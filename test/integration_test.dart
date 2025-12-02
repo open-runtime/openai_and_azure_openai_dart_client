@@ -35,11 +35,11 @@ import 'package:runtime_openai_and_azure_openai_dart_client/src/shared/intercept
 // Import generated models for Azure
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/create_chat_completion_request.dart'
     as azure;
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_union.dart'
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message.dart'
     as azure;
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_user_message_role_role.dart'
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_role_role.dart'
     as azure;
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_system_message_role_role.dart'
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_role_role2.dart'
     as azure;
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/azure_inference_y2024_m10_d21_ga_client.dart';
 
@@ -1078,9 +1078,9 @@ void main() {
             stop: null,
             logitBias: null,
             messages: [
-              azure.ChatCompletionRequestMessageUnionChatCompletionRequestUserMessage(
+              azure.ChatCompletionRequestMessageUser(
                 content: 'Say "hello" and nothing else.',
-                role: azure.ChatCompletionRequestUserMessageRoleRole.user,
+                role: azure.ChatCompletionRequestMessageRoleRole2.user,
                 name: null,
               ),
             ],
@@ -1108,14 +1108,14 @@ void main() {
             stop: null,
             logitBias: null,
             messages: [
-              azure.ChatCompletionRequestMessageUnionChatCompletionRequestSystemMessage(
+              azure.ChatCompletionRequestMessageSystem(
                 content: 'You are a helpful assistant that only responds with the word "pong".',
-                role: azure.ChatCompletionRequestSystemMessageRoleRole.system,
+                role: azure.ChatCompletionRequestMessageRoleRole.system,
                 name: null,
               ),
-              azure.ChatCompletionRequestMessageUnionChatCompletionRequestUserMessage(
+              azure.ChatCompletionRequestMessageUser(
                 content: 'ping',
-                role: azure.ChatCompletionRequestUserMessageRoleRole.user,
+                role: azure.ChatCompletionRequestMessageRoleRole2.user,
                 name: null,
               ),
             ],
