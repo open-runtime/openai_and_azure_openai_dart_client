@@ -25,7 +25,7 @@ class AssistantObject with AssistantObjectMappable {
     required this.metadata,
     this.assistantObjectToolResources,
     this.responseFormat,
-    this.tools = const AssistantObjectToolsToolsUnionVariantString(value: '[]'),
+    this.tools = const [],
     this.temperature = 1,
     this.topP = 1,
   });

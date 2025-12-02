@@ -69,6 +69,7 @@ export 'models/chat_completion_choice_log_probs.dart';
 export 'models/chat_completion_token_logprob.dart';
 export 'models/chat_completion_response_message.dart';
 export 'models/chat_completion_response_message_role.dart';
+export 'models/chat_completion_tool_choice_option_union.dart';
 export 'models/chat_completion_tool_choice_option.dart';
 export 'models/chat_completion_named_tool_choice.dart';
 export 'models/chat_completion_function_call.dart';

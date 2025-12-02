@@ -13,7 +13,7 @@ part 'modify_assistant_request.mapper.dart';
 @MappableClass()
 class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   const ModifyAssistantRequest({
-    this.tools = const ModifyAssistantRequestToolsToolsUnionVariantString(value: '[]'),
+    this.tools = const [],
     this.temperature = 1,
     this.topP = 1,
     this.model,

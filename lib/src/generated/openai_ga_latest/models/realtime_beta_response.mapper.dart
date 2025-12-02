@@ -19,7 +19,6 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
       RealtimeConversationItemMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       RealtimeBetaResponseUsageMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeBetaResponseModalitiesModalitiesMapper.ensureInitialized();
       RealtimeBetaResponseOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
     }
@@ -83,8 +82,8 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     key: r'conversation_id',
     opt: true,
   );
-  static VoiceIdsShared? _$voice(RealtimeBetaResponse v) => v.voice;
-  static const Field<RealtimeBetaResponse, VoiceIdsShared> _f$voice = Field(
+  static String? _$voice(RealtimeBetaResponse v) => v.voice;
+  static const Field<RealtimeBetaResponse, String> _f$voice = Field(
     'voice',
     _$voice,
     opt: true,
@@ -253,7 +252,6 @@ abstract class RealtimeBetaResponseCopyWith<
     RealtimeBetaResponseUsage
   >?
   get realtimeBetaResponseUsage;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeBetaResponseModalitiesModalities,
@@ -273,7 +271,7 @@ abstract class RealtimeBetaResponseCopyWith<
     Metadata? metadata,
     RealtimeBetaResponseUsage? realtimeBetaResponseUsage,
     String? conversationId,
-    VoiceIdsShared? voice,
+    String? voice,
     List<RealtimeBetaResponseModalitiesModalities>? modalities,
     RealtimeBetaResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat,
     num? temperature,
@@ -330,9 +328,6 @@ class _RealtimeBetaResponseCopyWithImpl<$R, $Out>
   >?
   get realtimeBetaResponseUsage => $value.realtimeBetaResponseUsage?.copyWith
       .$chain((v) => call(realtimeBetaResponseUsage: v));
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   ListCopyWith<
     $R,

@@ -21,7 +21,6 @@ class RealtimeSessionCreateRequestMapper
       RealtimeSessionCreateRequestInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionCreateRequestOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeSessionCreateRequestModelModelMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateRequestInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateRequestTurnDetectionMapper.ensureInitialized();
       RealtimeSessionCreateRequestToolsMapper.ensureInitialized();
@@ -102,9 +101,12 @@ class RealtimeSessionCreateRequestMapper
       v.instructions;
   static const Field<RealtimeSessionCreateRequest, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static VoiceIdsShared? _$voice(RealtimeSessionCreateRequest v) => v.voice;
-  static const Field<RealtimeSessionCreateRequest, VoiceIdsShared> _f$voice =
-      Field('voice', _$voice, opt: true);
+  static String? _$voice(RealtimeSessionCreateRequest v) => v.voice;
+  static const Field<RealtimeSessionCreateRequest, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+  );
   static RealtimeSessionCreateRequestInputAudioTranscription?
   _$realtimeSessionCreateRequestInputAudioTranscription(
     RealtimeSessionCreateRequest v,
@@ -273,7 +275,6 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     RealtimeSessionCreateRequestInputAudioNoiseReduction
   >
   get realtimeSessionCreateRequestInputAudioNoiseReduction;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionCreateRequestInputAudioTranscription,
@@ -308,7 +309,7 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     dynamic modalities,
     RealtimeSessionCreateRequestModelModel? model,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     RealtimeSessionCreateRequestInputAudioTranscription?
     realtimeSessionCreateRequestInputAudioTranscription,
     RealtimeSessionCreateRequestTurnDetection?
@@ -350,9 +351,6 @@ class _RealtimeSessionCreateRequestCopyWithImpl<$R, $Out>
       .$chain(
         (v) => call(realtimeSessionCreateRequestInputAudioNoiseReduction: v),
       );
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,

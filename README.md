@@ -66,7 +66,7 @@ dart run build_runner build --delete-conflicting-outputs
 
 ```dart
 import 'package:dio/dio.dart';
-import 'package:runtime_openai_client/runtime_openai_client.dart';
+import 'package:runtime_openai_and_azure_openai_dart_client/runtime_openai_and_azure_openai_dart_client.dart';
 
 void main() async {
   final dio = Dio(BaseOptions(
@@ -100,7 +100,7 @@ lib/
 │   ├── shared/                 # Shared utilities
 │   │   └── sse/               # SSE streaming support
 │   └── unified/               # Unified client abstraction
-├── runtime_openai_client.dart  # Library exports
+├── runtime_openai_and_azure_openai_dart_client.dart  # Library exports
 spec/
 ├── downloaded/                 # Raw OpenAPI specs (12 files)
 └── prepare/

@@ -3,6 +3,15 @@ description: Type-safe Dart client for OpenAI and Azure OpenAI APIs with unified
 version: 0.1.0
 repository: https://github.com/open-runtime/openai_and_azure_openai_dart_client
 homepage: https://github.com/open-runtime/openai_and_azure_openai_dart_client
+issue_tracker: https://github.com/open-runtime/openai_and_azure_openai_dart_client/issues
+documentation: https://github.com/open-runtime/openai_and_azure_openai_dart_client#readme
+
+topics:
+  - openai
+  - azure
+  - ai
+  - llm
+  - gpt
 
 environment:
   sdk: ^3.9.0

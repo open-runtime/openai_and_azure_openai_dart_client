@@ -18,7 +18,6 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
       RealtimeSessionInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeSessionModelModelMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionTurnDetectionMapper.ensureInitialized();
       RealtimeSessionToolsMapper.ensureInitialized();
@@ -102,8 +101,8 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     _$instructions,
     opt: true,
   );
-  static VoiceIdsShared? _$voice(RealtimeSession v) => v.voice;
-  static const Field<RealtimeSession, VoiceIdsShared> _f$voice = Field(
+  static String? _$voice(RealtimeSession v) => v.voice;
+  static const Field<RealtimeSession, String> _f$voice = Field(
     'voice',
     _$voice,
     opt: true,
@@ -252,7 +251,6 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     RealtimeSessionInputAudioNoiseReduction
   >
   get realtimeSessionInputAudioNoiseReduction;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionInputAudioTranscription,
@@ -282,7 +280,7 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     dynamic modalities,
     RealtimeSessionModelModel? model,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     RealtimeSessionInputAudioTranscription?
     realtimeSessionInputAudioTranscription,
     RealtimeSessionTurnDetection? realtimeSessionTurnDetection,
@@ -312,9 +310,6 @@ class _RealtimeSessionCopyWithImpl<$R, $Out>
       .realtimeSessionInputAudioNoiseReduction
       .copyWith
       .$chain((v) => call(realtimeSessionInputAudioNoiseReduction: v));
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionInputAudioTranscriptionCopyWith<
     $R,

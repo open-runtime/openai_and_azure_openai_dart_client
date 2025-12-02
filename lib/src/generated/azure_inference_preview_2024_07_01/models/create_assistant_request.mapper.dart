@@ -17,7 +17,7 @@ class CreateAssistantRequestMapper
       MapperContainer.globals.use(_instance = CreateAssistantRequestMapper._());
       CreateAssistantRequestToolsToolsUnionMapper.ensureInitialized();
       CreateAssistantRequestToolResourcesMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,12 +37,7 @@ class CreateAssistantRequestMapper
     CreateAssistantRequest,
     List<CreateAssistantRequestToolsToolsUnion>
   >
-  _f$tools = Field(
-    'tools',
-    _$tools,
-    opt: true,
-    def: const CreateAssistantRequestToolsToolsUnionVariantString(value: '[]'),
-  );
+  _f$tools = Field('tools', _$tools, opt: true, def: const []);
   static num? _$temperature(CreateAssistantRequest v) => v.temperature;
   static const Field<CreateAssistantRequest, num> _f$temperature = Field(
     'temperature',
@@ -95,10 +90,13 @@ class CreateAssistantRequestMapper
     _$metadata,
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     CreateAssistantRequest v,
   ) => v.responseFormat;
-  static const Field<CreateAssistantRequest, AssistantsApiResponseFormatOption>
+  static const Field<
+    CreateAssistantRequest,
+    AssistantsApiResponseFormatOptionUnion
+  >
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -224,10 +222,10 @@ abstract class CreateAssistantRequestCopyWith<
     CreateAssistantRequestToolResources
   >?
   get createAssistantRequestToolResources;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -240,7 +238,7 @@ abstract class CreateAssistantRequestCopyWith<
     String? instructions,
     CreateAssistantRequestToolResources? createAssistantRequestToolResources,
     dynamic metadata,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   CreateAssistantRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -282,10 +280,10 @@ class _CreateAssistantRequestCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(createAssistantRequestToolResources: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

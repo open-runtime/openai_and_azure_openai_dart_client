@@ -21,8 +21,8 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
       RunObjectIncompleteDetailsMapper.ensureInitialized();
       RunCompletionUsageMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
-      AssistantsApiToolChoiceOptionMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
       RunObjectToolsToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -150,13 +150,14 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     _$truncationStrategy,
     key: r'truncation_strategy',
   );
-  static AssistantsApiToolChoiceOption? _$toolChoice(RunObject v) =>
+  static AssistantsApiToolChoiceOptionUnion? _$toolChoice(RunObject v) =>
       v.toolChoice;
-  static const Field<RunObject, AssistantsApiToolChoiceOption> _f$toolChoice =
-      Field('toolChoice', _$toolChoice, key: r'tool_choice');
-  static AssistantsApiResponseFormatOption? _$responseFormat(RunObject v) =>
-      v.responseFormat;
-  static const Field<RunObject, AssistantsApiResponseFormatOption>
+  static const Field<RunObject, AssistantsApiToolChoiceOptionUnion>
+  _f$toolChoice = Field('toolChoice', _$toolChoice, key: r'tool_choice');
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
+    RunObject v,
+  ) => v.responseFormat;
+  static const Field<RunObject, AssistantsApiResponseFormatOptionUnion>
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -184,12 +185,7 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
   );
   static List<RunObjectToolsToolsUnion> _$tools(RunObject v) => v.tools;
   static const Field<RunObject, List<RunObjectToolsToolsUnion>> _f$tools =
-      Field(
-        'tools',
-        _$tools,
-        opt: true,
-        def: const RunObjectToolsToolsUnionVariantString(value: '[]'),
-      );
+      Field('tools', _$tools, opt: true, def: const []);
 
   @override
   final MappableFields<RunObject> fields = const {
@@ -331,16 +327,16 @@ abstract class RunObjectCopyWith<$R, $In extends RunObject, $Out>
   get usage;
   TruncationObjectCopyWith<$R, TruncationObject, TruncationObject>?
   get truncationStrategy;
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   ListCopyWith<
@@ -375,8 +371,8 @@ abstract class RunObjectCopyWith<$R, $In extends RunObject, $Out>
     int? maxPromptTokens,
     int? maxCompletionTokens,
     TruncationObject? truncationStrategy,
-    AssistantsApiToolChoiceOption? toolChoice,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiToolChoiceOptionUnion? toolChoice,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
     num? temperature,
     num? topP,
     bool? parallelToolCalls,
@@ -423,18 +419,18 @@ class _RunObjectCopyWithImpl<$R, $Out>
     (v) => call(truncationStrategy: v),
   );
   @override
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

@@ -15,7 +15,7 @@ class VideoListResource with VideoListResourceMappable {
     required this.firstId,
     required this.lastId,
     required this.hasMore,
-    this.objectField = list,
+    this.objectField = 'list',
   });
 
   final List<VideoResource> data;

@@ -19,7 +19,6 @@ class CreateChatCompletionRequestMapper
       );
       ServiceTierMapper.ensureInitialized();
       ChatCompletionRequestMessageUnionMapper.ensureInitialized();
-      ModelIdsSharedMapper.ensureInitialized();
       ResponseModalitiesMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       CreateChatCompletionRequestWebSearchOptionsMapper.ensureInitialized();
@@ -29,7 +28,7 @@ class CreateChatCompletionRequestMapper
       PredictionContentMapper.ensureInitialized();
       ChatCompletionStreamOptionsMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
-      ChatCompletionToolChoiceOptionMapper.ensureInitialized();
+      ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
       CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
     }
@@ -60,9 +59,11 @@ class CreateChatCompletionRequestMapper
     List<ChatCompletionRequestMessageUnion?>
   >
   _f$messages = Field('messages', _$messages);
-  static ModelIdsShared _$model(CreateChatCompletionRequest v) => v.model;
-  static const Field<CreateChatCompletionRequest, ModelIdsShared> _f$model =
-      Field('model', _$model);
+  static String? _$model(CreateChatCompletionRequest v) => v.model;
+  static const Field<CreateChatCompletionRequest, String> _f$model = Field(
+    'model',
+    _$model,
+  );
   static Map<String, int>? _$logitBias(CreateChatCompletionRequest v) =>
       v.logitBias;
   static const Field<CreateChatCompletionRequest, Map<String, int>>
@@ -169,12 +170,12 @@ class CreateChatCompletionRequestMapper
       v.tools;
   static const Field<CreateChatCompletionRequest, List<ChatCompletionTool>>
   _f$tools = Field('tools', _$tools, opt: true);
-  static ChatCompletionToolChoiceOption? _$toolChoice(
+  static ChatCompletionToolChoiceOptionUnion? _$toolChoice(
     CreateChatCompletionRequest v,
   ) => v.toolChoice;
   static const Field<
     CreateChatCompletionRequest,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
@@ -434,7 +435,6 @@ abstract class CreateChatCompletionRequestCopyWith<
     >?
   >
   get messages;
-  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model;
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias;
   CreateChatCompletionRequestWebSearchOptionsCopyWith<
     $R,
@@ -469,10 +469,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     ChatCompletionToolCopyWith<$R, ChatCompletionTool, ChatCompletionTool>
   >?
   get tools;
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice;
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
@@ -496,7 +496,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     String? user,
     ServiceTier? serviceTier,
     List<ChatCompletionRequestMessageUnion?>? messages,
-    ModelIdsShared? model,
+    String? model,
     Map<String, int>? logitBias,
     ResponseModalities? modalities,
     ReasoningEffort? reasoningEffort,
@@ -513,7 +513,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     int? seed,
     ChatCompletionStreamOptions? streamOptions,
     List<ChatCompletionTool>? tools,
-    ChatCompletionToolChoiceOption? toolChoice,
+    ChatCompletionToolChoiceOptionUnion? toolChoice,
     bool? parallelToolCalls,
     CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
     List<ChatCompletionFunctions>? functions,
@@ -572,9 +572,6 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     (v, t) => v?.copyWith.$chain(t),
     (v) => call(messages: v),
   );
-  @override
-  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model =>
-      $value.model.copyWith.$chain((v) => call(model: v));
   @override
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias =>
       $value.logitBias != null
@@ -641,10 +638,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
@@ -679,7 +676,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     Object? user = $none,
     Object? serviceTier = $none,
     List<ChatCompletionRequestMessageUnion?>? messages,
-    ModelIdsShared? model,
+    Object? model = $none,
     Object? logitBias = $none,
     Object? modalities = $none,
     Object? reasoningEffort = $none,
@@ -712,7 +709,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
       if (user != $none) #user: user,
       if (serviceTier != $none) #serviceTier: serviceTier,
       if (messages != null) #messages: messages,
-      if (model != null) #model: model,
+      if (model != $none) #model: model,
       if (logitBias != $none) #logitBias: logitBias,
       if (modalities != $none) #modalities: modalities,
       if (reasoningEffort != $none) #reasoningEffort: reasoningEffort,

@@ -20,9 +20,8 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       OutputItemMapper.ensureInitialized();
       ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
-      ModelIdsResponsesMapper.ensureInitialized();
+      ModelIdsResponsesUnionMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponseTextParamMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
@@ -146,8 +145,8 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     key: r'prompt_cache_key',
     opt: true,
   );
-  static ServiceTier? _$serviceTier(ResponseModel v) => v.serviceTier;
-  static const Field<ResponseModel, ServiceTier> _f$serviceTier = Field(
+  static String? _$serviceTier(ResponseModel v) => v.serviceTier;
+  static const Field<ResponseModel, String> _f$serviceTier = Field(
     'serviceTier',
     _$serviceTier,
     key: r'service_tier',
@@ -172,8 +171,8 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     key: r'previous_response_id',
     opt: true,
   );
-  static ModelIdsResponses? _$model(ResponseModel v) => v.model;
-  static const Field<ResponseModel, ModelIdsResponses> _f$model = Field(
+  static ModelIdsResponsesUnion? _$model(ResponseModel v) => v.model;
+  static const Field<ResponseModel, ModelIdsResponsesUnion> _f$model = Field(
     'model',
     _$model,
     opt: true,
@@ -392,8 +391,11 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
   ListCopyWith<$R, OutputItem, OutputItemCopyWith<$R, OutputItem, OutputItem>>
   get output;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model;
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning;
   ResponseTextParamCopyWith<$R, ResponseTextParam, ResponseTextParam>? get text;
@@ -420,11 +422,11 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     String? user,
     String? safetyIdentifier,
     String? promptCacheKey,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
     promptCacheRetention,
     String? previousResponseId,
-    ModelIdsResponses? model,
+    ModelIdsResponsesUnion? model,
     Reasoning? reasoning,
     int? maxOutputTokens,
     int? maxToolCalls,
@@ -471,10 +473,11 @@ class _ResponseModelCopyWithImpl<$R, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
-  @override
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning =>

@@ -18,7 +18,6 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCompletionsRunDataSourceSamplingParamsMapper._(),
       );
-      ReasoningEffortMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
     }
@@ -41,13 +40,10 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsMapper
       v.seed;
   static const Field<CreateEvalCompletionsRunDataSourceSamplingParams, int>
   _f$seed = Field('seed', _$seed, opt: true, def: 42);
-  static ReasoningEffort? _$reasoningEffort(
+  static String? _$reasoningEffort(
     CreateEvalCompletionsRunDataSourceSamplingParams v,
   ) => v.reasoningEffort;
-  static const Field<
-    CreateEvalCompletionsRunDataSourceSamplingParams,
-    ReasoningEffort
-  >
+  static const Field<CreateEvalCompletionsRunDataSourceSamplingParams, String>
   _f$reasoningEffort = Field(
     'reasoningEffort',
     _$reasoningEffort,
@@ -211,8 +207,6 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionCopyWith<
     $R,
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion,
@@ -229,7 +223,7 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsCopyWith<
     num? temperature,
     num? topP,
     int? seed,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     int? maxCompletionTokens,
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion?
     responseFormat,
@@ -262,10 +256,6 @@ class _CreateEvalCompletionsRunDataSourceSamplingParamsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalCompletionsRunDataSourceSamplingParams>
   $mapper =
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionCopyWith<
     $R,

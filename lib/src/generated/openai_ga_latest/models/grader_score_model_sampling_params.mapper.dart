@@ -17,7 +17,6 @@ class GraderScoreModelSamplingParamsMapper
       MapperContainer.globals.use(
         _instance = GraderScoreModelSamplingParamsMapper._(),
       );
-      ReasoningEffortMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -51,9 +50,9 @@ class GraderScoreModelSamplingParamsMapper
     key: r'max_completions_tokens',
     opt: true,
   );
-  static ReasoningEffort? _$reasoningEffort(GraderScoreModelSamplingParams v) =>
+  static String? _$reasoningEffort(GraderScoreModelSamplingParams v) =>
       v.reasoningEffort;
-  static const Field<GraderScoreModelSamplingParams, ReasoningEffort>
+  static const Field<GraderScoreModelSamplingParams, String>
   _f$reasoningEffort = Field(
     'reasoningEffort',
     _$reasoningEffort,
@@ -158,14 +157,12 @@ abstract class GraderScoreModelSamplingParamsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   $R call({
     num? topP,
     int? seed,
     num? temperature,
     int? maxCompletionsTokens,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
   });
   GraderScoreModelSamplingParamsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -189,10 +186,6 @@ class _GraderScoreModelSamplingParamsCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<GraderScoreModelSamplingParams> $mapper =
       GraderScoreModelSamplingParamsMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   $R call({
     Object? topP = $none,

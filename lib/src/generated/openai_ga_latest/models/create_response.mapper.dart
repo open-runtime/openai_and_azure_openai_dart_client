@@ -16,9 +16,8 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
       MapperContainer.globals.use(_instance = CreateResponseMapper._());
       ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
-      ModelIdsResponsesMapper.ensureInitialized();
+      ModelIdsResponsesUnionMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponseTextParamMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
@@ -27,7 +26,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
       InputParamMapper.ensureInitialized();
       IncludeEnumMapper.ensureInitialized();
       ResponseStreamOptionsUnionMapper.ensureInitialized();
-      ConversationParamMapper.ensureInitialized();
+      ConversationParamUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -122,8 +121,8 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     key: r'prompt_cache_key',
     opt: true,
   );
-  static ServiceTier? _$serviceTier(CreateResponse v) => v.serviceTier;
-  static const Field<CreateResponse, ServiceTier> _f$serviceTier = Field(
+  static String? _$serviceTier(CreateResponse v) => v.serviceTier;
+  static const Field<CreateResponse, String> _f$serviceTier = Field(
     'serviceTier',
     _$serviceTier,
     key: r'service_tier',
@@ -148,8 +147,8 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     key: r'previous_response_id',
     opt: true,
   );
-  static ModelIdsResponses? _$model(CreateResponse v) => v.model;
-  static const Field<CreateResponse, ModelIdsResponses> _f$model = Field(
+  static ModelIdsResponsesUnion? _$model(CreateResponse v) => v.model;
+  static const Field<CreateResponse, ModelIdsResponsesUnion> _f$model = Field(
     'model',
     _$model,
     opt: true,
@@ -226,12 +225,10 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     key: r'stream_options',
     opt: true,
   );
-  static ConversationParam? _$conversation(CreateResponse v) => v.conversation;
-  static const Field<CreateResponse, ConversationParam> _f$conversation = Field(
-    'conversation',
-    _$conversation,
-    opt: true,
-  );
+  static ConversationParamUnion? _$conversation(CreateResponse v) =>
+      v.conversation;
+  static const Field<CreateResponse, ConversationParamUnion> _f$conversation =
+      Field('conversation', _$conversation, opt: true);
 
   @override
   final MappableFields<CreateResponse> fields = const {
@@ -361,8 +358,11 @@ extension CreateResponseValueCopy<$R, $Out>
 abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model;
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning;
   ResponseTextParamCopyWith<$R, ResponseTextParam, ResponseTextParam>? get text;
@@ -378,7 +378,11 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     ResponseStreamOptionsUnion
   >?
   get streamOptions;
-  ConversationParamCopyWith<$R, ConversationParam, ConversationParam>?
+  ConversationParamUnionCopyWith<
+    $R,
+    ConversationParamUnion,
+    ConversationParamUnion
+  >?
   get conversation;
   $R call({
     num? temperature,
@@ -393,11 +397,11 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     String? user,
     String? safetyIdentifier,
     String? promptCacheKey,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
     promptCacheRetention,
     String? previousResponseId,
-    ModelIdsResponses? model,
+    ModelIdsResponsesUnion? model,
     Reasoning? reasoning,
     int? maxOutputTokens,
     int? maxToolCalls,
@@ -409,7 +413,7 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     List<IncludeEnum>? include,
     String? instructions,
     ResponseStreamOptionsUnion? streamOptions,
-    ConversationParam? conversation,
+    ConversationParamUnion? conversation,
   });
   CreateResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -428,10 +432,11 @@ class _CreateResponseCopyWithImpl<$R, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
-  @override
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning =>
@@ -476,7 +481,11 @@ class _CreateResponseCopyWithImpl<$R, $Out>
   get streamOptions =>
       $value.streamOptions?.copyWith.$chain((v) => call(streamOptions: v));
   @override
-  ConversationParamCopyWith<$R, ConversationParam, ConversationParam>?
+  ConversationParamUnionCopyWith<
+    $R,
+    ConversationParamUnion,
+    ConversationParamUnion
+  >?
   get conversation =>
       $value.conversation?.copyWith.$chain((v) => call(conversation: v));
   @override

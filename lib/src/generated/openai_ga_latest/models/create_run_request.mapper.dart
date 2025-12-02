@@ -15,13 +15,12 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateRunRequestMapper._());
       CreateRunRequestModelModelUnionMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
       CreateMessageRequestMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
-      AssistantsApiToolChoiceOptionMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -54,15 +53,13 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
       v.model;
   static const Field<CreateRunRequest, CreateRunRequestModelModelUnion>
   _f$model = Field('model', _$model, opt: true);
-  static ReasoningEffort? _$reasoningEffort(CreateRunRequest v) =>
-      v.reasoningEffort;
-  static const Field<CreateRunRequest, ReasoningEffort> _f$reasoningEffort =
-      Field(
-        'reasoningEffort',
-        _$reasoningEffort,
-        key: r'reasoning_effort',
-        opt: true,
-      );
+  static String? _$reasoningEffort(CreateRunRequest v) => v.reasoningEffort;
+  static const Field<CreateRunRequest, String> _f$reasoningEffort = Field(
+    'reasoningEffort',
+    _$reasoningEffort,
+    key: r'reasoning_effort',
+    opt: true,
+  );
   static String? _$instructions(CreateRunRequest v) => v.instructions;
   static const Field<CreateRunRequest, String> _f$instructions = Field(
     'instructions',
@@ -129,9 +126,9 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
         key: r'truncation_strategy',
         opt: true,
       );
-  static AssistantsApiToolChoiceOption? _$toolChoice(CreateRunRequest v) =>
+  static AssistantsApiToolChoiceOptionUnion? _$toolChoice(CreateRunRequest v) =>
       v.toolChoice;
-  static const Field<CreateRunRequest, AssistantsApiToolChoiceOption>
+  static const Field<CreateRunRequest, AssistantsApiToolChoiceOptionUnion>
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
@@ -145,10 +142,10 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     key: r'parallel_tool_calls',
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     CreateRunRequest v,
   ) => v.responseFormat;
-  static const Field<CreateRunRequest, AssistantsApiResponseFormatOption>
+  static const Field<CreateRunRequest, AssistantsApiResponseFormatOptionUnion>
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -267,8 +264,6 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     CreateRunRequestModelModelUnion
   >?
   get model;
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ListCopyWith<
     $R,
     CreateMessageRequest,
@@ -284,16 +279,16 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   TruncationObjectCopyWith<$R, TruncationObject, TruncationObject>?
   get truncationStrategy;
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -301,7 +296,7 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     num? temperature,
     num? topP,
     CreateRunRequestModelModelUnion? model,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     String? instructions,
     String? additionalInstructions,
     List<CreateMessageRequest>? additionalMessages,
@@ -311,9 +306,9 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     int? maxPromptTokens,
     int? maxCompletionTokens,
     TruncationObject? truncationStrategy,
-    AssistantsApiToolChoiceOption? toolChoice,
+    AssistantsApiToolChoiceOptionUnion? toolChoice,
     bool? parallelToolCalls,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   CreateRunRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -335,10 +330,6 @@ class _CreateRunRequestCopyWithImpl<$R, $Out>
     CreateRunRequestModelModelUnion
   >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   ListCopyWith<
     $R,
@@ -374,18 +365,18 @@ class _CreateRunRequestCopyWithImpl<$R, $Out>
     (v) => call(truncationStrategy: v),
   );
   @override
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

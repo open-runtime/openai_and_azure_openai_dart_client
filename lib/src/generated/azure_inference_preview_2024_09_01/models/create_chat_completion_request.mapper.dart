@@ -22,7 +22,7 @@ class CreateChatCompletionRequestMapper
       CreateChatCompletionRequestResponseFormatResponseFormatUnionMapper.ensureInitialized();
       ChatCompletionStreamOptionsMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
-      ChatCompletionToolChoiceOptionMapper.ensureInitialized();
+      ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
       CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
     }
@@ -132,12 +132,12 @@ class CreateChatCompletionRequestMapper
       v.tools;
   static const Field<CreateChatCompletionRequest, List<ChatCompletionTool>>
   _f$tools = Field('tools', _$tools, opt: true);
-  static ChatCompletionToolChoiceOption? _$toolChoice(
+  static ChatCompletionToolChoiceOptionUnion? _$toolChoice(
     CreateChatCompletionRequest v,
   ) => v.toolChoice;
   static const Field<
     CreateChatCompletionRequest,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
@@ -388,10 +388,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     ChatCompletionToolCopyWith<$R, ChatCompletionTool, ChatCompletionTool>
   >?
   get tools;
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice;
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
@@ -425,7 +425,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     int? seed,
     ChatCompletionStreamOptions? streamOptions,
     List<ChatCompletionTool>? tools,
-    ChatCompletionToolChoiceOption? toolChoice,
+    ChatCompletionToolChoiceOptionUnion? toolChoice,
     CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
     List<ChatCompletionFunctions>? functions,
     num? temperature,
@@ -538,10 +538,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));

@@ -18,13 +18,12 @@ class CreateRunRequestWithoutStreamMapper
         _instance = CreateRunRequestWithoutStreamMapper._(),
       );
       CreateRunRequestWithoutStreamModelModelUnionMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
       CreateMessageRequestMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
-      AssistantsApiToolChoiceOptionMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -58,15 +57,15 @@ class CreateRunRequestWithoutStreamMapper
     CreateRunRequestWithoutStreamModelModelUnion
   >
   _f$model = Field('model', _$model, opt: true);
-  static ReasoningEffort? _$reasoningEffort(CreateRunRequestWithoutStream v) =>
+  static String? _$reasoningEffort(CreateRunRequestWithoutStream v) =>
       v.reasoningEffort;
-  static const Field<CreateRunRequestWithoutStream, ReasoningEffort>
-  _f$reasoningEffort = Field(
-    'reasoningEffort',
-    _$reasoningEffort,
-    key: r'reasoning_effort',
-    opt: true,
-  );
+  static const Field<CreateRunRequestWithoutStream, String> _f$reasoningEffort =
+      Field(
+        'reasoningEffort',
+        _$reasoningEffort,
+        key: r'reasoning_effort',
+        opt: true,
+      );
   static String? _$instructions(CreateRunRequestWithoutStream v) =>
       v.instructions;
   static const Field<CreateRunRequestWithoutStream, String> _f$instructions =
@@ -125,12 +124,12 @@ class CreateRunRequestWithoutStreamMapper
     key: r'truncation_strategy',
     opt: true,
   );
-  static AssistantsApiToolChoiceOption? _$toolChoice(
+  static AssistantsApiToolChoiceOptionUnion? _$toolChoice(
     CreateRunRequestWithoutStream v,
   ) => v.toolChoice;
   static const Field<
     CreateRunRequestWithoutStream,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
@@ -147,12 +146,12 @@ class CreateRunRequestWithoutStreamMapper
         key: r'parallel_tool_calls',
         opt: true,
       );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     CreateRunRequestWithoutStream v,
   ) => v.responseFormat;
   static const Field<
     CreateRunRequestWithoutStream,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -282,8 +281,6 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
     CreateRunRequestWithoutStreamModelModelUnion
   >?
   get model;
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ListCopyWith<
     $R,
     CreateMessageRequest,
@@ -299,16 +296,16 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   TruncationObjectCopyWith<$R, TruncationObject, TruncationObject>?
   get truncationStrategy;
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -316,7 +313,7 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
     num? temperature,
     num? topP,
     CreateRunRequestWithoutStreamModelModelUnion? model,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     String? instructions,
     String? additionalInstructions,
     List<CreateMessageRequest>? additionalMessages,
@@ -325,9 +322,9 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
     int? maxPromptTokens,
     int? maxCompletionTokens,
     TruncationObject? truncationStrategy,
-    AssistantsApiToolChoiceOption? toolChoice,
+    AssistantsApiToolChoiceOptionUnion? toolChoice,
     bool? parallelToolCalls,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   CreateRunRequestWithoutStreamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -358,10 +355,6 @@ class _CreateRunRequestWithoutStreamCopyWithImpl<$R, $Out>
     CreateRunRequestWithoutStreamModelModelUnion
   >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   ListCopyWith<
     $R,
@@ -397,18 +390,18 @@ class _CreateRunRequestWithoutStreamCopyWithImpl<$R, $Out>
     (v) => call(truncationStrategy: v),
   );
   @override
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

@@ -18,15 +18,12 @@ class CreateChatCompletionRequestMapper
         _instance = CreateChatCompletionRequestMapper._(),
       );
       ChatCompletionRequestMessageMapper.ensureInitialized();
-      ModelIdsSharedMapper.ensureInitialized();
-      VerbosityMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
+      ModelIdsSharedUnionMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
       CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
       ResponseModalitiesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
-      ChatCompletionToolChoiceOptionMapper.ensureInitialized();
+      ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
       CreateChatCompletionRequestToolsToolsUnionMapper.ensureInitialized();
       CreateChatCompletionRequestWebSearchOptionsMapper.ensureInitialized();
       CreateChatCompletionRequestResponseFormatResponseFormatUnionMapper.ensureInitialized();
@@ -54,12 +51,15 @@ class CreateChatCompletionRequestMapper
     List<ChatCompletionRequestMessage>
   >
   _f$messages = Field('messages', _$messages);
-  static ModelIdsShared _$model(CreateChatCompletionRequest v) => v.model;
-  static const Field<CreateChatCompletionRequest, ModelIdsShared> _f$model =
-      Field('model', _$model);
-  static Verbosity? _$verbosity(CreateChatCompletionRequest v) => v.verbosity;
-  static const Field<CreateChatCompletionRequest, Verbosity> _f$verbosity =
-      Field('verbosity', _$verbosity, opt: true);
+  static ModelIdsSharedUnion? _$model(CreateChatCompletionRequest v) => v.model;
+  static const Field<CreateChatCompletionRequest, ModelIdsSharedUnion>
+  _f$model = Field('model', _$model);
+  static String? _$verbosity(CreateChatCompletionRequest v) => v.verbosity;
+  static const Field<CreateChatCompletionRequest, String> _f$verbosity = Field(
+    'verbosity',
+    _$verbosity,
+    opt: true,
+  );
   static String? _$user(CreateChatCompletionRequest v) => v.user;
   static const Field<CreateChatCompletionRequest, String> _f$user = Field(
     'user',
@@ -84,9 +84,8 @@ class CreateChatCompletionRequestMapper
         key: r'prompt_cache_key',
         opt: true,
       );
-  static ServiceTier? _$serviceTier(CreateChatCompletionRequest v) =>
-      v.serviceTier;
-  static const Field<CreateChatCompletionRequest, ServiceTier> _f$serviceTier =
+  static String? _$serviceTier(CreateChatCompletionRequest v) => v.serviceTier;
+  static const Field<CreateChatCompletionRequest, String> _f$serviceTier =
       Field('serviceTier', _$serviceTier, key: r'service_tier', opt: true);
   static ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
   _$promptCacheRetention(CreateChatCompletionRequest v) =>
@@ -130,15 +129,15 @@ class CreateChatCompletionRequestMapper
     _$metadata,
     opt: true,
   );
-  static ReasoningEffort? _$reasoningEffort(CreateChatCompletionRequest v) =>
+  static String? _$reasoningEffort(CreateChatCompletionRequest v) =>
       v.reasoningEffort;
-  static const Field<CreateChatCompletionRequest, ReasoningEffort>
-  _f$reasoningEffort = Field(
-    'reasoningEffort',
-    _$reasoningEffort,
-    key: r'reasoning_effort',
-    opt: true,
-  );
+  static const Field<CreateChatCompletionRequest, String> _f$reasoningEffort =
+      Field(
+        'reasoningEffort',
+        _$reasoningEffort,
+        key: r'reasoning_effort',
+        opt: true,
+      );
   static int? _$maxCompletionTokens(CreateChatCompletionRequest v) =>
       v.maxCompletionTokens;
   static const Field<CreateChatCompletionRequest, int> _f$maxCompletionTokens =
@@ -148,12 +147,12 @@ class CreateChatCompletionRequestMapper
         key: r'max_completion_tokens',
         opt: true,
       );
-  static ChatCompletionToolChoiceOption? _$toolChoice(
+  static ChatCompletionToolChoiceOptionUnion? _$toolChoice(
     CreateChatCompletionRequest v,
   ) => v.toolChoice;
   static const Field<
     CreateChatCompletionRequest,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
@@ -488,9 +487,8 @@ abstract class CreateChatCompletionRequestCopyWith<
     >
   >
   get messages;
-  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model;
-  VerbosityCopyWith<$R, Verbosity, Verbosity>? get verbosity;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
+  ModelIdsSharedUnionCopyWith<$R, ModelIdsSharedUnion, ModelIdsSharedUnion>?
+  get model;
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
     $R,
     CreateChatCompletionRequestFunctionCallFunctionCallUnion,
@@ -500,12 +498,10 @@ abstract class CreateChatCompletionRequestCopyWith<
   ResponseModalitiesCopyWith<$R, ResponseModalities, ResponseModalities>?
   get modalities;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice;
   ListCopyWith<
@@ -558,21 +554,21 @@ abstract class CreateChatCompletionRequestCopyWith<
   $R call({
     Map<String, int>? logitBias,
     List<ChatCompletionRequestMessage>? messages,
-    ModelIdsShared? model,
-    Verbosity? verbosity,
+    ModelIdsSharedUnion? model,
+    String? verbosity,
     String? user,
     String? safetyIdentifier,
     String? promptCacheKey,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
     promptCacheRetention,
     int? topLogprobs,
     CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
     ResponseModalities? modalities,
     Metadata? metadata,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     int? maxCompletionTokens,
-    ChatCompletionToolChoiceOption? toolChoice,
+    ChatCompletionToolChoiceOptionUnion? toolChoice,
     List<CreateChatCompletionRequestToolsToolsUnion>? tools,
     CreateChatCompletionRequestWebSearchOptions?
     createChatCompletionRequestWebSearchOptions,
@@ -642,14 +638,8 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     (v) => call(messages: v),
   );
   @override
-  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model =>
-      $value.model.copyWith.$chain((v) => call(model: v));
-  @override
-  VerbosityCopyWith<$R, Verbosity, Verbosity>? get verbosity =>
-      $value.verbosity?.copyWith.$chain((v) => call(verbosity: v));
-  @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
+  ModelIdsSharedUnionCopyWith<$R, ModelIdsSharedUnion, ModelIdsSharedUnion>?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
     $R,
@@ -666,14 +656,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
-  @override
-  ChatCompletionToolChoiceOptionCopyWith<
+  ChatCompletionToolChoiceOptionUnionCopyWith<
     $R,
-    ChatCompletionToolChoiceOption,
-    ChatCompletionToolChoiceOption
+    ChatCompletionToolChoiceOptionUnion,
+    ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
@@ -758,7 +744,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   $R call({
     Object? logitBias = $none,
     List<ChatCompletionRequestMessage>? messages,
-    ModelIdsShared? model,
+    Object? model = $none,
     Object? verbosity = $none,
     Object? user = $none,
     Object? safetyIdentifier = $none,
@@ -795,7 +781,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     FieldCopyWithData({
       if (logitBias != $none) #logitBias: logitBias,
       if (messages != null) #messages: messages,
-      if (model != null) #model: model,
+      if (model != $none) #model: model,
       if (verbosity != $none) #verbosity: verbosity,
       if (user != $none) #user: user,
       if (safetyIdentifier != $none) #safetyIdentifier: safetyIdentifier,

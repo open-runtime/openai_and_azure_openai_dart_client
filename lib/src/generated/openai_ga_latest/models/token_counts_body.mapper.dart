@@ -18,7 +18,7 @@ class TokenCountsBodyMapper extends ClassMapperBase<TokenCountsBody> {
       ResponseTextParamMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       TruncationEnumMapper.ensureInitialized();
-      ConversationParamMapper.ensureInitialized();
+      ConversationParamUnionMapper.ensureInitialized();
       ToolChoiceParamMapper.ensureInitialized();
     }
     return _instance!;
@@ -77,8 +77,9 @@ class TokenCountsBodyMapper extends ClassMapperBase<TokenCountsBody> {
     _$instructions,
     opt: true,
   );
-  static ConversationParam? _$conversation(TokenCountsBody v) => v.conversation;
-  static const Field<TokenCountsBody, ConversationParam> _f$conversation =
+  static ConversationParamUnion? _$conversation(TokenCountsBody v) =>
+      v.conversation;
+  static const Field<TokenCountsBody, ConversationParamUnion> _f$conversation =
       Field('conversation', _$conversation, opt: true);
   static ToolChoiceParam? _$toolChoice(TokenCountsBody v) => v.toolChoice;
   static const Field<TokenCountsBody, ToolChoiceParam> _f$toolChoice = Field(
@@ -191,7 +192,11 @@ abstract class TokenCountsBodyCopyWith<$R, $In extends TokenCountsBody, $Out>
   ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools;
   ResponseTextParamCopyWith<$R, ResponseTextParam, ResponseTextParam>? get text;
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning;
-  ConversationParamCopyWith<$R, ConversationParam, ConversationParam>?
+  ConversationParamUnionCopyWith<
+    $R,
+    ConversationParamUnion,
+    ConversationParamUnion
+  >?
   get conversation;
   ToolChoiceParamCopyWith<$R, ToolChoiceParam, ToolChoiceParam>? get toolChoice;
   $R call({
@@ -203,7 +208,7 @@ abstract class TokenCountsBodyCopyWith<$R, $In extends TokenCountsBody, $Out>
     Reasoning? reasoning,
     TruncationEnum? truncation,
     String? instructions,
-    ConversationParam? conversation,
+    ConversationParamUnion? conversation,
     ToolChoiceParam? toolChoice,
     bool? parallelToolCalls,
   });
@@ -236,7 +241,11 @@ class _TokenCountsBodyCopyWithImpl<$R, $Out>
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning =>
       $value.reasoning?.copyWith.$chain((v) => call(reasoning: v));
   @override
-  ConversationParamCopyWith<$R, ConversationParam, ConversationParam>?
+  ConversationParamUnionCopyWith<
+    $R,
+    ConversationParamUnion,
+    ConversationParamUnion
+  >?
   get conversation =>
       $value.conversation?.copyWith.$chain((v) => call(conversation: v));
   @override

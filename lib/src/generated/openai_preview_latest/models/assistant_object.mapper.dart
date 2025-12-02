@@ -16,7 +16,7 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
       MapperContainer.globals.use(_instance = AssistantObjectMapper._());
       AssistantObjectObjectObjectEnumMapper.ensureInitialized();
       AssistantObjectToolResourcesMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
       AssistantObjectToolsToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -69,10 +69,10 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
     key: r'AssistantObjectToolResources',
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     AssistantObject v,
   ) => v.responseFormat;
-  static const Field<AssistantObject, AssistantsApiResponseFormatOption>
+  static const Field<AssistantObject, AssistantsApiResponseFormatOptionUnion>
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -82,12 +82,7 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
   static List<AssistantObjectToolsToolsUnion> _$tools(AssistantObject v) =>
       v.tools;
   static const Field<AssistantObject, List<AssistantObjectToolsToolsUnion>>
-  _f$tools = Field(
-    'tools',
-    _$tools,
-    opt: true,
-    def: const AssistantObjectToolsToolsUnionVariantString(value: '[]'),
-  );
+  _f$tools = Field('tools', _$tools, opt: true, def: const []);
   static num? _$temperature(AssistantObject v) => v.temperature;
   static const Field<AssistantObject, num> _f$temperature = Field(
     'temperature',
@@ -209,10 +204,10 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
     AssistantObjectToolResources
   >?
   get assistantObjectToolResources;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   ListCopyWith<
@@ -235,7 +230,7 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
     String? instructions,
     Map<String, String>? metadata,
     AssistantObjectToolResources? assistantObjectToolResources,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
     List<AssistantObjectToolsToolsUnion>? tools,
     num? temperature,
     num? topP,
@@ -273,10 +268,10 @@ class _AssistantObjectCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(assistantObjectToolResources: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

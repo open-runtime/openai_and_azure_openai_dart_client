@@ -64,9 +64,7 @@ class EvalMapper extends ClassMapperBase<Eval> {
     _$testingCriteria,
     key: r'testing_criteria',
     opt: true,
-    def: const EvalTestingCriteriaTestingCriteriaUnionVariantString(
-      value: 'eval',
-    ),
+    def: 'eval',
   );
 
   @override

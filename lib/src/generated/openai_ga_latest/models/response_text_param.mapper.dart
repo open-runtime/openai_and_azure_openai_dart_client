@@ -15,7 +15,6 @@ class ResponseTextParamMapper extends ClassMapperBase<ResponseTextParam> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseTextParamMapper._());
       TextResponseFormatConfigurationMapper.ensureInitialized();
-      VerbosityMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,8 +26,8 @@ class ResponseTextParamMapper extends ClassMapperBase<ResponseTextParam> {
       v.format;
   static const Field<ResponseTextParam, TextResponseFormatConfiguration>
   _f$format = Field('format', _$format, opt: true);
-  static Verbosity? _$verbosity(ResponseTextParam v) => v.verbosity;
-  static const Field<ResponseTextParam, Verbosity> _f$verbosity = Field(
+  static String? _$verbosity(ResponseTextParam v) => v.verbosity;
+  static const Field<ResponseTextParam, String> _f$verbosity = Field(
     'verbosity',
     _$verbosity,
     opt: true,
@@ -124,8 +123,7 @@ abstract class ResponseTextParamCopyWith<
     TextResponseFormatConfiguration
   >?
   get format;
-  VerbosityCopyWith<$R, Verbosity, Verbosity>? get verbosity;
-  $R call({TextResponseFormatConfiguration? format, Verbosity? verbosity});
+  $R call({TextResponseFormatConfiguration? format, String? verbosity});
   ResponseTextParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -146,9 +144,6 @@ class _ResponseTextParamCopyWithImpl<$R, $Out>
     TextResponseFormatConfiguration
   >?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
-  @override
-  VerbosityCopyWith<$R, Verbosity, Verbosity>? get verbosity =>
-      $value.verbosity?.copyWith.$chain((v) => call(verbosity: v));
   @override
   $R call({Object? format = $none, Object? verbosity = $none}) => $apply(
     FieldCopyWithData({

@@ -18,7 +18,6 @@ class RealtimeSessionCreateResponseMapper
         _instance = RealtimeSessionCreateResponseMapper._(),
       );
       RealtimeSessionCreateResponseClientSecretMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateResponseInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateResponseTurnDetectionMapper.ensureInitialized();
       RealtimeSessionCreateResponseToolsMapper.ensureInitialized();
@@ -49,9 +48,12 @@ class RealtimeSessionCreateResponseMapper
       v.instructions;
   static const Field<RealtimeSessionCreateResponse, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static VoiceIdsShared? _$voice(RealtimeSessionCreateResponse v) => v.voice;
-  static const Field<RealtimeSessionCreateResponse, VoiceIdsShared> _f$voice =
-      Field('voice', _$voice, opt: true);
+  static String? _$voice(RealtimeSessionCreateResponse v) => v.voice;
+  static const Field<RealtimeSessionCreateResponse, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+  );
   static String? _$inputAudioFormat(RealtimeSessionCreateResponse v) =>
       v.inputAudioFormat;
   static const Field<RealtimeSessionCreateResponse, String>
@@ -247,7 +249,6 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     RealtimeSessionCreateResponseClientSecret
   >
   get realtimeSessionCreateResponseClientSecret;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionCreateResponseInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionCreateResponseInputAudioTranscription,
@@ -275,7 +276,7 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     realtimeSessionCreateResponseClientSecret,
     dynamic modalities,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     String? inputAudioFormat,
     String? outputAudioFormat,
     RealtimeSessionCreateResponseInputAudioTranscription?
@@ -319,9 +320,6 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
       .realtimeSessionCreateResponseClientSecret
       .copyWith
       .$chain((v) => call(realtimeSessionCreateResponseClientSecret: v));
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionCreateResponseInputAudioTranscriptionCopyWith<
     $R,

@@ -17,7 +17,7 @@ part 'create_assistant_request.mapper.dart';
 class CreateAssistantRequest with CreateAssistantRequestMappable {
   const CreateAssistantRequest({
     required this.model,
-    this.tools = const CreateAssistantRequestToolsToolsUnionVariantString(value: '[]'),
+    this.tools = const [],
     this.temperature = 1,
     this.topP = 1,
     this.name,

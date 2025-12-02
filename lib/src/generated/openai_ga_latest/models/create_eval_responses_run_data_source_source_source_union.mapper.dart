@@ -613,7 +613,6 @@ class CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSourceMapper
       );
       CreateEvalResponsesRunDataSourceSourceSourceUnionMapper.ensureInitialized();
       EvalResponsesSourceTypeTypeMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -670,12 +669,12 @@ class CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSourceMapper
     int
   >
   _f$createdBefore = Field('createdBefore', _$createdBefore);
-  static ReasoningEffort? _$reasoningEffort(
+  static String? _$reasoningEffort(
     CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSource v,
   ) => v.reasoningEffort;
   static const Field<
     CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSource,
-    ReasoningEffort
+    String
   >
   _f$reasoningEffort = Field('reasoningEffort', _$reasoningEffort);
   static num? _$temperature(
@@ -865,8 +864,6 @@ abstract class CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSou
           $In,
           $Out
         > {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get users;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get tools;
   @override
@@ -877,7 +874,7 @@ abstract class CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSou
     String? instructionsSearch,
     int? createdAfter,
     int? createdBefore,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     num? temperature,
     num? topP,
     List<String>? users,
@@ -919,10 +916,6 @@ class _CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSourceCopyW
   >
   $mapper =
       CreateEvalResponsesRunDataSourceSourceSourceUnionEvalResponsesSourceMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get users =>
       $value.users != null

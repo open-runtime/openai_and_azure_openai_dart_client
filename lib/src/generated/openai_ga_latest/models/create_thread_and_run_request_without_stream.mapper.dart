@@ -22,8 +22,8 @@ class CreateThreadAndRunRequestWithoutStreamMapper
       CreateThreadAndRunRequestWithoutStreamToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
-      AssistantsApiToolChoiceOptionMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -111,12 +111,12 @@ class CreateThreadAndRunRequestWithoutStreamMapper
     key: r'truncation_strategy',
     opt: true,
   );
-  static AssistantsApiToolChoiceOption? _$toolChoice(
+  static AssistantsApiToolChoiceOptionUnion? _$toolChoice(
     CreateThreadAndRunRequestWithoutStream v,
   ) => v.toolChoice;
   static const Field<
     CreateThreadAndRunRequestWithoutStream,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
@@ -133,12 +133,12 @@ class CreateThreadAndRunRequestWithoutStreamMapper
     key: r'parallel_tool_calls',
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     CreateThreadAndRunRequestWithoutStream v,
   ) => v.responseFormat;
   static const Field<
     CreateThreadAndRunRequestWithoutStream,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -287,16 +287,16 @@ abstract class CreateThreadAndRunRequestWithoutStreamCopyWith<
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   TruncationObjectCopyWith<$R, TruncationObject, TruncationObject>?
   get truncationStrategy;
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -313,9 +313,9 @@ abstract class CreateThreadAndRunRequestWithoutStreamCopyWith<
     int? maxPromptTokens,
     int? maxCompletionTokens,
     TruncationObject? truncationStrategy,
-    AssistantsApiToolChoiceOption? toolChoice,
+    AssistantsApiToolChoiceOptionUnion? toolChoice,
     bool? parallelToolCalls,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   CreateThreadAndRunRequestWithoutStreamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -375,18 +375,18 @@ class _CreateThreadAndRunRequestWithoutStreamCopyWithImpl<$R, $Out>
     (v) => call(truncationStrategy: v),
   );
   @override
-  AssistantsApiToolChoiceOptionCopyWith<
+  AssistantsApiToolChoiceOptionUnionCopyWith<
     $R,
-    AssistantsApiToolChoiceOption,
-    AssistantsApiToolChoiceOption
+    AssistantsApiToolChoiceOptionUnion,
+    AssistantsApiToolChoiceOptionUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

@@ -19,7 +19,6 @@ class CreateChatCompletionResponseMapper
       );
       CreateChatCompletionResponseChoicesMapper.ensureInitialized();
       CreateChatCompletionResponseObjectObjectEnumMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
       CompletionUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -59,9 +58,8 @@ class CreateChatCompletionResponseMapper
     CreateChatCompletionResponseObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
-  static ServiceTier? _$serviceTier(CreateChatCompletionResponse v) =>
-      v.serviceTier;
-  static const Field<CreateChatCompletionResponse, ServiceTier> _f$serviceTier =
+  static String? _$serviceTier(CreateChatCompletionResponse v) => v.serviceTier;
+  static const Field<CreateChatCompletionResponse, String> _f$serviceTier =
       Field('serviceTier', _$serviceTier, key: r'service_tier', opt: true);
   static String? _$systemFingerprint(CreateChatCompletionResponse v) =>
       v.systemFingerprint;
@@ -184,7 +182,6 @@ abstract class CreateChatCompletionResponseCopyWith<
     >
   >
   get choices;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
   CompletionUsageCopyWith<$R, CompletionUsage, CompletionUsage>? get usage;
   $R call({
     String? id,
@@ -192,7 +189,7 @@ abstract class CreateChatCompletionResponseCopyWith<
     int? created,
     String? model,
     CreateChatCompletionResponseObjectObjectEnum? objectEnum,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     String? systemFingerprint,
     CompletionUsage? usage,
   });
@@ -233,9 +230,6 @@ class _CreateChatCompletionResponseCopyWithImpl<$R, $Out>
     (v, t) => v.copyWith.$chain(t),
     (v) => call(choices: v),
   );
-  @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
   @override
   CompletionUsageCopyWith<$R, CompletionUsage, CompletionUsage>? get usage =>
       $value.usage?.copyWith.$chain((v) => call(usage: v));

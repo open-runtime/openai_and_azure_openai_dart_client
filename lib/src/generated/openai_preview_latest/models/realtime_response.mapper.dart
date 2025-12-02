@@ -19,7 +19,6 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
       RealtimeResponseStatusDetailsMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
       RealtimeResponseUsageMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeResponseModalitiesModalitiesMapper.ensureInitialized();
       RealtimeResponseOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
     }
@@ -78,8 +77,8 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
     key: r'conversation_id',
     opt: true,
   );
-  static VoiceIdsShared? _$voice(RealtimeResponse v) => v.voice;
-  static const Field<RealtimeResponse, VoiceIdsShared> _f$voice = Field(
+  static String? _$voice(RealtimeResponse v) => v.voice;
+  static const Field<RealtimeResponse, String> _f$voice = Field(
     'voice',
     _$voice,
     opt: true,
@@ -239,7 +238,6 @@ abstract class RealtimeResponseCopyWith<$R, $In extends RealtimeResponse, $Out>
     RealtimeResponseUsage
   >?
   get realtimeResponseUsage;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeResponseModalitiesModalities,
@@ -259,7 +257,7 @@ abstract class RealtimeResponseCopyWith<$R, $In extends RealtimeResponse, $Out>
     Map<String, String>? metadata,
     RealtimeResponseUsage? realtimeResponseUsage,
     String? conversationId,
-    VoiceIdsShared? voice,
+    String? voice,
     List<RealtimeResponseModalitiesModalities>? modalities,
     RealtimeResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat,
     num? temperature,
@@ -323,9 +321,6 @@ class _RealtimeResponseCopyWithImpl<$R, $Out>
   get realtimeResponseUsage => $value.realtimeResponseUsage?.copyWith.$chain(
     (v) => call(realtimeResponseUsage: v),
   );
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   ListCopyWith<
     $R,

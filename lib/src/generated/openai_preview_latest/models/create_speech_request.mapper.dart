@@ -14,7 +14,6 @@ class CreateSpeechRequestMapper extends ClassMapperBase<CreateSpeechRequest> {
   static CreateSpeechRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateSpeechRequestMapper._());
-      VoiceIdsSharedMapper.ensureInitialized();
       CreateSpeechRequestResponseFormatResponseFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -33,8 +32,8 @@ class CreateSpeechRequestMapper extends ClassMapperBase<CreateSpeechRequest> {
     'input',
     _$input,
   );
-  static VoiceIdsShared _$voice(CreateSpeechRequest v) => v.voice;
-  static const Field<CreateSpeechRequest, VoiceIdsShared> _f$voice = Field(
+  static String? _$voice(CreateSpeechRequest v) => v.voice;
+  static const Field<CreateSpeechRequest, String> _f$voice = Field(
     'voice',
     _$voice,
   );
@@ -157,11 +156,10 @@ abstract class CreateSpeechRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice;
   $R call({
     String? model,
     String? input,
-    VoiceIdsShared? voice,
+    String? voice,
     CreateSpeechRequestResponseFormatResponseFormat? responseFormat,
     num? speed,
     String? instructions,
@@ -180,13 +178,10 @@ class _CreateSpeechRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateSpeechRequest> $mapper =
       CreateSpeechRequestMapper.ensureInitialized();
   @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice =>
-      $value.voice.copyWith.$chain((v) => call(voice: v));
-  @override
   $R call({
     String? model,
     String? input,
-    VoiceIdsShared? voice,
+    Object? voice = $none,
     CreateSpeechRequestResponseFormatResponseFormat? responseFormat,
     num? speed,
     Object? instructions = $none,
@@ -194,7 +189,7 @@ class _CreateSpeechRequestCopyWithImpl<$R, $Out>
     FieldCopyWithData({
       if (model != null) #model: model,
       if (input != null) #input: input,
-      if (voice != null) #voice: voice,
+      if (voice != $none) #voice: voice,
       if (responseFormat != null) #responseFormat: responseFormat,
       if (speed != null) #speed: speed,
       if (instructions != $none) #instructions: instructions,

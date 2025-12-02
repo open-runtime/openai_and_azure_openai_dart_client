@@ -63,7 +63,7 @@ Edit `openapi_generator.yaml` to configure:
 
 ```dart
 import 'package:dio/dio.dart';
-import 'package:runtime_openai_client/runtime_openai_client.dart';
+import 'package:runtime_openai_and_azure_openai_dart_client/runtime_openai_and_azure_openai_dart_client.dart';
 
 void main() async {
   // Create Dio instance with base URL

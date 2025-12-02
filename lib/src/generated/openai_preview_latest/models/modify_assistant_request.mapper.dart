@@ -19,7 +19,7 @@ class ModifyAssistantRequestMapper
       ModifyAssistantRequestModelModelUnionMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       ModifyAssistantRequestToolResourcesMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,12 +34,7 @@ class ModifyAssistantRequestMapper
     ModifyAssistantRequest,
     List<ModifyAssistantRequestToolsToolsUnion>
   >
-  _f$tools = Field(
-    'tools',
-    _$tools,
-    opt: true,
-    def: const ModifyAssistantRequestToolsToolsUnionVariantString(value: '[]'),
-  );
+  _f$tools = Field('tools', _$tools, opt: true, def: const []);
   static num? _$temperature(ModifyAssistantRequest v) => v.temperature;
   static const Field<ModifyAssistantRequest, num> _f$temperature = Field(
     'temperature',
@@ -107,10 +102,13 @@ class ModifyAssistantRequestMapper
       v.metadata;
   static const Field<ModifyAssistantRequest, Map<String, String>> _f$metadata =
       Field('metadata', _$metadata, opt: true);
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     ModifyAssistantRequest v,
   ) => v.responseFormat;
-  static const Field<ModifyAssistantRequest, AssistantsApiResponseFormatOption>
+  static const Field<
+    ModifyAssistantRequest,
+    AssistantsApiResponseFormatOptionUnion
+  >
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -246,10 +244,10 @@ abstract class ModifyAssistantRequestCopyWith<
   get modifyAssistantRequestToolResources;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -263,7 +261,7 @@ abstract class ModifyAssistantRequestCopyWith<
     String? instructions,
     ModifyAssistantRequestToolResources? modifyAssistantRequestToolResources,
     Map<String, String>? metadata,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   ModifyAssistantRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -321,10 +319,10 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

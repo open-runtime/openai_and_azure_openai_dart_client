@@ -27,7 +27,7 @@ class Eval with EvalMappable {
     required this.createdAt,
     required this.metadata,
     this.objectEnum = EvalObjectObjectEnum.eval,
-    this.testingCriteria = const EvalTestingCriteriaTestingCriteriaUnionVariantString(value: 'eval'),
+    this.testingCriteria = 'eval',
   });
 
   final String id;

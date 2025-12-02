@@ -15,7 +15,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateResponseMapper._());
       ServiceTierMapper.ensureInitialized();
-      ModelIdsResponsesMapper.ensureInitialized();
+      ModelIdsResponsesUnionMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
@@ -51,8 +51,8 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     key: r'previous_response_id',
     opt: true,
   );
-  static ModelIdsResponses? _$model(CreateResponse v) => v.model;
-  static const Field<CreateResponse, ModelIdsResponses> _f$model = Field(
+  static ModelIdsResponsesUnion? _$model(CreateResponse v) => v.model;
+  static const Field<CreateResponse, ModelIdsResponsesUnion> _f$model = Field(
     'model',
     _$model,
     opt: true,
@@ -269,7 +269,11 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model;
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning;
   ResponsePropertiesTextCopyWith<
@@ -293,7 +297,7 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     ServiceTier? serviceTier,
     String? input,
     String? previousResponseId,
-    ModelIdsResponses? model,
+    ModelIdsResponsesUnion? model,
     Reasoning? reasoning,
     int? maxOutputTokens,
     String? instructions,
@@ -331,7 +335,11 @@ class _CreateResponseCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning =>

@@ -17,10 +17,9 @@ class CreateAssistantRequestMapper
       MapperContainer.globals.use(_instance = CreateAssistantRequestMapper._());
       CreateAssistantRequestModelModelUnionMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
       CreateAssistantRequestToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -72,10 +71,9 @@ class CreateAssistantRequestMapper
     _$instructions,
     opt: true,
   );
-  static ReasoningEffort? _$reasoningEffort(CreateAssistantRequest v) =>
+  static String? _$reasoningEffort(CreateAssistantRequest v) =>
       v.reasoningEffort;
-  static const Field<CreateAssistantRequest, ReasoningEffort>
-  _f$reasoningEffort = Field(
+  static const Field<CreateAssistantRequest, String> _f$reasoningEffort = Field(
     'reasoningEffort',
     _$reasoningEffort,
     key: r'reasoning_effort',
@@ -100,10 +98,13 @@ class CreateAssistantRequestMapper
     _$metadata,
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     CreateAssistantRequest v,
   ) => v.responseFormat;
-  static const Field<CreateAssistantRequest, AssistantsApiResponseFormatOption>
+  static const Field<
+    CreateAssistantRequest,
+    AssistantsApiResponseFormatOptionUnion
+  >
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -224,8 +225,6 @@ abstract class CreateAssistantRequestCopyWith<
     AssistantToolCopyWith<$R, AssistantTool, AssistantTool>
   >
   get tools;
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   CreateAssistantRequestToolResourcesCopyWith<
     $R,
     CreateAssistantRequestToolResources,
@@ -233,10 +232,10 @@ abstract class CreateAssistantRequestCopyWith<
   >?
   get toolResources;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -247,10 +246,10 @@ abstract class CreateAssistantRequestCopyWith<
     String? name,
     String? description,
     String? instructions,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     CreateAssistantRequestToolResources? toolResources,
     Metadata? metadata,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   CreateAssistantRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -285,10 +284,6 @@ class _CreateAssistantRequestCopyWithImpl<$R, $Out>
     (v) => call(tools: v),
   );
   @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
-  @override
   CreateAssistantRequestToolResourcesCopyWith<
     $R,
     CreateAssistantRequestToolResources,
@@ -300,10 +295,10 @@ class _CreateAssistantRequestCopyWithImpl<$R, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

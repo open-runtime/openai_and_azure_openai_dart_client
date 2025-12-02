@@ -14,7 +14,6 @@ class ReasoningMapper extends ClassMapperBase<Reasoning> {
   static ReasoningMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ReasoningMapper._());
-      ReasoningEffortMapper.ensureInitialized();
       ReasoningSummarySummaryMapper.ensureInitialized();
       ReasoningGenerateSummaryGenerateSummaryMapper.ensureInitialized();
     }
@@ -24,8 +23,8 @@ class ReasoningMapper extends ClassMapperBase<Reasoning> {
   @override
   final String id = 'Reasoning';
 
-  static ReasoningEffort? _$effort(Reasoning v) => v.effort;
-  static const Field<Reasoning, ReasoningEffort> _f$effort = Field(
+  static String? _$effort(Reasoning v) => v.effort;
+  static const Field<Reasoning, String> _f$effort = Field(
     'effort',
     _$effort,
     opt: true,
@@ -121,9 +120,8 @@ extension ReasoningValueCopy<$R, $Out> on ObjectCopyWith<$R, Reasoning, $Out> {
 
 abstract class ReasoningCopyWith<$R, $In extends Reasoning, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>? get effort;
   $R call({
-    ReasoningEffort? effort,
+    String? effort,
     ReasoningSummarySummary? summary,
     ReasoningGenerateSummaryGenerateSummary? generateSummary,
   });
@@ -138,9 +136,6 @@ class _ReasoningCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<Reasoning> $mapper =
       ReasoningMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>? get effort =>
-      $value.effort?.copyWith.$chain((v) => call(effort: v));
   @override
   $R call({
     Object? effort = $none,

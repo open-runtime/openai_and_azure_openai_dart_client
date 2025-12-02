@@ -46,7 +46,7 @@ class RunObject with RunObjectMappable {
     required this.responseFormat,
     this.temperature,
     this.topP,
-    this.tools = const RunObjectToolsToolsUnionVariantString(value: '[]'),
+    this.tools = const [],
   });
 
   final String id;

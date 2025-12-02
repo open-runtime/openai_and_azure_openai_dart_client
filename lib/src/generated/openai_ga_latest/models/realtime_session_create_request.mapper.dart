@@ -18,12 +18,11 @@ class RealtimeSessionCreateRequestMapper
         _instance = RealtimeSessionCreateRequestMapper._(),
       );
       RealtimeSessionCreateRequestClientSecretMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateRequestInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateRequestTracingTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestTurnDetectionMapper.ensureInitialized();
       RealtimeSessionCreateRequestToolsMapper.ensureInitialized();
-      RealtimeTruncationMapper.ensureInitialized();
+      RealtimeTruncationUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -58,9 +57,12 @@ class RealtimeSessionCreateRequestMapper
       v.instructions;
   static const Field<RealtimeSessionCreateRequest, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static VoiceIdsShared? _$voice(RealtimeSessionCreateRequest v) => v.voice;
-  static const Field<RealtimeSessionCreateRequest, VoiceIdsShared> _f$voice =
-      Field('voice', _$voice, opt: true);
+  static String? _$voice(RealtimeSessionCreateRequest v) => v.voice;
+  static const Field<RealtimeSessionCreateRequest, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+  );
   static String? _$inputAudioFormat(RealtimeSessionCreateRequest v) =>
       v.inputAudioFormat;
   static const Field<RealtimeSessionCreateRequest, String> _f$inputAudioFormat =
@@ -140,9 +142,10 @@ class RealtimeSessionCreateRequestMapper
     key: r'max_response_output_tokens',
     opt: true,
   );
-  static RealtimeTruncation? _$truncation(RealtimeSessionCreateRequest v) =>
-      v.truncation;
-  static const Field<RealtimeSessionCreateRequest, RealtimeTruncation>
+  static RealtimeTruncationUnion? _$truncation(
+    RealtimeSessionCreateRequest v,
+  ) => v.truncation;
+  static const Field<RealtimeSessionCreateRequest, RealtimeTruncationUnion>
   _f$truncation = Field('truncation', _$truncation, opt: true);
   static PromptUnion? _$prompt(RealtimeSessionCreateRequest v) => v.prompt;
   static const Field<RealtimeSessionCreateRequest, PromptUnion> _f$prompt =
@@ -277,7 +280,6 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     RealtimeSessionCreateRequestClientSecret
   >
   get realtimeSessionCreateRequestClientSecret;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionCreateRequestInputAudioTranscription,
@@ -306,7 +308,11 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     >
   >?
   get tools;
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation;
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   $R call({
@@ -315,7 +321,7 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     num? speed,
     dynamic modalities,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     String? inputAudioFormat,
     String? outputAudioFormat,
     RealtimeSessionCreateRequestInputAudioTranscription?
@@ -327,7 +333,7 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     String? toolChoice,
     num? temperature,
     String? maxResponseOutputTokens,
-    RealtimeTruncation? truncation,
+    RealtimeTruncationUnion? truncation,
     PromptUnion? prompt,
   });
   RealtimeSessionCreateRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -362,9 +368,6 @@ class _RealtimeSessionCreateRequestCopyWithImpl<$R, $Out>
       .realtimeSessionCreateRequestClientSecret
       .copyWith
       .$chain((v) => call(realtimeSessionCreateRequestClientSecret: v));
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,
@@ -412,7 +415,11 @@ class _RealtimeSessionCreateRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation =>
       $value.truncation?.copyWith.$chain((v) => call(truncation: v));
   @override

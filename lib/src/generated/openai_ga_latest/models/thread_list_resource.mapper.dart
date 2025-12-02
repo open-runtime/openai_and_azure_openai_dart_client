@@ -51,7 +51,7 @@ class ThreadListResourceMapper extends ClassMapperBase<ThreadListResource> {
     _$objectField,
     key: r'object',
     opt: true,
-    def: list,
+    def: 'list',
   );
 
   @override

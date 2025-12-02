@@ -16,7 +16,7 @@ class ThreadItemListResource with ThreadItemListResourceMappable {
     required this.firstId,
     required this.lastId,
     required this.hasMore,
-    this.objectField = list,
+    this.objectField = 'list',
   });
 
   final List<ThreadItem> data;

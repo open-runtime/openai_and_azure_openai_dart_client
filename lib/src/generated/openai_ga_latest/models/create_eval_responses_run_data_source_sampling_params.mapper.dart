@@ -18,7 +18,6 @@ class CreateEvalResponsesRunDataSourceSamplingParamsMapper
       MapperContainer.globals.use(
         _instance = CreateEvalResponsesRunDataSourceSamplingParamsMapper._(),
       );
-      ReasoningEffortMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceSamplingParamsTextMapper.ensureInitialized();
     }
@@ -38,13 +37,10 @@ class CreateEvalResponsesRunDataSourceSamplingParamsMapper
   static int _$seed(CreateEvalResponsesRunDataSourceSamplingParams v) => v.seed;
   static const Field<CreateEvalResponsesRunDataSourceSamplingParams, int>
   _f$seed = Field('seed', _$seed, opt: true, def: 42);
-  static ReasoningEffort? _$reasoningEffort(
+  static String? _$reasoningEffort(
     CreateEvalResponsesRunDataSourceSamplingParams v,
   ) => v.reasoningEffort;
-  static const Field<
-    CreateEvalResponsesRunDataSourceSamplingParams,
-    ReasoningEffort
-  >
+  static const Field<CreateEvalResponsesRunDataSourceSamplingParams, String>
   _f$reasoningEffort = Field(
     'reasoningEffort',
     _$reasoningEffort,
@@ -207,8 +203,6 @@ abstract class CreateEvalResponsesRunDataSourceSamplingParamsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools;
   CreateEvalResponsesRunDataSourceSamplingParamsTextCopyWith<
     $R,
@@ -220,7 +214,7 @@ abstract class CreateEvalResponsesRunDataSourceSamplingParamsCopyWith<
     num? temperature,
     num? topP,
     int? seed,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     int? maxCompletionTokens,
     List<Tool>? tools,
     CreateEvalResponsesRunDataSourceSamplingParamsText?
@@ -253,10 +247,6 @@ class _CreateEvalResponsesRunDataSourceSamplingParamsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalResponsesRunDataSourceSamplingParams>
   $mapper =
       CreateEvalResponsesRunDataSourceSamplingParamsMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools =>
       $value.tools != null

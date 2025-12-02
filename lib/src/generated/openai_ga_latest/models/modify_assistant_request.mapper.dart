@@ -17,10 +17,9 @@ class ModifyAssistantRequestMapper
       MapperContainer.globals.use(_instance = ModifyAssistantRequestMapper._());
       AssistantToolMapper.ensureInitialized();
       ModifyAssistantRequestModelModelUnionMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
       ModifyAssistantRequestToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -54,10 +53,9 @@ class ModifyAssistantRequestMapper
     ModifyAssistantRequestModelModelUnion
   >
   _f$model = Field('model', _$model, opt: true);
-  static ReasoningEffort? _$reasoningEffort(ModifyAssistantRequest v) =>
+  static String? _$reasoningEffort(ModifyAssistantRequest v) =>
       v.reasoningEffort;
-  static const Field<ModifyAssistantRequest, ReasoningEffort>
-  _f$reasoningEffort = Field(
+  static const Field<ModifyAssistantRequest, String> _f$reasoningEffort = Field(
     'reasoningEffort',
     _$reasoningEffort,
     key: r'reasoning_effort',
@@ -100,10 +98,13 @@ class ModifyAssistantRequestMapper
     _$metadata,
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     ModifyAssistantRequest v,
   ) => v.responseFormat;
-  static const Field<ModifyAssistantRequest, AssistantsApiResponseFormatOption>
+  static const Field<
+    ModifyAssistantRequest,
+    AssistantsApiResponseFormatOptionUnion
+  >
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -224,8 +225,6 @@ abstract class ModifyAssistantRequestCopyWith<
     ModifyAssistantRequestModelModelUnion
   >?
   get model;
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,
     ModifyAssistantRequestToolResources,
@@ -233,10 +232,10 @@ abstract class ModifyAssistantRequestCopyWith<
   >?
   get toolResources;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   $R call({
@@ -244,13 +243,13 @@ abstract class ModifyAssistantRequestCopyWith<
     num? topP,
     List<AssistantTool>? tools,
     ModifyAssistantRequestModelModelUnion? model,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     String? name,
     String? description,
     String? instructions,
     ModifyAssistantRequestToolResources? toolResources,
     Metadata? metadata,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
   });
   ModifyAssistantRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -285,10 +284,6 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
   >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
-  @override
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,
     ModifyAssistantRequestToolResources,
@@ -300,10 +295,10 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

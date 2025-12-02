@@ -18,7 +18,6 @@ class RealtimeResponseCreateParamsMapper
         _instance = RealtimeResponseCreateParamsMapper._(),
       );
       RealtimeResponseCreateParamsModalitiesModalitiesMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeResponseCreateParamsToolsMapper.ensureInitialized();
       RealtimeConversationItemWithReferenceMapper.ensureInitialized();
@@ -41,9 +40,12 @@ class RealtimeResponseCreateParamsMapper
       v.instructions;
   static const Field<RealtimeResponseCreateParams, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static VoiceIdsShared? _$voice(RealtimeResponseCreateParams v) => v.voice;
-  static const Field<RealtimeResponseCreateParams, VoiceIdsShared> _f$voice =
-      Field('voice', _$voice, opt: true);
+  static String? _$voice(RealtimeResponseCreateParams v) => v.voice;
+  static const Field<RealtimeResponseCreateParams, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+  );
   static RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat?
   _$outputAudioFormat(RealtimeResponseCreateParams v) => v.outputAudioFormat;
   static const Field<
@@ -213,7 +215,6 @@ abstract class RealtimeResponseCreateParamsCopyWith<
     >
   >?
   get modalities;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeResponseCreateParamsTools,
@@ -239,7 +240,7 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   $R call({
     List<RealtimeResponseCreateParamsModalitiesModalities>? modalities,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat?
     outputAudioFormat,
     List<RealtimeResponseCreateParamsTools>? tools,
@@ -289,9 +290,6 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
           (v) => call(modalities: v),
         )
       : null;
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   ListCopyWith<
     $R,

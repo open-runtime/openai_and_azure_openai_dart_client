@@ -19,7 +19,6 @@ class RealtimeBetaResponseCreateParamsMapper
       );
       RealtimeBetaResponseCreateParamsToolChoiceToolChoiceUnionMapper.ensureInitialized();
       RealtimeBetaResponseCreateParamsModalitiesModalitiesMapper.ensureInitialized();
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeBetaResponseCreateParamsOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeBetaResponseCreateParamsToolsMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -60,9 +59,12 @@ class RealtimeBetaResponseCreateParamsMapper
       v.instructions;
   static const Field<RealtimeBetaResponseCreateParams, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static VoiceIdsShared? _$voice(RealtimeBetaResponseCreateParams v) => v.voice;
-  static const Field<RealtimeBetaResponseCreateParams, VoiceIdsShared>
-  _f$voice = Field('voice', _$voice, opt: true);
+  static String? _$voice(RealtimeBetaResponseCreateParams v) => v.voice;
+  static const Field<RealtimeBetaResponseCreateParams, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+  );
   static RealtimeBetaResponseCreateParamsOutputAudioFormatOutputAudioFormat?
   _$outputAudioFormat(RealtimeBetaResponseCreateParams v) =>
       v.outputAudioFormat;
@@ -243,7 +245,6 @@ abstract class RealtimeBetaResponseCreateParamsCopyWith<
     >
   >?
   get modalities;
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeBetaResponseCreateParamsTools,
@@ -270,7 +271,7 @@ abstract class RealtimeBetaResponseCreateParamsCopyWith<
     RealtimeBetaResponseCreateParamsToolChoiceToolChoiceUnion? toolChoice,
     List<RealtimeBetaResponseCreateParamsModalitiesModalities>? modalities,
     String? instructions,
-    VoiceIdsShared? voice,
+    String? voice,
     RealtimeBetaResponseCreateParamsOutputAudioFormatOutputAudioFormat?
     outputAudioFormat,
     List<RealtimeBetaResponseCreateParamsTools>? tools,
@@ -328,9 +329,6 @@ class _RealtimeBetaResponseCreateParamsCopyWithImpl<$R, $Out>
           (v) => call(modalities: v),
         )
       : null;
-  @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
-      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   ListCopyWith<
     $R,

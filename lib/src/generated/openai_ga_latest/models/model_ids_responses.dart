@@ -2,16 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:dart_mappable/dart_mappable.dart';
+import 'model_ids_responses_union.dart';
+export 'model_ids_responses_union.dart';
 
-part 'model_ids_responses.mapper.dart';
-
-@MappableClass()
-class ModelIdsResponses with ModelIdsResponsesMappable {
-  const ModelIdsResponses();
-
-
-  static ModelIdsResponses fromJson(Map<String, dynamic> json) => ModelIdsResponsesMapper.fromJson(json);
-
-}
-
+typedef ModelIdsResponses = ModelIdsResponsesUnion?;

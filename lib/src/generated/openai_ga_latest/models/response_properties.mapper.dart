@@ -15,7 +15,7 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponsePropertiesMapper._());
       ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
-      ModelIdsResponsesMapper.ensureInitialized();
+      ModelIdsResponsesUnionMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponseTextParamMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
@@ -53,12 +53,9 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
     key: r'previous_response_id',
     opt: true,
   );
-  static ModelIdsResponses? _$model(ResponseProperties v) => v.model;
-  static const Field<ResponseProperties, ModelIdsResponses> _f$model = Field(
-    'model',
-    _$model,
-    opt: true,
-  );
+  static ModelIdsResponsesUnion? _$model(ResponseProperties v) => v.model;
+  static const Field<ResponseProperties, ModelIdsResponsesUnion> _f$model =
+      Field('model', _$model, opt: true);
   static Reasoning? _$reasoning(ResponseProperties v) => v.reasoning;
   static const Field<ResponseProperties, Reasoning> _f$reasoning = Field(
     'reasoning',
@@ -207,7 +204,11 @@ abstract class ResponsePropertiesCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model;
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning;
   ResponseTextParamCopyWith<$R, ResponseTextParam, ResponseTextParam>? get text;
@@ -218,7 +219,7 @@ abstract class ResponsePropertiesCopyWith<
     bool? background,
     ResponsePropertiesTruncationTruncation? truncation,
     String? previousResponseId,
-    ModelIdsResponses? model,
+    ModelIdsResponsesUnion? model,
     Reasoning? reasoning,
     int? maxOutputTokens,
     int? maxToolCalls,
@@ -241,7 +242,11 @@ class _ResponsePropertiesCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseProperties> $mapper =
       ResponsePropertiesMapper.ensureInitialized();
   @override
-  ModelIdsResponsesCopyWith<$R, ModelIdsResponses, ModelIdsResponses>?
+  ModelIdsResponsesUnionCopyWith<
+    $R,
+    ModelIdsResponsesUnion,
+    ModelIdsResponsesUnion
+  >?
   get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ReasoningCopyWith<$R, Reasoning, Reasoning>? get reasoning =>

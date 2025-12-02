@@ -17,7 +17,6 @@ class RealtimeResponseAudioOutputMapper
       MapperContainer.globals.use(
         _instance = RealtimeResponseAudioOutputMapper._(),
       );
-      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeAudioFormatsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +25,13 @@ class RealtimeResponseAudioOutputMapper
   @override
   final String id = 'RealtimeResponseAudioOutput';
 
-  static VoiceIdsShared _$voice(RealtimeResponseAudioOutput v) => v.voice;
-  static const Field<RealtimeResponseAudioOutput, VoiceIdsShared> _f$voice =
-      Field('voice', _$voice, opt: true, def: VoiceIdsShared.alloy);
+  static String? _$voice(RealtimeResponseAudioOutput v) => v.voice;
+  static const Field<RealtimeResponseAudioOutput, String> _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+    def: VoiceIdsShared.alloy,
+  );
   static RealtimeAudioFormats? _$format(RealtimeResponseAudioOutput v) =>
       v.format;
   static const Field<RealtimeResponseAudioOutput, RealtimeAudioFormats>
@@ -121,10 +124,9 @@ abstract class RealtimeResponseAudioOutputCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice;
   RealtimeAudioFormatsCopyWith<$R, RealtimeAudioFormats, RealtimeAudioFormats>?
   get format;
-  $R call({VoiceIdsShared? voice, RealtimeAudioFormats? format});
+  $R call({String? voice, RealtimeAudioFormats? format});
   RealtimeResponseAudioOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -148,15 +150,12 @@ class _RealtimeResponseAudioOutputCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeResponseAudioOutput> $mapper =
       RealtimeResponseAudioOutputMapper.ensureInitialized();
   @override
-  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice =>
-      $value.voice.copyWith.$chain((v) => call(voice: v));
-  @override
   RealtimeAudioFormatsCopyWith<$R, RealtimeAudioFormats, RealtimeAudioFormats>?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
   @override
-  $R call({VoiceIdsShared? voice, Object? format = $none}) => $apply(
+  $R call({Object? voice = $none, Object? format = $none}) => $apply(
     FieldCopyWithData({
-      if (voice != null) #voice: voice,
+      if (voice != $none) #voice: voice,
       if (format != $none) #format: format,
     }),
   );

@@ -17,7 +17,7 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
       AssistantObjectObjectObjectEnumMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       AssistantObjectToolResourcesMapper.ensureInitialized();
-      AssistantsApiResponseFormatOptionMapper.ensureInitialized();
+      AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -84,10 +84,10 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
     key: r'tool_resources',
     opt: true,
   );
-  static AssistantsApiResponseFormatOption? _$responseFormat(
+  static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
     AssistantObject v,
   ) => v.responseFormat;
-  static const Field<AssistantObject, AssistantsApiResponseFormatOption>
+  static const Field<AssistantObject, AssistantsApiResponseFormatOptionUnion>
   _f$responseFormat = Field(
     'responseFormat',
     _$responseFormat,
@@ -206,10 +206,10 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
     AssistantObjectToolResources
   >?
   get toolResources;
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat;
   ListCopyWith<
@@ -230,7 +230,7 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
     num? temperature,
     num? topP,
     AssistantObjectToolResources? toolResources,
-    AssistantsApiResponseFormatOption? responseFormat,
+    AssistantsApiResponseFormatOptionUnion? responseFormat,
     List<AssistantTool>? tools,
   });
   AssistantObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -258,10 +258,10 @@ class _AssistantObjectCopyWithImpl<$R, $Out>
   get toolResources =>
       $value.toolResources?.copyWith.$chain((v) => call(toolResources: v));
   @override
-  AssistantsApiResponseFormatOptionCopyWith<
+  AssistantsApiResponseFormatOptionUnionCopyWith<
     $R,
-    AssistantsApiResponseFormatOption,
-    AssistantsApiResponseFormatOption
+    AssistantsApiResponseFormatOptionUnion,
+    AssistantsApiResponseFormatOptionUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

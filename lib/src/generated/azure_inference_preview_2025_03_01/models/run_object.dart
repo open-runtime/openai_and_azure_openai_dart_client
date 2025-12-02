@@ -48,7 +48,7 @@ class RunObject with RunObjectMappable {
     this.temperature,
     this.topP,
     this.parallelToolCalls,
-    this.tools = const RunObjectToolsToolsUnionVariantString(value: '[]'),
+    this.tools = const [],
   });
 
   final String id;

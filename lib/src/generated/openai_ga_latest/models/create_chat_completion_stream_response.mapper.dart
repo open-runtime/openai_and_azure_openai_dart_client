@@ -19,7 +19,6 @@ class CreateChatCompletionStreamResponseMapper
       );
       CreateChatCompletionStreamResponseChoicesMapper.ensureInitialized();
       CreateChatCompletionStreamResponseObjectObjectEnumMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
       CompletionUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -55,9 +54,9 @@ class CreateChatCompletionStreamResponseMapper
     CreateChatCompletionStreamResponseObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
-  static ServiceTier? _$serviceTier(CreateChatCompletionStreamResponse v) =>
+  static String? _$serviceTier(CreateChatCompletionStreamResponse v) =>
       v.serviceTier;
-  static const Field<CreateChatCompletionStreamResponse, ServiceTier>
+  static const Field<CreateChatCompletionStreamResponse, String>
   _f$serviceTier = Field(
     'serviceTier',
     _$serviceTier,
@@ -192,7 +191,6 @@ abstract class CreateChatCompletionStreamResponseCopyWith<
     >
   >
   get choices;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
   CompletionUsageCopyWith<$R, CompletionUsage, CompletionUsage>? get usage;
   $R call({
     String? id,
@@ -200,7 +198,7 @@ abstract class CreateChatCompletionStreamResponseCopyWith<
     int? created,
     String? model,
     CreateChatCompletionStreamResponseObjectObjectEnum? objectEnum,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     String? systemFingerprint,
     CompletionUsage? usage,
   });
@@ -240,9 +238,6 @@ class _CreateChatCompletionStreamResponseCopyWithImpl<$R, $Out>
     (v, t) => v.copyWith.$chain(t),
     (v) => call(choices: v),
   );
-  @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
   @override
   CompletionUsageCopyWith<$R, CompletionUsage, CompletionUsage>? get usage =>
       $value.usage?.copyWith.$chain((v) => call(usage: v));

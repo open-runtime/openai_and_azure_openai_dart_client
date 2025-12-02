@@ -22,7 +22,7 @@ class RealtimeSessionCreateRequestGaMapper
       RealtimeSessionCreateRequestGaIncludeIncludeMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaTracingTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolsToolsUnionMapper.ensureInitialized();
-      RealtimeTruncationMapper.ensureInitialized();
+      RealtimeTruncationUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaOutputModalitiesOutputModalitiesMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
@@ -97,9 +97,10 @@ class RealtimeSessionCreateRequestGaMapper
     key: r'max_output_tokens',
     opt: true,
   );
-  static RealtimeTruncation? _$truncation(RealtimeSessionCreateRequestGa v) =>
-      v.truncation;
-  static const Field<RealtimeSessionCreateRequestGa, RealtimeTruncation>
+  static RealtimeTruncationUnion? _$truncation(
+    RealtimeSessionCreateRequestGa v,
+  ) => v.truncation;
+  static const Field<RealtimeSessionCreateRequestGa, RealtimeTruncationUnion>
   _f$truncation = Field('truncation', _$truncation, opt: true);
   static PromptUnion? _$prompt(RealtimeSessionCreateRequestGa v) => v.prompt;
   static const Field<RealtimeSessionCreateRequestGa, PromptUnion> _f$prompt =
@@ -283,7 +284,11 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
     >
   >?
   get tools;
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation;
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   ListCopyWith<
@@ -311,7 +316,7 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
     RealtimeSessionCreateRequestGaTracingTracingUnion? tracing,
     List<RealtimeSessionCreateRequestGaToolsToolsUnion>? tools,
     String? maxOutputTokens,
-    RealtimeTruncation? truncation,
+    RealtimeTruncationUnion? truncation,
     PromptUnion? prompt,
     List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>?
     outputModalities,
@@ -391,7 +396,11 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation =>
       $value.truncation?.copyWith.$chain((v) => call(truncation: v));
   @override

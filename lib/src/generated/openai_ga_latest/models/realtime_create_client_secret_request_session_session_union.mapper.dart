@@ -105,7 +105,7 @@ class RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreateR
       RealtimeSessionCreateRequestGaTracingTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolsToolsUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
-      RealtimeTruncationMapper.ensureInitialized();
+      RealtimeTruncationUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -210,13 +210,13 @@ class RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreateR
     String
   >
   _f$maxOutputTokens = Field('maxOutputTokens', _$maxOutputTokens);
-  static RealtimeTruncation? _$truncation(
+  static RealtimeTruncationUnion? _$truncation(
     RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreateRequestGa
     v,
   ) => v.truncation;
   static const Field<
     RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreateRequestGa,
-    RealtimeTruncation
+    RealtimeTruncationUnion
   >
   _f$truncation = Field('truncation', _$truncation);
   static PromptUnion? _$prompt(
@@ -436,7 +436,11 @@ abstract class RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessi
     RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion
   >
   get toolChoice;
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation;
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   @override
@@ -452,7 +456,7 @@ abstract class RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessi
     List<RealtimeSessionCreateRequestGaToolsToolsUnion>? tools,
     RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion? toolChoice,
     String? maxOutputTokens,
-    RealtimeTruncation? truncation,
+    RealtimeTruncationUnion? truncation,
     PromptUnion? prompt,
   });
   RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreateRequestGaCopyWith<
@@ -566,7 +570,11 @@ class _RealtimeCreateClientSecretRequestSessionSessionUnionRealtimeSessionCreate
   get toolChoice =>
       $value.toolChoice.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  RealtimeTruncationCopyWith<$R, RealtimeTruncation, RealtimeTruncation>?
+  RealtimeTruncationUnionCopyWith<
+    $R,
+    RealtimeTruncationUnion,
+    RealtimeTruncationUnion
+  >?
   get truncation =>
       $value.truncation?.copyWith.$chain((v) => call(truncation: v));
   @override

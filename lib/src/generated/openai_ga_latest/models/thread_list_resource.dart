@@ -16,7 +16,7 @@ class ThreadListResource with ThreadListResourceMappable {
     required this.firstId,
     required this.lastId,
     required this.hasMore,
-    this.objectField = list,
+    this.objectField = 'list',
   });
 
   final List<ThreadResource> data;

@@ -2,21 +2,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'package:dart_mappable/dart_mappable.dart';
-
-part 'realtime_truncation.mapper.dart';
+import 'realtime_truncation_union.dart';
+export 'realtime_truncation_union.dart';
 
 /// When the number of tokens in a conversation exceeds the model's input token limit, the conversation be truncated, meaning messages (starting from the oldest) will not be included in the model's context. A 32k context model with 4,096 max output tokens can only include 28,224 tokens in the context before truncation occurs.
 /// Clients can configure truncation behavior to truncate with a lower max token limit, which is an effective way to control token usage and cost.
 /// Truncation will reduce the number of cached tokens on the next turn (busting the cache), since messages are dropped from the beginning of the context. However, clients can also configure truncation to retain messages up to a fraction of the maximum context size, which will reduce the need for future truncations and thus improve the cache rate.
 /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
 ///
-@MappableClass()
-class RealtimeTruncation with RealtimeTruncationMappable {
-  const RealtimeTruncation();
-
-
-  static RealtimeTruncation fromJson(Map<String, dynamic> json) => RealtimeTruncationMapper.fromJson(json);
-
-}
-
+typedef RealtimeTruncation = RealtimeTruncationUnion?;

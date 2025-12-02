@@ -15,7 +15,6 @@ class EvalResponsesSourceMapper extends ClassMapperBase<EvalResponsesSource> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalResponsesSourceMapper._());
       EvalResponsesSourceTypeTypeMapper.ensureInitialized();
-      ReasoningEffortMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -60,15 +59,13 @@ class EvalResponsesSourceMapper extends ClassMapperBase<EvalResponsesSource> {
     key: r'created_before',
     opt: true,
   );
-  static ReasoningEffort? _$reasoningEffort(EvalResponsesSource v) =>
-      v.reasoningEffort;
-  static const Field<EvalResponsesSource, ReasoningEffort> _f$reasoningEffort =
-      Field(
-        'reasoningEffort',
-        _$reasoningEffort,
-        key: r'reasoning_effort',
-        opt: true,
-      );
+  static String? _$reasoningEffort(EvalResponsesSource v) => v.reasoningEffort;
+  static const Field<EvalResponsesSource, String> _f$reasoningEffort = Field(
+    'reasoningEffort',
+    _$reasoningEffort,
+    key: r'reasoning_effort',
+    opt: true,
+  );
   static num? _$temperature(EvalResponsesSource v) => v.temperature;
   static const Field<EvalResponsesSource, num> _f$temperature = Field(
     'temperature',
@@ -196,8 +193,6 @@ abstract class EvalResponsesSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get users;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get tools;
   $R call({
@@ -207,7 +202,7 @@ abstract class EvalResponsesSourceCopyWith<
     String? instructionsSearch,
     int? createdAfter,
     int? createdBefore,
-    ReasoningEffort? reasoningEffort,
+    String? reasoningEffort,
     num? temperature,
     num? topP,
     List<String>? users,
@@ -226,10 +221,6 @@ class _EvalResponsesSourceCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<EvalResponsesSource> $mapper =
       EvalResponsesSourceMapper.ensureInitialized();
-  @override
-  ReasoningEffortCopyWith<$R, ReasoningEffort, ReasoningEffort>?
-  get reasoningEffort =>
-      $value.reasoningEffort?.copyWith.$chain((v) => call(reasoningEffort: v));
   @override
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get users =>
       $value.users != null

@@ -18,7 +18,6 @@ class CreateModelResponsePropertiesMapper
         _instance = CreateModelResponsePropertiesMapper._(),
       );
       MetadataMapper.ensureInitialized();
-      ServiceTierMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
     }
     return _instance!;
@@ -76,15 +75,10 @@ class CreateModelResponsePropertiesMapper
         key: r'prompt_cache_key',
         opt: true,
       );
-  static ServiceTier? _$serviceTier(CreateModelResponseProperties v) =>
+  static String? _$serviceTier(CreateModelResponseProperties v) =>
       v.serviceTier;
-  static const Field<CreateModelResponseProperties, ServiceTier>
-  _f$serviceTier = Field(
-    'serviceTier',
-    _$serviceTier,
-    key: r'service_tier',
-    opt: true,
-  );
+  static const Field<CreateModelResponseProperties, String> _f$serviceTier =
+      Field('serviceTier', _$serviceTier, key: r'service_tier', opt: true);
   static ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
   _$promptCacheRetention(CreateModelResponseProperties v) =>
       v.promptCacheRetention;
@@ -201,7 +195,6 @@ abstract class CreateModelResponsePropertiesCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier;
   $R call({
     num? temperature,
     num? topP,
@@ -210,7 +203,7 @@ abstract class CreateModelResponsePropertiesCopyWith<
     String? user,
     String? safetyIdentifier,
     String? promptCacheKey,
-    ServiceTier? serviceTier,
+    String? serviceTier,
     ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
     promptCacheRetention,
   });
@@ -239,9 +232,6 @@ class _CreateModelResponsePropertiesCopyWithImpl<$R, $Out>
   @override
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
-  @override
-  ServiceTierCopyWith<$R, ServiceTier, ServiceTier>? get serviceTier =>
-      $value.serviceTier?.copyWith.$chain((v) => call(serviceTier: v));
   @override
   $R call({
     Object? temperature = $none,
