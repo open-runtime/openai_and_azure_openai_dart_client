@@ -16,7 +16,7 @@ import 'package:test/test.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/realtime_session_create_request_ga.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/realtime_session_create_request_ga_tool_choice_union.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/realtime_session_create_request_ga_audio_output.dart';
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/realtime_session_create_request_ga_type_type.dart';
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/realtime_session_create_request_ga_type.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/voice_ids_shared.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/voice_ids_shared_enum.dart';
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/openai_ga_latest/models/create_moderation_request.dart';
@@ -50,7 +50,7 @@ void main() {
 
     test('RealtimeSessionCreateRequestGa uses VariantString for default', () {
       // The default value should be properly wrapped in VariantString
-      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaTypeType.realtime);
+      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaType.realtime);
 
       // The default toolChoice should be the VariantString with 'auto'
       expect(request.toolChoice, isA<RealtimeSessionCreateRequestGaToolChoiceUnionVariantString>());
@@ -404,7 +404,7 @@ void main() {
     });
 
     test('RealtimeSessionCreateRequestGa serializes correctly', () {
-      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaTypeType.realtime);
+      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaType.realtime);
 
       final json = request.toJson();
       expect(json['type'], equals('realtime'));
@@ -467,7 +467,7 @@ void main() {
       // - toolChoice: Union with string enum ref (Edge Case 1)
       // - Various optional fields (Edge Case 4)
 
-      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaTypeType.realtime);
+      const request = RealtimeSessionCreateRequestGa(type: RealtimeSessionCreateRequestGaType.realtime);
 
       // All defaults should be correctly applied
       expect(request.toolChoice, isA<RealtimeSessionCreateRequestGaToolChoiceUnionVariantString>());

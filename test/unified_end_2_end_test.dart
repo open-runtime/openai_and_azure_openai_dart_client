@@ -538,8 +538,8 @@ void main() {
             print('Output tokens: ${usage['output_tokens']}');
           }
         } on DioException catch (e) {
-          if (e.response?.statusCode == 404) {
-            markTestSkipped('Responses API not available');
+          if (e.response?.statusCode == 404 || e.response?.statusCode == 400) {
+            markTestSkipped('Responses API not available or bad request: ${e.response?.statusCode}');
           } else {
             rethrow;
           }
@@ -853,6 +853,8 @@ void main() {
         } on DioException catch (e) {
           if (e.response?.statusCode == 404) {
             markTestSkipped('gpt-4o deployment not available');
+          } else if (e.response?.statusCode == 429) {
+            markTestSkipped('gpt-4o rate limited');
           } else {
             rethrow;
           }

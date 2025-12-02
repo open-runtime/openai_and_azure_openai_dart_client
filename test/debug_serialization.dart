@@ -1,19 +1,15 @@
 import 'dart:convert';
 
 import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/create_chat_completion_request.dart';
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_union.dart';
-import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_user_message_role_role.dart';
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message.dart';
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_role2.dart';
 
 void main() {
   final req = CreateChatCompletionRequest(
     stop: null,
     logitBias: null,
     messages: [
-      ChatCompletionRequestMessageUnionChatCompletionRequestUserMessage(
-        content: 'test',
-        role: ChatCompletionRequestUserMessageRoleRole.user,
-        name: null,
-      ),
+      ChatCompletionRequestMessageUser(content: 'test', role: ChatCompletionRequestMessageRole2.user, name: null),
     ],
     maxTokens: 10,
   );
