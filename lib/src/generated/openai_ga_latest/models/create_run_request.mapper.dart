@@ -14,7 +14,6 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
   static CreateRunRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateRunRequestMapper._());
-      CreateRunRequestModelModelUnionMapper.ensureInitialized();
       CreateMessageRequestMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -49,10 +48,12 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     opt: true,
     def: 1,
   );
-  static CreateRunRequestModelModelUnion? _$model(CreateRunRequest v) =>
-      v.model;
-  static const Field<CreateRunRequest, CreateRunRequestModelModelUnion>
-  _f$model = Field('model', _$model, opt: true);
+  static String? _$model(CreateRunRequest v) => v.model;
+  static const Field<CreateRunRequest, String> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static String? _$reasoningEffort(CreateRunRequest v) => v.reasoningEffort;
   static const Field<CreateRunRequest, String> _f$reasoningEffort = Field(
     'reasoningEffort',
@@ -258,12 +259,6 @@ extension CreateRunRequestValueCopy<$R, $Out>
 
 abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateRunRequestModelModelUnionCopyWith<
-    $R,
-    CreateRunRequestModelModelUnion,
-    CreateRunRequestModelModelUnion
-  >?
-  get model;
   ListCopyWith<
     $R,
     CreateMessageRequest,
@@ -295,7 +290,7 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     String? assistantId,
     num? temperature,
     num? topP,
-    CreateRunRequestModelModelUnion? model,
+    String? model,
     String? reasoningEffort,
     String? instructions,
     String? additionalInstructions,
@@ -323,13 +318,6 @@ class _CreateRunRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateRunRequest> $mapper =
       CreateRunRequestMapper.ensureInitialized();
-  @override
-  CreateRunRequestModelModelUnionCopyWith<
-    $R,
-    CreateRunRequestModelModelUnion,
-    CreateRunRequestModelModelUnion
-  >?
-  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ListCopyWith<
     $R,

@@ -33,7 +33,7 @@ class RealtimeResponse with RealtimeResponseMappable {
 
   final String? id;
   @MappableField(key: 'object')
-  final dynamic objectField;
+  final dynamic? objectField;
   final RealtimeResponseStatusStatus? status;
   @MappableField(key: 'RealtimeResponseStatusDetails')
   final RealtimeResponseStatusDetails? realtimeResponseStatusDetails;

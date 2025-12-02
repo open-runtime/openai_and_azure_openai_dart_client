@@ -12,7 +12,7 @@ part 'realtime_session_create_response_ga_audio_output.mapper.dart';
 @MappableClass()
 class RealtimeSessionCreateResponseGaAudioOutput with RealtimeSessionCreateResponseGaAudioOutputMappable {
   const RealtimeSessionCreateResponseGaAudioOutput({
-    this.voice = VoiceIdsShared.alloy,
+    this.voice = 'alloy',
     this.speed = 1,
     this.format,
   });

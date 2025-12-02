@@ -22,7 +22,7 @@ class ChatCompletionsRequestCommon with ChatCompletionsRequestCommonMappable {
 
   final List<String>? stop;
   @MappableField(key: 'logit_bias')
-  final dynamic logitBias;
+  final dynamic? logitBias;
   final String? user;
   final num? temperature;
   @MappableField(key: 'top_p')

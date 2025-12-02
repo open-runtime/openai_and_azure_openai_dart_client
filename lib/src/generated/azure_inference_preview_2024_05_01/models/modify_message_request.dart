@@ -12,7 +12,7 @@ class ModifyMessageRequest with ModifyMessageRequestMappable {
     this.metadata,
   });
 
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static ModifyMessageRequest fromJson(Map<String, dynamic> json) => ModifyMessageRequestMapper.fromJson(json);
 

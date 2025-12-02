@@ -19,7 +19,7 @@ class UpdateVectorStoreRequest with UpdateVectorStoreRequestMappable {
   final String? name;
   @MappableField(key: 'expires_after')
   final VectorStoreExpirationAfter? expiresAfter;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static UpdateVectorStoreRequest fromJson(Map<String, dynamic> json) => UpdateVectorStoreRequestMapper.fromJson(json);
 

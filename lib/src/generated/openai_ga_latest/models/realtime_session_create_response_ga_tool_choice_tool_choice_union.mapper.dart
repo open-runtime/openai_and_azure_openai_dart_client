@@ -23,9 +23,9 @@ class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionMapper
         _instance =
             RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionMapper._(),
       );
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceMcpMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -90,219 +90,6 @@ abstract class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionCopyWith<
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-    extends
-        ClassMapperBase<
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-        > {
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper._();
-
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper?
-  _instance;
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-  ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance =
-            RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper._(),
-      );
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
-    }
-    return _instance!;
-  }
-
-  @override
-  final String id =
-      'RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions';
-
-  @override
-  final MappableFields<
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  fields = const {};
-
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  _instantiate(DecodingData data) {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions();
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-    >(map);
-  }
-
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-    >(json);
-  }
-}
-
-mixin RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMappable {
-  String toJsonString() {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeJson<
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-        >(
-          this
-              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  Map<String, dynamic> toJson() {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeMap<
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-        >(
-          this
-              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  get copyWith =>
-      _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-      >(
-        this
-            as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        $identity,
-        $identity,
-      );
-  @override
-  String toString() {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-          other,
-        );
-  }
-
-  @override
-  int get hashCode {
-    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .hashValue(
-          this
-              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-}
-
-extension RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out
-  >
-  get $asRealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions =>
-      $base.as(
-        (v, t, t2) =>
-            _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
-}
-
-abstract class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-  $R,
-  $In extends RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-  $Out
->
-    implements
-        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionCopyWith<
-          $R,
-          $In,
-          $Out
-        > {
-  @override
-  $R call();
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        >
-    implements
-        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-          $R,
-          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl(
-    super.value,
-    super.then,
-    super.then2,
-  );
-
-  @override
-  late final ClassMapperBase<
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  $mapper =
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
-  @override
-  $R call() => $apply(FieldCopyWithData({}));
-  @override
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions
-  $make(CopyWithData data) =>
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions();
-
-  @override
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
 }
 
 class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceFunctionMapper
@@ -801,6 +588,233 @@ class _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceMcpCopy
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
       _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionToolChoiceMcpCopyWithImpl<
+        $R2,
+        $Out2
+      >($value, $cast, t);
+}
+
+class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper
+    extends
+        ClassMapperBase<
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+        > {
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper._();
+
+  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper?
+  _instance;
+  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper
+  ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance =
+            RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper._(),
+      );
+      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id =
+      'RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString';
+
+  static String _$value(
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString v,
+  ) => v.value;
+  static const Field<
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+    String
+  >
+  _f$value = Field('value', _$value);
+
+  @override
+  final MappableFields<
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  >
+  fields = const {#value: _f$value};
+
+  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  _instantiate(DecodingData data) {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString(
+      value: data.dec(_f$value),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<
+      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+    >(map);
+  }
+
+  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  fromJsonString(String json) {
+    return ensureInitialized().decodeJson<
+      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+    >(json);
+  }
+}
+
+mixin RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMappable {
+  String toJsonString() {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeJson<
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+        >(
+          this
+              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeMap<
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+        >(
+          this
+              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  >
+  get copyWith =>
+      _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+      >(
+        this
+            as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        $identity,
+        $identity,
+      );
+  @override
+  String toString() {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .stringifyValue(
+          this
+              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .equalsValue(
+          this
+              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+          other,
+        );
+  }
+
+  @override
+  int get hashCode {
+    return RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .hashValue(
+          this
+              as RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+}
+
+extension RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringValueCopy<
+  $R,
+  $Out
+>
+    on
+        ObjectCopyWith<
+          $R,
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R,
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+    $Out
+  >
+  get $asRealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString =>
+      $base.as(
+        (v, t, t2) =>
+            _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+              $R,
+              $Out
+            >(v, t, t2),
+      );
+}
+
+abstract class RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+  $R,
+  $In extends RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+  $Out
+>
+    implements
+        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionCopyWith<
+          $R,
+          $In,
+          $Out
+        > {
+  @override
+  $R call({String? value});
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    $In,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+  $R,
+  $Out
+>
+    extends
+        ClassCopyWithBase<
+          $R,
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+          $Out
+        >
+    implements
+        RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+          $R,
+          RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString
+  >
+  $mapper =
+      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
+  @override
+  $R call({String? value}) =>
+      $apply(FieldCopyWithData({if (value != null) #value: value}));
+  @override
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString $make(
+    CopyWithData data,
+  ) => RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString(
+    value: data.get(#value, or: $value.value),
+  );
+
+  @override
+  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
         $R2,
         $Out2
       >($value, $cast, t);

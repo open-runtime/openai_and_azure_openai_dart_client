@@ -30,7 +30,7 @@ class FineTuningJobEvent with FineTuningJobEventMappable {
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
   final String? id;
-  final dynamic data;
+  final dynamic? data;
 
   static FineTuningJobEvent fromJson(Map<String, dynamic> json) => FineTuningJobEventMapper.fromJson(json);
 

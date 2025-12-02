@@ -15,7 +15,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRe
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 

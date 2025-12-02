@@ -44,7 +44,7 @@ class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   final List<CreateThreadAndRunRequestToolsToolsUnion>? tools;
   @MappableField(key: 'CreateThreadAndRunRequestToolResources')
   final CreateThreadAndRunRequestToolResources? createThreadAndRunRequestToolResources;
-  final dynamic metadata;
+  final dynamic? metadata;
   final bool? stream;
   @MappableField(key: 'max_prompt_tokens')
   final int? maxPromptTokens;

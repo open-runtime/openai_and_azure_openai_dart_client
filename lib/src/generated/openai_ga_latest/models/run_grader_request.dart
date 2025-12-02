@@ -19,7 +19,7 @@ class RunGraderRequest with RunGraderRequestMappable {
   final RunGraderRequestGraderGraderUnion grader;
   @MappableField(key: 'model_sample')
   final String modelSample;
-  final dynamic item;
+  final dynamic? item;
 
   static RunGraderRequest fromJson(Map<String, dynamic> json) => RunGraderRequestMapper.fromJson(json);
 

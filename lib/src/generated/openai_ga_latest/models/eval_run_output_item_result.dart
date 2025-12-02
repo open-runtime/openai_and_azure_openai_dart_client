@@ -22,7 +22,7 @@ class EvalRunOutputItemResult with EvalRunOutputItemResultMappable {
   final num score;
   final bool passed;
   final String? type;
-  final dynamic sample;
+  final dynamic? sample;
 
   static EvalRunOutputItemResult fromJson(Map<String, dynamic> json) => EvalRunOutputItemResultMapper.fromJson(json);
 

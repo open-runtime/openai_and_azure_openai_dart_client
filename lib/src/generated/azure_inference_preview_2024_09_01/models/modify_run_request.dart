@@ -12,7 +12,7 @@ class ModifyRunRequest with ModifyRunRequestMappable {
     this.metadata,
   });
 
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static ModifyRunRequest fromJson(Map<String, dynamic> json) => ModifyRunRequestMapper.fromJson(json);
 

@@ -20,7 +20,7 @@ class CreateThreadRequest with CreateThreadRequestMappable {
   final List<CreateMessageRequest>? messages;
   @MappableField(key: 'CreateThreadRequestToolResources')
   final CreateThreadRequestToolResources? createThreadRequestToolResources;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateThreadRequest fromJson(Map<String, dynamic> json) => CreateThreadRequestMapper.fromJson(json);
 

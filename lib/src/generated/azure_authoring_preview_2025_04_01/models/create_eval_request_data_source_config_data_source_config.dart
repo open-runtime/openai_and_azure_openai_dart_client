@@ -23,7 +23,7 @@ class CreateEvalRequestDataSourceConfigDataSourceConfig with CreateEvalRequestDa
 
   @MappableField(key: 'item_schema')
   final dynamic itemSchema;
-  final dynamic metadata;
+  final dynamic? metadata;
   @MappableField(key: 'include_sample_schema')
   final bool includeSampleSchema;
   final CreateEvalLogsDataSourceConfigTypeType type;

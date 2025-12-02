@@ -20,7 +20,7 @@ class RealtimeSessionCreateResponseTools with RealtimeSessionCreateResponseTools
   final RealtimeSessionCreateResponseToolsTypeType? type;
   final String? name;
   final String? description;
-  final dynamic parameters;
+  final dynamic? parameters;
 
   static RealtimeSessionCreateResponseTools fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseToolsMapper.fromJson(json);
 

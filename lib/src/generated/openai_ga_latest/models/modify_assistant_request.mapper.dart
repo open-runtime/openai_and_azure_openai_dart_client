@@ -16,7 +16,6 @@ class ModifyAssistantRequestMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ModifyAssistantRequestMapper._());
       AssistantToolMapper.ensureInitialized();
-      ModifyAssistantRequestModelModelUnionMapper.ensureInitialized();
       ModifyAssistantRequestToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
@@ -45,14 +44,12 @@ class ModifyAssistantRequestMapper
   static List<AssistantTool> _$tools(ModifyAssistantRequest v) => v.tools;
   static const Field<ModifyAssistantRequest, List<AssistantTool>> _f$tools =
       Field('tools', _$tools, opt: true, def: const []);
-  static ModifyAssistantRequestModelModelUnion? _$model(
-    ModifyAssistantRequest v,
-  ) => v.model;
-  static const Field<
-    ModifyAssistantRequest,
-    ModifyAssistantRequestModelModelUnion
-  >
-  _f$model = Field('model', _$model, opt: true);
+  static String? _$model(ModifyAssistantRequest v) => v.model;
+  static const Field<ModifyAssistantRequest, String> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static String? _$reasoningEffort(ModifyAssistantRequest v) =>
       v.reasoningEffort;
   static const Field<ModifyAssistantRequest, String> _f$reasoningEffort = Field(
@@ -219,12 +216,6 @@ abstract class ModifyAssistantRequestCopyWith<
     AssistantToolCopyWith<$R, AssistantTool, AssistantTool>
   >
   get tools;
-  ModifyAssistantRequestModelModelUnionCopyWith<
-    $R,
-    ModifyAssistantRequestModelModelUnion,
-    ModifyAssistantRequestModelModelUnion
-  >?
-  get model;
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,
     ModifyAssistantRequestToolResources,
@@ -242,7 +233,7 @@ abstract class ModifyAssistantRequestCopyWith<
     num? temperature,
     num? topP,
     List<AssistantTool>? tools,
-    ModifyAssistantRequestModelModelUnion? model,
+    String? model,
     String? reasoningEffort,
     String? name,
     String? description,
@@ -276,13 +267,6 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
     (v, t) => v.copyWith.$chain(t),
     (v) => call(tools: v),
   );
-  @override
-  ModifyAssistantRequestModelModelUnionCopyWith<
-    $R,
-    ModifyAssistantRequestModelModelUnion,
-    ModifyAssistantRequestModelModelUnion
-  >?
-  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,

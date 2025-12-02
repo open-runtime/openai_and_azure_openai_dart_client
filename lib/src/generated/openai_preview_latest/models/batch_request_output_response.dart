@@ -18,7 +18,7 @@ class BatchRequestOutputResponse with BatchRequestOutputResponseMappable {
   final int? statusCode;
   @MappableField(key: 'request_id')
   final String? requestId;
-  final dynamic body;
+  final dynamic? body;
 
   static BatchRequestOutputResponse fromJson(Map<String, dynamic> json) => BatchRequestOutputResponseMapper.fromJson(json);
 

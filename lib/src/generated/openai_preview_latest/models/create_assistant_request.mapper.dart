@@ -15,7 +15,6 @@ class CreateAssistantRequestMapper
   static CreateAssistantRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateAssistantRequestMapper._());
-      CreateAssistantRequestModelModelUnionMapper.ensureInitialized();
       CreateAssistantRequestToolsToolsUnionMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       CreateAssistantRequestToolResourcesMapper.ensureInitialized();
@@ -27,14 +26,11 @@ class CreateAssistantRequestMapper
   @override
   final String id = 'CreateAssistantRequest';
 
-  static CreateAssistantRequestModelModelUnion _$model(
-    CreateAssistantRequest v,
-  ) => v.model;
-  static const Field<
-    CreateAssistantRequest,
-    CreateAssistantRequestModelModelUnion
-  >
-  _f$model = Field('model', _$model);
+  static String _$model(CreateAssistantRequest v) => v.model;
+  static const Field<CreateAssistantRequest, String> _f$model = Field(
+    'model',
+    _$model,
+  );
   static List<CreateAssistantRequestToolsToolsUnion> _$tools(
     CreateAssistantRequest v,
   ) => v.tools;
@@ -220,12 +216,6 @@ abstract class CreateAssistantRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateAssistantRequestModelModelUnionCopyWith<
-    $R,
-    CreateAssistantRequestModelModelUnion,
-    CreateAssistantRequestModelModelUnion
-  >
-  get model;
   ListCopyWith<
     $R,
     CreateAssistantRequestToolsToolsUnion,
@@ -251,7 +241,7 @@ abstract class CreateAssistantRequestCopyWith<
   >?
   get responseFormat;
   $R call({
-    CreateAssistantRequestModelModelUnion? model,
+    String? model,
     List<CreateAssistantRequestToolsToolsUnion>? tools,
     num? temperature,
     num? topP,
@@ -277,13 +267,6 @@ class _CreateAssistantRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateAssistantRequest> $mapper =
       CreateAssistantRequestMapper.ensureInitialized();
-  @override
-  CreateAssistantRequestModelModelUnionCopyWith<
-    $R,
-    CreateAssistantRequestModelModelUnion,
-    CreateAssistantRequestModelModelUnion
-  >
-  get model => $value.model.copyWith.$chain((v) => call(model: v));
   @override
   ListCopyWith<
     $R,
@@ -328,7 +311,7 @@ class _CreateAssistantRequestCopyWithImpl<$R, $Out>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));
   @override
   $R call({
-    CreateAssistantRequestModelModelUnion? model,
+    String? model,
     List<CreateAssistantRequestToolsToolsUnion>? tools,
     Object? temperature = $none,
     Object? topP = $none,

@@ -29,7 +29,7 @@ class CreateModerationRequestMapper
     'input',
     _$input,
   );
-  static String _$model(CreateModerationRequest v) => v.model;
+  static String? _$model(CreateModerationRequest v) => v.model;
   static const Field<CreateModerationRequest, String> _f$model = Field(
     'model',
     _$model,
@@ -135,10 +135,10 @@ class _CreateModerationRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateModerationRequest> $mapper =
       CreateModerationRequestMapper.ensureInitialized();
   @override
-  $R call({String? input, String? model}) => $apply(
+  $R call({String? input, Object? model = $none}) => $apply(
     FieldCopyWithData({
       if (input != null) #input: input,
-      if (model != null) #model: model,
+      if (model != $none) #model: model,
     }),
   );
   @override

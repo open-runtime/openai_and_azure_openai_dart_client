@@ -45,7 +45,7 @@ class RealtimeSession with RealtimeSessionMappable {
   final String toolChoice;
   final num temperature;
   final String? id;
-  final dynamic modalities;
+  final dynamic? modalities;
   final RealtimeSessionModelModel? model;
   final String? instructions;
   final VoiceIdsShared? voice;

@@ -5,7 +5,6 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_api_response_format_option.dart';
-import 'create_assistant_request_model_model_union.dart';
 import 'create_assistant_request_tool_resources.dart';
 import 'create_assistant_request_tools_tools_union.dart';
 import 'metadata.dart';
@@ -29,7 +28,7 @@ class CreateAssistantRequest with CreateAssistantRequestMappable {
     this.responseFormat,
   });
 
-  final CreateAssistantRequestModelModelUnion model;
+  final String model;
   final List<CreateAssistantRequestToolsToolsUnion> tools;
   final num? temperature;
   @MappableField(key: 'top_p')

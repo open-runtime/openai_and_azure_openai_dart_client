@@ -17,9 +17,9 @@ class ResponsePropertiesToolChoiceToolChoiceUnionMapper
       MapperContainer.globals.use(
         _instance = ResponsePropertiesToolChoiceToolChoiceUnionMapper._(),
       );
-      ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
       ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceTypesMapper.ensureInitialized();
       ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
+      ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -77,205 +77,6 @@ abstract class ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
   $R call();
   ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-    extends
-        ClassMapperBase<
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-        > {
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper._();
-
-  static ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper?
-  _instance;
-  static ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-  ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance =
-            ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper._(),
-      );
-      ResponsePropertiesToolChoiceToolChoiceUnionMapper.ensureInitialized();
-    }
-    return _instance!;
-  }
-
-  @override
-  final String id =
-      'ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions';
-
-  @override
-  final MappableFields<
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  fields = const {};
-
-  static ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-  _instantiate(DecodingData data) {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions();
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions fromJson(
-    Map<String, dynamic> map,
-  ) {
-    return ensureInitialized().decodeMap<
-      ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-    >(map);
-  }
-
-  static ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-    >(json);
-  }
-}
-
-mixin ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMappable {
-  String toJsonString() {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeJson<
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-        >(this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions);
-  }
-
-  Map<String, dynamic> toJson() {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeMap<
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-        >(this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions);
-  }
-
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  get copyWith =>
-      _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-        ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-      >(
-        this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-        $identity,
-        $identity,
-      );
-  @override
-  String toString() {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .stringifyValue(
-          this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .equalsValue(
-          this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-          other,
-        );
-  }
-
-  @override
-  int get hashCode {
-    return ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .hashValue(
-          this as ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-}
-
-extension ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R,
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out
-  >
-  get $asResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions => $base.as(
-    (v, t, t2) =>
-        _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-          $R,
-          $Out
-        >(v, t, t2),
-  );
-}
-
-abstract class ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-  $R,
-  $In extends ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-  $Out
->
-    implements
-        ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<$R, $In, $Out> {
-  @override
-  $R call();
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        >
-    implements
-        ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-          $R,
-          ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl(
-    super.value,
-    super.then,
-    super.then2,
-  );
-
-  @override
-  late final ClassMapperBase<
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  $mapper =
-      ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
-  @override
-  $R call() => $apply(FieldCopyWithData({}));
-  @override
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions $make(
-    CopyWithData data,
-  ) => ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions();
-
-  @override
-  ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
 }
 
 class ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceTypesMapper
@@ -721,6 +522,219 @@ class _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceFunctionCopyWithImpl
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
       _ResponsePropertiesToolChoiceToolChoiceUnionToolChoiceFunctionCopyWithImpl<
+        $R2,
+        $Out2
+      >($value, $cast, t);
+}
+
+class ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper
+    extends
+        ClassMapperBase<
+          ResponsePropertiesToolChoiceToolChoiceUnionVariantString
+        > {
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper._();
+
+  static ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper?
+  _instance;
+  static ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper
+  ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance =
+            ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper._(),
+      );
+      ResponsePropertiesToolChoiceToolChoiceUnionMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'ResponsePropertiesToolChoiceToolChoiceUnionVariantString';
+
+  static String _$value(
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString v,
+  ) => v.value;
+  static const Field<
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+    String
+  >
+  _f$value = Field('value', _$value);
+
+  @override
+  final MappableFields<ResponsePropertiesToolChoiceToolChoiceUnionVariantString>
+  fields = const {#value: _f$value};
+
+  static ResponsePropertiesToolChoiceToolChoiceUnionVariantString _instantiate(
+    DecodingData data,
+  ) {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantString(
+      value: data.dec(_f$value),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static ResponsePropertiesToolChoiceToolChoiceUnionVariantString fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ResponsePropertiesToolChoiceToolChoiceUnionVariantString>(
+          map,
+        );
+  }
+
+  static ResponsePropertiesToolChoiceToolChoiceUnionVariantString
+  fromJsonString(String json) {
+    return ensureInitialized()
+        .decodeJson<ResponsePropertiesToolChoiceToolChoiceUnionVariantString>(
+          json,
+        );
+  }
+}
+
+mixin ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMappable {
+  String toJsonString() {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeJson<ResponsePropertiesToolChoiceToolChoiceUnionVariantString>(
+          this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeMap<ResponsePropertiesToolChoiceToolChoiceUnionVariantString>(
+          this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString
+  >
+  get copyWith =>
+      _ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+        ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        ResponsePropertiesToolChoiceToolChoiceUnionVariantString
+      >(
+        this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        $identity,
+        $identity,
+      );
+  @override
+  String toString() {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .stringifyValue(
+          this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .equalsValue(
+          this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+          other,
+        );
+  }
+
+  @override
+  int get hashCode {
+    return ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .hashValue(
+          this as ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+}
+
+extension ResponsePropertiesToolChoiceToolChoiceUnionVariantStringValueCopy<
+  $R,
+  $Out
+>
+    on
+        ObjectCopyWith<
+          $R,
+          ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R,
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+    $Out
+  >
+  get $asResponsePropertiesToolChoiceToolChoiceUnionVariantString => $base.as(
+    (v, t, t2) =>
+        _ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+          $R,
+          $Out
+        >(v, t, t2),
+  );
+}
+
+abstract class ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+  $R,
+  $In extends ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+  $Out
+>
+    implements
+        ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<$R, $In, $Out> {
+  @override
+  $R call({String? value});
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    $In,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+  $R,
+  $Out
+>
+    extends
+        ClassCopyWithBase<
+          $R,
+          ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+          $Out
+        >
+    implements
+        ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+          $R,
+          ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  _ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString
+  >
+  $mapper =
+      ResponsePropertiesToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
+  @override
+  $R call({String? value}) =>
+      $apply(FieldCopyWithData({if (value != null) #value: value}));
+  @override
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantString $make(
+    CopyWithData data,
+  ) => ResponsePropertiesToolChoiceToolChoiceUnionVariantString(
+    value: data.get(#value, or: $value.value),
+  );
+
+  @override
+  ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    ResponsePropertiesToolChoiceToolChoiceUnionVariantString,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _ResponsePropertiesToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
         $R2,
         $Out2
       >($value, $cast, t);

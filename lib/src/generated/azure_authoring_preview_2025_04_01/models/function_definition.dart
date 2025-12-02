@@ -14,7 +14,7 @@ class FunctionDefinition with FunctionDefinitionMappable {
     this.name,
   });
 
-  final dynamic parameters;
+  final dynamic? parameters;
   final String? description;
   final String? name;
 

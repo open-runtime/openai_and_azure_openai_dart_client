@@ -56,7 +56,7 @@ class RealtimeSession with RealtimeSessionMappable {
   final String? id;
   @MappableField(key: 'object')
   final RealtimeSessionObjectObjectEnum? objectEnum;
-  final dynamic modalities;
+  final dynamic? modalities;
   final RealtimeSessionModelModel? model;
   final String? instructions;
   final VoiceIdsShared? voice;

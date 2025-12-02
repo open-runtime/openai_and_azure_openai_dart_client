@@ -26,7 +26,7 @@ class CreateVectorStoreRequest with CreateVectorStoreRequestMappable {
   final VectorStoreExpirationAfter? expiresAfter;
   @MappableField(key: 'chunking_strategy')
   final CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion? chunkingStrategy;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateVectorStoreRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreRequestMapper.fromJson(json);
 

@@ -36,7 +36,7 @@ class RealtimeBetaResponse with RealtimeBetaResponseMappable {
 
   final String? id;
   @MappableField(key: 'object')
-  final dynamic objectField;
+  final dynamic? objectField;
   final RealtimeBetaResponseStatusStatus? status;
   @MappableField(key: 'RealtimeBetaResponseStatusDetails')
   final RealtimeBetaResponseStatusDetails? realtimeBetaResponseStatusDetails;

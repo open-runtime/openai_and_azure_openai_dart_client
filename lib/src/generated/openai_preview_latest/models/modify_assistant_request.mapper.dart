@@ -16,7 +16,6 @@ class ModifyAssistantRequestMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ModifyAssistantRequestMapper._());
       ModifyAssistantRequestToolsToolsUnionMapper.ensureInitialized();
-      ModifyAssistantRequestModelModelUnionMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       ModifyAssistantRequestToolResourcesMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
@@ -50,14 +49,12 @@ class ModifyAssistantRequestMapper
     opt: true,
     def: 1,
   );
-  static ModifyAssistantRequestModelModelUnion? _$model(
-    ModifyAssistantRequest v,
-  ) => v.model;
-  static const Field<
-    ModifyAssistantRequest,
-    ModifyAssistantRequestModelModelUnion
-  >
-  _f$model = Field('model', _$model, opt: true);
+  static String? _$model(ModifyAssistantRequest v) => v.model;
+  static const Field<ModifyAssistantRequest, String> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static ReasoningEffort? _$reasoningEffort(ModifyAssistantRequest v) =>
       v.reasoningEffort;
   static const Field<ModifyAssistantRequest, ReasoningEffort>
@@ -230,12 +227,6 @@ abstract class ModifyAssistantRequestCopyWith<
     >
   >
   get tools;
-  ModifyAssistantRequestModelModelUnionCopyWith<
-    $R,
-    ModifyAssistantRequestModelModelUnion,
-    ModifyAssistantRequestModelModelUnion
-  >?
-  get model;
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,
     ModifyAssistantRequestToolResources,
@@ -254,7 +245,7 @@ abstract class ModifyAssistantRequestCopyWith<
     List<ModifyAssistantRequestToolsToolsUnion>? tools,
     num? temperature,
     num? topP,
-    ModifyAssistantRequestModelModelUnion? model,
+    String? model,
     ReasoningEffort? reasoningEffort,
     String? name,
     String? description,
@@ -292,13 +283,6 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
     (v, t) => v.copyWith.$chain(t),
     (v) => call(tools: v),
   );
-  @override
-  ModifyAssistantRequestModelModelUnionCopyWith<
-    $R,
-    ModifyAssistantRequestModelModelUnion,
-    ModifyAssistantRequestModelModelUnion
-  >?
-  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ModifyAssistantRequestToolResourcesCopyWith<
     $R,

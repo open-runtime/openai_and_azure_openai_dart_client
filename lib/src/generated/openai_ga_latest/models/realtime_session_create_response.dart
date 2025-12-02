@@ -40,7 +40,7 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   final List<RealtimeSessionCreateResponseIncludeInclude>? include;
   final String? model;
   @MappableField(key: 'output_modalities')
-  final dynamic outputModalities;
+  final dynamic? outputModalities;
   final String? instructions;
   @MappableField(key: 'RealtimeSessionCreateResponseAudio')
   final RealtimeSessionCreateResponseAudio? realtimeSessionCreateResponseAudio;

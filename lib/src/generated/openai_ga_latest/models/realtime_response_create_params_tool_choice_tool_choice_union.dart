@@ -6,7 +6,6 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'tool_choice_function_type_type.dart';
 import 'tool_choice_mcp_type_type.dart';
-import 'tool_choice_options.dart';
 import 'tool_choice_function.dart';
 import 'tool_choice_mcp.dart';
 
@@ -15,7 +14,7 @@ part 'realtime_response_create_params_tool_choice_tool_choice_union.mapper.dart'
 /// How the model chooses tools. Provide one of the string modes or force a specific.
 /// function/MCP tool.
 ///
-@MappableClass(includeSubClasses: [RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions, RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceFunction, RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcp])
+@MappableClass(includeSubClasses: [RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceFunction, RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcp, RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString])
 sealed class RealtimeResponseCreateParamsToolChoiceToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMappable {
   const RealtimeResponseCreateParamsToolChoiceToolChoiceUnion();
 
@@ -27,25 +26,18 @@ sealed class RealtimeResponseCreateParamsToolChoiceToolChoiceUnion with Realtime
 extension RealtimeResponseCreateParamsToolChoiceToolChoiceUnionDeserializer on RealtimeResponseCreateParamsToolChoiceToolChoiceUnion {
   static RealtimeResponseCreateParamsToolChoiceToolChoiceUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.fromJson(json);
-    } catch (_) {}
-    try {
       return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceFunctionMapper.fromJson(json);
     } catch (_) {}
     try {
       return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcpMapper.fromJson(json);
     } catch (_) {}
+    try {
+      return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.fromJson(json);
+    } catch (_) {}
 
 
     throw FormatException('Could not determine the correct type for RealtimeResponseCreateParamsToolChoiceToolChoiceUnion from: $json');
   }
-}
-
-@MappableClass()
-class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions extends RealtimeResponseCreateParamsToolChoiceToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMappable {
-
-
-  const RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions();
 }
 
 @MappableClass()
@@ -69,5 +61,14 @@ class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcp extends
     required this.type,
     required this.serverLabel,
     required this.name,
+  });
+}
+
+@MappableClass()
+class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString extends RealtimeResponseCreateParamsToolChoiceToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMappable {
+  final String value;
+
+  const RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString({
+    required this.value,
   });
 }

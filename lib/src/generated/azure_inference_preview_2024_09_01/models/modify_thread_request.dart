@@ -17,7 +17,7 @@ class ModifyThreadRequest with ModifyThreadRequestMappable {
 
   @MappableField(key: 'ModifyThreadRequestToolResources')
   final ModifyThreadRequestToolResources? modifyThreadRequestToolResources;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static ModifyThreadRequest fromJson(Map<String, dynamic> json) => ModifyThreadRequestMapper.fromJson(json);
 

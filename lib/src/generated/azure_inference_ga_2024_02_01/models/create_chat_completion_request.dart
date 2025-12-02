@@ -40,7 +40,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
 
   final List<String>? stop;
   @MappableField(key: 'logit_bias')
-  final dynamic logitBias;
+  final dynamic? logitBias;
   final String? user;
   final List<ChatCompletionRequestMessage>? messages;
   @MappableField(key: 'data_sources')

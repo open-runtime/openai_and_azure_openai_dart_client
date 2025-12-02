@@ -20,7 +20,7 @@ class RealtimeFunctionTool with RealtimeFunctionToolMappable {
   final RealtimeFunctionToolTypeType? type;
   final String? name;
   final String? description;
-  final dynamic parameters;
+  final dynamic? parameters;
 
   static RealtimeFunctionTool fromJson(Map<String, dynamic> json) => RealtimeFunctionToolMapper.fromJson(json);
 

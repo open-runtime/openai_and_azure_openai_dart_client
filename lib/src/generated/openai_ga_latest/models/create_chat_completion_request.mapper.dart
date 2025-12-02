@@ -18,7 +18,7 @@ class CreateChatCompletionRequestMapper
         _instance = CreateChatCompletionRequestMapper._(),
       );
       ChatCompletionRequestMessageMapper.ensureInitialized();
-      ModelIdsSharedUnionMapper.ensureInitialized();
+      ModelIdsSharedMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
       CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
       ResponseModalitiesMapper.ensureInitialized();
@@ -51,9 +51,9 @@ class CreateChatCompletionRequestMapper
     List<ChatCompletionRequestMessage>
   >
   _f$messages = Field('messages', _$messages);
-  static ModelIdsSharedUnion? _$model(CreateChatCompletionRequest v) => v.model;
-  static const Field<CreateChatCompletionRequest, ModelIdsSharedUnion>
-  _f$model = Field('model', _$model);
+  static ModelIdsShared _$model(CreateChatCompletionRequest v) => v.model;
+  static const Field<CreateChatCompletionRequest, ModelIdsShared> _f$model =
+      Field('model', _$model);
   static String? _$verbosity(CreateChatCompletionRequest v) => v.verbosity;
   static const Field<CreateChatCompletionRequest, String> _f$verbosity = Field(
     'verbosity',
@@ -487,8 +487,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     >
   >
   get messages;
-  ModelIdsSharedUnionCopyWith<$R, ModelIdsSharedUnion, ModelIdsSharedUnion>?
-  get model;
+  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model;
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
     $R,
     CreateChatCompletionRequestFunctionCallFunctionCallUnion,
@@ -554,7 +553,7 @@ abstract class CreateChatCompletionRequestCopyWith<
   $R call({
     Map<String, int>? logitBias,
     List<ChatCompletionRequestMessage>? messages,
-    ModelIdsSharedUnion? model,
+    ModelIdsShared? model,
     String? verbosity,
     String? user,
     String? safetyIdentifier,
@@ -638,8 +637,8 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     (v) => call(messages: v),
   );
   @override
-  ModelIdsSharedUnionCopyWith<$R, ModelIdsSharedUnion, ModelIdsSharedUnion>?
-  get model => $value.model?.copyWith.$chain((v) => call(model: v));
+  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model =>
+      $value.model.copyWith.$chain((v) => call(model: v));
   @override
   CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
     $R,
@@ -744,7 +743,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   $R call({
     Object? logitBias = $none,
     List<ChatCompletionRequestMessage>? messages,
-    Object? model = $none,
+    ModelIdsShared? model,
     Object? verbosity = $none,
     Object? user = $none,
     Object? safetyIdentifier = $none,
@@ -781,7 +780,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     FieldCopyWithData({
       if (logitBias != $none) #logitBias: logitBias,
       if (messages != null) #messages: messages,
-      if (model != $none) #model: model,
+      if (model != null) #model: model,
       if (verbosity != $none) #verbosity: verbosity,
       if (user != $none) #user: user,
       if (safetyIdentifier != $none) #safetyIdentifier: safetyIdentifier,

@@ -17,7 +17,7 @@ class CreateEvalLogsDataSourceConfig with CreateEvalLogsDataSourceConfigMappable
   });
 
   final CreateEvalLogsDataSourceConfigTypeType type;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateEvalLogsDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalLogsDataSourceConfigMapper.fromJson(json);
 

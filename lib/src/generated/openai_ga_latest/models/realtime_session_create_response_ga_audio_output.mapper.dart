@@ -28,7 +28,7 @@ class RealtimeSessionCreateResponseGaAudioOutputMapper
   static String? _$voice(RealtimeSessionCreateResponseGaAudioOutput v) =>
       v.voice;
   static const Field<RealtimeSessionCreateResponseGaAudioOutput, String>
-  _f$voice = Field('voice', _$voice, opt: true, def: VoiceIdsShared.alloy);
+  _f$voice = Field('voice', _$voice, opt: true, def: 'alloy');
   static num _$speed(RealtimeSessionCreateResponseGaAudioOutput v) => v.speed;
   static const Field<RealtimeSessionCreateResponseGaAudioOutput, num> _f$speed =
       Field('speed', _$speed, opt: true, def: 1);

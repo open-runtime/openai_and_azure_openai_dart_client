@@ -6,7 +6,6 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'tool_choice_function_type_type.dart';
 import 'tool_choice_mcp_type_type.dart';
-import 'tool_choice_options.dart';
 import 'tool_choice_function.dart';
 import 'tool_choice_mcp.dart';
 
@@ -15,7 +14,7 @@ part 'realtime_session_create_request_ga_tool_choice_tool_choice_union.mapper.da
 /// How the model chooses tools. Provide one of the string modes or force a specific.
 /// function/MCP tool.
 ///
-@MappableClass(includeSubClasses: [RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceOptions, RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceFunction, RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceMcp])
+@MappableClass(includeSubClasses: [RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceFunction, RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceMcp, RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantString])
 sealed class RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionMappable {
   const RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion();
 
@@ -27,25 +26,18 @@ sealed class RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion with Realti
 extension RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionDeserializer on RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion {
   static RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceOptionsMapper.fromJson(json);
-    } catch (_) {}
-    try {
       return RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceFunctionMapper.fromJson(json);
     } catch (_) {}
     try {
       return RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceMcpMapper.fromJson(json);
     } catch (_) {}
+    try {
+      return RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantStringMapper.fromJson(json);
+    } catch (_) {}
 
 
     throw FormatException('Could not determine the correct type for RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion from: $json');
   }
-}
-
-@MappableClass()
-class RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceOptions extends RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceOptionsMappable {
-
-
-  const RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceOptions();
 }
 
 @MappableClass()
@@ -69,5 +61,14 @@ class RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionToolChoiceMcp exten
     required this.type,
     required this.serverLabel,
     required this.name,
+  });
+}
+
+@MappableClass()
+class RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantString extends RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantStringMappable {
+  final String value;
+
+  const RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantString({
+    required this.value,
   });
 }

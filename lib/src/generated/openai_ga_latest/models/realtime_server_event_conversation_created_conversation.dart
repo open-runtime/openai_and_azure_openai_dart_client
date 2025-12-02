@@ -15,7 +15,7 @@ class RealtimeServerEventConversationCreatedConversation with RealtimeServerEven
 
   final String? id;
   @MappableField(key: 'object')
-  final dynamic objectField;
+  final dynamic? objectField;
 
   static RealtimeServerEventConversationCreatedConversation fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationCreatedConversationMapper.fromJson(json);
 

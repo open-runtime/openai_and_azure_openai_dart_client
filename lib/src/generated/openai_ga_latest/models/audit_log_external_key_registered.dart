@@ -14,7 +14,7 @@ class AuditLogExternalKeyRegistered with AuditLogExternalKeyRegisteredMappable {
   });
 
   final String? id;
-  final dynamic data;
+  final dynamic? data;
 
   static AuditLogExternalKeyRegistered fromJson(Map<String, dynamic> json) => AuditLogExternalKeyRegisteredMapper.fromJson(json);
 

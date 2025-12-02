@@ -20,7 +20,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRe
   final List<String>? fileIds;
   @MappableField(key: 'chunking_strategy')
   final CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion? chunkingStrategy;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 

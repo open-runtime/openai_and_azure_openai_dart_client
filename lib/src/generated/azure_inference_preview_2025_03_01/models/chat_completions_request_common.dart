@@ -27,7 +27,7 @@ class ChatCompletionsRequestCommon with ChatCompletionsRequestCommonMappable {
   @MappableField(key: 'max_completion_tokens')
   final int? maxCompletionTokens;
   @MappableField(key: 'logit_bias')
-  final dynamic logitBias;
+  final dynamic? logitBias;
   final bool? store;
   final Map<String, String>? metadata;
   final String? user;

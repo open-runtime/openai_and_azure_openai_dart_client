@@ -15,7 +15,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStores with CreateAssis
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateAssistantRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 

@@ -21,7 +21,7 @@ class McpListToolsTool with McpListToolsToolMappable {
   @MappableField(key: 'input_schema')
   final dynamic inputSchema;
   final String? description;
-  final dynamic annotations;
+  final dynamic? annotations;
 
   static McpListToolsTool fromJson(Map<String, dynamic> json) => McpListToolsToolMapper.fromJson(json);
 

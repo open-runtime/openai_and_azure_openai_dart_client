@@ -24,23 +24,23 @@ class Eval with EvalMappable {
     required this.id,
     required this.name,
     required this.dataSourceConfig,
+    required this.testingCriteria,
     required this.createdAt,
     required this.metadata,
     this.objectEnum = EvalObjectObjectEnum.eval,
-    this.testingCriteria = 'eval',
   });
 
   final String id;
   final String name;
   @MappableField(key: 'data_source_config')
   final EvalDataSourceConfigDataSourceConfigUnion dataSourceConfig;
+  @MappableField(key: 'testing_criteria')
+  final List<EvalTestingCriteriaTestingCriteriaUnion> testingCriteria;
   @MappableField(key: 'created_at')
   final int createdAt;
   final Metadata? metadata;
   @MappableField(key: 'object')
   final EvalObjectObjectEnum objectEnum;
-  @MappableField(key: 'testing_criteria')
-  final List<EvalTestingCriteriaTestingCriteriaUnion> testingCriteria;
 
   static Eval fromJson(Map<String, dynamic> json) => EvalMapper.fromJson(json);
 

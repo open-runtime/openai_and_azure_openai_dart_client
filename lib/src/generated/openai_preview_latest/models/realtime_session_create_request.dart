@@ -43,7 +43,7 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   @MappableField(key: 'tool_choice')
   final String toolChoice;
   final num temperature;
-  final dynamic modalities;
+  final dynamic? modalities;
   final RealtimeSessionCreateRequestModelModel? model;
   final String? instructions;
   final VoiceIdsShared? voice;

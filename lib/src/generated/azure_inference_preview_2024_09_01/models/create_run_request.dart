@@ -46,7 +46,7 @@ class CreateRunRequest with CreateRunRequestMappable {
   @MappableField(key: 'additional_messages')
   final List<CreateMessageRequest>? additionalMessages;
   final List<CreateRunRequestToolsToolsUnion>? tools;
-  final dynamic metadata;
+  final dynamic? metadata;
   final bool? stream;
   @MappableField(key: 'max_prompt_tokens')
   final int? maxPromptTokens;

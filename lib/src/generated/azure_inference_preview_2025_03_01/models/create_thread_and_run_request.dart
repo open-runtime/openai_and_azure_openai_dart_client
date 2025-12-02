@@ -48,7 +48,7 @@ class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   final List<CreateThreadAndRunRequestToolsToolsUnion>? tools;
   @MappableField(key: 'CreateThreadAndRunRequestToolResources')
   final CreateThreadAndRunRequestToolResources? createThreadAndRunRequestToolResources;
-  final dynamic metadata;
+  final dynamic? metadata;
   final bool? stream;
   @MappableField(key: 'stream_options')
   final ChatCompletionStreamOptions? streamOptions;

@@ -29,7 +29,7 @@ class EvalResponsesSource with EvalResponsesSourceMappable {
   });
 
   final EvalResponsesSourceTypeType type;
-  final dynamic metadata;
+  final dynamic? metadata;
   final String? model;
   @MappableField(key: 'instructions_search')
   final String? instructionsSearch;

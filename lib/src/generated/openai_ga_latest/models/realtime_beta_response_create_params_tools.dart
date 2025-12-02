@@ -20,7 +20,7 @@ class RealtimeBetaResponseCreateParamsTools with RealtimeBetaResponseCreateParam
   final RealtimeBetaResponseCreateParamsToolsTypeType? type;
   final String? name;
   final String? description;
-  final dynamic parameters;
+  final dynamic? parameters;
 
   static RealtimeBetaResponseCreateParamsTools fromJson(Map<String, dynamic> json) => RealtimeBetaResponseCreateParamsToolsMapper.fromJson(json);
 

@@ -35,7 +35,7 @@ class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   final String? instructions;
   @MappableField(key: 'ModifyAssistantRequestToolResources')
   final ModifyAssistantRequestToolResources? modifyAssistantRequestToolResources;
-  final dynamic metadata;
+  final dynamic? metadata;
   @MappableField(key: 'response_format')
   final AssistantsApiResponseFormatOption? responseFormat;
 

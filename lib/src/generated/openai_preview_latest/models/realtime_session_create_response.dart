@@ -34,7 +34,7 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
 
   @MappableField(key: 'RealtimeSessionCreateResponseClientSecret')
   final RealtimeSessionCreateResponseClientSecret realtimeSessionCreateResponseClientSecret;
-  final dynamic modalities;
+  final dynamic? modalities;
   final String? instructions;
   final VoiceIdsShared? voice;
   @MappableField(key: 'input_audio_format')

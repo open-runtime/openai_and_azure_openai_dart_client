@@ -14,7 +14,7 @@ class CreateModerationRequest with CreateModerationRequestMappable {
   });
 
   final String input;
-  final String model;
+  final String? model;
 
   static CreateModerationRequest fromJson(Map<String, dynamic> json) => CreateModerationRequestMapper.fromJson(json);
 

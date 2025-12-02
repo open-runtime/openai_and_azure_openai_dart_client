@@ -31,7 +31,7 @@ class FineTuningJobEvent with FineTuningJobEventMappable {
   final FineTuningJobEventLevelLevel level;
   final String message;
   final FineTuningJobEventTypeType? type;
-  final dynamic data;
+  final dynamic? data;
 
   static FineTuningJobEvent fromJson(Map<String, dynamic> json) => FineTuningJobEventMapper.fromJson(json);
 

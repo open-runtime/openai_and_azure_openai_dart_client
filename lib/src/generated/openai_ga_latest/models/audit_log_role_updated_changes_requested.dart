@@ -29,7 +29,7 @@ class AuditLogRoleUpdatedChangesRequested with AuditLogRoleUpdatedChangesRequest
   @MappableField(key: 'permissions_removed')
   final List<String>? permissionsRemoved;
   final String? description;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static AuditLogRoleUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogRoleUpdatedChangesRequestedMapper.fromJson(json);
 

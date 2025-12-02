@@ -20,9 +20,9 @@ class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMapper
         _instance =
             RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMapper._(),
       );
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
       RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
       RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcpMapper.ensureInitialized();
+      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -82,219 +82,6 @@ abstract class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<
   $R call();
   RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-    extends
-        ClassMapperBase<
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-        > {
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper._();
-
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper?
-  _instance;
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper
-  ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance =
-            RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper._(),
-      );
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMapper.ensureInitialized();
-    }
-    return _instance!;
-  }
-
-  @override
-  final String id =
-      'RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions';
-
-  @override
-  final MappableFields<
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  fields = const {};
-
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  _instantiate(DecodingData data) {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions();
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-    >(map);
-  }
-
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-    >(json);
-  }
-}
-
-mixin RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMappable {
-  String toJsonString() {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeJson<
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-        >(
-          this
-              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  Map<String, dynamic> toJson() {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .encodeMap<
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-        >(
-          this
-              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  get copyWith =>
-      _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-      >(
-        this
-            as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        $identity,
-        $identity,
-      );
-  @override
-  String toString() {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-          other,
-        );
-  }
-
-  @override
-  int get hashCode {
-    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized()
-        .hashValue(
-          this
-              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-        );
-  }
-}
-
-extension RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out
-  >
-  get $asRealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions =>
-      $base.as(
-        (v, t, t2) =>
-            _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
-}
-
-abstract class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-  $R,
-  $In extends RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-  $Out
->
-    implements
-        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<
-          $R,
-          $In,
-          $Out
-        > {
-  @override
-  $R call();
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
-}
-
-class _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        >
-    implements
-        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-          $R,
-          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-          $Out
-        > {
-  _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl(
-    super.value,
-    super.then,
-    super.then2,
-  );
-
-  @override
-  late final ClassMapperBase<
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions
-  >
-  $mapper =
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsMapper.ensureInitialized();
-  @override
-  $R call() => $apply(FieldCopyWithData({}));
-  @override
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions $make(
-    CopyWithData data,
-  ) => RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions();
-
-  @override
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWith<
-    $R2,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptions,
-    $Out2
-  >
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceOptionsCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
 }
 
 class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceFunctionMapper
@@ -791,6 +578,233 @@ class _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcpCopyWit
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
       _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionToolChoiceMcpCopyWithImpl<
+        $R2,
+        $Out2
+      >($value, $cast, t);
+}
+
+class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper
+    extends
+        ClassMapperBase<
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+        > {
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper._();
+
+  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper?
+  _instance;
+  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper
+  ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance =
+            RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper._(),
+      );
+      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id =
+      'RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString';
+
+  static String _$value(
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString v,
+  ) => v.value;
+  static const Field<
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+    String
+  >
+  _f$value = Field('value', _$value);
+
+  @override
+  final MappableFields<
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  >
+  fields = const {#value: _f$value};
+
+  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  _instantiate(DecodingData data) {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString(
+      value: data.dec(_f$value),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<
+      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+    >(map);
+  }
+
+  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  fromJsonString(String json) {
+    return ensureInitialized().decodeJson<
+      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+    >(json);
+  }
+}
+
+mixin RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMappable {
+  String toJsonString() {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeJson<
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+        >(
+          this
+              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .encodeMap<
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+        >(
+          this
+              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  >
+  get copyWith =>
+      _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+      >(
+        this
+            as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        $identity,
+        $identity,
+      );
+  @override
+  String toString() {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .stringifyValue(
+          this
+              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .equalsValue(
+          this
+              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+          other,
+        );
+  }
+
+  @override
+  int get hashCode {
+    return RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized()
+        .hashValue(
+          this
+              as RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+        );
+  }
+}
+
+extension RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringValueCopy<
+  $R,
+  $Out
+>
+    on
+        ObjectCopyWith<
+          $R,
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R,
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+    $Out
+  >
+  get $asRealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString =>
+      $base.as(
+        (v, t, t2) =>
+            _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+              $R,
+              $Out
+            >(v, t, t2),
+      );
+}
+
+abstract class RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+  $R,
+  $In extends RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+  $Out
+>
+    implements
+        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<
+          $R,
+          $In,
+          $Out
+        > {
+  @override
+  $R call({String? value});
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    $In,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
+  $R,
+  $Out
+>
+    extends
+        ClassCopyWithBase<
+          $R,
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+          $Out
+        >
+    implements
+        RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+          $R,
+          RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+          $Out
+        > {
+  _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString
+  >
+  $mapper =
+      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringMapper.ensureInitialized();
+  @override
+  $R call({String? value}) =>
+      $apply(FieldCopyWithData({if (value != null) #value: value}));
+  @override
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString $make(
+    CopyWithData data,
+  ) => RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString(
+    value: data.get(#value, or: $value.value),
+  );
+
+  @override
+  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWith<
+    $R2,
+    RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantStringCopyWithImpl<
         $R2,
         $Out2
       >($value, $cast, t);

@@ -20,7 +20,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStores with CreateAssis
   final List<String>? fileIds;
   @MappableField(key: 'chunking_strategy')
   final CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion? chunkingStrategy;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateAssistantRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 

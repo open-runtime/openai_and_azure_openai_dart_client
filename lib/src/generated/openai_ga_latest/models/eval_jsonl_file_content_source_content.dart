@@ -14,7 +14,7 @@ class EvalJsonlFileContentSourceContent with EvalJsonlFileContentSourceContentMa
   });
 
   final dynamic item;
-  final dynamic sample;
+  final dynamic? sample;
 
   static EvalJsonlFileContentSourceContent fromJson(Map<String, dynamic> json) => EvalJsonlFileContentSourceContentMapper.fromJson(json);
 

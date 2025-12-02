@@ -42,7 +42,7 @@ class CompletionsCreateRequest with CompletionsCreateRequestMappable {
   final num frequencyPenalty;
   final List<String>? prompt;
   @MappableField(key: 'logit_bias')
-  final dynamic logitBias;
+  final dynamic? logitBias;
   final String? user;
   final String? suffix;
   final List<String>? stop;

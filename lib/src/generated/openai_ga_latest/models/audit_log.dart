@@ -161,11 +161,11 @@ class AuditLog with AuditLogMappable {
   @MappableField(key: 'AuditLogIpAllowlistConfigDeactivated')
   final AuditLogIpAllowlistConfigDeactivated? auditLogIpAllowlistConfigDeactivated;
   @MappableField(key: 'login.succeeded')
-  final dynamic loginSucceeded;
+  final dynamic? loginSucceeded;
   @MappableField(key: 'AuditLogLoginFailed')
   final AuditLogLoginFailed? auditLogLoginFailed;
   @MappableField(key: 'logout.succeeded')
-  final dynamic logoutSucceeded;
+  final dynamic? logoutSucceeded;
   @MappableField(key: 'AuditLogLogoutFailed')
   final AuditLogLogoutFailed? auditLogLogoutFailed;
   @MappableField(key: 'AuditLogOrganizationUpdated')

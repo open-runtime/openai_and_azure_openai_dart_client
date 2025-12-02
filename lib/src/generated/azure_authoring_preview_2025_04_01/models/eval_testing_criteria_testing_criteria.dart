@@ -50,7 +50,7 @@ class EvalTestingCriteriaTestingCriteria with EvalTestingCriteriaTestingCriteria
   final String? name;
   final List<num>? range;
   @MappableField(key: 'sampling_params')
-  final dynamic samplingParams;
+  final dynamic? samplingParams;
 
   static EvalTestingCriteriaTestingCriteria fromJson(Map<String, dynamic> json) => EvalTestingCriteriaTestingCriteriaMapper.fromJson(json);
 

@@ -7,7 +7,6 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'assistants_api_response_format_option.dart';
 import 'assistants_api_tool_choice_option.dart';
 import 'create_message_request.dart';
-import 'create_run_request_model_model_union.dart';
 import 'create_run_request_tools_tools_union.dart';
 import 'metadata.dart';
 import 'parallel_tool_calls.dart';
@@ -43,7 +42,7 @@ class CreateRunRequest with CreateRunRequestMappable {
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
-  final CreateRunRequestModelModelUnion? model;
+  final String? model;
   @MappableField(key: 'reasoning_effort')
   final ReasoningEffort? reasoningEffort;
   final String? instructions;

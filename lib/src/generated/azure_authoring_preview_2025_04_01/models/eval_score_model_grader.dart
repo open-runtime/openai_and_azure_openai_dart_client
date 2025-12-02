@@ -30,7 +30,7 @@ class EvalScoreModelGrader with EvalScoreModelGraderMappable {
   final num? passThreshold;
   final List<num>? range;
   @MappableField(key: 'sampling_params')
-  final dynamic samplingParams;
+  final dynamic? samplingParams;
 
   static EvalScoreModelGrader fromJson(Map<String, dynamic> json) => EvalScoreModelGraderMapper.fromJson(json);
 

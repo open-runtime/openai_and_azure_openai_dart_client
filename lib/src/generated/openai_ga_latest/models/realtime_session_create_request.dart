@@ -42,7 +42,7 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   @MappableField(key: 'RealtimeSessionCreateRequestClientSecret')
   final RealtimeSessionCreateRequestClientSecret realtimeSessionCreateRequestClientSecret;
   final num speed;
-  final dynamic modalities;
+  final dynamic? modalities;
   final String? instructions;
   final VoiceIdsShared? voice;
   @MappableField(key: 'input_audio_format')

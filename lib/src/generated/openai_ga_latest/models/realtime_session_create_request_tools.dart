@@ -20,7 +20,7 @@ class RealtimeSessionCreateRequestTools with RealtimeSessionCreateRequestToolsMa
   final RealtimeSessionCreateRequestToolsTypeType? type;
   final String? name;
   final String? description;
-  final dynamic parameters;
+  final dynamic? parameters;
 
   static RealtimeSessionCreateRequestTools fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestToolsMapper.fromJson(json);
 

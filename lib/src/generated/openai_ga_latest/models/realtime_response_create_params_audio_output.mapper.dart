@@ -27,7 +27,7 @@ class RealtimeResponseCreateParamsAudioOutputMapper
 
   static String? _$voice(RealtimeResponseCreateParamsAudioOutput v) => v.voice;
   static const Field<RealtimeResponseCreateParamsAudioOutput, String> _f$voice =
-      Field('voice', _$voice, opt: true, def: VoiceIdsShared.alloy);
+      Field('voice', _$voice, opt: true, def: 'alloy');
   static RealtimeAudioFormats? _$format(
     RealtimeResponseCreateParamsAudioOutput v,
   ) => v.format;

@@ -21,7 +21,7 @@ class CreateMessageRequest with CreateMessageRequestMappable {
   final CreateMessageRequestRoleRole role;
   final String content;
   final List<CreateMessageRequestAttachments>? attachments;
-  final dynamic metadata;
+  final dynamic? metadata;
 
   static CreateMessageRequest fromJson(Map<String, dynamic> json) => CreateMessageRequestMapper.fromJson(json);
 

@@ -30,7 +30,7 @@ class RealtimeResponseAudioOutputMapper
     'voice',
     _$voice,
     opt: true,
-    def: VoiceIdsShared.alloy,
+    def: 'alloy',
   );
   static RealtimeAudioFormats? _$format(RealtimeResponseAudioOutput v) =>
       v.format;

@@ -20,7 +20,7 @@ class RealtimeSessionTools with RealtimeSessionToolsMappable {
   final RealtimeSessionToolsTypeType? type;
   final String? name;
   final String? description;
-  final dynamic parameters;
+  final dynamic? parameters;
 
   static RealtimeSessionTools fromJson(Map<String, dynamic> json) => RealtimeSessionToolsMapper.fromJson(json);
 

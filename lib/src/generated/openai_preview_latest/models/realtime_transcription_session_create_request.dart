@@ -27,7 +27,7 @@ class RealtimeTranscriptionSessionCreateRequest with RealtimeTranscriptionSessio
   final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_format')
   final RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat inputAudioFormat;
-  final dynamic modalities;
+  final dynamic? modalities;
   @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestInputAudioTranscription')
   final RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? realtimeTranscriptionSessionCreateRequestInputAudioTranscription;
   @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestTurnDetection')

@@ -17,7 +17,7 @@ class CreateEvalStoredCompletionsDataSourceConfig with CreateEvalStoredCompletio
     this.type = CreateEvalStoredCompletionsDataSourceConfigTypeType.storedCompletions,
   });
 
-  final dynamic metadata;
+  final dynamic? metadata;
   final CreateEvalStoredCompletionsDataSourceConfigTypeType type;
 
   static CreateEvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalStoredCompletionsDataSourceConfigMapper.fromJson(json);

@@ -6,7 +6,6 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_api_response_format_option.dart';
 import 'metadata.dart';
-import 'modify_assistant_request_model_model_union.dart';
 import 'modify_assistant_request_tool_resources.dart';
 import 'modify_assistant_request_tools_tools_union.dart';
 import 'reasoning_effort.dart';
@@ -33,7 +32,7 @@ class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
-  final ModifyAssistantRequestModelModelUnion? model;
+  final String? model;
   @MappableField(key: 'reasoning_effort')
   final ReasoningEffort? reasoningEffort;
   final String? name;

@@ -12,7 +12,7 @@ part 'realtime_response_create_params_audio_output.mapper.dart';
 @MappableClass()
 class RealtimeResponseCreateParamsAudioOutput with RealtimeResponseCreateParamsAudioOutputMappable {
   const RealtimeResponseCreateParamsAudioOutput({
-    this.voice = VoiceIdsShared.alloy,
+    this.voice = 'alloy',
     this.format,
   });
 

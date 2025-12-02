@@ -28,7 +28,7 @@ class RealtimeTranscriptionSessionCreateResponse with RealtimeTranscriptionSessi
 
   @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseClientSecret')
   final RealtimeTranscriptionSessionCreateResponseClientSecret realtimeTranscriptionSessionCreateResponseClientSecret;
-  final dynamic modalities;
+  final dynamic? modalities;
   @MappableField(key: 'input_audio_format')
   final String? inputAudioFormat;
   @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseInputAudioTranscription')

@@ -17,7 +17,6 @@ class CreateRunRequestWithoutStreamMapper
       MapperContainer.globals.use(
         _instance = CreateRunRequestWithoutStreamMapper._(),
       );
-      CreateRunRequestWithoutStreamModelModelUnionMapper.ensureInitialized();
       CreateMessageRequestMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -49,14 +48,12 @@ class CreateRunRequestWithoutStreamMapper
     opt: true,
     def: 1,
   );
-  static CreateRunRequestWithoutStreamModelModelUnion? _$model(
-    CreateRunRequestWithoutStream v,
-  ) => v.model;
-  static const Field<
-    CreateRunRequestWithoutStream,
-    CreateRunRequestWithoutStreamModelModelUnion
-  >
-  _f$model = Field('model', _$model, opt: true);
+  static String? _$model(CreateRunRequestWithoutStream v) => v.model;
+  static const Field<CreateRunRequestWithoutStream, String> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static String? _$reasoningEffort(CreateRunRequestWithoutStream v) =>
       v.reasoningEffort;
   static const Field<CreateRunRequestWithoutStream, String> _f$reasoningEffort =
@@ -275,12 +272,6 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateRunRequestWithoutStreamModelModelUnionCopyWith<
-    $R,
-    CreateRunRequestWithoutStreamModelModelUnion,
-    CreateRunRequestWithoutStreamModelModelUnion
-  >?
-  get model;
   ListCopyWith<
     $R,
     CreateMessageRequest,
@@ -312,7 +303,7 @@ abstract class CreateRunRequestWithoutStreamCopyWith<
     String? assistantId,
     num? temperature,
     num? topP,
-    CreateRunRequestWithoutStreamModelModelUnion? model,
+    String? model,
     String? reasoningEffort,
     String? instructions,
     String? additionalInstructions,
@@ -348,13 +339,6 @@ class _CreateRunRequestWithoutStreamCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateRunRequestWithoutStream> $mapper =
       CreateRunRequestWithoutStreamMapper.ensureInitialized();
-  @override
-  CreateRunRequestWithoutStreamModelModelUnionCopyWith<
-    $R,
-    CreateRunRequestWithoutStreamModelModelUnion,
-    CreateRunRequestWithoutStreamModelModelUnion
-  >?
-  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ListCopyWith<
     $R,

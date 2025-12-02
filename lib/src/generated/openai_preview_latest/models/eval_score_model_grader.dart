@@ -28,7 +28,7 @@ class EvalScoreModelGrader with EvalScoreModelGraderMappable {
   final String model;
   final List<EvalItem> input;
   @MappableField(key: 'sampling_params')
-  final dynamic samplingParams;
+  final dynamic? samplingParams;
   @MappableField(key: 'pass_threshold')
   final num? passThreshold;
   final List<num>? range;
