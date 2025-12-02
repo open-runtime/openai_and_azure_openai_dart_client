@@ -24,8 +24,8 @@ import '../generated/azure_inference_preview_2024_09_01/models/create_chat_compl
 import '../generated/azure_inference_preview_2025_03_01/models/create_chat_completion_request.dart'
     as azure_preview_202503;
 import '../generated/openai_ga_latest/models/chat_completion_request_message.dart' as openai_ga_msg;
-import '../generated/openai_ga_latest/models/chat_completion_request_message_role_role2.dart' as openai_ga_role_system;
-import '../generated/openai_ga_latest/models/chat_completion_request_message_role_role3.dart' as openai_ga_role_user;
+import '../generated/openai_ga_latest/models/chat_completion_request_message_role2.dart' as openai_ga_role_system;
+import '../generated/openai_ga_latest/models/chat_completion_request_message_role3.dart' as openai_ga_role_user;
 import '../generated/openai_ga_latest/models/create_chat_completion_request.dart' as openai_ga;
 import '../generated/openai_ga_latest/models/model_ids_shared.dart' as openai_ga_model;
 import '../generated/openai_preview_latest/models/create_chat_completion_request.dart' as openai_preview;
@@ -47,7 +47,7 @@ class UnifiedChatCompletionRequestMapper {
       messages.add(
         openai_ga_msg.ChatCompletionRequestMessageSystem(
           content: instructions,
-          role: openai_ga_role_system.ChatCompletionRequestMessageRoleRole2.system,
+          role: openai_ga_role_system.ChatCompletionRequestMessageRole2.system,
           name: null,
         ),
       );
@@ -57,7 +57,7 @@ class UnifiedChatCompletionRequestMapper {
     messages.add(
       openai_ga_msg.ChatCompletionRequestMessageUser(
         content: query,
-        role: openai_ga_role_user.ChatCompletionRequestMessageRoleRole3.user,
+        role: openai_ga_role_user.ChatCompletionRequestMessageRole3.user,
         name: null,
       ),
     );
