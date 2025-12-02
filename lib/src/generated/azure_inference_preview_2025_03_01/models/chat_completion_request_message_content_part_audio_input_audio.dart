@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_request_message_content_part_audio_input_audio_format_format.dart';
+import 'chat_completion_request_message_content_part_audio_input_audio_format.dart';
 
 part 'chat_completion_request_message_content_part_audio_input_audio.mapper.dart';
 
@@ -16,7 +16,7 @@ class ChatCompletionRequestMessageContentPartAudioInputAudio with ChatCompletion
   });
 
   final String data;
-  final ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormat format;
+  final ChatCompletionRequestMessageContentPartAudioInputAudioFormat format;
 
   static ChatCompletionRequestMessageContentPartAudioInputAudio fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartAudioInputAudioMapper.fromJson(json);
 

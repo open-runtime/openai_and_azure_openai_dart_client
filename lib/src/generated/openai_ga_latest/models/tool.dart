@@ -5,63 +5,63 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_tool_param.dart';
-import 'apply_patch_tool_param_type_type.dart';
+import 'apply_patch_tool_param_type.dart';
 import 'code_interpreter_tool.dart';
 import 'code_interpreter_tool_container_union.dart';
-import 'code_interpreter_tool_type_type.dart';
+import 'code_interpreter_tool_type.dart';
 import 'computer_environment.dart';
 import 'computer_use_preview_tool.dart';
-import 'computer_use_preview_tool_type_type.dart';
+import 'computer_use_preview_tool_type.dart';
 import 'custom_tool_param.dart';
 import 'custom_tool_param_format_union.dart';
-import 'custom_tool_param_type_type.dart';
+import 'custom_tool_param_type.dart';
 import 'file_search_tool.dart';
-import 'file_search_tool_type_type.dart';
+import 'file_search_tool_type.dart';
 import 'filters.dart';
 import 'function_shell_tool_param.dart';
-import 'function_shell_tool_param_type_type.dart';
+import 'function_shell_tool_param_type.dart';
 import 'function_tool.dart';
-import 'function_tool_type_type.dart';
+import 'function_tool_type.dart';
 import 'image_gen_tool.dart';
-import 'image_gen_tool_background_background.dart';
+import 'image_gen_tool_background.dart';
 import 'image_gen_tool_input_image_mask.dart';
-import 'image_gen_tool_model_model.dart';
-import 'image_gen_tool_moderation_moderation.dart';
+import 'image_gen_tool_model.dart';
+import 'image_gen_tool_moderation.dart';
 import 'image_gen_tool_output_format_output_format.dart';
-import 'image_gen_tool_quality_quality.dart';
-import 'image_gen_tool_size_size.dart';
-import 'image_gen_tool_type_type.dart';
+import 'image_gen_tool_quality.dart';
+import 'image_gen_tool_size.dart';
+import 'image_gen_tool_type.dart';
 import 'input_fidelity.dart';
 import 'local_shell_tool_param.dart';
-import 'local_shell_tool_param_type_type.dart';
+import 'local_shell_tool_param_type.dart';
 import 'mcp_tool.dart';
 import 'mcp_tool_allowed_tools_union.dart';
 import 'mcp_tool_connector_id_connector_id.dart';
 import 'mcp_tool_require_approval_union.dart';
-import 'mcp_tool_type_type.dart';
+import 'mcp_tool_type.dart';
 import 'ranking_options.dart';
 import 'tool_allowed_tools_union.dart';
-import 'tool_background_background.dart';
+import 'tool_background.dart';
 import 'tool_connector_id_connector_id.dart';
 import 'tool_container_union.dart';
 import 'tool_format_union.dart';
 import 'tool_input_image_mask.dart';
-import 'tool_model_model.dart';
-import 'tool_moderation_moderation.dart';
+import 'tool_model.dart';
+import 'tool_moderation.dart';
 import 'tool_output_format_output_format.dart';
-import 'tool_quality_quality.dart';
+import 'tool_quality.dart';
 import 'tool_require_approval_union.dart';
-import 'tool_size_size.dart';
-import 'tool_type_type.dart';
-import 'tool_type_type10.dart';
-import 'tool_type_type2.dart';
-import 'tool_type_type3.dart';
-import 'tool_type_type4.dart';
-import 'tool_type_type5.dart';
-import 'tool_type_type6.dart';
-import 'tool_type_type7.dart';
-import 'tool_type_type8.dart';
-import 'tool_type_type9.dart';
+import 'tool_size.dart';
+import 'tool_type.dart';
+import 'tool_type10.dart';
+import 'tool_type2.dart';
+import 'tool_type3.dart';
+import 'tool_type4.dart';
+import 'tool_type5.dart';
+import 'tool_type6.dart';
+import 'tool_type7.dart';
+import 'tool_type8.dart';
+import 'tool_type9.dart';
 
 part 'tool.mapper.dart';
 
@@ -125,7 +125,7 @@ extension ToolUnionDeserializer on Tool {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class ToolFunction extends Tool with ToolFunctionMappable {
-  final ToolTypeType type;
+  final ToolType type;
   final String name;
   final String? description;
   final Map<String, dynamic>? parameters;
@@ -142,7 +142,7 @@ class ToolFunction extends Tool with ToolFunctionMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class ToolFileSearch extends Tool with ToolFileSearchMappable {
-  final ToolTypeType2 type;
+  final ToolType2 type;
   @MappableField(key: 'vector_store_ids')
   final List<String> vectorStoreIds;
   @MappableField(key: 'max_num_results')
@@ -162,7 +162,7 @@ class ToolFileSearch extends Tool with ToolFileSearchMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_use_preview')
 class ToolComputerUsePreview extends Tool with ToolComputerUsePreviewMappable {
-  final ToolTypeType3 type;
+  final ToolType3 type;
   final ComputerEnvironment environment;
   @MappableField(key: 'display_width')
   final int displayWidth;
@@ -179,7 +179,7 @@ class ToolComputerUsePreview extends Tool with ToolComputerUsePreviewMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
 class ToolMcp extends Tool with ToolMcpMappable {
-  final ToolTypeType4 type;
+  final ToolType4 type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   @MappableField(key: 'server_url')
@@ -210,7 +210,7 @@ class ToolMcp extends Tool with ToolMcpMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class ToolCodeInterpreter extends Tool with ToolCodeInterpreterMappable {
-  final ToolTypeType5 type;
+  final ToolType5 type;
   final ToolContainerUnion container;
 
   const ToolCodeInterpreter({
@@ -221,16 +221,16 @@ class ToolCodeInterpreter extends Tool with ToolCodeInterpreterMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation')
 class ToolImageGeneration extends Tool with ToolImageGenerationMappable {
-  final ToolTypeType6 type;
-  final ToolModelModel model;
-  final ToolQualityQuality quality;
-  final ToolSizeSize size;
+  final ToolType6 type;
+  final ToolModel model;
+  final ToolQuality quality;
+  final ToolSize size;
   @MappableField(key: 'output_format')
   final ToolOutputFormatOutputFormat outputFormat;
   @MappableField(key: 'output_compression')
   final int outputCompression;
-  final ToolModerationModeration moderation;
-  final ToolBackgroundBackground background;
+  final ToolModeration moderation;
+  final ToolBackground background;
   @MappableField(key: 'input_fidelity')
   final InputFidelity? inputFidelity;
   @MappableField(key: 'input_image_mask')
@@ -255,7 +255,7 @@ class ToolImageGeneration extends Tool with ToolImageGenerationMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell')
 class ToolLocalShell extends Tool with ToolLocalShellMappable {
-  final ToolTypeType7 type;
+  final ToolType7 type;
 
   const ToolLocalShell({
     required this.type,
@@ -264,7 +264,7 @@ class ToolLocalShell extends Tool with ToolLocalShellMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell')
 class ToolShell extends Tool with ToolShellMappable {
-  final ToolTypeType8 type;
+  final ToolType8 type;
 
   const ToolShell({
     required this.type,
@@ -273,7 +273,7 @@ class ToolShell extends Tool with ToolShellMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class ToolCustom extends Tool with ToolCustomMappable {
-  final ToolTypeType9 type;
+  final ToolType9 type;
   final String name;
   final String? description;
   final ToolFormatUnion format;
@@ -288,7 +288,7 @@ class ToolCustom extends Tool with ToolCustomMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch')
 class ToolApplyPatch extends Tool with ToolApplyPatchMappable {
-  final ToolTypeType10 type;
+  final ToolType10 type;
 
   const ToolApplyPatch({
     required this.type,

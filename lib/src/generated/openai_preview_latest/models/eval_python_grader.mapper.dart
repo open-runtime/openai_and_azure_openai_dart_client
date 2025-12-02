@@ -14,7 +14,7 @@ class EvalPythonGraderMapper extends ClassMapperBase<EvalPythonGrader> {
   static EvalPythonGraderMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalPythonGraderMapper._());
-      EvalPythonGraderTypeTypeMapper.ensureInitialized();
+      EvalPythonGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class EvalPythonGraderMapper extends ClassMapperBase<EvalPythonGrader> {
   @override
   final String id = 'EvalPythonGrader';
 
-  static EvalPythonGraderTypeType _$type(EvalPythonGrader v) => v.type;
-  static const Field<EvalPythonGrader, EvalPythonGraderTypeType> _f$type =
-      Field('type', _$type);
+  static EvalPythonGraderType _$type(EvalPythonGrader v) => v.type;
+  static const Field<EvalPythonGrader, EvalPythonGraderType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$name(EvalPythonGrader v) => v.name;
   static const Field<EvalPythonGrader, String> _f$name = Field('name', _$name);
   static String _$source(EvalPythonGrader v) => v.source;
@@ -133,7 +135,7 @@ extension EvalPythonGraderValueCopy<$R, $Out>
 abstract class EvalPythonGraderCopyWith<$R, $In extends EvalPythonGrader, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    EvalPythonGraderTypeType? type,
+    EvalPythonGraderType? type,
     String? name,
     String? source,
     num? passThreshold,
@@ -154,7 +156,7 @@ class _EvalPythonGraderCopyWithImpl<$R, $Out>
       EvalPythonGraderMapper.ensureInitialized();
   @override
   $R call({
-    EvalPythonGraderTypeType? type,
+    EvalPythonGraderType? type,
     String? name,
     String? source,
     Object? passThreshold = $none,

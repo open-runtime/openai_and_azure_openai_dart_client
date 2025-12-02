@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_custom_type_type.dart';
+import 'tool_choice_custom_type.dart';
 import 'tool_choice_param.dart';
 
 part 'tool_choice_custom.mapper.dart';
@@ -18,7 +18,7 @@ class ToolChoiceCustom with ToolChoiceCustomMappable {
     required this.name,
   });
 
-  final ToolChoiceCustomTypeType type;
+  final ToolChoiceCustomType type;
   final String name;
 
   static ToolChoiceCustom fromJson(Map<String, dynamic> json) => ToolChoiceCustomMapper.fromJson(json);

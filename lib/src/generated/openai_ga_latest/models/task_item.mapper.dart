@@ -16,7 +16,7 @@ class TaskItemMapper extends ClassMapperBase<TaskItem> {
       MapperContainer.globals.use(_instance = TaskItemMapper._());
       TaskTypeMapper.ensureInitialized();
       TaskItemObjectObjectEnumMapper.ensureInitialized();
-      TaskItemTypeTypeMapper.ensureInitialized();
+      TaskItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -56,12 +56,12 @@ class TaskItemMapper extends ClassMapperBase<TaskItem> {
     opt: true,
     def: TaskItemObjectObjectEnum.undefined0,
   );
-  static TaskItemTypeType _$type(TaskItem v) => v.type;
-  static const Field<TaskItem, TaskItemTypeType> _f$type = Field(
+  static TaskItemType _$type(TaskItem v) => v.type;
+  static const Field<TaskItem, TaskItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: TaskItemTypeType.undefined0,
+    def: TaskItemType.undefined0,
   );
 
   @override
@@ -158,7 +158,7 @@ abstract class TaskItemCopyWith<$R, $In extends TaskItem, $Out>
     String? heading,
     String? summary,
     TaskItemObjectObjectEnum? objectEnum,
-    TaskItemTypeType? type,
+    TaskItemType? type,
   });
   TaskItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -180,7 +180,7 @@ class _TaskItemCopyWithImpl<$R, $Out>
     Object? heading = $none,
     Object? summary = $none,
     TaskItemObjectObjectEnum? objectEnum,
-    TaskItemTypeType? type,
+    TaskItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

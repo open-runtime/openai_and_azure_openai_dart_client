@@ -808,7 +808,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
             RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventTypeMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
       RealtimeServerEventUsageUnionMapper.ensureInitialized();
     }
@@ -827,12 +827,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType _$type(
+  static RealtimeServerEventType _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
-    RealtimeServerEventTypeType
+    RealtimeServerEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -1049,7 +1049,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType? type,
+    RealtimeServerEventType? type,
     String? itemId,
     int? contentIndex,
     String? transcript,
@@ -1115,7 +1115,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionCompletedCopyWi
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType? type,
+    RealtimeServerEventType? type,
     String? itemId,
     int? contentIndex,
     String? transcript,
@@ -1512,7 +1512,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
             RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType2Mapper.ensureInitialized();
+      RealtimeServerEventType2Mapper.ensureInitialized();
       RealtimeServerEventErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -1530,12 +1530,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType2 _$type(
+  static RealtimeServerEventType2 _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
-    RealtimeServerEventTypeType2
+    RealtimeServerEventType2
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -1730,7 +1730,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionFailedC
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType2? type,
+    RealtimeServerEventType2? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventError? realtimeServerEventError,
@@ -1782,7 +1782,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionFailedCopyWithI
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType2? type,
+    RealtimeServerEventType2? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventError? realtimeServerEventError,

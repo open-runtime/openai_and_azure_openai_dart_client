@@ -7,21 +7,21 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'message_content_delta_image_file.dart';
 import 'message_content_delta_image_url.dart';
 import 'message_content_delta_text.dart';
-import 'message_content_delta_type_type.dart';
-import 'message_content_delta_type_type2.dart';
-import 'message_content_delta_type_type3.dart';
-import 'message_content_delta_type_type4.dart';
+import 'message_content_delta_type.dart';
+import 'message_content_delta_type2.dart';
+import 'message_content_delta_type3.dart';
+import 'message_content_delta_type4.dart';
 import 'message_delta_content_image_file_object.dart';
 import 'message_delta_content_image_file_object_image_file.dart';
-import 'message_delta_content_image_file_object_type_type.dart';
+import 'message_delta_content_image_file_object_type.dart';
 import 'message_delta_content_image_url_object.dart';
 import 'message_delta_content_image_url_object_image_url.dart';
-import 'message_delta_content_image_url_object_type_type.dart';
+import 'message_delta_content_image_url_object_type.dart';
 import 'message_delta_content_refusal_object.dart';
-import 'message_delta_content_refusal_object_type_type.dart';
+import 'message_delta_content_refusal_object_type.dart';
 import 'message_delta_content_text_object.dart';
 import 'message_delta_content_text_object_text.dart';
-import 'message_delta_content_text_object_type_type.dart';
+import 'message_delta_content_text_object_type.dart';
 
 part 'message_content_delta.mapper.dart';
 
@@ -67,7 +67,7 @@ extension MessageContentDeltaUnionDeserializer on MessageContentDelta {
 class MessageContentDeltaImageFile extends MessageContentDelta with MessageContentDeltaImageFileMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageContentDeltaTypeType type;
+  final MessageContentDeltaType type;
   @MappableField(key: 'image_file')
   final MessageContentDeltaImageFile? messageContentDeltaImageFile;
 
@@ -82,7 +82,7 @@ class MessageContentDeltaImageFile extends MessageContentDelta with MessageConte
 class MessageContentDeltaText extends MessageContentDelta with MessageContentDeltaTextMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageContentDeltaTypeType2 type;
+  final MessageContentDeltaType2 type;
   @MappableField(key: 'text')
   final MessageContentDeltaText? messageContentDeltaText;
 
@@ -97,7 +97,7 @@ class MessageContentDeltaText extends MessageContentDelta with MessageContentDel
 class MessageContentDeltaRefusal extends MessageContentDelta with MessageContentDeltaRefusalMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageContentDeltaTypeType3 type;
+  final MessageContentDeltaType3 type;
   final String? refusal;
 
   const MessageContentDeltaRefusal({
@@ -111,7 +111,7 @@ class MessageContentDeltaRefusal extends MessageContentDelta with MessageContent
 class MessageContentDeltaImageUrl extends MessageContentDelta with MessageContentDeltaImageUrlMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageContentDeltaTypeType4 type;
+  final MessageContentDeltaType4 type;
   @MappableField(key: 'image_url')
   final MessageContentDeltaImageUrl? messageContentDeltaImageUrl;
 

@@ -90,7 +90,7 @@ class ConversationItemActionUnionSearchMapper
       ConversationItemActionUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      WebSearchActionSearchTypeTypeMapper.ensureInitialized();
+      WebSearchActionSearchTypeMapper.ensureInitialized();
       WebSearchActionSearchSourcesMapper.ensureInitialized();
     }
     return _instance!;
@@ -99,12 +99,12 @@ class ConversationItemActionUnionSearchMapper
   @override
   final String id = 'ConversationItemActionUnionSearch';
 
-  static WebSearchActionSearchTypeType _$type(
+  static WebSearchActionSearchType _$type(
     ConversationItemActionUnionSearch v,
   ) => v.type;
   static const Field<
     ConversationItemActionUnionSearch,
-    WebSearchActionSearchTypeType
+    WebSearchActionSearchType
   >
   _f$type = Field('type', _$type);
   static String _$query(ConversationItemActionUnionSearch v) => v.query;
@@ -237,7 +237,7 @@ abstract class ConversationItemActionUnionSearchCopyWith<
   get sources;
   @override
   $R call({
-    WebSearchActionSearchTypeType? type,
+    WebSearchActionSearchType? type,
     String? query,
     List<WebSearchActionSearchSources>? sources,
   });
@@ -282,7 +282,7 @@ class _ConversationItemActionUnionSearchCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    WebSearchActionSearchTypeType? type,
+    WebSearchActionSearchType? type,
     String? query,
     Object? sources = $none,
   }) => $apply(
@@ -327,7 +327,7 @@ class ConversationItemActionUnionOpenPageMapper
       ConversationItemActionUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      WebSearchActionOpenPageTypeTypeMapper.ensureInitialized();
+      WebSearchActionOpenPageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -335,12 +335,12 @@ class ConversationItemActionUnionOpenPageMapper
   @override
   final String id = 'ConversationItemActionUnionOpenPage';
 
-  static WebSearchActionOpenPageTypeType _$type(
+  static WebSearchActionOpenPageType _$type(
     ConversationItemActionUnionOpenPage v,
   ) => v.type;
   static const Field<
     ConversationItemActionUnionOpenPage,
-    WebSearchActionOpenPageTypeType
+    WebSearchActionOpenPageType
   >
   _f$type = Field('type', _$type);
   static String _$url(ConversationItemActionUnionOpenPage v) => v.url;
@@ -454,7 +454,7 @@ abstract class ConversationItemActionUnionOpenPageCopyWith<
 >
     implements ConversationItemActionUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({WebSearchActionOpenPageTypeType? type, String? url});
+  $R call({WebSearchActionOpenPageType? type, String? url});
   ConversationItemActionUnionOpenPageCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -477,7 +477,7 @@ class _ConversationItemActionUnionOpenPageCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ConversationItemActionUnionOpenPage> $mapper =
       ConversationItemActionUnionOpenPageMapper.ensureInitialized();
   @override
-  $R call({WebSearchActionOpenPageTypeType? type, String? url}) => $apply(
+  $R call({WebSearchActionOpenPageType? type, String? url}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (url != null) #url: url,
@@ -517,7 +517,7 @@ class ConversationItemActionUnionFindMapper
       ConversationItemActionUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      WebSearchActionFindTypeTypeMapper.ensureInitialized();
+      WebSearchActionFindTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -525,13 +525,9 @@ class ConversationItemActionUnionFindMapper
   @override
   final String id = 'ConversationItemActionUnionFind';
 
-  static WebSearchActionFindTypeType _$type(
-    ConversationItemActionUnionFind v,
-  ) => v.type;
-  static const Field<
-    ConversationItemActionUnionFind,
-    WebSearchActionFindTypeType
-  >
+  static WebSearchActionFindType _$type(ConversationItemActionUnionFind v) =>
+      v.type;
+  static const Field<ConversationItemActionUnionFind, WebSearchActionFindType>
   _f$type = Field('type', _$type);
   static String _$url(ConversationItemActionUnionFind v) => v.url;
   static const Field<ConversationItemActionUnionFind, String> _f$url = Field(
@@ -648,7 +644,7 @@ abstract class ConversationItemActionUnionFindCopyWith<
 >
     implements ConversationItemActionUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({WebSearchActionFindTypeType? type, String? url, String? pattern});
+  $R call({WebSearchActionFindType? type, String? url, String? pattern});
   ConversationItemActionUnionFindCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -672,7 +668,7 @@ class _ConversationItemActionUnionFindCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ConversationItemActionUnionFind> $mapper =
       ConversationItemActionUnionFindMapper.ensureInitialized();
   @override
-  $R call({WebSearchActionFindTypeType? type, String? url, String? pattern}) =>
+  $R call({WebSearchActionFindType? type, String? url, String? pattern}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

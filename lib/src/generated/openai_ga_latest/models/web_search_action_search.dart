@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'web_search_action_search_sources.dart';
-import 'web_search_action_search_type_type.dart';
+import 'web_search_action_search_type.dart';
 
 part 'web_search_action_search.mapper.dart';
 
@@ -19,7 +19,7 @@ class WebSearchActionSearch with WebSearchActionSearchMappable {
     this.sources,
   });
 
-  final WebSearchActionSearchTypeType type;
+  final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 

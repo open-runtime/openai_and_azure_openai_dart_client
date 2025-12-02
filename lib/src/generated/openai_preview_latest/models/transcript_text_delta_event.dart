@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_stream_event.dart';
 import 'transcript_text_delta_event_logprobs.dart';
-import 'transcript_text_delta_event_type_type.dart';
+import 'transcript_text_delta_event_type.dart';
 
 part 'transcript_text_delta_event.mapper.dart';
 
@@ -19,7 +19,7 @@ class TranscriptTextDeltaEvent with TranscriptTextDeltaEventMappable {
     this.logprobs,
   });
 
-  final TranscriptTextDeltaEventTypeType type;
+  final TranscriptTextDeltaEventType type;
   final String delta;
   final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 

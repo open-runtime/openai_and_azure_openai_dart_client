@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_tool_type_type.dart';
+import 'code_interpreter_tool_type.dart';
 
 part 'code_interpreter_tool.mapper.dart';
 
@@ -17,7 +17,7 @@ class CodeInterpreterTool with CodeInterpreterToolMappable {
     required this.fileIds,
   });
 
-  final CodeInterpreterToolTypeType type;
+  final CodeInterpreterToolType type;
   @MappableField(key: 'file_ids')
   final List<String> fileIds;
 

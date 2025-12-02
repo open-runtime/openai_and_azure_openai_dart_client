@@ -7,12 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'annotation.dart';
 import 'log_prob.dart';
 import 'output_content.dart';
-import 'output_message_content_type_type.dart';
-import 'output_message_content_type_type2.dart';
+import 'output_message_content_type.dart';
+import 'output_message_content_type2.dart';
 import 'output_text_content.dart';
-import 'output_text_content_type_type.dart';
+import 'output_text_content_type.dart';
 import 'refusal_content.dart';
-import 'refusal_content_type_type.dart';
+import 'refusal_content_type.dart';
 
 part 'output_message_content.mapper.dart';
 
@@ -50,7 +50,7 @@ extension OutputMessageContentUnionDeserializer on OutputMessageContent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
 class OutputMessageContentOutputText extends OutputMessageContent with OutputMessageContentOutputTextMappable {
-  final OutputMessageContentTypeType type;
+  final OutputMessageContentType type;
   final String text;
   final List<Annotation> annotations;
   final List<LogProb>? logprobs;
@@ -65,7 +65,7 @@ class OutputMessageContentOutputText extends OutputMessageContent with OutputMes
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class OutputMessageContentRefusal extends OutputMessageContent with OutputMessageContentRefusalMappable {
-  final OutputMessageContentTypeType2 type;
+  final OutputMessageContentType2 type;
   final String refusal;
 
   const OutputMessageContentRefusal({

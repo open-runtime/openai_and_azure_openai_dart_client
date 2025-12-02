@@ -17,7 +17,7 @@ class TranscriptTextSegmentEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextSegmentEventMapper._(),
       );
-      TranscriptTextSegmentEventTypeTypeMapper.ensureInitialized();
+      TranscriptTextSegmentEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class TranscriptTextSegmentEventMapper
   @override
   final String id = 'TranscriptTextSegmentEvent';
 
-  static TranscriptTextSegmentEventTypeType _$type(
-    TranscriptTextSegmentEvent v,
-  ) => v.type;
-  static const Field<
-    TranscriptTextSegmentEvent,
-    TranscriptTextSegmentEventTypeType
-  >
+  static TranscriptTextSegmentEventType _$type(TranscriptTextSegmentEvent v) =>
+      v.type;
+  static const Field<TranscriptTextSegmentEvent, TranscriptTextSegmentEventType>
   _f$type = Field('type', _$type);
   static String _$id(TranscriptTextSegmentEvent v) => v.id;
   static const Field<TranscriptTextSegmentEvent, String> _f$id = Field(
@@ -159,7 +155,7 @@ abstract class TranscriptTextSegmentEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    TranscriptTextSegmentEventTypeType? type,
+    TranscriptTextSegmentEventType? type,
     String? id,
     double? start,
     double? end,
@@ -186,7 +182,7 @@ class _TranscriptTextSegmentEventCopyWithImpl<$R, $Out>
       TranscriptTextSegmentEventMapper.ensureInitialized();
   @override
   $R call({
-    TranscriptTextSegmentEventTypeType? type,
+    TranscriptTextSegmentEventType? type,
     String? id,
     double? start,
     double? end,

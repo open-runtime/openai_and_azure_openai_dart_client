@@ -23,7 +23,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMap
         _instance =
             RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
-      RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeTypeMapper.ensureInitialized();
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeMapper.ensureInitialized();
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
@@ -42,13 +42,13 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMap
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeType
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType
   _$type(
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted v,
   ) => v.type;
   static const Field<
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeType
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -256,7 +256,7 @@ abstract class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCom
   get logprobs;
   $R call({
     String? eventId,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeType?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType?
     type,
     String? itemId,
     int? contentIndex,
@@ -324,7 +324,7 @@ class _RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedCo
   @override
   $R call({
     String? eventId,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeType?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType?
     type,
     String? itemId,
     int? contentIndex,

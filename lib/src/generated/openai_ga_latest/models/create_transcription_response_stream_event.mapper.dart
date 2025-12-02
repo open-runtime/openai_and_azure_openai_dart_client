@@ -101,7 +101,7 @@ class CreateTranscriptionResponseStreamEventTranscriptTextSegmentMapper
       );
       CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateTranscriptionResponseStreamEventTypeTypeMapper.ensureInitialized();
+      CreateTranscriptionResponseStreamEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -110,12 +110,12 @@ class CreateTranscriptionResponseStreamEventTranscriptTextSegmentMapper
   final String id =
       'CreateTranscriptionResponseStreamEventTranscriptTextSegment';
 
-  static CreateTranscriptionResponseStreamEventTypeType _$type(
+  static CreateTranscriptionResponseStreamEventType _$type(
     CreateTranscriptionResponseStreamEventTranscriptTextSegment v,
   ) => v.type;
   static const Field<
     CreateTranscriptionResponseStreamEventTranscriptTextSegment,
-    CreateTranscriptionResponseStreamEventTypeType
+    CreateTranscriptionResponseStreamEventType
   >
   _f$type = Field('type', _$type);
   static String _$id(
@@ -303,7 +303,7 @@ abstract class CreateTranscriptionResponseStreamEventTranscriptTextSegmentCopyWi
     implements CreateTranscriptionResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType? type,
+    CreateTranscriptionResponseStreamEventType? type,
     String? id,
     double? start,
     double? end,
@@ -348,7 +348,7 @@ class _CreateTranscriptionResponseStreamEventTranscriptTextSegmentCopyWithImpl<
       CreateTranscriptionResponseStreamEventTranscriptTextSegmentMapper.ensureInitialized();
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType? type,
+    CreateTranscriptionResponseStreamEventType? type,
     String? id,
     double? start,
     double? end,
@@ -407,7 +407,7 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDeltaMapper
       );
       CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateTranscriptionResponseStreamEventTypeType2Mapper.ensureInitialized();
+      CreateTranscriptionResponseStreamEventType2Mapper.ensureInitialized();
       CreateTranscriptionResponseStreamEventLogprobsMapper.ensureInitialized();
     }
     return _instance!;
@@ -416,12 +416,12 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDeltaMapper
   @override
   final String id = 'CreateTranscriptionResponseStreamEventTranscriptTextDelta';
 
-  static CreateTranscriptionResponseStreamEventTypeType2 _$type(
+  static CreateTranscriptionResponseStreamEventType2 _$type(
     CreateTranscriptionResponseStreamEventTranscriptTextDelta v,
   ) => v.type;
   static const Field<
     CreateTranscriptionResponseStreamEventTranscriptTextDelta,
-    CreateTranscriptionResponseStreamEventTypeType2
+    CreateTranscriptionResponseStreamEventType2
   >
   _f$type = Field('type', _$type);
   static String _$delta(
@@ -601,7 +601,7 @@ abstract class CreateTranscriptionResponseStreamEventTranscriptTextDeltaCopyWith
   get logprobs;
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType2? type,
+    CreateTranscriptionResponseStreamEventType2? type,
     String? delta,
     List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs,
     String? segmentId,
@@ -661,7 +661,7 @@ class _CreateTranscriptionResponseStreamEventTranscriptTextDeltaCopyWithImpl<
       : null;
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType2? type,
+    CreateTranscriptionResponseStreamEventType2? type,
     String? delta,
     Object? logprobs = $none,
     Object? segmentId = $none,
@@ -714,7 +714,7 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDoneMapper
       );
       CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateTranscriptionResponseStreamEventTypeType3Mapper.ensureInitialized();
+      CreateTranscriptionResponseStreamEventType3Mapper.ensureInitialized();
       CreateTranscriptionResponseStreamEventLogprobsMapper.ensureInitialized();
       TranscriptTextUsageTokensMapper.ensureInitialized();
     }
@@ -724,12 +724,12 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDoneMapper
   @override
   final String id = 'CreateTranscriptionResponseStreamEventTranscriptTextDone';
 
-  static CreateTranscriptionResponseStreamEventTypeType3 _$type(
+  static CreateTranscriptionResponseStreamEventType3 _$type(
     CreateTranscriptionResponseStreamEventTranscriptTextDone v,
   ) => v.type;
   static const Field<
     CreateTranscriptionResponseStreamEventTranscriptTextDone,
-    CreateTranscriptionResponseStreamEventTypeType3
+    CreateTranscriptionResponseStreamEventType3
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -913,7 +913,7 @@ abstract class CreateTranscriptionResponseStreamEventTranscriptTextDoneCopyWith<
   get usage;
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType3? type,
+    CreateTranscriptionResponseStreamEventType3? type,
     String? text,
     List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs,
     TranscriptTextUsageTokens? usage,
@@ -980,7 +980,7 @@ class _CreateTranscriptionResponseStreamEventTranscriptTextDoneCopyWithImpl<
   get usage => $value.usage?.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    CreateTranscriptionResponseStreamEventTypeType3? type,
+    CreateTranscriptionResponseStreamEventType3? type,
     String? text,
     Object? logprobs = $none,
     Object? usage = $none,

@@ -14,7 +14,7 @@ class WaitMapper extends ClassMapperBase<Wait> {
   static WaitMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WaitMapper._());
-      WaitTypeTypeMapper.ensureInitialized();
+      WaitTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,12 +22,12 @@ class WaitMapper extends ClassMapperBase<Wait> {
   @override
   final String id = 'Wait';
 
-  static WaitTypeType _$type(Wait v) => v.type;
-  static const Field<Wait, WaitTypeType> _f$type = Field(
+  static WaitType _$type(Wait v) => v.type;
+  static const Field<Wait, WaitType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: WaitTypeType.wait,
+    def: WaitType.wait,
   );
 
   @override
@@ -87,7 +87,7 @@ extension WaitValueCopy<$R, $Out> on ObjectCopyWith<$R, Wait, $Out> {
 
 abstract class WaitCopyWith<$R, $In extends Wait, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({WaitTypeType? type});
+  $R call({WaitType? type});
   WaitCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -98,7 +98,7 @@ class _WaitCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Wait, $Out>
   @override
   late final ClassMapperBase<Wait> $mapper = WaitMapper.ensureInitialized();
   @override
-  $R call({WaitTypeType? type}) =>
+  $R call({WaitType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   Wait $make(CopyWithData data) => Wait(type: data.get(#type, or: $value.type));

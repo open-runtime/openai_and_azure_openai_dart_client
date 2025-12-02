@@ -17,7 +17,7 @@ class RealtimeServerEventResponseTextDeltaMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseTextDeltaMapper._(),
       );
-      RealtimeServerEventResponseTextDeltaTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseTextDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class RealtimeServerEventResponseTextDeltaMapper
   static String _$eventId(RealtimeServerEventResponseTextDelta v) => v.eventId;
   static const Field<RealtimeServerEventResponseTextDelta, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseTextDeltaTypeType _$type(
+  static RealtimeServerEventResponseTextDeltaType _$type(
     RealtimeServerEventResponseTextDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseTextDelta,
-    RealtimeServerEventResponseTextDeltaTypeType
+    RealtimeServerEventResponseTextDeltaType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseTextDelta v) =>
@@ -169,7 +169,7 @@ abstract class RealtimeServerEventResponseTextDeltaCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventResponseTextDeltaTypeType? type,
+    RealtimeServerEventResponseTextDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -200,7 +200,7 @@ class _RealtimeServerEventResponseTextDeltaCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseTextDeltaTypeType? type,
+    RealtimeServerEventResponseTextDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

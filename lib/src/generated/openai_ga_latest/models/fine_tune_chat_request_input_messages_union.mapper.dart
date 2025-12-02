@@ -94,7 +94,7 @@ class FineTuneChatRequestInputMessagesUnionSystemMapper
       );
       FineTuneChatRequestInputMessagesUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestSystemMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestSystemMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -106,12 +106,12 @@ class FineTuneChatRequestInputMessagesUnionSystemMapper
       v.content;
   static const Field<FineTuneChatRequestInputMessagesUnionSystem, String>
   _f$content = Field('content', _$content);
-  static ChatCompletionRequestSystemMessageRoleRole _$role(
+  static ChatCompletionRequestSystemMessageRole _$role(
     FineTuneChatRequestInputMessagesUnionSystem v,
   ) => v.role;
   static const Field<
     FineTuneChatRequestInputMessagesUnionSystem,
-    ChatCompletionRequestSystemMessageRoleRole
+    ChatCompletionRequestSystemMessageRole
   >
   _f$role = Field('role', _$role);
   static String? _$name(FineTuneChatRequestInputMessagesUnionSystem v) =>
@@ -240,7 +240,7 @@ abstract class FineTuneChatRequestInputMessagesUnionSystemCopyWith<
   @override
   $R call({
     String? content,
-    ChatCompletionRequestSystemMessageRoleRole? role,
+    ChatCompletionRequestSystemMessageRole? role,
     String? name,
   });
   FineTuneChatRequestInputMessagesUnionSystemCopyWith<$R2, $In, $Out2>
@@ -269,7 +269,7 @@ class _FineTuneChatRequestInputMessagesUnionSystemCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? content,
-    ChatCompletionRequestSystemMessageRoleRole? role,
+    ChatCompletionRequestSystemMessageRole? role,
     Object? name = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -312,7 +312,7 @@ class FineTuneChatRequestInputMessagesUnionUserMapper
       );
       FineTuneChatRequestInputMessagesUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestUserMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestUserMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -324,12 +324,12 @@ class FineTuneChatRequestInputMessagesUnionUserMapper
       v.content;
   static const Field<FineTuneChatRequestInputMessagesUnionUser, String>
   _f$content = Field('content', _$content);
-  static ChatCompletionRequestUserMessageRoleRole _$role(
+  static ChatCompletionRequestUserMessageRole _$role(
     FineTuneChatRequestInputMessagesUnionUser v,
   ) => v.role;
   static const Field<
     FineTuneChatRequestInputMessagesUnionUser,
-    ChatCompletionRequestUserMessageRoleRole
+    ChatCompletionRequestUserMessageRole
   >
   _f$role = Field('role', _$role);
   static String? _$name(FineTuneChatRequestInputMessagesUnionUser v) => v.name;
@@ -452,7 +452,7 @@ abstract class FineTuneChatRequestInputMessagesUnionUserCopyWith<
   @override
   $R call({
     String? content,
-    ChatCompletionRequestUserMessageRoleRole? role,
+    ChatCompletionRequestUserMessageRole? role,
     String? name,
   });
   FineTuneChatRequestInputMessagesUnionUserCopyWith<$R2, $In, $Out2>
@@ -480,7 +480,7 @@ class _FineTuneChatRequestInputMessagesUnionUserCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? content,
-    ChatCompletionRequestUserMessageRoleRole? role,
+    ChatCompletionRequestUserMessageRole? role,
     Object? name = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -523,7 +523,7 @@ class FineTuneChatRequestInputMessagesUnionToolMapper
       );
       FineTuneChatRequestInputMessagesUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestToolMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestToolMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -531,12 +531,12 @@ class FineTuneChatRequestInputMessagesUnionToolMapper
   @override
   final String id = 'FineTuneChatRequestInputMessagesUnionTool';
 
-  static ChatCompletionRequestToolMessageRoleRole _$role(
+  static ChatCompletionRequestToolMessageRole _$role(
     FineTuneChatRequestInputMessagesUnionTool v,
   ) => v.role;
   static const Field<
     FineTuneChatRequestInputMessagesUnionTool,
-    ChatCompletionRequestToolMessageRoleRole
+    ChatCompletionRequestToolMessageRole
   >
   _f$role = Field('role', _$role);
   static String _$content(FineTuneChatRequestInputMessagesUnionTool v) =>
@@ -663,7 +663,7 @@ abstract class FineTuneChatRequestInputMessagesUnionToolCopyWith<
     implements FineTuneChatRequestInputMessagesUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ChatCompletionRequestToolMessageRoleRole? role,
+    ChatCompletionRequestToolMessageRole? role,
     String? content,
     String? toolCallId,
   });
@@ -691,7 +691,7 @@ class _FineTuneChatRequestInputMessagesUnionToolCopyWithImpl<$R, $Out>
   $mapper = FineTuneChatRequestInputMessagesUnionToolMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestToolMessageRoleRole? role,
+    ChatCompletionRequestToolMessageRole? role,
     String? content,
     String? toolCallId,
   }) => $apply(
@@ -736,7 +736,7 @@ class FineTuneChatRequestInputMessagesUnionFunctionMapper
       );
       FineTuneChatRequestInputMessagesUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestFunctionMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestFunctionMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -744,12 +744,12 @@ class FineTuneChatRequestInputMessagesUnionFunctionMapper
   @override
   final String id = 'FineTuneChatRequestInputMessagesUnionFunction';
 
-  static ChatCompletionRequestFunctionMessageRoleRole _$role(
+  static ChatCompletionRequestFunctionMessageRole _$role(
     FineTuneChatRequestInputMessagesUnionFunction v,
   ) => v.role;
   static const Field<
     FineTuneChatRequestInputMessagesUnionFunction,
-    ChatCompletionRequestFunctionMessageRoleRole
+    ChatCompletionRequestFunctionMessageRole
   >
   _f$role = Field('role', _$role);
   static String? _$content(FineTuneChatRequestInputMessagesUnionFunction v) =>
@@ -881,7 +881,7 @@ abstract class FineTuneChatRequestInputMessagesUnionFunctionCopyWith<
     implements FineTuneChatRequestInputMessagesUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ChatCompletionRequestFunctionMessageRoleRole? role,
+    ChatCompletionRequestFunctionMessageRole? role,
     String? content,
     String? name,
   });
@@ -914,7 +914,7 @@ class _FineTuneChatRequestInputMessagesUnionFunctionCopyWithImpl<$R, $Out>
       FineTuneChatRequestInputMessagesUnionFunctionMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestFunctionMessageRoleRole? role,
+    ChatCompletionRequestFunctionMessageRole? role,
     Object? content = $none,
     String? name,
   }) => $apply(

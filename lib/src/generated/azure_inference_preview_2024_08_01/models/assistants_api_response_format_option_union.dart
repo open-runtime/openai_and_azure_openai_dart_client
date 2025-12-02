@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistants_api_response_format_type_type.dart';
+import 'assistants_api_response_format_type.dart';
 import 'assistants_api_response_format.dart';
 
 part 'assistants_api_response_format_option_union.mapper.dart';
@@ -40,7 +40,7 @@ extension AssistantsApiResponseFormatOptionUnionDeserializer on AssistantsApiRes
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMappable {
-  final AssistantsApiResponseFormatTypeType type;
+  final AssistantsApiResponseFormatType type;
 
   const AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat({
     required this.type,

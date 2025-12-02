@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'url_annotation_source.dart';
-import 'url_annotation_type_type.dart';
+import 'url_annotation_type.dart';
 
 part 'url_annotation.mapper.dart';
 
@@ -14,11 +14,11 @@ part 'url_annotation.mapper.dart';
 class UrlAnnotation with UrlAnnotationMappable {
   const UrlAnnotation({
     required this.source,
-    this.type = UrlAnnotationTypeType.url,
+    this.type = UrlAnnotationType.url,
   });
 
   final UrlAnnotationSource source;
-  final UrlAnnotationTypeType type;
+  final UrlAnnotationType type;
 
   static UrlAnnotation fromJson(Map<String, dynamic> json) => UrlAnnotationMapper.fromJson(json);
 

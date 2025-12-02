@@ -88,7 +88,7 @@ class WebSearchApproximateLocationUnionVariant1Mapper
         _instance = WebSearchApproximateLocationUnionVariant1Mapper._(),
       );
       WebSearchApproximateLocationUnionMapper.ensureInitialized();
-      WebSearchApproximateLocationUnionVariant1TypeTypeMapper.ensureInitialized();
+      WebSearchApproximateLocationUnionVariant1TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -96,12 +96,12 @@ class WebSearchApproximateLocationUnionVariant1Mapper
   @override
   final String id = 'WebSearchApproximateLocationUnionVariant1';
 
-  static WebSearchApproximateLocationUnionVariant1TypeType _$type(
+  static WebSearchApproximateLocationUnionVariant1Type _$type(
     WebSearchApproximateLocationUnionVariant1 v,
   ) => v.type;
   static const Field<
     WebSearchApproximateLocationUnionVariant1,
-    WebSearchApproximateLocationUnionVariant1TypeType
+    WebSearchApproximateLocationUnionVariant1Type
   >
   _f$type = Field('type', _$type);
   static String? _$country(WebSearchApproximateLocationUnionVariant1 v) =>
@@ -235,7 +235,7 @@ abstract class WebSearchApproximateLocationUnionVariant1CopyWith<
     implements WebSearchApproximateLocationUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    WebSearchApproximateLocationUnionVariant1TypeType? type,
+    WebSearchApproximateLocationUnionVariant1Type? type,
     String? country,
     String? region,
     String? city,
@@ -265,7 +265,7 @@ class _WebSearchApproximateLocationUnionVariant1CopyWithImpl<$R, $Out>
   $mapper = WebSearchApproximateLocationUnionVariant1Mapper.ensureInitialized();
   @override
   $R call({
-    WebSearchApproximateLocationUnionVariant1TypeType? type,
+    WebSearchApproximateLocationUnionVariant1Type? type,
     Object? country = $none,
     Object? region = $none,
     Object? city = $none,

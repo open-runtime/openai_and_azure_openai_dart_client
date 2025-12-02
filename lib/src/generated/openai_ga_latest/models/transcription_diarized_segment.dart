@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'transcription_diarized_segment_type_type.dart';
+import 'transcription_diarized_segment_type.dart';
 
 part 'transcription_diarized_segment.mapper.dart';
 
@@ -20,7 +20,7 @@ class TranscriptionDiarizedSegment with TranscriptionDiarizedSegmentMappable {
     required this.speaker,
   });
 
-  final TranscriptionDiarizedSegmentTypeType type;
+  final TranscriptionDiarizedSegmentType type;
   final String id;
   final double start;
   final double end;

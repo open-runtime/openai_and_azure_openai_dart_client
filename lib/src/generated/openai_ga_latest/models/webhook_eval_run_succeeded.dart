@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_eval_run_succeeded_data.dart';
 import 'webhook_eval_run_succeeded_object_object_enum.dart';
-import 'webhook_eval_run_succeeded_type_type.dart';
+import 'webhook_eval_run_succeeded_type.dart';
 
 part 'webhook_eval_run_succeeded.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookEvalRunSucceeded with WebhookEvalRunSucceededMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookEvalRunSucceededData webhookEvalRunSucceededData;
-  final WebhookEvalRunSucceededTypeType type;
+  final WebhookEvalRunSucceededType type;
   @MappableField(key: 'object')
   final WebhookEvalRunSucceededObjectObjectEnum? objectEnum;
 

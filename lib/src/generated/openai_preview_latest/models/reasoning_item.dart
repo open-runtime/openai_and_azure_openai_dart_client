@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_item.dart';
-import 'reasoning_item_status_status.dart';
+import 'reasoning_item_status.dart';
 import 'reasoning_item_summary.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_type.dart';
 
 part 'reasoning_item.mapper.dart';
 
@@ -23,10 +23,10 @@ class ReasoningItem with ReasoningItemMappable {
     this.status,
   });
 
-  final ReasoningItemTypeType type;
+  final ReasoningItemType type;
   final String id;
   final List<ReasoningItemSummary> summary;
-  final ReasoningItemStatusStatus? status;
+  final ReasoningItemStatus? status;
 
   static ReasoningItem fromJson(Map<String, dynamic> json) => ReasoningItemMapper.fromJson(json);
 

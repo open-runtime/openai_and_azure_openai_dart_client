@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_tools_code.dart';
-import 'assistant_tools_code_type_type.dart';
+import 'assistant_tools_code_type.dart';
 import 'assistant_tools_file_search.dart';
-import 'assistant_tools_file_search_type_type.dart';
+import 'assistant_tools_file_search_type.dart';
 import 'assistant_tools_function.dart';
 import 'assistant_tools_function_function.dart';
-import 'assistant_tools_function_type_type.dart';
+import 'assistant_tools_function_type.dart';
 
 part 'assistant_object_tools_union.mapper.dart';
 
@@ -52,7 +52,7 @@ extension AssistantObjectToolsUnionDeserializer on AssistantObjectToolsUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class AssistantObjectToolsUnionCodeInterpreter extends AssistantObjectToolsUnion with AssistantObjectToolsUnionCodeInterpreterMappable {
-  final AssistantToolsCodeTypeType type;
+  final AssistantToolsCodeType type;
 
   const AssistantObjectToolsUnionCodeInterpreter({
     required this.type,
@@ -61,7 +61,7 @@ class AssistantObjectToolsUnionCodeInterpreter extends AssistantObjectToolsUnion
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class AssistantObjectToolsUnionFileSearch extends AssistantObjectToolsUnion with AssistantObjectToolsUnionFileSearchMappable {
-  final AssistantToolsFileSearchTypeType type;
+  final AssistantToolsFileSearchType type;
 
   const AssistantObjectToolsUnionFileSearch({
     required this.type,
@@ -70,7 +70,7 @@ class AssistantObjectToolsUnionFileSearch extends AssistantObjectToolsUnion with
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class AssistantObjectToolsUnionFunction extends AssistantObjectToolsUnion with AssistantObjectToolsUnionFunctionMappable {
-  final AssistantToolsFunctionTypeType type;
+  final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 

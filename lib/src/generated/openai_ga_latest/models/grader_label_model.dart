@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item.dart';
-import 'grader_label_model_type_type.dart';
+import 'grader_label_model_type.dart';
 
 part 'grader_label_model.mapper.dart';
 
@@ -23,7 +23,7 @@ class GraderLabelModel with GraderLabelModelMappable {
     required this.passingLabels,
   });
 
-  final GraderLabelModelTypeType type;
+  final GraderLabelModelType type;
   final String name;
   final String model;
   final List<EvalItem> input;

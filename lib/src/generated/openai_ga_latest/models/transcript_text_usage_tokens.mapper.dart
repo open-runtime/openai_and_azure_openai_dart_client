@@ -17,7 +17,7 @@ class TranscriptTextUsageTokensMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextUsageTokensMapper._(),
       );
-      TranscriptTextUsageTokensTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageTokensTypeMapper.ensureInitialized();
       TranscriptTextUsageTokensInputTokenDetailsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,9 @@ class TranscriptTextUsageTokensMapper
   @override
   final String id = 'TranscriptTextUsageTokens';
 
-  static TranscriptTextUsageTokensTypeType _$type(
-    TranscriptTextUsageTokens v,
-  ) => v.type;
-  static const Field<
-    TranscriptTextUsageTokens,
-    TranscriptTextUsageTokensTypeType
-  >
+  static TranscriptTextUsageTokensType _$type(TranscriptTextUsageTokens v) =>
+      v.type;
+  static const Field<TranscriptTextUsageTokens, TranscriptTextUsageTokensType>
   _f$type = Field('type', _$type);
   static int _$inputTokens(TranscriptTextUsageTokens v) => v.inputTokens;
   static const Field<TranscriptTextUsageTokens, int> _f$inputTokens = Field(
@@ -173,7 +169,7 @@ abstract class TranscriptTextUsageTokensCopyWith<
   >?
   get transcriptTextUsageTokensInputTokenDetails;
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     int? outputTokens,
     int? totalTokens,
@@ -206,7 +202,7 @@ class _TranscriptTextUsageTokensCopyWithImpl<$R, $Out>
       .$chain((v) => call(transcriptTextUsageTokensInputTokenDetails: v));
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     int? outputTokens,
     int? totalTokens,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'ranking_options_ranker_ranker.dart';
+import 'ranking_options_ranker.dart';
 
 part 'ranking_options.mapper.dart';
 
@@ -15,7 +15,7 @@ class RankingOptions with RankingOptionsMappable {
     this.scoreThreshold,
   });
 
-  final RankingOptionsRankerRanker? ranker;
+  final RankingOptionsRanker? ranker;
   @MappableField(key: 'score_threshold')
   final num? scoreThreshold;
 

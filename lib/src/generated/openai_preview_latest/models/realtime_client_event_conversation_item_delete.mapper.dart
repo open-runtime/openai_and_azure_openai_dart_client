@@ -17,7 +17,7 @@ class RealtimeClientEventConversationItemDeleteMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemDeleteMapper._(),
       );
-      RealtimeClientEventConversationItemDeleteTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventConversationItemDeleteTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventConversationItemDeleteMapper
   @override
   final String id = 'RealtimeClientEventConversationItemDelete';
 
-  static RealtimeClientEventConversationItemDeleteTypeType _$type(
+  static RealtimeClientEventConversationItemDeleteType _$type(
     RealtimeClientEventConversationItemDelete v,
   ) => v.type;
   static const Field<
     RealtimeClientEventConversationItemDelete,
-    RealtimeClientEventConversationItemDeleteTypeType
+    RealtimeClientEventConversationItemDeleteType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeClientEventConversationItemDelete v) =>
@@ -148,7 +148,7 @@ abstract class RealtimeClientEventConversationItemDeleteCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventConversationItemDeleteTypeType? type,
+    RealtimeClientEventConversationItemDeleteType? type,
     String? itemId,
     String? eventId,
   });
@@ -176,7 +176,7 @@ class _RealtimeClientEventConversationItemDeleteCopyWithImpl<$R, $Out>
   $mapper = RealtimeClientEventConversationItemDeleteMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventConversationItemDeleteTypeType? type,
+    RealtimeClientEventConversationItemDeleteType? type,
     String? itemId,
     Object? eventId = $none,
   }) => $apply(

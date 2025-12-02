@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'apply_patch_create_file_operation_type_type.dart';
+import 'apply_patch_create_file_operation_type.dart';
 
 part 'apply_patch_create_file_operation.mapper.dart';
 
@@ -14,12 +14,12 @@ class ApplyPatchCreateFileOperation with ApplyPatchCreateFileOperationMappable {
   const ApplyPatchCreateFileOperation({
     required this.path,
     required this.diff,
-    this.type = ApplyPatchCreateFileOperationTypeType.createFile,
+    this.type = ApplyPatchCreateFileOperationType.createFile,
   });
 
   final String path;
   final String diff;
-  final ApplyPatchCreateFileOperationTypeType type;
+  final ApplyPatchCreateFileOperationType type;
 
   static ApplyPatchCreateFileOperation fromJson(Map<String, dynamic> json) => ApplyPatchCreateFileOperationMapper.fromJson(json);
 

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_allowed_tools_mode_mode.dart';
+import 'chat_completion_allowed_tools_mode.dart';
 
 part 'chat_completion_allowed_tools.mapper.dart';
 
@@ -17,7 +17,7 @@ class ChatCompletionAllowedTools with ChatCompletionAllowedToolsMappable {
     required this.tools,
   });
 
-  final ChatCompletionAllowedToolsModeMode mode;
+  final ChatCompletionAllowedToolsMode mode;
   final List<dynamic> tools;
 
   static ChatCompletionAllowedTools fromJson(Map<String, dynamic> json) => ChatCompletionAllowedToolsMapper.fromJson(json);

@@ -17,7 +17,7 @@ class RunStepDetailsToolCallsCodeObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsCodeObjectMapper._(),
       );
-      RunStepDetailsToolCallsCodeObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsCodeObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class RunStepDetailsToolCallsCodeObjectMapper
     'id',
     _$id,
   );
-  static RunStepDetailsToolCallsCodeObjectTypeType _$type(
+  static RunStepDetailsToolCallsCodeObjectType _$type(
     RunStepDetailsToolCallsCodeObject v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallsCodeObject,
-    RunStepDetailsToolCallsCodeObjectTypeType
+    RunStepDetailsToolCallsCodeObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsToolCallsCodeObjectCodeInterpreter
@@ -162,7 +162,7 @@ abstract class RunStepDetailsToolCallsCodeObjectCopyWith<
   get runStepDetailsToolCallsCodeObjectCodeInterpreter;
   $R call({
     String? id,
-    RunStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDetailsToolCallsCodeObjectType? type,
     RunStepDetailsToolCallsCodeObjectCodeInterpreter?
     runStepDetailsToolCallsCodeObjectCodeInterpreter,
   });
@@ -201,7 +201,7 @@ class _RunStepDetailsToolCallsCodeObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDetailsToolCallsCodeObjectType? type,
     RunStepDetailsToolCallsCodeObjectCodeInterpreter?
     runStepDetailsToolCallsCodeObjectCodeInterpreter,
   }) => $apply(

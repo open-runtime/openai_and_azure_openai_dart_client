@@ -15,7 +15,7 @@ class ResponseAudioDoneEventMapper
   static ResponseAudioDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseAudioDoneEventMapper._());
-      ResponseAudioDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseAudioDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,9 +23,8 @@ class ResponseAudioDoneEventMapper
   @override
   final String id = 'ResponseAudioDoneEvent';
 
-  static ResponseAudioDoneEventTypeType _$type(ResponseAudioDoneEvent v) =>
-      v.type;
-  static const Field<ResponseAudioDoneEvent, ResponseAudioDoneEventTypeType>
+  static ResponseAudioDoneEventType _$type(ResponseAudioDoneEvent v) => v.type;
+  static const Field<ResponseAudioDoneEvent, ResponseAudioDoneEventType>
   _f$type = Field('type', _$type);
   static int _$sequenceNumber(ResponseAudioDoneEvent v) => v.sequenceNumber;
   static const Field<ResponseAudioDoneEvent, int> _f$sequenceNumber = Field(
@@ -121,7 +120,7 @@ abstract class ResponseAudioDoneEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseAudioDoneEventTypeType? type, int? sequenceNumber});
+  $R call({ResponseAudioDoneEventType? type, int? sequenceNumber});
   ResponseAudioDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -137,13 +136,12 @@ class _ResponseAudioDoneEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseAudioDoneEvent> $mapper =
       ResponseAudioDoneEventMapper.ensureInitialized();
   @override
-  $R call({ResponseAudioDoneEventTypeType? type, int? sequenceNumber}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (sequenceNumber != null) #sequenceNumber: sequenceNumber,
-        }),
-      );
+  $R call({ResponseAudioDoneEventType? type, int? sequenceNumber}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (sequenceNumber != null) #sequenceNumber: sequenceNumber,
+    }),
+  );
   @override
   ResponseAudioDoneEvent $make(CopyWithData data) => ResponseAudioDoneEvent(
     type: data.get(#type, or: $value.type),

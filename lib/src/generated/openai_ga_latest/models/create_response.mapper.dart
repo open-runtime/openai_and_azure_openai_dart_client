@@ -14,7 +14,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
   static CreateResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateResponseMapper._());
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
       ModelIdsResponsesUnionMapper.ensureInitialized();
@@ -56,15 +56,14 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     opt: true,
     def: false,
   );
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    CreateResponse v,
-  ) => v.truncation;
-  static const Field<CreateResponse, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(CreateResponse v) =>
+      v.truncation;
+  static const Field<CreateResponse, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static bool? _$parallelToolCalls(CreateResponse v) => v.parallelToolCalls;
   static const Field<CreateResponse, bool> _f$parallelToolCalls = Field(
@@ -392,7 +391,7 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     num? temperature,
     num? topP,
     bool? background,
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     bool? parallelToolCalls,
     bool? store,
     bool? stream,

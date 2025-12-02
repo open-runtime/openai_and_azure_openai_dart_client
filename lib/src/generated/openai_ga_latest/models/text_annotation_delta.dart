@@ -6,14 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_text_annotations_file_citation_object.dart';
 import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_delta_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_citation_object_type.dart';
 import 'message_delta_content_text_annotations_file_path_object.dart';
 import 'message_delta_content_text_annotations_file_path_object_file_path.dart';
-import 'message_delta_content_text_annotations_file_path_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_path_object_type.dart';
 import 'text_annotation_delta_file_citation.dart';
 import 'text_annotation_delta_file_path.dart';
-import 'text_annotation_delta_type_type.dart';
-import 'text_annotation_delta_type_type2.dart';
+import 'text_annotation_delta_type.dart';
+import 'text_annotation_delta_type2.dart';
 
 part 'text_annotation_delta.mapper.dart';
 
@@ -53,7 +53,7 @@ extension TextAnnotationDeltaUnionDeserializer on TextAnnotationDelta {
 class TextAnnotationDeltaFileCitation extends TextAnnotationDelta with TextAnnotationDeltaFileCitationMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final TextAnnotationDeltaTypeType type;
+  final TextAnnotationDeltaType type;
   final String? text;
   @MappableField(key: 'file_citation')
   final TextAnnotationDeltaFileCitation? textAnnotationDeltaFileCitation;
@@ -76,7 +76,7 @@ class TextAnnotationDeltaFileCitation extends TextAnnotationDelta with TextAnnot
 class TextAnnotationDeltaFilePath extends TextAnnotationDelta with TextAnnotationDeltaFilePathMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final TextAnnotationDeltaTypeType2 type;
+  final TextAnnotationDeltaType2 type;
   final String? text;
   @MappableField(key: 'file_path')
   final TextAnnotationDeltaFilePath? textAnnotationDeltaFilePath;

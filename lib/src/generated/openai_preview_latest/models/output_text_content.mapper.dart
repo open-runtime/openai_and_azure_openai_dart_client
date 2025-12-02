@@ -15,7 +15,7 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputTextContentMapper._());
       AnnotationMapper.ensureInitialized();
-      OutputTextContentTypeTypeMapper.ensureInitialized();
+      OutputTextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,14 +28,13 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
   static List<Annotation> _$annotations(OutputTextContent v) => v.annotations;
   static const Field<OutputTextContent, List<Annotation>> _f$annotations =
       Field('annotations', _$annotations);
-  static OutputTextContentTypeType _$type(OutputTextContent v) => v.type;
-  static const Field<OutputTextContent, OutputTextContentTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: OutputTextContentTypeType.outputText,
-      );
+  static OutputTextContentType _$type(OutputTextContent v) => v.type;
+  static const Field<OutputTextContent, OutputTextContentType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: OutputTextContentType.outputText,
+  );
 
   @override
   final MappableFields<OutputTextContent> fields = const {
@@ -132,7 +131,7 @@ abstract class OutputTextContentCopyWith<
   $R call({
     String? text,
     List<Annotation>? annotations,
-    OutputTextContentTypeType? type,
+    OutputTextContentType? type,
   });
   OutputTextContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -158,7 +157,7 @@ class _OutputTextContentCopyWithImpl<$R, $Out>
   $R call({
     String? text,
     List<Annotation>? annotations,
-    OutputTextContentTypeType? type,
+    OutputTextContentType? type,
   }) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,

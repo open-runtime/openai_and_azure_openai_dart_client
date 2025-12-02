@@ -15,13 +15,13 @@ class ComputerActionMapper extends ClassMapperBase<ComputerAction> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionMapper._());
       ComputerActionClickMapper.ensureInitialized();
+      ComputerActionTypeMapper.ensureInitialized();
       ComputerActionDoubleClickMapper.ensureInitialized();
       ComputerActionDragMapper.ensureInitialized();
       ComputerActionKeypressMapper.ensureInitialized();
       ComputerActionMoveMapper.ensureInitialized();
       ComputerActionScreenshotMapper.ensureInitialized();
       ComputerActionScrollMapper.ensureInitialized();
-      ComputerActionTypeMapper.ensureInitialized();
       ComputerActionWaitMapper.ensureInitialized();
     }
     return _instance!;
@@ -81,7 +81,7 @@ class ComputerActionClickMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionClickMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeTypeMapper.ensureInitialized();
+      ComputerActionTypeMapper.ensureInitialized();
       ClickButtonTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -90,9 +90,11 @@ class ComputerActionClickMapper
   @override
   final String id = 'ComputerActionClick';
 
-  static ComputerActionTypeType _$type(ComputerActionClick v) => v.type;
-  static const Field<ComputerActionClick, ComputerActionTypeType> _f$type =
-      Field('type', _$type);
+  static ComputerActionType _$type(ComputerActionClick v) => v.type;
+  static const Field<ComputerActionClick, ComputerActionType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static ClickButtonType _$button(ComputerActionClick v) => v.button;
   static const Field<ComputerActionClick, ClickButtonType> _f$button = Field(
     'button',
@@ -202,13 +204,10 @@ abstract class ComputerActionClickCopyWith<
   $Out
 >
     implements ComputerActionCopyWith<$R, $In, $Out> {
+  ComputerActionTypeCopyWith<$R, ComputerActionType, ComputerActionType>
+  get type;
   @override
-  $R call({
-    ComputerActionTypeType? type,
-    ClickButtonType? button,
-    int? x,
-    int? y,
-  });
+  $R call({ComputerActionType? type, ClickButtonType? button, int? x, int? y});
   ComputerActionClickCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -223,8 +222,11 @@ class _ComputerActionClickCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerActionClick> $mapper =
       ComputerActionClickMapper.ensureInitialized();
   @override
+  ComputerActionTypeCopyWith<$R, ComputerActionType, ComputerActionType>
+  get type => $value.type.copyWith.$chain((v) => call(type: v));
+  @override
   $R call({
-    ComputerActionTypeType? type,
+    ComputerActionType? type,
     ClickButtonType? button,
     int? x,
     int? y,
@@ -250,6 +252,160 @@ class _ComputerActionClickCopyWithImpl<$R, $Out>
       _ComputerActionClickCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
+class ComputerActionTypeMapper extends SubClassMapperBase<ComputerActionType> {
+  ComputerActionTypeMapper._();
+
+  static ComputerActionTypeMapper? _instance;
+  static ComputerActionTypeMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = ComputerActionTypeMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
+      ComputerActionType8Mapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'ComputerActionType';
+
+  static ComputerActionType8 _$type(ComputerActionType v) => v.type;
+  static const Field<ComputerActionType, ComputerActionType8> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static String _$text(ComputerActionType v) => v.text;
+  static const Field<ComputerActionType, String> _f$text = Field(
+    'text',
+    _$text,
+  );
+
+  @override
+  final MappableFields<ComputerActionType> fields = const {
+    #type: _f$type,
+    #text: _f$text,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'type';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
+
+  static ComputerActionType _instantiate(DecodingData data) {
+    return ComputerActionType(type: data.dec(_f$type), text: data.dec(_f$text));
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static ComputerActionType fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ComputerActionType>(map);
+  }
+
+  static ComputerActionType fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ComputerActionType>(json);
+  }
+}
+
+mixin ComputerActionTypeMappable {
+  String toJsonString() {
+    return ComputerActionTypeMapper.ensureInitialized()
+        .encodeJson<ComputerActionType>(this as ComputerActionType);
+  }
+
+  Map<String, dynamic> toJson() {
+    return ComputerActionTypeMapper.ensureInitialized()
+        .encodeMap<ComputerActionType>(this as ComputerActionType);
+  }
+
+  ComputerActionTypeCopyWith<
+    ComputerActionType,
+    ComputerActionType,
+    ComputerActionType
+  >
+  get copyWith =>
+      _ComputerActionTypeCopyWithImpl<ComputerActionType, ComputerActionType>(
+        this as ComputerActionType,
+        $identity,
+        $identity,
+      );
+  @override
+  String toString() {
+    return ComputerActionTypeMapper.ensureInitialized().stringifyValue(
+      this as ComputerActionType,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return ComputerActionTypeMapper.ensureInitialized().equalsValue(
+      this as ComputerActionType,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return ComputerActionTypeMapper.ensureInitialized().hashValue(
+      this as ComputerActionType,
+    );
+  }
+}
+
+extension ComputerActionTypeValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ComputerActionType, $Out> {
+  ComputerActionTypeCopyWith<$R, ComputerActionType, $Out>
+  get $asComputerActionType => $base.as(
+    (v, t, t2) => _ComputerActionTypeCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class ComputerActionTypeCopyWith<
+  $R,
+  $In extends ComputerActionType,
+  $Out
+>
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
+  $R call({ComputerActionType8? type, String? text});
+  ComputerActionTypeCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _ComputerActionTypeCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ComputerActionType, $Out>
+    implements ComputerActionTypeCopyWith<$R, ComputerActionType, $Out> {
+  _ComputerActionTypeCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<ComputerActionType> $mapper =
+      ComputerActionTypeMapper.ensureInitialized();
+  @override
+  $R call({ComputerActionType8? type, String? text}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (text != null) #text: text,
+    }),
+  );
+  @override
+  ComputerActionType $make(CopyWithData data) => ComputerActionType(
+    type: data.get(#type, or: $value.type),
+    text: data.get(#text, or: $value.text),
+  );
+
+  @override
+  ComputerActionTypeCopyWith<$R2, ComputerActionType, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  ) => _ComputerActionTypeCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+
 class ComputerActionDoubleClickMapper
     extends SubClassMapperBase<ComputerActionDoubleClick> {
   ComputerActionDoubleClickMapper._();
@@ -261,7 +417,7 @@ class ComputerActionDoubleClickMapper
         _instance = ComputerActionDoubleClickMapper._(),
       );
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType2Mapper.ensureInitialized();
+      ComputerActionType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -269,9 +425,9 @@ class ComputerActionDoubleClickMapper
   @override
   final String id = 'ComputerActionDoubleClick';
 
-  static ComputerActionTypeType2 _$type(ComputerActionDoubleClick v) => v.type;
-  static const Field<ComputerActionDoubleClick, ComputerActionTypeType2>
-  _f$type = Field('type', _$type);
+  static ComputerActionType2 _$type(ComputerActionDoubleClick v) => v.type;
+  static const Field<ComputerActionDoubleClick, ComputerActionType2> _f$type =
+      Field('type', _$type);
   static int _$x(ComputerActionDoubleClick v) => v.x;
   static const Field<ComputerActionDoubleClick, int> _f$x = Field('x', _$x);
   static int _$y(ComputerActionDoubleClick v) => v.y;
@@ -379,7 +535,7 @@ abstract class ComputerActionDoubleClickCopyWith<
 >
     implements ComputerActionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ComputerActionTypeType2? type, int? x, int? y});
+  $R call({ComputerActionType2? type, int? x, int? y});
   ComputerActionDoubleClickCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -395,7 +551,7 @@ class _ComputerActionDoubleClickCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerActionDoubleClick> $mapper =
       ComputerActionDoubleClickMapper.ensureInitialized();
   @override
-  $R call({ComputerActionTypeType2? type, int? x, int? y}) => $apply(
+  $R call({ComputerActionType2? type, int? x, int? y}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (x != null) #x: x,
@@ -424,7 +580,7 @@ class ComputerActionDragMapper extends SubClassMapperBase<ComputerActionDrag> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionDragMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType3Mapper.ensureInitialized();
+      ComputerActionType3Mapper.ensureInitialized();
       DragPointMapper.ensureInitialized();
     }
     return _instance!;
@@ -433,9 +589,11 @@ class ComputerActionDragMapper extends SubClassMapperBase<ComputerActionDrag> {
   @override
   final String id = 'ComputerActionDrag';
 
-  static ComputerActionTypeType3 _$type(ComputerActionDrag v) => v.type;
-  static const Field<ComputerActionDrag, ComputerActionTypeType3> _f$type =
-      Field('type', _$type);
+  static ComputerActionType3 _$type(ComputerActionDrag v) => v.type;
+  static const Field<ComputerActionDrag, ComputerActionType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static List<DragPoint> _$path(ComputerActionDrag v) => v.path;
   static const Field<ComputerActionDrag, List<DragPoint>> _f$path = Field(
     'path',
@@ -538,7 +696,7 @@ abstract class ComputerActionDragCopyWith<
   ListCopyWith<$R, DragPoint, DragPointCopyWith<$R, DragPoint, DragPoint>>
   get path;
   @override
-  $R call({ComputerActionTypeType3? type, List<DragPoint>? path});
+  $R call({ComputerActionType3? type, List<DragPoint>? path});
   ComputerActionDragCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -560,7 +718,7 @@ class _ComputerActionDragCopyWithImpl<$R, $Out>
     (v) => call(path: v),
   );
   @override
-  $R call({ComputerActionTypeType3? type, List<DragPoint>? path}) => $apply(
+  $R call({ComputerActionType3? type, List<DragPoint>? path}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (path != null) #path: path,
@@ -587,7 +745,7 @@ class ComputerActionKeypressMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionKeypressMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType4Mapper.ensureInitialized();
+      ComputerActionType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -595,8 +753,8 @@ class ComputerActionKeypressMapper
   @override
   final String id = 'ComputerActionKeypress';
 
-  static ComputerActionTypeType4 _$type(ComputerActionKeypress v) => v.type;
-  static const Field<ComputerActionKeypress, ComputerActionTypeType4> _f$type =
+  static ComputerActionType4 _$type(ComputerActionKeypress v) => v.type;
+  static const Field<ComputerActionKeypress, ComputerActionType4> _f$type =
       Field('type', _$type);
   static List<String> _$keys(ComputerActionKeypress v) => v.keys;
   static const Field<ComputerActionKeypress, List<String>> _f$keys = Field(
@@ -701,7 +859,7 @@ abstract class ComputerActionKeypressCopyWith<
     implements ComputerActionCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get keys;
   @override
-  $R call({ComputerActionTypeType4? type, List<String>? keys});
+  $R call({ComputerActionType4? type, List<String>? keys});
   ComputerActionKeypressCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -724,7 +882,7 @@ class _ComputerActionKeypressCopyWithImpl<$R, $Out>
         (v) => call(keys: v),
       );
   @override
-  $R call({ComputerActionTypeType4? type, List<String>? keys}) => $apply(
+  $R call({ComputerActionType4? type, List<String>? keys}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (keys != null) #keys: keys,
@@ -750,7 +908,7 @@ class ComputerActionMoveMapper extends SubClassMapperBase<ComputerActionMove> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionMoveMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType5Mapper.ensureInitialized();
+      ComputerActionType5Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -758,9 +916,11 @@ class ComputerActionMoveMapper extends SubClassMapperBase<ComputerActionMove> {
   @override
   final String id = 'ComputerActionMove';
 
-  static ComputerActionTypeType5 _$type(ComputerActionMove v) => v.type;
-  static const Field<ComputerActionMove, ComputerActionTypeType5> _f$type =
-      Field('type', _$type);
+  static ComputerActionType5 _$type(ComputerActionMove v) => v.type;
+  static const Field<ComputerActionMove, ComputerActionType5> _f$type = Field(
+    'type',
+    _$type,
+  );
   static int _$x(ComputerActionMove v) => v.x;
   static const Field<ComputerActionMove, int> _f$x = Field('x', _$x);
   static int _$y(ComputerActionMove v) => v.y;
@@ -865,7 +1025,7 @@ abstract class ComputerActionMoveCopyWith<
 >
     implements ComputerActionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ComputerActionTypeType5? type, int? x, int? y});
+  $R call({ComputerActionType5? type, int? x, int? y});
   ComputerActionMoveCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -880,7 +1040,7 @@ class _ComputerActionMoveCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerActionMove> $mapper =
       ComputerActionMoveMapper.ensureInitialized();
   @override
-  $R call({ComputerActionTypeType5? type, int? x, int? y}) => $apply(
+  $R call({ComputerActionType5? type, int? x, int? y}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (x != null) #x: x,
@@ -911,7 +1071,7 @@ class ComputerActionScreenshotMapper
         _instance = ComputerActionScreenshotMapper._(),
       );
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType6Mapper.ensureInitialized();
+      ComputerActionType6Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -919,9 +1079,9 @@ class ComputerActionScreenshotMapper
   @override
   final String id = 'ComputerActionScreenshot';
 
-  static ComputerActionTypeType6 _$type(ComputerActionScreenshot v) => v.type;
-  static const Field<ComputerActionScreenshot, ComputerActionTypeType6>
-  _f$type = Field('type', _$type);
+  static ComputerActionType6 _$type(ComputerActionScreenshot v) => v.type;
+  static const Field<ComputerActionScreenshot, ComputerActionType6> _f$type =
+      Field('type', _$type);
 
   @override
   final MappableFields<ComputerActionScreenshot> fields = const {
@@ -1015,7 +1175,7 @@ abstract class ComputerActionScreenshotCopyWith<
 >
     implements ComputerActionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ComputerActionTypeType6? type});
+  $R call({ComputerActionType6? type});
   ComputerActionScreenshotCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1031,7 +1191,7 @@ class _ComputerActionScreenshotCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerActionScreenshot> $mapper =
       ComputerActionScreenshotMapper.ensureInitialized();
   @override
-  $R call({ComputerActionTypeType6? type}) =>
+  $R call({ComputerActionType6? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ComputerActionScreenshot $make(CopyWithData data) =>
@@ -1052,7 +1212,7 @@ class ComputerActionScrollMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionScrollMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType7Mapper.ensureInitialized();
+      ComputerActionType7Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1060,9 +1220,11 @@ class ComputerActionScrollMapper
   @override
   final String id = 'ComputerActionScroll';
 
-  static ComputerActionTypeType7 _$type(ComputerActionScroll v) => v.type;
-  static const Field<ComputerActionScroll, ComputerActionTypeType7> _f$type =
-      Field('type', _$type);
+  static ComputerActionType7 _$type(ComputerActionScroll v) => v.type;
+  static const Field<ComputerActionScroll, ComputerActionType7> _f$type = Field(
+    'type',
+    _$type,
+  );
   static int _$x(ComputerActionScroll v) => v.x;
   static const Field<ComputerActionScroll, int> _f$x = Field('x', _$x);
   static int _$y(ComputerActionScroll v) => v.y;
@@ -1183,7 +1345,7 @@ abstract class ComputerActionScrollCopyWith<
     implements ComputerActionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ComputerActionTypeType7? type,
+    ComputerActionType7? type,
     int? x,
     int? y,
     int? scrollX,
@@ -1204,7 +1366,7 @@ class _ComputerActionScrollCopyWithImpl<$R, $Out>
       ComputerActionScrollMapper.ensureInitialized();
   @override
   $R call({
-    ComputerActionTypeType7? type,
+    ComputerActionType7? type,
     int? x,
     int? y,
     int? scrollX,
@@ -1233,158 +1395,6 @@ class _ComputerActionScrollCopyWithImpl<$R, $Out>
       _ComputerActionScrollCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ComputerActionTypeMapper extends SubClassMapperBase<ComputerActionType> {
-  ComputerActionTypeMapper._();
-
-  static ComputerActionTypeMapper? _instance;
-  static ComputerActionTypeMapper ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(_instance = ComputerActionTypeMapper._());
-      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType8Mapper.ensureInitialized();
-    }
-    return _instance!;
-  }
-
-  @override
-  final String id = 'ComputerActionType';
-
-  static ComputerActionTypeType8 _$type(ComputerActionType v) => v.type;
-  static const Field<ComputerActionType, ComputerActionTypeType8> _f$type =
-      Field('type', _$type);
-  static String _$text(ComputerActionType v) => v.text;
-  static const Field<ComputerActionType, String> _f$text = Field(
-    'text',
-    _$text,
-  );
-
-  @override
-  final MappableFields<ComputerActionType> fields = const {
-    #type: _f$type,
-    #text: _f$text,
-  };
-  @override
-  final bool ignoreNull = true;
-  @override
-  bool includeTypeId<T>(_) => false;
-
-  @override
-  final String discriminatorKey = 'type';
-  @override
-  final dynamic discriminatorValue = 'type';
-  @override
-  late final ClassMapperBase superMapper =
-      ComputerActionMapper.ensureInitialized();
-
-  static ComputerActionType _instantiate(DecodingData data) {
-    return ComputerActionType(type: data.dec(_f$type), text: data.dec(_f$text));
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static ComputerActionType fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ComputerActionType>(map);
-  }
-
-  static ComputerActionType fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ComputerActionType>(json);
-  }
-}
-
-mixin ComputerActionTypeMappable {
-  String toJsonString() {
-    return ComputerActionTypeMapper.ensureInitialized()
-        .encodeJson<ComputerActionType>(this as ComputerActionType);
-  }
-
-  Map<String, dynamic> toJson() {
-    return ComputerActionTypeMapper.ensureInitialized()
-        .encodeMap<ComputerActionType>(this as ComputerActionType);
-  }
-
-  ComputerActionTypeCopyWith<
-    ComputerActionType,
-    ComputerActionType,
-    ComputerActionType
-  >
-  get copyWith =>
-      _ComputerActionTypeCopyWithImpl<ComputerActionType, ComputerActionType>(
-        this as ComputerActionType,
-        $identity,
-        $identity,
-      );
-  @override
-  String toString() {
-    return ComputerActionTypeMapper.ensureInitialized().stringifyValue(
-      this as ComputerActionType,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return ComputerActionTypeMapper.ensureInitialized().equalsValue(
-      this as ComputerActionType,
-      other,
-    );
-  }
-
-  @override
-  int get hashCode {
-    return ComputerActionTypeMapper.ensureInitialized().hashValue(
-      this as ComputerActionType,
-    );
-  }
-}
-
-extension ComputerActionTypeValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ComputerActionType, $Out> {
-  ComputerActionTypeCopyWith<$R, ComputerActionType, $Out>
-  get $asComputerActionType => $base.as(
-    (v, t, t2) => _ComputerActionTypeCopyWithImpl<$R, $Out>(v, t, t2),
-  );
-}
-
-abstract class ComputerActionTypeCopyWith<
-  $R,
-  $In extends ComputerActionType,
-  $Out
->
-    implements ComputerActionCopyWith<$R, $In, $Out> {
-  @override
-  $R call({ComputerActionTypeType8? type, String? text});
-  ComputerActionTypeCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
-    Then<$Out2, $R2> t,
-  );
-}
-
-class _ComputerActionTypeCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ComputerActionType, $Out>
-    implements ComputerActionTypeCopyWith<$R, ComputerActionType, $Out> {
-  _ComputerActionTypeCopyWithImpl(super.value, super.then, super.then2);
-
-  @override
-  late final ClassMapperBase<ComputerActionType> $mapper =
-      ComputerActionTypeMapper.ensureInitialized();
-  @override
-  $R call({ComputerActionTypeType8? type, String? text}) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (text != null) #text: text,
-    }),
-  );
-  @override
-  ComputerActionType $make(CopyWithData data) => ComputerActionType(
-    type: data.get(#type, or: $value.type),
-    text: data.get(#text, or: $value.text),
-  );
-
-  @override
-  ComputerActionTypeCopyWith<$R2, ComputerActionType, $Out2> $chain<$R2, $Out2>(
-    Then<$Out2, $R2> t,
-  ) => _ComputerActionTypeCopyWithImpl<$R2, $Out2>($value, $cast, t);
-}
-
 class ComputerActionWaitMapper extends SubClassMapperBase<ComputerActionWait> {
   ComputerActionWaitMapper._();
 
@@ -1393,7 +1403,7 @@ class ComputerActionWaitMapper extends SubClassMapperBase<ComputerActionWait> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerActionWaitMapper._());
       ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerActionTypeType9Mapper.ensureInitialized();
+      ComputerActionType9Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1401,9 +1411,11 @@ class ComputerActionWaitMapper extends SubClassMapperBase<ComputerActionWait> {
   @override
   final String id = 'ComputerActionWait';
 
-  static ComputerActionTypeType9 _$type(ComputerActionWait v) => v.type;
-  static const Field<ComputerActionWait, ComputerActionTypeType9> _f$type =
-      Field('type', _$type);
+  static ComputerActionType9 _$type(ComputerActionWait v) => v.type;
+  static const Field<ComputerActionWait, ComputerActionType9> _f$type = Field(
+    'type',
+    _$type,
+  );
 
   @override
   final MappableFields<ComputerActionWait> fields = const {#type: _f$type};
@@ -1496,7 +1508,7 @@ abstract class ComputerActionWaitCopyWith<
 >
     implements ComputerActionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ComputerActionTypeType9? type});
+  $R call({ComputerActionType9? type});
   ComputerActionWaitCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1511,7 +1523,7 @@ class _ComputerActionWaitCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerActionWait> $mapper =
       ComputerActionWaitMapper.ensureInitialized();
   @override
-  $R call({ComputerActionTypeType9? type}) =>
+  $R call({ComputerActionType9? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ComputerActionWait $make(CopyWithData data) =>

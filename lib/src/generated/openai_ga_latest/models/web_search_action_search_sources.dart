@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'web_search_action_search_sources_type_type.dart';
+import 'web_search_action_search_sources_type.dart';
 
 part 'web_search_action_search_sources.mapper.dart';
 
@@ -15,7 +15,7 @@ class WebSearchActionSearchSources with WebSearchActionSearchSourcesMappable {
     required this.url,
   });
 
-  final WebSearchActionSearchSourcesTypeType type;
+  final WebSearchActionSearchSourcesType type;
   final String url;
 
   static WebSearchActionSearchSources fromJson(Map<String, dynamic> json) => WebSearchActionSearchSourcesMapper.fromJson(json);

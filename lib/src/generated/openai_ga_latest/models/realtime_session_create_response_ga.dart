@@ -7,14 +7,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'prompt.dart';
 import 'realtime_session_create_response_ga_audio.dart';
 import 'realtime_session_create_response_ga_client_secret.dart';
-import 'realtime_session_create_response_ga_include_include.dart';
+import 'realtime_session_create_response_ga_include.dart';
 import 'realtime_session_create_response_ga_max_output_tokens_union.dart';
 import 'realtime_session_create_response_ga_model_union.dart';
 import 'realtime_session_create_response_ga_output_modalities_output_modalities.dart';
 import 'realtime_session_create_response_ga_tool_choice_union.dart';
 import 'realtime_session_create_response_ga_tools_union.dart';
 import 'realtime_session_create_response_ga_tracing_union.dart';
-import 'realtime_session_create_response_ga_type_type.dart';
+import 'realtime_session_create_response_ga_type.dart';
 import 'realtime_truncation.dart';
 
 part 'realtime_session_create_response_ga.mapper.dart';
@@ -42,13 +42,13 @@ class RealtimeSessionCreateResponseGa with RealtimeSessionCreateResponseGaMappab
 
   @MappableField(key: 'client_secret')
   final RealtimeSessionCreateResponseGaClientSecret realtimeSessionCreateResponseGaClientSecret;
-  final RealtimeSessionCreateResponseGaTypeType type;
+  final RealtimeSessionCreateResponseGaType type;
   @MappableField(hook: const RealtimeSessionCreateResponseGaModelUnionHook())
   final RealtimeSessionCreateResponseGaModelUnion? model;
   final String? instructions;
   @MappableField(key: 'audio')
   final RealtimeSessionCreateResponseGaAudio? realtimeSessionCreateResponseGaAudio;
-  final List<RealtimeSessionCreateResponseGaIncludeInclude>? include;
+  final List<RealtimeSessionCreateResponseGaInclude>? include;
   final RealtimeSessionCreateResponseGaTracingUnion? tracing;
   final List<RealtimeSessionCreateResponseGaToolsUnion>? tools;
   @MappableField(key: 'max_output_tokens', hook: const RealtimeSessionCreateResponseGaMaxOutputTokensUnionHook())

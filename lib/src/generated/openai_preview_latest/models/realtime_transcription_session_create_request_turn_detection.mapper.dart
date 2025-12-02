@@ -23,8 +23,8 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper
         _instance =
             RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper._(),
       );
-      RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeTypeMapper.ensureInitialized();
-      RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagernessMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -66,34 +66,31 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper
     key: r'silence_duration_ms',
     opt: true,
   );
-  static RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType _$type(
+  static RealtimeTranscriptionSessionCreateRequestTurnDetectionType _$type(
     RealtimeTranscriptionSessionCreateRequestTurnDetection v,
   ) => v.type;
   static const Field<
     RealtimeTranscriptionSessionCreateRequestTurnDetection,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType
-        .serverVad,
+    def: RealtimeTranscriptionSessionCreateRequestTurnDetectionType.serverVad,
   );
-  static RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness
+  static RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness
   _$eagerness(RealtimeTranscriptionSessionCreateRequestTurnDetection v) =>
       v.eagerness;
   static const Field<
     RealtimeTranscriptionSessionCreateRequestTurnDetection,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness
   >
   _f$eagerness = Field(
     'eagerness',
     _$eagerness,
     opt: true,
-    def:
-        RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness
-            .auto,
+    def: RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness.auto,
   );
   static bool _$createResponse(
     RealtimeTranscriptionSessionCreateRequestTurnDetection v,
@@ -263,9 +260,8 @@ abstract class RealtimeTranscriptionSessionCreateRequestTurnDetectionCopyWith<
     num? threshold,
     int? prefixPaddingMs,
     int? silenceDurationMs,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType? type,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness?
-    eagerness,
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type,
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness? eagerness,
     bool? createResponse,
     bool? interruptResponse,
   });
@@ -310,9 +306,8 @@ class _RealtimeTranscriptionSessionCreateRequestTurnDetectionCopyWithImpl<
     Object? threshold = $none,
     Object? prefixPaddingMs = $none,
     Object? silenceDurationMs = $none,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType? type,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness?
-    eagerness,
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type,
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness? eagerness,
     bool? createResponse,
     bool? interruptResponse,
   }) => $apply(

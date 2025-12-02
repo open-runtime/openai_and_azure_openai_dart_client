@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_stream_event_part_type_type.dart';
+import 'response_stream_event_part_type.dart';
 
 part 'response_stream_event_part.mapper.dart';
 
@@ -15,7 +15,7 @@ class ResponseStreamEventPart with ResponseStreamEventPartMappable {
     required this.text,
   });
 
-  final ResponseStreamEventPartTypeType type;
+  final ResponseStreamEventPartType type;
   final String text;
 
   static ResponseStreamEventPart fromJson(Map<String, dynamic> json) => ResponseStreamEventPartMapper.fromJson(json);

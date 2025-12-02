@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'output_audio_type_type.dart';
+import 'output_audio_type.dart';
 
 part 'output_audio.mapper.dart';
 
@@ -18,7 +18,7 @@ class OutputAudio with OutputAudioMappable {
     required this.transcript,
   });
 
-  final OutputAudioTypeType type;
+  final OutputAudioType type;
   final String data;
   final String transcript;
 

@@ -8,7 +8,7 @@ import 'model_ids_responses.dart';
 import 'reasoning.dart';
 import 'response_properties_text.dart';
 import 'response_properties_tool_choice_union.dart';
-import 'response_properties_truncation_truncation.dart';
+import 'response_properties_truncation.dart';
 import 'tool.dart';
 
 part 'response_properties.mapper.dart';
@@ -16,7 +16,7 @@ part 'response_properties.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseProperties with ResponsePropertiesMappable {
   const ResponseProperties({
-    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.truncation = ResponsePropertiesTruncation.disabled,
     this.previousResponseId,
     this.model,
     this.reasoning,
@@ -27,7 +27,7 @@ class ResponseProperties with ResponsePropertiesMappable {
     this.toolChoice,
   });
 
-  final ResponsePropertiesTruncationTruncation? truncation;
+  final ResponsePropertiesTruncation? truncation;
   @MappableField(key: 'previous_response_id')
   final String? previousResponseId;
   final ModelIdsResponses? model;

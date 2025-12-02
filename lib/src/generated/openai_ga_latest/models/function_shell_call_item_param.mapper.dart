@@ -18,7 +18,7 @@ class FunctionShellCallItemParamMapper
         _instance = FunctionShellCallItemParamMapper._(),
       );
       FunctionShellActionParamMapper.ensureInitialized();
-      FunctionShellCallItemParamTypeTypeMapper.ensureInitialized();
+      FunctionShellCallItemParamTypeMapper.ensureInitialized();
       FunctionShellCallItemStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -37,18 +37,14 @@ class FunctionShellCallItemParamMapper
       v.action;
   static const Field<FunctionShellCallItemParam, FunctionShellActionParam>
   _f$action = Field('action', _$action);
-  static FunctionShellCallItemParamTypeType _$type(
-    FunctionShellCallItemParam v,
-  ) => v.type;
-  static const Field<
-    FunctionShellCallItemParam,
-    FunctionShellCallItemParamTypeType
-  >
+  static FunctionShellCallItemParamType _$type(FunctionShellCallItemParam v) =>
+      v.type;
+  static const Field<FunctionShellCallItemParam, FunctionShellCallItemParamType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallItemParamTypeType.shellCall,
+    def: FunctionShellCallItemParamType.shellCall,
   );
   static String? _$id(FunctionShellCallItemParam v) => v.id;
   static const Field<FunctionShellCallItemParam, String> _f$id = Field(
@@ -167,7 +163,7 @@ abstract class FunctionShellCallItemParamCopyWith<
   $R call({
     String? callId,
     FunctionShellActionParam? action,
-    FunctionShellCallItemParamTypeType? type,
+    FunctionShellCallItemParamType? type,
     String? id,
     FunctionShellCallItemStatus? status,
   });
@@ -200,7 +196,7 @@ class _FunctionShellCallItemParamCopyWithImpl<$R, $Out>
   $R call({
     String? callId,
     FunctionShellActionParam? action,
-    FunctionShellCallItemParamTypeType? type,
+    FunctionShellCallItemParamType? type,
     Object? id = $none,
     Object? status = $none,
   }) => $apply(

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'thread_object.dart';
-import 'thread_stream_event_union_variant1_event_event.dart';
+import 'thread_stream_event_union_variant1_event.dart';
 
 part 'thread_stream_event_union.mapper.dart';
 
@@ -31,7 +31,7 @@ extension ThreadStreamEventUnionDeserializer on ThreadStreamEventUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadStreamEventUnionVariant1 extends ThreadStreamEventUnion with ThreadStreamEventUnionVariant1Mappable {
-  final ThreadStreamEventUnionVariant1EventEvent event;
+  final ThreadStreamEventUnionVariant1Event event;
   final ThreadObject data;
 
   const ThreadStreamEventUnionVariant1({

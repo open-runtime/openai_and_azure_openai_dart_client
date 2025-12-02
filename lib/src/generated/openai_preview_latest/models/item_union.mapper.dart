@@ -76,10 +76,10 @@ class ItemUnionMessageMapper extends SubClassMapperBase<ItemUnionMessage> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionMessageMapper._());
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputMessageTypeTypeMapper.ensureInitialized();
-      OutputMessageRoleRoleMapper.ensureInitialized();
+      OutputMessageTypeMapper.ensureInitialized();
+      OutputMessageRoleMapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
-      OutputMessageStatusStatusMapper.ensureInitialized();
+      OutputMessageStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -89,13 +89,13 @@ class ItemUnionMessageMapper extends SubClassMapperBase<ItemUnionMessage> {
 
   static String _$id(ItemUnionMessage v) => v.id;
   static const Field<ItemUnionMessage, String> _f$id = Field('id', _$id);
-  static OutputMessageTypeType _$type(ItemUnionMessage v) => v.type;
-  static const Field<ItemUnionMessage, OutputMessageTypeType> _f$type = Field(
+  static OutputMessageType _$type(ItemUnionMessage v) => v.type;
+  static const Field<ItemUnionMessage, OutputMessageType> _f$type = Field(
     'type',
     _$type,
   );
-  static OutputMessageRoleRole _$role(ItemUnionMessage v) => v.role;
-  static const Field<ItemUnionMessage, OutputMessageRoleRole> _f$role = Field(
+  static OutputMessageRole _$role(ItemUnionMessage v) => v.role;
+  static const Field<ItemUnionMessage, OutputMessageRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -104,9 +104,11 @@ class ItemUnionMessageMapper extends SubClassMapperBase<ItemUnionMessage> {
     'content',
     _$content,
   );
-  static OutputMessageStatusStatus _$status(ItemUnionMessage v) => v.status;
-  static const Field<ItemUnionMessage, OutputMessageStatusStatus> _f$status =
-      Field('status', _$status);
+  static OutputMessageStatus _$status(ItemUnionMessage v) => v.status;
+  static const Field<ItemUnionMessage, OutputMessageStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<ItemUnionMessage> fields = const {
@@ -209,10 +211,10 @@ abstract class ItemUnionMessageCopyWith<$R, $In extends ItemUnionMessage, $Out>
   @override
   $R call({
     String? id,
-    OutputMessageTypeType? type,
-    OutputMessageRoleRole? role,
+    OutputMessageType? type,
+    OutputMessageRole? role,
     List<OutputContent>? content,
-    OutputMessageStatusStatus? status,
+    OutputMessageStatus? status,
   });
   ItemUnionMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -241,10 +243,10 @@ class _ItemUnionMessageCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    OutputMessageTypeType? type,
-    OutputMessageRoleRole? role,
+    OutputMessageType? type,
+    OutputMessageRole? role,
     List<OutputContent>? content,
-    OutputMessageStatusStatus? status,
+    OutputMessageStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,
@@ -280,8 +282,8 @@ class ItemUnionFileSearchCallMapper
         _instance = ItemUnionFileSearchCallMapper._(),
       );
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      FileSearchToolCallTypeTypeMapper.ensureInitialized();
-      FileSearchToolCallStatusStatusMapper.ensureInitialized();
+      FileSearchToolCallTypeMapper.ensureInitialized();
+      FileSearchToolCallStatusMapper.ensureInitialized();
       FileSearchToolCallResultsMapper.ensureInitialized();
     }
     return _instance!;
@@ -292,12 +294,12 @@ class ItemUnionFileSearchCallMapper
 
   static String _$id(ItemUnionFileSearchCall v) => v.id;
   static const Field<ItemUnionFileSearchCall, String> _f$id = Field('id', _$id);
-  static FileSearchToolCallTypeType _$type(ItemUnionFileSearchCall v) => v.type;
-  static const Field<ItemUnionFileSearchCall, FileSearchToolCallTypeType>
-  _f$type = Field('type', _$type);
-  static FileSearchToolCallStatusStatus _$status(ItemUnionFileSearchCall v) =>
+  static FileSearchToolCallType _$type(ItemUnionFileSearchCall v) => v.type;
+  static const Field<ItemUnionFileSearchCall, FileSearchToolCallType> _f$type =
+      Field('type', _$type);
+  static FileSearchToolCallStatus _$status(ItemUnionFileSearchCall v) =>
       v.status;
-  static const Field<ItemUnionFileSearchCall, FileSearchToolCallStatusStatus>
+  static const Field<ItemUnionFileSearchCall, FileSearchToolCallStatus>
   _f$status = Field('status', _$status);
   static List<String> _$queries(ItemUnionFileSearchCall v) => v.queries;
   static const Field<ItemUnionFileSearchCall, List<String>> _f$queries = Field(
@@ -424,8 +426,8 @@ abstract class ItemUnionFileSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    FileSearchToolCallTypeType? type,
-    FileSearchToolCallStatusStatus? status,
+    FileSearchToolCallType? type,
+    FileSearchToolCallStatus? status,
     List<String>? queries,
     List<FileSearchToolCallResults>? results,
   });
@@ -470,8 +472,8 @@ class _ItemUnionFileSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    FileSearchToolCallTypeType? type,
-    FileSearchToolCallStatusStatus? status,
+    FileSearchToolCallType? type,
+    FileSearchToolCallStatus? status,
     List<String>? queries,
     Object? results = $none,
   }) => $apply(
@@ -507,10 +509,10 @@ class ItemUnionComputerCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionComputerCallMapper._());
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerToolCallTypeTypeMapper.ensureInitialized();
+      ComputerToolCallTypeMapper.ensureInitialized();
       ComputerActionMapper.ensureInitialized();
       ComputerToolCallSafetyCheckMapper.ensureInitialized();
-      ComputerToolCallStatusStatusMapper.ensureInitialized();
+      ComputerToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -518,8 +520,8 @@ class ItemUnionComputerCallMapper
   @override
   final String id = 'ItemUnionComputerCall';
 
-  static ComputerToolCallTypeType _$type(ItemUnionComputerCall v) => v.type;
-  static const Field<ItemUnionComputerCall, ComputerToolCallTypeType> _f$type =
+  static ComputerToolCallType _$type(ItemUnionComputerCall v) => v.type;
+  static const Field<ItemUnionComputerCall, ComputerToolCallType> _f$type =
       Field('type', _$type);
   static String _$id(ItemUnionComputerCall v) => v.id;
   static const Field<ItemUnionComputerCall, String> _f$id = Field('id', _$id);
@@ -543,10 +545,9 @@ class ItemUnionComputerCallMapper
     _$pendingSafetyChecks,
     key: r'pending_safety_checks',
   );
-  static ComputerToolCallStatusStatus _$status(ItemUnionComputerCall v) =>
-      v.status;
-  static const Field<ItemUnionComputerCall, ComputerToolCallStatusStatus>
-  _f$status = Field('status', _$status);
+  static ComputerToolCallStatus _$status(ItemUnionComputerCall v) => v.status;
+  static const Field<ItemUnionComputerCall, ComputerToolCallStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<ItemUnionComputerCall> fields = const {
@@ -663,12 +664,12 @@ abstract class ItemUnionComputerCallCopyWith<
   get pendingSafetyChecks;
   @override
   $R call({
-    ComputerToolCallTypeType? type,
+    ComputerToolCallType? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
-    ComputerToolCallStatusStatus? status,
+    ComputerToolCallStatus? status,
   });
   ItemUnionComputerCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -703,12 +704,12 @@ class _ItemUnionComputerCallCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ComputerToolCallTypeType? type,
+    ComputerToolCallType? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
-    ComputerToolCallStatusStatus? status,
+    ComputerToolCallStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -750,10 +751,10 @@ class ItemUnionComputerCallOutputMapper
         _instance = ItemUnionComputerCallOutputMapper._(),
       );
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      ComputerCallOutputItemParamTypeTypeMapper.ensureInitialized();
+      ComputerCallOutputItemParamTypeMapper.ensureInitialized();
       ComputerScreenshotImageMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
-      ComputerCallOutputItemParamStatusStatusMapper.ensureInitialized();
+      ComputerCallOutputItemParamStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -772,12 +773,12 @@ class ItemUnionComputerCallOutputMapper
     _$callId,
     key: r'call_id',
   );
-  static ComputerCallOutputItemParamTypeType _$type(
+  static ComputerCallOutputItemParamType _$type(
     ItemUnionComputerCallOutput v,
   ) => v.type;
   static const Field<
     ItemUnionComputerCallOutput,
-    ComputerCallOutputItemParamTypeType
+    ComputerCallOutputItemParamType
   >
   _f$type = Field('type', _$type);
   static ComputerScreenshotImage _$output(ItemUnionComputerCallOutput v) =>
@@ -796,12 +797,12 @@ class ItemUnionComputerCallOutputMapper
     _$acknowledgedSafetyChecks,
     key: r'acknowledged_safety_checks',
   );
-  static ComputerCallOutputItemParamStatusStatus? _$status(
+  static ComputerCallOutputItemParamStatus? _$status(
     ItemUnionComputerCallOutput v,
   ) => v.status;
   static const Field<
     ItemUnionComputerCallOutput,
-    ComputerCallOutputItemParamStatusStatus
+    ComputerCallOutputItemParamStatus
   >
   _f$status = Field('status', _$status);
 
@@ -931,10 +932,10 @@ abstract class ItemUnionComputerCallOutputCopyWith<
   $R call({
     String? id,
     String? callId,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     ComputerScreenshotImage? output,
     List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
-    ComputerCallOutputItemParamStatusStatus? status,
+    ComputerCallOutputItemParamStatus? status,
   });
   ItemUnionComputerCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -986,7 +987,7 @@ class _ItemUnionComputerCallOutputCopyWithImpl<$R, $Out>
   $R call({
     Object? id = $none,
     String? callId,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     ComputerScreenshotImage? output,
     Object? acknowledgedSafetyChecks = $none,
     Object? status = $none,
@@ -1030,8 +1031,8 @@ class ItemUnionWebSearchCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionWebSearchCallMapper._());
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      WebSearchToolCallTypeTypeMapper.ensureInitialized();
-      WebSearchToolCallStatusStatusMapper.ensureInitialized();
+      WebSearchToolCallTypeMapper.ensureInitialized();
+      WebSearchToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1041,12 +1042,11 @@ class ItemUnionWebSearchCallMapper
 
   static String _$id(ItemUnionWebSearchCall v) => v.id;
   static const Field<ItemUnionWebSearchCall, String> _f$id = Field('id', _$id);
-  static WebSearchToolCallTypeType _$type(ItemUnionWebSearchCall v) => v.type;
-  static const Field<ItemUnionWebSearchCall, WebSearchToolCallTypeType>
-  _f$type = Field('type', _$type);
-  static WebSearchToolCallStatusStatus _$status(ItemUnionWebSearchCall v) =>
-      v.status;
-  static const Field<ItemUnionWebSearchCall, WebSearchToolCallStatusStatus>
+  static WebSearchToolCallType _$type(ItemUnionWebSearchCall v) => v.type;
+  static const Field<ItemUnionWebSearchCall, WebSearchToolCallType> _f$type =
+      Field('type', _$type);
+  static WebSearchToolCallStatus _$status(ItemUnionWebSearchCall v) => v.status;
+  static const Field<ItemUnionWebSearchCall, WebSearchToolCallStatus>
   _f$status = Field('status', _$status);
 
   @override
@@ -1148,8 +1148,8 @@ abstract class ItemUnionWebSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    WebSearchToolCallTypeType? type,
-    WebSearchToolCallStatusStatus? status,
+    WebSearchToolCallType? type,
+    WebSearchToolCallStatus? status,
   });
   ItemUnionWebSearchCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1168,8 +1168,8 @@ class _ItemUnionWebSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    WebSearchToolCallTypeType? type,
-    WebSearchToolCallStatusStatus? status,
+    WebSearchToolCallType? type,
+    WebSearchToolCallStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,
@@ -1199,8 +1199,8 @@ class ItemUnionFunctionCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionFunctionCallMapper._());
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      FunctionToolCallTypeTypeMapper.ensureInitialized();
-      FunctionToolCallStatusStatusMapper.ensureInitialized();
+      FunctionToolCallTypeMapper.ensureInitialized();
+      FunctionToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1210,8 +1210,8 @@ class ItemUnionFunctionCallMapper
 
   static String? _$id(ItemUnionFunctionCall v) => v.id;
   static const Field<ItemUnionFunctionCall, String> _f$id = Field('id', _$id);
-  static FunctionToolCallTypeType _$type(ItemUnionFunctionCall v) => v.type;
-  static const Field<ItemUnionFunctionCall, FunctionToolCallTypeType> _f$type =
+  static FunctionToolCallType _$type(ItemUnionFunctionCall v) => v.type;
+  static const Field<ItemUnionFunctionCall, FunctionToolCallType> _f$type =
       Field('type', _$type);
   static String _$callId(ItemUnionFunctionCall v) => v.callId;
   static const Field<ItemUnionFunctionCall, String> _f$callId = Field(
@@ -1229,10 +1229,9 @@ class ItemUnionFunctionCallMapper
     'arguments',
     _$arguments,
   );
-  static FunctionToolCallStatusStatus? _$status(ItemUnionFunctionCall v) =>
-      v.status;
-  static const Field<ItemUnionFunctionCall, FunctionToolCallStatusStatus>
-  _f$status = Field('status', _$status);
+  static FunctionToolCallStatus? _$status(ItemUnionFunctionCall v) => v.status;
+  static const Field<ItemUnionFunctionCall, FunctionToolCallStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<ItemUnionFunctionCall> fields = const {
@@ -1339,11 +1338,11 @@ abstract class ItemUnionFunctionCallCopyWith<
   @override
   $R call({
     String? id,
-    FunctionToolCallTypeType? type,
+    FunctionToolCallType? type,
     String? callId,
     String? name,
     String? arguments,
-    FunctionToolCallStatusStatus? status,
+    FunctionToolCallStatus? status,
   });
   ItemUnionFunctionCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1361,7 +1360,7 @@ class _ItemUnionFunctionCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     Object? id = $none,
-    FunctionToolCallTypeType? type,
+    FunctionToolCallType? type,
     String? callId,
     String? name,
     String? arguments,
@@ -1403,8 +1402,8 @@ class ItemUnionFunctionCallOutputMapper
         _instance = ItemUnionFunctionCallOutputMapper._(),
       );
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      FunctionCallOutputItemParamTypeTypeMapper.ensureInitialized();
-      FunctionCallOutputItemParamStatusStatusMapper.ensureInitialized();
+      FunctionCallOutputItemParamTypeMapper.ensureInitialized();
+      FunctionCallOutputItemParamStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1423,12 +1422,12 @@ class ItemUnionFunctionCallOutputMapper
     _$callId,
     key: r'call_id',
   );
-  static FunctionCallOutputItemParamTypeType _$type(
+  static FunctionCallOutputItemParamType _$type(
     ItemUnionFunctionCallOutput v,
   ) => v.type;
   static const Field<
     ItemUnionFunctionCallOutput,
-    FunctionCallOutputItemParamTypeType
+    FunctionCallOutputItemParamType
   >
   _f$type = Field('type', _$type);
   static String _$output(ItemUnionFunctionCallOutput v) => v.output;
@@ -1436,12 +1435,12 @@ class ItemUnionFunctionCallOutputMapper
     'output',
     _$output,
   );
-  static FunctionCallOutputItemParamStatusStatus? _$status(
+  static FunctionCallOutputItemParamStatus? _$status(
     ItemUnionFunctionCallOutput v,
   ) => v.status;
   static const Field<
     ItemUnionFunctionCallOutput,
-    FunctionCallOutputItemParamStatusStatus
+    FunctionCallOutputItemParamStatus
   >
   _f$status = Field('status', _$status);
 
@@ -1553,9 +1552,9 @@ abstract class ItemUnionFunctionCallOutputCopyWith<
   $R call({
     String? id,
     String? callId,
-    FunctionCallOutputItemParamTypeType? type,
+    FunctionCallOutputItemParamType? type,
     String? output,
-    FunctionCallOutputItemParamStatusStatus? status,
+    FunctionCallOutputItemParamStatus? status,
   });
   ItemUnionFunctionCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1583,7 +1582,7 @@ class _ItemUnionFunctionCallOutputCopyWithImpl<$R, $Out>
   $R call({
     Object? id = $none,
     String? callId,
-    FunctionCallOutputItemParamTypeType? type,
+    FunctionCallOutputItemParamType? type,
     String? output,
     Object? status = $none,
   }) => $apply(
@@ -1619,9 +1618,9 @@ class ItemUnionReasoningMapper extends SubClassMapperBase<ItemUnionReasoning> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionReasoningMapper._());
       ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      ReasoningItemTypeTypeMapper.ensureInitialized();
+      ReasoningItemTypeMapper.ensureInitialized();
       ReasoningItemSummaryMapper.ensureInitialized();
-      ReasoningItemStatusStatusMapper.ensureInitialized();
+      ReasoningItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1629,8 +1628,8 @@ class ItemUnionReasoningMapper extends SubClassMapperBase<ItemUnionReasoning> {
   @override
   final String id = 'ItemUnionReasoning';
 
-  static ReasoningItemTypeType _$type(ItemUnionReasoning v) => v.type;
-  static const Field<ItemUnionReasoning, ReasoningItemTypeType> _f$type = Field(
+  static ReasoningItemType _$type(ItemUnionReasoning v) => v.type;
+  static const Field<ItemUnionReasoning, ReasoningItemType> _f$type = Field(
     'type',
     _$type,
   );
@@ -1640,9 +1639,11 @@ class ItemUnionReasoningMapper extends SubClassMapperBase<ItemUnionReasoning> {
       v.summary;
   static const Field<ItemUnionReasoning, List<ReasoningItemSummary>>
   _f$summary = Field('summary', _$summary);
-  static ReasoningItemStatusStatus? _$status(ItemUnionReasoning v) => v.status;
-  static const Field<ItemUnionReasoning, ReasoningItemStatusStatus> _f$status =
-      Field('status', _$status);
+  static ReasoningItemStatus? _$status(ItemUnionReasoning v) => v.status;
+  static const Field<ItemUnionReasoning, ReasoningItemStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<ItemUnionReasoning> fields = const {
@@ -1751,10 +1752,10 @@ abstract class ItemUnionReasoningCopyWith<
   get summary;
   @override
   $R call({
-    ReasoningItemTypeType? type,
+    ReasoningItemType? type,
     String? id,
     List<ReasoningItemSummary>? summary,
-    ReasoningItemStatusStatus? status,
+    ReasoningItemStatus? status,
   });
   ItemUnionReasoningCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1782,7 +1783,7 @@ class _ItemUnionReasoningCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ReasoningItemTypeType? type,
+    ReasoningItemType? type,
     String? id,
     List<ReasoningItemSummary>? summary,
     Object? status = $none,

@@ -14,7 +14,7 @@ class GraderPythonMapper extends ClassMapperBase<GraderPython> {
   static GraderPythonMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderPythonMapper._());
-      GraderPythonTypeTypeMapper.ensureInitialized();
+      GraderPythonTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class GraderPythonMapper extends ClassMapperBase<GraderPython> {
   @override
   final String id = 'GraderPython';
 
-  static GraderPythonTypeType _$type(GraderPython v) => v.type;
-  static const Field<GraderPython, GraderPythonTypeType> _f$type = Field(
+  static GraderPythonType _$type(GraderPython v) => v.type;
+  static const Field<GraderPython, GraderPythonType> _f$type = Field(
     'type',
     _$type,
   );
@@ -126,7 +126,7 @@ extension GraderPythonValueCopy<$R, $Out>
 abstract class GraderPythonCopyWith<$R, $In extends GraderPython, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     String? imageTag,
@@ -144,7 +144,7 @@ class _GraderPythonCopyWithImpl<$R, $Out>
       GraderPythonMapper.ensureInitialized();
   @override
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     Object? imageTag = $none,

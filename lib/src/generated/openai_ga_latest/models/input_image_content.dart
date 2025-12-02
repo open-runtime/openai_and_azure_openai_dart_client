@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'function_and_custom_tool_call_output.dart';
 import 'image_detail.dart';
 import 'input_content.dart';
-import 'input_image_content_type_type.dart';
+import 'input_image_content_type.dart';
 
 part 'input_image_content.mapper.dart';
 
@@ -18,7 +18,7 @@ class InputImageContent with InputImageContentMappable {
     required this.detail,
     this.imageUrl,
     this.fileId,
-    this.type = InputImageContentTypeType.inputImage,
+    this.type = InputImageContentType.inputImage,
   });
 
   final ImageDetail detail;
@@ -26,7 +26,7 @@ class InputImageContent with InputImageContentMappable {
   final String? imageUrl;
   @MappableField(key: 'file_id')
   final String? fileId;
-  final InputImageContentTypeType type;
+  final InputImageContentType type;
 
   static InputImageContent fromJson(Map<String, dynamic> json) => InputImageContentMapper.fromJson(json);
 

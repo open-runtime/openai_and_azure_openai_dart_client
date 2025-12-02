@@ -14,7 +14,7 @@ class ScreenshotMapper extends ClassMapperBase<Screenshot> {
   static ScreenshotMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ScreenshotMapper._());
-      ScreenshotTypeTypeMapper.ensureInitialized();
+      ScreenshotTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,12 +22,12 @@ class ScreenshotMapper extends ClassMapperBase<Screenshot> {
   @override
   final String id = 'Screenshot';
 
-  static ScreenshotTypeType _$type(Screenshot v) => v.type;
-  static const Field<Screenshot, ScreenshotTypeType> _f$type = Field(
+  static ScreenshotType _$type(Screenshot v) => v.type;
+  static const Field<Screenshot, ScreenshotType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ScreenshotTypeType.screenshot,
+    def: ScreenshotType.screenshot,
   );
 
   @override
@@ -101,7 +101,7 @@ extension ScreenshotValueCopy<$R, $Out>
 
 abstract class ScreenshotCopyWith<$R, $In extends Screenshot, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ScreenshotTypeType? type});
+  $R call({ScreenshotType? type});
   ScreenshotCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -114,7 +114,7 @@ class _ScreenshotCopyWithImpl<$R, $Out>
   late final ClassMapperBase<Screenshot> $mapper =
       ScreenshotMapper.ensureInitialized();
   @override
-  $R call({ScreenshotTypeType? type}) =>
+  $R call({ScreenshotType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   Screenshot $make(CopyWithData data) =>

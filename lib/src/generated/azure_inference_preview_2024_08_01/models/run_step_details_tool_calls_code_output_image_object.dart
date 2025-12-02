@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_tool_calls_code_output_image_object_image.dart';
-import 'run_step_details_tool_calls_code_output_image_object_type_type.dart';
+import 'run_step_details_tool_calls_code_output_image_object_type.dart';
 
 part 'run_step_details_tool_calls_code_output_image_object.mapper.dart';
 
@@ -16,7 +16,7 @@ class RunStepDetailsToolCallsCodeOutputImageObject with RunStepDetailsToolCallsC
     required this.runStepDetailsToolCallsCodeOutputImageObjectImage,
   });
 
-  final RunStepDetailsToolCallsCodeOutputImageObjectTypeType type;
+  final RunStepDetailsToolCallsCodeOutputImageObjectType type;
   @MappableField(key: 'image')
   final RunStepDetailsToolCallsCodeOutputImageObjectImage runStepDetailsToolCallsCodeOutputImageObjectImage;
 

@@ -4,12 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_request_assistant_message_content_part_type_type.dart';
-import 'chat_completion_request_assistant_message_content_part_type_type2.dart';
+import 'chat_completion_request_assistant_message_content_part_type.dart';
+import 'chat_completion_request_assistant_message_content_part_type2.dart';
 import 'chat_completion_request_message_content_part_refusal.dart';
-import 'chat_completion_request_message_content_part_refusal_type_type.dart';
+import 'chat_completion_request_message_content_part_refusal_type.dart';
 import 'chat_completion_request_message_content_part_text.dart';
-import 'chat_completion_request_message_content_part_text_type_type.dart';
+import 'chat_completion_request_message_content_part_text_type.dart';
 
 part 'chat_completion_request_assistant_message_content_part.mapper.dart';
 
@@ -47,7 +47,7 @@ extension ChatCompletionRequestAssistantMessageContentPartUnionDeserializer on C
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart with ChatCompletionRequestAssistantMessageContentPartTextMappable {
-  final ChatCompletionRequestAssistantMessageContentPartTypeType type;
+  final ChatCompletionRequestAssistantMessageContentPartType type;
   final String text;
 
   const ChatCompletionRequestAssistantMessageContentPartText({
@@ -58,7 +58,7 @@ class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletio
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart with ChatCompletionRequestAssistantMessageContentPartRefusalMappable {
-  final ChatCompletionRequestAssistantMessageContentPartTypeType2 type;
+  final ChatCompletionRequestAssistantMessageContentPartType2 type;
   final String refusal;
 
   const ChatCompletionRequestAssistantMessageContentPartRefusal({

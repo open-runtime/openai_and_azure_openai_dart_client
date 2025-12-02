@@ -14,7 +14,7 @@ class LockedStatusMapper extends ClassMapperBase<LockedStatus> {
   static LockedStatusMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LockedStatusMapper._());
-      LockedStatusTypeTypeMapper.ensureInitialized();
+      LockedStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,12 +27,12 @@ class LockedStatusMapper extends ClassMapperBase<LockedStatus> {
     'reason',
     _$reason,
   );
-  static LockedStatusTypeType _$type(LockedStatus v) => v.type;
-  static const Field<LockedStatus, LockedStatusTypeType> _f$type = Field(
+  static LockedStatusType _$type(LockedStatus v) => v.type;
+  static const Field<LockedStatus, LockedStatusType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: LockedStatusTypeType.locked,
+    def: LockedStatusType.locked,
   );
 
   @override
@@ -111,7 +111,7 @@ extension LockedStatusValueCopy<$R, $Out>
 
 abstract class LockedStatusCopyWith<$R, $In extends LockedStatus, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? reason, LockedStatusTypeType? type});
+  $R call({String? reason, LockedStatusType? type});
   LockedStatusCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -124,7 +124,7 @@ class _LockedStatusCopyWithImpl<$R, $Out>
   late final ClassMapperBase<LockedStatus> $mapper =
       LockedStatusMapper.ensureInitialized();
   @override
-  $R call({Object? reason = $none, LockedStatusTypeType? type}) => $apply(
+  $R call({Object? reason = $none, LockedStatusType? type}) => $apply(
     FieldCopyWithData({
       if (reason != $none) #reason: reason,
       if (type != null) #type: type,

@@ -103,7 +103,7 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMapper
       );
       MessageDeltaContentTextObjectTextAnnotationsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageDeltaContentTextAnnotationsFileCitationObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -121,12 +121,12 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMapper
     int
   >
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentTextAnnotationsFileCitationObjectTypeType _$type(
+  static MessageDeltaContentTextAnnotationsFileCitationObjectType _$type(
     MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation v,
   ) => v.type;
   static const Field<
     MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType
+    MessageDeltaContentTextAnnotationsFileCitationObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$text(
@@ -330,7 +330,7 @@ abstract class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationCopy
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation?
     messageDeltaContentTextAnnotationsFileCitationObjectFileCitation,
@@ -390,7 +390,7 @@ class _MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationCopyWithImpl
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFileCitationObjectType? type,
     Object? text = $none,
     Object? messageDeltaContentTextAnnotationsFileCitationObjectFileCitation =
         $none,
@@ -456,7 +456,7 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMapper
       );
       MessageDeltaContentTextObjectTextAnnotationsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageDeltaContentTextAnnotationsFilePathObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -473,12 +473,12 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMapper
     int
   >
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentTextAnnotationsFilePathObjectTypeType _$type(
+  static MessageDeltaContentTextAnnotationsFilePathObjectType _$type(
     MessageDeltaContentTextObjectTextAnnotationsUnionFilePath v,
   ) => v.type;
   static const Field<
     MessageDeltaContentTextObjectTextAnnotationsUnionFilePath,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType
+    MessageDeltaContentTextAnnotationsFilePathObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$text(
@@ -680,7 +680,7 @@ abstract class MessageDeltaContentTextObjectTextAnnotationsUnionFilePathCopyWith
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageDeltaContentTextAnnotationsFilePathObjectFilePath?
     messageDeltaContentTextAnnotationsFilePathObjectFilePath,
@@ -739,7 +739,7 @@ class _MessageDeltaContentTextObjectTextAnnotationsUnionFilePathCopyWithImpl<
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFilePathObjectType? type,
     Object? text = $none,
     Object? messageDeltaContentTextAnnotationsFilePathObjectFilePath = $none,
     Object? startIndex = $none,

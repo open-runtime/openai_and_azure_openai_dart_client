@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_content.dart';
-import 'reasoning_text_content_type_type.dart';
+import 'reasoning_text_content_type.dart';
 
 part 'reasoning_text_content.mapper.dart';
 
@@ -14,11 +14,11 @@ part 'reasoning_text_content.mapper.dart';
 class ReasoningTextContent with ReasoningTextContentMappable {
   const ReasoningTextContent({
     required this.text,
-    this.type = ReasoningTextContentTypeType.reasoningText,
+    this.type = ReasoningTextContentType.reasoningText,
   });
 
   final String text;
-  final ReasoningTextContentTypeType type;
+  final ReasoningTextContentType type;
 
   static ReasoningTextContent fromJson(Map<String, dynamic> json) => ReasoningTextContentMapper.fromJson(json);
 

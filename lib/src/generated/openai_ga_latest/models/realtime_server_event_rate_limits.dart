@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_server_event_rate_limits_name_name.dart';
+import 'realtime_server_event_rate_limits_name.dart';
 
 part 'realtime_server_event_rate_limits.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeServerEventRateLimits with RealtimeServerEventRateLimitsMappable {
     this.resetSeconds,
   });
 
-  final RealtimeServerEventRateLimitsNameName? name;
+  final RealtimeServerEventRateLimitsName? name;
   final int? limit;
   final int? remaining;
   @MappableField(key: 'reset_seconds')

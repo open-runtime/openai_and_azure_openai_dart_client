@@ -23,7 +23,7 @@ class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper
         _instance =
             RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper._(),
       );
-      RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeTypeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,12 +32,12 @@ class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper
   final String id =
       'RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction';
 
-  static RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeType?
+  static RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType?
   _$type(RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction v) =>
       v.type;
   static const Field<
     RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction,
-    RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeType
+    RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType
   >
   _f$type = Field('type', _$type, opt: true);
 
@@ -173,8 +173,7 @@ abstract class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeType?
-    type,
+    RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType? type,
   });
   RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionCopyWith<
     $R2,

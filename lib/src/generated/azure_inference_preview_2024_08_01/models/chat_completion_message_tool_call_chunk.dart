@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_message_tool_call_chunk_function.dart';
-import 'chat_completion_message_tool_call_chunk_type_type.dart';
+import 'chat_completion_message_tool_call_chunk_type.dart';
 
 part 'chat_completion_message_tool_call_chunk.mapper.dart';
 
@@ -21,7 +21,7 @@ class ChatCompletionMessageToolCallChunk with ChatCompletionMessageToolCallChunk
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final ChatCompletionMessageToolCallChunkTypeType? type;
+  final ChatCompletionMessageToolCallChunkType? type;
   @MappableField(key: 'function')
   final ChatCompletionMessageToolCallChunkFunction? chatCompletionMessageToolCallChunkFunction;
 

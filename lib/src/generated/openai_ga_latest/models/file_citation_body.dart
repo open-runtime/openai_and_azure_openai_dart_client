@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'file_citation_body_type_type.dart';
+import 'file_citation_body_type.dart';
 
 part 'file_citation_body.mapper.dart';
 
@@ -16,7 +16,7 @@ class FileCitationBody with FileCitationBodyMappable {
     required this.fileId,
     required this.indexField,
     required this.filename,
-    this.type = FileCitationBodyTypeType.fileCitation,
+    this.type = FileCitationBodyType.fileCitation,
   });
 
   @MappableField(key: 'file_id')
@@ -24,7 +24,7 @@ class FileCitationBody with FileCitationBodyMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String filename;
-  final FileCitationBodyTypeType type;
+  final FileCitationBodyType type;
 
   static FileCitationBody fromJson(Map<String, dynamic> json) => FileCitationBodyMapper.fromJson(json);
 

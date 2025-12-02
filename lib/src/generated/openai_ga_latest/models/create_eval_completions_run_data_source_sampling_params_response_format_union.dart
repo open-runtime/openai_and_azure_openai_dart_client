@@ -6,12 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_chat_completion_request_response_format_union.dart';
 import 'response_format_json_object.dart';
-import 'response_format_json_object_type_type.dart';
+import 'response_format_json_object_type.dart';
 import 'response_format_json_schema.dart';
 import 'response_format_json_schema_json_schema.dart';
-import 'response_format_json_schema_type_type.dart';
+import 'response_format_json_schema_type.dart';
 import 'response_format_text.dart';
-import 'response_format_text_type_type.dart';
+import 'response_format_text_type.dart';
 import 'text_response_format_configuration.dart';
 
 part 'create_eval_completions_run_data_source_sampling_params_response_format_union.mapper.dart';
@@ -54,7 +54,7 @@ extension CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionDes
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMappable {
-  final ResponseFormatTextTypeType type;
+  final ResponseFormatTextType type;
 
   const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText({
     required this.type,
@@ -63,7 +63,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText ex
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
 class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchemaMappable {
-  final ResponseFormatJsonSchemaTypeType type;
+  final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 
@@ -75,7 +75,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSch
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
 class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectMappable {
-  final ResponseFormatJsonObjectTypeType type;
+  final ResponseFormatJsonObjectType type;
 
   const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject({
     required this.type,

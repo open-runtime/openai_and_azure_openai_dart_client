@@ -15,7 +15,7 @@ class InputImageContentMapper extends ClassMapperBase<InputImageContent> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputImageContentMapper._());
       ImageDetailMapper.ensureInitialized();
-      InputImageContentTypeTypeMapper.ensureInitialized();
+      InputImageContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -42,14 +42,13 @@ class InputImageContentMapper extends ClassMapperBase<InputImageContent> {
     key: r'file_id',
     opt: true,
   );
-  static InputImageContentTypeType _$type(InputImageContent v) => v.type;
-  static const Field<InputImageContent, InputImageContentTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: InputImageContentTypeType.inputImage,
-      );
+  static InputImageContentType _$type(InputImageContent v) => v.type;
+  static const Field<InputImageContent, InputImageContentType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: InputImageContentType.inputImage,
+  );
 
   @override
   final MappableFields<InputImageContent> fields = const {
@@ -147,7 +146,7 @@ abstract class InputImageContentCopyWith<
     ImageDetail? detail,
     String? imageUrl,
     String? fileId,
-    InputImageContentTypeType? type,
+    InputImageContentType? type,
   });
   InputImageContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -167,7 +166,7 @@ class _InputImageContentCopyWithImpl<$R, $Out>
     ImageDetail? detail,
     Object? imageUrl = $none,
     Object? fileId = $none,
-    InputImageContentTypeType? type,
+    InputImageContentType? type,
   }) => $apply(
     FieldCopyWithData({
       if (detail != null) #detail: detail,

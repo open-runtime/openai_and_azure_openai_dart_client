@@ -17,7 +17,7 @@ class ResponseAudioDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseAudioDeltaEventMapper._(),
       );
-      ResponseAudioDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseAudioDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseAudioDeltaEventMapper
   @override
   final String id = 'ResponseAudioDeltaEvent';
 
-  static ResponseAudioDeltaEventTypeType _$type(ResponseAudioDeltaEvent v) =>
+  static ResponseAudioDeltaEventType _$type(ResponseAudioDeltaEvent v) =>
       v.type;
-  static const Field<ResponseAudioDeltaEvent, ResponseAudioDeltaEventTypeType>
+  static const Field<ResponseAudioDeltaEvent, ResponseAudioDeltaEventType>
   _f$type = Field('type', _$type);
   static String _$delta(ResponseAudioDeltaEvent v) => v.delta;
   static const Field<ResponseAudioDeltaEvent, String> _f$delta = Field(
@@ -122,7 +122,7 @@ abstract class ResponseAudioDeltaEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseAudioDeltaEventTypeType? type, String? delta});
+  $R call({ResponseAudioDeltaEventType? type, String? delta});
   ResponseAudioDeltaEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,7 +138,7 @@ class _ResponseAudioDeltaEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseAudioDeltaEvent> $mapper =
       ResponseAudioDeltaEventMapper.ensureInitialized();
   @override
-  $R call({ResponseAudioDeltaEventTypeType? type, String? delta}) => $apply(
+  $R call({ResponseAudioDeltaEventType? type, String? delta}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (delta != null) #delta: delta,

@@ -15,7 +15,7 @@ class ResponseTextDeltaEventMapper
   static ResponseTextDeltaEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseTextDeltaEventMapper._());
-      ResponseTextDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseTextDeltaEventTypeMapper.ensureInitialized();
       ResponseLogProbMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,9 +24,8 @@ class ResponseTextDeltaEventMapper
   @override
   final String id = 'ResponseTextDeltaEvent';
 
-  static ResponseTextDeltaEventTypeType _$type(ResponseTextDeltaEvent v) =>
-      v.type;
-  static const Field<ResponseTextDeltaEvent, ResponseTextDeltaEventTypeType>
+  static ResponseTextDeltaEventType _$type(ResponseTextDeltaEvent v) => v.type;
+  static const Field<ResponseTextDeltaEvent, ResponseTextDeltaEventType>
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseTextDeltaEvent v) => v.itemId;
   static const Field<ResponseTextDeltaEvent, String> _f$itemId = Field(
@@ -166,7 +165,7 @@ abstract class ResponseTextDeltaEventCopyWith<
   >
   get logprobs;
   $R call({
-    ResponseTextDeltaEventTypeType? type,
+    ResponseTextDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -201,7 +200,7 @@ class _ResponseTextDeltaEventCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ResponseTextDeltaEventTypeType? type,
+    ResponseTextDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

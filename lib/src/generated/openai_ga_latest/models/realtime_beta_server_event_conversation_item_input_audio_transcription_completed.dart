@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'log_prob_properties.dart';
-import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_type_type.dart';
+import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_type.dart';
 import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_usage_union.dart';
 
 part 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed.mapper.dart';
@@ -35,7 +35,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted wi
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeType type;
+  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

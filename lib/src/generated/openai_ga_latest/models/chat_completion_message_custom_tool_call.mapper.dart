@@ -17,7 +17,7 @@ class ChatCompletionMessageCustomToolCallMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionMessageCustomToolCallMapper._(),
       );
-      ChatCompletionMessageCustomToolCallTypeTypeMapper.ensureInitialized();
+      ChatCompletionMessageCustomToolCallTypeMapper.ensureInitialized();
       ChatCompletionMessageCustomToolCallCustomMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class ChatCompletionMessageCustomToolCallMapper
     'id',
     _$id,
   );
-  static ChatCompletionMessageCustomToolCallTypeType _$type(
+  static ChatCompletionMessageCustomToolCallType _$type(
     ChatCompletionMessageCustomToolCall v,
   ) => v.type;
   static const Field<
     ChatCompletionMessageCustomToolCall,
-    ChatCompletionMessageCustomToolCallTypeType
+    ChatCompletionMessageCustomToolCallType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionMessageCustomToolCallCustom
@@ -164,7 +164,7 @@ abstract class ChatCompletionMessageCustomToolCallCopyWith<
   get chatCompletionMessageCustomToolCallCustom;
   $R call({
     String? id,
-    ChatCompletionMessageCustomToolCallTypeType? type,
+    ChatCompletionMessageCustomToolCallType? type,
     ChatCompletionMessageCustomToolCallCustom?
     chatCompletionMessageCustomToolCallCustom,
   });
@@ -202,7 +202,7 @@ class _ChatCompletionMessageCustomToolCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ChatCompletionMessageCustomToolCallTypeType? type,
+    ChatCompletionMessageCustomToolCallType? type,
     ChatCompletionMessageCustomToolCallCustom?
     chatCompletionMessageCustomToolCallCustom,
   }) => $apply(

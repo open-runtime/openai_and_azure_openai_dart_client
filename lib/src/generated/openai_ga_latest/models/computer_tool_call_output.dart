@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_call_safety_check_param.dart';
 import 'computer_screenshot_image.dart';
-import 'computer_tool_call_output_status_status.dart';
-import 'computer_tool_call_output_type_type.dart';
+import 'computer_tool_call_output_status.dart';
+import 'computer_tool_call_output_type.dart';
 
 part 'computer_tool_call_output.mapper.dart';
 
@@ -21,7 +21,7 @@ class ComputerToolCallOutput with ComputerToolCallOutputMappable {
     this.id,
     this.acknowledgedSafetyChecks,
     this.status,
-    this.type = ComputerToolCallOutputTypeType.computerCallOutput,
+    this.type = ComputerToolCallOutputType.computerCallOutput,
   });
 
   @MappableField(key: 'call_id')
@@ -30,8 +30,8 @@ class ComputerToolCallOutput with ComputerToolCallOutputMappable {
   final String? id;
   @MappableField(key: 'acknowledged_safety_checks')
   final List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks;
-  final ComputerToolCallOutputStatusStatus? status;
-  final ComputerToolCallOutputTypeType type;
+  final ComputerToolCallOutputStatus? status;
+  final ComputerToolCallOutputType type;
 
   static ComputerToolCallOutput fromJson(Map<String, dynamic> json) => ComputerToolCallOutputMapper.fromJson(json);
 

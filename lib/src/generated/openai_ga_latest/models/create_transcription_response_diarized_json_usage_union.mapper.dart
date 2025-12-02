@@ -103,7 +103,7 @@ class CreateTranscriptionResponseDiarizedJsonUsageUnionTokensMapper
       );
       CreateTranscriptionResponseDiarizedJsonUsageUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      TranscriptTextUsageTokensTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageTokensTypeMapper.ensureInitialized();
       TranscriptTextUsageTokensInputTokenDetailsMapper.ensureInitialized();
     }
     return _instance!;
@@ -112,12 +112,12 @@ class CreateTranscriptionResponseDiarizedJsonUsageUnionTokensMapper
   @override
   final String id = 'CreateTranscriptionResponseDiarizedJsonUsageUnionTokens';
 
-  static TranscriptTextUsageTokensTypeType _$type(
+  static TranscriptTextUsageTokensType _$type(
     CreateTranscriptionResponseDiarizedJsonUsageUnionTokens v,
   ) => v.type;
   static const Field<
     CreateTranscriptionResponseDiarizedJsonUsageUnionTokens,
-    TranscriptTextUsageTokensTypeType
+    TranscriptTextUsageTokensType
   >
   _f$type = Field('type', _$type);
   static int _$inputTokens(
@@ -319,7 +319,7 @@ abstract class CreateTranscriptionResponseDiarizedJsonUsageUnionTokensCopyWith<
   get transcriptTextUsageTokensInputTokenDetails;
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     TranscriptTextUsageTokensInputTokenDetails?
     transcriptTextUsageTokensInputTokenDetails,
@@ -374,7 +374,7 @@ class _CreateTranscriptionResponseDiarizedJsonUsageUnionTokensCopyWithImpl<
       .$chain((v) => call(transcriptTextUsageTokensInputTokenDetails: v));
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     Object? transcriptTextUsageTokensInputTokenDetails = $none,
     int? outputTokens,
@@ -435,7 +435,7 @@ class CreateTranscriptionResponseDiarizedJsonUsageUnionDurationMapper
       );
       CreateTranscriptionResponseDiarizedJsonUsageUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      TranscriptTextUsageDurationTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageDurationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -443,12 +443,12 @@ class CreateTranscriptionResponseDiarizedJsonUsageUnionDurationMapper
   @override
   final String id = 'CreateTranscriptionResponseDiarizedJsonUsageUnionDuration';
 
-  static TranscriptTextUsageDurationTypeType _$type(
+  static TranscriptTextUsageDurationType _$type(
     CreateTranscriptionResponseDiarizedJsonUsageUnionDuration v,
   ) => v.type;
   static const Field<
     CreateTranscriptionResponseDiarizedJsonUsageUnionDuration,
-    TranscriptTextUsageDurationTypeType
+    TranscriptTextUsageDurationType
   >
   _f$type = Field('type', _$type);
   static num _$seconds(
@@ -599,7 +599,7 @@ abstract class CreateTranscriptionResponseDiarizedJsonUsageUnionDurationCopyWith
           $Out
         > {
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds});
+  $R call({TranscriptTextUsageDurationType? type, num? seconds});
   CreateTranscriptionResponseDiarizedJsonUsageUnionDurationCopyWith<
     $R2,
     $In,
@@ -637,7 +637,7 @@ class _CreateTranscriptionResponseDiarizedJsonUsageUnionDurationCopyWithImpl<
   $mapper =
       CreateTranscriptionResponseDiarizedJsonUsageUnionDurationMapper.ensureInitialized();
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds}) => $apply(
+  $R call({TranscriptTextUsageDurationType? type, num? seconds}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (seconds != null) #seconds: seconds,

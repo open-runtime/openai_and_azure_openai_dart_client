@@ -96,7 +96,7 @@ class CustomToolChatCompletionsCustomFormatUnionVariant1Mapper
             CustomToolChatCompletionsCustomFormatUnionVariant1Mapper._(),
       );
       CustomToolChatCompletionsCustomFormatUnionMapper.ensureInitialized();
-      CustomToolChatCompletionsCustomFormatUnionVariant1TypeTypeMapper.ensureInitialized();
+      CustomToolChatCompletionsCustomFormatUnionVariant1TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -104,12 +104,12 @@ class CustomToolChatCompletionsCustomFormatUnionVariant1Mapper
   @override
   final String id = 'CustomToolChatCompletionsCustomFormatUnionVariant1';
 
-  static CustomToolChatCompletionsCustomFormatUnionVariant1TypeType _$type(
+  static CustomToolChatCompletionsCustomFormatUnionVariant1Type _$type(
     CustomToolChatCompletionsCustomFormatUnionVariant1 v,
   ) => v.type;
   static const Field<
     CustomToolChatCompletionsCustomFormatUnionVariant1,
-    CustomToolChatCompletionsCustomFormatUnionVariant1TypeType
+    CustomToolChatCompletionsCustomFormatUnionVariant1Type
   >
   _f$type = Field('type', _$type);
 
@@ -229,7 +229,7 @@ abstract class CustomToolChatCompletionsCustomFormatUnionVariant1CopyWith<
     implements
         CustomToolChatCompletionsCustomFormatUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({CustomToolChatCompletionsCustomFormatUnionVariant1TypeType? type});
+  $R call({CustomToolChatCompletionsCustomFormatUnionVariant1Type? type});
   CustomToolChatCompletionsCustomFormatUnionVariant1CopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -258,7 +258,7 @@ class _CustomToolChatCompletionsCustomFormatUnionVariant1CopyWithImpl<$R, $Out>
   $mapper =
       CustomToolChatCompletionsCustomFormatUnionVariant1Mapper.ensureInitialized();
   @override
-  $R call({CustomToolChatCompletionsCustomFormatUnionVariant1TypeType? type}) =>
+  $R call({CustomToolChatCompletionsCustomFormatUnionVariant1Type? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CustomToolChatCompletionsCustomFormatUnionVariant1 $make(CopyWithData data) =>
@@ -293,7 +293,7 @@ class CustomToolChatCompletionsCustomFormatUnionVariant2Mapper
             CustomToolChatCompletionsCustomFormatUnionVariant2Mapper._(),
       );
       CustomToolChatCompletionsCustomFormatUnionMapper.ensureInitialized();
-      CustomToolChatCompletionsCustomFormatUnionVariant2TypeTypeMapper.ensureInitialized();
+      CustomToolChatCompletionsCustomFormatUnionVariant2TypeMapper.ensureInitialized();
       CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper.ensureInitialized();
     }
     return _instance!;
@@ -302,12 +302,12 @@ class CustomToolChatCompletionsCustomFormatUnionVariant2Mapper
   @override
   final String id = 'CustomToolChatCompletionsCustomFormatUnionVariant2';
 
-  static CustomToolChatCompletionsCustomFormatUnionVariant2TypeType _$type(
+  static CustomToolChatCompletionsCustomFormatUnionVariant2Type _$type(
     CustomToolChatCompletionsCustomFormatUnionVariant2 v,
   ) => v.type;
   static const Field<
     CustomToolChatCompletionsCustomFormatUnionVariant2,
-    CustomToolChatCompletionsCustomFormatUnionVariant2TypeType
+    CustomToolChatCompletionsCustomFormatUnionVariant2Type
   >
   _f$type = Field('type', _$type);
   static CustomToolChatCompletionsCustomFormatUnionVariant2Grammar
@@ -454,7 +454,7 @@ abstract class CustomToolChatCompletionsCustomFormatUnionVariant2CopyWith<
   get customToolChatCompletionsCustomFormatUnionVariant2Grammar;
   @override
   $R call({
-    CustomToolChatCompletionsCustomFormatUnionVariant2TypeType? type,
+    CustomToolChatCompletionsCustomFormatUnionVariant2Type? type,
     CustomToolChatCompletionsCustomFormatUnionVariant2Grammar?
     customToolChatCompletionsCustomFormatUnionVariant2Grammar,
   });
@@ -500,7 +500,7 @@ class _CustomToolChatCompletionsCustomFormatUnionVariant2CopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    CustomToolChatCompletionsCustomFormatUnionVariant2TypeType? type,
+    CustomToolChatCompletionsCustomFormatUnionVariant2Type? type,
     CustomToolChatCompletionsCustomFormatUnionVariant2Grammar?
     customToolChatCompletionsCustomFormatUnionVariant2Grammar,
   }) => $apply(

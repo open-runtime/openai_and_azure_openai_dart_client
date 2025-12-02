@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_session_input_audio_noise_reduction_type_type.dart';
+import 'realtime_session_input_audio_noise_reduction_type.dart';
 
 part 'realtime_session_input_audio_noise_reduction.mapper.dart';
 
@@ -14,7 +14,7 @@ class RealtimeSessionInputAudioNoiseReduction with RealtimeSessionInputAudioNois
     this.type,
   });
 
-  final RealtimeSessionInputAudioNoiseReductionTypeType? type;
+  final RealtimeSessionInputAudioNoiseReductionType? type;
 
   static RealtimeSessionInputAudioNoiseReduction fromJson(Map<String, dynamic> json) => RealtimeSessionInputAudioNoiseReductionMapper.fromJson(json);
 

@@ -17,7 +17,7 @@ class CustomToolChatCompletionsMapper
       MapperContainer.globals.use(
         _instance = CustomToolChatCompletionsMapper._(),
       );
-      CustomToolChatCompletionsTypeTypeMapper.ensureInitialized();
+      CustomToolChatCompletionsTypeMapper.ensureInitialized();
       CustomToolChatCompletionsCustomMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,9 @@ class CustomToolChatCompletionsMapper
   @override
   final String id = 'CustomToolChatCompletions';
 
-  static CustomToolChatCompletionsTypeType _$type(
-    CustomToolChatCompletions v,
-  ) => v.type;
-  static const Field<
-    CustomToolChatCompletions,
-    CustomToolChatCompletionsTypeType
-  >
+  static CustomToolChatCompletionsType _$type(CustomToolChatCompletions v) =>
+      v.type;
+  static const Field<CustomToolChatCompletions, CustomToolChatCompletionsType>
   _f$type = Field('type', _$type);
   static CustomToolChatCompletionsCustom _$customToolChatCompletionsCustom(
     CustomToolChatCompletions v,
@@ -144,7 +140,7 @@ abstract class CustomToolChatCompletionsCopyWith<
   >
   get customToolChatCompletionsCustom;
   $R call({
-    CustomToolChatCompletionsTypeType? type,
+    CustomToolChatCompletionsType? type,
     CustomToolChatCompletionsCustom? customToolChatCompletionsCustom,
   });
   CustomToolChatCompletionsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -173,7 +169,7 @@ class _CustomToolChatCompletionsCopyWithImpl<$R, $Out>
       .$chain((v) => call(customToolChatCompletionsCustom: v));
   @override
   $R call({
-    CustomToolChatCompletionsTypeType? type,
+    CustomToolChatCompletionsType? type,
     CustomToolChatCompletionsCustom? customToolChatCompletionsCustom,
   }) => $apply(
     FieldCopyWithData({

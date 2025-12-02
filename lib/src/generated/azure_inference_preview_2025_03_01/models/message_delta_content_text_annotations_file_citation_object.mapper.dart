@@ -20,7 +20,7 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
         _instance =
             MessageDeltaContentTextAnnotationsFileCitationObjectMapper._(),
       );
-      MessageDeltaContentTextAnnotationsFileCitationObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -34,12 +34,12 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
   ) => v.indexField;
   static const Field<MessageDeltaContentTextAnnotationsFileCitationObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentTextAnnotationsFileCitationObjectTypeType _$type(
+  static MessageDeltaContentTextAnnotationsFileCitationObjectType _$type(
     MessageDeltaContentTextAnnotationsFileCitationObject v,
   ) => v.type;
   static const Field<
     MessageDeltaContentTextAnnotationsFileCitationObject,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType
+    MessageDeltaContentTextAnnotationsFileCitationObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$text(
@@ -223,7 +223,7 @@ abstract class MessageDeltaContentTextAnnotationsFileCitationObjectCopyWith<
   get messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation?
     messageDeltaContentTextAnnotationsFileCitationObjectFileCitation,
@@ -279,7 +279,7 @@ class _MessageDeltaContentTextAnnotationsFileCitationObjectCopyWithImpl<
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFileCitationObjectType? type,
     Object? text = $none,
     Object? messageDeltaContentTextAnnotationsFileCitationObjectFileCitation =
         $none,

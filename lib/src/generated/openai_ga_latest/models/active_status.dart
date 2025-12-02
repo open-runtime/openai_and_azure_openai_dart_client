@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'active_status_type_type.dart';
+import 'active_status_type.dart';
 
 part 'active_status.mapper.dart';
 
@@ -12,10 +12,10 @@ part 'active_status.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ActiveStatus with ActiveStatusMappable {
   const ActiveStatus({
-    this.type = ActiveStatusTypeType.active,
+    this.type = ActiveStatusType.active,
   });
 
-  final ActiveStatusTypeType type;
+  final ActiveStatusType type;
 
   static ActiveStatus fromJson(Map<String, dynamic> json) => ActiveStatusMapper.fromJson(json);
 

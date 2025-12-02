@@ -18,7 +18,7 @@ class RealtimeServerEventResponseAudioTranscriptDoneMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseAudioTranscriptDoneMapper._(),
       );
-      RealtimeServerEventResponseAudioTranscriptDoneTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseAudioTranscriptDoneTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeServerEventResponseAudioTranscriptDoneMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseAudioTranscriptDone, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseAudioTranscriptDoneTypeType _$type(
+  static RealtimeServerEventResponseAudioTranscriptDoneType _$type(
     RealtimeServerEventResponseAudioTranscriptDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioTranscriptDone,
-    RealtimeServerEventResponseAudioTranscriptDoneTypeType
+    RealtimeServerEventResponseAudioTranscriptDoneType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -194,7 +194,7 @@ abstract class RealtimeServerEventResponseAudioTranscriptDoneCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventResponseAudioTranscriptDoneTypeType? type,
+    RealtimeServerEventResponseAudioTranscriptDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -231,7 +231,7 @@ class _RealtimeServerEventResponseAudioTranscriptDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseAudioTranscriptDoneTypeType? type,
+    RealtimeServerEventResponseAudioTranscriptDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

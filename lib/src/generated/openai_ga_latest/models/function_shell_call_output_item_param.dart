@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_shell_call_output_content_param.dart';
-import 'function_shell_call_output_item_param_type_type.dart';
+import 'function_shell_call_output_item_param_type.dart';
 
 part 'function_shell_call_output_item_param.mapper.dart';
 
@@ -15,7 +15,7 @@ class FunctionShellCallOutputItemParam with FunctionShellCallOutputItemParamMapp
   const FunctionShellCallOutputItemParam({
     required this.callId,
     required this.output,
-    this.type = FunctionShellCallOutputItemParamTypeType.shellCallOutput,
+    this.type = FunctionShellCallOutputItemParamType.shellCallOutput,
     this.id,
     this.maxOutputLength,
   });
@@ -23,7 +23,7 @@ class FunctionShellCallOutputItemParam with FunctionShellCallOutputItemParamMapp
   @MappableField(key: 'call_id')
   final String callId;
   final List<FunctionShellCallOutputContentParam> output;
-  final FunctionShellCallOutputItemParamTypeType type;
+  final FunctionShellCallOutputItemParamType type;
   final String? id;
   @MappableField(key: 'max_output_length')
   final int? maxOutputLength;

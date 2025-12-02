@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_stream_event.dart';
-import 'response_web_search_call_in_progress_event_type_type.dart';
+import 'response_web_search_call_in_progress_event_type.dart';
 
 part 'response_web_search_call_in_progress_event.mapper.dart';
 
@@ -18,7 +18,7 @@ class ResponseWebSearchCallInProgressEvent with ResponseWebSearchCallInProgressE
     required this.itemId,
   });
 
-  final ResponseWebSearchCallInProgressEventTypeType type;
+  final ResponseWebSearchCallInProgressEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

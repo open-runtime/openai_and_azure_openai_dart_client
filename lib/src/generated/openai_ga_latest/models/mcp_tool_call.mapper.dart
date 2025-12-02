@@ -14,7 +14,7 @@ class McpToolCallMapper extends ClassMapperBase<McpToolCall> {
   static McpToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpToolCallMapper._());
-      McpToolCallTypeTypeMapper.ensureInitialized();
+      McpToolCallTypeMapper.ensureInitialized();
       McpToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class McpToolCallMapper extends ClassMapperBase<McpToolCall> {
   @override
   final String id = 'McpToolCall';
 
-  static McpToolCallTypeType _$type(McpToolCall v) => v.type;
-  static const Field<McpToolCall, McpToolCallTypeType> _f$type = Field(
+  static McpToolCallType _$type(McpToolCall v) => v.type;
+  static const Field<McpToolCall, McpToolCallType> _f$type = Field(
     'type',
     _$type,
   );
@@ -161,7 +161,7 @@ extension McpToolCallValueCopy<$R, $Out>
 abstract class McpToolCallCopyWith<$R, $In extends McpToolCall, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    McpToolCallTypeType? type,
+    McpToolCallType? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -184,7 +184,7 @@ class _McpToolCallCopyWithImpl<$R, $Out>
       McpToolCallMapper.ensureInitialized();
   @override
   $R call({
-    McpToolCallTypeType? type,
+    McpToolCallType? type,
     String? id,
     String? serverLabel,
     String? name,

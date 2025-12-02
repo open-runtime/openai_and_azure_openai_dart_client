@@ -17,7 +17,7 @@ class ChatCompletionAllowedToolsChoiceMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionAllowedToolsChoiceMapper._(),
       );
-      ChatCompletionAllowedToolsChoiceTypeTypeMapper.ensureInitialized();
+      ChatCompletionAllowedToolsChoiceTypeMapper.ensureInitialized();
       ChatCompletionAllowedToolsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ChatCompletionAllowedToolsChoiceMapper
   @override
   final String id = 'ChatCompletionAllowedToolsChoice';
 
-  static ChatCompletionAllowedToolsChoiceTypeType _$type(
+  static ChatCompletionAllowedToolsChoiceType _$type(
     ChatCompletionAllowedToolsChoice v,
   ) => v.type;
   static const Field<
     ChatCompletionAllowedToolsChoice,
-    ChatCompletionAllowedToolsChoiceTypeType
+    ChatCompletionAllowedToolsChoiceType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionAllowedTools _$allowedTools(
@@ -149,7 +149,7 @@ abstract class ChatCompletionAllowedToolsChoiceCopyWith<
   >
   get allowedTools;
   $R call({
-    ChatCompletionAllowedToolsChoiceTypeType? type,
+    ChatCompletionAllowedToolsChoiceType? type,
     ChatCompletionAllowedTools? allowedTools,
   });
   ChatCompletionAllowedToolsChoiceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -184,7 +184,7 @@ class _ChatCompletionAllowedToolsChoiceCopyWithImpl<$R, $Out>
       $value.allowedTools.copyWith.$chain((v) => call(allowedTools: v));
   @override
   $R call({
-    ChatCompletionAllowedToolsChoiceTypeType? type,
+    ChatCompletionAllowedToolsChoiceType? type,
     ChatCompletionAllowedTools? allowedTools,
   }) => $apply(
     FieldCopyWithData({

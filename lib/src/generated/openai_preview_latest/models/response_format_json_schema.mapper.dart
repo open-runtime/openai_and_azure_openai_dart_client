@@ -17,7 +17,7 @@ class ResponseFormatJsonSchemaMapper
       MapperContainer.globals.use(
         _instance = ResponseFormatJsonSchemaMapper._(),
       );
-      ResponseFormatJsonSchemaTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonSchemaTypeMapper.ensureInitialized();
       ResponseFormatJsonSchemaJsonSchemaMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class ResponseFormatJsonSchemaMapper
   @override
   final String id = 'ResponseFormatJsonSchema';
 
-  static ResponseFormatJsonSchemaTypeType _$type(ResponseFormatJsonSchema v) =>
+  static ResponseFormatJsonSchemaType _$type(ResponseFormatJsonSchema v) =>
       v.type;
-  static const Field<ResponseFormatJsonSchema, ResponseFormatJsonSchemaTypeType>
+  static const Field<ResponseFormatJsonSchema, ResponseFormatJsonSchemaType>
   _f$type = Field('type', _$type);
   static ResponseFormatJsonSchemaJsonSchema
   _$responseFormatJsonSchemaJsonSchema(ResponseFormatJsonSchema v) =>
@@ -139,7 +139,7 @@ abstract class ResponseFormatJsonSchemaCopyWith<
   >
   get responseFormatJsonSchemaJsonSchema;
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   });
   ResponseFormatJsonSchemaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -168,7 +168,7 @@ class _ResponseFormatJsonSchemaCopyWithImpl<$R, $Out>
       .$chain((v) => call(responseFormatJsonSchemaJsonSchema: v));
   @override
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   }) => $apply(
     FieldCopyWithData({

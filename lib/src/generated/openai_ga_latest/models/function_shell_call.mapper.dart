@@ -16,7 +16,7 @@ class FunctionShellCallMapper extends ClassMapperBase<FunctionShellCall> {
       MapperContainer.globals.use(_instance = FunctionShellCallMapper._());
       FunctionShellActionMapper.ensureInitialized();
       LocalShellCallStatusMapper.ensureInitialized();
-      FunctionShellCallTypeTypeMapper.ensureInitialized();
+      FunctionShellCallTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -49,14 +49,13 @@ class FunctionShellCallMapper extends ClassMapperBase<FunctionShellCall> {
     key: r'created_by',
     opt: true,
   );
-  static FunctionShellCallTypeType _$type(FunctionShellCall v) => v.type;
-  static const Field<FunctionShellCall, FunctionShellCallTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: FunctionShellCallTypeType.shellCall,
-      );
+  static FunctionShellCallType _$type(FunctionShellCall v) => v.type;
+  static const Field<FunctionShellCall, FunctionShellCallType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: FunctionShellCallType.shellCall,
+  );
 
   @override
   final MappableFields<FunctionShellCall> fields = const {
@@ -162,7 +161,7 @@ abstract class FunctionShellCallCopyWith<
     FunctionShellAction? action,
     LocalShellCallStatus? status,
     String? createdBy,
-    FunctionShellCallTypeType? type,
+    FunctionShellCallType? type,
   });
   FunctionShellCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -187,7 +186,7 @@ class _FunctionShellCallCopyWithImpl<$R, $Out>
     FunctionShellAction? action,
     LocalShellCallStatus? status,
     Object? createdBy = $none,
-    FunctionShellCallTypeType? type,
+    FunctionShellCallType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

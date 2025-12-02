@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'compound_filter_filters_union.dart';
-import 'compound_filter_type_type.dart';
+import 'compound_filter_type.dart';
 
 part 'compound_filter.mapper.dart';
 
@@ -17,7 +17,7 @@ class CompoundFilter with CompoundFilterMappable {
     required this.filters,
   });
 
-  final CompoundFilterTypeType type;
+  final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
   static CompoundFilter fromJson(Map<String, dynamic> json) => CompoundFilterMapper.fromJson(json);

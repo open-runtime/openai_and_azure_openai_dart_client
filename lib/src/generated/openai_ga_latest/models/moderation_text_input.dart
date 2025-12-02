@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'moderation_text_input_type_type.dart';
+import 'moderation_text_input_type.dart';
 
 part 'moderation_text_input.mapper.dart';
 
@@ -16,7 +16,7 @@ class ModerationTextInput with ModerationTextInputMappable {
     required this.text,
   });
 
-  final ModerationTextInputTypeType type;
+  final ModerationTextInputType type;
   final String text;
 
   static ModerationTextInput fromJson(Map<String, dynamic> json) => ModerationTextInputMapper.fromJson(json);

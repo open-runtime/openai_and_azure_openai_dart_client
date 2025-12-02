@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item_content_union.dart';
-import 'eval_item_role_role.dart';
-import 'eval_item_type_type.dart';
+import 'eval_item_role.dart';
+import 'eval_item_type.dart';
 import 'eval_item.dart';
 
 part 'create_eval_responses_run_data_source_input_messages_union_variant1_template_union.mapper.dart';
@@ -47,9 +47,9 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionVar
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem extends CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMappable {
-  final EvalItemRoleRole role;
+  final EvalItemRole role;
   final EvalItemContentUnion content;
-  final EvalItemTypeType? type;
+  final EvalItemType? type;
 
   const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem({
     required this.role,

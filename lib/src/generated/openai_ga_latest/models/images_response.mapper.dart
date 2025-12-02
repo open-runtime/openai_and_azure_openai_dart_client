@@ -15,10 +15,10 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImagesResponseMapper._());
       ImageMapper.ensureInitialized();
-      ImagesResponseBackgroundBackgroundMapper.ensureInitialized();
+      ImagesResponseBackgroundMapper.ensureInitialized();
       ImagesResponseOutputFormatOutputFormatMapper.ensureInitialized();
-      ImagesResponseSizeSizeMapper.ensureInitialized();
-      ImagesResponseQualityQualityMapper.ensureInitialized();
+      ImagesResponseSizeMapper.ensureInitialized();
+      ImagesResponseQualityMapper.ensureInitialized();
       ImageGenUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -38,10 +38,10 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
     _$data,
     opt: true,
   );
-  static ImagesResponseBackgroundBackground? _$background(ImagesResponse v) =>
+  static ImagesResponseBackground? _$background(ImagesResponse v) =>
       v.background;
-  static const Field<ImagesResponse, ImagesResponseBackgroundBackground>
-  _f$background = Field('background', _$background, opt: true);
+  static const Field<ImagesResponse, ImagesResponseBackground> _f$background =
+      Field('background', _$background, opt: true);
   static ImagesResponseOutputFormatOutputFormat? _$outputFormat(
     ImagesResponse v,
   ) => v.outputFormat;
@@ -52,15 +52,18 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
     key: r'output_format',
     opt: true,
   );
-  static ImagesResponseSizeSize? _$size(ImagesResponse v) => v.size;
-  static const Field<ImagesResponse, ImagesResponseSizeSize> _f$size = Field(
+  static ImagesResponseSize? _$size(ImagesResponse v) => v.size;
+  static const Field<ImagesResponse, ImagesResponseSize> _f$size = Field(
     'size',
     _$size,
     opt: true,
   );
-  static ImagesResponseQualityQuality? _$quality(ImagesResponse v) => v.quality;
-  static const Field<ImagesResponse, ImagesResponseQualityQuality> _f$quality =
-      Field('quality', _$quality, opt: true);
+  static ImagesResponseQuality? _$quality(ImagesResponse v) => v.quality;
+  static const Field<ImagesResponse, ImagesResponseQuality> _f$quality = Field(
+    'quality',
+    _$quality,
+    opt: true,
+  );
   static ImageGenUsage? _$usage(ImagesResponse v) => v.usage;
   static const Field<ImagesResponse, ImageGenUsage> _f$usage = Field(
     'usage',
@@ -162,10 +165,10 @@ abstract class ImagesResponseCopyWith<$R, $In extends ImagesResponse, $Out>
   $R call({
     int? created,
     List<Image>? data,
-    ImagesResponseBackgroundBackground? background,
+    ImagesResponseBackground? background,
     ImagesResponseOutputFormatOutputFormat? outputFormat,
-    ImagesResponseSizeSize? size,
-    ImagesResponseQualityQuality? quality,
+    ImagesResponseSize? size,
+    ImagesResponseQuality? quality,
     ImageGenUsage? usage,
   });
   ImagesResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(

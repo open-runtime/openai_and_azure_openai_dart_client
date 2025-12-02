@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'open_ai_file.dart';
 import 'upload_object_object_enum.dart';
-import 'upload_status_status.dart';
+import 'upload_status.dart';
 
 part 'upload.mapper.dart';
 
@@ -32,7 +32,7 @@ class Upload with UploadMappable {
   final String filename;
   final int bytes;
   final String purpose;
-  final UploadStatusStatus status;
+  final UploadStatus status;
   @MappableField(key: 'expires_at')
   final int expiresAt;
   @MappableField(key: 'object')

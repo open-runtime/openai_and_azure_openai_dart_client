@@ -17,7 +17,7 @@ class ResponseAudioTranscriptDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseAudioTranscriptDoneEventMapper._(),
       );
-      ResponseAudioTranscriptDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseAudioTranscriptDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseAudioTranscriptDoneEventMapper
   @override
   final String id = 'ResponseAudioTranscriptDoneEvent';
 
-  static ResponseAudioTranscriptDoneEventTypeType _$type(
+  static ResponseAudioTranscriptDoneEventType _$type(
     ResponseAudioTranscriptDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseAudioTranscriptDoneEvent,
-    ResponseAudioTranscriptDoneEventTypeType
+    ResponseAudioTranscriptDoneEventType
   >
   _f$type = Field('type', _$type);
 
@@ -125,7 +125,7 @@ abstract class ResponseAudioTranscriptDoneEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseAudioTranscriptDoneEventTypeType? type});
+  $R call({ResponseAudioTranscriptDoneEventType? type});
   ResponseAudioTranscriptDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -149,7 +149,7 @@ class _ResponseAudioTranscriptDoneEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseAudioTranscriptDoneEvent> $mapper =
       ResponseAudioTranscriptDoneEventMapper.ensureInitialized();
   @override
-  $R call({ResponseAudioTranscriptDoneEventTypeType? type}) =>
+  $R call({ResponseAudioTranscriptDoneEventType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseAudioTranscriptDoneEvent $make(CopyWithData data) =>

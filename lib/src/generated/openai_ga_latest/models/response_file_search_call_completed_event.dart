@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_file_search_call_completed_event_type_type.dart';
+import 'response_file_search_call_completed_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_file_search_call_completed_event.mapper.dart';
@@ -19,7 +19,7 @@ class ResponseFileSearchCallCompletedEvent with ResponseFileSearchCallCompletedE
     required this.sequenceNumber,
   });
 
-  final ResponseFileSearchCallCompletedEventTypeType type;
+  final ResponseFileSearchCallCompletedEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

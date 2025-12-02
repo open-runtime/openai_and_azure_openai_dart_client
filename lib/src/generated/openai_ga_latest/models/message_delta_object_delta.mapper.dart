@@ -17,7 +17,7 @@ class MessageDeltaObjectDeltaMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaObjectDeltaMapper._(),
       );
-      MessageDeltaObjectDeltaRoleRoleMapper.ensureInitialized();
+      MessageDeltaObjectDeltaRoleMapper.ensureInitialized();
       MessageContentDeltaMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class MessageDeltaObjectDeltaMapper
   @override
   final String id = 'MessageDeltaObjectDelta';
 
-  static MessageDeltaObjectDeltaRoleRole? _$role(MessageDeltaObjectDelta v) =>
+  static MessageDeltaObjectDeltaRole? _$role(MessageDeltaObjectDelta v) =>
       v.role;
-  static const Field<MessageDeltaObjectDelta, MessageDeltaObjectDeltaRoleRole>
+  static const Field<MessageDeltaObjectDelta, MessageDeltaObjectDeltaRole>
   _f$role = Field('role', _$role, opt: true);
   static List<MessageContentDelta>? _$content(MessageDeltaObjectDelta v) =>
       v.content;
@@ -129,7 +129,7 @@ abstract class MessageDeltaObjectDeltaCopyWith<
   >?
   get content;
   $R call({
-    MessageDeltaObjectDeltaRoleRole? role,
+    MessageDeltaObjectDeltaRole? role,
     List<MessageContentDelta>? content,
   });
   MessageDeltaObjectDeltaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(

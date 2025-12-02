@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_server_event_part_type_type.dart';
+import 'realtime_server_event_part_type.dart';
 
 part 'realtime_server_event_part.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeServerEventPart with RealtimeServerEventPartMappable {
     this.transcript,
   });
 
-  final RealtimeServerEventPartTypeType? type;
+  final RealtimeServerEventPartType? type;
   final String? text;
   final String? audio;
   final String? transcript;

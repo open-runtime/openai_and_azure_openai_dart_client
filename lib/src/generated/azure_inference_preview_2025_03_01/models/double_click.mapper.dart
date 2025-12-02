@@ -14,7 +14,7 @@ class DoubleClickMapper extends ClassMapperBase<DoubleClick> {
   static DoubleClickMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DoubleClickMapper._());
-      DoubleClickTypeTypeMapper.ensureInitialized();
+      DoubleClickTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class DoubleClickMapper extends ClassMapperBase<DoubleClick> {
   static const Field<DoubleClick, int> _f$x = Field('x', _$x);
   static int _$y(DoubleClick v) => v.y;
   static const Field<DoubleClick, int> _f$y = Field('y', _$y);
-  static DoubleClickTypeType _$type(DoubleClick v) => v.type;
-  static const Field<DoubleClick, DoubleClickTypeType> _f$type = Field(
+  static DoubleClickType _$type(DoubleClick v) => v.type;
+  static const Field<DoubleClick, DoubleClickType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: DoubleClickTypeType.doubleClick,
+    def: DoubleClickType.doubleClick,
   );
 
   @override
@@ -113,7 +113,7 @@ extension DoubleClickValueCopy<$R, $Out>
 
 abstract class DoubleClickCopyWith<$R, $In extends DoubleClick, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? x, int? y, DoubleClickTypeType? type});
+  $R call({int? x, int? y, DoubleClickType? type});
   DoubleClickCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -126,7 +126,7 @@ class _DoubleClickCopyWithImpl<$R, $Out>
   late final ClassMapperBase<DoubleClick> $mapper =
       DoubleClickMapper.ensureInitialized();
   @override
-  $R call({int? x, int? y, DoubleClickTypeType? type}) => $apply(
+  $R call({int? x, int? y, DoubleClickType? type}) => $apply(
     FieldCopyWithData({
       if (x != null) #x: x,
       if (y != null) #y: y,

@@ -7,11 +7,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'metadata.dart';
 import 'realtime_conversation_item.dart';
 import 'realtime_response_max_output_tokens_union.dart';
-import 'realtime_response_modalities_modalities.dart';
+import 'realtime_response_modalities.dart';
 import 'realtime_response_object_object_enum.dart';
 import 'realtime_response_output_audio_format_output_audio_format.dart';
+import 'realtime_response_status.dart';
 import 'realtime_response_status_details.dart';
-import 'realtime_response_status_status.dart';
 import 'realtime_response_usage.dart';
 import 'voice_ids_shared.dart';
 
@@ -39,7 +39,7 @@ class RealtimeResponse with RealtimeResponseMappable {
   final String? id;
   @MappableField(key: 'object')
   final RealtimeResponseObjectObjectEnum? objectEnum;
-  final RealtimeResponseStatusStatus? status;
+  final RealtimeResponseStatus? status;
   @MappableField(key: 'status_details')
   final RealtimeResponseStatusDetails? realtimeResponseStatusDetails;
   final List<RealtimeConversationItem>? output;
@@ -50,7 +50,7 @@ class RealtimeResponse with RealtimeResponseMappable {
   final String? conversationId;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
-  final List<RealtimeResponseModalitiesModalities>? modalities;
+  final List<RealtimeResponseModalities>? modalities;
   @MappableField(key: 'output_audio_format')
   final RealtimeResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat;
   final num? temperature;

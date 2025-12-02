@@ -4,16 +4,16 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_and_custom_tool_call_output_type_type.dart';
-import 'function_and_custom_tool_call_output_type_type2.dart';
-import 'function_and_custom_tool_call_output_type_type3.dart';
+import 'function_and_custom_tool_call_output_type.dart';
+import 'function_and_custom_tool_call_output_type2.dart';
+import 'function_and_custom_tool_call_output_type3.dart';
 import 'image_detail.dart';
 import 'input_file_content.dart';
-import 'input_file_content_type_type.dart';
+import 'input_file_content_type.dart';
 import 'input_image_content.dart';
-import 'input_image_content_type_type.dart';
+import 'input_image_content_type.dart';
 import 'input_text_content.dart';
-import 'input_text_content_type_type.dart';
+import 'input_text_content_type.dart';
 
 part 'function_and_custom_tool_call_output.mapper.dart';
 
@@ -54,7 +54,7 @@ extension FunctionAndCustomToolCallOutputUnionDeserializer on FunctionAndCustomT
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
 class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput with FunctionAndCustomToolCallOutputInputTextMappable {
-  final FunctionAndCustomToolCallOutputTypeType type;
+  final FunctionAndCustomToolCallOutputType type;
   final String text;
 
   const FunctionAndCustomToolCallOutputInputText({
@@ -65,7 +65,7 @@ class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCall
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
 class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCallOutput with FunctionAndCustomToolCallOutputInputImageMappable {
-  final FunctionAndCustomToolCallOutputTypeType2 type;
+  final FunctionAndCustomToolCallOutputType2 type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
@@ -82,7 +82,7 @@ class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCal
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
 class FunctionAndCustomToolCallOutputInputFile extends FunctionAndCustomToolCallOutput with FunctionAndCustomToolCallOutputInputFileMappable {
-  final FunctionAndCustomToolCallOutputTypeType3 type;
+  final FunctionAndCustomToolCallOutputType3 type;
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? filename;

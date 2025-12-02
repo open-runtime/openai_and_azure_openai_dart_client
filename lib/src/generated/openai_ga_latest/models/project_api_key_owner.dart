@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'project_api_key_owner_type_type.dart';
+import 'project_api_key_owner_type.dart';
 import 'project_user.dart';
 import 'project_service_account.dart';
 
@@ -18,7 +18,7 @@ class ProjectApiKeyOwner with ProjectApiKeyOwnerMappable {
     this.serviceAccount,
   });
 
-  final ProjectApiKeyOwnerTypeType? type;
+  final ProjectApiKeyOwnerType? type;
   final ProjectUser? user;
   @MappableField(key: 'service_account')
   final ProjectServiceAccount? serviceAccount;

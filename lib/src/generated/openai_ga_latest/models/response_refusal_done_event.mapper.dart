@@ -17,7 +17,7 @@ class ResponseRefusalDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseRefusalDoneEventMapper._(),
       );
-      ResponseRefusalDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseRefusalDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseRefusalDoneEventMapper
   @override
   final String id = 'ResponseRefusalDoneEvent';
 
-  static ResponseRefusalDoneEventTypeType _$type(ResponseRefusalDoneEvent v) =>
+  static ResponseRefusalDoneEventType _$type(ResponseRefusalDoneEvent v) =>
       v.type;
-  static const Field<ResponseRefusalDoneEvent, ResponseRefusalDoneEventTypeType>
+  static const Field<ResponseRefusalDoneEvent, ResponseRefusalDoneEventType>
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseRefusalDoneEvent v) => v.itemId;
   static const Field<ResponseRefusalDoneEvent, String> _f$itemId = Field(
@@ -155,7 +155,7 @@ abstract class ResponseRefusalDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseRefusalDoneEventTypeType? type,
+    ResponseRefusalDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -178,7 +178,7 @@ class _ResponseRefusalDoneEventCopyWithImpl<$R, $Out>
       ResponseRefusalDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseRefusalDoneEventTypeType? type,
+    ResponseRefusalDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

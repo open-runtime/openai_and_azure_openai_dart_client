@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'project_create_request_geography_geography.dart';
+import 'project_create_request_geography.dart';
 
 part 'project_create_request.mapper.dart';
 
@@ -16,7 +16,7 @@ class ProjectCreateRequest with ProjectCreateRequestMappable {
   });
 
   final String name;
-  final ProjectCreateRequestGeographyGeography? geography;
+  final ProjectCreateRequestGeography? geography;
 
   static ProjectCreateRequest fromJson(Map<String, dynamic> json) => ProjectCreateRequestMapper.fromJson(json);
 

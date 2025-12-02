@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_failed_event_type_type.dart';
+import 'response_failed_event_type.dart';
 import 'response_model.dart';
 import 'response_stream_event.dart';
 
@@ -19,7 +19,7 @@ class ResponseFailedEvent with ResponseFailedEventMappable {
     required this.response,
   });
 
-  final ResponseFailedEventTypeType type;
+  final ResponseFailedEventType type;
   final ResponseModel response;
 
   static ResponseFailedEvent fromJson(Map<String, dynamic> json) => ResponseFailedEventMapper.fromJson(json);

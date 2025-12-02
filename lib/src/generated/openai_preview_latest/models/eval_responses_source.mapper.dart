@@ -14,7 +14,7 @@ class EvalResponsesSourceMapper extends ClassMapperBase<EvalResponsesSource> {
   static EvalResponsesSourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalResponsesSourceMapper._());
-      EvalResponsesSourceTypeTypeMapper.ensureInitialized();
+      EvalResponsesSourceTypeMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class EvalResponsesSourceMapper extends ClassMapperBase<EvalResponsesSource> {
   @override
   final String id = 'EvalResponsesSource';
 
-  static EvalResponsesSourceTypeType _$type(EvalResponsesSource v) => v.type;
-  static const Field<EvalResponsesSource, EvalResponsesSourceTypeType> _f$type =
+  static EvalResponsesSourceType _$type(EvalResponsesSource v) => v.type;
+  static const Field<EvalResponsesSource, EvalResponsesSourceType> _f$type =
       Field('type', _$type);
   static dynamic _$metadata(EvalResponsesSource v) => v.metadata;
   static const Field<EvalResponsesSource, dynamic> _f$metadata = Field(
@@ -214,7 +214,7 @@ abstract class EvalResponsesSourceCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get users;
   $R call({
-    EvalResponsesSourceTypeType? type,
+    EvalResponsesSourceType? type,
     dynamic metadata,
     String? model,
     String? instructionsSearch,
@@ -251,7 +251,7 @@ class _EvalResponsesSourceCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    EvalResponsesSourceTypeType? type,
+    EvalResponsesSourceType? type,
     Object? metadata = $none,
     Object? model = $none,
     Object? instructionsSearch = $none,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
 import 'realtime_server_event_response_content_part_added_part.dart';
-import 'realtime_server_event_response_content_part_added_type_type.dart';
+import 'realtime_server_event_response_content_part_added_type.dart';
 
 part 'realtime_server_event_response_content_part_added.mapper.dart';
 
@@ -27,7 +27,7 @@ class RealtimeServerEventResponseContentPartAdded with RealtimeServerEventRespon
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseContentPartAddedTypeType type;
+  final RealtimeServerEventResponseContentPartAddedType type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')

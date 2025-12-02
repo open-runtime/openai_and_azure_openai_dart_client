@@ -4,15 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistant_stream_event_data_data.dart';
-import 'assistant_stream_event_event_event.dart';
-import 'assistant_stream_event_event_event2.dart';
+import 'assistant_stream_event_data.dart';
+import 'assistant_stream_event_event.dart';
+import 'assistant_stream_event_event2.dart';
 import 'done_event.dart';
-import 'done_event_data_data.dart';
-import 'done_event_event_event.dart';
+import 'done_event_data.dart';
+import 'done_event_event.dart';
 import 'error.dart';
 import 'error_event.dart';
-import 'error_event_event_event.dart';
+import 'error_event_event.dart';
 
 part 'assistant_stream_event.mapper.dart';
 
@@ -70,7 +70,7 @@ extension AssistantStreamEventUnionDeserializer on AssistantStreamEvent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
 class AssistantStreamEventError extends AssistantStreamEvent with AssistantStreamEventErrorMappable {
-  final AssistantStreamEventEventEvent event;
+  final AssistantStreamEventEvent event;
   final Error data;
 
   const AssistantStreamEventError({
@@ -81,8 +81,8 @@ class AssistantStreamEventError extends AssistantStreamEvent with AssistantStrea
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'done')
 class AssistantStreamEventDone extends AssistantStreamEvent with AssistantStreamEventDoneMappable {
-  final AssistantStreamEventEventEvent2 event;
-  final AssistantStreamEventDataData data;
+  final AssistantStreamEventEvent2 event;
+  final AssistantStreamEventData data;
 
   const AssistantStreamEventDone({
     required this.event,

@@ -14,7 +14,7 @@ class AudioVerboseResponseMapper extends ClassMapperBase<AudioVerboseResponse> {
   static AudioVerboseResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AudioVerboseResponseMapper._());
-      AudioVerboseResponseTaskTaskMapper.ensureInitialized();
+      AudioVerboseResponseTaskMapper.ensureInitialized();
       AudioSegmentMapper.ensureInitialized();
       AudioWordMapper.ensureInitialized();
     }
@@ -29,9 +29,9 @@ class AudioVerboseResponseMapper extends ClassMapperBase<AudioVerboseResponse> {
     'text',
     _$text,
   );
-  static AudioVerboseResponseTaskTask? _$task(AudioVerboseResponse v) => v.task;
-  static const Field<AudioVerboseResponse, AudioVerboseResponseTaskTask>
-  _f$task = Field('task', _$task, opt: true);
+  static AudioVerboseResponseTask? _$task(AudioVerboseResponse v) => v.task;
+  static const Field<AudioVerboseResponse, AudioVerboseResponseTask> _f$task =
+      Field('task', _$task, opt: true);
   static String? _$language(AudioVerboseResponse v) => v.language;
   static const Field<AudioVerboseResponse, String> _f$language = Field(
     'language',
@@ -159,7 +159,7 @@ abstract class AudioVerboseResponseCopyWith<
   get words;
   $R call({
     String? text,
-    AudioVerboseResponseTaskTask? task,
+    AudioVerboseResponseTask? task,
     String? language,
     num? duration,
     List<AudioSegment>? segments,

@@ -14,7 +14,7 @@ class InputTextMapper extends ClassMapperBase<InputText> {
   static InputTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputTextMapper._());
-      InputTextTypeTypeMapper.ensureInitialized();
+      InputTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,11 +22,8 @@ class InputTextMapper extends ClassMapperBase<InputText> {
   @override
   final String id = 'InputText';
 
-  static InputTextTypeType _$type(InputText v) => v.type;
-  static const Field<InputText, InputTextTypeType> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static InputTextType _$type(InputText v) => v.type;
+  static const Field<InputText, InputTextType> _f$type = Field('type', _$type);
   static String _$text(InputText v) => v.text;
   static const Field<InputText, String> _f$text = Field('text', _$text);
 
@@ -103,7 +100,7 @@ extension InputTextValueCopy<$R, $Out> on ObjectCopyWith<$R, InputText, $Out> {
 
 abstract class InputTextCopyWith<$R, $In extends InputText, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({InputTextTypeType? type, String? text});
+  $R call({InputTextType? type, String? text});
   InputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -116,7 +113,7 @@ class _InputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InputText> $mapper =
       InputTextMapper.ensureInitialized();
   @override
-  $R call({InputTextTypeType? type, String? text}) => $apply(
+  $R call({InputTextType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

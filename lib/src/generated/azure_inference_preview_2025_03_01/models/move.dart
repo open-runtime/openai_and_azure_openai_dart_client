@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'move_type_type.dart';
+import 'move_type.dart';
 
 part 'move.mapper.dart';
 
@@ -16,12 +16,12 @@ class Move with MoveMappable {
   const Move({
     required this.x,
     required this.y,
-    this.type = MoveTypeType.move,
+    this.type = MoveType.move,
   });
 
   final int x;
   final int y;
-  final MoveTypeType type;
+  final MoveType type;
 
   static Move fromJson(Map<String, dynamic> json) => MoveMapper.fromJson(json);
 

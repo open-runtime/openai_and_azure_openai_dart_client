@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_tool_calls_code_object_code_interpreter.dart';
-import 'run_step_details_tool_calls_code_object_type_type.dart';
+import 'run_step_details_tool_calls_code_object_type.dart';
 
 part 'run_step_details_tool_calls_code_object.mapper.dart';
 
@@ -19,7 +19,7 @@ class RunStepDetailsToolCallsCodeObject with RunStepDetailsToolCallsCodeObjectMa
   });
 
   final String id;
-  final RunStepDetailsToolCallsCodeObjectTypeType type;
+  final RunStepDetailsToolCallsCodeObjectType type;
   @MappableField(key: 'code_interpreter')
   final RunStepDetailsToolCallsCodeObjectCodeInterpreter runStepDetailsToolCallsCodeObjectCodeInterpreter;
 

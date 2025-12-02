@@ -18,7 +18,7 @@ class VectorStoreFileBatchObjectMapper
         _instance = VectorStoreFileBatchObjectMapper._(),
       );
       VectorStoreFileBatchObjectObjectObjectEnumMapper.ensureInitialized();
-      VectorStoreFileBatchObjectStatusStatusMapper.ensureInitialized();
+      VectorStoreFileBatchObjectStatusMapper.ensureInitialized();
       VectorStoreFileBatchObjectFileCountsMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,12 +50,12 @@ class VectorStoreFileBatchObjectMapper
       v.vectorStoreId;
   static const Field<VectorStoreFileBatchObject, String> _f$vectorStoreId =
       Field('vectorStoreId', _$vectorStoreId, key: r'vector_store_id');
-  static VectorStoreFileBatchObjectStatusStatus _$status(
+  static VectorStoreFileBatchObjectStatus _$status(
     VectorStoreFileBatchObject v,
   ) => v.status;
   static const Field<
     VectorStoreFileBatchObject,
-    VectorStoreFileBatchObjectStatusStatus
+    VectorStoreFileBatchObjectStatus
   >
   _f$status = Field('status', _$status);
   static VectorStoreFileBatchObjectFileCounts
@@ -184,7 +184,7 @@ abstract class VectorStoreFileBatchObjectCopyWith<
     VectorStoreFileBatchObjectObjectObjectEnum? objectEnum,
     int? createdAt,
     String? vectorStoreId,
-    VectorStoreFileBatchObjectStatusStatus? status,
+    VectorStoreFileBatchObjectStatus? status,
     VectorStoreFileBatchObjectFileCounts? vectorStoreFileBatchObjectFileCounts,
   });
   VectorStoreFileBatchObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -221,7 +221,7 @@ class _VectorStoreFileBatchObjectCopyWithImpl<$R, $Out>
     VectorStoreFileBatchObjectObjectObjectEnum? objectEnum,
     int? createdAt,
     String? vectorStoreId,
-    VectorStoreFileBatchObjectStatusStatus? status,
+    VectorStoreFileBatchObjectStatus? status,
     VectorStoreFileBatchObjectFileCounts? vectorStoreFileBatchObjectFileCounts,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class EvalStoredCompletionsDataSourceConfigMapper
       MapperContainer.globals.use(
         _instance = EvalStoredCompletionsDataSourceConfigMapper._(),
       );
-      EvalStoredCompletionsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalStoredCompletionsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class EvalStoredCompletionsDataSourceConfigMapper
   static dynamic _$schema(EvalStoredCompletionsDataSourceConfig v) => v.schema;
   static const Field<EvalStoredCompletionsDataSourceConfig, dynamic> _f$schema =
       Field('schema', _$schema);
-  static EvalStoredCompletionsDataSourceConfigTypeType _$type(
+  static EvalStoredCompletionsDataSourceConfigType _$type(
     EvalStoredCompletionsDataSourceConfig v,
   ) => v.type;
   static const Field<
     EvalStoredCompletionsDataSourceConfig,
-    EvalStoredCompletionsDataSourceConfigTypeType
+    EvalStoredCompletionsDataSourceConfigType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalStoredCompletionsDataSourceConfigTypeType.storedCompletions,
+    def: EvalStoredCompletionsDataSourceConfigType.storedCompletions,
   );
   static Map<String, String>? _$metadata(
     EvalStoredCompletionsDataSourceConfig v,
@@ -150,7 +150,7 @@ abstract class EvalStoredCompletionsDataSourceConfigCopyWith<
   get metadata;
   $R call({
     dynamic schema,
-    EvalStoredCompletionsDataSourceConfigTypeType? type,
+    EvalStoredCompletionsDataSourceConfigType? type,
     Map<String, String>? metadata,
   });
   EvalStoredCompletionsDataSourceConfigCopyWith<$R2, $In, $Out2>
@@ -186,7 +186,7 @@ class _EvalStoredCompletionsDataSourceConfigCopyWithImpl<$R, $Out>
   @override
   $R call({
     Object? schema = $none,
-    EvalStoredCompletionsDataSourceConfigTypeType? type,
+    EvalStoredCompletionsDataSourceConfigType? type,
     Object? metadata = $none,
   }) => $apply(
     FieldCopyWithData({

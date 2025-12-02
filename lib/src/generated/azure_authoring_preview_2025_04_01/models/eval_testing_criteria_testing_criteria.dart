@@ -6,15 +6,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item.dart';
 import 'eval_label_model_grader.dart';
-import 'eval_label_model_grader_type_type.dart';
+import 'eval_label_model_grader_type.dart';
 import 'eval_score_model_grader.dart';
-import 'eval_score_model_grader_type_type.dart';
+import 'eval_score_model_grader_type.dart';
 import 'eval_string_check_grader.dart';
-import 'eval_string_check_grader_operation_operation.dart';
-import 'eval_string_check_grader_type_type.dart';
+import 'eval_string_check_grader_operation.dart';
+import 'eval_string_check_grader_type.dart';
 import 'eval_text_similarity_grader.dart';
 import 'eval_text_similarity_grader_evaluation_metric_evaluation_metric.dart';
-import 'eval_text_similarity_grader_type_type.dart';
+import 'eval_text_similarity_grader_type.dart';
 
 part 'eval_testing_criteria_testing_criteria.mapper.dart';
 
@@ -29,7 +29,7 @@ class EvalTestingCriteriaTestingCriteria with EvalTestingCriteriaTestingCriteria
     required this.operation,
     required this.reference,
     required this.evaluationMetric,
-    this.type = EvalTextSimilarityGraderTypeType.textSimilarity,
+    this.type = EvalTextSimilarityGraderType.textSimilarity,
     this.name,
     this.range,
     this.samplingParams,
@@ -42,11 +42,11 @@ class EvalTestingCriteriaTestingCriteria with EvalTestingCriteriaTestingCriteria
   final List<String> passingLabels;
   @MappableField(key: 'pass_threshold')
   final num passThreshold;
-  final EvalStringCheckGraderOperationOperation operation;
+  final EvalStringCheckGraderOperation operation;
   final String reference;
   @MappableField(key: 'evaluation_metric')
   final EvalTextSimilarityGraderEvaluationMetricEvaluationMetric evaluationMetric;
-  final EvalTextSimilarityGraderTypeType type;
+  final EvalTextSimilarityGraderType type;
   final String? name;
   final List<num>? range;
   @MappableField(key: 'sampling_params')

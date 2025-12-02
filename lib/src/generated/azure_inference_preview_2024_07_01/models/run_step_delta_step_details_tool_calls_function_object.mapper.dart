@@ -18,7 +18,7 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsFunctionObjectMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsFunctionObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsFunctionObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
       v.indexField;
   static const Field<RunStepDeltaStepDetailsToolCallsFunctionObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsFunctionObjectType _$type(
     RunStepDeltaStepDetailsToolCallsFunctionObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsFunctionObject,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$id(RunStepDeltaStepDetailsToolCallsFunctionObject v) => v.id;
@@ -189,7 +189,7 @@ abstract class RunStepDeltaStepDetailsToolCallsFunctionObjectCopyWith<
   get runStepDeltaStepDetailsToolCallsFunctionObjectFunction;
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType? type,
     String? id,
     RunStepDeltaStepDetailsToolCallsFunctionObjectFunction?
     runStepDeltaStepDetailsToolCallsFunctionObjectFunction,
@@ -236,7 +236,7 @@ class _RunStepDeltaStepDetailsToolCallsFunctionObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType? type,
     Object? id = $none,
     Object? runStepDeltaStepDetailsToolCallsFunctionObjectFunction = $none,
   }) => $apply(

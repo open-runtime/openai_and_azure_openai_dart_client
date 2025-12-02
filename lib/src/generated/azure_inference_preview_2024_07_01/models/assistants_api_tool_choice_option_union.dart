@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_named_tool_choice_function.dart';
-import 'assistants_named_tool_choice_type_type.dart';
+import 'assistants_named_tool_choice_type.dart';
 import 'assistants_named_tool_choice.dart';
 
 part 'assistants_api_tool_choice_option_union.mapper.dart';
@@ -40,7 +40,7 @@ extension AssistantsApiToolChoiceOptionUnionDeserializer on AssistantsApiToolCho
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice extends AssistantsApiToolChoiceOptionUnion with AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMappable {
-  final AssistantsNamedToolChoiceTypeType type;
+  final AssistantsNamedToolChoiceType type;
   @MappableField(key: 'function')
   final AssistantsNamedToolChoiceFunction? assistantsNamedToolChoiceFunction;
 

@@ -17,7 +17,7 @@ class CreateEvalStoredCompletionsRunDataSourceMapper
       MapperContainer.globals.use(
         _instance = CreateEvalStoredCompletionsRunDataSourceMapper._(),
       );
-      CreateEvalStoredCompletionsRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalStoredCompletionsRunDataSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class CreateEvalStoredCompletionsRunDataSourceMapper
   @override
   final String id = 'CreateEvalStoredCompletionsRunDataSource';
 
-  static CreateEvalStoredCompletionsRunDataSourceTypeType _$type(
+  static CreateEvalStoredCompletionsRunDataSourceType _$type(
     CreateEvalStoredCompletionsRunDataSource v,
   ) => v.type;
   static const Field<
     CreateEvalStoredCompletionsRunDataSource,
-    CreateEvalStoredCompletionsRunDataSourceTypeType
+    CreateEvalStoredCompletionsRunDataSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalStoredCompletionsRunDataSourceTypeType.storedCompletions,
+    def: CreateEvalStoredCompletionsRunDataSourceType.storedCompletions,
   );
   static int? _$createdAfter(CreateEvalStoredCompletionsRunDataSource v) =>
       v.createdAfter;
@@ -185,7 +185,7 @@ abstract class CreateEvalStoredCompletionsRunDataSourceCopyWith<
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
   $R call({
-    CreateEvalStoredCompletionsRunDataSourceTypeType? type,
+    CreateEvalStoredCompletionsRunDataSourceType? type,
     int? createdAfter,
     int? createdBefore,
     int? limit,
@@ -225,7 +225,7 @@ class _CreateEvalStoredCompletionsRunDataSourceCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    CreateEvalStoredCompletionsRunDataSourceTypeType? type,
+    CreateEvalStoredCompletionsRunDataSourceType? type,
     Object? createdAfter = $none,
     Object? createdBefore = $none,
     Object? limit = $none,

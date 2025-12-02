@@ -7,169 +7,169 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'output_content.dart';
 import 'output_item.dart';
 import 'response_audio_delta_event.dart';
-import 'response_audio_delta_event_type_type.dart';
+import 'response_audio_delta_event_type.dart';
 import 'response_audio_done_event.dart';
-import 'response_audio_done_event_type_type.dart';
+import 'response_audio_done_event_type.dart';
 import 'response_audio_transcript_delta_event.dart';
-import 'response_audio_transcript_delta_event_type_type.dart';
+import 'response_audio_transcript_delta_event_type.dart';
 import 'response_audio_transcript_done_event.dart';
-import 'response_audio_transcript_done_event_type_type.dart';
+import 'response_audio_transcript_done_event_type.dart';
 import 'response_code_interpreter_call_code_delta_event.dart';
-import 'response_code_interpreter_call_code_delta_event_type_type.dart';
+import 'response_code_interpreter_call_code_delta_event_type.dart';
 import 'response_code_interpreter_call_code_done_event.dart';
-import 'response_code_interpreter_call_code_done_event_type_type.dart';
+import 'response_code_interpreter_call_code_done_event_type.dart';
 import 'response_code_interpreter_call_completed_event.dart';
-import 'response_code_interpreter_call_completed_event_type_type.dart';
+import 'response_code_interpreter_call_completed_event_type.dart';
 import 'response_code_interpreter_call_in_progress_event.dart';
-import 'response_code_interpreter_call_in_progress_event_type_type.dart';
+import 'response_code_interpreter_call_in_progress_event_type.dart';
 import 'response_code_interpreter_call_interpreting_event.dart';
-import 'response_code_interpreter_call_interpreting_event_type_type.dart';
+import 'response_code_interpreter_call_interpreting_event_type.dart';
 import 'response_completed_event.dart';
-import 'response_completed_event_type_type.dart';
+import 'response_completed_event_type.dart';
 import 'response_content_part_added_event.dart';
-import 'response_content_part_added_event_type_type.dart';
+import 'response_content_part_added_event_type.dart';
 import 'response_content_part_done_event.dart';
-import 'response_content_part_done_event_type_type.dart';
+import 'response_content_part_done_event_type.dart';
 import 'response_created_event.dart';
-import 'response_created_event_type_type.dart';
+import 'response_created_event_type.dart';
 import 'response_custom_tool_call_input_delta_event.dart';
-import 'response_custom_tool_call_input_delta_event_type_type.dart';
+import 'response_custom_tool_call_input_delta_event_type.dart';
 import 'response_custom_tool_call_input_done_event.dart';
-import 'response_custom_tool_call_input_done_event_type_type.dart';
+import 'response_custom_tool_call_input_done_event_type.dart';
 import 'response_error_event.dart';
-import 'response_error_event_type_type.dart';
+import 'response_error_event_type.dart';
 import 'response_failed_event.dart';
-import 'response_failed_event_type_type.dart';
+import 'response_failed_event_type.dart';
 import 'response_file_search_call_completed_event.dart';
-import 'response_file_search_call_completed_event_type_type.dart';
+import 'response_file_search_call_completed_event_type.dart';
 import 'response_file_search_call_in_progress_event.dart';
-import 'response_file_search_call_in_progress_event_type_type.dart';
+import 'response_file_search_call_in_progress_event_type.dart';
 import 'response_file_search_call_searching_event.dart';
-import 'response_file_search_call_searching_event_type_type.dart';
+import 'response_file_search_call_searching_event_type.dart';
 import 'response_function_call_arguments_delta_event.dart';
-import 'response_function_call_arguments_delta_event_type_type.dart';
+import 'response_function_call_arguments_delta_event_type.dart';
 import 'response_function_call_arguments_done_event.dart';
-import 'response_function_call_arguments_done_event_type_type.dart';
+import 'response_function_call_arguments_done_event_type.dart';
 import 'response_image_gen_call_completed_event.dart';
-import 'response_image_gen_call_completed_event_type_type.dart';
+import 'response_image_gen_call_completed_event_type.dart';
 import 'response_image_gen_call_generating_event.dart';
-import 'response_image_gen_call_generating_event_type_type.dart';
+import 'response_image_gen_call_generating_event_type.dart';
 import 'response_image_gen_call_in_progress_event.dart';
-import 'response_image_gen_call_in_progress_event_type_type.dart';
+import 'response_image_gen_call_in_progress_event_type.dart';
 import 'response_image_gen_call_partial_image_event.dart';
-import 'response_image_gen_call_partial_image_event_type_type.dart';
+import 'response_image_gen_call_partial_image_event_type.dart';
 import 'response_in_progress_event.dart';
-import 'response_in_progress_event_type_type.dart';
+import 'response_in_progress_event_type.dart';
 import 'response_incomplete_event.dart';
-import 'response_incomplete_event_type_type.dart';
+import 'response_incomplete_event_type.dart';
 import 'response_log_prob.dart';
 import 'response_mcp_call_arguments_delta_event.dart';
-import 'response_mcp_call_arguments_delta_event_type_type.dart';
+import 'response_mcp_call_arguments_delta_event_type.dart';
 import 'response_mcp_call_arguments_done_event.dart';
-import 'response_mcp_call_arguments_done_event_type_type.dart';
+import 'response_mcp_call_arguments_done_event_type.dart';
 import 'response_mcp_call_completed_event.dart';
-import 'response_mcp_call_completed_event_type_type.dart';
+import 'response_mcp_call_completed_event_type.dart';
 import 'response_mcp_call_failed_event.dart';
-import 'response_mcp_call_failed_event_type_type.dart';
+import 'response_mcp_call_failed_event_type.dart';
 import 'response_mcp_call_in_progress_event.dart';
-import 'response_mcp_call_in_progress_event_type_type.dart';
+import 'response_mcp_call_in_progress_event_type.dart';
 import 'response_mcp_list_tools_completed_event.dart';
-import 'response_mcp_list_tools_completed_event_type_type.dart';
+import 'response_mcp_list_tools_completed_event_type.dart';
 import 'response_mcp_list_tools_failed_event.dart';
-import 'response_mcp_list_tools_failed_event_type_type.dart';
+import 'response_mcp_list_tools_failed_event_type.dart';
 import 'response_mcp_list_tools_in_progress_event.dart';
-import 'response_mcp_list_tools_in_progress_event_type_type.dart';
+import 'response_mcp_list_tools_in_progress_event_type.dart';
 import 'response_model.dart';
 import 'response_output_item_added_event.dart';
-import 'response_output_item_added_event_type_type.dart';
+import 'response_output_item_added_event_type.dart';
 import 'response_output_item_done_event.dart';
-import 'response_output_item_done_event_type_type.dart';
+import 'response_output_item_done_event_type.dart';
 import 'response_output_text_annotation_added_event.dart';
-import 'response_output_text_annotation_added_event_type_type.dart';
+import 'response_output_text_annotation_added_event_type.dart';
 import 'response_queued_event.dart';
-import 'response_queued_event_type_type.dart';
+import 'response_queued_event_type.dart';
 import 'response_reasoning_summary_part_added_event.dart';
 import 'response_reasoning_summary_part_added_event_part.dart';
-import 'response_reasoning_summary_part_added_event_type_type.dart';
+import 'response_reasoning_summary_part_added_event_type.dart';
 import 'response_reasoning_summary_part_done_event.dart';
 import 'response_reasoning_summary_part_done_event_part.dart';
-import 'response_reasoning_summary_part_done_event_type_type.dart';
+import 'response_reasoning_summary_part_done_event_type.dart';
 import 'response_reasoning_summary_text_delta_event.dart';
-import 'response_reasoning_summary_text_delta_event_type_type.dart';
+import 'response_reasoning_summary_text_delta_event_type.dart';
 import 'response_reasoning_summary_text_done_event.dart';
-import 'response_reasoning_summary_text_done_event_type_type.dart';
+import 'response_reasoning_summary_text_done_event_type.dart';
 import 'response_reasoning_text_delta_event.dart';
-import 'response_reasoning_text_delta_event_type_type.dart';
+import 'response_reasoning_text_delta_event_type.dart';
 import 'response_reasoning_text_done_event.dart';
-import 'response_reasoning_text_done_event_type_type.dart';
+import 'response_reasoning_text_done_event_type.dart';
 import 'response_refusal_delta_event.dart';
-import 'response_refusal_delta_event_type_type.dart';
+import 'response_refusal_delta_event_type.dart';
 import 'response_refusal_done_event.dart';
-import 'response_refusal_done_event_type_type.dart';
+import 'response_refusal_done_event_type.dart';
 import 'response_stream_event_part.dart';
-import 'response_stream_event_type_type.dart';
-import 'response_stream_event_type_type10.dart';
-import 'response_stream_event_type_type11.dart';
-import 'response_stream_event_type_type12.dart';
-import 'response_stream_event_type_type13.dart';
-import 'response_stream_event_type_type14.dart';
-import 'response_stream_event_type_type15.dart';
-import 'response_stream_event_type_type16.dart';
-import 'response_stream_event_type_type17.dart';
-import 'response_stream_event_type_type18.dart';
-import 'response_stream_event_type_type19.dart';
-import 'response_stream_event_type_type2.dart';
-import 'response_stream_event_type_type20.dart';
-import 'response_stream_event_type_type21.dart';
-import 'response_stream_event_type_type22.dart';
-import 'response_stream_event_type_type23.dart';
-import 'response_stream_event_type_type24.dart';
-import 'response_stream_event_type_type25.dart';
-import 'response_stream_event_type_type26.dart';
-import 'response_stream_event_type_type27.dart';
-import 'response_stream_event_type_type28.dart';
-import 'response_stream_event_type_type29.dart';
-import 'response_stream_event_type_type3.dart';
-import 'response_stream_event_type_type30.dart';
-import 'response_stream_event_type_type31.dart';
-import 'response_stream_event_type_type32.dart';
-import 'response_stream_event_type_type33.dart';
-import 'response_stream_event_type_type34.dart';
-import 'response_stream_event_type_type35.dart';
-import 'response_stream_event_type_type36.dart';
-import 'response_stream_event_type_type37.dart';
-import 'response_stream_event_type_type38.dart';
-import 'response_stream_event_type_type39.dart';
-import 'response_stream_event_type_type4.dart';
-import 'response_stream_event_type_type40.dart';
-import 'response_stream_event_type_type41.dart';
-import 'response_stream_event_type_type42.dart';
-import 'response_stream_event_type_type43.dart';
-import 'response_stream_event_type_type44.dart';
-import 'response_stream_event_type_type45.dart';
-import 'response_stream_event_type_type46.dart';
-import 'response_stream_event_type_type47.dart';
-import 'response_stream_event_type_type48.dart';
-import 'response_stream_event_type_type49.dart';
-import 'response_stream_event_type_type5.dart';
-import 'response_stream_event_type_type50.dart';
-import 'response_stream_event_type_type51.dart';
-import 'response_stream_event_type_type52.dart';
-import 'response_stream_event_type_type53.dart';
-import 'response_stream_event_type_type6.dart';
-import 'response_stream_event_type_type7.dart';
-import 'response_stream_event_type_type8.dart';
-import 'response_stream_event_type_type9.dart';
+import 'response_stream_event_type.dart';
+import 'response_stream_event_type10.dart';
+import 'response_stream_event_type11.dart';
+import 'response_stream_event_type12.dart';
+import 'response_stream_event_type13.dart';
+import 'response_stream_event_type14.dart';
+import 'response_stream_event_type15.dart';
+import 'response_stream_event_type16.dart';
+import 'response_stream_event_type17.dart';
+import 'response_stream_event_type18.dart';
+import 'response_stream_event_type19.dart';
+import 'response_stream_event_type2.dart';
+import 'response_stream_event_type20.dart';
+import 'response_stream_event_type21.dart';
+import 'response_stream_event_type22.dart';
+import 'response_stream_event_type23.dart';
+import 'response_stream_event_type24.dart';
+import 'response_stream_event_type25.dart';
+import 'response_stream_event_type26.dart';
+import 'response_stream_event_type27.dart';
+import 'response_stream_event_type28.dart';
+import 'response_stream_event_type29.dart';
+import 'response_stream_event_type3.dart';
+import 'response_stream_event_type30.dart';
+import 'response_stream_event_type31.dart';
+import 'response_stream_event_type32.dart';
+import 'response_stream_event_type33.dart';
+import 'response_stream_event_type34.dart';
+import 'response_stream_event_type35.dart';
+import 'response_stream_event_type36.dart';
+import 'response_stream_event_type37.dart';
+import 'response_stream_event_type38.dart';
+import 'response_stream_event_type39.dart';
+import 'response_stream_event_type4.dart';
+import 'response_stream_event_type40.dart';
+import 'response_stream_event_type41.dart';
+import 'response_stream_event_type42.dart';
+import 'response_stream_event_type43.dart';
+import 'response_stream_event_type44.dart';
+import 'response_stream_event_type45.dart';
+import 'response_stream_event_type46.dart';
+import 'response_stream_event_type47.dart';
+import 'response_stream_event_type48.dart';
+import 'response_stream_event_type49.dart';
+import 'response_stream_event_type5.dart';
+import 'response_stream_event_type50.dart';
+import 'response_stream_event_type51.dart';
+import 'response_stream_event_type52.dart';
+import 'response_stream_event_type53.dart';
+import 'response_stream_event_type6.dart';
+import 'response_stream_event_type7.dart';
+import 'response_stream_event_type8.dart';
+import 'response_stream_event_type9.dart';
 import 'response_text_delta_event.dart';
-import 'response_text_delta_event_type_type.dart';
+import 'response_text_delta_event_type.dart';
 import 'response_text_done_event.dart';
-import 'response_text_done_event_type_type.dart';
+import 'response_text_done_event_type.dart';
 import 'response_web_search_call_completed_event.dart';
-import 'response_web_search_call_completed_event_type_type.dart';
+import 'response_web_search_call_completed_event_type.dart';
 import 'response_web_search_call_in_progress_event.dart';
-import 'response_web_search_call_in_progress_event_type_type.dart';
+import 'response_web_search_call_in_progress_event_type.dart';
 import 'response_web_search_call_searching_event.dart';
-import 'response_web_search_call_searching_event_type_type.dart';
+import 'response_web_search_call_searching_event_type.dart';
 
 part 'response_stream_event.mapper.dart';
 
@@ -360,7 +360,7 @@ extension ResponseStreamEventUnionDeserializer on ResponseStreamEvent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.delta')
 class ResponseStreamEventResponseAudioDelta extends ResponseStreamEvent with ResponseStreamEventResponseAudioDeltaMappable {
-  final ResponseStreamEventTypeType type;
+  final ResponseStreamEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   final String delta;
@@ -374,7 +374,7 @@ class ResponseStreamEventResponseAudioDelta extends ResponseStreamEvent with Res
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.done')
 class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent with ResponseStreamEventResponseAudioDoneMappable {
-  final ResponseStreamEventTypeType2 type;
+  final ResponseStreamEventType2 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
@@ -386,7 +386,7 @@ class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent with Resp
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.delta')
 class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEvent with ResponseStreamEventResponseAudioTranscriptDeltaMappable {
-  final ResponseStreamEventTypeType3 type;
+  final ResponseStreamEventType3 type;
   final String delta;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -400,7 +400,7 @@ class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEven
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.done')
 class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent with ResponseStreamEventResponseAudioTranscriptDoneMappable {
-  final ResponseStreamEventTypeType4 type;
+  final ResponseStreamEventType4 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
@@ -412,7 +412,7 @@ class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call_code.delta')
 class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMappable {
-  final ResponseStreamEventTypeType5 type;
+  final ResponseStreamEventType5 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -432,7 +432,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call_code.done')
 class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCodeDoneMappable {
-  final ResponseStreamEventTypeType6 type;
+  final ResponseStreamEventType6 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -452,7 +452,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStr
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.completed')
 class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCompletedMappable {
-  final ResponseStreamEventTypeType7 type;
+  final ResponseStreamEventType7 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -470,7 +470,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.in_progress')
 class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallInProgressMappable {
-  final ResponseStreamEventTypeType8 type;
+  final ResponseStreamEventType8 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -488,7 +488,7 @@ class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseS
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.interpreting')
 class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallInterpretingMappable {
-  final ResponseStreamEventTypeType9 type;
+  final ResponseStreamEventType9 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -506,7 +506,7 @@ class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends Respons
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.completed')
 class ResponseStreamEventResponseCompleted extends ResponseStreamEvent with ResponseStreamEventResponseCompletedMappable {
-  final ResponseStreamEventTypeType10 type;
+  final ResponseStreamEventType10 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -520,7 +520,7 @@ class ResponseStreamEventResponseCompleted extends ResponseStreamEvent with Resp
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.added')
 class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent with ResponseStreamEventResponseContentPartAddedMappable {
-  final ResponseStreamEventTypeType11 type;
+  final ResponseStreamEventType11 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -544,7 +544,7 @@ class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent wi
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.done')
 class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent with ResponseStreamEventResponseContentPartDoneMappable {
-  final ResponseStreamEventTypeType12 type;
+  final ResponseStreamEventType12 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -568,7 +568,7 @@ class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent wit
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.created')
 class ResponseStreamEventResponseCreated extends ResponseStreamEvent with ResponseStreamEventResponseCreatedMappable {
-  final ResponseStreamEventTypeType13 type;
+  final ResponseStreamEventType13 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -582,7 +582,7 @@ class ResponseStreamEventResponseCreated extends ResponseStreamEvent with Respon
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
 class ResponseStreamEventError extends ResponseStreamEvent with ResponseStreamEventErrorMappable {
-  final ResponseStreamEventTypeType14 type;
+  final ResponseStreamEventType14 type;
   final String? code;
   final String message;
   final String? param;
@@ -600,7 +600,7 @@ class ResponseStreamEventError extends ResponseStreamEvent with ResponseStreamEv
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.completed')
 class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallCompletedMappable {
-  final ResponseStreamEventTypeType15 type;
+  final ResponseStreamEventType15 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -618,7 +618,7 @@ class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamE
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.in_progress')
 class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallInProgressMappable {
-  final ResponseStreamEventTypeType16 type;
+  final ResponseStreamEventType16 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -636,7 +636,7 @@ class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStream
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.searching')
 class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallSearchingMappable {
-  final ResponseStreamEventTypeType17 type;
+  final ResponseStreamEventType17 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -654,7 +654,7 @@ class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamE
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.delta')
 class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStreamEvent with ResponseStreamEventResponseFunctionCallArgumentsDeltaMappable {
-  final ResponseStreamEventTypeType18 type;
+  final ResponseStreamEventType18 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -674,7 +674,7 @@ class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStre
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.done')
 class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStreamEvent with ResponseStreamEventResponseFunctionCallArgumentsDoneMappable {
-  final ResponseStreamEventTypeType19 type;
+  final ResponseStreamEventType19 type;
   @MappableField(key: 'item_id')
   final String itemId;
   final String name;
@@ -696,7 +696,7 @@ class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStrea
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.in_progress')
 class ResponseStreamEventResponseInProgress extends ResponseStreamEvent with ResponseStreamEventResponseInProgressMappable {
-  final ResponseStreamEventTypeType20 type;
+  final ResponseStreamEventType20 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -710,7 +710,7 @@ class ResponseStreamEventResponseInProgress extends ResponseStreamEvent with Res
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.failed')
 class ResponseStreamEventResponseFailed extends ResponseStreamEvent with ResponseStreamEventResponseFailedMappable {
-  final ResponseStreamEventTypeType21 type;
+  final ResponseStreamEventType21 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   final ResponseModel response;
@@ -724,7 +724,7 @@ class ResponseStreamEventResponseFailed extends ResponseStreamEvent with Respons
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.incomplete')
 class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent with ResponseStreamEventResponseIncompleteMappable {
-  final ResponseStreamEventTypeType22 type;
+  final ResponseStreamEventType22 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -738,7 +738,7 @@ class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent with Res
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.added')
 class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent with ResponseStreamEventResponseOutputItemAddedMappable {
-  final ResponseStreamEventTypeType23 type;
+  final ResponseStreamEventType23 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'sequence_number')
@@ -755,7 +755,7 @@ class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent wit
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.done')
 class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent with ResponseStreamEventResponseOutputItemDoneMappable {
-  final ResponseStreamEventTypeType24 type;
+  final ResponseStreamEventType24 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'sequence_number')
@@ -772,7 +772,7 @@ class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent with
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_part.added')
 class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryPartAddedMappable {
-  final ResponseStreamEventTypeType25 type;
+  final ResponseStreamEventType25 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -796,7 +796,7 @@ class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStrea
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_part.done')
 class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryPartDoneMappable {
-  final ResponseStreamEventTypeType26 type;
+  final ResponseStreamEventType26 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -820,7 +820,7 @@ class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStream
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_text.delta')
 class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryTextDeltaMappable {
-  final ResponseStreamEventTypeType27 type;
+  final ResponseStreamEventType27 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -843,7 +843,7 @@ class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStrea
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_text.done')
 class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryTextDoneMappable {
-  final ResponseStreamEventTypeType28 type;
+  final ResponseStreamEventType28 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -866,7 +866,7 @@ class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStream
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_text.delta')
 class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseReasoningTextDeltaMappable {
-  final ResponseStreamEventTypeType29 type;
+  final ResponseStreamEventType29 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -889,7 +889,7 @@ class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_text.done')
 class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningTextDoneMappable {
-  final ResponseStreamEventTypeType30 type;
+  final ResponseStreamEventType30 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -912,7 +912,7 @@ class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent w
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.delta')
 class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent with ResponseStreamEventResponseRefusalDeltaMappable {
-  final ResponseStreamEventTypeType31 type;
+  final ResponseStreamEventType31 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -935,7 +935,7 @@ class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent with R
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.done')
 class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent with ResponseStreamEventResponseRefusalDoneMappable {
-  final ResponseStreamEventTypeType32 type;
+  final ResponseStreamEventType32 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -958,7 +958,7 @@ class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent with Re
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.delta')
 class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextDeltaMappable {
-  final ResponseStreamEventTypeType33 type;
+  final ResponseStreamEventType33 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -983,7 +983,7 @@ class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent wit
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.done')
 class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextDoneMappable {
-  final ResponseStreamEventTypeType34 type;
+  final ResponseStreamEventType34 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1008,7 +1008,7 @@ class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent with
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.completed')
 class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallCompletedMappable {
-  final ResponseStreamEventTypeType35 type;
+  final ResponseStreamEventType35 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1026,7 +1026,7 @@ class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEv
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.in_progress')
 class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallInProgressMappable {
-  final ResponseStreamEventTypeType36 type;
+  final ResponseStreamEventType36 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1044,7 +1044,7 @@ class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamE
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.searching')
 class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallSearchingMappable {
-  final ResponseStreamEventTypeType37 type;
+  final ResponseStreamEventType37 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1062,7 +1062,7 @@ class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEv
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.completed')
 class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallCompletedMappable {
-  final ResponseStreamEventTypeType38 type;
+  final ResponseStreamEventType38 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'sequence_number')
@@ -1080,7 +1080,7 @@ class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.generating')
 class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallGeneratingMappable {
-  final ResponseStreamEventTypeType39 type;
+  final ResponseStreamEventType39 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1098,7 +1098,7 @@ class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseS
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.in_progress')
 class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallInProgressMappable {
-  final ResponseStreamEventTypeType40 type;
+  final ResponseStreamEventType40 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1116,7 +1116,7 @@ class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseS
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.partial_image')
 class ResponseStreamEventResponseImageGenerationCallPartialImage extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallPartialImageMappable {
-  final ResponseStreamEventTypeType41 type;
+  final ResponseStreamEventType41 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1140,7 +1140,7 @@ class ResponseStreamEventResponseImageGenerationCallPartialImage extends Respons
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.delta')
 class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallArgumentsDeltaMappable {
-  final ResponseStreamEventTypeType42 type;
+  final ResponseStreamEventType42 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1160,7 +1160,7 @@ class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEve
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.done')
 class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallArgumentsDoneMappable {
-  final ResponseStreamEventTypeType43 type;
+  final ResponseStreamEventType43 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')
@@ -1180,7 +1180,7 @@ class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEven
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.completed')
 class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallCompletedMappable {
-  final ResponseStreamEventTypeType44 type;
+  final ResponseStreamEventType44 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1198,7 +1198,7 @@ class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent wi
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.failed')
 class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallFailedMappable {
-  final ResponseStreamEventTypeType45 type;
+  final ResponseStreamEventType45 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1216,7 +1216,7 @@ class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent with 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.in_progress')
 class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallInProgressMappable {
-  final ResponseStreamEventTypeType46 type;
+  final ResponseStreamEventType46 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   @MappableField(key: 'output_index')
@@ -1234,7 +1234,7 @@ class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent w
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.completed')
 class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsCompletedMappable {
-  final ResponseStreamEventTypeType47 type;
+  final ResponseStreamEventType47 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1252,7 +1252,7 @@ class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEve
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.failed')
 class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsFailedMappable {
-  final ResponseStreamEventTypeType48 type;
+  final ResponseStreamEventType48 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1270,7 +1270,7 @@ class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.in_progress')
 class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsInProgressMappable {
-  final ResponseStreamEventTypeType49 type;
+  final ResponseStreamEventType49 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1288,7 +1288,7 @@ class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEv
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.annotation.added')
 class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextAnnotationAddedMappable {
-  final ResponseStreamEventTypeType50 type;
+  final ResponseStreamEventType50 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')
@@ -1314,7 +1314,7 @@ class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStrea
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.queued')
 class ResponseStreamEventResponseQueued extends ResponseStreamEvent with ResponseStreamEventResponseQueuedMappable {
-  final ResponseStreamEventTypeType51 type;
+  final ResponseStreamEventType51 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -1328,7 +1328,7 @@ class ResponseStreamEventResponseQueued extends ResponseStreamEvent with Respons
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.delta')
 class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStreamEvent with ResponseStreamEventResponseCustomToolCallInputDeltaMappable {
-  final ResponseStreamEventTypeType52 type;
+  final ResponseStreamEventType52 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   @MappableField(key: 'output_index')
@@ -1348,7 +1348,7 @@ class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStream
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.done')
 class ResponseStreamEventResponseCustomToolCallInputDone extends ResponseStreamEvent with ResponseStreamEventResponseCustomToolCallInputDoneMappable {
-  final ResponseStreamEventTypeType53 type;
+  final ResponseStreamEventType53 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   @MappableField(key: 'output_index')

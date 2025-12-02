@@ -8,9 +8,9 @@ import 'metadata.dart';
 import 'run_step_completion_usage.dart';
 import 'run_step_object_last_error.dart';
 import 'run_step_object_object_object_enum.dart';
-import 'run_step_object_status_status.dart';
+import 'run_step_object_status.dart';
 import 'run_step_object_step_details_union.dart';
-import 'run_step_object_type_type.dart';
+import 'run_step_object_type.dart';
 
 part 'run_step_object.mapper.dart';
 
@@ -48,8 +48,8 @@ class RunStepObject with RunStepObjectMappable {
   final String threadId;
   @MappableField(key: 'run_id')
   final String runId;
-  final RunStepObjectTypeType type;
-  final RunStepObjectStatusStatus status;
+  final RunStepObjectType type;
+  final RunStepObjectStatus status;
   @MappableField(key: 'step_details')
   final RunStepObjectStepDetailsUnion stepDetails;
   @MappableField(key: 'last_error')

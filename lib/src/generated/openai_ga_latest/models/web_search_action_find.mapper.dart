@@ -14,7 +14,7 @@ class WebSearchActionFindMapper extends ClassMapperBase<WebSearchActionFind> {
   static WebSearchActionFindMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebSearchActionFindMapper._());
-      WebSearchActionFindTypeTypeMapper.ensureInitialized();
+      WebSearchActionFindTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class WebSearchActionFindMapper extends ClassMapperBase<WebSearchActionFind> {
   @override
   final String id = 'WebSearchActionFind';
 
-  static WebSearchActionFindTypeType _$type(WebSearchActionFind v) => v.type;
-  static const Field<WebSearchActionFind, WebSearchActionFindTypeType> _f$type =
+  static WebSearchActionFindType _$type(WebSearchActionFind v) => v.type;
+  static const Field<WebSearchActionFind, WebSearchActionFindType> _f$type =
       Field('type', _$type);
   static String _$url(WebSearchActionFind v) => v.url;
   static const Field<WebSearchActionFind, String> _f$url = Field('url', _$url);
@@ -122,7 +122,7 @@ abstract class WebSearchActionFindCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({WebSearchActionFindTypeType? type, String? url, String? pattern});
+  $R call({WebSearchActionFindType? type, String? url, String? pattern});
   WebSearchActionFindCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -137,7 +137,7 @@ class _WebSearchActionFindCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WebSearchActionFind> $mapper =
       WebSearchActionFindMapper.ensureInitialized();
   @override
-  $R call({WebSearchActionFindTypeType? type, String? url, String? pattern}) =>
+  $R call({WebSearchActionFindType? type, String? url, String? pattern}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

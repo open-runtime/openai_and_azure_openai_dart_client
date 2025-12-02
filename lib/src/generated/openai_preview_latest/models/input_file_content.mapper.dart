@@ -14,7 +14,7 @@ class InputFileContentMapper extends ClassMapperBase<InputFileContent> {
   static InputFileContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputFileContentMapper._());
-      InputFileContentTypeTypeMapper.ensureInitialized();
+      InputFileContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -42,9 +42,13 @@ class InputFileContentMapper extends ClassMapperBase<InputFileContent> {
     key: r'file_data',
     opt: true,
   );
-  static InputFileContentTypeType _$type(InputFileContent v) => v.type;
-  static const Field<InputFileContent, InputFileContentTypeType> _f$type =
-      Field('type', _$type, opt: true, def: InputFileContentTypeType.inputFile);
+  static InputFileContentType _$type(InputFileContent v) => v.type;
+  static const Field<InputFileContent, InputFileContentType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: InputFileContentType.inputFile,
+  );
 
   @override
   final MappableFields<InputFileContent> fields = const {
@@ -133,7 +137,7 @@ abstract class InputFileContentCopyWith<$R, $In extends InputFileContent, $Out>
     String? fileId,
     String? filename,
     String? fileData,
-    InputFileContentTypeType? type,
+    InputFileContentType? type,
   });
   InputFileContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -153,7 +157,7 @@ class _InputFileContentCopyWithImpl<$R, $Out>
     Object? fileId = $none,
     Object? filename = $none,
     Object? fileData = $none,
-    InputFileContentTypeType? type,
+    InputFileContentType? type,
   }) => $apply(
     FieldCopyWithData({
       if (fileId != $none) #fileId: fileId,

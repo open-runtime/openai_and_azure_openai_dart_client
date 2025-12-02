@@ -17,7 +17,7 @@ class ResponseIncompleteEventMapper
       MapperContainer.globals.use(
         _instance = ResponseIncompleteEventMapper._(),
       );
-      ResponseIncompleteEventTypeTypeMapper.ensureInitialized();
+      ResponseIncompleteEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class ResponseIncompleteEventMapper
   @override
   final String id = 'ResponseIncompleteEvent';
 
-  static ResponseIncompleteEventTypeType _$type(ResponseIncompleteEvent v) =>
+  static ResponseIncompleteEventType _$type(ResponseIncompleteEvent v) =>
       v.type;
-  static const Field<ResponseIncompleteEvent, ResponseIncompleteEventTypeType>
+  static const Field<ResponseIncompleteEvent, ResponseIncompleteEventType>
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseIncompleteEvent v) => v.response;
   static const Field<ResponseIncompleteEvent, ResponseModel> _f$response =
@@ -131,7 +131,7 @@ abstract class ResponseIncompleteEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseIncompleteEventTypeType? type,
+    ResponseIncompleteEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   });
@@ -154,7 +154,7 @@ class _ResponseIncompleteEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseIncompleteEventTypeType? type,
+    ResponseIncompleteEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   }) => $apply(

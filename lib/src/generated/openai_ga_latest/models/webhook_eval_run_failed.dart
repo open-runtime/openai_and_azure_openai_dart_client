@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_eval_run_failed_data.dart';
 import 'webhook_eval_run_failed_object_object_enum.dart';
-import 'webhook_eval_run_failed_type_type.dart';
+import 'webhook_eval_run_failed_type.dart';
 
 part 'webhook_eval_run_failed.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookEvalRunFailed with WebhookEvalRunFailedMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookEvalRunFailedData webhookEvalRunFailedData;
-  final WebhookEvalRunFailedTypeType type;
+  final WebhookEvalRunFailedType type;
   @MappableField(key: 'object')
   final WebhookEvalRunFailedObjectObjectEnum? objectEnum;
 

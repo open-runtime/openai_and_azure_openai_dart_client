@@ -16,8 +16,8 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
       MapperContainer.globals.use(_instance = ComputerToolCallMapper._());
       ComputerActionMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
-      ComputerToolCallStatusStatusMapper.ensureInitialized();
-      ComputerToolCallTypeTypeMapper.ensureInitialized();
+      ComputerToolCallStatusMapper.ensureInitialized();
+      ComputerToolCallTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -47,17 +47,16 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
     _$pendingSafetyChecks,
     key: r'pending_safety_checks',
   );
-  static ComputerToolCallStatusStatus _$status(ComputerToolCall v) => v.status;
-  static const Field<ComputerToolCall, ComputerToolCallStatusStatus> _f$status =
+  static ComputerToolCallStatus _$status(ComputerToolCall v) => v.status;
+  static const Field<ComputerToolCall, ComputerToolCallStatus> _f$status =
       Field('status', _$status);
-  static ComputerToolCallTypeType _$type(ComputerToolCall v) => v.type;
-  static const Field<ComputerToolCall, ComputerToolCallTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: ComputerToolCallTypeType.computerCall,
-      );
+  static ComputerToolCallType _$type(ComputerToolCall v) => v.type;
+  static const Field<ComputerToolCall, ComputerToolCallType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: ComputerToolCallType.computerCall,
+  );
 
   @override
   final MappableFields<ComputerToolCall> fields = const {
@@ -162,8 +161,8 @@ abstract class ComputerToolCallCopyWith<$R, $In extends ComputerToolCall, $Out>
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    ComputerToolCallStatusStatus? status,
-    ComputerToolCallTypeType? type,
+    ComputerToolCallStatus? status,
+    ComputerToolCallType? type,
   });
   ComputerToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -202,8 +201,8 @@ class _ComputerToolCallCopyWithImpl<$R, $Out>
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    ComputerToolCallStatusStatus? status,
-    ComputerToolCallTypeType? type,
+    ComputerToolCallStatus? status,
+    ComputerToolCallType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

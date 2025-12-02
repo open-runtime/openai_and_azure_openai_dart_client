@@ -8,7 +8,7 @@ import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_response_message_annotations.dart';
 import 'chat_completion_response_message_audio.dart';
 import 'chat_completion_response_message_function_call.dart';
-import 'chat_completion_response_message_role_role.dart';
+import 'chat_completion_response_message_role.dart';
 
 part 'chat_completion_response_message.mapper.dart';
 
@@ -27,7 +27,7 @@ class ChatCompletionResponseMessage with ChatCompletionResponseMessageMappable {
 
   final String? content;
   final String? refusal;
-  final ChatCompletionResponseMessageRoleRole role;
+  final ChatCompletionResponseMessageRole role;
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
   final List<ChatCompletionResponseMessageAnnotations>? annotations;

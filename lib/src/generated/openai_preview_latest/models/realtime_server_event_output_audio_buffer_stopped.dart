@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_output_audio_buffer_stopped_type_type.dart';
+import 'realtime_server_event_output_audio_buffer_stopped_type.dart';
 
 part 'realtime_server_event_output_audio_buffer_stopped.mapper.dart';
 
@@ -24,7 +24,7 @@ class RealtimeServerEventOutputAudioBufferStopped with RealtimeServerEventOutput
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventOutputAudioBufferStoppedTypeType type;
+  final RealtimeServerEventOutputAudioBufferStoppedType type;
   @MappableField(key: 'response_id')
   final String responseId;
 

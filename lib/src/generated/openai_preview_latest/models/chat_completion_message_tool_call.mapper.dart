@@ -17,7 +17,7 @@ class ChatCompletionMessageToolCallMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionMessageToolCallMapper._(),
       );
-      ChatCompletionMessageToolCallTypeTypeMapper.ensureInitialized();
+      ChatCompletionMessageToolCallTypeMapper.ensureInitialized();
       ChatCompletionMessageToolCallFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class ChatCompletionMessageToolCallMapper
     'id',
     _$id,
   );
-  static ChatCompletionMessageToolCallTypeType _$type(
+  static ChatCompletionMessageToolCallType _$type(
     ChatCompletionMessageToolCall v,
   ) => v.type;
   static const Field<
     ChatCompletionMessageToolCall,
-    ChatCompletionMessageToolCallTypeType
+    ChatCompletionMessageToolCallType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionMessageToolCallFunction
@@ -156,7 +156,7 @@ abstract class ChatCompletionMessageToolCallCopyWith<
   get chatCompletionMessageToolCallFunction;
   $R call({
     String? id,
-    ChatCompletionMessageToolCallTypeType? type,
+    ChatCompletionMessageToolCallType? type,
     ChatCompletionMessageToolCallFunction?
     chatCompletionMessageToolCallFunction,
   });
@@ -195,7 +195,7 @@ class _ChatCompletionMessageToolCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ChatCompletionMessageToolCallTypeType? type,
+    ChatCompletionMessageToolCallType? type,
     ChatCompletionMessageToolCallFunction?
     chatCompletionMessageToolCallFunction,
   }) => $apply(

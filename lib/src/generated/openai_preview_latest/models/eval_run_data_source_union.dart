@@ -8,10 +8,10 @@ import 'create_eval_completions_run_data_source.dart';
 import 'create_eval_completions_run_data_source_input_messages_union.dart';
 import 'create_eval_completions_run_data_source_sampling_params.dart';
 import 'create_eval_completions_run_data_source_source_union.dart';
-import 'create_eval_completions_run_data_source_type_type.dart';
+import 'create_eval_completions_run_data_source_type.dart';
 import 'create_eval_jsonl_run_data_source.dart';
 import 'create_eval_jsonl_run_data_source_source_union.dart';
-import 'create_eval_jsonl_run_data_source_type_type.dart';
+import 'create_eval_jsonl_run_data_source_type.dart';
 import 'create_eval_run_request_data_source_union.dart';
 
 part 'eval_run_data_source_union.mapper.dart';
@@ -51,7 +51,7 @@ extension EvalRunDataSourceUnionDeserializer on EvalRunDataSourceUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'jsonl')
 class EvalRunDataSourceUnionJsonl extends EvalRunDataSourceUnion with EvalRunDataSourceUnionJsonlMappable {
-  final CreateEvalJsonlRunDataSourceTypeType type;
+  final CreateEvalJsonlRunDataSourceType type;
   final CreateEvalJsonlRunDataSourceSourceUnion source;
 
   const EvalRunDataSourceUnionJsonl({
@@ -62,7 +62,7 @@ class EvalRunDataSourceUnionJsonl extends EvalRunDataSourceUnion with EvalRunDat
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
 class EvalRunDataSourceUnionCompletions extends EvalRunDataSourceUnion with EvalRunDataSourceUnionCompletionsMappable {
-  final CreateEvalCompletionsRunDataSourceTypeType type;
+  final CreateEvalCompletionsRunDataSourceType type;
   @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages;
   @MappableField(key: 'sampling_params')

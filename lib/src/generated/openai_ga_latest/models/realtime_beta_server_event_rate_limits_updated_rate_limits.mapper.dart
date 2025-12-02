@@ -20,7 +20,7 @@ class RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper
         _instance =
             RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper._(),
       );
-      RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameNameMapper.ensureInitialized();
+      RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper
   @override
   final String id = 'RealtimeBetaServerEventRateLimitsUpdatedRateLimits';
 
-  static RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameName? _$name(
+  static RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName? _$name(
     RealtimeBetaServerEventRateLimitsUpdatedRateLimits v,
   ) => v.name;
   static const Field<
     RealtimeBetaServerEventRateLimitsUpdatedRateLimits,
-    RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameName
+    RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName
   >
   _f$name = Field('name', _$name, opt: true);
   static int? _$limit(RealtimeBetaServerEventRateLimitsUpdatedRateLimits v) =>
@@ -179,7 +179,7 @@ abstract class RealtimeBetaServerEventRateLimitsUpdatedRateLimitsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameName? name,
+    RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName? name,
     int? limit,
     int? remaining,
     num? resetSeconds,

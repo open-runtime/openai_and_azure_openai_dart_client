@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'function_shell_action.dart';
-import 'function_shell_call_type_type.dart';
+import 'function_shell_call_type.dart';
 import 'item_resource.dart';
 import 'local_shell_call_status.dart';
 import 'output_item.dart';
@@ -22,7 +22,7 @@ class FunctionShellCall with FunctionShellCallMappable {
     required this.action,
     required this.status,
     this.createdBy,
-    this.type = FunctionShellCallTypeType.shellCall,
+    this.type = FunctionShellCallType.shellCall,
   });
 
   final String id;
@@ -32,7 +32,7 @@ class FunctionShellCall with FunctionShellCallMappable {
   final LocalShellCallStatus status;
   @MappableField(key: 'created_by')
   final String? createdBy;
-  final FunctionShellCallTypeType type;
+  final FunctionShellCallType type;
 
   static FunctionShellCall fromJson(Map<String, dynamic> json) => FunctionShellCallMapper.fromJson(json);
 

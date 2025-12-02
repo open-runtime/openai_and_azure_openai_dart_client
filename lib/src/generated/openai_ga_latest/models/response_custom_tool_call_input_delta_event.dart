@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_custom_tool_call_input_delta_event_type_type.dart';
+import 'response_custom_tool_call_input_delta_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_custom_tool_call_input_delta_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseCustomToolCallInputDeltaEvent with ResponseCustomToolCallInputDelt
     required this.delta,
   });
 
-  final ResponseCustomToolCallInputDeltaEventTypeType type;
+  final ResponseCustomToolCallInputDeltaEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   @MappableField(key: 'output_index')

@@ -14,7 +14,7 @@ class FilePathMapper extends ClassMapperBase<FilePath> {
   static FilePathMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FilePathMapper._());
-      FilePathTypeTypeMapper.ensureInitialized();
+      FilePathTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,11 +22,8 @@ class FilePathMapper extends ClassMapperBase<FilePath> {
   @override
   final String id = 'FilePath';
 
-  static FilePathTypeType _$type(FilePath v) => v.type;
-  static const Field<FilePath, FilePathTypeType> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static FilePathType _$type(FilePath v) => v.type;
+  static const Field<FilePath, FilePathType> _f$type = Field('type', _$type);
   static String _$fileId(FilePath v) => v.fileId;
   static const Field<FilePath, String> _f$fileId = Field(
     'fileId',
@@ -116,7 +113,7 @@ extension FilePathValueCopy<$R, $Out> on ObjectCopyWith<$R, FilePath, $Out> {
 
 abstract class FilePathCopyWith<$R, $In extends FilePath, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FilePathTypeType? type, String? fileId, int? indexField});
+  $R call({FilePathType? type, String? fileId, int? indexField});
   FilePathCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -129,7 +126,7 @@ class _FilePathCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FilePath> $mapper =
       FilePathMapper.ensureInitialized();
   @override
-  $R call({FilePathTypeType? type, String? fileId, int? indexField}) => $apply(
+  $R call({FilePathType? type, String? fileId, int? indexField}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (fileId != null) #fileId: fileId,

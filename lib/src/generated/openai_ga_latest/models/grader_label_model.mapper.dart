@@ -14,7 +14,7 @@ class GraderLabelModelMapper extends ClassMapperBase<GraderLabelModel> {
   static GraderLabelModelMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderLabelModelMapper._());
-      GraderLabelModelTypeTypeMapper.ensureInitialized();
+      GraderLabelModelTypeMapper.ensureInitialized();
       EvalItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,11 @@ class GraderLabelModelMapper extends ClassMapperBase<GraderLabelModel> {
   @override
   final String id = 'GraderLabelModel';
 
-  static GraderLabelModelTypeType _$type(GraderLabelModel v) => v.type;
-  static const Field<GraderLabelModel, GraderLabelModelTypeType> _f$type =
-      Field('type', _$type);
+  static GraderLabelModelType _$type(GraderLabelModel v) => v.type;
+  static const Field<GraderLabelModel, GraderLabelModelType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$name(GraderLabelModel v) => v.name;
   static const Field<GraderLabelModel, String> _f$name = Field('name', _$name);
   static String _$model(GraderLabelModel v) => v.model;
@@ -143,7 +145,7 @@ abstract class GraderLabelModelCopyWith<$R, $In extends GraderLabelModel, $Out>
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>
   get passingLabels;
   $R call({
-    GraderLabelModelTypeType? type,
+    GraderLabelModelType? type,
     String? name,
     String? model,
     List<EvalItem>? input,
@@ -186,7 +188,7 @@ class _GraderLabelModelCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    GraderLabelModelTypeType? type,
+    GraderLabelModelType? type,
     String? name,
     String? model,
     List<EvalItem>? input,

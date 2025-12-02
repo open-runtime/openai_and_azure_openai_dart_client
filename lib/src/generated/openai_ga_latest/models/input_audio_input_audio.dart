@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'input_audio_input_audio_format_format.dart';
+import 'input_audio_input_audio_format.dart';
 
 part 'input_audio_input_audio.mapper.dart';
 
@@ -16,7 +16,7 @@ class InputAudioInputAudio with InputAudioInputAudioMappable {
   });
 
   final String data;
-  final InputAudioInputAudioFormatFormat format;
+  final InputAudioInputAudioFormat format;
 
   static InputAudioInputAudio fromJson(Map<String, dynamic> json) => InputAudioInputAudioMapper.fromJson(json);
 

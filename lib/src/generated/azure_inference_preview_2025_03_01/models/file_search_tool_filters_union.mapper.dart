@@ -83,7 +83,7 @@ class FileSearchToolFiltersUnionComparisonFilterMapper
         _instance = FileSearchToolFiltersUnionComparisonFilterMapper._(),
       );
       FileSearchToolFiltersUnionMapper.ensureInitialized();
-      ComparisonFilterTypeTypeMapper.ensureInitialized();
+      ComparisonFilterTypeMapper.ensureInitialized();
       ComparisonFilterValueUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -92,12 +92,12 @@ class FileSearchToolFiltersUnionComparisonFilterMapper
   @override
   final String id = 'FileSearchToolFiltersUnionComparisonFilter';
 
-  static ComparisonFilterTypeType _$type(
+  static ComparisonFilterType _$type(
     FileSearchToolFiltersUnionComparisonFilter v,
   ) => v.type;
   static const Field<
     FileSearchToolFiltersUnionComparisonFilter,
-    ComparisonFilterTypeType
+    ComparisonFilterType
   >
   _f$type = Field('type', _$type);
   static String _$key(FileSearchToolFiltersUnionComparisonFilter v) => v.key;
@@ -227,7 +227,7 @@ abstract class FileSearchToolFiltersUnionComparisonFilterCopyWith<
   get value;
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   });
@@ -263,7 +263,7 @@ class _FileSearchToolFiltersUnionComparisonFilterCopyWithImpl<$R, $Out>
   get value => $value.value.copyWith.$chain((v) => call(value: v));
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   }) => $apply(
@@ -306,7 +306,7 @@ class FileSearchToolFiltersUnionCompoundFilterMapper
         _instance = FileSearchToolFiltersUnionCompoundFilterMapper._(),
       );
       FileSearchToolFiltersUnionMapper.ensureInitialized();
-      CompoundFilterTypeTypeMapper.ensureInitialized();
+      CompoundFilterTypeMapper.ensureInitialized();
       CompoundFilterFiltersUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -315,12 +315,12 @@ class FileSearchToolFiltersUnionCompoundFilterMapper
   @override
   final String id = 'FileSearchToolFiltersUnionCompoundFilter';
 
-  static CompoundFilterTypeType _$type(
+  static CompoundFilterType _$type(
     FileSearchToolFiltersUnionCompoundFilter v,
   ) => v.type;
   static const Field<
     FileSearchToolFiltersUnionCompoundFilter,
-    CompoundFilterTypeType
+    CompoundFilterType
   >
   _f$type = Field('type', _$type);
   static List<CompoundFilterFiltersUnion> _$filters(
@@ -444,7 +444,7 @@ abstract class FileSearchToolFiltersUnionCompoundFilterCopyWith<
   get filters;
   @override
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   });
   FileSearchToolFiltersUnionCompoundFilterCopyWith<$R2, $In, $Out2>
@@ -486,7 +486,7 @@ class _FileSearchToolFiltersUnionCompoundFilterCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   }) => $apply(
     FieldCopyWithData({

@@ -18,7 +18,7 @@ class FunctionShellCallOutputItemParamMapper
         _instance = FunctionShellCallOutputItemParamMapper._(),
       );
       FunctionShellCallOutputContentParamMapper.ensureInitialized();
-      FunctionShellCallOutputItemParamTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputItemParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,18 +37,18 @@ class FunctionShellCallOutputItemParamMapper
     List<FunctionShellCallOutputContentParam>
   >
   _f$output = Field('output', _$output);
-  static FunctionShellCallOutputItemParamTypeType _$type(
+  static FunctionShellCallOutputItemParamType _$type(
     FunctionShellCallOutputItemParam v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputItemParam,
-    FunctionShellCallOutputItemParamTypeType
+    FunctionShellCallOutputItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputItemParamTypeType.shellCallOutput,
+    def: FunctionShellCallOutputItemParamType.shellCallOutput,
   );
   static String? _$id(FunctionShellCallOutputItemParam v) => v.id;
   static const Field<FunctionShellCallOutputItemParam, String> _f$id = Field(
@@ -180,7 +180,7 @@ abstract class FunctionShellCallOutputItemParamCopyWith<
   $R call({
     String? callId,
     List<FunctionShellCallOutputContentParam>? output,
-    FunctionShellCallOutputItemParamTypeType? type,
+    FunctionShellCallOutputItemParamType? type,
     String? id,
     int? maxOutputLength,
   });
@@ -225,7 +225,7 @@ class _FunctionShellCallOutputItemParamCopyWithImpl<$R, $Out>
   $R call({
     String? callId,
     List<FunctionShellCallOutputContentParam>? output,
-    FunctionShellCallOutputItemParamTypeType? type,
+    FunctionShellCallOutputItemParamType? type,
     Object? id = $none,
     Object? maxOutputLength = $none,
   }) => $apply(

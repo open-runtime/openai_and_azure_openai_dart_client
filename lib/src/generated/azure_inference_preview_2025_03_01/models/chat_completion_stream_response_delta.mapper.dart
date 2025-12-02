@@ -19,7 +19,7 @@ class ChatCompletionStreamResponseDeltaMapper
       );
       ChatCompletionStreamResponseDeltaFunctionCallMapper.ensureInitialized();
       ChatCompletionMessageToolCallChunkMapper.ensureInitialized();
-      ChatCompletionStreamResponseDeltaRoleRoleMapper.ensureInitialized();
+      ChatCompletionStreamResponseDeltaRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -52,12 +52,12 @@ class ChatCompletionStreamResponseDeltaMapper
     List<ChatCompletionMessageToolCallChunk>
   >
   _f$toolCalls = Field('toolCalls', _$toolCalls, key: r'tool_calls', opt: true);
-  static ChatCompletionStreamResponseDeltaRoleRole? _$role(
+  static ChatCompletionStreamResponseDeltaRole? _$role(
     ChatCompletionStreamResponseDelta v,
   ) => v.role;
   static const Field<
     ChatCompletionStreamResponseDelta,
-    ChatCompletionStreamResponseDeltaRoleRole
+    ChatCompletionStreamResponseDeltaRole
   >
   _f$role = Field('role', _$role, opt: true);
   static String? _$refusal(ChatCompletionStreamResponseDelta v) => v.refusal;
@@ -190,7 +190,7 @@ abstract class ChatCompletionStreamResponseDeltaCopyWith<
     ChatCompletionStreamResponseDeltaFunctionCall?
     chatCompletionStreamResponseDeltaFunctionCall,
     List<ChatCompletionMessageToolCallChunk>? toolCalls,
-    ChatCompletionStreamResponseDeltaRoleRole? role,
+    ChatCompletionStreamResponseDeltaRole? role,
     String? refusal,
   });
   ChatCompletionStreamResponseDeltaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(

@@ -14,8 +14,8 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
   static WebSearchToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebSearchToolCallMapper._());
-      WebSearchToolCallTypeTypeMapper.ensureInitialized();
-      WebSearchToolCallStatusStatusMapper.ensureInitialized();
+      WebSearchToolCallTypeMapper.ensureInitialized();
+      WebSearchToolCallStatusMapper.ensureInitialized();
       WebSearchToolCallActionUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,14 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
 
   static String _$id(WebSearchToolCall v) => v.id;
   static const Field<WebSearchToolCall, String> _f$id = Field('id', _$id);
-  static WebSearchToolCallTypeType _$type(WebSearchToolCall v) => v.type;
-  static const Field<WebSearchToolCall, WebSearchToolCallTypeType> _f$type =
-      Field('type', _$type);
-  static WebSearchToolCallStatusStatus _$status(WebSearchToolCall v) =>
-      v.status;
-  static const Field<WebSearchToolCall, WebSearchToolCallStatusStatus>
-  _f$status = Field('status', _$status);
+  static WebSearchToolCallType _$type(WebSearchToolCall v) => v.type;
+  static const Field<WebSearchToolCall, WebSearchToolCallType> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static WebSearchToolCallStatus _$status(WebSearchToolCall v) => v.status;
+  static const Field<WebSearchToolCall, WebSearchToolCallStatus> _f$status =
+      Field('status', _$status);
   static WebSearchToolCallActionUnion _$action(WebSearchToolCall v) => v.action;
   static const Field<WebSearchToolCall, WebSearchToolCallActionUnion>
   _f$action = Field('action', _$action);
@@ -137,8 +138,8 @@ abstract class WebSearchToolCallCopyWith<
   get action;
   $R call({
     String? id,
-    WebSearchToolCallTypeType? type,
-    WebSearchToolCallStatusStatus? status,
+    WebSearchToolCallType? type,
+    WebSearchToolCallStatus? status,
     WebSearchToolCallActionUnion? action,
   });
   WebSearchToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -164,8 +165,8 @@ class _WebSearchToolCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    WebSearchToolCallTypeType? type,
-    WebSearchToolCallStatusStatus? status,
+    WebSearchToolCallType? type,
+    WebSearchToolCallStatus? status,
     WebSearchToolCallActionUnion? action,
   }) => $apply(
     FieldCopyWithData({

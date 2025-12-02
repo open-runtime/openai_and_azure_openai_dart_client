@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_stored_completions_data_source_config_type_type.dart';
+import 'eval_stored_completions_data_source_config_type.dart';
 import 'metadata.dart';
 
 part 'eval_stored_completions_data_source_config.mapper.dart';
@@ -14,12 +14,12 @@ part 'eval_stored_completions_data_source_config.mapper.dart';
 class EvalStoredCompletionsDataSourceConfig with EvalStoredCompletionsDataSourceConfigMappable {
   const EvalStoredCompletionsDataSourceConfig({
     required this.schema,
-    this.type = EvalStoredCompletionsDataSourceConfigTypeType.storedCompletions,
+    this.type = EvalStoredCompletionsDataSourceConfigType.storedCompletions,
     this.metadata,
   });
 
   final dynamic schema;
-  final EvalStoredCompletionsDataSourceConfigTypeType type;
+  final EvalStoredCompletionsDataSourceConfigType type;
   final Metadata? metadata;
 
   static EvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) => EvalStoredCompletionsDataSourceConfigMapper.fromJson(json);

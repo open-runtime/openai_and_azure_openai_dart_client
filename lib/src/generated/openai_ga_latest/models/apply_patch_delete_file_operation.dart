@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'apply_patch_delete_file_operation_type_type.dart';
+import 'apply_patch_delete_file_operation_type.dart';
 
 part 'apply_patch_delete_file_operation.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'apply_patch_delete_file_operation.mapper.dart';
 class ApplyPatchDeleteFileOperation with ApplyPatchDeleteFileOperationMappable {
   const ApplyPatchDeleteFileOperation({
     required this.path,
-    this.type = ApplyPatchDeleteFileOperationTypeType.deleteFile,
+    this.type = ApplyPatchDeleteFileOperationType.deleteFile,
   });
 
   final String path;
-  final ApplyPatchDeleteFileOperationTypeType type;
+  final ApplyPatchDeleteFileOperationType type;
 
   static ApplyPatchDeleteFileOperation fromJson(Map<String, dynamic> json) => ApplyPatchDeleteFileOperationMapper.fromJson(json);
 

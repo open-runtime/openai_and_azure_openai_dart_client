@@ -17,7 +17,7 @@ class WebSearchActionSearchSourcesMapper
       MapperContainer.globals.use(
         _instance = WebSearchActionSearchSourcesMapper._(),
       );
-      WebSearchActionSearchSourcesTypeTypeMapper.ensureInitialized();
+      WebSearchActionSearchSourcesTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class WebSearchActionSearchSourcesMapper
   @override
   final String id = 'WebSearchActionSearchSources';
 
-  static WebSearchActionSearchSourcesTypeType _$type(
+  static WebSearchActionSearchSourcesType _$type(
     WebSearchActionSearchSources v,
   ) => v.type;
   static const Field<
     WebSearchActionSearchSources,
-    WebSearchActionSearchSourcesTypeType
+    WebSearchActionSearchSourcesType
   >
   _f$type = Field('type', _$type);
   static String _$url(WebSearchActionSearchSources v) => v.url;
@@ -129,7 +129,7 @@ abstract class WebSearchActionSearchSourcesCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({WebSearchActionSearchSourcesTypeType? type, String? url});
+  $R call({WebSearchActionSearchSourcesType? type, String? url});
   WebSearchActionSearchSourcesCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -153,7 +153,7 @@ class _WebSearchActionSearchSourcesCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WebSearchActionSearchSources> $mapper =
       WebSearchActionSearchSourcesMapper.ensureInitialized();
   @override
-  $R call({WebSearchActionSearchSourcesTypeType? type, String? url}) => $apply(
+  $R call({WebSearchActionSearchSourcesType? type, String? url}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (url != null) #url: url,

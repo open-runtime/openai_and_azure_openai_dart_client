@@ -14,7 +14,7 @@ class RefusalMapper extends ClassMapperBase<Refusal> {
   static RefusalMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RefusalMapper._());
-      RefusalTypeTypeMapper.ensureInitialized();
+      RefusalTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class RefusalMapper extends ClassMapperBase<Refusal> {
   @override
   final String id = 'Refusal';
 
-  static RefusalTypeType _$type(Refusal v) => v.type;
-  static const Field<Refusal, RefusalTypeType> _f$type = Field('type', _$type);
+  static RefusalType _$type(Refusal v) => v.type;
+  static const Field<Refusal, RefusalType> _f$type = Field('type', _$type);
   static String _$refusal(Refusal v) => v.refusal;
   static const Field<Refusal, String> _f$refusal = Field('refusal', _$refusal);
 
@@ -98,7 +98,7 @@ extension RefusalValueCopy<$R, $Out> on ObjectCopyWith<$R, Refusal, $Out> {
 
 abstract class RefusalCopyWith<$R, $In extends Refusal, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RefusalTypeType? type, String? refusal});
+  $R call({RefusalType? type, String? refusal});
   RefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -111,7 +111,7 @@ class _RefusalCopyWithImpl<$R, $Out>
   late final ClassMapperBase<Refusal> $mapper =
       RefusalMapper.ensureInitialized();
   @override
-  $R call({RefusalTypeType? type, String? refusal}) => $apply(
+  $R call({RefusalType? type, String? refusal}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (refusal != null) #refusal: refusal,

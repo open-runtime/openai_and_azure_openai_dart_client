@@ -14,7 +14,7 @@ class TypeModelMapper extends ClassMapperBase<TypeModel> {
   static TypeModelMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TypeModelMapper._());
-      TypeModelTypeTypeMapper.ensureInitialized();
+      TypeModelTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,12 +24,12 @@ class TypeModelMapper extends ClassMapperBase<TypeModel> {
 
   static String _$text(TypeModel v) => v.text;
   static const Field<TypeModel, String> _f$text = Field('text', _$text);
-  static TypeModelTypeType _$type(TypeModel v) => v.type;
-  static const Field<TypeModel, TypeModelTypeType> _f$type = Field(
+  static TypeModelType _$type(TypeModel v) => v.type;
+  static const Field<TypeModel, TypeModelType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: TypeModelTypeType.type,
+    def: TypeModelType.type,
   );
 
   @override
@@ -105,7 +105,7 @@ extension TypeModelValueCopy<$R, $Out> on ObjectCopyWith<$R, TypeModel, $Out> {
 
 abstract class TypeModelCopyWith<$R, $In extends TypeModel, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, TypeModelTypeType? type});
+  $R call({String? text, TypeModelType? type});
   TypeModelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -118,7 +118,7 @@ class _TypeModelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TypeModel> $mapper =
       TypeModelMapper.ensureInitialized();
   @override
-  $R call({String? text, TypeModelTypeType? type}) => $apply(
+  $R call({String? text, TypeModelType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

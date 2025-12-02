@@ -18,7 +18,7 @@ class CreateEvalRequestDataSourceConfigDataSourceConfigMapper
       MapperContainer.globals.use(
         _instance = CreateEvalRequestDataSourceConfigDataSourceConfigMapper._(),
       );
-      CreateEvalLogsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalLogsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -47,18 +47,18 @@ class CreateEvalRequestDataSourceConfigDataSourceConfigMapper
     opt: true,
     def: false,
   );
-  static CreateEvalLogsDataSourceConfigTypeType _$type(
+  static CreateEvalLogsDataSourceConfigType _$type(
     CreateEvalRequestDataSourceConfigDataSourceConfig v,
   ) => v.type;
   static const Field<
     CreateEvalRequestDataSourceConfigDataSourceConfig,
-    CreateEvalLogsDataSourceConfigTypeType
+    CreateEvalLogsDataSourceConfigType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalLogsDataSourceConfigTypeType.logs,
+    def: CreateEvalLogsDataSourceConfigType.logs,
   );
 
   @override
@@ -187,7 +187,7 @@ abstract class CreateEvalRequestDataSourceConfigDataSourceConfigCopyWith<
     dynamic itemSchema,
     dynamic metadata,
     bool? includeSampleSchema,
-    CreateEvalLogsDataSourceConfigTypeType? type,
+    CreateEvalLogsDataSourceConfigType? type,
   });
   CreateEvalRequestDataSourceConfigDataSourceConfigCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -221,7 +221,7 @@ class _CreateEvalRequestDataSourceConfigDataSourceConfigCopyWithImpl<$R, $Out>
     Object? itemSchema = $none,
     Object? metadata = $none,
     bool? includeSampleSchema,
-    CreateEvalLogsDataSourceConfigTypeType? type,
+    CreateEvalLogsDataSourceConfigType? type,
   }) => $apply(
     FieldCopyWithData({
       if (itemSchema != $none) #itemSchema: itemSchema,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_jsonl_file_content_source_content.dart';
-import 'eval_jsonl_file_content_source_type_type.dart';
+import 'eval_jsonl_file_content_source_type.dart';
 
 part 'eval_jsonl_file_content_source.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'eval_jsonl_file_content_source.mapper.dart';
 class EvalJsonlFileContentSource with EvalJsonlFileContentSourceMappable {
   const EvalJsonlFileContentSource({
     required this.content,
-    this.type = EvalJsonlFileContentSourceTypeType.fileContent,
+    this.type = EvalJsonlFileContentSourceType.fileContent,
   });
 
   final List<EvalJsonlFileContentSourceContent> content;
-  final EvalJsonlFileContentSourceTypeType type;
+  final EvalJsonlFileContentSourceType type;
 
   static EvalJsonlFileContentSource fromJson(Map<String, dynamic> json) => EvalJsonlFileContentSourceMapper.fromJson(json);
 

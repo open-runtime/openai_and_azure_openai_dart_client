@@ -17,7 +17,7 @@ class RealtimeMcpToolExecutionErrorMapper
       MapperContainer.globals.use(
         _instance = RealtimeMcpToolExecutionErrorMapper._(),
       );
-      RealtimeMcpToolExecutionErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcpToolExecutionErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeMcpToolExecutionErrorMapper
   @override
   final String id = 'RealtimeMcpToolExecutionError';
 
-  static RealtimeMcpToolExecutionErrorTypeType _$type(
+  static RealtimeMcpToolExecutionErrorType _$type(
     RealtimeMcpToolExecutionError v,
   ) => v.type;
   static const Field<
     RealtimeMcpToolExecutionError,
-    RealtimeMcpToolExecutionErrorTypeType
+    RealtimeMcpToolExecutionErrorType
   >
   _f$type = Field('type', _$type);
   static String _$message(RealtimeMcpToolExecutionError v) => v.message;
@@ -130,7 +130,7 @@ abstract class RealtimeMcpToolExecutionErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RealtimeMcpToolExecutionErrorTypeType? type, String? message});
+  $R call({RealtimeMcpToolExecutionErrorType? type, String? message});
   RealtimeMcpToolExecutionErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -154,13 +154,12 @@ class _RealtimeMcpToolExecutionErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeMcpToolExecutionError> $mapper =
       RealtimeMcpToolExecutionErrorMapper.ensureInitialized();
   @override
-  $R call({RealtimeMcpToolExecutionErrorTypeType? type, String? message}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (message != null) #message: message,
-        }),
-      );
+  $R call({RealtimeMcpToolExecutionErrorType? type, String? message}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (message != null) #message: message,
+    }),
+  );
   @override
   RealtimeMcpToolExecutionError $make(CopyWithData data) =>
       RealtimeMcpToolExecutionError(

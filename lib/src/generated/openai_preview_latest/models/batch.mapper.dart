@@ -15,7 +15,7 @@ class BatchMapper extends ClassMapperBase<Batch> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = BatchMapper._());
       BatchObjectObjectEnumMapper.ensureInitialized();
-      BatchStatusStatusMapper.ensureInitialized();
+      BatchStatusMapper.ensureInitialized();
       BatchErrorsMapper.ensureInitialized();
       BatchRequestCountsMapper.ensureInitialized();
     }
@@ -47,11 +47,8 @@ class BatchMapper extends ClassMapperBase<Batch> {
     _$completionWindow,
     key: r'completion_window',
   );
-  static BatchStatusStatus _$status(Batch v) => v.status;
-  static const Field<Batch, BatchStatusStatus> _f$status = Field(
-    'status',
-    _$status,
-  );
+  static BatchStatus _$status(Batch v) => v.status;
+  static const Field<Batch, BatchStatus> _f$status = Field('status', _$status);
   static int _$createdAt(Batch v) => v.createdAt;
   static const Field<Batch, int> _f$createdAt = Field(
     'createdAt',
@@ -260,7 +257,7 @@ abstract class BatchCopyWith<$R, $In extends Batch, $Out>
     String? endpoint,
     String? inputFileId,
     String? completionWindow,
-    BatchStatusStatus? status,
+    BatchStatus? status,
     int? createdAt,
     BatchErrors? batchErrors,
     String? outputFileId,
@@ -309,7 +306,7 @@ class _BatchCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Batch, $Out>
     String? endpoint,
     String? inputFileId,
     String? completionWindow,
-    BatchStatusStatus? status,
+    BatchStatus? status,
     int? createdAt,
     Object? batchErrors = $none,
     Object? outputFileId = $none,

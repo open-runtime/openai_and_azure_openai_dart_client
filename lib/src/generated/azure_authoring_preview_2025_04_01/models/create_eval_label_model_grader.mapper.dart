@@ -18,7 +18,7 @@ class CreateEvalLabelModelGraderMapper
         _instance = CreateEvalLabelModelGraderMapper._(),
       );
       CreateEvalItemMapper.ensureInitialized();
-      CreateEvalLabelModelGraderTypeTypeMapper.ensureInitialized();
+      CreateEvalLabelModelGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -50,13 +50,9 @@ class CreateEvalLabelModelGraderMapper
     _$passingLabels,
     key: r'passing_labels',
   );
-  static CreateEvalLabelModelGraderTypeType _$type(
-    CreateEvalLabelModelGrader v,
-  ) => v.type;
-  static const Field<
-    CreateEvalLabelModelGrader,
-    CreateEvalLabelModelGraderTypeType
-  >
+  static CreateEvalLabelModelGraderType _$type(CreateEvalLabelModelGrader v) =>
+      v.type;
+  static const Field<CreateEvalLabelModelGrader, CreateEvalLabelModelGraderType>
   _f$type = Field('type', _$type);
 
   @override
@@ -173,7 +169,7 @@ abstract class CreateEvalLabelModelGraderCopyWith<
     String? model,
     String? name,
     List<String>? passingLabels,
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
   });
   CreateEvalLabelModelGraderCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -225,7 +221,7 @@ class _CreateEvalLabelModelGraderCopyWithImpl<$R, $Out>
     String? model,
     String? name,
     List<String>? passingLabels,
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
   }) => $apply(
     FieldCopyWithData({
       if (input != null) #input: input,

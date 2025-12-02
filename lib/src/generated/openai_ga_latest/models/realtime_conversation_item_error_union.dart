@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_mcp_protocol_error.dart';
-import 'realtime_mcp_protocol_error_type_type.dart';
+import 'realtime_mcp_protocol_error_type.dart';
 import 'realtime_mcp_tool_execution_error.dart';
-import 'realtime_mcp_tool_execution_error_type_type.dart';
+import 'realtime_mcp_tool_execution_error_type.dart';
 import 'realtime_mcphttp_error.dart';
-import 'realtime_mcphttp_error_type_type.dart';
+import 'realtime_mcphttp_error_type.dart';
 
 part 'realtime_conversation_item_error_union.mapper.dart';
 
@@ -51,7 +51,7 @@ extension RealtimeConversationItemErrorUnionDeserializer on RealtimeConversation
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'protocol_error')
 class RealtimeConversationItemErrorUnionProtocolError extends RealtimeConversationItemErrorUnion with RealtimeConversationItemErrorUnionProtocolErrorMappable {
-  final RealtimeMcpProtocolErrorTypeType type;
+  final RealtimeMcpProtocolErrorType type;
   final int code;
   final String message;
 
@@ -64,7 +64,7 @@ class RealtimeConversationItemErrorUnionProtocolError extends RealtimeConversati
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_execution_error')
 class RealtimeConversationItemErrorUnionToolExecutionError extends RealtimeConversationItemErrorUnion with RealtimeConversationItemErrorUnionToolExecutionErrorMappable {
-  final RealtimeMcpToolExecutionErrorTypeType type;
+  final RealtimeMcpToolExecutionErrorType type;
   final String message;
 
   const RealtimeConversationItemErrorUnionToolExecutionError({
@@ -75,7 +75,7 @@ class RealtimeConversationItemErrorUnionToolExecutionError extends RealtimeConve
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'http_error')
 class RealtimeConversationItemErrorUnionHttpError extends RealtimeConversationItemErrorUnion with RealtimeConversationItemErrorUnionHttpErrorMappable {
-  final RealtimeMcphttpErrorTypeType type;
+  final RealtimeMcphttpErrorType type;
   final int code;
   final String message;
 

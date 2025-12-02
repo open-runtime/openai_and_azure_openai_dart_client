@@ -15,7 +15,7 @@ class GraderTextSimilarityMapper extends ClassMapperBase<GraderTextSimilarity> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderTextSimilarityMapper._());
       GraderTextSimilarityEvaluationMetricEvaluationMetricMapper.ensureInitialized();
-      GraderTextSimilarityTypeTypeMapper.ensureInitialized();
+      GraderTextSimilarityTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -49,14 +49,14 @@ class GraderTextSimilarityMapper extends ClassMapperBase<GraderTextSimilarity> {
     _$evaluationMetric,
     key: r'evaluation_metric',
   );
-  static GraderTextSimilarityTypeType _$type(GraderTextSimilarity v) => v.type;
-  static const Field<GraderTextSimilarity, GraderTextSimilarityTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: GraderTextSimilarityTypeType.textSimilarity,
-  );
+  static GraderTextSimilarityType _$type(GraderTextSimilarity v) => v.type;
+  static const Field<GraderTextSimilarity, GraderTextSimilarityType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: GraderTextSimilarityType.textSimilarity,
+      );
 
   @override
   final MappableFields<GraderTextSimilarity> fields = const {
@@ -156,7 +156,7 @@ abstract class GraderTextSimilarityCopyWith<
     String? input,
     String? reference,
     GraderTextSimilarityEvaluationMetricEvaluationMetric? evaluationMetric,
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
   });
   GraderTextSimilarityCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -177,7 +177,7 @@ class _GraderTextSimilarityCopyWithImpl<$R, $Out>
     String? input,
     String? reference,
     GraderTextSimilarityEvaluationMetricEvaluationMetric? evaluationMetric,
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,

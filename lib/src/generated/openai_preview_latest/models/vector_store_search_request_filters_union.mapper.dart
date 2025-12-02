@@ -93,7 +93,7 @@ class VectorStoreSearchRequestFiltersUnionComparisonFilterMapper
             VectorStoreSearchRequestFiltersUnionComparisonFilterMapper._(),
       );
       VectorStoreSearchRequestFiltersUnionMapper.ensureInitialized();
-      ComparisonFilterTypeTypeMapper.ensureInitialized();
+      ComparisonFilterTypeMapper.ensureInitialized();
       ComparisonFilterValueUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -102,12 +102,12 @@ class VectorStoreSearchRequestFiltersUnionComparisonFilterMapper
   @override
   final String id = 'VectorStoreSearchRequestFiltersUnionComparisonFilter';
 
-  static ComparisonFilterTypeType _$type(
+  static ComparisonFilterType _$type(
     VectorStoreSearchRequestFiltersUnionComparisonFilter v,
   ) => v.type;
   static const Field<
     VectorStoreSearchRequestFiltersUnionComparisonFilter,
-    ComparisonFilterTypeType
+    ComparisonFilterType
   >
   _f$type = Field('type', _$type);
   static String _$key(VectorStoreSearchRequestFiltersUnionComparisonFilter v) =>
@@ -255,7 +255,7 @@ abstract class VectorStoreSearchRequestFiltersUnionComparisonFilterCopyWith<
   get value;
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   });
@@ -300,7 +300,7 @@ class _VectorStoreSearchRequestFiltersUnionComparisonFilterCopyWithImpl<
   get value => $value.value.copyWith.$chain((v) => call(value: v));
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   }) => $apply(
@@ -346,7 +346,7 @@ class VectorStoreSearchRequestFiltersUnionCompoundFilterMapper
             VectorStoreSearchRequestFiltersUnionCompoundFilterMapper._(),
       );
       VectorStoreSearchRequestFiltersUnionMapper.ensureInitialized();
-      CompoundFilterTypeTypeMapper.ensureInitialized();
+      CompoundFilterTypeMapper.ensureInitialized();
       CompoundFilterFiltersUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -355,12 +355,12 @@ class VectorStoreSearchRequestFiltersUnionCompoundFilterMapper
   @override
   final String id = 'VectorStoreSearchRequestFiltersUnionCompoundFilter';
 
-  static CompoundFilterTypeType _$type(
+  static CompoundFilterType _$type(
     VectorStoreSearchRequestFiltersUnionCompoundFilter v,
   ) => v.type;
   static const Field<
     VectorStoreSearchRequestFiltersUnionCompoundFilter,
-    CompoundFilterTypeType
+    CompoundFilterType
   >
   _f$type = Field('type', _$type);
   static List<CompoundFilterFiltersUnion> _$filters(
@@ -499,7 +499,7 @@ abstract class VectorStoreSearchRequestFiltersUnionCompoundFilterCopyWith<
   get filters;
   @override
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   });
   VectorStoreSearchRequestFiltersUnionCompoundFilterCopyWith<$R2, $In, $Out2>
@@ -546,7 +546,7 @@ class _VectorStoreSearchRequestFiltersUnionCompoundFilterCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   }) => $apply(
     FieldCopyWithData({

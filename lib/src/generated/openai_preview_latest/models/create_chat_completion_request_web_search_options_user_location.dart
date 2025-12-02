@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_chat_completion_request_web_search_options_user_location_type_type.dart';
+import 'create_chat_completion_request_web_search_options_user_location_type.dart';
 import 'web_search_location.dart';
 
 part 'create_chat_completion_request_web_search_options_user_location.mapper.dart';
@@ -16,7 +16,7 @@ class CreateChatCompletionRequestWebSearchOptionsUserLocation with CreateChatCom
     required this.approximate,
   });
 
-  final CreateChatCompletionRequestWebSearchOptionsUserLocationTypeType type;
+  final CreateChatCompletionRequestWebSearchOptionsUserLocationType type;
   final WebSearchLocation approximate;
 
   static CreateChatCompletionRequestWebSearchOptionsUserLocation fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestWebSearchOptionsUserLocationMapper.fromJson(json);

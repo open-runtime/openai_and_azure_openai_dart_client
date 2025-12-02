@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_named_tool_choice_custom_custom.dart';
-import 'chat_completion_named_tool_choice_custom_type_type.dart';
+import 'chat_completion_named_tool_choice_custom_type.dart';
 
 part 'chat_completion_named_tool_choice_custom.mapper.dart';
 
@@ -17,7 +17,7 @@ class ChatCompletionNamedToolChoiceCustom with ChatCompletionNamedToolChoiceCust
     required this.chatCompletionNamedToolChoiceCustomCustom,
   });
 
-  final ChatCompletionNamedToolChoiceCustomTypeType type;
+  final ChatCompletionNamedToolChoiceCustomType type;
   @MappableField(key: 'custom')
   final ChatCompletionNamedToolChoiceCustomCustom chatCompletionNamedToolChoiceCustomCustom;
 

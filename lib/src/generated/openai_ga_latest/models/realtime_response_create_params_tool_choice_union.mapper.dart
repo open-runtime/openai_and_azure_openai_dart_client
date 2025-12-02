@@ -100,7 +100,7 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMapper
             RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMapper._(),
       );
       RealtimeResponseCreateParamsToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceFunctionTypeTypeMapper.ensureInitialized();
+      ToolChoiceFunctionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -109,12 +109,12 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMapper
   final String id =
       'RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction';
 
-  static ToolChoiceFunctionTypeType _$type(
+  static ToolChoiceFunctionType _$type(
     RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction v,
   ) => v.type;
   static const Field<
     RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction,
-    ToolChoiceFunctionTypeType
+    ToolChoiceFunctionType
   >
   _f$type = Field('type', _$type);
   static String _$name(
@@ -254,7 +254,7 @@ abstract class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionCopy
     implements
         RealtimeResponseCreateParamsToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name});
+  $R call({ToolChoiceFunctionType? type, String? name});
   RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionCopyWith<
     $R2,
     $In,
@@ -292,7 +292,7 @@ class _RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionCopyWithImpl
   $mapper =
       RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name}) => $apply(
+  $R call({ToolChoiceFunctionType? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,
@@ -336,7 +336,7 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMapper
             RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMapper._(),
       );
       RealtimeResponseCreateParamsToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceMcpTypeTypeMapper.ensureInitialized();
+      ToolChoiceMcpTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -344,12 +344,12 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMapper
   @override
   final String id = 'RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp';
 
-  static ToolChoiceMcpTypeType _$type(
+  static ToolChoiceMcpType _$type(
     RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp v,
   ) => v.type;
   static const Field<
     RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp,
-    ToolChoiceMcpTypeType
+    ToolChoiceMcpType
   >
   _f$type = Field('type', _$type);
   static String _$serverLabel(
@@ -495,7 +495,7 @@ abstract class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpCopyWith<
     implements
         RealtimeResponseCreateParamsToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceMcpTypeType? type, String? serverLabel, String? name});
+  $R call({ToolChoiceMcpType? type, String? serverLabel, String? name});
   RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpCopyWith<
     $R2,
     $In,
@@ -534,7 +534,7 @@ class _RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpCopyWithImpl<
       RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMapper.ensureInitialized();
   @override
   $R call({
-    ToolChoiceMcpTypeType? type,
+    ToolChoiceMcpType? type,
     String? serverLabel,
     Object? name = $none,
   }) => $apply(

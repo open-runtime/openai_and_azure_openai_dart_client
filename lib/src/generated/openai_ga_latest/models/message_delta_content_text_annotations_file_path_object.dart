@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_text_annotations_file_path_object_file_path.dart';
-import 'message_delta_content_text_annotations_file_path_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_path_object_type.dart';
 import 'text_annotation_delta.dart';
 
 part 'message_delta_content_text_annotations_file_path_object.mapper.dart';
@@ -24,7 +24,7 @@ class MessageDeltaContentTextAnnotationsFilePathObject with MessageDeltaContentT
 
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextAnnotationsFilePathObjectTypeType type;
+  final MessageDeltaContentTextAnnotationsFilePathObjectType type;
   final String? text;
   @MappableField(key: 'file_path')
   final MessageDeltaContentTextAnnotationsFilePathObjectFilePath? messageDeltaContentTextAnnotationsFilePathObjectFilePath;

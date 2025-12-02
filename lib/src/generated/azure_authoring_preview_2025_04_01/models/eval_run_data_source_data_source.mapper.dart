@@ -19,7 +19,7 @@ class EvalRunDataSourceDataSourceMapper
       );
       CreateEvalCompletionsRunDataSourceSourceMapper.ensureInitialized();
       CreateEvalJsonlRunDataSourceSourceSourceMapper.ensureInitialized();
-      CreateEvalJsonlRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalJsonlRunDataSourceTypeMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceInputMessagesMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
     }
@@ -49,18 +49,18 @@ class EvalRunDataSourceDataSourceMapper
     CreateEvalJsonlRunDataSourceSourceSource
   >
   _f$source = Field('source', _$source);
-  static CreateEvalJsonlRunDataSourceTypeType _$type(
+  static CreateEvalJsonlRunDataSourceType _$type(
     EvalRunDataSourceDataSource v,
   ) => v.type;
   static const Field<
     EvalRunDataSourceDataSource,
-    CreateEvalJsonlRunDataSourceTypeType
+    CreateEvalJsonlRunDataSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalJsonlRunDataSourceTypeType.jsonl,
+    def: CreateEvalJsonlRunDataSourceType.jsonl,
   );
   static CreateEvalCompletionsRunDataSourceInputMessages?
   _$createEvalCompletionsRunDataSourceInputMessages(
@@ -233,7 +233,7 @@ abstract class EvalRunDataSourceDataSourceCopyWith<
     CreateEvalCompletionsRunDataSourceSource?
     createEvalCompletionsRunDataSourceSource,
     CreateEvalJsonlRunDataSourceSourceSource? source,
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
     CreateEvalCompletionsRunDataSourceInputMessages?
     createEvalCompletionsRunDataSourceInputMessages,
     String? model,
@@ -304,7 +304,7 @@ class _EvalRunDataSourceDataSourceCopyWithImpl<$R, $Out>
     CreateEvalCompletionsRunDataSourceSource?
     createEvalCompletionsRunDataSourceSource,
     CreateEvalJsonlRunDataSourceSourceSource? source,
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
     Object? createEvalCompletionsRunDataSourceInputMessages = $none,
     Object? model = $none,
     Object? createEvalCompletionsRunDataSourceSamplingParams = $none,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'reasoning_item_summary_type_type.dart';
+import 'reasoning_item_summary_type.dart';
 
 part 'reasoning_item_summary.mapper.dart';
 
@@ -15,7 +15,7 @@ class ReasoningItemSummary with ReasoningItemSummaryMappable {
     required this.text,
   });
 
-  final ReasoningItemSummaryTypeType type;
+  final ReasoningItemSummaryType type;
   final String text;
 
   static ReasoningItemSummary fromJson(Map<String, dynamic> json) => ReasoningItemSummaryMapper.fromJson(json);

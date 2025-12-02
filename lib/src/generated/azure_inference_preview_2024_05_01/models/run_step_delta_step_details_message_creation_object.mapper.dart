@@ -18,7 +18,7 @@ class RunStepDeltaStepDetailsMessageCreationObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsMessageCreationObjectMapper._(),
       );
-      RunStepDeltaStepDetailsMessageCreationObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsMessageCreationObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsMessageCreationObjectMessageCreationMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class RunStepDeltaStepDetailsMessageCreationObjectMapper
   @override
   final String id = 'RunStepDeltaStepDetailsMessageCreationObject';
 
-  static RunStepDeltaStepDetailsMessageCreationObjectTypeType _$type(
+  static RunStepDeltaStepDetailsMessageCreationObjectType _$type(
     RunStepDeltaStepDetailsMessageCreationObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsMessageCreationObject,
-    RunStepDeltaStepDetailsMessageCreationObjectTypeType
+    RunStepDeltaStepDetailsMessageCreationObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDeltaStepDetailsMessageCreationObjectMessageCreation?
@@ -172,7 +172,7 @@ abstract class RunStepDeltaStepDetailsMessageCreationObjectCopyWith<
   >?
   get runStepDeltaStepDetailsMessageCreationObjectMessageCreation;
   $R call({
-    RunStepDeltaStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDeltaStepDetailsMessageCreationObjectType? type,
     RunStepDeltaStepDetailsMessageCreationObjectMessageCreation?
     runStepDeltaStepDetailsMessageCreationObjectMessageCreation,
   });
@@ -219,7 +219,7 @@ class _RunStepDeltaStepDetailsMessageCreationObjectCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    RunStepDeltaStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDeltaStepDetailsMessageCreationObjectType? type,
     Object? runStepDeltaStepDetailsMessageCreationObjectMessageCreation = $none,
   }) => $apply(
     FieldCopyWithData({

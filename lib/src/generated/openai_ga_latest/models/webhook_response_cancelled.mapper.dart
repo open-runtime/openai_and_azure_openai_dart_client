@@ -18,7 +18,7 @@ class WebhookResponseCancelledMapper
         _instance = WebhookResponseCancelledMapper._(),
       );
       WebhookResponseCancelledDataMapper.ensureInitialized();
-      WebhookResponseCancelledTypeTypeMapper.ensureInitialized();
+      WebhookResponseCancelledTypeMapper.ensureInitialized();
       WebhookResponseCancelledObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -47,9 +47,9 @@ class WebhookResponseCancelledMapper
     _$webhookResponseCancelledData,
     key: r'data',
   );
-  static WebhookResponseCancelledTypeType _$type(WebhookResponseCancelled v) =>
+  static WebhookResponseCancelledType _$type(WebhookResponseCancelled v) =>
       v.type;
-  static const Field<WebhookResponseCancelled, WebhookResponseCancelledTypeType>
+  static const Field<WebhookResponseCancelled, WebhookResponseCancelledType>
   _f$type = Field('type', _$type);
   static WebhookResponseCancelledObjectObjectEnum? _$objectEnum(
     WebhookResponseCancelled v,
@@ -163,7 +163,7 @@ abstract class WebhookResponseCancelledCopyWith<
     int? createdAt,
     String? id,
     WebhookResponseCancelledData? webhookResponseCancelledData,
-    WebhookResponseCancelledTypeType? type,
+    WebhookResponseCancelledType? type,
     WebhookResponseCancelledObjectObjectEnum? objectEnum,
   });
   WebhookResponseCancelledCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -195,7 +195,7 @@ class _WebhookResponseCancelledCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookResponseCancelledData? webhookResponseCancelledData,
-    WebhookResponseCancelledTypeType? type,
+    WebhookResponseCancelledType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

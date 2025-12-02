@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'approximate_location.dart';
 import 'web_search_preview_tool_search_context_size_search_context_size.dart';
-import 'web_search_preview_tool_type_type.dart';
+import 'web_search_preview_tool_type.dart';
 
 part 'web_search_preview_tool.mapper.dart';
 
@@ -16,14 +16,14 @@ class WebSearchPreviewTool with WebSearchPreviewToolMappable {
   const WebSearchPreviewTool({
     this.userLocation,
     this.searchContextSize,
-    this.type = WebSearchPreviewToolTypeType.webSearchPreview,
+    this.type = WebSearchPreviewToolType.webSearchPreview,
   });
 
   @MappableField(key: 'user_location')
   final ApproximateLocation? userLocation;
   @MappableField(key: 'search_context_size')
   final WebSearchPreviewToolSearchContextSizeSearchContextSize? searchContextSize;
-  final WebSearchPreviewToolTypeType type;
+  final WebSearchPreviewToolType type;
 
   static WebSearchPreviewTool fromJson(Map<String, dynamic> json) => WebSearchPreviewToolMapper.fromJson(json);
 

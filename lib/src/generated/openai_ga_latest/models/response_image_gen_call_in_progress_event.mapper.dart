@@ -17,7 +17,7 @@ class ResponseImageGenCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseImageGenCallInProgressEventMapper._(),
       );
-      ResponseImageGenCallInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseImageGenCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseImageGenCallInProgressEventMapper
   @override
   final String id = 'ResponseImageGenCallInProgressEvent';
 
-  static ResponseImageGenCallInProgressEventTypeType _$type(
+  static ResponseImageGenCallInProgressEventType _$type(
     ResponseImageGenCallInProgressEvent v,
   ) => v.type;
   static const Field<
     ResponseImageGenCallInProgressEvent,
-    ResponseImageGenCallInProgressEventTypeType
+    ResponseImageGenCallInProgressEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseImageGenCallInProgressEvent v) =>
@@ -152,7 +152,7 @@ abstract class ResponseImageGenCallInProgressEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseImageGenCallInProgressEventTypeType? type,
+    ResponseImageGenCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,
@@ -180,7 +180,7 @@ class _ResponseImageGenCallInProgressEventCopyWithImpl<$R, $Out>
       ResponseImageGenCallInProgressEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseImageGenCallInProgressEventTypeType? type,
+    ResponseImageGenCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_input_audio_buffer_append_type_type.dart';
+import 'realtime_client_event_input_audio_buffer_append_type.dart';
 
 part 'realtime_client_event_input_audio_buffer_append.mapper.dart';
 
@@ -28,7 +28,7 @@ class RealtimeClientEventInputAudioBufferAppend with RealtimeClientEventInputAud
     this.eventId,
   });
 
-  final RealtimeClientEventInputAudioBufferAppendTypeType type;
+  final RealtimeClientEventInputAudioBufferAppendType type;
   final String audio;
   @MappableField(key: 'event_id')
   final String? eventId;

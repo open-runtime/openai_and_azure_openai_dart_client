@@ -7,24 +7,24 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_request_assistant_message.dart';
 import 'chat_completion_request_assistant_message_function_call.dart';
-import 'chat_completion_request_assistant_message_role_role.dart';
+import 'chat_completion_request_assistant_message_role.dart';
 import 'chat_completion_request_developer_message.dart';
-import 'chat_completion_request_developer_message_role_role.dart';
+import 'chat_completion_request_developer_message_role.dart';
 import 'chat_completion_request_function_message.dart';
-import 'chat_completion_request_function_message_role_role.dart';
+import 'chat_completion_request_function_message_role.dart';
 import 'chat_completion_request_message_function_call.dart';
-import 'chat_completion_request_message_role_role.dart';
-import 'chat_completion_request_message_role_role2.dart';
-import 'chat_completion_request_message_role_role3.dart';
-import 'chat_completion_request_message_role_role4.dart';
-import 'chat_completion_request_message_role_role5.dart';
-import 'chat_completion_request_message_role_role6.dart';
+import 'chat_completion_request_message_role.dart';
+import 'chat_completion_request_message_role2.dart';
+import 'chat_completion_request_message_role3.dart';
+import 'chat_completion_request_message_role4.dart';
+import 'chat_completion_request_message_role5.dart';
+import 'chat_completion_request_message_role6.dart';
 import 'chat_completion_request_system_message.dart';
-import 'chat_completion_request_system_message_role_role.dart';
+import 'chat_completion_request_system_message_role.dart';
 import 'chat_completion_request_tool_message.dart';
-import 'chat_completion_request_tool_message_role_role.dart';
+import 'chat_completion_request_tool_message_role.dart';
 import 'chat_completion_request_user_message.dart';
-import 'chat_completion_request_user_message_role_role.dart';
+import 'chat_completion_request_user_message_role.dart';
 
 part 'chat_completion_request_message.mapper.dart';
 
@@ -75,7 +75,7 @@ extension ChatCompletionRequestMessageUnionDeserializer on ChatCompletionRequest
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'developer')
 class ChatCompletionRequestMessageDeveloper extends ChatCompletionRequestMessage with ChatCompletionRequestMessageDeveloperMappable {
   final String content;
-  final ChatCompletionRequestMessageRoleRole role;
+  final ChatCompletionRequestMessageRole role;
   final String? name;
 
   const ChatCompletionRequestMessageDeveloper({
@@ -88,7 +88,7 @@ class ChatCompletionRequestMessageDeveloper extends ChatCompletionRequestMessage
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
 class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage with ChatCompletionRequestMessageSystemMappable {
   final String content;
-  final ChatCompletionRequestMessageRoleRole2 role;
+  final ChatCompletionRequestMessageRole2 role;
   final String? name;
 
   const ChatCompletionRequestMessageSystem({
@@ -101,7 +101,7 @@ class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage wi
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
 class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage with ChatCompletionRequestMessageUserMappable {
   final String content;
-  final ChatCompletionRequestMessageRoleRole3 role;
+  final ChatCompletionRequestMessageRole3 role;
   final String? name;
 
   const ChatCompletionRequestMessageUser({
@@ -115,7 +115,7 @@ class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage with
 class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage with ChatCompletionRequestMessageAssistantMappable {
   final String? content;
   final String? refusal;
-  final ChatCompletionRequestMessageRoleRole4 role;
+  final ChatCompletionRequestMessageRole4 role;
   final String? name;
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
@@ -134,7 +134,7 @@ class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
 class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage with ChatCompletionRequestMessageToolMappable {
-  final ChatCompletionRequestMessageRoleRole5 role;
+  final ChatCompletionRequestMessageRole5 role;
   final String content;
   @MappableField(key: 'tool_call_id')
   final String toolCallId;
@@ -148,7 +148,7 @@ class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage with
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class ChatCompletionRequestMessageFunction extends ChatCompletionRequestMessage with ChatCompletionRequestMessageFunctionMappable {
-  final ChatCompletionRequestMessageRoleRole6 role;
+  final ChatCompletionRequestMessageRole6 role;
   final String? content;
   final String name;
 

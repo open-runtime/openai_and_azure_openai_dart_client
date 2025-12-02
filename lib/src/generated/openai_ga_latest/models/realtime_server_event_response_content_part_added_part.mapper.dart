@@ -18,7 +18,7 @@ class RealtimeServerEventResponseContentPartAddedPartMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseContentPartAddedPartMapper._(),
       );
-      RealtimeServerEventResponseContentPartAddedPartTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseContentPartAddedPartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class RealtimeServerEventResponseContentPartAddedPartMapper
   @override
   final String id = 'RealtimeServerEventResponseContentPartAddedPart';
 
-  static RealtimeServerEventResponseContentPartAddedPartTypeType? _$type(
+  static RealtimeServerEventResponseContentPartAddedPartType? _$type(
     RealtimeServerEventResponseContentPartAddedPart v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseContentPartAddedPart,
-    RealtimeServerEventResponseContentPartAddedPartTypeType
+    RealtimeServerEventResponseContentPartAddedPartType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeServerEventResponseContentPartAddedPart v) =>
@@ -172,7 +172,7 @@ abstract class RealtimeServerEventResponseContentPartAddedPartCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeServerEventResponseContentPartAddedPartTypeType? type,
+    RealtimeServerEventResponseContentPartAddedPartType? type,
     String? text,
     String? audio,
     String? transcript,

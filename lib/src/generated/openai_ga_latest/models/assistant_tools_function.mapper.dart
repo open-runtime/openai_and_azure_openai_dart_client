@@ -15,7 +15,7 @@ class AssistantToolsFunctionMapper
   static AssistantToolsFunctionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantToolsFunctionMapper._());
-      AssistantToolsFunctionTypeTypeMapper.ensureInitialized();
+      AssistantToolsFunctionTypeMapper.ensureInitialized();
       FunctionObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,9 +24,8 @@ class AssistantToolsFunctionMapper
   @override
   final String id = 'AssistantToolsFunction';
 
-  static AssistantToolsFunctionTypeType _$type(AssistantToolsFunction v) =>
-      v.type;
-  static const Field<AssistantToolsFunction, AssistantToolsFunctionTypeType>
+  static AssistantToolsFunctionType _$type(AssistantToolsFunction v) => v.type;
+  static const Field<AssistantToolsFunction, AssistantToolsFunctionType>
   _f$type = Field('type', _$type);
   static FunctionObject _$functionField(AssistantToolsFunction v) =>
       v.functionField;
@@ -121,10 +120,7 @@ abstract class AssistantToolsFunctionCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   FunctionObjectCopyWith<$R, FunctionObject, FunctionObject> get functionField;
-  $R call({
-    AssistantToolsFunctionTypeType? type,
-    FunctionObject? functionField,
-  });
+  $R call({AssistantToolsFunctionType? type, FunctionObject? functionField});
   AssistantToolsFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -144,15 +140,13 @@ class _AssistantToolsFunctionCopyWithImpl<$R, $Out>
   get functionField =>
       $value.functionField.copyWith.$chain((v) => call(functionField: v));
   @override
-  $R call({
-    AssistantToolsFunctionTypeType? type,
-    FunctionObject? functionField,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (functionField != null) #functionField: functionField,
-    }),
-  );
+  $R call({AssistantToolsFunctionType? type, FunctionObject? functionField}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (functionField != null) #functionField: functionField,
+        }),
+      );
   @override
   AssistantToolsFunction $make(CopyWithData data) => AssistantToolsFunction(
     type: data.get(#type, or: $value.type),

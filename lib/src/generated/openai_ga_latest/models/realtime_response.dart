@@ -9,8 +9,8 @@ import 'realtime_conversation_item.dart';
 import 'realtime_response_audio.dart';
 import 'realtime_response_max_output_tokens_union.dart';
 import 'realtime_response_output_modalities_output_modalities.dart';
+import 'realtime_response_status.dart';
 import 'realtime_response_status_details.dart';
-import 'realtime_response_status_status.dart';
 import 'realtime_response_usage.dart';
 
 part 'realtime_response.mapper.dart';
@@ -35,7 +35,7 @@ class RealtimeResponse with RealtimeResponseMappable {
   final String? id;
   @MappableField(key: 'object')
   final dynamic? objectField;
-  final RealtimeResponseStatusStatus? status;
+  final RealtimeResponseStatus? status;
   @MappableField(key: 'status_details')
   final RealtimeResponseStatusDetails? realtimeResponseStatusDetails;
   final List<RealtimeConversationItem>? output;

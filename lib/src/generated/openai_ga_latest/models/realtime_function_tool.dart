@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_function_tool_type_type.dart';
+import 'realtime_function_tool_type.dart';
 
 part 'realtime_function_tool.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeFunctionTool with RealtimeFunctionToolMappable {
     this.parameters,
   });
 
-  final RealtimeFunctionToolTypeType? type;
+  final RealtimeFunctionToolType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;

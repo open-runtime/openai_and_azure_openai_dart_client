@@ -18,7 +18,7 @@ class ComputerCallOutputItemParamMapper
         _instance = ComputerCallOutputItemParamMapper._(),
       );
       ComputerScreenshotImageMapper.ensureInitialized();
-      ComputerCallOutputItemParamTypeTypeMapper.ensureInitialized();
+      ComputerCallOutputItemParamTypeMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
       FunctionCallItemStatusMapper.ensureInitialized();
     }
@@ -38,18 +38,18 @@ class ComputerCallOutputItemParamMapper
       v.output;
   static const Field<ComputerCallOutputItemParam, ComputerScreenshotImage>
   _f$output = Field('output', _$output);
-  static ComputerCallOutputItemParamTypeType _$type(
+  static ComputerCallOutputItemParamType _$type(
     ComputerCallOutputItemParam v,
   ) => v.type;
   static const Field<
     ComputerCallOutputItemParam,
-    ComputerCallOutputItemParamTypeType
+    ComputerCallOutputItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ComputerCallOutputItemParamTypeType.computerCallOutput,
+    def: ComputerCallOutputItemParamType.computerCallOutput,
   );
   static String? _$id(ComputerCallOutputItemParam v) => v.id;
   static const Field<ComputerCallOutputItemParam, String> _f$id = Field(
@@ -193,7 +193,7 @@ abstract class ComputerCallOutputItemParamCopyWith<
   $R call({
     String? callId,
     ComputerScreenshotImage? output,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     String? id,
     List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
     FunctionCallItemStatus? status,
@@ -248,7 +248,7 @@ class _ComputerCallOutputItemParamCopyWithImpl<$R, $Out>
   $R call({
     String? callId,
     ComputerScreenshotImage? output,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     Object? id = $none,
     Object? acknowledgedSafetyChecks = $none,
     Object? status = $none,

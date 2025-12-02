@@ -6,14 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'easy_input_message.dart';
 import 'easy_input_message_content_union.dart';
-import 'easy_input_message_role_role.dart';
-import 'easy_input_message_type_type.dart';
+import 'easy_input_message_role.dart';
+import 'easy_input_message_type.dart';
 import 'input_item_content_union.dart';
-import 'input_item_role_role.dart';
-import 'input_item_type_type.dart';
-import 'input_item_type_type2.dart';
+import 'input_item_role.dart';
+import 'input_item_type.dart';
+import 'input_item_type2.dart';
 import 'item_reference.dart';
-import 'item_reference_type_type.dart';
+import 'item_reference_type.dart';
 
 part 'input_item.mapper.dart';
 
@@ -51,9 +51,9 @@ extension InputItemUnionDeserializer on InputItem {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class InputItemMessage extends InputItem with InputItemMessageMappable {
-  final InputItemRoleRole role;
+  final InputItemRole role;
   final InputItemContentUnion content;
-  final InputItemTypeType? type;
+  final InputItemType? type;
 
   const InputItemMessage({
     required this.role,
@@ -65,7 +65,7 @@ class InputItemMessage extends InputItem with InputItemMessageMappable {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'item_reference')
 class InputItemItemReference extends InputItem with InputItemItemReferenceMappable {
   final String id;
-  final InputItemTypeType2 type;
+  final InputItemType2 type;
 
   const InputItemItemReference({
     required this.id,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_types_type_type.dart';
+import 'tool_choice_types_type.dart';
 
 part 'tool_choice_types.mapper.dart';
 
@@ -17,7 +17,7 @@ class ToolChoiceTypes with ToolChoiceTypesMappable {
     required this.type,
   });
 
-  final ToolChoiceTypesTypeType type;
+  final ToolChoiceTypesType type;
 
   static ToolChoiceTypes fromJson(Map<String, dynamic> json) => ToolChoiceTypesMapper.fromJson(json);
 

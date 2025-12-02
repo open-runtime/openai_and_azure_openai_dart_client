@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'audit_log_actor_api_key_type_type.dart';
+import 'audit_log_actor_api_key_type.dart';
 import 'audit_log_actor_service_account.dart';
 import 'audit_log_actor_user.dart';
 
@@ -21,7 +21,7 @@ class AuditLogActorApiKey with AuditLogActorApiKeyMappable {
   });
 
   final String? id;
-  final AuditLogActorApiKeyTypeType? type;
+  final AuditLogActorApiKeyType? type;
   final AuditLogActorUser? user;
   @MappableField(key: 'service_account')
   final AuditLogActorServiceAccount? serviceAccount;

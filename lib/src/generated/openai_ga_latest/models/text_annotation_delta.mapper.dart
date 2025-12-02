@@ -84,7 +84,7 @@ class TextAnnotationDeltaFileCitationMapper
         _instance = TextAnnotationDeltaFileCitationMapper._(),
       );
       TextAnnotationDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      TextAnnotationDeltaTypeTypeMapper.ensureInitialized();
+      TextAnnotationDeltaTypeMapper.ensureInitialized();
       TextAnnotationDeltaFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -96,13 +96,9 @@ class TextAnnotationDeltaFileCitationMapper
   static int _$indexField(TextAnnotationDeltaFileCitation v) => v.indexField;
   static const Field<TextAnnotationDeltaFileCitation, int> _f$indexField =
       Field('indexField', _$indexField, key: r'index');
-  static TextAnnotationDeltaTypeType _$type(
-    TextAnnotationDeltaFileCitation v,
-  ) => v.type;
-  static const Field<
-    TextAnnotationDeltaFileCitation,
-    TextAnnotationDeltaTypeType
-  >
+  static TextAnnotationDeltaType _$type(TextAnnotationDeltaFileCitation v) =>
+      v.type;
+  static const Field<TextAnnotationDeltaFileCitation, TextAnnotationDeltaType>
   _f$type = Field('type', _$type);
   static String? _$text(TextAnnotationDeltaFileCitation v) => v.text;
   static const Field<TextAnnotationDeltaFileCitation, String> _f$text = Field(
@@ -253,7 +249,7 @@ abstract class TextAnnotationDeltaFileCitationCopyWith<
   @override
   $R call({
     int? indexField,
-    TextAnnotationDeltaTypeType? type,
+    TextAnnotationDeltaType? type,
     String? text,
     TextAnnotationDeltaFileCitation? textAnnotationDeltaFileCitation,
     int? startIndex,
@@ -294,7 +290,7 @@ class _TextAnnotationDeltaFileCitationCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    TextAnnotationDeltaTypeType? type,
+    TextAnnotationDeltaType? type,
     Object? text = $none,
     Object? textAnnotationDeltaFileCitation = $none,
     Object? startIndex = $none,
@@ -349,7 +345,7 @@ class TextAnnotationDeltaFilePathMapper
         _instance = TextAnnotationDeltaFilePathMapper._(),
       );
       TextAnnotationDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      TextAnnotationDeltaTypeType2Mapper.ensureInitialized();
+      TextAnnotationDeltaType2Mapper.ensureInitialized();
       TextAnnotationDeltaFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -364,9 +360,9 @@ class TextAnnotationDeltaFilePathMapper
     _$indexField,
     key: r'index',
   );
-  static TextAnnotationDeltaTypeType2 _$type(TextAnnotationDeltaFilePath v) =>
+  static TextAnnotationDeltaType2 _$type(TextAnnotationDeltaFilePath v) =>
       v.type;
-  static const Field<TextAnnotationDeltaFilePath, TextAnnotationDeltaTypeType2>
+  static const Field<TextAnnotationDeltaFilePath, TextAnnotationDeltaType2>
   _f$type = Field('type', _$type);
   static String? _$text(TextAnnotationDeltaFilePath v) => v.text;
   static const Field<TextAnnotationDeltaFilePath, String> _f$text = Field(
@@ -511,7 +507,7 @@ abstract class TextAnnotationDeltaFilePathCopyWith<
   @override
   $R call({
     int? indexField,
-    TextAnnotationDeltaTypeType2? type,
+    TextAnnotationDeltaType2? type,
     String? text,
     TextAnnotationDeltaFilePath? textAnnotationDeltaFilePath,
     int? startIndex,
@@ -552,7 +548,7 @@ class _TextAnnotationDeltaFilePathCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    TextAnnotationDeltaTypeType2? type,
+    TextAnnotationDeltaType2? type,
     Object? text = $none,
     Object? textAnnotationDeltaFilePath = $none,
     Object? startIndex = $none,

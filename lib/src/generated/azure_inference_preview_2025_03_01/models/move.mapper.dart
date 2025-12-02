@@ -14,7 +14,7 @@ class MoveMapper extends ClassMapperBase<Move> {
   static MoveMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MoveMapper._());
-      MoveTypeTypeMapper.ensureInitialized();
+      MoveTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class MoveMapper extends ClassMapperBase<Move> {
   static const Field<Move, int> _f$x = Field('x', _$x);
   static int _$y(Move v) => v.y;
   static const Field<Move, int> _f$y = Field('y', _$y);
-  static MoveTypeType _$type(Move v) => v.type;
-  static const Field<Move, MoveTypeType> _f$type = Field(
+  static MoveType _$type(Move v) => v.type;
+  static const Field<Move, MoveType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: MoveTypeType.move,
+    def: MoveType.move,
   );
 
   @override
@@ -95,7 +95,7 @@ extension MoveValueCopy<$R, $Out> on ObjectCopyWith<$R, Move, $Out> {
 
 abstract class MoveCopyWith<$R, $In extends Move, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? x, int? y, MoveTypeType? type});
+  $R call({int? x, int? y, MoveType? type});
   MoveCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -106,7 +106,7 @@ class _MoveCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Move, $Out>
   @override
   late final ClassMapperBase<Move> $mapper = MoveMapper.ensureInitialized();
   @override
-  $R call({int? x, int? y, MoveTypeType? type}) => $apply(
+  $R call({int? x, int? y, MoveType? type}) => $apply(
     FieldCopyWithData({
       if (x != null) #x: x,
       if (y != null) #y: y,

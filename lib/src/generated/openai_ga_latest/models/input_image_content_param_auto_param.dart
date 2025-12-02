@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'detail_enum.dart';
-import 'input_image_content_param_auto_param_type_type.dart';
+import 'input_image_content_param_auto_param_type.dart';
 
 part 'input_image_content_param_auto_param.mapper.dart';
 
@@ -16,7 +16,7 @@ class InputImageContentParamAutoParam with InputImageContentParamAutoParamMappab
     this.imageUrl,
     this.fileId,
     this.detail,
-    this.type = InputImageContentParamAutoParamTypeType.inputImage,
+    this.type = InputImageContentParamAutoParamType.inputImage,
   });
 
   @MappableField(key: 'image_url')
@@ -24,7 +24,7 @@ class InputImageContentParamAutoParam with InputImageContentParamAutoParamMappab
   @MappableField(key: 'file_id')
   final String? fileId;
   final DetailEnum? detail;
-  final InputImageContentParamAutoParamTypeType type;
+  final InputImageContentParamAutoParamType type;
 
   static InputImageContentParamAutoParam fromJson(Map<String, dynamic> json) => InputImageContentParamAutoParamMapper.fromJson(json);
 

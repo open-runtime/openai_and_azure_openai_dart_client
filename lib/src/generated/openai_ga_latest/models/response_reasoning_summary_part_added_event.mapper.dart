@@ -17,7 +17,7 @@ class ResponseReasoningSummaryPartAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryPartAddedEventMapper._(),
       );
-      ResponseReasoningSummaryPartAddedEventTypeTypeMapper.ensureInitialized();
+      ResponseReasoningSummaryPartAddedEventTypeMapper.ensureInitialized();
       ResponseReasoningSummaryPartAddedEventPartMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ResponseReasoningSummaryPartAddedEventMapper
   @override
   final String id = 'ResponseReasoningSummaryPartAddedEvent';
 
-  static ResponseReasoningSummaryPartAddedEventTypeType _$type(
+  static ResponseReasoningSummaryPartAddedEventType _$type(
     ResponseReasoningSummaryPartAddedEvent v,
   ) => v.type;
   static const Field<
     ResponseReasoningSummaryPartAddedEvent,
-    ResponseReasoningSummaryPartAddedEventTypeType
+    ResponseReasoningSummaryPartAddedEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseReasoningSummaryPartAddedEvent v) => v.itemId;
@@ -187,7 +187,7 @@ abstract class ResponseReasoningSummaryPartAddedEventCopyWith<
   >
   get responseReasoningSummaryPartAddedEventPart;
   $R call({
-    ResponseReasoningSummaryPartAddedEventTypeType? type,
+    ResponseReasoningSummaryPartAddedEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -228,7 +228,7 @@ class _ResponseReasoningSummaryPartAddedEventCopyWithImpl<$R, $Out>
       .$chain((v) => call(responseReasoningSummaryPartAddedEventPart: v));
   @override
   $R call({
-    ResponseReasoningSummaryPartAddedEventTypeType? type,
+    ResponseReasoningSummaryPartAddedEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,

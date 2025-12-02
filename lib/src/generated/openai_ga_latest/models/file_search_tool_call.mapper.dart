@@ -14,8 +14,8 @@ class FileSearchToolCallMapper extends ClassMapperBase<FileSearchToolCall> {
   static FileSearchToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileSearchToolCallMapper._());
-      FileSearchToolCallTypeTypeMapper.ensureInitialized();
-      FileSearchToolCallStatusStatusMapper.ensureInitialized();
+      FileSearchToolCallTypeMapper.ensureInitialized();
+      FileSearchToolCallStatusMapper.ensureInitialized();
       FileSearchToolCallResultsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,12 @@ class FileSearchToolCallMapper extends ClassMapperBase<FileSearchToolCall> {
 
   static String _$id(FileSearchToolCall v) => v.id;
   static const Field<FileSearchToolCall, String> _f$id = Field('id', _$id);
-  static FileSearchToolCallTypeType _$type(FileSearchToolCall v) => v.type;
-  static const Field<FileSearchToolCall, FileSearchToolCallTypeType> _f$type =
+  static FileSearchToolCallType _$type(FileSearchToolCall v) => v.type;
+  static const Field<FileSearchToolCall, FileSearchToolCallType> _f$type =
       Field('type', _$type);
-  static FileSearchToolCallStatusStatus _$status(FileSearchToolCall v) =>
-      v.status;
-  static const Field<FileSearchToolCall, FileSearchToolCallStatusStatus>
-  _f$status = Field('status', _$status);
+  static FileSearchToolCallStatus _$status(FileSearchToolCall v) => v.status;
+  static const Field<FileSearchToolCall, FileSearchToolCallStatus> _f$status =
+      Field('status', _$status);
   static List<String> _$queries(FileSearchToolCall v) => v.queries;
   static const Field<FileSearchToolCall, List<String>> _f$queries = Field(
     'queries',
@@ -150,8 +149,8 @@ abstract class FileSearchToolCallCopyWith<
   get results;
   $R call({
     String? id,
-    FileSearchToolCallTypeType? type,
-    FileSearchToolCallStatusStatus? status,
+    FileSearchToolCallType? type,
+    FileSearchToolCallStatus? status,
     List<String>? queries,
     List<FileSearchToolCallResults>? results,
   });
@@ -195,8 +194,8 @@ class _FileSearchToolCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    FileSearchToolCallTypeType? type,
-    FileSearchToolCallStatusStatus? status,
+    FileSearchToolCallType? type,
+    FileSearchToolCallStatus? status,
     List<String>? queries,
     Object? results = $none,
   }) => $apply(

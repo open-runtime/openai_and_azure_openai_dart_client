@@ -16,7 +16,7 @@ class WebSearchToolMapper extends ClassMapperBase<WebSearchTool> {
       MapperContainer.globals.use(_instance = WebSearchToolMapper._());
       WebSearchToolFiltersMapper.ensureInitialized();
       WebSearchApproximateLocationUnionMapper.ensureInitialized();
-      WebSearchToolTypeTypeMapper.ensureInitialized();
+      WebSearchToolTypeMapper.ensureInitialized();
       WebSearchToolSearchContextSizeSearchContextSizeMapper.ensureInitialized();
     }
     return _instance!;
@@ -40,12 +40,12 @@ class WebSearchToolMapper extends ClassMapperBase<WebSearchTool> {
     key: r'user_location',
     opt: true,
   );
-  static WebSearchToolTypeType _$type(WebSearchTool v) => v.type;
-  static const Field<WebSearchTool, WebSearchToolTypeType> _f$type = Field(
+  static WebSearchToolType _$type(WebSearchTool v) => v.type;
+  static const Field<WebSearchTool, WebSearchToolType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: WebSearchToolTypeType.webSearch,
+    def: WebSearchToolType.webSearch,
   );
   static WebSearchToolSearchContextSizeSearchContextSize _$searchContextSize(
     WebSearchTool v,
@@ -156,7 +156,7 @@ abstract class WebSearchToolCopyWith<$R, $In extends WebSearchTool, $Out>
   $R call({
     WebSearchToolFilters? filters,
     WebSearchApproximateLocationUnion? userLocation,
-    WebSearchToolTypeType? type,
+    WebSearchToolType? type,
     WebSearchToolSearchContextSizeSearchContextSize? searchContextSize,
   });
   WebSearchToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -185,7 +185,7 @@ class _WebSearchToolCopyWithImpl<$R, $Out>
   $R call({
     Object? filters = $none,
     Object? userLocation = $none,
-    WebSearchToolTypeType? type,
+    WebSearchToolType? type,
     WebSearchToolSearchContextSizeSearchContextSize? searchContextSize,
   }) => $apply(
     FieldCopyWithData({

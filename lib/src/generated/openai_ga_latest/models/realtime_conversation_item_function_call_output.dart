@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
 import 'realtime_conversation_item_function_call_output_object_object_enum.dart';
-import 'realtime_conversation_item_function_call_output_status_status.dart';
-import 'realtime_conversation_item_function_call_output_type_type.dart';
+import 'realtime_conversation_item_function_call_output_status.dart';
+import 'realtime_conversation_item_function_call_output_type.dart';
 
 part 'realtime_conversation_item_function_call_output.mapper.dart';
 
@@ -23,14 +23,14 @@ class RealtimeConversationItemFunctionCallOutput with RealtimeConversationItemFu
     this.status,
   });
 
-  final RealtimeConversationItemFunctionCallOutputTypeType type;
+  final RealtimeConversationItemFunctionCallOutputType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String output;
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemFunctionCallOutputObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemFunctionCallOutputStatusStatus? status;
+  final RealtimeConversationItemFunctionCallOutputStatus? status;
 
   static RealtimeConversationItemFunctionCallOutput fromJson(Map<String, dynamic> json) => RealtimeConversationItemFunctionCallOutputMapper.fromJson(json);
 

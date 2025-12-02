@@ -4,17 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'input_content_detail_detail.dart';
-import 'input_content_type_type.dart';
-import 'input_content_type_type2.dart';
-import 'input_content_type_type3.dart';
+import 'input_content_detail.dart';
+import 'input_content_type.dart';
+import 'input_content_type2.dart';
+import 'input_content_type3.dart';
 import 'input_file.dart';
-import 'input_file_type_type.dart';
+import 'input_file_type.dart';
 import 'input_image.dart';
-import 'input_image_detail_detail.dart';
-import 'input_image_type_type.dart';
+import 'input_image_detail.dart';
+import 'input_image_type.dart';
 import 'input_text.dart';
-import 'input_text_type_type.dart';
+import 'input_text_type.dart';
 
 part 'input_content.mapper.dart';
 
@@ -55,7 +55,7 @@ extension InputContentUnionDeserializer on InputContent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
 class InputContentInputText extends InputContent with InputContentInputTextMappable {
-  final InputContentTypeType type;
+  final InputContentType type;
   final String text;
 
   const InputContentInputText({
@@ -66,12 +66,12 @@ class InputContentInputText extends InputContent with InputContentInputTextMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
 class InputContentInputImage extends InputContent with InputContentInputImageMappable {
-  final InputContentTypeType2 type;
+  final InputContentType2 type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
   final String? fileId;
-  final InputContentDetailDetail detail;
+  final InputContentDetail detail;
 
   const InputContentInputImage({
     required this.type,
@@ -83,7 +83,7 @@ class InputContentInputImage extends InputContent with InputContentInputImageMap
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
 class InputContentInputFile extends InputContent with InputContentInputFileMappable {
-  final InputContentTypeType3 type;
+  final InputContentType3 type;
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? filename;

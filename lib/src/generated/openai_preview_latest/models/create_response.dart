@@ -10,7 +10,7 @@ import 'model_ids_responses.dart';
 import 'reasoning.dart';
 import 'response_properties_text.dart';
 import 'response_properties_tool_choice_union.dart';
-import 'response_properties_truncation_truncation.dart';
+import 'response_properties_truncation.dart';
 import 'service_tier.dart';
 import 'tool.dart';
 
@@ -34,7 +34,7 @@ class CreateResponse with CreateResponseMappable {
     this.include,
     this.temperature = 1,
     this.topP = 1,
-    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.truncation = ResponsePropertiesTruncation.disabled,
     this.parallelToolCalls = true,
     this.store = true,
     this.stream = false,
@@ -61,7 +61,7 @@ class CreateResponse with CreateResponseMappable {
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
-  final ResponsePropertiesTruncationTruncation? truncation;
+  final ResponsePropertiesTruncation? truncation;
   @MappableField(key: 'parallel_tool_calls')
   final bool? parallelToolCalls;
   final bool? store;

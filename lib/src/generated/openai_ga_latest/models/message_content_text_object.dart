@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content.dart';
 import 'message_content_text_object_text.dart';
-import 'message_content_text_object_type_type.dart';
+import 'message_content_text_object_type.dart';
 
 part 'message_content_text_object.mapper.dart';
 
@@ -18,7 +18,7 @@ class MessageContentTextObject with MessageContentTextObjectMappable {
     required this.messageContentTextObjectText,
   });
 
-  final MessageContentTextObjectTypeType type;
+  final MessageContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageContentTextObjectText messageContentTextObjectText;
 

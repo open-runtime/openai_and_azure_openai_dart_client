@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_transcription_session_create_response_input_audio_transcription_model_model.dart';
+import 'realtime_transcription_session_create_response_input_audio_transcription_model.dart';
 
 part 'realtime_transcription_session_create_response_input_audio_transcription.mapper.dart';
 
@@ -16,7 +16,7 @@ class RealtimeTranscriptionSessionCreateResponseInputAudioTranscription with Rea
     this.prompt,
   });
 
-  final RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelModel? model;
+  final RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel? model;
   final String? language;
   final String? prompt;
 

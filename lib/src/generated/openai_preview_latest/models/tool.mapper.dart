@@ -71,7 +71,7 @@ class ToolFileSearchMapper extends SubClassMapperBase<ToolFileSearch> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolFileSearchMapper._());
       ToolMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolTypeTypeMapper.ensureInitialized();
+      ToolTypeMapper.ensureInitialized();
       RankingOptionsMapper.ensureInitialized();
       FiltersUnionMapper.ensureInitialized();
     }
@@ -81,11 +81,8 @@ class ToolFileSearchMapper extends SubClassMapperBase<ToolFileSearch> {
   @override
   final String id = 'ToolFileSearch';
 
-  static ToolTypeType _$type(ToolFileSearch v) => v.type;
-  static const Field<ToolFileSearch, ToolTypeType> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static ToolType _$type(ToolFileSearch v) => v.type;
+  static const Field<ToolFileSearch, ToolType> _f$type = Field('type', _$type);
   static List<String> _$vectorStoreIds(ToolFileSearch v) => v.vectorStoreIds;
   static const Field<ToolFileSearch, List<String>> _f$vectorStoreIds = Field(
     'vectorStoreIds',
@@ -209,7 +206,7 @@ abstract class ToolFileSearchCopyWith<$R, $In extends ToolFileSearch, $Out>
   FiltersUnionCopyWith<$R, FiltersUnion, FiltersUnion>? get filters;
   @override
   $R call({
-    ToolTypeType? type,
+    ToolType? type,
     List<String>? vectorStoreIds,
     int? maxNumResults,
     RankingOptions? rankingOptions,
@@ -244,7 +241,7 @@ class _ToolFileSearchCopyWithImpl<$R, $Out>
       $value.filters?.copyWith.$chain((v) => call(filters: v));
   @override
   $R call({
-    ToolTypeType? type,
+    ToolType? type,
     List<String>? vectorStoreIds,
     Object? maxNumResults = $none,
     Object? rankingOptions = $none,
@@ -281,7 +278,7 @@ class ToolFunctionMapper extends SubClassMapperBase<ToolFunction> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolFunctionMapper._());
       ToolMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolTypeType2Mapper.ensureInitialized();
+      ToolType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -289,11 +286,8 @@ class ToolFunctionMapper extends SubClassMapperBase<ToolFunction> {
   @override
   final String id = 'ToolFunction';
 
-  static ToolTypeType2 _$type(ToolFunction v) => v.type;
-  static const Field<ToolFunction, ToolTypeType2> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static ToolType2 _$type(ToolFunction v) => v.type;
+  static const Field<ToolFunction, ToolType2> _f$type = Field('type', _$type);
   static String _$name(ToolFunction v) => v.name;
   static const Field<ToolFunction, String> _f$name = Field('name', _$name);
   static String? _$description(ToolFunction v) => v.description;
@@ -405,7 +399,7 @@ abstract class ToolFunctionCopyWith<$R, $In extends ToolFunction, $Out>
   get parameters;
   @override
   $R call({
-    ToolTypeType2? type,
+    ToolType2? type,
     String? name,
     String? description,
     Map<String, dynamic>? parameters,
@@ -433,7 +427,7 @@ class _ToolFunctionCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    ToolTypeType2? type,
+    ToolType2? type,
     String? name,
     Object? description = $none,
     Object? parameters = $none,
@@ -471,8 +465,8 @@ class ToolComputerUsePreviewMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolComputerUsePreviewMapper._());
       ToolMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolTypeType3Mapper.ensureInitialized();
-      ToolEnvironmentEnvironmentMapper.ensureInitialized();
+      ToolType3Mapper.ensureInitialized();
+      ToolEnvironmentMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -480,15 +474,15 @@ class ToolComputerUsePreviewMapper
   @override
   final String id = 'ToolComputerUsePreview';
 
-  static ToolTypeType3 _$type(ToolComputerUsePreview v) => v.type;
-  static const Field<ToolComputerUsePreview, ToolTypeType3> _f$type = Field(
+  static ToolType3 _$type(ToolComputerUsePreview v) => v.type;
+  static const Field<ToolComputerUsePreview, ToolType3> _f$type = Field(
     'type',
     _$type,
   );
-  static ToolEnvironmentEnvironment _$environment(ToolComputerUsePreview v) =>
+  static ToolEnvironment _$environment(ToolComputerUsePreview v) =>
       v.environment;
-  static const Field<ToolComputerUsePreview, ToolEnvironmentEnvironment>
-  _f$environment = Field('environment', _$environment);
+  static const Field<ToolComputerUsePreview, ToolEnvironment> _f$environment =
+      Field('environment', _$environment);
   static int _$displayWidth(ToolComputerUsePreview v) => v.displayWidth;
   static const Field<ToolComputerUsePreview, int> _f$displayWidth = Field(
     'displayWidth',
@@ -602,8 +596,8 @@ abstract class ToolComputerUsePreviewCopyWith<
     implements ToolCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ToolTypeType3? type,
-    ToolEnvironmentEnvironment? environment,
+    ToolType3? type,
+    ToolEnvironment? environment,
     int? displayWidth,
     int? displayHeight,
   });
@@ -623,8 +617,8 @@ class _ToolComputerUsePreviewCopyWithImpl<$R, $Out>
       ToolComputerUsePreviewMapper.ensureInitialized();
   @override
   $R call({
-    ToolTypeType3? type,
-    ToolEnvironmentEnvironment? environment,
+    ToolType3? type,
+    ToolEnvironment? environment,
     int? displayWidth,
     int? displayHeight,
   }) => $apply(

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_delta_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_citation_object_type.dart';
 import 'text_annotation_delta.dart';
 
 part 'message_delta_content_text_annotations_file_citation_object.mapper.dart';
@@ -24,7 +24,7 @@ class MessageDeltaContentTextAnnotationsFileCitationObject with MessageDeltaCont
 
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextAnnotationsFileCitationObjectTypeType type;
+  final MessageDeltaContentTextAnnotationsFileCitationObjectType type;
   final String? text;
   @MappableField(key: 'file_citation')
   final MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;

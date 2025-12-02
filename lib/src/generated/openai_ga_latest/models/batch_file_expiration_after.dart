@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'batch_file_expiration_after_anchor_anchor.dart';
+import 'batch_file_expiration_after_anchor.dart';
 
 part 'batch_file_expiration_after.mapper.dart';
 
@@ -16,7 +16,7 @@ class BatchFileExpirationAfter with BatchFileExpirationAfterMappable {
     required this.seconds,
   });
 
-  final BatchFileExpirationAfterAnchorAnchor anchor;
+  final BatchFileExpirationAfterAnchor anchor;
   final int seconds;
 
   static BatchFileExpirationAfter fromJson(Map<String, dynamic> json) => BatchFileExpirationAfterMapper.fromJson(json);

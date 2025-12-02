@@ -101,7 +101,7 @@ class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionMapper
             RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionMapper._(),
       );
       RealtimeSessionCreateResponseGaToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceFunctionTypeTypeMapper.ensureInitialized();
+      ToolChoiceFunctionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -110,12 +110,12 @@ class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionMapper
   final String id =
       'RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction';
 
-  static ToolChoiceFunctionTypeType _$type(
+  static ToolChoiceFunctionType _$type(
     RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction,
-    ToolChoiceFunctionTypeType
+    ToolChoiceFunctionType
   >
   _f$type = Field('type', _$type);
   static String _$name(
@@ -261,7 +261,7 @@ abstract class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionC
     implements
         RealtimeSessionCreateResponseGaToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name});
+  $R call({ToolChoiceFunctionType? type, String? name});
   RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionCopyWith<
     $R2,
     $In,
@@ -299,7 +299,7 @@ class _RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionCopyWithI
   $mapper =
       RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name}) => $apply(
+  $R call({ToolChoiceFunctionType? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,
@@ -343,7 +343,7 @@ class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpMapper
             RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpMapper._(),
       );
       RealtimeSessionCreateResponseGaToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceMcpTypeTypeMapper.ensureInitialized();
+      ToolChoiceMcpTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -352,12 +352,12 @@ class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpMapper
   final String id =
       'RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcp';
 
-  static ToolChoiceMcpTypeType _$type(
+  static ToolChoiceMcpType _$type(
     RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcp v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcp,
-    ToolChoiceMcpTypeType
+    ToolChoiceMcpType
   >
   _f$type = Field('type', _$type);
   static String _$serverLabel(
@@ -503,7 +503,7 @@ abstract class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpCopyWi
     implements
         RealtimeSessionCreateResponseGaToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceMcpTypeType? type, String? serverLabel, String? name});
+  $R call({ToolChoiceMcpType? type, String? serverLabel, String? name});
   RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpCopyWith<
     $R2,
     $In,
@@ -542,7 +542,7 @@ class _RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpCopyWithImpl<
       RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpMapper.ensureInitialized();
   @override
   $R call({
-    ToolChoiceMcpTypeType? type,
+    ToolChoiceMcpType? type,
     String? serverLabel,
     Object? name = $none,
   }) => $apply(

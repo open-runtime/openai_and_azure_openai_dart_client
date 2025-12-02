@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'fine_tune_dpo_method.dart';
-import 'fine_tune_method_type_type.dart';
+import 'fine_tune_method_type.dart';
 import 'fine_tune_supervised_method.dart';
 
 part 'fine_tune_method.mapper.dart';
@@ -19,7 +19,7 @@ class FineTuneMethod with FineTuneMethodMappable {
     this.dpo,
   });
 
-  final FineTuneMethodTypeType? type;
+  final FineTuneMethodType? type;
   final FineTuneSupervisedMethod? supervised;
   final FineTuneDpoMethod? dpo;
 

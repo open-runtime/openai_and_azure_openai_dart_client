@@ -6,9 +6,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item_with_reference_content.dart';
 import 'realtime_conversation_item_with_reference_object_object_enum.dart';
-import 'realtime_conversation_item_with_reference_role_role.dart';
-import 'realtime_conversation_item_with_reference_status_status.dart';
-import 'realtime_conversation_item_with_reference_type_type.dart';
+import 'realtime_conversation_item_with_reference_role.dart';
+import 'realtime_conversation_item_with_reference_status.dart';
+import 'realtime_conversation_item_with_reference_type.dart';
 
 part 'realtime_conversation_item_with_reference.mapper.dart';
 
@@ -29,11 +29,11 @@ class RealtimeConversationItemWithReference with RealtimeConversationItemWithRef
   });
 
   final String? id;
-  final RealtimeConversationItemWithReferenceTypeType? type;
+  final RealtimeConversationItemWithReferenceType? type;
   @MappableField(key: 'object')
   final RealtimeConversationItemWithReferenceObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemWithReferenceStatusStatus? status;
-  final RealtimeConversationItemWithReferenceRoleRole? role;
+  final RealtimeConversationItemWithReferenceStatus? status;
+  final RealtimeConversationItemWithReferenceRole? role;
   final List<RealtimeConversationItemWithReferenceContent>? content;
   @MappableField(key: 'call_id')
   final String? callId;

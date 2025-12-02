@@ -18,7 +18,7 @@ class RealtimeBetaResponseCreateParamsMapper
         _instance = RealtimeBetaResponseCreateParamsMapper._(),
       );
       RealtimeBetaResponseCreateParamsToolChoiceUnionMapper.ensureInitialized();
-      RealtimeBetaResponseCreateParamsModalitiesModalitiesMapper.ensureInitialized();
+      RealtimeBetaResponseCreateParamsModalitiesMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
       RealtimeBetaResponseCreateParamsOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeBetaResponseCreateParamsToolsMapper.ensureInitialized();
@@ -50,11 +50,12 @@ class RealtimeBetaResponseCreateParamsMapper
       value: 'auto',
     ),
   );
-  static List<RealtimeBetaResponseCreateParamsModalitiesModalities>?
-  _$modalities(RealtimeBetaResponseCreateParams v) => v.modalities;
+  static List<RealtimeBetaResponseCreateParamsModalities>? _$modalities(
+    RealtimeBetaResponseCreateParams v,
+  ) => v.modalities;
   static const Field<
     RealtimeBetaResponseCreateParams,
-    List<RealtimeBetaResponseCreateParamsModalitiesModalities>
+    List<RealtimeBetaResponseCreateParamsModalities>
   >
   _f$modalities = Field('modalities', _$modalities, opt: true);
   static String? _$instructions(RealtimeBetaResponseCreateParams v) =>
@@ -258,11 +259,11 @@ abstract class RealtimeBetaResponseCreateParamsCopyWith<
   get toolChoice;
   ListCopyWith<
     $R,
-    RealtimeBetaResponseCreateParamsModalitiesModalities,
+    RealtimeBetaResponseCreateParamsModalities,
     ObjectCopyWith<
       $R,
-      RealtimeBetaResponseCreateParamsModalitiesModalities,
-      RealtimeBetaResponseCreateParamsModalitiesModalities
+      RealtimeBetaResponseCreateParamsModalities,
+      RealtimeBetaResponseCreateParamsModalities
     >
   >?
   get modalities;
@@ -303,7 +304,7 @@ abstract class RealtimeBetaResponseCreateParamsCopyWith<
   get input;
   $R call({
     RealtimeBetaResponseCreateParamsToolChoiceUnion? toolChoice,
-    List<RealtimeBetaResponseCreateParamsModalitiesModalities>? modalities,
+    List<RealtimeBetaResponseCreateParamsModalities>? modalities,
     String? instructions,
     VoiceIdsShared? voice,
     RealtimeBetaResponseCreateParamsOutputAudioFormatOutputAudioFormat?
@@ -349,11 +350,11 @@ class _RealtimeBetaResponseCreateParamsCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeBetaResponseCreateParamsModalitiesModalities,
+    RealtimeBetaResponseCreateParamsModalities,
     ObjectCopyWith<
       $R,
-      RealtimeBetaResponseCreateParamsModalitiesModalities,
-      RealtimeBetaResponseCreateParamsModalitiesModalities
+      RealtimeBetaResponseCreateParamsModalities,
+      RealtimeBetaResponseCreateParamsModalities
     >
   >?
   get modalities => $value.modalities != null

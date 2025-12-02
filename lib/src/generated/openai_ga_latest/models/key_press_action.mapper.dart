@@ -14,7 +14,7 @@ class KeyPressActionMapper extends ClassMapperBase<KeyPressAction> {
   static KeyPressActionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = KeyPressActionMapper._());
-      KeyPressActionTypeTypeMapper.ensureInitialized();
+      KeyPressActionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,12 +27,12 @@ class KeyPressActionMapper extends ClassMapperBase<KeyPressAction> {
     'keys',
     _$keys,
   );
-  static KeyPressActionTypeType _$type(KeyPressAction v) => v.type;
-  static const Field<KeyPressAction, KeyPressActionTypeType> _f$type = Field(
+  static KeyPressActionType _$type(KeyPressAction v) => v.type;
+  static const Field<KeyPressAction, KeyPressActionType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: KeyPressActionTypeType.keypress,
+    def: KeyPressActionType.keypress,
   );
 
   @override
@@ -112,7 +112,7 @@ extension KeyPressActionValueCopy<$R, $Out>
 abstract class KeyPressActionCopyWith<$R, $In extends KeyPressAction, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get keys;
-  $R call({List<String>? keys, KeyPressActionTypeType? type});
+  $R call({List<String>? keys, KeyPressActionType? type});
   KeyPressActionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +134,7 @@ class _KeyPressActionCopyWithImpl<$R, $Out>
         (v) => call(keys: v),
       );
   @override
-  $R call({List<String>? keys, KeyPressActionTypeType? type}) => $apply(
+  $R call({List<String>? keys, KeyPressActionType? type}) => $apply(
     FieldCopyWithData({
       if (keys != null) #keys: keys,
       if (type != null) #type: type,

@@ -89,7 +89,7 @@ class ItemResourceOutputsUnionLogsMapper
       ItemResourceOutputsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      CodeInterpreterOutputLogsTypeTypeMapper.ensureInitialized();
+      CodeInterpreterOutputLogsTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -97,12 +97,11 @@ class ItemResourceOutputsUnionLogsMapper
   @override
   final String id = 'ItemResourceOutputsUnionLogs';
 
-  static CodeInterpreterOutputLogsTypeType _$type(
-    ItemResourceOutputsUnionLogs v,
-  ) => v.type;
+  static CodeInterpreterOutputLogsType _$type(ItemResourceOutputsUnionLogs v) =>
+      v.type;
   static const Field<
     ItemResourceOutputsUnionLogs,
-    CodeInterpreterOutputLogsTypeType
+    CodeInterpreterOutputLogsType
   >
   _f$type = Field('type', _$type);
   static String _$logs(ItemResourceOutputsUnionLogs v) => v.logs;
@@ -210,7 +209,7 @@ abstract class ItemResourceOutputsUnionLogsCopyWith<
 >
     implements ItemResourceOutputsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({CodeInterpreterOutputLogsTypeType? type, String? logs});
+  $R call({CodeInterpreterOutputLogsType? type, String? logs});
   ItemResourceOutputsUnionLogsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -234,7 +233,7 @@ class _ItemResourceOutputsUnionLogsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ItemResourceOutputsUnionLogs> $mapper =
       ItemResourceOutputsUnionLogsMapper.ensureInitialized();
   @override
-  $R call({CodeInterpreterOutputLogsTypeType? type, String? logs}) => $apply(
+  $R call({CodeInterpreterOutputLogsType? type, String? logs}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (logs != null) #logs: logs,
@@ -266,7 +265,7 @@ class ItemResourceOutputsUnionImageMapper
       ItemResourceOutputsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      CodeInterpreterOutputImageTypeTypeMapper.ensureInitialized();
+      CodeInterpreterOutputImageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -274,12 +273,12 @@ class ItemResourceOutputsUnionImageMapper
   @override
   final String id = 'ItemResourceOutputsUnionImage';
 
-  static CodeInterpreterOutputImageTypeType _$type(
+  static CodeInterpreterOutputImageType _$type(
     ItemResourceOutputsUnionImage v,
   ) => v.type;
   static const Field<
     ItemResourceOutputsUnionImage,
-    CodeInterpreterOutputImageTypeType
+    CodeInterpreterOutputImageType
   >
   _f$type = Field('type', _$type);
   static String _$url(ItemResourceOutputsUnionImage v) => v.url;
@@ -388,7 +387,7 @@ abstract class ItemResourceOutputsUnionImageCopyWith<
 >
     implements ItemResourceOutputsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({CodeInterpreterOutputImageTypeType? type, String? url});
+  $R call({CodeInterpreterOutputImageType? type, String? url});
   ItemResourceOutputsUnionImageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -412,7 +411,7 @@ class _ItemResourceOutputsUnionImageCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ItemResourceOutputsUnionImage> $mapper =
       ItemResourceOutputsUnionImageMapper.ensureInitialized();
   @override
-  $R call({CodeInterpreterOutputImageTypeType? type, String? url}) => $apply(
+  $R call({CodeInterpreterOutputImageType? type, String? url}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (url != null) #url: url,

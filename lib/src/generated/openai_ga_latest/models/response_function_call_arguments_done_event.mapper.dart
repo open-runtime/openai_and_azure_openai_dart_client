@@ -17,7 +17,7 @@ class ResponseFunctionCallArgumentsDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFunctionCallArgumentsDoneEventMapper._(),
       );
-      ResponseFunctionCallArgumentsDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseFunctionCallArgumentsDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseFunctionCallArgumentsDoneEventMapper
   @override
   final String id = 'ResponseFunctionCallArgumentsDoneEvent';
 
-  static ResponseFunctionCallArgumentsDoneEventTypeType _$type(
+  static ResponseFunctionCallArgumentsDoneEventType _$type(
     ResponseFunctionCallArgumentsDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseFunctionCallArgumentsDoneEvent,
-    ResponseFunctionCallArgumentsDoneEventTypeType
+    ResponseFunctionCallArgumentsDoneEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseFunctionCallArgumentsDoneEvent v) => v.itemId;
@@ -163,7 +163,7 @@ abstract class ResponseFunctionCallArgumentsDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseFunctionCallArgumentsDoneEventTypeType? type,
+    ResponseFunctionCallArgumentsDoneEventType? type,
     String? itemId,
     String? name,
     int? outputIndex,
@@ -193,7 +193,7 @@ class _ResponseFunctionCallArgumentsDoneEventCopyWithImpl<$R, $Out>
       ResponseFunctionCallArgumentsDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseFunctionCallArgumentsDoneEventTypeType? type,
+    ResponseFunctionCallArgumentsDoneEventType? type,
     String? itemId,
     String? name,
     int? outputIndex,

@@ -17,7 +17,7 @@ class RealtimeClientEventSessionUpdateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventSessionUpdateMapper._(),
       );
-      RealtimeClientEventSessionUpdateTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventSessionUpdateTypeMapper.ensureInitialized();
       RealtimeSessionCreateRequestMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class RealtimeClientEventSessionUpdateMapper
   @override
   final String id = 'RealtimeClientEventSessionUpdate';
 
-  static RealtimeClientEventSessionUpdateTypeType _$type(
+  static RealtimeClientEventSessionUpdateType _$type(
     RealtimeClientEventSessionUpdate v,
   ) => v.type;
   static const Field<
     RealtimeClientEventSessionUpdate,
-    RealtimeClientEventSessionUpdateTypeType
+    RealtimeClientEventSessionUpdateType
   >
   _f$type = Field('type', _$type);
   static RealtimeSessionCreateRequest _$session(
@@ -150,7 +150,7 @@ abstract class RealtimeClientEventSessionUpdateCopyWith<
   >
   get session;
   $R call({
-    RealtimeClientEventSessionUpdateTypeType? type,
+    RealtimeClientEventSessionUpdateType? type,
     RealtimeSessionCreateRequest? session,
     String? eventId,
   });
@@ -185,7 +185,7 @@ class _RealtimeClientEventSessionUpdateCopyWithImpl<$R, $Out>
   get session => $value.session.copyWith.$chain((v) => call(session: v));
   @override
   $R call({
-    RealtimeClientEventSessionUpdateTypeType? type,
+    RealtimeClientEventSessionUpdateType? type,
     RealtimeSessionCreateRequest? session,
     Object? eventId = $none,
   }) => $apply(

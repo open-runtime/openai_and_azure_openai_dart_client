@@ -104,7 +104,7 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileContentMapper
       );
       CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalJsonlFileContentSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileContentSourceTypeMapper.ensureInitialized();
       EvalJsonlFileContentSourceContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -113,12 +113,12 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileContentMapper
   @override
   final String id = 'CreateEvalCompletionsRunDataSourceSourceUnionFileContent';
 
-  static EvalJsonlFileContentSourceTypeType _$type(
+  static EvalJsonlFileContentSourceType _$type(
     CreateEvalCompletionsRunDataSourceSourceUnionFileContent v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSourceUnionFileContent,
-    EvalJsonlFileContentSourceTypeType
+    EvalJsonlFileContentSourceType
   >
   _f$type = Field('type', _$type);
   static List<EvalJsonlFileContentSourceContent> _$content(
@@ -274,7 +274,7 @@ abstract class CreateEvalCompletionsRunDataSourceSourceUnionFileContentCopyWith<
   get content;
   @override
   $R call({
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
     List<EvalJsonlFileContentSourceContent>? content,
   });
   CreateEvalCompletionsRunDataSourceSourceUnionFileContentCopyWith<
@@ -330,7 +330,7 @@ class _CreateEvalCompletionsRunDataSourceSourceUnionFileContentCopyWithImpl<
   );
   @override
   $R call({
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
     List<EvalJsonlFileContentSourceContent>? content,
   }) => $apply(
     FieldCopyWithData({
@@ -376,7 +376,7 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileIdMapper
       );
       CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalJsonlFileIdSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileIdSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -384,12 +384,12 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileIdMapper
   @override
   final String id = 'CreateEvalCompletionsRunDataSourceSourceUnionFileId';
 
-  static EvalJsonlFileIdSourceTypeType _$type(
+  static EvalJsonlFileIdSourceType _$type(
     CreateEvalCompletionsRunDataSourceSourceUnionFileId v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSourceUnionFileId,
-    EvalJsonlFileIdSourceTypeType
+    EvalJsonlFileIdSourceType
   >
   _f$type = Field('type', _$type);
   static String _$id(CreateEvalCompletionsRunDataSourceSourceUnionFileId v) =>
@@ -525,7 +525,7 @@ abstract class CreateEvalCompletionsRunDataSourceSourceUnionFileIdCopyWith<
     implements
         CreateEvalCompletionsRunDataSourceSourceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({EvalJsonlFileIdSourceTypeType? type, String? id});
+  $R call({EvalJsonlFileIdSourceType? type, String? id});
   CreateEvalCompletionsRunDataSourceSourceUnionFileIdCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -556,7 +556,7 @@ class _CreateEvalCompletionsRunDataSourceSourceUnionFileIdCopyWithImpl<$R, $Out>
   $mapper =
       CreateEvalCompletionsRunDataSourceSourceUnionFileIdMapper.ensureInitialized();
   @override
-  $R call({EvalJsonlFileIdSourceTypeType? type, String? id}) => $apply(
+  $R call({EvalJsonlFileIdSourceType? type, String? id}) => $apply(
     FieldCopyWithData({if (type != null) #type: type, if (id != null) #id: id}),
   );
   @override
@@ -598,7 +598,7 @@ class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMapper
       );
       CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalStoredCompletionsSourceTypeTypeMapper.ensureInitialized();
+      EvalStoredCompletionsSourceTypeMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
     }
     return _instance!;
@@ -608,12 +608,12 @@ class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMapper
   final String id =
       'CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions';
 
-  static EvalStoredCompletionsSourceTypeType _$type(
+  static EvalStoredCompletionsSourceType _$type(
     CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions,
-    EvalStoredCompletionsSourceTypeType
+    EvalStoredCompletionsSourceType
   >
   _f$type = Field('type', _$type);
   static Metadata? _$metadata(
@@ -818,7 +818,7 @@ abstract class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsCop
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   @override
   $R call({
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
     Metadata? metadata,
     String? model,
     int? createdAfter,
@@ -866,7 +866,7 @@ class _CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsCopyWithImp
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
   $R call({
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
     Object? metadata = $none,
     Object? model = $none,
     Object? createdAfter = $none,

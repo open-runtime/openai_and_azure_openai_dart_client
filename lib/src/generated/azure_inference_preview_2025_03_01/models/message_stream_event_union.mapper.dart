@@ -86,7 +86,7 @@ class MessageStreamEventUnionVariant1Mapper
         _instance = MessageStreamEventUnionVariant1Mapper._(),
       );
       MessageStreamEventUnionMapper.ensureInitialized();
-      MessageStreamEventUnionVariant1EventEventMapper.ensureInitialized();
+      MessageStreamEventUnionVariant1EventMapper.ensureInitialized();
       MessageObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -95,12 +95,12 @@ class MessageStreamEventUnionVariant1Mapper
   @override
   final String id = 'MessageStreamEventUnionVariant1';
 
-  static MessageStreamEventUnionVariant1EventEvent _$event(
+  static MessageStreamEventUnionVariant1Event _$event(
     MessageStreamEventUnionVariant1 v,
   ) => v.event;
   static const Field<
     MessageStreamEventUnionVariant1,
-    MessageStreamEventUnionVariant1EventEvent
+    MessageStreamEventUnionVariant1Event
   >
   _f$event = Field('event', _$event);
   static MessageObject _$data(MessageStreamEventUnionVariant1 v) => v.data;
@@ -204,10 +204,7 @@ abstract class MessageStreamEventUnionVariant1CopyWith<
     implements MessageStreamEventUnionCopyWith<$R, $In, $Out> {
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data;
   @override
-  $R call({
-    MessageStreamEventUnionVariant1EventEvent? event,
-    MessageObject? data,
-  });
+  $R call({MessageStreamEventUnionVariant1Event? event, MessageObject? data});
   MessageStreamEventUnionVariant1CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -234,15 +231,13 @@ class _MessageStreamEventUnionVariant1CopyWithImpl<$R, $Out>
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({
-    MessageStreamEventUnionVariant1EventEvent? event,
-    MessageObject? data,
-  }) => $apply(
-    FieldCopyWithData({
-      if (event != null) #event: event,
-      if (data != null) #data: data,
-    }),
-  );
+  $R call({MessageStreamEventUnionVariant1Event? event, MessageObject? data}) =>
+      $apply(
+        FieldCopyWithData({
+          if (event != null) #event: event,
+          if (data != null) #data: data,
+        }),
+      );
   @override
   MessageStreamEventUnionVariant1 $make(CopyWithData data) =>
       MessageStreamEventUnionVariant1(
@@ -275,7 +270,7 @@ class MessageStreamEventUnionVariant2Mapper
         _instance = MessageStreamEventUnionVariant2Mapper._(),
       );
       MessageStreamEventUnionMapper.ensureInitialized();
-      MessageStreamEventUnionVariant2EventEventMapper.ensureInitialized();
+      MessageStreamEventUnionVariant2EventMapper.ensureInitialized();
       MessageObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -284,12 +279,12 @@ class MessageStreamEventUnionVariant2Mapper
   @override
   final String id = 'MessageStreamEventUnionVariant2';
 
-  static MessageStreamEventUnionVariant2EventEvent _$event(
+  static MessageStreamEventUnionVariant2Event _$event(
     MessageStreamEventUnionVariant2 v,
   ) => v.event;
   static const Field<
     MessageStreamEventUnionVariant2,
-    MessageStreamEventUnionVariant2EventEvent
+    MessageStreamEventUnionVariant2Event
   >
   _f$event = Field('event', _$event);
   static MessageObject _$data(MessageStreamEventUnionVariant2 v) => v.data;
@@ -393,10 +388,7 @@ abstract class MessageStreamEventUnionVariant2CopyWith<
     implements MessageStreamEventUnionCopyWith<$R, $In, $Out> {
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data;
   @override
-  $R call({
-    MessageStreamEventUnionVariant2EventEvent? event,
-    MessageObject? data,
-  });
+  $R call({MessageStreamEventUnionVariant2Event? event, MessageObject? data});
   MessageStreamEventUnionVariant2CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -423,15 +415,13 @@ class _MessageStreamEventUnionVariant2CopyWithImpl<$R, $Out>
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({
-    MessageStreamEventUnionVariant2EventEvent? event,
-    MessageObject? data,
-  }) => $apply(
-    FieldCopyWithData({
-      if (event != null) #event: event,
-      if (data != null) #data: data,
-    }),
-  );
+  $R call({MessageStreamEventUnionVariant2Event? event, MessageObject? data}) =>
+      $apply(
+        FieldCopyWithData({
+          if (event != null) #event: event,
+          if (data != null) #data: data,
+        }),
+      );
   @override
   MessageStreamEventUnionVariant2 $make(CopyWithData data) =>
       MessageStreamEventUnionVariant2(
@@ -464,7 +454,7 @@ class MessageStreamEventUnionVariant3Mapper
         _instance = MessageStreamEventUnionVariant3Mapper._(),
       );
       MessageStreamEventUnionMapper.ensureInitialized();
-      MessageStreamEventUnionVariant3EventEventMapper.ensureInitialized();
+      MessageStreamEventUnionVariant3EventMapper.ensureInitialized();
       MessageDeltaObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -473,12 +463,12 @@ class MessageStreamEventUnionVariant3Mapper
   @override
   final String id = 'MessageStreamEventUnionVariant3';
 
-  static MessageStreamEventUnionVariant3EventEvent _$event(
+  static MessageStreamEventUnionVariant3Event _$event(
     MessageStreamEventUnionVariant3 v,
   ) => v.event;
   static const Field<
     MessageStreamEventUnionVariant3,
-    MessageStreamEventUnionVariant3EventEvent
+    MessageStreamEventUnionVariant3Event
   >
   _f$event = Field('event', _$event);
   static MessageDeltaObject _$data(MessageStreamEventUnionVariant3 v) => v.data;
@@ -584,7 +574,7 @@ abstract class MessageStreamEventUnionVariant3CopyWith<
   get data;
   @override
   $R call({
-    MessageStreamEventUnionVariant3EventEvent? event,
+    MessageStreamEventUnionVariant3Event? event,
     MessageDeltaObject? data,
   });
   MessageStreamEventUnionVariant3CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -614,7 +604,7 @@ class _MessageStreamEventUnionVariant3CopyWithImpl<$R, $Out>
   get data => $value.data.copyWith.$chain((v) => call(data: v));
   @override
   $R call({
-    MessageStreamEventUnionVariant3EventEvent? event,
+    MessageStreamEventUnionVariant3Event? event,
     MessageDeltaObject? data,
   }) => $apply(
     FieldCopyWithData({
@@ -654,7 +644,7 @@ class MessageStreamEventUnionVariant4Mapper
         _instance = MessageStreamEventUnionVariant4Mapper._(),
       );
       MessageStreamEventUnionMapper.ensureInitialized();
-      MessageStreamEventUnionVariant4EventEventMapper.ensureInitialized();
+      MessageStreamEventUnionVariant4EventMapper.ensureInitialized();
       MessageObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -663,12 +653,12 @@ class MessageStreamEventUnionVariant4Mapper
   @override
   final String id = 'MessageStreamEventUnionVariant4';
 
-  static MessageStreamEventUnionVariant4EventEvent _$event(
+  static MessageStreamEventUnionVariant4Event _$event(
     MessageStreamEventUnionVariant4 v,
   ) => v.event;
   static const Field<
     MessageStreamEventUnionVariant4,
-    MessageStreamEventUnionVariant4EventEvent
+    MessageStreamEventUnionVariant4Event
   >
   _f$event = Field('event', _$event);
   static MessageObject _$data(MessageStreamEventUnionVariant4 v) => v.data;
@@ -772,10 +762,7 @@ abstract class MessageStreamEventUnionVariant4CopyWith<
     implements MessageStreamEventUnionCopyWith<$R, $In, $Out> {
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data;
   @override
-  $R call({
-    MessageStreamEventUnionVariant4EventEvent? event,
-    MessageObject? data,
-  });
+  $R call({MessageStreamEventUnionVariant4Event? event, MessageObject? data});
   MessageStreamEventUnionVariant4CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -802,15 +789,13 @@ class _MessageStreamEventUnionVariant4CopyWithImpl<$R, $Out>
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({
-    MessageStreamEventUnionVariant4EventEvent? event,
-    MessageObject? data,
-  }) => $apply(
-    FieldCopyWithData({
-      if (event != null) #event: event,
-      if (data != null) #data: data,
-    }),
-  );
+  $R call({MessageStreamEventUnionVariant4Event? event, MessageObject? data}) =>
+      $apply(
+        FieldCopyWithData({
+          if (event != null) #event: event,
+          if (data != null) #data: data,
+        }),
+      );
   @override
   MessageStreamEventUnionVariant4 $make(CopyWithData data) =>
       MessageStreamEventUnionVariant4(
@@ -843,7 +828,7 @@ class MessageStreamEventUnionVariant5Mapper
         _instance = MessageStreamEventUnionVariant5Mapper._(),
       );
       MessageStreamEventUnionMapper.ensureInitialized();
-      MessageStreamEventUnionVariant5EventEventMapper.ensureInitialized();
+      MessageStreamEventUnionVariant5EventMapper.ensureInitialized();
       MessageObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -852,12 +837,12 @@ class MessageStreamEventUnionVariant5Mapper
   @override
   final String id = 'MessageStreamEventUnionVariant5';
 
-  static MessageStreamEventUnionVariant5EventEvent _$event(
+  static MessageStreamEventUnionVariant5Event _$event(
     MessageStreamEventUnionVariant5 v,
   ) => v.event;
   static const Field<
     MessageStreamEventUnionVariant5,
-    MessageStreamEventUnionVariant5EventEvent
+    MessageStreamEventUnionVariant5Event
   >
   _f$event = Field('event', _$event);
   static MessageObject _$data(MessageStreamEventUnionVariant5 v) => v.data;
@@ -961,10 +946,7 @@ abstract class MessageStreamEventUnionVariant5CopyWith<
     implements MessageStreamEventUnionCopyWith<$R, $In, $Out> {
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data;
   @override
-  $R call({
-    MessageStreamEventUnionVariant5EventEvent? event,
-    MessageObject? data,
-  });
+  $R call({MessageStreamEventUnionVariant5Event? event, MessageObject? data});
   MessageStreamEventUnionVariant5CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -991,15 +973,13 @@ class _MessageStreamEventUnionVariant5CopyWithImpl<$R, $Out>
   MessageObjectCopyWith<$R, MessageObject, MessageObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({
-    MessageStreamEventUnionVariant5EventEvent? event,
-    MessageObject? data,
-  }) => $apply(
-    FieldCopyWithData({
-      if (event != null) #event: event,
-      if (data != null) #data: data,
-    }),
-  );
+  $R call({MessageStreamEventUnionVariant5Event? event, MessageObject? data}) =>
+      $apply(
+        FieldCopyWithData({
+          if (event != null) #event: event,
+          if (data != null) #data: data,
+        }),
+      );
   @override
   MessageStreamEventUnionVariant5 $make(CopyWithData data) =>
       MessageStreamEventUnionVariant5(

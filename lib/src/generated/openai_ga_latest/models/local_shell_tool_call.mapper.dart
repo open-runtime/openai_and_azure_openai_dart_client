@@ -14,9 +14,9 @@ class LocalShellToolCallMapper extends ClassMapperBase<LocalShellToolCall> {
   static LocalShellToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LocalShellToolCallMapper._());
-      LocalShellToolCallTypeTypeMapper.ensureInitialized();
+      LocalShellToolCallTypeMapper.ensureInitialized();
       LocalShellExecActionMapper.ensureInitialized();
-      LocalShellToolCallStatusStatusMapper.ensureInitialized();
+      LocalShellToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,8 +24,8 @@ class LocalShellToolCallMapper extends ClassMapperBase<LocalShellToolCall> {
   @override
   final String id = 'LocalShellToolCall';
 
-  static LocalShellToolCallTypeType _$type(LocalShellToolCall v) => v.type;
-  static const Field<LocalShellToolCall, LocalShellToolCallTypeType> _f$type =
+  static LocalShellToolCallType _$type(LocalShellToolCall v) => v.type;
+  static const Field<LocalShellToolCall, LocalShellToolCallType> _f$type =
       Field('type', _$type);
   static String _$id(LocalShellToolCall v) => v.id;
   static const Field<LocalShellToolCall, String> _f$id = Field('id', _$id);
@@ -38,10 +38,9 @@ class LocalShellToolCallMapper extends ClassMapperBase<LocalShellToolCall> {
   static LocalShellExecAction _$action(LocalShellToolCall v) => v.action;
   static const Field<LocalShellToolCall, LocalShellExecAction> _f$action =
       Field('action', _$action);
-  static LocalShellToolCallStatusStatus _$status(LocalShellToolCall v) =>
-      v.status;
-  static const Field<LocalShellToolCall, LocalShellToolCallStatusStatus>
-  _f$status = Field('status', _$status);
+  static LocalShellToolCallStatus _$status(LocalShellToolCall v) => v.status;
+  static const Field<LocalShellToolCall, LocalShellToolCallStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<LocalShellToolCall> fields = const {
@@ -140,11 +139,11 @@ abstract class LocalShellToolCallCopyWith<
   LocalShellExecActionCopyWith<$R, LocalShellExecAction, LocalShellExecAction>
   get action;
   $R call({
-    LocalShellToolCallTypeType? type,
+    LocalShellToolCallType? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    LocalShellToolCallStatusStatus? status,
+    LocalShellToolCallStatus? status,
   });
   LocalShellToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -164,11 +163,11 @@ class _LocalShellToolCallCopyWithImpl<$R, $Out>
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
   $R call({
-    LocalShellToolCallTypeType? type,
+    LocalShellToolCallType? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    LocalShellToolCallStatusStatus? status,
+    LocalShellToolCallStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

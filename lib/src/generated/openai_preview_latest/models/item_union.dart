@@ -6,38 +6,38 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
 import 'computer_call_output_item_param.dart';
-import 'computer_call_output_item_param_status_status.dart';
-import 'computer_call_output_item_param_type_type.dart';
+import 'computer_call_output_item_param_status.dart';
+import 'computer_call_output_item_param_type.dart';
 import 'computer_call_safety_check_param.dart';
 import 'computer_screenshot_image.dart';
 import 'computer_tool_call.dart';
 import 'computer_tool_call_safety_check.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'file_search_tool_call.dart';
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'function_call_output_item_param.dart';
-import 'function_call_output_item_param_status_status.dart';
-import 'function_call_output_item_param_type_type.dart';
+import 'function_call_output_item_param_status.dart';
+import 'function_call_output_item_param_type.dart';
 import 'function_tool_call.dart';
-import 'function_tool_call_status_status.dart';
-import 'function_tool_call_type_type.dart';
+import 'function_tool_call_status.dart';
+import 'function_tool_call_type.dart';
 import 'item_resource.dart';
 import 'output_content.dart';
 import 'output_item.dart';
 import 'output_message.dart';
-import 'output_message_role_role.dart';
-import 'output_message_status_status.dart';
-import 'output_message_type_type.dart';
+import 'output_message_role.dart';
+import 'output_message_status.dart';
+import 'output_message_type.dart';
 import 'reasoning_item.dart';
-import 'reasoning_item_status_status.dart';
+import 'reasoning_item_status.dart';
 import 'reasoning_item_summary.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_type.dart';
 import 'web_search_tool_call.dart';
-import 'web_search_tool_call_status_status.dart';
-import 'web_search_tool_call_type_type.dart';
+import 'web_search_tool_call_status.dart';
+import 'web_search_tool_call_type.dart';
 
 part 'item_union.mapper.dart';
 
@@ -95,10 +95,10 @@ extension ItemUnionDeserializer on ItemUnion {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class ItemUnionMessage extends ItemUnion with ItemUnionMessageMappable {
   final String id;
-  final OutputMessageTypeType type;
-  final OutputMessageRoleRole role;
+  final OutputMessageType type;
+  final OutputMessageRole role;
   final List<OutputContent> content;
-  final OutputMessageStatusStatus status;
+  final OutputMessageStatus status;
 
   const ItemUnionMessage({
     required this.id,
@@ -112,8 +112,8 @@ class ItemUnionMessage extends ItemUnion with ItemUnionMessageMappable {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMappable {
   final String id;
-  final FileSearchToolCallTypeType type;
-  final FileSearchToolCallStatusStatus status;
+  final FileSearchToolCallType type;
+  final FileSearchToolCallStatus status;
   final List<String> queries;
   final List<FileSearchToolCallResults>? results;
 
@@ -128,14 +128,14 @@ class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMapp
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class ItemUnionComputerCall extends ItemUnion with ItemUnionComputerCallMappable {
-  final ComputerToolCallTypeType type;
+  final ComputerToolCallType type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerToolCallSafetyCheck> pendingSafetyChecks;
-  final ComputerToolCallStatusStatus status;
+  final ComputerToolCallStatus status;
 
   const ItemUnionComputerCall({
     required this.type,
@@ -152,11 +152,11 @@ class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOu
   final String? id;
   @MappableField(key: 'call_id')
   final String callId;
-  final ComputerCallOutputItemParamTypeType type;
+  final ComputerCallOutputItemParamType type;
   final ComputerScreenshotImage output;
   @MappableField(key: 'acknowledged_safety_checks')
   final List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks;
-  final ComputerCallOutputItemParamStatusStatus? status;
+  final ComputerCallOutputItemParamStatus? status;
 
   const ItemUnionComputerCallOutput({
     required this.id,
@@ -171,8 +171,8 @@ class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOu
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
 class ItemUnionWebSearchCall extends ItemUnion with ItemUnionWebSearchCallMappable {
   final String id;
-  final WebSearchToolCallTypeType type;
-  final WebSearchToolCallStatusStatus status;
+  final WebSearchToolCallType type;
+  final WebSearchToolCallStatus status;
 
   const ItemUnionWebSearchCall({
     required this.id,
@@ -184,12 +184,12 @@ class ItemUnionWebSearchCall extends ItemUnion with ItemUnionWebSearchCallMappab
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
 class ItemUnionFunctionCall extends ItemUnion with ItemUnionFunctionCallMappable {
   final String? id;
-  final FunctionToolCallTypeType type;
+  final FunctionToolCallType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String name;
   final String arguments;
-  final FunctionToolCallStatusStatus? status;
+  final FunctionToolCallStatus? status;
 
   const ItemUnionFunctionCall({
     required this.id,
@@ -206,9 +206,9 @@ class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOu
   final String? id;
   @MappableField(key: 'call_id')
   final String callId;
-  final FunctionCallOutputItemParamTypeType type;
+  final FunctionCallOutputItemParamType type;
   final String output;
-  final FunctionCallOutputItemParamStatusStatus? status;
+  final FunctionCallOutputItemParamStatus? status;
 
   const ItemUnionFunctionCallOutput({
     required this.id,
@@ -221,10 +221,10 @@ class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOu
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class ItemUnionReasoning extends ItemUnion with ItemUnionReasoningMappable {
-  final ReasoningItemTypeType type;
+  final ReasoningItemType type;
   final String id;
   final List<ReasoningItemSummary> summary;
-  final ReasoningItemStatusStatus? status;
+  final ReasoningItemStatus? status;
 
   const ItemUnionReasoning({
     required this.type,

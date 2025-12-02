@@ -92,7 +92,7 @@ class ApplyPatchToolCallOperationUnionCreateFileMapper
       ApplyPatchToolCallOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchCreateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchCreateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -100,12 +100,12 @@ class ApplyPatchToolCallOperationUnionCreateFileMapper
   @override
   final String id = 'ApplyPatchToolCallOperationUnionCreateFile';
 
-  static ApplyPatchCreateFileOperationTypeType _$type(
+  static ApplyPatchCreateFileOperationType _$type(
     ApplyPatchToolCallOperationUnionCreateFile v,
   ) => v.type;
   static const Field<
     ApplyPatchToolCallOperationUnionCreateFile,
-    ApplyPatchCreateFileOperationTypeType
+    ApplyPatchCreateFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchToolCallOperationUnionCreateFile v) => v.path;
@@ -232,7 +232,7 @@ abstract class ApplyPatchToolCallOperationUnionCreateFileCopyWith<
     implements ApplyPatchToolCallOperationUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
     String? path,
     String? diff,
   });
@@ -261,7 +261,7 @@ class _ApplyPatchToolCallOperationUnionCreateFileCopyWithImpl<$R, $Out>
       ApplyPatchToolCallOperationUnionCreateFileMapper.ensureInitialized();
   @override
   $R call({
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
     String? path,
     String? diff,
   }) => $apply(
@@ -306,7 +306,7 @@ class ApplyPatchToolCallOperationUnionDeleteFileMapper
       ApplyPatchToolCallOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchDeleteFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchDeleteFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -314,12 +314,12 @@ class ApplyPatchToolCallOperationUnionDeleteFileMapper
   @override
   final String id = 'ApplyPatchToolCallOperationUnionDeleteFile';
 
-  static ApplyPatchDeleteFileOperationTypeType _$type(
+  static ApplyPatchDeleteFileOperationType _$type(
     ApplyPatchToolCallOperationUnionDeleteFile v,
   ) => v.type;
   static const Field<
     ApplyPatchToolCallOperationUnionDeleteFile,
-    ApplyPatchDeleteFileOperationTypeType
+    ApplyPatchDeleteFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchToolCallOperationUnionDeleteFile v) => v.path;
@@ -441,7 +441,7 @@ abstract class ApplyPatchToolCallOperationUnionDeleteFileCopyWith<
 >
     implements ApplyPatchToolCallOperationUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ApplyPatchDeleteFileOperationTypeType? type, String? path});
+  $R call({ApplyPatchDeleteFileOperationType? type, String? path});
   ApplyPatchToolCallOperationUnionDeleteFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -466,13 +466,12 @@ class _ApplyPatchToolCallOperationUnionDeleteFileCopyWithImpl<$R, $Out>
   $mapper =
       ApplyPatchToolCallOperationUnionDeleteFileMapper.ensureInitialized();
   @override
-  $R call({ApplyPatchDeleteFileOperationTypeType? type, String? path}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (path != null) #path: path,
-        }),
-      );
+  $R call({ApplyPatchDeleteFileOperationType? type, String? path}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (path != null) #path: path,
+    }),
+  );
   @override
   ApplyPatchToolCallOperationUnionDeleteFile $make(CopyWithData data) =>
       ApplyPatchToolCallOperationUnionDeleteFile(
@@ -507,7 +506,7 @@ class ApplyPatchToolCallOperationUnionUpdateFileMapper
       ApplyPatchToolCallOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchUpdateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchUpdateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -515,12 +514,12 @@ class ApplyPatchToolCallOperationUnionUpdateFileMapper
   @override
   final String id = 'ApplyPatchToolCallOperationUnionUpdateFile';
 
-  static ApplyPatchUpdateFileOperationTypeType _$type(
+  static ApplyPatchUpdateFileOperationType _$type(
     ApplyPatchToolCallOperationUnionUpdateFile v,
   ) => v.type;
   static const Field<
     ApplyPatchToolCallOperationUnionUpdateFile,
-    ApplyPatchUpdateFileOperationTypeType
+    ApplyPatchUpdateFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchToolCallOperationUnionUpdateFile v) => v.path;
@@ -647,7 +646,7 @@ abstract class ApplyPatchToolCallOperationUnionUpdateFileCopyWith<
     implements ApplyPatchToolCallOperationUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
     String? path,
     String? diff,
   });
@@ -676,7 +675,7 @@ class _ApplyPatchToolCallOperationUnionUpdateFileCopyWithImpl<$R, $Out>
       ApplyPatchToolCallOperationUnionUpdateFileMapper.ensureInitialized();
   @override
   $R call({
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
     String? path,
     String? diff,
   }) => $apply(

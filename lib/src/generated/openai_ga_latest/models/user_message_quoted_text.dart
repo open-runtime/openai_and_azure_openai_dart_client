@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'user_message_quoted_text_type_type.dart';
+import 'user_message_quoted_text_type.dart';
 
 part 'user_message_quoted_text.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'user_message_quoted_text.mapper.dart';
 class UserMessageQuotedText with UserMessageQuotedTextMappable {
   const UserMessageQuotedText({
     required this.text,
-    this.type = UserMessageQuotedTextTypeType.quotedText,
+    this.type = UserMessageQuotedTextType.quotedText,
   });
 
   final String text;
-  final UserMessageQuotedTextTypeType type;
+  final UserMessageQuotedTextType type;
 
   static UserMessageQuotedText fromJson(Map<String, dynamic> json) => UserMessageQuotedTextMapper.fromJson(json);
 

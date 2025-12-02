@@ -14,8 +14,8 @@ class ImageGenToolCallMapper extends ClassMapperBase<ImageGenToolCall> {
   static ImageGenToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImageGenToolCallMapper._());
-      ImageGenToolCallTypeTypeMapper.ensureInitialized();
-      ImageGenToolCallStatusStatusMapper.ensureInitialized();
+      ImageGenToolCallTypeMapper.ensureInitialized();
+      ImageGenToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,13 +23,15 @@ class ImageGenToolCallMapper extends ClassMapperBase<ImageGenToolCall> {
   @override
   final String id = 'ImageGenToolCall';
 
-  static ImageGenToolCallTypeType _$type(ImageGenToolCall v) => v.type;
-  static const Field<ImageGenToolCall, ImageGenToolCallTypeType> _f$type =
-      Field('type', _$type);
+  static ImageGenToolCallType _$type(ImageGenToolCall v) => v.type;
+  static const Field<ImageGenToolCall, ImageGenToolCallType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$id(ImageGenToolCall v) => v.id;
   static const Field<ImageGenToolCall, String> _f$id = Field('id', _$id);
-  static ImageGenToolCallStatusStatus _$status(ImageGenToolCall v) => v.status;
-  static const Field<ImageGenToolCall, ImageGenToolCallStatusStatus> _f$status =
+  static ImageGenToolCallStatus _$status(ImageGenToolCall v) => v.status;
+  static const Field<ImageGenToolCall, ImageGenToolCallStatus> _f$status =
       Field('status', _$status);
   static String? _$result(ImageGenToolCall v) => v.result;
   static const Field<ImageGenToolCall, String> _f$result = Field(
@@ -121,9 +123,9 @@ extension ImageGenToolCallValueCopy<$R, $Out>
 abstract class ImageGenToolCallCopyWith<$R, $In extends ImageGenToolCall, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ImageGenToolCallTypeType? type,
+    ImageGenToolCallType? type,
     String? id,
-    ImageGenToolCallStatusStatus? status,
+    ImageGenToolCallStatus? status,
     String? result,
   });
   ImageGenToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -141,9 +143,9 @@ class _ImageGenToolCallCopyWithImpl<$R, $Out>
       ImageGenToolCallMapper.ensureInitialized();
   @override
   $R call({
-    ImageGenToolCallTypeType? type,
+    ImageGenToolCallType? type,
     String? id,
-    ImageGenToolCallStatusStatus? status,
+    ImageGenToolCallStatus? status,
     Object? result = $none,
   }) => $apply(
     FieldCopyWithData({

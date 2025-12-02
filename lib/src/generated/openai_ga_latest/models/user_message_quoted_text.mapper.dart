@@ -15,7 +15,7 @@ class UserMessageQuotedTextMapper
   static UserMessageQuotedTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserMessageQuotedTextMapper._());
-      UserMessageQuotedTextTypeTypeMapper.ensureInitialized();
+      UserMessageQuotedTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,15 +28,14 @@ class UserMessageQuotedTextMapper
     'text',
     _$text,
   );
-  static UserMessageQuotedTextTypeType _$type(UserMessageQuotedText v) =>
-      v.type;
-  static const Field<UserMessageQuotedText, UserMessageQuotedTextTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: UserMessageQuotedTextTypeType.quotedText,
-  );
+  static UserMessageQuotedTextType _$type(UserMessageQuotedText v) => v.type;
+  static const Field<UserMessageQuotedText, UserMessageQuotedTextType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: UserMessageQuotedTextType.quotedText,
+      );
 
   @override
   final MappableFields<UserMessageQuotedText> fields = const {
@@ -125,7 +124,7 @@ abstract class UserMessageQuotedTextCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, UserMessageQuotedTextTypeType? type});
+  $R call({String? text, UserMessageQuotedTextType? type});
   UserMessageQuotedTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -140,7 +139,7 @@ class _UserMessageQuotedTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserMessageQuotedText> $mapper =
       UserMessageQuotedTextMapper.ensureInitialized();
   @override
-  $R call({String? text, UserMessageQuotedTextTypeType? type}) => $apply(
+  $R call({String? text, UserMessageQuotedTextType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

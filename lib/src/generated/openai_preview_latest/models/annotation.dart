@@ -4,15 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'annotation_type_type.dart';
-import 'annotation_type_type2.dart';
-import 'annotation_type_type3.dart';
+import 'annotation_type.dart';
+import 'annotation_type2.dart';
+import 'annotation_type3.dart';
 import 'file_citation_body.dart';
-import 'file_citation_body_type_type.dart';
+import 'file_citation_body_type.dart';
 import 'file_path.dart';
-import 'file_path_type_type.dart';
+import 'file_path_type.dart';
 import 'url_citation_body.dart';
-import 'url_citation_body_type_type.dart';
+import 'url_citation_body_type.dart';
 
 part 'annotation.mapper.dart';
 
@@ -53,7 +53,7 @@ extension AnnotationUnionDeserializer on Annotation {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
 class AnnotationFileCitation extends Annotation with AnnotationFileCitationMappable {
-  final AnnotationTypeType type;
+  final AnnotationType type;
   @MappableField(key: 'file_id')
   final String fileId;
   @MappableField(key: 'index')
@@ -68,7 +68,7 @@ class AnnotationFileCitation extends Annotation with AnnotationFileCitationMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url_citation')
 class AnnotationUrlCitation extends Annotation with AnnotationUrlCitationMappable {
-  final AnnotationTypeType2 type;
+  final AnnotationType2 type;
   final String url;
   @MappableField(key: 'start_index')
   final int startIndex;
@@ -87,7 +87,7 @@ class AnnotationUrlCitation extends Annotation with AnnotationUrlCitationMappabl
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
 class AnnotationFilePath extends Annotation with AnnotationFilePathMappable {
-  final AnnotationTypeType3 type;
+  final AnnotationType3 type;
   @MappableField(key: 'file_id')
   final String fileId;
   @MappableField(key: 'index')

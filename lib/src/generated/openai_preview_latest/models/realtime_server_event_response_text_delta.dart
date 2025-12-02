@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_response_text_delta_type_type.dart';
+import 'realtime_server_event_response_text_delta_type.dart';
 
 part 'realtime_server_event_response_text_delta.mapper.dart';
 
@@ -24,7 +24,7 @@ class RealtimeServerEventResponseTextDelta with RealtimeServerEventResponseTextD
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseTextDeltaTypeType type;
+  final RealtimeServerEventResponseTextDeltaType type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')

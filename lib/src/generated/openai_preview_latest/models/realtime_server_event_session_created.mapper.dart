@@ -17,7 +17,7 @@ class RealtimeServerEventSessionCreatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventSessionCreatedMapper._(),
       );
-      RealtimeServerEventSessionCreatedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventSessionCreatedTypeMapper.ensureInitialized();
       RealtimeSessionMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,12 +29,12 @@ class RealtimeServerEventSessionCreatedMapper
   static String _$eventId(RealtimeServerEventSessionCreated v) => v.eventId;
   static const Field<RealtimeServerEventSessionCreated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventSessionCreatedTypeType _$type(
+  static RealtimeServerEventSessionCreatedType _$type(
     RealtimeServerEventSessionCreated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventSessionCreated,
-    RealtimeServerEventSessionCreatedTypeType
+    RealtimeServerEventSessionCreatedType
   >
   _f$type = Field('type', _$type);
   static RealtimeSession _$session(RealtimeServerEventSessionCreated v) =>
@@ -143,7 +143,7 @@ abstract class RealtimeServerEventSessionCreatedCopyWith<
   RealtimeSessionCopyWith<$R, RealtimeSession, RealtimeSession> get session;
   $R call({
     String? eventId,
-    RealtimeServerEventSessionCreatedTypeType? type,
+    RealtimeServerEventSessionCreatedType? type,
     RealtimeSession? session,
   });
   RealtimeServerEventSessionCreatedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -174,7 +174,7 @@ class _RealtimeServerEventSessionCreatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventSessionCreatedTypeType? type,
+    RealtimeServerEventSessionCreatedType? type,
     RealtimeSession? session,
   }) => $apply(
     FieldCopyWithData({

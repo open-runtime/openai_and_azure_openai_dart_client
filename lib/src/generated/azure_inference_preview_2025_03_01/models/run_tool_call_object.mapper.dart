@@ -14,7 +14,7 @@ class RunToolCallObjectMapper extends ClassMapperBase<RunToolCallObject> {
   static RunToolCallObjectMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RunToolCallObjectMapper._());
-      RunToolCallObjectTypeTypeMapper.ensureInitialized();
+      RunToolCallObjectTypeMapper.ensureInitialized();
       RunToolCallObjectFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -25,9 +25,11 @@ class RunToolCallObjectMapper extends ClassMapperBase<RunToolCallObject> {
 
   static String _$id(RunToolCallObject v) => v.id;
   static const Field<RunToolCallObject, String> _f$id = Field('id', _$id);
-  static RunToolCallObjectTypeType _$type(RunToolCallObject v) => v.type;
-  static const Field<RunToolCallObject, RunToolCallObjectTypeType> _f$type =
-      Field('type', _$type);
+  static RunToolCallObjectType _$type(RunToolCallObject v) => v.type;
+  static const Field<RunToolCallObject, RunToolCallObjectType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static RunToolCallObjectFunction _$runToolCallObjectFunction(
     RunToolCallObject v,
   ) => v.runToolCallObjectFunction;
@@ -136,7 +138,7 @@ abstract class RunToolCallObjectCopyWith<
   get runToolCallObjectFunction;
   $R call({
     String? id,
-    RunToolCallObjectTypeType? type,
+    RunToolCallObjectType? type,
     RunToolCallObjectFunction? runToolCallObjectFunction,
   });
   RunToolCallObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -163,7 +165,7 @@ class _RunToolCallObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunToolCallObjectTypeType? type,
+    RunToolCallObjectType? type,
     RunToolCallObjectFunction? runToolCallObjectFunction,
   }) => $apply(
     FieldCopyWithData({

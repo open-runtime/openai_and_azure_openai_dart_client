@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_object_last_error_code_code.dart';
+import 'run_object_last_error_code.dart';
 
 part 'run_object_last_error.mapper.dart';
 
@@ -15,7 +15,7 @@ class RunObjectLastError with RunObjectLastErrorMappable {
     required this.message,
   });
 
-  final RunObjectLastErrorCodeCode code;
+  final RunObjectLastErrorCode code;
   final String message;
 
   static RunObjectLastError fromJson(Map<String, dynamic> json) => RunObjectLastErrorMapper.fromJson(json);

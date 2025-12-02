@@ -15,7 +15,7 @@ class ResponseOutputTextMapper extends ClassMapperBase<ResponseOutputText> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseOutputTextMapper._());
       ResponseOutputTextAnnotationsUnionMapper.ensureInitialized();
-      ResponseOutputTextTypeTypeMapper.ensureInitialized();
+      ResponseOutputTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -36,14 +36,9 @@ class ResponseOutputTextMapper extends ClassMapperBase<ResponseOutputText> {
     List<ResponseOutputTextAnnotationsUnion>
   >
   _f$annotations = Field('annotations', _$annotations);
-  static ResponseOutputTextTypeType _$type(ResponseOutputText v) => v.type;
-  static const Field<ResponseOutputText, ResponseOutputTextTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: ResponseOutputTextTypeType.outputText,
-      );
+  static ResponseOutputTextType _$type(ResponseOutputText v) => v.type;
+  static const Field<ResponseOutputText, ResponseOutputTextType> _f$type =
+      Field('type', _$type, opt: true, def: ResponseOutputTextType.outputText);
 
   @override
   final MappableFields<ResponseOutputText> fields = const {
@@ -148,7 +143,7 @@ abstract class ResponseOutputTextCopyWith<
   $R call({
     String? text,
     List<ResponseOutputTextAnnotationsUnion>? annotations,
-    ResponseOutputTextTypeType? type,
+    ResponseOutputTextType? type,
   });
   ResponseOutputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -182,7 +177,7 @@ class _ResponseOutputTextCopyWithImpl<$R, $Out>
   $R call({
     String? text,
     List<ResponseOutputTextAnnotationsUnion>? annotations,
-    ResponseOutputTextTypeType? type,
+    ResponseOutputTextType? type,
   }) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,

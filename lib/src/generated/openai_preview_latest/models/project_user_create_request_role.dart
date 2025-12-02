@@ -1,0 +1,28 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'project_user_create_request_role.mapper.dart';
+
+/// `owner` or `member`
+@MappableEnum(defaultValue: 'unknown')
+enum ProjectUserCreateRequestRole {
+  @MappableValue('owner') 
+  owner,
+
+  @MappableValue('member') 
+  member,
+
+  @MappableValue('unknown') 
+  unknown;
+
+  String toJson() => toValue().toString();
+
+  @override
+  String toString() => toValue().toString();
+
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ProjectUserCreateRequestRole> get $valuesDefined => values.where((value) => value != ProjectUserCreateRequestRole.unknown).toList();
+}

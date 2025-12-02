@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistants_api_response_format_type_type.dart';
+import 'assistants_api_response_format_type.dart';
 
 part 'assistants_api_response_format.mapper.dart';
 
@@ -13,10 +13,10 @@ part 'assistants_api_response_format.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormat with AssistantsApiResponseFormatMappable {
   const AssistantsApiResponseFormat({
-    this.type = AssistantsApiResponseFormatTypeType.text,
+    this.type = AssistantsApiResponseFormatType.text,
   });
 
-  final AssistantsApiResponseFormatTypeType type;
+  final AssistantsApiResponseFormatType type;
 
   static AssistantsApiResponseFormat fromJson(Map<String, dynamic> json) => AssistantsApiResponseFormatMapper.fromJson(json);
 

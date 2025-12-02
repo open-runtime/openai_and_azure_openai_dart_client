@@ -15,7 +15,7 @@ class AssistantToolsFunctionMapper
   static AssistantToolsFunctionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantToolsFunctionMapper._());
-      AssistantToolsFunctionTypeTypeMapper.ensureInitialized();
+      AssistantToolsFunctionTypeMapper.ensureInitialized();
       AssistantToolsFunctionFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,9 +24,8 @@ class AssistantToolsFunctionMapper
   @override
   final String id = 'AssistantToolsFunction';
 
-  static AssistantToolsFunctionTypeType _$type(AssistantToolsFunction v) =>
-      v.type;
-  static const Field<AssistantToolsFunction, AssistantToolsFunctionTypeType>
+  static AssistantToolsFunctionType _$type(AssistantToolsFunction v) => v.type;
+  static const Field<AssistantToolsFunction, AssistantToolsFunctionType>
   _f$type = Field('type', _$type);
   static AssistantToolsFunctionFunction _$assistantToolsFunctionFunction(
     AssistantToolsFunction v,
@@ -134,7 +133,7 @@ abstract class AssistantToolsFunctionCopyWith<
   >
   get assistantToolsFunctionFunction;
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   });
   AssistantToolsFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -163,7 +162,7 @@ class _AssistantToolsFunctionCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolsFunctionFunction: v));
   @override
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   }) => $apply(
     FieldCopyWithData({

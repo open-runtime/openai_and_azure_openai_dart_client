@@ -17,7 +17,7 @@ class WebSearchActionOpenPageMapper
       MapperContainer.globals.use(
         _instance = WebSearchActionOpenPageMapper._(),
       );
-      WebSearchActionOpenPageTypeTypeMapper.ensureInitialized();
+      WebSearchActionOpenPageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class WebSearchActionOpenPageMapper
   @override
   final String id = 'WebSearchActionOpenPage';
 
-  static WebSearchActionOpenPageTypeType _$type(WebSearchActionOpenPage v) =>
+  static WebSearchActionOpenPageType _$type(WebSearchActionOpenPage v) =>
       v.type;
-  static const Field<WebSearchActionOpenPage, WebSearchActionOpenPageTypeType>
+  static const Field<WebSearchActionOpenPage, WebSearchActionOpenPageType>
   _f$type = Field('type', _$type);
   static String _$url(WebSearchActionOpenPage v) => v.url;
   static const Field<WebSearchActionOpenPage, String> _f$url = Field(
@@ -122,7 +122,7 @@ abstract class WebSearchActionOpenPageCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({WebSearchActionOpenPageTypeType? type, String? url});
+  $R call({WebSearchActionOpenPageType? type, String? url});
   WebSearchActionOpenPageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,7 +138,7 @@ class _WebSearchActionOpenPageCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WebSearchActionOpenPage> $mapper =
       WebSearchActionOpenPageMapper.ensureInitialized();
   @override
-  $R call({WebSearchActionOpenPageTypeType? type, String? url}) => $apply(
+  $R call({WebSearchActionOpenPageType? type, String? url}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (url != null) #url: url,

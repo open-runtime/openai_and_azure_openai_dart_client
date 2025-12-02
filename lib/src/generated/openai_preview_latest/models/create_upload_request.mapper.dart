@@ -14,7 +14,7 @@ class CreateUploadRequestMapper extends ClassMapperBase<CreateUploadRequest> {
   static CreateUploadRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateUploadRequestMapper._());
-      CreateUploadRequestPurposePurposeMapper.ensureInitialized();
+      CreateUploadRequestPurposeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,9 +27,9 @@ class CreateUploadRequestMapper extends ClassMapperBase<CreateUploadRequest> {
     'filename',
     _$filename,
   );
-  static CreateUploadRequestPurposePurpose _$purpose(CreateUploadRequest v) =>
+  static CreateUploadRequestPurpose _$purpose(CreateUploadRequest v) =>
       v.purpose;
-  static const Field<CreateUploadRequest, CreateUploadRequestPurposePurpose>
+  static const Field<CreateUploadRequest, CreateUploadRequestPurpose>
   _f$purpose = Field('purpose', _$purpose);
   static int _$bytes(CreateUploadRequest v) => v.bytes;
   static const Field<CreateUploadRequest, int> _f$bytes = Field(
@@ -136,7 +136,7 @@ abstract class CreateUploadRequestCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? filename,
-    CreateUploadRequestPurposePurpose? purpose,
+    CreateUploadRequestPurpose? purpose,
     int? bytes,
     String? mimeType,
   });
@@ -156,7 +156,7 @@ class _CreateUploadRequestCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? filename,
-    CreateUploadRequestPurposePurpose? purpose,
+    CreateUploadRequestPurpose? purpose,
     int? bytes,
     String? mimeType,
   }) => $apply(

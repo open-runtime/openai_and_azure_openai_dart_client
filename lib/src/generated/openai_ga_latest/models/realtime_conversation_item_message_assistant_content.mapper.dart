@@ -18,7 +18,7 @@ class RealtimeConversationItemMessageAssistantContentMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageAssistantContentMapper._(),
       );
-      RealtimeConversationItemMessageAssistantContentTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemMessageAssistantContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class RealtimeConversationItemMessageAssistantContentMapper
   @override
   final String id = 'RealtimeConversationItemMessageAssistantContent';
 
-  static RealtimeConversationItemMessageAssistantContentTypeType? _$type(
+  static RealtimeConversationItemMessageAssistantContentType? _$type(
     RealtimeConversationItemMessageAssistantContent v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessageAssistantContent,
-    RealtimeConversationItemMessageAssistantContentTypeType
+    RealtimeConversationItemMessageAssistantContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeConversationItemMessageAssistantContent v) =>
@@ -172,7 +172,7 @@ abstract class RealtimeConversationItemMessageAssistantContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemMessageAssistantContentTypeType? type,
+    RealtimeConversationItemMessageAssistantContentType? type,
     String? text,
     String? audio,
     String? transcript,

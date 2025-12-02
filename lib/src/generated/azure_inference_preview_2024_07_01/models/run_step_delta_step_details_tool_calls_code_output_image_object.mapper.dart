@@ -20,7 +20,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper
         _instance =
             RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImageMapper.ensureInitialized();
     }
     return _instance!;
@@ -34,12 +34,12 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper
   ) => v.indexField;
   static const Field<RunStepDeltaStepDetailsToolCallsCodeOutputImageObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType _$type(
     RunStepDeltaStepDetailsToolCallsCodeOutputImageObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeOutputImageObject,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
@@ -195,7 +195,7 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectCopyWith<
   get runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type,
     RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
     runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage,
   });
@@ -247,7 +247,7 @@ class _RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectCopyWithImpl<
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type,
     Object? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage = $none,
   }) => $apply(
     FieldCopyWithData({

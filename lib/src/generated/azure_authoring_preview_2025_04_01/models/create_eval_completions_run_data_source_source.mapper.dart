@@ -17,7 +17,7 @@ class CreateEvalCompletionsRunDataSourceSourceMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCompletionsRunDataSourceSourceMapper._(),
       );
-      CreateEvalCompletionsRunDataSourceSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class CreateEvalCompletionsRunDataSourceSourceMapper
   @override
   final String id = 'CreateEvalCompletionsRunDataSourceSource';
 
-  static CreateEvalCompletionsRunDataSourceSourceTypeType _$type(
+  static CreateEvalCompletionsRunDataSourceSourceType _$type(
     CreateEvalCompletionsRunDataSourceSource v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSource,
-    CreateEvalCompletionsRunDataSourceSourceTypeType
+    CreateEvalCompletionsRunDataSourceSourceType
   >
   _f$type = Field('type', _$type);
 
@@ -131,7 +131,7 @@ abstract class CreateEvalCompletionsRunDataSourceSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({CreateEvalCompletionsRunDataSourceSourceTypeType? type});
+  $R call({CreateEvalCompletionsRunDataSourceSourceType? type});
   CreateEvalCompletionsRunDataSourceSourceCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -155,7 +155,7 @@ class _CreateEvalCompletionsRunDataSourceSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalCompletionsRunDataSourceSource> $mapper =
       CreateEvalCompletionsRunDataSourceSourceMapper.ensureInitialized();
   @override
-  $R call({CreateEvalCompletionsRunDataSourceSourceTypeType? type}) =>
+  $R call({CreateEvalCompletionsRunDataSourceSourceType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateEvalCompletionsRunDataSourceSource $make(CopyWithData data) =>

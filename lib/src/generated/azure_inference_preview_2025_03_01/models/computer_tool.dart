@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'computer_tool_environment_environment.dart';
-import 'computer_tool_type_type.dart';
+import 'computer_tool_environment.dart';
+import 'computer_tool_type.dart';
 import 'tool.dart';
 
 part 'computer_tool.mapper.dart';
@@ -22,12 +22,12 @@ class ComputerTool with ComputerToolMappable {
     required this.environment,
   });
 
-  final ComputerToolTypeType type;
+  final ComputerToolType type;
   @MappableField(key: 'display_width')
   final num displayWidth;
   @MappableField(key: 'display_height')
   final num displayHeight;
-  final ComputerToolEnvironmentEnvironment environment;
+  final ComputerToolEnvironment environment;
 
   static ComputerTool fromJson(Map<String, dynamic> json) => ComputerToolMapper.fromJson(json);
 

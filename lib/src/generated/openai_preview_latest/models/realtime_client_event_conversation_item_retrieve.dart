@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_conversation_item_retrieve_type_type.dart';
+import 'realtime_client_event_conversation_item_retrieve_type.dart';
 
 part 'realtime_client_event_conversation_item_retrieve.mapper.dart';
 
@@ -22,7 +22,7 @@ class RealtimeClientEventConversationItemRetrieve with RealtimeClientEventConver
     this.eventId,
   });
 
-  final RealtimeClientEventConversationItemRetrieveTypeType type;
+  final RealtimeClientEventConversationItemRetrieveType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'event_id')

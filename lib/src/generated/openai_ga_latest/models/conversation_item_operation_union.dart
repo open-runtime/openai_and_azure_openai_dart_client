@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation.dart';
-import 'apply_patch_create_file_operation_type_type.dart';
+import 'apply_patch_create_file_operation_type.dart';
 import 'apply_patch_delete_file_operation.dart';
-import 'apply_patch_delete_file_operation_type_type.dart';
+import 'apply_patch_delete_file_operation_type.dart';
 import 'apply_patch_update_file_operation.dart';
-import 'apply_patch_update_file_operation_type_type.dart';
+import 'apply_patch_update_file_operation_type.dart';
 
 part 'conversation_item_operation_union.mapper.dart';
 
@@ -51,7 +51,7 @@ extension ConversationItemOperationUnionDeserializer on ConversationItemOperatio
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
 class ConversationItemOperationUnionCreateFile extends ConversationItemOperationUnion with ConversationItemOperationUnionCreateFileMappable {
-  final ApplyPatchCreateFileOperationTypeType type;
+  final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
@@ -64,7 +64,7 @@ class ConversationItemOperationUnionCreateFile extends ConversationItemOperation
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
 class ConversationItemOperationUnionDeleteFile extends ConversationItemOperationUnion with ConversationItemOperationUnionDeleteFileMappable {
-  final ApplyPatchDeleteFileOperationTypeType type;
+  final ApplyPatchDeleteFileOperationType type;
   final String path;
 
   const ConversationItemOperationUnionDeleteFile({
@@ -75,7 +75,7 @@ class ConversationItemOperationUnionDeleteFile extends ConversationItemOperation
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
 class ConversationItemOperationUnionUpdateFile extends ConversationItemOperationUnion with ConversationItemOperationUnionUpdateFileMappable {
-  final ApplyPatchUpdateFileOperationTypeType type;
+  final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 

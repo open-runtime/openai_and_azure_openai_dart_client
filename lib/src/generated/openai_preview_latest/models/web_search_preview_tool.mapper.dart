@@ -16,7 +16,7 @@ class WebSearchPreviewToolMapper extends ClassMapperBase<WebSearchPreviewTool> {
       MapperContainer.globals.use(_instance = WebSearchPreviewToolMapper._());
       ApproximateLocationMapper.ensureInitialized();
       WebSearchPreviewToolSearchContextSizeSearchContextSizeMapper.ensureInitialized();
-      WebSearchPreviewToolTypeTypeMapper.ensureInitialized();
+      WebSearchPreviewToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -45,14 +45,14 @@ class WebSearchPreviewToolMapper extends ClassMapperBase<WebSearchPreviewTool> {
     key: r'search_context_size',
     opt: true,
   );
-  static WebSearchPreviewToolTypeType _$type(WebSearchPreviewTool v) => v.type;
-  static const Field<WebSearchPreviewTool, WebSearchPreviewToolTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: WebSearchPreviewToolTypeType.webSearchPreview,
-  );
+  static WebSearchPreviewToolType _$type(WebSearchPreviewTool v) => v.type;
+  static const Field<WebSearchPreviewTool, WebSearchPreviewToolType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: WebSearchPreviewToolType.webSearchPreview,
+      );
 
   @override
   final MappableFields<WebSearchPreviewTool> fields = const {
@@ -148,7 +148,7 @@ abstract class WebSearchPreviewToolCopyWith<
   $R call({
     ApproximateLocation? userLocation,
     WebSearchPreviewToolSearchContextSizeSearchContextSize? searchContextSize,
-    WebSearchPreviewToolTypeType? type,
+    WebSearchPreviewToolType? type,
   });
   WebSearchPreviewToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -171,7 +171,7 @@ class _WebSearchPreviewToolCopyWithImpl<$R, $Out>
   $R call({
     Object? userLocation = $none,
     Object? searchContextSize = $none,
-    WebSearchPreviewToolTypeType? type,
+    WebSearchPreviewToolType? type,
   }) => $apply(
     FieldCopyWithData({
       if (userLocation != $none) #userLocation: userLocation,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_file_search_call_searching_event_type_type.dart';
+import 'response_file_search_call_searching_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_file_search_call_searching_event.mapper.dart';
@@ -18,7 +18,7 @@ class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingE
     required this.itemId,
   });
 
-  final ResponseFileSearchCallSearchingEventTypeType type;
+  final ResponseFileSearchCallSearchingEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

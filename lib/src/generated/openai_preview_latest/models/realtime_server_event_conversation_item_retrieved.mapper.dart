@@ -18,7 +18,7 @@ class RealtimeServerEventConversationItemRetrievedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventConversationItemRetrievedMapper._(),
       );
-      RealtimeServerEventConversationItemRetrievedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemRetrievedTypeMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class RealtimeServerEventConversationItemRetrievedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemRetrieved, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemRetrievedTypeType _$type(
+  static RealtimeServerEventConversationItemRetrievedType _$type(
     RealtimeServerEventConversationItemRetrieved v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemRetrieved,
-    RealtimeServerEventConversationItemRetrievedTypeType
+    RealtimeServerEventConversationItemRetrievedType
   >
   _f$type = Field('type', _$type);
   static RealtimeConversationItem _$item(
@@ -166,7 +166,7 @@ abstract class RealtimeServerEventConversationItemRetrievedCopyWith<
   get item;
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemRetrievedTypeType? type,
+    RealtimeServerEventConversationItemRetrievedType? type,
     RealtimeConversationItem? item,
   });
   RealtimeServerEventConversationItemRetrievedCopyWith<$R2, $In, $Out2>
@@ -206,7 +206,7 @@ class _RealtimeServerEventConversationItemRetrievedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemRetrievedTypeType? type,
+    RealtimeServerEventConversationItemRetrievedType? type,
     RealtimeConversationItem? item,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class MessageContentTextAnnotationsFilePathObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextAnnotationsFilePathObjectMapper._(),
       );
-      MessageContentTextAnnotationsFilePathObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class MessageContentTextAnnotationsFilePathObjectMapper
   @override
   final String id = 'MessageContentTextAnnotationsFilePathObject';
 
-  static MessageContentTextAnnotationsFilePathObjectTypeType _$type(
+  static MessageContentTextAnnotationsFilePathObjectType _$type(
     MessageContentTextAnnotationsFilePathObject v,
   ) => v.type;
   static const Field<
     MessageContentTextAnnotationsFilePathObject,
-    MessageContentTextAnnotationsFilePathObjectTypeType
+    MessageContentTextAnnotationsFilePathObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(MessageContentTextAnnotationsFilePathObject v) => v.text;
@@ -187,7 +187,7 @@ abstract class MessageContentTextAnnotationsFilePathObjectCopyWith<
   >
   get messageContentTextAnnotationsFilePathObjectFilePath;
   $R call({
-    MessageContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageContentTextAnnotationsFilePathObjectFilePath?
     messageContentTextAnnotationsFilePathObjectFilePath,
@@ -231,7 +231,7 @@ class _MessageContentTextAnnotationsFilePathObjectCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    MessageContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageContentTextAnnotationsFilePathObjectFilePath?
     messageContentTextAnnotationsFilePathObjectFilePath,

@@ -85,7 +85,7 @@ class RunObjectToolsUnionCodeInterpreterMapper
         _instance = RunObjectToolsUnionCodeInterpreterMapper._(),
       );
       RunObjectToolsUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolsCodeTypeTypeMapper.ensureInitialized();
+      AssistantToolsCodeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -93,13 +93,9 @@ class RunObjectToolsUnionCodeInterpreterMapper
   @override
   final String id = 'RunObjectToolsUnionCodeInterpreter';
 
-  static AssistantToolsCodeTypeType _$type(
-    RunObjectToolsUnionCodeInterpreter v,
-  ) => v.type;
-  static const Field<
-    RunObjectToolsUnionCodeInterpreter,
-    AssistantToolsCodeTypeType
-  >
+  static AssistantToolsCodeType _$type(RunObjectToolsUnionCodeInterpreter v) =>
+      v.type;
+  static const Field<RunObjectToolsUnionCodeInterpreter, AssistantToolsCodeType>
   _f$type = Field('type', _$type);
 
   @override
@@ -203,7 +199,7 @@ abstract class RunObjectToolsUnionCodeInterpreterCopyWith<
 >
     implements RunObjectToolsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolsCodeTypeType? type});
+  $R call({AssistantToolsCodeType? type});
   RunObjectToolsUnionCodeInterpreterCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -226,7 +222,7 @@ class _RunObjectToolsUnionCodeInterpreterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunObjectToolsUnionCodeInterpreter> $mapper =
       RunObjectToolsUnionCodeInterpreterMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsCodeTypeType? type}) =>
+  $R call({AssistantToolsCodeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   RunObjectToolsUnionCodeInterpreter $make(CopyWithData data) =>
@@ -259,7 +255,7 @@ class RunObjectToolsUnionFileSearchMapper
         _instance = RunObjectToolsUnionFileSearchMapper._(),
       );
       RunObjectToolsUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolsFileSearchTypeTypeMapper.ensureInitialized();
+      AssistantToolsFileSearchTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -267,12 +263,11 @@ class RunObjectToolsUnionFileSearchMapper
   @override
   final String id = 'RunObjectToolsUnionFileSearch';
 
-  static AssistantToolsFileSearchTypeType _$type(
-    RunObjectToolsUnionFileSearch v,
-  ) => v.type;
+  static AssistantToolsFileSearchType _$type(RunObjectToolsUnionFileSearch v) =>
+      v.type;
   static const Field<
     RunObjectToolsUnionFileSearch,
-    AssistantToolsFileSearchTypeType
+    AssistantToolsFileSearchType
   >
   _f$type = Field('type', _$type);
 
@@ -372,7 +367,7 @@ abstract class RunObjectToolsUnionFileSearchCopyWith<
 >
     implements RunObjectToolsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolsFileSearchTypeType? type});
+  $R call({AssistantToolsFileSearchType? type});
   RunObjectToolsUnionFileSearchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -396,7 +391,7 @@ class _RunObjectToolsUnionFileSearchCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunObjectToolsUnionFileSearch> $mapper =
       RunObjectToolsUnionFileSearchMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsFileSearchTypeType? type}) =>
+  $R call({AssistantToolsFileSearchType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   RunObjectToolsUnionFileSearch $make(CopyWithData data) =>
@@ -423,7 +418,7 @@ class RunObjectToolsUnionFunctionMapper
         _instance = RunObjectToolsUnionFunctionMapper._(),
       );
       RunObjectToolsUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolsFunctionTypeTypeMapper.ensureInitialized();
+      AssistantToolsFunctionTypeMapper.ensureInitialized();
       AssistantToolsFunctionFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -432,12 +427,9 @@ class RunObjectToolsUnionFunctionMapper
   @override
   final String id = 'RunObjectToolsUnionFunction';
 
-  static AssistantToolsFunctionTypeType _$type(RunObjectToolsUnionFunction v) =>
+  static AssistantToolsFunctionType _$type(RunObjectToolsUnionFunction v) =>
       v.type;
-  static const Field<
-    RunObjectToolsUnionFunction,
-    AssistantToolsFunctionTypeType
-  >
+  static const Field<RunObjectToolsUnionFunction, AssistantToolsFunctionType>
   _f$type = Field('type', _$type);
   static AssistantToolsFunctionFunction _$assistantToolsFunctionFunction(
     RunObjectToolsUnionFunction v,
@@ -561,7 +553,7 @@ abstract class RunObjectToolsUnionFunctionCopyWith<
   get assistantToolsFunctionFunction;
   @override
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   });
   RunObjectToolsUnionFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -598,7 +590,7 @@ class _RunObjectToolsUnionFunctionCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolsFunctionFunction: v));
   @override
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   }) => $apply(
     FieldCopyWithData({

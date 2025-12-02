@@ -20,7 +20,7 @@ class ChatCompletionRequestMessageContentPartImageImageUrlMapper
         _instance =
             ChatCompletionRequestMessageContentPartImageImageUrlMapper._(),
       );
-      ChatCompletionRequestMessageContentPartImageImageUrlDetailDetailMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartImageImageUrlDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,17 +35,18 @@ class ChatCompletionRequestMessageContentPartImageImageUrlMapper
     String
   >
   _f$url = Field('url', _$url);
-  static ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail
-  _$detail(ChatCompletionRequestMessageContentPartImageImageUrl v) => v.detail;
+  static ChatCompletionRequestMessageContentPartImageImageUrlDetail _$detail(
+    ChatCompletionRequestMessageContentPartImageImageUrl v,
+  ) => v.detail;
   static const Field<
     ChatCompletionRequestMessageContentPartImageImageUrl,
-    ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail
+    ChatCompletionRequestMessageContentPartImageImageUrlDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail.auto,
+    def: ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto,
   );
 
   @override
@@ -170,7 +171,7 @@ abstract class ChatCompletionRequestMessageContentPartImageImageUrlCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? url,
-    ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail? detail,
+    ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail,
   });
   ChatCompletionRequestMessageContentPartImageImageUrlCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -207,7 +208,7 @@ class _ChatCompletionRequestMessageContentPartImageImageUrlCopyWithImpl<
   @override
   $R call({
     String? url,
-    ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail? detail,
+    ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail,
   }) => $apply(
     FieldCopyWithData({
       if (url != null) #url: url,

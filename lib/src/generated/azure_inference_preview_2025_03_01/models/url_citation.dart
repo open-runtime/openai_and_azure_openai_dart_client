@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'url_citation_type_type.dart';
+import 'url_citation_type.dart';
 
 part 'url_citation.mapper.dart';
 
@@ -23,7 +23,7 @@ class UrlCitation with UrlCitationMappable {
 
   final String url;
   final String title;
-  final UrlCitationTypeType type;
+  final UrlCitationType type;
   @MappableField(key: 'start_index')
   final int startIndex;
   @MappableField(key: 'end_index')

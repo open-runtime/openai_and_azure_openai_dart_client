@@ -102,7 +102,7 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mapper
             CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mapper._(),
       );
       CreateEvalResponsesRunDataSourceInputMessagesUnionMapper.ensureInitialized();
-      CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeTypeMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -112,12 +112,12 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mapper
   final String id =
       'CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1';
 
-  static CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeType
-  _$type(CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1 v) =>
-      v.type;
+  static CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type _$type(
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1 v,
+  ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1,
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeType
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type
   >
   _f$type = Field('type', _$type);
   static List<
@@ -274,7 +274,7 @@ abstract class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1CopyWit
   get template;
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeType? type,
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type? type,
     List<
       CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnion
     >?
@@ -333,7 +333,7 @@ class _CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1CopyWithImpl<
   );
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeType? type,
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type? type,
     List<
       CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnion
     >?
@@ -382,7 +382,7 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mapper
             CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mapper._(),
       );
       CreateEvalResponsesRunDataSourceInputMessagesUnionMapper.ensureInitialized();
-      CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeTypeMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -391,12 +391,12 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mapper
   final String id =
       'CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2';
 
-  static CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeType
-  _$type(CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2 v) =>
-      v.type;
+  static CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type _$type(
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2 v,
+  ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2,
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeType
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type
   >
   _f$type = Field('type', _$type);
   static String _$itemReference(
@@ -543,7 +543,7 @@ abstract class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2CopyWit
         > {
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeType? type,
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type? type,
     String? itemReference,
   });
   CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2CopyWith<
@@ -584,7 +584,7 @@ class _CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2CopyWithImpl<
       CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mapper.ensureInitialized();
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeType? type,
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type? type,
     String? itemReference,
   }) => $apply(
     FieldCopyWithData({

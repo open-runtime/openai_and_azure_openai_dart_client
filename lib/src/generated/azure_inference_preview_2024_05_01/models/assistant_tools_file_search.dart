@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistant_tools_file_search_type_type.dart';
+import 'assistant_tools_file_search_type.dart';
 
 part 'assistant_tools_file_search.mapper.dart';
 
@@ -14,7 +14,7 @@ class AssistantToolsFileSearch with AssistantToolsFileSearchMappable {
     required this.type,
   });
 
-  final AssistantToolsFileSearchTypeType type;
+  final AssistantToolsFileSearchType type;
 
   static AssistantToolsFileSearch fromJson(Map<String, dynamic> json) => AssistantToolsFileSearchMapper.fromJson(json);
 

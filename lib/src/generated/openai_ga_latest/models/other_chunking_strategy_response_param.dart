@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'other_chunking_strategy_response_param_type_type.dart';
+import 'other_chunking_strategy_response_param_type.dart';
 
 part 'other_chunking_strategy_response_param.mapper.dart';
 
@@ -15,7 +15,7 @@ class OtherChunkingStrategyResponseParam with OtherChunkingStrategyResponseParam
     required this.type,
   });
 
-  final OtherChunkingStrategyResponseParamTypeType type;
+  final OtherChunkingStrategyResponseParamType type;
 
   static OtherChunkingStrategyResponseParam fromJson(Map<String, dynamic> json) => OtherChunkingStrategyResponseParamMapper.fromJson(json);
 

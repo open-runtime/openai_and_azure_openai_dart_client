@@ -18,7 +18,7 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventInputAudioBufferSpeechStoppedMapper._(),
       );
-      RealtimeServerEventInputAudioBufferSpeechStoppedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventInputAudioBufferSpeechStoppedTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferSpeechStopped, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventInputAudioBufferSpeechStoppedTypeType _$type(
+  static RealtimeServerEventInputAudioBufferSpeechStoppedType _$type(
     RealtimeServerEventInputAudioBufferSpeechStopped v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferSpeechStopped,
-    RealtimeServerEventInputAudioBufferSpeechStoppedTypeType
+    RealtimeServerEventInputAudioBufferSpeechStoppedType
   >
   _f$type = Field('type', _$type);
   static int _$audioEndMs(RealtimeServerEventInputAudioBufferSpeechStopped v) =>
@@ -172,7 +172,7 @@ abstract class RealtimeServerEventInputAudioBufferSpeechStoppedCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventInputAudioBufferSpeechStoppedTypeType? type,
+    RealtimeServerEventInputAudioBufferSpeechStoppedType? type,
     int? audioEndMs,
     String? itemId,
   });
@@ -206,7 +206,7 @@ class _RealtimeServerEventInputAudioBufferSpeechStoppedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventInputAudioBufferSpeechStoppedTypeType? type,
+    RealtimeServerEventInputAudioBufferSpeechStoppedType? type,
     int? audioEndMs,
     String? itemId,
   }) => $apply(

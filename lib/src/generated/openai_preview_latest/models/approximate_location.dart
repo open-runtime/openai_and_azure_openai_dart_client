@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'approximate_location_type_type.dart';
+import 'approximate_location_type.dart';
 
 part 'approximate_location.mapper.dart';
 
@@ -15,14 +15,14 @@ class ApproximateLocation with ApproximateLocationMappable {
     this.region,
     this.city,
     this.timezone,
-    this.type = ApproximateLocationTypeType.approximate,
+    this.type = ApproximateLocationType.approximate,
   });
 
   final String? country;
   final String? region;
   final String? city;
   final String? timezone;
-  final ApproximateLocationTypeType type;
+  final ApproximateLocationType type;
 
   static ApproximateLocation fromJson(Map<String, dynamic> json) => ApproximateLocationMapper.fromJson(json);
 

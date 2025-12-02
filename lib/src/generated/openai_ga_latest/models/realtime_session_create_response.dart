@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_function_tool.dart';
 import 'realtime_session_create_response_audio.dart';
-import 'realtime_session_create_response_include_include.dart';
+import 'realtime_session_create_response_include.dart';
 import 'realtime_session_create_response_max_output_tokens_union.dart';
 import 'realtime_session_create_response_tracing_union.dart';
 import 'realtime_session_create_response_turn_detection.dart';
@@ -38,7 +38,7 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   final String? objectField;
   @MappableField(key: 'expires_at')
   final int? expiresAt;
-  final List<RealtimeSessionCreateResponseIncludeInclude>? include;
+  final List<RealtimeSessionCreateResponseInclude>? include;
   final String? model;
   @MappableField(key: 'output_modalities')
   final dynamic? outputModalities;

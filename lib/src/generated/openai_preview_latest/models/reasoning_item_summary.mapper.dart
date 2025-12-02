@@ -14,7 +14,7 @@ class ReasoningItemSummaryMapper extends ClassMapperBase<ReasoningItemSummary> {
   static ReasoningItemSummaryMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ReasoningItemSummaryMapper._());
-      ReasoningItemSummaryTypeTypeMapper.ensureInitialized();
+      ReasoningItemSummaryTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class ReasoningItemSummaryMapper extends ClassMapperBase<ReasoningItemSummary> {
   @override
   final String id = 'ReasoningItemSummary';
 
-  static ReasoningItemSummaryTypeType _$type(ReasoningItemSummary v) => v.type;
-  static const Field<ReasoningItemSummary, ReasoningItemSummaryTypeType>
-  _f$type = Field('type', _$type);
+  static ReasoningItemSummaryType _$type(ReasoningItemSummary v) => v.type;
+  static const Field<ReasoningItemSummary, ReasoningItemSummaryType> _f$type =
+      Field('type', _$type);
   static String _$text(ReasoningItemSummary v) => v.text;
   static const Field<ReasoningItemSummary, String> _f$text = Field(
     'text',
@@ -118,7 +118,7 @@ abstract class ReasoningItemSummaryCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ReasoningItemSummaryTypeType? type, String? text});
+  $R call({ReasoningItemSummaryType? type, String? text});
   ReasoningItemSummaryCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -133,7 +133,7 @@ class _ReasoningItemSummaryCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ReasoningItemSummary> $mapper =
       ReasoningItemSummaryMapper.ensureInitialized();
   @override
-  $R call({ReasoningItemSummaryTypeType? type, String? text}) => $apply(
+  $R call({ReasoningItemSummaryType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

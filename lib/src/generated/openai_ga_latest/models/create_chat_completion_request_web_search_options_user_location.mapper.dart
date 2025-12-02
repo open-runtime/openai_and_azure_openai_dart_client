@@ -23,7 +23,7 @@ class CreateChatCompletionRequestWebSearchOptionsUserLocationMapper
         _instance =
             CreateChatCompletionRequestWebSearchOptionsUserLocationMapper._(),
       );
-      CreateChatCompletionRequestWebSearchOptionsUserLocationTypeTypeMapper.ensureInitialized();
+      CreateChatCompletionRequestWebSearchOptionsUserLocationTypeMapper.ensureInitialized();
       WebSearchLocationMapper.ensureInitialized();
     }
     return _instance!;
@@ -32,12 +32,12 @@ class CreateChatCompletionRequestWebSearchOptionsUserLocationMapper
   @override
   final String id = 'CreateChatCompletionRequestWebSearchOptionsUserLocation';
 
-  static CreateChatCompletionRequestWebSearchOptionsUserLocationTypeType _$type(
+  static CreateChatCompletionRequestWebSearchOptionsUserLocationType _$type(
     CreateChatCompletionRequestWebSearchOptionsUserLocation v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestWebSearchOptionsUserLocation,
-    CreateChatCompletionRequestWebSearchOptionsUserLocationTypeType
+    CreateChatCompletionRequestWebSearchOptionsUserLocationType
   >
   _f$type = Field('type', _$type);
   static WebSearchLocation _$approximate(
@@ -176,7 +176,7 @@ abstract class CreateChatCompletionRequestWebSearchOptionsUserLocationCopyWith<
   WebSearchLocationCopyWith<$R, WebSearchLocation, WebSearchLocation>
   get approximate;
   $R call({
-    CreateChatCompletionRequestWebSearchOptionsUserLocationTypeType? type,
+    CreateChatCompletionRequestWebSearchOptionsUserLocationType? type,
     WebSearchLocation? approximate,
   });
   CreateChatCompletionRequestWebSearchOptionsUserLocationCopyWith<
@@ -221,7 +221,7 @@ class _CreateChatCompletionRequestWebSearchOptionsUserLocationCopyWithImpl<
       $value.approximate.copyWith.$chain((v) => call(approximate: v));
   @override
   $R call({
-    CreateChatCompletionRequestWebSearchOptionsUserLocationTypeType? type,
+    CreateChatCompletionRequestWebSearchOptionsUserLocationType? type,
     WebSearchLocation? approximate,
   }) => $apply(
     FieldCopyWithData({

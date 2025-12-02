@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'user_role_update_request_role_role.dart';
+import 'user_role_update_request_role.dart';
 
 part 'user_role_update_request.mapper.dart';
 
@@ -14,7 +14,7 @@ class UserRoleUpdateRequest with UserRoleUpdateRequestMappable {
     required this.role,
   });
 
-  final UserRoleUpdateRequestRoleRole role;
+  final UserRoleUpdateRequestRole role;
 
   static UserRoleUpdateRequest fromJson(Map<String, dynamic> json) => UserRoleUpdateRequestMapper.fromJson(json);
 

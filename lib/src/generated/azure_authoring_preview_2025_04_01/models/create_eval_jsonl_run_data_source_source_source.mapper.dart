@@ -18,7 +18,7 @@ class CreateEvalJsonlRunDataSourceSourceSourceMapper
         _instance = CreateEvalJsonlRunDataSourceSourceSourceMapper._(),
       );
       EvalJsonlFileContentSourceContentMapper.ensureInitialized();
-      EvalJsonlFileIdSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileIdSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,18 +37,18 @@ class CreateEvalJsonlRunDataSourceSourceSourceMapper
   static String _$id(CreateEvalJsonlRunDataSourceSourceSource v) => v.id;
   static const Field<CreateEvalJsonlRunDataSourceSourceSource, String> _f$id =
       Field('id', _$id);
-  static EvalJsonlFileIdSourceTypeType _$type(
+  static EvalJsonlFileIdSourceType _$type(
     CreateEvalJsonlRunDataSourceSourceSource v,
   ) => v.type;
   static const Field<
     CreateEvalJsonlRunDataSourceSourceSource,
-    EvalJsonlFileIdSourceTypeType
+    EvalJsonlFileIdSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalJsonlFileIdSourceTypeType.fileId,
+    def: EvalJsonlFileIdSourceType.fileId,
   );
 
   @override
@@ -165,7 +165,7 @@ abstract class CreateEvalJsonlRunDataSourceSourceSourceCopyWith<
   $R call({
     List<EvalJsonlFileContentSourceContent>? content,
     String? id,
-    EvalJsonlFileIdSourceTypeType? type,
+    EvalJsonlFileIdSourceType? type,
   });
   CreateEvalJsonlRunDataSourceSourceSourceCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -208,7 +208,7 @@ class _CreateEvalJsonlRunDataSourceSourceSourceCopyWithImpl<$R, $Out>
   $R call({
     List<EvalJsonlFileContentSourceContent>? content,
     String? id,
-    EvalJsonlFileIdSourceTypeType? type,
+    EvalJsonlFileIdSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (content != null) #content: content,

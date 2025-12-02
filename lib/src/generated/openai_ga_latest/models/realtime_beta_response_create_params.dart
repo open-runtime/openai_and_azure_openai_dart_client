@@ -8,7 +8,7 @@ import 'metadata.dart';
 import 'prompt.dart';
 import 'realtime_beta_response_create_params_conversation_union.dart';
 import 'realtime_beta_response_create_params_max_output_tokens_union.dart';
-import 'realtime_beta_response_create_params_modalities_modalities.dart';
+import 'realtime_beta_response_create_params_modalities.dart';
 import 'realtime_beta_response_create_params_output_audio_format_output_audio_format.dart';
 import 'realtime_beta_response_create_params_tool_choice_union.dart';
 import 'realtime_beta_response_create_params_tools.dart';
@@ -37,7 +37,7 @@ class RealtimeBetaResponseCreateParams with RealtimeBetaResponseCreateParamsMapp
 
   @MappableField(key: 'tool_choice')
   final RealtimeBetaResponseCreateParamsToolChoiceUnion toolChoice;
-  final List<RealtimeBetaResponseCreateParamsModalitiesModalities>? modalities;
+  final List<RealtimeBetaResponseCreateParamsModalities>? modalities;
   final String? instructions;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;

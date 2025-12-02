@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'input_item.dart';
-import 'item_reference_type_type.dart';
+import 'item_reference_type.dart';
 
 part 'item_reference.mapper.dart';
 
@@ -19,7 +19,7 @@ class ItemReference with ItemReferenceMappable {
   });
 
   final String id;
-  final ItemReferenceTypeType type;
+  final ItemReferenceType type;
 
   static ItemReference fromJson(Map<String, dynamic> json) => ItemReferenceMapper.fromJson(json);
 

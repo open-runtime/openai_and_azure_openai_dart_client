@@ -21,7 +21,7 @@ class RealtimeTranscriptionSessionCreateRequestMapper
       RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper.ensureInitialized();
       RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper.ensureInitialized();
       AudioTranscriptionMapper.ensureInitialized();
-      RealtimeTranscriptionSessionCreateRequestIncludeIncludeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestIncludeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -86,11 +86,12 @@ class RealtimeTranscriptionSessionCreateRequestMapper
     key: r'input_audio_transcription',
     opt: true,
   );
-  static List<RealtimeTranscriptionSessionCreateRequestIncludeInclude>?
-  _$include(RealtimeTranscriptionSessionCreateRequest v) => v.include;
+  static List<RealtimeTranscriptionSessionCreateRequestInclude>? _$include(
+    RealtimeTranscriptionSessionCreateRequest v,
+  ) => v.include;
   static const Field<
     RealtimeTranscriptionSessionCreateRequest,
-    List<RealtimeTranscriptionSessionCreateRequestIncludeInclude>
+    List<RealtimeTranscriptionSessionCreateRequestInclude>
   >
   _f$include = Field('include', _$include, opt: true);
 
@@ -230,11 +231,11 @@ abstract class RealtimeTranscriptionSessionCreateRequestCopyWith<
   get inputAudioTranscription;
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateRequestIncludeInclude,
+    RealtimeTranscriptionSessionCreateRequestInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateRequestIncludeInclude,
-      RealtimeTranscriptionSessionCreateRequestIncludeInclude
+      RealtimeTranscriptionSessionCreateRequestInclude,
+      RealtimeTranscriptionSessionCreateRequestInclude
     >
   >?
   get include;
@@ -246,7 +247,7 @@ abstract class RealtimeTranscriptionSessionCreateRequestCopyWith<
     RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction?
     realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction,
     AudioTranscription? inputAudioTranscription,
-    List<RealtimeTranscriptionSessionCreateRequestIncludeInclude>? include,
+    List<RealtimeTranscriptionSessionCreateRequestInclude>? include,
   });
   RealtimeTranscriptionSessionCreateRequestCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -305,11 +306,11 @@ class _RealtimeTranscriptionSessionCreateRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateRequestIncludeInclude,
+    RealtimeTranscriptionSessionCreateRequestInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateRequestIncludeInclude,
-      RealtimeTranscriptionSessionCreateRequestIncludeInclude
+      RealtimeTranscriptionSessionCreateRequestInclude,
+      RealtimeTranscriptionSessionCreateRequestInclude
     >
   >?
   get include => $value.include != null

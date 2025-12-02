@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_shell_call_output_exit_outcome_type_type.dart';
+import 'function_shell_call_output_exit_outcome_type.dart';
 
 part 'function_shell_call_output_exit_outcome.mapper.dart';
 
@@ -13,12 +13,12 @@ part 'function_shell_call_output_exit_outcome.mapper.dart';
 class FunctionShellCallOutputExitOutcome with FunctionShellCallOutputExitOutcomeMappable {
   const FunctionShellCallOutputExitOutcome({
     required this.exitCode,
-    this.type = FunctionShellCallOutputExitOutcomeTypeType.exit,
+    this.type = FunctionShellCallOutputExitOutcomeType.exit,
   });
 
   @MappableField(key: 'exit_code')
   final int exitCode;
-  final FunctionShellCallOutputExitOutcomeTypeType type;
+  final FunctionShellCallOutputExitOutcomeType type;
 
   static FunctionShellCallOutputExitOutcome fromJson(Map<String, dynamic> json) => FunctionShellCallOutputExitOutcomeMapper.fromJson(json);
 

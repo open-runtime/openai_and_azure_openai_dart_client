@@ -17,7 +17,7 @@ class FunctionShellCallOutputExitOutcomeMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputExitOutcomeMapper._(),
       );
-      FunctionShellCallOutputExitOutcomeTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputExitOutcomeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class FunctionShellCallOutputExitOutcomeMapper
   static int _$exitCode(FunctionShellCallOutputExitOutcome v) => v.exitCode;
   static const Field<FunctionShellCallOutputExitOutcome, int> _f$exitCode =
       Field('exitCode', _$exitCode, key: r'exit_code');
-  static FunctionShellCallOutputExitOutcomeTypeType _$type(
+  static FunctionShellCallOutputExitOutcomeType _$type(
     FunctionShellCallOutputExitOutcome v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputExitOutcome,
-    FunctionShellCallOutputExitOutcomeTypeType
+    FunctionShellCallOutputExitOutcomeType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputExitOutcomeTypeType.exit,
+    def: FunctionShellCallOutputExitOutcomeType.exit,
   );
 
   @override
@@ -138,7 +138,7 @@ abstract class FunctionShellCallOutputExitOutcomeCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeTypeType? type});
+  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeType? type});
   FunctionShellCallOutputExitOutcomeCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -161,7 +161,7 @@ class _FunctionShellCallOutputExitOutcomeCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellCallOutputExitOutcome> $mapper =
       FunctionShellCallOutputExitOutcomeMapper.ensureInitialized();
   @override
-  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeTypeType? type}) =>
+  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeType? type}) =>
       $apply(
         FieldCopyWithData({
           if (exitCode != null) #exitCode: exitCode,

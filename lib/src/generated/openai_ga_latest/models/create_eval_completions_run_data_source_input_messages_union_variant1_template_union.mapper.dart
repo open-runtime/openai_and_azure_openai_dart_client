@@ -111,9 +111,9 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
             CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMapper._(),
       );
       CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionMapper.ensureInitialized();
-      EasyInputMessageRoleRoleMapper.ensureInitialized();
+      EasyInputMessageRoleMapper.ensureInitialized();
       EasyInputMessageContentUnionMapper.ensureInitialized();
-      EasyInputMessageTypeTypeMapper.ensureInitialized();
+      EasyInputMessageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -122,13 +122,13 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
   final String id =
       'CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage';
 
-  static EasyInputMessageRoleRole _$role(
+  static EasyInputMessageRole _$role(
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage
     v,
   ) => v.role;
   static const Field<
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage,
-    EasyInputMessageRoleRole
+    EasyInputMessageRole
   >
   _f$role = Field('role', _$role);
   static EasyInputMessageContentUnion _$content(
@@ -140,13 +140,13 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
     EasyInputMessageContentUnion
   >
   _f$content = Field('content', _$content);
-  static EasyInputMessageTypeType? _$type(
+  static EasyInputMessageType? _$type(
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage
     v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage,
-    EasyInputMessageTypeType
+    EasyInputMessageType
   >
   _f$type = Field('type', _$type);
 
@@ -296,9 +296,9 @@ abstract class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Templ
   get content;
   @override
   $R call({
-    EasyInputMessageRoleRole? role,
+    EasyInputMessageRole? role,
     EasyInputMessageContentUnion? content,
-    EasyInputMessageTypeType? type,
+    EasyInputMessageType? type,
   });
   CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageCopyWith<
     $R2,
@@ -345,7 +345,7 @@ class _CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EasyInputMessageRoleRole? role,
+    EasyInputMessageRole? role,
     EasyInputMessageContentUnion? content,
     Object? type = $none,
   }) => $apply(
@@ -394,9 +394,9 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
             CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMapper._(),
       );
       CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionMapper.ensureInitialized();
-      EvalItemRoleRoleMapper.ensureInitialized();
+      EvalItemRoleMapper.ensureInitialized();
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -405,13 +405,13 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
   final String id =
       'CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem';
 
-  static EvalItemRoleRole _$role(
+  static EvalItemRole _$role(
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem
     v,
   ) => v.role;
   static const Field<
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem,
-    EvalItemRoleRole
+    EvalItemRole
   >
   _f$role = Field('role', _$role);
   static EvalItemContentUnion _$content(
@@ -423,13 +423,13 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
     EvalItemContentUnion
   >
   _f$content = Field('content', _$content);
-  static EvalItemTypeType? _$type(
+  static EvalItemType? _$type(
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem
     v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem,
-    EvalItemTypeType
+    EvalItemType
   >
   _f$type = Field('type', _$type);
 
@@ -575,9 +575,9 @@ abstract class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Templ
   get content;
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
-    EvalItemTypeType? type,
+    EvalItemType? type,
   });
   CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemCopyWith<
     $R2,
@@ -620,7 +620,7 @@ class _CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_conversation_item_message_assistant_content_type_type.dart';
+import 'realtime_conversation_item_message_assistant_content_type.dart';
 
 part 'realtime_conversation_item_message_assistant_content.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeConversationItemMessageAssistantContent with RealtimeConversationI
     this.transcript,
   });
 
-  final RealtimeConversationItemMessageAssistantContentTypeType? type;
+  final RealtimeConversationItemMessageAssistantContentType? type;
   final String? text;
   final String? audio;
   final String? transcript;

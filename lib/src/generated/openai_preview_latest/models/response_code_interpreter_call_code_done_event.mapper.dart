@@ -17,7 +17,7 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallCodeDoneEventMapper._(),
       );
-      ResponseCodeInterpreterCallCodeDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseCodeInterpreterCallCodeDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
   @override
   final String id = 'ResponseCodeInterpreterCallCodeDoneEvent';
 
-  static ResponseCodeInterpreterCallCodeDoneEventTypeType _$type(
+  static ResponseCodeInterpreterCallCodeDoneEventType _$type(
     ResponseCodeInterpreterCallCodeDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseCodeInterpreterCallCodeDoneEvent,
-    ResponseCodeInterpreterCallCodeDoneEventTypeType
+    ResponseCodeInterpreterCallCodeDoneEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseCodeInterpreterCallCodeDoneEvent v) =>
@@ -143,7 +143,7 @@ abstract class ResponseCodeInterpreterCallCodeDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseCodeInterpreterCallCodeDoneEventTypeType? type,
+    ResponseCodeInterpreterCallCodeDoneEventType? type,
     int? outputIndex,
     String? code,
   });
@@ -171,7 +171,7 @@ class _ResponseCodeInterpreterCallCodeDoneEventCopyWithImpl<$R, $Out>
       ResponseCodeInterpreterCallCodeDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseCodeInterpreterCallCodeDoneEventTypeType? type,
+    ResponseCodeInterpreterCallCodeDoneEventType? type,
     int? outputIndex,
     String? code,
   }) => $apply(

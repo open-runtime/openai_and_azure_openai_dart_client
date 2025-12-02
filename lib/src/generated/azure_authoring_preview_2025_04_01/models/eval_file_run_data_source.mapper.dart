@@ -15,7 +15,7 @@ class EvalFileRunDataSourceMapper
   static EvalFileRunDataSourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalFileRunDataSourceMapper._());
-      EvalFileRunDataSourceTypeTypeMapper.ensureInitialized();
+      EvalFileRunDataSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,15 +29,9 @@ class EvalFileRunDataSourceMapper
     _$fileId,
     key: r'file_id',
   );
-  static EvalFileRunDataSourceTypeType _$type(EvalFileRunDataSource v) =>
-      v.type;
-  static const Field<EvalFileRunDataSource, EvalFileRunDataSourceTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: EvalFileRunDataSourceTypeType.file,
-  );
+  static EvalFileRunDataSourceType _$type(EvalFileRunDataSource v) => v.type;
+  static const Field<EvalFileRunDataSource, EvalFileRunDataSourceType> _f$type =
+      Field('type', _$type, opt: true, def: EvalFileRunDataSourceType.file);
 
   @override
   final MappableFields<EvalFileRunDataSource> fields = const {
@@ -126,7 +120,7 @@ abstract class EvalFileRunDataSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? fileId, EvalFileRunDataSourceTypeType? type});
+  $R call({String? fileId, EvalFileRunDataSourceType? type});
   EvalFileRunDataSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -141,7 +135,7 @@ class _EvalFileRunDataSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalFileRunDataSource> $mapper =
       EvalFileRunDataSourceMapper.ensureInitialized();
   @override
-  $R call({String? fileId, EvalFileRunDataSourceTypeType? type}) => $apply(
+  $R call({String? fileId, EvalFileRunDataSourceType? type}) => $apply(
     FieldCopyWithData({
       if (fileId != null) #fileId: fileId,
       if (type != null) #type: type,

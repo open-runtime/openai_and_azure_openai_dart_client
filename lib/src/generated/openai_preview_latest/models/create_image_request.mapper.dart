@@ -15,13 +15,13 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateImageRequestMapper._());
       CreateImageRequestModelUnionMapper.ensureInitialized();
-      CreateImageRequestQualityQualityMapper.ensureInitialized();
+      CreateImageRequestQualityMapper.ensureInitialized();
       CreateImageRequestResponseFormatResponseFormatMapper.ensureInitialized();
       CreateImageRequestOutputFormatOutputFormatMapper.ensureInitialized();
-      CreateImageRequestSizeSizeMapper.ensureInitialized();
-      CreateImageRequestModerationModerationMapper.ensureInitialized();
-      CreateImageRequestBackgroundBackgroundMapper.ensureInitialized();
-      CreateImageRequestStyleStyleMapper.ensureInitialized();
+      CreateImageRequestSizeMapper.ensureInitialized();
+      CreateImageRequestModerationMapper.ensureInitialized();
+      CreateImageRequestBackgroundMapper.ensureInitialized();
+      CreateImageRequestStyleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -56,15 +56,15 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     opt: true,
     def: 1,
   );
-  static CreateImageRequestQualityQuality? _$quality(CreateImageRequest v) =>
+  static CreateImageRequestQuality? _$quality(CreateImageRequest v) =>
       v.quality;
-  static const Field<CreateImageRequest, CreateImageRequestQualityQuality>
-  _f$quality = Field(
-    'quality',
-    _$quality,
-    opt: true,
-    def: CreateImageRequestQualityQuality.auto,
-  );
+  static const Field<CreateImageRequest, CreateImageRequestQuality> _f$quality =
+      Field(
+        'quality',
+        _$quality,
+        opt: true,
+        def: CreateImageRequestQuality.auto,
+      );
   static CreateImageRequestResponseFormatResponseFormat? _$responseFormat(
     CreateImageRequest v,
   ) => v.responseFormat;
@@ -101,37 +101,30 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     opt: true,
     def: 100,
   );
-  static CreateImageRequestSizeSize? _$size(CreateImageRequest v) => v.size;
-  static const Field<CreateImageRequest, CreateImageRequestSizeSize> _f$size =
-      Field('size', _$size, opt: true, def: CreateImageRequestSizeSize.auto);
-  static CreateImageRequestModerationModeration? _$moderation(
-    CreateImageRequest v,
-  ) => v.moderation;
-  static const Field<CreateImageRequest, CreateImageRequestModerationModeration>
+  static CreateImageRequestSize? _$size(CreateImageRequest v) => v.size;
+  static const Field<CreateImageRequest, CreateImageRequestSize> _f$size =
+      Field('size', _$size, opt: true, def: CreateImageRequestSize.auto);
+  static CreateImageRequestModeration? _$moderation(CreateImageRequest v) =>
+      v.moderation;
+  static const Field<CreateImageRequest, CreateImageRequestModeration>
   _f$moderation = Field(
     'moderation',
     _$moderation,
     opt: true,
-    def: CreateImageRequestModerationModeration.auto,
+    def: CreateImageRequestModeration.auto,
   );
-  static CreateImageRequestBackgroundBackground? _$background(
-    CreateImageRequest v,
-  ) => v.background;
-  static const Field<CreateImageRequest, CreateImageRequestBackgroundBackground>
+  static CreateImageRequestBackground? _$background(CreateImageRequest v) =>
+      v.background;
+  static const Field<CreateImageRequest, CreateImageRequestBackground>
   _f$background = Field(
     'background',
     _$background,
     opt: true,
-    def: CreateImageRequestBackgroundBackground.auto,
+    def: CreateImageRequestBackground.auto,
   );
-  static CreateImageRequestStyleStyle? _$style(CreateImageRequest v) => v.style;
-  static const Field<CreateImageRequest, CreateImageRequestStyleStyle>
-  _f$style = Field(
-    'style',
-    _$style,
-    opt: true,
-    def: CreateImageRequestStyleStyle.vivid,
-  );
+  static CreateImageRequestStyle? _$style(CreateImageRequest v) => v.style;
+  static const Field<CreateImageRequest, CreateImageRequestStyle> _f$style =
+      Field('style', _$style, opt: true, def: CreateImageRequestStyle.vivid);
 
   @override
   final MappableFields<CreateImageRequest> fields = const {
@@ -252,14 +245,14 @@ abstract class CreateImageRequestCopyWith<
     String? user,
     CreateImageRequestModelUnion? model,
     int? n,
-    CreateImageRequestQualityQuality? quality,
+    CreateImageRequestQuality? quality,
     CreateImageRequestResponseFormatResponseFormat? responseFormat,
     CreateImageRequestOutputFormatOutputFormat? outputFormat,
     int? outputCompression,
-    CreateImageRequestSizeSize? size,
-    CreateImageRequestModerationModeration? moderation,
-    CreateImageRequestBackgroundBackground? background,
-    CreateImageRequestStyleStyle? style,
+    CreateImageRequestSize? size,
+    CreateImageRequestModeration? moderation,
+    CreateImageRequestBackground? background,
+    CreateImageRequestStyle? style,
   });
   CreateImageRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

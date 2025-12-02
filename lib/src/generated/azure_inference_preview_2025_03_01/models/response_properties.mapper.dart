@@ -14,7 +14,7 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
   static ResponsePropertiesMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponsePropertiesMapper._());
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
@@ -26,15 +26,14 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
   @override
   final String id = 'ResponseProperties';
 
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    ResponseProperties v,
-  ) => v.truncation;
-  static const Field<ResponseProperties, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(ResponseProperties v) =>
+      v.truncation;
+  static const Field<ResponseProperties, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static String? _$previousResponseId(ResponseProperties v) =>
       v.previousResponseId;
@@ -205,7 +204,7 @@ abstract class ResponsePropertiesCopyWith<
   >?
   get toolChoice;
   $R call({
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     String? previousResponseId,
     Reasoning? reasoning,
     int? maxOutputTokens,

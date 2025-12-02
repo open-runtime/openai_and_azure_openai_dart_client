@@ -14,15 +14,15 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
   static ImageGenToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImageGenToolMapper._());
-      ImageGenToolTypeTypeMapper.ensureInitialized();
+      ImageGenToolTypeMapper.ensureInitialized();
       InputFidelityMapper.ensureInitialized();
       ImageGenToolInputImageMaskMapper.ensureInitialized();
-      ImageGenToolModelModelMapper.ensureInitialized();
-      ImageGenToolQualityQualityMapper.ensureInitialized();
-      ImageGenToolSizeSizeMapper.ensureInitialized();
+      ImageGenToolModelMapper.ensureInitialized();
+      ImageGenToolQualityMapper.ensureInitialized();
+      ImageGenToolSizeMapper.ensureInitialized();
       ImageGenToolOutputFormatOutputFormatMapper.ensureInitialized();
-      ImageGenToolModerationModerationMapper.ensureInitialized();
-      ImageGenToolBackgroundBackgroundMapper.ensureInitialized();
+      ImageGenToolModerationMapper.ensureInitialized();
+      ImageGenToolBackgroundMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,8 +30,8 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
   @override
   final String id = 'ImageGenTool';
 
-  static ImageGenToolTypeType _$type(ImageGenTool v) => v.type;
-  static const Field<ImageGenTool, ImageGenToolTypeType> _f$type = Field(
+  static ImageGenToolType _$type(ImageGenTool v) => v.type;
+  static const Field<ImageGenTool, ImageGenToolType> _f$type = Field(
     'type',
     _$type,
   );
@@ -52,27 +52,26 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
     key: r'input_image_mask',
     opt: true,
   );
-  static ImageGenToolModelModel _$model(ImageGenTool v) => v.model;
-  static const Field<ImageGenTool, ImageGenToolModelModel> _f$model = Field(
+  static ImageGenToolModel _$model(ImageGenTool v) => v.model;
+  static const Field<ImageGenTool, ImageGenToolModel> _f$model = Field(
     'model',
     _$model,
     opt: true,
-    def: ImageGenToolModelModel.gptImage1,
+    def: ImageGenToolModel.gptImage1,
   );
-  static ImageGenToolQualityQuality _$quality(ImageGenTool v) => v.quality;
-  static const Field<ImageGenTool, ImageGenToolQualityQuality> _f$quality =
-      Field(
-        'quality',
-        _$quality,
-        opt: true,
-        def: ImageGenToolQualityQuality.auto,
-      );
-  static ImageGenToolSizeSize _$size(ImageGenTool v) => v.size;
-  static const Field<ImageGenTool, ImageGenToolSizeSize> _f$size = Field(
+  static ImageGenToolQuality _$quality(ImageGenTool v) => v.quality;
+  static const Field<ImageGenTool, ImageGenToolQuality> _f$quality = Field(
+    'quality',
+    _$quality,
+    opt: true,
+    def: ImageGenToolQuality.auto,
+  );
+  static ImageGenToolSize _$size(ImageGenTool v) => v.size;
+  static const Field<ImageGenTool, ImageGenToolSize> _f$size = Field(
     'size',
     _$size,
     opt: true,
-    def: ImageGenToolSizeSize.auto,
+    def: ImageGenToolSize.auto,
   );
   static ImageGenToolOutputFormatOutputFormat _$outputFormat(ImageGenTool v) =>
       v.outputFormat;
@@ -92,24 +91,22 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
     opt: true,
     def: 100,
   );
-  static ImageGenToolModerationModeration _$moderation(ImageGenTool v) =>
-      v.moderation;
-  static const Field<ImageGenTool, ImageGenToolModerationModeration>
-  _f$moderation = Field(
-    'moderation',
-    _$moderation,
-    opt: true,
-    def: ImageGenToolModerationModeration.auto,
-  );
-  static ImageGenToolBackgroundBackground _$background(ImageGenTool v) =>
-      v.background;
-  static const Field<ImageGenTool, ImageGenToolBackgroundBackground>
-  _f$background = Field(
-    'background',
-    _$background,
-    opt: true,
-    def: ImageGenToolBackgroundBackground.auto,
-  );
+  static ImageGenToolModeration _$moderation(ImageGenTool v) => v.moderation;
+  static const Field<ImageGenTool, ImageGenToolModeration> _f$moderation =
+      Field(
+        'moderation',
+        _$moderation,
+        opt: true,
+        def: ImageGenToolModeration.auto,
+      );
+  static ImageGenToolBackground _$background(ImageGenTool v) => v.background;
+  static const Field<ImageGenTool, ImageGenToolBackground> _f$background =
+      Field(
+        'background',
+        _$background,
+        opt: true,
+        def: ImageGenToolBackground.auto,
+      );
   static int _$partialImages(ImageGenTool v) => v.partialImages;
   static const Field<ImageGenTool, int> _f$partialImages = Field(
     'partialImages',
@@ -223,16 +220,16 @@ abstract class ImageGenToolCopyWith<$R, $In extends ImageGenTool, $Out>
   >?
   get imageGenToolInputImageMask;
   $R call({
-    ImageGenToolTypeType? type,
+    ImageGenToolType? type,
     InputFidelity? inputFidelity,
     ImageGenToolInputImageMask? imageGenToolInputImageMask,
-    ImageGenToolModelModel? model,
-    ImageGenToolQualityQuality? quality,
-    ImageGenToolSizeSize? size,
+    ImageGenToolModel? model,
+    ImageGenToolQuality? quality,
+    ImageGenToolSize? size,
     ImageGenToolOutputFormatOutputFormat? outputFormat,
     int? outputCompression,
-    ImageGenToolModerationModeration? moderation,
-    ImageGenToolBackgroundBackground? background,
+    ImageGenToolModeration? moderation,
+    ImageGenToolBackground? background,
     int? partialImages,
   });
   ImageGenToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -256,16 +253,16 @@ class _ImageGenToolCopyWithImpl<$R, $Out>
       .$chain((v) => call(imageGenToolInputImageMask: v));
   @override
   $R call({
-    ImageGenToolTypeType? type,
+    ImageGenToolType? type,
     Object? inputFidelity = $none,
     Object? imageGenToolInputImageMask = $none,
-    ImageGenToolModelModel? model,
-    ImageGenToolQualityQuality? quality,
-    ImageGenToolSizeSize? size,
+    ImageGenToolModel? model,
+    ImageGenToolQuality? quality,
+    ImageGenToolSize? size,
     ImageGenToolOutputFormatOutputFormat? outputFormat,
     int? outputCompression,
-    ImageGenToolModerationModeration? moderation,
-    ImageGenToolBackgroundBackground? background,
+    ImageGenToolModeration? moderation,
+    ImageGenToolBackground? background,
     int? partialImages,
   }) => $apply(
     FieldCopyWithData({

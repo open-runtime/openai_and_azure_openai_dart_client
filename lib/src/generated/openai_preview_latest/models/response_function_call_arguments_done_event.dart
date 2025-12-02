@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_function_call_arguments_done_event_type_type.dart';
+import 'response_function_call_arguments_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_function_call_arguments_done_event.mapper.dart';
@@ -19,7 +19,7 @@ class ResponseFunctionCallArgumentsDoneEvent with ResponseFunctionCallArgumentsD
     required this.arguments,
   });
 
-  final ResponseFunctionCallArgumentsDoneEventTypeType type;
+  final ResponseFunctionCallArgumentsDoneEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

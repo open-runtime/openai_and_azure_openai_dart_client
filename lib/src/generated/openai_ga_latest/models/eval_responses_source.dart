@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_responses_source_type_type.dart';
+import 'eval_responses_source_type.dart';
 import 'reasoning_effort.dart';
 
 part 'eval_responses_source.mapper.dart';
@@ -27,7 +27,7 @@ class EvalResponsesSource with EvalResponsesSourceMappable {
     this.tools,
   });
 
-  final EvalResponsesSourceTypeType type;
+  final EvalResponsesSourceType type;
   final dynamic? metadata;
   final String? model;
   @MappableField(key: 'instructions_search')

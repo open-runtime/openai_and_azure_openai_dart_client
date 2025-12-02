@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_delta_object_delta_role_role.dart';
+import 'message_delta_object_delta_role.dart';
 import 'message_delta_object_delta_content_union.dart';
 
 part 'message_delta_object_delta.mapper.dart';
@@ -16,7 +16,7 @@ class MessageDeltaObjectDelta with MessageDeltaObjectDeltaMappable {
     this.content,
   });
 
-  final MessageDeltaObjectDeltaRoleRole? role;
+  final MessageDeltaObjectDeltaRole? role;
   final List<MessageDeltaObjectDeltaContentUnion>? content;
 
   static MessageDeltaObjectDelta fromJson(Map<String, dynamic> json) => MessageDeltaObjectDeltaMapper.fromJson(json);

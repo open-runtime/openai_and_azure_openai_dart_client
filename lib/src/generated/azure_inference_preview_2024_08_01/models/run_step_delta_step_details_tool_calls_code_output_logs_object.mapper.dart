@@ -20,7 +20,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper
         _instance =
             RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -33,12 +33,12 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper
   ) => v.indexField;
   static const Field<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType _$type(
     RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$logs(
@@ -173,7 +173,7 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   });
   RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectCopyWith<$R2, $In, $Out2>
@@ -211,7 +211,7 @@ class _RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectCopyWithImpl<
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? type,
     Object? logs = $none,
   }) => $apply(
     FieldCopyWithData({

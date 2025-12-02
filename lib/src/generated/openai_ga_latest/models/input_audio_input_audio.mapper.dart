@@ -14,7 +14,7 @@ class InputAudioInputAudioMapper extends ClassMapperBase<InputAudioInputAudio> {
   static InputAudioInputAudioMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputAudioInputAudioMapper._());
-      InputAudioInputAudioFormatFormatMapper.ensureInitialized();
+      InputAudioInputAudioFormatMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,9 +27,9 @@ class InputAudioInputAudioMapper extends ClassMapperBase<InputAudioInputAudio> {
     'data',
     _$data,
   );
-  static InputAudioInputAudioFormatFormat _$format(InputAudioInputAudio v) =>
+  static InputAudioInputAudioFormat _$format(InputAudioInputAudio v) =>
       v.format;
-  static const Field<InputAudioInputAudio, InputAudioInputAudioFormatFormat>
+  static const Field<InputAudioInputAudio, InputAudioInputAudioFormat>
   _f$format = Field('format', _$format);
 
   @override
@@ -119,7 +119,7 @@ abstract class InputAudioInputAudioCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? data, InputAudioInputAudioFormatFormat? format});
+  $R call({String? data, InputAudioInputAudioFormat? format});
   InputAudioInputAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +134,7 @@ class _InputAudioInputAudioCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InputAudioInputAudio> $mapper =
       InputAudioInputAudioMapper.ensureInitialized();
   @override
-  $R call({String? data, InputAudioInputAudioFormatFormat? format}) => $apply(
+  $R call({String? data, InputAudioInputAudioFormat? format}) => $apply(
     FieldCopyWithData({
       if (data != null) #data: data,
       if (format != null) #format: format,

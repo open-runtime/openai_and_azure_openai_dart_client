@@ -111,7 +111,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyU
             CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Mapper._(),
       );
       CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
-      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeTypeMapper.ensureInitialized();
+      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -120,14 +120,14 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyU
   final String id =
       'CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1';
 
-  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType
+  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type
   _$type(
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1
     v,
   ) => v.type;
   static const Field<
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type
   >
   _f$type = Field('type', _$type);
 
@@ -269,7 +269,7 @@ abstract class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunking
         > {
   @override
   $R call({
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType?
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type?
     type,
   });
   CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1CopyWith<
@@ -310,7 +310,7 @@ class _CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategy
       CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Mapper.ensureInitialized();
   @override
   $R call({
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType?
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type?
     type,
   }) => $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
@@ -350,7 +350,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyU
             CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Mapper._(),
       );
       CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
-      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeTypeMapper.ensureInitialized();
+      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeMapper.ensureInitialized();
       CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMapper.ensureInitialized();
     }
     return _instance!;
@@ -360,14 +360,14 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyU
   final String id =
       'CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2';
 
-  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType
+  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type
   _$type(
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2
     v,
   ) => v.type;
   static const Field<
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type
   >
   _f$type = Field('type', _$type);
   static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static
@@ -538,7 +538,7 @@ abstract class CreateAssistantRequestToolResourcesFileSearchVectorStoresChunking
   get createAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static;
   @override
   $R call({
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType?
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type?
     type,
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static?
     createAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static,
@@ -596,7 +596,7 @@ class _CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategy
       );
   @override
   $R call({
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType?
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type?
     type,
     CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static?
     createAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static,

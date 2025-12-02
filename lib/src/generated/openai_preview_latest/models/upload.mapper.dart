@@ -14,7 +14,7 @@ class UploadMapper extends ClassMapperBase<Upload> {
   static UploadMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UploadMapper._());
-      UploadStatusStatusMapper.ensureInitialized();
+      UploadStatusMapper.ensureInitialized();
       UploadObjectObjectEnumMapper.ensureInitialized();
       OpenAiFileMapper.ensureInitialized();
     }
@@ -41,8 +41,8 @@ class UploadMapper extends ClassMapperBase<Upload> {
   static const Field<Upload, int> _f$bytes = Field('bytes', _$bytes);
   static String _$purpose(Upload v) => v.purpose;
   static const Field<Upload, String> _f$purpose = Field('purpose', _$purpose);
-  static UploadStatusStatus _$status(Upload v) => v.status;
-  static const Field<Upload, UploadStatusStatus> _f$status = Field(
+  static UploadStatus _$status(Upload v) => v.status;
+  static const Field<Upload, UploadStatus> _f$status = Field(
     'status',
     _$status,
   );
@@ -150,7 +150,7 @@ abstract class UploadCopyWith<$R, $In extends Upload, $Out>
     String? filename,
     int? bytes,
     String? purpose,
-    UploadStatusStatus? status,
+    UploadStatus? status,
     int? expiresAt,
     UploadObjectObjectEnum? objectEnum,
     OpenAiFile? file,
@@ -174,7 +174,7 @@ class _UploadCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Upload, $Out>
     String? filename,
     int? bytes,
     String? purpose,
-    UploadStatusStatus? status,
+    UploadStatus? status,
     int? expiresAt,
     Object? objectEnum = $none,
     Object? file = $none,

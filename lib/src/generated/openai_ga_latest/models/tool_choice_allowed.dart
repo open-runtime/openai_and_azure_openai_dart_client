@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_allowed_mode_mode.dart';
-import 'tool_choice_allowed_type_type.dart';
+import 'tool_choice_allowed_mode.dart';
+import 'tool_choice_allowed_type.dart';
 import 'tool_choice_param.dart';
 
 part 'tool_choice_allowed.mapper.dart';
@@ -20,8 +20,8 @@ class ToolChoiceAllowed with ToolChoiceAllowedMappable {
     required this.tools,
   });
 
-  final ToolChoiceAllowedTypeType type;
-  final ToolChoiceAllowedModeMode mode;
+  final ToolChoiceAllowedType type;
+  final ToolChoiceAllowedMode mode;
   final List<dynamic> tools;
 
   static ToolChoiceAllowed fromJson(Map<String, dynamic> json) => ToolChoiceAllowedMapper.fromJson(json);

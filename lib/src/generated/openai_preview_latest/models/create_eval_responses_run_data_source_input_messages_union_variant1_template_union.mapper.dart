@@ -358,9 +358,9 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEva
             CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMapper._(),
       );
       CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionMapper.ensureInitialized();
-      EvalItemRoleRoleMapper.ensureInitialized();
+      EvalItemRoleMapper.ensureInitialized();
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -369,13 +369,13 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEva
   final String id =
       'CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem';
 
-  static EvalItemRoleRole _$role(
+  static EvalItemRole _$role(
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem
     v,
   ) => v.role;
   static const Field<
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem,
-    EvalItemRoleRole
+    EvalItemRole
   >
   _f$role = Field('role', _$role);
   static EvalItemContentUnion _$content(
@@ -387,13 +387,13 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEva
     EvalItemContentUnion
   >
   _f$content = Field('content', _$content);
-  static EvalItemTypeType? _$type(
+  static EvalItemType? _$type(
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem
     v,
   ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem,
-    EvalItemTypeType
+    EvalItemType
   >
   _f$type = Field('type', _$type);
 
@@ -539,9 +539,9 @@ abstract class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Templat
   get content;
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
-    EvalItemTypeType? type,
+    EvalItemType? type,
   });
   CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemCopyWith<
     $R2,
@@ -584,7 +584,7 @@ class _CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnionEv
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(

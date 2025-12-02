@@ -14,7 +14,7 @@ class RealtimeSessionToolsMapper extends ClassMapperBase<RealtimeSessionTools> {
   static RealtimeSessionToolsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeSessionToolsMapper._());
-      RealtimeSessionToolsTypeTypeMapper.ensureInitialized();
+      RealtimeSessionToolsTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class RealtimeSessionToolsMapper extends ClassMapperBase<RealtimeSessionTools> {
   @override
   final String id = 'RealtimeSessionTools';
 
-  static RealtimeSessionToolsTypeType? _$type(RealtimeSessionTools v) => v.type;
-  static const Field<RealtimeSessionTools, RealtimeSessionToolsTypeType>
-  _f$type = Field('type', _$type, opt: true);
+  static RealtimeSessionToolsType? _$type(RealtimeSessionTools v) => v.type;
+  static const Field<RealtimeSessionTools, RealtimeSessionToolsType> _f$type =
+      Field('type', _$type, opt: true);
   static String? _$name(RealtimeSessionTools v) => v.name;
   static const Field<RealtimeSessionTools, String> _f$name = Field(
     'name',
@@ -136,7 +136,7 @@ abstract class RealtimeSessionToolsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeSessionToolsTypeType? type,
+    RealtimeSessionToolsType? type,
     String? name,
     String? description,
     dynamic parameters,

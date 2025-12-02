@@ -17,7 +17,7 @@ class FileSearchToolRankingOptionsMapper
       MapperContainer.globals.use(
         _instance = FileSearchToolRankingOptionsMapper._(),
       );
-      FileSearchToolRankingOptionsRankerRankerMapper.ensureInitialized();
+      FileSearchToolRankingOptionsRankerMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class FileSearchToolRankingOptionsMapper
   @override
   final String id = 'FileSearchToolRankingOptions';
 
-  static FileSearchToolRankingOptionsRankerRanker _$ranker(
+  static FileSearchToolRankingOptionsRanker _$ranker(
     FileSearchToolRankingOptions v,
   ) => v.ranker;
   static const Field<
     FileSearchToolRankingOptions,
-    FileSearchToolRankingOptionsRankerRanker
+    FileSearchToolRankingOptionsRanker
   >
   _f$ranker = Field(
     'ranker',
     _$ranker,
     opt: true,
-    def: FileSearchToolRankingOptionsRankerRanker.auto,
+    def: FileSearchToolRankingOptionsRanker.auto,
   );
   static num _$scoreThreshold(FileSearchToolRankingOptions v) =>
       v.scoreThreshold;
@@ -139,10 +139,7 @@ abstract class FileSearchToolRankingOptionsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    FileSearchToolRankingOptionsRankerRanker? ranker,
-    num? scoreThreshold,
-  });
+  $R call({FileSearchToolRankingOptionsRanker? ranker, num? scoreThreshold});
   FileSearchToolRankingOptionsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -166,15 +163,13 @@ class _FileSearchToolRankingOptionsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileSearchToolRankingOptions> $mapper =
       FileSearchToolRankingOptionsMapper.ensureInitialized();
   @override
-  $R call({
-    FileSearchToolRankingOptionsRankerRanker? ranker,
-    num? scoreThreshold,
-  }) => $apply(
-    FieldCopyWithData({
-      if (ranker != null) #ranker: ranker,
-      if (scoreThreshold != null) #scoreThreshold: scoreThreshold,
-    }),
-  );
+  $R call({FileSearchToolRankingOptionsRanker? ranker, num? scoreThreshold}) =>
+      $apply(
+        FieldCopyWithData({
+          if (ranker != null) #ranker: ranker,
+          if (scoreThreshold != null) #scoreThreshold: scoreThreshold,
+        }),
+      );
   @override
   FileSearchToolRankingOptions $make(CopyWithData data) =>
       FileSearchToolRankingOptions(

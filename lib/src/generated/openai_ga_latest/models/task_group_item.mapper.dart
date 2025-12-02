@@ -16,7 +16,7 @@ class TaskGroupItemMapper extends ClassMapperBase<TaskGroupItem> {
       MapperContainer.globals.use(_instance = TaskGroupItemMapper._());
       TaskGroupTaskMapper.ensureInitialized();
       TaskGroupItemObjectObjectEnumMapper.ensureInitialized();
-      TaskGroupItemTypeTypeMapper.ensureInitialized();
+      TaskGroupItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -53,12 +53,12 @@ class TaskGroupItemMapper extends ClassMapperBase<TaskGroupItem> {
     opt: true,
     def: TaskGroupItemObjectObjectEnum.undefined0,
   );
-  static TaskGroupItemTypeType _$type(TaskGroupItem v) => v.type;
-  static const Field<TaskGroupItem, TaskGroupItemTypeType> _f$type = Field(
+  static TaskGroupItemType _$type(TaskGroupItem v) => v.type;
+  static const Field<TaskGroupItem, TaskGroupItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: TaskGroupItemTypeType.undefined0,
+    def: TaskGroupItemType.undefined0,
   );
 
   @override
@@ -160,7 +160,7 @@ abstract class TaskGroupItemCopyWith<$R, $In extends TaskGroupItem, $Out>
     String? threadId,
     List<TaskGroupTask>? tasks,
     TaskGroupItemObjectObjectEnum? objectEnum,
-    TaskGroupItemTypeType? type,
+    TaskGroupItemType? type,
   });
   TaskGroupItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -191,7 +191,7 @@ class _TaskGroupItemCopyWithImpl<$R, $Out>
     String? threadId,
     List<TaskGroupTask>? tasks,
     TaskGroupItemObjectObjectEnum? objectEnum,
-    TaskGroupItemTypeType? type,
+    TaskGroupItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

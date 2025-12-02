@@ -17,7 +17,7 @@ class ApplyPatchDeleteFileOperationParamMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchDeleteFileOperationParamMapper._(),
       );
-      ApplyPatchDeleteFileOperationParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchDeleteFileOperationParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class ApplyPatchDeleteFileOperationParamMapper
   static String _$path(ApplyPatchDeleteFileOperationParam v) => v.path;
   static const Field<ApplyPatchDeleteFileOperationParam, String> _f$path =
       Field('path', _$path);
-  static ApplyPatchDeleteFileOperationParamTypeType _$type(
+  static ApplyPatchDeleteFileOperationParamType _$type(
     ApplyPatchDeleteFileOperationParam v,
   ) => v.type;
   static const Field<
     ApplyPatchDeleteFileOperationParam,
-    ApplyPatchDeleteFileOperationParamTypeType
+    ApplyPatchDeleteFileOperationParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchDeleteFileOperationParamTypeType.deleteFile,
+    def: ApplyPatchDeleteFileOperationParamType.deleteFile,
   );
 
   @override
@@ -138,7 +138,7 @@ abstract class ApplyPatchDeleteFileOperationParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? path, ApplyPatchDeleteFileOperationParamTypeType? type});
+  $R call({String? path, ApplyPatchDeleteFileOperationParamType? type});
   ApplyPatchDeleteFileOperationParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -161,7 +161,7 @@ class _ApplyPatchDeleteFileOperationParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchDeleteFileOperationParam> $mapper =
       ApplyPatchDeleteFileOperationParamMapper.ensureInitialized();
   @override
-  $R call({String? path, ApplyPatchDeleteFileOperationParamTypeType? type}) =>
+  $R call({String? path, ApplyPatchDeleteFileOperationParamType? type}) =>
       $apply(
         FieldCopyWithData({
           if (path != null) #path: path,

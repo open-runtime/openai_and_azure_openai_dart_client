@@ -14,7 +14,7 @@ class FunctionToolMapper extends ClassMapperBase<FunctionTool> {
   static FunctionToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FunctionToolMapper._());
-      FunctionToolTypeTypeMapper.ensureInitialized();
+      FunctionToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,12 +37,12 @@ class FunctionToolMapper extends ClassMapperBase<FunctionTool> {
     _$description,
     opt: true,
   );
-  static FunctionToolTypeType _$type(FunctionTool v) => v.type;
-  static const Field<FunctionTool, FunctionToolTypeType> _f$type = Field(
+  static FunctionToolType _$type(FunctionTool v) => v.type;
+  static const Field<FunctionTool, FunctionToolType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionToolTypeType.valueFunction,
+    def: FunctionToolType.valueFunction,
   );
 
   @override
@@ -137,7 +137,7 @@ abstract class FunctionToolCopyWith<$R, $In extends FunctionTool, $Out>
     Map<String, dynamic>? parameters,
     bool? strict,
     String? description,
-    FunctionToolTypeType? type,
+    FunctionToolType? type,
   });
   FunctionToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -165,7 +165,7 @@ class _FunctionToolCopyWithImpl<$R, $Out>
     Object? parameters = $none,
     Object? strict = $none,
     Object? description = $none,
-    FunctionToolTypeType? type,
+    FunctionToolType? type,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,

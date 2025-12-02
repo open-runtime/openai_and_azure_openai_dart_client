@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_session_update_type_type.dart';
+import 'realtime_client_event_session_update_type.dart';
 import 'realtime_session_create_request.dart';
 
 part 'realtime_client_event_session_update.mapper.dart';
@@ -29,7 +29,7 @@ class RealtimeClientEventSessionUpdate with RealtimeClientEventSessionUpdateMapp
     this.eventId,
   });
 
-  final RealtimeClientEventSessionUpdateTypeType type;
+  final RealtimeClientEventSessionUpdateType type;
   final RealtimeSessionCreateRequest session;
   @MappableField(key: 'event_id')
   final String? eventId;

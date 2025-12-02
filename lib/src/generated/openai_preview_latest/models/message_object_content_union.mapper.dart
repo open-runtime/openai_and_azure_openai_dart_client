@@ -91,7 +91,7 @@ class MessageObjectContentUnionImageFileMapper
       MessageObjectContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      MessageContentImageFileObjectTypeTypeMapper.ensureInitialized();
+      MessageContentImageFileObjectTypeMapper.ensureInitialized();
       MessageContentImageFileObjectImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -100,12 +100,12 @@ class MessageObjectContentUnionImageFileMapper
   @override
   final String id = 'MessageObjectContentUnionImageFile';
 
-  static MessageContentImageFileObjectTypeType _$type(
+  static MessageContentImageFileObjectType _$type(
     MessageObjectContentUnionImageFile v,
   ) => v.type;
   static const Field<
     MessageObjectContentUnionImageFile,
-    MessageContentImageFileObjectTypeType
+    MessageContentImageFileObjectType
   >
   _f$type = Field('type', _$type);
   static MessageContentImageFileObjectImageFile
@@ -237,7 +237,7 @@ abstract class MessageObjectContentUnionImageFileCopyWith<
   get messageContentImageFileObjectImageFile;
   @override
   $R call({
-    MessageContentImageFileObjectTypeType? type,
+    MessageContentImageFileObjectType? type,
     MessageContentImageFileObjectImageFile?
     messageContentImageFileObjectImageFile,
   });
@@ -274,7 +274,7 @@ class _MessageObjectContentUnionImageFileCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentImageFileObjectImageFile: v));
   @override
   $R call({
-    MessageContentImageFileObjectTypeType? type,
+    MessageContentImageFileObjectType? type,
     MessageContentImageFileObjectImageFile?
     messageContentImageFileObjectImageFile,
   }) => $apply(
@@ -322,7 +322,7 @@ class MessageObjectContentUnionImageUrlMapper
       MessageObjectContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      MessageContentImageUrlObjectTypeTypeMapper.ensureInitialized();
+      MessageContentImageUrlObjectTypeMapper.ensureInitialized();
       MessageContentImageUrlObjectImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -331,12 +331,12 @@ class MessageObjectContentUnionImageUrlMapper
   @override
   final String id = 'MessageObjectContentUnionImageUrl';
 
-  static MessageContentImageUrlObjectTypeType _$type(
+  static MessageContentImageUrlObjectType _$type(
     MessageObjectContentUnionImageUrl v,
   ) => v.type;
   static const Field<
     MessageObjectContentUnionImageUrl,
-    MessageContentImageUrlObjectTypeType
+    MessageContentImageUrlObjectType
   >
   _f$type = Field('type', _$type);
   static MessageContentImageUrlObjectImageUrl
@@ -467,7 +467,7 @@ abstract class MessageObjectContentUnionImageUrlCopyWith<
   get messageContentImageUrlObjectImageUrl;
   @override
   $R call({
-    MessageContentImageUrlObjectTypeType? type,
+    MessageContentImageUrlObjectType? type,
     MessageContentImageUrlObjectImageUrl? messageContentImageUrlObjectImageUrl,
   });
   MessageObjectContentUnionImageUrlCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -504,7 +504,7 @@ class _MessageObjectContentUnionImageUrlCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentImageUrlObjectImageUrl: v));
   @override
   $R call({
-    MessageContentImageUrlObjectTypeType? type,
+    MessageContentImageUrlObjectType? type,
     MessageContentImageUrlObjectImageUrl? messageContentImageUrlObjectImageUrl,
   }) => $apply(
     FieldCopyWithData({
@@ -551,7 +551,7 @@ class MessageObjectContentUnionTextMapper
       MessageObjectContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      MessageContentTextObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextObjectTypeMapper.ensureInitialized();
       MessageContentTextObjectTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -560,12 +560,11 @@ class MessageObjectContentUnionTextMapper
   @override
   final String id = 'MessageObjectContentUnionText';
 
-  static MessageContentTextObjectTypeType _$type(
-    MessageObjectContentUnionText v,
-  ) => v.type;
+  static MessageContentTextObjectType _$type(MessageObjectContentUnionText v) =>
+      v.type;
   static const Field<
     MessageObjectContentUnionText,
-    MessageContentTextObjectTypeType
+    MessageContentTextObjectType
   >
   _f$type = Field('type', _$type);
   static MessageContentTextObjectText _$messageContentTextObjectText(
@@ -688,7 +687,7 @@ abstract class MessageObjectContentUnionTextCopyWith<
   get messageContentTextObjectText;
   @override
   $R call({
-    MessageContentTextObjectTypeType? type,
+    MessageContentTextObjectType? type,
     MessageContentTextObjectText? messageContentTextObjectText,
   });
   MessageObjectContentUnionTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -725,7 +724,7 @@ class _MessageObjectContentUnionTextCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentTextObjectText: v));
   @override
   $R call({
-    MessageContentTextObjectTypeType? type,
+    MessageContentTextObjectType? type,
     MessageContentTextObjectText? messageContentTextObjectText,
   }) => $apply(
     FieldCopyWithData({
@@ -767,7 +766,7 @@ class MessageObjectContentUnionRefusalMapper
       MessageObjectContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      MessageContentRefusalObjectTypeTypeMapper.ensureInitialized();
+      MessageContentRefusalObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -775,12 +774,12 @@ class MessageObjectContentUnionRefusalMapper
   @override
   final String id = 'MessageObjectContentUnionRefusal';
 
-  static MessageContentRefusalObjectTypeType _$type(
+  static MessageContentRefusalObjectType _$type(
     MessageObjectContentUnionRefusal v,
   ) => v.type;
   static const Field<
     MessageObjectContentUnionRefusal,
-    MessageContentRefusalObjectTypeType
+    MessageContentRefusalObjectType
   >
   _f$type = Field('type', _$type);
   static String _$refusal(MessageObjectContentUnionRefusal v) => v.refusal;
@@ -891,7 +890,7 @@ abstract class MessageObjectContentUnionRefusalCopyWith<
 >
     implements MessageObjectContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({MessageContentRefusalObjectTypeType? type, String? refusal});
+  $R call({MessageContentRefusalObjectType? type, String? refusal});
   MessageObjectContentUnionRefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -915,13 +914,12 @@ class _MessageObjectContentUnionRefusalCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageObjectContentUnionRefusal> $mapper =
       MessageObjectContentUnionRefusalMapper.ensureInitialized();
   @override
-  $R call({MessageContentRefusalObjectTypeType? type, String? refusal}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (refusal != null) #refusal: refusal,
-        }),
-      );
+  $R call({MessageContentRefusalObjectType? type, String? refusal}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (refusal != null) #refusal: refusal,
+    }),
+  );
   @override
   MessageObjectContentUnionRefusal $make(CopyWithData data) =>
       MessageObjectContentUnionRefusal(

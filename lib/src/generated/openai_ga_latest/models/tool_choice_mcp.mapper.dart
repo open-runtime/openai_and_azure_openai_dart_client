@@ -14,7 +14,7 @@ class ToolChoiceMcpMapper extends ClassMapperBase<ToolChoiceMcp> {
   static ToolChoiceMcpMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceMcpMapper._());
-      ToolChoiceMcpTypeTypeMapper.ensureInitialized();
+      ToolChoiceMcpTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class ToolChoiceMcpMapper extends ClassMapperBase<ToolChoiceMcp> {
   @override
   final String id = 'ToolChoiceMcp';
 
-  static ToolChoiceMcpTypeType _$type(ToolChoiceMcp v) => v.type;
-  static const Field<ToolChoiceMcp, ToolChoiceMcpTypeType> _f$type = Field(
+  static ToolChoiceMcpType _$type(ToolChoiceMcp v) => v.type;
+  static const Field<ToolChoiceMcp, ToolChoiceMcpType> _f$type = Field(
     'type',
     _$type,
   );
@@ -121,7 +121,7 @@ extension ToolChoiceMcpValueCopy<$R, $Out>
 
 abstract class ToolChoiceMcpCopyWith<$R, $In extends ToolChoiceMcp, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ToolChoiceMcpTypeType? type, String? serverLabel, String? name});
+  $R call({ToolChoiceMcpType? type, String? serverLabel, String? name});
   ToolChoiceMcpCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -135,7 +135,7 @@ class _ToolChoiceMcpCopyWithImpl<$R, $Out>
       ToolChoiceMcpMapper.ensureInitialized();
   @override
   $R call({
-    ToolChoiceMcpTypeType? type,
+    ToolChoiceMcpType? type,
     String? serverLabel,
     Object? name = $none,
   }) => $apply(

@@ -15,12 +15,12 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeResponseMapper._());
       RealtimeResponseObjectObjectEnumMapper.ensureInitialized();
-      RealtimeResponseStatusStatusMapper.ensureInitialized();
+      RealtimeResponseStatusMapper.ensureInitialized();
       RealtimeResponseStatusDetailsMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
       RealtimeResponseUsageMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
-      RealtimeResponseModalitiesModalitiesMapper.ensureInitialized();
+      RealtimeResponseModalitiesMapper.ensureInitialized();
       RealtimeResponseOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeResponseMaxOutputTokensUnionMapper.ensureInitialized();
     }
@@ -40,8 +40,8 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
       v.objectEnum;
   static const Field<RealtimeResponse, RealtimeResponseObjectObjectEnum>
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object', opt: true);
-  static RealtimeResponseStatusStatus? _$status(RealtimeResponse v) => v.status;
-  static const Field<RealtimeResponse, RealtimeResponseStatusStatus> _f$status =
+  static RealtimeResponseStatus? _$status(RealtimeResponse v) => v.status;
+  static const Field<RealtimeResponse, RealtimeResponseStatus> _f$status =
       Field('status', _$status, opt: true);
   static RealtimeResponseStatusDetails? _$realtimeResponseStatusDetails(
     RealtimeResponse v,
@@ -86,13 +86,9 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
     opt: true,
     hook: const VoiceIdsSharedHook(),
   );
-  static List<RealtimeResponseModalitiesModalities>? _$modalities(
-    RealtimeResponse v,
-  ) => v.modalities;
-  static const Field<
-    RealtimeResponse,
-    List<RealtimeResponseModalitiesModalities>
-  >
+  static List<RealtimeResponseModalities>? _$modalities(RealtimeResponse v) =>
+      v.modalities;
+  static const Field<RealtimeResponse, List<RealtimeResponseModalities>>
   _f$modalities = Field('modalities', _$modalities, opt: true);
   static RealtimeResponseOutputAudioFormatOutputAudioFormat?
   _$outputAudioFormat(RealtimeResponse v) => v.outputAudioFormat;
@@ -252,12 +248,8 @@ abstract class RealtimeResponseCopyWith<$R, $In extends RealtimeResponse, $Out>
   VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
-    RealtimeResponseModalitiesModalities,
-    ObjectCopyWith<
-      $R,
-      RealtimeResponseModalitiesModalities,
-      RealtimeResponseModalitiesModalities
-    >
+    RealtimeResponseModalities,
+    ObjectCopyWith<$R, RealtimeResponseModalities, RealtimeResponseModalities>
   >?
   get modalities;
   RealtimeResponseMaxOutputTokensUnionCopyWith<
@@ -269,14 +261,14 @@ abstract class RealtimeResponseCopyWith<$R, $In extends RealtimeResponse, $Out>
   $R call({
     String? id,
     RealtimeResponseObjectObjectEnum? objectEnum,
-    RealtimeResponseStatusStatus? status,
+    RealtimeResponseStatus? status,
     RealtimeResponseStatusDetails? realtimeResponseStatusDetails,
     List<RealtimeConversationItem>? output,
     Map<String, String>? metadata,
     RealtimeResponseUsage? realtimeResponseUsage,
     String? conversationId,
     VoiceIdsShared? voice,
-    List<RealtimeResponseModalitiesModalities>? modalities,
+    List<RealtimeResponseModalities>? modalities,
     RealtimeResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat,
     num? temperature,
     RealtimeResponseMaxOutputTokensUnion? maxOutputTokens,
@@ -345,12 +337,8 @@ class _RealtimeResponseCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeResponseModalitiesModalities,
-    ObjectCopyWith<
-      $R,
-      RealtimeResponseModalitiesModalities,
-      RealtimeResponseModalitiesModalities
-    >
+    RealtimeResponseModalities,
+    ObjectCopyWith<$R, RealtimeResponseModalities, RealtimeResponseModalities>
   >?
   get modalities => $value.modalities != null
       ? ListCopyWith(

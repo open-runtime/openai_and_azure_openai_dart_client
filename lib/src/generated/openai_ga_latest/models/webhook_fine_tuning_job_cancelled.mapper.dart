@@ -18,7 +18,7 @@ class WebhookFineTuningJobCancelledMapper
         _instance = WebhookFineTuningJobCancelledMapper._(),
       );
       WebhookFineTuningJobCancelledDataMapper.ensureInitialized();
-      WebhookFineTuningJobCancelledTypeTypeMapper.ensureInitialized();
+      WebhookFineTuningJobCancelledTypeMapper.ensureInitialized();
       WebhookFineTuningJobCancelledObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,12 +50,12 @@ class WebhookFineTuningJobCancelledMapper
     _$webhookFineTuningJobCancelledData,
     key: r'data',
   );
-  static WebhookFineTuningJobCancelledTypeType _$type(
+  static WebhookFineTuningJobCancelledType _$type(
     WebhookFineTuningJobCancelled v,
   ) => v.type;
   static const Field<
     WebhookFineTuningJobCancelled,
-    WebhookFineTuningJobCancelledTypeType
+    WebhookFineTuningJobCancelledType
   >
   _f$type = Field('type', _$type);
   static WebhookFineTuningJobCancelledObjectObjectEnum? _$objectEnum(
@@ -176,7 +176,7 @@ abstract class WebhookFineTuningJobCancelledCopyWith<
     int? createdAt,
     String? id,
     WebhookFineTuningJobCancelledData? webhookFineTuningJobCancelledData,
-    WebhookFineTuningJobCancelledTypeType? type,
+    WebhookFineTuningJobCancelledType? type,
     WebhookFineTuningJobCancelledObjectObjectEnum? objectEnum,
   });
   WebhookFineTuningJobCancelledCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -216,7 +216,7 @@ class _WebhookFineTuningJobCancelledCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookFineTuningJobCancelledData? webhookFineTuningJobCancelledData,
-    WebhookFineTuningJobCancelledTypeType? type,
+    WebhookFineTuningJobCancelledType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

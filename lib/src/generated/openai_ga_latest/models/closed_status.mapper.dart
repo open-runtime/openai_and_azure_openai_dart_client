@@ -14,7 +14,7 @@ class ClosedStatusMapper extends ClassMapperBase<ClosedStatus> {
   static ClosedStatusMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClosedStatusMapper._());
-      ClosedStatusTypeTypeMapper.ensureInitialized();
+      ClosedStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,12 +27,12 @@ class ClosedStatusMapper extends ClassMapperBase<ClosedStatus> {
     'reason',
     _$reason,
   );
-  static ClosedStatusTypeType _$type(ClosedStatus v) => v.type;
-  static const Field<ClosedStatus, ClosedStatusTypeType> _f$type = Field(
+  static ClosedStatusType _$type(ClosedStatus v) => v.type;
+  static const Field<ClosedStatus, ClosedStatusType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ClosedStatusTypeType.closed,
+    def: ClosedStatusType.closed,
   );
 
   @override
@@ -111,7 +111,7 @@ extension ClosedStatusValueCopy<$R, $Out>
 
 abstract class ClosedStatusCopyWith<$R, $In extends ClosedStatus, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? reason, ClosedStatusTypeType? type});
+  $R call({String? reason, ClosedStatusType? type});
   ClosedStatusCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -124,7 +124,7 @@ class _ClosedStatusCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ClosedStatus> $mapper =
       ClosedStatusMapper.ensureInitialized();
   @override
-  $R call({Object? reason = $none, ClosedStatusTypeType? type}) => $apply(
+  $R call({Object? reason = $none, ClosedStatusType? type}) => $apply(
     FieldCopyWithData({
       if (reason != $none) #reason: reason,
       if (type != null) #type: type,

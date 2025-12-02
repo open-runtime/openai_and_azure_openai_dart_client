@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'vector_store_search_request_ranking_options_ranker_ranker.dart';
+import 'vector_store_search_request_ranking_options_ranker.dart';
 
 part 'vector_store_search_request_ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchRequestRankingOptions with VectorStoreSearchRequestRankingOptionsMappable {
   const VectorStoreSearchRequestRankingOptions({
-    this.ranker = VectorStoreSearchRequestRankingOptionsRankerRanker.auto,
+    this.ranker = VectorStoreSearchRequestRankingOptionsRanker.auto,
     this.scoreThreshold = 0,
   });
 
-  final VectorStoreSearchRequestRankingOptionsRankerRanker ranker;
+  final VectorStoreSearchRequestRankingOptionsRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 

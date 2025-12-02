@@ -14,7 +14,7 @@ class LocalShellExecActionMapper extends ClassMapperBase<LocalShellExecAction> {
   static LocalShellExecActionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LocalShellExecActionMapper._());
-      LocalShellExecActionTypeTypeMapper.ensureInitialized();
+      LocalShellExecActionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -53,14 +53,9 @@ class LocalShellExecActionMapper extends ClassMapperBase<LocalShellExecAction> {
     _$user,
     opt: true,
   );
-  static LocalShellExecActionTypeType _$type(LocalShellExecAction v) => v.type;
-  static const Field<LocalShellExecAction, LocalShellExecActionTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: LocalShellExecActionTypeType.exec,
-  );
+  static LocalShellExecActionType _$type(LocalShellExecAction v) => v.type;
+  static const Field<LocalShellExecAction, LocalShellExecActionType> _f$type =
+      Field('type', _$type, opt: true, def: LocalShellExecActionType.exec);
 
   @override
   final MappableFields<LocalShellExecAction> fields = const {
@@ -165,7 +160,7 @@ abstract class LocalShellExecActionCopyWith<
     int? timeoutMs,
     String? workingDirectory,
     String? user,
-    LocalShellExecActionTypeType? type,
+    LocalShellExecActionType? type,
   });
   LocalShellExecActionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -201,7 +196,7 @@ class _LocalShellExecActionCopyWithImpl<$R, $Out>
     Object? timeoutMs = $none,
     Object? workingDirectory = $none,
     Object? user = $none,
-    LocalShellExecActionTypeType? type,
+    LocalShellExecActionType? type,
   }) => $apply(
     FieldCopyWithData({
       if (command != null) #command: command,

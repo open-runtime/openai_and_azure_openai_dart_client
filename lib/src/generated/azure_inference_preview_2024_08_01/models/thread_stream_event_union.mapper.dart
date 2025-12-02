@@ -80,7 +80,7 @@ class ThreadStreamEventUnionVariant1Mapper
         _instance = ThreadStreamEventUnionVariant1Mapper._(),
       );
       ThreadStreamEventUnionMapper.ensureInitialized();
-      ThreadStreamEventUnionVariant1EventEventMapper.ensureInitialized();
+      ThreadStreamEventUnionVariant1EventMapper.ensureInitialized();
       ThreadObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -89,12 +89,12 @@ class ThreadStreamEventUnionVariant1Mapper
   @override
   final String id = 'ThreadStreamEventUnionVariant1';
 
-  static ThreadStreamEventUnionVariant1EventEvent _$event(
+  static ThreadStreamEventUnionVariant1Event _$event(
     ThreadStreamEventUnionVariant1 v,
   ) => v.event;
   static const Field<
     ThreadStreamEventUnionVariant1,
-    ThreadStreamEventUnionVariant1EventEvent
+    ThreadStreamEventUnionVariant1Event
   >
   _f$event = Field('event', _$event);
   static ThreadObject _$data(ThreadStreamEventUnionVariant1 v) => v.data;
@@ -198,10 +198,7 @@ abstract class ThreadStreamEventUnionVariant1CopyWith<
     implements ThreadStreamEventUnionCopyWith<$R, $In, $Out> {
   ThreadObjectCopyWith<$R, ThreadObject, ThreadObject> get data;
   @override
-  $R call({
-    ThreadStreamEventUnionVariant1EventEvent? event,
-    ThreadObject? data,
-  });
+  $R call({ThreadStreamEventUnionVariant1Event? event, ThreadObject? data});
   ThreadStreamEventUnionVariant1CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -228,15 +225,13 @@ class _ThreadStreamEventUnionVariant1CopyWithImpl<$R, $Out>
   ThreadObjectCopyWith<$R, ThreadObject, ThreadObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({
-    ThreadStreamEventUnionVariant1EventEvent? event,
-    ThreadObject? data,
-  }) => $apply(
-    FieldCopyWithData({
-      if (event != null) #event: event,
-      if (data != null) #data: data,
-    }),
-  );
+  $R call({ThreadStreamEventUnionVariant1Event? event, ThreadObject? data}) =>
+      $apply(
+        FieldCopyWithData({
+          if (event != null) #event: event,
+          if (data != null) #data: data,
+        }),
+      );
   @override
   ThreadStreamEventUnionVariant1 $make(CopyWithData data) =>
       ThreadStreamEventUnionVariant1(

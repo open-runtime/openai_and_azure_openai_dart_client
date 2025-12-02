@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_mcp_call_in_progress_event_type_type.dart';
+import 'response_mcp_call_in_progress_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_mcp_call_in_progress_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseMcpCallInProgressEvent with ResponseMcpCallInProgressEventMappable
     required this.itemId,
   });
 
-  final ResponseMcpCallInProgressEventTypeType type;
+  final ResponseMcpCallInProgressEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   @MappableField(key: 'output_index')

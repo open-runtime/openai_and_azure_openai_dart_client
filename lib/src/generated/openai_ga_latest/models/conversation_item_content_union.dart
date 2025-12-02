@@ -6,29 +6,29 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'computer_screenshot_content.dart';
-import 'computer_screenshot_content_type_type.dart';
+import 'computer_screenshot_content_type.dart';
 import 'function_and_custom_tool_call_output.dart';
 import 'image_detail.dart';
 import 'input_content.dart';
 import 'input_file_content.dart';
-import 'input_file_content_type_type.dart';
+import 'input_file_content_type.dart';
 import 'input_image_content.dart';
-import 'input_image_content_type_type.dart';
+import 'input_image_content_type.dart';
 import 'input_text_content.dart';
-import 'input_text_content_type_type.dart';
+import 'input_text_content_type.dart';
 import 'log_prob.dart';
 import 'output_content.dart';
 import 'output_message_content.dart';
 import 'output_text_content.dart';
-import 'output_text_content_type_type.dart';
+import 'output_text_content_type.dart';
 import 'reasoning_text_content.dart';
-import 'reasoning_text_content_type_type.dart';
+import 'reasoning_text_content_type.dart';
 import 'refusal_content.dart';
-import 'refusal_content_type_type.dart';
+import 'refusal_content_type.dart';
 import 'summary_text_content.dart';
-import 'summary_text_content_type_type.dart';
+import 'summary_text_content_type.dart';
 import 'text_content.dart';
-import 'text_content_type_type.dart';
+import 'text_content_type.dart';
 
 part 'conversation_item_content_union.mapper.dart';
 
@@ -88,7 +88,7 @@ extension ConversationItemContentUnionDeserializer on ConversationItemContentUni
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
 class ConversationItemContentUnionInputText extends ConversationItemContentUnion with ConversationItemContentUnionInputTextMappable {
-  final InputTextContentTypeType type;
+  final InputTextContentType type;
   final String text;
 
   const ConversationItemContentUnionInputText({
@@ -99,7 +99,7 @@ class ConversationItemContentUnionInputText extends ConversationItemContentUnion
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
 class ConversationItemContentUnionOutputText extends ConversationItemContentUnion with ConversationItemContentUnionOutputTextMappable {
-  final OutputTextContentTypeType type;
+  final OutputTextContentType type;
   final String text;
   final List<Annotation> annotations;
   final List<LogProb>? logprobs;
@@ -114,7 +114,7 @@ class ConversationItemContentUnionOutputText extends ConversationItemContentUnio
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class ConversationItemContentUnionText extends ConversationItemContentUnion with ConversationItemContentUnionTextMappable {
-  final TextContentTypeType type;
+  final TextContentType type;
   final String text;
 
   const ConversationItemContentUnionText({
@@ -125,7 +125,7 @@ class ConversationItemContentUnionText extends ConversationItemContentUnion with
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'summary_text')
 class ConversationItemContentUnionSummaryText extends ConversationItemContentUnion with ConversationItemContentUnionSummaryTextMappable {
-  final SummaryTextContentTypeType type;
+  final SummaryTextContentType type;
   final String text;
 
   const ConversationItemContentUnionSummaryText({
@@ -136,7 +136,7 @@ class ConversationItemContentUnionSummaryText extends ConversationItemContentUni
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
 class ConversationItemContentUnionReasoningText extends ConversationItemContentUnion with ConversationItemContentUnionReasoningTextMappable {
-  final ReasoningTextContentTypeType type;
+  final ReasoningTextContentType type;
   final String text;
 
   const ConversationItemContentUnionReasoningText({
@@ -147,7 +147,7 @@ class ConversationItemContentUnionReasoningText extends ConversationItemContentU
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class ConversationItemContentUnionRefusal extends ConversationItemContentUnion with ConversationItemContentUnionRefusalMappable {
-  final RefusalContentTypeType type;
+  final RefusalContentType type;
   final String refusal;
 
   const ConversationItemContentUnionRefusal({
@@ -158,7 +158,7 @@ class ConversationItemContentUnionRefusal extends ConversationItemContentUnion w
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
 class ConversationItemContentUnionInputImage extends ConversationItemContentUnion with ConversationItemContentUnionInputImageMappable {
-  final InputImageContentTypeType type;
+  final InputImageContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
@@ -175,7 +175,7 @@ class ConversationItemContentUnionInputImage extends ConversationItemContentUnio
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_screenshot')
 class ConversationItemContentUnionComputerScreenshot extends ConversationItemContentUnion with ConversationItemContentUnionComputerScreenshotMappable {
-  final ComputerScreenshotContentTypeType type;
+  final ComputerScreenshotContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
@@ -190,7 +190,7 @@ class ConversationItemContentUnionComputerScreenshot extends ConversationItemCon
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
 class ConversationItemContentUnionInputFile extends ConversationItemContentUnion with ConversationItemContentUnionInputFileMappable {
-  final InputFileContentTypeType type;
+  final InputFileContentType type;
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? filename;

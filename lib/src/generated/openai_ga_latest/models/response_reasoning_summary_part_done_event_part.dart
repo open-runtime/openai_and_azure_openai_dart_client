@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_reasoning_summary_part_done_event_part_type_type.dart';
+import 'response_reasoning_summary_part_done_event_part_type.dart';
 
 part 'response_reasoning_summary_part_done_event_part.mapper.dart';
 
@@ -15,7 +15,7 @@ class ResponseReasoningSummaryPartDoneEventPart with ResponseReasoningSummaryPar
     required this.text,
   });
 
-  final ResponseReasoningSummaryPartDoneEventPartTypeType type;
+  final ResponseReasoningSummaryPartDoneEventPartType type;
   final String text;
 
   static ResponseReasoningSummaryPartDoneEventPart fromJson(Map<String, dynamic> json) => ResponseReasoningSummaryPartDoneEventPartMapper.fromJson(json);

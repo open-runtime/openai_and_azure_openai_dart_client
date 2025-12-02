@@ -17,7 +17,7 @@ class ApplyPatchCreateFileOperationParamMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchCreateFileOperationParamMapper._(),
       );
-      ApplyPatchCreateFileOperationParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchCreateFileOperationParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -31,18 +31,18 @@ class ApplyPatchCreateFileOperationParamMapper
   static String _$diff(ApplyPatchCreateFileOperationParam v) => v.diff;
   static const Field<ApplyPatchCreateFileOperationParam, String> _f$diff =
       Field('diff', _$diff);
-  static ApplyPatchCreateFileOperationParamTypeType _$type(
+  static ApplyPatchCreateFileOperationParamType _$type(
     ApplyPatchCreateFileOperationParam v,
   ) => v.type;
   static const Field<
     ApplyPatchCreateFileOperationParam,
-    ApplyPatchCreateFileOperationParamTypeType
+    ApplyPatchCreateFileOperationParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchCreateFileOperationParamTypeType.createFile,
+    def: ApplyPatchCreateFileOperationParamType.createFile,
   );
 
   @override
@@ -146,7 +146,7 @@ abstract class ApplyPatchCreateFileOperationParamCopyWith<
   $R call({
     String? path,
     String? diff,
-    ApplyPatchCreateFileOperationParamTypeType? type,
+    ApplyPatchCreateFileOperationParamType? type,
   });
   ApplyPatchCreateFileOperationParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -173,7 +173,7 @@ class _ApplyPatchCreateFileOperationParamCopyWithImpl<$R, $Out>
   $R call({
     String? path,
     String? diff,
-    ApplyPatchCreateFileOperationParamTypeType? type,
+    ApplyPatchCreateFileOperationParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (path != null) #path: path,

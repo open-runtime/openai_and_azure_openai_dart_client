@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'client_tool_call_item_object_object_enum.dart';
-import 'client_tool_call_item_type_type.dart';
+import 'client_tool_call_item_type.dart';
 import 'client_tool_call_status.dart';
 import 'thread_item.dart';
 
@@ -24,7 +24,7 @@ class ClientToolCallItem with ClientToolCallItemMappable {
     required this.arguments,
     required this.output,
     this.objectEnum = ClientToolCallItemObjectObjectEnum.undefined0,
-    this.type = ClientToolCallItemTypeType.undefined0,
+    this.type = ClientToolCallItemType.undefined0,
   });
 
   final String id;
@@ -40,7 +40,7 @@ class ClientToolCallItem with ClientToolCallItemMappable {
   final String? output;
   @MappableField(key: 'object')
   final ClientToolCallItemObjectObjectEnum objectEnum;
-  final ClientToolCallItemTypeType type;
+  final ClientToolCallItemType type;
 
   static ClientToolCallItem fromJson(Map<String, dynamic> json) => ClientToolCallItemMapper.fromJson(json);
 

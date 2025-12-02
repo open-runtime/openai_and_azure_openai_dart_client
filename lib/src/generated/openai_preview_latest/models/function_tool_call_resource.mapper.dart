@@ -17,8 +17,8 @@ class FunctionToolCallResourceMapper
       MapperContainer.globals.use(
         _instance = FunctionToolCallResourceMapper._(),
       );
-      FunctionToolCallTypeTypeMapper.ensureInitialized();
-      FunctionToolCallStatusStatusMapper.ensureInitialized();
+      FunctionToolCallTypeMapper.ensureInitialized();
+      FunctionToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -31,9 +31,9 @@ class FunctionToolCallResourceMapper
     'id',
     _$id,
   );
-  static FunctionToolCallTypeType _$type(FunctionToolCallResource v) => v.type;
-  static const Field<FunctionToolCallResource, FunctionToolCallTypeType>
-  _f$type = Field('type', _$type);
+  static FunctionToolCallType _$type(FunctionToolCallResource v) => v.type;
+  static const Field<FunctionToolCallResource, FunctionToolCallType> _f$type =
+      Field('type', _$type);
   static String _$callId(FunctionToolCallResource v) => v.callId;
   static const Field<FunctionToolCallResource, String> _f$callId = Field(
     'callId',
@@ -50,9 +50,9 @@ class FunctionToolCallResourceMapper
     'arguments',
     _$arguments,
   );
-  static FunctionToolCallStatusStatus? _$status(FunctionToolCallResource v) =>
+  static FunctionToolCallStatus? _$status(FunctionToolCallResource v) =>
       v.status;
-  static const Field<FunctionToolCallResource, FunctionToolCallStatusStatus>
+  static const Field<FunctionToolCallResource, FunctionToolCallStatus>
   _f$status = Field('status', _$status, opt: true);
 
   @override
@@ -152,11 +152,11 @@ abstract class FunctionToolCallResourceCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? id,
-    FunctionToolCallTypeType? type,
+    FunctionToolCallType? type,
     String? callId,
     String? name,
     String? arguments,
-    FunctionToolCallStatusStatus? status,
+    FunctionToolCallStatus? status,
   });
   FunctionToolCallResourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -175,7 +175,7 @@ class _FunctionToolCallResourceCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    FunctionToolCallTypeType? type,
+    FunctionToolCallType? type,
     String? callId,
     String? name,
     String? arguments,

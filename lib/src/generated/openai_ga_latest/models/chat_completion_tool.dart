@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_tool_type_type.dart';
+import 'chat_completion_tool_type.dart';
 import 'function_object.dart';
 
 part 'chat_completion_tool.mapper.dart';
@@ -18,7 +18,7 @@ class ChatCompletionTool with ChatCompletionToolMappable {
     required this.functionField,
   });
 
-  final ChatCompletionToolTypeType type;
+  final ChatCompletionToolType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 

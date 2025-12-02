@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_tool_calls_function_object_function.dart';
-import 'run_step_delta_step_details_tool_calls_function_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_function_object.mapper.dart';
 
@@ -20,7 +20,7 @@ class RunStepDeltaStepDetailsToolCallsFunctionObject with RunStepDeltaStepDetail
 
   @MappableField(key: 'index')
   final int indexField;
-  final RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsFunctionObjectType type;
   final String? id;
   @MappableField(key: 'function')
   final RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? runStepDeltaStepDetailsToolCallsFunctionObjectFunction;

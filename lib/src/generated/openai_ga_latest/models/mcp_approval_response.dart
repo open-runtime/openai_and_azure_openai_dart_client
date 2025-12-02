@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'mcp_approval_response_type_type.dart';
+import 'mcp_approval_response_type.dart';
 
 part 'mcp_approval_response.mapper.dart';
 
@@ -20,7 +20,7 @@ class McpApprovalResponse with McpApprovalResponseMappable {
     this.reason,
   });
 
-  final McpApprovalResponseTypeType type;
+  final McpApprovalResponseType type;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;
   final bool approve;

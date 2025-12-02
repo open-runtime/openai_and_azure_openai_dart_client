@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'thread_item.dart';
 import 'widget_message_item_object_object_enum.dart';
-import 'widget_message_item_type_type.dart';
+import 'widget_message_item_type.dart';
 
 part 'widget_message_item.mapper.dart';
 
@@ -19,7 +19,7 @@ class WidgetMessageItem with WidgetMessageItemMappable {
     required this.threadId,
     required this.widget,
     this.objectEnum = WidgetMessageItemObjectObjectEnum.undefined0,
-    this.type = WidgetMessageItemTypeType.undefined0,
+    this.type = WidgetMessageItemType.undefined0,
   });
 
   final String id;
@@ -30,7 +30,7 @@ class WidgetMessageItem with WidgetMessageItemMappable {
   final String widget;
   @MappableField(key: 'object')
   final WidgetMessageItemObjectObjectEnum objectEnum;
-  final WidgetMessageItemTypeType type;
+  final WidgetMessageItemType type;
 
   static WidgetMessageItem fromJson(Map<String, dynamic> json) => WidgetMessageItemMapper.fromJson(json);
 

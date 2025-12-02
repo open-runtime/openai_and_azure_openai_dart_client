@@ -14,7 +14,7 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
   static ResponseFailedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseFailedEventMapper._());
-      ResponseFailedEventTypeTypeMapper.ensureInitialized();
+      ResponseFailedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
   @override
   final String id = 'ResponseFailedEvent';
 
-  static ResponseFailedEventTypeType _$type(ResponseFailedEvent v) => v.type;
-  static const Field<ResponseFailedEvent, ResponseFailedEventTypeType> _f$type =
+  static ResponseFailedEventType _$type(ResponseFailedEvent v) => v.type;
+  static const Field<ResponseFailedEvent, ResponseFailedEventType> _f$type =
       Field('type', _$type);
   static int _$sequenceNumber(ResponseFailedEvent v) => v.sequenceNumber;
   static const Field<ResponseFailedEvent, int> _f$sequenceNumber = Field(
@@ -129,7 +129,7 @@ abstract class ResponseFailedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseFailedEventTypeType? type,
+    ResponseFailedEventType? type,
     int? sequenceNumber,
     ResponseModel? response,
   });
@@ -151,7 +151,7 @@ class _ResponseFailedEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseFailedEventTypeType? type,
+    ResponseFailedEventType? type,
     int? sequenceNumber,
     ResponseModel? response,
   }) => $apply(

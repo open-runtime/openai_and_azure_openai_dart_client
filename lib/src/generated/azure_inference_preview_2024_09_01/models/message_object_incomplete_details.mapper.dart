@@ -17,7 +17,7 @@ class MessageObjectIncompleteDetailsMapper
       MapperContainer.globals.use(
         _instance = MessageObjectIncompleteDetailsMapper._(),
       );
-      MessageObjectIncompleteDetailsReasonReasonMapper.ensureInitialized();
+      MessageObjectIncompleteDetailsReasonMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class MessageObjectIncompleteDetailsMapper
   @override
   final String id = 'MessageObjectIncompleteDetails';
 
-  static MessageObjectIncompleteDetailsReasonReason _$reason(
+  static MessageObjectIncompleteDetailsReason _$reason(
     MessageObjectIncompleteDetails v,
   ) => v.reason;
   static const Field<
     MessageObjectIncompleteDetails,
-    MessageObjectIncompleteDetailsReasonReason
+    MessageObjectIncompleteDetailsReason
   >
   _f$reason = Field('reason', _$reason);
 
@@ -125,7 +125,7 @@ abstract class MessageObjectIncompleteDetailsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({MessageObjectIncompleteDetailsReasonReason? reason});
+  $R call({MessageObjectIncompleteDetailsReason? reason});
   MessageObjectIncompleteDetailsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -149,7 +149,7 @@ class _MessageObjectIncompleteDetailsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageObjectIncompleteDetails> $mapper =
       MessageObjectIncompleteDetailsMapper.ensureInitialized();
   @override
-  $R call({MessageObjectIncompleteDetailsReasonReason? reason}) =>
+  $R call({MessageObjectIncompleteDetailsReason? reason}) =>
       $apply(FieldCopyWithData({if (reason != null) #reason: reason}));
   @override
   MessageObjectIncompleteDetails $make(CopyWithData data) =>

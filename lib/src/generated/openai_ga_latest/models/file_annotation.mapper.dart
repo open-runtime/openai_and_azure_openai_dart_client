@@ -15,7 +15,7 @@ class FileAnnotationMapper extends ClassMapperBase<FileAnnotation> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileAnnotationMapper._());
       FileAnnotationSourceMapper.ensureInitialized();
-      FileAnnotationTypeTypeMapper.ensureInitialized();
+      FileAnnotationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class FileAnnotationMapper extends ClassMapperBase<FileAnnotation> {
     'source',
     _$source,
   );
-  static FileAnnotationTypeType _$type(FileAnnotation v) => v.type;
-  static const Field<FileAnnotation, FileAnnotationTypeType> _f$type = Field(
+  static FileAnnotationType _$type(FileAnnotation v) => v.type;
+  static const Field<FileAnnotation, FileAnnotationType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FileAnnotationTypeType.file,
+    def: FileAnnotationType.file,
   );
 
   @override
@@ -114,7 +114,7 @@ abstract class FileAnnotationCopyWith<$R, $In extends FileAnnotation, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   FileAnnotationSourceCopyWith<$R, FileAnnotationSource, FileAnnotationSource>
   get source;
-  $R call({FileAnnotationSource? source, FileAnnotationTypeType? type});
+  $R call({FileAnnotationSource? source, FileAnnotationType? type});
   FileAnnotationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -132,13 +132,12 @@ class _FileAnnotationCopyWithImpl<$R, $Out>
   FileAnnotationSourceCopyWith<$R, FileAnnotationSource, FileAnnotationSource>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  $R call({FileAnnotationSource? source, FileAnnotationTypeType? type}) =>
-      $apply(
-        FieldCopyWithData({
-          if (source != null) #source: source,
-          if (type != null) #type: type,
-        }),
-      );
+  $R call({FileAnnotationSource? source, FileAnnotationType? type}) => $apply(
+    FieldCopyWithData({
+      if (source != null) #source: source,
+      if (type != null) #type: type,
+    }),
+  );
   @override
   FileAnnotation $make(CopyWithData data) => FileAnnotation(
     source: data.get(#source, or: $value.source),

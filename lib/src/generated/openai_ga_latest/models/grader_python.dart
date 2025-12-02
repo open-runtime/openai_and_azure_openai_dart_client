@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'grader_python_type_type.dart';
+import 'grader_python_type.dart';
 
 part 'grader_python.mapper.dart';
 
@@ -19,7 +19,7 @@ class GraderPython with GraderPythonMappable {
     this.imageTag,
   });
 
-  final GraderPythonTypeType type;
+  final GraderPythonType type;
   final String name;
   final String source;
   @MappableField(key: 'image_tag')

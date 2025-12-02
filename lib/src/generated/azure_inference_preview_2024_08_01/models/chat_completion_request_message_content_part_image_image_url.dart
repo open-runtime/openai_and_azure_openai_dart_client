@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_request_message_content_part_image_image_url_detail_detail.dart';
+import 'chat_completion_request_message_content_part_image_image_url_detail.dart';
 
 part 'chat_completion_request_message_content_part_image_image_url.mapper.dart';
 
@@ -12,11 +12,11 @@ part 'chat_completion_request_message_content_part_image_image_url.mapper.dart';
 class ChatCompletionRequestMessageContentPartImageImageUrl with ChatCompletionRequestMessageContentPartImageImageUrlMappable {
   const ChatCompletionRequestMessageContentPartImageImageUrl({
     required this.url,
-    this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail.auto,
+    this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto,
   });
 
   final String url;
-  final ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail detail;
+  final ChatCompletionRequestMessageContentPartImageImageUrlDetail detail;
 
   static ChatCompletionRequestMessageContentPartImageImageUrl fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartImageImageUrlMapper.fromJson(json);
 

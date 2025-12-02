@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'comparison_filter_type_type.dart';
+import 'comparison_filter_type.dart';
 import 'comparison_filter_value_union.dart';
 import 'comparison_filter.dart';
 
@@ -32,7 +32,7 @@ extension CompoundFilterFiltersUnionDeserializer on CompoundFilterFiltersUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CompoundFilterFiltersUnionComparisonFilter extends CompoundFilterFiltersUnion with CompoundFilterFiltersUnionComparisonFilterMappable {
-  final ComparisonFilterTypeType type;
+  final ComparisonFilterType type;
   final String key;
   final ComparisonFilterValueUnion value;
 

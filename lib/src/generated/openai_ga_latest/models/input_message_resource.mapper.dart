@@ -14,10 +14,10 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
   static InputMessageResourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputMessageResourceMapper._());
-      InputMessageRoleRoleMapper.ensureInitialized();
+      InputMessageRoleMapper.ensureInitialized();
       InputContentMapper.ensureInitialized();
-      InputMessageTypeTypeMapper.ensureInitialized();
-      InputMessageStatusStatusMapper.ensureInitialized();
+      InputMessageTypeMapper.ensureInitialized();
+      InputMessageStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,19 +25,24 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
   @override
   final String id = 'InputMessageResource';
 
-  static InputMessageRoleRole _$role(InputMessageResource v) => v.role;
-  static const Field<InputMessageResource, InputMessageRoleRole> _f$role =
-      Field('role', _$role);
+  static InputMessageRole _$role(InputMessageResource v) => v.role;
+  static const Field<InputMessageResource, InputMessageRole> _f$role = Field(
+    'role',
+    _$role,
+  );
   static List<InputContent> _$content(InputMessageResource v) => v.content;
   static const Field<InputMessageResource, List<InputContent>> _f$content =
       Field('content', _$content);
   static String _$id(InputMessageResource v) => v.id;
   static const Field<InputMessageResource, String> _f$id = Field('id', _$id);
-  static InputMessageTypeType? _$type(InputMessageResource v) => v.type;
-  static const Field<InputMessageResource, InputMessageTypeType> _f$type =
-      Field('type', _$type, opt: true);
-  static InputMessageStatusStatus? _$status(InputMessageResource v) => v.status;
-  static const Field<InputMessageResource, InputMessageStatusStatus> _f$status =
+  static InputMessageType? _$type(InputMessageResource v) => v.type;
+  static const Field<InputMessageResource, InputMessageType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+  );
+  static InputMessageStatus? _$status(InputMessageResource v) => v.status;
+  static const Field<InputMessageResource, InputMessageStatus> _f$status =
       Field('status', _$status, opt: true);
 
   @override
@@ -140,11 +145,11 @@ abstract class InputMessageResourceCopyWith<
   >
   get content;
   $R call({
-    InputMessageRoleRole? role,
+    InputMessageRole? role,
     List<InputContent>? content,
     String? id,
-    InputMessageTypeType? type,
-    InputMessageStatusStatus? status,
+    InputMessageType? type,
+    InputMessageStatus? status,
   });
   InputMessageResourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -172,7 +177,7 @@ class _InputMessageResourceCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    InputMessageRoleRole? role,
+    InputMessageRole? role,
     List<InputContent>? content,
     String? id,
     Object? type = $none,

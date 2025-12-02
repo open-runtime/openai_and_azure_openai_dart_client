@@ -20,7 +20,7 @@ class CreateEvalResponsesRunDataSourceMapper
       CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceSamplingParamsMapper.ensureInitialized();
-      CreateEvalResponsesRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -69,18 +69,18 @@ class CreateEvalResponsesRunDataSourceMapper
     _$model,
     opt: true,
   );
-  static CreateEvalResponsesRunDataSourceTypeType _$type(
+  static CreateEvalResponsesRunDataSourceType _$type(
     CreateEvalResponsesRunDataSource v,
   ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSource,
-    CreateEvalResponsesRunDataSourceTypeType
+    CreateEvalResponsesRunDataSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalResponsesRunDataSourceTypeType.responses,
+    def: CreateEvalResponsesRunDataSourceType.responses,
   );
 
   @override
@@ -211,7 +211,7 @@ abstract class CreateEvalResponsesRunDataSourceCopyWith<
     CreateEvalResponsesRunDataSourceSamplingParams?
     createEvalResponsesRunDataSourceSamplingParams,
     String? model,
-    CreateEvalResponsesRunDataSourceTypeType? type,
+    CreateEvalResponsesRunDataSourceType? type,
   });
   CreateEvalResponsesRunDataSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -266,7 +266,7 @@ class _CreateEvalResponsesRunDataSourceCopyWithImpl<$R, $Out>
     Object? inputMessages = $none,
     Object? createEvalResponsesRunDataSourceSamplingParams = $none,
     Object? model = $none,
-    CreateEvalResponsesRunDataSourceTypeType? type,
+    CreateEvalResponsesRunDataSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (source != null) #source: source,

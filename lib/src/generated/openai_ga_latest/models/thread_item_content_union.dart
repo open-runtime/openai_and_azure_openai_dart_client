@@ -5,10 +5,10 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'user_message_input_text.dart';
-import 'user_message_input_text_type_type.dart';
+import 'user_message_input_text_type.dart';
 import 'user_message_item_content_union.dart';
 import 'user_message_quoted_text.dart';
-import 'user_message_quoted_text_type_type.dart';
+import 'user_message_quoted_text_type.dart';
 
 part 'thread_item_content_union.mapper.dart';
 
@@ -47,7 +47,7 @@ extension ThreadItemContentUnionDeserializer on ThreadItemContentUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
 class ThreadItemContentUnionInputText extends ThreadItemContentUnion with ThreadItemContentUnionInputTextMappable {
-  final UserMessageInputTextTypeType type;
+  final UserMessageInputTextType type;
   final String text;
 
   const ThreadItemContentUnionInputText({
@@ -58,7 +58,7 @@ class ThreadItemContentUnionInputText extends ThreadItemContentUnion with Thread
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'quoted_text')
 class ThreadItemContentUnionQuotedText extends ThreadItemContentUnion with ThreadItemContentUnionQuotedTextMappable {
-  final UserMessageQuotedTextTypeType type;
+  final UserMessageQuotedTextType type;
   final String text;
 
   const ThreadItemContentUnionQuotedText({

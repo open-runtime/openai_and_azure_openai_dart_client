@@ -4,10 +4,10 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'comparison_filter_type_type.dart';
+import 'comparison_filter_type.dart';
 import 'comparison_filter_value_union.dart';
 import 'compound_filter_filters_union.dart';
-import 'compound_filter_type_type.dart';
+import 'compound_filter_type.dart';
 import 'comparison_filter.dart';
 import 'compound_filter.dart';
 
@@ -39,7 +39,7 @@ extension VectorStoreSearchRequestFiltersUnionDeserializer on VectorStoreSearchR
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchRequestFiltersUnionComparisonFilter extends VectorStoreSearchRequestFiltersUnion with VectorStoreSearchRequestFiltersUnionComparisonFilterMappable {
-  final ComparisonFilterTypeType type;
+  final ComparisonFilterType type;
   final String key;
   final ComparisonFilterValueUnion value;
 
@@ -52,7 +52,7 @@ class VectorStoreSearchRequestFiltersUnionComparisonFilter extends VectorStoreSe
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchRequestFiltersUnionCompoundFilter extends VectorStoreSearchRequestFiltersUnion with VectorStoreSearchRequestFiltersUnionCompoundFilterMappable {
-  final CompoundFilterTypeType type;
+  final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
   const VectorStoreSearchRequestFiltersUnionCompoundFilter({

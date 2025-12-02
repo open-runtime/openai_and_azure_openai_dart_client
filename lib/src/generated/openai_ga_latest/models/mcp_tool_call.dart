@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'conversation_item.dart';
 import 'item_resource.dart';
 import 'mcp_tool_call_status.dart';
-import 'mcp_tool_call_type_type.dart';
+import 'mcp_tool_call_type.dart';
 import 'output_item.dart';
 
 part 'mcp_tool_call.mapper.dart';
@@ -28,7 +28,7 @@ class McpToolCall with McpToolCallMappable {
     this.approvalRequestId,
   });
 
-  final McpToolCallTypeType type;
+  final McpToolCallType type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

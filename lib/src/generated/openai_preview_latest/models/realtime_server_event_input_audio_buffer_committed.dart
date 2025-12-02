@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_input_audio_buffer_committed_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_committed_type.dart';
 
 part 'realtime_server_event_input_audio_buffer_committed.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeServerEventInputAudioBufferCommitted with RealtimeServerEventInput
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventInputAudioBufferCommittedTypeType type;
+  final RealtimeServerEventInputAudioBufferCommittedType type;
   @MappableField(key: 'previous_item_id')
   final String previousItemId;
   @MappableField(key: 'item_id')

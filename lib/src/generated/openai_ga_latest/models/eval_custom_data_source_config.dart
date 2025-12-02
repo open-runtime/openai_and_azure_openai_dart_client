@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_custom_data_source_config_type_type.dart';
+import 'eval_custom_data_source_config_type.dart';
 
 part 'eval_custom_data_source_config.mapper.dart';
 
@@ -17,11 +17,11 @@ part 'eval_custom_data_source_config.mapper.dart';
 class EvalCustomDataSourceConfig with EvalCustomDataSourceConfigMappable {
   const EvalCustomDataSourceConfig({
     required this.schema,
-    this.type = EvalCustomDataSourceConfigTypeType.custom,
+    this.type = EvalCustomDataSourceConfigType.custom,
   });
 
   final dynamic schema;
-  final EvalCustomDataSourceConfigTypeType type;
+  final EvalCustomDataSourceConfigType type;
 
   static EvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) => EvalCustomDataSourceConfigMapper.fromJson(json);
 

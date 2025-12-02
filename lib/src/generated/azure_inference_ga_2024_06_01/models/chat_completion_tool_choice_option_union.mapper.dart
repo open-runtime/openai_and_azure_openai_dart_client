@@ -96,7 +96,7 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMapper
             ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMapper._(),
       );
       ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
-      ChatCompletionNamedToolChoiceTypeTypeMapper.ensureInitialized();
+      ChatCompletionNamedToolChoiceTypeMapper.ensureInitialized();
       ChatCompletionNamedToolChoiceFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -106,12 +106,12 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMapper
   final String id =
       'ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice';
 
-  static ChatCompletionNamedToolChoiceTypeType? _$type(
+  static ChatCompletionNamedToolChoiceType? _$type(
     ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice v,
   ) => v.type;
   static const Field<
     ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice,
-    ChatCompletionNamedToolChoiceTypeType
+    ChatCompletionNamedToolChoiceType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionNamedToolChoiceFunction?
@@ -274,7 +274,7 @@ abstract class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceC
   get chatCompletionNamedToolChoiceFunction;
   @override
   $R call({
-    ChatCompletionNamedToolChoiceTypeType? type,
+    ChatCompletionNamedToolChoiceType? type,
     ChatCompletionNamedToolChoiceFunction?
     chatCompletionNamedToolChoiceFunction,
   });

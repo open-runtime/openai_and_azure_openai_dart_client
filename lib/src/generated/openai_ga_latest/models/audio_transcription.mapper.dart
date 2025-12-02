@@ -14,7 +14,7 @@ class AudioTranscriptionMapper extends ClassMapperBase<AudioTranscription> {
   static AudioTranscriptionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AudioTranscriptionMapper._());
-      AudioTranscriptionModelModelMapper.ensureInitialized();
+      AudioTranscriptionModelMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class AudioTranscriptionMapper extends ClassMapperBase<AudioTranscription> {
   @override
   final String id = 'AudioTranscription';
 
-  static AudioTranscriptionModelModel? _$model(AudioTranscription v) => v.model;
-  static const Field<AudioTranscription, AudioTranscriptionModelModel>
-  _f$model = Field('model', _$model, opt: true);
+  static AudioTranscriptionModel? _$model(AudioTranscription v) => v.model;
+  static const Field<AudioTranscription, AudioTranscriptionModel> _f$model =
+      Field('model', _$model, opt: true);
   static String? _$language(AudioTranscription v) => v.language;
   static const Field<AudioTranscription, String> _f$language = Field(
     'language',
@@ -128,11 +128,7 @@ abstract class AudioTranscriptionCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    AudioTranscriptionModelModel? model,
-    String? language,
-    String? prompt,
-  });
+  $R call({AudioTranscriptionModel? model, String? language, String? prompt});
   AudioTranscriptionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

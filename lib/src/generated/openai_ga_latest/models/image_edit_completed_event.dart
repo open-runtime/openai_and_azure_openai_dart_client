@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'image_edit_completed_event_background_background.dart';
+import 'image_edit_completed_event_background.dart';
 import 'image_edit_completed_event_output_format_output_format.dart';
-import 'image_edit_completed_event_quality_quality.dart';
-import 'image_edit_completed_event_size_size.dart';
-import 'image_edit_completed_event_type_type.dart';
+import 'image_edit_completed_event_quality.dart';
+import 'image_edit_completed_event_size.dart';
+import 'image_edit_completed_event_type.dart';
 import 'image_edit_stream_event.dart';
 import 'images_usage.dart';
 
@@ -29,14 +29,14 @@ class ImageEditCompletedEvent with ImageEditCompletedEventMappable {
     required this.usage,
   });
 
-  final ImageEditCompletedEventTypeType type;
+  final ImageEditCompletedEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final ImageEditCompletedEventSizeSize size;
-  final ImageEditCompletedEventQualityQuality quality;
-  final ImageEditCompletedEventBackgroundBackground background;
+  final ImageEditCompletedEventSize size;
+  final ImageEditCompletedEventQuality quality;
+  final ImageEditCompletedEventBackground background;
   @MappableField(key: 'output_format')
   final ImageEditCompletedEventOutputFormatOutputFormat outputFormat;
   final ImagesUsage usage;

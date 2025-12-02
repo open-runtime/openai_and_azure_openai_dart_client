@@ -17,9 +17,9 @@ class EvalTestingCriteriaTestingCriteriaMapper
       MapperContainer.globals.use(
         _instance = EvalTestingCriteriaTestingCriteriaMapper._(),
       );
-      EvalStringCheckGraderOperationOperationMapper.ensureInitialized();
+      EvalStringCheckGraderOperationMapper.ensureInitialized();
       EvalTextSimilarityGraderEvaluationMetricEvaluationMetricMapper.ensureInitialized();
-      EvalTextSimilarityGraderTypeTypeMapper.ensureInitialized();
+      EvalTextSimilarityGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -49,12 +49,12 @@ class EvalTestingCriteriaTestingCriteriaMapper
       v.passThreshold;
   static const Field<EvalTestingCriteriaTestingCriteria, num> _f$passThreshold =
       Field('passThreshold', _$passThreshold, key: r'pass_threshold');
-  static EvalStringCheckGraderOperationOperation _$operation(
+  static EvalStringCheckGraderOperation _$operation(
     EvalTestingCriteriaTestingCriteria v,
   ) => v.operation;
   static const Field<
     EvalTestingCriteriaTestingCriteria,
-    EvalStringCheckGraderOperationOperation
+    EvalStringCheckGraderOperation
   >
   _f$operation = Field('operation', _$operation);
   static String _$reference(EvalTestingCriteriaTestingCriteria v) =>
@@ -73,18 +73,18 @@ class EvalTestingCriteriaTestingCriteriaMapper
     _$evaluationMetric,
     key: r'evaluation_metric',
   );
-  static EvalTextSimilarityGraderTypeType _$type(
+  static EvalTextSimilarityGraderType _$type(
     EvalTestingCriteriaTestingCriteria v,
   ) => v.type;
   static const Field<
     EvalTestingCriteriaTestingCriteria,
-    EvalTextSimilarityGraderTypeType
+    EvalTextSimilarityGraderType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalTextSimilarityGraderTypeType.textSimilarity,
+    def: EvalTextSimilarityGraderType.textSimilarity,
   );
   static String? _$name(EvalTestingCriteriaTestingCriteria v) => v.name;
   static const Field<EvalTestingCriteriaTestingCriteria, String> _f$name =
@@ -228,10 +228,10 @@ abstract class EvalTestingCriteriaTestingCriteriaCopyWith<
     String? model,
     List<String>? passingLabels,
     num? passThreshold,
-    EvalStringCheckGraderOperationOperation? operation,
+    EvalStringCheckGraderOperation? operation,
     String? reference,
     EvalTextSimilarityGraderEvaluationMetricEvaluationMetric? evaluationMetric,
-    EvalTextSimilarityGraderTypeType? type,
+    EvalTextSimilarityGraderType? type,
     String? name,
     List<num>? range,
     dynamic samplingParams,
@@ -287,10 +287,10 @@ class _EvalTestingCriteriaTestingCriteriaCopyWithImpl<$R, $Out>
     String? model,
     List<String>? passingLabels,
     num? passThreshold,
-    EvalStringCheckGraderOperationOperation? operation,
+    EvalStringCheckGraderOperation? operation,
     String? reference,
     EvalTextSimilarityGraderEvaluationMetricEvaluationMetric? evaluationMetric,
-    EvalTextSimilarityGraderTypeType? type,
+    EvalTextSimilarityGraderType? type,
     Object? name = $none,
     Object? range = $none,
     Object? samplingParams = $none,

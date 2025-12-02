@@ -18,7 +18,7 @@ class CodeInterpreterContainerAutoMapper
         _instance = CodeInterpreterContainerAutoMapper._(),
       );
       ContainerMemoryLimitMapper.ensureInitialized();
-      CodeInterpreterContainerAutoTypeTypeMapper.ensureInitialized();
+      CodeInterpreterContainerAutoTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -38,18 +38,18 @@ class CodeInterpreterContainerAutoMapper
     key: r'memory_limit',
     opt: true,
   );
-  static CodeInterpreterContainerAutoTypeType _$type(
+  static CodeInterpreterContainerAutoType _$type(
     CodeInterpreterContainerAuto v,
   ) => v.type;
   static const Field<
     CodeInterpreterContainerAuto,
-    CodeInterpreterContainerAutoTypeType
+    CodeInterpreterContainerAutoType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CodeInterpreterContainerAutoTypeType.auto,
+    def: CodeInterpreterContainerAutoType.auto,
   );
 
   @override
@@ -148,7 +148,7 @@ abstract class CodeInterpreterContainerAutoCopyWith<
   $R call({
     List<String>? fileIds,
     ContainerMemoryLimit? memoryLimit,
-    CodeInterpreterContainerAutoTypeType? type,
+    CodeInterpreterContainerAutoType? type,
   });
   CodeInterpreterContainerAutoCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -185,7 +185,7 @@ class _CodeInterpreterContainerAutoCopyWithImpl<$R, $Out>
   $R call({
     Object? fileIds = $none,
     Object? memoryLimit = $none,
-    CodeInterpreterContainerAutoTypeType? type,
+    CodeInterpreterContainerAutoType? type,
   }) => $apply(
     FieldCopyWithData({
       if (fileIds != $none) #fileIds: fileIds,

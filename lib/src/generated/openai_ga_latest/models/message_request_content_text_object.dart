@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_request_content_text_object_type_type.dart';
+import 'message_request_content_text_object_type.dart';
 
 part 'message_request_content_text_object.mapper.dart';
 
@@ -16,7 +16,7 @@ class MessageRequestContentTextObject with MessageRequestContentTextObjectMappab
     required this.text,
   });
 
-  final MessageRequestContentTextObjectTypeType type;
+  final MessageRequestContentTextObjectType type;
   final String text;
 
   static MessageRequestContentTextObject fromJson(Map<String, dynamic> json) => MessageRequestContentTextObjectMapper.fromJson(json);

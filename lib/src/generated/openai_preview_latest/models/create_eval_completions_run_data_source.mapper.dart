@@ -20,7 +20,7 @@ class CreateEvalCompletionsRunDataSourceMapper
       CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
-      CreateEvalCompletionsRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -66,18 +66,18 @@ class CreateEvalCompletionsRunDataSourceMapper
   static String? _$model(CreateEvalCompletionsRunDataSource v) => v.model;
   static const Field<CreateEvalCompletionsRunDataSource, String> _f$model =
       Field('model', _$model, opt: true);
-  static CreateEvalCompletionsRunDataSourceTypeType _$type(
+  static CreateEvalCompletionsRunDataSourceType _$type(
     CreateEvalCompletionsRunDataSource v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSource,
-    CreateEvalCompletionsRunDataSourceTypeType
+    CreateEvalCompletionsRunDataSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalCompletionsRunDataSourceTypeType.completions,
+    def: CreateEvalCompletionsRunDataSourceType.completions,
   );
 
   @override
@@ -209,7 +209,7 @@ abstract class CreateEvalCompletionsRunDataSourceCopyWith<
     CreateEvalCompletionsRunDataSourceSamplingParams?
     createEvalCompletionsRunDataSourceSamplingParams,
     String? model,
-    CreateEvalCompletionsRunDataSourceTypeType? type,
+    CreateEvalCompletionsRunDataSourceType? type,
   });
   CreateEvalCompletionsRunDataSourceCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -263,7 +263,7 @@ class _CreateEvalCompletionsRunDataSourceCopyWithImpl<$R, $Out>
     Object? inputMessages = $none,
     Object? createEvalCompletionsRunDataSourceSamplingParams = $none,
     Object? model = $none,
-    CreateEvalCompletionsRunDataSourceTypeType? type,
+    CreateEvalCompletionsRunDataSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (source != null) #source: source,

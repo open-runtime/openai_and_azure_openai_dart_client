@@ -84,7 +84,7 @@ class OutputMessageContentOutputTextMapper
         _instance = OutputMessageContentOutputTextMapper._(),
       );
       OutputMessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputMessageContentTypeTypeMapper.ensureInitialized();
+      OutputMessageContentTypeMapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
       LogProbMapper.ensureInitialized();
     }
@@ -94,13 +94,9 @@ class OutputMessageContentOutputTextMapper
   @override
   final String id = 'OutputMessageContentOutputText';
 
-  static OutputMessageContentTypeType _$type(
-    OutputMessageContentOutputText v,
-  ) => v.type;
-  static const Field<
-    OutputMessageContentOutputText,
-    OutputMessageContentTypeType
-  >
+  static OutputMessageContentType _$type(OutputMessageContentOutputText v) =>
+      v.type;
+  static const Field<OutputMessageContentOutputText, OutputMessageContentType>
   _f$type = Field('type', _$type);
   static String _$text(OutputMessageContentOutputText v) => v.text;
   static const Field<OutputMessageContentOutputText, String> _f$text = Field(
@@ -229,7 +225,7 @@ abstract class OutputMessageContentOutputTextCopyWith<
   get logprobs;
   @override
   $R call({
-    OutputMessageContentTypeType? type,
+    OutputMessageContentType? type,
     String? text,
     List<Annotation>? annotations,
     List<LogProb>? logprobs,
@@ -274,7 +270,7 @@ class _OutputMessageContentOutputTextCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    OutputMessageContentTypeType? type,
+    OutputMessageContentType? type,
     String? text,
     List<Annotation>? annotations,
     Object? logprobs = $none,
@@ -316,7 +312,7 @@ class OutputMessageContentRefusalMapper
         _instance = OutputMessageContentRefusalMapper._(),
       );
       OutputMessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputMessageContentTypeType2Mapper.ensureInitialized();
+      OutputMessageContentType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -324,9 +320,9 @@ class OutputMessageContentRefusalMapper
   @override
   final String id = 'OutputMessageContentRefusal';
 
-  static OutputMessageContentTypeType2 _$type(OutputMessageContentRefusal v) =>
+  static OutputMessageContentType2 _$type(OutputMessageContentRefusal v) =>
       v.type;
-  static const Field<OutputMessageContentRefusal, OutputMessageContentTypeType2>
+  static const Field<OutputMessageContentRefusal, OutputMessageContentType2>
   _f$type = Field('type', _$type);
   static String _$refusal(OutputMessageContentRefusal v) => v.refusal;
   static const Field<OutputMessageContentRefusal, String> _f$refusal = Field(
@@ -434,7 +430,7 @@ abstract class OutputMessageContentRefusalCopyWith<
 >
     implements OutputMessageContentCopyWith<$R, $In, $Out> {
   @override
-  $R call({OutputMessageContentTypeType2? type, String? refusal});
+  $R call({OutputMessageContentType2? type, String? refusal});
   OutputMessageContentRefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -458,7 +454,7 @@ class _OutputMessageContentRefusalCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputMessageContentRefusal> $mapper =
       OutputMessageContentRefusalMapper.ensureInitialized();
   @override
-  $R call({OutputMessageContentTypeType2? type, String? refusal}) => $apply(
+  $R call({OutputMessageContentType2? type, String? refusal}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (refusal != null) #refusal: refusal,

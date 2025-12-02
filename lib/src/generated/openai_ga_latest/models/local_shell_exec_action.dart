@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'local_shell_exec_action_type_type.dart';
+import 'local_shell_exec_action_type.dart';
 
 part 'local_shell_exec_action.mapper.dart';
 
@@ -17,7 +17,7 @@ class LocalShellExecAction with LocalShellExecActionMappable {
     this.timeoutMs,
     this.workingDirectory,
     this.user,
-    this.type = LocalShellExecActionTypeType.exec,
+    this.type = LocalShellExecActionType.exec,
   });
 
   final List<String> command;
@@ -27,7 +27,7 @@ class LocalShellExecAction with LocalShellExecActionMappable {
   @MappableField(key: 'working_directory')
   final String? workingDirectory;
   final String? user;
-  final LocalShellExecActionTypeType type;
+  final LocalShellExecActionType type;
 
   static LocalShellExecAction fromJson(Map<String, dynamic> json) => LocalShellExecActionMapper.fromJson(json);
 

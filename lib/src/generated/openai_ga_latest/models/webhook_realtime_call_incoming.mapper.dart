@@ -18,7 +18,7 @@ class WebhookRealtimeCallIncomingMapper
         _instance = WebhookRealtimeCallIncomingMapper._(),
       );
       WebhookRealtimeCallIncomingDataMapper.ensureInitialized();
-      WebhookRealtimeCallIncomingTypeTypeMapper.ensureInitialized();
+      WebhookRealtimeCallIncomingTypeMapper.ensureInitialized();
       WebhookRealtimeCallIncomingObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,12 +50,12 @@ class WebhookRealtimeCallIncomingMapper
     _$webhookRealtimeCallIncomingData,
     key: r'data',
   );
-  static WebhookRealtimeCallIncomingTypeType _$type(
+  static WebhookRealtimeCallIncomingType _$type(
     WebhookRealtimeCallIncoming v,
   ) => v.type;
   static const Field<
     WebhookRealtimeCallIncoming,
-    WebhookRealtimeCallIncomingTypeType
+    WebhookRealtimeCallIncomingType
   >
   _f$type = Field('type', _$type);
   static WebhookRealtimeCallIncomingObjectObjectEnum? _$objectEnum(
@@ -176,7 +176,7 @@ abstract class WebhookRealtimeCallIncomingCopyWith<
     int? createdAt,
     String? id,
     WebhookRealtimeCallIncomingData? webhookRealtimeCallIncomingData,
-    WebhookRealtimeCallIncomingTypeType? type,
+    WebhookRealtimeCallIncomingType? type,
     WebhookRealtimeCallIncomingObjectObjectEnum? objectEnum,
   });
   WebhookRealtimeCallIncomingCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -216,7 +216,7 @@ class _WebhookRealtimeCallIncomingCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookRealtimeCallIncomingData? webhookRealtimeCallIncomingData,
-    WebhookRealtimeCallIncomingTypeType? type,
+    WebhookRealtimeCallIncomingType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

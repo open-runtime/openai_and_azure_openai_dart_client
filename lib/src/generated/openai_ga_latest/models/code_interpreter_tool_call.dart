@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_tool_call_outputs_union.dart';
-import 'code_interpreter_tool_call_status_status.dart';
-import 'code_interpreter_tool_call_type_type.dart';
+import 'code_interpreter_tool_call_status.dart';
+import 'code_interpreter_tool_call_type.dart';
 import 'conversation_item.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
@@ -23,16 +23,16 @@ class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
     required this.containerId,
     required this.code,
     required this.outputs,
-    this.type = CodeInterpreterToolCallTypeType.codeInterpreterCall,
+    this.type = CodeInterpreterToolCallType.codeInterpreterCall,
   });
 
   final String id;
-  final CodeInterpreterToolCallStatusStatus status;
+  final CodeInterpreterToolCallStatus status;
   @MappableField(key: 'container_id')
   final String containerId;
   final String? code;
   final List<CodeInterpreterToolCallOutputsUnion>? outputs;
-  final CodeInterpreterToolCallTypeType type;
+  final CodeInterpreterToolCallType type;
 
   static CodeInterpreterToolCall fromJson(Map<String, dynamic> json) => CodeInterpreterToolCallMapper.fromJson(json);
 

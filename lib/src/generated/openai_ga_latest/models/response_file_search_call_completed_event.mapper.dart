@@ -17,7 +17,7 @@ class ResponseFileSearchCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFileSearchCallCompletedEventMapper._(),
       );
-      ResponseFileSearchCallCompletedEventTypeTypeMapper.ensureInitialized();
+      ResponseFileSearchCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseFileSearchCallCompletedEventMapper
   @override
   final String id = 'ResponseFileSearchCallCompletedEvent';
 
-  static ResponseFileSearchCallCompletedEventTypeType _$type(
+  static ResponseFileSearchCallCompletedEventType _$type(
     ResponseFileSearchCallCompletedEvent v,
   ) => v.type;
   static const Field<
     ResponseFileSearchCallCompletedEvent,
-    ResponseFileSearchCallCompletedEventTypeType
+    ResponseFileSearchCallCompletedEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseFileSearchCallCompletedEvent v) =>
@@ -152,7 +152,7 @@ abstract class ResponseFileSearchCallCompletedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseFileSearchCallCompletedEventTypeType? type,
+    ResponseFileSearchCallCompletedEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,
@@ -180,7 +180,7 @@ class _ResponseFileSearchCallCompletedEventCopyWithImpl<$R, $Out>
       ResponseFileSearchCallCompletedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseFileSearchCallCompletedEventTypeType? type,
+    ResponseFileSearchCallCompletedEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,

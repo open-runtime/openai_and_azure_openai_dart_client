@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'create_eval_completions_run_data_source_input_messages_union.dart';
 import 'create_eval_completions_run_data_source_sampling_params.dart';
 import 'create_eval_completions_run_data_source_source_union.dart';
-import 'create_eval_completions_run_data_source_type_type.dart';
+import 'create_eval_completions_run_data_source_type.dart';
 
 part 'create_eval_completions_run_data_source.mapper.dart';
 
@@ -20,7 +20,7 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
     this.inputMessages,
     this.createEvalCompletionsRunDataSourceSamplingParams,
     this.model,
-    this.type = CreateEvalCompletionsRunDataSourceTypeType.completions,
+    this.type = CreateEvalCompletionsRunDataSourceType.completions,
   });
 
   final CreateEvalCompletionsRunDataSourceSourceUnion source;
@@ -29,7 +29,7 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
   @MappableField(key: 'sampling_params')
   final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
   final String? model;
-  final CreateEvalCompletionsRunDataSourceTypeType type;
+  final CreateEvalCompletionsRunDataSourceType type;
 
   static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
 

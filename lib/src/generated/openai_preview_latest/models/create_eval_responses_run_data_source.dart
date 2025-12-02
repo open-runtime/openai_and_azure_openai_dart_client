@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'create_eval_responses_run_data_source_input_messages_union.dart';
 import 'create_eval_responses_run_data_source_sampling_params.dart';
 import 'create_eval_responses_run_data_source_source_union.dart';
-import 'create_eval_responses_run_data_source_type_type.dart';
+import 'create_eval_responses_run_data_source_type.dart';
 
 part 'create_eval_responses_run_data_source.mapper.dart';
 
@@ -20,7 +20,7 @@ class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMapp
     this.inputMessages,
     this.createEvalResponsesRunDataSourceSamplingParams,
     this.model,
-    this.type = CreateEvalResponsesRunDataSourceTypeType.completions,
+    this.type = CreateEvalResponsesRunDataSourceType.completions,
   });
 
   final CreateEvalResponsesRunDataSourceSourceUnion source;
@@ -29,7 +29,7 @@ class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMapp
   @MappableField(key: 'sampling_params')
   final CreateEvalResponsesRunDataSourceSamplingParams? createEvalResponsesRunDataSourceSamplingParams;
   final String? model;
-  final CreateEvalResponsesRunDataSourceTypeType type;
+  final CreateEvalResponsesRunDataSourceType type;
 
   static CreateEvalResponsesRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceMapper.fromJson(json);
 

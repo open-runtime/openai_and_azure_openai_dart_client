@@ -17,7 +17,7 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
       RealtimeSessionInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeSessionObjectObjectEnumMapper.ensureInitialized();
-      RealtimeSessionModelModelMapper.ensureInitialized();
+      RealtimeSessionModelMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
       AudioTranscriptionMapper.ensureInitialized();
       RealtimeTurnDetectionMapper.ensureInitialized();
@@ -26,7 +26,7 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
       RealtimeFunctionToolMapper.ensureInitialized();
       RealtimeSessionMaxResponseOutputTokensUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
-      RealtimeSessionIncludeIncludeMapper.ensureInitialized();
+      RealtimeSessionIncludeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -100,9 +100,12 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     _$modalities,
     opt: true,
   );
-  static RealtimeSessionModelModel? _$model(RealtimeSession v) => v.model;
-  static const Field<RealtimeSession, RealtimeSessionModelModel> _f$model =
-      Field('model', _$model, opt: true);
+  static RealtimeSessionModel? _$model(RealtimeSession v) => v.model;
+  static const Field<RealtimeSession, RealtimeSessionModel> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static String? _$instructions(RealtimeSession v) => v.instructions;
   static const Field<RealtimeSession, String> _f$instructions = Field(
     'instructions',
@@ -177,10 +180,10 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     _$prompt,
     opt: true,
   );
-  static List<RealtimeSessionIncludeInclude>? _$include(RealtimeSession v) =>
+  static List<RealtimeSessionInclude>? _$include(RealtimeSession v) =>
       v.include;
-  static const Field<RealtimeSession, List<RealtimeSessionIncludeInclude>>
-  _f$include = Field('include', _$include, opt: true);
+  static const Field<RealtimeSession, List<RealtimeSessionInclude>> _f$include =
+      Field('include', _$include, opt: true);
 
   @override
   final MappableFields<RealtimeSession> fields = const {
@@ -336,12 +339,8 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   ListCopyWith<
     $R,
-    RealtimeSessionIncludeInclude,
-    ObjectCopyWith<
-      $R,
-      RealtimeSessionIncludeInclude,
-      RealtimeSessionIncludeInclude
-    >
+    RealtimeSessionInclude,
+    ObjectCopyWith<$R, RealtimeSessionInclude, RealtimeSessionInclude>
   >?
   get include;
   $R call({
@@ -353,7 +352,7 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     String? id,
     RealtimeSessionObjectObjectEnum? objectEnum,
     dynamic modalities,
-    RealtimeSessionModelModel? model,
+    RealtimeSessionModel? model,
     String? instructions,
     VoiceIdsShared? voice,
     AudioTranscription? inputAudioTranscription,
@@ -365,7 +364,7 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     RealtimeSessionMaxResponseOutputTokensUnion? maxResponseOutputTokens,
     int? expiresAt,
     PromptUnion? prompt,
-    List<RealtimeSessionIncludeInclude>? include,
+    List<RealtimeSessionInclude>? include,
   });
   RealtimeSessionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -439,12 +438,8 @@ class _RealtimeSessionCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionIncludeInclude,
-    ObjectCopyWith<
-      $R,
-      RealtimeSessionIncludeInclude,
-      RealtimeSessionIncludeInclude
-    >
+    RealtimeSessionInclude,
+    ObjectCopyWith<$R, RealtimeSessionInclude, RealtimeSessionInclude>
   >?
   get include => $value.include != null
       ? ListCopyWith(

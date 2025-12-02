@@ -14,10 +14,10 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
   static InputMessageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputMessageMapper._());
-      InputMessageRoleRoleMapper.ensureInitialized();
+      InputMessageRoleMapper.ensureInitialized();
       InputContentMapper.ensureInitialized();
-      InputMessageTypeTypeMapper.ensureInitialized();
-      InputMessageStatusStatusMapper.ensureInitialized();
+      InputMessageTypeMapper.ensureInitialized();
+      InputMessageStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,8 +25,8 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
   @override
   final String id = 'InputMessage';
 
-  static InputMessageRoleRole _$role(InputMessage v) => v.role;
-  static const Field<InputMessage, InputMessageRoleRole> _f$role = Field(
+  static InputMessageRole _$role(InputMessage v) => v.role;
+  static const Field<InputMessage, InputMessageRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -35,14 +35,14 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
     'content',
     _$content,
   );
-  static InputMessageTypeType? _$type(InputMessage v) => v.type;
-  static const Field<InputMessage, InputMessageTypeType> _f$type = Field(
+  static InputMessageType? _$type(InputMessage v) => v.type;
+  static const Field<InputMessage, InputMessageType> _f$type = Field(
     'type',
     _$type,
     opt: true,
   );
-  static InputMessageStatusStatus? _$status(InputMessage v) => v.status;
-  static const Field<InputMessage, InputMessageStatusStatus> _f$status = Field(
+  static InputMessageStatus? _$status(InputMessage v) => v.status;
+  static const Field<InputMessage, InputMessageStatus> _f$status = Field(
     'status',
     _$status,
     opt: true,
@@ -138,10 +138,10 @@ abstract class InputMessageCopyWith<$R, $In extends InputMessage, $Out>
   >
   get content;
   $R call({
-    InputMessageRoleRole? role,
+    InputMessageRole? role,
     List<InputContent>? content,
-    InputMessageTypeType? type,
-    InputMessageStatusStatus? status,
+    InputMessageType? type,
+    InputMessageStatus? status,
   });
   InputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -167,7 +167,7 @@ class _InputMessageCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    InputMessageRoleRole? role,
+    InputMessageRole? role,
     List<InputContent>? content,
     Object? type = $none,
     Object? status = $none,

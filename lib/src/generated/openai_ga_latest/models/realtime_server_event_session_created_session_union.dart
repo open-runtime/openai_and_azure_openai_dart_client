@@ -11,18 +11,18 @@ import 'realtime_create_client_secret_request_session_union.dart';
 import 'realtime_server_event_session_union.dart';
 import 'realtime_session_create_request_ga.dart';
 import 'realtime_session_create_request_ga_audio.dart';
-import 'realtime_session_create_request_ga_include_include.dart';
+import 'realtime_session_create_request_ga_include.dart';
 import 'realtime_session_create_request_ga_max_output_tokens_union.dart';
 import 'realtime_session_create_request_ga_model_union.dart';
 import 'realtime_session_create_request_ga_output_modalities_output_modalities.dart';
 import 'realtime_session_create_request_ga_tool_choice_union.dart';
 import 'realtime_session_create_request_ga_tools_union.dart';
 import 'realtime_session_create_request_ga_tracing_union.dart';
-import 'realtime_session_create_request_ga_type_type.dart';
+import 'realtime_session_create_request_ga_type.dart';
 import 'realtime_transcription_session_create_request_ga.dart';
 import 'realtime_transcription_session_create_request_ga_audio.dart';
-import 'realtime_transcription_session_create_request_ga_include_include.dart';
-import 'realtime_transcription_session_create_request_ga_type_type.dart';
+import 'realtime_transcription_session_create_request_ga_include.dart';
+import 'realtime_transcription_session_create_request_ga_type.dart';
 import 'realtime_truncation.dart';
 
 part 'realtime_server_event_session_created_session_union.mapper.dart';
@@ -62,14 +62,14 @@ extension RealtimeServerEventSessionCreatedSessionUnionDeserializer on RealtimeS
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
 class RealtimeServerEventSessionCreatedSessionUnionRealtime extends RealtimeServerEventSessionCreatedSessionUnion with RealtimeServerEventSessionCreatedSessionUnionRealtimeMappable {
-  final RealtimeSessionCreateRequestGaTypeType type;
+  final RealtimeSessionCreateRequestGaType type;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities> outputModalities;
   final RealtimeSessionCreateRequestGaModelUnion? model;
   final String? instructions;
   @MappableField(key: 'audio')
   final RealtimeSessionCreateRequestGaAudio? realtimeSessionCreateRequestGaAudio;
-  final List<RealtimeSessionCreateRequestGaIncludeInclude>? include;
+  final List<RealtimeSessionCreateRequestGaInclude>? include;
   final RealtimeSessionCreateRequestGaTracingUnion? tracing;
   final List<RealtimeSessionCreateRequestGaToolsUnion>? tools;
   @MappableField(key: 'tool_choice')
@@ -97,10 +97,10 @@ class RealtimeServerEventSessionCreatedSessionUnionRealtime extends RealtimeServ
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
 class RealtimeServerEventSessionCreatedSessionUnionTranscription extends RealtimeServerEventSessionCreatedSessionUnion with RealtimeServerEventSessionCreatedSessionUnionTranscriptionMappable {
-  final RealtimeTranscriptionSessionCreateRequestGaTypeType type;
+  final RealtimeTranscriptionSessionCreateRequestGaType type;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
-  final List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>? include;
+  final List<RealtimeTranscriptionSessionCreateRequestGaInclude>? include;
 
   const RealtimeServerEventSessionCreatedSessionUnionTranscription({
     required this.type,

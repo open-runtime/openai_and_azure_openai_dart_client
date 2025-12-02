@@ -17,7 +17,7 @@ class MessageDeltaContentImageFileObjectImageFileMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentImageFileObjectImageFileMapper._(),
       );
-      MessageDeltaContentImageFileObjectImageFileDetailDetailMapper.ensureInitialized();
+      MessageDeltaContentImageFileObjectImageFileDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class MessageDeltaContentImageFileObjectImageFileMapper
   @override
   final String id = 'MessageDeltaContentImageFileObjectImageFile';
 
-  static MessageDeltaContentImageFileObjectImageFileDetailDetail _$detail(
+  static MessageDeltaContentImageFileObjectImageFileDetail _$detail(
     MessageDeltaContentImageFileObjectImageFile v,
   ) => v.detail;
   static const Field<
     MessageDeltaContentImageFileObjectImageFile,
-    MessageDeltaContentImageFileObjectImageFileDetailDetail
+    MessageDeltaContentImageFileObjectImageFileDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageDeltaContentImageFileObjectImageFileDetailDetail.auto,
+    def: MessageDeltaContentImageFileObjectImageFileDetail.auto,
   );
   static String? _$fileId(MessageDeltaContentImageFileObjectImageFile v) =>
       v.fileId;
@@ -153,7 +153,7 @@ abstract class MessageDeltaContentImageFileObjectImageFileCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    MessageDeltaContentImageFileObjectImageFileDetailDetail? detail,
+    MessageDeltaContentImageFileObjectImageFileDetail? detail,
     String? fileId,
   });
   MessageDeltaContentImageFileObjectImageFileCopyWith<$R2, $In, $Out2>
@@ -181,7 +181,7 @@ class _MessageDeltaContentImageFileObjectImageFileCopyWithImpl<$R, $Out>
       MessageDeltaContentImageFileObjectImageFileMapper.ensureInitialized();
   @override
   $R call({
-    MessageDeltaContentImageFileObjectImageFileDetailDetail? detail,
+    MessageDeltaContentImageFileObjectImageFileDetail? detail,
     Object? fileId = $none,
   }) => $apply(
     FieldCopyWithData({

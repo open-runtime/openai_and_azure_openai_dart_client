@@ -15,7 +15,7 @@ class ResponseTextDoneEventMapper
   static ResponseTextDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseTextDoneEventMapper._());
-      ResponseTextDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseTextDoneEventTypeMapper.ensureInitialized();
       ResponseLogProbMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,10 +24,9 @@ class ResponseTextDoneEventMapper
   @override
   final String id = 'ResponseTextDoneEvent';
 
-  static ResponseTextDoneEventTypeType _$type(ResponseTextDoneEvent v) =>
-      v.type;
-  static const Field<ResponseTextDoneEvent, ResponseTextDoneEventTypeType>
-  _f$type = Field('type', _$type);
+  static ResponseTextDoneEventType _$type(ResponseTextDoneEvent v) => v.type;
+  static const Field<ResponseTextDoneEvent, ResponseTextDoneEventType> _f$type =
+      Field('type', _$type);
   static String _$itemId(ResponseTextDoneEvent v) => v.itemId;
   static const Field<ResponseTextDoneEvent, String> _f$itemId = Field(
     'itemId',
@@ -166,7 +165,7 @@ abstract class ResponseTextDoneEventCopyWith<
   >
   get logprobs;
   $R call({
-    ResponseTextDoneEventTypeType? type,
+    ResponseTextDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -200,7 +199,7 @@ class _ResponseTextDoneEventCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ResponseTextDoneEventTypeType? type,
+    ResponseTextDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

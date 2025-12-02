@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation.dart';
-import 'apply_patch_create_file_operation_type_type.dart';
+import 'apply_patch_create_file_operation_type.dart';
 import 'apply_patch_delete_file_operation.dart';
-import 'apply_patch_delete_file_operation_type_type.dart';
+import 'apply_patch_delete_file_operation_type.dart';
 import 'apply_patch_update_file_operation.dart';
-import 'apply_patch_update_file_operation_type_type.dart';
+import 'apply_patch_update_file_operation_type.dart';
 import 'conversation_item_operation_union.dart';
 
 part 'item_resource_operation_union.mapper.dart';
@@ -52,7 +52,7 @@ extension ItemResourceOperationUnionDeserializer on ItemResourceOperationUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
 class ItemResourceOperationUnionCreateFile extends ItemResourceOperationUnion with ItemResourceOperationUnionCreateFileMappable {
-  final ApplyPatchCreateFileOperationTypeType type;
+  final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
@@ -65,7 +65,7 @@ class ItemResourceOperationUnionCreateFile extends ItemResourceOperationUnion wi
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
 class ItemResourceOperationUnionDeleteFile extends ItemResourceOperationUnion with ItemResourceOperationUnionDeleteFileMappable {
-  final ApplyPatchDeleteFileOperationTypeType type;
+  final ApplyPatchDeleteFileOperationType type;
   final String path;
 
   const ItemResourceOperationUnionDeleteFile({
@@ -76,7 +76,7 @@ class ItemResourceOperationUnionDeleteFile extends ItemResourceOperationUnion wi
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
 class ItemResourceOperationUnionUpdateFile extends ItemResourceOperationUnion with ItemResourceOperationUnionUpdateFileMappable {
-  final ApplyPatchUpdateFileOperationTypeType type;
+  final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 

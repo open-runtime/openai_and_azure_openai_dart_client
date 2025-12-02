@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_item.dart';
-import 'response_output_item_done_event_type_type.dart';
+import 'response_output_item_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_output_item_done_event.mapper.dart';
@@ -19,7 +19,7 @@ class ResponseOutputItemDoneEvent with ResponseOutputItemDoneEventMappable {
     required this.item,
   });
 
-  final ResponseOutputItemDoneEventTypeType type;
+  final ResponseOutputItemDoneEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final OutputItem item;

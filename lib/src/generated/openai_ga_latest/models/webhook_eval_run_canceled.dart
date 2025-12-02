@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_eval_run_canceled_data.dart';
 import 'webhook_eval_run_canceled_object_object_enum.dart';
-import 'webhook_eval_run_canceled_type_type.dart';
+import 'webhook_eval_run_canceled_type.dart';
 
 part 'webhook_eval_run_canceled.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookEvalRunCanceled with WebhookEvalRunCanceledMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookEvalRunCanceledData webhookEvalRunCanceledData;
-  final WebhookEvalRunCanceledTypeType type;
+  final WebhookEvalRunCanceledType type;
   @MappableField(key: 'object')
   final WebhookEvalRunCanceledObjectObjectEnum? objectEnum;
 

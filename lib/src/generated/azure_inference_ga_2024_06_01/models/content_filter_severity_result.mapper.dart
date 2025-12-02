@@ -17,7 +17,7 @@ class ContentFilterSeverityResultMapper
       MapperContainer.globals.use(
         _instance = ContentFilterSeverityResultMapper._(),
       );
-      ContentFilterSeverityResultSeveritySeverityMapper.ensureInitialized();
+      ContentFilterSeverityResultSeverityMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class ContentFilterSeverityResultMapper
     'filtered',
     _$filtered,
   );
-  static ContentFilterSeverityResultSeveritySeverity? _$severity(
+  static ContentFilterSeverityResultSeverity? _$severity(
     ContentFilterSeverityResult v,
   ) => v.severity;
   static const Field<
     ContentFilterSeverityResult,
-    ContentFilterSeverityResultSeveritySeverity
+    ContentFilterSeverityResultSeverity
   >
   _f$severity = Field('severity', _$severity, opt: true);
 
@@ -130,10 +130,7 @@ abstract class ContentFilterSeverityResultCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    bool? filtered,
-    ContentFilterSeverityResultSeveritySeverity? severity,
-  });
+  $R call({bool? filtered, ContentFilterSeverityResultSeverity? severity});
   ContentFilterSeverityResultCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

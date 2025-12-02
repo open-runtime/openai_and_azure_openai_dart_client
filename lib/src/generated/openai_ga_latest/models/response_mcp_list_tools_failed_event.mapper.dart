@@ -17,7 +17,7 @@ class ResponseMcpListToolsFailedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpListToolsFailedEventMapper._(),
       );
-      ResponseMcpListToolsFailedEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpListToolsFailedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseMcpListToolsFailedEventMapper
   @override
   final String id = 'ResponseMcpListToolsFailedEvent';
 
-  static ResponseMcpListToolsFailedEventTypeType _$type(
+  static ResponseMcpListToolsFailedEventType _$type(
     ResponseMcpListToolsFailedEvent v,
   ) => v.type;
   static const Field<
     ResponseMcpListToolsFailedEvent,
-    ResponseMcpListToolsFailedEventTypeType
+    ResponseMcpListToolsFailedEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseMcpListToolsFailedEvent v) => v.itemId;
@@ -147,7 +147,7 @@ abstract class ResponseMcpListToolsFailedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpListToolsFailedEventTypeType? type,
+    ResponseMcpListToolsFailedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,
@@ -176,7 +176,7 @@ class _ResponseMcpListToolsFailedEventCopyWithImpl<$R, $Out>
       ResponseMcpListToolsFailedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpListToolsFailedEventTypeType? type,
+    ResponseMcpListToolsFailedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,

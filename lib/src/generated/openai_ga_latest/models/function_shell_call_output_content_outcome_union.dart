@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_shell_call_output_exit_outcome.dart';
-import 'function_shell_call_output_exit_outcome_type_type.dart';
+import 'function_shell_call_output_exit_outcome_type.dart';
 import 'function_shell_call_output_timeout_outcome.dart';
-import 'function_shell_call_output_timeout_outcome_type_type.dart';
+import 'function_shell_call_output_timeout_outcome_type.dart';
 
 part 'function_shell_call_output_content_outcome_union.mapper.dart';
 
@@ -46,7 +46,7 @@ extension FunctionShellCallOutputContentOutcomeUnionDeserializer on FunctionShel
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'timeout')
 class FunctionShellCallOutputContentOutcomeUnionTimeout extends FunctionShellCallOutputContentOutcomeUnion with FunctionShellCallOutputContentOutcomeUnionTimeoutMappable {
-  final FunctionShellCallOutputTimeoutOutcomeTypeType type;
+  final FunctionShellCallOutputTimeoutOutcomeType type;
 
   const FunctionShellCallOutputContentOutcomeUnionTimeout({
     required this.type,
@@ -55,7 +55,7 @@ class FunctionShellCallOutputContentOutcomeUnionTimeout extends FunctionShellCal
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'exit')
 class FunctionShellCallOutputContentOutcomeUnionExit extends FunctionShellCallOutputContentOutcomeUnion with FunctionShellCallOutputContentOutcomeUnionExitMappable {
-  final FunctionShellCallOutputExitOutcomeTypeType type;
+  final FunctionShellCallOutputExitOutcomeType type;
   @MappableField(key: 'exit_code')
   final int exitCode;
 

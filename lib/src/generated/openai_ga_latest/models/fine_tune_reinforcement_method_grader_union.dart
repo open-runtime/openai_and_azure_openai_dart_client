@@ -7,18 +7,18 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'eval_item.dart';
 import 'grader_multi.dart';
 import 'grader_multi_graders_union.dart';
-import 'grader_multi_type_type.dart';
+import 'grader_multi_type.dart';
 import 'grader_python.dart';
-import 'grader_python_type_type.dart';
+import 'grader_python_type.dart';
 import 'grader_score_model.dart';
 import 'grader_score_model_sampling_params.dart';
-import 'grader_score_model_type_type.dart';
+import 'grader_score_model_type.dart';
 import 'grader_string_check.dart';
-import 'grader_string_check_operation_operation.dart';
-import 'grader_string_check_type_type.dart';
+import 'grader_string_check_operation.dart';
+import 'grader_string_check_type.dart';
 import 'grader_text_similarity.dart';
 import 'grader_text_similarity_evaluation_metric_evaluation_metric.dart';
-import 'grader_text_similarity_type_type.dart';
+import 'grader_text_similarity_type.dart';
 
 part 'fine_tune_reinforcement_method_grader_union.mapper.dart';
 
@@ -66,11 +66,11 @@ extension FineTuneReinforcementMethodGraderUnionDeserializer on FineTuneReinforc
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
 class FineTuneReinforcementMethodGraderUnionStringCheck extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionStringCheckMappable {
-  final GraderStringCheckTypeType type;
+  final GraderStringCheckType type;
   final String name;
   final String input;
   final String reference;
-  final GraderStringCheckOperationOperation operation;
+  final GraderStringCheckOperation operation;
 
   const FineTuneReinforcementMethodGraderUnionStringCheck({
     required this.type,
@@ -83,7 +83,7 @@ class FineTuneReinforcementMethodGraderUnionStringCheck extends FineTuneReinforc
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
 class FineTuneReinforcementMethodGraderUnionTextSimilarity extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionTextSimilarityMappable {
-  final GraderTextSimilarityTypeType type;
+  final GraderTextSimilarityType type;
   final String name;
   final String input;
   final String reference;
@@ -101,7 +101,7 @@ class FineTuneReinforcementMethodGraderUnionTextSimilarity extends FineTuneReinf
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
 class FineTuneReinforcementMethodGraderUnionPython extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionPythonMappable {
-  final GraderPythonTypeType type;
+  final GraderPythonType type;
   final String name;
   final String source;
   @MappableField(key: 'image_tag')
@@ -117,7 +117,7 @@ class FineTuneReinforcementMethodGraderUnionPython extends FineTuneReinforcement
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
 class FineTuneReinforcementMethodGraderUnionScoreModel extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionScoreModelMappable {
-  final GraderScoreModelTypeType type;
+  final GraderScoreModelType type;
   final String name;
   final String model;
   @MappableField(key: 'sampling_params')
@@ -137,7 +137,7 @@ class FineTuneReinforcementMethodGraderUnionScoreModel extends FineTuneReinforce
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'multi')
 class FineTuneReinforcementMethodGraderUnionMulti extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionMultiMappable {
-  final GraderMultiTypeType type;
+  final GraderMultiType type;
   final String name;
   final GraderMultiGradersUnion graders;
   @MappableField(key: 'calculate_output')

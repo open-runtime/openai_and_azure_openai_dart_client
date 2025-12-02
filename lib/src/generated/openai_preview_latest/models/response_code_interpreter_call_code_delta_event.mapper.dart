@@ -17,7 +17,7 @@ class ResponseCodeInterpreterCallCodeDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallCodeDeltaEventMapper._(),
       );
-      ResponseCodeInterpreterCallCodeDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseCodeInterpreterCallCodeDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseCodeInterpreterCallCodeDeltaEventMapper
   @override
   final String id = 'ResponseCodeInterpreterCallCodeDeltaEvent';
 
-  static ResponseCodeInterpreterCallCodeDeltaEventTypeType _$type(
+  static ResponseCodeInterpreterCallCodeDeltaEventType _$type(
     ResponseCodeInterpreterCallCodeDeltaEvent v,
   ) => v.type;
   static const Field<
     ResponseCodeInterpreterCallCodeDeltaEvent,
-    ResponseCodeInterpreterCallCodeDeltaEventTypeType
+    ResponseCodeInterpreterCallCodeDeltaEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseCodeInterpreterCallCodeDeltaEvent v) =>
@@ -147,7 +147,7 @@ abstract class ResponseCodeInterpreterCallCodeDeltaEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseCodeInterpreterCallCodeDeltaEventTypeType? type,
+    ResponseCodeInterpreterCallCodeDeltaEventType? type,
     int? outputIndex,
     String? delta,
   });
@@ -175,7 +175,7 @@ class _ResponseCodeInterpreterCallCodeDeltaEventCopyWithImpl<$R, $Out>
   $mapper = ResponseCodeInterpreterCallCodeDeltaEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseCodeInterpreterCallCodeDeltaEventTypeType? type,
+    ResponseCodeInterpreterCallCodeDeltaEventType? type,
     int? outputIndex,
     String? delta,
   }) => $apply(

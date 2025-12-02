@@ -17,7 +17,7 @@ class VectorStoreSearchRequestRankingOptionsMapper
       MapperContainer.globals.use(
         _instance = VectorStoreSearchRequestRankingOptionsMapper._(),
       );
-      VectorStoreSearchRequestRankingOptionsRankerRankerMapper.ensureInitialized();
+      VectorStoreSearchRequestRankingOptionsRankerMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class VectorStoreSearchRequestRankingOptionsMapper
   @override
   final String id = 'VectorStoreSearchRequestRankingOptions';
 
-  static VectorStoreSearchRequestRankingOptionsRankerRanker _$ranker(
+  static VectorStoreSearchRequestRankingOptionsRanker _$ranker(
     VectorStoreSearchRequestRankingOptions v,
   ) => v.ranker;
   static const Field<
     VectorStoreSearchRequestRankingOptions,
-    VectorStoreSearchRequestRankingOptionsRankerRanker
+    VectorStoreSearchRequestRankingOptionsRanker
   >
   _f$ranker = Field(
     'ranker',
     _$ranker,
     opt: true,
-    def: VectorStoreSearchRequestRankingOptionsRankerRanker.auto,
+    def: VectorStoreSearchRequestRankingOptionsRanker.auto,
   );
   static num _$scoreThreshold(VectorStoreSearchRequestRankingOptions v) =>
       v.scoreThreshold;
@@ -148,7 +148,7 @@ abstract class VectorStoreSearchRequestRankingOptionsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    VectorStoreSearchRequestRankingOptionsRankerRanker? ranker,
+    VectorStoreSearchRequestRankingOptionsRanker? ranker,
     num? scoreThreshold,
   });
   VectorStoreSearchRequestRankingOptionsCopyWith<$R2, $In, $Out2>
@@ -174,7 +174,7 @@ class _VectorStoreSearchRequestRankingOptionsCopyWithImpl<$R, $Out>
       VectorStoreSearchRequestRankingOptionsMapper.ensureInitialized();
   @override
   $R call({
-    VectorStoreSearchRequestRankingOptionsRankerRanker? ranker,
+    VectorStoreSearchRequestRankingOptionsRanker? ranker,
     num? scoreThreshold,
   }) => $apply(
     FieldCopyWithData({

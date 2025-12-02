@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_image_gen_call_partial_image_event_type_type.dart';
+import 'response_image_gen_call_partial_image_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_image_gen_call_partial_image_event.mapper.dart';
@@ -22,7 +22,7 @@ class ResponseImageGenCallPartialImageEvent with ResponseImageGenCallPartialImag
     required this.partialImageB64,
   });
 
-  final ResponseImageGenCallPartialImageEventTypeType type;
+  final ResponseImageGenCallPartialImageEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

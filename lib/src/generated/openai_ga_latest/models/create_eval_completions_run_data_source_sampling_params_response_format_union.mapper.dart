@@ -115,7 +115,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMap
       );
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatTextTypeTypeMapper.ensureInitialized();
+      ResponseFormatTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -124,12 +124,12 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMap
   final String id =
       'CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText';
 
-  static ResponseFormatTextTypeType _$type(
+  static ResponseFormatTextType _$type(
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText,
-    ResponseFormatTextTypeType
+    ResponseFormatTextType
   >
   _f$type = Field('type', _$type);
 
@@ -278,7 +278,7 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUni
           $Out
         > {
   @override
-  $R call({ResponseFormatTextTypeType? type});
+  $R call({ResponseFormatTextType? type});
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextCopyWith<
     $R2,
     $In,
@@ -316,7 +316,7 @@ class _CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextCo
   $mapper =
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatTextTypeType? type}) =>
+  $R call({ResponseFormatTextType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText $make(
@@ -356,7 +356,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSch
       );
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatJsonSchemaTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonSchemaTypeMapper.ensureInitialized();
       ResponseFormatJsonSchemaJsonSchemaMapper.ensureInitialized();
     }
     return _instance!;
@@ -366,13 +366,13 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSch
   final String id =
       'CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema';
 
-  static ResponseFormatJsonSchemaTypeType _$type(
+  static ResponseFormatJsonSchemaType _$type(
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema
     v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema,
-    ResponseFormatJsonSchemaTypeType
+    ResponseFormatJsonSchemaType
   >
   _f$type = Field('type', _$type);
   static ResponseFormatJsonSchemaJsonSchema
@@ -548,7 +548,7 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUni
   get responseFormatJsonSchemaJsonSchema;
   @override
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   });
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchemaCopyWith<
@@ -599,7 +599,7 @@ class _CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSc
       .$chain((v) => call(responseFormatJsonSchemaJsonSchema: v));
   @override
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   }) => $apply(
     FieldCopyWithData({
@@ -650,7 +650,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObj
       );
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatJsonObjectTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -659,13 +659,13 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObj
   final String id =
       'CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject';
 
-  static ResponseFormatJsonObjectTypeType _$type(
+  static ResponseFormatJsonObjectType _$type(
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject
     v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject,
-    ResponseFormatJsonObjectTypeType
+    ResponseFormatJsonObjectType
   >
   _f$type = Field('type', _$type);
 
@@ -814,7 +814,7 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUni
           $Out
         > {
   @override
-  $R call({ResponseFormatJsonObjectTypeType? type});
+  $R call({ResponseFormatJsonObjectType? type});
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectCopyWith<
     $R2,
     $In,
@@ -852,7 +852,7 @@ class _CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonOb
   $mapper =
       CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatJsonObjectTypeType? type}) =>
+  $R call({ResponseFormatJsonObjectType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject

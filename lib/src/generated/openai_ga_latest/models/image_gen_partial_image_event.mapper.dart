@@ -17,10 +17,10 @@ class ImageGenPartialImageEventMapper
       MapperContainer.globals.use(
         _instance = ImageGenPartialImageEventMapper._(),
       );
-      ImageGenPartialImageEventTypeTypeMapper.ensureInitialized();
-      ImageGenPartialImageEventSizeSizeMapper.ensureInitialized();
-      ImageGenPartialImageEventQualityQualityMapper.ensureInitialized();
-      ImageGenPartialImageEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageGenPartialImageEventTypeMapper.ensureInitialized();
+      ImageGenPartialImageEventSizeMapper.ensureInitialized();
+      ImageGenPartialImageEventQualityMapper.ensureInitialized();
+      ImageGenPartialImageEventBackgroundMapper.ensureInitialized();
       ImageGenPartialImageEventOutputFormatOutputFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,13 +29,9 @@ class ImageGenPartialImageEventMapper
   @override
   final String id = 'ImageGenPartialImageEvent';
 
-  static ImageGenPartialImageEventTypeType _$type(
-    ImageGenPartialImageEvent v,
-  ) => v.type;
-  static const Field<
-    ImageGenPartialImageEvent,
-    ImageGenPartialImageEventTypeType
-  >
+  static ImageGenPartialImageEventType _$type(ImageGenPartialImageEvent v) =>
+      v.type;
+  static const Field<ImageGenPartialImageEvent, ImageGenPartialImageEventType>
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageGenPartialImageEvent v) => v.b64Json;
   static const Field<ImageGenPartialImageEvent, String> _f$b64Json = Field(
@@ -49,28 +45,24 @@ class ImageGenPartialImageEventMapper
     _$createdAt,
     key: r'created_at',
   );
-  static ImageGenPartialImageEventSizeSize _$size(
-    ImageGenPartialImageEvent v,
-  ) => v.size;
-  static const Field<
-    ImageGenPartialImageEvent,
-    ImageGenPartialImageEventSizeSize
-  >
+  static ImageGenPartialImageEventSize _$size(ImageGenPartialImageEvent v) =>
+      v.size;
+  static const Field<ImageGenPartialImageEvent, ImageGenPartialImageEventSize>
   _f$size = Field('size', _$size);
-  static ImageGenPartialImageEventQualityQuality _$quality(
+  static ImageGenPartialImageEventQuality _$quality(
     ImageGenPartialImageEvent v,
   ) => v.quality;
   static const Field<
     ImageGenPartialImageEvent,
-    ImageGenPartialImageEventQualityQuality
+    ImageGenPartialImageEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageGenPartialImageEventBackgroundBackground _$background(
+  static ImageGenPartialImageEventBackground _$background(
     ImageGenPartialImageEvent v,
   ) => v.background;
   static const Field<
     ImageGenPartialImageEvent,
-    ImageGenPartialImageEventBackgroundBackground
+    ImageGenPartialImageEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageGenPartialImageEventOutputFormatOutputFormat _$outputFormat(
@@ -198,12 +190,12 @@ abstract class ImageGenPartialImageEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ImageGenPartialImageEventTypeType? type,
+    ImageGenPartialImageEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenPartialImageEventSizeSize? size,
-    ImageGenPartialImageEventQualityQuality? quality,
-    ImageGenPartialImageEventBackgroundBackground? background,
+    ImageGenPartialImageEventSize? size,
+    ImageGenPartialImageEventQuality? quality,
+    ImageGenPartialImageEventBackground? background,
     ImageGenPartialImageEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   });
@@ -223,12 +215,12 @@ class _ImageGenPartialImageEventCopyWithImpl<$R, $Out>
       ImageGenPartialImageEventMapper.ensureInitialized();
   @override
   $R call({
-    ImageGenPartialImageEventTypeType? type,
+    ImageGenPartialImageEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenPartialImageEventSizeSize? size,
-    ImageGenPartialImageEventQualityQuality? quality,
-    ImageGenPartialImageEventBackgroundBackground? background,
+    ImageGenPartialImageEventSize? size,
+    ImageGenPartialImageEventQuality? quality,
+    ImageGenPartialImageEventBackground? background,
     ImageGenPartialImageEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   }) => $apply(

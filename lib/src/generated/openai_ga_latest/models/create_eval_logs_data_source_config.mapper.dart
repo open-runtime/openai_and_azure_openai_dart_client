@@ -17,7 +17,7 @@ class CreateEvalLogsDataSourceConfigMapper
       MapperContainer.globals.use(
         _instance = CreateEvalLogsDataSourceConfigMapper._(),
       );
-      CreateEvalLogsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalLogsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class CreateEvalLogsDataSourceConfigMapper
   static dynamic _$metadata(CreateEvalLogsDataSourceConfig v) => v.metadata;
   static const Field<CreateEvalLogsDataSourceConfig, dynamic> _f$metadata =
       Field('metadata', _$metadata, opt: true);
-  static CreateEvalLogsDataSourceConfigTypeType _$type(
+  static CreateEvalLogsDataSourceConfigType _$type(
     CreateEvalLogsDataSourceConfig v,
   ) => v.type;
   static const Field<
     CreateEvalLogsDataSourceConfig,
-    CreateEvalLogsDataSourceConfigTypeType
+    CreateEvalLogsDataSourceConfigType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalLogsDataSourceConfigTypeType.logs,
+    def: CreateEvalLogsDataSourceConfigType.logs,
   );
 
   @override
@@ -137,7 +137,7 @@ abstract class CreateEvalLogsDataSourceConfigCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({dynamic metadata, CreateEvalLogsDataSourceConfigTypeType? type});
+  $R call({dynamic metadata, CreateEvalLogsDataSourceConfigType? type});
   CreateEvalLogsDataSourceConfigCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -163,7 +163,7 @@ class _CreateEvalLogsDataSourceConfigCopyWithImpl<$R, $Out>
   @override
   $R call({
     Object? metadata = $none,
-    CreateEvalLogsDataSourceConfigTypeType? type,
+    CreateEvalLogsDataSourceConfigType? type,
   }) => $apply(
     FieldCopyWithData({
       if (metadata != $none) #metadata: metadata,

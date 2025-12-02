@@ -17,7 +17,7 @@ class MessageDeltaContentRefusalObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentRefusalObjectMapper._(),
       );
-      MessageDeltaContentRefusalObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentRefusalObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class MessageDeltaContentRefusalObjectMapper
   static int _$indexField(MessageDeltaContentRefusalObject v) => v.indexField;
   static const Field<MessageDeltaContentRefusalObject, int> _f$indexField =
       Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentRefusalObjectTypeType _$type(
+  static MessageDeltaContentRefusalObjectType _$type(
     MessageDeltaContentRefusalObject v,
   ) => v.type;
   static const Field<
     MessageDeltaContentRefusalObject,
-    MessageDeltaContentRefusalObjectTypeType
+    MessageDeltaContentRefusalObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$refusal(MessageDeltaContentRefusalObject v) => v.refusal;
@@ -139,7 +139,7 @@ abstract class MessageDeltaContentRefusalObjectCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     int? indexField,
-    MessageDeltaContentRefusalObjectTypeType? type,
+    MessageDeltaContentRefusalObjectType? type,
     String? refusal,
   });
   MessageDeltaContentRefusalObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -167,7 +167,7 @@ class _MessageDeltaContentRefusalObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentRefusalObjectTypeType? type,
+    MessageDeltaContentRefusalObjectType? type,
     Object? refusal = $none,
   }) => $apply(
     FieldCopyWithData({

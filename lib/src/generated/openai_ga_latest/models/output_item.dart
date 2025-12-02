@@ -9,91 +9,91 @@ import 'apply_patch_call_status.dart';
 import 'apply_patch_tool_call.dart';
 import 'apply_patch_tool_call_operation_union.dart';
 import 'apply_patch_tool_call_output.dart';
-import 'apply_patch_tool_call_output_type_type.dart';
-import 'apply_patch_tool_call_type_type.dart';
+import 'apply_patch_tool_call_output_type.dart';
+import 'apply_patch_tool_call_type.dart';
 import 'code_interpreter_tool_call.dart';
 import 'code_interpreter_tool_call_outputs_union.dart';
-import 'code_interpreter_tool_call_status_status.dart';
-import 'code_interpreter_tool_call_type_type.dart';
+import 'code_interpreter_tool_call_status.dart';
+import 'code_interpreter_tool_call_type.dart';
 import 'computer_action.dart';
 import 'computer_call_safety_check_param.dart';
 import 'computer_tool_call.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'conversation_item.dart';
 import 'custom_tool_call.dart';
-import 'custom_tool_call_type_type.dart';
+import 'custom_tool_call_type.dart';
 import 'file_search_tool_call.dart';
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'function_shell_action.dart';
 import 'function_shell_call.dart';
 import 'function_shell_call_output.dart';
 import 'function_shell_call_output_content.dart';
-import 'function_shell_call_output_type_type.dart';
-import 'function_shell_call_type_type.dart';
+import 'function_shell_call_output_type.dart';
+import 'function_shell_call_type.dart';
 import 'function_tool_call.dart';
-import 'function_tool_call_status_status.dart';
-import 'function_tool_call_type_type.dart';
+import 'function_tool_call_status.dart';
+import 'function_tool_call_type.dart';
 import 'image_gen_tool_call.dart';
-import 'image_gen_tool_call_status_status.dart';
-import 'image_gen_tool_call_type_type.dart';
+import 'image_gen_tool_call_status.dart';
+import 'image_gen_tool_call_type.dart';
 import 'item_resource.dart';
 import 'local_shell_call_status.dart';
 import 'local_shell_exec_action.dart';
 import 'local_shell_tool_call.dart';
-import 'local_shell_tool_call_status_status.dart';
-import 'local_shell_tool_call_type_type.dart';
+import 'local_shell_tool_call_status.dart';
+import 'local_shell_tool_call_type.dart';
 import 'mcp_approval_request.dart';
-import 'mcp_approval_request_type_type.dart';
+import 'mcp_approval_request_type.dart';
 import 'mcp_list_tools.dart';
 import 'mcp_list_tools_tool.dart';
-import 'mcp_list_tools_type_type.dart';
+import 'mcp_list_tools_type.dart';
 import 'mcp_tool_call.dart';
 import 'mcp_tool_call_status.dart';
-import 'mcp_tool_call_type_type.dart';
+import 'mcp_tool_call_type.dart';
 import 'output_item_action_union.dart';
 import 'output_item_operation_union.dart';
 import 'output_item_outputs_union.dart';
 import 'output_item_results.dart';
-import 'output_item_role_role.dart';
-import 'output_item_status_status.dart';
-import 'output_item_status_status2.dart';
-import 'output_item_status_status3.dart';
-import 'output_item_status_status4.dart';
-import 'output_item_status_status5.dart';
-import 'output_item_type_type.dart';
-import 'output_item_type_type10.dart';
-import 'output_item_type_type11.dart';
-import 'output_item_type_type12.dart';
-import 'output_item_type_type13.dart';
-import 'output_item_type_type14.dart';
-import 'output_item_type_type15.dart';
-import 'output_item_type_type16.dart';
-import 'output_item_type_type17.dart';
-import 'output_item_type_type2.dart';
-import 'output_item_type_type3.dart';
-import 'output_item_type_type4.dart';
-import 'output_item_type_type5.dart';
-import 'output_item_type_type6.dart';
-import 'output_item_type_type7.dart';
-import 'output_item_type_type8.dart';
-import 'output_item_type_type9.dart';
+import 'output_item_role.dart';
+import 'output_item_status.dart';
+import 'output_item_status2.dart';
+import 'output_item_status3.dart';
+import 'output_item_status4.dart';
+import 'output_item_status5.dart';
+import 'output_item_type.dart';
+import 'output_item_type10.dart';
+import 'output_item_type11.dart';
+import 'output_item_type12.dart';
+import 'output_item_type13.dart';
+import 'output_item_type14.dart';
+import 'output_item_type15.dart';
+import 'output_item_type16.dart';
+import 'output_item_type17.dart';
+import 'output_item_type2.dart';
+import 'output_item_type3.dart';
+import 'output_item_type4.dart';
+import 'output_item_type5.dart';
+import 'output_item_type6.dart';
+import 'output_item_type7.dart';
+import 'output_item_type8.dart';
+import 'output_item_type9.dart';
 import 'output_message.dart';
 import 'output_message_content.dart';
-import 'output_message_role_role.dart';
-import 'output_message_status_status.dart';
-import 'output_message_type_type.dart';
+import 'output_message_role.dart';
+import 'output_message_status.dart';
+import 'output_message_type.dart';
 import 'reasoning_item.dart';
-import 'reasoning_item_status_status.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_status.dart';
+import 'reasoning_item_type.dart';
 import 'reasoning_text_content.dart';
 import 'summary.dart';
 import 'web_search_tool_call.dart';
 import 'web_search_tool_call_action_union.dart';
-import 'web_search_tool_call_status_status.dart';
-import 'web_search_tool_call_type_type.dart';
+import 'web_search_tool_call_status.dart';
+import 'web_search_tool_call_type.dart';
 
 part 'output_item.mapper.dart';
 
@@ -177,10 +177,10 @@ extension OutputItemUnionDeserializer on OutputItem {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class OutputItemMessage extends OutputItem with OutputItemMessageMappable {
   final String id;
-  final OutputItemTypeType type;
-  final OutputItemRoleRole role;
+  final OutputItemType type;
+  final OutputItemRole role;
   final List<OutputMessageContent> content;
-  final OutputItemStatusStatus status;
+  final OutputItemStatus status;
 
   const OutputItemMessage({
     required this.id,
@@ -194,8 +194,8 @@ class OutputItemMessage extends OutputItem with OutputItemMessageMappable {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class OutputItemFileSearchCall extends OutputItem with OutputItemFileSearchCallMappable {
   final String id;
-  final OutputItemTypeType2 type;
-  final OutputItemStatusStatus2 status;
+  final OutputItemType2 type;
+  final OutputItemStatus2 status;
   final List<String> queries;
   final List<OutputItemResults>? results;
 
@@ -211,12 +211,12 @@ class OutputItemFileSearchCall extends OutputItem with OutputItemFileSearchCallM
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
 class OutputItemFunctionCall extends OutputItem with OutputItemFunctionCallMappable {
   final String? id;
-  final OutputItemTypeType3 type;
+  final OutputItemType3 type;
   @MappableField(key: 'call_id')
   final String callId;
   final String name;
   final String arguments;
-  final OutputItemStatusStatus? status;
+  final OutputItemStatus? status;
 
   const OutputItemFunctionCall({
     required this.id,
@@ -231,8 +231,8 @@ class OutputItemFunctionCall extends OutputItem with OutputItemFunctionCallMappa
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
 class OutputItemWebSearchCall extends OutputItem with OutputItemWebSearchCallMappable {
   final String id;
-  final OutputItemTypeType4 type;
-  final OutputItemStatusStatus3 status;
+  final OutputItemType4 type;
+  final OutputItemStatus3 status;
   final OutputItemActionUnion action;
 
   const OutputItemWebSearchCall({
@@ -245,14 +245,14 @@ class OutputItemWebSearchCall extends OutputItem with OutputItemWebSearchCallMap
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class OutputItemComputerCall extends OutputItem with OutputItemComputerCallMappable {
-  final OutputItemTypeType5 type;
+  final OutputItemType5 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
-  final OutputItemStatusStatus status;
+  final OutputItemStatus status;
 
   const OutputItemComputerCall({
     required this.type,
@@ -266,13 +266,13 @@ class OutputItemComputerCall extends OutputItem with OutputItemComputerCallMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class OutputItemReasoning extends OutputItem with OutputItemReasoningMappable {
-  final OutputItemTypeType6 type;
+  final OutputItemType6 type;
   final String id;
   @MappableField(key: 'encrypted_content')
   final String? encryptedContent;
   final List<Summary> summary;
   final List<ReasoningTextContent>? content;
-  final OutputItemStatusStatus? status;
+  final OutputItemStatus? status;
 
   const OutputItemReasoning({
     required this.type,
@@ -286,9 +286,9 @@ class OutputItemReasoning extends OutputItem with OutputItemReasoningMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')
 class OutputItemImageGenerationCall extends OutputItem with OutputItemImageGenerationCallMappable {
-  final OutputItemTypeType7 type;
+  final OutputItemType7 type;
   final String id;
-  final OutputItemStatusStatus4 status;
+  final OutputItemStatus4 status;
   final String? result;
 
   const OutputItemImageGenerationCall({
@@ -301,9 +301,9 @@ class OutputItemImageGenerationCall extends OutputItem with OutputItemImageGener
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter_call')
 class OutputItemCodeInterpreterCall extends OutputItem with OutputItemCodeInterpreterCallMappable {
-  final OutputItemTypeType8 type;
+  final OutputItemType8 type;
   final String id;
-  final OutputItemStatusStatus5 status;
+  final OutputItemStatus5 status;
   @MappableField(key: 'container_id')
   final String containerId;
   final String? code;
@@ -321,12 +321,12 @@ class OutputItemCodeInterpreterCall extends OutputItem with OutputItemCodeInterp
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call')
 class OutputItemLocalShellCall extends OutputItem with OutputItemLocalShellCallMappable {
-  final OutputItemTypeType9 type;
+  final OutputItemType9 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final LocalShellExecAction action;
-  final OutputItemStatusStatus status;
+  final OutputItemStatus status;
 
   const OutputItemLocalShellCall({
     required this.type,
@@ -339,7 +339,7 @@ class OutputItemLocalShellCall extends OutputItem with OutputItemLocalShellCallM
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
 class OutputItemShellCall extends OutputItem with OutputItemShellCallMappable {
-  final OutputItemTypeType10 type;
+  final OutputItemType10 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -360,7 +360,7 @@ class OutputItemShellCall extends OutputItem with OutputItemShellCallMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
 class OutputItemShellCallOutput extends OutputItem with OutputItemShellCallOutputMappable {
-  final OutputItemTypeType11 type;
+  final OutputItemType11 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -382,7 +382,7 @@ class OutputItemShellCallOutput extends OutputItem with OutputItemShellCallOutpu
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call')
 class OutputItemApplyPatchCall extends OutputItem with OutputItemApplyPatchCallMappable {
-  final OutputItemTypeType12 type;
+  final OutputItemType12 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -403,7 +403,7 @@ class OutputItemApplyPatchCall extends OutputItem with OutputItemApplyPatchCallM
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call_output')
 class OutputItemApplyPatchCallOutput extends OutputItem with OutputItemApplyPatchCallOutputMappable {
-  final OutputItemTypeType13 type;
+  final OutputItemType13 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -424,7 +424,7 @@ class OutputItemApplyPatchCallOutput extends OutputItem with OutputItemApplyPatc
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
 class OutputItemMcpCall extends OutputItem with OutputItemMcpCallMappable {
-  final OutputItemTypeType14 type;
+  final OutputItemType14 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -451,7 +451,7 @@ class OutputItemMcpCall extends OutputItem with OutputItemMcpCallMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
 class OutputItemMcpListTools extends OutputItem with OutputItemMcpListToolsMappable {
-  final OutputItemTypeType15 type;
+  final OutputItemType15 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -469,7 +469,7 @@ class OutputItemMcpListTools extends OutputItem with OutputItemMcpListToolsMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
 class OutputItemMcpApprovalRequest extends OutputItem with OutputItemMcpApprovalRequestMappable {
-  final OutputItemTypeType16 type;
+  final OutputItemType16 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -487,7 +487,7 @@ class OutputItemMcpApprovalRequest extends OutputItem with OutputItemMcpApproval
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call')
 class OutputItemCustomToolCall extends OutputItem with OutputItemCustomToolCallMappable {
-  final OutputItemTypeType17 type;
+  final OutputItemType17 type;
   final String? id;
   @MappableField(key: 'call_id')
   final String callId;

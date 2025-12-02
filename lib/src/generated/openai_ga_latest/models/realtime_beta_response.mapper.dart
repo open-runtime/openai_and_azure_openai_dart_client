@@ -14,13 +14,13 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
   static RealtimeBetaResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeBetaResponseMapper._());
-      RealtimeBetaResponseStatusStatusMapper.ensureInitialized();
+      RealtimeBetaResponseStatusMapper.ensureInitialized();
       RealtimeBetaResponseStatusDetailsMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       RealtimeBetaResponseUsageMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
-      RealtimeBetaResponseModalitiesModalitiesMapper.ensureInitialized();
+      RealtimeBetaResponseModalitiesMapper.ensureInitialized();
       RealtimeBetaResponseOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeBetaResponseMaxOutputTokensUnionMapper.ensureInitialized();
     }
@@ -43,9 +43,9 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     key: r'object',
     opt: true,
   );
-  static RealtimeBetaResponseStatusStatus? _$status(RealtimeBetaResponse v) =>
+  static RealtimeBetaResponseStatus? _$status(RealtimeBetaResponse v) =>
       v.status;
-  static const Field<RealtimeBetaResponse, RealtimeBetaResponseStatusStatus>
+  static const Field<RealtimeBetaResponse, RealtimeBetaResponseStatus>
   _f$status = Field('status', _$status, opt: true);
   static RealtimeBetaResponseStatusDetails? _$realtimeBetaResponseStatusDetails(
     RealtimeBetaResponse v,
@@ -91,13 +91,10 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     opt: true,
     hook: const VoiceIdsSharedHook(),
   );
-  static List<RealtimeBetaResponseModalitiesModalities>? _$modalities(
+  static List<RealtimeBetaResponseModalities>? _$modalities(
     RealtimeBetaResponse v,
   ) => v.modalities;
-  static const Field<
-    RealtimeBetaResponse,
-    List<RealtimeBetaResponseModalitiesModalities>
-  >
+  static const Field<RealtimeBetaResponse, List<RealtimeBetaResponseModalities>>
   _f$modalities = Field('modalities', _$modalities, opt: true);
   static RealtimeBetaResponseOutputAudioFormatOutputAudioFormat?
   _$outputAudioFormat(RealtimeBetaResponse v) => v.outputAudioFormat;
@@ -269,11 +266,11 @@ abstract class RealtimeBetaResponseCopyWith<
   VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
-    RealtimeBetaResponseModalitiesModalities,
+    RealtimeBetaResponseModalities,
     ObjectCopyWith<
       $R,
-      RealtimeBetaResponseModalitiesModalities,
-      RealtimeBetaResponseModalitiesModalities
+      RealtimeBetaResponseModalities,
+      RealtimeBetaResponseModalities
     >
   >?
   get modalities;
@@ -286,14 +283,14 @@ abstract class RealtimeBetaResponseCopyWith<
   $R call({
     String? id,
     dynamic objectField,
-    RealtimeBetaResponseStatusStatus? status,
+    RealtimeBetaResponseStatus? status,
     RealtimeBetaResponseStatusDetails? realtimeBetaResponseStatusDetails,
     List<RealtimeConversationItem>? output,
     Metadata? metadata,
     RealtimeBetaResponseUsage? realtimeBetaResponseUsage,
     String? conversationId,
     VoiceIdsShared? voice,
-    List<RealtimeBetaResponseModalitiesModalities>? modalities,
+    List<RealtimeBetaResponseModalities>? modalities,
     RealtimeBetaResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat,
     num? temperature,
     RealtimeBetaResponseMaxOutputTokensUnion? maxOutputTokens,
@@ -355,11 +352,11 @@ class _RealtimeBetaResponseCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeBetaResponseModalitiesModalities,
+    RealtimeBetaResponseModalities,
     ObjectCopyWith<
       $R,
-      RealtimeBetaResponseModalitiesModalities,
-      RealtimeBetaResponseModalitiesModalities
+      RealtimeBetaResponseModalities,
+      RealtimeBetaResponseModalities
     >
   >?
   get modalities => $value.modalities != null

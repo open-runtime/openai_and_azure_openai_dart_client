@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'static_chunking_strategy.dart';
-import 'static_chunking_strategy_response_param_type_type.dart';
+import 'static_chunking_strategy_response_param_type.dart';
 
 part 'static_chunking_strategy_response_param.mapper.dart';
 
@@ -16,7 +16,7 @@ class StaticChunkingStrategyResponseParam with StaticChunkingStrategyResponsePar
     required this.staticField,
   });
 
-  final StaticChunkingStrategyResponseParamTypeType type;
+  final StaticChunkingStrategyResponseParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 

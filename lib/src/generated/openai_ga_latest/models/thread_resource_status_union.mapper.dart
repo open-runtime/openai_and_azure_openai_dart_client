@@ -90,7 +90,7 @@ class ThreadResourceStatusUnionActiveMapper
       ThreadResourceStatusUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ActiveStatusTypeTypeMapper.ensureInitialized();
+      ActiveStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,9 +98,8 @@ class ThreadResourceStatusUnionActiveMapper
   @override
   final String id = 'ThreadResourceStatusUnionActive';
 
-  static ActiveStatusTypeType _$type(ThreadResourceStatusUnionActive v) =>
-      v.type;
-  static const Field<ThreadResourceStatusUnionActive, ActiveStatusTypeType>
+  static ActiveStatusType _$type(ThreadResourceStatusUnionActive v) => v.type;
+  static const Field<ThreadResourceStatusUnionActive, ActiveStatusType>
   _f$type = Field('type', _$type);
 
   @override
@@ -203,7 +202,7 @@ abstract class ThreadResourceStatusUnionActiveCopyWith<
 >
     implements ThreadResourceStatusUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ActiveStatusTypeType? type});
+  $R call({ActiveStatusType? type});
   ThreadResourceStatusUnionActiveCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -227,7 +226,7 @@ class _ThreadResourceStatusUnionActiveCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadResourceStatusUnionActive> $mapper =
       ThreadResourceStatusUnionActiveMapper.ensureInitialized();
   @override
-  $R call({ActiveStatusTypeType? type}) =>
+  $R call({ActiveStatusType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ThreadResourceStatusUnionActive $make(CopyWithData data) =>
@@ -260,7 +259,7 @@ class ThreadResourceStatusUnionLockedMapper
       ThreadResourceStatusUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      LockedStatusTypeTypeMapper.ensureInitialized();
+      LockedStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -268,9 +267,8 @@ class ThreadResourceStatusUnionLockedMapper
   @override
   final String id = 'ThreadResourceStatusUnionLocked';
 
-  static LockedStatusTypeType _$type(ThreadResourceStatusUnionLocked v) =>
-      v.type;
-  static const Field<ThreadResourceStatusUnionLocked, LockedStatusTypeType>
+  static LockedStatusType _$type(ThreadResourceStatusUnionLocked v) => v.type;
+  static const Field<ThreadResourceStatusUnionLocked, LockedStatusType>
   _f$type = Field('type', _$type);
   static String? _$reason(ThreadResourceStatusUnionLocked v) => v.reason;
   static const Field<ThreadResourceStatusUnionLocked, String> _f$reason = Field(
@@ -382,7 +380,7 @@ abstract class ThreadResourceStatusUnionLockedCopyWith<
 >
     implements ThreadResourceStatusUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({LockedStatusTypeType? type, String? reason});
+  $R call({LockedStatusType? type, String? reason});
   ThreadResourceStatusUnionLockedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -406,7 +404,7 @@ class _ThreadResourceStatusUnionLockedCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadResourceStatusUnionLocked> $mapper =
       ThreadResourceStatusUnionLockedMapper.ensureInitialized();
   @override
-  $R call({LockedStatusTypeType? type, Object? reason = $none}) => $apply(
+  $R call({LockedStatusType? type, Object? reason = $none}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (reason != $none) #reason: reason,
@@ -446,7 +444,7 @@ class ThreadResourceStatusUnionClosedMapper
       ThreadResourceStatusUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ClosedStatusTypeTypeMapper.ensureInitialized();
+      ClosedStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -454,9 +452,8 @@ class ThreadResourceStatusUnionClosedMapper
   @override
   final String id = 'ThreadResourceStatusUnionClosed';
 
-  static ClosedStatusTypeType _$type(ThreadResourceStatusUnionClosed v) =>
-      v.type;
-  static const Field<ThreadResourceStatusUnionClosed, ClosedStatusTypeType>
+  static ClosedStatusType _$type(ThreadResourceStatusUnionClosed v) => v.type;
+  static const Field<ThreadResourceStatusUnionClosed, ClosedStatusType>
   _f$type = Field('type', _$type);
   static String? _$reason(ThreadResourceStatusUnionClosed v) => v.reason;
   static const Field<ThreadResourceStatusUnionClosed, String> _f$reason = Field(
@@ -568,7 +565,7 @@ abstract class ThreadResourceStatusUnionClosedCopyWith<
 >
     implements ThreadResourceStatusUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ClosedStatusTypeType? type, String? reason});
+  $R call({ClosedStatusType? type, String? reason});
   ThreadResourceStatusUnionClosedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -592,7 +589,7 @@ class _ThreadResourceStatusUnionClosedCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadResourceStatusUnionClosed> $mapper =
       ThreadResourceStatusUnionClosedMapper.ensureInitialized();
   @override
-  $R call({ClosedStatusTypeType? type, Object? reason = $none}) => $apply(
+  $R call({ClosedStatusType? type, Object? reason = $none}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (reason != $none) #reason: reason,

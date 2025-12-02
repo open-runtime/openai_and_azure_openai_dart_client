@@ -85,7 +85,7 @@ class DataContentPartsUnionTextMapper
         _instance = DataContentPartsUnionTextMapper._(),
       );
       DataContentPartsUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      ChatCompletionRequestMessageContentPartTextTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -93,12 +93,12 @@ class DataContentPartsUnionTextMapper
   @override
   final String id = 'DataContentPartsUnionText';
 
-  static ChatCompletionRequestMessageContentPartTextTypeType _$type(
+  static ChatCompletionRequestMessageContentPartTextType _$type(
     DataContentPartsUnionText v,
   ) => v.type;
   static const Field<
     DataContentPartsUnionText,
-    ChatCompletionRequestMessageContentPartTextTypeType
+    ChatCompletionRequestMessageContentPartTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(DataContentPartsUnionText v) => v.text;
@@ -208,7 +208,7 @@ abstract class DataContentPartsUnionTextCopyWith<
     implements DataContentPartsUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   });
   DataContentPartsUnionTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -227,7 +227,7 @@ class _DataContentPartsUnionTextCopyWithImpl<$R, $Out>
       DataContentPartsUnionTextMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({
@@ -259,7 +259,7 @@ class DataContentPartsUnionImageUrlMapper
         _instance = DataContentPartsUnionImageUrlMapper._(),
       );
       DataContentPartsUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      ChatCompletionRequestMessageContentPartImageTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartImageTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartImageImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -268,12 +268,12 @@ class DataContentPartsUnionImageUrlMapper
   @override
   final String id = 'DataContentPartsUnionImageUrl';
 
-  static ChatCompletionRequestMessageContentPartImageTypeType _$type(
+  static ChatCompletionRequestMessageContentPartImageType _$type(
     DataContentPartsUnionImageUrl v,
   ) => v.type;
   static const Field<
     DataContentPartsUnionImageUrl,
-    ChatCompletionRequestMessageContentPartImageTypeType
+    ChatCompletionRequestMessageContentPartImageType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionRequestMessageContentPartImageImageUrl
@@ -400,7 +400,7 @@ abstract class DataContentPartsUnionImageUrlCopyWith<
   get chatCompletionRequestMessageContentPartImageImageUrl;
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartImageTypeType? type,
+    ChatCompletionRequestMessageContentPartImageType? type,
     ChatCompletionRequestMessageContentPartImageImageUrl?
     chatCompletionRequestMessageContentPartImageImageUrl,
   });
@@ -440,7 +440,7 @@ class _DataContentPartsUnionImageUrlCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartImageTypeType? type,
+    ChatCompletionRequestMessageContentPartImageType? type,
     ChatCompletionRequestMessageContentPartImageImageUrl?
     chatCompletionRequestMessageContentPartImageImageUrl,
   }) => $apply(

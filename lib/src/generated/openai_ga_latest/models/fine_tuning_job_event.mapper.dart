@@ -15,8 +15,8 @@ class FineTuningJobEventMapper extends ClassMapperBase<FineTuningJobEvent> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FineTuningJobEventMapper._());
       FineTuningJobEventObjectObjectEnumMapper.ensureInitialized();
-      FineTuningJobEventLevelLevelMapper.ensureInitialized();
-      FineTuningJobEventTypeTypeMapper.ensureInitialized();
+      FineTuningJobEventLevelMapper.ensureInitialized();
+      FineTuningJobEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,16 +37,16 @@ class FineTuningJobEventMapper extends ClassMapperBase<FineTuningJobEvent> {
     _$createdAt,
     key: r'created_at',
   );
-  static FineTuningJobEventLevelLevel _$level(FineTuningJobEvent v) => v.level;
-  static const Field<FineTuningJobEvent, FineTuningJobEventLevelLevel>
-  _f$level = Field('level', _$level);
+  static FineTuningJobEventLevel _$level(FineTuningJobEvent v) => v.level;
+  static const Field<FineTuningJobEvent, FineTuningJobEventLevel> _f$level =
+      Field('level', _$level);
   static String _$message(FineTuningJobEvent v) => v.message;
   static const Field<FineTuningJobEvent, String> _f$message = Field(
     'message',
     _$message,
   );
-  static FineTuningJobEventTypeType? _$type(FineTuningJobEvent v) => v.type;
-  static const Field<FineTuningJobEvent, FineTuningJobEventTypeType> _f$type =
+  static FineTuningJobEventType? _$type(FineTuningJobEvent v) => v.type;
+  static const Field<FineTuningJobEvent, FineTuningJobEventType> _f$type =
       Field('type', _$type, opt: true);
   static dynamic _$data(FineTuningJobEvent v) => v.data;
   static const Field<FineTuningJobEvent, dynamic> _f$data = Field(
@@ -157,9 +157,9 @@ abstract class FineTuningJobEventCopyWith<
     FineTuningJobEventObjectObjectEnum? objectEnum,
     String? id,
     int? createdAt,
-    FineTuningJobEventLevelLevel? level,
+    FineTuningJobEventLevel? level,
     String? message,
-    FineTuningJobEventTypeType? type,
+    FineTuningJobEventType? type,
     dynamic data,
   });
   FineTuningJobEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -180,7 +180,7 @@ class _FineTuningJobEventCopyWithImpl<$R, $Out>
     FineTuningJobEventObjectObjectEnum? objectEnum,
     String? id,
     int? createdAt,
-    FineTuningJobEventLevelLevel? level,
+    FineTuningJobEventLevel? level,
     String? message,
     Object? type = $none,
     Object? data = $none,

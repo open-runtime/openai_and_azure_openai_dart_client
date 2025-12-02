@@ -14,7 +14,7 @@ class McpListToolsMapper extends ClassMapperBase<McpListTools> {
   static McpListToolsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpListToolsMapper._());
-      McpListToolsTypeTypeMapper.ensureInitialized();
+      McpListToolsTypeMapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class McpListToolsMapper extends ClassMapperBase<McpListTools> {
   @override
   final String id = 'McpListTools';
 
-  static McpListToolsTypeType _$type(McpListTools v) => v.type;
-  static const Field<McpListTools, McpListToolsTypeType> _f$type = Field(
+  static McpListToolsType _$type(McpListTools v) => v.type;
+  static const Field<McpListTools, McpListToolsType> _f$type = Field(
     'type',
     _$type,
   );
@@ -140,7 +140,7 @@ abstract class McpListToolsCopyWith<$R, $In extends McpListTools, $Out>
   >
   get tools;
   $R call({
-    McpListToolsTypeType? type,
+    McpListToolsType? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -170,7 +170,7 @@ class _McpListToolsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    McpListToolsTypeType? type,
+    McpListToolsType? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,

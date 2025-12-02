@@ -14,7 +14,7 @@ class CreateEvalItemMapper extends ClassMapperBase<CreateEvalItem> {
   static CreateEvalItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateEvalItemMapper._());
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,8 +29,8 @@ class CreateEvalItemMapper extends ClassMapperBase<CreateEvalItem> {
   );
   static String _$role(CreateEvalItem v) => v.role;
   static const Field<CreateEvalItem, String> _f$role = Field('role', _$role);
-  static EvalItemTypeType? _$type(CreateEvalItem v) => v.type;
-  static const Field<CreateEvalItem, EvalItemTypeType> _f$type = Field(
+  static EvalItemType? _$type(CreateEvalItem v) => v.type;
+  static const Field<CreateEvalItem, EvalItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
@@ -117,7 +117,7 @@ extension CreateEvalItemValueCopy<$R, $Out>
 
 abstract class CreateEvalItemCopyWith<$R, $In extends CreateEvalItem, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? content, String? role, EvalItemTypeType? type});
+  $R call({String? content, String? role, EvalItemType? type});
   CreateEvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

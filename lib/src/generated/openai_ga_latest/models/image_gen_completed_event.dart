@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'image_gen_completed_event_background_background.dart';
+import 'image_gen_completed_event_background.dart';
 import 'image_gen_completed_event_output_format_output_format.dart';
-import 'image_gen_completed_event_quality_quality.dart';
-import 'image_gen_completed_event_size_size.dart';
-import 'image_gen_completed_event_type_type.dart';
+import 'image_gen_completed_event_quality.dart';
+import 'image_gen_completed_event_size.dart';
+import 'image_gen_completed_event_type.dart';
 import 'image_gen_stream_event.dart';
 import 'images_usage.dart';
 
@@ -29,14 +29,14 @@ class ImageGenCompletedEvent with ImageGenCompletedEventMappable {
     required this.usage,
   });
 
-  final ImageGenCompletedEventTypeType type;
+  final ImageGenCompletedEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final ImageGenCompletedEventSizeSize size;
-  final ImageGenCompletedEventQualityQuality quality;
-  final ImageGenCompletedEventBackgroundBackground background;
+  final ImageGenCompletedEventSize size;
+  final ImageGenCompletedEventQuality quality;
+  final ImageGenCompletedEventBackground background;
   @MappableField(key: 'output_format')
   final ImageGenCompletedEventOutputFormatOutputFormat outputFormat;
   final ImagesUsage usage;

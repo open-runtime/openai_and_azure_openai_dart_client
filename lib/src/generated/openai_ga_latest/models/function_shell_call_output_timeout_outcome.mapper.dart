@@ -17,7 +17,7 @@ class FunctionShellCallOutputTimeoutOutcomeMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputTimeoutOutcomeMapper._(),
       );
-      FunctionShellCallOutputTimeoutOutcomeTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputTimeoutOutcomeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class FunctionShellCallOutputTimeoutOutcomeMapper
   @override
   final String id = 'FunctionShellCallOutputTimeoutOutcome';
 
-  static FunctionShellCallOutputTimeoutOutcomeTypeType _$type(
+  static FunctionShellCallOutputTimeoutOutcomeType _$type(
     FunctionShellCallOutputTimeoutOutcome v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputTimeoutOutcome,
-    FunctionShellCallOutputTimeoutOutcomeTypeType
+    FunctionShellCallOutputTimeoutOutcomeType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputTimeoutOutcomeTypeType.timeout,
+    def: FunctionShellCallOutputTimeoutOutcomeType.timeout,
   );
 
   @override
@@ -132,7 +132,7 @@ abstract class FunctionShellCallOutputTimeoutOutcomeCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FunctionShellCallOutputTimeoutOutcomeTypeType? type});
+  $R call({FunctionShellCallOutputTimeoutOutcomeType? type});
   FunctionShellCallOutputTimeoutOutcomeCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -155,7 +155,7 @@ class _FunctionShellCallOutputTimeoutOutcomeCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellCallOutputTimeoutOutcome> $mapper =
       FunctionShellCallOutputTimeoutOutcomeMapper.ensureInitialized();
   @override
-  $R call({FunctionShellCallOutputTimeoutOutcomeTypeType? type}) =>
+  $R call({FunctionShellCallOutputTimeoutOutcomeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   FunctionShellCallOutputTimeoutOutcome $make(CopyWithData data) =>

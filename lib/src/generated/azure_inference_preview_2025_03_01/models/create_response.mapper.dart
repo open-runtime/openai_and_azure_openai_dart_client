@@ -19,7 +19,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
       ToolMapper.ensureInitialized();
       ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
       IncludableMapper.ensureInitialized();
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -109,15 +109,14 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     opt: true,
     def: 1,
   );
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    CreateResponse v,
-  ) => v.truncation;
-  static const Field<CreateResponse, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(CreateResponse v) =>
+      v.truncation;
+  static const Field<CreateResponse, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static bool? _$parallelToolCalls(CreateResponse v) => v.parallelToolCalls;
   static const Field<CreateResponse, bool> _f$parallelToolCalls = Field(
@@ -286,7 +285,7 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     List<Includable>? include,
     num? temperature,
     num? topP,
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     bool? parallelToolCalls,
     bool? store,
     bool? stream,

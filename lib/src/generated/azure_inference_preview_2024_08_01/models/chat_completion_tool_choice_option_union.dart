@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_named_tool_choice_function.dart';
-import 'chat_completion_named_tool_choice_type_type.dart';
+import 'chat_completion_named_tool_choice_type.dart';
 import 'chat_completion_named_tool_choice.dart';
 
 part 'chat_completion_tool_choice_option_union.mapper.dart';
@@ -36,7 +36,7 @@ extension ChatCompletionToolChoiceOptionUnionDeserializer on ChatCompletionToolC
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMappable {
-  final ChatCompletionNamedToolChoiceTypeType type;
+  final ChatCompletionNamedToolChoiceType type;
   @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction chatCompletionNamedToolChoiceFunction;
 

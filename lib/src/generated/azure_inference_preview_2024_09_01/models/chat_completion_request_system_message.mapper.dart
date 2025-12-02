@@ -17,7 +17,7 @@ class ChatCompletionRequestSystemMessageMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestSystemMessageMapper._(),
       );
-      ChatCompletionRequestSystemMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestSystemMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class ChatCompletionRequestSystemMessageMapper
   static String _$content(ChatCompletionRequestSystemMessage v) => v.content;
   static const Field<ChatCompletionRequestSystemMessage, String> _f$content =
       Field('content', _$content);
-  static ChatCompletionRequestSystemMessageRoleRole _$role(
+  static ChatCompletionRequestSystemMessageRole _$role(
     ChatCompletionRequestSystemMessage v,
   ) => v.role;
   static const Field<
     ChatCompletionRequestSystemMessage,
-    ChatCompletionRequestSystemMessageRoleRole
+    ChatCompletionRequestSystemMessageRole
   >
   _f$role = Field('role', _$role);
   static String? _$name(ChatCompletionRequestSystemMessage v) => v.name;
@@ -140,7 +140,7 @@ abstract class ChatCompletionRequestSystemMessageCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? content,
-    ChatCompletionRequestSystemMessageRoleRole? role,
+    ChatCompletionRequestSystemMessageRole? role,
     String? name,
   });
   ChatCompletionRequestSystemMessageCopyWith<$R2, $In, $Out2>
@@ -167,7 +167,7 @@ class _ChatCompletionRequestSystemMessageCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? content,
-    ChatCompletionRequestSystemMessageRoleRole? role,
+    ChatCompletionRequestSystemMessageRole? role,
     Object? name = $none,
   }) => $apply(
     FieldCopyWithData({

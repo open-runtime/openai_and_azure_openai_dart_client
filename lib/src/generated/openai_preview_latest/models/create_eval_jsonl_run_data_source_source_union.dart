@@ -7,9 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'create_eval_completions_run_data_source_source_union.dart';
 import 'eval_jsonl_file_content_source.dart';
 import 'eval_jsonl_file_content_source_content.dart';
-import 'eval_jsonl_file_content_source_type_type.dart';
+import 'eval_jsonl_file_content_source_type.dart';
 import 'eval_jsonl_file_id_source.dart';
-import 'eval_jsonl_file_id_source_type_type.dart';
+import 'eval_jsonl_file_id_source_type.dart';
 
 part 'create_eval_jsonl_run_data_source_source_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension CreateEvalJsonlRunDataSourceSourceUnionDeserializer on CreateEvalJsonl
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
 class CreateEvalJsonlRunDataSourceSourceUnionFileContent extends CreateEvalJsonlRunDataSourceSourceUnion with CreateEvalJsonlRunDataSourceSourceUnionFileContentMappable {
-  final EvalJsonlFileContentSourceTypeType type;
+  final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
   const CreateEvalJsonlRunDataSourceSourceUnionFileContent({
@@ -59,7 +59,7 @@ class CreateEvalJsonlRunDataSourceSourceUnionFileContent extends CreateEvalJsonl
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
 class CreateEvalJsonlRunDataSourceSourceUnionFileId extends CreateEvalJsonlRunDataSourceSourceUnion with CreateEvalJsonlRunDataSourceSourceUnionFileIdMappable {
-  final EvalJsonlFileIdSourceTypeType type;
+  final EvalJsonlFileIdSourceType type;
   final String id;
 
   const CreateEvalJsonlRunDataSourceSourceUnionFileId({

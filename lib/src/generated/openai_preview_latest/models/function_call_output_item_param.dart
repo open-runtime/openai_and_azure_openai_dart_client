@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_call_output_item_param_status_status.dart';
-import 'function_call_output_item_param_type_type.dart';
+import 'function_call_output_item_param_status.dart';
+import 'function_call_output_item_param_type.dart';
 
 part 'function_call_output_item_param.mapper.dart';
 
@@ -15,7 +15,7 @@ class FunctionCallOutputItemParam with FunctionCallOutputItemParamMappable {
   const FunctionCallOutputItemParam({
     required this.callId,
     required this.output,
-    this.type = FunctionCallOutputItemParamTypeType.functionCallOutput,
+    this.type = FunctionCallOutputItemParamType.functionCallOutput,
     this.id,
     this.status,
   });
@@ -23,9 +23,9 @@ class FunctionCallOutputItemParam with FunctionCallOutputItemParamMappable {
   @MappableField(key: 'call_id')
   final String callId;
   final String output;
-  final FunctionCallOutputItemParamTypeType type;
+  final FunctionCallOutputItemParamType type;
   final String? id;
-  final FunctionCallOutputItemParamStatusStatus? status;
+  final FunctionCallOutputItemParamStatus? status;
 
   static FunctionCallOutputItemParam fromJson(Map<String, dynamic> json) => FunctionCallOutputItemParamMapper.fromJson(json);
 

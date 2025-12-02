@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_message_creation_object.dart';
 import 'run_step_delta_step_details_message_creation_object_message_creation.dart';
-import 'run_step_delta_step_details_message_creation_object_type_type.dart';
+import 'run_step_delta_step_details_message_creation_object_type.dart';
 import 'run_step_delta_step_details_tool_call.dart';
 import 'run_step_delta_step_details_tool_calls_object.dart';
-import 'run_step_delta_step_details_tool_calls_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_object_type.dart';
 
 part 'run_step_delta_object_delta_step_details_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension RunStepDeltaObjectDeltaStepDetailsUnionDeserializer on RunStepDeltaObj
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message_creation')
 class RunStepDeltaObjectDeltaStepDetailsUnionMessageCreation extends RunStepDeltaObjectDeltaStepDetailsUnion with RunStepDeltaObjectDeltaStepDetailsUnionMessageCreationMappable {
-  final RunStepDeltaStepDetailsMessageCreationObjectTypeType type;
+  final RunStepDeltaStepDetailsMessageCreationObjectType type;
   @MappableField(key: 'message_creation')
   final RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? runStepDeltaStepDetailsMessageCreationObjectMessageCreation;
 
@@ -60,7 +60,7 @@ class RunStepDeltaObjectDeltaStepDetailsUnionMessageCreation extends RunStepDelt
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_calls')
 class RunStepDeltaObjectDeltaStepDetailsUnionToolCalls extends RunStepDeltaObjectDeltaStepDetailsUnion with RunStepDeltaObjectDeltaStepDetailsUnionToolCallsMappable {
-  final RunStepDeltaStepDetailsToolCallsObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDeltaStepDetailsToolCall>? toolCalls;
 

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_message_item_object_object_enum.dart';
-import 'assistant_message_item_type_type.dart';
+import 'assistant_message_item_type.dart';
 import 'response_output_text.dart';
 import 'thread_item.dart';
 
@@ -20,7 +20,7 @@ class AssistantMessageItem with AssistantMessageItemMappable {
     required this.threadId,
     required this.content,
     this.objectEnum = AssistantMessageItemObjectObjectEnum.undefined0,
-    this.type = AssistantMessageItemTypeType.undefined0,
+    this.type = AssistantMessageItemType.undefined0,
   });
 
   final String id;
@@ -31,7 +31,7 @@ class AssistantMessageItem with AssistantMessageItemMappable {
   final List<ResponseOutputText> content;
   @MappableField(key: 'object')
   final AssistantMessageItemObjectObjectEnum objectEnum;
-  final AssistantMessageItemTypeType type;
+  final AssistantMessageItemType type;
 
   static AssistantMessageItem fromJson(Map<String, dynamic> json) => AssistantMessageItemMapper.fromJson(json);
 

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_content.dart';
-import 'response_content_part_done_event_type_type.dart';
+import 'response_content_part_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_content_part_done_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseContentPartDoneEvent with ResponseContentPartDoneEventMappable {
     required this.partField,
   });
 
-  final ResponseContentPartDoneEventTypeType type;
+  final ResponseContentPartDoneEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

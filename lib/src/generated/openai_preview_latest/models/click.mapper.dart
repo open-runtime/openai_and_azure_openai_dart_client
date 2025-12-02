@@ -14,8 +14,8 @@ class ClickMapper extends ClassMapperBase<Click> {
   static ClickMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClickMapper._());
-      ClickButtonButtonMapper.ensureInitialized();
-      ClickTypeTypeMapper.ensureInitialized();
+      ClickButtonMapper.ensureInitialized();
+      ClickTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,21 +23,18 @@ class ClickMapper extends ClassMapperBase<Click> {
   @override
   final String id = 'Click';
 
-  static ClickButtonButton _$button(Click v) => v.button;
-  static const Field<Click, ClickButtonButton> _f$button = Field(
-    'button',
-    _$button,
-  );
+  static ClickButton _$button(Click v) => v.button;
+  static const Field<Click, ClickButton> _f$button = Field('button', _$button);
   static int _$x(Click v) => v.x;
   static const Field<Click, int> _f$x = Field('x', _$x);
   static int _$y(Click v) => v.y;
   static const Field<Click, int> _f$y = Field('y', _$y);
-  static ClickTypeType _$type(Click v) => v.type;
-  static const Field<Click, ClickTypeType> _f$type = Field(
+  static ClickType _$type(Click v) => v.type;
+  static const Field<Click, ClickType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ClickTypeType.click,
+    def: ClickType.click,
   );
 
   @override
@@ -107,7 +104,7 @@ extension ClickValueCopy<$R, $Out> on ObjectCopyWith<$R, Click, $Out> {
 
 abstract class ClickCopyWith<$R, $In extends Click, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ClickButtonButton? button, int? x, int? y, ClickTypeType? type});
+  $R call({ClickButton? button, int? x, int? y, ClickType? type});
   ClickCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -118,15 +115,14 @@ class _ClickCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Click, $Out>
   @override
   late final ClassMapperBase<Click> $mapper = ClickMapper.ensureInitialized();
   @override
-  $R call({ClickButtonButton? button, int? x, int? y, ClickTypeType? type}) =>
-      $apply(
-        FieldCopyWithData({
-          if (button != null) #button: button,
-          if (x != null) #x: x,
-          if (y != null) #y: y,
-          if (type != null) #type: type,
-        }),
-      );
+  $R call({ClickButton? button, int? x, int? y, ClickType? type}) => $apply(
+    FieldCopyWithData({
+      if (button != null) #button: button,
+      if (x != null) #x: x,
+      if (y != null) #y: y,
+      if (type != null) #type: type,
+    }),
+  );
   @override
   Click $make(CopyWithData data) => Click(
     button: data.get(#button, or: $value.button),

@@ -14,8 +14,8 @@ import 'reasoning.dart';
 import 'response_error.dart';
 import 'response_model_incomplete_details.dart';
 import 'response_model_object_object_enum.dart';
-import 'response_model_status_status.dart';
-import 'response_properties_truncation_truncation.dart';
+import 'response_model_status.dart';
+import 'response_properties_truncation.dart';
 import 'response_text_param.dart';
 import 'response_usage.dart';
 import 'service_tier.dart';
@@ -38,7 +38,7 @@ class ResponseModel with ResponseModelMappable {
     this.temperature = 1,
     this.topP = 1,
     this.background = false,
-    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.truncation = ResponsePropertiesTruncation.disabled,
     this.metadata,
     this.topLogprobs,
     this.user,
@@ -77,7 +77,7 @@ class ResponseModel with ResponseModelMappable {
   @MappableField(key: 'top_p')
   final num? topP;
   final bool? background;
-  final ResponsePropertiesTruncationTruncation? truncation;
+  final ResponsePropertiesTruncation? truncation;
   final Metadata? metadata;
   @MappableField(key: 'top_logprobs')
   final int? topLogprobs;
@@ -103,7 +103,7 @@ class ResponseModel with ResponseModelMappable {
   @MappableField(key: 'tool_choice')
   final ToolChoiceParam? toolChoice;
   final Prompt? prompt;
-  final ResponseModelStatusStatus? status;
+  final ResponseModelStatus? status;
   @MappableField(key: 'output_text')
   final String? outputText;
   final ResponseUsage? usage;

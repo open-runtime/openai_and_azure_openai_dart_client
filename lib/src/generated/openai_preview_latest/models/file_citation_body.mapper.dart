@@ -14,7 +14,7 @@ class FileCitationBodyMapper extends ClassMapperBase<FileCitationBody> {
   static FileCitationBodyMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileCitationBodyMapper._());
-      FileCitationBodyTypeTypeMapper.ensureInitialized();
+      FileCitationBodyTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,14 +34,13 @@ class FileCitationBodyMapper extends ClassMapperBase<FileCitationBody> {
     _$indexField,
     key: r'index',
   );
-  static FileCitationBodyTypeType _$type(FileCitationBody v) => v.type;
-  static const Field<FileCitationBody, FileCitationBodyTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: FileCitationBodyTypeType.fileCitation,
-      );
+  static FileCitationBodyType _$type(FileCitationBody v) => v.type;
+  static const Field<FileCitationBody, FileCitationBodyType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: FileCitationBodyType.fileCitation,
+  );
 
   @override
   final MappableFields<FileCitationBody> fields = const {
@@ -124,7 +123,7 @@ extension FileCitationBodyValueCopy<$R, $Out>
 
 abstract class FileCitationBodyCopyWith<$R, $In extends FileCitationBody, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? fileId, int? indexField, FileCitationBodyTypeType? type});
+  $R call({String? fileId, int? indexField, FileCitationBodyType? type});
   FileCitationBodyCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -139,7 +138,7 @@ class _FileCitationBodyCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileCitationBody> $mapper =
       FileCitationBodyMapper.ensureInitialized();
   @override
-  $R call({String? fileId, int? indexField, FileCitationBodyTypeType? type}) =>
+  $R call({String? fileId, int? indexField, FileCitationBodyType? type}) =>
       $apply(
         FieldCopyWithData({
           if (fileId != null) #fileId: fileId,

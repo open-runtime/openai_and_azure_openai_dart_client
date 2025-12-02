@@ -14,7 +14,7 @@ class InviteProjectsMapper extends ClassMapperBase<InviteProjects> {
   static InviteProjectsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InviteProjectsMapper._());
-      InviteProjectsRoleRoleMapper.ensureInitialized();
+      InviteProjectsRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,8 +28,8 @@ class InviteProjectsMapper extends ClassMapperBase<InviteProjects> {
     _$id,
     opt: true,
   );
-  static InviteProjectsRoleRole? _$role(InviteProjects v) => v.role;
-  static const Field<InviteProjects, InviteProjectsRoleRole> _f$role = Field(
+  static InviteProjectsRole? _$role(InviteProjects v) => v.role;
+  static const Field<InviteProjects, InviteProjectsRole> _f$role = Field(
     'role',
     _$role,
     opt: true,
@@ -111,7 +111,7 @@ extension InviteProjectsValueCopy<$R, $Out>
 
 abstract class InviteProjectsCopyWith<$R, $In extends InviteProjects, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? id, InviteProjectsRoleRole? role});
+  $R call({String? id, InviteProjectsRole? role});
   InviteProjectsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

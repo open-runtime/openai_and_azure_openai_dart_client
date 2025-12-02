@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_tool_container_union.dart';
-import 'code_interpreter_tool_type_type.dart';
+import 'code_interpreter_tool_type.dart';
 import 'tool.dart';
 
 part 'code_interpreter_tool.mapper.dart';
@@ -19,7 +19,7 @@ class CodeInterpreterTool with CodeInterpreterToolMappable {
     required this.container,
   });
 
-  final CodeInterpreterToolTypeType type;
+  final CodeInterpreterToolType type;
   final CodeInterpreterToolContainerUnion container;
 
   static CodeInterpreterTool fromJson(Map<String, dynamic> json) => CodeInterpreterToolMapper.fromJson(json);

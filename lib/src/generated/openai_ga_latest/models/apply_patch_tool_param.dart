@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'apply_patch_tool_param_type_type.dart';
+import 'apply_patch_tool_param_type.dart';
 import 'tool.dart';
 
 part 'apply_patch_tool_param.mapper.dart';
@@ -13,10 +13,10 @@ part 'apply_patch_tool_param.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchToolParam with ApplyPatchToolParamMappable {
   const ApplyPatchToolParam({
-    this.type = ApplyPatchToolParamTypeType.applyPatch,
+    this.type = ApplyPatchToolParamType.applyPatch,
   });
 
-  final ApplyPatchToolParamTypeType type;
+  final ApplyPatchToolParamType type;
 
   static ApplyPatchToolParam fromJson(Map<String, dynamic> json) => ApplyPatchToolParamMapper.fromJson(json);
 

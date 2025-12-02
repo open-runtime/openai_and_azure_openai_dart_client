@@ -14,7 +14,7 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
   static ResponseFailedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseFailedEventMapper._());
-      ResponseFailedEventTypeTypeMapper.ensureInitialized();
+      ResponseFailedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
   @override
   final String id = 'ResponseFailedEvent';
 
-  static ResponseFailedEventTypeType _$type(ResponseFailedEvent v) => v.type;
-  static const Field<ResponseFailedEvent, ResponseFailedEventTypeType> _f$type =
+  static ResponseFailedEventType _$type(ResponseFailedEvent v) => v.type;
+  static const Field<ResponseFailedEvent, ResponseFailedEventType> _f$type =
       Field('type', _$type);
   static ResponseModel _$response(ResponseFailedEvent v) => v.response;
   static const Field<ResponseFailedEvent, ResponseModel> _f$response = Field(
@@ -120,7 +120,7 @@ abstract class ResponseFailedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
-  $R call({ResponseFailedEventTypeType? type, ResponseModel? response});
+  $R call({ResponseFailedEventType? type, ResponseModel? response});
   ResponseFailedEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,13 +138,12 @@ class _ResponseFailedEventCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseFailedEventTypeType? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseFailedEventType? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseFailedEvent $make(CopyWithData data) => ResponseFailedEvent(
     type: data.get(#type, or: $value.type),

@@ -14,7 +14,7 @@ class FileExpirationAfterMapper extends ClassMapperBase<FileExpirationAfter> {
   static FileExpirationAfterMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileExpirationAfterMapper._());
-      FileExpirationAfterAnchorAnchorMapper.ensureInitialized();
+      FileExpirationAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,10 +22,9 @@ class FileExpirationAfterMapper extends ClassMapperBase<FileExpirationAfter> {
   @override
   final String id = 'FileExpirationAfter';
 
-  static FileExpirationAfterAnchorAnchor _$anchor(FileExpirationAfter v) =>
-      v.anchor;
-  static const Field<FileExpirationAfter, FileExpirationAfterAnchorAnchor>
-  _f$anchor = Field('anchor', _$anchor);
+  static FileExpirationAfterAnchor _$anchor(FileExpirationAfter v) => v.anchor;
+  static const Field<FileExpirationAfter, FileExpirationAfterAnchor> _f$anchor =
+      Field('anchor', _$anchor);
   static int _$seconds(FileExpirationAfter v) => v.seconds;
   static const Field<FileExpirationAfter, int> _f$seconds = Field(
     'seconds',
@@ -119,7 +118,7 @@ abstract class FileExpirationAfterCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FileExpirationAfterAnchorAnchor? anchor, int? seconds});
+  $R call({FileExpirationAfterAnchor? anchor, int? seconds});
   FileExpirationAfterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +133,7 @@ class _FileExpirationAfterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileExpirationAfter> $mapper =
       FileExpirationAfterMapper.ensureInitialized();
   @override
-  $R call({FileExpirationAfterAnchorAnchor? anchor, int? seconds}) => $apply(
+  $R call({FileExpirationAfterAnchor? anchor, int? seconds}) => $apply(
     FieldCopyWithData({
       if (anchor != null) #anchor: anchor,
       if (seconds != null) #seconds: seconds,

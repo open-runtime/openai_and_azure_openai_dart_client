@@ -18,7 +18,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       ResponseErrorUnionMapper.ensureInitialized();
       ResponseModelIncompleteDetailsMapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
       ModelIdsResponsesUnionMapper.ensureInitialized();
@@ -27,7 +27,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       ToolMapper.ensureInitialized();
       ToolChoiceParamMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
-      ResponseModelStatusStatusMapper.ensureInitialized();
+      ResponseModelStatusMapper.ensureInitialized();
       ResponseUsageMapper.ensureInitialized();
       Conversation2Mapper.ensureInitialized();
     }
@@ -102,15 +102,14 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     opt: true,
     def: false,
   );
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    ResponseModel v,
-  ) => v.truncation;
-  static const Field<ResponseModel, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(ResponseModel v) =>
+      v.truncation;
+  static const Field<ResponseModel, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static Metadata? _$metadata(ResponseModel v) => v.metadata;
   static const Field<ResponseModel, Metadata> _f$metadata = Field(
@@ -222,9 +221,12 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     _$prompt,
     opt: true,
   );
-  static ResponseModelStatusStatus? _$status(ResponseModel v) => v.status;
-  static const Field<ResponseModel, ResponseModelStatusStatus> _f$status =
-      Field('status', _$status, opt: true);
+  static ResponseModelStatus? _$status(ResponseModel v) => v.status;
+  static const Field<ResponseModel, ResponseModelStatus> _f$status = Field(
+    'status',
+    _$status,
+    opt: true,
+  );
   static String? _$outputText(ResponseModel v) => v.outputText;
   static const Field<ResponseModel, String> _f$outputText = Field(
     'outputText',
@@ -420,7 +422,7 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     num? temperature,
     num? topP,
     bool? background,
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     Metadata? metadata,
     int? topLogprobs,
     String? user,
@@ -438,7 +440,7 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     List<Tool>? tools,
     ToolChoiceParam? toolChoice,
     PromptUnion? prompt,
-    ResponseModelStatusStatus? status,
+    ResponseModelStatus? status,
     String? outputText,
     ResponseUsage? usage,
     Conversation2? conversation,

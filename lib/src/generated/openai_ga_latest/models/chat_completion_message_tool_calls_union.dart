@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_message_custom_tool_call.dart';
 import 'chat_completion_message_custom_tool_call_custom.dart';
-import 'chat_completion_message_custom_tool_call_type_type.dart';
+import 'chat_completion_message_custom_tool_call_type.dart';
 import 'chat_completion_message_tool_call.dart';
 import 'chat_completion_message_tool_call_function.dart';
-import 'chat_completion_message_tool_call_type_type.dart';
+import 'chat_completion_message_tool_call_type.dart';
 
 part 'chat_completion_message_tool_calls_union.mapper.dart';
 
@@ -49,7 +49,7 @@ extension ChatCompletionMessageToolCallsUnionDeserializer on ChatCompletionMessa
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class ChatCompletionMessageToolCallsUnionFunction extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionFunctionMappable {
   final String id;
-  final ChatCompletionMessageToolCallTypeType type;
+  final ChatCompletionMessageToolCallType type;
   @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 
@@ -63,7 +63,7 @@ class ChatCompletionMessageToolCallsUnionFunction extends ChatCompletionMessageT
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class ChatCompletionMessageToolCallsUnionCustom extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionCustomMappable {
   final String id;
-  final ChatCompletionMessageCustomToolCallTypeType type;
+  final ChatCompletionMessageCustomToolCallType type;
   @MappableField(key: 'custom')
   final ChatCompletionMessageCustomToolCallCustom chatCompletionMessageCustomToolCallCustom;
 

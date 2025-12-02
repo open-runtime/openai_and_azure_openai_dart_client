@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_upload_request_purpose_purpose.dart';
+import 'create_upload_request_purpose.dart';
 
 part 'create_upload_request.mapper.dart';
 
@@ -18,7 +18,7 @@ class CreateUploadRequest with CreateUploadRequestMappable {
   });
 
   final String filename;
-  final CreateUploadRequestPurposePurpose purpose;
+  final CreateUploadRequestPurpose purpose;
   final int bytes;
   @MappableField(key: 'mime_type')
   final String mimeType;

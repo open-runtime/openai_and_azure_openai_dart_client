@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistant_tools_code_type_type.dart';
+import 'assistant_tools_code_type.dart';
 
 part 'assistant_tools_code.mapper.dart';
 
@@ -14,7 +14,7 @@ class AssistantToolsCode with AssistantToolsCodeMappable {
     required this.type,
   });
 
-  final AssistantToolsCodeTypeType type;
+  final AssistantToolsCodeType type;
 
   static AssistantToolsCode fromJson(Map<String, dynamic> json) => AssistantToolsCodeMapper.fromJson(json);
 

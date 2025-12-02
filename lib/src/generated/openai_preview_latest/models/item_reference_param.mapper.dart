@@ -14,7 +14,7 @@ class ItemReferenceParamMapper extends ClassMapperBase<ItemReferenceParam> {
   static ItemReferenceParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemReferenceParamMapper._());
-      ItemReferenceParamTypeTypeMapper.ensureInitialized();
+      ItemReferenceParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,13 +24,13 @@ class ItemReferenceParamMapper extends ClassMapperBase<ItemReferenceParam> {
 
   static String _$id(ItemReferenceParam v) => v.id;
   static const Field<ItemReferenceParam, String> _f$id = Field('id', _$id);
-  static ItemReferenceParamTypeType? _$type(ItemReferenceParam v) => v.type;
-  static const Field<ItemReferenceParam, ItemReferenceParamTypeType> _f$type =
+  static ItemReferenceParamType? _$type(ItemReferenceParam v) => v.type;
+  static const Field<ItemReferenceParam, ItemReferenceParamType> _f$type =
       Field(
         'type',
         _$type,
         opt: true,
-        def: ItemReferenceParamTypeType.itemReference,
+        def: ItemReferenceParamType.itemReference,
       );
 
   @override
@@ -118,7 +118,7 @@ abstract class ItemReferenceParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? id, ItemReferenceParamTypeType? type});
+  $R call({String? id, ItemReferenceParamType? type});
   ItemReferenceParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

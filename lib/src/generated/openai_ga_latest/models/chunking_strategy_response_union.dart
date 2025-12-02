@@ -5,10 +5,10 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'other_chunking_strategy_response_param.dart';
-import 'other_chunking_strategy_response_param_type_type.dart';
+import 'other_chunking_strategy_response_param_type.dart';
 import 'static_chunking_strategy.dart';
 import 'static_chunking_strategy_response_param.dart';
-import 'static_chunking_strategy_response_param_type_type.dart';
+import 'static_chunking_strategy_response_param_type.dart';
 
 part 'chunking_strategy_response_union.mapper.dart';
 
@@ -47,7 +47,7 @@ extension ChunkingStrategyResponseUnionDeserializer on ChunkingStrategyResponseU
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
 class ChunkingStrategyResponseUnionStatic extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionStaticMappable {
-  final StaticChunkingStrategyResponseParamTypeType type;
+  final StaticChunkingStrategyResponseParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
@@ -59,7 +59,7 @@ class ChunkingStrategyResponseUnionStatic extends ChunkingStrategyResponseUnion 
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'other')
 class ChunkingStrategyResponseUnionOther extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionOtherMappable {
-  final OtherChunkingStrategyResponseParamTypeType type;
+  final OtherChunkingStrategyResponseParamType type;
 
   const ChunkingStrategyResponseUnionOther({
     required this.type,

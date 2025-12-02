@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'computer_use_preview_tool_environment_environment.dart';
-import 'computer_use_preview_tool_type_type.dart';
+import 'computer_use_preview_tool_environment.dart';
+import 'computer_use_preview_tool_type.dart';
 import 'tool.dart';
 
 part 'computer_use_preview_tool.mapper.dart';
@@ -17,15 +17,15 @@ class ComputerUsePreviewTool with ComputerUsePreviewToolMappable {
     required this.environment,
     required this.displayWidth,
     required this.displayHeight,
-    this.type = ComputerUsePreviewToolTypeType.computerUsePreview,
+    this.type = ComputerUsePreviewToolType.computerUsePreview,
   });
 
-  final ComputerUsePreviewToolEnvironmentEnvironment environment;
+  final ComputerUsePreviewToolEnvironment environment;
   @MappableField(key: 'display_width')
   final int displayWidth;
   @MappableField(key: 'display_height')
   final int displayHeight;
-  final ComputerUsePreviewToolTypeType type;
+  final ComputerUsePreviewToolType type;
 
   static ComputerUsePreviewTool fromJson(Map<String, dynamic> json) => ComputerUsePreviewToolMapper.fromJson(json);
 

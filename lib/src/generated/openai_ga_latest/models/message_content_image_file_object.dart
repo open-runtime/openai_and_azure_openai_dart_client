@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content.dart';
 import 'message_content_image_file_object_image_file.dart';
-import 'message_content_image_file_object_type_type.dart';
+import 'message_content_image_file_object_type.dart';
 
 part 'message_content_image_file_object.mapper.dart';
 
@@ -18,7 +18,7 @@ class MessageContentImageFileObject with MessageContentImageFileObjectMappable {
     required this.messageContentImageFileObjectImageFile,
   });
 
-  final MessageContentImageFileObjectTypeType type;
+  final MessageContentImageFileObjectType type;
   @MappableField(key: 'image_file')
   final MessageContentImageFileObjectImageFile messageContentImageFileObjectImageFile;
 

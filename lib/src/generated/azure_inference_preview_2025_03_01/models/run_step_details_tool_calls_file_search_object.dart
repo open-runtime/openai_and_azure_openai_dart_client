@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_tool_calls_file_search_object_file_search.dart';
-import 'run_step_details_tool_calls_file_search_object_type_type.dart';
+import 'run_step_details_tool_calls_file_search_object_type.dart';
 
 part 'run_step_details_tool_calls_file_search_object.mapper.dart';
 
@@ -18,7 +18,7 @@ class RunStepDetailsToolCallsFileSearchObject with RunStepDetailsToolCallsFileSe
   });
 
   final String id;
-  final RunStepDetailsToolCallsFileSearchObjectTypeType type;
+  final RunStepDetailsToolCallsFileSearchObjectType type;
   @MappableField(key: 'file_search')
   final RunStepDetailsToolCallsFileSearchObjectFileSearch runStepDetailsToolCallsFileSearchObjectFileSearch;
 

@@ -17,7 +17,7 @@ class TextResponseFormatJsonSchemaMapper
       MapperContainer.globals.use(
         _instance = TextResponseFormatJsonSchemaMapper._(),
       );
-      TextResponseFormatJsonSchemaTypeTypeMapper.ensureInitialized();
+      TextResponseFormatJsonSchemaTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class TextResponseFormatJsonSchemaMapper
   @override
   final String id = 'TextResponseFormatJsonSchema';
 
-  static TextResponseFormatJsonSchemaTypeType _$type(
+  static TextResponseFormatJsonSchemaType _$type(
     TextResponseFormatJsonSchema v,
   ) => v.type;
   static const Field<
     TextResponseFormatJsonSchema,
-    TextResponseFormatJsonSchemaTypeType
+    TextResponseFormatJsonSchemaType
   >
   _f$type = Field('type', _$type);
   static String _$name(TextResponseFormatJsonSchema v) => v.name;
@@ -151,7 +151,7 @@ abstract class TextResponseFormatJsonSchemaCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    TextResponseFormatJsonSchemaTypeType? type,
+    TextResponseFormatJsonSchemaType? type,
     String? name,
     dynamic schema,
     bool? strict,
@@ -181,7 +181,7 @@ class _TextResponseFormatJsonSchemaCopyWithImpl<$R, $Out>
       TextResponseFormatJsonSchemaMapper.ensureInitialized();
   @override
   $R call({
-    TextResponseFormatJsonSchemaTypeType? type,
+    TextResponseFormatJsonSchemaType? type,
     String? name,
     Object? schema = $none,
     Object? strict = $none,

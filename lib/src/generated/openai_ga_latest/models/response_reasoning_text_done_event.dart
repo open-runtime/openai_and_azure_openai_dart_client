@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_reasoning_text_done_event_type_type.dart';
+import 'response_reasoning_text_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_reasoning_text_done_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseReasoningTextDoneEvent with ResponseReasoningTextDoneEventMappable
     required this.sequenceNumber,
   });
 
-  final ResponseReasoningTextDoneEventTypeType type;
+  final ResponseReasoningTextDoneEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

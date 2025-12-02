@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'screenshot_type_type.dart';
+import 'screenshot_type.dart';
 
 part 'screenshot.mapper.dart';
 
@@ -14,10 +14,10 @@ part 'screenshot.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Screenshot with ScreenshotMappable {
   const Screenshot({
-    this.type = ScreenshotTypeType.screenshot,
+    this.type = ScreenshotType.screenshot,
   });
 
-  final ScreenshotTypeType type;
+  final ScreenshotType type;
 
   static Screenshot fromJson(Map<String, dynamic> json) => ScreenshotMapper.fromJson(json);
 

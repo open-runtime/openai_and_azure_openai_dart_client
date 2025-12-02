@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_delta.dart';
-import 'message_delta_content_refusal_object_type_type.dart';
+import 'message_delta_content_refusal_object_type.dart';
 
 part 'message_delta_content_refusal_object.mapper.dart';
 
@@ -20,7 +20,7 @@ class MessageDeltaContentRefusalObject with MessageDeltaContentRefusalObjectMapp
 
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentRefusalObjectTypeType type;
+  final MessageDeltaContentRefusalObjectType type;
   final String? refusal;
 
   static MessageDeltaContentRefusalObject fromJson(Map<String, dynamic> json) => MessageDeltaContentRefusalObjectMapper.fromJson(json);

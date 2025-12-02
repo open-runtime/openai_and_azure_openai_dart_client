@@ -93,7 +93,7 @@ class CreateEvalRequestTestingCriteriaUnionLabelModelMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalLabelModelGraderTypeTypeMapper.ensureInitialized();
+      CreateEvalLabelModelGraderTypeMapper.ensureInitialized();
       CreateEvalItemUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -102,12 +102,12 @@ class CreateEvalRequestTestingCriteriaUnionLabelModelMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionLabelModel';
 
-  static CreateEvalLabelModelGraderTypeType _$type(
+  static CreateEvalLabelModelGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionLabelModel v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionLabelModel,
-    CreateEvalLabelModelGraderTypeType
+    CreateEvalLabelModelGraderType
   >
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalRequestTestingCriteriaUnionLabelModel v) =>
@@ -293,7 +293,7 @@ abstract class CreateEvalRequestTestingCriteriaUnionLabelModelCopyWith<
   get passingLabels;
   @override
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,
@@ -354,7 +354,7 @@ class _CreateEvalRequestTestingCriteriaUnionLabelModelCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,

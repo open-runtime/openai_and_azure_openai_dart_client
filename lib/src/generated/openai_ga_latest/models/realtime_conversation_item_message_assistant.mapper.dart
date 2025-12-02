@@ -17,11 +17,11 @@ class RealtimeConversationItemMessageAssistantMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageAssistantMapper._(),
       );
-      RealtimeConversationItemMessageAssistantTypeTypeMapper.ensureInitialized();
-      RealtimeConversationItemMessageAssistantRoleRoleMapper.ensureInitialized();
+      RealtimeConversationItemMessageAssistantTypeMapper.ensureInitialized();
+      RealtimeConversationItemMessageAssistantRoleMapper.ensureInitialized();
       RealtimeConversationItemMessageAssistantContentMapper.ensureInitialized();
       RealtimeConversationItemMessageAssistantObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemMessageAssistantStatusStatusMapper.ensureInitialized();
+      RealtimeConversationItemMessageAssistantStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,20 +29,20 @@ class RealtimeConversationItemMessageAssistantMapper
   @override
   final String id = 'RealtimeConversationItemMessageAssistant';
 
-  static RealtimeConversationItemMessageAssistantTypeType _$type(
+  static RealtimeConversationItemMessageAssistantType _$type(
     RealtimeConversationItemMessageAssistant v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessageAssistant,
-    RealtimeConversationItemMessageAssistantTypeType
+    RealtimeConversationItemMessageAssistantType
   >
   _f$type = Field('type', _$type);
-  static RealtimeConversationItemMessageAssistantRoleRole _$role(
+  static RealtimeConversationItemMessageAssistantRole _$role(
     RealtimeConversationItemMessageAssistant v,
   ) => v.role;
   static const Field<
     RealtimeConversationItemMessageAssistant,
-    RealtimeConversationItemMessageAssistantRoleRole
+    RealtimeConversationItemMessageAssistantRole
   >
   _f$role = Field('role', _$role);
   static List<RealtimeConversationItemMessageAssistantContent> _$content(
@@ -64,12 +64,12 @@ class RealtimeConversationItemMessageAssistantMapper
     RealtimeConversationItemMessageAssistantObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object', opt: true);
-  static RealtimeConversationItemMessageAssistantStatusStatus? _$status(
+  static RealtimeConversationItemMessageAssistantStatus? _$status(
     RealtimeConversationItemMessageAssistant v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemMessageAssistant,
-    RealtimeConversationItemMessageAssistantStatusStatus
+    RealtimeConversationItemMessageAssistantStatus
   >
   _f$status = Field('status', _$status, opt: true);
 
@@ -195,12 +195,12 @@ abstract class RealtimeConversationItemMessageAssistantCopyWith<
   >
   get content;
   $R call({
-    RealtimeConversationItemMessageAssistantTypeType? type,
-    RealtimeConversationItemMessageAssistantRoleRole? role,
+    RealtimeConversationItemMessageAssistantType? type,
+    RealtimeConversationItemMessageAssistantRole? role,
     List<RealtimeConversationItemMessageAssistantContent>? content,
     String? id,
     RealtimeConversationItemMessageAssistantObjectObjectEnum? objectEnum,
-    RealtimeConversationItemMessageAssistantStatusStatus? status,
+    RealtimeConversationItemMessageAssistantStatus? status,
   });
   RealtimeConversationItemMessageAssistantCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -241,8 +241,8 @@ class _RealtimeConversationItemMessageAssistantCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RealtimeConversationItemMessageAssistantTypeType? type,
-    RealtimeConversationItemMessageAssistantRoleRole? role,
+    RealtimeConversationItemMessageAssistantType? type,
+    RealtimeConversationItemMessageAssistantRole? role,
     List<RealtimeConversationItemMessageAssistantContent>? content,
     Object? id = $none,
     Object? objectEnum = $none,

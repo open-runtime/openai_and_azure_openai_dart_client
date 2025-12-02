@@ -8,7 +8,7 @@ import 'realtime_session_input_audio_format_input_audio_format.dart';
 import 'realtime_session_input_audio_noise_reduction.dart';
 import 'realtime_session_input_audio_transcription.dart';
 import 'realtime_session_max_response_output_tokens_union.dart';
-import 'realtime_session_model_model.dart';
+import 'realtime_session_model.dart';
 import 'realtime_session_output_audio_format_output_audio_format.dart';
 import 'realtime_session_tools.dart';
 import 'realtime_session_turn_detection.dart';
@@ -47,7 +47,7 @@ class RealtimeSession with RealtimeSessionMappable {
   final num temperature;
   final String? id;
   final dynamic? modalities;
-  final RealtimeSessionModelModel? model;
+  final RealtimeSessionModel? model;
   final String? instructions;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;

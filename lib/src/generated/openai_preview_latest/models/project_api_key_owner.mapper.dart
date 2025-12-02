@@ -14,7 +14,7 @@ class ProjectApiKeyOwnerMapper extends ClassMapperBase<ProjectApiKeyOwner> {
   static ProjectApiKeyOwnerMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ProjectApiKeyOwnerMapper._());
-      ProjectApiKeyOwnerTypeTypeMapper.ensureInitialized();
+      ProjectApiKeyOwnerTypeMapper.ensureInitialized();
       ProjectUserMapper.ensureInitialized();
       ProjectServiceAccountMapper.ensureInitialized();
     }
@@ -24,8 +24,8 @@ class ProjectApiKeyOwnerMapper extends ClassMapperBase<ProjectApiKeyOwner> {
   @override
   final String id = 'ProjectApiKeyOwner';
 
-  static ProjectApiKeyOwnerTypeType? _$type(ProjectApiKeyOwner v) => v.type;
-  static const Field<ProjectApiKeyOwner, ProjectApiKeyOwnerTypeType> _f$type =
+  static ProjectApiKeyOwnerType? _$type(ProjectApiKeyOwner v) => v.type;
+  static const Field<ProjectApiKeyOwner, ProjectApiKeyOwnerType> _f$type =
       Field('type', _$type, opt: true);
   static ProjectUser? _$user(ProjectApiKeyOwner v) => v.user;
   static const Field<ProjectApiKeyOwner, ProjectUser> _f$user = Field(
@@ -141,7 +141,7 @@ abstract class ProjectApiKeyOwnerCopyWith<
   >?
   get serviceAccount;
   $R call({
-    ProjectApiKeyOwnerTypeType? type,
+    ProjectApiKeyOwnerType? type,
     ProjectUser? user,
     ProjectServiceAccount? serviceAccount,
   });

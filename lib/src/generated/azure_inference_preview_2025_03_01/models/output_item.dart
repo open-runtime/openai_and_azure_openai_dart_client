@@ -7,35 +7,35 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'computer_action.dart';
 import 'computer_tool_call.dart';
 import 'computer_tool_call_safety_check.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'file_search_tool_call.dart';
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'function_tool_call.dart';
-import 'function_tool_call_status_status.dart';
-import 'function_tool_call_type_type.dart';
+import 'function_tool_call_status.dart';
+import 'function_tool_call_type.dart';
 import 'item_resource.dart';
 import 'output_content.dart';
 import 'output_item_content.dart';
 import 'output_item_results.dart';
-import 'output_item_role_role.dart';
-import 'output_item_status_status.dart';
-import 'output_item_status_status2.dart';
-import 'output_item_type_type.dart';
-import 'output_item_type_type2.dart';
-import 'output_item_type_type3.dart';
-import 'output_item_type_type4.dart';
-import 'output_item_type_type5.dart';
+import 'output_item_role.dart';
+import 'output_item_status.dart';
+import 'output_item_status2.dart';
+import 'output_item_type.dart';
+import 'output_item_type2.dart';
+import 'output_item_type3.dart';
+import 'output_item_type4.dart';
+import 'output_item_type5.dart';
 import 'output_message.dart';
-import 'output_message_role_role.dart';
-import 'output_message_status_status.dart';
-import 'output_message_type_type.dart';
+import 'output_message_role.dart';
+import 'output_message_status.dart';
+import 'output_message_type.dart';
 import 'reasoning_item.dart';
 import 'reasoning_item_content.dart';
-import 'reasoning_item_status_status.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_status.dart';
+import 'reasoning_item_type.dart';
 
 part 'output_item.mapper.dart';
 
@@ -83,10 +83,10 @@ extension OutputItemUnionDeserializer on OutputItem {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class OutputItemMessage extends OutputItem with OutputItemMessageMappable {
   final String id;
-  final OutputItemTypeType type;
-  final OutputItemRoleRole role;
+  final OutputItemType type;
+  final OutputItemRole role;
   final List<OutputContent> content;
-  final OutputItemStatusStatus status;
+  final OutputItemStatus status;
 
   const OutputItemMessage({
     required this.id,
@@ -100,8 +100,8 @@ class OutputItemMessage extends OutputItem with OutputItemMessageMappable {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class OutputItemFileSearchCall extends OutputItem with OutputItemFileSearchCallMappable {
   final String id;
-  final OutputItemTypeType2 type;
-  final OutputItemStatusStatus2 status;
+  final OutputItemType2 type;
+  final OutputItemStatus2 status;
   final List<String> queries;
   final List<OutputItemResults>? results;
 
@@ -117,12 +117,12 @@ class OutputItemFileSearchCall extends OutputItem with OutputItemFileSearchCallM
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
 class OutputItemFunctionCall extends OutputItem with OutputItemFunctionCallMappable {
   final String id;
-  final OutputItemTypeType3 type;
+  final OutputItemType3 type;
   @MappableField(key: 'call_id')
   final String callId;
   final String name;
   final String arguments;
-  final OutputItemStatusStatus? status;
+  final OutputItemStatus? status;
 
   const OutputItemFunctionCall({
     required this.id,
@@ -136,14 +136,14 @@ class OutputItemFunctionCall extends OutputItem with OutputItemFunctionCallMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class OutputItemComputerCall extends OutputItem with OutputItemComputerCallMappable {
-  final OutputItemTypeType4 type;
+  final OutputItemType4 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerToolCallSafetyCheck> pendingSafetyChecks;
-  final OutputItemStatusStatus status;
+  final OutputItemStatus status;
 
   const OutputItemComputerCall({
     required this.type,
@@ -157,10 +157,10 @@ class OutputItemComputerCall extends OutputItem with OutputItemComputerCallMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class OutputItemReasoning extends OutputItem with OutputItemReasoningMappable {
-  final OutputItemTypeType5 type;
+  final OutputItemType5 type;
   final String id;
   final List<OutputItemContent> content;
-  final OutputItemStatusStatus? status;
+  final OutputItemStatus? status;
 
   const OutputItemReasoning({
     required this.type,

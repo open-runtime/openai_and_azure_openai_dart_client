@@ -1,0 +1,26 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'response_mcp_call_completed_event_type.mapper.dart';
+
+/// The type of the event. Always 'response.mcp_call.completed'.
+@MappableEnum(defaultValue: 'unknown')
+enum ResponseMcpCallCompletedEventType {
+  /// Incorrect name has been replaced. Original name: `response.mcp_call.completed`.
+  @MappableValue('response.mcp_call.completed') 
+  undefined0,
+
+  @MappableValue('unknown') 
+  unknown;
+
+  String toJson() => toValue().toString();
+
+  @override
+  String toString() => toValue().toString();
+
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ResponseMcpCallCompletedEventType> get $valuesDefined => values.where((value) => value != ResponseMcpCallCompletedEventType.unknown).toList();
+}

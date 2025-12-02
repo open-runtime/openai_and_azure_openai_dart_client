@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'file_search_tool_ranking_options_ranker_ranker.dart';
+import 'file_search_tool_ranking_options_ranker.dart';
 
 part 'file_search_tool_ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchToolRankingOptions with FileSearchToolRankingOptionsMappable {
   const FileSearchToolRankingOptions({
-    this.ranker = FileSearchToolRankingOptionsRankerRanker.auto,
+    this.ranker = FileSearchToolRankingOptionsRanker.auto,
     this.scoreThreshold = 0,
   });
 
-  final FileSearchToolRankingOptionsRankerRanker ranker;
+  final FileSearchToolRankingOptionsRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 

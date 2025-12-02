@@ -17,7 +17,7 @@ class RealtimeMcpApprovalResponseMapper
       MapperContainer.globals.use(
         _instance = RealtimeMcpApprovalResponseMapper._(),
       );
-      RealtimeMcpApprovalResponseTypeTypeMapper.ensureInitialized();
+      RealtimeMcpApprovalResponseTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeMcpApprovalResponseMapper
   @override
   final String id = 'RealtimeMcpApprovalResponse';
 
-  static RealtimeMcpApprovalResponseTypeType _$type(
+  static RealtimeMcpApprovalResponseType _$type(
     RealtimeMcpApprovalResponse v,
   ) => v.type;
   static const Field<
     RealtimeMcpApprovalResponse,
-    RealtimeMcpApprovalResponseTypeType
+    RealtimeMcpApprovalResponseType
   >
   _f$type = Field('type', _$type);
   static String _$id(RealtimeMcpApprovalResponse v) => v.id;
@@ -156,7 +156,7 @@ abstract class RealtimeMcpApprovalResponseCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeMcpApprovalResponseTypeType? type,
+    RealtimeMcpApprovalResponseType? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -186,7 +186,7 @@ class _RealtimeMcpApprovalResponseCopyWithImpl<$R, $Out>
       RealtimeMcpApprovalResponseMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeMcpApprovalResponseTypeType? type,
+    RealtimeMcpApprovalResponseType? type,
     String? id,
     String? approvalRequestId,
     bool? approve,

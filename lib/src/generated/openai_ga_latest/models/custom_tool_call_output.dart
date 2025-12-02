@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
-import 'custom_tool_call_output_type_type.dart';
+import 'custom_tool_call_output_type.dart';
 
 part 'custom_tool_call_output.mapper.dart';
 
@@ -20,7 +20,7 @@ class CustomToolCallOutput with CustomToolCallOutputMappable {
     this.id,
   });
 
-  final CustomToolCallOutputTypeType type;
+  final CustomToolCallOutputType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String output;

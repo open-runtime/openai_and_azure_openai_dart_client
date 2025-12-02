@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_named_tool_choice_function.dart';
-import 'assistants_named_tool_choice_type_type.dart';
+import 'assistants_named_tool_choice_type.dart';
 
 part 'assistants_named_tool_choice.mapper.dart';
 
@@ -17,7 +17,7 @@ class AssistantsNamedToolChoice with AssistantsNamedToolChoiceMappable {
     this.assistantsNamedToolChoiceFunction,
   });
 
-  final AssistantsNamedToolChoiceTypeType type;
+  final AssistantsNamedToolChoiceType type;
   @MappableField(key: 'function')
   final AssistantsNamedToolChoiceFunction? assistantsNamedToolChoiceFunction;
 

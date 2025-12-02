@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_output_image_type_type.dart';
+import 'code_interpreter_output_image_type.dart';
 
 part 'code_interpreter_output_image.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'code_interpreter_output_image.mapper.dart';
 class CodeInterpreterOutputImage with CodeInterpreterOutputImageMappable {
   const CodeInterpreterOutputImage({
     required this.url,
-    this.type = CodeInterpreterOutputImageTypeType.image,
+    this.type = CodeInterpreterOutputImageType.image,
   });
 
   final String url;
-  final CodeInterpreterOutputImageTypeType type;
+  final CodeInterpreterOutputImageType type;
 
   static CodeInterpreterOutputImage fromJson(Map<String, dynamic> json) => CodeInterpreterOutputImageMapper.fromJson(json);
 

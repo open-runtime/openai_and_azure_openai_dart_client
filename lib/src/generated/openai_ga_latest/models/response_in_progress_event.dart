@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_in_progress_event_type_type.dart';
+import 'response_in_progress_event_type.dart';
 import 'response_model.dart';
 import 'response_stream_event.dart';
 
@@ -19,7 +19,7 @@ class ResponseInProgressEvent with ResponseInProgressEventMappable {
     required this.sequenceNumber,
   });
 
-  final ResponseInProgressEventTypeType type;
+  final ResponseInProgressEventType type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;

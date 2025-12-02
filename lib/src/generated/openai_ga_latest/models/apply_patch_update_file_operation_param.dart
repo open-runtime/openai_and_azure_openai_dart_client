@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_operation_param.dart';
-import 'apply_patch_update_file_operation_param_type_type.dart';
+import 'apply_patch_update_file_operation_param_type.dart';
 
 part 'apply_patch_update_file_operation_param.mapper.dart';
 
@@ -15,12 +15,12 @@ class ApplyPatchUpdateFileOperationParam with ApplyPatchUpdateFileOperationParam
   const ApplyPatchUpdateFileOperationParam({
     required this.path,
     required this.diff,
-    this.type = ApplyPatchUpdateFileOperationParamTypeType.updateFile,
+    this.type = ApplyPatchUpdateFileOperationParamType.updateFile,
   });
 
   final String path;
   final String diff;
-  final ApplyPatchUpdateFileOperationParamTypeType type;
+  final ApplyPatchUpdateFileOperationParamType type;
 
   static ApplyPatchUpdateFileOperationParam fromJson(Map<String, dynamic> json) => ApplyPatchUpdateFileOperationParamMapper.fromJson(json);
 

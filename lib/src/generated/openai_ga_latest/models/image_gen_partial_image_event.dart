@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'image_gen_partial_image_event_background_background.dart';
+import 'image_gen_partial_image_event_background.dart';
 import 'image_gen_partial_image_event_output_format_output_format.dart';
-import 'image_gen_partial_image_event_quality_quality.dart';
-import 'image_gen_partial_image_event_size_size.dart';
-import 'image_gen_partial_image_event_type_type.dart';
+import 'image_gen_partial_image_event_quality.dart';
+import 'image_gen_partial_image_event_size.dart';
+import 'image_gen_partial_image_event_type.dart';
 import 'image_gen_stream_event.dart';
 
 part 'image_gen_partial_image_event.mapper.dart';
@@ -28,14 +28,14 @@ class ImageGenPartialImageEvent with ImageGenPartialImageEventMappable {
     required this.partialImageIndex,
   });
 
-  final ImageGenPartialImageEventTypeType type;
+  final ImageGenPartialImageEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final ImageGenPartialImageEventSizeSize size;
-  final ImageGenPartialImageEventQualityQuality quality;
-  final ImageGenPartialImageEventBackgroundBackground background;
+  final ImageGenPartialImageEventSize size;
+  final ImageGenPartialImageEventQuality quality;
+  final ImageGenPartialImageEventBackground background;
   @MappableField(key: 'output_format')
   final ImageGenPartialImageEventOutputFormatOutputFormat outputFormat;
   @MappableField(key: 'partial_image_index')

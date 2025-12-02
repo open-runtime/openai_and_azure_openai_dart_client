@@ -17,7 +17,7 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsFileSearchObjectMapper._(),
       );
-      RunStepDetailsToolCallsFileSearchObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsFileSearchObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
   static String _$id(RunStepDetailsToolCallsFileSearchObject v) => v.id;
   static const Field<RunStepDetailsToolCallsFileSearchObject, String> _f$id =
       Field('id', _$id);
-  static RunStepDetailsToolCallsFileSearchObjectTypeType _$type(
+  static RunStepDetailsToolCallsFileSearchObjectType _$type(
     RunStepDetailsToolCallsFileSearchObject v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallsFileSearchObject,
-    RunStepDetailsToolCallsFileSearchObjectTypeType
+    RunStepDetailsToolCallsFileSearchObjectType
   >
   _f$type = Field('type', _$type);
   static dynamic _$fileSearch(RunStepDetailsToolCallsFileSearchObject v) =>
@@ -147,7 +147,7 @@ abstract class RunStepDetailsToolCallsFileSearchObjectCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? id,
-    RunStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDetailsToolCallsFileSearchObjectType? type,
     dynamic fileSearch,
   });
   RunStepDetailsToolCallsFileSearchObjectCopyWith<$R2, $In, $Out2>
@@ -174,7 +174,7 @@ class _RunStepDetailsToolCallsFileSearchObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDetailsToolCallsFileSearchObjectType? type,
     Object? fileSearch = $none,
   }) => $apply(
     FieldCopyWithData({

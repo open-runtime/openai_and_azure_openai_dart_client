@@ -6,12 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_file_output.dart';
 import 'code_interpreter_file_output_files.dart';
-import 'code_interpreter_file_output_type_type.dart';
+import 'code_interpreter_file_output_type.dart';
 import 'code_interpreter_text_output.dart';
-import 'code_interpreter_text_output_type_type.dart';
+import 'code_interpreter_text_output_type.dart';
 import 'code_interpreter_tool_output_files.dart';
-import 'code_interpreter_tool_output_type_type.dart';
-import 'code_interpreter_tool_output_type_type2.dart';
+import 'code_interpreter_tool_output_type.dart';
+import 'code_interpreter_tool_output_type2.dart';
 
 part 'code_interpreter_tool_output.mapper.dart';
 
@@ -49,7 +49,7 @@ extension CodeInterpreterToolOutputUnionDeserializer on CodeInterpreterToolOutpu
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class CodeInterpreterToolOutputLogs extends CodeInterpreterToolOutput with CodeInterpreterToolOutputLogsMappable {
-  final CodeInterpreterToolOutputTypeType type;
+  final CodeInterpreterToolOutputType type;
   final String logs;
 
   const CodeInterpreterToolOutputLogs({
@@ -60,7 +60,7 @@ class CodeInterpreterToolOutputLogs extends CodeInterpreterToolOutput with CodeI
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'files')
 class CodeInterpreterToolOutputFiles extends CodeInterpreterToolOutput with CodeInterpreterToolOutputFilesMappable {
-  final CodeInterpreterToolOutputTypeType2 type;
+  final CodeInterpreterToolOutputType2 type;
   final List<CodeInterpreterToolOutputFiles> files;
 
   const CodeInterpreterToolOutputFiles({

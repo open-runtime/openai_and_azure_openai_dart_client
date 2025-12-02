@@ -17,7 +17,7 @@ class MessageContentDeltaImageUrlMapper
       MapperContainer.globals.use(
         _instance = MessageContentDeltaImageUrlMapper._(),
       );
-      MessageContentDeltaImageUrlDetailDetailMapper.ensureInitialized();
+      MessageContentDeltaImageUrlDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class MessageContentDeltaImageUrlMapper
   @override
   final String id = 'MessageContentDeltaImageUrl';
 
-  static MessageContentDeltaImageUrlDetailDetail _$detail(
+  static MessageContentDeltaImageUrlDetail _$detail(
     MessageContentDeltaImageUrl v,
   ) => v.detail;
   static const Field<
     MessageContentDeltaImageUrl,
-    MessageContentDeltaImageUrlDetailDetail
+    MessageContentDeltaImageUrlDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentDeltaImageUrlDetailDetail.auto,
+    def: MessageContentDeltaImageUrlDetail.auto,
   );
   static String? _$url(MessageContentDeltaImageUrl v) => v.url;
   static const Field<MessageContentDeltaImageUrl, String> _f$url = Field(
@@ -136,7 +136,7 @@ abstract class MessageContentDeltaImageUrlCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({MessageContentDeltaImageUrlDetailDetail? detail, String? url});
+  $R call({MessageContentDeltaImageUrlDetail? detail, String? url});
   MessageContentDeltaImageUrlCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -160,15 +160,13 @@ class _MessageContentDeltaImageUrlCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentDeltaImageUrl> $mapper =
       MessageContentDeltaImageUrlMapper.ensureInitialized();
   @override
-  $R call({
-    MessageContentDeltaImageUrlDetailDetail? detail,
-    Object? url = $none,
-  }) => $apply(
-    FieldCopyWithData({
-      if (detail != null) #detail: detail,
-      if (url != $none) #url: url,
-    }),
-  );
+  $R call({MessageContentDeltaImageUrlDetail? detail, Object? url = $none}) =>
+      $apply(
+        FieldCopyWithData({
+          if (detail != null) #detail: detail,
+          if (url != $none) #url: url,
+        }),
+      );
   @override
   MessageContentDeltaImageUrl $make(CopyWithData data) =>
       MessageContentDeltaImageUrl(

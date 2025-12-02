@@ -18,9 +18,9 @@ class ComputerCallOutputItemParamMapper
         _instance = ComputerCallOutputItemParamMapper._(),
       );
       ComputerScreenshotImageMapper.ensureInitialized();
-      ComputerCallOutputItemParamTypeTypeMapper.ensureInitialized();
+      ComputerCallOutputItemParamTypeMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
-      ComputerCallOutputItemParamStatusStatusMapper.ensureInitialized();
+      ComputerCallOutputItemParamStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -38,18 +38,18 @@ class ComputerCallOutputItemParamMapper
       v.output;
   static const Field<ComputerCallOutputItemParam, ComputerScreenshotImage>
   _f$output = Field('output', _$output);
-  static ComputerCallOutputItemParamTypeType _$type(
+  static ComputerCallOutputItemParamType _$type(
     ComputerCallOutputItemParam v,
   ) => v.type;
   static const Field<
     ComputerCallOutputItemParam,
-    ComputerCallOutputItemParamTypeType
+    ComputerCallOutputItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ComputerCallOutputItemParamTypeType.computerCallOutput,
+    def: ComputerCallOutputItemParamType.computerCallOutput,
   );
   static String? _$id(ComputerCallOutputItemParam v) => v.id;
   static const Field<ComputerCallOutputItemParam, String> _f$id = Field(
@@ -70,12 +70,12 @@ class ComputerCallOutputItemParamMapper
     key: r'acknowledged_safety_checks',
     opt: true,
   );
-  static ComputerCallOutputItemParamStatusStatus? _$status(
+  static ComputerCallOutputItemParamStatus? _$status(
     ComputerCallOutputItemParam v,
   ) => v.status;
   static const Field<
     ComputerCallOutputItemParam,
-    ComputerCallOutputItemParamStatusStatus
+    ComputerCallOutputItemParamStatus
   >
   _f$status = Field('status', _$status, opt: true);
 
@@ -197,10 +197,10 @@ abstract class ComputerCallOutputItemParamCopyWith<
   $R call({
     String? callId,
     ComputerScreenshotImage? output,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     String? id,
     List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
-    ComputerCallOutputItemParamStatusStatus? status,
+    ComputerCallOutputItemParamStatus? status,
   });
   ComputerCallOutputItemParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -252,7 +252,7 @@ class _ComputerCallOutputItemParamCopyWithImpl<$R, $Out>
   $R call({
     String? callId,
     ComputerScreenshotImage? output,
-    ComputerCallOutputItemParamTypeType? type,
+    ComputerCallOutputItemParamType? type,
     Object? id = $none,
     Object? acknowledgedSafetyChecks = $none,
     Object? status = $none,

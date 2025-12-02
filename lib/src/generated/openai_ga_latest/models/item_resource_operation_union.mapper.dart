@@ -90,7 +90,7 @@ class ItemResourceOperationUnionCreateFileMapper
       ItemResourceOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchCreateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchCreateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,12 +98,12 @@ class ItemResourceOperationUnionCreateFileMapper
   @override
   final String id = 'ItemResourceOperationUnionCreateFile';
 
-  static ApplyPatchCreateFileOperationTypeType _$type(
+  static ApplyPatchCreateFileOperationType _$type(
     ItemResourceOperationUnionCreateFile v,
   ) => v.type;
   static const Field<
     ItemResourceOperationUnionCreateFile,
-    ApplyPatchCreateFileOperationTypeType
+    ApplyPatchCreateFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ItemResourceOperationUnionCreateFile v) => v.path;
@@ -223,7 +223,7 @@ abstract class ItemResourceOperationUnionCreateFileCopyWith<
     implements ItemResourceOperationUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
     String? path,
     String? diff,
   });
@@ -250,7 +250,7 @@ class _ItemResourceOperationUnionCreateFileCopyWithImpl<$R, $Out>
       ItemResourceOperationUnionCreateFileMapper.ensureInitialized();
   @override
   $R call({
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
     String? path,
     String? diff,
   }) => $apply(
@@ -295,7 +295,7 @@ class ItemResourceOperationUnionDeleteFileMapper
       ItemResourceOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchDeleteFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchDeleteFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -303,12 +303,12 @@ class ItemResourceOperationUnionDeleteFileMapper
   @override
   final String id = 'ItemResourceOperationUnionDeleteFile';
 
-  static ApplyPatchDeleteFileOperationTypeType _$type(
+  static ApplyPatchDeleteFileOperationType _$type(
     ItemResourceOperationUnionDeleteFile v,
   ) => v.type;
   static const Field<
     ItemResourceOperationUnionDeleteFile,
-    ApplyPatchDeleteFileOperationTypeType
+    ApplyPatchDeleteFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ItemResourceOperationUnionDeleteFile v) => v.path;
@@ -422,7 +422,7 @@ abstract class ItemResourceOperationUnionDeleteFileCopyWith<
 >
     implements ItemResourceOperationUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ApplyPatchDeleteFileOperationTypeType? type, String? path});
+  $R call({ApplyPatchDeleteFileOperationType? type, String? path});
   ItemResourceOperationUnionDeleteFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -445,13 +445,12 @@ class _ItemResourceOperationUnionDeleteFileCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ItemResourceOperationUnionDeleteFile> $mapper =
       ItemResourceOperationUnionDeleteFileMapper.ensureInitialized();
   @override
-  $R call({ApplyPatchDeleteFileOperationTypeType? type, String? path}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (path != null) #path: path,
-        }),
-      );
+  $R call({ApplyPatchDeleteFileOperationType? type, String? path}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (path != null) #path: path,
+    }),
+  );
   @override
   ItemResourceOperationUnionDeleteFile $make(CopyWithData data) =>
       ItemResourceOperationUnionDeleteFile(
@@ -486,7 +485,7 @@ class ItemResourceOperationUnionUpdateFileMapper
       ItemResourceOperationUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchUpdateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchUpdateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -494,12 +493,12 @@ class ItemResourceOperationUnionUpdateFileMapper
   @override
   final String id = 'ItemResourceOperationUnionUpdateFile';
 
-  static ApplyPatchUpdateFileOperationTypeType _$type(
+  static ApplyPatchUpdateFileOperationType _$type(
     ItemResourceOperationUnionUpdateFile v,
   ) => v.type;
   static const Field<
     ItemResourceOperationUnionUpdateFile,
-    ApplyPatchUpdateFileOperationTypeType
+    ApplyPatchUpdateFileOperationType
   >
   _f$type = Field('type', _$type);
   static String _$path(ItemResourceOperationUnionUpdateFile v) => v.path;
@@ -619,7 +618,7 @@ abstract class ItemResourceOperationUnionUpdateFileCopyWith<
     implements ItemResourceOperationUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
     String? path,
     String? diff,
   });
@@ -646,7 +645,7 @@ class _ItemResourceOperationUnionUpdateFileCopyWithImpl<$R, $Out>
       ItemResourceOperationUnionUpdateFileMapper.ensureInitialized();
   @override
   $R call({
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
     String? path,
     String? diff,
   }) => $apply(

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'user_message_input_text_type_type.dart';
+import 'user_message_input_text_type.dart';
 
 part 'user_message_input_text.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'user_message_input_text.mapper.dart';
 class UserMessageInputText with UserMessageInputTextMappable {
   const UserMessageInputText({
     required this.text,
-    this.type = UserMessageInputTextTypeType.inputText,
+    this.type = UserMessageInputTextType.inputText,
   });
 
   final String text;
-  final UserMessageInputTextTypeType type;
+  final UserMessageInputTextType type;
 
   static UserMessageInputText fromJson(Map<String, dynamic> json) => UserMessageInputTextMapper.fromJson(json);
 

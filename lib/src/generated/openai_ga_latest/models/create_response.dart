@@ -12,7 +12,7 @@ import 'model_ids_responses.dart';
 import 'model_response_properties_prompt_cache_retention_prompt_cache_retention.dart';
 import 'prompt.dart';
 import 'reasoning.dart';
-import 'response_properties_truncation_truncation.dart';
+import 'response_properties_truncation.dart';
 import 'response_stream_options.dart';
 import 'response_text_param.dart';
 import 'service_tier.dart';
@@ -27,7 +27,7 @@ class CreateResponse with CreateResponseMappable {
     this.temperature = 1,
     this.topP = 1,
     this.background = false,
-    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.truncation = ResponsePropertiesTruncation.disabled,
     this.parallelToolCalls = true,
     this.store = true,
     this.stream = false,
@@ -58,7 +58,7 @@ class CreateResponse with CreateResponseMappable {
   @MappableField(key: 'top_p')
   final num? topP;
   final bool? background;
-  final ResponsePropertiesTruncationTruncation? truncation;
+  final ResponsePropertiesTruncation? truncation;
   @MappableField(key: 'parallel_tool_calls')
   final bool? parallelToolCalls;
   final bool? store;

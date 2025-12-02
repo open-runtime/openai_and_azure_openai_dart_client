@@ -9,84 +9,84 @@ import 'apply_patch_call_status.dart';
 import 'apply_patch_tool_call.dart';
 import 'apply_patch_tool_call_operation_union.dart';
 import 'apply_patch_tool_call_output.dart';
-import 'apply_patch_tool_call_output_type_type.dart';
-import 'apply_patch_tool_call_type_type.dart';
+import 'apply_patch_tool_call_output_type.dart';
+import 'apply_patch_tool_call_type.dart';
 import 'code_interpreter_tool_call.dart';
 import 'code_interpreter_tool_call_outputs_union.dart';
-import 'code_interpreter_tool_call_status_status.dart';
-import 'code_interpreter_tool_call_type_type.dart';
+import 'code_interpreter_tool_call_status.dart';
+import 'code_interpreter_tool_call_type.dart';
 import 'computer_action.dart';
 import 'computer_call_safety_check_param.dart';
 import 'computer_tool_call.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'conversation_item.dart';
 import 'file_search_tool_call.dart';
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'function_shell_action.dart';
 import 'function_shell_call.dart';
 import 'function_shell_call_output.dart';
 import 'function_shell_call_output_content.dart';
-import 'function_shell_call_output_type_type.dart';
-import 'function_shell_call_type_type.dart';
+import 'function_shell_call_output_type.dart';
+import 'function_shell_call_type.dart';
 import 'image_gen_tool_call.dart';
-import 'image_gen_tool_call_status_status.dart';
-import 'image_gen_tool_call_type_type.dart';
+import 'image_gen_tool_call_status.dart';
+import 'image_gen_tool_call_type.dart';
 import 'item_resource_action_union.dart';
 import 'item_resource_operation_union.dart';
 import 'item_resource_outputs_union.dart';
 import 'item_resource_results.dart';
-import 'item_resource_role_role.dart';
-import 'item_resource_status_status.dart';
-import 'item_resource_status_status2.dart';
-import 'item_resource_status_status3.dart';
-import 'item_resource_status_status4.dart';
-import 'item_resource_status_status5.dart';
-import 'item_resource_type_type.dart';
-import 'item_resource_type_type10.dart';
-import 'item_resource_type_type11.dart';
-import 'item_resource_type_type12.dart';
-import 'item_resource_type_type13.dart';
-import 'item_resource_type_type14.dart';
-import 'item_resource_type_type15.dart';
-import 'item_resource_type_type16.dart';
-import 'item_resource_type_type2.dart';
-import 'item_resource_type_type3.dart';
-import 'item_resource_type_type4.dart';
-import 'item_resource_type_type5.dart';
-import 'item_resource_type_type6.dart';
-import 'item_resource_type_type7.dart';
-import 'item_resource_type_type8.dart';
-import 'item_resource_type_type9.dart';
+import 'item_resource_role.dart';
+import 'item_resource_status.dart';
+import 'item_resource_status2.dart';
+import 'item_resource_status3.dart';
+import 'item_resource_status4.dart';
+import 'item_resource_status5.dart';
+import 'item_resource_type.dart';
+import 'item_resource_type10.dart';
+import 'item_resource_type11.dart';
+import 'item_resource_type12.dart';
+import 'item_resource_type13.dart';
+import 'item_resource_type14.dart';
+import 'item_resource_type15.dart';
+import 'item_resource_type16.dart';
+import 'item_resource_type2.dart';
+import 'item_resource_type3.dart';
+import 'item_resource_type4.dart';
+import 'item_resource_type5.dart';
+import 'item_resource_type6.dart';
+import 'item_resource_type7.dart';
+import 'item_resource_type8.dart';
+import 'item_resource_type9.dart';
 import 'local_shell_call_status.dart';
 import 'local_shell_exec_action.dart';
 import 'local_shell_tool_call.dart';
 import 'local_shell_tool_call_output.dart';
-import 'local_shell_tool_call_output_status_status.dart';
-import 'local_shell_tool_call_output_type_type.dart';
-import 'local_shell_tool_call_status_status.dart';
-import 'local_shell_tool_call_type_type.dart';
+import 'local_shell_tool_call_output_status.dart';
+import 'local_shell_tool_call_output_type.dart';
+import 'local_shell_tool_call_status.dart';
+import 'local_shell_tool_call_type.dart';
 import 'mcp_approval_request.dart';
-import 'mcp_approval_request_type_type.dart';
+import 'mcp_approval_request_type.dart';
 import 'mcp_approval_response_resource.dart';
-import 'mcp_approval_response_resource_type_type.dart';
+import 'mcp_approval_response_resource_type.dart';
 import 'mcp_list_tools.dart';
 import 'mcp_list_tools_tool.dart';
-import 'mcp_list_tools_type_type.dart';
+import 'mcp_list_tools_type.dart';
 import 'mcp_tool_call.dart';
 import 'mcp_tool_call_status.dart';
-import 'mcp_tool_call_type_type.dart';
+import 'mcp_tool_call_type.dart';
 import 'output_message.dart';
 import 'output_message_content.dart';
-import 'output_message_role_role.dart';
-import 'output_message_status_status.dart';
-import 'output_message_type_type.dart';
+import 'output_message_role.dart';
+import 'output_message_status.dart';
+import 'output_message_type.dart';
 import 'web_search_tool_call.dart';
 import 'web_search_tool_call_action_union.dart';
-import 'web_search_tool_call_status_status.dart';
-import 'web_search_tool_call_type_type.dart';
+import 'web_search_tool_call_status.dart';
+import 'web_search_tool_call_type.dart';
 
 part 'item_resource.mapper.dart';
 
@@ -169,10 +169,10 @@ extension ItemResourceUnionDeserializer on ItemResource {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class ItemResourceMessage extends ItemResource with ItemResourceMessageMappable {
   final String id;
-  final ItemResourceTypeType type;
-  final ItemResourceRoleRole role;
+  final ItemResourceType type;
+  final ItemResourceRole role;
   final List<OutputMessageContent> content;
-  final ItemResourceStatusStatus status;
+  final ItemResourceStatus status;
 
   const ItemResourceMessage({
     required this.id,
@@ -186,8 +186,8 @@ class ItemResourceMessage extends ItemResource with ItemResourceMessageMappable 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class ItemResourceFileSearchCall extends ItemResource with ItemResourceFileSearchCallMappable {
   final String id;
-  final ItemResourceTypeType2 type;
-  final ItemResourceStatusStatus2 status;
+  final ItemResourceType2 type;
+  final ItemResourceStatus2 status;
   final List<String> queries;
   final List<ItemResourceResults>? results;
 
@@ -202,14 +202,14 @@ class ItemResourceFileSearchCall extends ItemResource with ItemResourceFileSearc
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class ItemResourceComputerCall extends ItemResource with ItemResourceComputerCallMappable {
-  final ItemResourceTypeType3 type;
+  final ItemResourceType3 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
-  final ItemResourceStatusStatus status;
+  final ItemResourceStatus status;
 
   const ItemResourceComputerCall({
     required this.type,
@@ -224,8 +224,8 @@ class ItemResourceComputerCall extends ItemResource with ItemResourceComputerCal
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
 class ItemResourceWebSearchCall extends ItemResource with ItemResourceWebSearchCallMappable {
   final String id;
-  final ItemResourceTypeType4 type;
-  final ItemResourceStatusStatus3 status;
+  final ItemResourceType4 type;
+  final ItemResourceStatus3 status;
   final ItemResourceActionUnion action;
 
   const ItemResourceWebSearchCall({
@@ -238,9 +238,9 @@ class ItemResourceWebSearchCall extends ItemResource with ItemResourceWebSearchC
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')
 class ItemResourceImageGenerationCall extends ItemResource with ItemResourceImageGenerationCallMappable {
-  final ItemResourceTypeType5 type;
+  final ItemResourceType5 type;
   final String id;
-  final ItemResourceStatusStatus4 status;
+  final ItemResourceStatus4 status;
   final String? result;
 
   const ItemResourceImageGenerationCall({
@@ -253,9 +253,9 @@ class ItemResourceImageGenerationCall extends ItemResource with ItemResourceImag
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter_call')
 class ItemResourceCodeInterpreterCall extends ItemResource with ItemResourceCodeInterpreterCallMappable {
-  final ItemResourceTypeType6 type;
+  final ItemResourceType6 type;
   final String id;
-  final ItemResourceStatusStatus5 status;
+  final ItemResourceStatus5 status;
   @MappableField(key: 'container_id')
   final String containerId;
   final String? code;
@@ -273,12 +273,12 @@ class ItemResourceCodeInterpreterCall extends ItemResource with ItemResourceCode
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call')
 class ItemResourceLocalShellCall extends ItemResource with ItemResourceLocalShellCallMappable {
-  final ItemResourceTypeType7 type;
+  final ItemResourceType7 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final LocalShellExecAction action;
-  final ItemResourceStatusStatus status;
+  final ItemResourceStatus status;
 
   const ItemResourceLocalShellCall({
     required this.type,
@@ -291,10 +291,10 @@ class ItemResourceLocalShellCall extends ItemResource with ItemResourceLocalShel
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call_output')
 class ItemResourceLocalShellCallOutput extends ItemResource with ItemResourceLocalShellCallOutputMappable {
-  final ItemResourceTypeType8 type;
+  final ItemResourceType8 type;
   final String id;
   final String output;
-  final ItemResourceStatusStatus? status;
+  final ItemResourceStatus? status;
 
   const ItemResourceLocalShellCallOutput({
     required this.type,
@@ -306,7 +306,7 @@ class ItemResourceLocalShellCallOutput extends ItemResource with ItemResourceLoc
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
 class ItemResourceShellCall extends ItemResource with ItemResourceShellCallMappable {
-  final ItemResourceTypeType9 type;
+  final ItemResourceType9 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -327,7 +327,7 @@ class ItemResourceShellCall extends ItemResource with ItemResourceShellCallMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
 class ItemResourceShellCallOutput extends ItemResource with ItemResourceShellCallOutputMappable {
-  final ItemResourceTypeType10 type;
+  final ItemResourceType10 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -349,7 +349,7 @@ class ItemResourceShellCallOutput extends ItemResource with ItemResourceShellCal
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call')
 class ItemResourceApplyPatchCall extends ItemResource with ItemResourceApplyPatchCallMappable {
-  final ItemResourceTypeType11 type;
+  final ItemResourceType11 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -370,7 +370,7 @@ class ItemResourceApplyPatchCall extends ItemResource with ItemResourceApplyPatc
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call_output')
 class ItemResourceApplyPatchCallOutput extends ItemResource with ItemResourceApplyPatchCallOutputMappable {
-  final ItemResourceTypeType12 type;
+  final ItemResourceType12 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -391,7 +391,7 @@ class ItemResourceApplyPatchCallOutput extends ItemResource with ItemResourceApp
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
 class ItemResourceMcpListTools extends ItemResource with ItemResourceMcpListToolsMappable {
-  final ItemResourceTypeType13 type;
+  final ItemResourceType13 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -409,7 +409,7 @@ class ItemResourceMcpListTools extends ItemResource with ItemResourceMcpListTool
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
 class ItemResourceMcpApprovalRequest extends ItemResource with ItemResourceMcpApprovalRequestMappable {
-  final ItemResourceTypeType14 type;
+  final ItemResourceType14 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -427,7 +427,7 @@ class ItemResourceMcpApprovalRequest extends ItemResource with ItemResourceMcpAp
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
 class ItemResourceMcpApprovalResponse extends ItemResource with ItemResourceMcpApprovalResponseMappable {
-  final ItemResourceTypeType15 type;
+  final ItemResourceType15 type;
   final String id;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;
@@ -445,7 +445,7 @@ class ItemResourceMcpApprovalResponse extends ItemResource with ItemResourceMcpA
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
 class ItemResourceMcpCall extends ItemResource with ItemResourceMcpCallMappable {
-  final ItemResourceTypeType16 type;
+  final ItemResourceType16 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

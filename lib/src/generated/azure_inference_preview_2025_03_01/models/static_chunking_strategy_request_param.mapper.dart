@@ -17,7 +17,7 @@ class StaticChunkingStrategyRequestParamMapper
       MapperContainer.globals.use(
         _instance = StaticChunkingStrategyRequestParamMapper._(),
       );
-      StaticChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
+      StaticChunkingStrategyRequestParamTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class StaticChunkingStrategyRequestParamMapper
   @override
   final String id = 'StaticChunkingStrategyRequestParam';
 
-  static StaticChunkingStrategyRequestParamTypeType _$type(
+  static StaticChunkingStrategyRequestParamType _$type(
     StaticChunkingStrategyRequestParam v,
   ) => v.type;
   static const Field<
     StaticChunkingStrategyRequestParam,
-    StaticChunkingStrategyRequestParamTypeType
+    StaticChunkingStrategyRequestParamType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
@@ -143,7 +143,7 @@ abstract class StaticChunkingStrategyRequestParamCopyWith<
   >
   get staticField;
   $R call({
-    StaticChunkingStrategyRequestParamTypeType? type,
+    StaticChunkingStrategyRequestParamType? type,
     StaticChunkingStrategy? staticField,
   });
   StaticChunkingStrategyRequestParamCopyWith<$R2, $In, $Out2>
@@ -177,7 +177,7 @@ class _StaticChunkingStrategyRequestParamCopyWithImpl<$R, $Out>
       $value.staticField.copyWith.$chain((v) => call(staticField: v));
   @override
   $R call({
-    StaticChunkingStrategyRequestParamTypeType? type,
+    StaticChunkingStrategyRequestParamType? type,
     StaticChunkingStrategy? staticField,
   }) => $apply(
     FieldCopyWithData({

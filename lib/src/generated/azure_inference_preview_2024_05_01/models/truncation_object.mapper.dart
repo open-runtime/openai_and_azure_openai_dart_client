@@ -14,7 +14,7 @@ class TruncationObjectMapper extends ClassMapperBase<TruncationObject> {
   static TruncationObjectMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TruncationObjectMapper._());
-      TruncationObjectTypeTypeMapper.ensureInitialized();
+      TruncationObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class TruncationObjectMapper extends ClassMapperBase<TruncationObject> {
   @override
   final String id = 'TruncationObject';
 
-  static TruncationObjectTypeType _$type(TruncationObject v) => v.type;
-  static const Field<TruncationObject, TruncationObjectTypeType> _f$type =
-      Field('type', _$type);
+  static TruncationObjectType _$type(TruncationObject v) => v.type;
+  static const Field<TruncationObject, TruncationObjectType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static int? _$lastMessages(TruncationObject v) => v.lastMessages;
   static const Field<TruncationObject, int> _f$lastMessages = Field(
     'lastMessages',
@@ -112,7 +114,7 @@ extension TruncationObjectValueCopy<$R, $Out>
 
 abstract class TruncationObjectCopyWith<$R, $In extends TruncationObject, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({TruncationObjectTypeType? type, int? lastMessages});
+  $R call({TruncationObjectType? type, int? lastMessages});
   TruncationObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -127,13 +129,12 @@ class _TruncationObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TruncationObject> $mapper =
       TruncationObjectMapper.ensureInitialized();
   @override
-  $R call({TruncationObjectTypeType? type, Object? lastMessages = $none}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (lastMessages != $none) #lastMessages: lastMessages,
-        }),
-      );
+  $R call({TruncationObjectType? type, Object? lastMessages = $none}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (lastMessages != $none) #lastMessages: lastMessages,
+    }),
+  );
   @override
   TruncationObject $make(CopyWithData data) => TruncationObject(
     type: data.get(#type, or: $value.type),

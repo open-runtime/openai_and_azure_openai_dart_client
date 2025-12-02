@@ -15,7 +15,7 @@ class MessageContentImageUrlMapper
   static MessageContentImageUrlMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageContentImageUrlMapper._());
-      MessageContentImageUrlDetailDetailMapper.ensureInitialized();
+      MessageContentImageUrlDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,15 +28,14 @@ class MessageContentImageUrlMapper
     'url',
     _$url,
   );
-  static MessageContentImageUrlDetailDetail _$detail(
-    MessageContentImageUrl v,
-  ) => v.detail;
-  static const Field<MessageContentImageUrl, MessageContentImageUrlDetailDetail>
+  static MessageContentImageUrlDetail _$detail(MessageContentImageUrl v) =>
+      v.detail;
+  static const Field<MessageContentImageUrl, MessageContentImageUrlDetail>
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentImageUrlDetailDetail.auto,
+    def: MessageContentImageUrlDetail.auto,
   );
 
   @override
@@ -126,7 +125,7 @@ abstract class MessageContentImageUrlCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? url, MessageContentImageUrlDetailDetail? detail});
+  $R call({String? url, MessageContentImageUrlDetail? detail});
   MessageContentImageUrlCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -142,7 +141,7 @@ class _MessageContentImageUrlCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentImageUrl> $mapper =
       MessageContentImageUrlMapper.ensureInitialized();
   @override
-  $R call({String? url, MessageContentImageUrlDetailDetail? detail}) => $apply(
+  $R call({String? url, MessageContentImageUrlDetail? detail}) => $apply(
     FieldCopyWithData({
       if (url != null) #url: url,
       if (detail != null) #detail: detail,

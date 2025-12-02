@@ -17,7 +17,7 @@ class AutoChunkingStrategyRequestParamMapper
       MapperContainer.globals.use(
         _instance = AutoChunkingStrategyRequestParamMapper._(),
       );
-      AutoChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
+      AutoChunkingStrategyRequestParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class AutoChunkingStrategyRequestParamMapper
   @override
   final String id = 'AutoChunkingStrategyRequestParam';
 
-  static AutoChunkingStrategyRequestParamTypeType _$type(
+  static AutoChunkingStrategyRequestParamType _$type(
     AutoChunkingStrategyRequestParam v,
   ) => v.type;
   static const Field<
     AutoChunkingStrategyRequestParam,
-    AutoChunkingStrategyRequestParamTypeType
+    AutoChunkingStrategyRequestParamType
   >
   _f$type = Field('type', _$type);
 
@@ -125,7 +125,7 @@ abstract class AutoChunkingStrategyRequestParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({AutoChunkingStrategyRequestParamTypeType? type});
+  $R call({AutoChunkingStrategyRequestParamType? type});
   AutoChunkingStrategyRequestParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -149,7 +149,7 @@ class _AutoChunkingStrategyRequestParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AutoChunkingStrategyRequestParam> $mapper =
       AutoChunkingStrategyRequestParamMapper.ensureInitialized();
   @override
-  $R call({AutoChunkingStrategyRequestParamTypeType? type}) =>
+  $R call({AutoChunkingStrategyRequestParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AutoChunkingStrategyRequestParam $make(CopyWithData data) =>

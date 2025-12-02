@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'file_citation_type_type.dart';
+import 'file_citation_type.dart';
 
 part 'file_citation.mapper.dart';
 
@@ -19,7 +19,7 @@ class FileCitation with FileCitationMappable {
     required this.fileId,
   });
 
-  final FileCitationTypeType type;
+  final FileCitationType type;
   @MappableField(key: 'index')
   final int indexField;
   @MappableField(key: 'file_id')

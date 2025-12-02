@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_code_interpreter_call_code_done_event_type_type.dart';
+import 'response_code_interpreter_call_code_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_code_interpreter_call_code_done_event.mapper.dart';
@@ -18,7 +18,7 @@ class ResponseCodeInterpreterCallCodeDoneEvent with ResponseCodeInterpreterCallC
     required this.code,
   });
 
-  final ResponseCodeInterpreterCallCodeDoneEventTypeType type;
+  final ResponseCodeInterpreterCallCodeDoneEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final String code;

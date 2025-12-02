@@ -81,7 +81,7 @@ class ToolContainerUnionCodeInterpreterContainerAutoMapper
         _instance = ToolContainerUnionCodeInterpreterContainerAutoMapper._(),
       );
       ToolContainerUnionMapper.ensureInitialized();
-      CodeInterpreterContainerAutoTypeTypeMapper.ensureInitialized();
+      CodeInterpreterContainerAutoTypeMapper.ensureInitialized();
       ContainerMemoryLimitMapper.ensureInitialized();
     }
     return _instance!;
@@ -90,12 +90,12 @@ class ToolContainerUnionCodeInterpreterContainerAutoMapper
   @override
   final String id = 'ToolContainerUnionCodeInterpreterContainerAuto';
 
-  static CodeInterpreterContainerAutoTypeType _$type(
+  static CodeInterpreterContainerAutoType _$type(
     ToolContainerUnionCodeInterpreterContainerAuto v,
   ) => v.type;
   static const Field<
     ToolContainerUnionCodeInterpreterContainerAuto,
-    CodeInterpreterContainerAutoTypeType
+    CodeInterpreterContainerAutoType
   >
   _f$type = Field('type', _$type);
   static List<String>? _$fileIds(
@@ -237,7 +237,7 @@ abstract class ToolContainerUnionCodeInterpreterContainerAutoCopyWith<
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get fileIds;
   @override
   $R call({
-    CodeInterpreterContainerAutoTypeType? type,
+    CodeInterpreterContainerAutoType? type,
     List<String>? fileIds,
     ContainerMemoryLimit? memoryLimit,
   });
@@ -279,7 +279,7 @@ class _ToolContainerUnionCodeInterpreterContainerAutoCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    CodeInterpreterContainerAutoTypeType? type,
+    CodeInterpreterContainerAutoType? type,
     Object? fileIds = $none,
     Object? memoryLimit = $none,
   }) => $apply(

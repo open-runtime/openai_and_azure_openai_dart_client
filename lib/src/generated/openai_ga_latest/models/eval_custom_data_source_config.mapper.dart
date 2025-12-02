@@ -17,7 +17,7 @@ class EvalCustomDataSourceConfigMapper
       MapperContainer.globals.use(
         _instance = EvalCustomDataSourceConfigMapper._(),
       );
-      EvalCustomDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalCustomDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,18 +30,14 @@ class EvalCustomDataSourceConfigMapper
     'schema',
     _$schema,
   );
-  static EvalCustomDataSourceConfigTypeType _$type(
-    EvalCustomDataSourceConfig v,
-  ) => v.type;
-  static const Field<
-    EvalCustomDataSourceConfig,
-    EvalCustomDataSourceConfigTypeType
-  >
+  static EvalCustomDataSourceConfigType _$type(EvalCustomDataSourceConfig v) =>
+      v.type;
+  static const Field<EvalCustomDataSourceConfig, EvalCustomDataSourceConfigType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalCustomDataSourceConfigTypeType.custom,
+    def: EvalCustomDataSourceConfigType.custom,
   );
 
   @override
@@ -135,7 +131,7 @@ abstract class EvalCustomDataSourceConfigCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({dynamic schema, EvalCustomDataSourceConfigTypeType? type});
+  $R call({dynamic schema, EvalCustomDataSourceConfigType? type});
   EvalCustomDataSourceConfigCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -155,7 +151,7 @@ class _EvalCustomDataSourceConfigCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalCustomDataSourceConfig> $mapper =
       EvalCustomDataSourceConfigMapper.ensureInitialized();
   @override
-  $R call({Object? schema = $none, EvalCustomDataSourceConfigTypeType? type}) =>
+  $R call({Object? schema = $none, EvalCustomDataSourceConfigType? type}) =>
       $apply(
         FieldCopyWithData({
           if (schema != $none) #schema: schema,

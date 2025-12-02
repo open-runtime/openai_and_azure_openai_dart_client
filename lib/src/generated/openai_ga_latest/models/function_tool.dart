@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_tool_type_type.dart';
+import 'function_tool_type.dart';
 import 'tool.dart';
 
 part 'function_tool.mapper.dart';
@@ -17,14 +17,14 @@ class FunctionTool with FunctionToolMappable {
     required this.parameters,
     required this.strict,
     this.description,
-    this.type = FunctionToolTypeType.valueFunction,
+    this.type = FunctionToolType.valueFunction,
   });
 
   final String name;
   final Map<String, dynamic>? parameters;
   final bool? strict;
   final String? description;
-  final FunctionToolTypeType type;
+  final FunctionToolType type;
 
   static FunctionTool fromJson(Map<String, dynamic> json) => FunctionToolMapper.fromJson(json);
 

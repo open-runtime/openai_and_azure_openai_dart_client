@@ -17,7 +17,7 @@ class RealtimeClientEventResponseCancelMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventResponseCancelMapper._(),
       );
-      RealtimeClientEventResponseCancelTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventResponseCancelTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventResponseCancelMapper
   @override
   final String id = 'RealtimeClientEventResponseCancel';
 
-  static RealtimeClientEventResponseCancelTypeType _$type(
+  static RealtimeClientEventResponseCancelType _$type(
     RealtimeClientEventResponseCancel v,
   ) => v.type;
   static const Field<
     RealtimeClientEventResponseCancel,
-    RealtimeClientEventResponseCancelTypeType
+    RealtimeClientEventResponseCancelType
   >
   _f$type = Field('type', _$type);
   static String? _$eventId(RealtimeClientEventResponseCancel v) => v.eventId;
@@ -140,7 +140,7 @@ abstract class RealtimeClientEventResponseCancelCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventResponseCancelTypeType? type,
+    RealtimeClientEventResponseCancelType? type,
     String? eventId,
     String? responseId,
   });
@@ -168,7 +168,7 @@ class _RealtimeClientEventResponseCancelCopyWithImpl<$R, $Out>
       RealtimeClientEventResponseCancelMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventResponseCancelTypeType? type,
+    RealtimeClientEventResponseCancelType? type,
     Object? eventId = $none,
     Object? responseId = $none,
   }) => $apply(

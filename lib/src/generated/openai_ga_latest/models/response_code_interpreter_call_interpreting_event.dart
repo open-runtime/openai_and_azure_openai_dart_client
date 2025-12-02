@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_code_interpreter_call_interpreting_event_type_type.dart';
+import 'response_code_interpreter_call_interpreting_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_code_interpreter_call_interpreting_event.mapper.dart';
@@ -19,7 +19,7 @@ class ResponseCodeInterpreterCallInterpretingEvent with ResponseCodeInterpreterC
     required this.sequenceNumber,
   });
 
-  final ResponseCodeInterpreterCallInterpretingEventTypeType type;
+  final ResponseCodeInterpreterCallInterpretingEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

@@ -20,7 +20,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
         _instance =
             RealtimeServerEventResponseFunctionCallArgumentsDoneMapper._(),
       );
-      RealtimeServerEventResponseFunctionCallArgumentsDoneTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseFunctionCallArgumentsDoneTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -36,12 +36,12 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseFunctionCallArgumentsDoneTypeType _$type(
+  static RealtimeServerEventResponseFunctionCallArgumentsDoneType _$type(
     RealtimeServerEventResponseFunctionCallArgumentsDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseFunctionCallArgumentsDone,
-    RealtimeServerEventResponseFunctionCallArgumentsDoneTypeType
+    RealtimeServerEventResponseFunctionCallArgumentsDoneType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -217,7 +217,7 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDoneCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventResponseFunctionCallArgumentsDoneTypeType? type,
+    RealtimeServerEventResponseFunctionCallArgumentsDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -259,7 +259,7 @@ class _RealtimeServerEventResponseFunctionCallArgumentsDoneCopyWithImpl<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseFunctionCallArgumentsDoneTypeType? type,
+    RealtimeServerEventResponseFunctionCallArgumentsDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

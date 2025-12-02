@@ -17,7 +17,7 @@ class ResponseCustomToolCallInputDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCustomToolCallInputDoneEventMapper._(),
       );
-      ResponseCustomToolCallInputDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseCustomToolCallInputDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseCustomToolCallInputDoneEventMapper
   @override
   final String id = 'ResponseCustomToolCallInputDoneEvent';
 
-  static ResponseCustomToolCallInputDoneEventTypeType _$type(
+  static ResponseCustomToolCallInputDoneEventType _$type(
     ResponseCustomToolCallInputDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseCustomToolCallInputDoneEvent,
-    ResponseCustomToolCallInputDoneEventTypeType
+    ResponseCustomToolCallInputDoneEventType
   >
   _f$type = Field('type', _$type);
   static int _$sequenceNumber(ResponseCustomToolCallInputDoneEvent v) =>
@@ -157,7 +157,7 @@ abstract class ResponseCustomToolCallInputDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseCustomToolCallInputDoneEventTypeType? type,
+    ResponseCustomToolCallInputDoneEventType? type,
     int? sequenceNumber,
     int? outputIndex,
     String? itemId,
@@ -186,7 +186,7 @@ class _ResponseCustomToolCallInputDoneEventCopyWithImpl<$R, $Out>
       ResponseCustomToolCallInputDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseCustomToolCallInputDoneEventTypeType? type,
+    ResponseCustomToolCallInputDoneEventType? type,
     int? sequenceNumber,
     int? outputIndex,
     String? itemId,

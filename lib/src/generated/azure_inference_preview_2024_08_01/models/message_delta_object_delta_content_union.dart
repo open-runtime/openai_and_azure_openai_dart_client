@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_image_file_object.dart';
 import 'message_delta_content_image_file_object_image_file.dart';
-import 'message_delta_content_image_file_object_type_type.dart';
+import 'message_delta_content_image_file_object_type.dart';
 import 'message_delta_content_text_object.dart';
 import 'message_delta_content_text_object_text.dart';
-import 'message_delta_content_text_object_type_type.dart';
+import 'message_delta_content_text_object_type.dart';
 
 part 'message_delta_object_delta_content_union.mapper.dart';
 
@@ -50,7 +50,7 @@ extension MessageDeltaObjectDeltaContentUnionDeserializer on MessageDeltaObjectD
 class MessageDeltaObjectDeltaContentUnionImageFile extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionImageFileMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentImageFileObjectTypeType type;
+  final MessageDeltaContentImageFileObjectType type;
   @MappableField(key: 'image_file')
   final MessageDeltaContentImageFileObjectImageFile? messageDeltaContentImageFileObjectImageFile;
 
@@ -65,7 +65,7 @@ class MessageDeltaObjectDeltaContentUnionImageFile extends MessageDeltaObjectDel
 class MessageDeltaObjectDeltaContentUnionText extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionTextMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextObjectTypeType type;
+  final MessageDeltaContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageDeltaContentTextObjectText? messageDeltaContentTextObjectText;
 

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_mcp_type_type.dart';
+import 'tool_choice_mcp_type.dart';
 import 'tool_choice_param.dart';
 
 part 'tool_choice_mcp.mapper.dart';
@@ -19,7 +19,7 @@ class ToolChoiceMcp with ToolChoiceMcpMappable {
     this.name,
   });
 
-  final ToolChoiceMcpTypeType type;
+  final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   final String? name;

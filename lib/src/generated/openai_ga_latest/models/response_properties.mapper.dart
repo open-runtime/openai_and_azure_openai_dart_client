@@ -14,7 +14,7 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
   static ResponsePropertiesMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponsePropertiesMapper._());
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
       ModelIdsResponsesUnionMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponseTextParamMapper.ensureInitialized();
@@ -35,15 +35,14 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
     opt: true,
     def: false,
   );
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    ResponseProperties v,
-  ) => v.truncation;
-  static const Field<ResponseProperties, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(ResponseProperties v) =>
+      v.truncation;
+  static const Field<ResponseProperties, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static String? _$previousResponseId(ResponseProperties v) =>
       v.previousResponseId;
@@ -221,7 +220,7 @@ abstract class ResponsePropertiesCopyWith<
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   $R call({
     bool? background,
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     String? previousResponseId,
     ModelIdsResponsesUnion? model,
     Reasoning? reasoning,

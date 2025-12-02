@@ -6,11 +6,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_object.dart';
 import 'message_object.dart';
-import 'message_stream_event_union_variant1_event_event.dart';
-import 'message_stream_event_union_variant2_event_event.dart';
-import 'message_stream_event_union_variant3_event_event.dart';
-import 'message_stream_event_union_variant4_event_event.dart';
-import 'message_stream_event_union_variant5_event_event.dart';
+import 'message_stream_event_union_variant1_event.dart';
+import 'message_stream_event_union_variant2_event.dart';
+import 'message_stream_event_union_variant3_event.dart';
+import 'message_stream_event_union_variant4_event.dart';
+import 'message_stream_event_union_variant5_event.dart';
 
 part 'message_stream_event_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension MessageStreamEventUnionDeserializer on MessageStreamEventUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant1 extends MessageStreamEventUnion with MessageStreamEventUnionVariant1Mappable {
-  final MessageStreamEventUnionVariant1EventEvent event;
+  final MessageStreamEventUnionVariant1Event event;
   final MessageObject data;
 
   const MessageStreamEventUnionVariant1({
@@ -59,7 +59,7 @@ class MessageStreamEventUnionVariant1 extends MessageStreamEventUnion with Messa
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant2 extends MessageStreamEventUnion with MessageStreamEventUnionVariant2Mappable {
-  final MessageStreamEventUnionVariant2EventEvent event;
+  final MessageStreamEventUnionVariant2Event event;
   final MessageObject data;
 
   const MessageStreamEventUnionVariant2({
@@ -70,7 +70,7 @@ class MessageStreamEventUnionVariant2 extends MessageStreamEventUnion with Messa
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant3 extends MessageStreamEventUnion with MessageStreamEventUnionVariant3Mappable {
-  final MessageStreamEventUnionVariant3EventEvent event;
+  final MessageStreamEventUnionVariant3Event event;
   final MessageDeltaObject data;
 
   const MessageStreamEventUnionVariant3({
@@ -81,7 +81,7 @@ class MessageStreamEventUnionVariant3 extends MessageStreamEventUnion with Messa
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant4 extends MessageStreamEventUnion with MessageStreamEventUnionVariant4Mappable {
-  final MessageStreamEventUnionVariant4EventEvent event;
+  final MessageStreamEventUnionVariant4Event event;
   final MessageObject data;
 
   const MessageStreamEventUnionVariant4({
@@ -92,7 +92,7 @@ class MessageStreamEventUnionVariant4 extends MessageStreamEventUnion with Messa
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant5 extends MessageStreamEventUnion with MessageStreamEventUnionVariant5Mappable {
-  final MessageStreamEventUnionVariant5EventEvent event;
+  final MessageStreamEventUnionVariant5Event event;
   final MessageObject data;
 
   const MessageStreamEventUnionVariant5({

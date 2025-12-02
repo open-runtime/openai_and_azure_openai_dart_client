@@ -17,7 +17,7 @@ class TranscriptTextUsageDurationMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextUsageDurationMapper._(),
       );
-      TranscriptTextUsageDurationTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageDurationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class TranscriptTextUsageDurationMapper
   @override
   final String id = 'TranscriptTextUsageDuration';
 
-  static TranscriptTextUsageDurationTypeType _$type(
+  static TranscriptTextUsageDurationType _$type(
     TranscriptTextUsageDuration v,
   ) => v.type;
   static const Field<
     TranscriptTextUsageDuration,
-    TranscriptTextUsageDurationTypeType
+    TranscriptTextUsageDurationType
   >
   _f$type = Field('type', _$type);
   static num _$seconds(TranscriptTextUsageDuration v) => v.seconds;
@@ -130,7 +130,7 @@ abstract class TranscriptTextUsageDurationCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds});
+  $R call({TranscriptTextUsageDurationType? type, num? seconds});
   TranscriptTextUsageDurationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -154,7 +154,7 @@ class _TranscriptTextUsageDurationCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TranscriptTextUsageDuration> $mapper =
       TranscriptTextUsageDurationMapper.ensureInitialized();
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds}) => $apply(
+  $R call({TranscriptTextUsageDurationType? type, num? seconds}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (seconds != null) #seconds: seconds,

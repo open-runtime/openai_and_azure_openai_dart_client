@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
-import 'image_gen_tool_call_status_status.dart';
-import 'image_gen_tool_call_type_type.dart';
+import 'image_gen_tool_call_status.dart';
+import 'image_gen_tool_call_type.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
 
@@ -23,9 +23,9 @@ class ImageGenToolCall with ImageGenToolCallMappable {
     required this.result,
   });
 
-  final ImageGenToolCallTypeType type;
+  final ImageGenToolCallType type;
   final String id;
-  final ImageGenToolCallStatusStatus status;
+  final ImageGenToolCallStatus status;
   final String? result;
 
   static ImageGenToolCall fromJson(Map<String, dynamic> json) => ImageGenToolCallMapper.fromJson(json);

@@ -17,7 +17,7 @@ class ResponseOutputItemAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseOutputItemAddedEventMapper._(),
       );
-      ResponseOutputItemAddedEventTypeTypeMapper.ensureInitialized();
+      ResponseOutputItemAddedEventTypeMapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ResponseOutputItemAddedEventMapper
   @override
   final String id = 'ResponseOutputItemAddedEvent';
 
-  static ResponseOutputItemAddedEventTypeType _$type(
+  static ResponseOutputItemAddedEventType _$type(
     ResponseOutputItemAddedEvent v,
   ) => v.type;
   static const Field<
     ResponseOutputItemAddedEvent,
-    ResponseOutputItemAddedEventTypeType
+    ResponseOutputItemAddedEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseOutputItemAddedEvent v) => v.outputIndex;
@@ -146,7 +146,7 @@ abstract class ResponseOutputItemAddedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   OutputItemCopyWith<$R, OutputItem, OutputItem> get item;
   $R call({
-    ResponseOutputItemAddedEventTypeType? type,
+    ResponseOutputItemAddedEventType? type,
     int? outputIndex,
     int? sequenceNumber,
     OutputItem? item,
@@ -178,7 +178,7 @@ class _ResponseOutputItemAddedEventCopyWithImpl<$R, $Out>
       $value.item.copyWith.$chain((v) => call(item: v));
   @override
   $R call({
-    ResponseOutputItemAddedEventTypeType? type,
+    ResponseOutputItemAddedEventType? type,
     int? outputIndex,
     int? sequenceNumber,
     OutputItem? item,

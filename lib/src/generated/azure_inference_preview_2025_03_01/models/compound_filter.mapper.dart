@@ -14,7 +14,7 @@ class CompoundFilterMapper extends ClassMapperBase<CompoundFilter> {
   static CompoundFilterMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CompoundFilterMapper._());
-      CompoundFilterTypeTypeMapper.ensureInitialized();
+      CompoundFilterTypeMapper.ensureInitialized();
       CompoundFilterFiltersUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class CompoundFilterMapper extends ClassMapperBase<CompoundFilter> {
   @override
   final String id = 'CompoundFilter';
 
-  static CompoundFilterTypeType _$type(CompoundFilter v) => v.type;
-  static const Field<CompoundFilter, CompoundFilterTypeType> _f$type = Field(
+  static CompoundFilterType _$type(CompoundFilter v) => v.type;
+  static const Field<CompoundFilter, CompoundFilterType> _f$type = Field(
     'type',
     _$type,
   );
@@ -123,7 +123,7 @@ abstract class CompoundFilterCopyWith<$R, $In extends CompoundFilter, $Out>
   >
   get filters;
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   });
   CompoundFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -156,7 +156,7 @@ class _CompoundFilterCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CompoundFilterTypeType? type,
+    CompoundFilterType? type,
     List<CompoundFilterFiltersUnion>? filters,
   }) => $apply(
     FieldCopyWithData({

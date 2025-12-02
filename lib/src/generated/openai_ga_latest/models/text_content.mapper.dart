@@ -14,7 +14,7 @@ class TextContentMapper extends ClassMapperBase<TextContent> {
   static TextContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TextContentMapper._());
-      TextContentTypeTypeMapper.ensureInitialized();
+      TextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,12 +24,12 @@ class TextContentMapper extends ClassMapperBase<TextContent> {
 
   static String _$text(TextContent v) => v.text;
   static const Field<TextContent, String> _f$text = Field('text', _$text);
-  static TextContentTypeType _$type(TextContent v) => v.type;
-  static const Field<TextContent, TextContentTypeType> _f$type = Field(
+  static TextContentType _$type(TextContent v) => v.type;
+  static const Field<TextContent, TextContentType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: TextContentTypeType.text,
+    def: TextContentType.text,
   );
 
   @override
@@ -106,7 +106,7 @@ extension TextContentValueCopy<$R, $Out>
 
 abstract class TextContentCopyWith<$R, $In extends TextContent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, TextContentTypeType? type});
+  $R call({String? text, TextContentType? type});
   TextContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -119,7 +119,7 @@ class _TextContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TextContent> $mapper =
       TextContentMapper.ensureInitialized();
   @override
-  $R call({String? text, TextContentTypeType? type}) => $apply(
+  $R call({String? text, TextContentType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

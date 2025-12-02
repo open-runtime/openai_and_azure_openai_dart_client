@@ -17,7 +17,7 @@ class VectorStoreFileObjectLastErrorMapper
       MapperContainer.globals.use(
         _instance = VectorStoreFileObjectLastErrorMapper._(),
       );
-      VectorStoreFileObjectLastErrorCodeCodeMapper.ensureInitialized();
+      VectorStoreFileObjectLastErrorCodeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class VectorStoreFileObjectLastErrorMapper
   @override
   final String id = 'VectorStoreFileObjectLastError';
 
-  static VectorStoreFileObjectLastErrorCodeCode _$code(
+  static VectorStoreFileObjectLastErrorCode _$code(
     VectorStoreFileObjectLastError v,
   ) => v.code;
   static const Field<
     VectorStoreFileObjectLastError,
-    VectorStoreFileObjectLastErrorCodeCode
+    VectorStoreFileObjectLastErrorCode
   >
   _f$code = Field('code', _$code);
   static String _$message(VectorStoreFileObjectLastError v) => v.message;
@@ -134,7 +134,7 @@ abstract class VectorStoreFileObjectLastErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({VectorStoreFileObjectLastErrorCodeCode? code, String? message});
+  $R call({VectorStoreFileObjectLastErrorCode? code, String? message});
   VectorStoreFileObjectLastErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -158,7 +158,7 @@ class _VectorStoreFileObjectLastErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VectorStoreFileObjectLastError> $mapper =
       VectorStoreFileObjectLastErrorMapper.ensureInitialized();
   @override
-  $R call({VectorStoreFileObjectLastErrorCodeCode? code, String? message}) =>
+  $R call({VectorStoreFileObjectLastErrorCode? code, String? message}) =>
       $apply(
         FieldCopyWithData({
           if (code != null) #code: code,

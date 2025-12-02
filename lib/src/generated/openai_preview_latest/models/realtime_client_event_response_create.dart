@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_response_create_type_type.dart';
+import 'realtime_client_event_response_create_type.dart';
 import 'realtime_response_create_params.dart';
 
 part 'realtime_client_event_response_create.mapper.dart';
@@ -34,7 +34,7 @@ class RealtimeClientEventResponseCreate with RealtimeClientEventResponseCreateMa
     this.response,
   });
 
-  final RealtimeClientEventResponseCreateTypeType type;
+  final RealtimeClientEventResponseCreateType type;
   @MappableField(key: 'event_id')
   final String? eventId;
   final RealtimeResponseCreateParams? response;

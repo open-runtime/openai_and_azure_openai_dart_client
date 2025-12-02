@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_tool_call.dart';
-import 'run_step_details_tool_calls_object_type_type.dart';
+import 'run_step_details_tool_calls_object_type.dart';
 
 part 'run_step_details_tool_calls_object.mapper.dart';
 
@@ -17,7 +17,7 @@ class RunStepDetailsToolCallsObject with RunStepDetailsToolCallsObjectMappable {
     required this.toolCalls,
   });
 
-  final RunStepDetailsToolCallsObjectTypeType type;
+  final RunStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDetailsToolCall> toolCalls;
 

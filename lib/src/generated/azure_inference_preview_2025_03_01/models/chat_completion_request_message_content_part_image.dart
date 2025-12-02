@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_image_image_url.dart';
-import 'chat_completion_request_message_content_part_image_type_type.dart';
+import 'chat_completion_request_message_content_part_image_type.dart';
 import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_image.mapper.dart';
@@ -17,7 +17,7 @@ class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMes
     required this.chatCompletionRequestMessageContentPartImageImageUrl,
   });
 
-  final ChatCompletionRequestMessageContentPartImageTypeType type;
+  final ChatCompletionRequestMessageContentPartImageType type;
   @MappableField(key: 'image_url')
   final ChatCompletionRequestMessageContentPartImageImageUrl chatCompletionRequestMessageContentPartImageImageUrl;
 

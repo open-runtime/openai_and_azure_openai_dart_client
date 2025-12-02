@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'custom_tool_chat_completions_custom_format_union_variant2_grammar_syntax_syntax.dart';
+import 'custom_tool_chat_completions_custom_format_union_variant2_grammar_syntax.dart';
 
 part 'custom_tool_chat_completions_custom_format_union_variant2_grammar.mapper.dart';
 
@@ -16,7 +16,7 @@ class CustomToolChatCompletionsCustomFormatUnionVariant2Grammar with CustomToolC
   });
 
   final String definition;
-  final CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntax syntax;
+  final CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax syntax;
 
   static CustomToolChatCompletionsCustomFormatUnionVariant2Grammar fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper.fromJson(json);
 

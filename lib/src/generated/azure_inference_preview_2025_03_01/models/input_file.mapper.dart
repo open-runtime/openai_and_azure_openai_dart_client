@@ -14,7 +14,7 @@ class InputFileMapper extends ClassMapperBase<InputFile> {
   static InputFileMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputFileMapper._());
-      InputFileTypeTypeMapper.ensureInitialized();
+      InputFileTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,11 +22,8 @@ class InputFileMapper extends ClassMapperBase<InputFile> {
   @override
   final String id = 'InputFile';
 
-  static InputFileTypeType _$type(InputFile v) => v.type;
-  static const Field<InputFile, InputFileTypeType> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static InputFileType _$type(InputFile v) => v.type;
+  static const Field<InputFile, InputFileType> _f$type = Field('type', _$type);
   static String? _$fileId(InputFile v) => v.fileId;
   static const Field<InputFile, String> _f$fileId = Field(
     'fileId',
@@ -129,7 +126,7 @@ extension InputFileValueCopy<$R, $Out> on ObjectCopyWith<$R, InputFile, $Out> {
 abstract class InputFileCopyWith<$R, $In extends InputFile, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    InputFileTypeType? type,
+    InputFileType? type,
     String? fileId,
     String? filename,
     String? fileData,
@@ -147,7 +144,7 @@ class _InputFileCopyWithImpl<$R, $Out>
       InputFileMapper.ensureInitialized();
   @override
   $R call({
-    InputFileTypeType? type,
+    InputFileType? type,
     Object? fileId = $none,
     Object? filename = $none,
     Object? fileData = $none,

@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
 
@@ -26,8 +26,8 @@ class FileSearchToolCall with FileSearchToolCallMappable {
   });
 
   final String id;
-  final FileSearchToolCallTypeType type;
-  final FileSearchToolCallStatusStatus status;
+  final FileSearchToolCallType type;
+  final FileSearchToolCallStatus status;
   final List<String> queries;
   final List<FileSearchToolCallResults>? results;
 

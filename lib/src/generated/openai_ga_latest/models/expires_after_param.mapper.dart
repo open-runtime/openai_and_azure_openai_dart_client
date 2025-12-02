@@ -14,7 +14,7 @@ class ExpiresAfterParamMapper extends ClassMapperBase<ExpiresAfterParam> {
   static ExpiresAfterParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ExpiresAfterParamMapper._());
-      ExpiresAfterParamAnchorAnchorMapper.ensureInitialized();
+      ExpiresAfterParamAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,15 +27,14 @@ class ExpiresAfterParamMapper extends ClassMapperBase<ExpiresAfterParam> {
     'seconds',
     _$seconds,
   );
-  static ExpiresAfterParamAnchorAnchor _$anchor(ExpiresAfterParam v) =>
-      v.anchor;
-  static const Field<ExpiresAfterParam, ExpiresAfterParamAnchorAnchor>
-  _f$anchor = Field(
-    'anchor',
-    _$anchor,
-    opt: true,
-    def: ExpiresAfterParamAnchorAnchor.createdAt,
-  );
+  static ExpiresAfterParamAnchor _$anchor(ExpiresAfterParam v) => v.anchor;
+  static const Field<ExpiresAfterParam, ExpiresAfterParamAnchor> _f$anchor =
+      Field(
+        'anchor',
+        _$anchor,
+        opt: true,
+        def: ExpiresAfterParamAnchor.createdAt,
+      );
 
   @override
   final MappableFields<ExpiresAfterParam> fields = const {
@@ -125,7 +124,7 @@ abstract class ExpiresAfterParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? seconds, ExpiresAfterParamAnchorAnchor? anchor});
+  $R call({int? seconds, ExpiresAfterParamAnchor? anchor});
   ExpiresAfterParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -140,7 +139,7 @@ class _ExpiresAfterParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ExpiresAfterParam> $mapper =
       ExpiresAfterParamMapper.ensureInitialized();
   @override
-  $R call({int? seconds, ExpiresAfterParamAnchorAnchor? anchor}) => $apply(
+  $R call({int? seconds, ExpiresAfterParamAnchor? anchor}) => $apply(
     FieldCopyWithData({
       if (seconds != null) #seconds: seconds,
       if (anchor != null) #anchor: anchor,

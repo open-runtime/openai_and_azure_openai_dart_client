@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'comparison_filter_type_type.dart';
+import 'comparison_filter_type.dart';
 import 'comparison_filter_value_union.dart';
 
 part 'comparison_filter.mapper.dart';
@@ -16,13 +16,13 @@ class ComparisonFilter with ComparisonFilterMappable {
   const ComparisonFilter({
     required this.key,
     required this.value,
-    this.type = ComparisonFilterTypeType.eq,
+    this.type = ComparisonFilterType.eq,
   });
 
   final String key;
   @MappableField(hook: const ComparisonFilterValueUnionHook())
   final ComparisonFilterValueUnion value;
-  final ComparisonFilterTypeType type;
+  final ComparisonFilterType type;
 
   static ComparisonFilter fromJson(Map<String, dynamic> json) => ComparisonFilterMapper.fromJson(json);
 

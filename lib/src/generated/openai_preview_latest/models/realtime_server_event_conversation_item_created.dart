@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
 import 'realtime_server_event.dart';
-import 'realtime_server_event_conversation_item_created_type_type.dart';
+import 'realtime_server_event_conversation_item_created_type.dart';
 
 part 'realtime_server_event_conversation_item_created.mapper.dart';
 
@@ -31,7 +31,7 @@ class RealtimeServerEventConversationItemCreated with RealtimeServerEventConvers
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventConversationItemCreatedTypeType type;
+  final RealtimeServerEventConversationItemCreatedType type;
   @MappableField(key: 'previous_item_id')
   final String previousItemId;
   final RealtimeConversationItem item;

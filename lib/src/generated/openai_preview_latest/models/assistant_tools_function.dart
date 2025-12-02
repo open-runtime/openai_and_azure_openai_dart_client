@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'assistant_tools_function_type_type.dart';
+import 'assistant_tools_function_type.dart';
 import 'function_object.dart';
 
 part 'assistant_tools_function.mapper.dart';
@@ -16,7 +16,7 @@ class AssistantToolsFunction with AssistantToolsFunctionMappable {
     required this.functionField,
   });
 
-  final AssistantToolsFunctionTypeType type;
+  final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 

@@ -91,7 +91,7 @@ class ResponsePropertiesToolChoiceUnionToolChoiceTypesMapper
         _instance = ResponsePropertiesToolChoiceUnionToolChoiceTypesMapper._(),
       );
       ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceTypesTypeTypeMapper.ensureInitialized();
+      ToolChoiceTypesTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -99,12 +99,12 @@ class ResponsePropertiesToolChoiceUnionToolChoiceTypesMapper
   @override
   final String id = 'ResponsePropertiesToolChoiceUnionToolChoiceTypes';
 
-  static ToolChoiceTypesTypeType _$type(
+  static ToolChoiceTypesType _$type(
     ResponsePropertiesToolChoiceUnionToolChoiceTypes v,
   ) => v.type;
   static const Field<
     ResponsePropertiesToolChoiceUnionToolChoiceTypes,
-    ToolChoiceTypesTypeType
+    ToolChoiceTypesType
   >
   _f$type = Field('type', _$type);
 
@@ -224,7 +224,7 @@ abstract class ResponsePropertiesToolChoiceUnionToolChoiceTypesCopyWith<
 >
     implements ResponsePropertiesToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceTypesTypeType? type});
+  $R call({ToolChoiceTypesType? type});
   ResponsePropertiesToolChoiceUnionToolChoiceTypesCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -253,7 +253,7 @@ class _ResponsePropertiesToolChoiceUnionToolChoiceTypesCopyWithImpl<$R, $Out>
   $mapper =
       ResponsePropertiesToolChoiceUnionToolChoiceTypesMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceTypesTypeType? type}) =>
+  $R call({ToolChoiceTypesType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponsePropertiesToolChoiceUnionToolChoiceTypes $make(CopyWithData data) =>
@@ -289,7 +289,7 @@ class ResponsePropertiesToolChoiceUnionToolChoiceFunctionMapper
             ResponsePropertiesToolChoiceUnionToolChoiceFunctionMapper._(),
       );
       ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
-      ToolChoiceFunctionTypeTypeMapper.ensureInitialized();
+      ToolChoiceFunctionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -297,12 +297,12 @@ class ResponsePropertiesToolChoiceUnionToolChoiceFunctionMapper
   @override
   final String id = 'ResponsePropertiesToolChoiceUnionToolChoiceFunction';
 
-  static ToolChoiceFunctionTypeType _$type(
+  static ToolChoiceFunctionType _$type(
     ResponsePropertiesToolChoiceUnionToolChoiceFunction v,
   ) => v.type;
   static const Field<
     ResponsePropertiesToolChoiceUnionToolChoiceFunction,
-    ToolChoiceFunctionTypeType
+    ToolChoiceFunctionType
   >
   _f$type = Field('type', _$type);
   static String _$name(ResponsePropertiesToolChoiceUnionToolChoiceFunction v) =>
@@ -429,7 +429,7 @@ abstract class ResponsePropertiesToolChoiceUnionToolChoiceFunctionCopyWith<
 >
     implements ResponsePropertiesToolChoiceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name});
+  $R call({ToolChoiceFunctionType? type, String? name});
   ResponsePropertiesToolChoiceUnionToolChoiceFunctionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -460,7 +460,7 @@ class _ResponsePropertiesToolChoiceUnionToolChoiceFunctionCopyWithImpl<$R, $Out>
   $mapper =
       ResponsePropertiesToolChoiceUnionToolChoiceFunctionMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name}) => $apply(
+  $R call({ToolChoiceFunctionType? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,

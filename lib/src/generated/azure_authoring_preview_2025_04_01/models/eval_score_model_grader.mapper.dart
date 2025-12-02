@@ -15,7 +15,7 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalScoreModelGraderMapper._());
       EvalItemMapper.ensureInitialized();
-      EvalScoreModelGraderTypeTypeMapper.ensureInitialized();
+      EvalScoreModelGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -38,9 +38,9 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
     'name',
     _$name,
   );
-  static EvalScoreModelGraderTypeType _$type(EvalScoreModelGrader v) => v.type;
-  static const Field<EvalScoreModelGrader, EvalScoreModelGraderTypeType>
-  _f$type = Field('type', _$type);
+  static EvalScoreModelGraderType _$type(EvalScoreModelGrader v) => v.type;
+  static const Field<EvalScoreModelGrader, EvalScoreModelGraderType> _f$type =
+      Field('type', _$type);
   static num? _$passThreshold(EvalScoreModelGrader v) => v.passThreshold;
   static const Field<EvalScoreModelGrader, num> _f$passThreshold = Field(
     'passThreshold',
@@ -166,7 +166,7 @@ abstract class EvalScoreModelGraderCopyWith<
     List<EvalItem>? input,
     String? model,
     String? name,
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     num? passThreshold,
     List<num>? range,
     dynamic samplingParams,
@@ -205,7 +205,7 @@ class _EvalScoreModelGraderCopyWithImpl<$R, $Out>
     List<EvalItem>? input,
     String? model,
     String? name,
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     Object? passThreshold = $none,
     Object? range = $none,
     Object? samplingParams = $none,

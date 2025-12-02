@@ -18,7 +18,7 @@ class RealtimeConversationItemMessageSystemContentMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageSystemContentMapper._(),
       );
-      RealtimeConversationItemMessageSystemContentTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemMessageSystemContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class RealtimeConversationItemMessageSystemContentMapper
   @override
   final String id = 'RealtimeConversationItemMessageSystemContent';
 
-  static RealtimeConversationItemMessageSystemContentTypeType? _$type(
+  static RealtimeConversationItemMessageSystemContentType? _$type(
     RealtimeConversationItemMessageSystemContent v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessageSystemContent,
-    RealtimeConversationItemMessageSystemContentTypeType
+    RealtimeConversationItemMessageSystemContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeConversationItemMessageSystemContent v) =>
@@ -149,7 +149,7 @@ abstract class RealtimeConversationItemMessageSystemContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemMessageSystemContentTypeType? type,
+    RealtimeConversationItemMessageSystemContentType? type,
     String? text,
   });
   RealtimeConversationItemMessageSystemContentCopyWith<$R2, $In, $Out2>

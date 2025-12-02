@@ -16,7 +16,7 @@ class ProjectServiceAccountMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ProjectServiceAccountMapper._());
       ProjectServiceAccountObjectObjectEnumMapper.ensureInitialized();
-      ProjectServiceAccountRoleRoleMapper.ensureInitialized();
+      ProjectServiceAccountRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,10 +39,9 @@ class ProjectServiceAccountMapper
     'name',
     _$name,
   );
-  static ProjectServiceAccountRoleRole _$role(ProjectServiceAccount v) =>
-      v.role;
-  static const Field<ProjectServiceAccount, ProjectServiceAccountRoleRole>
-  _f$role = Field('role', _$role);
+  static ProjectServiceAccountRole _$role(ProjectServiceAccount v) => v.role;
+  static const Field<ProjectServiceAccount, ProjectServiceAccountRole> _f$role =
+      Field('role', _$role);
   static int _$createdAt(ProjectServiceAccount v) => v.createdAt;
   static const Field<ProjectServiceAccount, int> _f$createdAt = Field(
     'createdAt',
@@ -147,7 +146,7 @@ abstract class ProjectServiceAccountCopyWith<
     ProjectServiceAccountObjectObjectEnum? objectEnum,
     String? id,
     String? name,
-    ProjectServiceAccountRoleRole? role,
+    ProjectServiceAccountRole? role,
     int? createdAt,
   });
   ProjectServiceAccountCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -168,7 +167,7 @@ class _ProjectServiceAccountCopyWithImpl<$R, $Out>
     ProjectServiceAccountObjectObjectEnum? objectEnum,
     String? id,
     String? name,
-    ProjectServiceAccountRoleRole? role,
+    ProjectServiceAccountRole? role,
     int? createdAt,
   }) => $apply(
     FieldCopyWithData({

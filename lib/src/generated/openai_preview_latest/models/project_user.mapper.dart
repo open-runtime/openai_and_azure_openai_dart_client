@@ -15,7 +15,7 @@ class ProjectUserMapper extends ClassMapperBase<ProjectUser> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ProjectUserMapper._());
       ProjectUserObjectObjectEnumMapper.ensureInitialized();
-      ProjectUserRoleRoleMapper.ensureInitialized();
+      ProjectUserRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -33,8 +33,8 @@ class ProjectUserMapper extends ClassMapperBase<ProjectUser> {
   static const Field<ProjectUser, String> _f$name = Field('name', _$name);
   static String _$email(ProjectUser v) => v.email;
   static const Field<ProjectUser, String> _f$email = Field('email', _$email);
-  static ProjectUserRoleRole _$role(ProjectUser v) => v.role;
-  static const Field<ProjectUser, ProjectUserRoleRole> _f$role = Field(
+  static ProjectUserRole _$role(ProjectUser v) => v.role;
+  static const Field<ProjectUser, ProjectUserRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -135,7 +135,7 @@ abstract class ProjectUserCopyWith<$R, $In extends ProjectUser, $Out>
     String? id,
     String? name,
     String? email,
-    ProjectUserRoleRole? role,
+    ProjectUserRole? role,
     int? addedAt,
   });
   ProjectUserCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -155,7 +155,7 @@ class _ProjectUserCopyWithImpl<$R, $Out>
     String? id,
     String? name,
     String? email,
-    ProjectUserRoleRole? role,
+    ProjectUserRole? role,
     int? addedAt,
   }) => $apply(
     FieldCopyWithData({

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_realtime_call_incoming_data.dart';
 import 'webhook_realtime_call_incoming_object_object_enum.dart';
-import 'webhook_realtime_call_incoming_type_type.dart';
+import 'webhook_realtime_call_incoming_type.dart';
 
 part 'webhook_realtime_call_incoming.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookRealtimeCallIncoming with WebhookRealtimeCallIncomingMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookRealtimeCallIncomingData webhookRealtimeCallIncomingData;
-  final WebhookRealtimeCallIncomingTypeType type;
+  final WebhookRealtimeCallIncomingType type;
   @MappableField(key: 'object')
   final WebhookRealtimeCallIncomingObjectObjectEnum? objectEnum;
 

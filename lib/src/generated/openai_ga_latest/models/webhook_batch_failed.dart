@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_batch_failed_data.dart';
 import 'webhook_batch_failed_object_object_enum.dart';
-import 'webhook_batch_failed_type_type.dart';
+import 'webhook_batch_failed_type.dart';
 
 part 'webhook_batch_failed.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookBatchFailed with WebhookBatchFailedMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookBatchFailedData webhookBatchFailedData;
-  final WebhookBatchFailedTypeType type;
+  final WebhookBatchFailedType type;
   @MappableField(key: 'object')
   final WebhookBatchFailedObjectObjectEnum? objectEnum;
 

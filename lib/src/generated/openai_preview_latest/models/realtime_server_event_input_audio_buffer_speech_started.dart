@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_input_audio_buffer_speech_started_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_speech_started_type.dart';
 
 part 'realtime_server_event_input_audio_buffer_speech_started.mapper.dart';
 
@@ -31,7 +31,7 @@ class RealtimeServerEventInputAudioBufferSpeechStarted with RealtimeServerEventI
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventInputAudioBufferSpeechStartedTypeType type;
+  final RealtimeServerEventInputAudioBufferSpeechStartedType type;
   @MappableField(key: 'audio_start_ms')
   final int audioStartMs;
   @MappableField(key: 'item_id')

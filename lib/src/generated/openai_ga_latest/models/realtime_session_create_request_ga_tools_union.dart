@@ -8,9 +8,9 @@ import 'mcp_tool.dart';
 import 'mcp_tool_allowed_tools_union.dart';
 import 'mcp_tool_connector_id_connector_id.dart';
 import 'mcp_tool_require_approval_union.dart';
-import 'mcp_tool_type_type.dart';
+import 'mcp_tool_type.dart';
 import 'realtime_function_tool.dart';
-import 'realtime_function_tool_type_type.dart';
+import 'realtime_function_tool_type.dart';
 import 'realtime_response_create_params_tools_union.dart';
 import 'tool.dart';
 
@@ -51,7 +51,7 @@ extension RealtimeSessionCreateRequestGaToolsUnionDeserializer on RealtimeSessio
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class RealtimeSessionCreateRequestGaToolsUnionFunction extends RealtimeSessionCreateRequestGaToolsUnion with RealtimeSessionCreateRequestGaToolsUnionFunctionMappable {
-  final RealtimeFunctionToolTypeType? type;
+  final RealtimeFunctionToolType? type;
   final String? name;
   final String? description;
   final dynamic parameters;
@@ -66,7 +66,7 @@ class RealtimeSessionCreateRequestGaToolsUnionFunction extends RealtimeSessionCr
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
 class RealtimeSessionCreateRequestGaToolsUnionMcp extends RealtimeSessionCreateRequestGaToolsUnion with RealtimeSessionCreateRequestGaToolsUnionMcpMappable {
-  final McpToolTypeType type;
+  final McpToolType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   @MappableField(key: 'server_url')

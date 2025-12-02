@@ -17,11 +17,11 @@ class RealtimeConversationItemMessageUserMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageUserMapper._(),
       );
-      RealtimeConversationItemMessageUserTypeTypeMapper.ensureInitialized();
-      RealtimeConversationItemMessageUserRoleRoleMapper.ensureInitialized();
+      RealtimeConversationItemMessageUserTypeMapper.ensureInitialized();
+      RealtimeConversationItemMessageUserRoleMapper.ensureInitialized();
       RealtimeConversationItemMessageUserContentMapper.ensureInitialized();
       RealtimeConversationItemMessageUserObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemMessageUserStatusStatusMapper.ensureInitialized();
+      RealtimeConversationItemMessageUserStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,20 +29,20 @@ class RealtimeConversationItemMessageUserMapper
   @override
   final String id = 'RealtimeConversationItemMessageUser';
 
-  static RealtimeConversationItemMessageUserTypeType _$type(
+  static RealtimeConversationItemMessageUserType _$type(
     RealtimeConversationItemMessageUser v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessageUser,
-    RealtimeConversationItemMessageUserTypeType
+    RealtimeConversationItemMessageUserType
   >
   _f$type = Field('type', _$type);
-  static RealtimeConversationItemMessageUserRoleRole _$role(
+  static RealtimeConversationItemMessageUserRole _$role(
     RealtimeConversationItemMessageUser v,
   ) => v.role;
   static const Field<
     RealtimeConversationItemMessageUser,
-    RealtimeConversationItemMessageUserRoleRole
+    RealtimeConversationItemMessageUserRole
   >
   _f$role = Field('role', _$role);
   static List<RealtimeConversationItemMessageUserContent> _$content(
@@ -67,12 +67,12 @@ class RealtimeConversationItemMessageUserMapper
     RealtimeConversationItemMessageUserObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object', opt: true);
-  static RealtimeConversationItemMessageUserStatusStatus? _$status(
+  static RealtimeConversationItemMessageUserStatus? _$status(
     RealtimeConversationItemMessageUser v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemMessageUser,
-    RealtimeConversationItemMessageUserStatusStatus
+    RealtimeConversationItemMessageUserStatus
   >
   _f$status = Field('status', _$status, opt: true);
 
@@ -193,12 +193,12 @@ abstract class RealtimeConversationItemMessageUserCopyWith<
   >
   get content;
   $R call({
-    RealtimeConversationItemMessageUserTypeType? type,
-    RealtimeConversationItemMessageUserRoleRole? role,
+    RealtimeConversationItemMessageUserType? type,
+    RealtimeConversationItemMessageUserRole? role,
     List<RealtimeConversationItemMessageUserContent>? content,
     String? id,
     RealtimeConversationItemMessageUserObjectObjectEnum? objectEnum,
-    RealtimeConversationItemMessageUserStatusStatus? status,
+    RealtimeConversationItemMessageUserStatus? status,
   });
   RealtimeConversationItemMessageUserCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -238,8 +238,8 @@ class _RealtimeConversationItemMessageUserCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RealtimeConversationItemMessageUserTypeType? type,
-    RealtimeConversationItemMessageUserRoleRole? role,
+    RealtimeConversationItemMessageUserType? type,
+    RealtimeConversationItemMessageUserRole? role,
     List<RealtimeConversationItemMessageUserContent>? content,
     Object? id = $none,
     Object? objectEnum = $none,

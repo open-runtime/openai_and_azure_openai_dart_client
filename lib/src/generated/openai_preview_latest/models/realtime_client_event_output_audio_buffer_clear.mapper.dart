@@ -17,7 +17,7 @@ class RealtimeClientEventOutputAudioBufferClearMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventOutputAudioBufferClearMapper._(),
       );
-      RealtimeClientEventOutputAudioBufferClearTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventOutputAudioBufferClearTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventOutputAudioBufferClearMapper
   @override
   final String id = 'RealtimeClientEventOutputAudioBufferClear';
 
-  static RealtimeClientEventOutputAudioBufferClearTypeType _$type(
+  static RealtimeClientEventOutputAudioBufferClearType _$type(
     RealtimeClientEventOutputAudioBufferClear v,
   ) => v.type;
   static const Field<
     RealtimeClientEventOutputAudioBufferClear,
-    RealtimeClientEventOutputAudioBufferClearTypeType
+    RealtimeClientEventOutputAudioBufferClearType
   >
   _f$type = Field('type', _$type);
   static String? _$eventId(RealtimeClientEventOutputAudioBufferClear v) =>
@@ -143,7 +143,7 @@ abstract class RealtimeClientEventOutputAudioBufferClearCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventOutputAudioBufferClearTypeType? type,
+    RealtimeClientEventOutputAudioBufferClearType? type,
     String? eventId,
   });
   RealtimeClientEventOutputAudioBufferClearCopyWith<$R2, $In, $Out2>
@@ -170,7 +170,7 @@ class _RealtimeClientEventOutputAudioBufferClearCopyWithImpl<$R, $Out>
   $mapper = RealtimeClientEventOutputAudioBufferClearMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventOutputAudioBufferClearTypeType? type,
+    RealtimeClientEventOutputAudioBufferClearType? type,
     Object? eventId = $none,
   }) => $apply(
     FieldCopyWithData({

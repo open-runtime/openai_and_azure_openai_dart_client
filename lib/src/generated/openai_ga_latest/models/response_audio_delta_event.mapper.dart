@@ -17,7 +17,7 @@ class ResponseAudioDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseAudioDeltaEventMapper._(),
       );
-      ResponseAudioDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseAudioDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseAudioDeltaEventMapper
   @override
   final String id = 'ResponseAudioDeltaEvent';
 
-  static ResponseAudioDeltaEventTypeType _$type(ResponseAudioDeltaEvent v) =>
+  static ResponseAudioDeltaEventType _$type(ResponseAudioDeltaEvent v) =>
       v.type;
-  static const Field<ResponseAudioDeltaEvent, ResponseAudioDeltaEventTypeType>
+  static const Field<ResponseAudioDeltaEvent, ResponseAudioDeltaEventType>
   _f$type = Field('type', _$type);
   static int _$sequenceNumber(ResponseAudioDeltaEvent v) => v.sequenceNumber;
   static const Field<ResponseAudioDeltaEvent, int> _f$sequenceNumber = Field(
@@ -131,7 +131,7 @@ abstract class ResponseAudioDeltaEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseAudioDeltaEventTypeType? type,
+    ResponseAudioDeltaEventType? type,
     int? sequenceNumber,
     String? delta,
   });
@@ -151,7 +151,7 @@ class _ResponseAudioDeltaEventCopyWithImpl<$R, $Out>
       ResponseAudioDeltaEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseAudioDeltaEventTypeType? type,
+    ResponseAudioDeltaEventType? type,
     int? sequenceNumber,
     String? delta,
   }) => $apply(

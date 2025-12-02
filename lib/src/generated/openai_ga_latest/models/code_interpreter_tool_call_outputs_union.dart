@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_output_image.dart';
-import 'code_interpreter_output_image_type_type.dart';
+import 'code_interpreter_output_image_type.dart';
 import 'code_interpreter_output_logs.dart';
-import 'code_interpreter_output_logs_type_type.dart';
+import 'code_interpreter_output_logs_type.dart';
 
 part 'code_interpreter_tool_call_outputs_union.mapper.dart';
 
@@ -46,7 +46,7 @@ extension CodeInterpreterToolCallOutputsUnionDeserializer on CodeInterpreterTool
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class CodeInterpreterToolCallOutputsUnionLogs extends CodeInterpreterToolCallOutputsUnion with CodeInterpreterToolCallOutputsUnionLogsMappable {
-  final CodeInterpreterOutputLogsTypeType type;
+  final CodeInterpreterOutputLogsType type;
   final String logs;
 
   const CodeInterpreterToolCallOutputsUnionLogs({
@@ -57,7 +57,7 @@ class CodeInterpreterToolCallOutputsUnionLogs extends CodeInterpreterToolCallOut
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
 class CodeInterpreterToolCallOutputsUnionImage extends CodeInterpreterToolCallOutputsUnion with CodeInterpreterToolCallOutputsUnionImageMappable {
-  final CodeInterpreterOutputImageTypeType type;
+  final CodeInterpreterOutputImageType type;
   final String url;
 
   const CodeInterpreterToolCallOutputsUnionImage({

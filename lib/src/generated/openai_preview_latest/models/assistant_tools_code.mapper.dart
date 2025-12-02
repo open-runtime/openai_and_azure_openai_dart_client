@@ -14,7 +14,7 @@ class AssistantToolsCodeMapper extends ClassMapperBase<AssistantToolsCode> {
   static AssistantToolsCodeMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantToolsCodeMapper._());
-      AssistantToolsCodeTypeTypeMapper.ensureInitialized();
+      AssistantToolsCodeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class AssistantToolsCodeMapper extends ClassMapperBase<AssistantToolsCode> {
   @override
   final String id = 'AssistantToolsCode';
 
-  static AssistantToolsCodeTypeType _$type(AssistantToolsCode v) => v.type;
-  static const Field<AssistantToolsCode, AssistantToolsCodeTypeType> _f$type =
+  static AssistantToolsCodeType _$type(AssistantToolsCode v) => v.type;
+  static const Field<AssistantToolsCode, AssistantToolsCodeType> _f$type =
       Field('type', _$type);
 
   @override
@@ -108,7 +108,7 @@ abstract class AssistantToolsCodeCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({AssistantToolsCodeTypeType? type});
+  $R call({AssistantToolsCodeType? type});
   AssistantToolsCodeCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -123,7 +123,7 @@ class _AssistantToolsCodeCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AssistantToolsCode> $mapper =
       AssistantToolsCodeMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsCodeTypeType? type}) =>
+  $R call({AssistantToolsCodeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AssistantToolsCode $make(CopyWithData data) =>

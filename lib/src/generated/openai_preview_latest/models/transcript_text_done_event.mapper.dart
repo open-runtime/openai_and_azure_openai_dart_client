@@ -17,7 +17,7 @@ class TranscriptTextDoneEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextDoneEventMapper._(),
       );
-      TranscriptTextDoneEventTypeTypeMapper.ensureInitialized();
+      TranscriptTextDoneEventTypeMapper.ensureInitialized();
       TranscriptTextDoneEventLogprobsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class TranscriptTextDoneEventMapper
   @override
   final String id = 'TranscriptTextDoneEvent';
 
-  static TranscriptTextDoneEventTypeType _$type(TranscriptTextDoneEvent v) =>
+  static TranscriptTextDoneEventType _$type(TranscriptTextDoneEvent v) =>
       v.type;
-  static const Field<TranscriptTextDoneEvent, TranscriptTextDoneEventTypeType>
+  static const Field<TranscriptTextDoneEvent, TranscriptTextDoneEventType>
   _f$type = Field('type', _$type);
   static String _$text(TranscriptTextDoneEvent v) => v.text;
   static const Field<TranscriptTextDoneEvent, String> _f$text = Field(
@@ -144,7 +144,7 @@ abstract class TranscriptTextDoneEventCopyWith<
   >?
   get logprobs;
   $R call({
-    TranscriptTextDoneEventTypeType? type,
+    TranscriptTextDoneEventType? type,
     String? text,
     List<TranscriptTextDoneEventLogprobs>? logprobs,
   });
@@ -181,7 +181,7 @@ class _TranscriptTextDoneEventCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    TranscriptTextDoneEventTypeType? type,
+    TranscriptTextDoneEventType? type,
     String? text,
     Object? logprobs = $none,
   }) => $apply(

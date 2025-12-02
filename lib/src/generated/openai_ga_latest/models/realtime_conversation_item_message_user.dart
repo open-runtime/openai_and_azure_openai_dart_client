@@ -6,9 +6,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item_message_user_content.dart';
 import 'realtime_conversation_item_message_user_object_object_enum.dart';
-import 'realtime_conversation_item_message_user_role_role.dart';
-import 'realtime_conversation_item_message_user_status_status.dart';
-import 'realtime_conversation_item_message_user_type_type.dart';
+import 'realtime_conversation_item_message_user_role.dart';
+import 'realtime_conversation_item_message_user_status.dart';
+import 'realtime_conversation_item_message_user_type.dart';
 
 part 'realtime_conversation_item_message_user.mapper.dart';
 
@@ -24,13 +24,13 @@ class RealtimeConversationItemMessageUser with RealtimeConversationItemMessageUs
     this.status,
   });
 
-  final RealtimeConversationItemMessageUserTypeType type;
-  final RealtimeConversationItemMessageUserRoleRole role;
+  final RealtimeConversationItemMessageUserType type;
+  final RealtimeConversationItemMessageUserRole role;
   final List<RealtimeConversationItemMessageUserContent> content;
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemMessageUserObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemMessageUserStatusStatus? status;
+  final RealtimeConversationItemMessageUserStatus? status;
 
   static RealtimeConversationItemMessageUser fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageUserMapper.fromJson(json);
 

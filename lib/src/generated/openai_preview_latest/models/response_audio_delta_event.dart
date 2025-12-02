@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_audio_delta_event_type_type.dart';
+import 'response_audio_delta_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_audio_delta_event.mapper.dart';
@@ -17,7 +17,7 @@ class ResponseAudioDeltaEvent with ResponseAudioDeltaEventMappable {
     required this.delta,
   });
 
-  final ResponseAudioDeltaEventTypeType type;
+  final ResponseAudioDeltaEventType type;
   final String delta;
 
   static ResponseAudioDeltaEvent fromJson(Map<String, dynamic> json) => ResponseAudioDeltaEventMapper.fromJson(json);

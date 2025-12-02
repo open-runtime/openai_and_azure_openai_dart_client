@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_diarized_json_usage_union.dart';
 import 'transcript_text_usage_duration.dart';
-import 'transcript_text_usage_duration_type_type.dart';
+import 'transcript_text_usage_duration_type.dart';
 import 'transcript_text_usage_tokens.dart';
 import 'transcript_text_usage_tokens_input_token_details.dart';
-import 'transcript_text_usage_tokens_type_type.dart';
+import 'transcript_text_usage_tokens_type.dart';
 
 part 'create_transcription_response_json_usage_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension CreateTranscriptionResponseJsonUsageUnionDeserializer on CreateTranscr
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tokens')
 class CreateTranscriptionResponseJsonUsageUnionTokens extends CreateTranscriptionResponseJsonUsageUnion with CreateTranscriptionResponseJsonUsageUnionTokensMappable {
-  final TranscriptTextUsageTokensTypeType type;
+  final TranscriptTextUsageTokensType type;
   @MappableField(key: 'input_tokens')
   final int inputTokens;
   @MappableField(key: 'input_token_details')
@@ -69,7 +69,7 @@ class CreateTranscriptionResponseJsonUsageUnionTokens extends CreateTranscriptio
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'duration')
 class CreateTranscriptionResponseJsonUsageUnionDuration extends CreateTranscriptionResponseJsonUsageUnion with CreateTranscriptionResponseJsonUsageUnionDurationMappable {
-  final TranscriptTextUsageDurationTypeType type;
+  final TranscriptTextUsageDurationType type;
   final num seconds;
 
   const CreateTranscriptionResponseJsonUsageUnionDuration({

@@ -14,7 +14,7 @@ class CreateBatchRequestMapper extends ClassMapperBase<CreateBatchRequest> {
   static CreateBatchRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateBatchRequestMapper._());
-      CreateBatchRequestEndpointEndpointMapper.ensureInitialized();
+      CreateBatchRequestEndpointMapper.ensureInitialized();
       CreateBatchRequestCompletionWindowCompletionWindowMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       BatchFileExpirationAfterMapper.ensureInitialized();
@@ -31,9 +31,9 @@ class CreateBatchRequestMapper extends ClassMapperBase<CreateBatchRequest> {
     _$inputFileId,
     key: r'input_file_id',
   );
-  static CreateBatchRequestEndpointEndpoint _$endpoint(CreateBatchRequest v) =>
+  static CreateBatchRequestEndpoint _$endpoint(CreateBatchRequest v) =>
       v.endpoint;
-  static const Field<CreateBatchRequest, CreateBatchRequestEndpointEndpoint>
+  static const Field<CreateBatchRequest, CreateBatchRequestEndpoint>
   _f$endpoint = Field('endpoint', _$endpoint);
   static CreateBatchRequestCompletionWindowCompletionWindow _$completionWindow(
     CreateBatchRequest v,
@@ -166,7 +166,7 @@ abstract class CreateBatchRequestCopyWith<
   get outputExpiresAfter;
   $R call({
     String? inputFileId,
-    CreateBatchRequestEndpointEndpoint? endpoint,
+    CreateBatchRequestEndpoint? endpoint,
     CreateBatchRequestCompletionWindowCompletionWindow? completionWindow,
     Metadata? metadata,
     BatchFileExpirationAfter? outputExpiresAfter,
@@ -199,7 +199,7 @@ class _CreateBatchRequestCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? inputFileId,
-    CreateBatchRequestEndpointEndpoint? endpoint,
+    CreateBatchRequestEndpoint? endpoint,
     CreateBatchRequestCompletionWindowCompletionWindow? completionWindow,
     Object? metadata = $none,
     Object? outputExpiresAfter = $none,

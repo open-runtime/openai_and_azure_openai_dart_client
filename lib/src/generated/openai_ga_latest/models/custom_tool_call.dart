@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
-import 'custom_tool_call_type_type.dart';
+import 'custom_tool_call_type.dart';
 import 'output_item.dart';
 
 part 'custom_tool_call.mapper.dart';
@@ -22,7 +22,7 @@ class CustomToolCall with CustomToolCallMappable {
     this.id,
   });
 
-  final CustomToolCallTypeType type;
+  final CustomToolCallType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String name;

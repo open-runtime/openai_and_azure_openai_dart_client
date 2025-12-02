@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'easy_input_message_content_union.dart';
-import 'easy_input_message_role_role.dart';
-import 'easy_input_message_type_type.dart';
+import 'easy_input_message_role.dart';
+import 'easy_input_message_type.dart';
 import 'input_item.dart';
 
 part 'easy_input_message.mapper.dart';
@@ -25,9 +25,9 @@ class EasyInputMessage with EasyInputMessageMappable {
     this.type,
   });
 
-  final EasyInputMessageRoleRole role;
+  final EasyInputMessageRole role;
   final EasyInputMessageContentUnion content;
-  final EasyInputMessageTypeType? type;
+  final EasyInputMessageType? type;
 
   static EasyInputMessage fromJson(Map<String, dynamic> json) => EasyInputMessageMapper.fromJson(json);
 

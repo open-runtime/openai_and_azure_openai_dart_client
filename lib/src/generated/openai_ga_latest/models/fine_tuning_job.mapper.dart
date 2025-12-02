@@ -17,7 +17,7 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
       FineTuningJobErrorMapper.ensureInitialized();
       FineTuningJobHyperparametersMapper.ensureInitialized();
       FineTuningJobObjectObjectEnumMapper.ensureInitialized();
-      FineTuningJobStatusStatusMapper.ensureInitialized();
+      FineTuningJobStatusMapper.ensureInitialized();
       FineTuningJobIntegrationsUnionMapper.ensureInitialized();
       FineTuneMethodMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -80,9 +80,11 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
     _$resultFiles,
     key: r'result_files',
   );
-  static FineTuningJobStatusStatus _$status(FineTuningJob v) => v.status;
-  static const Field<FineTuningJob, FineTuningJobStatusStatus> _f$status =
-      Field('status', _$status);
+  static FineTuningJobStatus _$status(FineTuningJob v) => v.status;
+  static const Field<FineTuningJob, FineTuningJobStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
   static int? _$trainedTokens(FineTuningJob v) => v.trainedTokens;
   static const Field<FineTuningJob, int> _f$trainedTokens = Field(
     'trainedTokens',
@@ -273,7 +275,7 @@ abstract class FineTuningJobCopyWith<$R, $In extends FineTuningJob, $Out>
     FineTuningJobObjectObjectEnum? objectEnum,
     String? organizationId,
     List<String>? resultFiles,
-    FineTuningJobStatusStatus? status,
+    FineTuningJobStatus? status,
     int? trainedTokens,
     String? trainingFile,
     String? validationFile,
@@ -349,7 +351,7 @@ class _FineTuningJobCopyWithImpl<$R, $Out>
     FineTuningJobObjectObjectEnum? objectEnum,
     String? organizationId,
     List<String>? resultFiles,
-    FineTuningJobStatusStatus? status,
+    FineTuningJobStatus? status,
     Object? trainedTokens = $none,
     String? trainingFile,
     Object? validationFile = $none,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_image_url_object_image_url.dart';
-import 'message_content_image_url_object_type_type.dart';
+import 'message_content_image_url_object_type.dart';
 
 part 'message_content_image_url_object.mapper.dart';
 
@@ -17,7 +17,7 @@ class MessageContentImageUrlObject with MessageContentImageUrlObjectMappable {
     required this.messageContentImageUrlObjectImageUrl,
   });
 
-  final MessageContentImageUrlObjectTypeType type;
+  final MessageContentImageUrlObjectType type;
   @MappableField(key: 'image_url')
   final MessageContentImageUrlObjectImageUrl messageContentImageUrlObjectImageUrl;
 

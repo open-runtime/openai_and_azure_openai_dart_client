@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_transcription_session_create_request_turn_detection_type_type.dart';
+import 'realtime_transcription_session_create_request_turn_detection_type.dart';
 
 part 'realtime_transcription_session_create_request_turn_detection.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTransc
     this.silenceDurationMs,
   });
 
-  final RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType? type;
+  final RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type;
   final num? threshold;
   @MappableField(key: 'prefix_padding_ms')
   final int? prefixPaddingMs;

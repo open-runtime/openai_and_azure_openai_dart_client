@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_function_type_type.dart';
-import 'tool_choice_mcp_type_type.dart';
+import 'tool_choice_function_type.dart';
+import 'tool_choice_mcp_type.dart';
 import 'tool_choice_function.dart';
 import 'tool_choice_mcp.dart';
 
@@ -42,7 +42,7 @@ extension RealtimeSessionCreateResponseGaToolChoiceUnionDeserializer on Realtime
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction extends RealtimeSessionCreateResponseGaToolChoiceUnion with RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunctionMappable {
-  final ToolChoiceFunctionTypeType type;
+  final ToolChoiceFunctionType type;
   final String name;
 
   const RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction({
@@ -53,7 +53,7 @@ class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceFunction extends R
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcp extends RealtimeSessionCreateResponseGaToolChoiceUnion with RealtimeSessionCreateResponseGaToolChoiceUnionToolChoiceMcpMappable {
-  final ToolChoiceMcpTypeType type;
+  final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   final String? name;

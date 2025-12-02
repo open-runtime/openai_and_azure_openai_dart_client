@@ -15,7 +15,7 @@ class WebhookEvalRunFailedMapper extends ClassMapperBase<WebhookEvalRunFailed> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookEvalRunFailedMapper._());
       WebhookEvalRunFailedDataMapper.ensureInitialized();
-      WebhookEvalRunFailedTypeTypeMapper.ensureInitialized();
+      WebhookEvalRunFailedTypeMapper.ensureInitialized();
       WebhookEvalRunFailedObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,9 +41,9 @@ class WebhookEvalRunFailedMapper extends ClassMapperBase<WebhookEvalRunFailed> {
     _$webhookEvalRunFailedData,
     key: r'data',
   );
-  static WebhookEvalRunFailedTypeType _$type(WebhookEvalRunFailed v) => v.type;
-  static const Field<WebhookEvalRunFailed, WebhookEvalRunFailedTypeType>
-  _f$type = Field('type', _$type);
+  static WebhookEvalRunFailedType _$type(WebhookEvalRunFailed v) => v.type;
+  static const Field<WebhookEvalRunFailed, WebhookEvalRunFailedType> _f$type =
+      Field('type', _$type);
   static WebhookEvalRunFailedObjectObjectEnum? _$objectEnum(
     WebhookEvalRunFailed v,
   ) => v.objectEnum;
@@ -153,7 +153,7 @@ abstract class WebhookEvalRunFailedCopyWith<
     int? createdAt,
     String? id,
     WebhookEvalRunFailedData? webhookEvalRunFailedData,
-    WebhookEvalRunFailedTypeType? type,
+    WebhookEvalRunFailedType? type,
     WebhookEvalRunFailedObjectObjectEnum? objectEnum,
   });
   WebhookEvalRunFailedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -182,7 +182,7 @@ class _WebhookEvalRunFailedCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookEvalRunFailedData? webhookEvalRunFailedData,
-    WebhookEvalRunFailedTypeType? type,
+    WebhookEvalRunFailedType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_input_audio_buffer_cleared_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_cleared_type.dart';
 
 part 'realtime_server_event_input_audio_buffer_cleared.mapper.dart';
 
@@ -21,7 +21,7 @@ class RealtimeServerEventInputAudioBufferCleared with RealtimeServerEventInputAu
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventInputAudioBufferClearedTypeType type;
+  final RealtimeServerEventInputAudioBufferClearedType type;
 
   static RealtimeServerEventInputAudioBufferCleared fromJson(Map<String, dynamic> json) => RealtimeServerEventInputAudioBufferClearedMapper.fromJson(json);
 

@@ -17,7 +17,7 @@ class RealtimeServerEventConversationItemDeletedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventConversationItemDeletedMapper._(),
       );
-      RealtimeServerEventConversationItemDeletedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemDeletedTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,12 +29,12 @@ class RealtimeServerEventConversationItemDeletedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemDeleted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemDeletedTypeType _$type(
+  static RealtimeServerEventConversationItemDeletedType _$type(
     RealtimeServerEventConversationItemDeleted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemDeleted,
-    RealtimeServerEventConversationItemDeletedTypeType
+    RealtimeServerEventConversationItemDeletedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeServerEventConversationItemDeleted v) =>
@@ -151,7 +151,7 @@ abstract class RealtimeServerEventConversationItemDeletedCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemDeletedTypeType? type,
+    RealtimeServerEventConversationItemDeletedType? type,
     String? itemId,
   });
   RealtimeServerEventConversationItemDeletedCopyWith<$R2, $In, $Out2>
@@ -180,7 +180,7 @@ class _RealtimeServerEventConversationItemDeletedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemDeletedTypeType? type,
+    RealtimeServerEventConversationItemDeletedType? type,
     String? itemId,
   }) => $apply(
     FieldCopyWithData({

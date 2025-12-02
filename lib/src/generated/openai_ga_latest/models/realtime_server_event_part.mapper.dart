@@ -17,7 +17,7 @@ class RealtimeServerEventPartMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventPartMapper._(),
       );
-      RealtimeServerEventPartTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventPartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class RealtimeServerEventPartMapper
   @override
   final String id = 'RealtimeServerEventPart';
 
-  static RealtimeServerEventPartTypeType? _$type(RealtimeServerEventPart v) =>
+  static RealtimeServerEventPartType? _$type(RealtimeServerEventPart v) =>
       v.type;
-  static const Field<RealtimeServerEventPart, RealtimeServerEventPartTypeType>
+  static const Field<RealtimeServerEventPart, RealtimeServerEventPartType>
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeServerEventPart v) => v.text;
   static const Field<RealtimeServerEventPart, String> _f$text = Field(
@@ -140,7 +140,7 @@ abstract class RealtimeServerEventPartCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeServerEventPartTypeType? type,
+    RealtimeServerEventPartType? type,
     String? text,
     String? audio,
     String? transcript,

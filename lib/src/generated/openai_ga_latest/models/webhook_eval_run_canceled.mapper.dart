@@ -16,7 +16,7 @@ class WebhookEvalRunCanceledMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookEvalRunCanceledMapper._());
       WebhookEvalRunCanceledDataMapper.ensureInitialized();
-      WebhookEvalRunCanceledTypeTypeMapper.ensureInitialized();
+      WebhookEvalRunCanceledTypeMapper.ensureInitialized();
       WebhookEvalRunCanceledObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -42,9 +42,8 @@ class WebhookEvalRunCanceledMapper
     _$webhookEvalRunCanceledData,
     key: r'data',
   );
-  static WebhookEvalRunCanceledTypeType _$type(WebhookEvalRunCanceled v) =>
-      v.type;
-  static const Field<WebhookEvalRunCanceled, WebhookEvalRunCanceledTypeType>
+  static WebhookEvalRunCanceledType _$type(WebhookEvalRunCanceled v) => v.type;
+  static const Field<WebhookEvalRunCanceled, WebhookEvalRunCanceledType>
   _f$type = Field('type', _$type);
   static WebhookEvalRunCanceledObjectObjectEnum? _$objectEnum(
     WebhookEvalRunCanceled v,
@@ -158,7 +157,7 @@ abstract class WebhookEvalRunCanceledCopyWith<
     int? createdAt,
     String? id,
     WebhookEvalRunCanceledData? webhookEvalRunCanceledData,
-    WebhookEvalRunCanceledTypeType? type,
+    WebhookEvalRunCanceledType? type,
     WebhookEvalRunCanceledObjectObjectEnum? objectEnum,
   });
   WebhookEvalRunCanceledCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -188,7 +187,7 @@ class _WebhookEvalRunCanceledCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookEvalRunCanceledData? webhookEvalRunCanceledData,
-    WebhookEvalRunCanceledTypeType? type,
+    WebhookEvalRunCanceledType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

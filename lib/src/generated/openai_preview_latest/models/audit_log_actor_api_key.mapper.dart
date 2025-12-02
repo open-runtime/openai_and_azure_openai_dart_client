@@ -14,7 +14,7 @@ class AuditLogActorApiKeyMapper extends ClassMapperBase<AuditLogActorApiKey> {
   static AuditLogActorApiKeyMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AuditLogActorApiKeyMapper._());
-      AuditLogActorApiKeyTypeTypeMapper.ensureInitialized();
+      AuditLogActorApiKeyTypeMapper.ensureInitialized();
       AuditLogActorUserMapper.ensureInitialized();
       AuditLogActorServiceAccountMapper.ensureInitialized();
     }
@@ -30,8 +30,8 @@ class AuditLogActorApiKeyMapper extends ClassMapperBase<AuditLogActorApiKey> {
     _$id,
     opt: true,
   );
-  static AuditLogActorApiKeyTypeType? _$type(AuditLogActorApiKey v) => v.type;
-  static const Field<AuditLogActorApiKey, AuditLogActorApiKeyTypeType> _f$type =
+  static AuditLogActorApiKeyType? _$type(AuditLogActorApiKey v) => v.type;
+  static const Field<AuditLogActorApiKey, AuditLogActorApiKeyType> _f$type =
       Field('type', _$type, opt: true);
   static AuditLogActorUser? _$user(AuditLogActorApiKey v) => v.user;
   static const Field<AuditLogActorApiKey, AuditLogActorUser> _f$user = Field(
@@ -149,7 +149,7 @@ abstract class AuditLogActorApiKeyCopyWith<
   get serviceAccount;
   $R call({
     String? id,
-    AuditLogActorApiKeyTypeType? type,
+    AuditLogActorApiKeyType? type,
     AuditLogActorUser? user,
     AuditLogActorServiceAccount? serviceAccount,
   });

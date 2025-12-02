@@ -15,7 +15,7 @@ class UrlAnnotationMapper extends ClassMapperBase<UrlAnnotation> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UrlAnnotationMapper._());
       UrlAnnotationSourceMapper.ensureInitialized();
-      UrlAnnotationTypeTypeMapper.ensureInitialized();
+      UrlAnnotationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class UrlAnnotationMapper extends ClassMapperBase<UrlAnnotation> {
     'source',
     _$source,
   );
-  static UrlAnnotationTypeType _$type(UrlAnnotation v) => v.type;
-  static const Field<UrlAnnotation, UrlAnnotationTypeType> _f$type = Field(
+  static UrlAnnotationType _$type(UrlAnnotation v) => v.type;
+  static const Field<UrlAnnotation, UrlAnnotationType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: UrlAnnotationTypeType.url,
+    def: UrlAnnotationType.url,
   );
 
   @override
@@ -114,7 +114,7 @@ abstract class UrlAnnotationCopyWith<$R, $In extends UrlAnnotation, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   UrlAnnotationSourceCopyWith<$R, UrlAnnotationSource, UrlAnnotationSource>
   get source;
-  $R call({UrlAnnotationSource? source, UrlAnnotationTypeType? type});
+  $R call({UrlAnnotationSource? source, UrlAnnotationType? type});
   UrlAnnotationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -130,7 +130,7 @@ class _UrlAnnotationCopyWithImpl<$R, $Out>
   UrlAnnotationSourceCopyWith<$R, UrlAnnotationSource, UrlAnnotationSource>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  $R call({UrlAnnotationSource? source, UrlAnnotationTypeType? type}) => $apply(
+  $R call({UrlAnnotationSource? source, UrlAnnotationType? type}) => $apply(
     FieldCopyWithData({
       if (source != null) #source: source,
       if (type != null) #type: type,

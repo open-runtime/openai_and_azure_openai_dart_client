@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_item_content_union_variant2_type_type.dart';
-import 'eval_item_content_union_variant3_type_type.dart';
+import 'eval_item_content_union_variant2_type.dart';
+import 'eval_item_content_union_variant3_type.dart';
 import 'input_audio_input_audio.dart';
-import 'input_audio_type_type.dart';
-import 'input_text_content_type_type.dart';
+import 'input_audio_type.dart';
+import 'input_text_content_type.dart';
 import 'input_text_content.dart';
 import 'input_audio.dart';
 
@@ -50,7 +50,7 @@ extension EvalItemContentUnionDeserializer on EvalItemContentUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionInputTextContent extends EvalItemContentUnion with EvalItemContentUnionInputTextContentMappable {
-  final InputTextContentTypeType type;
+  final InputTextContentType type;
   final String text;
 
   const EvalItemContentUnionInputTextContent({
@@ -61,7 +61,7 @@ class EvalItemContentUnionInputTextContent extends EvalItemContentUnion with Eva
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionVariant2 extends EvalItemContentUnion with EvalItemContentUnionVariant2Mappable {
-  final EvalItemContentUnionVariant2TypeType type;
+  final EvalItemContentUnionVariant2Type type;
   final String text;
 
   const EvalItemContentUnionVariant2({
@@ -72,7 +72,7 @@ class EvalItemContentUnionVariant2 extends EvalItemContentUnion with EvalItemCon
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionVariant3 extends EvalItemContentUnion with EvalItemContentUnionVariant3Mappable {
-  final EvalItemContentUnionVariant3TypeType type;
+  final EvalItemContentUnionVariant3Type type;
   @MappableField(key: 'image_url')
   final String imageUrl;
   final String? detail;
@@ -86,7 +86,7 @@ class EvalItemContentUnionVariant3 extends EvalItemContentUnion with EvalItemCon
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionInputAudio extends EvalItemContentUnion with EvalItemContentUnionInputAudioMappable {
-  final InputAudioTypeType type;
+  final InputAudioType type;
   @MappableField(key: 'input_audio')
   final InputAudioInputAudio inputAudioInputAudio;
 

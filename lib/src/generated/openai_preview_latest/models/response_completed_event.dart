@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_completed_event_type_type.dart';
+import 'response_completed_event_type.dart';
 import 'response_model.dart';
 import 'response_stream_event.dart';
 
@@ -18,7 +18,7 @@ class ResponseCompletedEvent with ResponseCompletedEventMappable {
     required this.response,
   });
 
-  final ResponseCompletedEventTypeType type;
+  final ResponseCompletedEventType type;
   final ResponseModel response;
 
   static ResponseCompletedEvent fromJson(Map<String, dynamic> json) => ResponseCompletedEventMapper.fromJson(json);

@@ -5,14 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation_param.dart';
-import 'apply_patch_create_file_operation_param_type_type.dart';
+import 'apply_patch_create_file_operation_param_type.dart';
 import 'apply_patch_delete_file_operation_param.dart';
-import 'apply_patch_delete_file_operation_param_type_type.dart';
-import 'apply_patch_operation_param_type_type.dart';
-import 'apply_patch_operation_param_type_type2.dart';
-import 'apply_patch_operation_param_type_type3.dart';
+import 'apply_patch_delete_file_operation_param_type.dart';
+import 'apply_patch_operation_param_type.dart';
+import 'apply_patch_operation_param_type2.dart';
+import 'apply_patch_operation_param_type3.dart';
 import 'apply_patch_update_file_operation_param.dart';
-import 'apply_patch_update_file_operation_param_type_type.dart';
+import 'apply_patch_update_file_operation_param_type.dart';
 
 part 'apply_patch_operation_param.mapper.dart';
 
@@ -54,7 +54,7 @@ extension ApplyPatchOperationParamUnionDeserializer on ApplyPatchOperationParam 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
 class ApplyPatchOperationParamCreateFile extends ApplyPatchOperationParam with ApplyPatchOperationParamCreateFileMappable {
-  final ApplyPatchOperationParamTypeType type;
+  final ApplyPatchOperationParamType type;
   final String path;
   final String diff;
 
@@ -67,7 +67,7 @@ class ApplyPatchOperationParamCreateFile extends ApplyPatchOperationParam with A
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
 class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam with ApplyPatchOperationParamDeleteFileMappable {
-  final ApplyPatchOperationParamTypeType2 type;
+  final ApplyPatchOperationParamType2 type;
   final String path;
 
   const ApplyPatchOperationParamDeleteFile({
@@ -78,7 +78,7 @@ class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam with A
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
 class ApplyPatchOperationParamUpdateFile extends ApplyPatchOperationParam with ApplyPatchOperationParamUpdateFileMappable {
-  final ApplyPatchOperationParamTypeType3 type;
+  final ApplyPatchOperationParamType3 type;
   final String path;
   final String diff;
 

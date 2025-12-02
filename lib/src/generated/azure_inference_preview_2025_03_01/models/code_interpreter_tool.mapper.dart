@@ -14,7 +14,7 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
   static CodeInterpreterToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CodeInterpreterToolMapper._());
-      CodeInterpreterToolTypeTypeMapper.ensureInitialized();
+      CodeInterpreterToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
   @override
   final String id = 'CodeInterpreterTool';
 
-  static CodeInterpreterToolTypeType _$type(CodeInterpreterTool v) => v.type;
-  static const Field<CodeInterpreterTool, CodeInterpreterToolTypeType> _f$type =
+  static CodeInterpreterToolType _$type(CodeInterpreterTool v) => v.type;
+  static const Field<CodeInterpreterTool, CodeInterpreterToolType> _f$type =
       Field('type', _$type);
   static List<String> _$fileIds(CodeInterpreterTool v) => v.fileIds;
   static const Field<CodeInterpreterTool, List<String>> _f$fileIds = Field(
@@ -120,7 +120,7 @@ abstract class CodeInterpreterToolCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get fileIds;
-  $R call({CodeInterpreterToolTypeType? type, List<String>? fileIds});
+  $R call({CodeInterpreterToolType? type, List<String>? fileIds});
   CodeInterpreterToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -142,7 +142,7 @@ class _CodeInterpreterToolCopyWithImpl<$R, $Out>
         (v) => call(fileIds: v),
       );
   @override
-  $R call({CodeInterpreterToolTypeType? type, List<String>? fileIds}) => $apply(
+  $R call({CodeInterpreterToolType? type, List<String>? fileIds}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (fileIds != null) #fileIds: fileIds,

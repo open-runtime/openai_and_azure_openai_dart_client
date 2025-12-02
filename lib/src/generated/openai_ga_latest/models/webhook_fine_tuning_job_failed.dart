@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_fine_tuning_job_failed_data.dart';
 import 'webhook_fine_tuning_job_failed_object_object_enum.dart';
-import 'webhook_fine_tuning_job_failed_type_type.dart';
+import 'webhook_fine_tuning_job_failed_type.dart';
 
 part 'webhook_fine_tuning_job_failed.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookFineTuningJobFailed with WebhookFineTuningJobFailedMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookFineTuningJobFailedData webhookFineTuningJobFailedData;
-  final WebhookFineTuningJobFailedTypeType type;
+  final WebhookFineTuningJobFailedType type;
   @MappableField(key: 'object')
   final WebhookFineTuningJobFailedObjectObjectEnum? objectEnum;
 

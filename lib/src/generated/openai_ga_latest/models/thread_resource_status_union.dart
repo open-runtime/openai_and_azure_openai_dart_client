@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'active_status.dart';
-import 'active_status_type_type.dart';
+import 'active_status_type.dart';
 import 'closed_status.dart';
-import 'closed_status_type_type.dart';
+import 'closed_status_type.dart';
 import 'locked_status.dart';
-import 'locked_status_type_type.dart';
+import 'locked_status_type.dart';
 
 part 'thread_resource_status_union.mapper.dart';
 
@@ -51,7 +51,7 @@ extension ThreadResourceStatusUnionDeserializer on ThreadResourceStatusUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'active')
 class ThreadResourceStatusUnionActive extends ThreadResourceStatusUnion with ThreadResourceStatusUnionActiveMappable {
-  final ActiveStatusTypeType type;
+  final ActiveStatusType type;
 
   const ThreadResourceStatusUnionActive({
     required this.type,
@@ -60,7 +60,7 @@ class ThreadResourceStatusUnionActive extends ThreadResourceStatusUnion with Thr
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'locked')
 class ThreadResourceStatusUnionLocked extends ThreadResourceStatusUnion with ThreadResourceStatusUnionLockedMappable {
-  final LockedStatusTypeType type;
+  final LockedStatusType type;
   final String? reason;
 
   const ThreadResourceStatusUnionLocked({
@@ -71,7 +71,7 @@ class ThreadResourceStatusUnionLocked extends ThreadResourceStatusUnion with Thr
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'closed')
 class ThreadResourceStatusUnionClosed extends ThreadResourceStatusUnion with ThreadResourceStatusUnionClosedMappable {
-  final ClosedStatusTypeType type;
+  final ClosedStatusType type;
   final String? reason;
 
   const ThreadResourceStatusUnionClosed({

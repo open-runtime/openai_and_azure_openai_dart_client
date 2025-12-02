@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'batch_errors.dart';
 import 'batch_object_object_enum.dart';
 import 'batch_request_counts.dart';
-import 'batch_status_status.dart';
+import 'batch_status.dart';
 import 'batch_usage.dart';
 import 'metadata.dart';
 
@@ -48,7 +48,7 @@ class Batch with BatchMappable {
   final String inputFileId;
   @MappableField(key: 'completion_window')
   final String completionWindow;
-  final BatchStatusStatus status;
+  final BatchStatus status;
   @MappableField(key: 'created_at')
   final int createdAt;
   final String? model;

@@ -80,8 +80,8 @@ class ToolChoiceParamAllowedToolsMapper
         _instance = ToolChoiceParamAllowedToolsMapper._(),
       );
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeTypeMapper.ensureInitialized();
-      ToolChoiceParamModeModeMapper.ensureInitialized();
+      ToolChoiceParamTypeMapper.ensureInitialized();
+      ToolChoiceParamModeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -89,14 +89,12 @@ class ToolChoiceParamAllowedToolsMapper
   @override
   final String id = 'ToolChoiceParamAllowedTools';
 
-  static ToolChoiceParamTypeType _$type(ToolChoiceParamAllowedTools v) =>
-      v.type;
-  static const Field<ToolChoiceParamAllowedTools, ToolChoiceParamTypeType>
-  _f$type = Field('type', _$type);
-  static ToolChoiceParamModeMode _$mode(ToolChoiceParamAllowedTools v) =>
-      v.mode;
-  static const Field<ToolChoiceParamAllowedTools, ToolChoiceParamModeMode>
-  _f$mode = Field('mode', _$mode);
+  static ToolChoiceParamType _$type(ToolChoiceParamAllowedTools v) => v.type;
+  static const Field<ToolChoiceParamAllowedTools, ToolChoiceParamType> _f$type =
+      Field('type', _$type);
+  static ToolChoiceParamMode _$mode(ToolChoiceParamAllowedTools v) => v.mode;
+  static const Field<ToolChoiceParamAllowedTools, ToolChoiceParamMode> _f$mode =
+      Field('mode', _$mode);
   static List<dynamic> _$tools(ToolChoiceParamAllowedTools v) => v.tools;
   static const Field<ToolChoiceParamAllowedTools, List<dynamic>> _f$tools =
       Field('tools', _$tools);
@@ -205,8 +203,8 @@ abstract class ToolChoiceParamAllowedToolsCopyWith<
   ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>> get tools;
   @override
   $R call({
-    ToolChoiceParamTypeType? type,
-    ToolChoiceParamModeMode? mode,
+    ToolChoiceParamType? type,
+    ToolChoiceParamMode? mode,
     List<dynamic>? tools,
   });
   ToolChoiceParamAllowedToolsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -240,8 +238,8 @@ class _ToolChoiceParamAllowedToolsCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ToolChoiceParamTypeType? type,
-    ToolChoiceParamModeMode? mode,
+    ToolChoiceParamType? type,
+    ToolChoiceParamMode? mode,
     List<dynamic>? tools,
   }) => $apply(
     FieldCopyWithData({
@@ -275,7 +273,7 @@ class ToolChoiceParamFunctionMapper
         _instance = ToolChoiceParamFunctionMapper._(),
       );
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeType2Mapper.ensureInitialized();
+      ToolChoiceParamType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -283,9 +281,9 @@ class ToolChoiceParamFunctionMapper
   @override
   final String id = 'ToolChoiceParamFunction';
 
-  static ToolChoiceParamTypeType2 _$type(ToolChoiceParamFunction v) => v.type;
-  static const Field<ToolChoiceParamFunction, ToolChoiceParamTypeType2>
-  _f$type = Field('type', _$type);
+  static ToolChoiceParamType2 _$type(ToolChoiceParamFunction v) => v.type;
+  static const Field<ToolChoiceParamFunction, ToolChoiceParamType2> _f$type =
+      Field('type', _$type);
   static String _$name(ToolChoiceParamFunction v) => v.name;
   static const Field<ToolChoiceParamFunction, String> _f$name = Field(
     'name',
@@ -388,7 +386,7 @@ abstract class ToolChoiceParamFunctionCopyWith<
 >
     implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceParamTypeType2? type, String? name});
+  $R call({ToolChoiceParamType2? type, String? name});
   ToolChoiceParamFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -404,7 +402,7 @@ class _ToolChoiceParamFunctionCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceParamFunction> $mapper =
       ToolChoiceParamFunctionMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceParamTypeType2? type, String? name}) => $apply(
+  $R call({ToolChoiceParamType2? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,
@@ -430,7 +428,7 @@ class ToolChoiceParamMcpMapper extends SubClassMapperBase<ToolChoiceParamMcp> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceParamMcpMapper._());
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeType3Mapper.ensureInitialized();
+      ToolChoiceParamType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -438,9 +436,11 @@ class ToolChoiceParamMcpMapper extends SubClassMapperBase<ToolChoiceParamMcp> {
   @override
   final String id = 'ToolChoiceParamMcp';
 
-  static ToolChoiceParamTypeType3 _$type(ToolChoiceParamMcp v) => v.type;
-  static const Field<ToolChoiceParamMcp, ToolChoiceParamTypeType3> _f$type =
-      Field('type', _$type);
+  static ToolChoiceParamType3 _$type(ToolChoiceParamMcp v) => v.type;
+  static const Field<ToolChoiceParamMcp, ToolChoiceParamType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$serverLabel(ToolChoiceParamMcp v) => v.serverLabel;
   static const Field<ToolChoiceParamMcp, String> _f$serverLabel = Field(
     'serverLabel',
@@ -552,7 +552,7 @@ abstract class ToolChoiceParamMcpCopyWith<
 >
     implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceParamTypeType3? type, String? serverLabel, String? name});
+  $R call({ToolChoiceParamType3? type, String? serverLabel, String? name});
   ToolChoiceParamMcpCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -568,7 +568,7 @@ class _ToolChoiceParamMcpCopyWithImpl<$R, $Out>
       ToolChoiceParamMcpMapper.ensureInitialized();
   @override
   $R call({
-    ToolChoiceParamTypeType3? type,
+    ToolChoiceParamType3? type,
     String? serverLabel,
     Object? name = $none,
   }) => $apply(
@@ -600,7 +600,7 @@ class ToolChoiceParamCustomMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceParamCustomMapper._());
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeType4Mapper.ensureInitialized();
+      ToolChoiceParamType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -608,8 +608,8 @@ class ToolChoiceParamCustomMapper
   @override
   final String id = 'ToolChoiceParamCustom';
 
-  static ToolChoiceParamTypeType4 _$type(ToolChoiceParamCustom v) => v.type;
-  static const Field<ToolChoiceParamCustom, ToolChoiceParamTypeType4> _f$type =
+  static ToolChoiceParamType4 _$type(ToolChoiceParamCustom v) => v.type;
+  static const Field<ToolChoiceParamCustom, ToolChoiceParamType4> _f$type =
       Field('type', _$type);
   static String _$name(ToolChoiceParamCustom v) => v.name;
   static const Field<ToolChoiceParamCustom, String> _f$name = Field(
@@ -713,7 +713,7 @@ abstract class ToolChoiceParamCustomCopyWith<
 >
     implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceParamTypeType4? type, String? name});
+  $R call({ToolChoiceParamType4? type, String? name});
   ToolChoiceParamCustomCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -728,7 +728,7 @@ class _ToolChoiceParamCustomCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceParamCustom> $mapper =
       ToolChoiceParamCustomMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceParamTypeType4? type, String? name}) => $apply(
+  $R call({ToolChoiceParamType4? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,
@@ -757,7 +757,7 @@ class ToolChoiceParamApplyPatchMapper
         _instance = ToolChoiceParamApplyPatchMapper._(),
       );
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeType5Mapper.ensureInitialized();
+      ToolChoiceParamType5Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -765,9 +765,9 @@ class ToolChoiceParamApplyPatchMapper
   @override
   final String id = 'ToolChoiceParamApplyPatch';
 
-  static ToolChoiceParamTypeType5 _$type(ToolChoiceParamApplyPatch v) => v.type;
-  static const Field<ToolChoiceParamApplyPatch, ToolChoiceParamTypeType5>
-  _f$type = Field('type', _$type);
+  static ToolChoiceParamType5 _$type(ToolChoiceParamApplyPatch v) => v.type;
+  static const Field<ToolChoiceParamApplyPatch, ToolChoiceParamType5> _f$type =
+      Field('type', _$type);
 
   @override
   final MappableFields<ToolChoiceParamApplyPatch> fields = const {
@@ -865,7 +865,7 @@ abstract class ToolChoiceParamApplyPatchCopyWith<
 >
     implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceParamTypeType5? type});
+  $R call({ToolChoiceParamType5? type});
   ToolChoiceParamApplyPatchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -881,7 +881,7 @@ class _ToolChoiceParamApplyPatchCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceParamApplyPatch> $mapper =
       ToolChoiceParamApplyPatchMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceParamTypeType5? type}) =>
+  $R call({ToolChoiceParamType5? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ToolChoiceParamApplyPatch $make(CopyWithData data) =>
@@ -902,7 +902,7 @@ class ToolChoiceParamShellMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceParamShellMapper._());
       ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
-      ToolChoiceParamTypeType6Mapper.ensureInitialized();
+      ToolChoiceParamType6Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -910,8 +910,8 @@ class ToolChoiceParamShellMapper
   @override
   final String id = 'ToolChoiceParamShell';
 
-  static ToolChoiceParamTypeType6 _$type(ToolChoiceParamShell v) => v.type;
-  static const Field<ToolChoiceParamShell, ToolChoiceParamTypeType6> _f$type =
+  static ToolChoiceParamType6 _$type(ToolChoiceParamShell v) => v.type;
+  static const Field<ToolChoiceParamShell, ToolChoiceParamType6> _f$type =
       Field('type', _$type);
 
   @override
@@ -1004,7 +1004,7 @@ abstract class ToolChoiceParamShellCopyWith<
 >
     implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ToolChoiceParamTypeType6? type});
+  $R call({ToolChoiceParamType6? type});
   ToolChoiceParamShellCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1019,7 +1019,7 @@ class _ToolChoiceParamShellCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceParamShell> $mapper =
       ToolChoiceParamShellMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceParamTypeType6? type}) =>
+  $R call({ToolChoiceParamType6? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ToolChoiceParamShell $make(CopyWithData data) =>

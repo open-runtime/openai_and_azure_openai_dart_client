@@ -17,8 +17,8 @@ class LocalShellToolCallOutputMapper
       MapperContainer.globals.use(
         _instance = LocalShellToolCallOutputMapper._(),
       );
-      LocalShellToolCallOutputTypeTypeMapper.ensureInitialized();
-      LocalShellToolCallOutputStatusStatusMapper.ensureInitialized();
+      LocalShellToolCallOutputTypeMapper.ensureInitialized();
+      LocalShellToolCallOutputStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,9 +26,9 @@ class LocalShellToolCallOutputMapper
   @override
   final String id = 'LocalShellToolCallOutput';
 
-  static LocalShellToolCallOutputTypeType _$type(LocalShellToolCallOutput v) =>
+  static LocalShellToolCallOutputType _$type(LocalShellToolCallOutput v) =>
       v.type;
-  static const Field<LocalShellToolCallOutput, LocalShellToolCallOutputTypeType>
+  static const Field<LocalShellToolCallOutput, LocalShellToolCallOutputType>
   _f$type = Field('type', _$type);
   static String _$id(LocalShellToolCallOutput v) => v.id;
   static const Field<LocalShellToolCallOutput, String> _f$id = Field(
@@ -40,13 +40,9 @@ class LocalShellToolCallOutputMapper
     'output',
     _$output,
   );
-  static LocalShellToolCallOutputStatusStatus? _$status(
-    LocalShellToolCallOutput v,
-  ) => v.status;
-  static const Field<
-    LocalShellToolCallOutput,
-    LocalShellToolCallOutputStatusStatus
-  >
+  static LocalShellToolCallOutputStatus? _$status(LocalShellToolCallOutput v) =>
+      v.status;
+  static const Field<LocalShellToolCallOutput, LocalShellToolCallOutputStatus>
   _f$status = Field('status', _$status, opt: true);
 
   @override
@@ -141,10 +137,10 @@ abstract class LocalShellToolCallOutputCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    LocalShellToolCallOutputTypeType? type,
+    LocalShellToolCallOutputType? type,
     String? id,
     String? output,
-    LocalShellToolCallOutputStatusStatus? status,
+    LocalShellToolCallOutputStatus? status,
   });
   LocalShellToolCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -162,7 +158,7 @@ class _LocalShellToolCallOutputCopyWithImpl<$R, $Out>
       LocalShellToolCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    LocalShellToolCallOutputTypeType? type,
+    LocalShellToolCallOutputType? type,
     String? id,
     String? output,
     Object? status = $none,

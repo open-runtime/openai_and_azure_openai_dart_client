@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_input_audio_buffer_commit_type_type.dart';
+import 'realtime_client_event_input_audio_buffer_commit_type.dart';
 
 part 'realtime_client_event_input_audio_buffer_commit.mapper.dart';
 
@@ -27,7 +27,7 @@ class RealtimeClientEventInputAudioBufferCommit with RealtimeClientEventInputAud
     this.eventId,
   });
 
-  final RealtimeClientEventInputAudioBufferCommitTypeType type;
+  final RealtimeClientEventInputAudioBufferCommitType type;
   @MappableField(key: 'event_id')
   final String? eventId;
 

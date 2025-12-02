@@ -92,7 +92,7 @@ class ResponseOutputTextAnnotationsUnionFileMapper
       ResponseOutputTextAnnotationsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      FileAnnotationTypeTypeMapper.ensureInitialized();
+      FileAnnotationTypeMapper.ensureInitialized();
       FileAnnotationSourceMapper.ensureInitialized();
     }
     return _instance!;
@@ -101,13 +101,9 @@ class ResponseOutputTextAnnotationsUnionFileMapper
   @override
   final String id = 'ResponseOutputTextAnnotationsUnionFile';
 
-  static FileAnnotationTypeType _$type(
-    ResponseOutputTextAnnotationsUnionFile v,
-  ) => v.type;
-  static const Field<
-    ResponseOutputTextAnnotationsUnionFile,
-    FileAnnotationTypeType
-  >
+  static FileAnnotationType _$type(ResponseOutputTextAnnotationsUnionFile v) =>
+      v.type;
+  static const Field<ResponseOutputTextAnnotationsUnionFile, FileAnnotationType>
   _f$type = Field('type', _$type);
   static FileAnnotationSource _$source(
     ResponseOutputTextAnnotationsUnionFile v,
@@ -227,7 +223,7 @@ abstract class ResponseOutputTextAnnotationsUnionFileCopyWith<
   FileAnnotationSourceCopyWith<$R, FileAnnotationSource, FileAnnotationSource>
   get source;
   @override
-  $R call({FileAnnotationTypeType? type, FileAnnotationSource? source});
+  $R call({FileAnnotationType? type, FileAnnotationSource? source});
   ResponseOutputTextAnnotationsUnionFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -253,13 +249,12 @@ class _ResponseOutputTextAnnotationsUnionFileCopyWithImpl<$R, $Out>
   FileAnnotationSourceCopyWith<$R, FileAnnotationSource, FileAnnotationSource>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  $R call({FileAnnotationTypeType? type, FileAnnotationSource? source}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (source != null) #source: source,
-        }),
-      );
+  $R call({FileAnnotationType? type, FileAnnotationSource? source}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (source != null) #source: source,
+    }),
+  );
   @override
   ResponseOutputTextAnnotationsUnionFile $make(CopyWithData data) =>
       ResponseOutputTextAnnotationsUnionFile(
@@ -294,7 +289,7 @@ class ResponseOutputTextAnnotationsUnionUrlMapper
       ResponseOutputTextAnnotationsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      UrlAnnotationTypeTypeMapper.ensureInitialized();
+      UrlAnnotationTypeMapper.ensureInitialized();
       UrlAnnotationSourceMapper.ensureInitialized();
     }
     return _instance!;
@@ -303,13 +298,9 @@ class ResponseOutputTextAnnotationsUnionUrlMapper
   @override
   final String id = 'ResponseOutputTextAnnotationsUnionUrl';
 
-  static UrlAnnotationTypeType _$type(
-    ResponseOutputTextAnnotationsUnionUrl v,
-  ) => v.type;
-  static const Field<
-    ResponseOutputTextAnnotationsUnionUrl,
-    UrlAnnotationTypeType
-  >
+  static UrlAnnotationType _$type(ResponseOutputTextAnnotationsUnionUrl v) =>
+      v.type;
+  static const Field<ResponseOutputTextAnnotationsUnionUrl, UrlAnnotationType>
   _f$type = Field('type', _$type);
   static UrlAnnotationSource _$source(
     ResponseOutputTextAnnotationsUnionUrl v,
@@ -425,7 +416,7 @@ abstract class ResponseOutputTextAnnotationsUnionUrlCopyWith<
   UrlAnnotationSourceCopyWith<$R, UrlAnnotationSource, UrlAnnotationSource>
   get source;
   @override
-  $R call({UrlAnnotationTypeType? type, UrlAnnotationSource? source});
+  $R call({UrlAnnotationType? type, UrlAnnotationSource? source});
   ResponseOutputTextAnnotationsUnionUrlCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -451,7 +442,7 @@ class _ResponseOutputTextAnnotationsUnionUrlCopyWithImpl<$R, $Out>
   UrlAnnotationSourceCopyWith<$R, UrlAnnotationSource, UrlAnnotationSource>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  $R call({UrlAnnotationTypeType? type, UrlAnnotationSource? source}) => $apply(
+  $R call({UrlAnnotationType? type, UrlAnnotationSource? source}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (source != null) #source: source,

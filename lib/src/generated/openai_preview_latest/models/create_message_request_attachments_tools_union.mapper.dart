@@ -100,7 +100,7 @@ class CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMapper
       );
       CreateMessageRequestAttachmentsToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      AssistantToolsCodeTypeTypeMapper.ensureInitialized();
+      AssistantToolsCodeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -108,12 +108,12 @@ class CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMapper
   @override
   final String id = 'CreateMessageRequestAttachmentsToolsUnionCodeInterpreter';
 
-  static AssistantToolsCodeTypeType _$type(
+  static AssistantToolsCodeType _$type(
     CreateMessageRequestAttachmentsToolsUnionCodeInterpreter v,
   ) => v.type;
   static const Field<
     CreateMessageRequestAttachmentsToolsUnionCodeInterpreter,
-    AssistantToolsCodeTypeType
+    AssistantToolsCodeType
   >
   _f$type = Field('type', _$type);
 
@@ -249,7 +249,7 @@ abstract class CreateMessageRequestAttachmentsToolsUnionCodeInterpreterCopyWith<
     implements
         CreateMessageRequestAttachmentsToolsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolsCodeTypeType? type});
+  $R call({AssistantToolsCodeType? type});
   CreateMessageRequestAttachmentsToolsUnionCodeInterpreterCopyWith<
     $R2,
     $In,
@@ -287,7 +287,7 @@ class _CreateMessageRequestAttachmentsToolsUnionCodeInterpreterCopyWithImpl<
   $mapper =
       CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsCodeTypeType? type}) =>
+  $R call({AssistantToolsCodeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateMessageRequestAttachmentsToolsUnionCodeInterpreter $make(
@@ -326,7 +326,7 @@ class CreateMessageRequestAttachmentsToolsUnionFileSearchMapper
       );
       CreateMessageRequestAttachmentsToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      AssistantToolsFileSearchTypeOnlyTypeTypeMapper.ensureInitialized();
+      AssistantToolsFileSearchTypeOnlyTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -334,12 +334,12 @@ class CreateMessageRequestAttachmentsToolsUnionFileSearchMapper
   @override
   final String id = 'CreateMessageRequestAttachmentsToolsUnionFileSearch';
 
-  static AssistantToolsFileSearchTypeOnlyTypeType _$type(
+  static AssistantToolsFileSearchTypeOnlyType _$type(
     CreateMessageRequestAttachmentsToolsUnionFileSearch v,
   ) => v.type;
   static const Field<
     CreateMessageRequestAttachmentsToolsUnionFileSearch,
-    AssistantToolsFileSearchTypeOnlyTypeType
+    AssistantToolsFileSearchTypeOnlyType
   >
   _f$type = Field('type', _$type);
 
@@ -467,7 +467,7 @@ abstract class CreateMessageRequestAttachmentsToolsUnionFileSearchCopyWith<
     implements
         CreateMessageRequestAttachmentsToolsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolsFileSearchTypeOnlyTypeType? type});
+  $R call({AssistantToolsFileSearchTypeOnlyType? type});
   CreateMessageRequestAttachmentsToolsUnionFileSearchCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -498,7 +498,7 @@ class _CreateMessageRequestAttachmentsToolsUnionFileSearchCopyWithImpl<$R, $Out>
   $mapper =
       CreateMessageRequestAttachmentsToolsUnionFileSearchMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsFileSearchTypeOnlyTypeType? type}) =>
+  $R call({AssistantToolsFileSearchTypeOnlyType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateMessageRequestAttachmentsToolsUnionFileSearch $make(

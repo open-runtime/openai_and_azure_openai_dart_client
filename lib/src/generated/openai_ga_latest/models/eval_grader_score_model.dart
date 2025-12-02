@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'eval_item.dart';
 import 'grader_score_model.dart';
 import 'grader_score_model_sampling_params.dart';
-import 'grader_score_model_type_type.dart';
+import 'grader_score_model_type.dart';
 
 part 'eval_grader_score_model.mapper.dart';
 
@@ -23,7 +23,7 @@ class EvalGraderScoreModel with EvalGraderScoreModelMappable {
     this.passThreshold,
   });
 
-  final GraderScoreModelTypeType type;
+  final GraderScoreModelType type;
   final String name;
   final String model;
   final List<EvalItem> input;

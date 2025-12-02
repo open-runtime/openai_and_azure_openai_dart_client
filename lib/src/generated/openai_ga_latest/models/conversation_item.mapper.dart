@@ -93,7 +93,7 @@ class ConversationItemMessageMapper
         _instance = ConversationItemMessageMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeTypeMapper.ensureInitialized();
+      ConversationItemTypeMapper.ensureInitialized();
       MessageStatusMapper.ensureInitialized();
       MessageRoleMapper.ensureInitialized();
       ConversationItemContentUnionMapper.ensureInitialized();
@@ -104,9 +104,9 @@ class ConversationItemMessageMapper
   @override
   final String id = 'ConversationItemMessage';
 
-  static ConversationItemTypeType _$type(ConversationItemMessage v) => v.type;
-  static const Field<ConversationItemMessage, ConversationItemTypeType>
-  _f$type = Field('type', _$type);
+  static ConversationItemType _$type(ConversationItemMessage v) => v.type;
+  static const Field<ConversationItemMessage, ConversationItemType> _f$type =
+      Field('type', _$type);
   static String _$id(ConversationItemMessage v) => v.id;
   static const Field<ConversationItemMessage, String> _f$id = Field('id', _$id);
   static MessageStatus _$status(ConversationItemMessage v) => v.status;
@@ -241,7 +241,7 @@ abstract class ConversationItemMessageCopyWith<
   get content;
   @override
   $R call({
-    ConversationItemTypeType? type,
+    ConversationItemType? type,
     String? id,
     MessageStatus? status,
     MessageRole? role,
@@ -278,7 +278,7 @@ class _ConversationItemMessageCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ConversationItemTypeType? type,
+    ConversationItemType? type,
     String? id,
     MessageStatus? status,
     MessageRole? role,
@@ -318,8 +318,8 @@ class ConversationItemFileSearchCallMapper
         _instance = ConversationItemFileSearchCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType2Mapper.ensureInitialized();
-      ConversationItemStatusStatusMapper.ensureInitialized();
+      ConversationItemType2Mapper.ensureInitialized();
+      ConversationItemStatusMapper.ensureInitialized();
       ConversationItemResultsMapper.ensureInitialized();
     }
     return _instance!;
@@ -333,17 +333,13 @@ class ConversationItemFileSearchCallMapper
     'id',
     _$id,
   );
-  static ConversationItemTypeType2 _$type(ConversationItemFileSearchCall v) =>
+  static ConversationItemType2 _$type(ConversationItemFileSearchCall v) =>
       v.type;
-  static const Field<ConversationItemFileSearchCall, ConversationItemTypeType2>
+  static const Field<ConversationItemFileSearchCall, ConversationItemType2>
   _f$type = Field('type', _$type);
-  static ConversationItemStatusStatus _$status(
-    ConversationItemFileSearchCall v,
-  ) => v.status;
-  static const Field<
-    ConversationItemFileSearchCall,
-    ConversationItemStatusStatus
-  >
+  static ConversationItemStatus _$status(ConversationItemFileSearchCall v) =>
+      v.status;
+  static const Field<ConversationItemFileSearchCall, ConversationItemStatus>
   _f$status = Field('status', _$status);
   static List<String> _$queries(ConversationItemFileSearchCall v) => v.queries;
   static const Field<ConversationItemFileSearchCall, List<String>> _f$queries =
@@ -480,8 +476,8 @@ abstract class ConversationItemFileSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    ConversationItemTypeType2? type,
-    ConversationItemStatusStatus? status,
+    ConversationItemType2? type,
+    ConversationItemStatus? status,
     List<String>? queries,
     List<ConversationItemResults>? results,
   });
@@ -534,8 +530,8 @@ class _ConversationItemFileSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ConversationItemTypeType2? type,
-    ConversationItemStatusStatus? status,
+    ConversationItemType2? type,
+    ConversationItemStatus? status,
     List<String>? queries,
     Object? results = $none,
   }) => $apply(
@@ -578,8 +574,8 @@ class ConversationItemWebSearchCallMapper
         _instance = ConversationItemWebSearchCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType3Mapper.ensureInitialized();
-      ConversationItemStatusStatus2Mapper.ensureInitialized();
+      ConversationItemType3Mapper.ensureInitialized();
+      ConversationItemStatus2Mapper.ensureInitialized();
       ConversationItemActionUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -593,17 +589,13 @@ class ConversationItemWebSearchCallMapper
     'id',
     _$id,
   );
-  static ConversationItemTypeType3 _$type(ConversationItemWebSearchCall v) =>
+  static ConversationItemType3 _$type(ConversationItemWebSearchCall v) =>
       v.type;
-  static const Field<ConversationItemWebSearchCall, ConversationItemTypeType3>
+  static const Field<ConversationItemWebSearchCall, ConversationItemType3>
   _f$type = Field('type', _$type);
-  static ConversationItemStatusStatus2 _$status(
-    ConversationItemWebSearchCall v,
-  ) => v.status;
-  static const Field<
-    ConversationItemWebSearchCall,
-    ConversationItemStatusStatus2
-  >
+  static ConversationItemStatus2 _$status(ConversationItemWebSearchCall v) =>
+      v.status;
+  static const Field<ConversationItemWebSearchCall, ConversationItemStatus2>
   _f$status = Field('status', _$status);
   static ConversationItemActionUnion _$action(
     ConversationItemWebSearchCall v,
@@ -723,8 +715,8 @@ abstract class ConversationItemWebSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    ConversationItemTypeType3? type,
-    ConversationItemStatusStatus2? status,
+    ConversationItemType3? type,
+    ConversationItemStatus2? status,
     ConversationItemActionUnion? action,
   });
   ConversationItemWebSearchCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -759,8 +751,8 @@ class _ConversationItemWebSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ConversationItemTypeType3? type,
-    ConversationItemStatusStatus2? status,
+    ConversationItemType3? type,
+    ConversationItemStatus2? status,
     ConversationItemActionUnion? action,
   }) => $apply(
     FieldCopyWithData({
@@ -800,8 +792,8 @@ class ConversationItemImageGenerationCallMapper
         _instance = ConversationItemImageGenerationCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType4Mapper.ensureInitialized();
-      ConversationItemStatusStatus3Mapper.ensureInitialized();
+      ConversationItemType4Mapper.ensureInitialized();
+      ConversationItemStatus3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -809,25 +801,21 @@ class ConversationItemImageGenerationCallMapper
   @override
   final String id = 'ConversationItemImageGenerationCall';
 
-  static ConversationItemTypeType4 _$type(
-    ConversationItemImageGenerationCall v,
-  ) => v.type;
-  static const Field<
-    ConversationItemImageGenerationCall,
-    ConversationItemTypeType4
-  >
+  static ConversationItemType4 _$type(ConversationItemImageGenerationCall v) =>
+      v.type;
+  static const Field<ConversationItemImageGenerationCall, ConversationItemType4>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemImageGenerationCall v) => v.id;
   static const Field<ConversationItemImageGenerationCall, String> _f$id = Field(
     'id',
     _$id,
   );
-  static ConversationItemStatusStatus3 _$status(
+  static ConversationItemStatus3 _$status(
     ConversationItemImageGenerationCall v,
   ) => v.status;
   static const Field<
     ConversationItemImageGenerationCall,
-    ConversationItemStatusStatus3
+    ConversationItemStatus3
   >
   _f$status = Field('status', _$status);
   static String? _$result(ConversationItemImageGenerationCall v) => v.result;
@@ -946,9 +934,9 @@ abstract class ConversationItemImageGenerationCallCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType4? type,
+    ConversationItemType4? type,
     String? id,
-    ConversationItemStatusStatus3? status,
+    ConversationItemStatus3? status,
     String? result,
   });
   ConversationItemImageGenerationCallCopyWith<$R2, $In, $Out2>
@@ -974,9 +962,9 @@ class _ConversationItemImageGenerationCallCopyWithImpl<$R, $Out>
       ConversationItemImageGenerationCallMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType4? type,
+    ConversationItemType4? type,
     String? id,
-    ConversationItemStatusStatus3? status,
+    ConversationItemStatus3? status,
     Object? result = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -1020,10 +1008,10 @@ class ConversationItemComputerCallMapper
         _instance = ConversationItemComputerCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType5Mapper.ensureInitialized();
+      ConversationItemType5Mapper.ensureInitialized();
       ComputerActionMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
-      ConversationItemStatusStatus4Mapper.ensureInitialized();
+      ConversationItemStatus4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1031,9 +1019,8 @@ class ConversationItemComputerCallMapper
   @override
   final String id = 'ConversationItemComputerCall';
 
-  static ConversationItemTypeType5 _$type(ConversationItemComputerCall v) =>
-      v.type;
-  static const Field<ConversationItemComputerCall, ConversationItemTypeType5>
+  static ConversationItemType5 _$type(ConversationItemComputerCall v) => v.type;
+  static const Field<ConversationItemComputerCall, ConversationItemType5>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemComputerCall v) => v.id;
   static const Field<ConversationItemComputerCall, String> _f$id = Field(
@@ -1061,13 +1048,9 @@ class ConversationItemComputerCallMapper
     _$pendingSafetyChecks,
     key: r'pending_safety_checks',
   );
-  static ConversationItemStatusStatus4 _$status(
-    ConversationItemComputerCall v,
-  ) => v.status;
-  static const Field<
-    ConversationItemComputerCall,
-    ConversationItemStatusStatus4
-  >
+  static ConversationItemStatus4 _$status(ConversationItemComputerCall v) =>
+      v.status;
+  static const Field<ConversationItemComputerCall, ConversationItemStatus4>
   _f$status = Field('status', _$status);
 
   @override
@@ -1189,12 +1172,12 @@ abstract class ConversationItemComputerCallCopyWith<
   get pendingSafetyChecks;
   @override
   $R call({
-    ConversationItemTypeType5? type,
+    ConversationItemType5? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   });
   ConversationItemComputerCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1238,12 +1221,12 @@ class _ConversationItemComputerCallCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ConversationItemTypeType5? type,
+    ConversationItemType5? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -1286,10 +1269,10 @@ class ConversationItemReasoningMapper
         _instance = ConversationItemReasoningMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType6Mapper.ensureInitialized();
+      ConversationItemType6Mapper.ensureInitialized();
       SummaryMapper.ensureInitialized();
       ReasoningTextContentMapper.ensureInitialized();
-      ConversationItemStatusStatus4Mapper.ensureInitialized();
+      ConversationItemStatus4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1297,10 +1280,9 @@ class ConversationItemReasoningMapper
   @override
   final String id = 'ConversationItemReasoning';
 
-  static ConversationItemTypeType6 _$type(ConversationItemReasoning v) =>
-      v.type;
-  static const Field<ConversationItemReasoning, ConversationItemTypeType6>
-  _f$type = Field('type', _$type);
+  static ConversationItemType6 _$type(ConversationItemReasoning v) => v.type;
+  static const Field<ConversationItemReasoning, ConversationItemType6> _f$type =
+      Field('type', _$type);
   static String _$id(ConversationItemReasoning v) => v.id;
   static const Field<ConversationItemReasoning, String> _f$id = Field(
     'id',
@@ -1317,9 +1299,9 @@ class ConversationItemReasoningMapper
       v.content;
   static const Field<ConversationItemReasoning, List<ReasoningTextContent>>
   _f$content = Field('content', _$content);
-  static ConversationItemStatusStatus4? _$status(ConversationItemReasoning v) =>
+  static ConversationItemStatus4? _$status(ConversationItemReasoning v) =>
       v.status;
-  static const Field<ConversationItemReasoning, ConversationItemStatusStatus4>
+  static const Field<ConversationItemReasoning, ConversationItemStatus4>
   _f$status = Field('status', _$status);
 
   @override
@@ -1438,12 +1420,12 @@ abstract class ConversationItemReasoningCopyWith<
   get content;
   @override
   $R call({
-    ConversationItemTypeType6? type,
+    ConversationItemType6? type,
     String? id,
     String? encryptedContent,
     List<Summary>? summary,
     List<ReasoningTextContent>? content,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   });
   ConversationItemReasoningCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1481,7 +1463,7 @@ class _ConversationItemReasoningCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    ConversationItemTypeType6? type,
+    ConversationItemType6? type,
     String? id,
     Object? encryptedContent = $none,
     List<Summary>? summary,
@@ -1528,8 +1510,8 @@ class ConversationItemCodeInterpreterCallMapper
         _instance = ConversationItemCodeInterpreterCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType7Mapper.ensureInitialized();
-      ConversationItemStatusStatus5Mapper.ensureInitialized();
+      ConversationItemType7Mapper.ensureInitialized();
+      ConversationItemStatus5Mapper.ensureInitialized();
       ConversationItemOutputsUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -1538,25 +1520,21 @@ class ConversationItemCodeInterpreterCallMapper
   @override
   final String id = 'ConversationItemCodeInterpreterCall';
 
-  static ConversationItemTypeType7 _$type(
-    ConversationItemCodeInterpreterCall v,
-  ) => v.type;
-  static const Field<
-    ConversationItemCodeInterpreterCall,
-    ConversationItemTypeType7
-  >
+  static ConversationItemType7 _$type(ConversationItemCodeInterpreterCall v) =>
+      v.type;
+  static const Field<ConversationItemCodeInterpreterCall, ConversationItemType7>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemCodeInterpreterCall v) => v.id;
   static const Field<ConversationItemCodeInterpreterCall, String> _f$id = Field(
     'id',
     _$id,
   );
-  static ConversationItemStatusStatus5 _$status(
+  static ConversationItemStatus5 _$status(
     ConversationItemCodeInterpreterCall v,
   ) => v.status;
   static const Field<
     ConversationItemCodeInterpreterCall,
-    ConversationItemStatusStatus5
+    ConversationItemStatus5
   >
   _f$status = Field('status', _$status);
   static String _$containerId(ConversationItemCodeInterpreterCall v) =>
@@ -1701,9 +1679,9 @@ abstract class ConversationItemCodeInterpreterCallCopyWith<
   get outputs;
   @override
   $R call({
-    ConversationItemTypeType7? type,
+    ConversationItemType7? type,
     String? id,
-    ConversationItemStatusStatus5? status,
+    ConversationItemStatus5? status,
     String? containerId,
     String? code,
     List<ConversationItemOutputsUnion>? outputs,
@@ -1748,9 +1726,9 @@ class _ConversationItemCodeInterpreterCallCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    ConversationItemTypeType7? type,
+    ConversationItemType7? type,
     String? id,
-    ConversationItemStatusStatus5? status,
+    ConversationItemStatus5? status,
     String? containerId,
     Object? code = $none,
     Object? outputs = $none,
@@ -1800,9 +1778,9 @@ class ConversationItemLocalShellCallMapper
         _instance = ConversationItemLocalShellCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType8Mapper.ensureInitialized();
+      ConversationItemType8Mapper.ensureInitialized();
       LocalShellExecActionMapper.ensureInitialized();
-      ConversationItemStatusStatus4Mapper.ensureInitialized();
+      ConversationItemStatus4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1810,9 +1788,9 @@ class ConversationItemLocalShellCallMapper
   @override
   final String id = 'ConversationItemLocalShellCall';
 
-  static ConversationItemTypeType8 _$type(ConversationItemLocalShellCall v) =>
+  static ConversationItemType8 _$type(ConversationItemLocalShellCall v) =>
       v.type;
-  static const Field<ConversationItemLocalShellCall, ConversationItemTypeType8>
+  static const Field<ConversationItemLocalShellCall, ConversationItemType8>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemLocalShellCall v) => v.id;
   static const Field<ConversationItemLocalShellCall, String> _f$id = Field(
@@ -1829,13 +1807,9 @@ class ConversationItemLocalShellCallMapper
       v.action;
   static const Field<ConversationItemLocalShellCall, LocalShellExecAction>
   _f$action = Field('action', _$action);
-  static ConversationItemStatusStatus4 _$status(
-    ConversationItemLocalShellCall v,
-  ) => v.status;
-  static const Field<
-    ConversationItemLocalShellCall,
-    ConversationItemStatusStatus4
-  >
+  static ConversationItemStatus4 _$status(ConversationItemLocalShellCall v) =>
+      v.status;
+  static const Field<ConversationItemLocalShellCall, ConversationItemStatus4>
   _f$status = Field('status', _$status);
 
   @override
@@ -1951,11 +1925,11 @@ abstract class ConversationItemLocalShellCallCopyWith<
   get action;
   @override
   $R call({
-    ConversationItemTypeType8? type,
+    ConversationItemType8? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   });
   ConversationItemLocalShellCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1984,11 +1958,11 @@ class _ConversationItemLocalShellCallCopyWithImpl<$R, $Out>
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
   $R call({
-    ConversationItemTypeType8? type,
+    ConversationItemType8? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -2029,8 +2003,8 @@ class ConversationItemLocalShellCallOutputMapper
         _instance = ConversationItemLocalShellCallOutputMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType9Mapper.ensureInitialized();
-      ConversationItemStatusStatus4Mapper.ensureInitialized();
+      ConversationItemType9Mapper.ensureInitialized();
+      ConversationItemStatus4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -2038,12 +2012,11 @@ class ConversationItemLocalShellCallOutputMapper
   @override
   final String id = 'ConversationItemLocalShellCallOutput';
 
-  static ConversationItemTypeType9 _$type(
-    ConversationItemLocalShellCallOutput v,
-  ) => v.type;
+  static ConversationItemType9 _$type(ConversationItemLocalShellCallOutput v) =>
+      v.type;
   static const Field<
     ConversationItemLocalShellCallOutput,
-    ConversationItemTypeType9
+    ConversationItemType9
   >
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemLocalShellCallOutput v) => v.id;
@@ -2052,12 +2025,12 @@ class ConversationItemLocalShellCallOutputMapper
   static String _$output(ConversationItemLocalShellCallOutput v) => v.output;
   static const Field<ConversationItemLocalShellCallOutput, String> _f$output =
       Field('output', _$output);
-  static ConversationItemStatusStatus4? _$status(
+  static ConversationItemStatus4? _$status(
     ConversationItemLocalShellCallOutput v,
   ) => v.status;
   static const Field<
     ConversationItemLocalShellCallOutput,
-    ConversationItemStatusStatus4
+    ConversationItemStatus4
   >
   _f$status = Field('status', _$status);
 
@@ -2173,10 +2146,10 @@ abstract class ConversationItemLocalShellCallOutputCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType9? type,
+    ConversationItemType9? type,
     String? id,
     String? output,
-    ConversationItemStatusStatus4? status,
+    ConversationItemStatus4? status,
   });
   ConversationItemLocalShellCallOutputCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -2201,7 +2174,7 @@ class _ConversationItemLocalShellCallOutputCopyWithImpl<$R, $Out>
       ConversationItemLocalShellCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType9? type,
+    ConversationItemType9? type,
     String? id,
     String? output,
     Object? status = $none,
@@ -2247,7 +2220,7 @@ class ConversationItemShellCallMapper
         _instance = ConversationItemShellCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType10Mapper.ensureInitialized();
+      ConversationItemType10Mapper.ensureInitialized();
       FunctionShellActionMapper.ensureInitialized();
       LocalShellCallStatusMapper.ensureInitialized();
     }
@@ -2257,9 +2230,8 @@ class ConversationItemShellCallMapper
   @override
   final String id = 'ConversationItemShellCall';
 
-  static ConversationItemTypeType10 _$type(ConversationItemShellCall v) =>
-      v.type;
-  static const Field<ConversationItemShellCall, ConversationItemTypeType10>
+  static ConversationItemType10 _$type(ConversationItemShellCall v) => v.type;
+  static const Field<ConversationItemShellCall, ConversationItemType10>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemShellCall v) => v.id;
   static const Field<ConversationItemShellCall, String> _f$id = Field(
@@ -2396,7 +2368,7 @@ abstract class ConversationItemShellCallCopyWith<
   get action;
   @override
   $R call({
-    ConversationItemTypeType10? type,
+    ConversationItemType10? type,
     String? id,
     String? callId,
     FunctionShellAction? action,
@@ -2422,7 +2394,7 @@ class _ConversationItemShellCallCopyWithImpl<$R, $Out>
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
   $R call({
-    ConversationItemTypeType10? type,
+    ConversationItemType10? type,
     String? id,
     String? callId,
     FunctionShellAction? action,
@@ -2466,7 +2438,7 @@ class ConversationItemShellCallOutputMapper
         _instance = ConversationItemShellCallOutputMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType11Mapper.ensureInitialized();
+      ConversationItemType11Mapper.ensureInitialized();
       FunctionShellCallOutputContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -2475,12 +2447,9 @@ class ConversationItemShellCallOutputMapper
   @override
   final String id = 'ConversationItemShellCallOutput';
 
-  static ConversationItemTypeType11 _$type(ConversationItemShellCallOutput v) =>
+  static ConversationItemType11 _$type(ConversationItemShellCallOutput v) =>
       v.type;
-  static const Field<
-    ConversationItemShellCallOutput,
-    ConversationItemTypeType11
-  >
+  static const Field<ConversationItemShellCallOutput, ConversationItemType11>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemShellCallOutput v) => v.id;
   static const Field<ConversationItemShellCallOutput, String> _f$id = Field(
@@ -2632,7 +2601,7 @@ abstract class ConversationItemShellCallOutputCopyWith<
   get output;
   @override
   $R call({
-    ConversationItemTypeType11? type,
+    ConversationItemType11? type,
     String? id,
     String? callId,
     List<FunctionShellCallOutputContent>? output,
@@ -2678,7 +2647,7 @@ class _ConversationItemShellCallOutputCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ConversationItemTypeType11? type,
+    ConversationItemType11? type,
     String? id,
     String? callId,
     List<FunctionShellCallOutputContent>? output,
@@ -2730,7 +2699,7 @@ class ConversationItemApplyPatchCallMapper
         _instance = ConversationItemApplyPatchCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType12Mapper.ensureInitialized();
+      ConversationItemType12Mapper.ensureInitialized();
       ApplyPatchCallStatusMapper.ensureInitialized();
       ConversationItemOperationUnionMapper.ensureInitialized();
     }
@@ -2740,9 +2709,9 @@ class ConversationItemApplyPatchCallMapper
   @override
   final String id = 'ConversationItemApplyPatchCall';
 
-  static ConversationItemTypeType12 _$type(ConversationItemApplyPatchCall v) =>
+  static ConversationItemType12 _$type(ConversationItemApplyPatchCall v) =>
       v.type;
-  static const Field<ConversationItemApplyPatchCall, ConversationItemTypeType12>
+  static const Field<ConversationItemApplyPatchCall, ConversationItemType12>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemApplyPatchCall v) => v.id;
   static const Field<ConversationItemApplyPatchCall, String> _f$id = Field(
@@ -2890,7 +2859,7 @@ abstract class ConversationItemApplyPatchCallCopyWith<
   get operation;
   @override
   $R call({
-    ConversationItemTypeType12? type,
+    ConversationItemType12? type,
     String? id,
     String? callId,
     ApplyPatchCallStatus? status,
@@ -2928,7 +2897,7 @@ class _ConversationItemApplyPatchCallCopyWithImpl<$R, $Out>
   get operation => $value.operation.copyWith.$chain((v) => call(operation: v));
   @override
   $R call({
-    ConversationItemTypeType12? type,
+    ConversationItemType12? type,
     String? id,
     String? callId,
     ApplyPatchCallStatus? status,
@@ -2976,7 +2945,7 @@ class ConversationItemApplyPatchCallOutputMapper
         _instance = ConversationItemApplyPatchCallOutputMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType13Mapper.ensureInitialized();
+      ConversationItemType13Mapper.ensureInitialized();
       ApplyPatchCallOutputStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -2985,12 +2954,12 @@ class ConversationItemApplyPatchCallOutputMapper
   @override
   final String id = 'ConversationItemApplyPatchCallOutput';
 
-  static ConversationItemTypeType13 _$type(
+  static ConversationItemType13 _$type(
     ConversationItemApplyPatchCallOutput v,
   ) => v.type;
   static const Field<
     ConversationItemApplyPatchCallOutput,
-    ConversationItemTypeType13
+    ConversationItemType13
   >
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemApplyPatchCallOutput v) => v.id;
@@ -3131,7 +3100,7 @@ abstract class ConversationItemApplyPatchCallOutputCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType13? type,
+    ConversationItemType13? type,
     String? id,
     String? callId,
     ApplyPatchCallOutputStatus? status,
@@ -3161,7 +3130,7 @@ class _ConversationItemApplyPatchCallOutputCopyWithImpl<$R, $Out>
       ConversationItemApplyPatchCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType13? type,
+    ConversationItemType13? type,
     String? id,
     String? callId,
     ApplyPatchCallOutputStatus? status,
@@ -3213,7 +3182,7 @@ class ConversationItemMcpListToolsMapper
         _instance = ConversationItemMcpListToolsMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType14Mapper.ensureInitialized();
+      ConversationItemType14Mapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -3222,9 +3191,9 @@ class ConversationItemMcpListToolsMapper
   @override
   final String id = 'ConversationItemMcpListTools';
 
-  static ConversationItemTypeType14 _$type(ConversationItemMcpListTools v) =>
+  static ConversationItemType14 _$type(ConversationItemMcpListTools v) =>
       v.type;
-  static const Field<ConversationItemMcpListTools, ConversationItemTypeType14>
+  static const Field<ConversationItemMcpListTools, ConversationItemType14>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemMcpListTools v) => v.id;
   static const Field<ConversationItemMcpListTools, String> _f$id = Field(
@@ -3356,7 +3325,7 @@ abstract class ConversationItemMcpListToolsCopyWith<
   get tools;
   @override
   $R call({
-    ConversationItemTypeType14? type,
+    ConversationItemType14? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -3397,7 +3366,7 @@ class _ConversationItemMcpListToolsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ConversationItemTypeType14? type,
+    ConversationItemType14? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -3438,7 +3407,7 @@ class ConversationItemMcpApprovalRequestMapper
         _instance = ConversationItemMcpApprovalRequestMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType15Mapper.ensureInitialized();
+      ConversationItemType15Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3446,13 +3415,9 @@ class ConversationItemMcpApprovalRequestMapper
   @override
   final String id = 'ConversationItemMcpApprovalRequest';
 
-  static ConversationItemTypeType15 _$type(
-    ConversationItemMcpApprovalRequest v,
-  ) => v.type;
-  static const Field<
-    ConversationItemMcpApprovalRequest,
-    ConversationItemTypeType15
-  >
+  static ConversationItemType15 _$type(ConversationItemMcpApprovalRequest v) =>
+      v.type;
+  static const Field<ConversationItemMcpApprovalRequest, ConversationItemType15>
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemMcpApprovalRequest v) => v.id;
   static const Field<ConversationItemMcpApprovalRequest, String> _f$id = Field(
@@ -3583,7 +3548,7 @@ abstract class ConversationItemMcpApprovalRequestCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType15? type,
+    ConversationItemType15? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3612,7 +3577,7 @@ class _ConversationItemMcpApprovalRequestCopyWithImpl<$R, $Out>
       ConversationItemMcpApprovalRequestMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType15? type,
+    ConversationItemType15? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3661,7 +3626,7 @@ class ConversationItemMcpApprovalResponseMapper
         _instance = ConversationItemMcpApprovalResponseMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType16Mapper.ensureInitialized();
+      ConversationItemType16Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3669,12 +3634,11 @@ class ConversationItemMcpApprovalResponseMapper
   @override
   final String id = 'ConversationItemMcpApprovalResponse';
 
-  static ConversationItemTypeType16 _$type(
-    ConversationItemMcpApprovalResponse v,
-  ) => v.type;
+  static ConversationItemType16 _$type(ConversationItemMcpApprovalResponse v) =>
+      v.type;
   static const Field<
     ConversationItemMcpApprovalResponse,
-    ConversationItemTypeType16
+    ConversationItemType16
   >
   _f$type = Field('type', _$type);
   static String _$id(ConversationItemMcpApprovalResponse v) => v.id;
@@ -3811,7 +3775,7 @@ abstract class ConversationItemMcpApprovalResponseCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType16? type,
+    ConversationItemType16? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -3840,7 +3804,7 @@ class _ConversationItemMcpApprovalResponseCopyWithImpl<$R, $Out>
       ConversationItemMcpApprovalResponseMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType16? type,
+    ConversationItemType16? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -3892,7 +3856,7 @@ class ConversationItemMcpCallMapper
         _instance = ConversationItemMcpCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType17Mapper.ensureInitialized();
+      ConversationItemType17Mapper.ensureInitialized();
       McpToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -3901,9 +3865,9 @@ class ConversationItemMcpCallMapper
   @override
   final String id = 'ConversationItemMcpCall';
 
-  static ConversationItemTypeType17 _$type(ConversationItemMcpCall v) => v.type;
-  static const Field<ConversationItemMcpCall, ConversationItemTypeType17>
-  _f$type = Field('type', _$type);
+  static ConversationItemType17 _$type(ConversationItemMcpCall v) => v.type;
+  static const Field<ConversationItemMcpCall, ConversationItemType17> _f$type =
+      Field('type', _$type);
   static String _$id(ConversationItemMcpCall v) => v.id;
   static const Field<ConversationItemMcpCall, String> _f$id = Field('id', _$id);
   static String _$serverLabel(ConversationItemMcpCall v) => v.serverLabel;
@@ -4055,7 +4019,7 @@ abstract class ConversationItemMcpCallCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType17? type,
+    ConversationItemType17? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -4081,7 +4045,7 @@ class _ConversationItemMcpCallCopyWithImpl<$R, $Out>
       ConversationItemMcpCallMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType17? type,
+    ConversationItemType17? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -4136,7 +4100,7 @@ class ConversationItemCustomToolCallMapper
         _instance = ConversationItemCustomToolCallMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType18Mapper.ensureInitialized();
+      ConversationItemType18Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4144,9 +4108,9 @@ class ConversationItemCustomToolCallMapper
   @override
   final String id = 'ConversationItemCustomToolCall';
 
-  static ConversationItemTypeType18 _$type(ConversationItemCustomToolCall v) =>
+  static ConversationItemType18 _$type(ConversationItemCustomToolCall v) =>
       v.type;
-  static const Field<ConversationItemCustomToolCall, ConversationItemTypeType18>
+  static const Field<ConversationItemCustomToolCall, ConversationItemType18>
   _f$type = Field('type', _$type);
   static String? _$id(ConversationItemCustomToolCall v) => v.id;
   static const Field<ConversationItemCustomToolCall, String> _f$id = Field(
@@ -4281,7 +4245,7 @@ abstract class ConversationItemCustomToolCallCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType18? type,
+    ConversationItemType18? type,
     String? id,
     String? callId,
     String? name,
@@ -4311,7 +4275,7 @@ class _ConversationItemCustomToolCallCopyWithImpl<$R, $Out>
       ConversationItemCustomToolCallMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType18? type,
+    ConversationItemType18? type,
     Object? id = $none,
     String? callId,
     String? name,
@@ -4356,7 +4320,7 @@ class ConversationItemCustomToolCallOutputMapper
         _instance = ConversationItemCustomToolCallOutputMapper._(),
       );
       ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
-      ConversationItemTypeType19Mapper.ensureInitialized();
+      ConversationItemType19Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4364,12 +4328,12 @@ class ConversationItemCustomToolCallOutputMapper
   @override
   final String id = 'ConversationItemCustomToolCallOutput';
 
-  static ConversationItemTypeType19 _$type(
+  static ConversationItemType19 _$type(
     ConversationItemCustomToolCallOutput v,
   ) => v.type;
   static const Field<
     ConversationItemCustomToolCallOutput,
-    ConversationItemTypeType19
+    ConversationItemType19
   >
   _f$type = Field('type', _$type);
   static String? _$id(ConversationItemCustomToolCallOutput v) => v.id;
@@ -4494,7 +4458,7 @@ abstract class ConversationItemCustomToolCallOutputCopyWith<
     implements ConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ConversationItemTypeType19? type,
+    ConversationItemType19? type,
     String? id,
     String? callId,
     String? output,
@@ -4522,7 +4486,7 @@ class _ConversationItemCustomToolCallOutputCopyWithImpl<$R, $Out>
       ConversationItemCustomToolCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    ConversationItemTypeType19? type,
+    ConversationItemType19? type,
     Object? id = $none,
     String? callId,
     String? output,

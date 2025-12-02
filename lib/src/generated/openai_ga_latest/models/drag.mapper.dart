@@ -15,7 +15,7 @@ class DragMapper extends ClassMapperBase<Drag> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DragMapper._());
       DragPointMapper.ensureInitialized();
-      DragTypeTypeMapper.ensureInitialized();
+      DragTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class DragMapper extends ClassMapperBase<Drag> {
 
   static List<DragPoint> _$path(Drag v) => v.path;
   static const Field<Drag, List<DragPoint>> _f$path = Field('path', _$path);
-  static DragTypeType _$type(Drag v) => v.type;
-  static const Field<Drag, DragTypeType> _f$type = Field(
+  static DragType _$type(Drag v) => v.type;
+  static const Field<Drag, DragType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: DragTypeType.drag,
+    def: DragType.drag,
   );
 
   @override
@@ -92,7 +92,7 @@ abstract class DragCopyWith<$R, $In extends Drag, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, DragPoint, DragPointCopyWith<$R, DragPoint, DragPoint>>
   get path;
-  $R call({List<DragPoint>? path, DragTypeType? type});
+  $R call({List<DragPoint>? path, DragType? type});
   DragCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -110,7 +110,7 @@ class _DragCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Drag, $Out>
     (v) => call(path: v),
   );
   @override
-  $R call({List<DragPoint>? path, DragTypeType? type}) => $apply(
+  $R call({List<DragPoint>? path, DragType? type}) => $apply(
     FieldCopyWithData({
       if (path != null) #path: path,
       if (type != null) #type: type,

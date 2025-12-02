@@ -20,7 +20,7 @@ class RealtimeBetaServerEventResponseContentPartDonePartMapper
         _instance =
             RealtimeBetaServerEventResponseContentPartDonePartMapper._(),
       );
-      RealtimeBetaServerEventResponseContentPartDonePartTypeTypeMapper.ensureInitialized();
+      RealtimeBetaServerEventResponseContentPartDonePartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class RealtimeBetaServerEventResponseContentPartDonePartMapper
   @override
   final String id = 'RealtimeBetaServerEventResponseContentPartDonePart';
 
-  static RealtimeBetaServerEventResponseContentPartDonePartTypeType? _$type(
+  static RealtimeBetaServerEventResponseContentPartDonePartType? _$type(
     RealtimeBetaServerEventResponseContentPartDonePart v,
   ) => v.type;
   static const Field<
     RealtimeBetaServerEventResponseContentPartDonePart,
-    RealtimeBetaServerEventResponseContentPartDonePartTypeType
+    RealtimeBetaServerEventResponseContentPartDonePartType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeBetaServerEventResponseContentPartDonePart v) =>
@@ -174,7 +174,7 @@ abstract class RealtimeBetaServerEventResponseContentPartDonePartCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeBetaServerEventResponseContentPartDonePartTypeType? type,
+    RealtimeBetaServerEventResponseContentPartDonePartType? type,
     String? text,
     String? audio,
     String? transcript,

@@ -17,7 +17,7 @@ class ResponseModelIncompleteDetailsMapper
       MapperContainer.globals.use(
         _instance = ResponseModelIncompleteDetailsMapper._(),
       );
-      ResponseModelIncompleteDetailsReasonReasonMapper.ensureInitialized();
+      ResponseModelIncompleteDetailsReasonMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseModelIncompleteDetailsMapper
   @override
   final String id = 'ResponseModelIncompleteDetails';
 
-  static ResponseModelIncompleteDetailsReasonReason? _$reason(
+  static ResponseModelIncompleteDetailsReason? _$reason(
     ResponseModelIncompleteDetails v,
   ) => v.reason;
   static const Field<
     ResponseModelIncompleteDetails,
-    ResponseModelIncompleteDetailsReasonReason
+    ResponseModelIncompleteDetailsReason
   >
   _f$reason = Field('reason', _$reason, opt: true);
 
@@ -125,7 +125,7 @@ abstract class ResponseModelIncompleteDetailsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseModelIncompleteDetailsReasonReason? reason});
+  $R call({ResponseModelIncompleteDetailsReason? reason});
   ResponseModelIncompleteDetailsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

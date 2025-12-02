@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_custom_data_source_config_type_type.dart';
+import 'create_eval_custom_data_source_config_type.dart';
 
 part 'create_eval_custom_data_source_config.mapper.dart';
 
@@ -14,14 +14,14 @@ class CreateEvalCustomDataSourceConfig with CreateEvalCustomDataSourceConfigMapp
   const CreateEvalCustomDataSourceConfig({
     required this.itemSchema,
     this.includeSampleSchema = false,
-    this.type = CreateEvalCustomDataSourceConfigTypeType.custom,
+    this.type = CreateEvalCustomDataSourceConfigType.custom,
   });
 
   @MappableField(key: 'item_schema')
   final dynamic itemSchema;
   @MappableField(key: 'include_sample_schema')
   final bool includeSampleSchema;
-  final CreateEvalCustomDataSourceConfigTypeType type;
+  final CreateEvalCustomDataSourceConfigType type;
 
   static CreateEvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalCustomDataSourceConfigMapper.fromJson(json);
 

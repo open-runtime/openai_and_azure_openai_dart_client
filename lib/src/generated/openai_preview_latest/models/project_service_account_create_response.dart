@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'project_service_account_api_key.dart';
 import 'project_service_account_create_response_object_object_enum.dart';
-import 'project_service_account_create_response_role_role.dart';
+import 'project_service_account_create_response_role.dart';
 
 part 'project_service_account_create_response.mapper.dart';
 
@@ -25,7 +25,7 @@ class ProjectServiceAccountCreateResponse with ProjectServiceAccountCreateRespon
   final ProjectServiceAccountCreateResponseObjectObjectEnum objectEnum;
   final String id;
   final String name;
-  final ProjectServiceAccountCreateResponseRoleRole role;
+  final ProjectServiceAccountCreateResponseRole role;
   @MappableField(key: 'created_at')
   final int createdAt;
   @MappableField(key: 'api_key')

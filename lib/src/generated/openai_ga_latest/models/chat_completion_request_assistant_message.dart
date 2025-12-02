@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_request_assistant_message_audio.dart';
 import 'chat_completion_request_assistant_message_function_call.dart';
-import 'chat_completion_request_assistant_message_role_role.dart';
+import 'chat_completion_request_assistant_message_role.dart';
 import 'chat_completion_request_message.dart';
 
 part 'chat_completion_request_assistant_message.mapper.dart';
@@ -26,7 +26,7 @@ class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantM
     this.functionCall,
   });
 
-  final ChatCompletionRequestAssistantMessageRoleRole role;
+  final ChatCompletionRequestAssistantMessageRole role;
   final String? content;
   final String? refusal;
   final String? name;

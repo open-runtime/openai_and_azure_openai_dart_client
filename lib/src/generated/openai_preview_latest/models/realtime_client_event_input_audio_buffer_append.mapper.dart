@@ -17,7 +17,7 @@ class RealtimeClientEventInputAudioBufferAppendMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventInputAudioBufferAppendMapper._(),
       );
-      RealtimeClientEventInputAudioBufferAppendTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventInputAudioBufferAppendTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventInputAudioBufferAppendMapper
   @override
   final String id = 'RealtimeClientEventInputAudioBufferAppend';
 
-  static RealtimeClientEventInputAudioBufferAppendTypeType _$type(
+  static RealtimeClientEventInputAudioBufferAppendType _$type(
     RealtimeClientEventInputAudioBufferAppend v,
   ) => v.type;
   static const Field<
     RealtimeClientEventInputAudioBufferAppend,
-    RealtimeClientEventInputAudioBufferAppendTypeType
+    RealtimeClientEventInputAudioBufferAppendType
   >
   _f$type = Field('type', _$type);
   static String _$audio(RealtimeClientEventInputAudioBufferAppend v) => v.audio;
@@ -147,7 +147,7 @@ abstract class RealtimeClientEventInputAudioBufferAppendCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventInputAudioBufferAppendTypeType? type,
+    RealtimeClientEventInputAudioBufferAppendType? type,
     String? audio,
     String? eventId,
   });
@@ -175,7 +175,7 @@ class _RealtimeClientEventInputAudioBufferAppendCopyWithImpl<$R, $Out>
   $mapper = RealtimeClientEventInputAudioBufferAppendMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventInputAudioBufferAppendTypeType? type,
+    RealtimeClientEventInputAudioBufferAppendType? type,
     String? audio,
     Object? eventId = $none,
   }) => $apply(

@@ -17,7 +17,7 @@ class ResponseFunctionCallArgumentsDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFunctionCallArgumentsDeltaEventMapper._(),
       );
-      ResponseFunctionCallArgumentsDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseFunctionCallArgumentsDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseFunctionCallArgumentsDeltaEventMapper
   @override
   final String id = 'ResponseFunctionCallArgumentsDeltaEvent';
 
-  static ResponseFunctionCallArgumentsDeltaEventTypeType _$type(
+  static ResponseFunctionCallArgumentsDeltaEventType _$type(
     ResponseFunctionCallArgumentsDeltaEvent v,
   ) => v.type;
   static const Field<
     ResponseFunctionCallArgumentsDeltaEvent,
-    ResponseFunctionCallArgumentsDeltaEventTypeType
+    ResponseFunctionCallArgumentsDeltaEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseFunctionCallArgumentsDeltaEvent v) => v.itemId;
@@ -151,7 +151,7 @@ abstract class ResponseFunctionCallArgumentsDeltaEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseFunctionCallArgumentsDeltaEventTypeType? type,
+    ResponseFunctionCallArgumentsDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     String? delta,
@@ -179,7 +179,7 @@ class _ResponseFunctionCallArgumentsDeltaEventCopyWithImpl<$R, $Out>
       ResponseFunctionCallArgumentsDeltaEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseFunctionCallArgumentsDeltaEventTypeType? type,
+    ResponseFunctionCallArgumentsDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     String? delta,

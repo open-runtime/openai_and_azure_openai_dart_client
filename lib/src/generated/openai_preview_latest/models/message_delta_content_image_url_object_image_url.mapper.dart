@@ -17,7 +17,7 @@ class MessageDeltaContentImageUrlObjectImageUrlMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentImageUrlObjectImageUrlMapper._(),
       );
-      MessageDeltaContentImageUrlObjectImageUrlDetailDetailMapper.ensureInitialized();
+      MessageDeltaContentImageUrlObjectImageUrlDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class MessageDeltaContentImageUrlObjectImageUrlMapper
   @override
   final String id = 'MessageDeltaContentImageUrlObjectImageUrl';
 
-  static MessageDeltaContentImageUrlObjectImageUrlDetailDetail _$detail(
+  static MessageDeltaContentImageUrlObjectImageUrlDetail _$detail(
     MessageDeltaContentImageUrlObjectImageUrl v,
   ) => v.detail;
   static const Field<
     MessageDeltaContentImageUrlObjectImageUrl,
-    MessageDeltaContentImageUrlObjectImageUrlDetailDetail
+    MessageDeltaContentImageUrlObjectImageUrlDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageDeltaContentImageUrlObjectImageUrlDetailDetail.auto,
+    def: MessageDeltaContentImageUrlObjectImageUrlDetail.auto,
   );
   static String? _$url(MessageDeltaContentImageUrlObjectImageUrl v) => v.url;
   static const Field<MessageDeltaContentImageUrlObjectImageUrl, String> _f$url =
@@ -147,7 +147,7 @@ abstract class MessageDeltaContentImageUrlObjectImageUrlCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    MessageDeltaContentImageUrlObjectImageUrlDetailDetail? detail,
+    MessageDeltaContentImageUrlObjectImageUrlDetail? detail,
     String? url,
   });
   MessageDeltaContentImageUrlObjectImageUrlCopyWith<$R2, $In, $Out2>
@@ -174,7 +174,7 @@ class _MessageDeltaContentImageUrlObjectImageUrlCopyWithImpl<$R, $Out>
   $mapper = MessageDeltaContentImageUrlObjectImageUrlMapper.ensureInitialized();
   @override
   $R call({
-    MessageDeltaContentImageUrlObjectImageUrlDetailDetail? detail,
+    MessageDeltaContentImageUrlObjectImageUrlDetail? detail,
     Object? url = $none,
   }) => $apply(
     FieldCopyWithData({

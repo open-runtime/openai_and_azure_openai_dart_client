@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'output_content.dart';
-import 'output_text_type_type.dart';
+import 'output_text_type.dart';
 
 part 'output_text.mapper.dart';
 
@@ -20,7 +20,7 @@ class OutputText with OutputTextMappable {
     required this.annotations,
   });
 
-  final OutputTextTypeType type;
+  final OutputTextType type;
   final String text;
   final List<Annotation> annotations;
 

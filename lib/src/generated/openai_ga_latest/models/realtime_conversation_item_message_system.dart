@@ -6,9 +6,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item_message_system_content.dart';
 import 'realtime_conversation_item_message_system_object_object_enum.dart';
-import 'realtime_conversation_item_message_system_role_role.dart';
-import 'realtime_conversation_item_message_system_status_status.dart';
-import 'realtime_conversation_item_message_system_type_type.dart';
+import 'realtime_conversation_item_message_system_role.dart';
+import 'realtime_conversation_item_message_system_status.dart';
+import 'realtime_conversation_item_message_system_type.dart';
 
 part 'realtime_conversation_item_message_system.mapper.dart';
 
@@ -24,13 +24,13 @@ class RealtimeConversationItemMessageSystem with RealtimeConversationItemMessage
     this.status,
   });
 
-  final RealtimeConversationItemMessageSystemTypeType type;
-  final RealtimeConversationItemMessageSystemRoleRole role;
+  final RealtimeConversationItemMessageSystemType type;
+  final RealtimeConversationItemMessageSystemRole role;
   final List<RealtimeConversationItemMessageSystemContent> content;
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemMessageSystemObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemMessageSystemStatusStatus? status;
+  final RealtimeConversationItemMessageSystemStatus? status;
 
   static RealtimeConversationItemMessageSystem fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageSystemMapper.fromJson(json);
 

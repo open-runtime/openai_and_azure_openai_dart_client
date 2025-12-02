@@ -89,7 +89,7 @@ class RealtimeServerEventUsageUnionTokensMapper
       RealtimeServerEventUsageUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      TranscriptTextUsageTokensTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageTokensTypeMapper.ensureInitialized();
       TranscriptTextUsageTokensInputTokenDetailsMapper.ensureInitialized();
     }
     return _instance!;
@@ -98,12 +98,12 @@ class RealtimeServerEventUsageUnionTokensMapper
   @override
   final String id = 'RealtimeServerEventUsageUnionTokens';
 
-  static TranscriptTextUsageTokensTypeType _$type(
+  static TranscriptTextUsageTokensType _$type(
     RealtimeServerEventUsageUnionTokens v,
   ) => v.type;
   static const Field<
     RealtimeServerEventUsageUnionTokens,
-    TranscriptTextUsageTokensTypeType
+    TranscriptTextUsageTokensType
   >
   _f$type = Field('type', _$type);
   static int _$inputTokens(RealtimeServerEventUsageUnionTokens v) =>
@@ -255,7 +255,7 @@ abstract class RealtimeServerEventUsageUnionTokensCopyWith<
   get transcriptTextUsageTokensInputTokenDetails;
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     TranscriptTextUsageTokensInputTokenDetails?
     transcriptTextUsageTokensInputTokenDetails,
@@ -295,7 +295,7 @@ class _RealtimeServerEventUsageUnionTokensCopyWithImpl<$R, $Out>
       .$chain((v) => call(transcriptTextUsageTokensInputTokenDetails: v));
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     Object? transcriptTextUsageTokensInputTokenDetails = $none,
     int? outputTokens,
@@ -351,7 +351,7 @@ class RealtimeServerEventUsageUnionDurationMapper
       RealtimeServerEventUsageUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      TranscriptTextUsageDurationTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageDurationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -359,12 +359,12 @@ class RealtimeServerEventUsageUnionDurationMapper
   @override
   final String id = 'RealtimeServerEventUsageUnionDuration';
 
-  static TranscriptTextUsageDurationTypeType _$type(
+  static TranscriptTextUsageDurationType _$type(
     RealtimeServerEventUsageUnionDuration v,
   ) => v.type;
   static const Field<
     RealtimeServerEventUsageUnionDuration,
-    TranscriptTextUsageDurationTypeType
+    TranscriptTextUsageDurationType
   >
   _f$type = Field('type', _$type);
   static num _$seconds(RealtimeServerEventUsageUnionDuration v) => v.seconds;
@@ -477,7 +477,7 @@ abstract class RealtimeServerEventUsageUnionDurationCopyWith<
 >
     implements RealtimeServerEventUsageUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds});
+  $R call({TranscriptTextUsageDurationType? type, num? seconds});
   RealtimeServerEventUsageUnionDurationCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -500,7 +500,7 @@ class _RealtimeServerEventUsageUnionDurationCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeServerEventUsageUnionDuration> $mapper =
       RealtimeServerEventUsageUnionDurationMapper.ensureInitialized();
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds}) => $apply(
+  $R call({TranscriptTextUsageDurationType? type, num? seconds}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (seconds != null) #seconds: seconds,

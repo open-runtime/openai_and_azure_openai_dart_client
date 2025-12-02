@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'custom_grammar_format_param.dart';
-import 'custom_grammar_format_param_type_type.dart';
+import 'custom_grammar_format_param_type.dart';
 import 'custom_text_format_param.dart';
-import 'custom_text_format_param_type_type.dart';
+import 'custom_text_format_param_type.dart';
 import 'grammar_syntax1.dart';
 import 'tool_format_union.dart';
 
@@ -48,7 +48,7 @@ extension CustomToolParamFormatUnionDeserializer on CustomToolParamFormatUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class CustomToolParamFormatUnionText extends CustomToolParamFormatUnion with CustomToolParamFormatUnionTextMappable {
-  final CustomTextFormatParamTypeType type;
+  final CustomTextFormatParamType type;
 
   const CustomToolParamFormatUnionText({
     required this.type,
@@ -57,7 +57,7 @@ class CustomToolParamFormatUnionText extends CustomToolParamFormatUnion with Cus
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'grammar')
 class CustomToolParamFormatUnionGrammar extends CustomToolParamFormatUnion with CustomToolParamFormatUnionGrammarMappable {
-  final CustomGrammarFormatParamTypeType type;
+  final CustomGrammarFormatParamType type;
   final GrammarSyntax1 syntax;
   final String definition;
 

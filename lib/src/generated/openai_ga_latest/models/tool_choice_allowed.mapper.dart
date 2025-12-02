@@ -14,8 +14,8 @@ class ToolChoiceAllowedMapper extends ClassMapperBase<ToolChoiceAllowed> {
   static ToolChoiceAllowedMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceAllowedMapper._());
-      ToolChoiceAllowedTypeTypeMapper.ensureInitialized();
-      ToolChoiceAllowedModeModeMapper.ensureInitialized();
+      ToolChoiceAllowedTypeMapper.ensureInitialized();
+      ToolChoiceAllowedModeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,12 +23,16 @@ class ToolChoiceAllowedMapper extends ClassMapperBase<ToolChoiceAllowed> {
   @override
   final String id = 'ToolChoiceAllowed';
 
-  static ToolChoiceAllowedTypeType _$type(ToolChoiceAllowed v) => v.type;
-  static const Field<ToolChoiceAllowed, ToolChoiceAllowedTypeType> _f$type =
-      Field('type', _$type);
-  static ToolChoiceAllowedModeMode _$mode(ToolChoiceAllowed v) => v.mode;
-  static const Field<ToolChoiceAllowed, ToolChoiceAllowedModeMode> _f$mode =
-      Field('mode', _$mode);
+  static ToolChoiceAllowedType _$type(ToolChoiceAllowed v) => v.type;
+  static const Field<ToolChoiceAllowed, ToolChoiceAllowedType> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static ToolChoiceAllowedMode _$mode(ToolChoiceAllowed v) => v.mode;
+  static const Field<ToolChoiceAllowed, ToolChoiceAllowedMode> _f$mode = Field(
+    'mode',
+    _$mode,
+  );
   static List<dynamic> _$tools(ToolChoiceAllowed v) => v.tools;
   static const Field<ToolChoiceAllowed, List<dynamic>> _f$tools = Field(
     'tools',
@@ -127,8 +131,8 @@ abstract class ToolChoiceAllowedCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>> get tools;
   $R call({
-    ToolChoiceAllowedTypeType? type,
-    ToolChoiceAllowedModeMode? mode,
+    ToolChoiceAllowedType? type,
+    ToolChoiceAllowedMode? mode,
     List<dynamic>? tools,
   });
   ToolChoiceAllowedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -153,8 +157,8 @@ class _ToolChoiceAllowedCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ToolChoiceAllowedTypeType? type,
-    ToolChoiceAllowedModeMode? mode,
+    ToolChoiceAllowedType? type,
+    ToolChoiceAllowedMode? mode,
     List<dynamic>? tools,
   }) => $apply(
     FieldCopyWithData({

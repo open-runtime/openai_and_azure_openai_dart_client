@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'mcp_list_tools_tool.dart';
 import 'realtime_conversation_item.dart';
-import 'realtime_mcp_list_tools_type_type.dart';
+import 'realtime_mcp_list_tools_type.dart';
 
 part 'realtime_mcp_list_tools.mapper.dart';
 
@@ -21,7 +21,7 @@ class RealtimeMcpListTools with RealtimeMcpListToolsMappable {
     this.id,
   });
 
-  final RealtimeMcpListToolsTypeType type;
+  final RealtimeMcpListToolsType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   final List<McpListToolsTool> tools;

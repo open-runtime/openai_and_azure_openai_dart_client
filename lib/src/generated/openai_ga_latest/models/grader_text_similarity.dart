@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'grader_text_similarity_evaluation_metric_evaluation_metric.dart';
-import 'grader_text_similarity_type_type.dart';
+import 'grader_text_similarity_type.dart';
 
 part 'grader_text_similarity.mapper.dart';
 
@@ -18,7 +18,7 @@ class GraderTextSimilarity with GraderTextSimilarityMappable {
     required this.input,
     required this.reference,
     required this.evaluationMetric,
-    this.type = GraderTextSimilarityTypeType.textSimilarity,
+    this.type = GraderTextSimilarityType.textSimilarity,
   });
 
   final String name;
@@ -26,7 +26,7 @@ class GraderTextSimilarity with GraderTextSimilarityMappable {
   final String reference;
   @MappableField(key: 'evaluation_metric')
   final GraderTextSimilarityEvaluationMetricEvaluationMetric evaluationMetric;
-  final GraderTextSimilarityTypeType type;
+  final GraderTextSimilarityType type;
 
   static GraderTextSimilarity fromJson(Map<String, dynamic> json) => GraderTextSimilarityMapper.fromJson(json);
 

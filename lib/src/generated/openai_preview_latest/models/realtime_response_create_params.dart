@@ -8,7 +8,7 @@ import 'metadata.dart';
 import 'realtime_conversation_item_with_reference.dart';
 import 'realtime_response_create_params_conversation_union.dart';
 import 'realtime_response_create_params_max_response_output_tokens_union.dart';
-import 'realtime_response_create_params_modalities_modalities.dart';
+import 'realtime_response_create_params_modalities.dart';
 import 'realtime_response_create_params_output_audio_format_output_audio_format.dart';
 import 'realtime_response_create_params_tools.dart';
 import 'voice_ids_shared.dart';
@@ -32,7 +32,7 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
     this.input,
   });
 
-  final List<RealtimeResponseCreateParamsModalitiesModalities>? modalities;
+  final List<RealtimeResponseCreateParamsModalities>? modalities;
   final String? instructions;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;

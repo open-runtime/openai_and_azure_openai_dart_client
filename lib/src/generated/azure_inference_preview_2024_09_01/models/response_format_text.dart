@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_format_text_type_type.dart';
+import 'response_format_text_type.dart';
 
 part 'response_format_text.mapper.dart';
 
@@ -14,7 +14,7 @@ class ResponseFormatText with ResponseFormatTextMappable {
     required this.type,
   });
 
-  final ResponseFormatTextTypeType type;
+  final ResponseFormatTextType type;
 
   static ResponseFormatText fromJson(Map<String, dynamic> json) => ResponseFormatTextMapper.fromJson(json);
 

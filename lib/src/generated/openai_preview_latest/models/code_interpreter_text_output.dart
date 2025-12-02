@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_text_output_type_type.dart';
+import 'code_interpreter_text_output_type.dart';
 import 'code_interpreter_tool_output.dart';
 
 part 'code_interpreter_text_output.mapper.dart';
@@ -18,7 +18,7 @@ class CodeInterpreterTextOutput with CodeInterpreterTextOutputMappable {
     required this.logs,
   });
 
-  final CodeInterpreterTextOutputTypeType type;
+  final CodeInterpreterTextOutputType type;
   final String logs;
 
   static CodeInterpreterTextOutput fromJson(Map<String, dynamic> json) => CodeInterpreterTextOutputMapper.fromJson(json);

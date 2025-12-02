@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'grader_string_check_operation_operation.dart';
-import 'grader_string_check_type_type.dart';
+import 'grader_string_check_operation.dart';
+import 'grader_string_check_type.dart';
 
 part 'grader_string_check.mapper.dart';
 
@@ -21,11 +21,11 @@ class GraderStringCheck with GraderStringCheckMappable {
     required this.operation,
   });
 
-  final GraderStringCheckTypeType type;
+  final GraderStringCheckType type;
   final String name;
   final String input;
   final String reference;
-  final GraderStringCheckOperationOperation operation;
+  final GraderStringCheckOperation operation;
 
   static GraderStringCheck fromJson(Map<String, dynamic> json) => GraderStringCheckMapper.fromJson(json);
 

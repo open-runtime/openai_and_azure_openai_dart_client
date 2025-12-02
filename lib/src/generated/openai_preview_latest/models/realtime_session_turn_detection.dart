@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_session_turn_detection_type_type.dart';
-import 'realtime_session_turn_detection_eagerness_eagerness.dart';
+import 'realtime_session_turn_detection_type.dart';
+import 'realtime_session_turn_detection_eagerness.dart';
 
 part 'realtime_session_turn_detection.mapper.dart';
 
@@ -15,8 +15,8 @@ class RealtimeSessionTurnDetection with RealtimeSessionTurnDetectionMappable {
     this.threshold,
     this.prefixPaddingMs,
     this.silenceDurationMs,
-    this.type = RealtimeSessionTurnDetectionTypeType.serverVad,
-    this.eagerness = RealtimeSessionTurnDetectionEagernessEagerness.auto,
+    this.type = RealtimeSessionTurnDetectionType.serverVad,
+    this.eagerness = RealtimeSessionTurnDetectionEagerness.auto,
     this.createResponse = true,
     this.interruptResponse = true,
   });
@@ -26,8 +26,8 @@ class RealtimeSessionTurnDetection with RealtimeSessionTurnDetectionMappable {
   final int? prefixPaddingMs;
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
-  final RealtimeSessionTurnDetectionTypeType type;
-  final RealtimeSessionTurnDetectionEagernessEagerness eagerness;
+  final RealtimeSessionTurnDetectionType type;
+  final RealtimeSessionTurnDetectionEagerness eagerness;
   @MappableField(key: 'create_response')
   final bool createResponse;
   @MappableField(key: 'interrupt_response')

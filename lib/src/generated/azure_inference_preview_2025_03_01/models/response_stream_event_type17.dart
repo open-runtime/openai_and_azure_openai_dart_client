@@ -1,0 +1,27 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'response_stream_event_type17.mapper.dart';
+
+/// The type of the event. Always `response.file_search_call.searching`.
+///
+@MappableEnum(defaultValue: 'unknown')
+enum ResponseStreamEventType17 {
+  /// Incorrect name has been replaced. Original name: `response.file_search_call.searching`.
+  @MappableValue('response.file_search_call.searching') 
+  undefined0,
+
+  @MappableValue('unknown') 
+  unknown;
+
+  String toJson() => toValue().toString();
+
+  @override
+  String toString() => toValue().toString();
+
+  /// Returns all defined enum values excluding the unknown value.
+  static List<ResponseStreamEventType17> get $valuesDefined => values.where((value) => value != ResponseStreamEventType17.unknown).toList();
+}

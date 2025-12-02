@@ -17,7 +17,7 @@ class CodeInterpreterOutputLogsMapper
       MapperContainer.globals.use(
         _instance = CodeInterpreterOutputLogsMapper._(),
       );
-      CodeInterpreterOutputLogsTypeTypeMapper.ensureInitialized();
+      CodeInterpreterOutputLogsTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,18 +30,14 @@ class CodeInterpreterOutputLogsMapper
     'logs',
     _$logs,
   );
-  static CodeInterpreterOutputLogsTypeType _$type(
-    CodeInterpreterOutputLogs v,
-  ) => v.type;
-  static const Field<
-    CodeInterpreterOutputLogs,
-    CodeInterpreterOutputLogsTypeType
-  >
+  static CodeInterpreterOutputLogsType _$type(CodeInterpreterOutputLogs v) =>
+      v.type;
+  static const Field<CodeInterpreterOutputLogs, CodeInterpreterOutputLogsType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CodeInterpreterOutputLogsTypeType.logs,
+    def: CodeInterpreterOutputLogsType.logs,
   );
 
   @override
@@ -135,7 +131,7 @@ abstract class CodeInterpreterOutputLogsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? logs, CodeInterpreterOutputLogsTypeType? type});
+  $R call({String? logs, CodeInterpreterOutputLogsType? type});
   CodeInterpreterOutputLogsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -151,7 +147,7 @@ class _CodeInterpreterOutputLogsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CodeInterpreterOutputLogs> $mapper =
       CodeInterpreterOutputLogsMapper.ensureInitialized();
   @override
-  $R call({String? logs, CodeInterpreterOutputLogsTypeType? type}) => $apply(
+  $R call({String? logs, CodeInterpreterOutputLogsType? type}) => $apply(
     FieldCopyWithData({
       if (logs != null) #logs: logs,
       if (type != null) #type: type,

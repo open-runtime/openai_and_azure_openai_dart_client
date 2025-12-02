@@ -97,7 +97,7 @@ class CreateChatCompletionRequestPredictionUnionContentMapper
       );
       CreateChatCompletionRequestPredictionUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      PredictionContentTypeTypeMapper.ensureInitialized();
+      PredictionContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -105,12 +105,12 @@ class CreateChatCompletionRequestPredictionUnionContentMapper
   @override
   final String id = 'CreateChatCompletionRequestPredictionUnionContent';
 
-  static PredictionContentTypeType _$type(
+  static PredictionContentType _$type(
     CreateChatCompletionRequestPredictionUnionContent v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestPredictionUnionContent,
-    PredictionContentTypeType
+    PredictionContentType
   >
   _f$type = Field('type', _$type);
   static String _$content(
@@ -244,7 +244,7 @@ abstract class CreateChatCompletionRequestPredictionUnionContentCopyWith<
     implements
         CreateChatCompletionRequestPredictionUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({PredictionContentTypeType? type, String? content});
+  $R call({PredictionContentType? type, String? content});
   CreateChatCompletionRequestPredictionUnionContentCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -273,7 +273,7 @@ class _CreateChatCompletionRequestPredictionUnionContentCopyWithImpl<$R, $Out>
   $mapper =
       CreateChatCompletionRequestPredictionUnionContentMapper.ensureInitialized();
   @override
-  $R call({PredictionContentTypeType? type, String? content}) => $apply(
+  $R call({PredictionContentType? type, String? content}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (content != null) #content: content,

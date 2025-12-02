@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_ranking_options_ranker_ranker.dart';
+import 'tool_ranking_options_ranker.dart';
 
 part 'tool_ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolRankingOptions with ToolRankingOptionsMappable {
   const ToolRankingOptions({
-    this.ranker = ToolRankingOptionsRankerRanker.auto,
+    this.ranker = ToolRankingOptionsRanker.auto,
     this.scoreThreshold = 0,
   });
 
-  final ToolRankingOptionsRankerRanker ranker;
+  final ToolRankingOptionsRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 

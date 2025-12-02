@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_request_message_content_part_text_type_type.dart';
+import 'chat_completion_request_message_content_part_text_type.dart';
 import 'chat_completion_request_message_content_part_text.dart';
 
 part 'chat_completion_request_developer_message_content_part_union.mapper.dart';
@@ -31,7 +31,7 @@ extension ChatCompletionRequestDeveloperMessageContentPartUnionDeserializer on C
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartText extends ChatCompletionRequestDeveloperMessageContentPartUnion with ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartTextMappable {
-  final ChatCompletionRequestMessageContentPartTextTypeType type;
+  final ChatCompletionRequestMessageContentPartTextType type;
   final String text;
 
   const ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartText({

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'web_search_action_open_page_type_type.dart';
+import 'web_search_action_open_page_type.dart';
 
 part 'web_search_action_open_page.mapper.dart';
 
@@ -17,7 +17,7 @@ class WebSearchActionOpenPage with WebSearchActionOpenPageMappable {
     required this.url,
   });
 
-  final WebSearchActionOpenPageTypeType type;
+  final WebSearchActionOpenPageType type;
   final String url;
 
   static WebSearchActionOpenPage fromJson(Map<String, dynamic> json) => WebSearchActionOpenPageMapper.fromJson(json);

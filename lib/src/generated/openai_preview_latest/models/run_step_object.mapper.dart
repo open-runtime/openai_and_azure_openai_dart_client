@@ -15,8 +15,8 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RunStepObjectMapper._());
       RunStepObjectObjectObjectEnumMapper.ensureInitialized();
-      RunStepObjectTypeTypeMapper.ensureInitialized();
-      RunStepObjectStatusStatusMapper.ensureInitialized();
+      RunStepObjectTypeMapper.ensureInitialized();
+      RunStepObjectStatusMapper.ensureInitialized();
       RunStepObjectStepDetailsUnionMapper.ensureInitialized();
       RunStepObjectLastErrorMapper.ensureInitialized();
       RunStepCompletionUsageMapper.ensureInitialized();
@@ -57,14 +57,16 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
     _$runId,
     key: r'run_id',
   );
-  static RunStepObjectTypeType _$type(RunStepObject v) => v.type;
-  static const Field<RunStepObject, RunStepObjectTypeType> _f$type = Field(
+  static RunStepObjectType _$type(RunStepObject v) => v.type;
+  static const Field<RunStepObject, RunStepObjectType> _f$type = Field(
     'type',
     _$type,
   );
-  static RunStepObjectStatusStatus _$status(RunStepObject v) => v.status;
-  static const Field<RunStepObject, RunStepObjectStatusStatus> _f$status =
-      Field('status', _$status);
+  static RunStepObjectStatus _$status(RunStepObject v) => v.status;
+  static const Field<RunStepObject, RunStepObjectStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
   static RunStepObjectStepDetailsUnion _$stepDetails(RunStepObject v) =>
       v.stepDetails;
   static const Field<RunStepObject, RunStepObjectStepDetailsUnion>
@@ -246,8 +248,8 @@ abstract class RunStepObjectCopyWith<$R, $In extends RunStepObject, $Out>
     String? assistantId,
     String? threadId,
     String? runId,
-    RunStepObjectTypeType? type,
-    RunStepObjectStatusStatus? status,
+    RunStepObjectType? type,
+    RunStepObjectStatus? status,
     RunStepObjectStepDetailsUnion? stepDetails,
     RunStepObjectLastError? runStepObjectLastError,
     int? expiredAt,
@@ -309,8 +311,8 @@ class _RunStepObjectCopyWithImpl<$R, $Out>
     String? assistantId,
     String? threadId,
     String? runId,
-    RunStepObjectTypeType? type,
-    RunStepObjectStatusStatus? status,
+    RunStepObjectType? type,
+    RunStepObjectStatus? status,
     RunStepObjectStepDetailsUnion? stepDetails,
     Object? runStepObjectLastError = $none,
     Object? expiredAt = $none,

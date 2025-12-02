@@ -4,9 +4,9 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'fine_tuning_job_event_level_level.dart';
+import 'fine_tuning_job_event_level.dart';
 import 'fine_tuning_job_event_object_object_enum.dart';
-import 'fine_tuning_job_event_type_type.dart';
+import 'fine_tuning_job_event_type.dart';
 
 part 'fine_tuning_job_event.mapper.dart';
 
@@ -28,9 +28,9 @@ class FineTuningJobEvent with FineTuningJobEventMappable {
   final String id;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final FineTuningJobEventLevelLevel level;
+  final FineTuningJobEventLevel level;
   final String message;
-  final FineTuningJobEventTypeType? type;
+  final FineTuningJobEventType? type;
   final dynamic? data;
 
   static FineTuningJobEvent fromJson(Map<String, dynamic> json) => FineTuningJobEventMapper.fromJson(json);

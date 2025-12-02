@@ -15,7 +15,7 @@ class InviteRequestProjectsMapper
   static InviteRequestProjectsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InviteRequestProjectsMapper._());
-      InviteRequestProjectsRoleRoleMapper.ensureInitialized();
+      InviteRequestProjectsRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,10 +25,9 @@ class InviteRequestProjectsMapper
 
   static String _$id(InviteRequestProjects v) => v.id;
   static const Field<InviteRequestProjects, String> _f$id = Field('id', _$id);
-  static InviteRequestProjectsRoleRole _$role(InviteRequestProjects v) =>
-      v.role;
-  static const Field<InviteRequestProjects, InviteRequestProjectsRoleRole>
-  _f$role = Field('role', _$role);
+  static InviteRequestProjectsRole _$role(InviteRequestProjects v) => v.role;
+  static const Field<InviteRequestProjects, InviteRequestProjectsRole> _f$role =
+      Field('role', _$role);
 
   @override
   final MappableFields<InviteRequestProjects> fields = const {
@@ -114,7 +113,7 @@ abstract class InviteRequestProjectsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? id, InviteRequestProjectsRoleRole? role});
+  $R call({String? id, InviteRequestProjectsRole? role});
   InviteRequestProjectsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +128,7 @@ class _InviteRequestProjectsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InviteRequestProjects> $mapper =
       InviteRequestProjectsMapper.ensureInitialized();
   @override
-  $R call({String? id, InviteRequestProjectsRoleRole? role}) => $apply(
+  $R call({String? id, InviteRequestProjectsRole? role}) => $apply(
     FieldCopyWithData({if (id != null) #id: id, if (role != null) #role: role}),
   );
   @override

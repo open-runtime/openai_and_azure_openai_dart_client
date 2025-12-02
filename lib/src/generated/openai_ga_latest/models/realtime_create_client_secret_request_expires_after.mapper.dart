@@ -18,7 +18,7 @@ class RealtimeCreateClientSecretRequestExpiresAfterMapper
       MapperContainer.globals.use(
         _instance = RealtimeCreateClientSecretRequestExpiresAfterMapper._(),
       );
-      RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchorMapper.ensureInitialized();
+      RealtimeCreateClientSecretRequestExpiresAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,18 +26,18 @@ class RealtimeCreateClientSecretRequestExpiresAfterMapper
   @override
   final String id = 'RealtimeCreateClientSecretRequestExpiresAfter';
 
-  static RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor _$anchor(
+  static RealtimeCreateClientSecretRequestExpiresAfterAnchor _$anchor(
     RealtimeCreateClientSecretRequestExpiresAfter v,
   ) => v.anchor;
   static const Field<
     RealtimeCreateClientSecretRequestExpiresAfter,
-    RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor
+    RealtimeCreateClientSecretRequestExpiresAfterAnchor
   >
   _f$anchor = Field(
     'anchor',
     _$anchor,
     opt: true,
-    def: RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor.createdAt,
+    def: RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt,
   );
   static int _$seconds(RealtimeCreateClientSecretRequestExpiresAfter v) =>
       v.seconds;
@@ -154,7 +154,7 @@ abstract class RealtimeCreateClientSecretRequestExpiresAfterCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor? anchor,
+    RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor,
     int? seconds,
   });
   RealtimeCreateClientSecretRequestExpiresAfterCopyWith<$R2, $In, $Out2>
@@ -186,7 +186,7 @@ class _RealtimeCreateClientSecretRequestExpiresAfterCopyWithImpl<$R, $Out>
       RealtimeCreateClientSecretRequestExpiresAfterMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor? anchor,
+    RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor,
     int? seconds,
   }) => $apply(
     FieldCopyWithData({

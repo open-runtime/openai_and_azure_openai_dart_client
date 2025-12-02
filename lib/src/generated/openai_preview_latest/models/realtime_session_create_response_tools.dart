@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_session_create_response_tools_type_type.dart';
+import 'realtime_session_create_response_tools_type.dart';
 
 part 'realtime_session_create_response_tools.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeSessionCreateResponseTools with RealtimeSessionCreateResponseTools
     this.parameters,
   });
 
-  final RealtimeSessionCreateResponseToolsTypeType? type;
+  final RealtimeSessionCreateResponseToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;

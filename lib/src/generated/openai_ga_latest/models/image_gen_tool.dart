@@ -4,14 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'image_gen_tool_background_background.dart';
+import 'image_gen_tool_background.dart';
 import 'image_gen_tool_input_image_mask.dart';
-import 'image_gen_tool_model_model.dart';
-import 'image_gen_tool_moderation_moderation.dart';
+import 'image_gen_tool_model.dart';
+import 'image_gen_tool_moderation.dart';
 import 'image_gen_tool_output_format_output_format.dart';
-import 'image_gen_tool_quality_quality.dart';
-import 'image_gen_tool_size_size.dart';
-import 'image_gen_tool_type_type.dart';
+import 'image_gen_tool_quality.dart';
+import 'image_gen_tool_size.dart';
+import 'image_gen_tool_type.dart';
 import 'input_fidelity.dart';
 import 'tool.dart';
 
@@ -25,30 +25,30 @@ class ImageGenTool with ImageGenToolMappable {
     required this.type,
     this.inputFidelity,
     this.imageGenToolInputImageMask,
-    this.model = ImageGenToolModelModel.gptImage1,
-    this.quality = ImageGenToolQualityQuality.auto,
-    this.size = ImageGenToolSizeSize.auto,
+    this.model = ImageGenToolModel.gptImage1,
+    this.quality = ImageGenToolQuality.auto,
+    this.size = ImageGenToolSize.auto,
     this.outputFormat = ImageGenToolOutputFormatOutputFormat.png,
     this.outputCompression = 100,
-    this.moderation = ImageGenToolModerationModeration.auto,
-    this.background = ImageGenToolBackgroundBackground.auto,
+    this.moderation = ImageGenToolModeration.auto,
+    this.background = ImageGenToolBackground.auto,
     this.partialImages = 0,
   });
 
-  final ImageGenToolTypeType type;
+  final ImageGenToolType type;
   @MappableField(key: 'input_fidelity')
   final InputFidelity? inputFidelity;
   @MappableField(key: 'input_image_mask')
   final ImageGenToolInputImageMask? imageGenToolInputImageMask;
-  final ImageGenToolModelModel model;
-  final ImageGenToolQualityQuality quality;
-  final ImageGenToolSizeSize size;
+  final ImageGenToolModel model;
+  final ImageGenToolQuality quality;
+  final ImageGenToolSize size;
   @MappableField(key: 'output_format')
   final ImageGenToolOutputFormatOutputFormat outputFormat;
   @MappableField(key: 'output_compression')
   final int outputCompression;
-  final ImageGenToolModerationModeration moderation;
-  final ImageGenToolBackgroundBackground background;
+  final ImageGenToolModeration moderation;
+  final ImageGenToolBackground background;
   @MappableField(key: 'partial_images')
   final int partialImages;
 

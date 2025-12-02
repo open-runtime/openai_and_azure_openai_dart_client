@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'web_search_action_find_type_type.dart';
+import 'web_search_action_find_type.dart';
 
 part 'web_search_action_find.mapper.dart';
 
@@ -18,7 +18,7 @@ class WebSearchActionFind with WebSearchActionFindMappable {
     required this.pattern,
   });
 
-  final WebSearchActionFindTypeType type;
+  final WebSearchActionFindType type;
   final String url;
   final String pattern;
 

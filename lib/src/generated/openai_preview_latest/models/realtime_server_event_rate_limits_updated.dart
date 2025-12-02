@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
 import 'realtime_server_event_rate_limits_updated_rate_limits.dart';
-import 'realtime_server_event_rate_limits_updated_type_type.dart';
+import 'realtime_server_event_rate_limits_updated_type.dart';
 
 part 'realtime_server_event_rate_limits_updated.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeServerEventRateLimitsUpdated with RealtimeServerEventRateLimitsUpd
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventRateLimitsUpdatedTypeType type;
+  final RealtimeServerEventRateLimitsUpdatedType type;
   @MappableField(key: 'rate_limits')
   final List<RealtimeServerEventRateLimitsUpdatedRateLimits> rateLimits;
 

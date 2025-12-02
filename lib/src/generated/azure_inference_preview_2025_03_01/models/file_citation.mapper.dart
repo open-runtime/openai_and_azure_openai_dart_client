@@ -14,7 +14,7 @@ class FileCitationMapper extends ClassMapperBase<FileCitation> {
   static FileCitationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileCitationMapper._());
-      FileCitationTypeTypeMapper.ensureInitialized();
+      FileCitationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class FileCitationMapper extends ClassMapperBase<FileCitation> {
   @override
   final String id = 'FileCitation';
 
-  static FileCitationTypeType _$type(FileCitation v) => v.type;
-  static const Field<FileCitation, FileCitationTypeType> _f$type = Field(
+  static FileCitationType _$type(FileCitation v) => v.type;
+  static const Field<FileCitation, FileCitationType> _f$type = Field(
     'type',
     _$type,
   );
@@ -121,7 +121,7 @@ extension FileCitationValueCopy<$R, $Out>
 
 abstract class FileCitationCopyWith<$R, $In extends FileCitation, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FileCitationTypeType? type, int? indexField, String? fileId});
+  $R call({FileCitationType? type, int? indexField, String? fileId});
   FileCitationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -134,14 +134,13 @@ class _FileCitationCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileCitation> $mapper =
       FileCitationMapper.ensureInitialized();
   @override
-  $R call({FileCitationTypeType? type, int? indexField, String? fileId}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (indexField != null) #indexField: indexField,
-          if (fileId != null) #fileId: fileId,
-        }),
-      );
+  $R call({FileCitationType? type, int? indexField, String? fileId}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (indexField != null) #indexField: indexField,
+      if (fileId != null) #fileId: fileId,
+    }),
+  );
   @override
   FileCitation $make(CopyWithData data) => FileCitation(
     type: data.get(#type, or: $value.type),

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'output_item_content_type_type.dart';
+import 'output_item_content_type.dart';
 
 part 'output_item_content.mapper.dart';
 
@@ -15,7 +15,7 @@ class OutputItemContent with OutputItemContentMappable {
     required this.text,
   });
 
-  final OutputItemContentTypeType type;
+  final OutputItemContentType type;
   final String text;
 
   static OutputItemContent fromJson(Map<String, dynamic> json) => OutputItemContentMapper.fromJson(json);

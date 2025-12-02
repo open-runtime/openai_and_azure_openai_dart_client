@@ -74,7 +74,7 @@ class OutputContentOutputTextMapper
         _instance = OutputContentOutputTextMapper._(),
       );
       OutputContentMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputContentTypeTypeMapper.ensureInitialized();
+      OutputContentTypeMapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
     }
     return _instance!;
@@ -83,8 +83,8 @@ class OutputContentOutputTextMapper
   @override
   final String id = 'OutputContentOutputText';
 
-  static OutputContentTypeType _$type(OutputContentOutputText v) => v.type;
-  static const Field<OutputContentOutputText, OutputContentTypeType> _f$type =
+  static OutputContentType _$type(OutputContentOutputText v) => v.type;
+  static const Field<OutputContentOutputText, OutputContentType> _f$type =
       Field('type', _$type);
   static String _$text(OutputContentOutputText v) => v.text;
   static const Field<OutputContentOutputText, String> _f$text = Field(
@@ -197,7 +197,7 @@ abstract class OutputContentOutputTextCopyWith<
   get annotations;
   @override
   $R call({
-    OutputContentTypeType? type,
+    OutputContentType? type,
     String? text,
     List<Annotation>? annotations,
   });
@@ -224,7 +224,7 @@ class _OutputContentOutputTextCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    OutputContentTypeType? type,
+    OutputContentType? type,
     String? text,
     List<Annotation>? annotations,
   }) => $apply(
@@ -256,7 +256,7 @@ class OutputContentRefusalMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputContentRefusalMapper._());
       OutputContentMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputContentTypeType2Mapper.ensureInitialized();
+      OutputContentType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -264,9 +264,11 @@ class OutputContentRefusalMapper
   @override
   final String id = 'OutputContentRefusal';
 
-  static OutputContentTypeType2 _$type(OutputContentRefusal v) => v.type;
-  static const Field<OutputContentRefusal, OutputContentTypeType2> _f$type =
-      Field('type', _$type);
+  static OutputContentType2 _$type(OutputContentRefusal v) => v.type;
+  static const Field<OutputContentRefusal, OutputContentType2> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$refusal(OutputContentRefusal v) => v.refusal;
   static const Field<OutputContentRefusal, String> _f$refusal = Field(
     'refusal',
@@ -369,7 +371,7 @@ abstract class OutputContentRefusalCopyWith<
 >
     implements OutputContentCopyWith<$R, $In, $Out> {
   @override
-  $R call({OutputContentTypeType2? type, String? refusal});
+  $R call({OutputContentType2? type, String? refusal});
   OutputContentRefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -384,7 +386,7 @@ class _OutputContentRefusalCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputContentRefusal> $mapper =
       OutputContentRefusalMapper.ensureInitialized();
   @override
-  $R call({OutputContentTypeType2? type, String? refusal}) => $apply(
+  $R call({OutputContentType2? type, String? refusal}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (refusal != null) #refusal: refusal,

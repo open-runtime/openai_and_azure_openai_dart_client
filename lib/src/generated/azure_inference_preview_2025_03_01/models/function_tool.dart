@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_tool_type_type.dart';
+import 'function_tool_type.dart';
 import 'tool.dart';
 
 part 'function_tool.mapper.dart';
@@ -22,7 +22,7 @@ class FunctionTool with FunctionToolMappable {
     this.description,
   });
 
-  final FunctionToolTypeType type;
+  final FunctionToolType type;
   final String name;
   final dynamic parameters;
   final bool strict;

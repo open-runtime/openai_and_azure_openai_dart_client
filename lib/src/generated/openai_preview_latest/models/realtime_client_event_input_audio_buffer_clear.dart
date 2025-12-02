@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_input_audio_buffer_clear_type_type.dart';
+import 'realtime_client_event_input_audio_buffer_clear_type.dart';
 
 part 'realtime_client_event_input_audio_buffer_clear.mapper.dart';
 
@@ -19,7 +19,7 @@ class RealtimeClientEventInputAudioBufferClear with RealtimeClientEventInputAudi
     this.eventId,
   });
 
-  final RealtimeClientEventInputAudioBufferClearTypeType type;
+  final RealtimeClientEventInputAudioBufferClearType type;
   @MappableField(key: 'event_id')
   final String? eventId;
 

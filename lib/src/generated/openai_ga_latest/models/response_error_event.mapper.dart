@@ -14,7 +14,7 @@ class ResponseErrorEventMapper extends ClassMapperBase<ResponseErrorEvent> {
   static ResponseErrorEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseErrorEventMapper._());
-      ResponseErrorEventTypeTypeMapper.ensureInitialized();
+      ResponseErrorEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class ResponseErrorEventMapper extends ClassMapperBase<ResponseErrorEvent> {
   @override
   final String id = 'ResponseErrorEvent';
 
-  static ResponseErrorEventTypeType _$type(ResponseErrorEvent v) => v.type;
-  static const Field<ResponseErrorEvent, ResponseErrorEventTypeType> _f$type =
+  static ResponseErrorEventType _$type(ResponseErrorEvent v) => v.type;
+  static const Field<ResponseErrorEvent, ResponseErrorEventType> _f$type =
       Field('type', _$type);
   static String? _$code(ResponseErrorEvent v) => v.code;
   static const Field<ResponseErrorEvent, String> _f$code = Field(
@@ -142,7 +142,7 @@ abstract class ResponseErrorEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseErrorEventTypeType? type,
+    ResponseErrorEventType? type,
     String? code,
     String? message,
     String? param,
@@ -163,7 +163,7 @@ class _ResponseErrorEventCopyWithImpl<$R, $Out>
       ResponseErrorEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseErrorEventTypeType? type,
+    ResponseErrorEventType? type,
     Object? code = $none,
     String? message,
     Object? param = $none,

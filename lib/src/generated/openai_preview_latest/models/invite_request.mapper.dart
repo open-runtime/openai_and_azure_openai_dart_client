@@ -14,7 +14,7 @@ class InviteRequestMapper extends ClassMapperBase<InviteRequest> {
   static InviteRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InviteRequestMapper._());
-      InviteRequestRoleRoleMapper.ensureInitialized();
+      InviteRequestRoleMapper.ensureInitialized();
       InviteRequestProjectsMapper.ensureInitialized();
     }
     return _instance!;
@@ -25,8 +25,8 @@ class InviteRequestMapper extends ClassMapperBase<InviteRequest> {
 
   static String _$email(InviteRequest v) => v.email;
   static const Field<InviteRequest, String> _f$email = Field('email', _$email);
-  static InviteRequestRoleRole _$role(InviteRequest v) => v.role;
-  static const Field<InviteRequest, InviteRequestRoleRole> _f$role = Field(
+  static InviteRequestRole _$role(InviteRequest v) => v.role;
+  static const Field<InviteRequest, InviteRequestRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -127,7 +127,7 @@ abstract class InviteRequestCopyWith<$R, $In extends InviteRequest, $Out>
   get projects;
   $R call({
     String? email,
-    InviteRequestRoleRole? role,
+    InviteRequestRole? role,
     List<InviteRequestProjects>? projects,
   });
   InviteRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -159,17 +159,14 @@ class _InviteRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  $R call({
-    String? email,
-    InviteRequestRoleRole? role,
-    Object? projects = $none,
-  }) => $apply(
-    FieldCopyWithData({
-      if (email != null) #email: email,
-      if (role != null) #role: role,
-      if (projects != $none) #projects: projects,
-    }),
-  );
+  $R call({String? email, InviteRequestRole? role, Object? projects = $none}) =>
+      $apply(
+        FieldCopyWithData({
+          if (email != null) #email: email,
+          if (role != null) #role: role,
+          if (projects != $none) #projects: projects,
+        }),
+      );
   @override
   InviteRequest $make(CopyWithData data) => InviteRequest(
     email: data.get(#email, or: $value.email),

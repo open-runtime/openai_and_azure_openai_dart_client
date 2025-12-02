@@ -18,7 +18,7 @@ class FunctionShellCallOutputMapper
         _instance = FunctionShellCallOutputMapper._(),
       );
       FunctionShellCallOutputContentMapper.ensureInitialized();
-      FunctionShellCallOutputTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -55,14 +55,14 @@ class FunctionShellCallOutputMapper
     key: r'created_by',
     opt: true,
   );
-  static FunctionShellCallOutputTypeType _$type(FunctionShellCallOutput v) =>
+  static FunctionShellCallOutputType _$type(FunctionShellCallOutput v) =>
       v.type;
-  static const Field<FunctionShellCallOutput, FunctionShellCallOutputTypeType>
+  static const Field<FunctionShellCallOutput, FunctionShellCallOutputType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputTypeType.shellCallOutput,
+    def: FunctionShellCallOutputType.shellCallOutput,
   );
 
   @override
@@ -176,7 +176,7 @@ abstract class FunctionShellCallOutputCopyWith<
     List<FunctionShellCallOutputContent>? output,
     int? maxOutputLength,
     String? createdBy,
-    FunctionShellCallOutputTypeType? type,
+    FunctionShellCallOutputType? type,
   });
   FunctionShellCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -214,7 +214,7 @@ class _FunctionShellCallOutputCopyWithImpl<$R, $Out>
     List<FunctionShellCallOutputContent>? output,
     Object? maxOutputLength = $none,
     Object? createdBy = $none,
-    FunctionShellCallOutputTypeType? type,
+    FunctionShellCallOutputType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

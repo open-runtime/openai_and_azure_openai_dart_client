@@ -14,7 +14,7 @@ class ApproximateLocationMapper extends ClassMapperBase<ApproximateLocation> {
   static ApproximateLocationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ApproximateLocationMapper._());
-      ApproximateLocationTypeTypeMapper.ensureInitialized();
+      ApproximateLocationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -46,13 +46,13 @@ class ApproximateLocationMapper extends ClassMapperBase<ApproximateLocation> {
     _$timezone,
     opt: true,
   );
-  static ApproximateLocationTypeType _$type(ApproximateLocation v) => v.type;
-  static const Field<ApproximateLocation, ApproximateLocationTypeType> _f$type =
+  static ApproximateLocationType _$type(ApproximateLocation v) => v.type;
+  static const Field<ApproximateLocation, ApproximateLocationType> _f$type =
       Field(
         'type',
         _$type,
         opt: true,
-        def: ApproximateLocationTypeType.approximate,
+        def: ApproximateLocationType.approximate,
       );
 
   @override
@@ -153,7 +153,7 @@ abstract class ApproximateLocationCopyWith<
     String? region,
     String? city,
     String? timezone,
-    ApproximateLocationTypeType? type,
+    ApproximateLocationType? type,
   });
   ApproximateLocationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -174,7 +174,7 @@ class _ApproximateLocationCopyWithImpl<$R, $Out>
     Object? region = $none,
     Object? city = $none,
     Object? timezone = $none,
-    ApproximateLocationTypeType? type,
+    ApproximateLocationType? type,
   }) => $apply(
     FieldCopyWithData({
       if (country != $none) #country: country,

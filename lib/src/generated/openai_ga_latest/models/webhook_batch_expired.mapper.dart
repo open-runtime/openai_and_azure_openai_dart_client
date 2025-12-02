@@ -15,7 +15,7 @@ class WebhookBatchExpiredMapper extends ClassMapperBase<WebhookBatchExpired> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookBatchExpiredMapper._());
       WebhookBatchExpiredDataMapper.ensureInitialized();
-      WebhookBatchExpiredTypeTypeMapper.ensureInitialized();
+      WebhookBatchExpiredTypeMapper.ensureInitialized();
       WebhookBatchExpiredObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,8 +41,8 @@ class WebhookBatchExpiredMapper extends ClassMapperBase<WebhookBatchExpired> {
     _$webhookBatchExpiredData,
     key: r'data',
   );
-  static WebhookBatchExpiredTypeType _$type(WebhookBatchExpired v) => v.type;
-  static const Field<WebhookBatchExpired, WebhookBatchExpiredTypeType> _f$type =
+  static WebhookBatchExpiredType _$type(WebhookBatchExpired v) => v.type;
+  static const Field<WebhookBatchExpired, WebhookBatchExpiredType> _f$type =
       Field('type', _$type);
   static WebhookBatchExpiredObjectObjectEnum? _$objectEnum(
     WebhookBatchExpired v,
@@ -153,7 +153,7 @@ abstract class WebhookBatchExpiredCopyWith<
     int? createdAt,
     String? id,
     WebhookBatchExpiredData? webhookBatchExpiredData,
-    WebhookBatchExpiredTypeType? type,
+    WebhookBatchExpiredType? type,
     WebhookBatchExpiredObjectObjectEnum? objectEnum,
   });
   WebhookBatchExpiredCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -183,7 +183,7 @@ class _WebhookBatchExpiredCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookBatchExpiredData? webhookBatchExpiredData,
-    WebhookBatchExpiredTypeType? type,
+    WebhookBatchExpiredType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

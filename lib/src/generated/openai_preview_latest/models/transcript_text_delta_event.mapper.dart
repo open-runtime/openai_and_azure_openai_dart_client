@@ -17,7 +17,7 @@ class TranscriptTextDeltaEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextDeltaEventMapper._(),
       );
-      TranscriptTextDeltaEventTypeTypeMapper.ensureInitialized();
+      TranscriptTextDeltaEventTypeMapper.ensureInitialized();
       TranscriptTextDeltaEventLogprobsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class TranscriptTextDeltaEventMapper
   @override
   final String id = 'TranscriptTextDeltaEvent';
 
-  static TranscriptTextDeltaEventTypeType _$type(TranscriptTextDeltaEvent v) =>
+  static TranscriptTextDeltaEventType _$type(TranscriptTextDeltaEvent v) =>
       v.type;
-  static const Field<TranscriptTextDeltaEvent, TranscriptTextDeltaEventTypeType>
+  static const Field<TranscriptTextDeltaEvent, TranscriptTextDeltaEventType>
   _f$type = Field('type', _$type);
   static String _$delta(TranscriptTextDeltaEvent v) => v.delta;
   static const Field<TranscriptTextDeltaEvent, String> _f$delta = Field(
@@ -144,7 +144,7 @@ abstract class TranscriptTextDeltaEventCopyWith<
   >?
   get logprobs;
   $R call({
-    TranscriptTextDeltaEventTypeType? type,
+    TranscriptTextDeltaEventType? type,
     String? delta,
     List<TranscriptTextDeltaEventLogprobs>? logprobs,
   });
@@ -181,7 +181,7 @@ class _TranscriptTextDeltaEventCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    TranscriptTextDeltaEventTypeType? type,
+    TranscriptTextDeltaEventType? type,
     String? delta,
     Object? logprobs = $none,
   }) => $apply(

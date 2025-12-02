@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_content.dart';
-import 'refusal_type_type.dart';
+import 'refusal_type.dart';
 
 part 'refusal.mapper.dart';
 
@@ -18,7 +18,7 @@ class Refusal with RefusalMappable {
     required this.refusal,
   });
 
-  final RefusalTypeType type;
+  final RefusalType type;
   final String refusal;
 
   static Refusal fromJson(Map<String, dynamic> json) => RefusalMapper.fromJson(json);

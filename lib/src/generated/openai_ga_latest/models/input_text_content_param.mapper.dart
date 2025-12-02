@@ -15,7 +15,7 @@ class InputTextContentParamMapper
   static InputTextContentParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputTextContentParamMapper._());
-      InputTextContentParamTypeTypeMapper.ensureInitialized();
+      InputTextContentParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,15 +28,14 @@ class InputTextContentParamMapper
     'text',
     _$text,
   );
-  static InputTextContentParamTypeType _$type(InputTextContentParam v) =>
-      v.type;
-  static const Field<InputTextContentParam, InputTextContentParamTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: InputTextContentParamTypeType.inputText,
-  );
+  static InputTextContentParamType _$type(InputTextContentParam v) => v.type;
+  static const Field<InputTextContentParam, InputTextContentParamType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: InputTextContentParamType.inputText,
+      );
 
   @override
   final MappableFields<InputTextContentParam> fields = const {
@@ -125,7 +124,7 @@ abstract class InputTextContentParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, InputTextContentParamTypeType? type});
+  $R call({String? text, InputTextContentParamType? type});
   InputTextContentParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -140,7 +139,7 @@ class _InputTextContentParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InputTextContentParam> $mapper =
       InputTextContentParamMapper.ensureInitialized();
   @override
-  $R call({String? text, InputTextContentParamTypeType? type}) => $apply(
+  $R call({String? text, InputTextContentParamType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

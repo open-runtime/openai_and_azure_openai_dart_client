@@ -17,7 +17,7 @@ class AssistantToolsFileSearchTypeOnlyMapper
       MapperContainer.globals.use(
         _instance = AssistantToolsFileSearchTypeOnlyMapper._(),
       );
-      AssistantToolsFileSearchTypeOnlyTypeTypeMapper.ensureInitialized();
+      AssistantToolsFileSearchTypeOnlyTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class AssistantToolsFileSearchTypeOnlyMapper
   @override
   final String id = 'AssistantToolsFileSearchTypeOnly';
 
-  static AssistantToolsFileSearchTypeOnlyTypeType _$type(
+  static AssistantToolsFileSearchTypeOnlyType _$type(
     AssistantToolsFileSearchTypeOnly v,
   ) => v.type;
   static const Field<
     AssistantToolsFileSearchTypeOnly,
-    AssistantToolsFileSearchTypeOnlyTypeType
+    AssistantToolsFileSearchTypeOnlyType
   >
   _f$type = Field('type', _$type);
 
@@ -125,7 +125,7 @@ abstract class AssistantToolsFileSearchTypeOnlyCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({AssistantToolsFileSearchTypeOnlyTypeType? type});
+  $R call({AssistantToolsFileSearchTypeOnlyType? type});
   AssistantToolsFileSearchTypeOnlyCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -149,7 +149,7 @@ class _AssistantToolsFileSearchTypeOnlyCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AssistantToolsFileSearchTypeOnly> $mapper =
       AssistantToolsFileSearchTypeOnlyMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsFileSearchTypeOnlyTypeType? type}) =>
+  $R call({AssistantToolsFileSearchTypeOnlyType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AssistantToolsFileSearchTypeOnly $make(CopyWithData data) =>

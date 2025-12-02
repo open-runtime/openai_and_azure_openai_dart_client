@@ -14,7 +14,7 @@ class RunObjectLastErrorMapper extends ClassMapperBase<RunObjectLastError> {
   static RunObjectLastErrorMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RunObjectLastErrorMapper._());
-      RunObjectLastErrorCodeCodeMapper.ensureInitialized();
+      RunObjectLastErrorCodeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class RunObjectLastErrorMapper extends ClassMapperBase<RunObjectLastError> {
   @override
   final String id = 'RunObjectLastError';
 
-  static RunObjectLastErrorCodeCode _$code(RunObjectLastError v) => v.code;
-  static const Field<RunObjectLastError, RunObjectLastErrorCodeCode> _f$code =
+  static RunObjectLastErrorCode _$code(RunObjectLastError v) => v.code;
+  static const Field<RunObjectLastError, RunObjectLastErrorCode> _f$code =
       Field('code', _$code);
   static String _$message(RunObjectLastError v) => v.message;
   static const Field<RunObjectLastError, String> _f$message = Field(
@@ -119,7 +119,7 @@ abstract class RunObjectLastErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RunObjectLastErrorCodeCode? code, String? message});
+  $R call({RunObjectLastErrorCode? code, String? message});
   RunObjectLastErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +134,7 @@ class _RunObjectLastErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunObjectLastError> $mapper =
       RunObjectLastErrorMapper.ensureInitialized();
   @override
-  $R call({RunObjectLastErrorCodeCode? code, String? message}) => $apply(
+  $R call({RunObjectLastErrorCode? code, String? message}) => $apply(
     FieldCopyWithData({
       if (code != null) #code: code,
       if (message != null) #message: message,

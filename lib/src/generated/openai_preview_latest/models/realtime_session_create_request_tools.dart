@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_session_create_request_tools_type_type.dart';
+import 'realtime_session_create_request_tools_type.dart';
 
 part 'realtime_session_create_request_tools.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeSessionCreateRequestTools with RealtimeSessionCreateRequestToolsMa
     this.parameters,
   });
 
-  final RealtimeSessionCreateRequestToolsTypeType? type;
+  final RealtimeSessionCreateRequestToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;

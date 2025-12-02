@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'batch_request_input_method_method.dart';
+import 'batch_request_input_method.dart';
 
 part 'batch_request_input.mapper.dart';
 
@@ -19,7 +19,7 @@ class BatchRequestInput with BatchRequestInputMappable {
 
   @MappableField(key: 'custom_id')
   final String? customId;
-  final BatchRequestInputMethodMethod? method;
+  final BatchRequestInputMethod? method;
   final String? url;
 
   static BatchRequestInput fromJson(Map<String, dynamic> json) => BatchRequestInputMapper.fromJson(json);

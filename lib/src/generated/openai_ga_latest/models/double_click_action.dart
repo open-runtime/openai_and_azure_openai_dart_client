@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'double_click_action_type_type.dart';
+import 'double_click_action_type.dart';
 
 part 'double_click_action.mapper.dart';
 
@@ -15,12 +15,12 @@ class DoubleClickAction with DoubleClickActionMappable {
   const DoubleClickAction({
     required this.x,
     required this.y,
-    this.type = DoubleClickActionTypeType.doubleClick,
+    this.type = DoubleClickActionType.doubleClick,
   });
 
   final int x;
   final int y;
-  final DoubleClickActionTypeType type;
+  final DoubleClickActionType type;
 
   static DoubleClickAction fromJson(Map<String, dynamic> json) => DoubleClickActionMapper.fromJson(json);
 

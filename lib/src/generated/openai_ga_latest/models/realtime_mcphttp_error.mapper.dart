@@ -14,7 +14,7 @@ class RealtimeMcphttpErrorMapper extends ClassMapperBase<RealtimeMcphttpError> {
   static RealtimeMcphttpErrorMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcphttpErrorMapper._());
-      RealtimeMcphttpErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcphttpErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class RealtimeMcphttpErrorMapper extends ClassMapperBase<RealtimeMcphttpError> {
   @override
   final String id = 'RealtimeMcphttpError';
 
-  static RealtimeMcphttpErrorTypeType _$type(RealtimeMcphttpError v) => v.type;
-  static const Field<RealtimeMcphttpError, RealtimeMcphttpErrorTypeType>
-  _f$type = Field('type', _$type);
+  static RealtimeMcphttpErrorType _$type(RealtimeMcphttpError v) => v.type;
+  static const Field<RealtimeMcphttpError, RealtimeMcphttpErrorType> _f$type =
+      Field('type', _$type);
   static int _$code(RealtimeMcphttpError v) => v.code;
   static const Field<RealtimeMcphttpError, int> _f$code = Field('code', _$code);
   static String _$message(RealtimeMcphttpError v) => v.message;
@@ -122,7 +122,7 @@ abstract class RealtimeMcphttpErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RealtimeMcphttpErrorTypeType? type, int? code, String? message});
+  $R call({RealtimeMcphttpErrorType? type, int? code, String? message});
   RealtimeMcphttpErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -137,7 +137,7 @@ class _RealtimeMcphttpErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeMcphttpError> $mapper =
       RealtimeMcphttpErrorMapper.ensureInitialized();
   @override
-  $R call({RealtimeMcphttpErrorTypeType? type, int? code, String? message}) =>
+  $R call({RealtimeMcphttpErrorType? type, int? code, String? message}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

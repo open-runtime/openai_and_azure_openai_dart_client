@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_tool_call.dart';
 import 'run_step_details_tool_calls_function_object_function.dart';
-import 'run_step_details_tool_calls_function_object_type_type.dart';
+import 'run_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_details_tool_calls_function_object.mapper.dart';
 
@@ -19,7 +19,7 @@ class RunStepDetailsToolCallsFunctionObject with RunStepDetailsToolCallsFunction
   });
 
   final String id;
-  final RunStepDetailsToolCallsFunctionObjectTypeType type;
+  final RunStepDetailsToolCallsFunctionObjectType type;
   @MappableField(key: 'function')
   final RunStepDetailsToolCallsFunctionObjectFunction runStepDetailsToolCallsFunctionObjectFunction;
 

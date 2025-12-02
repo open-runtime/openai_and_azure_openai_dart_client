@@ -5,35 +5,35 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'click.dart';
-import 'click_button_button.dart';
-import 'click_type_type.dart';
-import 'computer_action_button_button.dart';
-import 'computer_action_type_type.dart';
-import 'computer_action_type_type2.dart';
-import 'computer_action_type_type3.dart';
-import 'computer_action_type_type4.dart';
-import 'computer_action_type_type5.dart';
-import 'computer_action_type_type6.dart';
-import 'computer_action_type_type7.dart';
-import 'computer_action_type_type8.dart';
-import 'computer_action_type_type9.dart';
+import 'click_button.dart';
+import 'click_type.dart';
+import 'computer_action_button.dart';
+import 'computer_action_type.dart';
+import 'computer_action_type2.dart';
+import 'computer_action_type3.dart';
+import 'computer_action_type4.dart';
+import 'computer_action_type5.dart';
+import 'computer_action_type6.dart';
+import 'computer_action_type7.dart';
+import 'computer_action_type8.dart';
+import 'computer_action_type9.dart';
 import 'coordinate.dart';
 import 'double_click.dart';
-import 'double_click_type_type.dart';
+import 'double_click_type.dart';
 import 'drag.dart';
-import 'drag_type_type.dart';
+import 'drag_type.dart';
 import 'key_press.dart';
-import 'key_press_type_type.dart';
+import 'key_press_type.dart';
 import 'move.dart';
-import 'move_type_type.dart';
+import 'move_type.dart';
 import 'screenshot.dart';
-import 'screenshot_type_type.dart';
+import 'screenshot_type.dart';
 import 'scroll.dart';
-import 'scroll_type_type.dart';
+import 'scroll_type.dart';
 import 'type_model.dart';
-import 'type_model_type_type.dart';
+import 'type_model_type.dart';
 import 'wait.dart';
-import 'wait_type_type.dart';
+import 'wait_type.dart';
 
 part 'computer_action.mapper.dart';
 
@@ -92,8 +92,8 @@ extension ComputerActionUnionDeserializer on ComputerAction {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'click')
 class ComputerActionClick extends ComputerAction with ComputerActionClickMappable {
-  final ComputerActionTypeType type;
-  final ComputerActionButtonButton button;
+  final ComputerActionType type;
+  final ComputerActionButton button;
   final int x;
   final int y;
 
@@ -107,7 +107,7 @@ class ComputerActionClick extends ComputerAction with ComputerActionClickMappabl
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'double_click')
 class ComputerActionDoubleClick extends ComputerAction with ComputerActionDoubleClickMappable {
-  final ComputerActionTypeType2 type;
+  final ComputerActionType2 type;
   final int x;
   final int y;
 
@@ -120,7 +120,7 @@ class ComputerActionDoubleClick extends ComputerAction with ComputerActionDouble
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'drag')
 class ComputerActionDrag extends ComputerAction with ComputerActionDragMappable {
-  final ComputerActionTypeType3 type;
+  final ComputerActionType3 type;
   final List<Coordinate> path;
 
   const ComputerActionDrag({
@@ -131,7 +131,7 @@ class ComputerActionDrag extends ComputerAction with ComputerActionDragMappable 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'keypress')
 class ComputerActionKeypress extends ComputerAction with ComputerActionKeypressMappable {
-  final ComputerActionTypeType4 type;
+  final ComputerActionType4 type;
   final List<String> keys;
 
   const ComputerActionKeypress({
@@ -142,7 +142,7 @@ class ComputerActionKeypress extends ComputerAction with ComputerActionKeypressM
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'move')
 class ComputerActionMove extends ComputerAction with ComputerActionMoveMappable {
-  final ComputerActionTypeType5 type;
+  final ComputerActionType5 type;
   final int x;
   final int y;
 
@@ -155,7 +155,7 @@ class ComputerActionMove extends ComputerAction with ComputerActionMoveMappable 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'screenshot')
 class ComputerActionScreenshot extends ComputerAction with ComputerActionScreenshotMappable {
-  final ComputerActionTypeType6 type;
+  final ComputerActionType6 type;
 
   const ComputerActionScreenshot({
     required this.type,
@@ -164,7 +164,7 @@ class ComputerActionScreenshot extends ComputerAction with ComputerActionScreens
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'scroll')
 class ComputerActionScroll extends ComputerAction with ComputerActionScrollMappable {
-  final ComputerActionTypeType7 type;
+  final ComputerActionType7 type;
   final int x;
   final int y;
   @MappableField(key: 'scroll_x')
@@ -183,7 +183,7 @@ class ComputerActionScroll extends ComputerAction with ComputerActionScrollMappa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'type')
 class ComputerActionType extends ComputerAction with ComputerActionTypeMappable {
-  final ComputerActionTypeType8 type;
+  final ComputerActionType8 type;
   final String text;
 
   const ComputerActionType({
@@ -194,7 +194,7 @@ class ComputerActionType extends ComputerAction with ComputerActionTypeMappable 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'wait')
 class ComputerActionWait extends ComputerAction with ComputerActionWaitMappable {
-  final ComputerActionTypeType9 type;
+  final ComputerActionType9 type;
 
   const ComputerActionWait({
     required this.type,

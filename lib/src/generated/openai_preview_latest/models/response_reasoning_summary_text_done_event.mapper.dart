@@ -17,7 +17,7 @@ class ResponseReasoningSummaryTextDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryTextDoneEventMapper._(),
       );
-      ResponseReasoningSummaryTextDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseReasoningSummaryTextDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseReasoningSummaryTextDoneEventMapper
   @override
   final String id = 'ResponseReasoningSummaryTextDoneEvent';
 
-  static ResponseReasoningSummaryTextDoneEventTypeType _$type(
+  static ResponseReasoningSummaryTextDoneEventType _$type(
     ResponseReasoningSummaryTextDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseReasoningSummaryTextDoneEvent,
-    ResponseReasoningSummaryTextDoneEventTypeType
+    ResponseReasoningSummaryTextDoneEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseReasoningSummaryTextDoneEvent v) => v.itemId;
@@ -156,7 +156,7 @@ abstract class ResponseReasoningSummaryTextDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseReasoningSummaryTextDoneEventTypeType? type,
+    ResponseReasoningSummaryTextDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -185,7 +185,7 @@ class _ResponseReasoningSummaryTextDoneEventCopyWithImpl<$R, $Out>
       ResponseReasoningSummaryTextDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseReasoningSummaryTextDoneEventTypeType? type,
+    ResponseReasoningSummaryTextDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,

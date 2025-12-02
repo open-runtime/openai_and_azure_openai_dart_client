@@ -18,7 +18,7 @@ class ProjectServiceAccountCreateResponseMapper
         _instance = ProjectServiceAccountCreateResponseMapper._(),
       );
       ProjectServiceAccountCreateResponseObjectObjectEnumMapper.ensureInitialized();
-      ProjectServiceAccountCreateResponseRoleRoleMapper.ensureInitialized();
+      ProjectServiceAccountCreateResponseRoleMapper.ensureInitialized();
       ProjectServiceAccountApiKeyMapper.ensureInitialized();
     }
     return _instance!;
@@ -43,12 +43,12 @@ class ProjectServiceAccountCreateResponseMapper
   static String _$name(ProjectServiceAccountCreateResponse v) => v.name;
   static const Field<ProjectServiceAccountCreateResponse, String> _f$name =
       Field('name', _$name);
-  static ProjectServiceAccountCreateResponseRoleRole _$role(
+  static ProjectServiceAccountCreateResponseRole _$role(
     ProjectServiceAccountCreateResponse v,
   ) => v.role;
   static const Field<
     ProjectServiceAccountCreateResponse,
-    ProjectServiceAccountCreateResponseRoleRole
+    ProjectServiceAccountCreateResponseRole
   >
   _f$role = Field('role', _$role);
   static int _$createdAt(ProjectServiceAccountCreateResponse v) => v.createdAt;
@@ -179,7 +179,7 @@ abstract class ProjectServiceAccountCreateResponseCopyWith<
     ProjectServiceAccountCreateResponseObjectObjectEnum? objectEnum,
     String? id,
     String? name,
-    ProjectServiceAccountCreateResponseRoleRole? role,
+    ProjectServiceAccountCreateResponseRole? role,
     int? createdAt,
     ProjectServiceAccountApiKey? apiKey,
   });
@@ -216,7 +216,7 @@ class _ProjectServiceAccountCreateResponseCopyWithImpl<$R, $Out>
     ProjectServiceAccountCreateResponseObjectObjectEnum? objectEnum,
     String? id,
     String? name,
-    ProjectServiceAccountCreateResponseRoleRole? role,
+    ProjectServiceAccountCreateResponseRole? role,
     int? createdAt,
     ProjectServiceAccountApiKey? apiKey,
   }) => $apply(

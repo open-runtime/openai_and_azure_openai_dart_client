@@ -17,7 +17,7 @@ class ProjectUserUpdateRequestMapper
       MapperContainer.globals.use(
         _instance = ProjectUserUpdateRequestMapper._(),
       );
-      ProjectUserUpdateRequestRoleRoleMapper.ensureInitialized();
+      ProjectUserUpdateRequestRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ProjectUserUpdateRequestMapper
   @override
   final String id = 'ProjectUserUpdateRequest';
 
-  static ProjectUserUpdateRequestRoleRole _$role(ProjectUserUpdateRequest v) =>
+  static ProjectUserUpdateRequestRole _$role(ProjectUserUpdateRequest v) =>
       v.role;
-  static const Field<ProjectUserUpdateRequest, ProjectUserUpdateRequestRoleRole>
+  static const Field<ProjectUserUpdateRequest, ProjectUserUpdateRequestRole>
   _f$role = Field('role', _$role);
 
   @override
@@ -113,7 +113,7 @@ abstract class ProjectUserUpdateRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ProjectUserUpdateRequestRoleRole? role});
+  $R call({ProjectUserUpdateRequestRole? role});
   ProjectUserUpdateRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +129,7 @@ class _ProjectUserUpdateRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ProjectUserUpdateRequest> $mapper =
       ProjectUserUpdateRequestMapper.ensureInitialized();
   @override
-  $R call({ProjectUserUpdateRequestRoleRole? role}) =>
+  $R call({ProjectUserUpdateRequestRole? role}) =>
       $apply(FieldCopyWithData({if (role != null) #role: role}));
   @override
   ProjectUserUpdateRequest $make(CopyWithData data) =>

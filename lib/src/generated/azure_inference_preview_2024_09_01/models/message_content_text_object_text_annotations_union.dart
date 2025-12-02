@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_text_annotations_file_citation_object.dart';
 import 'message_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_content_text_annotations_file_citation_object_type.dart';
 import 'message_content_text_annotations_file_path_object.dart';
 import 'message_content_text_annotations_file_path_object_file_path.dart';
-import 'message_content_text_annotations_file_path_object_type_type.dart';
+import 'message_content_text_annotations_file_path_object_type.dart';
 
 part 'message_content_text_object_text_annotations_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension MessageContentTextObjectTextAnnotationsUnionDeserializer on MessageCon
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
 class MessageContentTextObjectTextAnnotationsUnionFileCitation extends MessageContentTextObjectTextAnnotationsUnion with MessageContentTextObjectTextAnnotationsUnionFileCitationMappable {
-  final MessageContentTextAnnotationsFileCitationObjectTypeType type;
+  final MessageContentTextAnnotationsFileCitationObjectType type;
   final String text;
   @MappableField(key: 'file_citation')
   final MessageContentTextAnnotationsFileCitationObjectFileCitation messageContentTextAnnotationsFileCitationObjectFileCitation;
@@ -68,7 +68,7 @@ class MessageContentTextObjectTextAnnotationsUnionFileCitation extends MessageCo
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
 class MessageContentTextObjectTextAnnotationsUnionFilePath extends MessageContentTextObjectTextAnnotationsUnion with MessageContentTextObjectTextAnnotationsUnionFilePathMappable {
-  final MessageContentTextAnnotationsFilePathObjectTypeType type;
+  final MessageContentTextAnnotationsFilePathObjectType type;
   final String text;
   @MappableField(key: 'file_path')
   final MessageContentTextAnnotationsFilePathObjectFilePath messageContentTextAnnotationsFilePathObjectFilePath;

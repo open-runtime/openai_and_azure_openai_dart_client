@@ -94,7 +94,7 @@ class CreateEvalRunRequestDataSourceUnionJsonlMapper
       );
       CreateEvalRunRequestDataSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalJsonlRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalJsonlRunDataSourceTypeMapper.ensureInitialized();
       CreateEvalJsonlRunDataSourceSourceUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -103,12 +103,12 @@ class CreateEvalRunRequestDataSourceUnionJsonlMapper
   @override
   final String id = 'CreateEvalRunRequestDataSourceUnionJsonl';
 
-  static CreateEvalJsonlRunDataSourceTypeType _$type(
+  static CreateEvalJsonlRunDataSourceType _$type(
     CreateEvalRunRequestDataSourceUnionJsonl v,
   ) => v.type;
   static const Field<
     CreateEvalRunRequestDataSourceUnionJsonl,
-    CreateEvalJsonlRunDataSourceTypeType
+    CreateEvalJsonlRunDataSourceType
   >
   _f$type = Field('type', _$type);
   static CreateEvalJsonlRunDataSourceSourceUnion _$source(
@@ -236,7 +236,7 @@ abstract class CreateEvalRunRequestDataSourceUnionJsonlCopyWith<
   get source;
   @override
   $R call({
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
     CreateEvalJsonlRunDataSourceSourceUnion? source,
   });
   CreateEvalRunRequestDataSourceUnionJsonlCopyWith<$R2, $In, $Out2>
@@ -270,7 +270,7 @@ class _CreateEvalRunRequestDataSourceUnionJsonlCopyWithImpl<$R, $Out>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
   $R call({
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
     CreateEvalJsonlRunDataSourceSourceUnion? source,
   }) => $apply(
     FieldCopyWithData({
@@ -312,7 +312,7 @@ class CreateEvalRunRequestDataSourceUnionCompletionsMapper
       );
       CreateEvalRunRequestDataSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalCompletionsRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceTypeMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized();
@@ -323,12 +323,12 @@ class CreateEvalRunRequestDataSourceUnionCompletionsMapper
   @override
   final String id = 'CreateEvalRunRequestDataSourceUnionCompletions';
 
-  static CreateEvalCompletionsRunDataSourceTypeType _$type(
+  static CreateEvalCompletionsRunDataSourceType _$type(
     CreateEvalRunRequestDataSourceUnionCompletions v,
   ) => v.type;
   static const Field<
     CreateEvalRunRequestDataSourceUnionCompletions,
-    CreateEvalCompletionsRunDataSourceTypeType
+    CreateEvalCompletionsRunDataSourceType
   >
   _f$type = Field('type', _$type);
   static CreateEvalCompletionsRunDataSourceInputMessagesUnion? _$inputMessages(
@@ -523,7 +523,7 @@ abstract class CreateEvalRunRequestDataSourceUnionCompletionsCopyWith<
   get source;
   @override
   $R call({
-    CreateEvalCompletionsRunDataSourceTypeType? type,
+    CreateEvalCompletionsRunDataSourceType? type,
     CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages,
     CreateEvalCompletionsRunDataSourceSamplingParams?
     createEvalCompletionsRunDataSourceSamplingParams,
@@ -584,7 +584,7 @@ class _CreateEvalRunRequestDataSourceUnionCompletionsCopyWithImpl<$R, $Out>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
   $R call({
-    CreateEvalCompletionsRunDataSourceTypeType? type,
+    CreateEvalCompletionsRunDataSourceType? type,
     Object? inputMessages = $none,
     Object? createEvalCompletionsRunDataSourceSamplingParams = $none,
     Object? model = $none,
@@ -640,7 +640,7 @@ class CreateEvalRunRequestDataSourceUnionResponsesMapper
       );
       CreateEvalRunRequestDataSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalResponsesRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceTypeMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceSamplingParamsMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized();
@@ -651,12 +651,12 @@ class CreateEvalRunRequestDataSourceUnionResponsesMapper
   @override
   final String id = 'CreateEvalRunRequestDataSourceUnionResponses';
 
-  static CreateEvalResponsesRunDataSourceTypeType _$type(
+  static CreateEvalResponsesRunDataSourceType _$type(
     CreateEvalRunRequestDataSourceUnionResponses v,
   ) => v.type;
   static const Field<
     CreateEvalRunRequestDataSourceUnionResponses,
-    CreateEvalResponsesRunDataSourceTypeType
+    CreateEvalResponsesRunDataSourceType
   >
   _f$type = Field('type', _$type);
   static CreateEvalResponsesRunDataSourceInputMessagesUnion? _$inputMessages(
@@ -846,7 +846,7 @@ abstract class CreateEvalRunRequestDataSourceUnionResponsesCopyWith<
   get source;
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceTypeType? type,
+    CreateEvalResponsesRunDataSourceType? type,
     CreateEvalResponsesRunDataSourceInputMessagesUnion? inputMessages,
     CreateEvalResponsesRunDataSourceSamplingParams?
     createEvalResponsesRunDataSourceSamplingParams,
@@ -907,7 +907,7 @@ class _CreateEvalRunRequestDataSourceUnionResponsesCopyWithImpl<$R, $Out>
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceTypeType? type,
+    CreateEvalResponsesRunDataSourceType? type,
     Object? inputMessages = $none,
     Object? createEvalResponsesRunDataSourceSamplingParams = $none,
     Object? model = $none,

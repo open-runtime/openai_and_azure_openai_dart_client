@@ -14,7 +14,7 @@ class ResponseFormatTextMapper extends ClassMapperBase<ResponseFormatText> {
   static ResponseFormatTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseFormatTextMapper._());
-      ResponseFormatTextTypeTypeMapper.ensureInitialized();
+      ResponseFormatTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class ResponseFormatTextMapper extends ClassMapperBase<ResponseFormatText> {
   @override
   final String id = 'ResponseFormatText';
 
-  static ResponseFormatTextTypeType _$type(ResponseFormatText v) => v.type;
-  static const Field<ResponseFormatText, ResponseFormatTextTypeType> _f$type =
+  static ResponseFormatTextType _$type(ResponseFormatText v) => v.type;
+  static const Field<ResponseFormatText, ResponseFormatTextType> _f$type =
       Field('type', _$type);
 
   @override
@@ -108,7 +108,7 @@ abstract class ResponseFormatTextCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseFormatTextTypeType? type});
+  $R call({ResponseFormatTextType? type});
   ResponseFormatTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -123,7 +123,7 @@ class _ResponseFormatTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseFormatText> $mapper =
       ResponseFormatTextMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatTextTypeType? type}) =>
+  $R call({ResponseFormatTextType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseFormatText $make(CopyWithData data) =>

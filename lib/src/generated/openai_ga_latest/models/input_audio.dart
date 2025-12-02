@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'input_audio_input_audio.dart';
-import 'input_audio_type_type.dart';
+import 'input_audio_type.dart';
 
 part 'input_audio.mapper.dart';
 
@@ -18,7 +18,7 @@ class InputAudio with InputAudioMappable {
     required this.inputAudioInputAudio,
   });
 
-  final InputAudioTypeType type;
+  final InputAudioType type;
   @MappableField(key: 'input_audio')
   final InputAudioInputAudio inputAudioInputAudio;
 

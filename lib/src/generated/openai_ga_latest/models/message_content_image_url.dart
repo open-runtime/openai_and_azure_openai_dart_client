@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_content_image_url_detail_detail.dart';
+import 'message_content_image_url_detail.dart';
 
 part 'message_content_image_url.mapper.dart';
 
@@ -12,11 +12,11 @@ part 'message_content_image_url.mapper.dart';
 class MessageContentImageUrl with MessageContentImageUrlMappable {
   const MessageContentImageUrl({
     required this.url,
-    this.detail = MessageContentImageUrlDetailDetail.auto,
+    this.detail = MessageContentImageUrlDetail.auto,
   });
 
   final String url;
-  final MessageContentImageUrlDetailDetail detail;
+  final MessageContentImageUrlDetail detail;
 
   static MessageContentImageUrl fromJson(Map<String, dynamic> json) => MessageContentImageUrlMapper.fromJson(json);
 

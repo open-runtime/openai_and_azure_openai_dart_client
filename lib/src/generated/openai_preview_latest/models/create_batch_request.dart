@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_batch_request_endpoint_endpoint.dart';
+import 'create_batch_request_endpoint.dart';
 import 'create_batch_request_completion_window_completion_window.dart';
 import 'metadata.dart';
 
@@ -21,7 +21,7 @@ class CreateBatchRequest with CreateBatchRequestMappable {
 
   @MappableField(key: 'input_file_id')
   final String inputFileId;
-  final CreateBatchRequestEndpointEndpoint endpoint;
+  final CreateBatchRequestEndpoint endpoint;
   @MappableField(key: 'completion_window')
   final CreateBatchRequestCompletionWindowCompletionWindow completionWindow;
   final Metadata? metadata;

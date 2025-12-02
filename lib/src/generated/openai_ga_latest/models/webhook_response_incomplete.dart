@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_response_incomplete_data.dart';
 import 'webhook_response_incomplete_object_object_enum.dart';
-import 'webhook_response_incomplete_type_type.dart';
+import 'webhook_response_incomplete_type.dart';
 
 part 'webhook_response_incomplete.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookResponseIncomplete with WebhookResponseIncompleteMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookResponseIncompleteData webhookResponseIncompleteData;
-  final WebhookResponseIncompleteTypeType type;
+  final WebhookResponseIncompleteType type;
   @MappableField(key: 'object')
   final WebhookResponseIncompleteObjectObjectEnum? objectEnum;
 

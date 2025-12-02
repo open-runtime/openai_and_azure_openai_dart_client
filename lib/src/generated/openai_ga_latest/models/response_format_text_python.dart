@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_format_text_python_type_type.dart';
+import 'response_format_text_python_type.dart';
 
 part 'response_format_text_python.mapper.dart';
 
@@ -17,7 +17,7 @@ class ResponseFormatTextPython with ResponseFormatTextPythonMappable {
     required this.type,
   });
 
-  final ResponseFormatTextPythonTypeType type;
+  final ResponseFormatTextPythonType type;
 
   static ResponseFormatTextPython fromJson(Map<String, dynamic> json) => ResponseFormatTextPythonMapper.fromJson(json);
 

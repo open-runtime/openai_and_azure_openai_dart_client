@@ -14,7 +14,7 @@ class ReasoningMapper extends ClassMapperBase<Reasoning> {
   static ReasoningMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ReasoningMapper._());
-      ReasoningSummarySummaryMapper.ensureInitialized();
+      ReasoningSummaryMapper.ensureInitialized();
       ReasoningGenerateSummaryGenerateSummaryMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,8 +29,8 @@ class ReasoningMapper extends ClassMapperBase<Reasoning> {
     _$effort,
     opt: true,
   );
-  static ReasoningSummarySummary? _$summary(Reasoning v) => v.summary;
-  static const Field<Reasoning, ReasoningSummarySummary> _f$summary = Field(
+  static ReasoningSummary? _$summary(Reasoning v) => v.summary;
+  static const Field<Reasoning, ReasoningSummary> _f$summary = Field(
     'summary',
     _$summary,
     opt: true,
@@ -126,7 +126,7 @@ abstract class ReasoningCopyWith<$R, $In extends Reasoning, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? effort,
-    ReasoningSummarySummary? summary,
+    ReasoningSummary? summary,
     ReasoningGenerateSummaryGenerateSummary? generateSummary,
   });
   ReasoningCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);

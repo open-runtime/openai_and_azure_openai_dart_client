@@ -23,7 +23,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper
         _instance =
             RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper._(),
       );
-      RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeTypeMapper.ensureInitialized();
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeMapper.ensureInitialized();
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,13 +41,13 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeType
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType
   _$type(
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed v,
   ) => v.type;
   static const Field<
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeType
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -238,7 +238,7 @@ abstract class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFai
   get realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError;
   $R call({
     String? eventId,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeType?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType?
     type,
     String? itemId,
     int? contentIndex,
@@ -299,7 +299,7 @@ class _RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedCopyW
   @override
   $R call({
     String? eventId,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeType?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType?
     type,
     String? itemId,
     int? contentIndex,

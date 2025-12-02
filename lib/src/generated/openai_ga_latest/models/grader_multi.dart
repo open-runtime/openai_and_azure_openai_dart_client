@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'grader_multi_graders_union.dart';
-import 'grader_multi_type_type.dart';
+import 'grader_multi_type.dart';
 
 part 'grader_multi.mapper.dart';
 
@@ -16,14 +16,14 @@ class GraderMulti with GraderMultiMappable {
     required this.name,
     required this.graders,
     required this.calculateOutput,
-    this.type = GraderMultiTypeType.multi,
+    this.type = GraderMultiType.multi,
   });
 
   final String name;
   final GraderMultiGradersUnion graders;
   @MappableField(key: 'calculate_output')
   final String calculateOutput;
-  final GraderMultiTypeType type;
+  final GraderMultiType type;
 
   static GraderMulti fromJson(Map<String, dynamic> json) => GraderMultiMapper.fromJson(json);
 

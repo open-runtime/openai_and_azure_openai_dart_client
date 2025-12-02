@@ -18,7 +18,7 @@ class ChatCompletionRequestMessageContentPartImageMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartImageMapper._(),
       );
-      ChatCompletionRequestMessageContentPartImageTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartImageTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartImageImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class ChatCompletionRequestMessageContentPartImageMapper
   @override
   final String id = 'ChatCompletionRequestMessageContentPartImage';
 
-  static ChatCompletionRequestMessageContentPartImageTypeType _$type(
+  static ChatCompletionRequestMessageContentPartImageType _$type(
     ChatCompletionRequestMessageContentPartImage v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestMessageContentPartImage,
-    ChatCompletionRequestMessageContentPartImageTypeType
+    ChatCompletionRequestMessageContentPartImageType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionRequestMessageContentPartImageImageUrl
@@ -171,7 +171,7 @@ abstract class ChatCompletionRequestMessageContentPartImageCopyWith<
   >
   get chatCompletionRequestMessageContentPartImageImageUrl;
   $R call({
-    ChatCompletionRequestMessageContentPartImageTypeType? type,
+    ChatCompletionRequestMessageContentPartImageType? type,
     ChatCompletionRequestMessageContentPartImageImageUrl?
     chatCompletionRequestMessageContentPartImageImageUrl,
   });
@@ -216,7 +216,7 @@ class _ChatCompletionRequestMessageContentPartImageCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartImageTypeType? type,
+    ChatCompletionRequestMessageContentPartImageType? type,
     ChatCompletionRequestMessageContentPartImageImageUrl?
     chatCompletionRequestMessageContentPartImageImageUrl,
   }) => $apply(

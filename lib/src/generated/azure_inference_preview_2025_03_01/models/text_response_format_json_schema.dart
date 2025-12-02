@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_format_json_schema_schema.dart';
 import 'text_response_format_configuration.dart';
-import 'text_response_format_json_schema_type_type.dart';
+import 'text_response_format_json_schema_type.dart';
 
 part 'text_response_format_json_schema.mapper.dart';
 
@@ -23,7 +23,7 @@ class TextResponseFormatJsonSchema with TextResponseFormatJsonSchemaMappable {
     this.name,
   });
 
-  final TextResponseFormatJsonSchemaTypeType type;
+  final TextResponseFormatJsonSchemaType type;
   final ResponseFormatJsonSchemaSchema schema;
   final bool? strict;
   final String? description;

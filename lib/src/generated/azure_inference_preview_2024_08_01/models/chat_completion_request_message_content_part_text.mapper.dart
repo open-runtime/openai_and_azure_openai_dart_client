@@ -17,7 +17,7 @@ class ChatCompletionRequestMessageContentPartTextMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartTextMapper._(),
       );
-      ChatCompletionRequestMessageContentPartTextTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ChatCompletionRequestMessageContentPartTextMapper
   @override
   final String id = 'ChatCompletionRequestMessageContentPartText';
 
-  static ChatCompletionRequestMessageContentPartTextTypeType _$type(
+  static ChatCompletionRequestMessageContentPartTextType _$type(
     ChatCompletionRequestMessageContentPartText v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestMessageContentPartText,
-    ChatCompletionRequestMessageContentPartTextTypeType
+    ChatCompletionRequestMessageContentPartTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(ChatCompletionRequestMessageContentPartText v) => v.text;
@@ -147,7 +147,7 @@ abstract class ChatCompletionRequestMessageContentPartTextCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   });
   ChatCompletionRequestMessageContentPartTextCopyWith<$R2, $In, $Out2>
@@ -175,7 +175,7 @@ class _ChatCompletionRequestMessageContentPartTextCopyWithImpl<$R, $Out>
       ChatCompletionRequestMessageContentPartTextMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({

@@ -73,7 +73,7 @@ class AnnotationFileCitationMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AnnotationFileCitationMapper._());
       AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      AnnotationTypeTypeMapper.ensureInitialized();
+      AnnotationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -81,9 +81,11 @@ class AnnotationFileCitationMapper
   @override
   final String id = 'AnnotationFileCitation';
 
-  static AnnotationTypeType _$type(AnnotationFileCitation v) => v.type;
-  static const Field<AnnotationFileCitation, AnnotationTypeType> _f$type =
-      Field('type', _$type);
+  static AnnotationType _$type(AnnotationFileCitation v) => v.type;
+  static const Field<AnnotationFileCitation, AnnotationType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$fileId(AnnotationFileCitation v) => v.fileId;
   static const Field<AnnotationFileCitation, String> _f$fileId = Field(
     'fileId',
@@ -202,7 +204,7 @@ abstract class AnnotationFileCitationCopyWith<
     implements AnnotationCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    AnnotationTypeType? type,
+    AnnotationType? type,
     String? fileId,
     int? indexField,
     String? filename,
@@ -223,7 +225,7 @@ class _AnnotationFileCitationCopyWithImpl<$R, $Out>
       AnnotationFileCitationMapper.ensureInitialized();
   @override
   $R call({
-    AnnotationTypeType? type,
+    AnnotationType? type,
     String? fileId,
     int? indexField,
     String? filename,
@@ -258,7 +260,7 @@ class AnnotationUrlCitationMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AnnotationUrlCitationMapper._());
       AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      AnnotationTypeType2Mapper.ensureInitialized();
+      AnnotationType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -266,9 +268,11 @@ class AnnotationUrlCitationMapper
   @override
   final String id = 'AnnotationUrlCitation';
 
-  static AnnotationTypeType2 _$type(AnnotationUrlCitation v) => v.type;
-  static const Field<AnnotationUrlCitation, AnnotationTypeType2> _f$type =
-      Field('type', _$type);
+  static AnnotationType2 _$type(AnnotationUrlCitation v) => v.type;
+  static const Field<AnnotationUrlCitation, AnnotationType2> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$url(AnnotationUrlCitation v) => v.url;
   static const Field<AnnotationUrlCitation, String> _f$url = Field(
     'url',
@@ -394,7 +398,7 @@ abstract class AnnotationUrlCitationCopyWith<
     implements AnnotationCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    AnnotationTypeType2? type,
+    AnnotationType2? type,
     String? url,
     int? startIndex,
     int? endIndex,
@@ -415,7 +419,7 @@ class _AnnotationUrlCitationCopyWithImpl<$R, $Out>
       AnnotationUrlCitationMapper.ensureInitialized();
   @override
   $R call({
-    AnnotationTypeType2? type,
+    AnnotationType2? type,
     String? url,
     int? startIndex,
     int? endIndex,
@@ -455,7 +459,7 @@ class AnnotationContainerFileCitationMapper
         _instance = AnnotationContainerFileCitationMapper._(),
       );
       AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      AnnotationTypeType3Mapper.ensureInitialized();
+      AnnotationType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -463,10 +467,9 @@ class AnnotationContainerFileCitationMapper
   @override
   final String id = 'AnnotationContainerFileCitation';
 
-  static AnnotationTypeType3 _$type(AnnotationContainerFileCitation v) =>
-      v.type;
-  static const Field<AnnotationContainerFileCitation, AnnotationTypeType3>
-  _f$type = Field('type', _$type);
+  static AnnotationType3 _$type(AnnotationContainerFileCitation v) => v.type;
+  static const Field<AnnotationContainerFileCitation, AnnotationType3> _f$type =
+      Field('type', _$type);
   static String _$containerId(AnnotationContainerFileCitation v) =>
       v.containerId;
   static const Field<AnnotationContainerFileCitation, String> _f$containerId =
@@ -602,7 +605,7 @@ abstract class AnnotationContainerFileCitationCopyWith<
     implements AnnotationCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    AnnotationTypeType3? type,
+    AnnotationType3? type,
     String? containerId,
     String? fileId,
     int? startIndex,
@@ -633,7 +636,7 @@ class _AnnotationContainerFileCitationCopyWithImpl<$R, $Out>
       AnnotationContainerFileCitationMapper.ensureInitialized();
   @override
   $R call({
-    AnnotationTypeType3? type,
+    AnnotationType3? type,
     String? containerId,
     String? fileId,
     int? startIndex,
@@ -682,7 +685,7 @@ class AnnotationFilePathMapper extends SubClassMapperBase<AnnotationFilePath> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AnnotationFilePathMapper._());
       AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      AnnotationTypeType4Mapper.ensureInitialized();
+      AnnotationType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -690,8 +693,8 @@ class AnnotationFilePathMapper extends SubClassMapperBase<AnnotationFilePath> {
   @override
   final String id = 'AnnotationFilePath';
 
-  static AnnotationTypeType4 _$type(AnnotationFilePath v) => v.type;
-  static const Field<AnnotationFilePath, AnnotationTypeType4> _f$type = Field(
+  static AnnotationType4 _$type(AnnotationFilePath v) => v.type;
+  static const Field<AnnotationFilePath, AnnotationType4> _f$type = Field(
     'type',
     _$type,
   );
@@ -806,7 +809,7 @@ abstract class AnnotationFilePathCopyWith<
 >
     implements AnnotationCopyWith<$R, $In, $Out> {
   @override
-  $R call({AnnotationTypeType4? type, String? fileId, int? indexField});
+  $R call({AnnotationType4? type, String? fileId, int? indexField});
   AnnotationFilePathCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -821,14 +824,13 @@ class _AnnotationFilePathCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AnnotationFilePath> $mapper =
       AnnotationFilePathMapper.ensureInitialized();
   @override
-  $R call({AnnotationTypeType4? type, String? fileId, int? indexField}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (fileId != null) #fileId: fileId,
-          if (indexField != null) #indexField: indexField,
-        }),
-      );
+  $R call({AnnotationType4? type, String? fileId, int? indexField}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (fileId != null) #fileId: fileId,
+      if (indexField != null) #indexField: indexField,
+    }),
+  );
   @override
   AnnotationFilePath $make(CopyWithData data) => AnnotationFilePath(
     type: data.get(#type, or: $value.type),

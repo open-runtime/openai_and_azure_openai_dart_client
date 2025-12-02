@@ -17,10 +17,10 @@ class ImageEditCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ImageEditCompletedEventMapper._(),
       );
-      ImageEditCompletedEventTypeTypeMapper.ensureInitialized();
-      ImageEditCompletedEventSizeSizeMapper.ensureInitialized();
-      ImageEditCompletedEventQualityQualityMapper.ensureInitialized();
-      ImageEditCompletedEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageEditCompletedEventTypeMapper.ensureInitialized();
+      ImageEditCompletedEventSizeMapper.ensureInitialized();
+      ImageEditCompletedEventQualityMapper.ensureInitialized();
+      ImageEditCompletedEventBackgroundMapper.ensureInitialized();
       ImageEditCompletedEventOutputFormatOutputFormatMapper.ensureInitialized();
       ImagesUsageMapper.ensureInitialized();
     }
@@ -30,9 +30,9 @@ class ImageEditCompletedEventMapper
   @override
   final String id = 'ImageEditCompletedEvent';
 
-  static ImageEditCompletedEventTypeType _$type(ImageEditCompletedEvent v) =>
+  static ImageEditCompletedEventType _$type(ImageEditCompletedEvent v) =>
       v.type;
-  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventTypeType>
+  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventType>
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageEditCompletedEvent v) => v.b64Json;
   static const Field<ImageEditCompletedEvent, String> _f$b64Json = Field(
@@ -46,25 +46,18 @@ class ImageEditCompletedEventMapper
     _$createdAt,
     key: r'created_at',
   );
-  static ImageEditCompletedEventSizeSize _$size(ImageEditCompletedEvent v) =>
+  static ImageEditCompletedEventSize _$size(ImageEditCompletedEvent v) =>
       v.size;
-  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventSizeSize>
+  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventSize>
   _f$size = Field('size', _$size);
-  static ImageEditCompletedEventQualityQuality _$quality(
-    ImageEditCompletedEvent v,
-  ) => v.quality;
-  static const Field<
-    ImageEditCompletedEvent,
-    ImageEditCompletedEventQualityQuality
-  >
+  static ImageEditCompletedEventQuality _$quality(ImageEditCompletedEvent v) =>
+      v.quality;
+  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventQuality>
   _f$quality = Field('quality', _$quality);
-  static ImageEditCompletedEventBackgroundBackground _$background(
+  static ImageEditCompletedEventBackground _$background(
     ImageEditCompletedEvent v,
   ) => v.background;
-  static const Field<
-    ImageEditCompletedEvent,
-    ImageEditCompletedEventBackgroundBackground
-  >
+  static const Field<ImageEditCompletedEvent, ImageEditCompletedEventBackground>
   _f$background = Field('background', _$background);
   static ImageEditCompletedEventOutputFormatOutputFormat _$outputFormat(
     ImageEditCompletedEvent v,
@@ -185,12 +178,12 @@ abstract class ImageEditCompletedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
   $R call({
-    ImageEditCompletedEventTypeType? type,
+    ImageEditCompletedEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditCompletedEventSizeSize? size,
-    ImageEditCompletedEventQualityQuality? quality,
-    ImageEditCompletedEventBackgroundBackground? background,
+    ImageEditCompletedEventSize? size,
+    ImageEditCompletedEventQuality? quality,
+    ImageEditCompletedEventBackground? background,
     ImageEditCompletedEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   });
@@ -213,12 +206,12 @@ class _ImageEditCompletedEventCopyWithImpl<$R, $Out>
       $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    ImageEditCompletedEventTypeType? type,
+    ImageEditCompletedEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditCompletedEventSizeSize? size,
-    ImageEditCompletedEventQualityQuality? quality,
-    ImageEditCompletedEventBackgroundBackground? background,
+    ImageEditCompletedEventSize? size,
+    ImageEditCompletedEventQuality? quality,
+    ImageEditCompletedEventBackground? background,
     ImageEditCompletedEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   }) => $apply(

@@ -86,7 +86,7 @@ class RunStepDetailsToolCallCodeInterpreterMapper
         _instance = RunStepDetailsToolCallCodeInterpreterMapper._(),
       );
       RunStepDetailsToolCallMapper.ensureInitialized().addSubMapper(_instance!);
-      RunStepDetailsToolCallTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallTypeMapper.ensureInitialized();
       RunStepDetailsToolCallCodeInterpreterMapper.ensureInitialized();
     }
     return _instance!;
@@ -98,12 +98,12 @@ class RunStepDetailsToolCallCodeInterpreterMapper
   static String _$id(RunStepDetailsToolCallCodeInterpreter v) => v.id;
   static const Field<RunStepDetailsToolCallCodeInterpreter, String> _f$id =
       Field('id', _$id);
-  static RunStepDetailsToolCallTypeType _$type(
+  static RunStepDetailsToolCallType _$type(
     RunStepDetailsToolCallCodeInterpreter v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallCodeInterpreter,
-    RunStepDetailsToolCallTypeType
+    RunStepDetailsToolCallType
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsToolCallCodeInterpreter
@@ -239,7 +239,7 @@ abstract class RunStepDetailsToolCallCodeInterpreterCopyWith<
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType? type,
+    RunStepDetailsToolCallType? type,
     RunStepDetailsToolCallCodeInterpreter?
     runStepDetailsToolCallCodeInterpreter,
   });
@@ -277,7 +277,7 @@ class _RunStepDetailsToolCallCodeInterpreterCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType? type,
+    RunStepDetailsToolCallType? type,
     RunStepDetailsToolCallCodeInterpreter?
     runStepDetailsToolCallCodeInterpreter,
   }) => $apply(
@@ -325,7 +325,7 @@ class RunStepDetailsToolCallFileSearchMapper
         _instance = RunStepDetailsToolCallFileSearchMapper._(),
       );
       RunStepDetailsToolCallMapper.ensureInitialized().addSubMapper(_instance!);
-      RunStepDetailsToolCallTypeType2Mapper.ensureInitialized();
+      RunStepDetailsToolCallType2Mapper.ensureInitialized();
       RunStepDetailsToolCallFileSearchMapper.ensureInitialized();
     }
     return _instance!;
@@ -339,12 +339,12 @@ class RunStepDetailsToolCallFileSearchMapper
     'id',
     _$id,
   );
-  static RunStepDetailsToolCallTypeType2 _$type(
+  static RunStepDetailsToolCallType2 _$type(
     RunStepDetailsToolCallFileSearch v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallFileSearch,
-    RunStepDetailsToolCallTypeType2
+    RunStepDetailsToolCallType2
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsToolCallFileSearch _$runStepDetailsToolCallFileSearch(
@@ -476,7 +476,7 @@ abstract class RunStepDetailsToolCallFileSearchCopyWith<
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType2? type,
+    RunStepDetailsToolCallType2? type,
     RunStepDetailsToolCallFileSearch? runStepDetailsToolCallFileSearch,
   });
   RunStepDetailsToolCallFileSearchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -514,7 +514,7 @@ class _RunStepDetailsToolCallFileSearchCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType2? type,
+    RunStepDetailsToolCallType2? type,
     RunStepDetailsToolCallFileSearch? runStepDetailsToolCallFileSearch,
   }) => $apply(
     FieldCopyWithData({
@@ -560,7 +560,7 @@ class RunStepDetailsToolCallFunctionMapper
         _instance = RunStepDetailsToolCallFunctionMapper._(),
       );
       RunStepDetailsToolCallMapper.ensureInitialized().addSubMapper(_instance!);
-      RunStepDetailsToolCallTypeType3Mapper.ensureInitialized();
+      RunStepDetailsToolCallType3Mapper.ensureInitialized();
       RunStepDetailsToolCallFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -574,12 +574,11 @@ class RunStepDetailsToolCallFunctionMapper
     'id',
     _$id,
   );
-  static RunStepDetailsToolCallTypeType3 _$type(
-    RunStepDetailsToolCallFunction v,
-  ) => v.type;
+  static RunStepDetailsToolCallType3 _$type(RunStepDetailsToolCallFunction v) =>
+      v.type;
   static const Field<
     RunStepDetailsToolCallFunction,
-    RunStepDetailsToolCallTypeType3
+    RunStepDetailsToolCallType3
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsToolCallFunction _$runStepDetailsToolCallFunction(
@@ -711,7 +710,7 @@ abstract class RunStepDetailsToolCallFunctionCopyWith<
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType3? type,
+    RunStepDetailsToolCallType3? type,
     RunStepDetailsToolCallFunction? runStepDetailsToolCallFunction,
   });
   RunStepDetailsToolCallFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -749,7 +748,7 @@ class _RunStepDetailsToolCallFunctionCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    RunStepDetailsToolCallTypeType3? type,
+    RunStepDetailsToolCallType3? type,
     RunStepDetailsToolCallFunction? runStepDetailsToolCallFunction,
   }) => $apply(
     FieldCopyWithData({

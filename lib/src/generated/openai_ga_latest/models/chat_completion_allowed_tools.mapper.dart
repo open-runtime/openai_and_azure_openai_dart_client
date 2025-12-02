@@ -17,7 +17,7 @@ class ChatCompletionAllowedToolsMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionAllowedToolsMapper._(),
       );
-      ChatCompletionAllowedToolsModeModeMapper.ensureInitialized();
+      ChatCompletionAllowedToolsModeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class ChatCompletionAllowedToolsMapper
   @override
   final String id = 'ChatCompletionAllowedTools';
 
-  static ChatCompletionAllowedToolsModeMode _$mode(
-    ChatCompletionAllowedTools v,
-  ) => v.mode;
-  static const Field<
-    ChatCompletionAllowedTools,
-    ChatCompletionAllowedToolsModeMode
-  >
+  static ChatCompletionAllowedToolsMode _$mode(ChatCompletionAllowedTools v) =>
+      v.mode;
+  static const Field<ChatCompletionAllowedTools, ChatCompletionAllowedToolsMode>
   _f$mode = Field('mode', _$mode);
   static List<dynamic> _$tools(ChatCompletionAllowedTools v) => v.tools;
   static const Field<ChatCompletionAllowedTools, List<dynamic>> _f$tools =
@@ -129,7 +125,7 @@ abstract class ChatCompletionAllowedToolsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>> get tools;
-  $R call({ChatCompletionAllowedToolsModeMode? mode, List<dynamic>? tools});
+  $R call({ChatCompletionAllowedToolsMode? mode, List<dynamic>? tools});
   ChatCompletionAllowedToolsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -156,7 +152,7 @@ class _ChatCompletionAllowedToolsCopyWithImpl<$R, $Out>
         (v) => call(tools: v),
       );
   @override
-  $R call({ChatCompletionAllowedToolsModeMode? mode, List<dynamic>? tools}) =>
+  $R call({ChatCompletionAllowedToolsMode? mode, List<dynamic>? tools}) =>
       $apply(
         FieldCopyWithData({
           if (mode != null) #mode: mode,

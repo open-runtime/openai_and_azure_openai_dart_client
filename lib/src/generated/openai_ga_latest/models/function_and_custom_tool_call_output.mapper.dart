@@ -92,7 +92,7 @@ class FunctionAndCustomToolCallOutputInputTextMapper
       FunctionAndCustomToolCallOutputMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      FunctionAndCustomToolCallOutputTypeTypeMapper.ensureInitialized();
+      FunctionAndCustomToolCallOutputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -100,12 +100,12 @@ class FunctionAndCustomToolCallOutputInputTextMapper
   @override
   final String id = 'FunctionAndCustomToolCallOutputInputText';
 
-  static FunctionAndCustomToolCallOutputTypeType _$type(
+  static FunctionAndCustomToolCallOutputType _$type(
     FunctionAndCustomToolCallOutputInputText v,
   ) => v.type;
   static const Field<
     FunctionAndCustomToolCallOutputInputText,
-    FunctionAndCustomToolCallOutputTypeType
+    FunctionAndCustomToolCallOutputType
   >
   _f$type = Field('type', _$type);
   static String _$text(FunctionAndCustomToolCallOutputInputText v) => v.text;
@@ -221,7 +221,7 @@ abstract class FunctionAndCustomToolCallOutputInputTextCopyWith<
 >
     implements FunctionAndCustomToolCallOutputCopyWith<$R, $In, $Out> {
   @override
-  $R call({FunctionAndCustomToolCallOutputTypeType? type, String? text});
+  $R call({FunctionAndCustomToolCallOutputType? type, String? text});
   FunctionAndCustomToolCallOutputInputTextCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -245,13 +245,12 @@ class _FunctionAndCustomToolCallOutputInputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionAndCustomToolCallOutputInputText> $mapper =
       FunctionAndCustomToolCallOutputInputTextMapper.ensureInitialized();
   @override
-  $R call({FunctionAndCustomToolCallOutputTypeType? type, String? text}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (text != null) #text: text,
-        }),
-      );
+  $R call({FunctionAndCustomToolCallOutputType? type, String? text}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (text != null) #text: text,
+    }),
+  );
   @override
   FunctionAndCustomToolCallOutputInputText $make(CopyWithData data) =>
       FunctionAndCustomToolCallOutputInputText(
@@ -286,7 +285,7 @@ class FunctionAndCustomToolCallOutputInputImageMapper
       FunctionAndCustomToolCallOutputMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      FunctionAndCustomToolCallOutputTypeType2Mapper.ensureInitialized();
+      FunctionAndCustomToolCallOutputType2Mapper.ensureInitialized();
       ImageDetailMapper.ensureInitialized();
     }
     return _instance!;
@@ -295,12 +294,12 @@ class FunctionAndCustomToolCallOutputInputImageMapper
   @override
   final String id = 'FunctionAndCustomToolCallOutputInputImage';
 
-  static FunctionAndCustomToolCallOutputTypeType2 _$type(
+  static FunctionAndCustomToolCallOutputType2 _$type(
     FunctionAndCustomToolCallOutputInputImage v,
   ) => v.type;
   static const Field<
     FunctionAndCustomToolCallOutputInputImage,
-    FunctionAndCustomToolCallOutputTypeType2
+    FunctionAndCustomToolCallOutputType2
   >
   _f$type = Field('type', _$type);
   static String? _$imageUrl(FunctionAndCustomToolCallOutputInputImage v) =>
@@ -437,7 +436,7 @@ abstract class FunctionAndCustomToolCallOutputInputImageCopyWith<
     implements FunctionAndCustomToolCallOutputCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    FunctionAndCustomToolCallOutputTypeType2? type,
+    FunctionAndCustomToolCallOutputType2? type,
     String? imageUrl,
     String? fileId,
     ImageDetail? detail,
@@ -466,7 +465,7 @@ class _FunctionAndCustomToolCallOutputInputImageCopyWithImpl<$R, $Out>
   $mapper = FunctionAndCustomToolCallOutputInputImageMapper.ensureInitialized();
   @override
   $R call({
-    FunctionAndCustomToolCallOutputTypeType2? type,
+    FunctionAndCustomToolCallOutputType2? type,
     Object? imageUrl = $none,
     Object? fileId = $none,
     ImageDetail? detail,
@@ -514,7 +513,7 @@ class FunctionAndCustomToolCallOutputInputFileMapper
       FunctionAndCustomToolCallOutputMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      FunctionAndCustomToolCallOutputTypeType3Mapper.ensureInitialized();
+      FunctionAndCustomToolCallOutputType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -522,12 +521,12 @@ class FunctionAndCustomToolCallOutputInputFileMapper
   @override
   final String id = 'FunctionAndCustomToolCallOutputInputFile';
 
-  static FunctionAndCustomToolCallOutputTypeType3 _$type(
+  static FunctionAndCustomToolCallOutputType3 _$type(
     FunctionAndCustomToolCallOutputInputFile v,
   ) => v.type;
   static const Field<
     FunctionAndCustomToolCallOutputInputFile,
-    FunctionAndCustomToolCallOutputTypeType3
+    FunctionAndCustomToolCallOutputType3
   >
   _f$type = Field('type', _$type);
   static String? _$fileId(FunctionAndCustomToolCallOutputInputFile v) =>
@@ -666,7 +665,7 @@ abstract class FunctionAndCustomToolCallOutputInputFileCopyWith<
     implements FunctionAndCustomToolCallOutputCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    FunctionAndCustomToolCallOutputTypeType3? type,
+    FunctionAndCustomToolCallOutputType3? type,
     String? fileId,
     String? filename,
     String? fileUrl,
@@ -696,7 +695,7 @@ class _FunctionAndCustomToolCallOutputInputFileCopyWithImpl<$R, $Out>
       FunctionAndCustomToolCallOutputInputFileMapper.ensureInitialized();
   @override
   $R call({
-    FunctionAndCustomToolCallOutputTypeType3? type,
+    FunctionAndCustomToolCallOutputType3? type,
     Object? fileId = $none,
     Object? filename = $none,
     Object? fileUrl = $none,

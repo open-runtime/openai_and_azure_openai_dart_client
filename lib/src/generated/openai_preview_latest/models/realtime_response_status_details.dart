@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_response_status_details_type_type.dart';
-import 'realtime_response_status_details_reason_reason.dart';
+import 'realtime_response_status_details_type.dart';
+import 'realtime_response_status_details_reason.dart';
 import 'realtime_response_status_details_error.dart';
 
 part 'realtime_response_status_details.mapper.dart';
@@ -18,8 +18,8 @@ class RealtimeResponseStatusDetails with RealtimeResponseStatusDetailsMappable {
     this.realtimeResponseStatusDetailsError,
   });
 
-  final RealtimeResponseStatusDetailsTypeType? type;
-  final RealtimeResponseStatusDetailsReasonReason? reason;
+  final RealtimeResponseStatusDetailsType? type;
+  final RealtimeResponseStatusDetailsReason? reason;
   @MappableField(key: 'error')
   final RealtimeResponseStatusDetailsError? realtimeResponseStatusDetailsError;
 

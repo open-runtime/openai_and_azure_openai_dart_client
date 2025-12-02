@@ -18,7 +18,7 @@ class WebhookResponseCompletedMapper
         _instance = WebhookResponseCompletedMapper._(),
       );
       WebhookResponseCompletedDataMapper.ensureInitialized();
-      WebhookResponseCompletedTypeTypeMapper.ensureInitialized();
+      WebhookResponseCompletedTypeMapper.ensureInitialized();
       WebhookResponseCompletedObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -47,9 +47,9 @@ class WebhookResponseCompletedMapper
     _$webhookResponseCompletedData,
     key: r'data',
   );
-  static WebhookResponseCompletedTypeType _$type(WebhookResponseCompleted v) =>
+  static WebhookResponseCompletedType _$type(WebhookResponseCompleted v) =>
       v.type;
-  static const Field<WebhookResponseCompleted, WebhookResponseCompletedTypeType>
+  static const Field<WebhookResponseCompleted, WebhookResponseCompletedType>
   _f$type = Field('type', _$type);
   static WebhookResponseCompletedObjectObjectEnum? _$objectEnum(
     WebhookResponseCompleted v,
@@ -163,7 +163,7 @@ abstract class WebhookResponseCompletedCopyWith<
     int? createdAt,
     String? id,
     WebhookResponseCompletedData? webhookResponseCompletedData,
-    WebhookResponseCompletedTypeType? type,
+    WebhookResponseCompletedType? type,
     WebhookResponseCompletedObjectObjectEnum? objectEnum,
   });
   WebhookResponseCompletedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -195,7 +195,7 @@ class _WebhookResponseCompletedCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookResponseCompletedData? webhookResponseCompletedData,
-    WebhookResponseCompletedTypeType? type,
+    WebhookResponseCompletedType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

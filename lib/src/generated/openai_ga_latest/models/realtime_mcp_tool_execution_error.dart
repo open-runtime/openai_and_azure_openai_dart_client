@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_mcp_tool_execution_error_type_type.dart';
+import 'realtime_mcp_tool_execution_error_type.dart';
 
 part 'realtime_mcp_tool_execution_error.mapper.dart';
 
@@ -15,7 +15,7 @@ class RealtimeMcpToolExecutionError with RealtimeMcpToolExecutionErrorMappable {
     required this.message,
   });
 
-  final RealtimeMcpToolExecutionErrorTypeType type;
+  final RealtimeMcpToolExecutionErrorType type;
   final String message;
 
   static RealtimeMcpToolExecutionError fromJson(Map<String, dynamic> json) => RealtimeMcpToolExecutionErrorMapper.fromJson(json);

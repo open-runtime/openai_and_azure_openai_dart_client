@@ -15,7 +15,7 @@ class WebSearchActionSearchMapper
   static WebSearchActionSearchMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebSearchActionSearchMapper._());
-      WebSearchActionSearchTypeTypeMapper.ensureInitialized();
+      WebSearchActionSearchTypeMapper.ensureInitialized();
       WebSearchActionSearchSourcesMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,10 +24,9 @@ class WebSearchActionSearchMapper
   @override
   final String id = 'WebSearchActionSearch';
 
-  static WebSearchActionSearchTypeType _$type(WebSearchActionSearch v) =>
-      v.type;
-  static const Field<WebSearchActionSearch, WebSearchActionSearchTypeType>
-  _f$type = Field('type', _$type);
+  static WebSearchActionSearchType _$type(WebSearchActionSearch v) => v.type;
+  static const Field<WebSearchActionSearch, WebSearchActionSearchType> _f$type =
+      Field('type', _$type);
   static String _$query(WebSearchActionSearch v) => v.query;
   static const Field<WebSearchActionSearch, String> _f$query = Field(
     'query',
@@ -139,7 +138,7 @@ abstract class WebSearchActionSearchCopyWith<
   >?
   get sources;
   $R call({
-    WebSearchActionSearchTypeType? type,
+    WebSearchActionSearchType? type,
     String? query,
     List<WebSearchActionSearchSources>? sources,
   });
@@ -175,7 +174,7 @@ class _WebSearchActionSearchCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    WebSearchActionSearchTypeType? type,
+    WebSearchActionSearchType? type,
     String? query,
     Object? sources = $none,
   }) => $apply(

@@ -106,7 +106,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMapper
       );
       RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDeltaStepDetailsToolCallsCodeObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper.ensureInitialized();
     }
     return _instance!;
@@ -132,12 +132,12 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMapper
     String
   >
   _f$id = Field('id', _$id);
-  static RunStepDeltaStepDetailsToolCallsCodeObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeObjectType _$type(
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter?
@@ -319,7 +319,7 @@ abstract class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpret
   $R call({
     int? indexField,
     String? id,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeObjectType? type,
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter?
     runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
   });
@@ -376,7 +376,7 @@ class _RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterCopyWi
   $R call({
     int? indexField,
     Object? id = $none,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeObjectType? type,
     Object? runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -432,7 +432,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchMapper
       );
       RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -457,12 +457,12 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchMapper
     String
   >
   _f$id = Field('id', _$id);
-  static RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsFileSearchObjectType _$type(
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType
   >
   _f$type = Field('type', _$type);
   static dynamic _$fileSearch(
@@ -628,7 +628,7 @@ abstract class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchCop
   $R call({
     int? indexField,
     String? id,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type,
     dynamic fileSearch,
   });
   RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchCopyWith<
@@ -671,7 +671,7 @@ class _RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchCopyWithImp
   $R call({
     int? indexField,
     Object? id = $none,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type,
     Object? fileSearch = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -722,7 +722,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionMapper
       );
       RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDeltaStepDetailsToolCallsFunctionObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsFunctionObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -748,12 +748,12 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionMapper
     String
   >
   _f$id = Field('id', _$id);
-  static RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsFunctionObjectType _$type(
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDeltaStepDetailsToolCallsFunctionObjectFunction?
@@ -925,7 +925,7 @@ abstract class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionCopyW
   $R call({
     int? indexField,
     String? id,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType? type,
     RunStepDeltaStepDetailsToolCallsFunctionObjectFunction?
     runStepDeltaStepDetailsToolCallsFunctionObjectFunction,
   });
@@ -981,7 +981,7 @@ class _RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionCopyWithImpl<
   $R call({
     int? indexField,
     Object? id = $none,
-    RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFunctionObjectType? type,
     Object? runStepDeltaStepDetailsToolCallsFunctionObjectFunction = $none,
   }) => $apply(
     FieldCopyWithData({

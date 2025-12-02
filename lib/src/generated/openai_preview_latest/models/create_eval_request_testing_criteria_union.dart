@@ -6,18 +6,18 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_item.dart';
 import 'create_eval_label_model_grader.dart';
-import 'create_eval_label_model_grader_type_type.dart';
+import 'create_eval_label_model_grader_type.dart';
 import 'eval_item.dart';
 import 'eval_python_grader.dart';
-import 'eval_python_grader_type_type.dart';
+import 'eval_python_grader_type.dart';
 import 'eval_score_model_grader.dart';
-import 'eval_score_model_grader_type_type.dart';
+import 'eval_score_model_grader_type.dart';
 import 'eval_string_check_grader.dart';
-import 'eval_string_check_grader_operation_operation.dart';
-import 'eval_string_check_grader_type_type.dart';
+import 'eval_string_check_grader_operation.dart';
+import 'eval_string_check_grader_type.dart';
 import 'eval_text_similarity_grader.dart';
 import 'eval_text_similarity_grader_evaluation_metric_evaluation_metric.dart';
-import 'eval_text_similarity_grader_type_type.dart';
+import 'eval_text_similarity_grader_type.dart';
 
 part 'create_eval_request_testing_criteria_union.mapper.dart';
 
@@ -65,7 +65,7 @@ extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequest
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
 class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
-  final CreateEvalLabelModelGraderTypeType type;
+  final CreateEvalLabelModelGraderType type;
   final String name;
   final String model;
   final List<CreateEvalItem> input;
@@ -85,11 +85,11 @@ class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestT
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
 class CreateEvalRequestTestingCriteriaUnionStringCheck extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionStringCheckMappable {
-  final EvalStringCheckGraderTypeType type;
+  final EvalStringCheckGraderType type;
   final String name;
   final String input;
   final String reference;
-  final EvalStringCheckGraderOperationOperation operation;
+  final EvalStringCheckGraderOperation operation;
 
   const CreateEvalRequestTestingCriteriaUnionStringCheck({
     required this.type,
@@ -102,7 +102,7 @@ class CreateEvalRequestTestingCriteriaUnionStringCheck extends CreateEvalRequest
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
 class CreateEvalRequestTestingCriteriaUnionTextSimilarity extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionTextSimilarityMappable {
-  final EvalTextSimilarityGraderTypeType type;
+  final EvalTextSimilarityGraderType type;
   final String? name;
   final String input;
   final String reference;
@@ -123,7 +123,7 @@ class CreateEvalRequestTestingCriteriaUnionTextSimilarity extends CreateEvalRequ
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
 class CreateEvalRequestTestingCriteriaUnionPython extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionPythonMappable {
-  final EvalPythonGraderTypeType type;
+  final EvalPythonGraderType type;
   final String name;
   final String source;
   @MappableField(key: 'pass_threshold')
@@ -142,7 +142,7 @@ class CreateEvalRequestTestingCriteriaUnionPython extends CreateEvalRequestTesti
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
 class CreateEvalRequestTestingCriteriaUnionScoreModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionScoreModelMappable {
-  final EvalScoreModelGraderTypeType type;
+  final EvalScoreModelGraderType type;
   final String name;
   final String model;
   @MappableField(key: 'sampling_params')

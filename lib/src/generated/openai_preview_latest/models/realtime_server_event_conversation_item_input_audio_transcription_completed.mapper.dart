@@ -23,7 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
-      RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,13 +41,13 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeType
+  static RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType
   _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
-    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeType
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -238,7 +238,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
   get logprobs;
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeType?
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType?
     type,
     String? itemId,
     int? contentIndex,
@@ -297,7 +297,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionCompletedCopyWi
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeType?
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType?
     type,
     String? itemId,
     int? contentIndex,

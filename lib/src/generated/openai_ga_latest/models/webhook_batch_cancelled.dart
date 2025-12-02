@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_batch_cancelled_data.dart';
 import 'webhook_batch_cancelled_object_object_enum.dart';
-import 'webhook_batch_cancelled_type_type.dart';
+import 'webhook_batch_cancelled_type.dart';
 
 part 'webhook_batch_cancelled.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookBatchCancelled with WebhookBatchCancelledMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookBatchCancelledData webhookBatchCancelledData;
-  final WebhookBatchCancelledTypeType type;
+  final WebhookBatchCancelledType type;
   @MappableField(key: 'object')
   final WebhookBatchCancelledObjectObjectEnum? objectEnum;
 

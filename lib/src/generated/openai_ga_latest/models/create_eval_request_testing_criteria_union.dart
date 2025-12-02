@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_item.dart';
 import 'create_eval_label_model_grader.dart';
-import 'create_eval_label_model_grader_type_type.dart';
+import 'create_eval_label_model_grader_type.dart';
 
 part 'create_eval_request_testing_criteria_union.mapper.dart';
 
@@ -42,7 +42,7 @@ extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequest
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
 class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
-  final CreateEvalLabelModelGraderTypeType type;
+  final CreateEvalLabelModelGraderType type;
   final String name;
   final String model;
   final List<CreateEvalItem> input;

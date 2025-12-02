@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_response_audio_transcript_delta_type_type.dart';
+import 'realtime_server_event_response_audio_transcript_delta_type.dart';
 
 part 'realtime_server_event_response_audio_transcript_delta.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeServerEventResponseAudioTranscriptDelta with RealtimeServerEventRe
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseAudioTranscriptDeltaTypeType type;
+  final RealtimeServerEventResponseAudioTranscriptDeltaType type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')

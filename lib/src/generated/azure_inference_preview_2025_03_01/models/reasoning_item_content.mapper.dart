@@ -14,7 +14,7 @@ class ReasoningItemContentMapper extends ClassMapperBase<ReasoningItemContent> {
   static ReasoningItemContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ReasoningItemContentMapper._());
-      ReasoningItemContentTypeTypeMapper.ensureInitialized();
+      ReasoningItemContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class ReasoningItemContentMapper extends ClassMapperBase<ReasoningItemContent> {
   @override
   final String id = 'ReasoningItemContent';
 
-  static ReasoningItemContentTypeType _$type(ReasoningItemContent v) => v.type;
-  static const Field<ReasoningItemContent, ReasoningItemContentTypeType>
-  _f$type = Field('type', _$type);
+  static ReasoningItemContentType _$type(ReasoningItemContent v) => v.type;
+  static const Field<ReasoningItemContent, ReasoningItemContentType> _f$type =
+      Field('type', _$type);
   static String _$text(ReasoningItemContent v) => v.text;
   static const Field<ReasoningItemContent, String> _f$text = Field(
     'text',
@@ -118,7 +118,7 @@ abstract class ReasoningItemContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ReasoningItemContentTypeType? type, String? text});
+  $R call({ReasoningItemContentType? type, String? text});
   ReasoningItemContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -133,7 +133,7 @@ class _ReasoningItemContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ReasoningItemContent> $mapper =
       ReasoningItemContentMapper.ensureInitialized();
   @override
-  $R call({ReasoningItemContentTypeType? type, String? text}) => $apply(
+  $R call({ReasoningItemContentType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

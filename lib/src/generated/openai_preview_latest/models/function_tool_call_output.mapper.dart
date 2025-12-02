@@ -15,8 +15,8 @@ class FunctionToolCallOutputMapper
   static FunctionToolCallOutputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FunctionToolCallOutputMapper._());
-      FunctionToolCallOutputTypeTypeMapper.ensureInitialized();
-      FunctionToolCallOutputStatusStatusMapper.ensureInitialized();
+      FunctionToolCallOutputTypeMapper.ensureInitialized();
+      FunctionToolCallOutputStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,9 +24,8 @@ class FunctionToolCallOutputMapper
   @override
   final String id = 'FunctionToolCallOutput';
 
-  static FunctionToolCallOutputTypeType _$type(FunctionToolCallOutput v) =>
-      v.type;
-  static const Field<FunctionToolCallOutput, FunctionToolCallOutputTypeType>
+  static FunctionToolCallOutputType _$type(FunctionToolCallOutput v) => v.type;
+  static const Field<FunctionToolCallOutput, FunctionToolCallOutputType>
   _f$type = Field('type', _$type);
   static String _$callId(FunctionToolCallOutput v) => v.callId;
   static const Field<FunctionToolCallOutput, String> _f$callId = Field(
@@ -45,10 +44,9 @@ class FunctionToolCallOutputMapper
     _$id,
     opt: true,
   );
-  static FunctionToolCallOutputStatusStatus? _$status(
-    FunctionToolCallOutput v,
-  ) => v.status;
-  static const Field<FunctionToolCallOutput, FunctionToolCallOutputStatusStatus>
+  static FunctionToolCallOutputStatus? _$status(FunctionToolCallOutput v) =>
+      v.status;
+  static const Field<FunctionToolCallOutput, FunctionToolCallOutputStatus>
   _f$status = Field('status', _$status, opt: true);
 
   @override
@@ -145,11 +143,11 @@ abstract class FunctionToolCallOutputCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    FunctionToolCallOutputTypeType? type,
+    FunctionToolCallOutputType? type,
     String? callId,
     String? output,
     String? id,
-    FunctionToolCallOutputStatusStatus? status,
+    FunctionToolCallOutputStatus? status,
   });
   FunctionToolCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -167,7 +165,7 @@ class _FunctionToolCallOutputCopyWithImpl<$R, $Out>
       FunctionToolCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    FunctionToolCallOutputTypeType? type,
+    FunctionToolCallOutputType? type,
     String? callId,
     String? output,
     Object? id = $none,

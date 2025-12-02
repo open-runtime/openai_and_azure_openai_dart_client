@@ -14,7 +14,7 @@ class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
   static SpeechAudioDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = SpeechAudioDoneEventMapper._());
-      SpeechAudioDoneEventTypeTypeMapper.ensureInitialized();
+      SpeechAudioDoneEventTypeMapper.ensureInitialized();
       SpeechAudioDoneEventUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,9 @@ class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
   @override
   final String id = 'SpeechAudioDoneEvent';
 
-  static SpeechAudioDoneEventTypeType _$type(SpeechAudioDoneEvent v) => v.type;
-  static const Field<SpeechAudioDoneEvent, SpeechAudioDoneEventTypeType>
-  _f$type = Field('type', _$type);
+  static SpeechAudioDoneEventType _$type(SpeechAudioDoneEvent v) => v.type;
+  static const Field<SpeechAudioDoneEvent, SpeechAudioDoneEventType> _f$type =
+      Field('type', _$type);
   static SpeechAudioDoneEventUsage _$speechAudioDoneEventUsage(
     SpeechAudioDoneEvent v,
   ) => v.speechAudioDoneEventUsage;
@@ -130,7 +130,7 @@ abstract class SpeechAudioDoneEventCopyWith<
   >
   get speechAudioDoneEventUsage;
   $R call({
-    SpeechAudioDoneEventTypeType? type,
+    SpeechAudioDoneEventType? type,
     SpeechAudioDoneEventUsage? speechAudioDoneEventUsage,
   });
   SpeechAudioDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -156,7 +156,7 @@ class _SpeechAudioDoneEventCopyWithImpl<$R, $Out>
       .$chain((v) => call(speechAudioDoneEventUsage: v));
   @override
   $R call({
-    SpeechAudioDoneEventTypeType? type,
+    SpeechAudioDoneEventType? type,
     SpeechAudioDoneEventUsage? speechAudioDoneEventUsage,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class OtherChunkingStrategyResponseParamMapper
       MapperContainer.globals.use(
         _instance = OtherChunkingStrategyResponseParamMapper._(),
       );
-      OtherChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
+      OtherChunkingStrategyResponseParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class OtherChunkingStrategyResponseParamMapper
   @override
   final String id = 'OtherChunkingStrategyResponseParam';
 
-  static OtherChunkingStrategyResponseParamTypeType _$type(
+  static OtherChunkingStrategyResponseParamType _$type(
     OtherChunkingStrategyResponseParam v,
   ) => v.type;
   static const Field<
     OtherChunkingStrategyResponseParam,
-    OtherChunkingStrategyResponseParamTypeType
+    OtherChunkingStrategyResponseParamType
   >
   _f$type = Field('type', _$type);
 
@@ -126,7 +126,7 @@ abstract class OtherChunkingStrategyResponseParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({OtherChunkingStrategyResponseParamTypeType? type});
+  $R call({OtherChunkingStrategyResponseParamType? type});
   OtherChunkingStrategyResponseParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -149,7 +149,7 @@ class _OtherChunkingStrategyResponseParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OtherChunkingStrategyResponseParam> $mapper =
       OtherChunkingStrategyResponseParamMapper.ensureInitialized();
   @override
-  $R call({OtherChunkingStrategyResponseParamTypeType? type}) =>
+  $R call({OtherChunkingStrategyResponseParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   OtherChunkingStrategyResponseParam $make(CopyWithData data) =>

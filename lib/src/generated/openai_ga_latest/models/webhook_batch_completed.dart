@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_batch_completed_data.dart';
 import 'webhook_batch_completed_object_object_enum.dart';
-import 'webhook_batch_completed_type_type.dart';
+import 'webhook_batch_completed_type.dart';
 
 part 'webhook_batch_completed.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookBatchCompleted with WebhookBatchCompletedMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookBatchCompletedData webhookBatchCompletedData;
-  final WebhookBatchCompletedTypeType type;
+  final WebhookBatchCompletedType type;
   @MappableField(key: 'object')
   final WebhookBatchCompletedObjectObjectEnum? objectEnum;
 
