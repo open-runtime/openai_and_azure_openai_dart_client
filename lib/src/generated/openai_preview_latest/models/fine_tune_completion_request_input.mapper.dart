@@ -39,6 +39,10 @@ class FineTuneCompletionRequestInputMapper
     #prompt: _f$prompt,
     #completion: _f$completion,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneCompletionRequestInput _instantiate(DecodingData data) {
     return FineTuneCompletionRequestInput(

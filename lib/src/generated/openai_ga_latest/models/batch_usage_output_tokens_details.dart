@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'batch_usage_output_tokens_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchUsageOutputTokensDetails with BatchUsageOutputTokensDetailsMappable {
   const BatchUsageOutputTokensDetails({
     required this.reasoningTokens,

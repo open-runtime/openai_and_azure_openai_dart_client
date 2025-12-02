@@ -32,6 +32,10 @@ class ProjectServiceAccountCreateRequestMapper
   final MappableFields<ProjectServiceAccountCreateRequest> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectServiceAccountCreateRequest _instantiate(DecodingData data) {
     return ProjectServiceAccountCreateRequest(name: data.dec(_f$name));

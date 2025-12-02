@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'rate_limits_param.mapper.dart';
 
 /// Controls request rate limits for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RateLimitsParam with RateLimitsParamMappable {
   const RateLimitsParam({
     this.maxRequestsPer1Minute,

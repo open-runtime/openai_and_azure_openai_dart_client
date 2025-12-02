@@ -11,7 +11,7 @@ import 'content_filter_choice_results.dart';
 
 part 'create_chat_completion_response_choices_choices.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponseChoicesChoices with CreateChatCompletionResponseChoicesChoicesMappable {
   const CreateChatCompletionResponseChoicesChoices({
     this.indexField,

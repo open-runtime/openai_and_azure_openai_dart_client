@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'output_item.dart';
 import 'reasoning_item_status_status.dart';
 import 'reasoning_item_type_type.dart';
 import 'reasoning_text_content.dart';
@@ -16,7 +18,7 @@ part 'reasoning_item.mapper.dart';
 /// for subsequent turns of a conversation if you are manually.
 /// [managing context](https://platform.openai.com/docs/guides/conversation-state).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ReasoningItem with ReasoningItemMappable {
   const ReasoningItem({
     required this.type,

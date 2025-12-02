@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'project_service_account_create_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountCreateRequest with ProjectServiceAccountCreateRequestMappable {
   const ProjectServiceAccountCreateRequest({
     required this.name,

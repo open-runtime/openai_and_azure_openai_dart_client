@@ -88,6 +88,10 @@ class AuditLogOrganizationUpdatedChangesRequestedMapper
         #apiCallLogging: _f$apiCallLogging,
         #apiCallLoggingProjectIds: _f$apiCallLoggingProjectIds,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogOrganizationUpdatedChangesRequested _instantiate(
     DecodingData data,

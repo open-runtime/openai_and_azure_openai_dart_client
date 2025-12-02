@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'create_transcription_response_stream_event.dart';
 import 'transcript_text_done_event_logprobs.dart';
 import 'transcript_text_done_event_type_type.dart';
 
 part 'transcript_text_done_event.mapper.dart';
 
 /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextDoneEvent with TranscriptTextDoneEventMappable {
   const TranscriptTextDoneEvent({
     required this.type,

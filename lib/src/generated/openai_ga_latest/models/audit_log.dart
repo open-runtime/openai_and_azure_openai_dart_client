@@ -56,7 +56,7 @@ import 'audit_log_user_updated.dart';
 part 'audit_log.mapper.dart';
 
 /// A log of a user action or configuration change within this organization.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLog with AuditLogMappable {
   const AuditLog({
     required this.id,
@@ -118,101 +118,101 @@ class AuditLog with AuditLogMappable {
   @MappableField(key: 'effective_at')
   final int effectiveAt;
   final AuditLogActor actor;
-  @MappableField(key: 'AuditLogInviteSent')
+  @MappableField(key: 'invite.sent')
   final AuditLogInviteSent? auditLogInviteSent;
-  @MappableField(key: 'AuditLogApiKeyCreated')
+  @MappableField(key: 'api_key.created')
   final AuditLogApiKeyCreated? auditLogApiKeyCreated;
-  @MappableField(key: 'AuditLogApiKeyUpdated')
+  @MappableField(key: 'api_key.updated')
   final AuditLogApiKeyUpdated? auditLogApiKeyUpdated;
-  @MappableField(key: 'AuditLogApiKeyDeleted')
+  @MappableField(key: 'api_key.deleted')
   final AuditLogApiKeyDeleted? auditLogApiKeyDeleted;
-  @MappableField(key: 'AuditLogCheckpointPermissionCreated')
+  @MappableField(key: 'checkpoint.permission.created')
   final AuditLogCheckpointPermissionCreated? auditLogCheckpointPermissionCreated;
-  @MappableField(key: 'AuditLogCheckpointPermissionDeleted')
+  @MappableField(key: 'checkpoint.permission.deleted')
   final AuditLogCheckpointPermissionDeleted? auditLogCheckpointPermissionDeleted;
-  @MappableField(key: 'AuditLogExternalKeyRegistered')
+  @MappableField(key: 'external_key.registered')
   final AuditLogExternalKeyRegistered? auditLogExternalKeyRegistered;
-  @MappableField(key: 'AuditLogExternalKeyRemoved')
+  @MappableField(key: 'external_key.removed')
   final AuditLogExternalKeyRemoved? auditLogExternalKeyRemoved;
-  @MappableField(key: 'AuditLogGroupCreated')
+  @MappableField(key: 'group.created')
   final AuditLogGroupCreated? auditLogGroupCreated;
-  @MappableField(key: 'AuditLogGroupUpdated')
+  @MappableField(key: 'group.updated')
   final AuditLogGroupUpdated? auditLogGroupUpdated;
-  @MappableField(key: 'AuditLogGroupDeleted')
+  @MappableField(key: 'group.deleted')
   final AuditLogGroupDeleted? auditLogGroupDeleted;
-  @MappableField(key: 'AuditLogScimEnabled')
+  @MappableField(key: 'scim.enabled')
   final AuditLogScimEnabled? auditLogScimEnabled;
-  @MappableField(key: 'AuditLogScimDisabled')
+  @MappableField(key: 'scim.disabled')
   final AuditLogScimDisabled? auditLogScimDisabled;
-  @MappableField(key: 'AuditLogProject')
+  @MappableField(key: 'project')
   final AuditLogProject? auditLogProject;
-  @MappableField(key: 'AuditLogInviteAccepted')
+  @MappableField(key: 'invite.accepted')
   final AuditLogInviteAccepted? auditLogInviteAccepted;
-  @MappableField(key: 'AuditLogInviteDeleted')
+  @MappableField(key: 'invite.deleted')
   final AuditLogInviteDeleted? auditLogInviteDeleted;
-  @MappableField(key: 'AuditLogIpAllowlistCreated')
+  @MappableField(key: 'ip_allowlist.created')
   final AuditLogIpAllowlistCreated? auditLogIpAllowlistCreated;
-  @MappableField(key: 'AuditLogIpAllowlistUpdated')
+  @MappableField(key: 'ip_allowlist.updated')
   final AuditLogIpAllowlistUpdated? auditLogIpAllowlistUpdated;
-  @MappableField(key: 'AuditLogIpAllowlistDeleted')
+  @MappableField(key: 'ip_allowlist.deleted')
   final AuditLogIpAllowlistDeleted? auditLogIpAllowlistDeleted;
-  @MappableField(key: 'AuditLogIpAllowlistConfigActivated')
+  @MappableField(key: 'ip_allowlist.config.activated')
   final AuditLogIpAllowlistConfigActivated? auditLogIpAllowlistConfigActivated;
-  @MappableField(key: 'AuditLogIpAllowlistConfigDeactivated')
+  @MappableField(key: 'ip_allowlist.config.deactivated')
   final AuditLogIpAllowlistConfigDeactivated? auditLogIpAllowlistConfigDeactivated;
   @MappableField(key: 'login.succeeded')
   final dynamic? loginSucceeded;
-  @MappableField(key: 'AuditLogLoginFailed')
+  @MappableField(key: 'login.failed')
   final AuditLogLoginFailed? auditLogLoginFailed;
   @MappableField(key: 'logout.succeeded')
   final dynamic? logoutSucceeded;
-  @MappableField(key: 'AuditLogLogoutFailed')
+  @MappableField(key: 'logout.failed')
   final AuditLogLogoutFailed? auditLogLogoutFailed;
-  @MappableField(key: 'AuditLogOrganizationUpdated')
+  @MappableField(key: 'organization.updated')
   final AuditLogOrganizationUpdated? auditLogOrganizationUpdated;
-  @MappableField(key: 'AuditLogProjectCreated')
+  @MappableField(key: 'project.created')
   final AuditLogProjectCreated? auditLogProjectCreated;
-  @MappableField(key: 'AuditLogProjectUpdated')
+  @MappableField(key: 'project.updated')
   final AuditLogProjectUpdated? auditLogProjectUpdated;
-  @MappableField(key: 'AuditLogProjectArchived')
+  @MappableField(key: 'project.archived')
   final AuditLogProjectArchived? auditLogProjectArchived;
-  @MappableField(key: 'AuditLogCertificatesDeactivated')
+  @MappableField(key: 'certificates.deactivated')
   final AuditLogCertificatesDeactivated? auditLogCertificatesDeactivated;
-  @MappableField(key: 'AuditLogRateLimitUpdated')
+  @MappableField(key: 'rate_limit.updated')
   final AuditLogRateLimitUpdated? auditLogRateLimitUpdated;
-  @MappableField(key: 'AuditLogRateLimitDeleted')
+  @MappableField(key: 'rate_limit.deleted')
   final AuditLogRateLimitDeleted? auditLogRateLimitDeleted;
-  @MappableField(key: 'AuditLogRoleCreated')
+  @MappableField(key: 'role.created')
   final AuditLogRoleCreated? auditLogRoleCreated;
-  @MappableField(key: 'AuditLogRoleUpdated')
+  @MappableField(key: 'role.updated')
   final AuditLogRoleUpdated? auditLogRoleUpdated;
-  @MappableField(key: 'AuditLogRoleDeleted')
+  @MappableField(key: 'role.deleted')
   final AuditLogRoleDeleted? auditLogRoleDeleted;
-  @MappableField(key: 'AuditLogRoleAssignmentCreated')
+  @MappableField(key: 'role.assignment.created')
   final AuditLogRoleAssignmentCreated? auditLogRoleAssignmentCreated;
-  @MappableField(key: 'AuditLogRoleAssignmentDeleted')
+  @MappableField(key: 'role.assignment.deleted')
   final AuditLogRoleAssignmentDeleted? auditLogRoleAssignmentDeleted;
-  @MappableField(key: 'AuditLogServiceAccountCreated')
+  @MappableField(key: 'service_account.created')
   final AuditLogServiceAccountCreated? auditLogServiceAccountCreated;
-  @MappableField(key: 'AuditLogServiceAccountUpdated')
+  @MappableField(key: 'service_account.updated')
   final AuditLogServiceAccountUpdated? auditLogServiceAccountUpdated;
-  @MappableField(key: 'AuditLogServiceAccountDeleted')
+  @MappableField(key: 'service_account.deleted')
   final AuditLogServiceAccountDeleted? auditLogServiceAccountDeleted;
-  @MappableField(key: 'AuditLogUserAdded')
+  @MappableField(key: 'user.added')
   final AuditLogUserAdded? auditLogUserAdded;
-  @MappableField(key: 'AuditLogUserUpdated')
+  @MappableField(key: 'user.updated')
   final AuditLogUserUpdated? auditLogUserUpdated;
-  @MappableField(key: 'AuditLogUserDeleted')
+  @MappableField(key: 'user.deleted')
   final AuditLogUserDeleted? auditLogUserDeleted;
-  @MappableField(key: 'AuditLogCertificateCreated')
+  @MappableField(key: 'certificate.created')
   final AuditLogCertificateCreated? auditLogCertificateCreated;
-  @MappableField(key: 'AuditLogCertificateUpdated')
+  @MappableField(key: 'certificate.updated')
   final AuditLogCertificateUpdated? auditLogCertificateUpdated;
-  @MappableField(key: 'AuditLogCertificateDeleted')
+  @MappableField(key: 'certificate.deleted')
   final AuditLogCertificateDeleted? auditLogCertificateDeleted;
-  @MappableField(key: 'AuditLogCertificatesActivated')
+  @MappableField(key: 'certificates.activated')
   final AuditLogCertificatesActivated? auditLogCertificatesActivated;
-  @MappableField(key: 'AuditLogProjectDeleted')
+  @MappableField(key: 'project.deleted')
   final AuditLogProjectDeleted? auditLogProjectDeleted;
 
   static AuditLog fromJson(Map<String, dynamic> json) => AuditLogMapper.fromJson(json);

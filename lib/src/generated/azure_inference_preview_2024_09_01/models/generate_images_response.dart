@@ -8,7 +8,7 @@ import 'image_result.dart';
 
 part 'generate_images_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GenerateImagesResponse with GenerateImagesResponseMappable {
   const GenerateImagesResponse({
     required this.created,

@@ -47,6 +47,10 @@ class EvaluationDeleteRunResponseMapper
     #objectField: _f$objectField,
     #runId: _f$runId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvaluationDeleteRunResponse _instantiate(DecodingData data) {
     return EvaluationDeleteRunResponse(

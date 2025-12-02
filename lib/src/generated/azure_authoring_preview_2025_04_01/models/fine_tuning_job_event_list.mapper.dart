@@ -45,6 +45,10 @@ class FineTuningJobEventListMapper
     #data: _f$data,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobEventList _instantiate(DecodingData data) {
     return FineTuningJobEventList(

@@ -12,7 +12,7 @@ import 'user_compute_datasource.dart';
 
 part 'ingestion_job_user_compute.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobUserCompute with IngestionJobUserComputeMappable {
   const IngestionJobUserCompute({
     required this.kind,

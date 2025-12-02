@@ -37,7 +37,7 @@ class CreateThreadRequestToolResourcesMapper
   _f$createThreadRequestToolResourcesCodeInterpreter = Field(
     'createThreadRequestToolResourcesCodeInterpreter',
     _$createThreadRequestToolResourcesCodeInterpreter,
-    key: r'CreateThreadRequestToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static CreateThreadRequestToolResourcesFileSearch?
@@ -51,7 +51,7 @@ class CreateThreadRequestToolResourcesMapper
   _f$createThreadRequestToolResourcesFileSearch = Field(
     'createThreadRequestToolResourcesFileSearch',
     _$createThreadRequestToolResourcesFileSearch,
-    key: r'CreateThreadRequestToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -62,6 +62,10 @@ class CreateThreadRequestToolResourcesMapper
     #createThreadRequestToolResourcesFileSearch:
         _f$createThreadRequestToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequestToolResources _instantiate(DecodingData data) {
     return CreateThreadRequestToolResources(

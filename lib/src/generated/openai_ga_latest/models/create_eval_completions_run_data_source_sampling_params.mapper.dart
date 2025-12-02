@@ -18,7 +18,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCompletionsRunDataSourceSamplingParamsMapper._(),
       );
-      CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,12 +60,12 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsMapper
     key: r'max_completion_tokens',
     opt: true,
   );
-  static CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion?
+  static CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion?
   _$responseFormat(CreateEvalCompletionsRunDataSourceSamplingParams v) =>
       v.responseFormat;
   static const Field<
     CreateEvalCompletionsRunDataSourceSamplingParams,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -93,6 +93,10 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsMapper
     #responseFormat: _f$responseFormat,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCompletionsRunDataSourceSamplingParams _instantiate(
     DecodingData data,
@@ -207,10 +211,10 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion,
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
   >?
   get responseFormat;
   ListCopyWith<
@@ -225,7 +229,7 @@ abstract class CreateEvalCompletionsRunDataSourceSamplingParamsCopyWith<
     int? seed,
     String? reasoningEffort,
     int? maxCompletionTokens,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion?
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion?
     responseFormat,
     List<ChatCompletionTool>? tools,
   });
@@ -257,10 +261,10 @@ class _CreateEvalCompletionsRunDataSourceSamplingParamsCopyWithImpl<$R, $Out>
   $mapper =
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
   @override
-  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion,
-    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion,
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));

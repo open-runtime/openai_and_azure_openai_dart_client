@@ -51,6 +51,10 @@ class ListFineTuningJobEventsResponseMapper
     #objectEnum: _f$objectEnum,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListFineTuningJobEventsResponse _instantiate(DecodingData data) {
     return ListFineTuningJobEventsResponse(

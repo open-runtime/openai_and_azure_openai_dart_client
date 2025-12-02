@@ -14,6 +14,7 @@ class ChatkitWorkflowMapper extends ClassMapperBase<ChatkitWorkflow> {
   static ChatkitWorkflowMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ChatkitWorkflowMapper._());
+      StateVariablesUnionMapper.ensureInitialized();
       ChatkitWorkflowTracingMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,10 +30,16 @@ class ChatkitWorkflowMapper extends ClassMapperBase<ChatkitWorkflow> {
     'version',
     _$version,
   );
-  static Map<String, String>? _$stateVariables(ChatkitWorkflow v) =>
-      v.stateVariables;
-  static const Field<ChatkitWorkflow, Map<String, String>> _f$stateVariables =
-      Field('stateVariables', _$stateVariables, key: r'state_variables');
+  static Map<String, StateVariablesUnion>? _$stateVariables(
+    ChatkitWorkflow v,
+  ) => v.stateVariables;
+  static const Field<ChatkitWorkflow, Map<String, StateVariablesUnion>>
+  _f$stateVariables = Field(
+    'stateVariables',
+    _$stateVariables,
+    key: r'state_variables',
+    hook: const StateVariablesUnionHook(),
+  );
   static ChatkitWorkflowTracing _$tracing(ChatkitWorkflow v) => v.tracing;
   static const Field<ChatkitWorkflow, ChatkitWorkflowTracing> _f$tracing =
       Field('tracing', _$tracing);
@@ -44,6 +51,10 @@ class ChatkitWorkflowMapper extends ClassMapperBase<ChatkitWorkflow> {
     #stateVariables: _f$stateVariables,
     #tracing: _f$tracing,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatkitWorkflow _instantiate(DecodingData data) {
     return ChatkitWorkflow(
@@ -116,7 +127,12 @@ extension ChatkitWorkflowValueCopy<$R, $Out>
 
 abstract class ChatkitWorkflowCopyWith<$R, $In extends ChatkitWorkflow, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    StateVariablesUnion,
+    StateVariablesUnionCopyWith<$R, StateVariablesUnion, StateVariablesUnion>
+  >?
   get stateVariables;
   ChatkitWorkflowTracingCopyWith<
     $R,
@@ -127,7 +143,7 @@ abstract class ChatkitWorkflowCopyWith<$R, $In extends ChatkitWorkflow, $Out>
   $R call({
     String? id,
     String? version,
-    Map<String, String>? stateVariables,
+    Map<String, StateVariablesUnion>? stateVariables,
     ChatkitWorkflowTracing? tracing,
   });
   ChatkitWorkflowCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -144,11 +160,16 @@ class _ChatkitWorkflowCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ChatkitWorkflow> $mapper =
       ChatkitWorkflowMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    StateVariablesUnion,
+    StateVariablesUnionCopyWith<$R, StateVariablesUnion, StateVariablesUnion>
+  >?
   get stateVariables => $value.stateVariables != null
       ? MapCopyWith(
           $value.stateVariables!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(stateVariables: v),
         )
       : null;

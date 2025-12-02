@@ -8,7 +8,7 @@ import 'create_container_body_expires_after.dart';
 
 part 'create_container_body.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateContainerBody with CreateContainerBodyMappable {
   const CreateContainerBody({
     required this.name,
@@ -19,7 +19,7 @@ class CreateContainerBody with CreateContainerBodyMappable {
   final String name;
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
-  @MappableField(key: 'CreateContainerBodyExpiresAfter')
+  @MappableField(key: 'expires_after')
   final CreateContainerBodyExpiresAfter? createContainerBodyExpiresAfter;
 
   static CreateContainerBody fromJson(Map<String, dynamic> json) => CreateContainerBodyMapper.fromJson(json);

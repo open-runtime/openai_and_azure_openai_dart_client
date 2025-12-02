@@ -123,6 +123,10 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper
     #start: _f$start,
     #end: _f$end,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionSegment
   _instantiate(DecodingData data) {

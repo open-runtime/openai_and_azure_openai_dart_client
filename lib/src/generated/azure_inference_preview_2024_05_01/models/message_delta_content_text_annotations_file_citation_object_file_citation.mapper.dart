@@ -53,6 +53,10 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectFileCitationMapper
     MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation
   >
   fields = const {#fileId: _f$fileId, #quote: _f$quote};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation
   _instantiate(DecodingData data) {

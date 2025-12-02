@@ -9,7 +9,7 @@ import 'role_deleted_resource_object_object_enum.dart';
 part 'role_deleted_resource.mapper.dart';
 
 /// Confirmation payload returned after deleting a role.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RoleDeletedResource with RoleDeletedResourceMappable {
   const RoleDeletedResource({
     required this.objectEnum,

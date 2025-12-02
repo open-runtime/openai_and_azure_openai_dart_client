@@ -14,7 +14,7 @@ part 'realtime_truncation_union.mapper.dart';
 /// Truncation will reduce the number of cached tokens on the next turn (busting the cache), since messages are dropped from the beginning of the context. However, clients can also configure truncation to retain messages up to a fraction of the maximum context size, which will reduce the need for future truncations and thus improve the cache rate.
 /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
 ///
-@MappableClass(includeSubClasses: [RealtimeTruncationUnionVariant1, RealtimeTruncationUnionVariantString])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeTruncationUnionVariant1, RealtimeTruncationUnionVariantString])
 sealed class RealtimeTruncationUnion with RealtimeTruncationUnionMappable {
   const RealtimeTruncationUnion();
 
@@ -37,10 +37,12 @@ extension RealtimeTruncationUnionDeserializer on RealtimeTruncationUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTruncationUnionVariant1 extends RealtimeTruncationUnion with RealtimeTruncationUnionVariant1Mappable {
   final RealtimeTruncationUnionVariant1TypeType type;
+  @MappableField(key: 'retention_ratio')
   final num retentionRatio;
+  @MappableField(key: 'token_limits')
   final RealtimeTruncationUnionVariant1TokenLimits? realtimeTruncationUnionVariant1TokenLimits;
 
   const RealtimeTruncationUnionVariant1({
@@ -50,7 +52,7 @@ class RealtimeTruncationUnionVariant1 extends RealtimeTruncationUnion with Realt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTruncationUnionVariantString extends RealtimeTruncationUnion with RealtimeTruncationUnionVariantStringMappable {
   final String value;
 

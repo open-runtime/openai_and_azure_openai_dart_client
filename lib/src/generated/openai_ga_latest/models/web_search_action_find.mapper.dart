@@ -39,6 +39,10 @@ class WebSearchActionFindMapper extends ClassMapperBase<WebSearchActionFind> {
     #url: _f$url,
     #pattern: _f$pattern,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchActionFind _instantiate(DecodingData data) {
     return WebSearchActionFind(

@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_output_audio_buffer_cleared.mapper.dart';
 
 /// **WebRTC Only:** Emitted when the output audio buffer is cleared. This happens either in VAD.
@@ -12,7 +14,7 @@ part 'realtime_server_event_output_audio_buffer_cleared.mapper.dart';
 /// cut off the current audio response.
 /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventOutputAudioBufferCleared with RealtimeServerEventOutputAudioBufferClearedMappable {
   const RealtimeServerEventOutputAudioBufferCleared({
     required this.eventId,

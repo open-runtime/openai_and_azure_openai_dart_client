@@ -35,6 +35,10 @@ class AutomaticThreadTitlingParamMapper
   final MappableFields<AutomaticThreadTitlingParam> fields = const {
     #enabled: _f$enabled,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AutomaticThreadTitlingParam _instantiate(DecodingData data) {
     return AutomaticThreadTitlingParam(enabled: data.dec(_f$enabled));

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'top_log_prob.mapper.dart';
 
 /// The top log probability of a token.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TopLogProb with TopLogProbMappable {
   const TopLogProb({
     required this.token,

@@ -13,7 +13,7 @@ import 'realtime_conversation_item_message_system_type_type.dart';
 part 'realtime_conversation_item_message_system.mapper.dart';
 
 /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageSystem with RealtimeConversationItemMessageSystemMappable {
   const RealtimeConversationItemMessageSystem({
     required this.type,

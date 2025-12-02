@@ -33,6 +33,10 @@ class BatchUsageOutputTokensDetailsMapper
   final MappableFields<BatchUsageOutputTokensDetails> fields = const {
     #reasoningTokens: _f$reasoningTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchUsageOutputTokensDetails _instantiate(DecodingData data) {
     return BatchUsageOutputTokensDetails(

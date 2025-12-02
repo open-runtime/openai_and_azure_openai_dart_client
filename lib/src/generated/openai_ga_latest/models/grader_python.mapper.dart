@@ -49,6 +49,10 @@ class GraderPythonMapper extends ClassMapperBase<GraderPython> {
     #source: _f$source,
     #imageTag: _f$imageTag,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderPython _instantiate(DecodingData data) {
     return GraderPython(

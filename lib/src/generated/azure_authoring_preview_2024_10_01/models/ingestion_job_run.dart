@@ -11,7 +11,7 @@ import 'operation_state.dart';
 part 'ingestion_job_run.mapper.dart';
 
 /// The details of a job run
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobRun with IngestionJobRunMappable {
   const IngestionJobRun({
     this.jobId,

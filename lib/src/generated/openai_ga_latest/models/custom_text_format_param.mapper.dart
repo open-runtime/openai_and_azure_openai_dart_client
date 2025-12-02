@@ -35,6 +35,10 @@ class CustomTextFormatParamMapper
 
   @override
   final MappableFields<CustomTextFormatParam> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomTextFormatParam _instantiate(DecodingData data) {
     return CustomTextFormatParam(type: data.dec(_f$type));

@@ -23,6 +23,10 @@ class InputParamMapper extends ClassMapperBase<InputParam> {
 
   @override
   final MappableFields<InputParam> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputParam _instantiate(DecodingData data) {
     return InputParam();

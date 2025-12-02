@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'message_content.dart';
 import 'message_content_image_url_object_image_url.dart';
 import 'message_content_image_url_object_type_type.dart';
 
 part 'message_content_image_url_object.mapper.dart';
 
 /// References an image URL in the content of a message.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentImageUrlObject with MessageContentImageUrlObjectMappable {
   const MessageContentImageUrlObject({
     required this.type,
@@ -18,7 +19,7 @@ class MessageContentImageUrlObject with MessageContentImageUrlObjectMappable {
   });
 
   final MessageContentImageUrlObjectTypeType type;
-  @MappableField(key: 'MessageContentImageUrlObjectImageUrl')
+  @MappableField(key: 'image_url')
   final MessageContentImageUrlObjectImageUrl messageContentImageUrlObjectImageUrl;
 
   static MessageContentImageUrlObject fromJson(Map<String, dynamic> json) => MessageContentImageUrlObjectMapper.fromJson(json);

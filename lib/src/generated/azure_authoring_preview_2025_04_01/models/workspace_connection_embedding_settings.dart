@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'workspace_connection_embedding_settings.mapper.dart';
 
 /// Connection id to the embedding model
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkspaceConnectionEmbeddingSettings with WorkspaceConnectionEmbeddingSettingsMappable {
   const WorkspaceConnectionEmbeddingSettings({
     this.connectionId,

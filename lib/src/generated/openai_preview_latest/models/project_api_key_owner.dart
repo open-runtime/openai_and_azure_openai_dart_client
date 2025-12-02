@@ -10,7 +10,7 @@ import 'project_service_account.dart';
 
 part 'project_api_key_owner.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKeyOwner with ProjectApiKeyOwnerMappable {
   const ProjectApiKeyOwner({
     this.type,

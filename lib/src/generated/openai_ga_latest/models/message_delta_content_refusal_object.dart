@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'message_content_delta.dart';
 import 'message_delta_content_refusal_object_type_type.dart';
 
 part 'message_delta_content_refusal_object.mapper.dart';
 
 /// The refusal content that is part of a message.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentRefusalObject with MessageDeltaContentRefusalObjectMappable {
   const MessageDeltaContentRefusalObject({
     required this.indexField,

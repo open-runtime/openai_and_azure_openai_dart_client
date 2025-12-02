@@ -4,14 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'item_resource.dart';
 import 'mcp_tool_call_status.dart';
 import 'mcp_tool_call_type_type.dart';
+import 'output_item.dart';
 
 part 'mcp_tool_call.mapper.dart';
 
 /// An invocation of a tool on an MCP server.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpToolCall with McpToolCallMappable {
   const McpToolCall({
     required this.type,

@@ -11,7 +11,7 @@ part 'azure_cosmos_db_chat_extension_configuration.mapper.dart';
 
 /// A specific representation of configurable options for Azure Cosmos DB when using it as an Azure OpenAI chat.
 /// extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureCosmosDbChatExtensionConfiguration with AzureCosmosDbChatExtensionConfigurationMappable {
   const AzureCosmosDbChatExtensionConfiguration({
     required this.type,

@@ -41,6 +41,10 @@ class ProjectUserCreateRequestMapper
     #userId: _f$userId,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectUserCreateRequest _instantiate(DecodingData data) {
     return ProjectUserCreateRequest(

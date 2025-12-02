@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'fine_tune_preference_request_input_input_messages_messages_union.dart';
+import 'fine_tune_preference_request_input_input_messages_union.dart';
 import 'chat_completion_tool.dart';
 import 'parallel_tool_calls.dart';
 
 part 'fine_tune_preference_request_input_input.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTunePreferenceRequestInputInput with FineTunePreferenceRequestInputInputMappable {
   const FineTunePreferenceRequestInputInput({
     this.messages,
@@ -18,7 +18,7 @@ class FineTunePreferenceRequestInputInput with FineTunePreferenceRequestInputInp
     this.parallelToolCalls,
   });
 
-  final List<FineTunePreferenceRequestInputInputMessagesMessagesUnion>? messages;
+  final List<FineTunePreferenceRequestInputInputMessagesUnion>? messages;
   final List<ChatCompletionTool>? tools;
   @MappableField(key: 'parallel_tool_calls')
   final ParallelToolCalls? parallelToolCalls;

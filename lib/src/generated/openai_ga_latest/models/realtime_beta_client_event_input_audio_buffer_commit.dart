@@ -17,7 +17,7 @@ part 'realtime_beta_client_event_input_audio_buffer_commit.mapper.dart';
 /// from the model. The server will respond with an `input_audio_buffer.committed` .
 /// event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventInputAudioBufferCommit with RealtimeBetaClientEventInputAudioBufferCommitMappable {
   const RealtimeBetaClientEventInputAudioBufferCommit({
     required this.type,

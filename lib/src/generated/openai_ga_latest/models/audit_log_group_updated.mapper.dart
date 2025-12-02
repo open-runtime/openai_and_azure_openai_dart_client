@@ -35,7 +35,7 @@ class AuditLogGroupUpdatedMapper extends ClassMapperBase<AuditLogGroupUpdated> {
   _f$auditLogGroupUpdatedChangesRequested = Field(
     'auditLogGroupUpdatedChangesRequested',
     _$auditLogGroupUpdatedChangesRequested,
-    key: r'AuditLogGroupUpdatedChangesRequested',
+    key: r'changes_requested',
     opt: true,
   );
 
@@ -45,6 +45,10 @@ class AuditLogGroupUpdatedMapper extends ClassMapperBase<AuditLogGroupUpdated> {
     #auditLogGroupUpdatedChangesRequested:
         _f$auditLogGroupUpdatedChangesRequested,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogGroupUpdated _instantiate(DecodingData data) {
     return AuditLogGroupUpdated(

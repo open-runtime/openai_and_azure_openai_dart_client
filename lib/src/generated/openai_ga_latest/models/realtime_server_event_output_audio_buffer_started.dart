@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_output_audio_buffer_started.mapper.dart';
 
 /// **WebRTC Only:** Emitted when the server begins streaming audio to the client. This event is.
@@ -11,7 +13,7 @@ part 'realtime_server_event_output_audio_buffer_started.mapper.dart';
 /// to the response.
 /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventOutputAudioBufferStarted with RealtimeServerEventOutputAudioBufferStartedMappable {
   const RealtimeServerEventOutputAudioBufferStarted({
     required this.eventId,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'function_call_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionCallFunction with FunctionCallFunctionMappable {
   const FunctionCallFunction({
     this.name,

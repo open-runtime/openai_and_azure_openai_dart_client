@@ -34,6 +34,10 @@ class WebhookResponseCompletedDataMapper
   final MappableFields<WebhookResponseCompletedData> fields = const {
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseCompletedData _instantiate(DecodingData data) {
     return WebhookResponseCompletedData(id: data.dec(_f$id));

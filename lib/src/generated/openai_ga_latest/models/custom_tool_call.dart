@@ -4,13 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
 import 'custom_tool_call_type_type.dart';
+import 'output_item.dart';
 
 part 'custom_tool_call.mapper.dart';
 
 /// A call to a custom tool created by the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolCall with CustomToolCallMappable {
   const CustomToolCall({
     required this.type,

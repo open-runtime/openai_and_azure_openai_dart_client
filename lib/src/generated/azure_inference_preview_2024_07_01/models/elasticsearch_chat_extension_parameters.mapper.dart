@@ -17,10 +17,10 @@ class ElasticsearchChatExtensionParametersMapper
       MapperContainer.globals.use(
         _instance = ElasticsearchChatExtensionParametersMapper._(),
       );
-      ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnionMapper.ensureInitialized();
+      ElasticsearchChatExtensionParametersAuthenticationUnionMapper.ensureInitialized();
       ElasticsearchIndexFieldMappingOptionsMapper.ensureInitialized();
       ElasticsearchQueryTypeMapper.ensureInitialized();
-      ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMapper.ensureInitialized();
+      ElasticsearchChatExtensionParametersEmbeddingDependencyUnionMapper.ensureInitialized();
       OnYourDataContextPropertyMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,11 +29,11 @@ class ElasticsearchChatExtensionParametersMapper
   @override
   final String id = 'ElasticsearchChatExtensionParameters';
 
-  static ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion
+  static ElasticsearchChatExtensionParametersAuthenticationUnion
   _$authentication(ElasticsearchChatExtensionParameters v) => v.authentication;
   static const Field<
     ElasticsearchChatExtensionParameters,
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion
+    ElasticsearchChatExtensionParametersAuthenticationUnion
   >
   _f$authentication = Field('authentication', _$authentication);
   static String _$endpoint(ElasticsearchChatExtensionParameters v) =>
@@ -109,12 +109,12 @@ class ElasticsearchChatExtensionParametersMapper
     ElasticsearchQueryType
   >
   _f$queryType = Field('queryType', _$queryType, key: r'query_type', opt: true);
-  static ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+  static ElasticsearchChatExtensionParametersEmbeddingDependencyUnion?
   _$embeddingDependency(ElasticsearchChatExtensionParameters v) =>
       v.embeddingDependency;
   static const Field<
     ElasticsearchChatExtensionParameters,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion
   >
   _f$embeddingDependency = Field(
     'embeddingDependency',
@@ -152,6 +152,10 @@ class ElasticsearchChatExtensionParametersMapper
     #embeddingDependency: _f$embeddingDependency,
     #includeContexts: _f$includeContexts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ElasticsearchChatExtensionParameters _instantiate(DecodingData data) {
     return ElasticsearchChatExtensionParameters(
@@ -252,10 +256,10 @@ abstract class ElasticsearchChatExtensionParametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  ElasticsearchChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion,
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion
+    ElasticsearchChatExtensionParametersAuthenticationUnion,
+    ElasticsearchChatExtensionParametersAuthenticationUnion
   >
   get authentication;
   ElasticsearchIndexFieldMappingOptionsCopyWith<
@@ -264,10 +268,10 @@ abstract class ElasticsearchChatExtensionParametersCopyWith<
     ElasticsearchIndexFieldMappingOptions
   >?
   get fieldsMapping;
-  ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  ElasticsearchChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion,
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion
   >?
   get embeddingDependency;
   ListCopyWith<
@@ -277,8 +281,7 @@ abstract class ElasticsearchChatExtensionParametersCopyWith<
   >?
   get includeContexts;
   $R call({
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion?
-    authentication,
+    ElasticsearchChatExtensionParametersAuthenticationUnion? authentication,
     String? endpoint,
     String? indexName,
     bool? allowPartialResult,
@@ -289,7 +292,7 @@ abstract class ElasticsearchChatExtensionParametersCopyWith<
     String? roleInformation,
     ElasticsearchIndexFieldMappingOptions? fieldsMapping,
     ElasticsearchQueryType? queryType,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion?
     embeddingDependency,
     List<OnYourDataContextProperty>? includeContexts,
   });
@@ -315,10 +318,10 @@ class _ElasticsearchChatExtensionParametersCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ElasticsearchChatExtensionParameters> $mapper =
       ElasticsearchChatExtensionParametersMapper.ensureInitialized();
   @override
-  ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  ElasticsearchChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion,
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion
+    ElasticsearchChatExtensionParametersAuthenticationUnion,
+    ElasticsearchChatExtensionParametersAuthenticationUnion
   >
   get authentication =>
       $value.authentication.copyWith.$chain((v) => call(authentication: v));
@@ -331,10 +334,10 @@ class _ElasticsearchChatExtensionParametersCopyWithImpl<$R, $Out>
   get fieldsMapping =>
       $value.fieldsMapping?.copyWith.$chain((v) => call(fieldsMapping: v));
   @override
-  ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  ElasticsearchChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion,
+    ElasticsearchChatExtensionParametersEmbeddingDependencyUnion
   >?
   get embeddingDependency => $value.embeddingDependency?.copyWith.$chain(
     (v) => call(embeddingDependency: v),
@@ -354,8 +357,7 @@ class _ElasticsearchChatExtensionParametersCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion?
-    authentication,
+    ElasticsearchChatExtensionParametersAuthenticationUnion? authentication,
     String? endpoint,
     String? indexName,
     bool? allowPartialResult,

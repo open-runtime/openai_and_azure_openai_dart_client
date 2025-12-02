@@ -4,11 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'assistant_tool.dart';
 import 'assistant_tools_code_type_type.dart';
 
 part 'assistant_tools_code.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsCode with AssistantToolsCodeMappable {
   const AssistantToolsCode({
     required this.type,

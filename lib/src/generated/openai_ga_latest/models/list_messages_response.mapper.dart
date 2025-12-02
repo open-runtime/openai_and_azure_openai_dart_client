@@ -60,6 +60,10 @@ class ListMessagesResponseMapper extends ClassMapperBase<ListMessagesResponse> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListMessagesResponse _instantiate(DecodingData data) {
     return ListMessagesResponse(

@@ -60,6 +60,10 @@ class EvalStringCheckGraderMapper
     #reference: _f$reference,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalStringCheckGrader _instantiate(DecodingData data) {
     return EvalStringCheckGrader(

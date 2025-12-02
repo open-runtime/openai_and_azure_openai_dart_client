@@ -18,7 +18,7 @@ class ResponseContentPartDoneEventMapper
         _instance = ResponseContentPartDoneEventMapper._(),
       );
       ResponseContentPartDoneEventTypeTypeMapper.ensureInitialized();
-      OutputContentUnionMapper.ensureInitialized();
+      OutputContentMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -52,10 +52,10 @@ class ResponseContentPartDoneEventMapper
     _$contentIndex,
     key: r'content_index',
   );
-  static OutputContentUnion? _$partField(ResponseContentPartDoneEvent v) =>
+  static OutputContent _$partField(ResponseContentPartDoneEvent v) =>
       v.partField;
-  static const Field<ResponseContentPartDoneEvent, OutputContentUnion>
-  _f$partField = Field('partField', _$partField, key: r'part');
+  static const Field<ResponseContentPartDoneEvent, OutputContent> _f$partField =
+      Field('partField', _$partField, key: r'part');
 
   @override
   final MappableFields<ResponseContentPartDoneEvent> fields = const {
@@ -65,6 +65,10 @@ class ResponseContentPartDoneEventMapper
     #contentIndex: _f$contentIndex,
     #partField: _f$partField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseContentPartDoneEvent _instantiate(DecodingData data) {
     return ResponseContentPartDoneEvent(
@@ -149,14 +153,13 @@ abstract class ResponseContentPartDoneEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
-  get partField;
+  OutputContentCopyWith<$R, OutputContent, OutputContent> get partField;
   $R call({
     ResponseContentPartDoneEventTypeType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
-    OutputContentUnion? partField,
+    OutputContent? partField,
   });
   ResponseContentPartDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -181,22 +184,22 @@ class _ResponseContentPartDoneEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseContentPartDoneEvent> $mapper =
       ResponseContentPartDoneEventMapper.ensureInitialized();
   @override
-  OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
-  get partField => $value.partField?.copyWith.$chain((v) => call(partField: v));
+  OutputContentCopyWith<$R, OutputContent, OutputContent> get partField =>
+      $value.partField.copyWith.$chain((v) => call(partField: v));
   @override
   $R call({
     ResponseContentPartDoneEventTypeType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
-    Object? partField = $none,
+    OutputContent? partField,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (itemId != null) #itemId: itemId,
       if (outputIndex != null) #outputIndex: outputIndex,
       if (contentIndex != null) #contentIndex: contentIndex,
-      if (partField != $none) #partField: partField,
+      if (partField != null) #partField: partField,
     }),
   );
   @override

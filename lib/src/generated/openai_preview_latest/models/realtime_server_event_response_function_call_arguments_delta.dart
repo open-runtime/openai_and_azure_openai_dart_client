@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_response_function_call_arguments_delta_type_type.dart';
 
 part 'realtime_server_event_response_function_call_arguments_delta.mapper.dart';
 
 /// Returned when the model-generated function call arguments are updated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseFunctionCallArgumentsDelta with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
   const RealtimeServerEventResponseFunctionCallArgumentsDelta({
     required this.eventId,

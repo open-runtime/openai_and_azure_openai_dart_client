@@ -11,7 +11,7 @@ import 'eval_api_error.dart';
 
 part 'eval_run_output_item_sample.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemSample with EvalRunOutputItemSampleMappable {
   const EvalRunOutputItemSample({
     required this.input,
@@ -31,7 +31,7 @@ class EvalRunOutputItemSample with EvalRunOutputItemSampleMappable {
   @MappableField(key: 'finish_reason')
   final String finishReason;
   final String model;
-  @MappableField(key: 'EvalRunOutputItemSampleUsage')
+  @MappableField(key: 'usage')
   final EvalRunOutputItemSampleUsage evalRunOutputItemSampleUsage;
   final EvalApiError error;
   final num temperature;

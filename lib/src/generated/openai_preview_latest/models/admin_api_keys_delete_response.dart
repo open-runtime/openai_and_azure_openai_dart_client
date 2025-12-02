@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'admin_api_keys_delete_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKeysDeleteResponse with AdminApiKeysDeleteResponseMappable {
   const AdminApiKeysDeleteResponse({
     this.id,

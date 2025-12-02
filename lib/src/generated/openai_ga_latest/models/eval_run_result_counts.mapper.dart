@@ -49,6 +49,10 @@ class EvalRunResultCountsMapper extends ClassMapperBase<EvalRunResultCounts> {
     #failed: _f$failed,
     #passed: _f$passed,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunResultCounts _instantiate(DecodingData data) {
     return EvalRunResultCounts(

@@ -4,10 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_mcp_list_tools_in_progress.mapper.dart';
 
 /// Returned when listing MCP tools is in progress for an item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventMcpListToolsInProgress with RealtimeServerEventMcpListToolsInProgressMappable {
   const RealtimeServerEventMcpListToolsInProgress({
     required this.eventId,

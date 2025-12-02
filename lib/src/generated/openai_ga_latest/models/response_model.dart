@@ -24,7 +24,7 @@ import 'tools_array.dart';
 
 part 'response_model.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseModel with ResponseModelMappable {
   const ResponseModel({
     required this.id,

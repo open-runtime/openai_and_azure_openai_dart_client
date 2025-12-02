@@ -40,6 +40,10 @@ class LockedStatusMapper extends ClassMapperBase<LockedStatus> {
     #reason: _f$reason,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LockedStatus _instantiate(DecodingData data) {
     return LockedStatus(reason: data.dec(_f$reason), type: data.dec(_f$type));

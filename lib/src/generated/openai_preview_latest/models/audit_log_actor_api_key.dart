@@ -11,7 +11,7 @@ import 'audit_log_actor_user.dart';
 part 'audit_log_actor_api_key.mapper.dart';
 
 /// The API Key used to perform the audit logged action.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActorApiKey with AuditLogActorApiKeyMappable {
   const AuditLogActorApiKey({
     this.id,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_text_delta.mapper.dart';
 
 /// Returned when the text value of an "output_text" content part is updated.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseTextDelta with RealtimeBetaServerEventResponseTextDeltaMappable {
   const RealtimeBetaServerEventResponseTextDelta({
     required this.eventId,

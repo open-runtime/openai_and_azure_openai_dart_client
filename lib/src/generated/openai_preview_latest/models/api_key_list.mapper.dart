@@ -65,6 +65,10 @@ class ApiKeyListMapper extends ClassMapperBase<ApiKeyList> {
     #firstId: _f$firstId,
     #lastId: _f$lastId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApiKeyList _instantiate(DecodingData data) {
     return ApiKeyList(

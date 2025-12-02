@@ -56,6 +56,10 @@ class RealtimeServerEventResponseContentPartAddedPartMapper
         #audio: _f$audio,
         #transcript: _f$transcript,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseContentPartAddedPart _instantiate(
     DecodingData data,

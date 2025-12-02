@@ -56,6 +56,10 @@ class ResponseFileSearchCallSearchingEventMapper
     #itemId: _f$itemId,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFileSearchCallSearchingEvent _instantiate(DecodingData data) {
     return ResponseFileSearchCallSearchingEvent(

@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'chat_completion_request_message.dart';
 import 'chat_completion_request_system_message_role_role.dart';
 
 part 'chat_completion_request_system_message.mapper.dart';
@@ -12,7 +13,7 @@ part 'chat_completion_request_system_message.mapper.dart';
 /// messages sent by the user. With o1 models and newer, use `developer` messages.
 /// for this purpose instead.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestSystemMessage with ChatCompletionRequestSystemMessageMappable {
   const ChatCompletionRequestSystemMessage({
     required this.content,

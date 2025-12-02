@@ -46,7 +46,7 @@ class GraderScoreModelMapper extends ClassMapperBase<GraderScoreModel> {
   _f$graderScoreModelSamplingParams = Field(
     'graderScoreModelSamplingParams',
     _$graderScoreModelSamplingParams,
-    key: r'GraderScoreModelSamplingParams',
+    key: r'sampling_params',
     opt: true,
   );
   static List<num>? _$range(GraderScoreModel v) => v.range;
@@ -65,6 +65,10 @@ class GraderScoreModelMapper extends ClassMapperBase<GraderScoreModel> {
     #graderScoreModelSamplingParams: _f$graderScoreModelSamplingParams,
     #range: _f$range,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderScoreModel _instantiate(DecodingData data) {
     return GraderScoreModel(

@@ -40,7 +40,7 @@ class WebhookBatchCompletedMapper
   _f$webhookBatchCompletedData = Field(
     'webhookBatchCompletedData',
     _$webhookBatchCompletedData,
-    key: r'WebhookBatchCompletedData',
+    key: r'data',
   );
   static WebhookBatchCompletedTypeType _$type(WebhookBatchCompleted v) =>
       v.type;
@@ -63,6 +63,10 @@ class WebhookBatchCompletedMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchCompleted _instantiate(DecodingData data) {
     return WebhookBatchCompleted(

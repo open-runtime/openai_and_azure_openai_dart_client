@@ -40,6 +40,10 @@ class ClosedStatusMapper extends ClassMapperBase<ClosedStatus> {
     #reason: _f$reason,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ClosedStatus _instantiate(DecodingData data) {
     return ClosedStatus(reason: data.dec(_f$reason), type: data.dec(_f$type));

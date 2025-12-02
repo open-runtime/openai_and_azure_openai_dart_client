@@ -11,7 +11,7 @@ import 'role.dart';
 part 'group_role_assignment.mapper.dart';
 
 /// Role assignment linking a group to a role.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupRoleAssignment with GroupRoleAssignmentMappable {
   const GroupRoleAssignment({
     required this.objectEnum,

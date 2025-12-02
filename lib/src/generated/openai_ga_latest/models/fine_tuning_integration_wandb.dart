@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'fine_tuning_integration_wandb.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningIntegrationWandb with FineTuningIntegrationWandbMappable {
   const FineTuningIntegrationWandb({
     required this.project,

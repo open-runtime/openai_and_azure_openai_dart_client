@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_run_per_testing_criteria_results.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunPerTestingCriteriaResults with EvalRunPerTestingCriteriaResultsMappable {
   const EvalRunPerTestingCriteriaResults({
     required this.failed,

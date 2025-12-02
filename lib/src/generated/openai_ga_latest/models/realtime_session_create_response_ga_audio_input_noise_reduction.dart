@@ -8,7 +8,7 @@ import 'noise_reduction_type.dart';
 
 part 'realtime_session_create_response_ga_audio_input_noise_reduction.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGaAudioInputNoiseReduction with RealtimeSessionCreateResponseGaAudioInputNoiseReductionMappable {
   const RealtimeSessionCreateResponseGaAudioInputNoiseReduction({
     this.type,

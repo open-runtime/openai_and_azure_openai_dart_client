@@ -9,7 +9,7 @@ import 'image_gen_input_usage_details.dart';
 part 'image_gen_usage.mapper.dart';
 
 /// For `gpt-image-1` only, the token usage information for the image generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenUsage with ImageGenUsageMappable {
   const ImageGenUsage({
     required this.inputTokens,

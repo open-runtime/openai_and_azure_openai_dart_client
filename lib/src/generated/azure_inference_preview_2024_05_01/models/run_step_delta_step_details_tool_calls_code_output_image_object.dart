@@ -9,7 +9,7 @@ import 'run_step_delta_step_details_tool_calls_code_output_image_object_type_typ
 
 part 'run_step_delta_step_details_tool_calls_code_output_image_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject with RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMappable {
   const RunStepDeltaStepDetailsToolCallsCodeOutputImageObject({
     required this.indexField,
@@ -20,7 +20,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject with RunStepDeltaSte
   @MappableField(key: 'index')
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType type;
-  @MappableField(key: 'RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage')
+  @MappableField(key: 'image')
   final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
 
   static RunStepDeltaStepDetailsToolCallsCodeOutputImageObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json);

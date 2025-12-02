@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'run_step_completion_usage.mapper.dart';
 
 /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepCompletionUsage with RunStepCompletionUsageMappable {
   const RunStepCompletionUsage({
     required this.completionTokens,

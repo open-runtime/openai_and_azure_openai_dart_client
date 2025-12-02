@@ -67,7 +67,7 @@ class EvalRunOutputItemMapper extends ClassMapperBase<EvalRunOutputItem> {
   _f$evalRunOutputItemSample = Field(
     'evalRunOutputItemSample',
     _$evalRunOutputItemSample,
-    key: r'EvalRunOutputItemSample',
+    key: r'sample',
   );
   static String _$status(EvalRunOutputItem v) => v.status;
   static const Field<EvalRunOutputItem, String> _f$status = Field(
@@ -98,6 +98,10 @@ class EvalRunOutputItemMapper extends ClassMapperBase<EvalRunOutputItem> {
     #status: _f$status,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItem _instantiate(DecodingData data) {
     return EvalRunOutputItem(

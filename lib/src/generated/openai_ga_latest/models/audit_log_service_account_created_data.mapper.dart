@@ -35,6 +35,10 @@ class AuditLogServiceAccountCreatedDataMapper
   final MappableFields<AuditLogServiceAccountCreatedData> fields = const {
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogServiceAccountCreatedData _instantiate(DecodingData data) {
     return AuditLogServiceAccountCreatedData(role: data.dec(_f$role));

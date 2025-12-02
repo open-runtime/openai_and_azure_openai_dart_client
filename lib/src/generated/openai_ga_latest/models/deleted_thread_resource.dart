@@ -9,7 +9,7 @@ import 'deleted_thread_resource_object_object_enum.dart';
 part 'deleted_thread_resource.mapper.dart';
 
 /// Confirmation payload returned after deleting a thread.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeletedThreadResource with DeletedThreadResourceMappable {
   const DeletedThreadResource({
     required this.id,

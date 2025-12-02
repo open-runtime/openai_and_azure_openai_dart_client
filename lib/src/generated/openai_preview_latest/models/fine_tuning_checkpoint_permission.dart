@@ -10,7 +10,7 @@ part 'fine_tuning_checkpoint_permission.mapper.dart';
 
 /// The `checkpoint.permission` object represents a permission for a fine-tuned model checkpoint.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningCheckpointPermission with FineTuningCheckpointPermissionMappable {
   const FineTuningCheckpointPermission({
     required this.id,

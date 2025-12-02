@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'batch_request_output_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutputResponse with BatchRequestOutputResponseMappable {
   const BatchRequestOutputResponse({
     this.statusCode,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'history_param.mapper.dart';
 
 /// Controls how much historical context is retained for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class HistoryParam with HistoryParamMappable {
   const HistoryParam({
     this.enabled,

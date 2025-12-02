@@ -61,6 +61,10 @@ class CitationMapper extends ClassMapperBase<Citation> {
     #chunkId: _f$chunkId,
     #rerankScore: _f$rerankScore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Citation _instantiate(DecodingData data) {
     return Citation(

@@ -10,7 +10,7 @@ import 'fine_tuning_method_type.dart';
 part 'dpo_method_request.mapper.dart';
 
 /// Request for DPO method finetuning
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DpoMethodRequest with DpoMethodRequestMappable {
   const DpoMethodRequest({
     required this.type,

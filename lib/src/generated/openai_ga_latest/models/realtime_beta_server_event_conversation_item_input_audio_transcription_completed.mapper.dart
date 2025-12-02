@@ -24,7 +24,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMap
             RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedTypeTypeMapper.ensureInitialized();
-      RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnionMapper.ensureInitialized();
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
     return _instance!;
@@ -79,13 +79,13 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMap
     String
   >
   _f$transcript = Field('transcript', _$transcript);
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
   _$usage(
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted v,
   ) => v.usage;
   static const Field<
     RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
   >
   _f$usage = Field('usage', _$usage);
   static List<LogProbProperties>? _$logprobs(
@@ -110,6 +110,10 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMap
     #usage: _f$usage,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted
   _instantiate(DecodingData data) {
@@ -238,10 +242,10 @@ abstract class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCom
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnionCopyWith<
+  RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionCopyWith<
     $R,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion,
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
   >
   get usage;
   ListCopyWith<
@@ -257,7 +261,7 @@ abstract class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCom
     String? itemId,
     int? contentIndex,
     String? transcript,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion?
     usage,
     List<LogProbProperties>? logprobs,
   });
@@ -298,10 +302,10 @@ class _RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedCo
   $mapper =
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper.ensureInitialized();
   @override
-  RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnionCopyWith<
+  RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionCopyWith<
     $R,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion,
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
   >
   get usage => $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
@@ -325,7 +329,7 @@ class _RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedCo
     String? itemId,
     int? contentIndex,
     String? transcript,
-    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion?
+    RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion?
     usage,
     Object? logprobs = $none,
   }) => $apply(

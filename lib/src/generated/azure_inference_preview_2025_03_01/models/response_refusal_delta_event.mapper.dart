@@ -65,6 +65,10 @@ class ResponseRefusalDeltaEventMapper
     #contentIndex: _f$contentIndex,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseRefusalDeltaEvent _instantiate(DecodingData data) {
     return ResponseRefusalDeltaEvent(

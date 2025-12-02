@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'comparison_filter_type_type.dart';
+import 'comparison_filter_value_union.dart';
 
 part 'comparison_filter.mapper.dart';
 
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComparisonFilter with ComparisonFilterMappable {
   const ComparisonFilter({
     required this.key,
@@ -19,7 +20,8 @@ class ComparisonFilter with ComparisonFilterMappable {
   });
 
   final String key;
-  final String value;
+  @MappableField(hook: const ComparisonFilterValueUnionHook())
+  final ComparisonFilterValueUnion value;
   final ComparisonFilterTypeType type;
 
   static ComparisonFilter fromJson(Map<String, dynamic> json) => ComparisonFilterMapper.fromJson(json);

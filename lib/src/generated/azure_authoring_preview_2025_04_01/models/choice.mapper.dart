@@ -57,6 +57,10 @@ class ChoiceMapper extends ClassMapperBase<Choice> {
     #finishReason: _f$finishReason,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Choice _instantiate(DecodingData data) {
     return Choice(

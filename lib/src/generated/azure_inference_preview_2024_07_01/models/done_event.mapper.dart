@@ -39,6 +39,10 @@ class DoneEventMapper extends ClassMapperBase<DoneEvent> {
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DoneEvent _instantiate(DecodingData data) {
     return DoneEvent(event: data.dec(_f$event), data: data.dec(_f$data));

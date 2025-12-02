@@ -9,7 +9,7 @@ import 'audio_verbose_response.dart';
 
 part 'translations_create_response_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [TranslationsCreateResponseUnionAudioResponse, TranslationsCreateResponseUnionAudioVerboseResponse])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [TranslationsCreateResponseUnionAudioResponse, TranslationsCreateResponseUnionAudioVerboseResponse])
 sealed class TranslationsCreateResponseUnion with TranslationsCreateResponseUnionMappable {
   const TranslationsCreateResponseUnion();
 
@@ -32,7 +32,7 @@ extension TranslationsCreateResponseUnionDeserializer on TranslationsCreateRespo
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranslationsCreateResponseUnionAudioResponse extends TranslationsCreateResponseUnion with TranslationsCreateResponseUnionAudioResponseMappable {
   final String text;
 
@@ -41,7 +41,7 @@ class TranslationsCreateResponseUnionAudioResponse extends TranslationsCreateRes
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranslationsCreateResponseUnionAudioVerboseResponse extends TranslationsCreateResponseUnion with TranslationsCreateResponseUnionAudioVerboseResponseMappable {
 
 

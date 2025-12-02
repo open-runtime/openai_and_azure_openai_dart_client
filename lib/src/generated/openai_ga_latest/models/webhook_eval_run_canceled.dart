@@ -12,7 +12,7 @@ part 'webhook_eval_run_canceled.mapper.dart';
 
 /// Sent when an eval run has been canceled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunCanceled with WebhookEvalRunCanceledMappable {
   const WebhookEvalRunCanceled({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookEvalRunCanceled with WebhookEvalRunCanceledMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookEvalRunCanceledData')
+  @MappableField(key: 'data')
   final WebhookEvalRunCanceledData webhookEvalRunCanceledData;
   final WebhookEvalRunCanceledTypeType type;
   @MappableField(key: 'object')

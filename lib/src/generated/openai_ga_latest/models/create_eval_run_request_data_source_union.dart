@@ -1,0 +1,107 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'create_eval_completions_run_data_source.dart';
+import 'create_eval_completions_run_data_source_input_messages_union.dart';
+import 'create_eval_completions_run_data_source_sampling_params.dart';
+import 'create_eval_completions_run_data_source_source_union.dart';
+import 'create_eval_completions_run_data_source_type_type.dart';
+import 'create_eval_jsonl_run_data_source.dart';
+import 'create_eval_jsonl_run_data_source_source_union.dart';
+import 'create_eval_jsonl_run_data_source_type_type.dart';
+import 'create_eval_responses_run_data_source.dart';
+import 'create_eval_responses_run_data_source_input_messages_union.dart';
+import 'create_eval_responses_run_data_source_sampling_params.dart';
+import 'create_eval_responses_run_data_source_source_union.dart';
+import 'create_eval_responses_run_data_source_type_type.dart';
+
+part 'create_eval_run_request_data_source_union.mapper.dart';
+
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
+  CreateEvalRunRequestDataSourceUnionJsonl,
+  CreateEvalRunRequestDataSourceUnionCompletions,
+  CreateEvalRunRequestDataSourceUnionResponses
+])
+sealed class CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionMappable {
+  const CreateEvalRunRequestDataSourceUnion();
+
+  static CreateEvalRunRequestDataSourceUnion fromJson(Map<String, dynamic> json) {
+    return CreateEvalRunRequestDataSourceUnionDeserializer.tryDeserialize(json);
+  }
+
+}
+
+extension CreateEvalRunRequestDataSourceUnionDeserializer on CreateEvalRunRequestDataSourceUnion {
+  static CreateEvalRunRequestDataSourceUnion tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'type',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      CreateEvalRunRequestDataSourceUnionJsonl: 'jsonl',
+      CreateEvalRunRequestDataSourceUnionCompletions: 'completions',
+      CreateEvalRunRequestDataSourceUnionResponses: 'responses',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[CreateEvalRunRequestDataSourceUnionJsonl] => CreateEvalRunRequestDataSourceUnionJsonlMapper.fromJson(json),
+      _ when value == effective[CreateEvalRunRequestDataSourceUnionCompletions] => CreateEvalRunRequestDataSourceUnionCompletionsMapper.fromJson(json),
+      _ when value == effective[CreateEvalRunRequestDataSourceUnionResponses] => CreateEvalRunRequestDataSourceUnionResponsesMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalRunRequestDataSourceUnion'),
+    };
+  }
+}
+
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'jsonl')
+class CreateEvalRunRequestDataSourceUnionJsonl extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionJsonlMappable {
+  final CreateEvalJsonlRunDataSourceTypeType type;
+  final CreateEvalJsonlRunDataSourceSourceUnion source;
+
+  const CreateEvalRunRequestDataSourceUnionJsonl({
+    required this.type,
+    required this.source,
+  });
+
+}
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
+class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionCompletionsMappable {
+  final CreateEvalCompletionsRunDataSourceTypeType type;
+  @MappableField(key: 'input_messages')
+  final CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages;
+  @MappableField(key: 'sampling_params')
+  final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
+  final String? model;
+  final CreateEvalCompletionsRunDataSourceSourceUnion source;
+
+  const CreateEvalRunRequestDataSourceUnionCompletions({
+    required this.type,
+    required this.inputMessages,
+    required this.createEvalCompletionsRunDataSourceSamplingParams,
+    required this.model,
+    required this.source,
+  });
+
+}
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
+class CreateEvalRunRequestDataSourceUnionResponses extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionResponsesMappable {
+  final CreateEvalResponsesRunDataSourceTypeType type;
+  @MappableField(key: 'input_messages')
+  final CreateEvalResponsesRunDataSourceInputMessagesUnion? inputMessages;
+  @MappableField(key: 'sampling_params')
+  final CreateEvalResponsesRunDataSourceSamplingParams? createEvalResponsesRunDataSourceSamplingParams;
+  final String? model;
+  final CreateEvalResponsesRunDataSourceSourceUnion source;
+
+  const CreateEvalRunRequestDataSourceUnionResponses({
+    required this.type,
+    required this.inputMessages,
+    required this.createEvalResponsesRunDataSourceSamplingParams,
+    required this.model,
+    required this.source,
+  });
+
+}

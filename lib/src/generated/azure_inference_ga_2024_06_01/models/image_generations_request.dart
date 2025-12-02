@@ -11,7 +11,7 @@ import 'images_response_format.dart';
 
 part 'image_generations_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenerationsRequest with ImageGenerationsRequestMappable {
   const ImageGenerationsRequest({
     required this.prompt,

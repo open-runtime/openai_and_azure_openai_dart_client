@@ -31,6 +31,10 @@ class AuditLogApiKeyDeletedMapper
 
   @override
   final MappableFields<AuditLogApiKeyDeleted> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogApiKeyDeleted _instantiate(DecodingData data) {
     return AuditLogApiKeyDeleted(id: data.dec(_f$id));

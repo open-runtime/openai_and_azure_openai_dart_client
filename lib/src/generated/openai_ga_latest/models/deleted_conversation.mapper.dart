@@ -50,6 +50,10 @@ class DeletedConversationMapper extends ClassMapperBase<DeletedConversation> {
     #id: _f$id,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeletedConversation _instantiate(DecodingData data) {
     return DeletedConversation(

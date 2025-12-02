@@ -49,6 +49,10 @@ class FunctionShellActionParamMapper
     #timeoutMs: _f$timeoutMs,
     #maxOutputLength: _f$maxOutputLength,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellActionParam _instantiate(DecodingData data) {
     return FunctionShellActionParam(

@@ -14,8 +14,8 @@ class CreateEvalRequestMapper extends ClassMapperBase<CreateEvalRequest> {
   static CreateEvalRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateEvalRequestMapper._());
-      CreateEvalRequestDataSourceConfigDataSourceConfigUnionMapper.ensureInitialized();
-      CreateEvalRequestTestingCriteriaTestingCriteriaUnionMapper.ensureInitialized();
+      CreateEvalRequestDataSourceConfigUnionMapper.ensureInitialized();
+      CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,22 +24,21 @@ class CreateEvalRequestMapper extends ClassMapperBase<CreateEvalRequest> {
   @override
   final String id = 'CreateEvalRequest';
 
-  static CreateEvalRequestDataSourceConfigDataSourceConfigUnion
-  _$dataSourceConfig(CreateEvalRequest v) => v.dataSourceConfig;
-  static const Field<
-    CreateEvalRequest,
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion
-  >
+  static CreateEvalRequestDataSourceConfigUnion _$dataSourceConfig(
+    CreateEvalRequest v,
+  ) => v.dataSourceConfig;
+  static const Field<CreateEvalRequest, CreateEvalRequestDataSourceConfigUnion>
   _f$dataSourceConfig = Field(
     'dataSourceConfig',
     _$dataSourceConfig,
     key: r'data_source_config',
   );
-  static List<CreateEvalRequestTestingCriteriaTestingCriteriaUnion>
-  _$testingCriteria(CreateEvalRequest v) => v.testingCriteria;
+  static List<CreateEvalRequestTestingCriteriaUnion> _$testingCriteria(
+    CreateEvalRequest v,
+  ) => v.testingCriteria;
   static const Field<
     CreateEvalRequest,
-    List<CreateEvalRequestTestingCriteriaTestingCriteriaUnion>
+    List<CreateEvalRequestTestingCriteriaUnion>
   >
   _f$testingCriteria = Field(
     'testingCriteria',
@@ -66,6 +65,10 @@ class CreateEvalRequestMapper extends ClassMapperBase<CreateEvalRequest> {
     #name: _f$name,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRequest _instantiate(DecodingData data) {
     return CreateEvalRequest(
@@ -147,26 +150,26 @@ abstract class CreateEvalRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalRequestDataSourceConfigDataSourceConfigUnionCopyWith<
+  CreateEvalRequestDataSourceConfigUnionCopyWith<
     $R,
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion,
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion
+    CreateEvalRequestDataSourceConfigUnion,
+    CreateEvalRequestDataSourceConfigUnion
   >
   get dataSourceConfig;
   ListCopyWith<
     $R,
-    CreateEvalRequestTestingCriteriaTestingCriteriaUnion,
-    CreateEvalRequestTestingCriteriaTestingCriteriaUnionCopyWith<
+    CreateEvalRequestTestingCriteriaUnion,
+    CreateEvalRequestTestingCriteriaUnionCopyWith<
       $R,
-      CreateEvalRequestTestingCriteriaTestingCriteriaUnion,
-      CreateEvalRequestTestingCriteriaTestingCriteriaUnion
+      CreateEvalRequestTestingCriteriaUnion,
+      CreateEvalRequestTestingCriteriaUnion
     >
   >
   get testingCriteria;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   $R call({
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion? dataSourceConfig,
-    List<CreateEvalRequestTestingCriteriaTestingCriteriaUnion>? testingCriteria,
+    CreateEvalRequestDataSourceConfigUnion? dataSourceConfig,
+    List<CreateEvalRequestTestingCriteriaUnion>? testingCriteria,
     String? name,
     Metadata? metadata,
   });
@@ -184,21 +187,21 @@ class _CreateEvalRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalRequest> $mapper =
       CreateEvalRequestMapper.ensureInitialized();
   @override
-  CreateEvalRequestDataSourceConfigDataSourceConfigUnionCopyWith<
+  CreateEvalRequestDataSourceConfigUnionCopyWith<
     $R,
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion,
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion
+    CreateEvalRequestDataSourceConfigUnion,
+    CreateEvalRequestDataSourceConfigUnion
   >
   get dataSourceConfig =>
       $value.dataSourceConfig.copyWith.$chain((v) => call(dataSourceConfig: v));
   @override
   ListCopyWith<
     $R,
-    CreateEvalRequestTestingCriteriaTestingCriteriaUnion,
-    CreateEvalRequestTestingCriteriaTestingCriteriaUnionCopyWith<
+    CreateEvalRequestTestingCriteriaUnion,
+    CreateEvalRequestTestingCriteriaUnionCopyWith<
       $R,
-      CreateEvalRequestTestingCriteriaTestingCriteriaUnion,
-      CreateEvalRequestTestingCriteriaTestingCriteriaUnion
+      CreateEvalRequestTestingCriteriaUnion,
+      CreateEvalRequestTestingCriteriaUnion
     >
   >
   get testingCriteria => ListCopyWith(
@@ -211,8 +214,8 @@ class _CreateEvalRequestCopyWithImpl<$R, $Out>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
   $R call({
-    CreateEvalRequestDataSourceConfigDataSourceConfigUnion? dataSourceConfig,
-    List<CreateEvalRequestTestingCriteriaTestingCriteriaUnion>? testingCriteria,
+    CreateEvalRequestDataSourceConfigUnion? dataSourceConfig,
+    List<CreateEvalRequestTestingCriteriaUnion>? testingCriteria,
     Object? name = $none,
     Object? metadata = $none,
   }) => $apply(

@@ -39,6 +39,10 @@ class ThreadObjectToolResourcesFileSearchMapper
   final MappableFields<ThreadObjectToolResourcesFileSearch> fields = const {
     #vectorStoreIds: _f$vectorStoreIds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadObjectToolResourcesFileSearch _instantiate(DecodingData data) {
     return ThreadObjectToolResourcesFileSearch(

@@ -102,6 +102,10 @@ class RetrievedDocumentMapper extends ClassMapperBase<RetrievedDocument> {
     #originalSearchScore: _f$originalSearchScore,
     #filterReason: _f$filterReason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RetrievedDocument _instantiate(DecodingData data) {
     return RetrievedDocument(

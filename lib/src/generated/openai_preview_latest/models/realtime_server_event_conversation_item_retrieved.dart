@@ -5,13 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
+import 'realtime_server_event.dart';
 import 'realtime_server_event_conversation_item_retrieved_type_type.dart';
 
 part 'realtime_server_event_conversation_item_retrieved.mapper.dart';
 
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemRetrieved with RealtimeServerEventConversationItemRetrievedMappable {
   const RealtimeServerEventConversationItemRetrieved({
     required this.eventId,

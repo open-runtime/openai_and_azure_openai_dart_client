@@ -14,7 +14,7 @@ import 'error_base.dart';
 part 'content_filter_choice_results.mapper.dart';
 
 /// Information about the content filtering category (hate, sexual, violence, self_harm), if it has been detected, as well as the severity level (very_low, low, medium, high-scale that determines the intensity and risk level of harmful content) and if it has been filtered or not. Information about third party text and profanity, if it has been detected, and if it has been filtered or not. And information about customer block list, if it has been filtered and its id.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterChoiceResults with ContentFilterChoiceResultsMappable {
   const ContentFilterChoiceResults({
     this.sexual,

@@ -9,7 +9,7 @@ import 'top_log_prob.dart';
 part 'log_prob.mapper.dart';
 
 /// The log probability of a token.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LogProb with LogProbMappable {
   const LogProb({
     required this.token,

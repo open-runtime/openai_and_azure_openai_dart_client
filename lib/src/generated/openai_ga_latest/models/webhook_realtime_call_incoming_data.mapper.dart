@@ -45,6 +45,10 @@ class WebhookRealtimeCallIncomingDataMapper
     #callId: _f$callId,
     #sipHeaders: _f$sipHeaders,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookRealtimeCallIncomingData _instantiate(DecodingData data) {
     return WebhookRealtimeCallIncomingData(

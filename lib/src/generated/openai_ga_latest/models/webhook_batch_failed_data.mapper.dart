@@ -27,6 +27,10 @@ class WebhookBatchFailedDataMapper
 
   @override
   final MappableFields<WebhookBatchFailedData> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchFailedData _instantiate(DecodingData data) {
     return WebhookBatchFailedData(id: data.dec(_f$id));

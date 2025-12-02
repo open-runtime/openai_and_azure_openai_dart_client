@@ -23,7 +23,7 @@ class _ImagesApi implements ImagesApi {
   Future<HttpResponse<ImagesResponse>> createImageEdit({
     required String image,
     required String prompt,
-    String? model = 'dall-e-2',
+    ModelUnion? model = const ModelUnionVariantString(value: 'dall-e-2'),
     int? n = 1,
     Size? size = Size.value1024x1024,
     ResponseFormat2? responseFormat = ResponseFormat2.url,
@@ -41,9 +41,9 @@ class _ImagesApi implements ImagesApi {
     final _data = FormData();
     _data.fields.add(MapEntry('image', image));
     _data.fields.add(MapEntry('prompt', prompt));
-    if (model != null) {
-      _data.fields.add(MapEntry('model', model));
-    }
+    _data.fields.add(
+      MapEntry('model', jsonEncode(model ?? <String, dynamic>{})),
+    );
     if (n != null) {
       _data.fields.add(MapEntry('n', n.toString()));
     }
@@ -124,7 +124,7 @@ class _ImagesApi implements ImagesApi {
   Future<HttpResponse<ImagesResponse>> createImageVariation({
     required MultipartFile image,
     String? user,
-    String? model = 'dall-e-2',
+    ModelUnion? model = const ModelUnionVariantString(value: 'dall-e-2'),
     int? n = 1,
     ResponseFormat2? responseFormat = ResponseFormat2.url,
     Size2? size = Size2.value1024x1024,
@@ -141,9 +141,9 @@ class _ImagesApi implements ImagesApi {
     if (user != null) {
       _data.fields.add(MapEntry('user', user));
     }
-    if (model != null) {
-      _data.fields.add(MapEntry('model', model));
-    }
+    _data.fields.add(
+      MapEntry('model', jsonEncode(model ?? <String, dynamic>{})),
+    );
     if (n != null) {
       _data.fields.add(MapEntry('n', n.toString()));
     }

@@ -33,6 +33,10 @@ class LocalShellToolParamMapper extends ClassMapperBase<LocalShellToolParam> {
 
   @override
   final MappableFields<LocalShellToolParam> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LocalShellToolParam _instantiate(DecodingData data) {
     return LocalShellToolParam(type: data.dec(_f$type));

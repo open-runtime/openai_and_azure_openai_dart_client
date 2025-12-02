@@ -56,6 +56,10 @@ class RealtimeConversationItemMessageAssistantContentMapper
         #audio: _f$audio,
         #transcript: _f$transcript,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemMessageAssistantContent _instantiate(
     DecodingData data,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'create_group_user_body.mapper.dart';
 
 /// Request payload for adding a user to a group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateGroupUserBody with CreateGroupUserBodyMappable {
   const CreateGroupUserBody({
     required this.userId,

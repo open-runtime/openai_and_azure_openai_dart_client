@@ -23,6 +23,10 @@ class ThreadStreamEventMapper extends ClassMapperBase<ThreadStreamEvent> {
 
   @override
   final MappableFields<ThreadStreamEvent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadStreamEvent _instantiate(DecodingData data) {
     return ThreadStreamEvent();

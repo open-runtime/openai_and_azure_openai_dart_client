@@ -75,7 +75,7 @@ class ChatCompletionResponseMessageMapper
   _f$chatCompletionResponseMessageAudio = Field(
     'chatCompletionResponseMessageAudio',
     _$chatCompletionResponseMessageAudio,
-    key: r'ChatCompletionResponseMessageAudio',
+    key: r'audio',
     opt: true,
   );
   static AzureChatExtensionsMessageContext? _$context(
@@ -97,6 +97,10 @@ class ChatCompletionResponseMessageMapper
     #chatCompletionResponseMessageAudio: _f$chatCompletionResponseMessageAudio,
     #context: _f$context,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessage _instantiate(DecodingData data) {
     return ChatCompletionResponseMessage(

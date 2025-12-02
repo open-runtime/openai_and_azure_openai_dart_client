@@ -4,54 +4,65 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'other_chunking_strategy_response_param.dart';
 import 'other_chunking_strategy_response_param_type_type.dart';
 import 'static_chunking_strategy.dart';
-import 'static_chunking_strategy_response_param_type_type.dart';
 import 'static_chunking_strategy_response_param.dart';
-import 'other_chunking_strategy_response_param.dart';
+import 'static_chunking_strategy_response_param_type_type.dart';
 
 part 'chunking_strategy_response_union.mapper.dart';
 
-/// The strategy used to chunk the file.
-@MappableClass(includeSubClasses: [ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam, ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam])
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
+  ChunkingStrategyResponseUnionStatic,
+  ChunkingStrategyResponseUnionOther
+])
 sealed class ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionMappable {
   const ChunkingStrategyResponseUnion();
 
   static ChunkingStrategyResponseUnion fromJson(Map<String, dynamic> json) {
     return ChunkingStrategyResponseUnionDeserializer.tryDeserialize(json);
   }
+
 }
 
 extension ChunkingStrategyResponseUnionDeserializer on ChunkingStrategyResponseUnion {
-  static ChunkingStrategyResponseUnion tryDeserialize(Map<String, dynamic> json) {
-    try {
-      return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.fromJson(json);
-    } catch (_) {}
-    try {
-      return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.fromJson(json);
-    } catch (_) {}
-
-
-    throw FormatException('Could not determine the correct type for ChunkingStrategyResponseUnion from: $json');
+  static ChunkingStrategyResponseUnion tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'type',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      ChunkingStrategyResponseUnionStatic: 'static',
+      ChunkingStrategyResponseUnionOther: 'other',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[ChunkingStrategyResponseUnionStatic] => ChunkingStrategyResponseUnionStaticMapper.fromJson(json),
+      _ when value == effective[ChunkingStrategyResponseUnionOther] => ChunkingStrategyResponseUnionOtherMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChunkingStrategyResponseUnion'),
+    };
   }
 }
 
-@MappableClass()
-class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
+class ChunkingStrategyResponseUnionStatic extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionStaticMappable {
   final StaticChunkingStrategyResponseParamTypeType type;
+  @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
-  const ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam({
+  const ChunkingStrategyResponseUnionStatic({
     required this.type,
     required this.staticField,
   });
-}
 
-@MappableClass()
-class ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMappable {
+}
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'other')
+class ChunkingStrategyResponseUnionOther extends ChunkingStrategyResponseUnion with ChunkingStrategyResponseUnionOtherMappable {
   final OtherChunkingStrategyResponseParamTypeType type;
 
-  const ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam({
+  const ChunkingStrategyResponseUnionOther({
     required this.type,
   });
+
 }

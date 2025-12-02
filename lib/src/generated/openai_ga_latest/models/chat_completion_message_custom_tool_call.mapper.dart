@@ -50,7 +50,7 @@ class ChatCompletionMessageCustomToolCallMapper
   _f$chatCompletionMessageCustomToolCallCustom = Field(
     'chatCompletionMessageCustomToolCallCustom',
     _$chatCompletionMessageCustomToolCallCustom,
-    key: r'ChatCompletionMessageCustomToolCallCustom',
+    key: r'custom',
   );
 
   @override
@@ -60,6 +60,10 @@ class ChatCompletionMessageCustomToolCallMapper
     #chatCompletionMessageCustomToolCallCustom:
         _f$chatCompletionMessageCustomToolCallCustom,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageCustomToolCall _instantiate(DecodingData data) {
     return ChatCompletionMessageCustomToolCall(

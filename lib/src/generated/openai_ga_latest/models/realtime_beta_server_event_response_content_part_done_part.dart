@@ -8,7 +8,7 @@ import 'realtime_beta_server_event_response_content_part_done_part_type_type.dar
 
 part 'realtime_beta_server_event_response_content_part_done_part.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseContentPartDonePart with RealtimeBetaServerEventResponseContentPartDonePartMappable {
   const RealtimeBetaServerEventResponseContentPartDonePart({
     this.type,

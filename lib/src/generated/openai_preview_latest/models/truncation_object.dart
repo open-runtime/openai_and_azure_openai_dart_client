@@ -9,7 +9,7 @@ import 'truncation_object_type_type.dart';
 part 'truncation_object.mapper.dart';
 
 /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TruncationObject with TruncationObjectMappable {
   const TruncationObject({
     required this.type,

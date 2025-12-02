@@ -48,6 +48,10 @@ class GroupListResourceMapper extends ClassMapperBase<GroupListResource> {
     #hasMore: _f$hasMore,
     #next: _f$next,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupListResource _instantiate(DecodingData data) {
     return GroupListResource(

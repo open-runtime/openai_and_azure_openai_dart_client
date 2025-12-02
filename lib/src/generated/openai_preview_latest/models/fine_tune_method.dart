@@ -11,7 +11,7 @@ import 'fine_tune_supervised_method.dart';
 part 'fine_tune_method.mapper.dart';
 
 /// The method used for fine-tuning.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneMethod with FineTuneMethodMappable {
   const FineTuneMethod({
     this.type,

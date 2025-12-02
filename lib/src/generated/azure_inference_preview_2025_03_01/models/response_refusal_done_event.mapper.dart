@@ -61,6 +61,10 @@ class ResponseRefusalDoneEventMapper
     #contentIndex: _f$contentIndex,
     #refusal: _f$refusal,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseRefusalDoneEvent _instantiate(DecodingData data) {
     return ResponseRefusalDoneEvent(

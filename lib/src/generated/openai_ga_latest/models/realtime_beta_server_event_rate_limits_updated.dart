@@ -13,7 +13,7 @@ part 'realtime_beta_server_event_rate_limits_updated.mapper.dart';
 /// tokens, the rate limits shown here reflect that reservation, which is then .
 /// adjusted accordingly once the Response is completed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventRateLimitsUpdated with RealtimeBetaServerEventRateLimitsUpdatedMappable {
   const RealtimeBetaServerEventRateLimitsUpdated({
     required this.eventId,

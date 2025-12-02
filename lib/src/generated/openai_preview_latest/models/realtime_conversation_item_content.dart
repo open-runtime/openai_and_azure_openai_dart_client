@@ -8,7 +8,7 @@ import 'realtime_conversation_item_content_type_type.dart';
 
 part 'realtime_conversation_item_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemContent with RealtimeConversationItemContentMappable {
   const RealtimeConversationItemContent({
     this.type,

@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_response_create_type_type.dart';
 import 'realtime_response_create_params.dart';
 
@@ -25,7 +26,7 @@ part 'realtime_client_event_response_create.mapper.dart';
 /// `instructions`, and `temperature`. These fields will override the Session's .
 /// configuration for this Response only.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventResponseCreate with RealtimeClientEventResponseCreateMappable {
   const RealtimeClientEventResponseCreate({
     required this.type,

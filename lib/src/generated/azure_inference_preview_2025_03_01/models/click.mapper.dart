@@ -47,6 +47,10 @@ class ClickMapper extends ClassMapperBase<Click> {
     #y: _f$y,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Click _instantiate(DecodingData data) {
     return Click(

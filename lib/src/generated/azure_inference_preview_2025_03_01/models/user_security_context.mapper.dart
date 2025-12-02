@@ -57,6 +57,10 @@ class UserSecurityContextMapper extends ClassMapperBase<UserSecurityContext> {
     #endUserTenantId: _f$endUserTenantId,
     #sourceIp: _f$sourceIp,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserSecurityContext _instantiate(DecodingData data) {
     return UserSecurityContext(

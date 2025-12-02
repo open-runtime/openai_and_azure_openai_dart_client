@@ -49,7 +49,7 @@ class EvalListMapper extends ClassMapperBase<EvalList> {
     _$objectEnum,
     key: r'object',
     opt: true,
-    def: EvalListObjectObjectEnum.valueList,
+    def: EvalListObjectObjectEnum.list,
   );
 
   @override
@@ -60,6 +60,10 @@ class EvalListMapper extends ClassMapperBase<EvalList> {
     #hasMore: _f$hasMore,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalList _instantiate(DecodingData data) {
     return EvalList(

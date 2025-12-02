@@ -9,7 +9,7 @@ import 'target_type.dart';
 part 'target_index.mapper.dart';
 
 /// Information about the index to be created.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TargetIndex with TargetIndexMappable {
   const TargetIndex({
     required this.kind,

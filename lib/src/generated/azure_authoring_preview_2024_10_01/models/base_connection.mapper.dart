@@ -30,6 +30,10 @@ class BaseConnectionMapper extends ClassMapperBase<BaseConnection> {
 
   @override
   final MappableFields<BaseConnection> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BaseConnection _instantiate(DecodingData data) {
     return BaseConnection(kind: data.dec(_f$kind));

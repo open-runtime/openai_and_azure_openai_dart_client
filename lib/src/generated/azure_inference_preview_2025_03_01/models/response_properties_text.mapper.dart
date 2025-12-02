@@ -15,7 +15,7 @@ class ResponsePropertiesTextMapper
   static ResponsePropertiesTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponsePropertiesTextMapper._());
-      TextResponseFormatConfigurationUnionMapper.ensureInitialized();
+      TextResponseFormatConfigurationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,19 +23,19 @@ class ResponsePropertiesTextMapper
   @override
   final String id = 'ResponsePropertiesText';
 
-  static TextResponseFormatConfigurationUnion? _$format(
-    ResponsePropertiesText v,
-  ) => v.format;
-  static const Field<
-    ResponsePropertiesText,
-    TextResponseFormatConfigurationUnion
-  >
+  static TextResponseFormatConfiguration? _$format(ResponsePropertiesText v) =>
+      v.format;
+  static const Field<ResponsePropertiesText, TextResponseFormatConfiguration>
   _f$format = Field('format', _$format, opt: true);
 
   @override
   final MappableFields<ResponsePropertiesText> fields = const {
     #format: _f$format,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponsePropertiesText _instantiate(DecodingData data) {
     return ResponsePropertiesText(format: data.dec(_f$format));
@@ -111,13 +111,13 @@ abstract class ResponsePropertiesTextCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  TextResponseFormatConfigurationUnionCopyWith<
+  TextResponseFormatConfigurationCopyWith<
     $R,
-    TextResponseFormatConfigurationUnion,
-    TextResponseFormatConfigurationUnion
+    TextResponseFormatConfiguration,
+    TextResponseFormatConfiguration
   >?
   get format;
-  $R call({TextResponseFormatConfigurationUnion? format});
+  $R call({TextResponseFormatConfiguration? format});
   ResponsePropertiesTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -133,10 +133,10 @@ class _ResponsePropertiesTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponsePropertiesText> $mapper =
       ResponsePropertiesTextMapper.ensureInitialized();
   @override
-  TextResponseFormatConfigurationUnionCopyWith<
+  TextResponseFormatConfigurationCopyWith<
     $R,
-    TextResponseFormatConfigurationUnion,
-    TextResponseFormatConfigurationUnion
+    TextResponseFormatConfiguration,
+    TextResponseFormatConfiguration
   >?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
   @override

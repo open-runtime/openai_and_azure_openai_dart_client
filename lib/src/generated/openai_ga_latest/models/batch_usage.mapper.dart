@@ -36,7 +36,7 @@ class BatchUsageMapper extends ClassMapperBase<BatchUsage> {
   _f$batchUsageInputTokensDetails = Field(
     'batchUsageInputTokensDetails',
     _$batchUsageInputTokensDetails,
-    key: r'BatchUsageInputTokensDetails',
+    key: r'input_tokens_details',
   );
   static int _$outputTokens(BatchUsage v) => v.outputTokens;
   static const Field<BatchUsage, int> _f$outputTokens = Field(
@@ -51,7 +51,7 @@ class BatchUsageMapper extends ClassMapperBase<BatchUsage> {
   _f$batchUsageOutputTokensDetails = Field(
     'batchUsageOutputTokensDetails',
     _$batchUsageOutputTokensDetails,
-    key: r'BatchUsageOutputTokensDetails',
+    key: r'output_tokens_details',
   );
   static int _$totalTokens(BatchUsage v) => v.totalTokens;
   static const Field<BatchUsage, int> _f$totalTokens = Field(
@@ -68,6 +68,10 @@ class BatchUsageMapper extends ClassMapperBase<BatchUsage> {
     #batchUsageOutputTokensDetails: _f$batchUsageOutputTokensDetails,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchUsage _instantiate(DecodingData data) {
     return BatchUsage(

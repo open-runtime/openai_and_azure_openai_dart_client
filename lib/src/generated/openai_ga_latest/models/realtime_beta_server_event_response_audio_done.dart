@@ -9,7 +9,7 @@ part 'realtime_beta_server_event_response_audio_done.mapper.dart';
 /// Returned when the model-generated audio is done. Also emitted when a Response.
 /// is interrupted, incomplete, or cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseAudioDone with RealtimeBetaServerEventResponseAudioDoneMappable {
   const RealtimeBetaServerEventResponseAudioDone({
     required this.eventId,

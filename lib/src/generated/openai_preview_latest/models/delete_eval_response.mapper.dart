@@ -45,6 +45,10 @@ class DeleteEvalResponseMapper extends ClassMapperBase<DeleteEvalResponse> {
     #deleted: _f$deleted,
     #evalId: _f$evalId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteEvalResponse _instantiate(DecodingData data) {
     return DeleteEvalResponse(

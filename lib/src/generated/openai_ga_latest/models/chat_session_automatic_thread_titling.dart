@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chat_session_automatic_thread_titling.mapper.dart';
 
 /// Automatic thread title preferences for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionAutomaticThreadTitling with ChatSessionAutomaticThreadTitlingMappable {
   const ChatSessionAutomaticThreadTitling({
     required this.enabled,

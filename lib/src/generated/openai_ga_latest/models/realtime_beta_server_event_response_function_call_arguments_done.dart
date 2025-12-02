@@ -9,7 +9,7 @@ part 'realtime_beta_server_event_response_function_call_arguments_done.mapper.da
 /// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseFunctionCallArgumentsDone with RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMappable {
   const RealtimeBetaServerEventResponseFunctionCallArgumentsDone({
     required this.eventId,

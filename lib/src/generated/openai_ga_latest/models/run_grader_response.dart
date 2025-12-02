@@ -8,7 +8,7 @@ import 'run_grader_response_metadata.dart';
 
 part 'run_grader_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunGraderResponse with RunGraderResponseMappable {
   const RunGraderResponse({
     required this.reward,
@@ -18,7 +18,7 @@ class RunGraderResponse with RunGraderResponseMappable {
   });
 
   final num reward;
-  @MappableField(key: 'RunGraderResponseMetadata')
+  @MappableField(key: 'metadata')
   final RunGraderResponseMetadata runGraderResponseMetadata;
   @MappableField(key: 'sub_rewards')
   final Map<String, dynamic> subRewards;

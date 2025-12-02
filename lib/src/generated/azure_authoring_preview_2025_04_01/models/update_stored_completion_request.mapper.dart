@@ -33,6 +33,10 @@ class UpdateStoredCompletionRequestMapper
   final MappableFields<UpdateStoredCompletionRequest> fields = const {
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateStoredCompletionRequest _instantiate(DecodingData data) {
     return UpdateStoredCompletionRequest(metadata: data.dec(_f$metadata));

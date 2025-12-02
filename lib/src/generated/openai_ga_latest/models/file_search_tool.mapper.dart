@@ -66,6 +66,10 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
     #filters: _f$filters,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchTool _instantiate(DecodingData data) {
     return FileSearchTool(

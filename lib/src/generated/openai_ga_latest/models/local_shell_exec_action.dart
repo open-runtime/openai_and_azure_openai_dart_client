@@ -9,7 +9,7 @@ import 'local_shell_exec_action_type_type.dart';
 part 'local_shell_exec_action.mapper.dart';
 
 /// Execute a shell command on the server.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LocalShellExecAction with LocalShellExecActionMappable {
   const LocalShellExecAction({
     required this.command,

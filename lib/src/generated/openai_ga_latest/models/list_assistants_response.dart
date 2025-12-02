@@ -8,7 +8,7 @@ import 'assistant_object.dart';
 
 part 'list_assistants_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListAssistantsResponse with ListAssistantsResponseMappable {
   const ListAssistantsResponse({
     required this.objectField,

@@ -9,7 +9,7 @@ import 'batch_error_data.dart';
 part 'batch_errors.mapper.dart';
 
 /// For batches that have failed, this will contain more information on the cause of the failures.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchErrors with BatchErrorsMappable {
   const BatchErrors({
     this.objectField,

@@ -40,6 +40,10 @@ class RunStepDeltaObjectMapper extends ClassMapperBase<RunStepDeltaObject> {
     #objectEnum: _f$objectEnum,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaObject _instantiate(DecodingData data) {
     return RunStepDeltaObject(

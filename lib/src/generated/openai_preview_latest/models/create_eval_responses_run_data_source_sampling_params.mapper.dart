@@ -54,6 +54,10 @@ class CreateEvalResponsesRunDataSourceSamplingParamsMapper
         #topP: _f$topP,
         #seed: _f$seed,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalResponsesRunDataSourceSamplingParams _instantiate(
     DecodingData data,

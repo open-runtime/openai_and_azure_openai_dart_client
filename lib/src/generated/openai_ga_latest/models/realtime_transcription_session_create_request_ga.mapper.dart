@@ -46,7 +46,7 @@ class RealtimeTranscriptionSessionCreateRequestGaMapper
   _f$realtimeTranscriptionSessionCreateRequestGaAudio = Field(
     'realtimeTranscriptionSessionCreateRequestGaAudio',
     _$realtimeTranscriptionSessionCreateRequestGaAudio,
-    key: r'RealtimeTranscriptionSessionCreateRequestGaAudio',
+    key: r'audio',
     opt: true,
   );
   static List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>?
@@ -65,6 +65,10 @@ class RealtimeTranscriptionSessionCreateRequestGaMapper
             _f$realtimeTranscriptionSessionCreateRequestGaAudio,
         #include: _f$include,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequestGa _instantiate(
     DecodingData data,

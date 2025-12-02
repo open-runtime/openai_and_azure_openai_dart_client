@@ -43,6 +43,10 @@ class ResponseAudioTranscriptDoneEventMapper
     #type: _f$type,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseAudioTranscriptDoneEvent _instantiate(DecodingData data) {
     return ResponseAudioTranscriptDoneEvent(

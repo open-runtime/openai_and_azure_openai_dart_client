@@ -10,7 +10,7 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_del
 
 /// Returned when the text value of an input audio transcription content part is updated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta with RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({
     required this.eventId,

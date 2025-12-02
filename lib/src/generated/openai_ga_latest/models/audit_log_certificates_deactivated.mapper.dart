@@ -38,6 +38,10 @@ class AuditLogCertificatesDeactivatedMapper
   final MappableFields<AuditLogCertificatesDeactivated> fields = const {
     #certificates: _f$certificates,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogCertificatesDeactivated _instantiate(DecodingData data) {
     return AuditLogCertificatesDeactivated(

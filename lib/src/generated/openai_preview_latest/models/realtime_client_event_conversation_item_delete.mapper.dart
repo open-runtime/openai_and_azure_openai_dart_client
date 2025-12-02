@@ -45,6 +45,10 @@ class RealtimeClientEventConversationItemDeleteMapper
   @override
   final MappableFields<RealtimeClientEventConversationItemDelete> fields =
       const {#type: _f$type, #itemId: _f$itemId, #eventId: _f$eventId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventConversationItemDelete _instantiate(
     DecodingData data,

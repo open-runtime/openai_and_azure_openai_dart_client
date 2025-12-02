@@ -79,6 +79,10 @@ class FileMapper extends ClassMapperBase<File> {
     #expiresAt: _f$expiresAt,
     #statusDetails: _f$statusDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static File _instantiate(DecodingData data) {
     return File(

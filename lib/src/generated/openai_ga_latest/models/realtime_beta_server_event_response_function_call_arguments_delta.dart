@@ -8,7 +8,7 @@ part 'realtime_beta_server_event_response_function_call_arguments_delta.mapper.d
 
 /// Returned when the model-generated function call arguments are updated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseFunctionCallArgumentsDelta with RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaMappable {
   const RealtimeBetaServerEventResponseFunctionCallArgumentsDelta({
     required this.eventId,

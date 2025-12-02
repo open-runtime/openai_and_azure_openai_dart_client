@@ -65,6 +65,10 @@ class RealtimeBetaServerEventInputAudioBufferSpeechStoppedMapper
     #audioEndMs: _f$audioEndMs,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventInputAudioBufferSpeechStopped _instantiate(
     DecodingData data,

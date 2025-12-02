@@ -17,8 +17,8 @@ class CreateEvalCompletionsRunDataSourceMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCompletionsRunDataSourceMapper._(),
       );
-      CreateEvalCompletionsRunDataSourceSourceSourceUnionMapper.ensureInitialized();
-      CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnionMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceSourceUnionMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceSamplingParamsMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceTypeTypeMapper.ensureInitialized();
     }
@@ -28,19 +28,20 @@ class CreateEvalCompletionsRunDataSourceMapper
   @override
   final String id = 'CreateEvalCompletionsRunDataSource';
 
-  static CreateEvalCompletionsRunDataSourceSourceSourceUnion _$source(
+  static CreateEvalCompletionsRunDataSourceSourceUnion _$source(
     CreateEvalCompletionsRunDataSource v,
   ) => v.source;
   static const Field<
     CreateEvalCompletionsRunDataSource,
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion
+    CreateEvalCompletionsRunDataSourceSourceUnion
   >
   _f$source = Field('source', _$source);
-  static CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion?
-  _$inputMessages(CreateEvalCompletionsRunDataSource v) => v.inputMessages;
+  static CreateEvalCompletionsRunDataSourceInputMessagesUnion? _$inputMessages(
+    CreateEvalCompletionsRunDataSource v,
+  ) => v.inputMessages;
   static const Field<
     CreateEvalCompletionsRunDataSource,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion
   >
   _f$inputMessages = Field(
     'inputMessages',
@@ -59,7 +60,7 @@ class CreateEvalCompletionsRunDataSourceMapper
   _f$createEvalCompletionsRunDataSourceSamplingParams = Field(
     'createEvalCompletionsRunDataSourceSamplingParams',
     _$createEvalCompletionsRunDataSourceSamplingParams,
-    key: r'CreateEvalCompletionsRunDataSourceSamplingParams',
+    key: r'sampling_params',
     opt: true,
   );
   static String? _$model(CreateEvalCompletionsRunDataSource v) => v.model;
@@ -88,6 +89,10 @@ class CreateEvalCompletionsRunDataSourceMapper
     #model: _f$model,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCompletionsRunDataSource _instantiate(DecodingData data) {
     return CreateEvalCompletionsRunDataSource(
@@ -180,16 +185,16 @@ abstract class CreateEvalCompletionsRunDataSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalCompletionsRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion,
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion
+    CreateEvalCompletionsRunDataSourceSourceUnion,
+    CreateEvalCompletionsRunDataSourceSourceUnion
   >
   get source;
-  CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceInputMessagesUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion,
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion
   >?
   get inputMessages;
   CreateEvalCompletionsRunDataSourceSamplingParamsCopyWith<
@@ -199,9 +204,8 @@ abstract class CreateEvalCompletionsRunDataSourceCopyWith<
   >?
   get createEvalCompletionsRunDataSourceSamplingParams;
   $R call({
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion? source,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion?
-    inputMessages,
+    CreateEvalCompletionsRunDataSourceSourceUnion? source,
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages,
     CreateEvalCompletionsRunDataSourceSamplingParams?
     createEvalCompletionsRunDataSourceSamplingParams,
     String? model,
@@ -229,17 +233,17 @@ class _CreateEvalCompletionsRunDataSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalCompletionsRunDataSource> $mapper =
       CreateEvalCompletionsRunDataSourceMapper.ensureInitialized();
   @override
-  CreateEvalCompletionsRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion,
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion
+    CreateEvalCompletionsRunDataSourceSourceUnion,
+    CreateEvalCompletionsRunDataSourceSourceUnion
   >
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnionCopyWith<
+  CreateEvalCompletionsRunDataSourceInputMessagesUnionCopyWith<
     $R,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion,
-    CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion,
+    CreateEvalCompletionsRunDataSourceInputMessagesUnion
   >?
   get inputMessages =>
       $value.inputMessages?.copyWith.$chain((v) => call(inputMessages: v));
@@ -255,7 +259,7 @@ class _CreateEvalCompletionsRunDataSourceCopyWithImpl<$R, $Out>
       .$chain((v) => call(createEvalCompletionsRunDataSourceSamplingParams: v));
   @override
   $R call({
-    CreateEvalCompletionsRunDataSourceSourceSourceUnion? source,
+    CreateEvalCompletionsRunDataSourceSourceUnion? source,
     Object? inputMessages = $none,
     Object? createEvalCompletionsRunDataSourceSamplingParams = $none,
     Object? model = $none,

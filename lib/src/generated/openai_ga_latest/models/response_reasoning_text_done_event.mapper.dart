@@ -64,6 +64,10 @@ class ResponseReasoningTextDoneEventMapper
     #text: _f$text,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseReasoningTextDoneEvent _instantiate(DecodingData data) {
     return ResponseReasoningTextDoneEvent(

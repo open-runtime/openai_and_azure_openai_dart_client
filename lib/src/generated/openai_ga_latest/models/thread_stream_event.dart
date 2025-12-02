@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'thread_stream_event.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadStreamEvent with ThreadStreamEventMappable {
   const ThreadStreamEvent();
 

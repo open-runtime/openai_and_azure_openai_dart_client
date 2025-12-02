@@ -9,7 +9,7 @@ import 'vector_store_file_attributes.dart';
 
 part 'create_vector_store_file_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreFileRequest with CreateVectorStoreFileRequestMappable {
   const CreateVectorStoreFileRequest({
     required this.fileId,

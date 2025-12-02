@@ -50,7 +50,7 @@ class MessageDeltaContentTextObjectMapper
   _f$messageDeltaContentTextObjectText = Field(
     'messageDeltaContentTextObjectText',
     _$messageDeltaContentTextObjectText,
-    key: r'MessageDeltaContentTextObjectText',
+    key: r'text',
     opt: true,
   );
 
@@ -60,6 +60,10 @@ class MessageDeltaContentTextObjectMapper
     #type: _f$type,
     #messageDeltaContentTextObjectText: _f$messageDeltaContentTextObjectText,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextObject _instantiate(DecodingData data) {
     return MessageDeltaContentTextObject(

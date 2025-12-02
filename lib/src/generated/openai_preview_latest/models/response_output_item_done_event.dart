@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_item.dart';
 import 'response_output_item_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_output_item_done_event.mapper.dart';
 
 /// Emitted when an output item is marked done.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseOutputItemDoneEvent with ResponseOutputItemDoneEventMappable {
   const ResponseOutputItemDoneEvent({
     required this.type,

@@ -4,14 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'item_resource.dart';
 import 'mcp_list_tools_tool.dart';
 import 'mcp_list_tools_type_type.dart';
+import 'output_item.dart';
 
 part 'mcp_list_tools.mapper.dart';
 
 /// A list of tools available on an MCP server.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpListTools with McpListToolsMappable {
   const McpListTools({
     required this.type,

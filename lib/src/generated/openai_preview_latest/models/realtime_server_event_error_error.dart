@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_server_event_error_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventErrorError with RealtimeServerEventErrorErrorMappable {
   const RealtimeServerEventErrorError({
     required this.type,

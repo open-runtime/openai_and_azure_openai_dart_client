@@ -17,8 +17,8 @@ class ChunkingStrategyRequestParamUnionMapper
       MapperContainer.globals.use(
         _instance = ChunkingStrategyRequestParamUnionMapper._(),
       );
-      ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized();
-      ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized();
+      ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized();
+      ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,10 +28,16 @@ class ChunkingStrategyRequestParamUnionMapper
 
   @override
   final MappableFields<ChunkingStrategyRequestParamUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChunkingStrategyRequestParamUnion _instantiate(DecodingData data) {
-    throw MapperException.missingConstructor(
+    throw MapperException.missingSubclass(
       'ChunkingStrategyRequestParamUnion',
+      'type',
+      '${data.value['type']}',
     );
   }
 
@@ -74,246 +80,196 @@ abstract class ChunkingStrategyRequestParamUnionCopyWith<
   );
 }
 
-class ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper
-    extends
-        ClassMapperBase<
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-        > {
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper._();
+class ChunkingStrategyRequestParamUnionAutoMapper
+    extends SubClassMapperBase<ChunkingStrategyRequestParamUnionAuto> {
+  ChunkingStrategyRequestParamUnionAutoMapper._();
 
-  static ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper?
-  _instance;
-  static ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper
-  ensureInitialized() {
+  static ChunkingStrategyRequestParamUnionAutoMapper? _instance;
+  static ChunkingStrategyRequestParamUnionAutoMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper._(),
+        _instance = ChunkingStrategyRequestParamUnionAutoMapper._(),
       );
-      ChunkingStrategyRequestParamUnionMapper.ensureInitialized();
+      ChunkingStrategyRequestParamUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       AutoChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
 
   @override
-  final String id =
-      'ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam';
+  final String id = 'ChunkingStrategyRequestParamUnionAuto';
 
   static AutoChunkingStrategyRequestParamTypeType _$type(
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam v,
+    ChunkingStrategyRequestParamUnionAuto v,
   ) => v.type;
   static const Field<
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionAuto,
     AutoChunkingStrategyRequestParamTypeType
   >
   _f$type = Field('type', _$type);
 
   @override
-  final MappableFields<
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-  >
-  fields = const {#type: _f$type};
+  final MappableFields<ChunkingStrategyRequestParamUnionAuto> fields = const {
+    #type: _f$type,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-  _instantiate(DecodingData data) {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam(
-      type: data.dec(_f$type),
-    );
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'auto';
+  @override
+  late final ClassMapperBase superMapper =
+      ChunkingStrategyRequestParamUnionMapper.ensureInitialized();
+
+  static ChunkingStrategyRequestParamUnionAuto _instantiate(DecodingData data) {
+    return ChunkingStrategyRequestParamUnionAuto(type: data.dec(_f$type));
   }
 
   @override
   final Function instantiate = _instantiate;
 
-  static ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-    >(map);
+  static ChunkingStrategyRequestParamUnionAuto fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized().decodeMap<ChunkingStrategyRequestParamUnionAuto>(
+      map,
+    );
   }
 
-  static ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-    >(json);
+  static ChunkingStrategyRequestParamUnionAuto fromJsonString(String json) {
+    return ensureInitialized()
+        .decodeJson<ChunkingStrategyRequestParamUnionAuto>(json);
   }
 }
 
-mixin ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMappable {
+mixin ChunkingStrategyRequestParamUnionAutoMappable {
   String toJsonString() {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized()
-        .encodeJson<
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-        >(
-          this
-              as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+    return ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized()
+        .encodeJson<ChunkingStrategyRequestParamUnionAuto>(
+          this as ChunkingStrategyRequestParamUnionAuto,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized()
-        .encodeMap<
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-        >(
-          this
-              as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+    return ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized()
+        .encodeMap<ChunkingStrategyRequestParamUnionAuto>(
+          this as ChunkingStrategyRequestParamUnionAuto,
         );
   }
 
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
+  ChunkingStrategyRequestParamUnionAutoCopyWith<
+    ChunkingStrategyRequestParamUnionAuto,
+    ChunkingStrategyRequestParamUnionAuto,
+    ChunkingStrategyRequestParamUnionAuto
   >
   get copyWith =>
-      _ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWithImpl<
-        ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-        ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-      >(
-        this
-            as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-        $identity,
-        $identity,
-      );
+      _ChunkingStrategyRequestParamUnionAutoCopyWithImpl<
+        ChunkingStrategyRequestParamUnionAuto,
+        ChunkingStrategyRequestParamUnionAuto
+      >(this as ChunkingStrategyRequestParamUnionAuto, $identity, $identity);
   @override
   String toString() {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-        );
+    return ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized()
+        .stringifyValue(this as ChunkingStrategyRequestParamUnionAuto);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-          other,
-        );
+    return ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized()
+        .equalsValue(this as ChunkingStrategyRequestParamUnionAuto, other);
   }
 
   @override
   int get hashCode {
-    return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-        );
+    return ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized()
+        .hashValue(this as ChunkingStrategyRequestParamUnionAuto);
   }
 }
 
-extension ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-          $Out
-        > {
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
+extension ChunkingStrategyRequestParamUnionAutoValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChunkingStrategyRequestParamUnionAuto, $Out> {
+  ChunkingStrategyRequestParamUnionAutoCopyWith<
     $R,
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionAuto,
     $Out
   >
-  get $asChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam =>
-      $base.as(
-        (v, t, t2) =>
-            _ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChunkingStrategyRequestParamUnionAuto => $base.as(
+    (v, t, t2) =>
+        _ChunkingStrategyRequestParamUnionAutoCopyWithImpl<$R, $Out>(v, t, t2),
+  );
 }
 
-abstract class ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
+abstract class ChunkingStrategyRequestParamUnionAutoCopyWith<
   $R,
-  $In extends ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+  $In extends ChunkingStrategyRequestParamUnionAuto,
   $Out
 >
     implements ChunkingStrategyRequestParamUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({AutoChunkingStrategyRequestParamTypeType? type});
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChunkingStrategyRequestParamUnionAutoCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
-          $Out
-        >
+class _ChunkingStrategyRequestParamUnionAutoCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ChunkingStrategyRequestParamUnionAuto, $Out>
     implements
-        ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
+        ChunkingStrategyRequestParamUnionAutoCopyWith<
           $R,
-          ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+          ChunkingStrategyRequestParamUnionAuto,
           $Out
         > {
-  _ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWithImpl(
+  _ChunkingStrategyRequestParamUnionAutoCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam
-  >
-  $mapper =
-      ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.ensureInitialized();
+  late final ClassMapperBase<ChunkingStrategyRequestParamUnionAuto> $mapper =
+      ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized();
   @override
   $R call({AutoChunkingStrategyRequestParamTypeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam $make(
-    CopyWithData data,
-  ) => ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam(
-    type: data.get(#type, or: $value.type),
-  );
+  ChunkingStrategyRequestParamUnionAuto $make(CopyWithData data) =>
+      ChunkingStrategyRequestParamUnionAuto(
+        type: data.get(#type, or: $value.type),
+      );
 
   @override
-  ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWith<
+  ChunkingStrategyRequestParamUnionAutoCopyWith<
     $R2,
-    ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionAuto,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChunkingStrategyRequestParamUnionAutoCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 
-class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper
-    extends
-        ClassMapperBase<
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-        > {
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper._();
+class ChunkingStrategyRequestParamUnionStaticMapper
+    extends SubClassMapperBase<ChunkingStrategyRequestParamUnionStatic> {
+  ChunkingStrategyRequestParamUnionStaticMapper._();
 
-  static ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper?
-  _instance;
-  static ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper
-  ensureInitialized() {
+  static ChunkingStrategyRequestParamUnionStaticMapper? _instance;
+  static ChunkingStrategyRequestParamUnionStaticMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper._(),
+        _instance = ChunkingStrategyRequestParamUnionStaticMapper._(),
       );
-      ChunkingStrategyRequestParamUnionMapper.ensureInitialized();
+      ChunkingStrategyRequestParamUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       StaticChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
@@ -321,35 +277,47 @@ class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper
   }
 
   @override
-  final String id =
-      'ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam';
+  final String id = 'ChunkingStrategyRequestParamUnionStatic';
 
   static StaticChunkingStrategyRequestParamTypeType _$type(
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam v,
+    ChunkingStrategyRequestParamUnionStatic v,
   ) => v.type;
   static const Field<
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionStatic,
     StaticChunkingStrategyRequestParamTypeType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam v,
+    ChunkingStrategyRequestParamUnionStatic v,
   ) => v.staticField;
   static const Field<
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionStatic,
     StaticChunkingStrategy
   >
-  _f$staticField = Field('staticField', _$staticField);
+  _f$staticField = Field('staticField', _$staticField, key: r'static');
 
   @override
-  final MappableFields<
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-  >
-  fields = const {#type: _f$type, #staticField: _f$staticField};
+  final MappableFields<ChunkingStrategyRequestParamUnionStatic> fields = const {
+    #type: _f$type,
+    #staticField: _f$staticField,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-  _instantiate(DecodingData data) {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'static';
+  @override
+  late final ClassMapperBase superMapper =
+      ChunkingStrategyRequestParamUnionMapper.ensureInitialized();
+
+  static ChunkingStrategyRequestParamUnionStatic _instantiate(
+    DecodingData data,
+  ) {
+    return ChunkingStrategyRequestParamUnionStatic(
       type: data.dec(_f$type),
       staticField: data.dec(_f$staticField),
     );
@@ -358,114 +326,83 @@ class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-    >(map);
+  static ChunkingStrategyRequestParamUnionStatic fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ChunkingStrategyRequestParamUnionStatic>(map);
   }
 
-  static ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-    >(json);
+  static ChunkingStrategyRequestParamUnionStatic fromJsonString(String json) {
+    return ensureInitialized()
+        .decodeJson<ChunkingStrategyRequestParamUnionStatic>(json);
   }
 }
 
-mixin ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMappable {
+mixin ChunkingStrategyRequestParamUnionStaticMappable {
   String toJsonString() {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized()
-        .encodeJson<
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-        >(
-          this
-              as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    return ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized()
+        .encodeJson<ChunkingStrategyRequestParamUnionStatic>(
+          this as ChunkingStrategyRequestParamUnionStatic,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized()
-        .encodeMap<
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-        >(
-          this
-              as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    return ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized()
+        .encodeMap<ChunkingStrategyRequestParamUnionStatic>(
+          this as ChunkingStrategyRequestParamUnionStatic,
         );
   }
 
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
+  ChunkingStrategyRequestParamUnionStaticCopyWith<
+    ChunkingStrategyRequestParamUnionStatic,
+    ChunkingStrategyRequestParamUnionStatic,
+    ChunkingStrategyRequestParamUnionStatic
   >
   get copyWith =>
-      _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWithImpl<
-        ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-        ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-      >(
-        this
-            as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-        $identity,
-        $identity,
-      );
+      _ChunkingStrategyRequestParamUnionStaticCopyWithImpl<
+        ChunkingStrategyRequestParamUnionStatic,
+        ChunkingStrategyRequestParamUnionStatic
+      >(this as ChunkingStrategyRequestParamUnionStatic, $identity, $identity);
   @override
   String toString() {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-        );
+    return ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized()
+        .stringifyValue(this as ChunkingStrategyRequestParamUnionStatic);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-          other,
-        );
+    return ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized()
+        .equalsValue(this as ChunkingStrategyRequestParamUnionStatic, other);
   }
 
   @override
   int get hashCode {
-    return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-        );
+    return ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized()
+        .hashValue(this as ChunkingStrategyRequestParamUnionStatic);
   }
 }
 
-extension ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-          $Out
-        > {
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
+extension ChunkingStrategyRequestParamUnionStaticValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChunkingStrategyRequestParamUnionStatic, $Out> {
+  ChunkingStrategyRequestParamUnionStaticCopyWith<
     $R,
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionStatic,
     $Out
   >
-  get $asChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam =>
-      $base.as(
-        (v, t, t2) =>
-            _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChunkingStrategyRequestParamUnionStatic => $base.as(
+    (v, t, t2) =>
+        _ChunkingStrategyRequestParamUnionStaticCopyWithImpl<$R, $Out>(
+          v,
+          t,
+          t2,
+        ),
+  );
 }
 
-abstract class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
+abstract class ChunkingStrategyRequestParamUnionStaticCopyWith<
   $R,
-  $In extends ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+  $In extends ChunkingStrategyRequestParamUnionStatic,
   $Out
 >
     implements ChunkingStrategyRequestParamUnionCopyWith<$R, $In, $Out> {
@@ -480,42 +417,27 @@ abstract class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestPar
     StaticChunkingStrategyRequestParamTypeType? type,
     StaticChunkingStrategy? staticField,
   });
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChunkingStrategyRequestParamUnionStaticCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
-          $Out
-        >
+class _ChunkingStrategyRequestParamUnionStaticCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ChunkingStrategyRequestParamUnionStatic, $Out>
     implements
-        ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
+        ChunkingStrategyRequestParamUnionStaticCopyWith<
           $R,
-          ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+          ChunkingStrategyRequestParamUnionStatic,
           $Out
         > {
-  _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWithImpl(
+  _ChunkingStrategyRequestParamUnionStaticCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam
-  >
-  $mapper =
-      ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.ensureInitialized();
+  late final ClassMapperBase<ChunkingStrategyRequestParamUnionStatic> $mapper =
+      ChunkingStrategyRequestParamUnionStaticMapper.ensureInitialized();
   @override
   StaticChunkingStrategyCopyWith<
     $R,
@@ -535,23 +457,23 @@ class _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWi
     }),
   );
   @override
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam $make(
-    CopyWithData data,
-  ) => ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam(
-    type: data.get(#type, or: $value.type),
-    staticField: data.get(#staticField, or: $value.staticField),
-  );
+  ChunkingStrategyRequestParamUnionStatic $make(CopyWithData data) =>
+      ChunkingStrategyRequestParamUnionStatic(
+        type: data.get(#type, or: $value.type),
+        staticField: data.get(#staticField, or: $value.staticField),
+      );
 
   @override
-  ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWith<
+  ChunkingStrategyRequestParamUnionStaticCopyWith<
     $R2,
-    ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam,
+    ChunkingStrategyRequestParamUnionStatic,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChunkingStrategyRequestParamUnionStaticCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 

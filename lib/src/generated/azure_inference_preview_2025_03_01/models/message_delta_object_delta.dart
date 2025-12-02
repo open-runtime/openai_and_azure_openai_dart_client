@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_object_delta_role_role.dart';
-import 'message_delta_object_delta_content_content_union.dart';
+import 'message_delta_object_delta_content_union.dart';
 
 part 'message_delta_object_delta.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaObjectDelta with MessageDeltaObjectDeltaMappable {
   const MessageDeltaObjectDelta({
     this.role,
@@ -17,7 +17,7 @@ class MessageDeltaObjectDelta with MessageDeltaObjectDeltaMappable {
   });
 
   final MessageDeltaObjectDeltaRoleRole? role;
-  final List<MessageDeltaObjectDeltaContentContentUnion>? content;
+  final List<MessageDeltaObjectDeltaContentUnion>? content;
 
   static MessageDeltaObjectDelta fromJson(Map<String, dynamic> json) => MessageDeltaObjectDeltaMapper.fromJson(json);
 

@@ -4,16 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'file_search_tool_filters_filters_union.dart';
+import 'file_search_tool_filters_union.dart';
 import 'file_search_tool_ranking_options.dart';
 import 'file_search_tool_type_type.dart';
+import 'tool.dart';
 
 part 'file_search_tool.mapper.dart';
 
 /// A tool that searches for relevant content from uploaded files.
 /// Learn more about the [file search tool](/docs/guides/tools-file-search).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchTool with FileSearchToolMappable {
   const FileSearchTool({
     required this.type,
@@ -28,8 +29,8 @@ class FileSearchTool with FileSearchToolMappable {
   final List<String> vectorStoreIds;
   @MappableField(key: 'max_num_results')
   final int? maxNumResults;
-  final FileSearchToolFiltersFiltersUnion? filters;
-  @MappableField(key: 'FileSearchToolRankingOptions')
+  final FileSearchToolFiltersUnion? filters;
+  @MappableField(key: 'ranking_options')
   final FileSearchToolRankingOptions? fileSearchToolRankingOptions;
 
   static FileSearchTool fromJson(Map<String, dynamic> json) => FileSearchToolMapper.fromJson(json);

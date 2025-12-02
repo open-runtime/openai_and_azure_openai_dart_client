@@ -17,7 +17,7 @@ class FineTuneReinforcementRequestInputMapper
       MapperContainer.globals.use(
         _instance = FineTuneReinforcementRequestInputMapper._(),
       );
-      FineTuneReinforcementRequestInputMessagesMessagesUnionMapper.ensureInitialized();
+      FineTuneReinforcementRequestInputMessagesUnionMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,11 +26,12 @@ class FineTuneReinforcementRequestInputMapper
   @override
   final String id = 'FineTuneReinforcementRequestInput';
 
-  static List<FineTuneReinforcementRequestInputMessagesMessagesUnion>
-  _$messages(FineTuneReinforcementRequestInput v) => v.messages;
+  static List<FineTuneReinforcementRequestInputMessagesUnion> _$messages(
+    FineTuneReinforcementRequestInput v,
+  ) => v.messages;
   static const Field<
     FineTuneReinforcementRequestInput,
-    List<FineTuneReinforcementRequestInputMessagesMessagesUnion>
+    List<FineTuneReinforcementRequestInputMessagesUnion>
   >
   _f$messages = Field('messages', _$messages);
   static List<ChatCompletionTool>? _$tools(
@@ -47,6 +48,10 @@ class FineTuneReinforcementRequestInputMapper
     #messages: _f$messages,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneReinforcementRequestInput _instantiate(DecodingData data) {
     return FineTuneReinforcementRequestInput(
@@ -136,11 +141,11 @@ abstract class FineTuneReinforcementRequestInputCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    FineTuneReinforcementRequestInputMessagesMessagesUnion,
-    FineTuneReinforcementRequestInputMessagesMessagesUnionCopyWith<
+    FineTuneReinforcementRequestInputMessagesUnion,
+    FineTuneReinforcementRequestInputMessagesUnionCopyWith<
       $R,
-      FineTuneReinforcementRequestInputMessagesMessagesUnion,
-      FineTuneReinforcementRequestInputMessagesMessagesUnion
+      FineTuneReinforcementRequestInputMessagesUnion,
+      FineTuneReinforcementRequestInputMessagesUnion
     >
   >
   get messages;
@@ -151,7 +156,7 @@ abstract class FineTuneReinforcementRequestInputCopyWith<
   >?
   get tools;
   $R call({
-    List<FineTuneReinforcementRequestInputMessagesMessagesUnion>? messages,
+    List<FineTuneReinforcementRequestInputMessagesUnion>? messages,
     List<ChatCompletionTool>? tools,
   });
   FineTuneReinforcementRequestInputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -179,11 +184,11 @@ class _FineTuneReinforcementRequestInputCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    FineTuneReinforcementRequestInputMessagesMessagesUnion,
-    FineTuneReinforcementRequestInputMessagesMessagesUnionCopyWith<
+    FineTuneReinforcementRequestInputMessagesUnion,
+    FineTuneReinforcementRequestInputMessagesUnionCopyWith<
       $R,
-      FineTuneReinforcementRequestInputMessagesMessagesUnion,
-      FineTuneReinforcementRequestInputMessagesMessagesUnion
+      FineTuneReinforcementRequestInputMessagesUnion,
+      FineTuneReinforcementRequestInputMessagesUnion
     >
   >
   get messages => ListCopyWith(
@@ -206,7 +211,7 @@ class _FineTuneReinforcementRequestInputCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    List<FineTuneReinforcementRequestInputMessagesMessagesUnion>? messages,
+    List<FineTuneReinforcementRequestInputMessagesUnion>? messages,
     Object? tools = $none,
   }) => $apply(
     FieldCopyWithData({

@@ -13,7 +13,7 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_fai
 /// request for a user message failed. These events are separate from other .
 /// `error` events so that the client can identify the related Item.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed with RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed({
     required this.eventId,
@@ -30,7 +30,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed with 
   final String itemId;
   @MappableField(key: 'content_index')
   final int contentIndex;
-  @MappableField(key: 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError')
+  @MappableField(key: 'error')
   final RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json);

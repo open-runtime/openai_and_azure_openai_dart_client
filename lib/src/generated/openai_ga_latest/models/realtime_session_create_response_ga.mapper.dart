@@ -19,14 +19,16 @@ class RealtimeSessionCreateResponseGaMapper
       );
       RealtimeSessionCreateResponseGaClientSecretMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaModelUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaAudioMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaIncludeIncludeMapper.ensureInitialized();
-      RealtimeSessionCreateResponseGaTracingTracingUnionMapper.ensureInitialized();
-      RealtimeSessionCreateResponseGaToolsToolsUnionMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaTracingUnionMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaToolsUnionMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaMaxOutputTokensUnionMapper.ensureInitialized();
       RealtimeTruncationUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaOutputModalitiesOutputModalitiesMapper.ensureInitialized();
-      RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaToolChoiceUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -45,7 +47,7 @@ class RealtimeSessionCreateResponseGaMapper
   _f$realtimeSessionCreateResponseGaClientSecret = Field(
     'realtimeSessionCreateResponseGaClientSecret',
     _$realtimeSessionCreateResponseGaClientSecret,
-    key: r'RealtimeSessionCreateResponseGaClientSecret',
+    key: r'client_secret',
   );
   static RealtimeSessionCreateResponseGaTypeType _$type(
     RealtimeSessionCreateResponseGa v,
@@ -55,11 +57,18 @@ class RealtimeSessionCreateResponseGaMapper
     RealtimeSessionCreateResponseGaTypeType
   >
   _f$type = Field('type', _$type);
-  static String? _$model(RealtimeSessionCreateResponseGa v) => v.model;
-  static const Field<RealtimeSessionCreateResponseGa, String> _f$model = Field(
+  static RealtimeSessionCreateResponseGaModelUnion? _$model(
+    RealtimeSessionCreateResponseGa v,
+  ) => v.model;
+  static const Field<
+    RealtimeSessionCreateResponseGa,
+    RealtimeSessionCreateResponseGaModelUnion
+  >
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
+    hook: const RealtimeSessionCreateResponseGaModelUnionHook(),
   );
   static String? _$instructions(RealtimeSessionCreateResponseGa v) =>
       v.instructions;
@@ -75,7 +84,7 @@ class RealtimeSessionCreateResponseGaMapper
   _f$realtimeSessionCreateResponseGaAudio = Field(
     'realtimeSessionCreateResponseGaAudio',
     _$realtimeSessionCreateResponseGaAudio,
-    key: r'RealtimeSessionCreateResponseGaAudio',
+    key: r'audio',
     opt: true,
   );
   static List<RealtimeSessionCreateResponseGaIncludeInclude>? _$include(
@@ -86,30 +95,35 @@ class RealtimeSessionCreateResponseGaMapper
     List<RealtimeSessionCreateResponseGaIncludeInclude>
   >
   _f$include = Field('include', _$include, opt: true);
-  static RealtimeSessionCreateResponseGaTracingTracingUnion? _$tracing(
+  static RealtimeSessionCreateResponseGaTracingUnion? _$tracing(
     RealtimeSessionCreateResponseGa v,
   ) => v.tracing;
   static const Field<
     RealtimeSessionCreateResponseGa,
-    RealtimeSessionCreateResponseGaTracingTracingUnion
+    RealtimeSessionCreateResponseGaTracingUnion
   >
   _f$tracing = Field('tracing', _$tracing, opt: true);
-  static List<RealtimeSessionCreateResponseGaToolsToolsUnion>? _$tools(
+  static List<RealtimeSessionCreateResponseGaToolsUnion>? _$tools(
     RealtimeSessionCreateResponseGa v,
   ) => v.tools;
   static const Field<
     RealtimeSessionCreateResponseGa,
-    List<RealtimeSessionCreateResponseGaToolsToolsUnion>
+    List<RealtimeSessionCreateResponseGaToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
-  static String? _$maxOutputTokens(RealtimeSessionCreateResponseGa v) =>
-      v.maxOutputTokens;
-  static const Field<RealtimeSessionCreateResponseGa, String>
+  static RealtimeSessionCreateResponseGaMaxOutputTokensUnion? _$maxOutputTokens(
+    RealtimeSessionCreateResponseGa v,
+  ) => v.maxOutputTokens;
+  static const Field<
+    RealtimeSessionCreateResponseGa,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+  >
   _f$maxOutputTokens = Field(
     'maxOutputTokens',
     _$maxOutputTokens,
     key: r'max_output_tokens',
     opt: true,
+    hook: const RealtimeSessionCreateResponseGaMaxOutputTokensUnionHook(),
   );
   static RealtimeTruncationUnion? _$truncation(
     RealtimeSessionCreateResponseGa v,
@@ -134,22 +148,21 @@ class RealtimeSessionCreateResponseGaMapper
       RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities.audio,
     ],
   );
-  static RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion _$toolChoice(
+  static RealtimeSessionCreateResponseGaToolChoiceUnion _$toolChoice(
     RealtimeSessionCreateResponseGa v,
   ) => v.toolChoice;
   static const Field<
     RealtimeSessionCreateResponseGa,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateResponseGaToolChoiceUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
     key: r'tool_choice',
     opt: true,
-    def:
-        const RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString(
-          value: 'auto',
-        ),
+    def: const RealtimeSessionCreateResponseGaToolChoiceUnionVariantString(
+      value: 'auto',
+    ),
   );
 
   @override
@@ -170,6 +183,10 @@ class RealtimeSessionCreateResponseGaMapper
     #outputModalities: _f$outputModalities,
     #toolChoice: _f$toolChoice,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponseGa _instantiate(DecodingData data) {
     return RealtimeSessionCreateResponseGa(
@@ -277,6 +294,12 @@ abstract class RealtimeSessionCreateResponseGaCopyWith<
     RealtimeSessionCreateResponseGaClientSecret
   >
   get realtimeSessionCreateResponseGaClientSecret;
+  RealtimeSessionCreateResponseGaModelUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseGaModelUnion,
+    RealtimeSessionCreateResponseGaModelUnion
+  >?
+  get model;
   RealtimeSessionCreateResponseGaAudioCopyWith<
     $R,
     RealtimeSessionCreateResponseGaAudio,
@@ -293,22 +316,28 @@ abstract class RealtimeSessionCreateResponseGaCopyWith<
     >
   >?
   get include;
-  RealtimeSessionCreateResponseGaTracingTracingUnionCopyWith<
+  RealtimeSessionCreateResponseGaTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaTracingTracingUnion,
-    RealtimeSessionCreateResponseGaTracingTracingUnion
+    RealtimeSessionCreateResponseGaTracingUnion,
+    RealtimeSessionCreateResponseGaTracingUnion
   >?
   get tracing;
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaToolsToolsUnion,
-    RealtimeSessionCreateResponseGaToolsToolsUnionCopyWith<
+    RealtimeSessionCreateResponseGaToolsUnion,
+    RealtimeSessionCreateResponseGaToolsUnionCopyWith<
       $R,
-      RealtimeSessionCreateResponseGaToolsToolsUnion,
-      RealtimeSessionCreateResponseGaToolsToolsUnion
+      RealtimeSessionCreateResponseGaToolsUnion,
+      RealtimeSessionCreateResponseGaToolsUnion
     >
   >?
   get tools;
+  RealtimeSessionCreateResponseGaMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+  >?
+  get maxOutputTokens;
   RealtimeTruncationUnionCopyWith<
     $R,
     RealtimeTruncationUnion,
@@ -326,28 +355,28 @@ abstract class RealtimeSessionCreateResponseGaCopyWith<
     >
   >
   get outputModalities;
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionCopyWith<
+  RealtimeSessionCreateResponseGaToolChoiceUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateResponseGaToolChoiceUnion,
+    RealtimeSessionCreateResponseGaToolChoiceUnion
   >
   get toolChoice;
   $R call({
     RealtimeSessionCreateResponseGaClientSecret?
     realtimeSessionCreateResponseGaClientSecret,
     RealtimeSessionCreateResponseGaTypeType? type,
-    String? model,
+    RealtimeSessionCreateResponseGaModelUnion? model,
     String? instructions,
     RealtimeSessionCreateResponseGaAudio? realtimeSessionCreateResponseGaAudio,
     List<RealtimeSessionCreateResponseGaIncludeInclude>? include,
-    RealtimeSessionCreateResponseGaTracingTracingUnion? tracing,
-    List<RealtimeSessionCreateResponseGaToolsToolsUnion>? tools,
-    String? maxOutputTokens,
+    RealtimeSessionCreateResponseGaTracingUnion? tracing,
+    List<RealtimeSessionCreateResponseGaToolsUnion>? tools,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion? maxOutputTokens,
     RealtimeTruncationUnion? truncation,
     PromptUnion? prompt,
     List<RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities>?
     outputModalities,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeSessionCreateResponseGaToolChoiceUnion? toolChoice,
   });
   RealtimeSessionCreateResponseGaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -382,6 +411,13 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
       .copyWith
       .$chain((v) => call(realtimeSessionCreateResponseGaClientSecret: v));
   @override
+  RealtimeSessionCreateResponseGaModelUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseGaModelUnion,
+    RealtimeSessionCreateResponseGaModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
+  @override
   RealtimeSessionCreateResponseGaAudioCopyWith<
     $R,
     RealtimeSessionCreateResponseGaAudio,
@@ -409,20 +445,20 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  RealtimeSessionCreateResponseGaTracingTracingUnionCopyWith<
+  RealtimeSessionCreateResponseGaTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaTracingTracingUnion,
-    RealtimeSessionCreateResponseGaTracingTracingUnion
+    RealtimeSessionCreateResponseGaTracingUnion,
+    RealtimeSessionCreateResponseGaTracingUnion
   >?
   get tracing => $value.tracing?.copyWith.$chain((v) => call(tracing: v));
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaToolsToolsUnion,
-    RealtimeSessionCreateResponseGaToolsToolsUnionCopyWith<
+    RealtimeSessionCreateResponseGaToolsUnion,
+    RealtimeSessionCreateResponseGaToolsUnionCopyWith<
       $R,
-      RealtimeSessionCreateResponseGaToolsToolsUnion,
-      RealtimeSessionCreateResponseGaToolsToolsUnion
+      RealtimeSessionCreateResponseGaToolsUnion,
+      RealtimeSessionCreateResponseGaToolsUnion
     >
   >?
   get tools => $value.tools != null
@@ -432,6 +468,14 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionCreateResponseGaMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+  >?
+  get maxOutputTokens =>
+      $value.maxOutputTokens?.copyWith.$chain((v) => call(maxOutputTokens: v));
   @override
   RealtimeTruncationUnionCopyWith<
     $R,
@@ -459,10 +503,10 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
     (v) => call(outputModalities: v),
   );
   @override
-  RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionCopyWith<
+  RealtimeSessionCreateResponseGaToolChoiceUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateResponseGaToolChoiceUnion,
+    RealtimeSessionCreateResponseGaToolChoiceUnion
   >
   get toolChoice =>
       $value.toolChoice.copyWith.$chain((v) => call(toolChoice: v));
@@ -482,7 +526,7 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
     Object? prompt = $none,
     List<RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities>?
     outputModalities,
-    RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeSessionCreateResponseGaToolChoiceUnion? toolChoice,
   }) => $apply(
     FieldCopyWithData({
       if (realtimeSessionCreateResponseGaClientSecret != null)

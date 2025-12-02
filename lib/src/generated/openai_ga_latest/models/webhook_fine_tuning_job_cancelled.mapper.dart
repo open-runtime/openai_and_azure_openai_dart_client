@@ -48,7 +48,7 @@ class WebhookFineTuningJobCancelledMapper
   _f$webhookFineTuningJobCancelledData = Field(
     'webhookFineTuningJobCancelledData',
     _$webhookFineTuningJobCancelledData,
-    key: r'WebhookFineTuningJobCancelledData',
+    key: r'data',
   );
   static WebhookFineTuningJobCancelledTypeType _$type(
     WebhookFineTuningJobCancelled v,
@@ -75,6 +75,10 @@ class WebhookFineTuningJobCancelledMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookFineTuningJobCancelled _instantiate(DecodingData data) {
     return WebhookFineTuningJobCancelled(

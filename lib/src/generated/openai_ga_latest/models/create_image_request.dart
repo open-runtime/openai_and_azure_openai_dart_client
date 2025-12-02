@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_image_request_background_background.dart';
+import 'create_image_request_model_union.dart';
 import 'create_image_request_moderation_moderation.dart';
 import 'create_image_request_output_format_output_format.dart';
 import 'create_image_request_quality_quality.dart';
@@ -15,7 +16,7 @@ import 'partial_images.dart';
 
 part 'create_image_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateImageRequest with CreateImageRequestMappable {
   const CreateImageRequest({
     required this.prompt,
@@ -48,7 +49,8 @@ class CreateImageRequest with CreateImageRequestMappable {
   final CreateImageRequestModerationModeration? moderation;
   final CreateImageRequestBackgroundBackground? background;
   final CreateImageRequestStyleStyle? style;
-  final String? model;
+  @MappableField(hook: const CreateImageRequestModelUnionHook())
+  final CreateImageRequestModelUnion? model;
   @MappableField(key: 'partial_images')
   final PartialImages? partialImages;
   final String? user;

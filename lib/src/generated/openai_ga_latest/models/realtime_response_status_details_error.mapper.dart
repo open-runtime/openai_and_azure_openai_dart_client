@@ -36,6 +36,10 @@ class RealtimeResponseStatusDetailsErrorMapper
     #type: _f$type,
     #code: _f$code,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseStatusDetailsError _instantiate(DecodingData data) {
     return RealtimeResponseStatusDetailsError(

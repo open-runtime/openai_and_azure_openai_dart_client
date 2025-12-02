@@ -45,6 +45,10 @@ class ResponseFormatJsonSchemaJsonSchemaMapper
     #strict: _f$strict,
     #description: _f$description,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatJsonSchemaJsonSchema _instantiate(DecodingData data) {
     return ResponseFormatJsonSchemaJsonSchema(

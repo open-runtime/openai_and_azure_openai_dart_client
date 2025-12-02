@@ -28,6 +28,10 @@ class RealtimeTruncationUnionMapper
 
   @override
   final MappableFields<RealtimeTruncationUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTruncationUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('RealtimeTruncationUnion');
@@ -99,7 +103,7 @@ class RealtimeTruncationUnionVariant1Mapper
   static num _$retentionRatio(RealtimeTruncationUnionVariant1 v) =>
       v.retentionRatio;
   static const Field<RealtimeTruncationUnionVariant1, num> _f$retentionRatio =
-      Field('retentionRatio', _$retentionRatio);
+      Field('retentionRatio', _$retentionRatio, key: r'retention_ratio');
   static RealtimeTruncationUnionVariant1TokenLimits?
   _$realtimeTruncationUnionVariant1TokenLimits(
     RealtimeTruncationUnionVariant1 v,
@@ -111,6 +115,7 @@ class RealtimeTruncationUnionVariant1Mapper
   _f$realtimeTruncationUnionVariant1TokenLimits = Field(
     'realtimeTruncationUnionVariant1TokenLimits',
     _$realtimeTruncationUnionVariant1TokenLimits,
+    key: r'token_limits',
   );
 
   @override
@@ -120,6 +125,10 @@ class RealtimeTruncationUnionVariant1Mapper
     #realtimeTruncationUnionVariant1TokenLimits:
         _f$realtimeTruncationUnionVariant1TokenLimits,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTruncationUnionVariant1 _instantiate(DecodingData data) {
     return RealtimeTruncationUnionVariant1(
@@ -319,6 +328,10 @@ class RealtimeTruncationUnionVariantStringMapper
   final MappableFields<RealtimeTruncationUnionVariantString> fields = const {
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTruncationUnionVariantString _instantiate(DecodingData data) {
     return RealtimeTruncationUnionVariantString(value: data.dec(_f$value));

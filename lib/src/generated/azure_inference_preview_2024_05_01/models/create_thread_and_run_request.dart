@@ -7,13 +7,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'assistants_api_response_format_option.dart';
 import 'assistants_api_tool_choice_option.dart';
 import 'create_thread_and_run_request_tool_resources.dart';
-import 'create_thread_and_run_request_tools_tools_union.dart';
+import 'create_thread_and_run_request_tools_union.dart';
 import 'create_thread_request.dart';
 import 'truncation_object.dart';
 
 part 'create_thread_and_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   const CreateThreadAndRunRequest({
     required this.assistantId,
@@ -41,8 +41,8 @@ class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   final CreateThreadRequest? thread;
   final String? model;
   final String? instructions;
-  final List<CreateThreadAndRunRequestToolsToolsUnion>? tools;
-  @MappableField(key: 'CreateThreadAndRunRequestToolResources')
+  final List<CreateThreadAndRunRequestToolsUnion>? tools;
+  @MappableField(key: 'tool_resources')
   final CreateThreadAndRunRequestToolResources? createThreadAndRunRequestToolResources;
   final dynamic? metadata;
   final bool? stream;

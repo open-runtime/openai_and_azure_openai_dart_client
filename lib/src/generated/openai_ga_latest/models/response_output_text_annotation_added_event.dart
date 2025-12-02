@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_output_text_annotation_added_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_output_text_annotation_added_event.mapper.dart';
 
 /// Emitted when an annotation is added to output text content.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseOutputTextAnnotationAddedEvent with ResponseOutputTextAnnotationAddedEventMappable {
   const ResponseOutputTextAnnotationAddedEvent({
     required this.type,

@@ -9,7 +9,7 @@ import 'realtime_conversation_item_message_user_content_detail_detail.dart';
 
 part 'realtime_conversation_item_message_user_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageUserContent with RealtimeConversationItemMessageUserContentMappable {
   const RealtimeConversationItemMessageUserContent({
     this.detail = RealtimeConversationItemMessageUserContentDetailDetail.auto,

@@ -52,6 +52,10 @@ class CreateChatCompletionRequestWebSearchOptionsUserLocationMapper
   @override
   final MappableFields<CreateChatCompletionRequestWebSearchOptionsUserLocation>
   fields = const {#type: _f$type, #approximate: _f$approximate};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequestWebSearchOptionsUserLocation _instantiate(
     DecodingData data,

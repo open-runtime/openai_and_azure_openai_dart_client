@@ -41,6 +41,10 @@ class CompletionsCreateResponseUsageMapper
     #promptTokens: _f$promptTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionsCreateResponseUsage _instantiate(DecodingData data) {
     return CompletionsCreateResponseUsage(

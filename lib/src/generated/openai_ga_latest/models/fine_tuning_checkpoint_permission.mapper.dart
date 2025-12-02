@@ -55,6 +55,10 @@ class FineTuningCheckpointPermissionMapper
     #projectId: _f$projectId,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningCheckpointPermission _instantiate(DecodingData data) {
     return FineTuningCheckpointPermission(

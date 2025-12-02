@@ -54,6 +54,10 @@ class ResponseMcpListToolsFailedEventMapper
     #outputIndex: _f$outputIndex,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseMcpListToolsFailedEvent _instantiate(DecodingData data) {
     return ResponseMcpListToolsFailedEvent(

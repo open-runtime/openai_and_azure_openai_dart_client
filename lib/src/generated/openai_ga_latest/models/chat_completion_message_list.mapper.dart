@@ -64,7 +64,7 @@ class ChatCompletionMessageListMapper
     _$objectEnum,
     key: r'object',
     opt: true,
-    def: ChatCompletionMessageListObjectObjectEnum.valueList,
+    def: ChatCompletionMessageListObjectObjectEnum.list,
   );
 
   @override
@@ -75,6 +75,10 @@ class ChatCompletionMessageListMapper
     #hasMore: _f$hasMore,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageList _instantiate(DecodingData data) {
     return ChatCompletionMessageList(

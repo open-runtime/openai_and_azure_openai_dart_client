@@ -11,7 +11,7 @@ part 'pinecone_chat_extension_configuration.mapper.dart';
 
 /// A specific representation of configurable options for Pinecone when using it as an Azure OpenAI chat.
 /// extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeChatExtensionConfiguration with PineconeChatExtensionConfigurationMappable {
   const PineconeChatExtensionConfiguration({
     required this.type,

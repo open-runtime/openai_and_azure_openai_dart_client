@@ -44,6 +44,10 @@ class DeleteFineTuningCheckpointPermissionResponseMapper
   @override
   final MappableFields<DeleteFineTuningCheckpointPermissionResponse> fields =
       const {#id: _f$id, #objectEnum: _f$objectEnum, #deleted: _f$deleted};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteFineTuningCheckpointPermissionResponse _instantiate(
     DecodingData data,

@@ -12,7 +12,7 @@ import 'eval_jsonl_file_id_source_type_type.dart';
 
 part 'create_eval_jsonl_run_data_source_source_source.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalJsonlRunDataSourceSourceSource with CreateEvalJsonlRunDataSourceSourceSourceMappable {
   const CreateEvalJsonlRunDataSourceSourceSource({
     required this.content,

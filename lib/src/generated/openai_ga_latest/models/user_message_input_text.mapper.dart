@@ -41,6 +41,10 @@ class UserMessageInputTextMapper extends ClassMapperBase<UserMessageInputText> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserMessageInputText _instantiate(DecodingData data) {
     return UserMessageInputText(

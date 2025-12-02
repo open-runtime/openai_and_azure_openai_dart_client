@@ -32,6 +32,10 @@ class WebhookEvalRunCanceledDataMapper
 
   @override
   final MappableFields<WebhookEvalRunCanceledData> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookEvalRunCanceledData _instantiate(DecodingData data) {
     return WebhookEvalRunCanceledData(id: data.dec(_f$id));

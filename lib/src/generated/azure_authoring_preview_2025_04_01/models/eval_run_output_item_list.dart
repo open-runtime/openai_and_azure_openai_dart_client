@@ -10,14 +10,14 @@ import 'eval_run_output_item_list_object_object_enum.dart';
 part 'eval_run_output_item_list.mapper.dart';
 
 /// An object representing a list of output items for an evaluation run.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemList with EvalRunOutputItemListMappable {
   const EvalRunOutputItemList({
     required this.data,
     required this.firstId,
     required this.hasMore,
     required this.lastId,
-    this.objectEnum = EvalRunOutputItemListObjectObjectEnum.valueList,
+    this.objectEnum = EvalRunOutputItemListObjectObjectEnum.list,
   });
 
   final List<EvalRunOutputItem> data;

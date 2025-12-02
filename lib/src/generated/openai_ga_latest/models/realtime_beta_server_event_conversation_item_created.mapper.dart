@@ -61,6 +61,10 @@ class RealtimeBetaServerEventConversationItemCreatedMapper
         #item: _f$item,
         #previousItemId: _f$previousItemId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemCreated _instantiate(
     DecodingData data,

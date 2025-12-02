@@ -9,7 +9,7 @@ import 'usage_vector_stores_result_object_object_enum.dart';
 part 'usage_vector_stores_result.mapper.dart';
 
 /// The aggregated vector stores usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageVectorStoresResult with UsageVectorStoresResultMappable {
   const UsageVectorStoresResult({
     required this.objectEnum,

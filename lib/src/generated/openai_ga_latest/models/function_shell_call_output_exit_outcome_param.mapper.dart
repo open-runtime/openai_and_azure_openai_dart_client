@@ -48,6 +48,10 @@ class FunctionShellCallOutputExitOutcomeParamMapper
     #exitCode: _f$exitCode,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputExitOutcomeParam _instantiate(
     DecodingData data,

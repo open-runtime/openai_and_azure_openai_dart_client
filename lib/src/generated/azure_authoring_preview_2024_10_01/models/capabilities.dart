@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'capabilities.mapper.dart';
 
 /// The capabilities of a base or fine tune model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Capabilities with CapabilitiesMappable {
   const Capabilities({
     required this.fineTune,

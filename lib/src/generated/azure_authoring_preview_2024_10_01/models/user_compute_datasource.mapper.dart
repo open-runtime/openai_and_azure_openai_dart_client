@@ -29,6 +29,10 @@ class UserComputeDatasourceMapper
 
   @override
   final MappableFields<UserComputeDatasource> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserComputeDatasource _instantiate(DecodingData data) {
     return UserComputeDatasource(kind: data.dec(_f$kind));

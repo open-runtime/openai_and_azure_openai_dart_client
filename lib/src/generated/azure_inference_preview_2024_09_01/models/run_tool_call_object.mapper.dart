@@ -35,7 +35,7 @@ class RunToolCallObjectMapper extends ClassMapperBase<RunToolCallObject> {
   _f$runToolCallObjectFunction = Field(
     'runToolCallObjectFunction',
     _$runToolCallObjectFunction,
-    key: r'RunToolCallObjectFunction',
+    key: r'function',
   );
 
   @override
@@ -44,6 +44,10 @@ class RunToolCallObjectMapper extends ClassMapperBase<RunToolCallObject> {
     #type: _f$type,
     #runToolCallObjectFunction: _f$runToolCallObjectFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunToolCallObject _instantiate(DecodingData data) {
     return RunToolCallObject(

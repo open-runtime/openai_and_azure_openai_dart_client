@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'moderation_image_url_input_image_url.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModerationImageUrlInputImageUrl with ModerationImageUrlInputImageUrlMappable {
   const ModerationImageUrlInputImageUrl({
     required this.url,

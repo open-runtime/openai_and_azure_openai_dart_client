@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_request_data_source_config_data_source_config_union.dart';
-import 'create_eval_request_testing_criteria_testing_criteria_union.dart';
+import 'create_eval_request_data_source_config_union.dart';
+import 'create_eval_request_testing_criteria_union.dart';
 import 'metadata.dart';
 
 part 'create_eval_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRequest with CreateEvalRequestMappable {
   const CreateEvalRequest({
     required this.dataSourceConfig,
@@ -20,9 +20,9 @@ class CreateEvalRequest with CreateEvalRequestMappable {
   });
 
   @MappableField(key: 'data_source_config')
-  final CreateEvalRequestDataSourceConfigDataSourceConfigUnion dataSourceConfig;
+  final CreateEvalRequestDataSourceConfigUnion dataSourceConfig;
   @MappableField(key: 'testing_criteria')
-  final List<CreateEvalRequestTestingCriteriaTestingCriteriaUnion> testingCriteria;
+  final List<CreateEvalRequestTestingCriteriaUnion> testingCriteria;
   final String? name;
   final Metadata? metadata;
 

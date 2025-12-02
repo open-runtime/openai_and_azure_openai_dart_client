@@ -17,6 +17,10 @@ class FineTuneDpoMethodHyperparametersMapper
       MapperContainer.globals.use(
         _instance = FineTuneDpoMethodHyperparametersMapper._(),
       );
+      FineTuneDpoMethodHyperparametersBetaUnionMapper.ensureInitialized();
+      FineTuneDpoMethodHyperparametersBatchSizeUnionMapper.ensureInitialized();
+      FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionMapper.ensureInitialized();
+      FineTuneDpoMethodHyperparametersNEpochsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,35 +28,75 @@ class FineTuneDpoMethodHyperparametersMapper
   @override
   final String id = 'FineTuneDpoMethodHyperparameters';
 
-  static String _$beta(FineTuneDpoMethodHyperparameters v) => v.beta;
-  static const Field<FineTuneDpoMethodHyperparameters, String> _f$beta = Field(
+  static FineTuneDpoMethodHyperparametersBetaUnion _$beta(
+    FineTuneDpoMethodHyperparameters v,
+  ) => v.beta;
+  static const Field<
+    FineTuneDpoMethodHyperparameters,
+    FineTuneDpoMethodHyperparametersBetaUnion
+  >
+  _f$beta = Field(
     'beta',
     _$beta,
     opt: true,
-    def: 'auto',
+    def: const FineTuneDpoMethodHyperparametersBetaUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuneDpoMethodHyperparametersBetaUnionHook(),
   );
-  static String _$batchSize(FineTuneDpoMethodHyperparameters v) => v.batchSize;
-  static const Field<FineTuneDpoMethodHyperparameters, String> _f$batchSize =
-      Field(
-        'batchSize',
-        _$batchSize,
-        key: r'batch_size',
-        opt: true,
-        def: 'auto',
-      );
-  static String _$learningRateMultiplier(FineTuneDpoMethodHyperparameters v) =>
+  static FineTuneDpoMethodHyperparametersBatchSizeUnion _$batchSize(
+    FineTuneDpoMethodHyperparameters v,
+  ) => v.batchSize;
+  static const Field<
+    FineTuneDpoMethodHyperparameters,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion
+  >
+  _f$batchSize = Field(
+    'batchSize',
+    _$batchSize,
+    key: r'batch_size',
+    opt: true,
+    def: const FineTuneDpoMethodHyperparametersBatchSizeUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuneDpoMethodHyperparametersBatchSizeUnionHook(),
+  );
+  static FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion
+  _$learningRateMultiplier(FineTuneDpoMethodHyperparameters v) =>
       v.learningRateMultiplier;
-  static const Field<FineTuneDpoMethodHyperparameters, String>
+  static const Field<
+    FineTuneDpoMethodHyperparameters,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion
+  >
   _f$learningRateMultiplier = Field(
     'learningRateMultiplier',
     _$learningRateMultiplier,
     key: r'learning_rate_multiplier',
     opt: true,
-    def: 'auto',
+    def:
+        const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionVariantString(
+          value: 'auto',
+        ),
+    hook:
+        const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionHook(),
   );
-  static String _$nEpochs(FineTuneDpoMethodHyperparameters v) => v.nEpochs;
-  static const Field<FineTuneDpoMethodHyperparameters, String> _f$nEpochs =
-      Field('nEpochs', _$nEpochs, key: r'n_epochs', opt: true, def: 'auto');
+  static FineTuneDpoMethodHyperparametersNEpochsUnion _$nEpochs(
+    FineTuneDpoMethodHyperparameters v,
+  ) => v.nEpochs;
+  static const Field<
+    FineTuneDpoMethodHyperparameters,
+    FineTuneDpoMethodHyperparametersNEpochsUnion
+  >
+  _f$nEpochs = Field(
+    'nEpochs',
+    _$nEpochs,
+    key: r'n_epochs',
+    opt: true,
+    def: const FineTuneDpoMethodHyperparametersNEpochsUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuneDpoMethodHyperparametersNEpochsUnionHook(),
+  );
 
   @override
   final MappableFields<FineTuneDpoMethodHyperparameters> fields = const {
@@ -61,6 +105,10 @@ class FineTuneDpoMethodHyperparametersMapper
     #learningRateMultiplier: _f$learningRateMultiplier,
     #nEpochs: _f$nEpochs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneDpoMethodHyperparameters _instantiate(DecodingData data) {
     return FineTuneDpoMethodHyperparameters(
@@ -149,11 +197,36 @@ abstract class FineTuneDpoMethodHyperparametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  FineTuneDpoMethodHyperparametersBetaUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersBetaUnion,
+    FineTuneDpoMethodHyperparametersBetaUnion
+  >
+  get beta;
+  FineTuneDpoMethodHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion
+  >
+  get batchSize;
+  FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion
+  >
+  get learningRateMultiplier;
+  FineTuneDpoMethodHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersNEpochsUnion,
+    FineTuneDpoMethodHyperparametersNEpochsUnion
+  >
+  get nEpochs;
   $R call({
-    String? beta,
-    String? batchSize,
-    String? learningRateMultiplier,
-    String? nEpochs,
+    FineTuneDpoMethodHyperparametersBetaUnion? beta,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion? batchSize,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion?
+    learningRateMultiplier,
+    FineTuneDpoMethodHyperparametersNEpochsUnion? nEpochs,
   });
   FineTuneDpoMethodHyperparametersCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -178,11 +251,42 @@ class _FineTuneDpoMethodHyperparametersCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FineTuneDpoMethodHyperparameters> $mapper =
       FineTuneDpoMethodHyperparametersMapper.ensureInitialized();
   @override
+  FineTuneDpoMethodHyperparametersBetaUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersBetaUnion,
+    FineTuneDpoMethodHyperparametersBetaUnion
+  >
+  get beta => $value.beta.copyWith.$chain((v) => call(beta: v));
+  @override
+  FineTuneDpoMethodHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion
+  >
+  get batchSize => $value.batchSize.copyWith.$chain((v) => call(batchSize: v));
+  @override
+  FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion
+  >
+  get learningRateMultiplier => $value.learningRateMultiplier.copyWith.$chain(
+    (v) => call(learningRateMultiplier: v),
+  );
+  @override
+  FineTuneDpoMethodHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuneDpoMethodHyperparametersNEpochsUnion,
+    FineTuneDpoMethodHyperparametersNEpochsUnion
+  >
+  get nEpochs => $value.nEpochs.copyWith.$chain((v) => call(nEpochs: v));
+  @override
   $R call({
-    String? beta,
-    String? batchSize,
-    String? learningRateMultiplier,
-    String? nEpochs,
+    FineTuneDpoMethodHyperparametersBetaUnion? beta,
+    FineTuneDpoMethodHyperparametersBatchSizeUnion? batchSize,
+    FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion?
+    learningRateMultiplier,
+    FineTuneDpoMethodHyperparametersNEpochsUnion? nEpochs,
   }) => $apply(
     FieldCopyWithData({
       if (beta != null) #beta: beta,

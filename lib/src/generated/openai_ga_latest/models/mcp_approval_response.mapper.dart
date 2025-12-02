@@ -58,6 +58,10 @@ class McpApprovalResponseMapper extends ClassMapperBase<McpApprovalResponse> {
     #id: _f$id,
     #reason: _f$reason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpApprovalResponse _instantiate(DecodingData data) {
     return McpApprovalResponse(

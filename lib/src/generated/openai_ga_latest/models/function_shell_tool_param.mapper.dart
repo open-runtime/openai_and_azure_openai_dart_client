@@ -35,6 +35,10 @@ class FunctionShellToolParamMapper
 
   @override
   final MappableFields<FunctionShellToolParam> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellToolParam _instantiate(DecodingData data) {
     return FunctionShellToolParam(type: data.dec(_f$type));

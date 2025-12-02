@@ -9,7 +9,7 @@ import 'url_annotation_source_type_type.dart';
 part 'url_annotation_source.mapper.dart';
 
 /// URL backing an annotation entry.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UrlAnnotationSource with UrlAnnotationSourceMappable {
   const UrlAnnotationSource({
     required this.url,

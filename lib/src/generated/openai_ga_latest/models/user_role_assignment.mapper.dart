@@ -40,6 +40,10 @@ class UserRoleAssignmentMapper extends ClassMapperBase<UserRoleAssignment> {
     #user: _f$user,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserRoleAssignment _instantiate(DecodingData data) {
     return UserRoleAssignment(

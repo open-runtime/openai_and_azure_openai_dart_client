@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_named_tool_choice_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionNamedToolChoiceFunction with ChatCompletionNamedToolChoiceFunctionMappable {
   const ChatCompletionNamedToolChoiceFunction({
     required this.name,

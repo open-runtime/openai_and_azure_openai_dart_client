@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_mcp_call_in_progress.mapper.dart';
 
 /// Returned when an MCP tool call has started and is in progress.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseMcpCallInProgress with RealtimeBetaServerEventResponseMcpCallInProgressMappable {
   const RealtimeBetaServerEventResponseMcpCallInProgress({
     required this.eventId,

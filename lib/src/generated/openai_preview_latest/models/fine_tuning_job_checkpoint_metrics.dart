@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'fine_tuning_job_checkpoint_metrics.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobCheckpointMetrics with FineTuningJobCheckpointMetricsMappable {
   const FineTuningJobCheckpointMetrics({
     this.step,

@@ -39,6 +39,10 @@ class RealtimeMcphttpErrorMapper extends ClassMapperBase<RealtimeMcphttpError> {
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeMcphttpError _instantiate(DecodingData data) {
     return RealtimeMcphttpError(

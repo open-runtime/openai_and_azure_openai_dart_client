@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_session_update_type_type.dart';
 import 'realtime_session_create_request.dart';
 
@@ -20,7 +21,7 @@ part 'realtime_client_event_session_update.mapper.dart';
 /// Only the fields that are present are updated. To clear a field like.
 /// `instructions`, pass an empty string.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventSessionUpdate with RealtimeClientEventSessionUpdateMappable {
   const RealtimeClientEventSessionUpdate({
     required this.type,

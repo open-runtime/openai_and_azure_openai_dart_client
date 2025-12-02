@@ -10,7 +10,7 @@ import 'input_image_content_param_auto_param_type_type.dart';
 part 'input_image_content_param_auto_param.mapper.dart';
 
 /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision)
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputImageContentParamAutoParam with InputImageContentParamAutoParamMappable {
   const InputImageContentParamAutoParam({
     this.imageUrl,

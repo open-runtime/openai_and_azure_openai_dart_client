@@ -9,7 +9,7 @@ import 'project_group_deleted_resource_object_object_enum.dart';
 part 'project_group_deleted_resource.mapper.dart';
 
 /// Confirmation payload returned after removing a group from a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectGroupDeletedResource with ProjectGroupDeletedResourceMappable {
   const ProjectGroupDeletedResource({
     required this.objectEnum,

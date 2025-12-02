@@ -11,7 +11,7 @@ import 'chat_session_history.dart';
 part 'chat_session_chatkit_configuration.mapper.dart';
 
 /// ChatKit configuration for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionChatkitConfiguration with ChatSessionChatkitConfigurationMappable {
   const ChatSessionChatkitConfiguration({
     required this.automaticThreadTitling,

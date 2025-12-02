@@ -50,6 +50,10 @@ class CreateModerationResponseMapper
     #model: _f$model,
     #results: _f$results,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModerationResponse _instantiate(DecodingData data) {
     return CreateModerationResponse(

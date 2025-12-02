@@ -44,6 +44,10 @@ class ResponseCodeInterpreterCallCodeDeltaEventMapper
   @override
   final MappableFields<ResponseCodeInterpreterCallCodeDeltaEvent> fields =
       const {#type: _f$type, #outputIndex: _f$outputIndex, #delta: _f$delta};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCodeInterpreterCallCodeDeltaEvent _instantiate(
     DecodingData data,

@@ -53,6 +53,10 @@ class UserMapper extends ClassMapperBase<User> {
     #role: _f$role,
     #addedAt: _f$addedAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static User _instantiate(DecodingData data) {
     return User(

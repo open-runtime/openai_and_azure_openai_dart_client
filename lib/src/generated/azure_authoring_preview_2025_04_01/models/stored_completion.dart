@@ -10,7 +10,7 @@ import 'usage.dart';
 
 part 'stored_completion.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletion with StoredCompletionMappable {
   const StoredCompletion({
     this.id,

@@ -57,6 +57,10 @@ class InputImageContentMapper extends ClassMapperBase<InputImageContent> {
     #fileId: _f$fileId,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputImageContent _instantiate(DecodingData data) {
     return InputImageContent(

@@ -8,7 +8,7 @@ import 'metadata.dart';
 
 part 'modify_message_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyMessageRequest with ModifyMessageRequestMappable {
   const ModifyMessageRequest({
     this.metadata,

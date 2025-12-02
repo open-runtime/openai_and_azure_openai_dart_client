@@ -38,6 +38,10 @@ class AzureChatExtensionsMessageContextMapper
     #citations: _f$citations,
     #intent: _f$intent,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureChatExtensionsMessageContext _instantiate(DecodingData data) {
     return AzureChatExtensionsMessageContext(

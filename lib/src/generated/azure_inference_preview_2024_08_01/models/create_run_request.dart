@@ -7,12 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'assistants_api_response_format_option.dart';
 import 'assistants_api_tool_choice_option.dart';
 import 'create_message_request.dart';
-import 'create_run_request_tools_tools_union.dart';
+import 'create_run_request_tools_union.dart';
 import 'truncation_object.dart';
 
 part 'create_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateRunRequest with CreateRunRequestMappable {
   const CreateRunRequest({
     required this.assistantId,
@@ -43,7 +43,7 @@ class CreateRunRequest with CreateRunRequestMappable {
   final String? additionalInstructions;
   @MappableField(key: 'additional_messages')
   final List<CreateMessageRequest>? additionalMessages;
-  final List<CreateRunRequestToolsToolsUnion>? tools;
+  final List<CreateRunRequestToolsUnion>? tools;
   final dynamic? metadata;
   final bool? stream;
   @MappableField(key: 'max_prompt_tokens')

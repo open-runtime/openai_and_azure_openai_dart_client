@@ -15,7 +15,7 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileSearchToolMapper._());
       FileSearchToolTypeTypeMapper.ensureInitialized();
-      FileSearchToolFiltersFiltersUnionMapper.ensureInitialized();
+      FileSearchToolFiltersUnionMapper.ensureInitialized();
       FileSearchToolRankingOptionsMapper.ensureInitialized();
     }
     return _instance!;
@@ -42,10 +42,9 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
     key: r'max_num_results',
     opt: true,
   );
-  static FileSearchToolFiltersFiltersUnion? _$filters(FileSearchTool v) =>
-      v.filters;
-  static const Field<FileSearchTool, FileSearchToolFiltersFiltersUnion>
-  _f$filters = Field('filters', _$filters, opt: true);
+  static FileSearchToolFiltersUnion? _$filters(FileSearchTool v) => v.filters;
+  static const Field<FileSearchTool, FileSearchToolFiltersUnion> _f$filters =
+      Field('filters', _$filters, opt: true);
   static FileSearchToolRankingOptions? _$fileSearchToolRankingOptions(
     FileSearchTool v,
   ) => v.fileSearchToolRankingOptions;
@@ -53,7 +52,7 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
   _f$fileSearchToolRankingOptions = Field(
     'fileSearchToolRankingOptions',
     _$fileSearchToolRankingOptions,
-    key: r'FileSearchToolRankingOptions',
+    key: r'ranking_options',
     opt: true,
   );
 
@@ -65,6 +64,10 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
     #filters: _f$filters,
     #fileSearchToolRankingOptions: _f$fileSearchToolRankingOptions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchTool _instantiate(DecodingData data) {
     return FileSearchTool(
@@ -140,10 +143,10 @@ abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>
   get vectorStoreIds;
-  FileSearchToolFiltersFiltersUnionCopyWith<
+  FileSearchToolFiltersUnionCopyWith<
     $R,
-    FileSearchToolFiltersFiltersUnion,
-    FileSearchToolFiltersFiltersUnion
+    FileSearchToolFiltersUnion,
+    FileSearchToolFiltersUnion
   >?
   get filters;
   FileSearchToolRankingOptionsCopyWith<
@@ -156,7 +159,7 @@ abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
     FileSearchToolTypeType? type,
     List<String>? vectorStoreIds,
     int? maxNumResults,
-    FileSearchToolFiltersFiltersUnion? filters,
+    FileSearchToolFiltersUnion? filters,
     FileSearchToolRankingOptions? fileSearchToolRankingOptions,
   });
   FileSearchToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -180,10 +183,10 @@ class _FileSearchToolCopyWithImpl<$R, $Out>
     (v) => call(vectorStoreIds: v),
   );
   @override
-  FileSearchToolFiltersFiltersUnionCopyWith<
+  FileSearchToolFiltersUnionCopyWith<
     $R,
-    FileSearchToolFiltersFiltersUnion,
-    FileSearchToolFiltersFiltersUnion
+    FileSearchToolFiltersUnion,
+    FileSearchToolFiltersUnion
   >?
   get filters => $value.filters?.copyWith.$chain((v) => call(filters: v));
   @override

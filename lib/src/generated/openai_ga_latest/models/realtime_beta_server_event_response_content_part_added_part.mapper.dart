@@ -69,6 +69,10 @@ class RealtimeBetaServerEventResponseContentPartAddedPartMapper
     #audio: _f$audio,
     #transcript: _f$transcript,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseContentPartAddedPart _instantiate(
     DecodingData data,

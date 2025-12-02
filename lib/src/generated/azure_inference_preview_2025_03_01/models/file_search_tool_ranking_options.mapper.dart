@@ -54,6 +54,10 @@ class FileSearchToolRankingOptionsMapper
     #ranker: _f$ranker,
     #scoreThreshold: _f$scoreThreshold,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchToolRankingOptions _instantiate(DecodingData data) {
     return FileSearchToolRankingOptions(

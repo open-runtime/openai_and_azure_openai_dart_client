@@ -13,7 +13,7 @@ import 'realtime_conversation_item_type_type.dart';
 part 'realtime_conversation_item.mapper.dart';
 
 /// The item to add to the conversation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItem with RealtimeConversationItemMappable {
   const RealtimeConversationItem({
     this.id,

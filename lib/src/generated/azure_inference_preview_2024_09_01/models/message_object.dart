@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_object_attachments.dart';
-import 'message_object_content_content_union.dart';
+import 'message_object_content_union.dart';
 import 'message_object_incomplete_details.dart';
 import 'message_object_object_object_enum.dart';
 import 'message_object_role_role.dart';
@@ -14,7 +14,7 @@ import 'message_object_status_status.dart';
 part 'message_object.mapper.dart';
 
 /// Represents a message within a [thread](/docs/api-reference/threads).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageObject with MessageObjectMappable {
   const MessageObject({
     required this.id,
@@ -41,14 +41,14 @@ class MessageObject with MessageObjectMappable {
   @MappableField(key: 'thread_id')
   final String threadId;
   final MessageObjectStatusStatus status;
-  @MappableField(key: 'MessageObjectIncompleteDetails')
+  @MappableField(key: 'incomplete_details')
   final MessageObjectIncompleteDetails? messageObjectIncompleteDetails;
   @MappableField(key: 'completed_at')
   final int? completedAt;
   @MappableField(key: 'incomplete_at')
   final int? incompleteAt;
   final MessageObjectRoleRole role;
-  final List<MessageObjectContentContentUnion> content;
+  final List<MessageObjectContentUnion> content;
   @MappableField(key: 'assistant_id')
   final String? assistantId;
   @MappableField(key: 'run_id')

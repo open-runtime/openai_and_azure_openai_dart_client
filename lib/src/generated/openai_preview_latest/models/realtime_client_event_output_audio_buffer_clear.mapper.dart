@@ -41,6 +41,10 @@ class RealtimeClientEventOutputAudioBufferClearMapper
   @override
   final MappableFields<RealtimeClientEventOutputAudioBufferClear> fields =
       const {#type: _f$type, #eventId: _f$eventId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventOutputAudioBufferClear _instantiate(
     DecodingData data,

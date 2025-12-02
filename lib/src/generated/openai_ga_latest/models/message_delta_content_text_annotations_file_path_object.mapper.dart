@@ -54,7 +54,7 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
   _f$messageDeltaContentTextAnnotationsFilePathObjectFilePath = Field(
     'messageDeltaContentTextAnnotationsFilePathObjectFilePath',
     _$messageDeltaContentTextAnnotationsFilePathObjectFilePath,
-    key: r'MessageDeltaContentTextAnnotationsFilePathObjectFilePath',
+    key: r'file_path',
     opt: true,
   );
   static int? _$startIndex(
@@ -83,6 +83,10 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
     #startIndex: _f$startIndex,
     #endIndex: _f$endIndex,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextAnnotationsFilePathObject _instantiate(
     DecodingData data,

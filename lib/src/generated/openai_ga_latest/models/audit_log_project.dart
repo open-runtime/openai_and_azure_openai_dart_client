@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_project.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogProject with AuditLogProjectMappable {
   const AuditLogProject({
     this.id,

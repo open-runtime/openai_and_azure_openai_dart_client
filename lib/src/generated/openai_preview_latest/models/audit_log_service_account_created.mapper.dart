@@ -41,7 +41,7 @@ class AuditLogServiceAccountCreatedMapper
   _f$auditLogServiceAccountCreatedData = Field(
     'auditLogServiceAccountCreatedData',
     _$auditLogServiceAccountCreatedData,
-    key: r'AuditLogServiceAccountCreatedData',
+    key: r'data',
     opt: true,
   );
 
@@ -50,6 +50,10 @@ class AuditLogServiceAccountCreatedMapper
     #id: _f$id,
     #auditLogServiceAccountCreatedData: _f$auditLogServiceAccountCreatedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogServiceAccountCreated _instantiate(DecodingData data) {
     return AuditLogServiceAccountCreated(

@@ -30,7 +30,7 @@ class UserListResourceObjectObjectEnumMapper
   UserListResourceObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return UserListResourceObjectObjectEnum.valueList;
+        return UserListResourceObjectObjectEnum.list;
       case 'unknown':
         return UserListResourceObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class UserListResourceObjectObjectEnumMapper
   @override
   dynamic encode(UserListResourceObjectObjectEnum self) {
     switch (self) {
-      case UserListResourceObjectObjectEnum.valueList:
+      case UserListResourceObjectObjectEnum.list:
         return 'list';
       case UserListResourceObjectObjectEnum.unknown:
         return 'unknown';

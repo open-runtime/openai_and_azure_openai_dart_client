@@ -78,6 +78,10 @@ class FineTuningJobCheckpointMapper
     #objectField: _f$objectField,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobCheckpoint _instantiate(DecodingData data) {
     return FineTuningJobCheckpoint(

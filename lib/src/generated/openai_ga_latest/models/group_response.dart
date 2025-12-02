@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'group_response.mapper.dart';
 
 /// Details about an organization group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupResponse with GroupResponseMappable {
   const GroupResponse({
     required this.id,

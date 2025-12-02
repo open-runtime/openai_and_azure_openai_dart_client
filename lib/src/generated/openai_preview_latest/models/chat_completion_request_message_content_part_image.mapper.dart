@@ -46,7 +46,7 @@ class ChatCompletionRequestMessageContentPartImageMapper
   _f$chatCompletionRequestMessageContentPartImageImageUrl = Field(
     'chatCompletionRequestMessageContentPartImageImageUrl',
     _$chatCompletionRequestMessageContentPartImageImageUrl,
-    key: r'ChatCompletionRequestMessageContentPartImageImageUrl',
+    key: r'image_url',
   );
 
   @override
@@ -56,6 +56,10 @@ class ChatCompletionRequestMessageContentPartImageMapper
         #chatCompletionRequestMessageContentPartImageImageUrl:
             _f$chatCompletionRequestMessageContentPartImageImageUrl,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartImage _instantiate(
     DecodingData data,

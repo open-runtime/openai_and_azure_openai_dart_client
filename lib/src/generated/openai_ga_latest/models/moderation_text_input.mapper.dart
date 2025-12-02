@@ -36,6 +36,10 @@ class ModerationTextInputMapper extends ClassMapperBase<ModerationTextInput> {
     #type: _f$type,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModerationTextInput _instantiate(DecodingData data) {
     return ModerationTextInput(

@@ -45,6 +45,10 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImageMapper
     RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage
   >
   fields = const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage
   _instantiate(DecodingData data) {

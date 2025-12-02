@@ -8,7 +8,7 @@ import 'realtime_session_create_request_tools_type_type.dart';
 
 part 'realtime_session_create_request_tools.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestTools with RealtimeSessionCreateRequestToolsMappable {
   const RealtimeSessionCreateRequestTools({
     this.type,

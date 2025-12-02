@@ -40,6 +40,10 @@ class ChatCompletionChoiceCommonMapper
     #indexField: _f$indexField,
     #finishReason: _f$finishReason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionChoiceCommon _instantiate(DecodingData data) {
     return ChatCompletionChoiceCommon(

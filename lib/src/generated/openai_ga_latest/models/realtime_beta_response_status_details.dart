@@ -10,7 +10,7 @@ import 'realtime_beta_response_status_details_error.dart';
 
 part 'realtime_beta_response_status_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaResponseStatusDetails with RealtimeBetaResponseStatusDetailsMappable {
   const RealtimeBetaResponseStatusDetails({
     this.type,
@@ -20,7 +20,7 @@ class RealtimeBetaResponseStatusDetails with RealtimeBetaResponseStatusDetailsMa
 
   final RealtimeBetaResponseStatusDetailsTypeType? type;
   final RealtimeBetaResponseStatusDetailsReasonReason? reason;
-  @MappableField(key: 'RealtimeBetaResponseStatusDetailsError')
+  @MappableField(key: 'error')
   final RealtimeBetaResponseStatusDetailsError? realtimeBetaResponseStatusDetailsError;
 
   static RealtimeBetaResponseStatusDetails fromJson(Map<String, dynamic> json) => RealtimeBetaResponseStatusDetailsMapper.fromJson(json);

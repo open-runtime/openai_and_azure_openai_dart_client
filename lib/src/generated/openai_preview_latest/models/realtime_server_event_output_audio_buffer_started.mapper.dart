@@ -45,6 +45,10 @@ class RealtimeServerEventOutputAudioBufferStartedMapper
   @override
   final MappableFields<RealtimeServerEventOutputAudioBufferStarted> fields =
       const {#eventId: _f$eventId, #type: _f$type, #responseId: _f$responseId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventOutputAudioBufferStarted _instantiate(
     DecodingData data,

@@ -18,6 +18,7 @@ class RealtimeSessionCreateResponseAudioOutputMapper
         _instance = RealtimeSessionCreateResponseAudioOutputMapper._(),
       );
       RealtimeAudioFormatsMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -33,9 +34,15 @@ class RealtimeSessionCreateResponseAudioOutputMapper
     RealtimeAudioFormats
   >
   _f$format = Field('format', _$format, opt: true);
-  static String? _$voice(RealtimeSessionCreateResponseAudioOutput v) => v.voice;
-  static const Field<RealtimeSessionCreateResponseAudioOutput, String>
-  _f$voice = Field('voice', _$voice, opt: true);
+  static VoiceIdsShared? _$voice(RealtimeSessionCreateResponseAudioOutput v) =>
+      v.voice;
+  static const Field<RealtimeSessionCreateResponseAudioOutput, VoiceIdsShared>
+  _f$voice = Field(
+    'voice',
+    _$voice,
+    opt: true,
+    hook: const VoiceIdsSharedHook(),
+  );
   static num? _$speed(RealtimeSessionCreateResponseAudioOutput v) => v.speed;
   static const Field<RealtimeSessionCreateResponseAudioOutput, num> _f$speed =
       Field('speed', _$speed, opt: true);
@@ -43,6 +50,10 @@ class RealtimeSessionCreateResponseAudioOutputMapper
   @override
   final MappableFields<RealtimeSessionCreateResponseAudioOutput> fields =
       const {#format: _f$format, #voice: _f$voice, #speed: _f$speed};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponseAudioOutput _instantiate(
     DecodingData data,
@@ -139,7 +150,8 @@ abstract class RealtimeSessionCreateResponseAudioOutputCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   RealtimeAudioFormatsCopyWith<$R, RealtimeAudioFormats, RealtimeAudioFormats>?
   get format;
-  $R call({RealtimeAudioFormats? format, String? voice, num? speed});
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
+  $R call({RealtimeAudioFormats? format, VoiceIdsShared? voice, num? speed});
   RealtimeSessionCreateResponseAudioOutputCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -165,6 +177,9 @@ class _RealtimeSessionCreateResponseAudioOutputCopyWithImpl<$R, $Out>
   @override
   RealtimeAudioFormatsCopyWith<$R, RealtimeAudioFormats, RealtimeAudioFormats>?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
+  @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   $R call({
     Object? format = $none,

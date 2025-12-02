@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_file_search_call_completed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_file_search_call_completed_event.mapper.dart';
 
 /// Emitted when a file search call is completed (results found).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFileSearchCallCompletedEvent with ResponseFileSearchCallCompletedEventMappable {
   const ResponseFileSearchCallCompletedEvent({
     required this.type,

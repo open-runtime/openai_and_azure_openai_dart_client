@@ -10,7 +10,7 @@ part 'computer_screenshot_image.mapper.dart';
 
 /// A computer screenshot image used with the computer use tool.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerScreenshotImage with ComputerScreenshotImageMappable {
   const ComputerScreenshotImage({
     this.imageUrl,

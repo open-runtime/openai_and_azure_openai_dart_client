@@ -55,6 +55,10 @@ class FileCitationBodyMapper extends ClassMapperBase<FileCitationBody> {
     #filename: _f$filename,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileCitationBody _instantiate(DecodingData data) {
     return FileCitationBody(

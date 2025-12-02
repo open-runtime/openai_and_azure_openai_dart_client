@@ -8,7 +8,7 @@ part 'mcp_list_tools_tool.mapper.dart';
 
 /// A tool available on an MCP server.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpListToolsTool with McpListToolsToolMappable {
   const McpListToolsTool({
     required this.name,

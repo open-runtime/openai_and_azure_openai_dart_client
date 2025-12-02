@@ -17,6 +17,9 @@ class FineTuningJobHyperparametersMapper
       MapperContainer.globals.use(
         _instance = FineTuningJobHyperparametersMapper._(),
       );
+      FineTuningJobHyperparametersBatchSizeUnionMapper.ensureInitialized();
+      FineTuningJobHyperparametersLearningRateMultiplierUnionMapper.ensureInitialized();
+      FineTuningJobHyperparametersNEpochsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,31 +27,57 @@ class FineTuningJobHyperparametersMapper
   @override
   final String id = 'FineTuningJobHyperparameters';
 
-  static String _$batchSize(FineTuningJobHyperparameters v) => v.batchSize;
-  static const Field<FineTuningJobHyperparameters, String> _f$batchSize = Field(
+  static FineTuningJobHyperparametersBatchSizeUnion _$batchSize(
+    FineTuningJobHyperparameters v,
+  ) => v.batchSize;
+  static const Field<
+    FineTuningJobHyperparameters,
+    FineTuningJobHyperparametersBatchSizeUnion
+  >
+  _f$batchSize = Field(
     'batchSize',
     _$batchSize,
     key: r'batch_size',
     opt: true,
-    def: 'auto',
+    def: const FineTuningJobHyperparametersBatchSizeUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuningJobHyperparametersBatchSizeUnionHook(),
   );
-  static String _$learningRateMultiplier(FineTuningJobHyperparameters v) =>
+  static FineTuningJobHyperparametersLearningRateMultiplierUnion
+  _$learningRateMultiplier(FineTuningJobHyperparameters v) =>
       v.learningRateMultiplier;
-  static const Field<FineTuningJobHyperparameters, String>
+  static const Field<
+    FineTuningJobHyperparameters,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion
+  >
   _f$learningRateMultiplier = Field(
     'learningRateMultiplier',
     _$learningRateMultiplier,
     key: r'learning_rate_multiplier',
     opt: true,
-    def: 'auto',
+    def:
+        const FineTuningJobHyperparametersLearningRateMultiplierUnionVariantString(
+          value: 'auto',
+        ),
+    hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook(),
   );
-  static String _$nEpochs(FineTuningJobHyperparameters v) => v.nEpochs;
-  static const Field<FineTuningJobHyperparameters, String> _f$nEpochs = Field(
+  static FineTuningJobHyperparametersNEpochsUnion _$nEpochs(
+    FineTuningJobHyperparameters v,
+  ) => v.nEpochs;
+  static const Field<
+    FineTuningJobHyperparameters,
+    FineTuningJobHyperparametersNEpochsUnion
+  >
+  _f$nEpochs = Field(
     'nEpochs',
     _$nEpochs,
     key: r'n_epochs',
     opt: true,
-    def: 'auto',
+    def: const FineTuningJobHyperparametersNEpochsUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuningJobHyperparametersNEpochsUnionHook(),
   );
 
   @override
@@ -57,6 +86,10 @@ class FineTuningJobHyperparametersMapper
     #learningRateMultiplier: _f$learningRateMultiplier,
     #nEpochs: _f$nEpochs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobHyperparameters _instantiate(DecodingData data) {
     return FineTuningJobHyperparameters(
@@ -139,7 +172,30 @@ abstract class FineTuningJobHyperparametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? batchSize, String? learningRateMultiplier, String? nEpochs});
+  FineTuningJobHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersBatchSizeUnion,
+    FineTuningJobHyperparametersBatchSizeUnion
+  >
+  get batchSize;
+  FineTuningJobHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion
+  >
+  get learningRateMultiplier;
+  FineTuningJobHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersNEpochsUnion,
+    FineTuningJobHyperparametersNEpochsUnion
+  >
+  get nEpochs;
+  $R call({
+    FineTuningJobHyperparametersBatchSizeUnion? batchSize,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion?
+    learningRateMultiplier,
+    FineTuningJobHyperparametersNEpochsUnion? nEpochs,
+  });
   FineTuningJobHyperparametersCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -163,10 +219,34 @@ class _FineTuningJobHyperparametersCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FineTuningJobHyperparameters> $mapper =
       FineTuningJobHyperparametersMapper.ensureInitialized();
   @override
+  FineTuningJobHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersBatchSizeUnion,
+    FineTuningJobHyperparametersBatchSizeUnion
+  >
+  get batchSize => $value.batchSize.copyWith.$chain((v) => call(batchSize: v));
+  @override
+  FineTuningJobHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion
+  >
+  get learningRateMultiplier => $value.learningRateMultiplier.copyWith.$chain(
+    (v) => call(learningRateMultiplier: v),
+  );
+  @override
+  FineTuningJobHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuningJobHyperparametersNEpochsUnion,
+    FineTuningJobHyperparametersNEpochsUnion
+  >
+  get nEpochs => $value.nEpochs.copyWith.$chain((v) => call(nEpochs: v));
+  @override
   $R call({
-    String? batchSize,
-    String? learningRateMultiplier,
-    String? nEpochs,
+    FineTuningJobHyperparametersBatchSizeUnion? batchSize,
+    FineTuningJobHyperparametersLearningRateMultiplierUnion?
+    learningRateMultiplier,
+    FineTuningJobHyperparametersNEpochsUnion? nEpochs,
   }) => $apply(
     FieldCopyWithData({
       if (batchSize != null) #batchSize: batchSize,

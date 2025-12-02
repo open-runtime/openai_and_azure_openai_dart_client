@@ -53,6 +53,10 @@ class SystemComputeStorageMapper extends ClassMapperBase<SystemComputeStorage> {
     #chunking: _f$chunking,
     #embeddings: _f$embeddings,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SystemComputeStorage _instantiate(DecodingData data) {
     return SystemComputeStorage(

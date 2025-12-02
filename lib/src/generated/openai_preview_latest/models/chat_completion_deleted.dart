@@ -8,7 +8,7 @@ import 'chat_completion_deleted_object_object_enum.dart';
 
 part 'chat_completion_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionDeleted with ChatCompletionDeletedMappable {
   const ChatCompletionDeleted({
     required this.objectEnum,

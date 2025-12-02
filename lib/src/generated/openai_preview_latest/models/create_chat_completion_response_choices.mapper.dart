@@ -61,7 +61,7 @@ class CreateChatCompletionResponseChoicesMapper
   _f$createChatCompletionResponseChoicesLogprobs = Field(
     'createChatCompletionResponseChoicesLogprobs',
     _$createChatCompletionResponseChoicesLogprobs,
-    key: r'CreateChatCompletionResponseChoicesLogprobs',
+    key: r'logprobs',
   );
 
   @override
@@ -72,6 +72,10 @@ class CreateChatCompletionResponseChoicesMapper
     #createChatCompletionResponseChoicesLogprobs:
         _f$createChatCompletionResponseChoicesLogprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionResponseChoices _instantiate(DecodingData data) {
     return CreateChatCompletionResponseChoices(

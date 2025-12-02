@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'fine_tuning_job_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobError with FineTuningJobErrorMappable {
   const FineTuningJobError({
     required this.code,

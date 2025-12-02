@@ -44,6 +44,10 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
   @override
   final MappableFields<ResponseCodeInterpreterCallCodeDoneEvent> fields =
       const {#type: _f$type, #outputIndex: _f$outputIndex, #code: _f$code};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCodeInterpreterCallCodeDoneEvent _instantiate(
     DecodingData data,

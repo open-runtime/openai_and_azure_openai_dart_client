@@ -14,7 +14,7 @@ class ResponseOutputTextMapper extends ClassMapperBase<ResponseOutputText> {
   static ResponseOutputTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseOutputTextMapper._());
-      ResponseOutputTextAnnotationsAnnotationsUnionMapper.ensureInitialized();
+      ResponseOutputTextAnnotationsUnionMapper.ensureInitialized();
       ResponseOutputTextTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -28,12 +28,12 @@ class ResponseOutputTextMapper extends ClassMapperBase<ResponseOutputText> {
     'text',
     _$text,
   );
-  static List<ResponseOutputTextAnnotationsAnnotationsUnion> _$annotations(
+  static List<ResponseOutputTextAnnotationsUnion> _$annotations(
     ResponseOutputText v,
   ) => v.annotations;
   static const Field<
     ResponseOutputText,
-    List<ResponseOutputTextAnnotationsAnnotationsUnion>
+    List<ResponseOutputTextAnnotationsUnion>
   >
   _f$annotations = Field('annotations', _$annotations);
   static ResponseOutputTextTypeType _$type(ResponseOutputText v) => v.type;
@@ -51,6 +51,10 @@ class ResponseOutputTextMapper extends ClassMapperBase<ResponseOutputText> {
     #annotations: _f$annotations,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseOutputText _instantiate(DecodingData data) {
     return ResponseOutputText(
@@ -133,17 +137,17 @@ abstract class ResponseOutputTextCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    ResponseOutputTextAnnotationsAnnotationsUnion,
-    ResponseOutputTextAnnotationsAnnotationsUnionCopyWith<
+    ResponseOutputTextAnnotationsUnion,
+    ResponseOutputTextAnnotationsUnionCopyWith<
       $R,
-      ResponseOutputTextAnnotationsAnnotationsUnion,
-      ResponseOutputTextAnnotationsAnnotationsUnion
+      ResponseOutputTextAnnotationsUnion,
+      ResponseOutputTextAnnotationsUnion
     >
   >
   get annotations;
   $R call({
     String? text,
-    List<ResponseOutputTextAnnotationsAnnotationsUnion>? annotations,
+    List<ResponseOutputTextAnnotationsUnion>? annotations,
     ResponseOutputTextTypeType? type,
   });
   ResponseOutputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -162,11 +166,11 @@ class _ResponseOutputTextCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    ResponseOutputTextAnnotationsAnnotationsUnion,
-    ResponseOutputTextAnnotationsAnnotationsUnionCopyWith<
+    ResponseOutputTextAnnotationsUnion,
+    ResponseOutputTextAnnotationsUnionCopyWith<
       $R,
-      ResponseOutputTextAnnotationsAnnotationsUnion,
-      ResponseOutputTextAnnotationsAnnotationsUnion
+      ResponseOutputTextAnnotationsUnion,
+      ResponseOutputTextAnnotationsUnion
     >
   >
   get annotations => ListCopyWith(
@@ -177,7 +181,7 @@ class _ResponseOutputTextCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? text,
-    List<ResponseOutputTextAnnotationsAnnotationsUnion>? annotations,
+    List<ResponseOutputTextAnnotationsUnion>? annotations,
     ResponseOutputTextTypeType? type,
   }) => $apply(
     FieldCopyWithData({

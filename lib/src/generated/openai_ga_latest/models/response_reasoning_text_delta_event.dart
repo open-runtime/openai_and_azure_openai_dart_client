@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_reasoning_text_delta_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_reasoning_text_delta_event.mapper.dart';
 
 /// Emitted when a delta is added to a reasoning text.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseReasoningTextDeltaEvent with ResponseReasoningTextDeltaEventMappable {
   const ResponseReasoningTextDeltaEvent({
     required this.type,

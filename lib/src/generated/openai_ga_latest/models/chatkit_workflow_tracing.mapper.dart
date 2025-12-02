@@ -32,6 +32,10 @@ class ChatkitWorkflowTracingMapper
   final MappableFields<ChatkitWorkflowTracing> fields = const {
     #enabled: _f$enabled,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatkitWorkflowTracing _instantiate(DecodingData data) {
     return ChatkitWorkflowTracing(enabled: data.dec(_f$enabled));

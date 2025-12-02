@@ -48,6 +48,10 @@ class OnYourDataConnectionStringAuthenticationOptionsMapper
   @override
   final MappableFields<OnYourDataConnectionStringAuthenticationOptions> fields =
       const {#type: _f$type, #connectionString: _f$connectionString};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataConnectionStringAuthenticationOptions _instantiate(
     DecodingData data,

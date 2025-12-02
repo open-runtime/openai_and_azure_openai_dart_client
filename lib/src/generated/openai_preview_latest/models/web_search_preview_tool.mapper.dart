@@ -60,6 +60,10 @@ class WebSearchPreviewToolMapper extends ClassMapperBase<WebSearchPreviewTool> {
     #searchContextSize: _f$searchContextSize,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchPreviewTool _instantiate(DecodingData data) {
     return WebSearchPreviewTool(

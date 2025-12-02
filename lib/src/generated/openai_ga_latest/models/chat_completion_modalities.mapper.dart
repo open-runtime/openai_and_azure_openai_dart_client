@@ -26,6 +26,10 @@ class ChatCompletionModalitiesMapper
 
   @override
   final MappableFields<ChatCompletionModalities> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionModalities _instantiate(DecodingData data) {
     return ChatCompletionModalities();

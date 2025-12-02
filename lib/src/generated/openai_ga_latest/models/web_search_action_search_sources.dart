@@ -8,7 +8,7 @@ import 'web_search_action_search_sources_type_type.dart';
 
 part 'web_search_action_search_sources.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchActionSearchSources with WebSearchActionSearchSourcesMappable {
   const WebSearchActionSearchSources({
     required this.type,

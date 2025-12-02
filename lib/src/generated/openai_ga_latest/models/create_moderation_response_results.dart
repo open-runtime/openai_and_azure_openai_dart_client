@@ -10,7 +10,7 @@ import 'create_moderation_response_results_category_applied_input_types.dart';
 
 part 'create_moderation_response_results.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationResponseResults with CreateModerationResponseResultsMappable {
   const CreateModerationResponseResults({
     required this.flagged,
@@ -20,11 +20,11 @@ class CreateModerationResponseResults with CreateModerationResponseResultsMappab
   });
 
   final bool flagged;
-  @MappableField(key: 'CreateModerationResponseResultsCategories')
+  @MappableField(key: 'categories')
   final CreateModerationResponseResultsCategories createModerationResponseResultsCategories;
-  @MappableField(key: 'CreateModerationResponseResultsCategoryScores')
+  @MappableField(key: 'category_scores')
   final CreateModerationResponseResultsCategoryScores createModerationResponseResultsCategoryScores;
-  @MappableField(key: 'CreateModerationResponseResultsCategoryAppliedInputTypes')
+  @MappableField(key: 'category_applied_input_types')
   final CreateModerationResponseResultsCategoryAppliedInputTypes createModerationResponseResultsCategoryAppliedInputTypes;
 
   static CreateModerationResponseResults fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsMapper.fromJson(json);

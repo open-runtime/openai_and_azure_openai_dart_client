@@ -62,6 +62,10 @@ class DalleErrorMapper extends ClassMapperBase<DalleError> {
     #type: _f$type,
     #innerError: _f$innerError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleError _instantiate(DecodingData data) {
     return DalleError(

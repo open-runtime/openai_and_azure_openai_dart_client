@@ -72,7 +72,7 @@ class RealtimeResponseUsageInputTokenDetailsMapper
   _f$realtimeResponseUsageInputTokenDetailsCachedTokensDetails = Field(
     'realtimeResponseUsageInputTokenDetailsCachedTokensDetails',
     _$realtimeResponseUsageInputTokenDetailsCachedTokensDetails,
-    key: r'RealtimeResponseUsageInputTokenDetailsCachedTokensDetails',
+    key: r'cached_tokens_details',
     opt: true,
   );
 
@@ -85,6 +85,10 @@ class RealtimeResponseUsageInputTokenDetailsMapper
     #realtimeResponseUsageInputTokenDetailsCachedTokensDetails:
         _f$realtimeResponseUsageInputTokenDetailsCachedTokensDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseUsageInputTokenDetails _instantiate(
     DecodingData data,

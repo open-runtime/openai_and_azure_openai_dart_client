@@ -39,7 +39,7 @@ class AuditLogProjectUpdatedMapper
   _f$auditLogProjectUpdatedChangesRequested = Field(
     'auditLogProjectUpdatedChangesRequested',
     _$auditLogProjectUpdatedChangesRequested,
-    key: r'AuditLogProjectUpdatedChangesRequested',
+    key: r'changes_requested',
     opt: true,
   );
 
@@ -49,6 +49,10 @@ class AuditLogProjectUpdatedMapper
     #auditLogProjectUpdatedChangesRequested:
         _f$auditLogProjectUpdatedChangesRequested,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectUpdated _instantiate(DecodingData data) {
     return AuditLogProjectUpdated(

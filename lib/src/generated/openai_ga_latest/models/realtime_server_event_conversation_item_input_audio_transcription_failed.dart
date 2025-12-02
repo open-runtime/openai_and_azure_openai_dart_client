@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed_type_type.dart';
 
@@ -13,7 +14,7 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_failed.m
 /// request for a user message failed. These events are separate from other .
 /// `error` events so that the client can identify the related Item.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemInputAudioTranscriptionFailed with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionFailed({
     required this.eventId,
@@ -30,7 +31,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailed with Real
   final String itemId;
   @MappableField(key: 'content_index')
   final int contentIndex;
-  @MappableField(key: 'RealtimeServerEventConversationItemInputAudioTranscriptionFailedError')
+  @MappableField(key: 'error')
   final RealtimeServerEventConversationItemInputAudioTranscriptionFailedError realtimeServerEventConversationItemInputAudioTranscriptionFailedError;
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionFailed fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json);

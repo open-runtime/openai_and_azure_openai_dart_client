@@ -18,7 +18,7 @@ class OnYourDataEndpointVectorizationSourceMapper
         _instance = OnYourDataEndpointVectorizationSourceMapper._(),
       );
       OnYourDataVectorizationSourceTypeMapper.ensureInitialized();
-      OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnionMapper.ensureInitialized();
+      OnYourDataEndpointVectorizationSourceAuthenticationUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -38,11 +38,11 @@ class OnYourDataEndpointVectorizationSourceMapper
       v.endpoint;
   static const Field<OnYourDataEndpointVectorizationSource, String>
   _f$endpoint = Field('endpoint', _$endpoint, opt: true);
-  static OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion?
+  static OnYourDataEndpointVectorizationSourceAuthenticationUnion?
   _$authentication(OnYourDataEndpointVectorizationSource v) => v.authentication;
   static const Field<
     OnYourDataEndpointVectorizationSource,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion
   >
   _f$authentication = Field('authentication', _$authentication, opt: true);
   static int? _$dimensions(OnYourDataEndpointVectorizationSource v) =>
@@ -57,6 +57,10 @@ class OnYourDataEndpointVectorizationSourceMapper
     #authentication: _f$authentication,
     #dimensions: _f$dimensions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataEndpointVectorizationSource _instantiate(DecodingData data) {
     return OnYourDataEndpointVectorizationSource(
@@ -147,17 +151,16 @@ abstract class OnYourDataEndpointVectorizationSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnionCopyWith<
+  OnYourDataEndpointVectorizationSourceAuthenticationUnionCopyWith<
     $R,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion,
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion
   >?
   get authentication;
   $R call({
     OnYourDataVectorizationSourceType? type,
     String? endpoint,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion?
-    authentication,
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion? authentication,
     int? dimensions,
   });
   OnYourDataEndpointVectorizationSourceCopyWith<$R2, $In, $Out2>
@@ -182,10 +185,10 @@ class _OnYourDataEndpointVectorizationSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OnYourDataEndpointVectorizationSource> $mapper =
       OnYourDataEndpointVectorizationSourceMapper.ensureInitialized();
   @override
-  OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnionCopyWith<
+  OnYourDataEndpointVectorizationSourceAuthenticationUnionCopyWith<
     $R,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion,
-    OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion,
+    OnYourDataEndpointVectorizationSourceAuthenticationUnion
   >?
   get authentication =>
       $value.authentication?.copyWith.$chain((v) => call(authentication: v));

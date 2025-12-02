@@ -26,6 +26,10 @@ class ModelIdsResponsesUnionMapper
 
   @override
   final MappableFields<ModelIdsResponsesUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelIdsResponsesUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ModelIdsResponsesUnion');
@@ -86,6 +90,10 @@ class ModelIdsResponsesUnionModelIdsSharedMapper
 
   @override
   final MappableFields<ModelIdsResponsesUnionModelIdsShared> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelIdsResponsesUnionModelIdsShared _instantiate(DecodingData data) {
     return ModelIdsResponsesUnionModelIdsShared();
@@ -241,6 +249,10 @@ class ModelIdsResponsesUnionVariantStringMapper
   final MappableFields<ModelIdsResponsesUnionVariantString> fields = const {
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelIdsResponsesUnionVariantString _instantiate(DecodingData data) {
     return ModelIdsResponsesUnionVariantString(value: data.dec(_f$value));

@@ -82,6 +82,10 @@ class RealtimeConversationItemMessageSystemMapper
     #objectEnum: _f$objectEnum,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemMessageSystem _instantiate(DecodingData data) {
     return RealtimeConversationItemMessageSystem(

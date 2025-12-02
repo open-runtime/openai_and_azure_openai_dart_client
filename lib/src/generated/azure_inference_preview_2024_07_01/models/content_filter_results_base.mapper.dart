@@ -75,6 +75,10 @@ class ContentFilterResultsBaseMapper
     #customBlocklists: _f$customBlocklists,
     #error: _f$error,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterResultsBase _instantiate(DecodingData data) {
     return ContentFilterResultsBase(

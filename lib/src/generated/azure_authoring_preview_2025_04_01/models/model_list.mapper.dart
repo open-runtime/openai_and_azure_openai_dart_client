@@ -42,6 +42,10 @@ class ModelListMapper extends ClassMapperBase<ModelList> {
     #objectField: _f$objectField,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelList _instantiate(DecodingData data) {
     return ModelList(

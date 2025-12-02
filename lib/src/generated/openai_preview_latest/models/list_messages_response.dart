@@ -8,7 +8,7 @@ import 'message_object.dart';
 
 part 'list_messages_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListMessagesResponse with ListMessagesResponseMappable {
   const ListMessagesResponse({
     required this.objectField,

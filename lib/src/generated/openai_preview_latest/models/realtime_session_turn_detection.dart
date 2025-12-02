@@ -9,7 +9,7 @@ import 'realtime_session_turn_detection_eagerness_eagerness.dart';
 
 part 'realtime_session_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionTurnDetection with RealtimeSessionTurnDetectionMappable {
   const RealtimeSessionTurnDetection({
     this.threshold,

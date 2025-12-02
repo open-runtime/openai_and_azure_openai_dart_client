@@ -12,7 +12,7 @@ import 'pinecone_field_mapping_options.dart';
 part 'pinecone_chat_extension_parameters.mapper.dart';
 
 /// Parameters for configuring Azure OpenAI Pinecone chat extensions.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeChatExtensionParameters with PineconeChatExtensionParametersMappable {
   const PineconeChatExtensionParameters({
     required this.authentication,

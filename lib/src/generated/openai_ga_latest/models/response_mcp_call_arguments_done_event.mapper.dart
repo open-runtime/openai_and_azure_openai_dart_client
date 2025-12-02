@@ -56,6 +56,10 @@ class ResponseMcpCallArgumentsDoneEventMapper
     #arguments: _f$arguments,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseMcpCallArgumentsDoneEvent _instantiate(DecodingData data) {
     return ResponseMcpCallArgumentsDoneEvent(

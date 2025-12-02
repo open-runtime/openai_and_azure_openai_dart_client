@@ -38,6 +38,10 @@ class UpdateVectorStoreFileAttributesRequestMapper
   final MappableFields<UpdateVectorStoreFileAttributesRequest> fields = const {
     #attributes: _f$attributes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateVectorStoreFileAttributesRequest _instantiate(
     DecodingData data,

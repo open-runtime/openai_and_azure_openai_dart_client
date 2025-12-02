@@ -42,6 +42,10 @@ class MessageDeltaContentTextObjectTextMapper
     #value: _f$value,
     #annotations: _f$annotations,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextObjectText _instantiate(DecodingData data) {
     return MessageDeltaContentTextObjectText(

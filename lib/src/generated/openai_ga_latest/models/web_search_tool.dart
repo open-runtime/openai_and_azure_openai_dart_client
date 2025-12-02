@@ -14,7 +14,7 @@ part 'web_search_tool.mapper.dart';
 /// Search the Internet for sources related to the prompt. Learn more about the.
 /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchTool with WebSearchToolMappable {
   const WebSearchTool({
     this.filters,

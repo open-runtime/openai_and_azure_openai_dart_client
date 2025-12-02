@@ -8,7 +8,7 @@ import 'create_eval_completions_run_data_source_source_type_type.dart';
 
 part 'create_eval_completions_run_data_source_source.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceSource with CreateEvalCompletionsRunDataSourceSourceMappable {
   const CreateEvalCompletionsRunDataSourceSource({
     required this.type,

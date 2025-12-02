@@ -7,14 +7,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'run_step_object_last_error.dart';
 import 'run_step_object_object_object_enum.dart';
 import 'run_step_object_status_status.dart';
-import 'run_step_object_step_details_step_details_union.dart';
+import 'run_step_object_step_details_union.dart';
 import 'run_step_object_type_type.dart';
 
 part 'run_step_object.mapper.dart';
 
 /// Represents a step in execution of a run.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepObject with RunStepObjectMappable {
   const RunStepObject({
     required this.id,
@@ -48,8 +48,8 @@ class RunStepObject with RunStepObjectMappable {
   final RunStepObjectTypeType type;
   final RunStepObjectStatusStatus status;
   @MappableField(key: 'step_details')
-  final RunStepObjectStepDetailsStepDetailsUnion stepDetails;
-  @MappableField(key: 'RunStepObjectLastError')
+  final RunStepObjectStepDetailsUnion stepDetails;
+  @MappableField(key: 'last_error')
   final RunStepObjectLastError? runStepObjectLastError;
   @MappableField(key: 'expired_at')
   final int? expiredAt;

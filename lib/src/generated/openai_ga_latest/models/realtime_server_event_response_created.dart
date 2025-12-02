@@ -5,13 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_response.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_response_created.mapper.dart';
 
 /// Returned when a new Response is created. The first event of response creation,.
 /// where the response is in an initial state of `in_progress`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseCreated with RealtimeServerEventResponseCreatedMappable {
   const RealtimeServerEventResponseCreated({
     required this.eventId,

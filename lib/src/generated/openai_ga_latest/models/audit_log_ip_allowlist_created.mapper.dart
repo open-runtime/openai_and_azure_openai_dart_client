@@ -47,6 +47,10 @@ class AuditLogIpAllowlistCreatedMapper
     #name: _f$name,
     #allowedIps: _f$allowedIps,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogIpAllowlistCreated _instantiate(DecodingData data) {
     return AuditLogIpAllowlistCreated(

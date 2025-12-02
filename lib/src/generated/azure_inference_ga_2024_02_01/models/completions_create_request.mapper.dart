@@ -157,6 +157,10 @@ class CompletionsCreateRequestMapper
     #completionConfig: _f$completionConfig,
     #bestOf: _f$bestOf,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionsCreateRequest _instantiate(DecodingData data) {
     return CompletionsCreateRequest(

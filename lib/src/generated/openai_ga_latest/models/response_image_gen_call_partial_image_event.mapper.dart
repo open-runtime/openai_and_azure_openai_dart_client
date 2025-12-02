@@ -74,6 +74,10 @@ class ResponseImageGenCallPartialImageEventMapper
     #partialImageIndex: _f$partialImageIndex,
     #partialImageB64: _f$partialImageB64,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseImageGenCallPartialImageEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallPartialImageEvent(

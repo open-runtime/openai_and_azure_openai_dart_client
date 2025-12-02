@@ -59,6 +59,10 @@ class VectorStoreFileContentResponseMapper
     #hasMore: _f$hasMore,
     #nextPage: _f$nextPage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileContentResponse _instantiate(DecodingData data) {
     return VectorStoreFileContentResponse(

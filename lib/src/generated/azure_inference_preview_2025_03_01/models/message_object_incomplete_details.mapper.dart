@@ -38,6 +38,10 @@ class MessageObjectIncompleteDetailsMapper
   final MappableFields<MessageObjectIncompleteDetails> fields = const {
     #reason: _f$reason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageObjectIncompleteDetails _instantiate(DecodingData data) {
     return MessageObjectIncompleteDetails(reason: data.dec(_f$reason));

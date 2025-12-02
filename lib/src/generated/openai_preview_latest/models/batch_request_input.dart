@@ -9,7 +9,7 @@ import 'batch_request_input_method_method.dart';
 part 'batch_request_input.mapper.dart';
 
 /// The per-line object of the batch input file
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestInput with BatchRequestInputMappable {
   const BatchRequestInput({
     this.customId,

@@ -35,6 +35,10 @@ class ItemReferenceMapper extends ClassMapperBase<ItemReference> {
     #id: _f$id,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ItemReference _instantiate(DecodingData data) {
     return ItemReference(id: data.dec(_f$id), type: data.dec(_f$type));

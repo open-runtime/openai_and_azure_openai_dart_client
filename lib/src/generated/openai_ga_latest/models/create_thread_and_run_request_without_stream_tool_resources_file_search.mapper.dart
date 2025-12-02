@@ -50,6 +50,10 @@ class CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMapper
     CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch
   >
   fields = const {#vectorStoreIds: _f$vectorStoreIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch
   _instantiate(DecodingData data) {

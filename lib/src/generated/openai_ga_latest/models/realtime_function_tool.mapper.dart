@@ -51,6 +51,10 @@ class RealtimeFunctionToolMapper extends ClassMapperBase<RealtimeFunctionTool> {
     #description: _f$description,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeFunctionTool _instantiate(DecodingData data) {
     return RealtimeFunctionTool(

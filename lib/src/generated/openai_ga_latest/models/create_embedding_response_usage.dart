@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_embedding_response_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEmbeddingResponseUsage with CreateEmbeddingResponseUsageMappable {
   const CreateEmbeddingResponseUsage({
     required this.promptTokens,

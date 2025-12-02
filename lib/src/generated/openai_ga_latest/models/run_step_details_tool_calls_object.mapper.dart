@@ -48,6 +48,10 @@ class RunStepDetailsToolCallsObjectMapper
     #type: _f$type,
     #toolCalls: _f$toolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsObject _instantiate(DecodingData data) {
     return RunStepDetailsToolCallsObject(

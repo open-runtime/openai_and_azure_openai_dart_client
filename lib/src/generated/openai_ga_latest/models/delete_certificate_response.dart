@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'delete_certificate_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteCertificateResponse with DeleteCertificateResponseMappable {
   const DeleteCertificateResponse({
     required this.objectField,

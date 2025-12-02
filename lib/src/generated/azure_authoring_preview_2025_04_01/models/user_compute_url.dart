@@ -13,7 +13,7 @@ import 'workspace_connection_embedding_settings.dart';
 part 'user_compute_url.mapper.dart';
 
 /// Urls
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeUrl with UserComputeUrlMappable {
   const UserComputeUrl({
     required this.kind,

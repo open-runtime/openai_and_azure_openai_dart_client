@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'fine_tuning_hyper_parameters.mapper.dart';
 
 /// The hyper parameter settings used in a fine tune job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningHyperParameters with FineTuningHyperParametersMappable {
   const FineTuningHyperParameters({
     this.nEpochs,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'span_polygon.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SpanPolygon with SpanPolygonMappable {
   const SpanPolygon({
     this.x,

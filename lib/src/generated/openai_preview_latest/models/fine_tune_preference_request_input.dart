@@ -10,7 +10,7 @@ import 'fine_tune_preference_request_input_input.dart';
 part 'fine_tune_preference_request_input.mapper.dart';
 
 /// The per-line training example of a fine-tuning input file for chat models using the dpo method.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTunePreferenceRequestInput with FineTunePreferenceRequestInputMappable {
   const FineTunePreferenceRequestInput({
     this.fineTunePreferenceRequestInputInput,
@@ -18,7 +18,7 @@ class FineTunePreferenceRequestInput with FineTunePreferenceRequestInputMappable
     this.nonPreferredCompletion,
   });
 
-  @MappableField(key: 'FineTunePreferenceRequestInputInput')
+  @MappableField(key: 'input')
   final FineTunePreferenceRequestInputInput? fineTunePreferenceRequestInputInput;
   @MappableField(key: 'preferred_completion')
   final List<ChatCompletionRequestAssistantMessage>? preferredCompletion;

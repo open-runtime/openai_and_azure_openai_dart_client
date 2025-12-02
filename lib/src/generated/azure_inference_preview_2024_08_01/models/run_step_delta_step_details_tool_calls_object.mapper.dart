@@ -18,7 +18,7 @@ class RunStepDeltaStepDetailsToolCallsObjectMapper
         _instance = RunStepDeltaStepDetailsToolCallsObjectMapper._(),
       );
       RunStepDeltaStepDetailsToolCallsObjectTypeTypeMapper.ensureInitialized();
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnionMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,11 +34,11 @@ class RunStepDeltaStepDetailsToolCallsObjectMapper
     RunStepDeltaStepDetailsToolCallsObjectTypeType
   >
   _f$type = Field('type', _$type);
-  static List<RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion>?
+  static List<RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion>?
   _$toolCalls(RunStepDeltaStepDetailsToolCallsObject v) => v.toolCalls;
   static const Field<
     RunStepDeltaStepDetailsToolCallsObject,
-    List<RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion>
+    List<RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion>
   >
   _f$toolCalls = Field('toolCalls', _$toolCalls, key: r'tool_calls', opt: true);
 
@@ -47,6 +47,10 @@ class RunStepDeltaStepDetailsToolCallsObjectMapper
     #type: _f$type,
     #toolCalls: _f$toolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsObject _instantiate(
     DecodingData data,
@@ -138,18 +142,17 @@ abstract class RunStepDeltaStepDetailsToolCallsObjectCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion,
-    RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnionCopyWith<
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion,
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCopyWith<
       $R,
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion,
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion
+      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion,
+      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
     >
   >?
   get toolCalls;
   $R call({
     RunStepDeltaStepDetailsToolCallsObjectTypeType? type,
-    List<RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion>?
-    toolCalls,
+    List<RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion>? toolCalls,
   });
   RunStepDeltaStepDetailsToolCallsObjectCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -175,11 +178,11 @@ class _RunStepDeltaStepDetailsToolCallsObjectCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion,
-    RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnionCopyWith<
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion,
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCopyWith<
       $R,
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion,
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsToolCallsUnion
+      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion,
+      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
     >
   >?
   get toolCalls => $value.toolCalls != null

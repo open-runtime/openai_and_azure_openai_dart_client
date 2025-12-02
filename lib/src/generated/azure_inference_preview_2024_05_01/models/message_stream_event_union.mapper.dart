@@ -31,6 +31,10 @@ class MessageStreamEventUnionMapper
 
   @override
   final MappableFields<MessageStreamEventUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('MessageStreamEventUnion');
@@ -108,6 +112,10 @@ class MessageStreamEventUnionVariant1Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnionVariant1 _instantiate(DecodingData data) {
     return MessageStreamEventUnionVariant1(
@@ -293,6 +301,10 @@ class MessageStreamEventUnionVariant2Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnionVariant2 _instantiate(DecodingData data) {
     return MessageStreamEventUnionVariant2(
@@ -478,6 +490,10 @@ class MessageStreamEventUnionVariant3Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnionVariant3 _instantiate(DecodingData data) {
     return MessageStreamEventUnionVariant3(
@@ -664,6 +680,10 @@ class MessageStreamEventUnionVariant4Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnionVariant4 _instantiate(DecodingData data) {
     return MessageStreamEventUnionVariant4(
@@ -849,6 +869,10 @@ class MessageStreamEventUnionVariant5Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEventUnionVariant5 _instantiate(DecodingData data) {
     return MessageStreamEventUnionVariant5(

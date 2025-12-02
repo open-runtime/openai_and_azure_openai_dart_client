@@ -36,6 +36,10 @@ class WebSearchToolFiltersMapper extends ClassMapperBase<WebSearchToolFilters> {
   final MappableFields<WebSearchToolFilters> fields = const {
     #allowedDomains: _f$allowedDomains,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchToolFilters _instantiate(DecodingData data) {
     return WebSearchToolFilters(allowedDomains: data.dec(_f$allowedDomains));

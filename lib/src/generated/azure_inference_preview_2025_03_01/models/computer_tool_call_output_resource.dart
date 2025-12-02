@@ -11,7 +11,7 @@ import 'computer_tool_call_safety_check.dart';
 
 part 'computer_tool_call_output_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerToolCallOutputResource with ComputerToolCallOutputResourceMappable {
   const ComputerToolCallOutputResource({
     required this.id,

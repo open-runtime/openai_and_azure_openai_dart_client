@@ -53,6 +53,10 @@ class ConversationMapper extends ClassMapperBase<Conversation> {
     #createdAt: _f$createdAt,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Conversation _instantiate(DecodingData data) {
     return Conversation(

@@ -109,6 +109,10 @@ class VideoResourceMapper extends ClassMapperBase<VideoResource> {
     #error: _f$error,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VideoResource _instantiate(DecodingData data) {
     return VideoResource(

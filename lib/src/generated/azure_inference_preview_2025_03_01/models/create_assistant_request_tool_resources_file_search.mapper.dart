@@ -59,6 +59,10 @@ class CreateAssistantRequestToolResourcesFileSearchMapper
         #vectorStoreIds: _f$vectorStoreIds,
         #vectorStores: _f$vectorStores,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateAssistantRequestToolResourcesFileSearch _instantiate(
     DecodingData data,

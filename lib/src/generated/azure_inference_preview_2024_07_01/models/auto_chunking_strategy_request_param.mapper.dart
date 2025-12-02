@@ -38,6 +38,10 @@ class AutoChunkingStrategyRequestParamMapper
   final MappableFields<AutoChunkingStrategyRequestParam> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AutoChunkingStrategyRequestParam _instantiate(DecodingData data) {
     return AutoChunkingStrategyRequestParam(type: data.dec(_f$type));

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'run_completion_usage.mapper.dart';
 
 /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunCompletionUsage with RunCompletionUsageMappable {
   const RunCompletionUsage({
     required this.completionTokens,

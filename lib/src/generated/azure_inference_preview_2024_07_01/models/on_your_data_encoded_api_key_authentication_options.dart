@@ -9,7 +9,7 @@ import 'on_your_data_authentication_type.dart';
 part 'on_your_data_encoded_api_key_authentication_options.mapper.dart';
 
 /// The authentication options for Azure OpenAI On Your Data when using an Elasticsearch encoded API key.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataEncodedApiKeyAuthenticationOptions with OnYourDataEncodedApiKeyAuthenticationOptionsMappable {
   const OnYourDataEncodedApiKeyAuthenticationOptions({
     required this.type,

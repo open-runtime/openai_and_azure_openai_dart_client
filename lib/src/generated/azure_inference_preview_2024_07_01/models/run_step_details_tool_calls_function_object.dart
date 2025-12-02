@@ -9,7 +9,7 @@ import 'run_step_details_tool_calls_function_object_type_type.dart';
 
 part 'run_step_details_tool_calls_function_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsFunctionObject with RunStepDetailsToolCallsFunctionObjectMappable {
   const RunStepDetailsToolCallsFunctionObject({
     required this.id,
@@ -19,7 +19,7 @@ class RunStepDetailsToolCallsFunctionObject with RunStepDetailsToolCallsFunction
 
   final String id;
   final RunStepDetailsToolCallsFunctionObjectTypeType type;
-  @MappableField(key: 'RunStepDetailsToolCallsFunctionObjectFunction')
+  @MappableField(key: 'function')
   final RunStepDetailsToolCallsFunctionObjectFunction runStepDetailsToolCallsFunctionObjectFunction;
 
   static RunStepDetailsToolCallsFunctionObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFunctionObjectMapper.fromJson(json);

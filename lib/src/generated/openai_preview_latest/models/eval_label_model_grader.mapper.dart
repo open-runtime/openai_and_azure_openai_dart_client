@@ -60,6 +60,10 @@ class EvalLabelModelGraderMapper extends ClassMapperBase<EvalLabelModelGrader> {
     #labels: _f$labels,
     #passingLabels: _f$passingLabels,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalLabelModelGrader _instantiate(DecodingData data) {
     return EvalLabelModelGrader(

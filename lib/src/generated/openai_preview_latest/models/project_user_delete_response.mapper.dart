@@ -50,6 +50,10 @@ class ProjectUserDeleteResponseMapper
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectUserDeleteResponse _instantiate(DecodingData data) {
     return ProjectUserDeleteResponse(

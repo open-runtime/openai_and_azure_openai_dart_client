@@ -8,13 +8,15 @@ import 'computer_action.dart';
 import 'computer_tool_call_safety_check.dart';
 import 'computer_tool_call_status_status.dart';
 import 'computer_tool_call_type_type.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'computer_tool_call.mapper.dart';
 
 /// A tool call to a computer use tool. See the .
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerToolCall with ComputerToolCallMappable {
   const ComputerToolCall({
     required this.id,

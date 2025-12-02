@@ -63,6 +63,10 @@ class FileSearchToolCallResultsMapper
     #attributes: _f$attributes,
     #score: _f$score,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchToolCallResults _instantiate(DecodingData data) {
     return FileSearchToolCallResults(

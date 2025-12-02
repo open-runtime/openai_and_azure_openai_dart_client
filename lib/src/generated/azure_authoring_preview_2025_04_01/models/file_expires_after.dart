@@ -9,7 +9,7 @@ import 'file_expiry_anchor.dart';
 part 'file_expires_after.mapper.dart';
 
 /// Defines a expiration for the file.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileExpiresAfter with FileExpiresAfterMappable {
   const FileExpiresAfter({
     this.anchor,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_transcription_session_create_response_ga_audio_input_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection with RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetectionMappable {
   const RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection({
     this.type,

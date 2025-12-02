@@ -33,7 +33,7 @@ class ChatCompletionToolMapper extends ClassMapperBase<ChatCompletionTool> {
   _f$chatCompletionToolFunction = Field(
     'chatCompletionToolFunction',
     _$chatCompletionToolFunction,
-    key: r'ChatCompletionToolFunction',
+    key: r'function',
   );
 
   @override
@@ -41,6 +41,10 @@ class ChatCompletionToolMapper extends ClassMapperBase<ChatCompletionTool> {
     #type: _f$type,
     #chatCompletionToolFunction: _f$chatCompletionToolFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionTool _instantiate(DecodingData data) {
     return ChatCompletionTool(

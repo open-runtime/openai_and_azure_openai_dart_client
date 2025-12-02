@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_thread_and_run_request_tool_resources_code_interpreter.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadAndRunRequestToolResourcesCodeInterpreter with CreateThreadAndRunRequestToolResourcesCodeInterpreterMappable {
   const CreateThreadAndRunRequestToolResourcesCodeInterpreter({
     this.fileIds = const [],

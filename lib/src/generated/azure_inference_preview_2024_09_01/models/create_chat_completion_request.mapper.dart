@@ -17,13 +17,13 @@ class CreateChatCompletionRequestMapper
       MapperContainer.globals.use(
         _instance = CreateChatCompletionRequestMapper._(),
       );
-      ChatCompletionRequestMessageUnionMapper.ensureInitialized();
+      ChatCompletionRequestMessageMapper.ensureInitialized();
       AzureChatExtensionConfigurationMapper.ensureInitialized();
-      CreateChatCompletionRequestResponseFormatResponseFormatUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized();
       ChatCompletionStreamOptionsMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
       ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
-      CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestFunctionCallUnionMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,12 +41,12 @@ class CreateChatCompletionRequestMapper
       v.logitBias;
   static const Field<CreateChatCompletionRequest, Map<String, int>>
   _f$logitBias = Field('logitBias', _$logitBias, key: r'logit_bias');
-  static List<ChatCompletionRequestMessageUnion?> _$messages(
+  static List<ChatCompletionRequestMessage> _$messages(
     CreateChatCompletionRequest v,
   ) => v.messages;
   static const Field<
     CreateChatCompletionRequest,
-    List<ChatCompletionRequestMessageUnion?>
+    List<ChatCompletionRequestMessage>
   >
   _f$messages = Field('messages', _$messages);
   static int? _$maxTokens(CreateChatCompletionRequest v) => v.maxTokens;
@@ -100,11 +100,12 @@ class CreateChatCompletionRequestMapper
         key: r'parallel_tool_calls',
         opt: true,
       );
-  static CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-  _$responseFormat(CreateChatCompletionRequest v) => v.responseFormat;
+  static CreateChatCompletionRequestResponseFormatUnion? _$responseFormat(
+    CreateChatCompletionRequest v,
+  ) => v.responseFormat;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -145,11 +146,12 @@ class CreateChatCompletionRequestMapper
     key: r'tool_choice',
     opt: true,
   );
-  static CreateChatCompletionRequestFunctionCallFunctionCallUnion?
-  _$functionCall(CreateChatCompletionRequest v) => v.functionCall;
+  static CreateChatCompletionRequestFunctionCallUnion? _$functionCall(
+    CreateChatCompletionRequest v,
+  ) => v.functionCall;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion
   >
   _f$functionCall = Field(
     'functionCall',
@@ -245,6 +247,10 @@ class CreateChatCompletionRequestMapper
     #logprobs: _f$logprobs,
     #n: _f$n,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequest _instantiate(DecodingData data) {
     return CreateChatCompletionRequest(
@@ -352,12 +358,12 @@ abstract class CreateChatCompletionRequestCopyWith<
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias;
   ListCopyWith<
     $R,
-    ChatCompletionRequestMessageUnion?,
-    ChatCompletionRequestMessageUnionCopyWith<
+    ChatCompletionRequestMessage,
+    ChatCompletionRequestMessageCopyWith<
       $R,
-      ChatCompletionRequestMessageUnion,
-      ChatCompletionRequestMessageUnion
-    >?
+      ChatCompletionRequestMessage,
+      ChatCompletionRequestMessage
+    >
   >
   get messages;
   ListCopyWith<
@@ -370,10 +376,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     >
   >?
   get dataSources;
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat;
   ChatCompletionStreamOptionsCopyWith<
@@ -394,10 +400,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice;
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall;
   ListCopyWith<
@@ -413,20 +419,19 @@ abstract class CreateChatCompletionRequestCopyWith<
   $R call({
     List<String>? stop,
     Map<String, int>? logitBias,
-    List<ChatCompletionRequestMessageUnion?>? messages,
+    List<ChatCompletionRequestMessage>? messages,
     int? maxTokens,
     int? maxCompletionTokens,
     String? user,
     List<AzureChatExtensionConfiguration>? dataSources,
     int? topLogprobs,
     bool? parallelToolCalls,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-    responseFormat,
+    CreateChatCompletionRequestResponseFormatUnion? responseFormat,
     int? seed,
     ChatCompletionStreamOptions? streamOptions,
     List<ChatCompletionTool>? tools,
     ChatCompletionToolChoiceOptionUnion? toolChoice,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
+    CreateChatCompletionRequestFunctionCallUnion? functionCall,
     List<ChatCompletionFunctions>? functions,
     num? temperature,
     num? topP,
@@ -479,16 +484,16 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    ChatCompletionRequestMessageUnion?,
-    ChatCompletionRequestMessageUnionCopyWith<
+    ChatCompletionRequestMessage,
+    ChatCompletionRequestMessageCopyWith<
       $R,
-      ChatCompletionRequestMessageUnion,
-      ChatCompletionRequestMessageUnion
-    >?
+      ChatCompletionRequestMessage,
+      ChatCompletionRequestMessage
+    >
   >
   get messages => ListCopyWith(
     $value.messages,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(messages: v),
   );
   @override
@@ -509,10 +514,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));
@@ -546,10 +551,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall =>
       $value.functionCall?.copyWith.$chain((v) => call(functionCall: v));
@@ -574,7 +579,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   $R call({
     Object? stop = $none,
     Object? logitBias = $none,
-    List<ChatCompletionRequestMessageUnion?>? messages,
+    List<ChatCompletionRequestMessage>? messages,
     Object? maxTokens = $none,
     Object? maxCompletionTokens = $none,
     Object? user = $none,

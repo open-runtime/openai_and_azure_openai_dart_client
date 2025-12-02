@@ -33,7 +33,7 @@ class CostsResultMapper extends ClassMapperBase<CostsResult> {
       Field(
         'costsResultAmount',
         _$costsResultAmount,
-        key: r'CostsResultAmount',
+        key: r'amount',
         opt: true,
       );
   static String? _$lineItem(CostsResult v) => v.lineItem;
@@ -58,6 +58,10 @@ class CostsResultMapper extends ClassMapperBase<CostsResult> {
     #lineItem: _f$lineItem,
     #projectId: _f$projectId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CostsResult _instantiate(DecodingData data) {
     return CostsResult(

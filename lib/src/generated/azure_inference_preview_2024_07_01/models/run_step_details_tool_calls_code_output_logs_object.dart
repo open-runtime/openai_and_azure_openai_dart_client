@@ -9,7 +9,7 @@ import 'run_step_details_tool_calls_code_output_logs_object_type_type.dart';
 part 'run_step_details_tool_calls_code_output_logs_object.mapper.dart';
 
 /// Text output from the Code Interpreter tool call as part of a run step.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsCodeOutputLogsObject with RunStepDetailsToolCallsCodeOutputLogsObjectMappable {
   const RunStepDetailsToolCallsCodeOutputLogsObject({
     required this.type,

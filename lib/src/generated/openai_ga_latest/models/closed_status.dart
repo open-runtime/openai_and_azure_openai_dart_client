@@ -9,7 +9,7 @@ import 'closed_status_type_type.dart';
 part 'closed_status.mapper.dart';
 
 /// Indicates that a thread has been closed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ClosedStatus with ClosedStatusMappable {
   const ClosedStatus({
     required this.reason,

@@ -46,6 +46,10 @@ class TranscriptTextDeltaEventLogprobsMapper
     #logprob: _f$logprob,
     #bytes: _f$bytes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextDeltaEventLogprobs _instantiate(DecodingData data) {
     return TranscriptTextDeltaEventLogprobs(

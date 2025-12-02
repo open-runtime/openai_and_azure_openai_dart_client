@@ -44,7 +44,7 @@ class MessageContentImageFileObjectMapper
   _f$messageContentImageFileObjectImageFile = Field(
     'messageContentImageFileObjectImageFile',
     _$messageContentImageFileObjectImageFile,
-    key: r'MessageContentImageFileObjectImageFile',
+    key: r'image_file',
   );
 
   @override
@@ -53,6 +53,10 @@ class MessageContentImageFileObjectMapper
     #messageContentImageFileObjectImageFile:
         _f$messageContentImageFileObjectImageFile,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentImageFileObject _instantiate(DecodingData data) {
     return MessageContentImageFileObject(

@@ -14,6 +14,8 @@ class CreateSpeechRequestMapper extends ClassMapperBase<CreateSpeechRequest> {
   static CreateSpeechRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateSpeechRequestMapper._());
+      CreateSpeechRequestModelUnionMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       CreateSpeechRequestResponseFormatResponseFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -22,20 +24,24 @@ class CreateSpeechRequestMapper extends ClassMapperBase<CreateSpeechRequest> {
   @override
   final String id = 'CreateSpeechRequest';
 
-  static String _$model(CreateSpeechRequest v) => v.model;
-  static const Field<CreateSpeechRequest, String> _f$model = Field(
+  static CreateSpeechRequestModelUnion _$model(CreateSpeechRequest v) =>
+      v.model;
+  static const Field<CreateSpeechRequest, CreateSpeechRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
+    hook: const CreateSpeechRequestModelUnionHook(),
   );
   static String _$input(CreateSpeechRequest v) => v.input;
   static const Field<CreateSpeechRequest, String> _f$input = Field(
     'input',
     _$input,
   );
-  static String? _$voice(CreateSpeechRequest v) => v.voice;
-  static const Field<CreateSpeechRequest, String> _f$voice = Field(
+  static VoiceIdsShared _$voice(CreateSpeechRequest v) => v.voice;
+  static const Field<CreateSpeechRequest, VoiceIdsShared> _f$voice = Field(
     'voice',
     _$voice,
+    hook: const VoiceIdsSharedHook(),
   );
   static CreateSpeechRequestResponseFormatResponseFormat _$responseFormat(
     CreateSpeechRequest v,
@@ -74,6 +80,10 @@ class CreateSpeechRequestMapper extends ClassMapperBase<CreateSpeechRequest> {
     #speed: _f$speed,
     #instructions: _f$instructions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateSpeechRequest _instantiate(DecodingData data) {
     return CreateSpeechRequest(
@@ -156,10 +166,17 @@ abstract class CreateSpeechRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateSpeechRequestModelUnionCopyWith<
+    $R,
+    CreateSpeechRequestModelUnion,
+    CreateSpeechRequestModelUnion
+  >
+  get model;
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice;
   $R call({
-    String? model,
+    CreateSpeechRequestModelUnion? model,
     String? input,
-    String? voice,
+    VoiceIdsShared? voice,
     CreateSpeechRequestResponseFormatResponseFormat? responseFormat,
     num? speed,
     String? instructions,
@@ -178,10 +195,20 @@ class _CreateSpeechRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateSpeechRequest> $mapper =
       CreateSpeechRequestMapper.ensureInitialized();
   @override
+  CreateSpeechRequestModelUnionCopyWith<
+    $R,
+    CreateSpeechRequestModelUnion,
+    CreateSpeechRequestModelUnion
+  >
+  get model => $value.model.copyWith.$chain((v) => call(model: v));
+  @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice =>
+      $value.voice.copyWith.$chain((v) => call(voice: v));
+  @override
   $R call({
-    String? model,
+    CreateSpeechRequestModelUnion? model,
     String? input,
-    Object? voice = $none,
+    VoiceIdsShared? voice,
     CreateSpeechRequestResponseFormatResponseFormat? responseFormat,
     num? speed,
     Object? instructions = $none,
@@ -189,7 +216,7 @@ class _CreateSpeechRequestCopyWithImpl<$R, $Out>
     FieldCopyWithData({
       if (model != null) #model: model,
       if (input != null) #input: input,
-      if (voice != $none) #voice: voice,
+      if (voice != null) #voice: voice,
       if (responseFormat != null) #responseFormat: responseFormat,
       if (speed != null) #speed: speed,
       if (instructions != $none) #instructions: instructions,

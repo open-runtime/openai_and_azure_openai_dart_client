@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'audio_response.mapper.dart';
 
 /// Translation or transcription response when response_format was json
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioResponse with AudioResponseMappable {
   const AudioResponse({
     required this.text,

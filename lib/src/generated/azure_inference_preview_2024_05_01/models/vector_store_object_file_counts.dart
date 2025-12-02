@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'vector_store_object_file_counts.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreObjectFileCounts with VectorStoreObjectFileCountsMappable {
   const VectorStoreObjectFileCounts({
     required this.inProgress,

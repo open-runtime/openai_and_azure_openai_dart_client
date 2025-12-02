@@ -8,7 +8,7 @@ import 'realtime_mcp_protocol_error_type_type.dart';
 
 part 'realtime_mcp_protocol_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpProtocolError with RealtimeMcpProtocolErrorMappable {
   const RealtimeMcpProtocolError({
     required this.type,

@@ -41,6 +41,10 @@ class AuditLogLogoutFailedMapper extends ClassMapperBase<AuditLogLogoutFailed> {
     #errorCode: _f$errorCode,
     #errorMessage: _f$errorMessage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogLogoutFailed _instantiate(DecodingData data) {
     return AuditLogLogoutFailed(

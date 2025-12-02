@@ -65,6 +65,10 @@ class RoleMapper extends ClassMapperBase<Role> {
     #resourceType: _f$resourceType,
     #predefinedRole: _f$predefinedRole,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Role _instantiate(DecodingData data) {
     return Role(

@@ -51,6 +51,10 @@ class CreateThreadRequestMapper extends ClassMapperBase<CreateThreadRequest> {
     #toolResources: _f$toolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequest _instantiate(DecodingData data) {
     return CreateThreadRequest(

@@ -42,7 +42,7 @@ class RunGraderResponseMetadataMapper
   _f$runGraderResponseMetadataErrors = Field(
     'runGraderResponseMetadataErrors',
     _$runGraderResponseMetadataErrors,
-    key: r'RunGraderResponseMetadataErrors',
+    key: r'errors',
   );
   static num _$executionTime(RunGraderResponseMetadata v) => v.executionTime;
   static const Field<RunGraderResponseMetadata, num> _f$executionTime = Field(
@@ -74,6 +74,10 @@ class RunGraderResponseMetadataMapper
     #tokenUsage: _f$tokenUsage,
     #sampledModelName: _f$sampledModelName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunGraderResponseMetadata _instantiate(DecodingData data) {
     return RunGraderResponseMetadata(

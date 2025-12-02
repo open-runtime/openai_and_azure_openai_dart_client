@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_group_created_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogGroupCreatedData with AuditLogGroupCreatedDataMappable {
   const AuditLogGroupCreatedData({
     this.groupName,

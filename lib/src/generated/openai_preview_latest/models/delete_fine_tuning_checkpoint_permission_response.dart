@@ -8,7 +8,7 @@ import 'delete_fine_tuning_checkpoint_permission_response_object_object_enum.dar
 
 part 'delete_fine_tuning_checkpoint_permission_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteFineTuningCheckpointPermissionResponse with DeleteFineTuningCheckpointPermissionResponseMappable {
   const DeleteFineTuningCheckpointPermissionResponse({
     required this.id,

@@ -38,6 +38,10 @@ class DeletedRoleAssignmentResourceMapper
     #objectField: _f$objectField,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeletedRoleAssignmentResource _instantiate(DecodingData data) {
     return DeletedRoleAssignmentResource(

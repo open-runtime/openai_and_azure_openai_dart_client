@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'apply_patch_operation_param.dart';
 import 'apply_patch_update_file_operation_param_type_type.dart';
 
 part 'apply_patch_update_file_operation_param.mapper.dart';
 
 /// Instruction for updating an existing file via the apply_patch tool.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchUpdateFileOperationParam with ApplyPatchUpdateFileOperationParamMappable {
   const ApplyPatchUpdateFileOperationParam({
     required this.path,

@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_function_call_arguments_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_function_call_arguments_done_event.mapper.dart';
 
 /// Emitted when function-call arguments are finalized.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFunctionCallArgumentsDoneEvent with ResponseFunctionCallArgumentsDoneEventMappable {
   const ResponseFunctionCallArgumentsDoneEvent({
     required this.type,

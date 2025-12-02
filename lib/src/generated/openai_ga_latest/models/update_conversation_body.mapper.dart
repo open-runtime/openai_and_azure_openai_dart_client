@@ -33,6 +33,10 @@ class UpdateConversationBodyMapper
   final MappableFields<UpdateConversationBody> fields = const {
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateConversationBody _instantiate(DecodingData data) {
     return UpdateConversationBody(metadata: data.dec(_f$metadata));

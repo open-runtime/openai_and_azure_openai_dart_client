@@ -78,6 +78,10 @@ class EvalTextSimilarityGraderMapper
     #name: _f$name,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalTextSimilarityGrader _instantiate(DecodingData data) {
     return EvalTextSimilarityGrader(

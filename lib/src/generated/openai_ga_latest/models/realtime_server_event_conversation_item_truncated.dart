@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_conversation_item_truncated.mapper.dart';
 
 /// Returned when an earlier assistant audio message item is truncated by the .
@@ -13,7 +15,7 @@ part 'realtime_server_event_conversation_item_truncated.mapper.dart';
 /// This action will truncate the audio and remove the server-side text transcript .
 /// to ensure there is no text in the context that hasn't been heard by the user.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemTruncated with RealtimeServerEventConversationItemTruncatedMappable {
   const RealtimeServerEventConversationItemTruncated({
     required this.eventId,

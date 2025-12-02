@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chunking_settings.mapper.dart';
 
 /// Chunking settings
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChunkingSettings with ChunkingSettingsMappable {
   const ChunkingSettings({
     this.maxChunkSizeInTokens,

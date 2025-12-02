@@ -9,7 +9,7 @@ import 'ingestion_job_type.dart';
 part 'ingestion_job.mapper.dart';
 
 /// Represents the details of a job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJob with IngestionJobMappable {
   const IngestionJob({
     required this.kind,

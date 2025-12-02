@@ -8,7 +8,7 @@ import 'chat_completion_response_format.dart';
 
 part 'create_chat_completion_request_response_format.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequestResponseFormat with CreateChatCompletionRequestResponseFormatMappable {
   const CreateChatCompletionRequestResponseFormat({
     this.type,

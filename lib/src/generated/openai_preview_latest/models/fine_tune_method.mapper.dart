@@ -47,6 +47,10 @@ class FineTuneMethodMapper extends ClassMapperBase<FineTuneMethod> {
     #supervised: _f$supervised,
     #dpo: _f$dpo,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneMethod _instantiate(DecodingData data) {
     return FineTuneMethod(

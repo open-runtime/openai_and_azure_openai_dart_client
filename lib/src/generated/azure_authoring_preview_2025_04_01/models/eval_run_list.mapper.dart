@@ -54,7 +54,7 @@ class EvalRunListMapper extends ClassMapperBase<EvalRunList> {
         _$objectEnum,
         key: r'object',
         opt: true,
-        def: EvalRunListObjectObjectEnum.valueList,
+        def: EvalRunListObjectObjectEnum.list,
       );
 
   @override
@@ -65,6 +65,10 @@ class EvalRunListMapper extends ClassMapperBase<EvalRunList> {
     #lastId: _f$lastId,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunList _instantiate(DecodingData data) {
     return EvalRunList(

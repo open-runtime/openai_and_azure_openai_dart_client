@@ -49,6 +49,10 @@ class UsageMapper extends ClassMapperBase<Usage> {
     #completionTokens: _f$completionTokens,
     #promptTokens: _f$promptTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Usage _instantiate(DecodingData data) {
     return Usage(

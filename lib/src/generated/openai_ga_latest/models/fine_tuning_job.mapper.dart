@@ -18,7 +18,7 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
       FineTuningJobHyperparametersMapper.ensureInitialized();
       FineTuningJobObjectObjectEnumMapper.ensureInitialized();
       FineTuningJobStatusStatusMapper.ensureInitialized();
-      FineTuningIntegrationMapper.ensureInitialized();
+      FineTuningJobIntegrationsUnionMapper.ensureInitialized();
       FineTuneMethodMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
     }
@@ -60,7 +60,7 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
   _f$fineTuningJobHyperparameters = Field(
     'fineTuningJobHyperparameters',
     _$fineTuningJobHyperparameters,
-    key: r'FineTuningJobHyperparameters',
+    key: r'hyperparameters',
   );
   static String _$model(FineTuningJob v) => v.model;
   static const Field<FineTuningJob, String> _f$model = Field('model', _$model);
@@ -103,9 +103,10 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
   );
   static int _$seed(FineTuningJob v) => v.seed;
   static const Field<FineTuningJob, int> _f$seed = Field('seed', _$seed);
-  static List<FineTuningIntegration>? _$integrations(FineTuningJob v) =>
-      v.integrations;
-  static const Field<FineTuningJob, List<FineTuningIntegration>>
+  static List<FineTuningJobIntegrationsUnion>? _$integrations(
+    FineTuningJob v,
+  ) => v.integrations;
+  static const Field<FineTuningJob, List<FineTuningJobIntegrationsUnion>>
   _f$integrations = Field('integrations', _$integrations, opt: true);
   static int? _$estimatedFinish(FineTuningJob v) => v.estimatedFinish;
   static const Field<FineTuningJob, int> _f$estimatedFinish = Field(
@@ -149,6 +150,10 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
     #method: _f$method,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJob _instantiate(DecodingData data) {
     return FineTuningJob(
@@ -247,11 +252,11 @@ abstract class FineTuningJobCopyWith<$R, $In extends FineTuningJob, $Out>
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get resultFiles;
   ListCopyWith<
     $R,
-    FineTuningIntegration,
-    FineTuningIntegrationCopyWith<
+    FineTuningJobIntegrationsUnion,
+    FineTuningJobIntegrationsUnionCopyWith<
       $R,
-      FineTuningIntegration,
-      FineTuningIntegration
+      FineTuningJobIntegrationsUnion,
+      FineTuningJobIntegrationsUnion
     >
   >?
   get integrations;
@@ -273,7 +278,7 @@ abstract class FineTuningJobCopyWith<$R, $In extends FineTuningJob, $Out>
     String? trainingFile,
     String? validationFile,
     int? seed,
-    List<FineTuningIntegration>? integrations,
+    List<FineTuningJobIntegrationsUnion>? integrations,
     int? estimatedFinish,
     FineTuneMethod? method,
     Metadata? metadata,
@@ -312,11 +317,11 @@ class _FineTuningJobCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    FineTuningIntegration,
-    FineTuningIntegrationCopyWith<
+    FineTuningJobIntegrationsUnion,
+    FineTuningJobIntegrationsUnionCopyWith<
       $R,
-      FineTuningIntegration,
-      FineTuningIntegration
+      FineTuningJobIntegrationsUnion,
+      FineTuningJobIntegrationsUnion
     >
   >?
   get integrations => $value.integrations != null

@@ -70,6 +70,10 @@ class WidgetMessageItemMapper extends ClassMapperBase<WidgetMessageItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WidgetMessageItem _instantiate(DecodingData data) {
     return WidgetMessageItem(

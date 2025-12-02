@@ -69,6 +69,10 @@ class RealtimeServerEventResponseAudioDeltaMapper
     #contentIndex: _f$contentIndex,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseAudioDelta _instantiate(DecodingData data) {
     return RealtimeServerEventResponseAudioDelta(

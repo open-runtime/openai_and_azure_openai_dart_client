@@ -46,6 +46,10 @@ class RoleListResourceMapper extends ClassMapperBase<RoleListResource> {
     #hasMore: _f$hasMore,
     #next: _f$next,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RoleListResource _instantiate(DecodingData data) {
     return RoleListResource(

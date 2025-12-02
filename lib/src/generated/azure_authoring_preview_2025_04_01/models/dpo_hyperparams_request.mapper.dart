@@ -67,6 +67,10 @@ class DpoHyperparamsRequestMapper
     #beta: _f$beta,
     #l2Multiplier: _f$l2Multiplier,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DpoHyperparamsRequest _instantiate(DecodingData data) {
     return DpoHyperparamsRequest(

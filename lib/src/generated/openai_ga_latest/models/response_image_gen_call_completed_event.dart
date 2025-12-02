@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_image_gen_call_completed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_image_gen_call_completed_event.mapper.dart';
 
 /// Emitted when an image generation tool call has completed and the final image is available.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseImageGenCallCompletedEvent with ResponseImageGenCallCompletedEventMappable {
   const ResponseImageGenCallCompletedEvent({
     required this.type,

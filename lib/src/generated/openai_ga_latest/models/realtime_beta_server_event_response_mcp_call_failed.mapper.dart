@@ -50,6 +50,10 @@ class RealtimeBetaServerEventResponseMcpCallFailedMapper
         #outputIndex: _f$outputIndex,
         #itemId: _f$itemId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseMcpCallFailed _instantiate(
     DecodingData data,

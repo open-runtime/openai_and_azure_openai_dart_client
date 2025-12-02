@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'usage_time_bucket_object_object_enum.dart';
-import 'usage_time_bucket_result_result_union.dart';
+import 'usage_time_bucket_result_union.dart';
 
 part 'usage_time_bucket.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageTimeBucket with UsageTimeBucketMappable {
   const UsageTimeBucket({
     required this.objectEnum,
@@ -24,7 +24,7 @@ class UsageTimeBucket with UsageTimeBucketMappable {
   final int startTime;
   @MappableField(key: 'end_time')
   final int endTime;
-  final List<UsageTimeBucketResultResultUnion> result;
+  final List<UsageTimeBucketResultUnion> result;
 
   static UsageTimeBucket fromJson(Map<String, dynamic> json) => UsageTimeBucketMapper.fromJson(json);
 

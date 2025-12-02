@@ -8,7 +8,7 @@ import 'function_definition.dart';
 
 part 'tool.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Tool with ToolMappable {
   const Tool({
     this.type,

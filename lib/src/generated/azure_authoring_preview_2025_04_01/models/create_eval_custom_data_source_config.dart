@@ -9,7 +9,7 @@ import 'create_eval_custom_data_source_config_type_type.dart';
 part 'create_eval_custom_data_source_config.mapper.dart';
 
 /// A CustomDataSourceConfig object that defines the schema for the data source used for the evaluation runs. This schema is used to define the shape of the data that will be: - Used to define your testing criteria and - What data is required when creating a run
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCustomDataSourceConfig with CreateEvalCustomDataSourceConfigMappable {
   const CreateEvalCustomDataSourceConfig({
     required this.itemSchema,

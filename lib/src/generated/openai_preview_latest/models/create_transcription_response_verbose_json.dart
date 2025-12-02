@@ -10,7 +10,7 @@ import 'transcription_word.dart';
 part 'create_transcription_response_verbose_json.mapper.dart';
 
 /// Represents a verbose json transcription response returned by model, based on the provided input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseVerboseJson with CreateTranscriptionResponseVerboseJsonMappable {
   const CreateTranscriptionResponseVerboseJson({
     required this.language,

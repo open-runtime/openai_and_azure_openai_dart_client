@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'completion_usage_completion_tokens_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsageCompletionTokensDetails with CompletionUsageCompletionTokensDetailsMappable {
   const CompletionUsageCompletionTokensDetails({
     this.acceptedPredictionTokens,

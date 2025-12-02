@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation_param_type_type.dart';
+import 'apply_patch_operation_param.dart';
 
 part 'apply_patch_create_file_operation_param.mapper.dart';
 
 /// Instruction for creating a new file via the apply_patch tool.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchCreateFileOperationParam with ApplyPatchCreateFileOperationParamMappable {
   const ApplyPatchCreateFileOperationParam({
     required this.path,

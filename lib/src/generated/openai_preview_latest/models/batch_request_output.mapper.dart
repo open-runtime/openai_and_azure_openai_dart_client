@@ -43,7 +43,7 @@ class BatchRequestOutputMapper extends ClassMapperBase<BatchRequestOutput> {
   _f$batchRequestOutputResponse = Field(
     'batchRequestOutputResponse',
     _$batchRequestOutputResponse,
-    key: r'BatchRequestOutputResponse',
+    key: r'response',
     opt: true,
   );
   static BatchRequestOutputError? _$batchRequestOutputError(
@@ -53,7 +53,7 @@ class BatchRequestOutputMapper extends ClassMapperBase<BatchRequestOutput> {
   _f$batchRequestOutputError = Field(
     'batchRequestOutputError',
     _$batchRequestOutputError,
-    key: r'BatchRequestOutputError',
+    key: r'error',
     opt: true,
   );
 
@@ -64,6 +64,10 @@ class BatchRequestOutputMapper extends ClassMapperBase<BatchRequestOutput> {
     #batchRequestOutputResponse: _f$batchRequestOutputResponse,
     #batchRequestOutputError: _f$batchRequestOutputError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestOutput _instantiate(DecodingData data) {
     return BatchRequestOutput(

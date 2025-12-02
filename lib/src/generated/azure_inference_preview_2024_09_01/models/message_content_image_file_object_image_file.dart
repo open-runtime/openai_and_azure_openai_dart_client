@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'message_content_image_file_object_image_file.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentImageFileObjectImageFile with MessageContentImageFileObjectImageFileMappable {
   const MessageContentImageFileObjectImageFile({
     required this.fileId,

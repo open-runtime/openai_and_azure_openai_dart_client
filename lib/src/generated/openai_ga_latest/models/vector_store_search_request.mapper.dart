@@ -17,7 +17,7 @@ class VectorStoreSearchRequestMapper
       MapperContainer.globals.use(
         _instance = VectorStoreSearchRequestMapper._(),
       );
-      VectorStoreSearchRequestFiltersFiltersUnionMapper.ensureInitialized();
+      VectorStoreSearchRequestFiltersUnionMapper.ensureInitialized();
       VectorStoreSearchRequestRankingOptionsMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class VectorStoreSearchRequestMapper
     'query',
     _$query,
   );
-  static VectorStoreSearchRequestFiltersFiltersUnion? _$filters(
+  static VectorStoreSearchRequestFiltersUnion? _$filters(
     VectorStoreSearchRequest v,
   ) => v.filters;
   static const Field<
     VectorStoreSearchRequest,
-    VectorStoreSearchRequestFiltersFiltersUnion
+    VectorStoreSearchRequestFiltersUnion
   >
   _f$filters = Field('filters', _$filters, opt: true);
   static VectorStoreSearchRequestRankingOptions?
@@ -49,7 +49,7 @@ class VectorStoreSearchRequestMapper
   _f$vectorStoreSearchRequestRankingOptions = Field(
     'vectorStoreSearchRequestRankingOptions',
     _$vectorStoreSearchRequestRankingOptions,
-    key: r'VectorStoreSearchRequestRankingOptions',
+    key: r'ranking_options',
     opt: true,
   );
   static bool _$rewriteQuery(VectorStoreSearchRequest v) => v.rewriteQuery;
@@ -78,6 +78,10 @@ class VectorStoreSearchRequestMapper
     #rewriteQuery: _f$rewriteQuery,
     #maxNumResults: _f$maxNumResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchRequest _instantiate(DecodingData data) {
     return VectorStoreSearchRequest(
@@ -161,10 +165,10 @@ abstract class VectorStoreSearchRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  VectorStoreSearchRequestFiltersFiltersUnionCopyWith<
+  VectorStoreSearchRequestFiltersUnionCopyWith<
     $R,
-    VectorStoreSearchRequestFiltersFiltersUnion,
-    VectorStoreSearchRequestFiltersFiltersUnion
+    VectorStoreSearchRequestFiltersUnion,
+    VectorStoreSearchRequestFiltersUnion
   >?
   get filters;
   VectorStoreSearchRequestRankingOptionsCopyWith<
@@ -175,7 +179,7 @@ abstract class VectorStoreSearchRequestCopyWith<
   get vectorStoreSearchRequestRankingOptions;
   $R call({
     String? query,
-    VectorStoreSearchRequestFiltersFiltersUnion? filters,
+    VectorStoreSearchRequestFiltersUnion? filters,
     VectorStoreSearchRequestRankingOptions?
     vectorStoreSearchRequestRankingOptions,
     bool? rewriteQuery,
@@ -196,10 +200,10 @@ class _VectorStoreSearchRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VectorStoreSearchRequest> $mapper =
       VectorStoreSearchRequestMapper.ensureInitialized();
   @override
-  VectorStoreSearchRequestFiltersFiltersUnionCopyWith<
+  VectorStoreSearchRequestFiltersUnionCopyWith<
     $R,
-    VectorStoreSearchRequestFiltersFiltersUnion,
-    VectorStoreSearchRequestFiltersFiltersUnion
+    VectorStoreSearchRequestFiltersUnion,
+    VectorStoreSearchRequestFiltersUnion
   >?
   get filters => $value.filters?.copyWith.$chain((v) => call(filters: v));
   @override

@@ -10,7 +10,7 @@ import 'group_response.dart';
 part 'group_list_resource.mapper.dart';
 
 /// Paginated list of organization groups.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupListResource with GroupListResourceMappable {
   const GroupListResource({
     required this.objectEnum,

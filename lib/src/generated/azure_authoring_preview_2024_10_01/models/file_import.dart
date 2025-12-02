@@ -9,7 +9,7 @@ import 'purpose.dart';
 part 'file_import.mapper.dart';
 
 /// Defines a document to import from an external content url to be usable with Azure OpenAI.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileImport with FileImportMappable {
   const FileImport({
     required this.purpose,

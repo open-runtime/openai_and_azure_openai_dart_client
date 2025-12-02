@@ -12,7 +12,7 @@ part 'webhook_batch_completed.mapper.dart';
 
 /// Sent when a batch API request has been completed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCompleted with WebhookBatchCompletedMappable {
   const WebhookBatchCompleted({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookBatchCompleted with WebhookBatchCompletedMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookBatchCompletedData')
+  @MappableField(key: 'data')
   final WebhookBatchCompletedData webhookBatchCompletedData;
   final WebhookBatchCompletedTypeType type;
   @MappableField(key: 'object')

@@ -8,7 +8,7 @@ import 'realtime_transcription_session_create_request_turn_detection_type_type.d
 
 part 'realtime_transcription_session_create_request_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTranscriptionSessionCreateRequestTurnDetectionMappable {
   const RealtimeTranscriptionSessionCreateRequestTurnDetection({
     this.type,

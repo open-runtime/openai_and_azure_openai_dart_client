@@ -33,6 +33,10 @@ class AuditLogGroupUpdatedChangesRequestedMapper
   final MappableFields<AuditLogGroupUpdatedChangesRequested> fields = const {
     #groupName: _f$groupName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogGroupUpdatedChangesRequested _instantiate(DecodingData data) {
     return AuditLogGroupUpdatedChangesRequested(

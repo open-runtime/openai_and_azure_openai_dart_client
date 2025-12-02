@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'vector_store_file_object_chunking_strategy_chunking_strategy_union.dart';
+import 'vector_store_file_object_chunking_strategy_union.dart';
 import 'vector_store_file_object_last_error.dart';
 import 'vector_store_file_object_object_object_enum.dart';
 import 'vector_store_file_object_status_status.dart';
@@ -12,7 +12,7 @@ import 'vector_store_file_object_status_status.dart';
 part 'vector_store_file_object.mapper.dart';
 
 /// A list of files attached to a vector store.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileObject with VectorStoreFileObjectMappable {
   const VectorStoreFileObject({
     required this.id,
@@ -35,10 +35,10 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   @MappableField(key: 'vector_store_id')
   final String vectorStoreId;
   final VectorStoreFileObjectStatusStatus status;
-  @MappableField(key: 'VectorStoreFileObjectLastError')
+  @MappableField(key: 'last_error')
   final VectorStoreFileObjectLastError? vectorStoreFileObjectLastError;
   @MappableField(key: 'chunking_strategy')
-  final VectorStoreFileObjectChunkingStrategyChunkingStrategyUnion? chunkingStrategy;
+  final VectorStoreFileObjectChunkingStrategyUnion? chunkingStrategy;
 
   static VectorStoreFileObject fromJson(Map<String, dynamic> json) => VectorStoreFileObjectMapper.fromJson(json);
 

@@ -27,6 +27,10 @@ class WebSearchApproximateLocationUnionMapper
 
   @override
   final MappableFields<WebSearchApproximateLocationUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchApproximateLocationUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -125,6 +129,10 @@ class WebSearchApproximateLocationUnionVariant1Mapper
         #city: _f$city,
         #timezone: _f$timezone,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchApproximateLocationUnionVariant1 _instantiate(
     DecodingData data,

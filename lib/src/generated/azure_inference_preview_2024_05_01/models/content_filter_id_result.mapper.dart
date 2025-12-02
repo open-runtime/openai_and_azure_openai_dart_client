@@ -39,6 +39,10 @@ class ContentFilterIdResultMapper
     #filtered: _f$filtered,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterIdResult _instantiate(DecodingData data) {
     return ContentFilterIdResult(

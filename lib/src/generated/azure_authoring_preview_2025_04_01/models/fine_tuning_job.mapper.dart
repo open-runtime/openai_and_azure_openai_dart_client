@@ -166,6 +166,10 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
     #integrations: _f$integrations,
     #method: _f$method,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJob _instantiate(DecodingData data) {
     return FineTuningJob(

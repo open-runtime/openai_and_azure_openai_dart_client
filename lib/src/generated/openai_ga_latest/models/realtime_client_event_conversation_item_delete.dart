@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
+
 part 'realtime_client_event_conversation_item_delete.mapper.dart';
 
 /// Send this event when you want to remove any item from the conversation .
@@ -11,7 +13,7 @@ part 'realtime_client_event_conversation_item_delete.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventConversationItemDelete with RealtimeClientEventConversationItemDeleteMappable {
   const RealtimeClientEventConversationItemDelete({
     required this.type,

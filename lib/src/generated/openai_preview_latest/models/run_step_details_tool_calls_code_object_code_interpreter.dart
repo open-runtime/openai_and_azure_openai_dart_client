@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_step_details_tool_calls_code_object_code_interpreter_outputs_outputs_union.dart';
+import 'run_step_details_tool_calls_code_object_code_interpreter_outputs_union.dart';
 
 part 'run_step_details_tool_calls_code_object_code_interpreter.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsCodeObjectCodeInterpreter with RunStepDetailsToolCallsCodeObjectCodeInterpreterMappable {
   const RunStepDetailsToolCallsCodeObjectCodeInterpreter({
     required this.input,
@@ -16,7 +16,7 @@ class RunStepDetailsToolCallsCodeObjectCodeInterpreter with RunStepDetailsToolCa
   });
 
   final String input;
-  final List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion> outputs;
+  final List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion> outputs;
 
   static RunStepDetailsToolCallsCodeObjectCodeInterpreter fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper.fromJson(json);
 

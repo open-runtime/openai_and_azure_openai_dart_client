@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'modify_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyRunRequest with ModifyRunRequestMappable {
   const ModifyRunRequest({
     this.metadata,

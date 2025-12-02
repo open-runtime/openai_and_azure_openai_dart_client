@@ -40,6 +40,10 @@ class InviteProjectsMapper extends ClassMapperBase<InviteProjects> {
     #id: _f$id,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteProjects _instantiate(DecodingData data) {
     return InviteProjects(id: data.dec(_f$id), role: data.dec(_f$role));

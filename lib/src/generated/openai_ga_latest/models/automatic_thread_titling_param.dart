@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'automatic_thread_titling_param.mapper.dart';
 
 /// Controls whether ChatKit automatically generates thread titles.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AutomaticThreadTitlingParam with AutomaticThreadTitlingParamMappable {
   const AutomaticThreadTitlingParam({
     this.enabled,

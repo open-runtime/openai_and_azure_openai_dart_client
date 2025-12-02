@@ -8,7 +8,7 @@ import 'thread_object.dart';
 
 part 'list_threads_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListThreadsResponse with ListThreadsResponseMappable {
   const ListThreadsResponse({
     required this.objectField,

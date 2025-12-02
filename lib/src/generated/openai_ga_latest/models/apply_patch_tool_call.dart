@@ -5,13 +5,16 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_call_status.dart';
-import 'apply_patch_tool_call_operation_operation_union.dart';
+import 'apply_patch_tool_call_operation_union.dart';
 import 'apply_patch_tool_call_type_type.dart';
+import 'conversation_item.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'apply_patch_tool_call.mapper.dart';
 
 /// A tool call that applies file diffs by creating, deleting, or updating files.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchToolCall with ApplyPatchToolCallMappable {
   const ApplyPatchToolCall({
     required this.id,
@@ -26,7 +29,7 @@ class ApplyPatchToolCall with ApplyPatchToolCallMappable {
   @MappableField(key: 'call_id')
   final String callId;
   final ApplyPatchCallStatus status;
-  final ApplyPatchToolCallOperationOperationUnion operation;
+  final ApplyPatchToolCallOperationUnion operation;
   @MappableField(key: 'created_by')
   final String? createdBy;
   final ApplyPatchToolCallTypeType type;

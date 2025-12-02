@@ -11,7 +11,7 @@ part 'code_interpreter_file_output.mapper.dart';
 
 /// The output of a code interpreter tool call that is a file.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterFileOutput with CodeInterpreterFileOutputMappable {
   const CodeInterpreterFileOutput({
     required this.type,

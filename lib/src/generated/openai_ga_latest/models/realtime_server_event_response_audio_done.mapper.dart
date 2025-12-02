@@ -59,6 +59,10 @@ class RealtimeServerEventResponseAudioDoneMapper
     #outputIndex: _f$outputIndex,
     #contentIndex: _f$contentIndex,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseAudioDone _instantiate(DecodingData data) {
     return RealtimeServerEventResponseAudioDone(

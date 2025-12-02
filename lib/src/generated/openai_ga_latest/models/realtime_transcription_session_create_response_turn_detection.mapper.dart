@@ -81,6 +81,10 @@ class RealtimeTranscriptionSessionCreateResponseTurnDetectionMapper
     #prefixPaddingMs: _f$prefixPaddingMs,
     #silenceDurationMs: _f$silenceDurationMs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateResponseTurnDetection _instantiate(
     DecodingData data,

@@ -10,7 +10,7 @@ import 'run_tool_call_object_type_type.dart';
 part 'run_tool_call_object.mapper.dart';
 
 /// Tool call objects
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunToolCallObject with RunToolCallObjectMappable {
   const RunToolCallObject({
     required this.id,
@@ -20,7 +20,7 @@ class RunToolCallObject with RunToolCallObjectMappable {
 
   final String id;
   final RunToolCallObjectTypeType type;
-  @MappableField(key: 'RunToolCallObjectFunction')
+  @MappableField(key: 'function')
   final RunToolCallObjectFunction runToolCallObjectFunction;
 
   static RunToolCallObject fromJson(Map<String, dynamic> json) => RunToolCallObjectMapper.fromJson(json);

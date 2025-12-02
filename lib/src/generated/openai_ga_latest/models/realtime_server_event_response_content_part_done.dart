@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_response_content_part_done_part.dart';
 
 part 'realtime_server_event_response_content_part_done.mapper.dart';
@@ -11,7 +12,7 @@ part 'realtime_server_event_response_content_part_done.mapper.dart';
 /// Returned when a content part is done streaming in an assistant message item.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseContentPartDone with RealtimeServerEventResponseContentPartDoneMappable {
   const RealtimeServerEventResponseContentPartDone({
     required this.eventId,
@@ -34,7 +35,7 @@ class RealtimeServerEventResponseContentPartDone with RealtimeServerEventRespons
   final int outputIndex;
   @MappableField(key: 'content_index')
   final int contentIndex;
-  @MappableField(key: 'RealtimeServerEventResponseContentPartDonePart')
+  @MappableField(key: 'part')
   final RealtimeServerEventResponseContentPartDonePart realtimeServerEventResponseContentPartDonePart;
 
   static RealtimeServerEventResponseContentPartDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseContentPartDoneMapper.fromJson(json);

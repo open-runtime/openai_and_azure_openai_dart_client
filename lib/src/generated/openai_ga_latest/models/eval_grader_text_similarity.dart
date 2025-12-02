@@ -10,7 +10,7 @@ import 'grader_text_similarity_type_type.dart';
 
 part 'eval_grader_text_similarity.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalGraderTextSimilarity with EvalGraderTextSimilarityMappable {
   const EvalGraderTextSimilarity({
     required this.name,

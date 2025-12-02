@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_session_create_request_client_secret.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestClientSecret with RealtimeSessionCreateRequestClientSecretMappable {
   const RealtimeSessionCreateRequestClientSecret({
     required this.value,

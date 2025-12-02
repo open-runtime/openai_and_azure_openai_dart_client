@@ -79,6 +79,10 @@ class ResponseOutputTextAnnotationAddedEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #annotation: _f$annotation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseOutputTextAnnotationAddedEvent _instantiate(
     DecodingData data,

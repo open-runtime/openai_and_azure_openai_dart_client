@@ -10,7 +10,7 @@ part 'mcp_approval_response.mapper.dart';
 
 /// A response to an MCP approval request.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpApprovalResponse with McpApprovalResponseMappable {
   const McpApprovalResponse({
     required this.type,

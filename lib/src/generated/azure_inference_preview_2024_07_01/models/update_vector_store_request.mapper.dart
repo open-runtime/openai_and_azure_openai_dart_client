@@ -54,6 +54,10 @@ class UpdateVectorStoreRequestMapper
     #expiresAfter: _f$expiresAfter,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateVectorStoreRequest _instantiate(DecodingData data) {
     return UpdateVectorStoreRequest(

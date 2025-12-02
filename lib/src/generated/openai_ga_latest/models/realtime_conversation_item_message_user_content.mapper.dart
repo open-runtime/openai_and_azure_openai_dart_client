@@ -73,6 +73,10 @@ class RealtimeConversationItemMessageUserContentMapper
         #imageUrl: _f$imageUrl,
         #transcript: _f$transcript,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemMessageUserContent _instantiate(
     DecodingData data,

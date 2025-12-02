@@ -17,8 +17,8 @@ class CreateEvalResponsesRunDataSourceMapper
       MapperContainer.globals.use(
         _instance = CreateEvalResponsesRunDataSourceMapper._(),
       );
-      CreateEvalResponsesRunDataSourceSourceSourceUnionMapper.ensureInitialized();
-      CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnionMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized();
+      CreateEvalResponsesRunDataSourceInputMessagesUnionMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceSamplingParamsMapper.ensureInitialized();
       CreateEvalResponsesRunDataSourceTypeTypeMapper.ensureInitialized();
     }
@@ -28,19 +28,20 @@ class CreateEvalResponsesRunDataSourceMapper
   @override
   final String id = 'CreateEvalResponsesRunDataSource';
 
-  static CreateEvalResponsesRunDataSourceSourceSourceUnion _$source(
+  static CreateEvalResponsesRunDataSourceSourceUnion _$source(
     CreateEvalResponsesRunDataSource v,
   ) => v.source;
   static const Field<
     CreateEvalResponsesRunDataSource,
-    CreateEvalResponsesRunDataSourceSourceSourceUnion
+    CreateEvalResponsesRunDataSourceSourceUnion
   >
   _f$source = Field('source', _$source);
-  static CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion?
-  _$inputMessages(CreateEvalResponsesRunDataSource v) => v.inputMessages;
+  static CreateEvalResponsesRunDataSourceInputMessagesUnion? _$inputMessages(
+    CreateEvalResponsesRunDataSource v,
+  ) => v.inputMessages;
   static const Field<
     CreateEvalResponsesRunDataSource,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalResponsesRunDataSourceInputMessagesUnion
   >
   _f$inputMessages = Field(
     'inputMessages',
@@ -59,7 +60,7 @@ class CreateEvalResponsesRunDataSourceMapper
   _f$createEvalResponsesRunDataSourceSamplingParams = Field(
     'createEvalResponsesRunDataSourceSamplingParams',
     _$createEvalResponsesRunDataSourceSamplingParams,
-    key: r'CreateEvalResponsesRunDataSourceSamplingParams',
+    key: r'sampling_params',
     opt: true,
   );
   static String? _$model(CreateEvalResponsesRunDataSource v) => v.model;
@@ -91,6 +92,10 @@ class CreateEvalResponsesRunDataSourceMapper
     #model: _f$model,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalResponsesRunDataSource _instantiate(DecodingData data) {
     return CreateEvalResponsesRunDataSource(
@@ -182,16 +187,16 @@ abstract class CreateEvalResponsesRunDataSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalResponsesRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalResponsesRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalResponsesRunDataSourceSourceSourceUnion,
-    CreateEvalResponsesRunDataSourceSourceSourceUnion
+    CreateEvalResponsesRunDataSourceSourceUnion,
+    CreateEvalResponsesRunDataSourceSourceUnion
   >
   get source;
-  CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnionCopyWith<
+  CreateEvalResponsesRunDataSourceInputMessagesUnionCopyWith<
     $R,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalResponsesRunDataSourceInputMessagesUnion,
+    CreateEvalResponsesRunDataSourceInputMessagesUnion
   >?
   get inputMessages;
   CreateEvalResponsesRunDataSourceSamplingParamsCopyWith<
@@ -201,9 +206,8 @@ abstract class CreateEvalResponsesRunDataSourceCopyWith<
   >?
   get createEvalResponsesRunDataSourceSamplingParams;
   $R call({
-    CreateEvalResponsesRunDataSourceSourceSourceUnion? source,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion?
-    inputMessages,
+    CreateEvalResponsesRunDataSourceSourceUnion? source,
+    CreateEvalResponsesRunDataSourceInputMessagesUnion? inputMessages,
     CreateEvalResponsesRunDataSourceSamplingParams?
     createEvalResponsesRunDataSourceSamplingParams,
     String? model,
@@ -232,17 +236,17 @@ class _CreateEvalResponsesRunDataSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalResponsesRunDataSource> $mapper =
       CreateEvalResponsesRunDataSourceMapper.ensureInitialized();
   @override
-  CreateEvalResponsesRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalResponsesRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalResponsesRunDataSourceSourceSourceUnion,
-    CreateEvalResponsesRunDataSourceSourceSourceUnion
+    CreateEvalResponsesRunDataSourceSourceUnion,
+    CreateEvalResponsesRunDataSourceSourceUnion
   >
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
-  CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnionCopyWith<
+  CreateEvalResponsesRunDataSourceInputMessagesUnionCopyWith<
     $R,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion,
-    CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion
+    CreateEvalResponsesRunDataSourceInputMessagesUnion,
+    CreateEvalResponsesRunDataSourceInputMessagesUnion
   >?
   get inputMessages =>
       $value.inputMessages?.copyWith.$chain((v) => call(inputMessages: v));
@@ -258,7 +262,7 @@ class _CreateEvalResponsesRunDataSourceCopyWithImpl<$R, $Out>
       .$chain((v) => call(createEvalResponsesRunDataSourceSamplingParams: v));
   @override
   $R call({
-    CreateEvalResponsesRunDataSourceSourceSourceUnion? source,
+    CreateEvalResponsesRunDataSourceSourceUnion? source,
     Object? inputMessages = $none,
     Object? createEvalResponsesRunDataSourceSamplingParams = $none,
     Object? model = $none,

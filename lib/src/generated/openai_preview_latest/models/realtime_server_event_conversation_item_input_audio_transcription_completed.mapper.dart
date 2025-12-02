@@ -99,6 +99,10 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
     #transcript: _f$transcript,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
   _instantiate(DecodingData data) {

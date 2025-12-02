@@ -29,6 +29,10 @@ class ProjectUpdateRequestMapper extends ClassMapperBase<ProjectUpdateRequest> {
 
   @override
   final MappableFields<ProjectUpdateRequest> fields = const {#name: _f$name};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectUpdateRequest _instantiate(DecodingData data) {
     return ProjectUpdateRequest(name: data.dec(_f$name));

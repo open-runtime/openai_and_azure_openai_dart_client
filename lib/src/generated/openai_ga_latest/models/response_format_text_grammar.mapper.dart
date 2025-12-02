@@ -44,6 +44,10 @@ class ResponseFormatTextGrammarMapper
     #type: _f$type,
     #grammar: _f$grammar,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatTextGrammar _instantiate(DecodingData data) {
     return ResponseFormatTextGrammar(

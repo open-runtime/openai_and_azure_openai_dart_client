@@ -37,6 +37,10 @@ class RealtimeBetaServerEventInputAudioBufferClearedMapper
   @override
   final MappableFields<RealtimeBetaServerEventInputAudioBufferCleared> fields =
       const {#eventId: _f$eventId, #type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventInputAudioBufferCleared _instantiate(
     DecodingData data,

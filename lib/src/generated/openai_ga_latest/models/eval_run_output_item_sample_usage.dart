@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_run_output_item_sample_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemSampleUsage with EvalRunOutputItemSampleUsageMappable {
   const EvalRunOutputItemSampleUsage({
     required this.totalTokens,

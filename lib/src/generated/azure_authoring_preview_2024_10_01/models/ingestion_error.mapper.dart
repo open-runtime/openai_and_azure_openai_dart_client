@@ -39,6 +39,10 @@ class IngestionErrorMapper extends ClassMapperBase<IngestionError> {
     #message: _f$message,
     #innerErrors: _f$innerErrors,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionError _instantiate(DecodingData data) {
     return IngestionError(

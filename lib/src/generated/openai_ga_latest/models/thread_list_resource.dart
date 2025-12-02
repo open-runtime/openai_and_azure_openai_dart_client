@@ -9,7 +9,7 @@ import 'thread_resource.dart';
 part 'thread_list_resource.mapper.dart';
 
 /// A paginated list of ChatKit threads.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadListResource with ThreadListResourceMappable {
   const ThreadListResource({
     required this.data,

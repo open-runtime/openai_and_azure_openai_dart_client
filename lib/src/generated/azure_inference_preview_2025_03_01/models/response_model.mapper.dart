@@ -21,8 +21,8 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
-      ToolUnionMapper.ensureInitialized();
-      ResponsePropertiesToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      ToolMapper.ensureInitialized();
+      ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
       ResponseModelStatusStatusMapper.ensureInitialized();
       ResponseUsageMapper.ensureInitialized();
     }
@@ -56,7 +56,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
   _f$responseModelIncompleteDetails = Field(
     'responseModelIncompleteDetails',
     _$responseModelIncompleteDetails,
-    key: r'ResponseModelIncompleteDetails',
+    key: r'incomplete_details',
   );
   static List<OutputItem> _$output(ResponseModel v) => v.output;
   static const Field<ResponseModel, List<OutputItem>> _f$output = Field(
@@ -146,19 +146,18 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
   _f$responsePropertiesText = Field(
     'responsePropertiesText',
     _$responsePropertiesText,
-    key: r'ResponsePropertiesText',
+    key: r'text',
     opt: true,
   );
-  static List<ToolUnion?>? _$tools(ResponseModel v) => v.tools;
-  static const Field<ResponseModel, List<ToolUnion?>> _f$tools = Field(
+  static List<Tool>? _$tools(ResponseModel v) => v.tools;
+  static const Field<ResponseModel, List<Tool>> _f$tools = Field(
     'tools',
     _$tools,
     opt: true,
   );
-  static ResponsePropertiesToolChoiceToolChoiceUnion? _$toolChoice(
-    ResponseModel v,
-  ) => v.toolChoice;
-  static const Field<ResponseModel, ResponsePropertiesToolChoiceToolChoiceUnion>
+  static ResponsePropertiesToolChoiceUnion? _$toolChoice(ResponseModel v) =>
+      v.toolChoice;
+  static const Field<ResponseModel, ResponsePropertiesToolChoiceUnion>
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
@@ -208,6 +207,10 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     #outputText: _f$outputText,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseModel _instantiate(DecodingData data) {
     return ResponseModel(
@@ -319,12 +322,11 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     ResponsePropertiesText
   >?
   get responsePropertiesText;
-  ListCopyWith<$R, ToolUnion?, ToolUnionCopyWith<$R, ToolUnion, ToolUnion>?>?
-  get tools;
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools;
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice;
   ResponseUsageCopyWith<$R, ResponseUsage, ResponseUsage>? get usage;
@@ -347,8 +349,8 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     int? maxOutputTokens,
     String? instructions,
     ResponsePropertiesText? responsePropertiesText,
-    List<ToolUnion?>? tools,
-    ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice,
+    List<Tool>? tools,
+    ResponsePropertiesToolChoiceUnion? toolChoice,
     ResponseModelStatusStatus? status,
     String? outputText,
     ResponseUsage? usage,
@@ -406,19 +408,19 @@ class _ResponseModelCopyWithImpl<$R, $Out>
     (v) => call(responsePropertiesText: v),
   );
   @override
-  ListCopyWith<$R, ToolUnion?, ToolUnionCopyWith<$R, ToolUnion, ToolUnion>?>?
-  get tools => $value.tools != null
+  ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools =>
+      $value.tools != null
       ? ListCopyWith(
           $value.tools!,
-          (v, t) => v?.copyWith.$chain(t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(tools: v),
         )
       : null;
   @override
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));

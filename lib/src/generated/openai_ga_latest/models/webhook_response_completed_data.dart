@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_response_completed_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCompletedData with WebhookResponseCompletedDataMappable {
   const WebhookResponseCompletedData({
     required this.id,

@@ -60,6 +60,10 @@ class ResponseCustomToolCallInputDeltaEventMapper
     #itemId: _f$itemId,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCustomToolCallInputDeltaEvent _instantiate(DecodingData data) {
     return ResponseCustomToolCallInputDeltaEvent(

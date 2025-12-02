@@ -16,7 +16,7 @@ part 'realtime_transcription_session_create_response.mapper.dart';
 /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This.
 /// property is not present when a session is updated via the WebSocket API.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponse with RealtimeTranscriptionSessionCreateResponseMappable {
   const RealtimeTranscriptionSessionCreateResponse({
     required this.realtimeTranscriptionSessionCreateResponseClientSecret,
@@ -26,14 +26,14 @@ class RealtimeTranscriptionSessionCreateResponse with RealtimeTranscriptionSessi
     this.realtimeTranscriptionSessionCreateResponseTurnDetection,
   });
 
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseClientSecret')
+  @MappableField(key: 'client_secret')
   final RealtimeTranscriptionSessionCreateResponseClientSecret realtimeTranscriptionSessionCreateResponseClientSecret;
   final dynamic? modalities;
   @MappableField(key: 'input_audio_format')
   final String? inputAudioFormat;
   @MappableField(key: 'input_audio_transcription')
   final AudioTranscription? inputAudioTranscription;
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseTurnDetection')
+  @MappableField(key: 'turn_detection')
   final RealtimeTranscriptionSessionCreateResponseTurnDetection? realtimeTranscriptionSessionCreateResponseTurnDetection;
 
   static RealtimeTranscriptionSessionCreateResponse fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseMapper.fromJson(json);

@@ -17,7 +17,7 @@ part 'realtime_beta_client_event_input_audio_buffer_append.mapper.dart';
 /// VAD to be more responsive. Unlike made other client events, the server will .
 /// not send a confirmation response to this event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventInputAudioBufferAppend with RealtimeBetaClientEventInputAudioBufferAppendMappable {
   const RealtimeBetaClientEventInputAudioBufferAppend({
     required this.type,

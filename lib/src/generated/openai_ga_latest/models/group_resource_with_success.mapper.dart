@@ -54,6 +54,10 @@ class GroupResourceWithSuccessMapper
     #createdAt: _f$createdAt,
     #isScimManaged: _f$isScimManaged,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupResourceWithSuccess _instantiate(DecodingData data) {
     return GroupResourceWithSuccess(

@@ -10,7 +10,7 @@ import 'create_chat_completion_response_choices_logprobs.dart';
 
 part 'create_chat_completion_response_choices.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponseChoices with CreateChatCompletionResponseChoicesMappable {
   const CreateChatCompletionResponseChoices({
     required this.finishReason,

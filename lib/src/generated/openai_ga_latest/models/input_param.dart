@@ -15,7 +15,7 @@ part 'input_param.mapper.dart';
 /// - [Conversation state](https://platform.openai.com/docs/guides/conversation-state).
 /// - [Function calling](https://platform.openai.com/docs/guides/function-calling).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputParam with InputParamMappable {
   const InputParam();
 

@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_conversation_item_added.mapper.dart';
 
@@ -15,7 +16,7 @@ part 'realtime_server_event_conversation_item_added.mapper.dart';
 ///
 /// The event will include the full content of the Item (except when model is generating a Response) except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if necessary.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemAdded with RealtimeServerEventConversationItemAddedMappable {
   const RealtimeServerEventConversationItemAdded({
     required this.eventId,

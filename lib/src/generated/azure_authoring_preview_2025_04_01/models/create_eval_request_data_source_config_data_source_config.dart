@@ -12,7 +12,7 @@ import 'create_eval_logs_data_source_config_type_type.dart';
 part 'create_eval_request_data_source_config_data_source_config.mapper.dart';
 
 /// The configuration for the data source used for the evaluation runs.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRequestDataSourceConfigDataSourceConfig with CreateEvalRequestDataSourceConfigDataSourceConfigMappable {
   const CreateEvalRequestDataSourceConfigDataSourceConfig({
     required this.itemSchema,

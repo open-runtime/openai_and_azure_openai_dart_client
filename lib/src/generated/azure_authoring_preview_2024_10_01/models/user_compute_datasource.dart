@@ -8,7 +8,7 @@ import 'user_compute_datasource_type.dart';
 
 part 'user_compute_datasource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeDatasource with UserComputeDatasourceMappable {
   const UserComputeDatasource({
     required this.kind,

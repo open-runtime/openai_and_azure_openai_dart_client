@@ -60,6 +60,10 @@ class EvalRunOutputItemResultMapper
     #type: _f$type,
     #sample: _f$sample,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemResult _instantiate(DecodingData data) {
     return EvalRunOutputItemResult(

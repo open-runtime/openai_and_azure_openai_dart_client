@@ -62,7 +62,7 @@ class TranscriptTextUsageTokensMapper
   _f$transcriptTextUsageTokensInputTokenDetails = Field(
     'transcriptTextUsageTokensInputTokenDetails',
     _$transcriptTextUsageTokensInputTokenDetails,
-    key: r'TranscriptTextUsageTokensInputTokenDetails',
+    key: r'input_token_details',
     opt: true,
   );
 
@@ -75,6 +75,10 @@ class TranscriptTextUsageTokensMapper
     #transcriptTextUsageTokensInputTokenDetails:
         _f$transcriptTextUsageTokensInputTokenDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextUsageTokens _instantiate(DecodingData data) {
     return TranscriptTextUsageTokens(

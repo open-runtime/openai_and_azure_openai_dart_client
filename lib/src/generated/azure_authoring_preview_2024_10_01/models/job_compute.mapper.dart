@@ -27,6 +27,10 @@ class JobComputeMapper extends ClassMapperBase<JobCompute> {
 
   @override
   final MappableFields<JobCompute> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static JobCompute _instantiate(DecodingData data) {
     return JobCompute(kind: data.dec(_f$kind));

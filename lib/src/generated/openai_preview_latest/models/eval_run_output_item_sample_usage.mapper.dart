@@ -54,6 +54,10 @@ class EvalRunOutputItemSampleUsageMapper
     #promptTokens: _f$promptTokens,
     #cachedTokens: _f$cachedTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemSampleUsage _instantiate(DecodingData data) {
     return EvalRunOutputItemSampleUsage(

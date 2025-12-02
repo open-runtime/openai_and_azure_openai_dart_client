@@ -58,13 +58,13 @@ class RealtimeTranscriptionSessionCreateResponseGaAudioInputMapper
     RealtimeTranscriptionSessionCreateResponseGaAudioInput,
     RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction
   >
-  _f$realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction = Field(
-    'realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction',
-    _$realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction,
-    key:
-        r'RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction',
-    opt: true,
-  );
+  _f$realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction =
+      Field(
+        'realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction',
+        _$realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction,
+        key: r'noise_reduction',
+        opt: true,
+      );
   static RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection?
   _$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection(
     RealtimeTranscriptionSessionCreateResponseGaAudioInput v,
@@ -73,12 +73,13 @@ class RealtimeTranscriptionSessionCreateResponseGaAudioInputMapper
     RealtimeTranscriptionSessionCreateResponseGaAudioInput,
     RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection
   >
-  _f$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection = Field(
-    'realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection',
-    _$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection,
-    key: r'RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection',
-    opt: true,
-  );
+  _f$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection =
+      Field(
+        'realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection',
+        _$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection,
+        key: r'turn_detection',
+        opt: true,
+      );
 
   @override
   final MappableFields<RealtimeTranscriptionSessionCreateResponseGaAudioInput>
@@ -90,6 +91,10 @@ class RealtimeTranscriptionSessionCreateResponseGaAudioInputMapper
     #realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection:
         _f$realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateResponseGaAudioInput _instantiate(
     DecodingData data,

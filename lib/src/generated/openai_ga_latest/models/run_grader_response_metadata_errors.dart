@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_grader_response_metadata_errors.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunGraderResponseMetadataErrors with RunGraderResponseMetadataErrorsMappable {
   const RunGraderResponseMetadataErrors({
     required this.formulaParseError,

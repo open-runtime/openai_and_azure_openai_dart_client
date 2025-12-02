@@ -5,13 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_tool_type_type.dart';
+import 'tool.dart';
 
 part 'function_tool.mapper.dart';
 
 /// Defines a function in your own code the model can choose to call. Learn more.
 /// about [function calling](/docs/guides/function-calling).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionTool with FunctionToolMappable {
   const FunctionTool({
     required this.type,

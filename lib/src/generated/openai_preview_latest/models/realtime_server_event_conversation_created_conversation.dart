@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_server_event_conversation_created_conversation.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationCreatedConversation with RealtimeServerEventConversationCreatedConversationMappable {
   const RealtimeServerEventConversationCreatedConversation({
     this.id,

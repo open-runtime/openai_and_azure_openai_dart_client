@@ -4,13 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_conversation_item_deleted.mapper.dart';
 
 /// Returned when an item in the conversation is deleted by the client with a .
 /// `conversation.item.delete` event. This event is used to synchronize the .
 /// server's understanding of the conversation history with the client's view.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemDeleted with RealtimeServerEventConversationItemDeletedMappable {
   const RealtimeServerEventConversationItemDeleted({
     required this.eventId,

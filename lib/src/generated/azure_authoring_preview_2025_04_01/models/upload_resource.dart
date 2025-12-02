@@ -11,7 +11,7 @@ import 'upload_status.dart';
 
 part 'upload_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadResource with UploadResourceMappable {
   const UploadResource({
     this.objectField,

@@ -91,6 +91,10 @@ class ProjectRateLimitMapper extends ClassMapperBase<ProjectRateLimit> {
     #maxRequestsPer1Day: _f$maxRequestsPer1Day,
     #batch1DayMaxInputTokens: _f$batch1DayMaxInputTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectRateLimit _instantiate(DecodingData data) {
     return ProjectRateLimit(

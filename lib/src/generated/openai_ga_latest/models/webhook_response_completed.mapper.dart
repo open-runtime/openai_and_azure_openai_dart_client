@@ -45,7 +45,7 @@ class WebhookResponseCompletedMapper
   _f$webhookResponseCompletedData = Field(
     'webhookResponseCompletedData',
     _$webhookResponseCompletedData,
-    key: r'WebhookResponseCompletedData',
+    key: r'data',
   );
   static WebhookResponseCompletedTypeType _$type(WebhookResponseCompleted v) =>
       v.type;
@@ -68,6 +68,10 @@ class WebhookResponseCompletedMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseCompleted _instantiate(DecodingData data) {
     return WebhookResponseCompleted(

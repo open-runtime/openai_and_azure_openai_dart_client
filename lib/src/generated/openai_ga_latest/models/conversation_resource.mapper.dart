@@ -54,6 +54,10 @@ class ConversationResourceMapper extends ClassMapperBase<ConversationResource> {
     #createdAt: _f$createdAt,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConversationResource _instantiate(DecodingData data) {
     return ConversationResource(

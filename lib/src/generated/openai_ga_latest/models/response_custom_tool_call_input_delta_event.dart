@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_custom_tool_call_input_delta_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_custom_tool_call_input_delta_event.mapper.dart';
 
 /// Event representing a delta (partial update) to the input of a custom tool call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseCustomToolCallInputDeltaEvent with ResponseCustomToolCallInputDeltaEventMappable {
   const ResponseCustomToolCallInputDeltaEvent({
     required this.type,

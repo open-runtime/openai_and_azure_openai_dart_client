@@ -61,6 +61,10 @@ class ChatCompletionResponseMessageAnnotationsUrlCitationMapper
     #url: _f$url,
     #title: _f$title,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessageAnnotationsUrlCitation _instantiate(
     DecodingData data,

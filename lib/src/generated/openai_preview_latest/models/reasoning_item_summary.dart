@@ -8,7 +8,7 @@ import 'reasoning_item_summary_type_type.dart';
 
 part 'reasoning_item_summary.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ReasoningItemSummary with ReasoningItemSummaryMappable {
   const ReasoningItemSummary({
     required this.type,

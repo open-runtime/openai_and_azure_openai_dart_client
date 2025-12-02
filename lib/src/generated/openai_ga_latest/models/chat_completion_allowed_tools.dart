@@ -10,7 +10,7 @@ part 'chat_completion_allowed_tools.mapper.dart';
 
 /// Constrains the tools available to the model to a pre-defined set.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionAllowedTools with ChatCompletionAllowedToolsMappable {
   const ChatCompletionAllowedTools({
     required this.mode,

@@ -44,7 +44,7 @@ class AssistantsNamedToolChoiceMapper
   _f$assistantsNamedToolChoiceFunction = Field(
     'assistantsNamedToolChoiceFunction',
     _$assistantsNamedToolChoiceFunction,
-    key: r'AssistantsNamedToolChoiceFunction',
+    key: r'function',
     opt: true,
   );
 
@@ -53,6 +53,10 @@ class AssistantsNamedToolChoiceMapper
     #type: _f$type,
     #assistantsNamedToolChoiceFunction: _f$assistantsNamedToolChoiceFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsNamedToolChoice _instantiate(DecodingData data) {
     return AssistantsNamedToolChoice(

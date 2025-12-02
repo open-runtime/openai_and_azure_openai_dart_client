@@ -26,6 +26,10 @@ class ConversationParam2Mapper extends ClassMapperBase<ConversationParam2> {
 
   @override
   final MappableFields<ConversationParam2> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConversationParam2 _instantiate(DecodingData data) {
     return ConversationParam2(id: data.dec(_f$id));

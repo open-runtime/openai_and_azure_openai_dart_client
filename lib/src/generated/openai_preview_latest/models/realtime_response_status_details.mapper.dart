@@ -53,7 +53,7 @@ class RealtimeResponseStatusDetailsMapper
   _f$realtimeResponseStatusDetailsError = Field(
     'realtimeResponseStatusDetailsError',
     _$realtimeResponseStatusDetailsError,
-    key: r'RealtimeResponseStatusDetailsError',
+    key: r'error',
     opt: true,
   );
 
@@ -63,6 +63,10 @@ class RealtimeResponseStatusDetailsMapper
     #reason: _f$reason,
     #realtimeResponseStatusDetailsError: _f$realtimeResponseStatusDetailsError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseStatusDetails _instantiate(DecodingData data) {
     return RealtimeResponseStatusDetails(

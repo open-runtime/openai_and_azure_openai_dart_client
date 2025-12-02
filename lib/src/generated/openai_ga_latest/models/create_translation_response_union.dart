@@ -10,7 +10,7 @@ import 'create_translation_response_verbose_json.dart';
 
 part 'create_translation_response_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [CreateTranslationResponseUnionCreateTranslationResponseJson, CreateTranslationResponseUnionCreateTranslationResponseVerboseJson])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateTranslationResponseUnionCreateTranslationResponseJson, CreateTranslationResponseUnionCreateTranslationResponseVerboseJson])
 sealed class CreateTranslationResponseUnion with CreateTranslationResponseUnionMappable {
   const CreateTranslationResponseUnion();
 
@@ -33,7 +33,7 @@ extension CreateTranslationResponseUnionDeserializer on CreateTranslationRespons
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranslationResponseUnionCreateTranslationResponseJson extends CreateTranslationResponseUnion with CreateTranslationResponseUnionCreateTranslationResponseJsonMappable {
   final String text;
 
@@ -42,7 +42,7 @@ class CreateTranslationResponseUnionCreateTranslationResponseJson extends Create
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranslationResponseUnionCreateTranslationResponseVerboseJson extends CreateTranslationResponseUnion with CreateTranslationResponseUnionCreateTranslationResponseVerboseJsonMappable {
   final String language;
   final num duration;

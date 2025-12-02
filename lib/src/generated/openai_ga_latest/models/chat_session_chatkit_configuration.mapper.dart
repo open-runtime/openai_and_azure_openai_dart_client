@@ -55,6 +55,10 @@ class ChatSessionChatkitConfigurationMapper
     #fileUpload: _f$fileUpload,
     #history: _f$history,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatSessionChatkitConfiguration _instantiate(DecodingData data) {
     return ChatSessionChatkitConfiguration(

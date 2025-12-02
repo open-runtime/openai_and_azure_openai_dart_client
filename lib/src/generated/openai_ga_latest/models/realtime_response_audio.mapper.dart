@@ -30,7 +30,7 @@ class RealtimeResponseAudioMapper
   _f$realtimeResponseAudioOutput = Field(
     'realtimeResponseAudioOutput',
     _$realtimeResponseAudioOutput,
-    key: r'RealtimeResponseAudioOutput',
+    key: r'output',
     opt: true,
   );
 
@@ -38,6 +38,10 @@ class RealtimeResponseAudioMapper
   final MappableFields<RealtimeResponseAudio> fields = const {
     #realtimeResponseAudioOutput: _f$realtimeResponseAudioOutput,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseAudio _instantiate(DecodingData data) {
     return RealtimeResponseAudio(

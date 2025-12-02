@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'image_gen_input_usage_details.mapper.dart';
 
 /// The input tokens detailed information for the image generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenInputUsageDetails with ImageGenInputUsageDetailsMappable {
   const ImageGenInputUsageDetails({
     required this.textTokens,

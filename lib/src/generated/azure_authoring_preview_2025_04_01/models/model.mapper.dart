@@ -90,6 +90,10 @@ class ModelMapper extends ClassMapperBase<Model> {
     #model: _f$model,
     #fineTune: _f$fineTune,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Model _instantiate(DecodingData data) {
     return Model(

@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_input_audio_buffer_timeout_triggered.mapper.dart';
 
 /// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured.
@@ -20,7 +22,7 @@ part 'realtime_server_event_input_audio_buffer_timeout_triggered.mapper.dart';
 /// that didn't trigger VAD but is still detected by the model, so the model may respond with.
 /// something relevant to the conversation or a prompt to continue speaking.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventInputAudioBufferTimeoutTriggered with RealtimeServerEventInputAudioBufferTimeoutTriggeredMappable {
   const RealtimeServerEventInputAudioBufferTimeoutTriggered({
     required this.eventId,

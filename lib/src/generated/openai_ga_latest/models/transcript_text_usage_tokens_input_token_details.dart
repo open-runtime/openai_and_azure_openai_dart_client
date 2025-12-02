@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'transcript_text_usage_tokens_input_token_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextUsageTokensInputTokenDetails with TranscriptTextUsageTokensInputTokenDetailsMappable {
   const TranscriptTextUsageTokensInputTokenDetails({
     this.textTokens,

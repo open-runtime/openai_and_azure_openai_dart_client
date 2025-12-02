@@ -11,7 +11,7 @@ part 'realtime_beta_server_event_response_created.mapper.dart';
 /// Returned when a new Response is created. The first event of response creation,.
 /// where the response is in an initial state of `in_progress`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseCreated with RealtimeBetaServerEventResponseCreatedMappable {
   const RealtimeBetaServerEventResponseCreated({
     required this.eventId,

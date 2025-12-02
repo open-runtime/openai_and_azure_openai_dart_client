@@ -48,6 +48,10 @@ class UsageCodeInterpreterSessionsResultMapper
     #numSessions: _f$numSessions,
     #projectId: _f$projectId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageCodeInterpreterSessionsResult _instantiate(DecodingData data) {
     return UsageCodeInterpreterSessionsResult(

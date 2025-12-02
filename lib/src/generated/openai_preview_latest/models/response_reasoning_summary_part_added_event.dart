@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_reasoning_summary_part_added_event_part.dart';
 import 'response_reasoning_summary_part_added_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_reasoning_summary_part_added_event.mapper.dart';
 
 /// Emitted when a new reasoning summary part is added.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseReasoningSummaryPartAddedEvent with ResponseReasoningSummaryPartAddedEventMappable {
   const ResponseReasoningSummaryPartAddedEvent({
     required this.type,
@@ -27,7 +28,7 @@ class ResponseReasoningSummaryPartAddedEvent with ResponseReasoningSummaryPartAd
   final int outputIndex;
   @MappableField(key: 'summary_index')
   final int summaryIndex;
-  @MappableField(key: 'ResponseReasoningSummaryPartAddedEventPart')
+  @MappableField(key: 'part')
   final ResponseReasoningSummaryPartAddedEventPart responseReasoningSummaryPartAddedEventPart;
 
   static ResponseReasoningSummaryPartAddedEvent fromJson(Map<String, dynamic> json) => ResponseReasoningSummaryPartAddedEventMapper.fromJson(json);

@@ -34,6 +34,10 @@ class WebhookResponseIncompleteDataMapper
   final MappableFields<WebhookResponseIncompleteData> fields = const {
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseIncompleteData _instantiate(DecodingData data) {
     return WebhookResponseIncompleteData(id: data.dec(_f$id));

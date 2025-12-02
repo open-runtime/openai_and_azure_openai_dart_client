@@ -15,7 +15,7 @@ class UsageTimeBucketMapper extends ClassMapperBase<UsageTimeBucket> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UsageTimeBucketMapper._());
       UsageTimeBucketObjectObjectEnumMapper.ensureInitialized();
-      UsageTimeBucketResultResultUnionMapper.ensureInitialized();
+      UsageTimeBucketResultUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,9 +39,9 @@ class UsageTimeBucketMapper extends ClassMapperBase<UsageTimeBucket> {
     _$endTime,
     key: r'end_time',
   );
-  static List<UsageTimeBucketResultResultUnion> _$result(UsageTimeBucket v) =>
+  static List<UsageTimeBucketResultUnion> _$result(UsageTimeBucket v) =>
       v.result;
-  static const Field<UsageTimeBucket, List<UsageTimeBucketResultResultUnion>>
+  static const Field<UsageTimeBucket, List<UsageTimeBucketResultUnion>>
   _f$result = Field('result', _$result);
 
   @override
@@ -51,6 +51,10 @@ class UsageTimeBucketMapper extends ClassMapperBase<UsageTimeBucket> {
     #endTime: _f$endTime,
     #result: _f$result,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageTimeBucket _instantiate(DecodingData data) {
     return UsageTimeBucket(
@@ -125,11 +129,11 @@ abstract class UsageTimeBucketCopyWith<$R, $In extends UsageTimeBucket, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    UsageTimeBucketResultResultUnion,
-    UsageTimeBucketResultResultUnionCopyWith<
+    UsageTimeBucketResultUnion,
+    UsageTimeBucketResultUnionCopyWith<
       $R,
-      UsageTimeBucketResultResultUnion,
-      UsageTimeBucketResultResultUnion
+      UsageTimeBucketResultUnion,
+      UsageTimeBucketResultUnion
     >
   >
   get result;
@@ -137,7 +141,7 @@ abstract class UsageTimeBucketCopyWith<$R, $In extends UsageTimeBucket, $Out>
     UsageTimeBucketObjectObjectEnum? objectEnum,
     int? startTime,
     int? endTime,
-    List<UsageTimeBucketResultResultUnion>? result,
+    List<UsageTimeBucketResultUnion>? result,
   });
   UsageTimeBucketCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -155,11 +159,11 @@ class _UsageTimeBucketCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    UsageTimeBucketResultResultUnion,
-    UsageTimeBucketResultResultUnionCopyWith<
+    UsageTimeBucketResultUnion,
+    UsageTimeBucketResultUnionCopyWith<
       $R,
-      UsageTimeBucketResultResultUnion,
-      UsageTimeBucketResultResultUnion
+      UsageTimeBucketResultUnion,
+      UsageTimeBucketResultUnion
     >
   >
   get result => ListCopyWith(
@@ -172,7 +176,7 @@ class _UsageTimeBucketCopyWithImpl<$R, $Out>
     UsageTimeBucketObjectObjectEnum? objectEnum,
     int? startTime,
     int? endTime,
-    List<UsageTimeBucketResultResultUnion>? result,
+    List<UsageTimeBucketResultUnion>? result,
   }) => $apply(
     FieldCopyWithData({
       if (objectEnum != null) #objectEnum: objectEnum,

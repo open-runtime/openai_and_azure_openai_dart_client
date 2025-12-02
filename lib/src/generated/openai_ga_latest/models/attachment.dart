@@ -9,7 +9,7 @@ import 'attachment_type.dart';
 part 'attachment.mapper.dart';
 
 /// Attachment metadata included on thread items.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Attachment with AttachmentMappable {
   const Attachment({
     required this.type,

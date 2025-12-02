@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_choice_common.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionChoiceCommon with ChatCompletionChoiceCommonMappable {
   const ChatCompletionChoiceCommon({
     this.indexField,

@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_output_audio_buffer_clear_type_type.dart';
 
 part 'realtime_client_event_output_audio_buffer_clear.mapper.dart';
@@ -14,7 +15,7 @@ part 'realtime_client_event_output_audio_buffer_clear.mapper.dart';
 /// generation of the current response.
 /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventOutputAudioBufferClear with RealtimeClientEventOutputAudioBufferClearMappable {
   const RealtimeClientEventOutputAudioBufferClear({
     required this.type,

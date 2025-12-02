@@ -18,9 +18,11 @@ class RealtimeSessionCreateResponseMapper
         _instance = RealtimeSessionCreateResponseMapper._(),
       );
       RealtimeSessionCreateResponseClientSecretMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateResponseInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateResponseTurnDetectionMapper.ensureInitialized();
       RealtimeSessionCreateResponseToolsMapper.ensureInitialized();
+      RealtimeSessionCreateResponseMaxResponseOutputTokensUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,7 +41,7 @@ class RealtimeSessionCreateResponseMapper
   _f$realtimeSessionCreateResponseClientSecret = Field(
     'realtimeSessionCreateResponseClientSecret',
     _$realtimeSessionCreateResponseClientSecret,
-    key: r'RealtimeSessionCreateResponseClientSecret',
+    key: r'client_secret',
   );
   static dynamic _$modalities(RealtimeSessionCreateResponse v) => v.modalities;
   static const Field<RealtimeSessionCreateResponse, dynamic> _f$modalities =
@@ -48,12 +50,9 @@ class RealtimeSessionCreateResponseMapper
       v.instructions;
   static const Field<RealtimeSessionCreateResponse, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static String? _$voice(RealtimeSessionCreateResponse v) => v.voice;
-  static const Field<RealtimeSessionCreateResponse, String> _f$voice = Field(
-    'voice',
-    _$voice,
-    opt: true,
-  );
+  static VoiceIdsShared? _$voice(RealtimeSessionCreateResponse v) => v.voice;
+  static const Field<RealtimeSessionCreateResponse, VoiceIdsShared> _f$voice =
+      Field('voice', _$voice, opt: true, hook: const VoiceIdsSharedHook());
   static String? _$inputAudioFormat(RealtimeSessionCreateResponse v) =>
       v.inputAudioFormat;
   static const Field<RealtimeSessionCreateResponse, String>
@@ -83,7 +82,7 @@ class RealtimeSessionCreateResponseMapper
   _f$realtimeSessionCreateResponseInputAudioTranscription = Field(
     'realtimeSessionCreateResponseInputAudioTranscription',
     _$realtimeSessionCreateResponseInputAudioTranscription,
-    key: r'RealtimeSessionCreateResponseInputAudioTranscription',
+    key: r'input_audio_transcription',
     opt: true,
   );
   static RealtimeSessionCreateResponseTurnDetection?
@@ -97,7 +96,7 @@ class RealtimeSessionCreateResponseMapper
   _f$realtimeSessionCreateResponseTurnDetection = Field(
     'realtimeSessionCreateResponseTurnDetection',
     _$realtimeSessionCreateResponseTurnDetection,
-    key: r'RealtimeSessionCreateResponseTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
   static List<RealtimeSessionCreateResponseTools>? _$tools(
@@ -117,14 +116,19 @@ class RealtimeSessionCreateResponseMapper
     _$temperature,
     opt: true,
   );
-  static String? _$maxResponseOutputTokens(RealtimeSessionCreateResponse v) =>
+  static RealtimeSessionCreateResponseMaxResponseOutputTokensUnion?
+  _$maxResponseOutputTokens(RealtimeSessionCreateResponse v) =>
       v.maxResponseOutputTokens;
-  static const Field<RealtimeSessionCreateResponse, String>
+  static const Field<
+    RealtimeSessionCreateResponse,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion
+  >
   _f$maxResponseOutputTokens = Field(
     'maxResponseOutputTokens',
     _$maxResponseOutputTokens,
     key: r'max_response_output_tokens',
     opt: true,
+    hook: const RealtimeSessionCreateResponseMaxResponseOutputTokensUnionHook(),
   );
 
   @override
@@ -145,6 +149,10 @@ class RealtimeSessionCreateResponseMapper
     #temperature: _f$temperature,
     #maxResponseOutputTokens: _f$maxResponseOutputTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponse _instantiate(DecodingData data) {
     return RealtimeSessionCreateResponse(
@@ -249,6 +257,7 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     RealtimeSessionCreateResponseClientSecret
   >
   get realtimeSessionCreateResponseClientSecret;
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionCreateResponseInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionCreateResponseInputAudioTranscription,
@@ -271,12 +280,18 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     >
   >?
   get tools;
+  RealtimeSessionCreateResponseMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens;
   $R call({
     RealtimeSessionCreateResponseClientSecret?
     realtimeSessionCreateResponseClientSecret,
     dynamic modalities,
     String? instructions,
-    String? voice,
+    VoiceIdsShared? voice,
     String? inputAudioFormat,
     String? outputAudioFormat,
     RealtimeSessionCreateResponseInputAudioTranscription?
@@ -286,7 +301,8 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     List<RealtimeSessionCreateResponseTools>? tools,
     String? toolChoice,
     num? temperature,
-    String? maxResponseOutputTokens,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion?
+    maxResponseOutputTokens,
   });
   RealtimeSessionCreateResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -320,6 +336,9 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
       .realtimeSessionCreateResponseClientSecret
       .copyWith
       .$chain((v) => call(realtimeSessionCreateResponseClientSecret: v));
+  @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionCreateResponseInputAudioTranscriptionCopyWith<
     $R,
@@ -359,6 +378,14 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionCreateResponseMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion,
+    RealtimeSessionCreateResponseMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens => $value.maxResponseOutputTokens?.copyWith
+      .$chain((v) => call(maxResponseOutputTokens: v));
   @override
   $R call({
     RealtimeSessionCreateResponseClientSecret?

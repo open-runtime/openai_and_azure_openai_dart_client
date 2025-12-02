@@ -57,7 +57,7 @@ class ContentFilterDetectedWithCitationResultMapper
   _f$contentFilterDetectedWithCitationResultCitation = Field(
     'contentFilterDetectedWithCitationResultCitation',
     _$contentFilterDetectedWithCitationResultCitation,
-    key: r'ContentFilterDetectedWithCitationResultCitation',
+    key: r'citation',
     opt: true,
   );
 
@@ -69,6 +69,10 @@ class ContentFilterDetectedWithCitationResultMapper
     #contentFilterDetectedWithCitationResultCitation:
         _f$contentFilterDetectedWithCitationResultCitation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterDetectedWithCitationResult _instantiate(
     DecodingData data,

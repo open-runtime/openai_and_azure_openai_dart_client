@@ -4,9 +4,9 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_data_source_config_data_source_config_union.dart';
+import 'eval_data_source_config_union.dart';
 import 'eval_object_object_enum.dart';
-import 'eval_testing_criteria_testing_criteria_union.dart';
+import 'eval_testing_criteria_union.dart';
 import 'metadata.dart';
 
 part 'eval.mapper.dart';
@@ -18,7 +18,7 @@ part 'eval.mapper.dart';
 ///  - See how well my chatbot handles customer support.
 ///  - Check if o4-mini is better at my usecase than gpt-4o.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Eval with EvalMappable {
   const Eval({
     required this.id,
@@ -33,9 +33,9 @@ class Eval with EvalMappable {
   final String id;
   final String name;
   @MappableField(key: 'data_source_config')
-  final EvalDataSourceConfigDataSourceConfigUnion dataSourceConfig;
+  final EvalDataSourceConfigUnion dataSourceConfig;
   @MappableField(key: 'testing_criteria')
-  final List<EvalTestingCriteriaTestingCriteriaUnion> testingCriteria;
+  final List<EvalTestingCriteriaUnion> testingCriteria;
   @MappableField(key: 'created_at')
   final int createdAt;
   final Metadata metadata;

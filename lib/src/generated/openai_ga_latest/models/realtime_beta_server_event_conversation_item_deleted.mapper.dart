@@ -41,6 +41,10 @@ class RealtimeBetaServerEventConversationItemDeletedMapper
   @override
   final MappableFields<RealtimeBetaServerEventConversationItemDeleted> fields =
       const {#eventId: _f$eventId, #type: _f$type, #itemId: _f$itemId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemDeleted _instantiate(
     DecodingData data,

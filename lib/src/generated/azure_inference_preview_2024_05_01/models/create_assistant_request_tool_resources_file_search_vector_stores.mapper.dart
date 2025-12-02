@@ -52,6 +52,10 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper
     CreateAssistantRequestToolResourcesFileSearchVectorStores
   >
   fields = const {#fileIds: _f$fileIds, #metadata: _f$metadata};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateAssistantRequestToolResourcesFileSearchVectorStores _instantiate(
     DecodingData data,

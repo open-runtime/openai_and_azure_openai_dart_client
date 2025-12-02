@@ -61,7 +61,7 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
   _f$chatCompletionRequestAssistantMessageAudio = Field(
     'chatCompletionRequestAssistantMessageAudio',
     _$chatCompletionRequestAssistantMessageAudio,
-    key: r'ChatCompletionRequestAssistantMessageAudio',
+    key: r'audio',
     opt: true,
   );
   static List<ChatCompletionMessageToolCall>? _$toolCalls(
@@ -83,7 +83,7 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
   _f$chatCompletionRequestAssistantMessageFunctionCall = Field(
     'chatCompletionRequestAssistantMessageFunctionCall',
     _$chatCompletionRequestAssistantMessageFunctionCall,
-    key: r'ChatCompletionRequestAssistantMessageFunctionCall',
+    key: r'function_call',
     opt: true,
   );
   static FineTuneChatCompletionRequestAssistantMessageWeightWeight? _$weight(
@@ -109,6 +109,10 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
             _f$chatCompletionRequestAssistantMessageFunctionCall,
         #weight: _f$weight,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneChatCompletionRequestAssistantMessage _instantiate(
     DecodingData data,

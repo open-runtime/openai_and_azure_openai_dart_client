@@ -9,7 +9,7 @@ import 'apply_patch_delete_file_operation_type_type.dart';
 part 'apply_patch_delete_file_operation.mapper.dart';
 
 /// Instruction describing how to delete a file via the apply_patch tool.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchDeleteFileOperation with ApplyPatchDeleteFileOperationMappable {
   const ApplyPatchDeleteFileOperation({
     required this.path,

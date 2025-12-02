@@ -50,6 +50,10 @@ class CompletionUsagePromptTokensDetailsMapper
     #audioTokens: _f$audioTokens,
     #cachedTokens: _f$cachedTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsagePromptTokensDetails _instantiate(DecodingData data) {
     return CompletionUsagePromptTokensDetails(

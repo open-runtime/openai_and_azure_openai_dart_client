@@ -27,6 +27,10 @@ class TargetIndexMapper extends ClassMapperBase<TargetIndex> {
 
   @override
   final MappableFields<TargetIndex> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TargetIndex _instantiate(DecodingData data) {
     return TargetIndex(kind: data.dec(_f$kind));

@@ -48,7 +48,7 @@ class MessageDeltaContentImageFileObjectMapper
   _f$messageDeltaContentImageFileObjectImageFile = Field(
     'messageDeltaContentImageFileObjectImageFile',
     _$messageDeltaContentImageFileObjectImageFile,
-    key: r'MessageDeltaContentImageFileObjectImageFile',
+    key: r'image_file',
     opt: true,
   );
 
@@ -59,6 +59,10 @@ class MessageDeltaContentImageFileObjectMapper
     #messageDeltaContentImageFileObjectImageFile:
         _f$messageDeltaContentImageFileObjectImageFile,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentImageFileObject _instantiate(DecodingData data) {
     return MessageDeltaContentImageFileObject(

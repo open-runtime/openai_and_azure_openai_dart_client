@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'tool_choice.mapper.dart';
 
 /// Tool selection that the assistant should honor when executing the item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolChoice with ToolChoiceMappable {
   const ToolChoice({
     required this.id,

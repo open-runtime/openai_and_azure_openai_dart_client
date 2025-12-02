@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'message_stream_event.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEvent with MessageStreamEventMappable {
   const MessageStreamEvent();
 

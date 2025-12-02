@@ -47,7 +47,7 @@ class ImagesUsageMapper extends ClassMapperBase<ImagesUsage> {
   _f$imagesUsageInputTokensDetails = Field(
     'imagesUsageInputTokensDetails',
     _$imagesUsageInputTokensDetails,
-    key: r'ImagesUsageInputTokensDetails',
+    key: r'input_tokens_details',
   );
 
   @override
@@ -57,6 +57,10 @@ class ImagesUsageMapper extends ClassMapperBase<ImagesUsage> {
     #outputTokens: _f$outputTokens,
     #imagesUsageInputTokensDetails: _f$imagesUsageInputTokensDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImagesUsage _instantiate(DecodingData data) {
     return ImagesUsage(

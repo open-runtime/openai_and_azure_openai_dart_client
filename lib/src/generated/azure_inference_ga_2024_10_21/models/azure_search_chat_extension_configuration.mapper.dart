@@ -48,6 +48,10 @@ class AzureSearchChatExtensionConfigurationMapper
     #type: _f$type,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureSearchChatExtensionConfiguration _instantiate(DecodingData data) {
     return AzureSearchChatExtensionConfiguration(

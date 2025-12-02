@@ -59,6 +59,10 @@ class ResponseMcpCallFailedEventMapper
     #outputIndex: _f$outputIndex,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseMcpCallFailedEvent _instantiate(DecodingData data) {
     return ResponseMcpCallFailedEvent(

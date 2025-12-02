@@ -9,7 +9,7 @@ import 'usage_moderations_result_object_object_enum.dart';
 part 'usage_moderations_result.mapper.dart';
 
 /// The aggregated moderations usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageModerationsResult with UsageModerationsResultMappable {
   const UsageModerationsResult({
     required this.objectEnum,

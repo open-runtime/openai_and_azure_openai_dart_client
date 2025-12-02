@@ -17,10 +17,10 @@ class AzureSearchChatExtensionParametersMapper
       MapperContainer.globals.use(
         _instance = AzureSearchChatExtensionParametersMapper._(),
       );
-      AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionMapper.ensureInitialized();
+      AzureSearchChatExtensionParametersAuthenticationUnionMapper.ensureInitialized();
       AzureSearchIndexFieldMappingOptionsMapper.ensureInitialized();
       AzureSearchQueryTypeMapper.ensureInitialized();
-      AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMapper.ensureInitialized();
+      AzureSearchChatExtensionParametersEmbeddingDependencyUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,11 +28,12 @@ class AzureSearchChatExtensionParametersMapper
   @override
   final String id = 'AzureSearchChatExtensionParameters';
 
-  static AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion
-  _$authentication(AzureSearchChatExtensionParameters v) => v.authentication;
+  static AzureSearchChatExtensionParametersAuthenticationUnion _$authentication(
+    AzureSearchChatExtensionParameters v,
+  ) => v.authentication;
   static const Field<
     AzureSearchChatExtensionParameters,
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureSearchChatExtensionParametersAuthenticationUnion
   >
   _f$authentication = Field('authentication', _$authentication);
   static String _$endpoint(AzureSearchChatExtensionParameters v) => v.endpoint;
@@ -98,12 +99,12 @@ class AzureSearchChatExtensionParametersMapper
   static String? _$filter(AzureSearchChatExtensionParameters v) => v.filter;
   static const Field<AzureSearchChatExtensionParameters, String> _f$filter =
       Field('filter', _$filter, opt: true);
-  static AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+  static AzureSearchChatExtensionParametersEmbeddingDependencyUnion?
   _$embeddingDependency(AzureSearchChatExtensionParameters v) =>
       v.embeddingDependency;
   static const Field<
     AzureSearchChatExtensionParameters,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion
   >
   _f$embeddingDependency = Field(
     'embeddingDependency',
@@ -127,6 +128,10 @@ class AzureSearchChatExtensionParametersMapper
     #filter: _f$filter,
     #embeddingDependency: _f$embeddingDependency,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureSearchChatExtensionParameters _instantiate(DecodingData data) {
     return AzureSearchChatExtensionParameters(
@@ -224,10 +229,10 @@ abstract class AzureSearchChatExtensionParametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  AzureSearchChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion,
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureSearchChatExtensionParametersAuthenticationUnion,
+    AzureSearchChatExtensionParametersAuthenticationUnion
   >
   get authentication;
   AzureSearchIndexFieldMappingOptionsCopyWith<
@@ -236,15 +241,14 @@ abstract class AzureSearchChatExtensionParametersCopyWith<
     AzureSearchIndexFieldMappingOptions
   >?
   get fieldsMapping;
-  AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  AzureSearchChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion,
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion
   >?
   get embeddingDependency;
   $R call({
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion?
-    authentication,
+    AzureSearchChatExtensionParametersAuthenticationUnion? authentication,
     String? endpoint,
     String? indexName,
     int? topNDocuments,
@@ -255,7 +259,7 @@ abstract class AzureSearchChatExtensionParametersCopyWith<
     AzureSearchQueryType? queryType,
     String? semanticConfiguration,
     String? filter,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion?
     embeddingDependency,
   });
   AzureSearchChatExtensionParametersCopyWith<$R2, $In, $Out2>
@@ -280,10 +284,10 @@ class _AzureSearchChatExtensionParametersCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AzureSearchChatExtensionParameters> $mapper =
       AzureSearchChatExtensionParametersMapper.ensureInitialized();
   @override
-  AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  AzureSearchChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion,
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureSearchChatExtensionParametersAuthenticationUnion,
+    AzureSearchChatExtensionParametersAuthenticationUnion
   >
   get authentication =>
       $value.authentication.copyWith.$chain((v) => call(authentication: v));
@@ -296,18 +300,17 @@ class _AzureSearchChatExtensionParametersCopyWithImpl<$R, $Out>
   get fieldsMapping =>
       $value.fieldsMapping?.copyWith.$chain((v) => call(fieldsMapping: v));
   @override
-  AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  AzureSearchChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion,
+    AzureSearchChatExtensionParametersEmbeddingDependencyUnion
   >?
   get embeddingDependency => $value.embeddingDependency?.copyWith.$chain(
     (v) => call(embeddingDependency: v),
   );
   @override
   $R call({
-    AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion?
-    authentication,
+    AzureSearchChatExtensionParametersAuthenticationUnion? authentication,
     String? endpoint,
     String? indexName,
     Object? topNDocuments = $none,

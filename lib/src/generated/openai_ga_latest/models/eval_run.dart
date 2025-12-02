@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_api_error.dart';
-import 'eval_run_data_source_data_source_union.dart';
+import 'eval_run_data_source_union.dart';
 import 'eval_run_object_object_enum.dart';
 import 'eval_run_per_model_usage.dart';
 import 'eval_run_per_testing_criteria_results.dart';
@@ -16,7 +16,7 @@ part 'eval_run.mapper.dart';
 
 /// A schema representing an evaluation run.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRun with EvalRunMappable {
   const EvalRun({
     required this.id,
@@ -45,14 +45,14 @@ class EvalRun with EvalRunMappable {
   final int createdAt;
   @MappableField(key: 'report_url')
   final String reportUrl;
-  @MappableField(key: 'EvalRunResultCounts')
+  @MappableField(key: 'result_counts')
   final EvalRunResultCounts evalRunResultCounts;
   @MappableField(key: 'per_model_usage')
   final List<EvalRunPerModelUsage> perModelUsage;
   @MappableField(key: 'per_testing_criteria_results')
   final List<EvalRunPerTestingCriteriaResults> perTestingCriteriaResults;
   @MappableField(key: 'data_source')
-  final EvalRunDataSourceDataSourceUnion dataSource;
+  final EvalRunDataSourceUnion dataSource;
   final Metadata metadata;
   final EvalApiError error;
   @MappableField(key: 'object')

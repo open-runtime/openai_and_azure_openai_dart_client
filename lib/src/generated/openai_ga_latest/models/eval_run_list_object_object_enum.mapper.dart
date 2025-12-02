@@ -30,7 +30,7 @@ class EvalRunListObjectObjectEnumMapper
   EvalRunListObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return EvalRunListObjectObjectEnum.valueList;
+        return EvalRunListObjectObjectEnum.list;
       case 'unknown':
         return EvalRunListObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class EvalRunListObjectObjectEnumMapper
   @override
   dynamic encode(EvalRunListObjectObjectEnum self) {
     switch (self) {
-      case EvalRunListObjectObjectEnum.valueList:
+      case EvalRunListObjectObjectEnum.list:
         return 'list';
       case EvalRunListObjectObjectEnum.unknown:
         return 'unknown';

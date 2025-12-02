@@ -62,7 +62,7 @@ class CreateChatCompletionResponseChoicesMapper
   _f$createChatCompletionResponseChoicesLogprobs = Field(
     'createChatCompletionResponseChoicesLogprobs',
     _$createChatCompletionResponseChoicesLogprobs,
-    key: r'CreateChatCompletionResponseChoicesLogprobs',
+    key: r'logprobs',
   );
   static ContentFilterChoiceResults? _$contentFilterResults(
     CreateChatCompletionResponseChoices v,
@@ -87,6 +87,10 @@ class CreateChatCompletionResponseChoicesMapper
         _f$createChatCompletionResponseChoicesLogprobs,
     #contentFilterResults: _f$contentFilterResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionResponseChoices _instantiate(DecodingData data) {
     return CreateChatCompletionResponseChoices(

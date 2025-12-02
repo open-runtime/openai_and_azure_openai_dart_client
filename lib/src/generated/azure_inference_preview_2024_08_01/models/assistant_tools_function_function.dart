@@ -8,7 +8,7 @@ import 'chat_completion_function_parameters.dart';
 
 part 'assistant_tools_function_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFunctionFunction with AssistantToolsFunctionFunctionMappable {
   const AssistantToolsFunctionFunction({
     required this.description,

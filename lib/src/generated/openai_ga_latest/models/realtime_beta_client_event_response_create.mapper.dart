@@ -47,6 +47,10 @@ class RealtimeBetaClientEventResponseCreateMapper
     #eventId: _f$eventId,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaClientEventResponseCreate _instantiate(DecodingData data) {
     return RealtimeBetaClientEventResponseCreate(

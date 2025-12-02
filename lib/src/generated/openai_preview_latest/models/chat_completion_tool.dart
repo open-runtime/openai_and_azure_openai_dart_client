@@ -9,7 +9,7 @@ import 'function_object.dart';
 
 part 'chat_completion_tool.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionTool with ChatCompletionToolMappable {
   const ChatCompletionTool({
     required this.type,

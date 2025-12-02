@@ -45,7 +45,7 @@ class RunStepDetailsMessageCreationObjectMapper
   _f$runStepDetailsMessageCreationObjectMessageCreation = Field(
     'runStepDetailsMessageCreationObjectMessageCreation',
     _$runStepDetailsMessageCreationObjectMessageCreation,
-    key: r'RunStepDetailsMessageCreationObjectMessageCreation',
+    key: r'message_creation',
   );
 
   @override
@@ -54,6 +54,10 @@ class RunStepDetailsMessageCreationObjectMapper
     #runStepDetailsMessageCreationObjectMessageCreation:
         _f$runStepDetailsMessageCreationObjectMessageCreation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsMessageCreationObject _instantiate(DecodingData data) {
     return RunStepDetailsMessageCreationObject(

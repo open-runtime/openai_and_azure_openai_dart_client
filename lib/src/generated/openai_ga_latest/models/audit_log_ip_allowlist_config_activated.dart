@@ -8,7 +8,7 @@ import 'audit_log_ip_allowlist_config_activated_configs.dart';
 
 part 'audit_log_ip_allowlist_config_activated.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogIpAllowlistConfigActivated with AuditLogIpAllowlistConfigActivatedMappable {
   const AuditLogIpAllowlistConfigActivated({
     this.configs,

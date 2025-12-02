@@ -13,7 +13,7 @@ import 'realtime_conversation_item_message_user_type_type.dart';
 part 'realtime_conversation_item_message_user.mapper.dart';
 
 /// A user message item in a Realtime conversation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageUser with RealtimeConversationItemMessageUserMappable {
   const RealtimeConversationItemMessageUser({
     required this.type,

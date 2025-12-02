@@ -31,6 +31,10 @@ class ChatCompletionRequestAssistantMessageAudioMapper
   @override
   final MappableFields<ChatCompletionRequestAssistantMessageAudio> fields =
       const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestAssistantMessageAudio _instantiate(
     DecodingData data,

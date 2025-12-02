@@ -53,6 +53,10 @@ class EvalJsonlFileContentSourceMapper
     #content: _f$content,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalJsonlFileContentSource _instantiate(DecodingData data) {
     return EvalJsonlFileContentSource(

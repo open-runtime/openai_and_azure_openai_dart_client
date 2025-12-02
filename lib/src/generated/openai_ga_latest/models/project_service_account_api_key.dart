@@ -8,7 +8,7 @@ import 'project_service_account_api_key_object_object_enum.dart';
 
 part 'project_service_account_api_key.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountApiKey with ProjectServiceAccountApiKeyMappable {
   const ProjectServiceAccountApiKey({
     required this.objectEnum,

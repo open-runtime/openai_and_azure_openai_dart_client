@@ -16,7 +16,7 @@ import 'run_step_stream_event_union_variant7_event_event.dart';
 
 part 'run_step_stream_event_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [RunStepStreamEventUnionVariant1, RunStepStreamEventUnionVariant2, RunStepStreamEventUnionVariant3, RunStepStreamEventUnionVariant4, RunStepStreamEventUnionVariant5, RunStepStreamEventUnionVariant6, RunStepStreamEventUnionVariant7])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RunStepStreamEventUnionVariant1, RunStepStreamEventUnionVariant2, RunStepStreamEventUnionVariant3, RunStepStreamEventUnionVariant4, RunStepStreamEventUnionVariant5, RunStepStreamEventUnionVariant6, RunStepStreamEventUnionVariant7])
 sealed class RunStepStreamEventUnion with RunStepStreamEventUnionMappable {
   const RunStepStreamEventUnion();
 
@@ -54,7 +54,7 @@ extension RunStepStreamEventUnionDeserializer on RunStepStreamEventUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant1 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant1Mappable {
   final RunStepStreamEventUnionVariant1EventEvent event;
   final RunStepObject data;
@@ -65,7 +65,7 @@ class RunStepStreamEventUnionVariant1 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant2 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant2Mappable {
   final RunStepStreamEventUnionVariant2EventEvent event;
   final RunStepObject data;
@@ -76,7 +76,7 @@ class RunStepStreamEventUnionVariant2 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant3 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant3Mappable {
   final RunStepStreamEventUnionVariant3EventEvent event;
   final RunStepDeltaObject data;
@@ -87,7 +87,7 @@ class RunStepStreamEventUnionVariant3 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant4 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant4Mappable {
   final RunStepStreamEventUnionVariant4EventEvent event;
   final RunStepObject data;
@@ -98,7 +98,7 @@ class RunStepStreamEventUnionVariant4 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant5 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant5Mappable {
   final RunStepStreamEventUnionVariant5EventEvent event;
   final RunStepObject data;
@@ -109,7 +109,7 @@ class RunStepStreamEventUnionVariant5 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant6 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant6Mappable {
   final RunStepStreamEventUnionVariant6EventEvent event;
   final RunStepObject data;
@@ -120,7 +120,7 @@ class RunStepStreamEventUnionVariant6 extends RunStepStreamEventUnion with RunSt
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant7 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant7Mappable {
   final RunStepStreamEventUnionVariant7EventEvent event;
   final RunStepObject data;

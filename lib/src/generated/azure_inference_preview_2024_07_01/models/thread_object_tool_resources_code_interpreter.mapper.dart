@@ -38,6 +38,10 @@ class ThreadObjectToolResourcesCodeInterpreterMapper
   @override
   final MappableFields<ThreadObjectToolResourcesCodeInterpreter> fields =
       const {#fileIds: _f$fileIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadObjectToolResourcesCodeInterpreter _instantiate(
     DecodingData data,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'computer_call_safety_check_param.mapper.dart';
 
 /// A pending safety check for the computer call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerCallSafetyCheckParam with ComputerCallSafetyCheckParamMappable {
   const ComputerCallSafetyCheckParam({
     required this.id,

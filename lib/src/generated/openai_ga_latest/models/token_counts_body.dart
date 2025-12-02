@@ -13,7 +13,7 @@ import 'truncation_enum.dart';
 
 part 'token_counts_body.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TokenCountsBody with TokenCountsBodyMappable {
   const TokenCountsBody({
     this.model,

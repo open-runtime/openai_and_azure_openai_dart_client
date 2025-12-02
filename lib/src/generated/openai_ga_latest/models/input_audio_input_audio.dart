@@ -8,7 +8,7 @@ import 'input_audio_input_audio_format_format.dart';
 
 part 'input_audio_input_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputAudioInputAudio with InputAudioInputAudioMappable {
   const InputAudioInputAudio({
     required this.data,

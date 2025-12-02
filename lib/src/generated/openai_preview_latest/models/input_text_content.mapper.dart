@@ -33,6 +33,10 @@ class InputTextContentMapper extends ClassMapperBase<InputTextContent> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputTextContent _instantiate(DecodingData data) {
     return InputTextContent(text: data.dec(_f$text), type: data.dec(_f$type));

@@ -8,7 +8,7 @@ import 'stored_completion.dart';
 
 part 'stored_completion_list.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionList with StoredCompletionListMappable {
   const StoredCompletionList({
     this.objectField,

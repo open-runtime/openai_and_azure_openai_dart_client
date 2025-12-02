@@ -8,7 +8,7 @@ part 'chat_completion_stream_options.mapper.dart';
 
 /// Options for streaming response. Only set this when you set `stream: true`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionStreamOptions with ChatCompletionStreamOptionsMappable {
   const ChatCompletionStreamOptions({
     this.includeUsage,

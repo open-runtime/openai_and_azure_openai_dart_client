@@ -8,7 +8,7 @@ import 'realtime_conversation_item_with_reference_content_type_type.dart';
 
 part 'realtime_conversation_item_with_reference_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemWithReferenceContent with RealtimeConversationItemWithReferenceContentMappable {
   const RealtimeConversationItemWithReferenceContent({
     this.type,

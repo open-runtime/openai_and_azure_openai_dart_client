@@ -34,6 +34,10 @@ class CreateTranslationResponseJsonMapper
   final MappableFields<CreateTranslationResponseJson> fields = const {
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranslationResponseJson _instantiate(DecodingData data) {
     return CreateTranslationResponseJson(text: data.dec(_f$text));

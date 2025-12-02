@@ -10,7 +10,7 @@ import 'completions_create_response_usage.dart';
 
 part 'completions_create_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionsCreateResponse with CompletionsCreateResponseMappable {
   const CompletionsCreateResponse({
     required this.id,
@@ -30,7 +30,7 @@ class CompletionsCreateResponse with CompletionsCreateResponseMappable {
   final List<CompletionsCreateResponseChoices> choices;
   @MappableField(key: 'prompt_filter_results')
   final PromptFilterResults? promptFilterResults;
-  @MappableField(key: 'CompletionsCreateResponseUsage')
+  @MappableField(key: 'usage')
   final CompletionsCreateResponseUsage? completionsCreateResponseUsage;
 
   static CompletionsCreateResponse fromJson(Map<String, dynamic> json) => CompletionsCreateResponseMapper.fromJson(json);

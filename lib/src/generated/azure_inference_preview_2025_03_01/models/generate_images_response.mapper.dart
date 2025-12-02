@@ -39,6 +39,10 @@ class GenerateImagesResponseMapper
     #created: _f$created,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GenerateImagesResponse _instantiate(DecodingData data) {
     return GenerateImagesResponse(

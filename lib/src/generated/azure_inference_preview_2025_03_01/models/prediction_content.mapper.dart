@@ -36,6 +36,10 @@ class PredictionContentMapper extends ClassMapperBase<PredictionContent> {
     #type: _f$type,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PredictionContent _instantiate(DecodingData data) {
     return PredictionContent(

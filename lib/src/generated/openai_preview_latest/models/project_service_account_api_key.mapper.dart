@@ -63,6 +63,10 @@ class ProjectServiceAccountApiKeyMapper
     #createdAt: _f$createdAt,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectServiceAccountApiKey _instantiate(DecodingData data) {
     return ProjectServiceAccountApiKey(

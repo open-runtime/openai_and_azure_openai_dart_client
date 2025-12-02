@@ -50,6 +50,10 @@ class DeleteVectorStoreFileResponseMapper
     #deleted: _f$deleted,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteVectorStoreFileResponse _instantiate(DecodingData data) {
     return DeleteVectorStoreFileResponse(

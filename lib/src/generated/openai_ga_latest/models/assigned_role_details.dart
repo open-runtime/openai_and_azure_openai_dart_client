@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'assigned_role_details.mapper.dart';
 
 /// Detailed information about a role assignment entry returned when listing assignments.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssignedRoleDetails with AssignedRoleDetailsMappable {
   const AssignedRoleDetails({
     required this.id,

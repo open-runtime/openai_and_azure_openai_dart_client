@@ -12,7 +12,7 @@ import 'metadata.dart';
 
 part 'batch.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Batch with BatchMappable {
   const Batch({
     required this.id,
@@ -48,7 +48,7 @@ class Batch with BatchMappable {
   final BatchStatusStatus status;
   @MappableField(key: 'created_at')
   final int createdAt;
-  @MappableField(key: 'BatchErrors')
+  @MappableField(key: 'errors')
   final BatchErrors? batchErrors;
   @MappableField(key: 'output_file_id')
   final String? outputFileId;
@@ -70,7 +70,7 @@ class Batch with BatchMappable {
   final int? cancellingAt;
   @MappableField(key: 'cancelled_at')
   final int? cancelledAt;
-  @MappableField(key: 'BatchRequestCounts')
+  @MappableField(key: 'request_counts')
   final BatchRequestCounts? batchRequestCounts;
   final Metadata? metadata;
 

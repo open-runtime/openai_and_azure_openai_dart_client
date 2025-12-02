@@ -69,6 +69,10 @@ class ApplyPatchToolCallItemParamMapper
     #id: _f$id,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApplyPatchToolCallItemParam _instantiate(DecodingData data) {
     return ApplyPatchToolCallItemParam(

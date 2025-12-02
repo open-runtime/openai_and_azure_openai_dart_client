@@ -33,6 +33,10 @@ class CreateVectorStoreFileBatchRequestMapper
   final MappableFields<CreateVectorStoreFileBatchRequest> fields = const {
     #fileIds: _f$fileIds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreFileBatchRequest _instantiate(DecodingData data) {
     return CreateVectorStoreFileBatchRequest(fileIds: data.dec(_f$fileIds));

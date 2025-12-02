@@ -9,7 +9,7 @@ import 'list_audit_logs_response_object_object_enum.dart';
 
 part 'list_audit_logs_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListAuditLogsResponse with ListAuditLogsResponseMappable {
   const ListAuditLogsResponse({
     required this.objectEnum,

@@ -70,6 +70,10 @@ class ImageResultMapper extends ClassMapperBase<ImageResult> {
     #revisedPrompt: _f$revisedPrompt,
     #promptFilterResults: _f$promptFilterResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageResult _instantiate(DecodingData data) {
     return ImageResult(

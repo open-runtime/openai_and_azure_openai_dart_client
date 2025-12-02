@@ -12,7 +12,7 @@ import 'system_compute_datasource.dart';
 
 part 'ingestion_job_system_compute.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobSystemCompute with IngestionJobSystemComputeMappable {
   const IngestionJobSystemCompute({
     required this.kind,

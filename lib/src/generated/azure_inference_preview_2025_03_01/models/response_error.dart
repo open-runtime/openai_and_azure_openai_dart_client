@@ -10,7 +10,7 @@ part 'response_error.mapper.dart';
 
 /// An error object returned when the model fails to generate a Response.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseError with ResponseErrorMappable {
   const ResponseError({
     required this.code,

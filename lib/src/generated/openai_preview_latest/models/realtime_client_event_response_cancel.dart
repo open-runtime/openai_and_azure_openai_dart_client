@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_response_cancel_type_type.dart';
 
 part 'realtime_client_event_response_cancel.mapper.dart';
@@ -12,7 +13,7 @@ part 'realtime_client_event_response_cancel.mapper.dart';
 /// with a `response.cancelled` event or an error if there is no response to .
 /// cancel.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventResponseCancel with RealtimeClientEventResponseCancelMappable {
   const RealtimeClientEventResponseCancel({
     required this.type,

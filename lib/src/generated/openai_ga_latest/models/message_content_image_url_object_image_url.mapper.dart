@@ -47,6 +47,10 @@ class MessageContentImageUrlObjectImageUrlMapper
     #url: _f$url,
     #detail: _f$detail,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentImageUrlObjectImageUrl _instantiate(DecodingData data) {
     return MessageContentImageUrlObjectImageUrl(

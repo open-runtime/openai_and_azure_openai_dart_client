@@ -68,6 +68,10 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
     #status: _f$status,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerToolCall _instantiate(DecodingData data) {
     return ComputerToolCall(

@@ -9,7 +9,7 @@ import 'static_chunking_strategy_response_param_type_type.dart';
 
 part 'static_chunking_strategy_response_param.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StaticChunkingStrategyResponseParam with StaticChunkingStrategyResponseParamMappable {
   const StaticChunkingStrategyResponseParam({
     required this.type,

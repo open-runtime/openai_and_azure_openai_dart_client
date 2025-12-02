@@ -2,8 +2,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
 
-import 'assistant_stream_event_union.dart';
-export 'assistant_stream_event_union.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'assistant_stream_event_data_data.dart';
+import 'assistant_stream_event_event_event.dart';
+import 'assistant_stream_event_event_event2.dart';
+import 'done_event.dart';
+import 'done_event_data_data.dart';
+import 'done_event_event_event.dart';
+import 'error.dart';
+import 'error_event.dart';
+import 'error_event_event_event.dart';
+
+part 'assistant_stream_event.mapper.dart';
 
 /// Represents an event emitted when streaming a Run.
 ///
@@ -23,4 +34,56 @@ export 'assistant_stream_event_union.dart';
 ///
 /// We may add additional events over time, so we recommend handling unknown events gracefully.
 /// in your code.
-typedef AssistantStreamEvent = AssistantStreamEventUnion?;
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'event', includeSubClasses: [
+  AssistantStreamEventError,
+  AssistantStreamEventDone
+])
+sealed class AssistantStreamEvent with AssistantStreamEventMappable {
+  const AssistantStreamEvent();
+
+  static AssistantStreamEvent fromJson(Map<String, dynamic> json) {
+    return AssistantStreamEventUnionDeserializer.tryDeserialize(json);
+  }
+}
+
+extension AssistantStreamEventUnionDeserializer on AssistantStreamEvent {
+  static AssistantStreamEvent tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'event',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      AssistantStreamEventError: 'error',
+      AssistantStreamEventDone: 'done',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[AssistantStreamEventError] => AssistantStreamEventErrorMapper.fromJson(json),
+      _ when value == effective[AssistantStreamEventDone] => AssistantStreamEventDoneMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for AssistantStreamEvent'),
+    };
+  }
+}
+
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
+class AssistantStreamEventError extends AssistantStreamEvent with AssistantStreamEventErrorMappable {
+  final AssistantStreamEventEventEvent event;
+  final Error data;
+
+  const AssistantStreamEventError({
+    required this.event,
+    required this.data,
+  });
+}
+
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'done')
+class AssistantStreamEventDone extends AssistantStreamEvent with AssistantStreamEventDoneMappable {
+  final AssistantStreamEventEventEvent2 event;
+  final AssistantStreamEventDataData data;
+
+  const AssistantStreamEventDone({
+    required this.event,
+    required this.data,
+  });
+}

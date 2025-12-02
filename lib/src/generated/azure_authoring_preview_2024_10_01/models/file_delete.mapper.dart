@@ -38,6 +38,10 @@ class FileDeleteMapper extends ClassMapperBase<FileDelete> {
     #deleted: _f$deleted,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileDelete _instantiate(DecodingData data) {
     return FileDelete(

@@ -45,7 +45,7 @@ class ChatCompletionRequestMessageContentPartFileMapper
   _f$chatCompletionRequestMessageContentPartFileFile = Field(
     'chatCompletionRequestMessageContentPartFileFile',
     _$chatCompletionRequestMessageContentPartFileFile,
-    key: r'ChatCompletionRequestMessageContentPartFileFile',
+    key: r'file',
   );
 
   @override
@@ -55,6 +55,10 @@ class ChatCompletionRequestMessageContentPartFileMapper
         #chatCompletionRequestMessageContentPartFileFile:
             _f$chatCompletionRequestMessageContentPartFileFile,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartFile _instantiate(
     DecodingData data,

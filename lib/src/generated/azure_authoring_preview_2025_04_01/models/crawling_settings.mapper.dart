@@ -68,6 +68,10 @@ class CrawlingSettingsMapper extends ClassMapperBase<CrawlingSettings> {
     #maxRedirects: _f$maxRedirects,
     #maxFiles: _f$maxFiles,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CrawlingSettings _instantiate(DecodingData data) {
     return CrawlingSettings(

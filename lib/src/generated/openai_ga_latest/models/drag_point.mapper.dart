@@ -28,6 +28,10 @@ class DragPointMapper extends ClassMapperBase<DragPoint> {
 
   @override
   final MappableFields<DragPoint> fields = const {#x: _f$x, #y: _f$y};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DragPoint _instantiate(DecodingData data) {
     return DragPoint(x: data.dec(_f$x), y: data.dec(_f$y));

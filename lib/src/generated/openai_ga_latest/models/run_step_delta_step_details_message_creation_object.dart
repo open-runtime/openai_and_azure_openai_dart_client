@@ -10,7 +10,7 @@ import 'run_step_delta_step_details_message_creation_object_type_type.dart';
 part 'run_step_delta_step_details_message_creation_object.mapper.dart';
 
 /// Details of the message creation by the run step.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsMessageCreationObject with RunStepDeltaStepDetailsMessageCreationObjectMappable {
   const RunStepDeltaStepDetailsMessageCreationObject({
     required this.type,
@@ -18,7 +18,7 @@ class RunStepDeltaStepDetailsMessageCreationObject with RunStepDeltaStepDetailsM
   });
 
   final RunStepDeltaStepDetailsMessageCreationObjectTypeType type;
-  @MappableField(key: 'RunStepDeltaStepDetailsMessageCreationObjectMessageCreation')
+  @MappableField(key: 'message_creation')
   final RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? runStepDeltaStepDetailsMessageCreationObjectMessageCreation;
 
   static RunStepDeltaStepDetailsMessageCreationObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsMessageCreationObjectMapper.fromJson(json);

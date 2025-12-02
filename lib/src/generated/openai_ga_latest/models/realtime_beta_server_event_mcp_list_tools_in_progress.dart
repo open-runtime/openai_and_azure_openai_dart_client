@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_mcp_list_tools_in_progress.mapper.dart';
 
 /// Returned when listing MCP tools is in progress for an item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventMcpListToolsInProgress with RealtimeBetaServerEventMcpListToolsInProgressMappable {
   const RealtimeBetaServerEventMcpListToolsInProgress({
     required this.eventId,

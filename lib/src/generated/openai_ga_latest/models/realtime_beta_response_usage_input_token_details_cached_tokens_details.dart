@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_beta_response_usage_input_token_details_cached_tokens_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails with RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMappable {
   const RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails({
     this.textTokens,

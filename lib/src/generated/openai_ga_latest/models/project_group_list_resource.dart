@@ -10,7 +10,7 @@ import 'project_group_list_resource_object_object_enum.dart';
 part 'project_group_list_resource.mapper.dart';
 
 /// Paginated list of groups that have access to a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectGroupListResource with ProjectGroupListResourceMappable {
   const ProjectGroupListResource({
     required this.objectEnum,

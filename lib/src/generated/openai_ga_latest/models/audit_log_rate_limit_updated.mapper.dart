@@ -41,7 +41,7 @@ class AuditLogRateLimitUpdatedMapper
   _f$auditLogRateLimitUpdatedChangesRequested = Field(
     'auditLogRateLimitUpdatedChangesRequested',
     _$auditLogRateLimitUpdatedChangesRequested,
-    key: r'AuditLogRateLimitUpdatedChangesRequested',
+    key: r'changes_requested',
     opt: true,
   );
 
@@ -51,6 +51,10 @@ class AuditLogRateLimitUpdatedMapper
     #auditLogRateLimitUpdatedChangesRequested:
         _f$auditLogRateLimitUpdatedChangesRequested,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRateLimitUpdated _instantiate(DecodingData data) {
     return AuditLogRateLimitUpdated(

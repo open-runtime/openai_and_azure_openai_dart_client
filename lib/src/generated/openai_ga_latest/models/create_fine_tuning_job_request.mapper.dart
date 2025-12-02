@@ -17,6 +17,7 @@ class CreateFineTuningJobRequestMapper
       MapperContainer.globals.use(
         _instance = CreateFineTuningJobRequestMapper._(),
       );
+      CreateFineTuningJobRequestModelUnionMapper.ensureInitialized();
       CreateFineTuningJobRequestHyperparametersMapper.ensureInitialized();
       CreateFineTuningJobRequestIntegrationsMapper.ensureInitialized();
       FineTuneMethodMapper.ensureInitialized();
@@ -28,10 +29,17 @@ class CreateFineTuningJobRequestMapper
   @override
   final String id = 'CreateFineTuningJobRequest';
 
-  static String _$model(CreateFineTuningJobRequest v) => v.model;
-  static const Field<CreateFineTuningJobRequest, String> _f$model = Field(
+  static CreateFineTuningJobRequestModelUnion _$model(
+    CreateFineTuningJobRequest v,
+  ) => v.model;
+  static const Field<
+    CreateFineTuningJobRequest,
+    CreateFineTuningJobRequestModelUnion
+  >
+  _f$model = Field(
     'model',
     _$model,
+    hook: const CreateFineTuningJobRequestModelUnionHook(),
   );
   static String _$trainingFile(CreateFineTuningJobRequest v) => v.trainingFile;
   static const Field<CreateFineTuningJobRequest, String> _f$trainingFile =
@@ -51,7 +59,7 @@ class CreateFineTuningJobRequestMapper
   _f$createFineTuningJobRequestHyperparameters = Field(
     'createFineTuningJobRequestHyperparameters',
     _$createFineTuningJobRequestHyperparameters,
-    key: r'CreateFineTuningJobRequestHyperparameters',
+    key: r'hyperparameters',
     opt: true,
   );
   static String? _$validationFile(CreateFineTuningJobRequest v) =>
@@ -100,6 +108,10 @@ class CreateFineTuningJobRequestMapper
     #method: _f$method,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateFineTuningJobRequest _instantiate(DecodingData data) {
     return CreateFineTuningJobRequest(
@@ -191,6 +203,12 @@ abstract class CreateFineTuningJobRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateFineTuningJobRequestModelUnionCopyWith<
+    $R,
+    CreateFineTuningJobRequestModelUnion,
+    CreateFineTuningJobRequestModelUnion
+  >
+  get model;
   CreateFineTuningJobRequestHyperparametersCopyWith<
     $R,
     CreateFineTuningJobRequestHyperparameters,
@@ -210,7 +228,7 @@ abstract class CreateFineTuningJobRequestCopyWith<
   FineTuneMethodCopyWith<$R, FineTuneMethod, FineTuneMethod>? get method;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   $R call({
-    String? model,
+    CreateFineTuningJobRequestModelUnion? model,
     String? trainingFile,
     String? suffix,
     CreateFineTuningJobRequestHyperparameters?
@@ -239,6 +257,13 @@ class _CreateFineTuningJobRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateFineTuningJobRequest> $mapper =
       CreateFineTuningJobRequestMapper.ensureInitialized();
+  @override
+  CreateFineTuningJobRequestModelUnionCopyWith<
+    $R,
+    CreateFineTuningJobRequestModelUnion,
+    CreateFineTuningJobRequestModelUnion
+  >
+  get model => $value.model.copyWith.$chain((v) => call(model: v));
   @override
   CreateFineTuningJobRequestHyperparametersCopyWith<
     $R,
@@ -274,7 +299,7 @@ class _CreateFineTuningJobRequestCopyWithImpl<$R, $Out>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
   $R call({
-    String? model,
+    CreateFineTuningJobRequestModelUnion? model,
     String? trainingFile,
     Object? suffix = $none,
     Object? createFineTuningJobRequestHyperparameters = $none,

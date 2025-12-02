@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_eval_completions_run_data_source_sampling_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletionsRunDataSourceSamplingParamsMappable {
   const CreateEvalCompletionsRunDataSourceSamplingParams({
     this.seed = 42,

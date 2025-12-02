@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_session_create_response_ga_client_secret.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGaClientSecret with RealtimeSessionCreateResponseGaClientSecretMappable {
   const RealtimeSessionCreateResponseGaClientSecret({
     required this.value,

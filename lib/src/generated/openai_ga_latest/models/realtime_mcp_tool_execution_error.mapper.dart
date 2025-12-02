@@ -44,6 +44,10 @@ class RealtimeMcpToolExecutionErrorMapper
     #type: _f$type,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeMcpToolExecutionError _instantiate(DecodingData data) {
     return RealtimeMcpToolExecutionError(

@@ -32,6 +32,10 @@ class WaitMapper extends ClassMapperBase<Wait> {
 
   @override
   final MappableFields<Wait> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Wait _instantiate(DecodingData data) {
     return Wait(type: data.dec(_f$type));

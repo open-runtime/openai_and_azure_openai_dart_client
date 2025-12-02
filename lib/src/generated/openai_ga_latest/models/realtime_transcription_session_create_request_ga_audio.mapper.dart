@@ -37,7 +37,7 @@ class RealtimeTranscriptionSessionCreateRequestGaAudioMapper
   _f$realtimeTranscriptionSessionCreateRequestGaAudioInput = Field(
     'realtimeTranscriptionSessionCreateRequestGaAudioInput',
     _$realtimeTranscriptionSessionCreateRequestGaAudioInput,
-    key: r'RealtimeTranscriptionSessionCreateRequestGaAudioInput',
+    key: r'input',
     opt: true,
   );
 
@@ -47,6 +47,10 @@ class RealtimeTranscriptionSessionCreateRequestGaAudioMapper
     #realtimeTranscriptionSessionCreateRequestGaAudioInput:
         _f$realtimeTranscriptionSessionCreateRequestGaAudioInput,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequestGaAudio _instantiate(
     DecodingData data,

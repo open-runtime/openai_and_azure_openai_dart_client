@@ -10,7 +10,7 @@ part 'upload_part.mapper.dart';
 
 /// The upload Part represents a chunk of bytes we can add to an Upload object.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadPart with UploadPartMappable {
   const UploadPart({
     required this.id,

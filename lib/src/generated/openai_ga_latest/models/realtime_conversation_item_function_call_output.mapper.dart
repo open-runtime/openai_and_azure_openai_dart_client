@@ -72,6 +72,10 @@ class RealtimeConversationItemFunctionCallOutputMapper
         #objectEnum: _f$objectEnum,
         #status: _f$status,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemFunctionCallOutput _instantiate(
     DecodingData data,

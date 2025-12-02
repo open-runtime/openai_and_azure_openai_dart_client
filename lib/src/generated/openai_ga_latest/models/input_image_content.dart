@@ -4,13 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'function_and_custom_tool_call_output.dart';
 import 'image_detail.dart';
+import 'input_content.dart';
 import 'input_image_content_type_type.dart';
 
 part 'input_image_content.mapper.dart';
 
 /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputImageContent with InputImageContentMappable {
   const InputImageContent({
     required this.detail,

@@ -37,6 +37,10 @@ class ContentFilterDetectedWithCitationResultCitationMapper
   @override
   final MappableFields<ContentFilterDetectedWithCitationResultCitation> fields =
       const {#url: _f$url, #license: _f$license};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterDetectedWithCitationResultCitation _instantiate(
     DecodingData data,

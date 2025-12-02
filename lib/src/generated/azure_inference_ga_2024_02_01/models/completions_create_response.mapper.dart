@@ -73,7 +73,7 @@ class CompletionsCreateResponseMapper
   _f$completionsCreateResponseUsage = Field(
     'completionsCreateResponseUsage',
     _$completionsCreateResponseUsage,
-    key: r'CompletionsCreateResponseUsage',
+    key: r'usage',
     opt: true,
   );
 
@@ -87,6 +87,10 @@ class CompletionsCreateResponseMapper
     #promptFilterResults: _f$promptFilterResults,
     #completionsCreateResponseUsage: _f$completionsCreateResponseUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionsCreateResponse _instantiate(DecodingData data) {
     return CompletionsCreateResponse(

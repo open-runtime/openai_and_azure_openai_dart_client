@@ -37,6 +37,10 @@ class CreateEvalCompletionsRunDataSourceSourceMapper
   @override
   final MappableFields<CreateEvalCompletionsRunDataSourceSource> fields =
       const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCompletionsRunDataSourceSource _instantiate(
     DecodingData data,

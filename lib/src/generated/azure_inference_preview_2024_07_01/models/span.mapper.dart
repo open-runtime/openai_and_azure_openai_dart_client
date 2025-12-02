@@ -41,6 +41,10 @@ class SpanMapper extends ClassMapperBase<Span> {
     #length: _f$length,
     #polygon: _f$polygon,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Span _instantiate(DecodingData data) {
     return Span(

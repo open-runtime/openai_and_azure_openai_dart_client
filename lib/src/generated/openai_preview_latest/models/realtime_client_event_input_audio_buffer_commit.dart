@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_input_audio_buffer_commit_type_type.dart';
 
 part 'realtime_client_event_input_audio_buffer_commit.mapper.dart';
@@ -19,7 +20,7 @@ part 'realtime_client_event_input_audio_buffer_commit.mapper.dart';
 /// from the model. The server will respond with an `input_audio_buffer.committed` .
 /// event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventInputAudioBufferCommit with RealtimeClientEventInputAudioBufferCommitMappable {
   const RealtimeClientEventInputAudioBufferCommit({
     required this.type,

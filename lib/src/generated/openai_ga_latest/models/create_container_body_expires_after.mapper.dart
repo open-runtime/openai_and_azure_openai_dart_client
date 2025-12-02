@@ -44,6 +44,10 @@ class CreateContainerBodyExpiresAfterMapper
     #anchor: _f$anchor,
     #minutes: _f$minutes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateContainerBodyExpiresAfter _instantiate(DecodingData data) {
     return CreateContainerBodyExpiresAfter(

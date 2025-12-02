@@ -33,6 +33,10 @@ class AuditLogActorServiceAccountMapper
 
   @override
   final MappableFields<AuditLogActorServiceAccount> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogActorServiceAccount _instantiate(DecodingData data) {
     return AuditLogActorServiceAccount(id: data.dec(_f$id));

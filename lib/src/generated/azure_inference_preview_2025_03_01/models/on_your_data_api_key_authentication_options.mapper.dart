@@ -42,6 +42,10 @@ class OnYourDataApiKeyAuthenticationOptionsMapper
     #type: _f$type,
     #key: _f$key,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataApiKeyAuthenticationOptions _instantiate(DecodingData data) {
     return OnYourDataApiKeyAuthenticationOptions(

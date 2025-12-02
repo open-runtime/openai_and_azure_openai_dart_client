@@ -50,7 +50,7 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
   _f$messageContentTextAnnotationsFileCitationObjectFileCitation = Field(
     'messageContentTextAnnotationsFileCitationObjectFileCitation',
     _$messageContentTextAnnotationsFileCitationObjectFileCitation,
-    key: r'MessageContentTextAnnotationsFileCitationObjectFileCitation',
+    key: r'file_citation',
   );
   static int _$startIndex(MessageContentTextAnnotationsFileCitationObject v) =>
       v.startIndex;
@@ -71,6 +71,10 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
         #startIndex: _f$startIndex,
         #endIndex: _f$endIndex,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextAnnotationsFileCitationObject _instantiate(
     DecodingData data,

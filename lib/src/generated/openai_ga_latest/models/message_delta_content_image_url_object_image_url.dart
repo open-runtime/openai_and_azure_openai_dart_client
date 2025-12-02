@@ -8,7 +8,7 @@ import 'message_delta_content_image_url_object_image_url_detail_detail.dart';
 
 part 'message_delta_content_image_url_object_image_url.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentImageUrlObjectImageUrl with MessageDeltaContentImageUrlObjectImageUrlMappable {
   const MessageDeltaContentImageUrlObjectImageUrl({
     this.detail = MessageDeltaContentImageUrlObjectImageUrlDetailDetail.auto,

@@ -19,9 +19,10 @@ class RealtimeSessionCreateResponseMapper
       );
       RealtimeSessionCreateResponseIncludeIncludeMapper.ensureInitialized();
       RealtimeSessionCreateResponseAudioMapper.ensureInitialized();
-      RealtimeSessionCreateResponseTracingTracingUnionMapper.ensureInitialized();
+      RealtimeSessionCreateResponseTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseTurnDetectionMapper.ensureInitialized();
       RealtimeFunctionToolMapper.ensureInitialized();
+      RealtimeSessionCreateResponseMaxOutputTokensUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -83,15 +84,15 @@ class RealtimeSessionCreateResponseMapper
   _f$realtimeSessionCreateResponseAudio = Field(
     'realtimeSessionCreateResponseAudio',
     _$realtimeSessionCreateResponseAudio,
-    key: r'RealtimeSessionCreateResponseAudio',
+    key: r'audio',
     opt: true,
   );
-  static RealtimeSessionCreateResponseTracingTracingUnion? _$tracing(
+  static RealtimeSessionCreateResponseTracingUnion? _$tracing(
     RealtimeSessionCreateResponse v,
   ) => v.tracing;
   static const Field<
     RealtimeSessionCreateResponse,
-    RealtimeSessionCreateResponseTracingTracingUnion
+    RealtimeSessionCreateResponseTracingUnion
   >
   _f$tracing = Field('tracing', _$tracing, opt: true);
   static RealtimeSessionCreateResponseTurnDetection?
@@ -105,7 +106,7 @@ class RealtimeSessionCreateResponseMapper
   _f$realtimeSessionCreateResponseTurnDetection = Field(
     'realtimeSessionCreateResponseTurnDetection',
     _$realtimeSessionCreateResponseTurnDetection,
-    key: r'RealtimeSessionCreateResponseTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
   static List<RealtimeFunctionTool>? _$tools(RealtimeSessionCreateResponse v) =>
@@ -115,15 +116,20 @@ class RealtimeSessionCreateResponseMapper
   static String? _$toolChoice(RealtimeSessionCreateResponse v) => v.toolChoice;
   static const Field<RealtimeSessionCreateResponse, String> _f$toolChoice =
       Field('toolChoice', _$toolChoice, key: r'tool_choice', opt: true);
-  static String? _$maxOutputTokens(RealtimeSessionCreateResponse v) =>
-      v.maxOutputTokens;
-  static const Field<RealtimeSessionCreateResponse, String> _f$maxOutputTokens =
-      Field(
-        'maxOutputTokens',
-        _$maxOutputTokens,
-        key: r'max_output_tokens',
-        opt: true,
-      );
+  static RealtimeSessionCreateResponseMaxOutputTokensUnion? _$maxOutputTokens(
+    RealtimeSessionCreateResponse v,
+  ) => v.maxOutputTokens;
+  static const Field<
+    RealtimeSessionCreateResponse,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion
+  >
+  _f$maxOutputTokens = Field(
+    'maxOutputTokens',
+    _$maxOutputTokens,
+    key: r'max_output_tokens',
+    opt: true,
+    hook: const RealtimeSessionCreateResponseMaxOutputTokensUnionHook(),
+  );
 
   @override
   final MappableFields<RealtimeSessionCreateResponse> fields = const {
@@ -142,6 +148,10 @@ class RealtimeSessionCreateResponseMapper
     #toolChoice: _f$toolChoice,
     #maxOutputTokens: _f$maxOutputTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponse _instantiate(DecodingData data) {
     return RealtimeSessionCreateResponse(
@@ -255,10 +265,10 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     RealtimeSessionCreateResponseAudio
   >?
   get realtimeSessionCreateResponseAudio;
-  RealtimeSessionCreateResponseTracingTracingUnionCopyWith<
+  RealtimeSessionCreateResponseTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseTracingTracingUnion,
-    RealtimeSessionCreateResponseTracingTracingUnion
+    RealtimeSessionCreateResponseTracingUnion,
+    RealtimeSessionCreateResponseTracingUnion
   >?
   get tracing;
   RealtimeSessionCreateResponseTurnDetectionCopyWith<
@@ -273,6 +283,12 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     RealtimeFunctionToolCopyWith<$R, RealtimeFunctionTool, RealtimeFunctionTool>
   >?
   get tools;
+  RealtimeSessionCreateResponseMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion
+  >?
+  get maxOutputTokens;
   $R call({
     String? id,
     String? objectField,
@@ -282,12 +298,12 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     dynamic outputModalities,
     String? instructions,
     RealtimeSessionCreateResponseAudio? realtimeSessionCreateResponseAudio,
-    RealtimeSessionCreateResponseTracingTracingUnion? tracing,
+    RealtimeSessionCreateResponseTracingUnion? tracing,
     RealtimeSessionCreateResponseTurnDetection?
     realtimeSessionCreateResponseTurnDetection,
     List<RealtimeFunctionTool>? tools,
     String? toolChoice,
-    String? maxOutputTokens,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion? maxOutputTokens,
   });
   RealtimeSessionCreateResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -339,10 +355,10 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(realtimeSessionCreateResponseAudio: v));
   @override
-  RealtimeSessionCreateResponseTracingTracingUnionCopyWith<
+  RealtimeSessionCreateResponseTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateResponseTracingTracingUnion,
-    RealtimeSessionCreateResponseTracingTracingUnion
+    RealtimeSessionCreateResponseTracingUnion,
+    RealtimeSessionCreateResponseTracingUnion
   >?
   get tracing => $value.tracing?.copyWith.$chain((v) => call(tracing: v));
   @override
@@ -368,6 +384,14 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionCreateResponseMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion,
+    RealtimeSessionCreateResponseMaxOutputTokensUnion
+  >?
+  get maxOutputTokens =>
+      $value.maxOutputTokens?.copyWith.$chain((v) => call(maxOutputTokens: v));
   @override
   $R call({
     Object? id = $none,

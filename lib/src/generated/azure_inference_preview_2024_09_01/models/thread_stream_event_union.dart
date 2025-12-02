@@ -9,7 +9,7 @@ import 'thread_stream_event_union_variant1_event_event.dart';
 
 part 'thread_stream_event_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ThreadStreamEventUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ThreadStreamEventUnionVariant1])
 sealed class ThreadStreamEventUnion with ThreadStreamEventUnionMappable {
   const ThreadStreamEventUnion();
 
@@ -29,7 +29,7 @@ extension ThreadStreamEventUnionDeserializer on ThreadStreamEventUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadStreamEventUnionVariant1 extends ThreadStreamEventUnion with ThreadStreamEventUnionVariant1Mappable {
   final ThreadStreamEventUnionVariant1EventEvent event;
   final ThreadObject data;

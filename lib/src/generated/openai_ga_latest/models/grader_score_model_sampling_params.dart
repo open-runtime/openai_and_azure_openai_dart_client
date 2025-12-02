@@ -8,7 +8,7 @@ import 'reasoning_effort.dart';
 
 part 'grader_score_model_sampling_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderScoreModelSamplingParams with GraderScoreModelSamplingParamsMappable {
   const GraderScoreModelSamplingParams({
     this.topP = 1,

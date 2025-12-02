@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'web_search_location.mapper.dart';
 
 /// Approximate location parameters for the search.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchLocation with WebSearchLocationMappable {
   const WebSearchLocation({
     this.country,

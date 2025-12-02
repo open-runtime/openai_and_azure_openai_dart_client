@@ -9,7 +9,7 @@ import 'logprob.dart';
 
 part 'choice.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Choice with ChoiceMappable {
   const Choice({
     this.indexField,

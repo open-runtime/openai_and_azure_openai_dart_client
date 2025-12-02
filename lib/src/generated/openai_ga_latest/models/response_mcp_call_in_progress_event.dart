@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_mcp_call_in_progress_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_mcp_call_in_progress_event.mapper.dart';
 
 /// Emitted when an MCP  tool call is in progress.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseMcpCallInProgressEvent with ResponseMcpCallInProgressEventMappable {
   const ResponseMcpCallInProgressEvent({
     required this.type,

@@ -54,6 +54,10 @@ class ScrollMapper extends ClassMapperBase<Scroll> {
     #scrollY: _f$scrollY,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Scroll _instantiate(DecodingData data) {
     return Scroll(

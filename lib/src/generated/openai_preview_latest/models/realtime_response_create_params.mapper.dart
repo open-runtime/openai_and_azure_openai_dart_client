@@ -18,8 +18,11 @@ class RealtimeResponseCreateParamsMapper
         _instance = RealtimeResponseCreateParamsMapper._(),
       );
       RealtimeResponseCreateParamsModalitiesModalitiesMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeResponseCreateParamsToolsMapper.ensureInitialized();
+      RealtimeResponseCreateParamsMaxResponseOutputTokensUnionMapper.ensureInitialized();
+      RealtimeResponseCreateParamsConversationUnionMapper.ensureInitialized();
       RealtimeConversationItemWithReferenceMapper.ensureInitialized();
     }
     return _instance!;
@@ -40,12 +43,9 @@ class RealtimeResponseCreateParamsMapper
       v.instructions;
   static const Field<RealtimeResponseCreateParams, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static String? _$voice(RealtimeResponseCreateParams v) => v.voice;
-  static const Field<RealtimeResponseCreateParams, String> _f$voice = Field(
-    'voice',
-    _$voice,
-    opt: true,
-  );
+  static VoiceIdsShared? _$voice(RealtimeResponseCreateParams v) => v.voice;
+  static const Field<RealtimeResponseCreateParams, VoiceIdsShared> _f$voice =
+      Field('voice', _$voice, opt: true, hook: const VoiceIdsSharedHook());
   static RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat?
   _$outputAudioFormat(RealtimeResponseCreateParams v) => v.outputAudioFormat;
   static const Field<
@@ -75,19 +75,33 @@ class RealtimeResponseCreateParamsMapper
     _$temperature,
     opt: true,
   );
-  static String? _$maxResponseOutputTokens(RealtimeResponseCreateParams v) =>
+  static RealtimeResponseCreateParamsMaxResponseOutputTokensUnion?
+  _$maxResponseOutputTokens(RealtimeResponseCreateParams v) =>
       v.maxResponseOutputTokens;
-  static const Field<RealtimeResponseCreateParams, String>
+  static const Field<
+    RealtimeResponseCreateParams,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+  >
   _f$maxResponseOutputTokens = Field(
     'maxResponseOutputTokens',
     _$maxResponseOutputTokens,
     key: r'max_response_output_tokens',
     opt: true,
+    hook: const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionHook(),
   );
-  static String? _$conversation(RealtimeResponseCreateParams v) =>
-      v.conversation;
-  static const Field<RealtimeResponseCreateParams, String> _f$conversation =
-      Field('conversation', _$conversation, opt: true);
+  static RealtimeResponseCreateParamsConversationUnion? _$conversation(
+    RealtimeResponseCreateParams v,
+  ) => v.conversation;
+  static const Field<
+    RealtimeResponseCreateParams,
+    RealtimeResponseCreateParamsConversationUnion
+  >
+  _f$conversation = Field(
+    'conversation',
+    _$conversation,
+    opt: true,
+    hook: const RealtimeResponseCreateParamsConversationUnionHook(),
+  );
   static Map<String, String>? _$metadata(RealtimeResponseCreateParams v) =>
       v.metadata;
   static const Field<RealtimeResponseCreateParams, Map<String, String>>
@@ -115,6 +129,10 @@ class RealtimeResponseCreateParamsMapper
     #metadata: _f$metadata,
     #input: _f$input,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseCreateParams _instantiate(DecodingData data) {
     return RealtimeResponseCreateParams(
@@ -215,6 +233,7 @@ abstract class RealtimeResponseCreateParamsCopyWith<
     >
   >?
   get modalities;
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeResponseCreateParamsTools,
@@ -225,6 +244,18 @@ abstract class RealtimeResponseCreateParamsCopyWith<
     >
   >?
   get tools;
+  RealtimeResponseCreateParamsMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens;
+  RealtimeResponseCreateParamsConversationUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsConversationUnion,
+    RealtimeResponseCreateParamsConversationUnion
+  >?
+  get conversation;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
   ListCopyWith<
@@ -240,14 +271,15 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   $R call({
     List<RealtimeResponseCreateParamsModalitiesModalities>? modalities,
     String? instructions,
-    String? voice,
+    VoiceIdsShared? voice,
     RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat?
     outputAudioFormat,
     List<RealtimeResponseCreateParamsTools>? tools,
     String? toolChoice,
     num? temperature,
-    String? maxResponseOutputTokens,
-    String? conversation,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion?
+    maxResponseOutputTokens,
+    RealtimeResponseCreateParamsConversationUnion? conversation,
     Map<String, String>? metadata,
     List<RealtimeConversationItemWithReference>? input,
   });
@@ -291,6 +323,9 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
         )
       : null;
   @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
+  @override
   ListCopyWith<
     $R,
     RealtimeResponseCreateParamsTools,
@@ -307,6 +342,22 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeResponseCreateParamsMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens => $value.maxResponseOutputTokens?.copyWith
+      .$chain((v) => call(maxResponseOutputTokens: v));
+  @override
+  RealtimeResponseCreateParamsConversationUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsConversationUnion,
+    RealtimeResponseCreateParamsConversationUnion
+  >?
+  get conversation =>
+      $value.conversation?.copyWith.$chain((v) => call(conversation: v));
   @override
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata => $value.metadata != null

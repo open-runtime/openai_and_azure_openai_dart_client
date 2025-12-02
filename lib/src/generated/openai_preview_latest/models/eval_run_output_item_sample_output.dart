@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_run_output_item_sample_output.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemSampleOutput with EvalRunOutputItemSampleOutputMappable {
   const EvalRunOutputItemSampleOutput({
     this.role,

@@ -32,6 +32,10 @@ class PublicAssignOrganizationGroupRoleBodyMapper
   final MappableFields<PublicAssignOrganizationGroupRoleBody> fields = const {
     #roleId: _f$roleId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PublicAssignOrganizationGroupRoleBody _instantiate(DecodingData data) {
     return PublicAssignOrganizationGroupRoleBody(roleId: data.dec(_f$roleId));

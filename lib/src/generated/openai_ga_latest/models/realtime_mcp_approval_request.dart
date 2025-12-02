@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_conversation_item.dart';
 import 'realtime_mcp_approval_request_type_type.dart';
 
 part 'realtime_mcp_approval_request.mapper.dart';
 
 /// A Realtime item requesting human approval of a tool invocation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpApprovalRequest with RealtimeMcpApprovalRequestMappable {
   const RealtimeMcpApprovalRequest({
     required this.type,

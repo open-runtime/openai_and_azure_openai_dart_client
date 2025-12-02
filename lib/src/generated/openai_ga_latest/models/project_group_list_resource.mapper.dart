@@ -56,6 +56,10 @@ class ProjectGroupListResourceMapper
     #hasMore: _f$hasMore,
     #next: _f$next,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectGroupListResource _instantiate(DecodingData data) {
     return ProjectGroupListResource(

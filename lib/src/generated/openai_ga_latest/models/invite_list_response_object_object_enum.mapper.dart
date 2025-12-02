@@ -30,7 +30,7 @@ class InviteListResponseObjectObjectEnumMapper
   InviteListResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return InviteListResponseObjectObjectEnum.valueList;
+        return InviteListResponseObjectObjectEnum.list;
       case 'unknown':
         return InviteListResponseObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class InviteListResponseObjectObjectEnumMapper
   @override
   dynamic encode(InviteListResponseObjectObjectEnum self) {
     switch (self) {
-      case InviteListResponseObjectObjectEnum.valueList:
+      case InviteListResponseObjectObjectEnum.list:
         return 'list';
       case InviteListResponseObjectObjectEnum.unknown:
         return 'unknown';

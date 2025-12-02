@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'mongo_db_field_mapping_options.mapper.dart';
 
 /// Optional settings to control how fields are processed when using a configured Mongo DB resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MongoDbFieldMappingOptions with MongoDbFieldMappingOptionsMappable {
   const MongoDbFieldMappingOptions({
     required this.contentFields,

@@ -8,7 +8,7 @@ import 'web_search_approximate_location_union_variant1_type_type.dart';
 
 part 'web_search_approximate_location_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [WebSearchApproximateLocationUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [WebSearchApproximateLocationUnionVariant1])
 sealed class WebSearchApproximateLocationUnion with WebSearchApproximateLocationUnionMappable {
   const WebSearchApproximateLocationUnion();
 
@@ -28,7 +28,7 @@ extension WebSearchApproximateLocationUnionDeserializer on WebSearchApproximateL
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchApproximateLocationUnionVariant1 extends WebSearchApproximateLocationUnion with WebSearchApproximateLocationUnionVariant1Mappable {
   final WebSearchApproximateLocationUnionVariant1TypeType type;
   final String? country;

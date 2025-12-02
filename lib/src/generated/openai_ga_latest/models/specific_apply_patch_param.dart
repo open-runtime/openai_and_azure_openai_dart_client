@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'specific_apply_patch_param_type_type.dart';
+import 'tool_choice_param.dart';
 
 part 'specific_apply_patch_param.mapper.dart';
 
 /// Forces the model to call the apply_patch tool when executing a tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SpecificApplyPatchParam with SpecificApplyPatchParamMappable {
   const SpecificApplyPatchParam({
     this.type = SpecificApplyPatchParamTypeType.applyPatch,

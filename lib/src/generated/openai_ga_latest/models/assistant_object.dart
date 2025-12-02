@@ -13,7 +13,7 @@ import 'metadata.dart';
 part 'assistant_object.mapper.dart';
 
 /// Represents an `assistant` that can call the model and use tools.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantObject with AssistantObjectMappable {
   const AssistantObject({
     required this.id,

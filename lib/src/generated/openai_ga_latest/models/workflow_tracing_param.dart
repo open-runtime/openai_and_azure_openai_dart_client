@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'workflow_tracing_param.mapper.dart';
 
 /// Controls diagnostic tracing during the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkflowTracingParam with WorkflowTracingParamMappable {
   const WorkflowTracingParam({
     this.enabled,

@@ -13,7 +13,7 @@ import 'vector_store_object_status_status.dart';
 part 'vector_store_object.mapper.dart';
 
 /// A vector store is a collection of processed files can be used by the `file_search` tool.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreObject with VectorStoreObjectMappable {
   const VectorStoreObject({
     required this.id,
@@ -37,7 +37,7 @@ class VectorStoreObject with VectorStoreObjectMappable {
   final String name;
   @MappableField(key: 'usage_bytes')
   final int usageBytes;
-  @MappableField(key: 'VectorStoreObjectFileCounts')
+  @MappableField(key: 'file_counts')
   final VectorStoreObjectFileCounts vectorStoreObjectFileCounts;
   final VectorStoreObjectStatusStatus status;
   @MappableField(key: 'last_active_at')

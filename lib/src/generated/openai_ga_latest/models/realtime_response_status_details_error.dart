@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_response_status_details_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseStatusDetailsError with RealtimeResponseStatusDetailsErrorMappable {
   const RealtimeResponseStatusDetailsError({
     this.type,

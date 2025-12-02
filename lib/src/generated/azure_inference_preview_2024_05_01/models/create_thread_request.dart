@@ -9,7 +9,7 @@ import 'create_thread_request_tool_resources.dart';
 
 part 'create_thread_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequest with CreateThreadRequestMappable {
   const CreateThreadRequest({
     this.messages,
@@ -18,7 +18,7 @@ class CreateThreadRequest with CreateThreadRequestMappable {
   });
 
   final List<CreateMessageRequest>? messages;
-  @MappableField(key: 'CreateThreadRequestToolResources')
+  @MappableField(key: 'tool_resources')
   final CreateThreadRequestToolResources? createThreadRequestToolResources;
   final dynamic? metadata;
 

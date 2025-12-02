@@ -10,7 +10,7 @@ import 'create_chat_completion_stream_response_object_object_enum.dart';
 part 'create_chat_completion_stream_response.mapper.dart';
 
 /// Represents a streamed chunk of a chat completion response returned by model, based on the provided input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionStreamResponse with CreateChatCompletionStreamResponseMappable {
   const CreateChatCompletionStreamResponse({
     required this.id,

@@ -9,7 +9,7 @@ import 'function_shell_call_output_outcome_param.dart';
 part 'function_shell_call_output_content_param.mapper.dart';
 
 /// Captured stdout and stderr for a portion of a function shell tool call output.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutputContentParam with FunctionShellCallOutputContentParamMappable {
   const FunctionShellCallOutputContentParam({
     required this.stdout,

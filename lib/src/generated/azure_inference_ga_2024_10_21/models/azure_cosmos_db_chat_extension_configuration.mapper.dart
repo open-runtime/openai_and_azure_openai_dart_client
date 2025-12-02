@@ -48,6 +48,10 @@ class AzureCosmosDbChatExtensionConfigurationMapper
     #type: _f$type,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureCosmosDbChatExtensionConfiguration _instantiate(
     DecodingData data,

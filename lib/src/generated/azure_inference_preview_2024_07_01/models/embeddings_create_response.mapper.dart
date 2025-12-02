@@ -52,7 +52,7 @@ class EmbeddingsCreateResponseMapper
   _f$embeddingsCreateResponseUsage = Field(
     'embeddingsCreateResponseUsage',
     _$embeddingsCreateResponseUsage,
-    key: r'EmbeddingsCreateResponseUsage',
+    key: r'usage',
   );
 
   @override
@@ -62,6 +62,10 @@ class EmbeddingsCreateResponseMapper
     #data: _f$data,
     #embeddingsCreateResponseUsage: _f$embeddingsCreateResponseUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EmbeddingsCreateResponse _instantiate(DecodingData data) {
     return EmbeddingsCreateResponse(

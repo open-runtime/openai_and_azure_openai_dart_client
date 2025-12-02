@@ -46,6 +46,10 @@ class ServerlessComputeMapper extends ClassMapperBase<ServerlessCompute> {
     #sku: _f$sku,
     #instanceCount: _f$instanceCount,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ServerlessCompute _instantiate(DecodingData data) {
     return ServerlessCompute(

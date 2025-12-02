@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'function_shell_action_param.mapper.dart';
 
 /// Commands and limits describing how to run the function shell tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellActionParam with FunctionShellActionParamMappable {
   const FunctionShellActionParam({
     required this.commands,

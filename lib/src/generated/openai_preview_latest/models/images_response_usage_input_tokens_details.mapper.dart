@@ -38,6 +38,10 @@ class ImagesResponseUsageInputTokensDetailsMapper
     #textTokens: _f$textTokens,
     #imageTokens: _f$imageTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImagesResponseUsageInputTokensDetails _instantiate(DecodingData data) {
     return ImagesResponseUsageInputTokensDetails(

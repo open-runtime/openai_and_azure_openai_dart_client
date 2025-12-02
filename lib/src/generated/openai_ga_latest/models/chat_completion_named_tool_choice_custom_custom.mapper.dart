@@ -31,6 +31,10 @@ class ChatCompletionNamedToolChoiceCustomCustomMapper
   @override
   final MappableFields<ChatCompletionNamedToolChoiceCustomCustom> fields =
       const {#name: _f$name};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionNamedToolChoiceCustomCustom _instantiate(
     DecodingData data,

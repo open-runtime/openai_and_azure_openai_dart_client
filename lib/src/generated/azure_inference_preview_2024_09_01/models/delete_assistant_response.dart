@@ -8,7 +8,7 @@ import 'delete_assistant_response_object_object_enum.dart';
 
 part 'delete_assistant_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteAssistantResponse with DeleteAssistantResponseMappable {
   const DeleteAssistantResponse({
     required this.id,

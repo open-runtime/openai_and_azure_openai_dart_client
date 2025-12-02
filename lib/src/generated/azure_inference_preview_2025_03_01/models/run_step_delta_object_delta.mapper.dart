@@ -17,7 +17,7 @@ class RunStepDeltaObjectDeltaMapper
       MapperContainer.globals.use(
         _instance = RunStepDeltaObjectDeltaMapper._(),
       );
-      RunStepDeltaObjectDeltaStepDetailsStepDetailsUnionMapper.ensureInitialized();
+      RunStepDeltaObjectDeltaStepDetailsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RunStepDeltaObjectDeltaMapper
   @override
   final String id = 'RunStepDeltaObjectDelta';
 
-  static RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion? _$stepDetails(
+  static RunStepDeltaObjectDeltaStepDetailsUnion? _$stepDetails(
     RunStepDeltaObjectDelta v,
   ) => v.stepDetails;
   static const Field<
     RunStepDeltaObjectDelta,
-    RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion
+    RunStepDeltaObjectDeltaStepDetailsUnion
   >
   _f$stepDetails = Field(
     'stepDetails',
@@ -43,6 +43,10 @@ class RunStepDeltaObjectDeltaMapper
   final MappableFields<RunStepDeltaObjectDelta> fields = const {
     #stepDetails: _f$stepDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaObjectDelta _instantiate(DecodingData data) {
     return RunStepDeltaObjectDelta(stepDetails: data.dec(_f$stepDetails));
@@ -118,13 +122,13 @@ abstract class RunStepDeltaObjectDeltaCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RunStepDeltaObjectDeltaStepDetailsStepDetailsUnionCopyWith<
+  RunStepDeltaObjectDeltaStepDetailsUnionCopyWith<
     $R,
-    RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion,
-    RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion
+    RunStepDeltaObjectDeltaStepDetailsUnion,
+    RunStepDeltaObjectDeltaStepDetailsUnion
   >?
   get stepDetails;
-  $R call({RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion? stepDetails});
+  $R call({RunStepDeltaObjectDeltaStepDetailsUnion? stepDetails});
   RunStepDeltaObjectDeltaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -140,10 +144,10 @@ class _RunStepDeltaObjectDeltaCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunStepDeltaObjectDelta> $mapper =
       RunStepDeltaObjectDeltaMapper.ensureInitialized();
   @override
-  RunStepDeltaObjectDeltaStepDetailsStepDetailsUnionCopyWith<
+  RunStepDeltaObjectDeltaStepDetailsUnionCopyWith<
     $R,
-    RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion,
-    RunStepDeltaObjectDeltaStepDetailsStepDetailsUnion
+    RunStepDeltaObjectDeltaStepDetailsUnion,
+    RunStepDeltaObjectDeltaStepDetailsUnion
   >?
   get stepDetails =>
       $value.stepDetails?.copyWith.$chain((v) => call(stepDetails: v));

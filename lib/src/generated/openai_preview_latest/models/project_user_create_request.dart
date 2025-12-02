@@ -8,7 +8,7 @@ import 'project_user_create_request_role_role.dart';
 
 part 'project_user_create_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUserCreateRequest with ProjectUserCreateRequestMappable {
   const ProjectUserCreateRequest({
     required this.userId,

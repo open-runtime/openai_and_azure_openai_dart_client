@@ -44,6 +44,10 @@ class OnYourDataKeyAndKeyIdAuthenticationOptionsMapper
   @override
   final MappableFields<OnYourDataKeyAndKeyIdAuthenticationOptions> fields =
       const {#type: _f$type, #key: _f$key, #keyId: _f$keyId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataKeyAndKeyIdAuthenticationOptions _instantiate(
     DecodingData data,

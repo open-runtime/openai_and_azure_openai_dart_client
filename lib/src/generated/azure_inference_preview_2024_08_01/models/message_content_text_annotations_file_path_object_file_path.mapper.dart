@@ -39,6 +39,10 @@ class MessageContentTextAnnotationsFilePathObjectFilePathMapper
   @override
   final MappableFields<MessageContentTextAnnotationsFilePathObjectFilePath>
   fields = const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextAnnotationsFilePathObjectFilePath _instantiate(
     DecodingData data,

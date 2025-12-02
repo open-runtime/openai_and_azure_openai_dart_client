@@ -38,6 +38,10 @@ class ResponseTextParamMapper extends ClassMapperBase<ResponseTextParam> {
     #format: _f$format,
     #verbosity: _f$verbosity,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextParam _instantiate(DecodingData data) {
     return ResponseTextParam(

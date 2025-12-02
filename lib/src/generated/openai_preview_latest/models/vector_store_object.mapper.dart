@@ -52,7 +52,7 @@ class VectorStoreObjectMapper extends ClassMapperBase<VectorStoreObject> {
   _f$vectorStoreObjectFileCounts = Field(
     'vectorStoreObjectFileCounts',
     _$vectorStoreObjectFileCounts,
-    key: r'VectorStoreObjectFileCounts',
+    key: r'file_counts',
   );
   static VectorStoreObjectStatusStatus _$status(VectorStoreObject v) =>
       v.status;
@@ -98,6 +98,10 @@ class VectorStoreObjectMapper extends ClassMapperBase<VectorStoreObject> {
     #expiresAfter: _f$expiresAfter,
     #expiresAt: _f$expiresAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreObject _instantiate(DecodingData data) {
     return VectorStoreObject(

@@ -11,7 +11,7 @@ part 'response_format_text_python.mapper.dart';
 /// Configure the model to generate valid Python code. See the.
 /// [custom grammars guide](https://platform.openai.com/docs/guides/custom-grammars) for more details.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatTextPython with ResponseFormatTextPythonMappable {
   const ResponseFormatTextPython({
     required this.type,

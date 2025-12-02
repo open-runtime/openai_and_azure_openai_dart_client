@@ -72,6 +72,10 @@ class ResponseTextDoneEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextDoneEvent _instantiate(DecodingData data) {
     return ResponseTextDoneEvent(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_batch_completed_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCompletedData with WebhookBatchCompletedDataMappable {
   const WebhookBatchCompletedData({
     required this.id,

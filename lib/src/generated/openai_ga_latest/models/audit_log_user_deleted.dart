@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_user_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogUserDeleted with AuditLogUserDeletedMappable {
   const AuditLogUserDeleted({
     this.id,

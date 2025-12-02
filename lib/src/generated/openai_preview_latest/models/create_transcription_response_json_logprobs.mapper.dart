@@ -41,6 +41,10 @@ class CreateTranscriptionResponseJsonLogprobsMapper
     #logprob: _f$logprob,
     #bytes: _f$bytes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseJsonLogprobs _instantiate(
     DecodingData data,

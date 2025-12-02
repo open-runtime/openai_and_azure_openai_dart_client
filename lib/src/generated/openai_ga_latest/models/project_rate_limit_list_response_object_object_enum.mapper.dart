@@ -31,7 +31,7 @@ class ProjectRateLimitListResponseObjectObjectEnumMapper
   ProjectRateLimitListResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ProjectRateLimitListResponseObjectObjectEnum.valueList;
+        return ProjectRateLimitListResponseObjectObjectEnum.list;
       case 'unknown':
         return ProjectRateLimitListResponseObjectObjectEnum.unknown;
       default:
@@ -42,7 +42,7 @@ class ProjectRateLimitListResponseObjectObjectEnumMapper
   @override
   dynamic encode(ProjectRateLimitListResponseObjectObjectEnum self) {
     switch (self) {
-      case ProjectRateLimitListResponseObjectObjectEnum.valueList:
+      case ProjectRateLimitListResponseObjectObjectEnum.list:
         return 'list';
       case ProjectRateLimitListResponseObjectObjectEnum.unknown:
         return 'unknown';

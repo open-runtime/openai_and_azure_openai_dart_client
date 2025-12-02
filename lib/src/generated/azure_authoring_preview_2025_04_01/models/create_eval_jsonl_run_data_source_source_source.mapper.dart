@@ -54,6 +54,10 @@ class CreateEvalJsonlRunDataSourceSourceSourceMapper
   @override
   final MappableFields<CreateEvalJsonlRunDataSourceSourceSource> fields =
       const {#content: _f$content, #id: _f$id, #type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalJsonlRunDataSourceSourceSource _instantiate(
     DecodingData data,

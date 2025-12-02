@@ -71,6 +71,10 @@ class AssistantMessageItemMapper extends ClassMapperBase<AssistantMessageItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantMessageItem _instantiate(DecodingData data) {
     return AssistantMessageItem(

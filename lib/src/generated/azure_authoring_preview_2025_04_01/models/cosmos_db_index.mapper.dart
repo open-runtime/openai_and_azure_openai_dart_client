@@ -50,6 +50,10 @@ class CosmosDbIndexMapper extends ClassMapperBase<CosmosDbIndex> {
     #collectionName: _f$collectionName,
     #databaseName: _f$databaseName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CosmosDbIndex _instantiate(DecodingData data) {
     return CosmosDbIndex(

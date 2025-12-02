@@ -57,6 +57,10 @@ class ComputerScreenshotContentMapper
     #fileId: _f$fileId,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerScreenshotContent _instantiate(DecodingData data) {
     return ComputerScreenshotContent(

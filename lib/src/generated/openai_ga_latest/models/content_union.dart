@@ -11,7 +11,7 @@ part 'content_union.mapper.dart';
 
 /// Multi-modal input and output contents.
 ///
-@MappableClass(includeSubClasses: [ContentUnionInputContent, ContentUnionOutputContent])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ContentUnionInputContent, ContentUnionOutputContent])
 sealed class ContentUnion with ContentUnionMappable {
   const ContentUnion();
 
@@ -34,14 +34,14 @@ extension ContentUnionDeserializer on ContentUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentUnionInputContent extends ContentUnion with ContentUnionInputContentMappable {
 
 
   const ContentUnionInputContent();
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentUnionOutputContent extends ContentUnion with ContentUnionOutputContentMappable {
 
 

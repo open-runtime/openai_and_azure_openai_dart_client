@@ -44,6 +44,10 @@ class MongoDbChatExtensionConfigurationMapper
     #type: _f$type,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MongoDbChatExtensionConfiguration _instantiate(DecodingData data) {
     return MongoDbChatExtensionConfiguration(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_audio_formats.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeAudioFormats with RealtimeAudioFormatsMappable {
   const RealtimeAudioFormats();
 

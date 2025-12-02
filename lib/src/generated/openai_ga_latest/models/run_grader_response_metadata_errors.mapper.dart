@@ -152,6 +152,10 @@ class RunGraderResponseMetadataErrorsMapper
     #modelGraderParseError: _f$modelGraderParseError,
     #modelGraderServerErrorDetails: _f$modelGraderServerErrorDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunGraderResponseMetadataErrors _instantiate(DecodingData data) {
     return RunGraderResponseMetadataErrors(

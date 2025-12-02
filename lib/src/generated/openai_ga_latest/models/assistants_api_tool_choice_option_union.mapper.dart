@@ -28,6 +28,10 @@ class AssistantsApiToolChoiceOptionUnionMapper
 
   @override
   final MappableFields<AssistantsApiToolChoiceOptionUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiToolChoiceOptionUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -118,6 +122,7 @@ class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMapper
   _f$assistantsNamedToolChoiceFunction = Field(
     'assistantsNamedToolChoiceFunction',
     _$assistantsNamedToolChoiceFunction,
+    key: r'function',
   );
 
   @override
@@ -128,6 +133,10 @@ class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMapper
     #type: _f$type,
     #assistantsNamedToolChoiceFunction: _f$assistantsNamedToolChoiceFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice
   _instantiate(DecodingData data) {
@@ -363,6 +372,10 @@ class AssistantsApiToolChoiceOptionUnionVariantStringMapper
   @override
   final MappableFields<AssistantsApiToolChoiceOptionUnionVariantString> fields =
       const {#value: _f$value};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiToolChoiceOptionUnionVariantString _instantiate(
     DecodingData data,

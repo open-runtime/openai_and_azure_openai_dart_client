@@ -117,6 +117,10 @@ class EvalTestingCriteriaTestingCriteriaMapper
     #range: _f$range,
     #samplingParams: _f$samplingParams,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalTestingCriteriaTestingCriteria _instantiate(DecodingData data) {
     return EvalTestingCriteriaTestingCriteria(

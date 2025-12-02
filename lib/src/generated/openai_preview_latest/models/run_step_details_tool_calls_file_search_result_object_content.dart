@@ -8,7 +8,7 @@ import 'run_step_details_tool_calls_file_search_result_object_content_type_type.
 
 part 'run_step_details_tool_calls_file_search_result_object_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsFileSearchResultObjectContent with RunStepDetailsToolCallsFileSearchResultObjectContentMappable {
   const RunStepDetailsToolCallsFileSearchResultObjectContent({
     this.type,

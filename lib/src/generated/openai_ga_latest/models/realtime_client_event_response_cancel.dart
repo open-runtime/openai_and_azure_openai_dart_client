@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
+
 part 'realtime_client_event_response_cancel.mapper.dart';
 
 /// Send this event to cancel an in-progress response. The server will respond .
@@ -12,7 +14,7 @@ part 'realtime_client_event_response_cancel.mapper.dart';
 /// to call `response.cancel` even if no response is in progress, an error will be.
 /// returned the session will remain unaffected.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventResponseCancel with RealtimeClientEventResponseCancelMappable {
   const RealtimeClientEventResponseCancel({
     required this.type,

@@ -10,7 +10,7 @@ import 'response_item_list_object_object_enum.dart';
 part 'response_item_list.mapper.dart';
 
 /// A list of Response items.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseItemList with ResponseItemListMappable {
   const ResponseItemList({
     required this.objectEnum,

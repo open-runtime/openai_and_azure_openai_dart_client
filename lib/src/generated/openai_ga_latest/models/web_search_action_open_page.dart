@@ -10,7 +10,7 @@ part 'web_search_action_open_page.mapper.dart';
 
 /// Action type "open_page" - Opens a specific URL from search results.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchActionOpenPage with WebSearchActionOpenPageMappable {
   const WebSearchActionOpenPage({
     required this.type,

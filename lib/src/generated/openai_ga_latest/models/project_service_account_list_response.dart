@@ -9,7 +9,7 @@ import 'project_service_account_list_response_object_object_enum.dart';
 
 part 'project_service_account_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountListResponse with ProjectServiceAccountListResponseMappable {
   const ProjectServiceAccountListResponse({
     required this.objectEnum,

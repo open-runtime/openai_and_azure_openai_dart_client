@@ -62,6 +62,10 @@ class CreateChatSessionBodyMapper
     #rateLimits: _f$rateLimits,
     #chatkitConfiguration: _f$chatkitConfiguration,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatSessionBody _instantiate(DecodingData data) {
     return CreateChatSessionBody(

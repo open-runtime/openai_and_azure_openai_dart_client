@@ -40,6 +40,10 @@ class RealtimeServerEventMcpListToolsFailedMapper
     #type: _f$type,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventMcpListToolsFailed _instantiate(DecodingData data) {
     return RealtimeServerEventMcpListToolsFailed(

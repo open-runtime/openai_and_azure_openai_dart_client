@@ -12,7 +12,7 @@ import 'reasoning_effort.dart';
 
 part 'modify_assistant_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   const ModifyAssistantRequest({
     this.temperature = 1,

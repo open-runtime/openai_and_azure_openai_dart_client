@@ -49,6 +49,10 @@ class EmbeddingsCreateRequestMapper
     #user: _f$user,
     #inputType: _f$inputType,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EmbeddingsCreateRequest _instantiate(DecodingData data) {
     return EmbeddingsCreateRequest(

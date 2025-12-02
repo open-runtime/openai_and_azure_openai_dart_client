@@ -49,6 +49,10 @@ class RealtimeServerEventResponseMcpCallCompletedMapper
         #outputIndex: _f$outputIndex,
         #itemId: _f$itemId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseMcpCallCompleted _instantiate(
     DecodingData data,

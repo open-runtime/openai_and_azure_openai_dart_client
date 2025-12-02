@@ -42,6 +42,10 @@ class PublicCreateOrganizationRoleBodyMapper
     #permissions: _f$permissions,
     #description: _f$description,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PublicCreateOrganizationRoleBody _instantiate(DecodingData data) {
     return PublicCreateOrganizationRoleBody(

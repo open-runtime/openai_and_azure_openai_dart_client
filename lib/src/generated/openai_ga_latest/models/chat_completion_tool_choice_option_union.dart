@@ -24,7 +24,7 @@ part 'chat_completion_tool_choice_option_union.mapper.dart';
 ///
 /// `none` is the default when no tools are present. `auto` is the default if tools are present.
 ///
-@MappableClass(includeSubClasses: [ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice, ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice, ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom, ChatCompletionToolChoiceOptionUnionVariantString])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice, ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice, ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom, ChatCompletionToolChoiceOptionUnionVariantString])
 sealed class ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionMappable {
   const ChatCompletionToolChoiceOptionUnion();
 
@@ -53,9 +53,10 @@ extension ChatCompletionToolChoiceOptionUnionDeserializer on ChatCompletionToolC
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoiceMappable {
   final ChatCompletionAllowedToolsChoiceTypeType type;
+  @MappableField(key: 'allowed_tools')
   final ChatCompletionAllowedTools allowedTools;
 
   const ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice({
@@ -64,9 +65,10 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice extend
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMappable {
   final ChatCompletionNamedToolChoiceTypeType type;
+  @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction chatCompletionNamedToolChoiceFunction;
 
   const ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice({
@@ -75,9 +77,10 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends C
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustomMappable {
   final ChatCompletionNamedToolChoiceCustomTypeType type;
+  @MappableField(key: 'custom')
   final ChatCompletionNamedToolChoiceCustomCustom chatCompletionNamedToolChoiceCustomCustom;
 
   const ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom({
@@ -86,7 +89,7 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom ext
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionVariantString extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionVariantStringMappable {
   final String value;
 

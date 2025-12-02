@@ -34,6 +34,10 @@ class WebhookResponseCancelledDataMapper
   final MappableFields<WebhookResponseCancelledData> fields = const {
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseCancelledData _instantiate(DecodingData data) {
     return WebhookResponseCancelledData(id: data.dec(_f$id));

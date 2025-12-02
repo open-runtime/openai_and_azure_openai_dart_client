@@ -8,7 +8,7 @@ import 'transcription_segment.dart';
 
 part 'create_translation_response_verbose_json.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranslationResponseVerboseJson with CreateTranslationResponseVerboseJsonMappable {
   const CreateTranslationResponseVerboseJson({
     required this.language,

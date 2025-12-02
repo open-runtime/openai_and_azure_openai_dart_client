@@ -95,6 +95,10 @@ class ImageEditCompletedEventMapper
     #outputFormat: _f$outputFormat,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageEditCompletedEvent _instantiate(DecodingData data) {
     return ImageEditCompletedEvent(

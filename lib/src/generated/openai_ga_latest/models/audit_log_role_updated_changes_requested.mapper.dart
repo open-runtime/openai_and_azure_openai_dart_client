@@ -85,6 +85,10 @@ class AuditLogRoleUpdatedChangesRequestedMapper
     #description: _f$description,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRoleUpdatedChangesRequested _instantiate(DecodingData data) {
     return AuditLogRoleUpdatedChangesRequested(

@@ -45,6 +45,10 @@ class DeleteMessageResponseMapper
     #deleted: _f$deleted,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteMessageResponse _instantiate(DecodingData data) {
     return DeleteMessageResponse(

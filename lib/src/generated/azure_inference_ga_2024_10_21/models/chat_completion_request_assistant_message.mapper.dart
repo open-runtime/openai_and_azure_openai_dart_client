@@ -65,7 +65,7 @@ class ChatCompletionRequestAssistantMessageMapper
   _f$chatCompletionRequestAssistantMessageFunctionCall = Field(
     'chatCompletionRequestAssistantMessageFunctionCall',
     _$chatCompletionRequestAssistantMessageFunctionCall,
-    key: r'ChatCompletionRequestAssistantMessageFunctionCall',
+    key: r'function_call',
     opt: true,
   );
 
@@ -79,6 +79,10 @@ class ChatCompletionRequestAssistantMessageMapper
     #chatCompletionRequestAssistantMessageFunctionCall:
         _f$chatCompletionRequestAssistantMessageFunctionCall,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestAssistantMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestAssistantMessage(

@@ -51,6 +51,10 @@ class GraderStringCheckMapper extends ClassMapperBase<GraderStringCheck> {
     #reference: _f$reference,
     #operation: _f$operation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderStringCheck _instantiate(DecodingData data) {
     return GraderStringCheck(

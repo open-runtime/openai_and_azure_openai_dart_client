@@ -32,6 +32,10 @@ class SystemComputeDatasourceMapper
 
   @override
   final MappableFields<SystemComputeDatasource> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SystemComputeDatasource _instantiate(DecodingData data) {
     return SystemComputeDatasource(kind: data.dec(_f$kind));

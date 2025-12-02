@@ -44,6 +44,10 @@ class ImageGenToolInputImageMaskMapper
     #imageUrl: _f$imageUrl,
     #fileId: _f$fileId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenToolInputImageMask _instantiate(DecodingData data) {
     return ImageGenToolInputImageMask(

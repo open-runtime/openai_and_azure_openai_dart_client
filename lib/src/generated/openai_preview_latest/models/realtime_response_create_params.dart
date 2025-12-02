@@ -6,6 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'metadata.dart';
 import 'realtime_conversation_item_with_reference.dart';
+import 'realtime_response_create_params_conversation_union.dart';
+import 'realtime_response_create_params_max_response_output_tokens_union.dart';
 import 'realtime_response_create_params_modalities_modalities.dart';
 import 'realtime_response_create_params_output_audio_format_output_audio_format.dart';
 import 'realtime_response_create_params_tools.dart';
@@ -14,7 +16,7 @@ import 'voice_ids_shared.dart';
 part 'realtime_response_create_params.mapper.dart';
 
 /// Create a new Realtime response with these parameters
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   const RealtimeResponseCreateParams({
     this.modalities,
@@ -32,6 +34,7 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
 
   final List<RealtimeResponseCreateParamsModalitiesModalities>? modalities;
   final String? instructions;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
   @MappableField(key: 'output_audio_format')
   final RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat? outputAudioFormat;
@@ -39,9 +42,10 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
   final num? temperature;
-  @MappableField(key: 'max_response_output_tokens')
-  final String? maxResponseOutputTokens;
-  final String? conversation;
+  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionHook())
+  final RealtimeResponseCreateParamsMaxResponseOutputTokensUnion? maxResponseOutputTokens;
+  @MappableField(hook: const RealtimeResponseCreateParamsConversationUnionHook())
+  final RealtimeResponseCreateParamsConversationUnion? conversation;
   final Metadata? metadata;
   final List<RealtimeConversationItemWithReference>? input;
 

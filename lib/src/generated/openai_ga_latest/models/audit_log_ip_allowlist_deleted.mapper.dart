@@ -47,6 +47,10 @@ class AuditLogIpAllowlistDeletedMapper
     #name: _f$name,
     #allowedIps: _f$allowedIps,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogIpAllowlistDeleted _instantiate(DecodingData data) {
     return AuditLogIpAllowlistDeleted(

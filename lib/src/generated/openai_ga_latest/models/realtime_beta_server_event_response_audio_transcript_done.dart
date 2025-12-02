@@ -10,7 +10,7 @@ part 'realtime_beta_server_event_response_audio_transcript_done.mapper.dart';
 /// streaming. Also emitted when a Response is interrupted, incomplete, or.
 /// cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseAudioTranscriptDone with RealtimeBetaServerEventResponseAudioTranscriptDoneMappable {
   const RealtimeBetaServerEventResponseAudioTranscriptDone({
     required this.eventId,

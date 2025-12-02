@@ -66,6 +66,10 @@ class BatchesListMapper extends ClassMapperBase<BatchesList> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchesList _instantiate(DecodingData data) {
     return BatchesList(

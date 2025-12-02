@@ -42,6 +42,10 @@ class CreateEvalItemMapper extends ClassMapperBase<CreateEvalItem> {
     #role: _f$role,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalItem _instantiate(DecodingData data) {
     return CreateEvalItem(

@@ -61,6 +61,10 @@ class ListVectorStoresResponseMapper
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListVectorStoresResponse _instantiate(DecodingData data) {
     return ListVectorStoresResponse(

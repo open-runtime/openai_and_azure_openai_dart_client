@@ -59,6 +59,10 @@ class GraderLabelModelMapper extends ClassMapperBase<GraderLabelModel> {
     #labels: _f$labels,
     #passingLabels: _f$passingLabels,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderLabelModel _instantiate(DecodingData data) {
     return GraderLabelModel(

@@ -8,7 +8,7 @@ import 'project_user_update_request_role_role.dart';
 
 part 'project_user_update_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUserUpdateRequest with ProjectUserUpdateRequestMappable {
   const ProjectUserUpdateRequest({
     required this.role,

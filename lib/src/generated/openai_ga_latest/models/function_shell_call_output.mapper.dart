@@ -74,6 +74,10 @@ class FunctionShellCallOutputMapper
     #createdBy: _f$createdBy,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutput _instantiate(DecodingData data) {
     return FunctionShellCallOutput(

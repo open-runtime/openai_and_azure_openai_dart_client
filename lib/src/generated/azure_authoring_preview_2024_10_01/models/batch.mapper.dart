@@ -179,6 +179,10 @@ class BatchMapper extends ClassMapperBase<Batch> {
     #requestCounts: _f$requestCounts,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Batch _instantiate(DecodingData data) {
     return Batch(

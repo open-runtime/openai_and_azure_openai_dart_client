@@ -39,6 +39,10 @@ class CostsResultAmountMapper extends ClassMapperBase<CostsResultAmount> {
     #value: _f$value,
     #currency: _f$currency,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CostsResultAmount _instantiate(DecodingData data) {
     return CostsResultAmount(

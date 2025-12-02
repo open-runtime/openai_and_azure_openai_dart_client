@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'dpo_hyperparams_request.mapper.dart';
 
 /// Hyperparameters for DPO method of finetuning
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DpoHyperparamsRequest with DpoHyperparamsRequestMappable {
   const DpoHyperparamsRequest({
     this.nEpochs,

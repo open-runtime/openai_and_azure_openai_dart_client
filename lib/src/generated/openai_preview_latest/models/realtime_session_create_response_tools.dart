@@ -8,7 +8,7 @@ import 'realtime_session_create_response_tools_type_type.dart';
 
 part 'realtime_session_create_response_tools.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseTools with RealtimeSessionCreateResponseToolsMappable {
   const RealtimeSessionCreateResponseTools({
     this.type,

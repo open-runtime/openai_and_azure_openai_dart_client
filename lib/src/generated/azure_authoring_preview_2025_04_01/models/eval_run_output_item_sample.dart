@@ -11,7 +11,7 @@ import 'eval_run_output_item_sample_usage.dart';
 
 part 'eval_run_output_item_sample.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemSample with EvalRunOutputItemSampleMappable {
   const EvalRunOutputItemSample({
     required this.error,
@@ -38,7 +38,7 @@ class EvalRunOutputItemSample with EvalRunOutputItemSampleMappable {
   final num temperature;
   @MappableField(key: 'top_p')
   final num topP;
-  @MappableField(key: 'EvalRunOutputItemSampleUsage')
+  @MappableField(key: 'usage')
   final EvalRunOutputItemSampleUsage evalRunOutputItemSampleUsage;
 
   static EvalRunOutputItemSample fromJson(Map<String, dynamic> json) => EvalRunOutputItemSampleMapper.fromJson(json);

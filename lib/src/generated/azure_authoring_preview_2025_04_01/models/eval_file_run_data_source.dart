@@ -9,7 +9,7 @@ import 'eval_file_run_data_source_type_type.dart';
 part 'eval_file_run_data_source.mapper.dart';
 
 /// A FileRunDataSource configuration with a file id
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalFileRunDataSource with EvalFileRunDataSourceMappable {
   const EvalFileRunDataSource({
     required this.fileId,

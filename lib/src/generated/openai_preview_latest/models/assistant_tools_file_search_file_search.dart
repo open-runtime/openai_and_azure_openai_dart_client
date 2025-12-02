@@ -8,7 +8,7 @@ import 'file_search_ranking_options.dart';
 
 part 'assistant_tools_file_search_file_search.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFileSearchFileSearch with AssistantToolsFileSearchFileSearchMappable {
   const AssistantToolsFileSearchFileSearch({
     this.maxNumResults,

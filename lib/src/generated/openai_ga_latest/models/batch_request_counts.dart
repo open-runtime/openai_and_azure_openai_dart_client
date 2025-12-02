@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'batch_request_counts.mapper.dart';
 
 /// The request counts for different statuses within the batch.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestCounts with BatchRequestCountsMappable {
   const BatchRequestCounts({
     required this.total,

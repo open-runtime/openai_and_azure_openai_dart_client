@@ -36,6 +36,10 @@ class RealtimeBetaResponseStatusDetailsErrorMapper
     #type: _f$type,
     #code: _f$code,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseStatusDetailsError _instantiate(
     DecodingData data,

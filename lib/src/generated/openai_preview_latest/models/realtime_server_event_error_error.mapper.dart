@@ -62,6 +62,10 @@ class RealtimeServerEventErrorErrorMapper
     #param: _f$param,
     #eventId: _f$eventId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventErrorError _instantiate(DecodingData data) {
     return RealtimeServerEventErrorError(

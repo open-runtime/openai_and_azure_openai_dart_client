@@ -41,6 +41,10 @@ class DeleteModelResponseMapper extends ClassMapperBase<DeleteModelResponse> {
     #deleted: _f$deleted,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteModelResponse _instantiate(DecodingData data) {
     return DeleteModelResponse(

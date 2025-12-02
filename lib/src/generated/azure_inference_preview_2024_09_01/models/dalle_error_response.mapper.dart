@@ -31,6 +31,10 @@ class DalleErrorResponseMapper extends ClassMapperBase<DalleErrorResponse> {
 
   @override
   final MappableFields<DalleErrorResponse> fields = const {#error: _f$error};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleErrorResponse _instantiate(DecodingData data) {
     return DalleErrorResponse(error: data.dec(_f$error));

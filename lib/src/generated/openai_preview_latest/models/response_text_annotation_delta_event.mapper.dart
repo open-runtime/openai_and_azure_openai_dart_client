@@ -62,6 +62,10 @@ class ResponseTextAnnotationDeltaEventMapper
     #annotationIndex: _f$annotationIndex,
     #annotation: _f$annotation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextAnnotationDeltaEvent _instantiate(DecodingData data) {
     return ResponseTextAnnotationDeltaEvent(

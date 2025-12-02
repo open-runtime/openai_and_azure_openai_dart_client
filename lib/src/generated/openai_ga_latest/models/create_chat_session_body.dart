@@ -12,7 +12,7 @@ import 'workflow_param.dart';
 part 'create_chat_session_body.mapper.dart';
 
 /// Parameters for provisioning a new ChatKit session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatSessionBody with CreateChatSessionBodyMappable {
   const CreateChatSessionBody({
     required this.workflow,

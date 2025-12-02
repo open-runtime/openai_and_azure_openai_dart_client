@@ -107,6 +107,10 @@ class RealtimeSessionTurnDetectionMapper
     #createResponse: _f$createResponse,
     #interruptResponse: _f$interruptResponse,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionTurnDetection _instantiate(DecodingData data) {
     return RealtimeSessionTurnDetection(

@@ -42,6 +42,10 @@ class AuditLogProjectCreatedDataMapper
     #name: _f$name,
     #title: _f$title,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectCreatedData _instantiate(DecodingData data) {
     return AuditLogProjectCreatedData(

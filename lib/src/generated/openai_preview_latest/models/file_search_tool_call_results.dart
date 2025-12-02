@@ -8,7 +8,7 @@ import 'vector_store_file_attributes.dart';
 
 part 'file_search_tool_call_results.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchToolCallResults with FileSearchToolCallResultsMappable {
   const FileSearchToolCallResults({
     this.fileId,

@@ -46,6 +46,10 @@ class ModelMapper extends ClassMapperBase<Model> {
     #objectEnum: _f$objectEnum,
     #ownedBy: _f$ownedBy,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Model _instantiate(DecodingData data) {
     return Model(

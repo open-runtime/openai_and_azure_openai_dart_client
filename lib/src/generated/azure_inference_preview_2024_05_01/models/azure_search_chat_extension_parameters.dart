@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'azure_search_chat_extension_parameters_authentication_authentication_union.dart';
-import 'azure_search_chat_extension_parameters_embedding_dependency_embedding_dependency_union.dart';
+import 'azure_search_chat_extension_parameters_authentication_union.dart';
+import 'azure_search_chat_extension_parameters_embedding_dependency_union.dart';
 import 'azure_search_index_field_mapping_options.dart';
 import 'azure_search_query_type.dart';
 import 'on_your_data_context_property.dart';
@@ -13,7 +13,7 @@ import 'on_your_data_context_property.dart';
 part 'azure_search_chat_extension_parameters.mapper.dart';
 
 /// Parameters for Azure Search when used as an Azure OpenAI chat extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureSearchChatExtensionParameters with AzureSearchChatExtensionParametersMappable {
   const AzureSearchChatExtensionParameters({
     required this.authentication,
@@ -33,7 +33,7 @@ class AzureSearchChatExtensionParameters with AzureSearchChatExtensionParameters
     this.includeContexts,
   });
 
-  final AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion authentication;
+  final AzureSearchChatExtensionParametersAuthenticationUnion authentication;
   final String endpoint;
   @MappableField(key: 'index_name')
   final String indexName;
@@ -56,7 +56,7 @@ class AzureSearchChatExtensionParameters with AzureSearchChatExtensionParameters
   final String? semanticConfiguration;
   final String? filter;
   @MappableField(key: 'embedding_dependency')
-  final AzureSearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion? embeddingDependency;
+  final AzureSearchChatExtensionParametersEmbeddingDependencyUnion? embeddingDependency;
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 

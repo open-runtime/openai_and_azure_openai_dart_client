@@ -48,6 +48,10 @@ class RealtimeResponseUsageOutputTokenDetailsMapper
     #textTokens: _f$textTokens,
     #audioTokens: _f$audioTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseUsageOutputTokenDetails _instantiate(
     DecodingData data,

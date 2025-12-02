@@ -8,7 +8,7 @@ import 'delete_certificate_response_object_object_enum.dart';
 
 part 'delete_certificate_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteCertificateResponse with DeleteCertificateResponseMappable {
   const DeleteCertificateResponse({
     required this.objectEnum,

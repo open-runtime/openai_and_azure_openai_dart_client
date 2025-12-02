@@ -27,6 +27,10 @@ class RunStepCompletionUsageUnionMapper
 
   @override
   final MappableFields<RunStepCompletionUsageUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepCompletionUsageUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('RunStepCompletionUsageUnion');
@@ -88,15 +92,19 @@ class RunStepCompletionUsageUnionVariant1Mapper
   static int _$completionTokens(RunStepCompletionUsageUnionVariant1 v) =>
       v.completionTokens;
   static const Field<RunStepCompletionUsageUnionVariant1, int>
-  _f$completionTokens = Field('completionTokens', _$completionTokens);
+  _f$completionTokens = Field(
+    'completionTokens',
+    _$completionTokens,
+    key: r'completion_tokens',
+  );
   static int _$promptTokens(RunStepCompletionUsageUnionVariant1 v) =>
       v.promptTokens;
   static const Field<RunStepCompletionUsageUnionVariant1, int> _f$promptTokens =
-      Field('promptTokens', _$promptTokens);
+      Field('promptTokens', _$promptTokens, key: r'prompt_tokens');
   static int _$totalTokens(RunStepCompletionUsageUnionVariant1 v) =>
       v.totalTokens;
   static const Field<RunStepCompletionUsageUnionVariant1, int> _f$totalTokens =
-      Field('totalTokens', _$totalTokens);
+      Field('totalTokens', _$totalTokens, key: r'total_tokens');
 
   @override
   final MappableFields<RunStepCompletionUsageUnionVariant1> fields = const {
@@ -104,6 +112,10 @@ class RunStepCompletionUsageUnionVariant1Mapper
     #promptTokens: _f$promptTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepCompletionUsageUnionVariant1 _instantiate(DecodingData data) {
     return RunStepCompletionUsageUnionVariant1(

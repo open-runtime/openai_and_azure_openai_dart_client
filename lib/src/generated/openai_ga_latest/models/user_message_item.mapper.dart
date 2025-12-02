@@ -14,7 +14,7 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
   static UserMessageItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserMessageItemMapper._());
-      UserMessageItemContentContentUnionMapper.ensureInitialized();
+      UserMessageItemContentUnionMapper.ensureInitialized();
       AttachmentMapper.ensureInitialized();
       InferenceOptionsMapper.ensureInitialized();
       UserMessageItemObjectObjectEnumMapper.ensureInitialized();
@@ -40,10 +40,9 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
     _$threadId,
     key: r'thread_id',
   );
-  static List<UserMessageItemContentContentUnion> _$content(
-    UserMessageItem v,
-  ) => v.content;
-  static const Field<UserMessageItem, List<UserMessageItemContentContentUnion>>
+  static List<UserMessageItemContentUnion> _$content(UserMessageItem v) =>
+      v.content;
+  static const Field<UserMessageItem, List<UserMessageItemContentUnion>>
   _f$content = Field('content', _$content);
   static List<Attachment> _$attachments(UserMessageItem v) => v.attachments;
   static const Field<UserMessageItem, List<Attachment>> _f$attachments = Field(
@@ -83,6 +82,10 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserMessageItem _instantiate(DecodingData data) {
     return UserMessageItem(
@@ -161,11 +164,11 @@ abstract class UserMessageItemCopyWith<$R, $In extends UserMessageItem, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    UserMessageItemContentContentUnion,
-    UserMessageItemContentContentUnionCopyWith<
+    UserMessageItemContentUnion,
+    UserMessageItemContentUnionCopyWith<
       $R,
-      UserMessageItemContentContentUnion,
-      UserMessageItemContentContentUnion
+      UserMessageItemContentUnion,
+      UserMessageItemContentUnion
     >
   >
   get content;
@@ -177,7 +180,7 @@ abstract class UserMessageItemCopyWith<$R, $In extends UserMessageItem, $Out>
     String? id,
     int? createdAt,
     String? threadId,
-    List<UserMessageItemContentContentUnion>? content,
+    List<UserMessageItemContentUnion>? content,
     List<Attachment>? attachments,
     InferenceOptions? inferenceOptions,
     UserMessageItemObjectObjectEnum? objectEnum,
@@ -199,11 +202,11 @@ class _UserMessageItemCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    UserMessageItemContentContentUnion,
-    UserMessageItemContentContentUnionCopyWith<
+    UserMessageItemContentUnion,
+    UserMessageItemContentUnionCopyWith<
       $R,
-      UserMessageItemContentContentUnion,
-      UserMessageItemContentContentUnion
+      UserMessageItemContentUnion,
+      UserMessageItemContentUnion
     >
   >
   get content => ListCopyWith(
@@ -228,7 +231,7 @@ class _UserMessageItemCopyWithImpl<$R, $Out>
     String? id,
     int? createdAt,
     String? threadId,
-    List<UserMessageItemContentContentUnion>? content,
+    List<UserMessageItemContentUnion>? content,
     List<Attachment>? attachments,
     Object? inferenceOptions = $none,
     UserMessageItemObjectObjectEnum? objectEnum,

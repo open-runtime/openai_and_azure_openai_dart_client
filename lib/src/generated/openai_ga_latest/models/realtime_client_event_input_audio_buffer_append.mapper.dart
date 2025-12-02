@@ -38,6 +38,10 @@ class RealtimeClientEventInputAudioBufferAppendMapper
   @override
   final MappableFields<RealtimeClientEventInputAudioBufferAppend> fields =
       const {#type: _f$type, #audio: _f$audio, #eventId: _f$eventId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventInputAudioBufferAppend _instantiate(
     DecodingData data,

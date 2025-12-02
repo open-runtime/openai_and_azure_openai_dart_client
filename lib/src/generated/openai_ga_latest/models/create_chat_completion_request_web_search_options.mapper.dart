@@ -37,7 +37,7 @@ class CreateChatCompletionRequestWebSearchOptionsMapper
   _f$createChatCompletionRequestWebSearchOptionsUserLocation = Field(
     'createChatCompletionRequestWebSearchOptionsUserLocation',
     _$createChatCompletionRequestWebSearchOptionsUserLocation,
-    key: r'CreateChatCompletionRequestWebSearchOptionsUserLocation',
+    key: r'user_location',
     opt: true,
   );
   static WebSearchContextSize? _$searchContextSize(
@@ -61,6 +61,10 @@ class CreateChatCompletionRequestWebSearchOptionsMapper
             _f$createChatCompletionRequestWebSearchOptionsUserLocation,
         #searchContextSize: _f$searchContextSize,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequestWebSearchOptions _instantiate(
     DecodingData data,

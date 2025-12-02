@@ -34,7 +34,7 @@ class RunGraderResponseMapper extends ClassMapperBase<RunGraderResponse> {
   _f$runGraderResponseMetadata = Field(
     'runGraderResponseMetadata',
     _$runGraderResponseMetadata,
-    key: r'RunGraderResponseMetadata',
+    key: r'metadata',
   );
   static Map<String, dynamic> _$subRewards(RunGraderResponse v) => v.subRewards;
   static const Field<RunGraderResponse, Map<String, dynamic>> _f$subRewards =
@@ -56,6 +56,10 @@ class RunGraderResponseMapper extends ClassMapperBase<RunGraderResponse> {
     #subRewards: _f$subRewards,
     #modelGraderTokenUsagePerModel: _f$modelGraderTokenUsagePerModel,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunGraderResponse _instantiate(DecodingData data) {
     return RunGraderResponse(

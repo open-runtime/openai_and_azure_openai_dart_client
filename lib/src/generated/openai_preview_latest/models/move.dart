@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'move_type_type.dart';
 
 part 'move.mapper.dart';
 
 /// A mouse move action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Move with MoveMappable {
   const Move({
     required this.x,

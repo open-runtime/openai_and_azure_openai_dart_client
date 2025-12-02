@@ -14,7 +14,7 @@ class RunGraderRequestMapper extends ClassMapperBase<RunGraderRequest> {
   static RunGraderRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RunGraderRequestMapper._());
-      RunGraderRequestGraderGraderUnionMapper.ensureInitialized();
+      RunGraderRequestGraderUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,10 +22,9 @@ class RunGraderRequestMapper extends ClassMapperBase<RunGraderRequest> {
   @override
   final String id = 'RunGraderRequest';
 
-  static RunGraderRequestGraderGraderUnion _$grader(RunGraderRequest v) =>
-      v.grader;
-  static const Field<RunGraderRequest, RunGraderRequestGraderGraderUnion>
-  _f$grader = Field('grader', _$grader);
+  static RunGraderRequestGraderUnion _$grader(RunGraderRequest v) => v.grader;
+  static const Field<RunGraderRequest, RunGraderRequestGraderUnion> _f$grader =
+      Field('grader', _$grader);
   static String _$modelSample(RunGraderRequest v) => v.modelSample;
   static const Field<RunGraderRequest, String> _f$modelSample = Field(
     'modelSample',
@@ -45,6 +44,10 @@ class RunGraderRequestMapper extends ClassMapperBase<RunGraderRequest> {
     #modelSample: _f$modelSample,
     #item: _f$item,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunGraderRequest _instantiate(DecodingData data) {
     return RunGraderRequest(
@@ -116,14 +119,14 @@ extension RunGraderRequestValueCopy<$R, $Out>
 
 abstract class RunGraderRequestCopyWith<$R, $In extends RunGraderRequest, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  RunGraderRequestGraderGraderUnionCopyWith<
+  RunGraderRequestGraderUnionCopyWith<
     $R,
-    RunGraderRequestGraderGraderUnion,
-    RunGraderRequestGraderGraderUnion
+    RunGraderRequestGraderUnion,
+    RunGraderRequestGraderUnion
   >
   get grader;
   $R call({
-    RunGraderRequestGraderGraderUnion? grader,
+    RunGraderRequestGraderUnion? grader,
     String? modelSample,
     dynamic item,
   });
@@ -141,15 +144,15 @@ class _RunGraderRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunGraderRequest> $mapper =
       RunGraderRequestMapper.ensureInitialized();
   @override
-  RunGraderRequestGraderGraderUnionCopyWith<
+  RunGraderRequestGraderUnionCopyWith<
     $R,
-    RunGraderRequestGraderGraderUnion,
-    RunGraderRequestGraderGraderUnion
+    RunGraderRequestGraderUnion,
+    RunGraderRequestGraderUnion
   >
   get grader => $value.grader.copyWith.$chain((v) => call(grader: v));
   @override
   $R call({
-    RunGraderRequestGraderGraderUnion? grader,
+    RunGraderRequestGraderUnion? grader,
     String? modelSample,
     Object? item = $none,
   }) => $apply(

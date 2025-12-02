@@ -8,7 +8,7 @@ import 'container_resource.dart';
 
 part 'container_list_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerListResource with ContainerListResourceMappable {
   const ContainerListResource({
     required this.objectField,

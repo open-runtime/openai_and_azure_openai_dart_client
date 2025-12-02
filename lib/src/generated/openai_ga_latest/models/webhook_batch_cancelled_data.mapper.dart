@@ -32,6 +32,10 @@ class WebhookBatchCancelledDataMapper
 
   @override
   final MappableFields<WebhookBatchCancelledData> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchCancelledData _instantiate(DecodingData data) {
     return WebhookBatchCancelledData(id: data.dec(_f$id));

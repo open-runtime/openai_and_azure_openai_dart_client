@@ -38,6 +38,10 @@ class ItemReferenceParamMapper extends ClassMapperBase<ItemReferenceParam> {
     #id: _f$id,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ItemReferenceParam _instantiate(DecodingData data) {
     return ItemReferenceParam(id: data.dec(_f$id), type: data.dec(_f$type));

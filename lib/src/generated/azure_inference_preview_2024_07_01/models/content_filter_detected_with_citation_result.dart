@@ -10,7 +10,7 @@ import 'content_filter_result_base.dart';
 
 part 'content_filter_detected_with_citation_result.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedWithCitationResult with ContentFilterDetectedWithCitationResultMappable {
   const ContentFilterDetectedWithCitationResult({
     required this.contentFilterDetectedResult,
@@ -23,7 +23,7 @@ class ContentFilterDetectedWithCitationResult with ContentFilterDetectedWithCita
   final ContentFilterDetectedResult contentFilterDetectedResult;
   final bool filtered;
   final bool? detected;
-  @MappableField(key: 'ContentFilterDetectedWithCitationResultCitation')
+  @MappableField(key: 'citation')
   final ContentFilterDetectedWithCitationResultCitation? contentFilterDetectedWithCitationResultCitation;
 
   static ContentFilterDetectedWithCitationResult fromJson(Map<String, dynamic> json) => ContentFilterDetectedWithCitationResultMapper.fromJson(json);

@@ -10,7 +10,7 @@ part 'realtime_beta_server_event_transcription_session_created.mapper.dart';
 
 /// Returned when a transcription session is created.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventTranscriptionSessionCreated with RealtimeBetaServerEventTranscriptionSessionCreatedMappable {
   const RealtimeBetaServerEventTranscriptionSessionCreated({
     required this.eventId,

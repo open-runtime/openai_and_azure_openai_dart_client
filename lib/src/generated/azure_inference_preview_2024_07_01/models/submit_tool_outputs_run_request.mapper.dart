@@ -45,6 +45,10 @@ class SubmitToolOutputsRunRequestMapper
     #toolOutputs: _f$toolOutputs,
     #stream: _f$stream,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SubmitToolOutputsRunRequest _instantiate(DecodingData data) {
     return SubmitToolOutputsRunRequest(

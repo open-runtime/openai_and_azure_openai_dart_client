@@ -8,7 +8,7 @@ import 'model_ids_shared.dart';
 
 part 'model_ids_responses_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ModelIdsResponsesUnionModelIdsShared, ModelIdsResponsesUnionVariantString])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ModelIdsResponsesUnionModelIdsShared, ModelIdsResponsesUnionVariantString])
 sealed class ModelIdsResponsesUnion with ModelIdsResponsesUnionMappable {
   const ModelIdsResponsesUnion();
 
@@ -31,14 +31,14 @@ extension ModelIdsResponsesUnionDeserializer on ModelIdsResponsesUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelIdsResponsesUnionModelIdsShared extends ModelIdsResponsesUnion with ModelIdsResponsesUnionModelIdsSharedMappable {
 
 
   const ModelIdsResponsesUnionModelIdsShared();
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelIdsResponsesUnionVariantString extends ModelIdsResponsesUnion with ModelIdsResponsesUnionVariantStringMappable {
   final String value;
 

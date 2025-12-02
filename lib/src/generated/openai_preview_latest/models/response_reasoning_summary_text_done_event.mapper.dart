@@ -60,6 +60,10 @@ class ResponseReasoningSummaryTextDoneEventMapper
     #summaryIndex: _f$summaryIndex,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseReasoningSummaryTextDoneEvent _instantiate(DecodingData data) {
     return ResponseReasoningSummaryTextDoneEvent(

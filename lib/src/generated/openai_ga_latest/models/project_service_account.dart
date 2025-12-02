@@ -10,7 +10,7 @@ import 'project_service_account_role_role.dart';
 part 'project_service_account.mapper.dart';
 
 /// Represents an individual service account in a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccount with ProjectServiceAccountMappable {
   const ProjectServiceAccount({
     required this.objectEnum,

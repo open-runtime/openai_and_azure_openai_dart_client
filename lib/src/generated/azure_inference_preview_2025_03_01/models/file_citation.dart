@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'annotation.dart';
 import 'file_citation_type_type.dart';
 
 part 'file_citation.mapper.dart';
 
 /// A citation to a file.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileCitation with FileCitationMappable {
   const FileCitation({
     required this.type,

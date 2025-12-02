@@ -11,14 +11,14 @@ part 'chat_completion_list.mapper.dart';
 
 /// An object representing a list of Chat Completions.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionList with ChatCompletionListMappable {
   const ChatCompletionList({
     required this.data,
     required this.firstId,
     required this.lastId,
     required this.hasMore,
-    this.objectEnum = ChatCompletionListObjectObjectEnum.valueList,
+    this.objectEnum = ChatCompletionListObjectObjectEnum.list,
   });
 
   final List<CreateChatCompletionResponse> data;

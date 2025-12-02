@@ -68,6 +68,10 @@ class ContainerFileResourceMapper
     #path: _f$path,
     #source: _f$source,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContainerFileResource _instantiate(DecodingData data) {
     return ContainerFileResource(

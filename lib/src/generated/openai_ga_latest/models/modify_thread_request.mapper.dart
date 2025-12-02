@@ -45,6 +45,10 @@ class ModifyThreadRequestMapper extends ClassMapperBase<ModifyThreadRequest> {
     #toolResources: _f$toolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyThreadRequest _instantiate(DecodingData data) {
     return ModifyThreadRequest(

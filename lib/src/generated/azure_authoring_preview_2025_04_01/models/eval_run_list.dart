@@ -10,14 +10,14 @@ import 'eval_run_list_object_object_enum.dart';
 part 'eval_run_list.mapper.dart';
 
 /// An object representing a list of runs for an evaluation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunList with EvalRunListMappable {
   const EvalRunList({
     required this.data,
     required this.firstId,
     required this.hasMore,
     required this.lastId,
-    this.objectEnum = EvalRunListObjectObjectEnum.valueList,
+    this.objectEnum = EvalRunListObjectObjectEnum.list,
   });
 
   final List<EvalRun> data;

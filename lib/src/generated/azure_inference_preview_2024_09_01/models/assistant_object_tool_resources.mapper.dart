@@ -37,7 +37,7 @@ class AssistantObjectToolResourcesMapper
   _f$assistantObjectToolResourcesCodeInterpreter = Field(
     'assistantObjectToolResourcesCodeInterpreter',
     _$assistantObjectToolResourcesCodeInterpreter,
-    key: r'AssistantObjectToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static AssistantObjectToolResourcesFileSearch?
@@ -50,7 +50,7 @@ class AssistantObjectToolResourcesMapper
   _f$assistantObjectToolResourcesFileSearch = Field(
     'assistantObjectToolResourcesFileSearch',
     _$assistantObjectToolResourcesFileSearch,
-    key: r'AssistantObjectToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -61,6 +61,10 @@ class AssistantObjectToolResourcesMapper
     #assistantObjectToolResourcesFileSearch:
         _f$assistantObjectToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantObjectToolResources _instantiate(DecodingData data) {
     return AssistantObjectToolResources(

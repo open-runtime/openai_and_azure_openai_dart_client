@@ -24,6 +24,10 @@ class RealtimeTurnDetectionMapper
 
   @override
   final MappableFields<RealtimeTurnDetection> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTurnDetection _instantiate(DecodingData data) {
     return RealtimeTurnDetection();

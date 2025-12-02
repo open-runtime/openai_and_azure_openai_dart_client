@@ -15,7 +15,7 @@ class ValidateGraderResponseMapper
   static ValidateGraderResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ValidateGraderResponseMapper._());
-      ValidateGraderResponseGraderGraderUnionMapper.ensureInitialized();
+      ValidateGraderResponseGraderUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,19 +23,20 @@ class ValidateGraderResponseMapper
   @override
   final String id = 'ValidateGraderResponse';
 
-  static ValidateGraderResponseGraderGraderUnion? _$grader(
+  static ValidateGraderResponseGraderUnion? _$grader(
     ValidateGraderResponse v,
   ) => v.grader;
-  static const Field<
-    ValidateGraderResponse,
-    ValidateGraderResponseGraderGraderUnion
-  >
+  static const Field<ValidateGraderResponse, ValidateGraderResponseGraderUnion>
   _f$grader = Field('grader', _$grader, opt: true);
 
   @override
   final MappableFields<ValidateGraderResponse> fields = const {
     #grader: _f$grader,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ValidateGraderResponse _instantiate(DecodingData data) {
     return ValidateGraderResponse(grader: data.dec(_f$grader));
@@ -111,13 +112,13 @@ abstract class ValidateGraderResponseCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  ValidateGraderResponseGraderGraderUnionCopyWith<
+  ValidateGraderResponseGraderUnionCopyWith<
     $R,
-    ValidateGraderResponseGraderGraderUnion,
-    ValidateGraderResponseGraderGraderUnion
+    ValidateGraderResponseGraderUnion,
+    ValidateGraderResponseGraderUnion
   >?
   get grader;
-  $R call({ValidateGraderResponseGraderGraderUnion? grader});
+  $R call({ValidateGraderResponseGraderUnion? grader});
   ValidateGraderResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -133,10 +134,10 @@ class _ValidateGraderResponseCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ValidateGraderResponse> $mapper =
       ValidateGraderResponseMapper.ensureInitialized();
   @override
-  ValidateGraderResponseGraderGraderUnionCopyWith<
+  ValidateGraderResponseGraderUnionCopyWith<
     $R,
-    ValidateGraderResponseGraderGraderUnion,
-    ValidateGraderResponseGraderGraderUnion
+    ValidateGraderResponseGraderUnion,
+    ValidateGraderResponseGraderUnion
   >?
   get grader => $value.grader?.copyWith.$chain((v) => call(grader: v));
   @override

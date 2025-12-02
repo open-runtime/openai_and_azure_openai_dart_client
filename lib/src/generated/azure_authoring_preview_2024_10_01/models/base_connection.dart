@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'base_connection.mapper.dart';
 
 /// A connection to a resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BaseConnection with BaseConnectionMappable {
   const BaseConnection({
     required this.kind,

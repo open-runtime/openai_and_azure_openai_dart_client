@@ -24,7 +24,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
-      ResponsePropertiesToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
       ResponseModelStatusStatusMapper.ensureInitialized();
       ResponseUsageMapper.ensureInitialized();
     }
@@ -58,7 +58,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
   _f$responseModelIncompleteDetails = Field(
     'responseModelIncompleteDetails',
     _$responseModelIncompleteDetails,
-    key: r'ResponseModelIncompleteDetails',
+    key: r'incomplete_details',
   );
   static List<OutputItem> _$output(ResponseModel v) => v.output;
   static const Field<ResponseModel, List<OutputItem>> _f$output = Field(
@@ -155,7 +155,7 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
   _f$responsePropertiesText = Field(
     'responsePropertiesText',
     _$responsePropertiesText,
-    key: r'ResponsePropertiesText',
+    key: r'text',
     opt: true,
   );
   static List<Tool>? _$tools(ResponseModel v) => v.tools;
@@ -164,10 +164,9 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     _$tools,
     opt: true,
   );
-  static ResponsePropertiesToolChoiceToolChoiceUnion? _$toolChoice(
-    ResponseModel v,
-  ) => v.toolChoice;
-  static const Field<ResponseModel, ResponsePropertiesToolChoiceToolChoiceUnion>
+  static ResponsePropertiesToolChoiceUnion? _$toolChoice(ResponseModel v) =>
+      v.toolChoice;
+  static const Field<ResponseModel, ResponsePropertiesToolChoiceUnion>
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
@@ -218,6 +217,10 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     #outputText: _f$outputText,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseModel _instantiate(DecodingData data) {
     return ResponseModel(
@@ -337,10 +340,10 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
   >?
   get responsePropertiesText;
   ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools;
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice;
   ResponseUsageCopyWith<$R, ResponseUsage, ResponseUsage>? get usage;
@@ -365,7 +368,7 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     String? instructions,
     ResponsePropertiesText? responsePropertiesText,
     List<Tool>? tools,
-    ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice,
+    ResponsePropertiesToolChoiceUnion? toolChoice,
     ResponseModelStatusStatus? status,
     String? outputText,
     ResponseUsage? usage,
@@ -439,10 +442,10 @@ class _ResponseModelCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));

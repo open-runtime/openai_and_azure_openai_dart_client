@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_file_file.dart';
 import 'chat_completion_request_message_content_part_file_type_type.dart';
+import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_file.mapper.dart';
 
 /// Learn about [file inputs](https://platform.openai.com/docs/guides/text) for text generation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartFile with ChatCompletionRequestMessageContentPartFileMappable {
   const ChatCompletionRequestMessageContentPartFile({
     required this.type,
@@ -19,7 +20,7 @@ class ChatCompletionRequestMessageContentPartFile with ChatCompletionRequestMess
   });
 
   final ChatCompletionRequestMessageContentPartFileTypeType type;
-  @MappableField(key: 'ChatCompletionRequestMessageContentPartFileFile')
+  @MappableField(key: 'file')
   final ChatCompletionRequestMessageContentPartFileFile chatCompletionRequestMessageContentPartFileFile;
 
   static ChatCompletionRequestMessageContentPartFile fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartFileMapper.fromJson(json);

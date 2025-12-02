@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_response_cancelled_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCancelledData with WebhookResponseCancelledDataMappable {
   const WebhookResponseCancelledData({
     required this.id,

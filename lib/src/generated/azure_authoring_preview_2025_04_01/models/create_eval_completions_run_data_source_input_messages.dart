@@ -9,7 +9,7 @@ import 'create_eval_completions_run_data_source_input_messages_template.dart';
 
 part 'create_eval_completions_run_data_source_input_messages.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessages with CreateEvalCompletionsRunDataSourceInputMessagesMappable {
   const CreateEvalCompletionsRunDataSourceInputMessages({
     required this.type,

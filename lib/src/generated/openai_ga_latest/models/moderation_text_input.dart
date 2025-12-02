@@ -9,7 +9,7 @@ import 'moderation_text_input_type_type.dart';
 part 'moderation_text_input.mapper.dart';
 
 /// An object describing text to classify.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModerationTextInput with ModerationTextInputMappable {
   const ModerationTextInput({
     required this.type,

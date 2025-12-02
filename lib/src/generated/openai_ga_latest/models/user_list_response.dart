@@ -9,7 +9,7 @@ import 'user_list_response_object_object_enum.dart';
 
 part 'user_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserListResponse with UserListResponseMappable {
   const UserListResponse({
     required this.objectEnum,

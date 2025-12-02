@@ -33,6 +33,10 @@ class RunStepDetailsToolCallsCodeOutputImageObjectImageMapper
   @override
   final MappableFields<RunStepDetailsToolCallsCodeOutputImageObjectImage>
   fields = const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsCodeOutputImageObjectImage _instantiate(
     DecodingData data,

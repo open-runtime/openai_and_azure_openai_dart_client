@@ -47,6 +47,10 @@ class RealtimeClientEventResponseCancelMapper
     #eventId: _f$eventId,
     #responseId: _f$responseId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventResponseCancel _instantiate(DecodingData data) {
     return RealtimeClientEventResponseCancel(

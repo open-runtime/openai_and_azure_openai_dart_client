@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'elasticsearch_chat_extension_parameters_authentication_authentication_union.dart';
-import 'elasticsearch_chat_extension_parameters_embedding_dependency_embedding_dependency_union.dart';
+import 'elasticsearch_chat_extension_parameters_authentication_union.dart';
+import 'elasticsearch_chat_extension_parameters_embedding_dependency_union.dart';
 import 'elasticsearch_index_field_mapping_options.dart';
 import 'elasticsearch_query_type.dart';
 import 'on_your_data_context_property.dart';
@@ -13,7 +13,7 @@ import 'on_your_data_context_property.dart';
 part 'elasticsearch_chat_extension_parameters.mapper.dart';
 
 /// Parameters to use when configuring Elasticsearch® as an Azure OpenAI chat extension. 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ElasticsearchChatExtensionParameters with ElasticsearchChatExtensionParametersMappable {
   const ElasticsearchChatExtensionParameters({
     required this.authentication,
@@ -30,7 +30,7 @@ class ElasticsearchChatExtensionParameters with ElasticsearchChatExtensionParame
     this.includeContexts,
   });
 
-  final ElasticsearchChatExtensionParametersAuthenticationAuthenticationUnion authentication;
+  final ElasticsearchChatExtensionParametersAuthenticationUnion authentication;
   final String endpoint;
   @MappableField(key: 'index_name')
   final String indexName;
@@ -48,7 +48,7 @@ class ElasticsearchChatExtensionParameters with ElasticsearchChatExtensionParame
   @MappableField(key: 'query_type')
   final ElasticsearchQueryType? queryType;
   @MappableField(key: 'embedding_dependency')
-  final ElasticsearchChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion? embeddingDependency;
+  final ElasticsearchChatExtensionParametersEmbeddingDependencyUnion? embeddingDependency;
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 

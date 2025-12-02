@@ -4,13 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'item_resource.dart';
 import 'mcp_approval_response_resource_type_type.dart';
 
 part 'mcp_approval_response_resource.mapper.dart';
 
 /// A response to an MCP approval request.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpApprovalResponseResource with McpApprovalResponseResourceMappable {
   const McpApprovalResponseResource({
     required this.type,

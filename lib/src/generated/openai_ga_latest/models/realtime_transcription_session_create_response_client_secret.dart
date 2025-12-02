@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_transcription_session_create_response_client_secret.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponseClientSecret with RealtimeTranscriptionSessionCreateResponseClientSecretMappable {
   const RealtimeTranscriptionSessionCreateResponseClientSecret({
     required this.value,

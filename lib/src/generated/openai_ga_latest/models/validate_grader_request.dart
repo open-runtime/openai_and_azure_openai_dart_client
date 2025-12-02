@@ -4,17 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'validate_grader_request_grader_grader_union.dart';
+import 'validate_grader_request_grader_union.dart';
 
 part 'validate_grader_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ValidateGraderRequest with ValidateGraderRequestMappable {
   const ValidateGraderRequest({
     required this.grader,
   });
 
-  final ValidateGraderRequestGraderGraderUnion grader;
+  final ValidateGraderRequestGraderUnion grader;
 
   static ValidateGraderRequest fromJson(Map<String, dynamic> json) => ValidateGraderRequestMapper.fromJson(json);
 

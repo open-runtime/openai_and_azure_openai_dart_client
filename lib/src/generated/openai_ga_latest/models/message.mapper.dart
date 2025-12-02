@@ -16,7 +16,7 @@ class MessageMapper extends ClassMapperBase<Message> {
       MapperContainer.globals.use(_instance = MessageMapper._());
       MessageStatusMapper.ensureInitialized();
       MessageRoleMapper.ensureInitialized();
-      MessageContentContentUnionMapper.ensureInitialized();
+      MessageContentUnionMapper.ensureInitialized();
       MessageTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -34,9 +34,11 @@ class MessageMapper extends ClassMapperBase<Message> {
   );
   static MessageRole _$role(Message v) => v.role;
   static const Field<Message, MessageRole> _f$role = Field('role', _$role);
-  static List<MessageContentContentUnion> _$content(Message v) => v.content;
-  static const Field<Message, List<MessageContentContentUnion>> _f$content =
-      Field('content', _$content);
+  static List<MessageContentUnion> _$content(Message v) => v.content;
+  static const Field<Message, List<MessageContentUnion>> _f$content = Field(
+    'content',
+    _$content,
+  );
   static MessageTypeType _$type(Message v) => v.type;
   static const Field<Message, MessageTypeType> _f$type = Field(
     'type',
@@ -53,6 +55,10 @@ class MessageMapper extends ClassMapperBase<Message> {
     #content: _f$content,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Message _instantiate(DecodingData data) {
     return Message(
@@ -123,19 +129,15 @@ abstract class MessageCopyWith<$R, $In extends Message, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    MessageContentContentUnion,
-    MessageContentContentUnionCopyWith<
-      $R,
-      MessageContentContentUnion,
-      MessageContentContentUnion
-    >
+    MessageContentUnion,
+    MessageContentUnionCopyWith<$R, MessageContentUnion, MessageContentUnion>
   >
   get content;
   $R call({
     String? id,
     MessageStatus? status,
     MessageRole? role,
-    List<MessageContentContentUnion>? content,
+    List<MessageContentUnion>? content,
     MessageTypeType? type,
   });
   MessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -152,12 +154,8 @@ class _MessageCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    MessageContentContentUnion,
-    MessageContentContentUnionCopyWith<
-      $R,
-      MessageContentContentUnion,
-      MessageContentContentUnion
-    >
+    MessageContentUnion,
+    MessageContentUnionCopyWith<$R, MessageContentUnion, MessageContentUnion>
   >
   get content => ListCopyWith(
     $value.content,
@@ -169,7 +167,7 @@ class _MessageCopyWithImpl<$R, $Out>
     String? id,
     MessageStatus? status,
     MessageRole? role,
-    List<MessageContentContentUnion>? content,
+    List<MessageContentUnion>? content,
     MessageTypeType? type,
   }) => $apply(
     FieldCopyWithData({

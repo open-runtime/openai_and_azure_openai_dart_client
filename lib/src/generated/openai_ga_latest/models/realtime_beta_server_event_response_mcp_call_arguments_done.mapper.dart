@@ -83,6 +83,10 @@ class RealtimeBetaServerEventResponseMcpCallArgumentsDoneMapper
     #outputIndex: _f$outputIndex,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseMcpCallArgumentsDone _instantiate(
     DecodingData data,

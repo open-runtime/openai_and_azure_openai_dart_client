@@ -41,6 +41,10 @@ class RealtimeConnectParamsMapper
     #model: _f$model,
     #callId: _f$callId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConnectParams _instantiate(DecodingData data) {
     return RealtimeConnectParams(

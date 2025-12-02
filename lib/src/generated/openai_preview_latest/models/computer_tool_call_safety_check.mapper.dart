@@ -46,6 +46,10 @@ class ComputerToolCallSafetyCheckMapper
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerToolCallSafetyCheck _instantiate(DecodingData data) {
     return ComputerToolCallSafetyCheck(

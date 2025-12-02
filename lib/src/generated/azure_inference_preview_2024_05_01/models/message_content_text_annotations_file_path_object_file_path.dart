@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'message_content_text_annotations_file_path_object_file_path.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextAnnotationsFilePathObjectFilePath with MessageContentTextAnnotationsFilePathObjectFilePathMappable {
   const MessageContentTextAnnotationsFilePathObjectFilePath({
     required this.fileId,

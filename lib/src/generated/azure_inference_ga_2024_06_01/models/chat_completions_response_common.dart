@@ -9,7 +9,7 @@ import 'completion_usage.dart';
 
 part 'chat_completions_response_common.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionsResponseCommon with ChatCompletionsResponseCommonMappable {
   const ChatCompletionsResponseCommon({
     required this.id,

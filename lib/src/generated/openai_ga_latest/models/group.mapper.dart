@@ -53,6 +53,10 @@ class GroupMapper extends ClassMapperBase<Group> {
     #createdAt: _f$createdAt,
     #scimManaged: _f$scimManaged,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Group _instantiate(DecodingData data) {
     return Group(

@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_in_progress_event_type_type.dart';
 import 'response_model.dart';
+import 'response_stream_event.dart';
 
 part 'response_in_progress_event.mapper.dart';
 
 /// Emitted when the response is in progress.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseInProgressEvent with ResponseInProgressEventMappable {
   const ResponseInProgressEvent({
     required this.type,

@@ -8,7 +8,7 @@ import 'container_file_resource.dart';
 
 part 'container_file_list_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerFileListResource with ContainerFileListResourceMappable {
   const ContainerFileListResource({
     required this.objectField,

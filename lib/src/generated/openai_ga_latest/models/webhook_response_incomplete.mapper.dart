@@ -45,7 +45,7 @@ class WebhookResponseIncompleteMapper
   _f$webhookResponseIncompleteData = Field(
     'webhookResponseIncompleteData',
     _$webhookResponseIncompleteData,
-    key: r'WebhookResponseIncompleteData',
+    key: r'data',
   );
   static WebhookResponseIncompleteTypeType _$type(
     WebhookResponseIncomplete v,
@@ -72,6 +72,10 @@ class WebhookResponseIncompleteMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseIncomplete _instantiate(DecodingData data) {
     return WebhookResponseIncomplete(

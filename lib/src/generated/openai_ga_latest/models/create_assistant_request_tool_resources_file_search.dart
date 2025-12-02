@@ -8,7 +8,7 @@ import 'create_assistant_request_tool_resources_file_search_vector_stores.dart';
 
 part 'create_assistant_request_tool_resources_file_search.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequestToolResourcesFileSearch with CreateAssistantRequestToolResourcesFileSearchMappable {
   const CreateAssistantRequestToolResourcesFileSearch({
     this.vectorStoreIds,

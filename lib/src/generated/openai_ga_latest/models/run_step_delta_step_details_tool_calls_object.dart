@@ -10,7 +10,7 @@ import 'run_step_delta_step_details_tool_calls_object_type_type.dart';
 part 'run_step_delta_step_details_tool_calls_object.mapper.dart';
 
 /// Details of the tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsObject with RunStepDeltaStepDetailsToolCallsObjectMappable {
   const RunStepDeltaStepDetailsToolCallsObject({
     required this.type,

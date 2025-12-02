@@ -37,6 +37,10 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
     #type: _f$type,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFailedEvent _instantiate(DecodingData data) {
     return ResponseFailedEvent(

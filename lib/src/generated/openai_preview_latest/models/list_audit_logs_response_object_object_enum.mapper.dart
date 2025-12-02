@@ -30,7 +30,7 @@ class ListAuditLogsResponseObjectObjectEnumMapper
   ListAuditLogsResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ListAuditLogsResponseObjectObjectEnum.valueList;
+        return ListAuditLogsResponseObjectObjectEnum.list;
       case 'unknown':
         return ListAuditLogsResponseObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class ListAuditLogsResponseObjectObjectEnumMapper
   @override
   dynamic encode(ListAuditLogsResponseObjectObjectEnum self) {
     switch (self) {
-      case ListAuditLogsResponseObjectObjectEnum.valueList:
+      case ListAuditLogsResponseObjectObjectEnum.list:
         return 'list';
       case ListAuditLogsResponseObjectObjectEnum.unknown:
         return 'unknown';

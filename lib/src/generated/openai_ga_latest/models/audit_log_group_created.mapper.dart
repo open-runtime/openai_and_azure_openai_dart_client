@@ -35,7 +35,7 @@ class AuditLogGroupCreatedMapper extends ClassMapperBase<AuditLogGroupCreated> {
   _f$auditLogGroupCreatedData = Field(
     'auditLogGroupCreatedData',
     _$auditLogGroupCreatedData,
-    key: r'AuditLogGroupCreatedData',
+    key: r'data',
     opt: true,
   );
 
@@ -44,6 +44,10 @@ class AuditLogGroupCreatedMapper extends ClassMapperBase<AuditLogGroupCreated> {
     #id: _f$id,
     #auditLogGroupCreatedData: _f$auditLogGroupCreatedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogGroupCreated _instantiate(DecodingData data) {
     return AuditLogGroupCreated(

@@ -17,7 +17,7 @@ class MessageDeltaContentTextObjectTextMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentTextObjectTextMapper._(),
       );
-      MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnionMapper.ensureInitialized();
+      MessageDeltaContentTextObjectTextAnnotationsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,11 +28,12 @@ class MessageDeltaContentTextObjectTextMapper
   static String? _$value(MessageDeltaContentTextObjectText v) => v.value;
   static const Field<MessageDeltaContentTextObjectText, String> _f$value =
       Field('value', _$value, opt: true);
-  static List<MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion>?
-  _$annotations(MessageDeltaContentTextObjectText v) => v.annotations;
+  static List<MessageDeltaContentTextObjectTextAnnotationsUnion>? _$annotations(
+    MessageDeltaContentTextObjectText v,
+  ) => v.annotations;
   static const Field<
     MessageDeltaContentTextObjectText,
-    List<MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion>
+    List<MessageDeltaContentTextObjectTextAnnotationsUnion>
   >
   _f$annotations = Field('annotations', _$annotations, opt: true);
 
@@ -41,6 +42,10 @@ class MessageDeltaContentTextObjectTextMapper
     #value: _f$value,
     #annotations: _f$annotations,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextObjectText _instantiate(DecodingData data) {
     return MessageDeltaContentTextObjectText(
@@ -130,18 +135,17 @@ abstract class MessageDeltaContentTextObjectTextCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion,
-    MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnionCopyWith<
+    MessageDeltaContentTextObjectTextAnnotationsUnion,
+    MessageDeltaContentTextObjectTextAnnotationsUnionCopyWith<
       $R,
-      MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion,
-      MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion
+      MessageDeltaContentTextObjectTextAnnotationsUnion,
+      MessageDeltaContentTextObjectTextAnnotationsUnion
     >
   >?
   get annotations;
   $R call({
     String? value,
-    List<MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion>?
-    annotations,
+    List<MessageDeltaContentTextObjectTextAnnotationsUnion>? annotations,
   });
   MessageDeltaContentTextObjectTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -168,11 +172,11 @@ class _MessageDeltaContentTextObjectTextCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion,
-    MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnionCopyWith<
+    MessageDeltaContentTextObjectTextAnnotationsUnion,
+    MessageDeltaContentTextObjectTextAnnotationsUnionCopyWith<
       $R,
-      MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion,
-      MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion
+      MessageDeltaContentTextObjectTextAnnotationsUnion,
+      MessageDeltaContentTextObjectTextAnnotationsUnion
     >
   >?
   get annotations => $value.annotations != null

@@ -18,7 +18,7 @@ part 'realtime_beta_server_event_conversation_item_created.mapper.dart';
 ///   - The client has sent a `conversation.item.create` event to add a new Item.
 ///     to the Conversation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemCreated with RealtimeBetaServerEventConversationItemCreatedMappable {
   const RealtimeBetaServerEventConversationItemCreated({
     required this.eventId,

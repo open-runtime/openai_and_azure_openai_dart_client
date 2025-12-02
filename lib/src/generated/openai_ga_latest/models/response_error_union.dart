@@ -8,7 +8,7 @@ import 'response_error_code.dart';
 
 part 'response_error_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ResponseErrorUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ResponseErrorUnionVariant1])
 sealed class ResponseErrorUnion with ResponseErrorUnionMappable {
   const ResponseErrorUnion();
 
@@ -28,7 +28,7 @@ extension ResponseErrorUnionDeserializer on ResponseErrorUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseErrorUnionVariant1 extends ResponseErrorUnion with ResponseErrorUnionVariant1Mappable {
   final ResponseErrorCode code;
   final String message;

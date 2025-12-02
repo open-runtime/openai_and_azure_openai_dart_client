@@ -34,7 +34,7 @@ class CreateThreadRequestMapper extends ClassMapperBase<CreateThreadRequest> {
   _f$createThreadRequestToolResources = Field(
     'createThreadRequestToolResources',
     _$createThreadRequestToolResources,
-    key: r'CreateThreadRequestToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static Map<String, String>? _$metadata(CreateThreadRequest v) => v.metadata;
@@ -47,6 +47,10 @@ class CreateThreadRequestMapper extends ClassMapperBase<CreateThreadRequest> {
     #createThreadRequestToolResources: _f$createThreadRequestToolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequest _instantiate(DecodingData data) {
     return CreateThreadRequest(

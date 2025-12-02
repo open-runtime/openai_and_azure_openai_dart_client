@@ -44,7 +44,7 @@ class MessageContentImageUrlObjectMapper
   _f$messageContentImageUrlObjectImageUrl = Field(
     'messageContentImageUrlObjectImageUrl',
     _$messageContentImageUrlObjectImageUrl,
-    key: r'MessageContentImageUrlObjectImageUrl',
+    key: r'image_url',
   );
 
   @override
@@ -53,6 +53,10 @@ class MessageContentImageUrlObjectMapper
     #messageContentImageUrlObjectImageUrl:
         _f$messageContentImageUrlObjectImageUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentImageUrlObject _instantiate(DecodingData data) {
     return MessageContentImageUrlObject(

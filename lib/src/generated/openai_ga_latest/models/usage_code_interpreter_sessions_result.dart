@@ -9,7 +9,7 @@ import 'usage_code_interpreter_sessions_result_object_object_enum.dart';
 part 'usage_code_interpreter_sessions_result.mapper.dart';
 
 /// The aggregated code interpreter sessions usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageCodeInterpreterSessionsResult with UsageCodeInterpreterSessionsResultMappable {
   const UsageCodeInterpreterSessionsResult({
     required this.objectEnum,

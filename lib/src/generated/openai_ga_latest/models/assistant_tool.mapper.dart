@@ -14,6 +14,9 @@ class AssistantToolMapper extends ClassMapperBase<AssistantTool> {
   static AssistantToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantToolMapper._());
+      AssistantToolCodeInterpreterMapper.ensureInitialized();
+      AssistantToolFileSearchMapper.ensureInitialized();
+      AssistantToolFunctionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,9 +26,17 @@ class AssistantToolMapper extends ClassMapperBase<AssistantTool> {
 
   @override
   final MappableFields<AssistantTool> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantTool _instantiate(DecodingData data) {
-    return AssistantTool();
+    throw MapperException.missingSubclass(
+      'AssistantTool',
+      'type',
+      '${data.value['type']}',
+    );
   }
 
   @override
@@ -41,51 +52,10 @@ class AssistantToolMapper extends ClassMapperBase<AssistantTool> {
 }
 
 mixin AssistantToolMappable {
-  String toJsonString() {
-    return AssistantToolMapper.ensureInitialized().encodeJson<AssistantTool>(
-      this as AssistantTool,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return AssistantToolMapper.ensureInitialized().encodeMap<AssistantTool>(
-      this as AssistantTool,
-    );
-  }
-
+  String toJsonString();
+  Map<String, dynamic> toJson();
   AssistantToolCopyWith<AssistantTool, AssistantTool, AssistantTool>
-  get copyWith => _AssistantToolCopyWithImpl<AssistantTool, AssistantTool>(
-    this as AssistantTool,
-    $identity,
-    $identity,
-  );
-  @override
-  String toString() {
-    return AssistantToolMapper.ensureInitialized().stringifyValue(
-      this as AssistantTool,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return AssistantToolMapper.ensureInitialized().equalsValue(
-      this as AssistantTool,
-      other,
-    );
-  }
-
-  @override
-  int get hashCode {
-    return AssistantToolMapper.ensureInitialized().hashValue(
-      this as AssistantTool,
-    );
-  }
-}
-
-extension AssistantToolValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, AssistantTool, $Out> {
-  AssistantToolCopyWith<$R, AssistantTool, $Out> get $asAssistantTool =>
-      $base.as((v, t, t2) => _AssistantToolCopyWithImpl<$R, $Out>(v, t, t2));
+  get copyWith;
 }
 
 abstract class AssistantToolCopyWith<$R, $In extends AssistantTool, $Out>
@@ -94,22 +64,505 @@ abstract class AssistantToolCopyWith<$R, $In extends AssistantTool, $Out>
   AssistantToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _AssistantToolCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, AssistantTool, $Out>
-    implements AssistantToolCopyWith<$R, AssistantTool, $Out> {
-  _AssistantToolCopyWithImpl(super.value, super.then, super.then2);
+class AssistantToolCodeInterpreterMapper
+    extends SubClassMapperBase<AssistantToolCodeInterpreter> {
+  AssistantToolCodeInterpreterMapper._();
+
+  static AssistantToolCodeInterpreterMapper? _instance;
+  static AssistantToolCodeInterpreterMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance = AssistantToolCodeInterpreterMapper._(),
+      );
+      AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
+      AssistantToolTypeTypeMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
 
   @override
-  late final ClassMapperBase<AssistantTool> $mapper =
+  final String id = 'AssistantToolCodeInterpreter';
+
+  static AssistantToolTypeType _$type(AssistantToolCodeInterpreter v) => v.type;
+  static const Field<AssistantToolCodeInterpreter, AssistantToolTypeType>
+  _f$type = Field('type', _$type);
+
+  @override
+  final MappableFields<AssistantToolCodeInterpreter> fields = const {
+    #type: _f$type,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'code_interpreter';
+  @override
+  late final ClassMapperBase superMapper =
       AssistantToolMapper.ensureInitialized();
-  @override
-  $R call() => $apply(FieldCopyWithData({}));
-  @override
-  AssistantTool $make(CopyWithData data) => AssistantTool();
+
+  static AssistantToolCodeInterpreter _instantiate(DecodingData data) {
+    return AssistantToolCodeInterpreter(type: data.dec(_f$type));
+  }
 
   @override
-  AssistantToolCopyWith<$R2, AssistantTool, $Out2> $chain<$R2, $Out2>(
+  final Function instantiate = _instantiate;
+
+  static AssistantToolCodeInterpreter fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<AssistantToolCodeInterpreter>(map);
+  }
+
+  static AssistantToolCodeInterpreter fromJsonString(String json) {
+    return ensureInitialized().decodeJson<AssistantToolCodeInterpreter>(json);
+  }
+}
+
+mixin AssistantToolCodeInterpreterMappable {
+  String toJsonString() {
+    return AssistantToolCodeInterpreterMapper.ensureInitialized()
+        .encodeJson<AssistantToolCodeInterpreter>(
+          this as AssistantToolCodeInterpreter,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return AssistantToolCodeInterpreterMapper.ensureInitialized()
+        .encodeMap<AssistantToolCodeInterpreter>(
+          this as AssistantToolCodeInterpreter,
+        );
+  }
+
+  AssistantToolCodeInterpreterCopyWith<
+    AssistantToolCodeInterpreter,
+    AssistantToolCodeInterpreter,
+    AssistantToolCodeInterpreter
+  >
+  get copyWith =>
+      _AssistantToolCodeInterpreterCopyWithImpl<
+        AssistantToolCodeInterpreter,
+        AssistantToolCodeInterpreter
+      >(this as AssistantToolCodeInterpreter, $identity, $identity);
+  @override
+  String toString() {
+    return AssistantToolCodeInterpreterMapper.ensureInitialized()
+        .stringifyValue(this as AssistantToolCodeInterpreter);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return AssistantToolCodeInterpreterMapper.ensureInitialized().equalsValue(
+      this as AssistantToolCodeInterpreter,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return AssistantToolCodeInterpreterMapper.ensureInitialized().hashValue(
+      this as AssistantToolCodeInterpreter,
+    );
+  }
+}
+
+extension AssistantToolCodeInterpreterValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, AssistantToolCodeInterpreter, $Out> {
+  AssistantToolCodeInterpreterCopyWith<$R, AssistantToolCodeInterpreter, $Out>
+  get $asAssistantToolCodeInterpreter => $base.as(
+    (v, t, t2) => _AssistantToolCodeInterpreterCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class AssistantToolCodeInterpreterCopyWith<
+  $R,
+  $In extends AssistantToolCodeInterpreter,
+  $Out
+>
+    implements AssistantToolCopyWith<$R, $In, $Out> {
+  @override
+  $R call({AssistantToolTypeType? type});
+  AssistantToolCodeInterpreterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
-  ) => _AssistantToolCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  );
+}
+
+class _AssistantToolCodeInterpreterCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, AssistantToolCodeInterpreter, $Out>
+    implements
+        AssistantToolCodeInterpreterCopyWith<
+          $R,
+          AssistantToolCodeInterpreter,
+          $Out
+        > {
+  _AssistantToolCodeInterpreterCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<AssistantToolCodeInterpreter> $mapper =
+      AssistantToolCodeInterpreterMapper.ensureInitialized();
+  @override
+  $R call({AssistantToolTypeType? type}) =>
+      $apply(FieldCopyWithData({if (type != null) #type: type}));
+  @override
+  AssistantToolCodeInterpreter $make(CopyWithData data) =>
+      AssistantToolCodeInterpreter(type: data.get(#type, or: $value.type));
+
+  @override
+  AssistantToolCodeInterpreterCopyWith<$R2, AssistantToolCodeInterpreter, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _AssistantToolCodeInterpreterCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+
+class AssistantToolFileSearchMapper
+    extends SubClassMapperBase<AssistantToolFileSearch> {
+  AssistantToolFileSearchMapper._();
+
+  static AssistantToolFileSearchMapper? _instance;
+  static AssistantToolFileSearchMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance = AssistantToolFileSearchMapper._(),
+      );
+      AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
+      AssistantToolTypeType2Mapper.ensureInitialized();
+      AssistantToolFileSearchMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'AssistantToolFileSearch';
+
+  static AssistantToolTypeType2 _$type(AssistantToolFileSearch v) => v.type;
+  static const Field<AssistantToolFileSearch, AssistantToolTypeType2> _f$type =
+      Field('type', _$type);
+  static AssistantToolFileSearch? _$assistantToolFileSearch(
+    AssistantToolFileSearch v,
+  ) => v.assistantToolFileSearch;
+  static const Field<AssistantToolFileSearch, AssistantToolFileSearch>
+  _f$assistantToolFileSearch = Field(
+    'assistantToolFileSearch',
+    _$assistantToolFileSearch,
+    key: r'file_search',
+  );
+
+  @override
+  final MappableFields<AssistantToolFileSearch> fields = const {
+    #type: _f$type,
+    #assistantToolFileSearch: _f$assistantToolFileSearch,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search';
+  @override
+  late final ClassMapperBase superMapper =
+      AssistantToolMapper.ensureInitialized();
+
+  static AssistantToolFileSearch _instantiate(DecodingData data) {
+    return AssistantToolFileSearch(
+      type: data.dec(_f$type),
+      assistantToolFileSearch: data.dec(_f$assistantToolFileSearch),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static AssistantToolFileSearch fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<AssistantToolFileSearch>(map);
+  }
+
+  static AssistantToolFileSearch fromJsonString(String json) {
+    return ensureInitialized().decodeJson<AssistantToolFileSearch>(json);
+  }
+}
+
+mixin AssistantToolFileSearchMappable {
+  String toJsonString() {
+    return AssistantToolFileSearchMapper.ensureInitialized()
+        .encodeJson<AssistantToolFileSearch>(this as AssistantToolFileSearch);
+  }
+
+  Map<String, dynamic> toJson() {
+    return AssistantToolFileSearchMapper.ensureInitialized()
+        .encodeMap<AssistantToolFileSearch>(this as AssistantToolFileSearch);
+  }
+
+  AssistantToolFileSearchCopyWith<
+    AssistantToolFileSearch,
+    AssistantToolFileSearch,
+    AssistantToolFileSearch
+  >
+  get copyWith =>
+      _AssistantToolFileSearchCopyWithImpl<
+        AssistantToolFileSearch,
+        AssistantToolFileSearch
+      >(this as AssistantToolFileSearch, $identity, $identity);
+  @override
+  String toString() {
+    return AssistantToolFileSearchMapper.ensureInitialized().stringifyValue(
+      this as AssistantToolFileSearch,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return AssistantToolFileSearchMapper.ensureInitialized().equalsValue(
+      this as AssistantToolFileSearch,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return AssistantToolFileSearchMapper.ensureInitialized().hashValue(
+      this as AssistantToolFileSearch,
+    );
+  }
+}
+
+extension AssistantToolFileSearchValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, AssistantToolFileSearch, $Out> {
+  AssistantToolFileSearchCopyWith<$R, AssistantToolFileSearch, $Out>
+  get $asAssistantToolFileSearch => $base.as(
+    (v, t, t2) => _AssistantToolFileSearchCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class AssistantToolFileSearchCopyWith<
+  $R,
+  $In extends AssistantToolFileSearch,
+  $Out
+>
+    implements AssistantToolCopyWith<$R, $In, $Out> {
+  AssistantToolFileSearchCopyWith<
+    $R,
+    AssistantToolFileSearch,
+    AssistantToolFileSearch
+  >?
+  get assistantToolFileSearch;
+  @override
+  $R call({
+    AssistantToolTypeType2? type,
+    AssistantToolFileSearch? assistantToolFileSearch,
+  });
+  AssistantToolFileSearchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _AssistantToolFileSearchCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, AssistantToolFileSearch, $Out>
+    implements
+        AssistantToolFileSearchCopyWith<$R, AssistantToolFileSearch, $Out> {
+  _AssistantToolFileSearchCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<AssistantToolFileSearch> $mapper =
+      AssistantToolFileSearchMapper.ensureInitialized();
+  @override
+  AssistantToolFileSearchCopyWith<
+    $R,
+    AssistantToolFileSearch,
+    AssistantToolFileSearch
+  >?
+  get assistantToolFileSearch => $value.assistantToolFileSearch?.copyWith
+      .$chain((v) => call(assistantToolFileSearch: v));
+  @override
+  $R call({
+    AssistantToolTypeType2? type,
+    Object? assistantToolFileSearch = $none,
+  }) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (assistantToolFileSearch != $none)
+        #assistantToolFileSearch: assistantToolFileSearch,
+    }),
+  );
+  @override
+  AssistantToolFileSearch $make(CopyWithData data) => AssistantToolFileSearch(
+    type: data.get(#type, or: $value.type),
+    assistantToolFileSearch: data.get(
+      #assistantToolFileSearch,
+      or: $value.assistantToolFileSearch,
+    ),
+  );
+
+  @override
+  AssistantToolFileSearchCopyWith<$R2, AssistantToolFileSearch, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _AssistantToolFileSearchCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+
+class AssistantToolFunctionMapper
+    extends SubClassMapperBase<AssistantToolFunction> {
+  AssistantToolFunctionMapper._();
+
+  static AssistantToolFunctionMapper? _instance;
+  static AssistantToolFunctionMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = AssistantToolFunctionMapper._());
+      AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
+      AssistantToolTypeType3Mapper.ensureInitialized();
+      FunctionObjectMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'AssistantToolFunction';
+
+  static AssistantToolTypeType3 _$type(AssistantToolFunction v) => v.type;
+  static const Field<AssistantToolFunction, AssistantToolTypeType3> _f$type =
+      Field('type', _$type);
+  static FunctionObject _$functionField(AssistantToolFunction v) =>
+      v.functionField;
+  static const Field<AssistantToolFunction, FunctionObject> _f$functionField =
+      Field('functionField', _$functionField, key: r'function');
+
+  @override
+  final MappableFields<AssistantToolFunction> fields = const {
+    #type: _f$type,
+    #functionField: _f$functionField,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function';
+  @override
+  late final ClassMapperBase superMapper =
+      AssistantToolMapper.ensureInitialized();
+
+  static AssistantToolFunction _instantiate(DecodingData data) {
+    return AssistantToolFunction(
+      type: data.dec(_f$type),
+      functionField: data.dec(_f$functionField),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static AssistantToolFunction fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<AssistantToolFunction>(map);
+  }
+
+  static AssistantToolFunction fromJsonString(String json) {
+    return ensureInitialized().decodeJson<AssistantToolFunction>(json);
+  }
+}
+
+mixin AssistantToolFunctionMappable {
+  String toJsonString() {
+    return AssistantToolFunctionMapper.ensureInitialized()
+        .encodeJson<AssistantToolFunction>(this as AssistantToolFunction);
+  }
+
+  Map<String, dynamic> toJson() {
+    return AssistantToolFunctionMapper.ensureInitialized()
+        .encodeMap<AssistantToolFunction>(this as AssistantToolFunction);
+  }
+
+  AssistantToolFunctionCopyWith<
+    AssistantToolFunction,
+    AssistantToolFunction,
+    AssistantToolFunction
+  >
+  get copyWith =>
+      _AssistantToolFunctionCopyWithImpl<
+        AssistantToolFunction,
+        AssistantToolFunction
+      >(this as AssistantToolFunction, $identity, $identity);
+  @override
+  String toString() {
+    return AssistantToolFunctionMapper.ensureInitialized().stringifyValue(
+      this as AssistantToolFunction,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return AssistantToolFunctionMapper.ensureInitialized().equalsValue(
+      this as AssistantToolFunction,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return AssistantToolFunctionMapper.ensureInitialized().hashValue(
+      this as AssistantToolFunction,
+    );
+  }
+}
+
+extension AssistantToolFunctionValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, AssistantToolFunction, $Out> {
+  AssistantToolFunctionCopyWith<$R, AssistantToolFunction, $Out>
+  get $asAssistantToolFunction => $base.as(
+    (v, t, t2) => _AssistantToolFunctionCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class AssistantToolFunctionCopyWith<
+  $R,
+  $In extends AssistantToolFunction,
+  $Out
+>
+    implements AssistantToolCopyWith<$R, $In, $Out> {
+  FunctionObjectCopyWith<$R, FunctionObject, FunctionObject> get functionField;
+  @override
+  $R call({AssistantToolTypeType3? type, FunctionObject? functionField});
+  AssistantToolFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _AssistantToolFunctionCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, AssistantToolFunction, $Out>
+    implements AssistantToolFunctionCopyWith<$R, AssistantToolFunction, $Out> {
+  _AssistantToolFunctionCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<AssistantToolFunction> $mapper =
+      AssistantToolFunctionMapper.ensureInitialized();
+  @override
+  FunctionObjectCopyWith<$R, FunctionObject, FunctionObject>
+  get functionField =>
+      $value.functionField.copyWith.$chain((v) => call(functionField: v));
+  @override
+  $R call({AssistantToolTypeType3? type, FunctionObject? functionField}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (functionField != null) #functionField: functionField,
+        }),
+      );
+  @override
+  AssistantToolFunction $make(CopyWithData data) => AssistantToolFunction(
+    type: data.get(#type, or: $value.type),
+    functionField: data.get(#functionField, or: $value.functionField),
+  );
+
+  @override
+  AssistantToolFunctionCopyWith<$R2, AssistantToolFunction, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _AssistantToolFunctionCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 

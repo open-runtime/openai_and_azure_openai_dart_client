@@ -6,14 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_object_object_object_enum.dart';
 import 'assistant_object_tool_resources.dart';
-import 'assistant_object_tools_tools_union.dart';
+import 'assistant_object_tools_union.dart';
 import 'assistants_api_response_format_option.dart';
 import 'metadata.dart';
 
 part 'assistant_object.mapper.dart';
 
 /// Represents an `assistant` that can call the model and use tools.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantObject with AssistantObjectMappable {
   const AssistantObject({
     required this.id,
@@ -41,11 +41,11 @@ class AssistantObject with AssistantObjectMappable {
   final String model;
   final String? instructions;
   final Metadata? metadata;
-  @MappableField(key: 'AssistantObjectToolResources')
+  @MappableField(key: 'tool_resources')
   final AssistantObjectToolResources? assistantObjectToolResources;
   @MappableField(key: 'response_format')
   final AssistantsApiResponseFormatOption? responseFormat;
-  final List<AssistantObjectToolsToolsUnion> tools;
+  final List<AssistantObjectToolsUnion> tools;
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;

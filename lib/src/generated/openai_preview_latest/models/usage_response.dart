@@ -9,7 +9,7 @@ import 'usage_time_bucket.dart';
 
 part 'usage_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageResponse with UsageResponseMappable {
   const UsageResponse({
     required this.objectEnum,

@@ -9,7 +9,7 @@ import 'fine_tuning_method_type.dart';
 part 'supervised_method.mapper.dart';
 
 /// Method used for supervised finetuning
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SupervisedMethod with SupervisedMethodMappable {
   const SupervisedMethod({
     required this.type,

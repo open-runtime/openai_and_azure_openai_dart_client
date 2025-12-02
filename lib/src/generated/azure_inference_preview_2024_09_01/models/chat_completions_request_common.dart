@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completions_request_common.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionsRequestCommon with ChatCompletionsRequestCommonMappable {
   const ChatCompletionsRequestCommon({
     required this.stop,

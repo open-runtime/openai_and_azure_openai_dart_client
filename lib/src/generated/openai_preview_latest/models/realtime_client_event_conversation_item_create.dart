@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_conversation_item_create_type_type.dart';
 import 'realtime_conversation_item.dart';
 
@@ -17,7 +18,7 @@ part 'realtime_client_event_conversation_item_create.mapper.dart';
 /// If successful, the server will respond with a `conversation.item.created` .
 /// event, otherwise an `error` event will be sent.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventConversationItemCreate with RealtimeClientEventConversationItemCreateMappable {
   const RealtimeClientEventConversationItemCreate({
     required this.type,

@@ -75,6 +75,10 @@ class TaskItemMapper extends ClassMapperBase<TaskItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TaskItem _instantiate(DecodingData data) {
     return TaskItem(

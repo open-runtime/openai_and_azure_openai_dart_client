@@ -40,7 +40,7 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
   _f$imagesResponseUsage = Field(
     'imagesResponseUsage',
     _$imagesResponseUsage,
-    key: r'ImagesResponseUsage',
+    key: r'usage',
     opt: true,
   );
 
@@ -50,6 +50,10 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
     #data: _f$data,
     #imagesResponseUsage: _f$imagesResponseUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImagesResponse _instantiate(DecodingData data) {
     return ImagesResponse(

@@ -8,7 +8,7 @@ import 'vad_config_type_type.dart';
 
 part 'vad_config.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VadConfig with VadConfigMappable {
   const VadConfig({
     required this.type,

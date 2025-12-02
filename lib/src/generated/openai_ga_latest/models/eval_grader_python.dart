@@ -9,7 +9,7 @@ import 'grader_python_type_type.dart';
 
 part 'eval_grader_python.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalGraderPython with EvalGraderPythonMappable {
   const EvalGraderPython({
     required this.type,

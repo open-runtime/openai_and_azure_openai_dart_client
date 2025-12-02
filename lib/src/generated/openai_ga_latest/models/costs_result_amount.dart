@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'costs_result_amount.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CostsResultAmount with CostsResultAmountMappable {
   const CostsResultAmount({
     this.value,

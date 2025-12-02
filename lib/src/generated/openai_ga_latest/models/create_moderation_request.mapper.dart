@@ -17,6 +17,7 @@ class CreateModerationRequestMapper
       MapperContainer.globals.use(
         _instance = CreateModerationRequestMapper._(),
       );
+      CreateModerationRequestModelUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,11 +30,15 @@ class CreateModerationRequestMapper
     'input',
     _$input,
   );
-  static String? _$model(CreateModerationRequest v) => v.model;
-  static const Field<CreateModerationRequest, String> _f$model = Field(
+  static CreateModerationRequestModelUnion? _$model(
+    CreateModerationRequest v,
+  ) => v.model;
+  static const Field<CreateModerationRequest, CreateModerationRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
+    hook: const CreateModerationRequestModelUnionHook(),
   );
 
   @override
@@ -41,6 +46,10 @@ class CreateModerationRequestMapper
     #input: _f$input,
     #model: _f$model,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModerationRequest _instantiate(DecodingData data) {
     return CreateModerationRequest(
@@ -119,7 +128,13 @@ abstract class CreateModerationRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? input, String? model});
+  CreateModerationRequestModelUnionCopyWith<
+    $R,
+    CreateModerationRequestModelUnion,
+    CreateModerationRequestModelUnion
+  >?
+  get model;
+  $R call({String? input, CreateModerationRequestModelUnion? model});
   CreateModerationRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,6 +149,13 @@ class _CreateModerationRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateModerationRequest> $mapper =
       CreateModerationRequestMapper.ensureInitialized();
+  @override
+  CreateModerationRequestModelUnionCopyWith<
+    $R,
+    CreateModerationRequestModelUnion,
+    CreateModerationRequestModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   $R call({String? input, Object? model = $none}) => $apply(
     FieldCopyWithData({

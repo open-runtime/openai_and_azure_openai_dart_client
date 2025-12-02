@@ -33,6 +33,10 @@ class ResponseUsageInputTokensDetailsMapper
   final MappableFields<ResponseUsageInputTokensDetails> fields = const {
     #cachedTokens: _f$cachedTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseUsageInputTokensDetails _instantiate(DecodingData data) {
     return ResponseUsageInputTokensDetails(

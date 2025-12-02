@@ -33,6 +33,10 @@ class ApplyPatchToolParamMapper extends ClassMapperBase<ApplyPatchToolParam> {
 
   @override
   final MappableFields<ApplyPatchToolParam> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApplyPatchToolParam _instantiate(DecodingData data) {
     return ApplyPatchToolParam(type: data.dec(_f$type));

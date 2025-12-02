@@ -46,6 +46,10 @@ class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper
     RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction
   >
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction
   _instantiate(DecodingData data) {

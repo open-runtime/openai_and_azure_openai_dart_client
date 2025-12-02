@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_thread_request_tool_resources_file_search_vector_stores.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRequestToolResourcesFileSearchVectorStoresMappable {
   const CreateThreadRequestToolResourcesFileSearchVectorStores({
     this.fileIds,

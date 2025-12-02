@@ -69,6 +69,10 @@ class RealtimeBetaServerEventInputAudioBufferSpeechStartedMapper
     #audioStartMs: _f$audioStartMs,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventInputAudioBufferSpeechStarted _instantiate(
     DecodingData data,

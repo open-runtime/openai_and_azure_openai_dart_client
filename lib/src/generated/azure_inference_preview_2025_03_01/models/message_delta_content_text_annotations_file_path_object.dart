@@ -10,7 +10,7 @@ import 'message_delta_content_text_annotations_file_path_object_type_type.dart';
 part 'message_delta_content_text_annotations_file_path_object.mapper.dart';
 
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentTextAnnotationsFilePathObject with MessageDeltaContentTextAnnotationsFilePathObjectMappable {
   const MessageDeltaContentTextAnnotationsFilePathObject({
     required this.indexField,
@@ -25,7 +25,7 @@ class MessageDeltaContentTextAnnotationsFilePathObject with MessageDeltaContentT
   final int indexField;
   final MessageDeltaContentTextAnnotationsFilePathObjectTypeType type;
   final String? text;
-  @MappableField(key: 'MessageDeltaContentTextAnnotationsFilePathObjectFilePath')
+  @MappableField(key: 'file_path')
   final MessageDeltaContentTextAnnotationsFilePathObjectFilePath? messageDeltaContentTextAnnotationsFilePathObjectFilePath;
   @MappableField(key: 'start_index')
   final int? startIndex;

@@ -4,10 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_mcp_list_tools_completed.mapper.dart';
 
 /// Returned when listing MCP tools has completed for an item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventMcpListToolsCompleted with RealtimeServerEventMcpListToolsCompletedMappable {
   const RealtimeServerEventMcpListToolsCompleted({
     required this.eventId,

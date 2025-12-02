@@ -19,8 +19,10 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
       RealtimeConversationItemMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       RealtimeBetaResponseUsageMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeBetaResponseModalitiesModalitiesMapper.ensureInitialized();
       RealtimeBetaResponseOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
+      RealtimeBetaResponseMaxOutputTokensUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -52,7 +54,7 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
   _f$realtimeBetaResponseStatusDetails = Field(
     'realtimeBetaResponseStatusDetails',
     _$realtimeBetaResponseStatusDetails,
-    key: r'RealtimeBetaResponseStatusDetails',
+    key: r'status_details',
     opt: true,
   );
   static List<RealtimeConversationItem>? _$output(RealtimeBetaResponse v) =>
@@ -72,7 +74,7 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
   _f$realtimeBetaResponseUsage = Field(
     'realtimeBetaResponseUsage',
     _$realtimeBetaResponseUsage,
-    key: r'RealtimeBetaResponseUsage',
+    key: r'usage',
     opt: true,
   );
   static String? _$conversationId(RealtimeBetaResponse v) => v.conversationId;
@@ -82,11 +84,12 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     key: r'conversation_id',
     opt: true,
   );
-  static String? _$voice(RealtimeBetaResponse v) => v.voice;
-  static const Field<RealtimeBetaResponse, String> _f$voice = Field(
+  static VoiceIdsShared? _$voice(RealtimeBetaResponse v) => v.voice;
+  static const Field<RealtimeBetaResponse, VoiceIdsShared> _f$voice = Field(
     'voice',
     _$voice,
     opt: true,
+    hook: const VoiceIdsSharedHook(),
   );
   static List<RealtimeBetaResponseModalitiesModalities>? _$modalities(
     RealtimeBetaResponse v,
@@ -114,12 +117,19 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     _$temperature,
     opt: true,
   );
-  static String? _$maxOutputTokens(RealtimeBetaResponse v) => v.maxOutputTokens;
-  static const Field<RealtimeBetaResponse, String> _f$maxOutputTokens = Field(
+  static RealtimeBetaResponseMaxOutputTokensUnion? _$maxOutputTokens(
+    RealtimeBetaResponse v,
+  ) => v.maxOutputTokens;
+  static const Field<
+    RealtimeBetaResponse,
+    RealtimeBetaResponseMaxOutputTokensUnion
+  >
+  _f$maxOutputTokens = Field(
     'maxOutputTokens',
     _$maxOutputTokens,
     key: r'max_output_tokens',
     opt: true,
+    hook: const RealtimeBetaResponseMaxOutputTokensUnionHook(),
   );
 
   @override
@@ -138,6 +148,10 @@ class RealtimeBetaResponseMapper extends ClassMapperBase<RealtimeBetaResponse> {
     #temperature: _f$temperature,
     #maxOutputTokens: _f$maxOutputTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponse _instantiate(DecodingData data) {
     return RealtimeBetaResponse(
@@ -252,6 +266,7 @@ abstract class RealtimeBetaResponseCopyWith<
     RealtimeBetaResponseUsage
   >?
   get realtimeBetaResponseUsage;
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   ListCopyWith<
     $R,
     RealtimeBetaResponseModalitiesModalities,
@@ -262,6 +277,12 @@ abstract class RealtimeBetaResponseCopyWith<
     >
   >?
   get modalities;
+  RealtimeBetaResponseMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeBetaResponseMaxOutputTokensUnion,
+    RealtimeBetaResponseMaxOutputTokensUnion
+  >?
+  get maxOutputTokens;
   $R call({
     String? id,
     dynamic objectField,
@@ -271,11 +292,11 @@ abstract class RealtimeBetaResponseCopyWith<
     Metadata? metadata,
     RealtimeBetaResponseUsage? realtimeBetaResponseUsage,
     String? conversationId,
-    String? voice,
+    VoiceIdsShared? voice,
     List<RealtimeBetaResponseModalitiesModalities>? modalities,
     RealtimeBetaResponseOutputAudioFormatOutputAudioFormat? outputAudioFormat,
     num? temperature,
-    String? maxOutputTokens,
+    RealtimeBetaResponseMaxOutputTokensUnion? maxOutputTokens,
   });
   RealtimeBetaResponseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -329,6 +350,9 @@ class _RealtimeBetaResponseCopyWithImpl<$R, $Out>
   get realtimeBetaResponseUsage => $value.realtimeBetaResponseUsage?.copyWith
       .$chain((v) => call(realtimeBetaResponseUsage: v));
   @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
+  @override
   ListCopyWith<
     $R,
     RealtimeBetaResponseModalitiesModalities,
@@ -345,6 +369,14 @@ class _RealtimeBetaResponseCopyWithImpl<$R, $Out>
           (v) => call(modalities: v),
         )
       : null;
+  @override
+  RealtimeBetaResponseMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeBetaResponseMaxOutputTokensUnion,
+    RealtimeBetaResponseMaxOutputTokensUnion
+  >?
+  get maxOutputTokens =>
+      $value.maxOutputTokens?.copyWith.$chain((v) => call(maxOutputTokens: v));
   @override
   $R call({
     Object? id = $none,

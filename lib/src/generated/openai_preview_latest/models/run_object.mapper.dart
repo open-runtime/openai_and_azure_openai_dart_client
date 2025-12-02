@@ -23,7 +23,7 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
       TruncationObjectMapper.ensureInitialized();
       AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
-      RunObjectToolsToolsUnionMapper.ensureInitialized();
+      RunObjectToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -65,16 +65,12 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
   _f$runObjectRequiredAction = Field(
     'runObjectRequiredAction',
     _$runObjectRequiredAction,
-    key: r'RunObjectRequiredAction',
+    key: r'required_action',
   );
   static RunObjectLastError? _$runObjectLastError(RunObject v) =>
       v.runObjectLastError;
   static const Field<RunObject, RunObjectLastError> _f$runObjectLastError =
-      Field(
-        'runObjectLastError',
-        _$runObjectLastError,
-        key: r'RunObjectLastError',
-      );
+      Field('runObjectLastError', _$runObjectLastError, key: r'last_error');
   static int? _$expiresAt(RunObject v) => v.expiresAt;
   static const Field<RunObject, int> _f$expiresAt = Field(
     'expiresAt',
@@ -112,7 +108,7 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
   _f$runObjectIncompleteDetails = Field(
     'runObjectIncompleteDetails',
     _$runObjectIncompleteDetails,
-    key: r'RunObjectIncompleteDetails',
+    key: r'incomplete_details',
   );
   static String _$model(RunObject v) => v.model;
   static const Field<RunObject, String> _f$model = Field('model', _$model);
@@ -182,9 +178,13 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     key: r'top_p',
     opt: true,
   );
-  static List<RunObjectToolsToolsUnion> _$tools(RunObject v) => v.tools;
-  static const Field<RunObject, List<RunObjectToolsToolsUnion>> _f$tools =
-      Field('tools', _$tools, opt: true, def: const []);
+  static List<RunObjectToolsUnion> _$tools(RunObject v) => v.tools;
+  static const Field<RunObject, List<RunObjectToolsUnion>> _f$tools = Field(
+    'tools',
+    _$tools,
+    opt: true,
+    def: const [],
+  );
 
   @override
   final MappableFields<RunObject> fields = const {
@@ -216,6 +216,10 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     #topP: _f$topP,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunObject _instantiate(DecodingData data) {
     return RunObject(
@@ -342,12 +346,8 @@ abstract class RunObjectCopyWith<$R, $In extends RunObject, $Out>
   get responseFormat;
   ListCopyWith<
     $R,
-    RunObjectToolsToolsUnion,
-    RunObjectToolsToolsUnionCopyWith<
-      $R,
-      RunObjectToolsToolsUnion,
-      RunObjectToolsToolsUnion
-    >
+    RunObjectToolsUnion,
+    RunObjectToolsUnionCopyWith<$R, RunObjectToolsUnion, RunObjectToolsUnion>
   >
   get tools;
   $R call({
@@ -377,7 +377,7 @@ abstract class RunObjectCopyWith<$R, $In extends RunObject, $Out>
     AssistantsApiResponseFormatOptionUnion? responseFormat,
     num? temperature,
     num? topP,
-    List<RunObjectToolsToolsUnion>? tools,
+    List<RunObjectToolsUnion>? tools,
   });
   RunObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -447,12 +447,8 @@ class _RunObjectCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RunObjectToolsToolsUnion,
-    RunObjectToolsToolsUnionCopyWith<
-      $R,
-      RunObjectToolsToolsUnion,
-      RunObjectToolsToolsUnion
-    >
+    RunObjectToolsUnion,
+    RunObjectToolsUnionCopyWith<$R, RunObjectToolsUnion, RunObjectToolsUnion>
   >
   get tools => ListCopyWith(
     $value.tools,
@@ -487,7 +483,7 @@ class _RunObjectCopyWithImpl<$R, $Out>
     Object? responseFormat = $none,
     Object? temperature = $none,
     Object? topP = $none,
-    List<RunObjectToolsToolsUnion>? tools,
+    List<RunObjectToolsUnion>? tools,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

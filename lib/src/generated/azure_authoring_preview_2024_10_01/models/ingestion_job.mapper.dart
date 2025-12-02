@@ -39,6 +39,10 @@ class IngestionJobMapper extends ClassMapperBase<IngestionJob> {
     #kind: _f$kind,
     #jobId: _f$jobId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJob _instantiate(DecodingData data) {
     return IngestionJob(kind: data.dec(_f$kind), jobId: data.dec(_f$jobId));

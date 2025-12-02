@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_fine_tuning_checkpoint_permission_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateFineTuningCheckpointPermissionRequest with CreateFineTuningCheckpointPermissionRequestMappable {
   const CreateFineTuningCheckpointPermissionRequest({
     required this.projectIds,

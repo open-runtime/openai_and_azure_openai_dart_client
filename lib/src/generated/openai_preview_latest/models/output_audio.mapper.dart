@@ -41,6 +41,10 @@ class OutputAudioMapper extends ClassMapperBase<OutputAudio> {
     #data: _f$data,
     #transcript: _f$transcript,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputAudio _instantiate(DecodingData data) {
     return OutputAudio(

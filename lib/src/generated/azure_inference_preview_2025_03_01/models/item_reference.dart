@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'input_item.dart';
 import 'item_reference_type_type.dart';
 
 part 'item_reference.mapper.dart';
 
 /// An internal identifier for an item to reference.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ItemReference with ItemReferenceMappable {
   const ItemReference({
     required this.id,

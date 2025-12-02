@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_image_image_url.dart';
 import 'chat_completion_request_message_content_part_image_type_type.dart';
+import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_image.mapper.dart';
 
 /// Learn about [image inputs](/docs/guides/vision).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMessageContentPartImageMappable {
   const ChatCompletionRequestMessageContentPartImage({
     required this.type,
@@ -19,7 +20,7 @@ class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMes
   });
 
   final ChatCompletionRequestMessageContentPartImageTypeType type;
-  @MappableField(key: 'ChatCompletionRequestMessageContentPartImageImageUrl')
+  @MappableField(key: 'image_url')
   final ChatCompletionRequestMessageContentPartImageImageUrl chatCompletionRequestMessageContentPartImageImageUrl;
 
   static ChatCompletionRequestMessageContentPartImage fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartImageMapper.fromJson(json);

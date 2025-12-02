@@ -18,7 +18,7 @@ class AzureMachineLearningIndexChatExtensionParametersMapper
       MapperContainer.globals.use(
         _instance = AzureMachineLearningIndexChatExtensionParametersMapper._(),
       );
-      AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnionMapper.ensureInitialized();
+      AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionMapper.ensureInitialized();
       OnYourDataContextPropertyMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class AzureMachineLearningIndexChatExtensionParametersMapper
   @override
   final String id = 'AzureMachineLearningIndexChatExtensionParameters';
 
-  static AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion
+  static AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
   _$authentication(AzureMachineLearningIndexChatExtensionParameters v) =>
       v.authentication;
   static const Field<
     AzureMachineLearningIndexChatExtensionParameters,
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
   >
   _f$authentication = Field('authentication', _$authentication);
   static String _$projectResourceId(
@@ -136,6 +136,10 @@ class AzureMachineLearningIndexChatExtensionParametersMapper
     #filter: _f$filter,
     #includeContexts: _f$includeContexts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureMachineLearningIndexChatExtensionParameters _instantiate(
     DecodingData data,
@@ -255,10 +259,10 @@ abstract class AzureMachineLearningIndexChatExtensionParametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion,
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion,
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
   >
   get authentication;
   ListCopyWith<
@@ -268,7 +272,7 @@ abstract class AzureMachineLearningIndexChatExtensionParametersCopyWith<
   >?
   get includeContexts;
   $R call({
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion?
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion?
     authentication,
     String? projectResourceId,
     String? name,
@@ -310,10 +314,10 @@ class _AzureMachineLearningIndexChatExtensionParametersCopyWithImpl<$R, $Out>
   $mapper =
       AzureMachineLearningIndexChatExtensionParametersMapper.ensureInitialized();
   @override
-  AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnionCopyWith<
+  AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionCopyWith<
     $R,
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion,
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion,
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
   >
   get authentication =>
       $value.authentication.copyWith.$chain((v) => call(authentication: v));
@@ -332,7 +336,7 @@ class _AzureMachineLearningIndexChatExtensionParametersCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion?
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion?
     authentication,
     String? projectResourceId,
     String? name,

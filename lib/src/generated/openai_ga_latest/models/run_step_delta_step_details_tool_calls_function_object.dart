@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'run_step_delta_step_details_tool_call.dart';
 import 'run_step_delta_step_details_tool_calls_function_object_function.dart';
 import 'run_step_delta_step_details_tool_calls_function_object_type_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_function_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsFunctionObject with RunStepDeltaStepDetailsToolCallsFunctionObjectMappable {
   const RunStepDeltaStepDetailsToolCallsFunctionObject({
     required this.indexField,
@@ -22,7 +23,7 @@ class RunStepDeltaStepDetailsToolCallsFunctionObject with RunStepDeltaStepDetail
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType type;
   final String? id;
-  @MappableField(key: 'RunStepDeltaStepDetailsToolCallsFunctionObjectFunction')
+  @MappableField(key: 'function')
   final RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? runStepDeltaStepDetailsToolCallsFunctionObjectFunction;
 
   static RunStepDeltaStepDetailsToolCallsFunctionObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsFunctionObjectMapper.fromJson(json);

@@ -87,6 +87,10 @@ class ChatCompletionRequestAssistantMessageMapper
     #toolCalls: _f$toolCalls,
     #functionCall: _f$functionCall,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestAssistantMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestAssistantMessage(

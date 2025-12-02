@@ -15,7 +15,7 @@ import 'truncation_object.dart';
 
 part 'create_run_request_without_stream.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateRunRequestWithoutStream with CreateRunRequestWithoutStreamMappable {
   const CreateRunRequestWithoutStream({
     required this.assistantId,

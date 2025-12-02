@@ -61,6 +61,10 @@ class RealtimeServerEventRateLimitsUpdatedRateLimitsMapper
         #remaining: _f$remaining,
         #resetSeconds: _f$resetSeconds,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventRateLimitsUpdatedRateLimits _instantiate(
     DecodingData data,

@@ -51,6 +51,10 @@ class UploadFileStartBodyMapper extends ClassMapperBase<UploadFileStartBody> {
     #bytes: _f$bytes,
     #mimeType: _f$mimeType,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadFileStartBody _instantiate(DecodingData data) {
     return UploadFileStartBody(

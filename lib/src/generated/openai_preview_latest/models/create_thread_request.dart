@@ -13,7 +13,7 @@ part 'create_thread_request.mapper.dart';
 /// Options to create a new thread. If no thread is provided when running a .
 /// request, an empty thread will be created.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequest with CreateThreadRequestMappable {
   const CreateThreadRequest({
     this.messages,
@@ -22,7 +22,7 @@ class CreateThreadRequest with CreateThreadRequestMappable {
   });
 
   final List<CreateMessageRequest>? messages;
-  @MappableField(key: 'CreateThreadRequestToolResources')
+  @MappableField(key: 'tool_resources')
   final CreateThreadRequestToolResources? createThreadRequestToolResources;
   final Metadata? metadata;
 

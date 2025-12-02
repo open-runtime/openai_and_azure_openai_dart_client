@@ -54,7 +54,7 @@ class RealtimeBetaResponseStatusDetailsMapper
   _f$realtimeBetaResponseStatusDetailsError = Field(
     'realtimeBetaResponseStatusDetailsError',
     _$realtimeBetaResponseStatusDetailsError,
-    key: r'RealtimeBetaResponseStatusDetailsError',
+    key: r'error',
     opt: true,
   );
 
@@ -65,6 +65,10 @@ class RealtimeBetaResponseStatusDetailsMapper
     #realtimeBetaResponseStatusDetailsError:
         _f$realtimeBetaResponseStatusDetailsError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseStatusDetails _instantiate(DecodingData data) {
     return RealtimeBetaResponseStatusDetails(

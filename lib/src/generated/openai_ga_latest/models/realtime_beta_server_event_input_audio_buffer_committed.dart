@@ -11,7 +11,7 @@ part 'realtime_beta_server_event_input_audio_buffer_committed.mapper.dart';
 /// message item that will be created, thus a `conversation.item.created` event.
 /// will also be sent to the client.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventInputAudioBufferCommitted with RealtimeBetaServerEventInputAudioBufferCommittedMappable {
   const RealtimeBetaServerEventInputAudioBufferCommitted({
     required this.eventId,

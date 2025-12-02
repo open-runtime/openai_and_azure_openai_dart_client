@@ -74,6 +74,10 @@ class EvalMapper extends ClassMapperBase<Eval> {
     #testingCriteria: _f$testingCriteria,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Eval _instantiate(DecodingData data) {
     return Eval(

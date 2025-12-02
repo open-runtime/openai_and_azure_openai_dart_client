@@ -8,7 +8,7 @@ import 'response_format_json_schema_schema.dart';
 
 part 'response_format_json_schema_json_schema.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatJsonSchemaJsonSchema with ResponseFormatJsonSchemaJsonSchemaMappable {
   const ResponseFormatJsonSchemaJsonSchema({
     required this.name,

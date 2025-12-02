@@ -38,6 +38,10 @@ class AssistantToolsFileSearchTypeOnlyMapper
   final MappableFields<AssistantToolsFileSearchTypeOnly> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFileSearchTypeOnly _instantiate(DecodingData data) {
     return AssistantToolsFileSearchTypeOnly(type: data.dec(_f$type));

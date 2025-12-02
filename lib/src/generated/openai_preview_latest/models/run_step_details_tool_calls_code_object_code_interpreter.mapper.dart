@@ -18,7 +18,7 @@ class RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper._(),
       );
-      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionMapper.ensureInitialized();
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,19 +30,21 @@ class RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper
       v.input;
   static const Field<RunStepDetailsToolCallsCodeObjectCodeInterpreter, String>
   _f$input = Field('input', _$input);
-  static List<
-    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
-  >
+  static List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>
   _$outputs(RunStepDetailsToolCallsCodeObjectCodeInterpreter v) => v.outputs;
   static const Field<
     RunStepDetailsToolCallsCodeObjectCodeInterpreter,
-    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion>
+    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>
   >
   _f$outputs = Field('outputs', _$outputs);
 
   @override
   final MappableFields<RunStepDetailsToolCallsCodeObjectCodeInterpreter>
   fields = const {#input: _f$input, #outputs: _f$outputs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsCodeObjectCodeInterpreter _instantiate(
     DecodingData data,
@@ -154,18 +156,17 @@ abstract class RunStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionCopyWith<
+    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionCopyWith<
       $R,
-      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
     >
   >
   get outputs;
   $R call({
     String? input,
-    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion>?
-    outputs,
+    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>? outputs,
   });
   RunStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -197,11 +198,11 @@ class _RunStepDetailsToolCallsCodeObjectCodeInterpreterCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionCopyWith<
+    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+    RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionCopyWith<
       $R,
-      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
     >
   >
   get outputs => ListCopyWith(
@@ -212,8 +213,7 @@ class _RunStepDetailsToolCallsCodeObjectCodeInterpreterCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? input,
-    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion>?
-    outputs,
+    List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>? outputs,
   }) => $apply(
     FieldCopyWithData({
       if (input != null) #input: input,

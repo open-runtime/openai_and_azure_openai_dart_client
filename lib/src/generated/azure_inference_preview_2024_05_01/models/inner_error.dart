@@ -10,7 +10,7 @@ import 'inner_error_code.dart';
 part 'inner_error.mapper.dart';
 
 /// Inner error with additional details.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InnerError with InnerErrorMappable {
   const InnerError({
     this.code,

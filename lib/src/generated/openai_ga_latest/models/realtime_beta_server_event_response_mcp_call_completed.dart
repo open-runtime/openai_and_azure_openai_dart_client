@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_mcp_call_completed.mapper.dart';
 
 /// Returned when an MCP tool call has completed successfully.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseMcpCallCompleted with RealtimeBetaServerEventResponseMcpCallCompletedMappable {
   const RealtimeBetaServerEventResponseMcpCallCompleted({
     required this.eventId,

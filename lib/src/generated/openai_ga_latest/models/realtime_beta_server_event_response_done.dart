@@ -12,7 +12,7 @@ part 'realtime_beta_server_event_response_done.mapper.dart';
 /// final state. The Response object included in the `response.done` event will .
 /// include all output Items in the Response but will omit the raw audio data.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseDone with RealtimeBetaServerEventResponseDoneMappable {
   const RealtimeBetaServerEventResponseDone({
     required this.eventId,

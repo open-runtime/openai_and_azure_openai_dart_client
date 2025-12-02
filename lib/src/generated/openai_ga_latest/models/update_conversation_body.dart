@@ -8,7 +8,7 @@ import 'metadata.dart';
 
 part 'update_conversation_body.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateConversationBody with UpdateConversationBodyMappable {
   const UpdateConversationBody({
     required this.metadata,

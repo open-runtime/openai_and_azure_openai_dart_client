@@ -14,7 +14,7 @@ class ThreadResourceMapper extends ClassMapperBase<ThreadResource> {
   static ThreadResourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ThreadResourceMapper._());
-      ThreadResourceStatusStatusUnionMapper.ensureInitialized();
+      ThreadResourceStatusUnionMapper.ensureInitialized();
       ThreadResourceObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -33,9 +33,9 @@ class ThreadResourceMapper extends ClassMapperBase<ThreadResource> {
   );
   static String? _$title(ThreadResource v) => v.title;
   static const Field<ThreadResource, String> _f$title = Field('title', _$title);
-  static ThreadResourceStatusStatusUnion _$status(ThreadResource v) => v.status;
-  static const Field<ThreadResource, ThreadResourceStatusStatusUnion>
-  _f$status = Field('status', _$status);
+  static ThreadResourceStatusUnion _$status(ThreadResource v) => v.status;
+  static const Field<ThreadResource, ThreadResourceStatusUnion> _f$status =
+      Field('status', _$status);
   static String _$user(ThreadResource v) => v.user;
   static const Field<ThreadResource, String> _f$user = Field('user', _$user);
   static ThreadResourceObjectObjectEnum _$objectEnum(ThreadResource v) =>
@@ -58,6 +58,10 @@ class ThreadResourceMapper extends ClassMapperBase<ThreadResource> {
     #user: _f$user,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadResource _instantiate(DecodingData data) {
     return ThreadResource(
@@ -132,17 +136,17 @@ extension ThreadResourceValueCopy<$R, $Out>
 
 abstract class ThreadResourceCopyWith<$R, $In extends ThreadResource, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  ThreadResourceStatusStatusUnionCopyWith<
+  ThreadResourceStatusUnionCopyWith<
     $R,
-    ThreadResourceStatusStatusUnion,
-    ThreadResourceStatusStatusUnion
+    ThreadResourceStatusUnion,
+    ThreadResourceStatusUnion
   >
   get status;
   $R call({
     String? id,
     int? createdAt,
     String? title,
-    ThreadResourceStatusStatusUnion? status,
+    ThreadResourceStatusUnion? status,
     String? user,
     ThreadResourceObjectObjectEnum? objectEnum,
   });
@@ -160,10 +164,10 @@ class _ThreadResourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadResource> $mapper =
       ThreadResourceMapper.ensureInitialized();
   @override
-  ThreadResourceStatusStatusUnionCopyWith<
+  ThreadResourceStatusUnionCopyWith<
     $R,
-    ThreadResourceStatusStatusUnion,
-    ThreadResourceStatusStatusUnion
+    ThreadResourceStatusUnion,
+    ThreadResourceStatusUnion
   >
   get status => $value.status.copyWith.$chain((v) => call(status: v));
   @override
@@ -171,7 +175,7 @@ class _ThreadResourceCopyWithImpl<$R, $Out>
     String? id,
     int? createdAt,
     Object? title = $none,
-    ThreadResourceStatusStatusUnion? status,
+    ThreadResourceStatusUnion? status,
     String? user,
     ThreadResourceObjectObjectEnum? objectEnum,
   }) => $apply(

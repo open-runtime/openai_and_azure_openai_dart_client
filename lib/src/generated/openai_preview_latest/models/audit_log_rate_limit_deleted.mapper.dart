@@ -33,6 +33,10 @@ class AuditLogRateLimitDeletedMapper
 
   @override
   final MappableFields<AuditLogRateLimitDeleted> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRateLimitDeleted _instantiate(DecodingData data) {
     return AuditLogRateLimitDeleted(id: data.dec(_f$id));

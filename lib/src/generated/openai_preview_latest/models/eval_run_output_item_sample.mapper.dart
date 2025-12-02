@@ -62,7 +62,7 @@ class EvalRunOutputItemSampleMapper
   _f$evalRunOutputItemSampleUsage = Field(
     'evalRunOutputItemSampleUsage',
     _$evalRunOutputItemSampleUsage,
-    key: r'EvalRunOutputItemSampleUsage',
+    key: r'usage',
   );
   static EvalApiError _$error(EvalRunOutputItemSample v) => v.error;
   static const Field<EvalRunOutputItemSample, EvalApiError> _f$error = Field(
@@ -107,6 +107,10 @@ class EvalRunOutputItemSampleMapper
     #topP: _f$topP,
     #seed: _f$seed,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemSample _instantiate(DecodingData data) {
     return EvalRunOutputItemSample(

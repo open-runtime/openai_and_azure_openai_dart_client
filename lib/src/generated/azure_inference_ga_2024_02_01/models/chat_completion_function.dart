@@ -8,7 +8,7 @@ import 'chat_completion_function_parameters.dart';
 
 part 'chat_completion_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionFunction with ChatCompletionFunctionMappable {
   const ChatCompletionFunction({
     required this.name,

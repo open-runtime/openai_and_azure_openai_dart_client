@@ -13,7 +13,7 @@ part 'fine_tune_preference_request_input.mapper.dart';
 /// Input messages may contain text or image content only. Audio and file input messages.
 /// are not currently supported for fine-tuning.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTunePreferenceRequestInput with FineTunePreferenceRequestInputMappable {
   const FineTunePreferenceRequestInput({
     this.fineTunePreferenceRequestInputInput,
@@ -21,7 +21,7 @@ class FineTunePreferenceRequestInput with FineTunePreferenceRequestInputMappable
     this.nonPreferredOutput,
   });
 
-  @MappableField(key: 'FineTunePreferenceRequestInputInput')
+  @MappableField(key: 'input')
   final FineTunePreferenceRequestInputInput? fineTunePreferenceRequestInputInput;
   @MappableField(key: 'preferred_output')
   final List<ChatCompletionRequestAssistantMessage>? preferredOutput;

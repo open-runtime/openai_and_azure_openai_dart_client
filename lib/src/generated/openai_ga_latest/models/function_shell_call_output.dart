@@ -4,13 +4,16 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
 import 'function_shell_call_output_content.dart';
 import 'function_shell_call_output_type_type.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'function_shell_call_output.mapper.dart';
 
 /// The output of a shell tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutput with FunctionShellCallOutputMappable {
   const FunctionShellCallOutput({
     required this.id,

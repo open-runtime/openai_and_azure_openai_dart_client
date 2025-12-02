@@ -34,6 +34,10 @@ class WebhookFineTuningJobCancelledDataMapper
   final MappableFields<WebhookFineTuningJobCancelledData> fields = const {
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookFineTuningJobCancelledData _instantiate(DecodingData data) {
     return WebhookFineTuningJobCancelledData(id: data.dec(_f$id));

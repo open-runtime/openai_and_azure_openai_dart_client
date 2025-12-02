@@ -51,6 +51,10 @@ class ChatCompletionRequestMessageContentPartAudioInputAudioMapper
   @override
   final MappableFields<ChatCompletionRequestMessageContentPartAudioInputAudio>
   fields = const {#data: _f$data, #format: _f$format};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartAudioInputAudio _instantiate(
     DecodingData data,

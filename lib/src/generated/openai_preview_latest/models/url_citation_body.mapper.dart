@@ -57,6 +57,10 @@ class UrlCitationBodyMapper extends ClassMapperBase<UrlCitationBody> {
     #title: _f$title,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UrlCitationBody _instantiate(DecodingData data) {
     return UrlCitationBody(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_thread_and_run_request_without_stream_tool_resources_file_search.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch with CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMappable {
   const CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch({
     this.vectorStoreIds,

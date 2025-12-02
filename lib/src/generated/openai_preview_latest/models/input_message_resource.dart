@@ -11,7 +11,7 @@ import 'input_message_type_type.dart';
 
 part 'input_message_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputMessageResource with InputMessageResourceMappable {
   const InputMessageResource({
     required this.role,

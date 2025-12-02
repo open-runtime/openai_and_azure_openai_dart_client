@@ -30,7 +30,7 @@ class CreateEmbeddingResponseObjectObjectEnumMapper
   CreateEmbeddingResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return CreateEmbeddingResponseObjectObjectEnum.valueList;
+        return CreateEmbeddingResponseObjectObjectEnum.list;
       case 'unknown':
         return CreateEmbeddingResponseObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class CreateEmbeddingResponseObjectObjectEnumMapper
   @override
   dynamic encode(CreateEmbeddingResponseObjectObjectEnum self) {
     switch (self) {
-      case CreateEmbeddingResponseObjectObjectEnum.valueList:
+      case CreateEmbeddingResponseObjectObjectEnum.list:
         return 'list';
       case CreateEmbeddingResponseObjectObjectEnum.unknown:
         return 'unknown';

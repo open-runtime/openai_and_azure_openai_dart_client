@@ -10,7 +10,7 @@ import 'content_filter_result_base.dart';
 part 'content_filter_detailed_results.mapper.dart';
 
 /// Content filtering results with a detail of content filter ids for the filtered segments.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetailedResults with ContentFilterDetailedResultsMappable {
   const ContentFilterDetailedResults({
     required this.filtered,

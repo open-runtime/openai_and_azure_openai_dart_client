@@ -55,6 +55,10 @@ class RealtimeServerEventInputAudioBufferSpeechStartedMapper
     #audioStartMs: _f$audioStartMs,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventInputAudioBufferSpeechStarted _instantiate(
     DecodingData data,

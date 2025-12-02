@@ -12,7 +12,7 @@ import 'fine_tune_chat_completion_request_assistant_message_weight_weight.dart';
 
 part 'fine_tune_chat_completion_request_assistant_message.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneChatCompletionRequestAssistantMessage with FineTuneChatCompletionRequestAssistantMessageMappable {
   const FineTuneChatCompletionRequestAssistantMessage({
     required this.role,
@@ -29,11 +29,11 @@ class FineTuneChatCompletionRequestAssistantMessage with FineTuneChatCompletionR
   final String? content;
   final String? refusal;
   final String? name;
-  @MappableField(key: 'ChatCompletionRequestAssistantMessageAudio')
+  @MappableField(key: 'audio')
   final ChatCompletionRequestAssistantMessageAudio? chatCompletionRequestAssistantMessageAudio;
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
-  @MappableField(key: 'ChatCompletionRequestAssistantMessageFunctionCall')
+  @MappableField(key: 'function_call')
   final ChatCompletionRequestAssistantMessageFunctionCall? chatCompletionRequestAssistantMessageFunctionCall;
   final FineTuneChatCompletionRequestAssistantMessageWeightWeight? weight;
 

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'batch_error_data.mapper.dart';
 
 /// Error information for a failure in batch.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchErrorData with BatchErrorDataMappable {
   const BatchErrorData({
     this.code,

@@ -41,6 +41,10 @@ class FileAnnotationSourceMapper extends ClassMapperBase<FileAnnotationSource> {
     #filename: _f$filename,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileAnnotationSource _instantiate(DecodingData data) {
     return FileAnnotationSource(

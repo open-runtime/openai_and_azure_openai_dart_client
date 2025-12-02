@@ -58,6 +58,10 @@ class ProjectServiceAccountMapper
     #role: _f$role,
     #createdAt: _f$createdAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectServiceAccount _instantiate(DecodingData data) {
     return ProjectServiceAccount(

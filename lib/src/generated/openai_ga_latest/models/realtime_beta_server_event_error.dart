@@ -12,7 +12,7 @@ part 'realtime_beta_server_event_error.mapper.dart';
 /// problem. Most errors are recoverable and the session will stay open, we.
 /// recommend to implementors to monitor and log error messages by default.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventError with RealtimeBetaServerEventErrorMappable {
   const RealtimeBetaServerEventError({
     required this.eventId,
@@ -23,7 +23,7 @@ class RealtimeBetaServerEventError with RealtimeBetaServerEventErrorMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
-  @MappableField(key: 'RealtimeBetaServerEventErrorError')
+  @MappableField(key: 'error')
   final RealtimeBetaServerEventErrorError realtimeBetaServerEventErrorError;
 
   static RealtimeBetaServerEventError fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventErrorMapper.fromJson(json);

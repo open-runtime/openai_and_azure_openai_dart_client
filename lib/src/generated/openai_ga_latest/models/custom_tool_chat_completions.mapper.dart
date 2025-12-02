@@ -41,7 +41,7 @@ class CustomToolChatCompletionsMapper
   _f$customToolChatCompletionsCustom = Field(
     'customToolChatCompletionsCustom',
     _$customToolChatCompletionsCustom,
-    key: r'CustomToolChatCompletionsCustom',
+    key: r'custom',
   );
 
   @override
@@ -49,6 +49,10 @@ class CustomToolChatCompletionsMapper
     #type: _f$type,
     #customToolChatCompletionsCustom: _f$customToolChatCompletionsCustom,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomToolChatCompletions _instantiate(DecodingData data) {
     return CustomToolChatCompletions(

@@ -10,7 +10,7 @@ part 'embedding.mapper.dart';
 
 /// Represents an embedding vector returned by embedding endpoint.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Embedding with EmbeddingMappable {
   const Embedding({
     required this.indexField,

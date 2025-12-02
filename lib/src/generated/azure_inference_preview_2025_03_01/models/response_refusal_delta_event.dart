@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_refusal_delta_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_refusal_delta_event.mapper.dart';
 
 /// Emitted when there is a partial refusal text.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseRefusalDeltaEvent with ResponseRefusalDeltaEventMappable {
   const ResponseRefusalDeltaEvent({
     required this.type,

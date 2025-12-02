@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'speech_audio_done_event_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SpeechAudioDoneEventUsage with SpeechAudioDoneEventUsageMappable {
   const SpeechAudioDoneEventUsage({
     required this.inputTokens,

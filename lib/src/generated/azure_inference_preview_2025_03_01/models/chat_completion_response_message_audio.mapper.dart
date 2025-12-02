@@ -47,6 +47,10 @@ class ChatCompletionResponseMessageAudioMapper
     #data: _f$data,
     #transcript: _f$transcript,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessageAudio _instantiate(DecodingData data) {
     return ChatCompletionResponseMessageAudio(

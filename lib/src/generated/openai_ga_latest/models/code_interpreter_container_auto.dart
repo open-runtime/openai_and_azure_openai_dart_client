@@ -10,7 +10,7 @@ import 'container_memory_limit.dart';
 part 'code_interpreter_container_auto.mapper.dart';
 
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterContainerAuto with CodeInterpreterContainerAutoMappable {
   const CodeInterpreterContainerAuto({
     this.fileIds,

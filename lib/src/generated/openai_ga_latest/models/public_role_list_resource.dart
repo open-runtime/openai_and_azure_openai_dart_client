@@ -10,7 +10,7 @@ import 'role.dart';
 part 'public_role_list_resource.mapper.dart';
 
 /// Paginated list of roles available on an organization or project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PublicRoleListResource with PublicRoleListResourceMappable {
   const PublicRoleListResource({
     required this.objectEnum,

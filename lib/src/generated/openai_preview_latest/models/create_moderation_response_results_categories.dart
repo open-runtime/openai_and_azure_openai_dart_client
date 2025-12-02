@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_moderation_response_results_categories.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationResponseResultsCategories with CreateModerationResponseResultsCategoriesMappable {
   const CreateModerationResponseResultsCategories({
     required this.hate,

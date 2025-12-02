@@ -10,7 +10,7 @@ part 'web_search_action_find.mapper.dart';
 
 /// Action type "find": Searches for a pattern within a loaded page.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchActionFind with WebSearchActionFindMappable {
   const WebSearchActionFind({
     required this.type,

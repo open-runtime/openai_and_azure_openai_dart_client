@@ -9,7 +9,7 @@ import 'run_step_details_tool_calls_file_search_result_object.dart';
 
 part 'run_step_details_tool_calls_file_search_object_file_search.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsFileSearchObjectFileSearch with RunStepDetailsToolCallsFileSearchObjectFileSearchMappable {
   const RunStepDetailsToolCallsFileSearchObjectFileSearch({
     this.rankingOptions,

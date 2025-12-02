@@ -23,6 +23,10 @@ class PartialImagesMapper extends ClassMapperBase<PartialImages> {
 
   @override
   final MappableFields<PartialImages> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PartialImages _instantiate(DecodingData data) {
     return PartialImages();

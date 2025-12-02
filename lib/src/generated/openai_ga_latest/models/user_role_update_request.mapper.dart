@@ -30,6 +30,10 @@ class UserRoleUpdateRequestMapper
 
   @override
   final MappableFields<UserRoleUpdateRequest> fields = const {#role: _f$role};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserRoleUpdateRequest _instantiate(DecodingData data) {
     return UserRoleUpdateRequest(role: data.dec(_f$role));

@@ -8,7 +8,7 @@ import 'tool_call.dart';
 
 part 'choice_message.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChoiceMessage with ChoiceMessageMappable {
   const ChoiceMessage({
     this.content,

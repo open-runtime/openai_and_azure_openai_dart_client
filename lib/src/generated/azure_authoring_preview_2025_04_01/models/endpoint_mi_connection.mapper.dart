@@ -46,6 +46,10 @@ class EndpointMiConnectionMapper extends ClassMapperBase<EndpointMiConnection> {
     #endpoint: _f$endpoint,
     #resourceId: _f$resourceId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EndpointMiConnection _instantiate(DecodingData data) {
     return EndpointMiConnection(

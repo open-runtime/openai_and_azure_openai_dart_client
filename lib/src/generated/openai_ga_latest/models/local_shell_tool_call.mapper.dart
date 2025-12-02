@@ -51,6 +51,10 @@ class LocalShellToolCallMapper extends ClassMapperBase<LocalShellToolCall> {
     #action: _f$action,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LocalShellToolCall _instantiate(DecodingData data) {
     return LocalShellToolCall(

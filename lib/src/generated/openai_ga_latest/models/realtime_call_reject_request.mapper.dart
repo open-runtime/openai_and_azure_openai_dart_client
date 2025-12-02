@@ -36,6 +36,10 @@ class RealtimeCallRejectRequestMapper
   final MappableFields<RealtimeCallRejectRequest> fields = const {
     #statusCode: _f$statusCode,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeCallRejectRequest _instantiate(DecodingData data) {
     return RealtimeCallRejectRequest(statusCode: data.dec(_f$statusCode));

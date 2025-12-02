@@ -11,7 +11,7 @@ part 'azure_search_chat_extension_configuration.mapper.dart';
 
 /// A specific representation of configurable options for Azure Search when using it as an Azure OpenAI chat.
 /// extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureSearchChatExtensionConfiguration with AzureSearchChatExtensionConfigurationMappable {
   const AzureSearchChatExtensionConfiguration({
     required this.type,

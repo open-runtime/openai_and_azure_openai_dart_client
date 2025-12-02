@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_login_failed.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogLoginFailed with AuditLogLoginFailedMappable {
   const AuditLogLoginFailed({
     this.errorCode,

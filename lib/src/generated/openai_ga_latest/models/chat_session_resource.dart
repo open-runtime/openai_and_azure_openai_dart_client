@@ -13,7 +13,7 @@ import 'chatkit_workflow.dart';
 part 'chat_session_resource.mapper.dart';
 
 /// Represents a ChatKit session and its resolved configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionResource with ChatSessionResourceMappable {
   const ChatSessionResource({
     required this.id,

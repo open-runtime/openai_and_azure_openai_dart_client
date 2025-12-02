@@ -15,9 +15,9 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpToolMapper._());
       McpToolTypeTypeMapper.ensureInitialized();
-      McpToolRequireApprovalRequireApprovalUnionMapper.ensureInitialized();
+      McpToolRequireApprovalUnionMapper.ensureInitialized();
       McpToolConnectorIdConnectorIdMapper.ensureInitialized();
-      McpToolAllowedToolsAllowedToolsUnionMapper.ensureInitialized();
+      McpToolAllowedToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -33,19 +33,16 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
     _$serverLabel,
     key: r'server_label',
   );
-  static McpToolRequireApprovalRequireApprovalUnion? _$requireApproval(
-    McpTool v,
-  ) => v.requireApproval;
-  static const Field<McpTool, McpToolRequireApprovalRequireApprovalUnion>
-  _f$requireApproval = Field(
-    'requireApproval',
-    _$requireApproval,
-    key: r'require_approval',
-    opt: true,
-    def: const McpToolRequireApprovalRequireApprovalUnionVariantString(
-      value: 'always',
-    ),
-  );
+  static McpToolRequireApprovalUnion? _$requireApproval(McpTool v) =>
+      v.requireApproval;
+  static const Field<McpTool, McpToolRequireApprovalUnion> _f$requireApproval =
+      Field(
+        'requireApproval',
+        _$requireApproval,
+        key: r'require_approval',
+        opt: true,
+        def: const McpToolRequireApprovalUnionVariantString(value: 'always'),
+      );
   static String? _$serverUrl(McpTool v) => v.serverUrl;
   static const Field<McpTool, String> _f$serverUrl = Field(
     'serverUrl',
@@ -76,10 +73,8 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
     _$headers,
     opt: true,
   );
-  static McpToolAllowedToolsAllowedToolsUnion? _$allowedTools(McpTool v) =>
-      v.allowedTools;
-  static const Field<McpTool, McpToolAllowedToolsAllowedToolsUnion>
-  _f$allowedTools = Field(
+  static McpToolAllowedToolsUnion? _$allowedTools(McpTool v) => v.allowedTools;
+  static const Field<McpTool, McpToolAllowedToolsUnion> _f$allowedTools = Field(
     'allowedTools',
     _$allowedTools,
     key: r'allowed_tools',
@@ -98,6 +93,10 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
     #headers: _f$headers,
     #allowedTools: _f$allowedTools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpTool _instantiate(DecodingData data) {
     return McpTool(
@@ -170,30 +169,30 @@ extension McpToolValueCopy<$R, $Out> on ObjectCopyWith<$R, McpTool, $Out> {
 
 abstract class McpToolCopyWith<$R, $In extends McpTool, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  McpToolRequireApprovalRequireApprovalUnionCopyWith<
+  McpToolRequireApprovalUnionCopyWith<
     $R,
-    McpToolRequireApprovalRequireApprovalUnion,
-    McpToolRequireApprovalRequireApprovalUnion
+    McpToolRequireApprovalUnion,
+    McpToolRequireApprovalUnion
   >?
   get requireApproval;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get headers;
-  McpToolAllowedToolsAllowedToolsUnionCopyWith<
+  McpToolAllowedToolsUnionCopyWith<
     $R,
-    McpToolAllowedToolsAllowedToolsUnion,
-    McpToolAllowedToolsAllowedToolsUnion
+    McpToolAllowedToolsUnion,
+    McpToolAllowedToolsUnion
   >?
   get allowedTools;
   $R call({
     McpToolTypeType? type,
     String? serverLabel,
-    McpToolRequireApprovalRequireApprovalUnion? requireApproval,
+    McpToolRequireApprovalUnion? requireApproval,
     String? serverUrl,
     McpToolConnectorIdConnectorId? connectorId,
     String? authorization,
     String? serverDescription,
     Map<String, String>? headers,
-    McpToolAllowedToolsAllowedToolsUnion? allowedTools,
+    McpToolAllowedToolsUnion? allowedTools,
   });
   McpToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -207,10 +206,10 @@ class _McpToolCopyWithImpl<$R, $Out>
   late final ClassMapperBase<McpTool> $mapper =
       McpToolMapper.ensureInitialized();
   @override
-  McpToolRequireApprovalRequireApprovalUnionCopyWith<
+  McpToolRequireApprovalUnionCopyWith<
     $R,
-    McpToolRequireApprovalRequireApprovalUnion,
-    McpToolRequireApprovalRequireApprovalUnion
+    McpToolRequireApprovalUnion,
+    McpToolRequireApprovalUnion
   >?
   get requireApproval =>
       $value.requireApproval?.copyWith.$chain((v) => call(requireApproval: v));
@@ -224,10 +223,10 @@ class _McpToolCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  McpToolAllowedToolsAllowedToolsUnionCopyWith<
+  McpToolAllowedToolsUnionCopyWith<
     $R,
-    McpToolAllowedToolsAllowedToolsUnion,
-    McpToolAllowedToolsAllowedToolsUnion
+    McpToolAllowedToolsUnion,
+    McpToolAllowedToolsUnion
   >?
   get allowedTools =>
       $value.allowedTools?.copyWith.$chain((v) => call(allowedTools: v));

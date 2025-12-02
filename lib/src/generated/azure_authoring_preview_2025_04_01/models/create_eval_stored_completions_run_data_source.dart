@@ -10,7 +10,7 @@ import 'metadata.dart';
 part 'create_eval_stored_completions_run_data_source.mapper.dart';
 
 /// A StoredCompletionsRunDataSource configuration describing a set of filters
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalStoredCompletionsRunDataSource with CreateEvalStoredCompletionsRunDataSourceMappable {
   const CreateEvalStoredCompletionsRunDataSource({
     this.type = CreateEvalStoredCompletionsRunDataSourceTypeType.storedCompletions,

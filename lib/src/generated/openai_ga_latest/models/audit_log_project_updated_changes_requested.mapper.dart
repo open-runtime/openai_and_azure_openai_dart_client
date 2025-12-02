@@ -32,6 +32,10 @@ class AuditLogProjectUpdatedChangesRequestedMapper
   final MappableFields<AuditLogProjectUpdatedChangesRequested> fields = const {
     #title: _f$title,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectUpdatedChangesRequested _instantiate(
     DecodingData data,

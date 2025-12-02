@@ -17,6 +17,7 @@ class CreateCompletionRequestMapper
       MapperContainer.globals.use(
         _instance = CreateCompletionRequestMapper._(),
       );
+      CreateCompletionRequestModelUnionMapper.ensureInitialized();
       StopConfigurationMapper.ensureInitialized();
       ChatCompletionStreamOptionsMapper.ensureInitialized();
     }
@@ -26,10 +27,13 @@ class CreateCompletionRequestMapper
   @override
   final String id = 'CreateCompletionRequest';
 
-  static String _$model(CreateCompletionRequest v) => v.model;
-  static const Field<CreateCompletionRequest, String> _f$model = Field(
+  static CreateCompletionRequestModelUnion _$model(CreateCompletionRequest v) =>
+      v.model;
+  static const Field<CreateCompletionRequest, CreateCompletionRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
+    hook: const CreateCompletionRequestModelUnionHook(),
   );
   static Map<String, int>? _$logitBias(CreateCompletionRequest v) =>
       v.logitBias;
@@ -168,6 +172,10 @@ class CreateCompletionRequestMapper
     #temperature: _f$temperature,
     #topP: _f$topP,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionRequest _instantiate(DecodingData data) {
     return CreateCompletionRequest(
@@ -262,6 +270,12 @@ abstract class CreateCompletionRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateCompletionRequestModelUnionCopyWith<
+    $R,
+    CreateCompletionRequestModelUnion,
+    CreateCompletionRequestModelUnion
+  >
+  get model;
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias;
   StopConfigurationCopyWith<$R, StopConfiguration, StopConfiguration>? get stop;
   ChatCompletionStreamOptionsCopyWith<
@@ -271,7 +285,7 @@ abstract class CreateCompletionRequestCopyWith<
   >?
   get streamOptions;
   $R call({
-    String? model,
+    CreateCompletionRequestModelUnion? model,
     Map<String, int>? logitBias,
     int? logprobs,
     String? suffix,
@@ -305,6 +319,13 @@ class _CreateCompletionRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateCompletionRequest> $mapper =
       CreateCompletionRequestMapper.ensureInitialized();
   @override
+  CreateCompletionRequestModelUnionCopyWith<
+    $R,
+    CreateCompletionRequestModelUnion,
+    CreateCompletionRequestModelUnion
+  >
+  get model => $value.model.copyWith.$chain((v) => call(model: v));
+  @override
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias =>
       $value.logitBias != null
       ? MapCopyWith(
@@ -326,7 +347,7 @@ class _CreateCompletionRequestCopyWithImpl<$R, $Out>
       $value.streamOptions?.copyWith.$chain((v) => call(streamOptions: v));
   @override
   $R call({
-    String? model,
+    CreateCompletionRequestModelUnion? model,
     Object? logitBias = $none,
     Object? logprobs = $none,
     Object? suffix = $none,

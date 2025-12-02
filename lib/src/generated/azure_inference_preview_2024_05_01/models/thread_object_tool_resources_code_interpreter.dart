@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'thread_object_tool_resources_code_interpreter.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadObjectToolResourcesCodeInterpreter with ThreadObjectToolResourcesCodeInterpreterMappable {
   const ThreadObjectToolResourcesCodeInterpreter({
     this.fileIds = const [],

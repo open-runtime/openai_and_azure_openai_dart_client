@@ -41,6 +41,10 @@ class DoubleClickActionMapper extends ClassMapperBase<DoubleClickAction> {
     #y: _f$y,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DoubleClickAction _instantiate(DecodingData data) {
     return DoubleClickAction(

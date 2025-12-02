@@ -40,7 +40,7 @@ class AssistantToolsFileSearchMapper
   _f$assistantToolsFileSearchFileSearch = Field(
     'assistantToolsFileSearchFileSearch',
     _$assistantToolsFileSearchFileSearch,
-    key: r'AssistantToolsFileSearchFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -49,6 +49,10 @@ class AssistantToolsFileSearchMapper
     #type: _f$type,
     #assistantToolsFileSearchFileSearch: _f$assistantToolsFileSearchFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFileSearch _instantiate(DecodingData data) {
     return AssistantToolsFileSearch(

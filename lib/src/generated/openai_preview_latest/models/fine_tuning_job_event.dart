@@ -11,7 +11,7 @@ import 'fine_tuning_job_event_type_type.dart';
 part 'fine_tuning_job_event.mapper.dart';
 
 /// Fine-tuning job event object
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobEvent with FineTuningJobEventMappable {
   const FineTuningJobEvent({
     required this.objectEnum,

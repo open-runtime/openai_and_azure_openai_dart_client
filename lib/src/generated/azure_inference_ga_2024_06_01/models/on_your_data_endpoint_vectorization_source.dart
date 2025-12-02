@@ -11,7 +11,7 @@ part 'on_your_data_endpoint_vectorization_source.mapper.dart';
 
 /// The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based.
 /// on a public Azure OpenAI endpoint call for embeddings.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataEndpointVectorizationSource with OnYourDataEndpointVectorizationSourceMappable {
   const OnYourDataEndpointVectorizationSource({
     required this.type,

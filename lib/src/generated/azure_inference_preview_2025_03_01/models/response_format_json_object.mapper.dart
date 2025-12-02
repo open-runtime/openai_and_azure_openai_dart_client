@@ -34,6 +34,10 @@ class ResponseFormatJsonObjectMapper
   final MappableFields<ResponseFormatJsonObject> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatJsonObject _instantiate(DecodingData data) {
     return ResponseFormatJsonObject(type: data.dec(_f$type));

@@ -8,7 +8,7 @@ import 'container_resource_expires_after_anchor_anchor.dart';
 
 part 'container_resource_expires_after.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerResourceExpiresAfter with ContainerResourceExpiresAfterMappable {
   const ContainerResourceExpiresAfter({
     this.anchor,

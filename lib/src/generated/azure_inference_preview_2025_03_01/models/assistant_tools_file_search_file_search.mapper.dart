@@ -38,6 +38,10 @@ class AssistantToolsFileSearchFileSearchMapper
   final MappableFields<AssistantToolsFileSearchFileSearch> fields = const {
     #maxNumResults: _f$maxNumResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFileSearchFileSearch _instantiate(DecodingData data) {
     return AssistantToolsFileSearchFileSearch(

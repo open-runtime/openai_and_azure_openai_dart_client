@@ -9,7 +9,7 @@ import 'list_fine_tuning_checkpoint_permission_response_object_object_enum.dart'
 
 part 'list_fine_tuning_checkpoint_permission_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListFineTuningCheckpointPermissionResponse with ListFineTuningCheckpointPermissionResponseMappable {
   const ListFineTuningCheckpointPermissionResponse({
     required this.data,

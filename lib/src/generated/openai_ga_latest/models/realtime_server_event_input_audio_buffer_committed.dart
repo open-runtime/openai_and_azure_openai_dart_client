@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_input_audio_buffer_committed.mapper.dart';
 
 /// Returned when an input audio buffer is committed, either by the client or.
@@ -11,7 +13,7 @@ part 'realtime_server_event_input_audio_buffer_committed.mapper.dart';
 /// message item that will be created, thus a `conversation.item.created` event.
 /// will also be sent to the client.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventInputAudioBufferCommitted with RealtimeServerEventInputAudioBufferCommittedMappable {
   const RealtimeServerEventInputAudioBufferCommitted({
     required this.eventId,

@@ -80,6 +80,10 @@ class InviteMapper extends ClassMapperBase<Invite> {
     #acceptedAt: _f$acceptedAt,
     #projects: _f$projects,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Invite _instantiate(DecodingData data) {
     return Invite(

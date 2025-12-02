@@ -80,6 +80,10 @@ class IngestionJobUserComputeMapper
     #datasource: _f$datasource,
     #dataRefreshIntervalInHours: _f$dataRefreshIntervalInHours,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobUserCompute _instantiate(DecodingData data) {
     return IngestionJobUserCompute(

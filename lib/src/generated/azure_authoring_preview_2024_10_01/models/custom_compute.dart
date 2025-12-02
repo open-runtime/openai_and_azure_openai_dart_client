@@ -9,7 +9,7 @@ import 'compute_type.dart';
 part 'custom_compute.mapper.dart';
 
 /// Custom compute.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomCompute with CustomComputeMappable {
   const CustomCompute({
     required this.kind,

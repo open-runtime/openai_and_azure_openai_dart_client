@@ -19,7 +19,7 @@ class AzureCosmosDbChatExtensionParametersMapper
       );
       OnYourDataConnectionStringAuthenticationOptionsMapper.ensureInitialized();
       AzureCosmosDbFieldMappingOptionsMapper.ensureInitialized();
-      AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMapper.ensureInitialized();
+      AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionMapper.ensureInitialized();
       OnYourDataContextPropertyMapper.ensureInitialized();
     }
     return _instance!;
@@ -68,12 +68,12 @@ class AzureCosmosDbChatExtensionParametersMapper
     _$fieldsMapping,
     key: r'fields_mapping',
   );
-  static AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+  static AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
   _$embeddingDependency(AzureCosmosDbChatExtensionParameters v) =>
       v.embeddingDependency;
   static const Field<
     AzureCosmosDbChatExtensionParameters,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
   >
   _f$embeddingDependency = Field(
     'embeddingDependency',
@@ -154,6 +154,10 @@ class AzureCosmosDbChatExtensionParametersMapper
     #roleInformation: _f$roleInformation,
     #includeContexts: _f$includeContexts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureCosmosDbChatExtensionParameters _instantiate(DecodingData data) {
     return AzureCosmosDbChatExtensionParameters(
@@ -266,10 +270,10 @@ abstract class AzureCosmosDbChatExtensionParametersCopyWith<
     AzureCosmosDbFieldMappingOptions
   >
   get fieldsMapping;
-  AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion,
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
   >
   get embeddingDependency;
   ListCopyWith<
@@ -284,7 +288,7 @@ abstract class AzureCosmosDbChatExtensionParametersCopyWith<
     String? containerName,
     String? indexName,
     AzureCosmosDbFieldMappingOptions? fieldsMapping,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion?
     embeddingDependency,
     bool? allowPartialResult,
     int? topNDocuments,
@@ -332,10 +336,10 @@ class _AzureCosmosDbChatExtensionParametersCopyWithImpl<$R, $Out>
   get fieldsMapping =>
       $value.fieldsMapping.copyWith.$chain((v) => call(fieldsMapping: v));
   @override
-  AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion,
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
   >
   get embeddingDependency => $value.embeddingDependency.copyWith.$chain(
     (v) => call(embeddingDependency: v),
@@ -360,7 +364,7 @@ class _AzureCosmosDbChatExtensionParametersCopyWithImpl<$R, $Out>
     String? containerName,
     String? indexName,
     AzureCosmosDbFieldMappingOptions? fieldsMapping,
-    AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion?
     embeddingDependency,
     bool? allowPartialResult,
     Object? topNDocuments = $none,

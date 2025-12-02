@@ -100,6 +100,10 @@ class ChatSessionResourceMapper extends ClassMapperBase<ChatSessionResource> {
     #chatkitConfiguration: _f$chatkitConfiguration,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatSessionResource _instantiate(DecodingData data) {
     return ChatSessionResource(

@@ -39,6 +39,10 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
     #type: _f$type,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchToolCall _instantiate(DecodingData data) {
     return WebSearchToolCall(

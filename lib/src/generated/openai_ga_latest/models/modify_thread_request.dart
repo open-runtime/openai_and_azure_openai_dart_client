@@ -9,7 +9,7 @@ import 'modify_thread_request_tool_resources.dart';
 
 part 'modify_thread_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyThreadRequest with ModifyThreadRequestMappable {
   const ModifyThreadRequest({
     this.toolResources,

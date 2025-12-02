@@ -11,7 +11,7 @@ part 'message_delta_object.mapper.dart';
 
 /// Represents a message delta i.e. any changed fields on a message during streaming.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaObject with MessageDeltaObjectMappable {
   const MessageDeltaObject({
     required this.id,
@@ -22,7 +22,7 @@ class MessageDeltaObject with MessageDeltaObjectMappable {
   final String id;
   @MappableField(key: 'object')
   final MessageDeltaObjectObjectObjectEnum objectEnum;
-  @MappableField(key: 'MessageDeltaObjectDelta')
+  @MappableField(key: 'delta')
   final MessageDeltaObjectDelta messageDeltaObjectDelta;
 
   static MessageDeltaObject fromJson(Map<String, dynamic> json) => MessageDeltaObjectMapper.fromJson(json);

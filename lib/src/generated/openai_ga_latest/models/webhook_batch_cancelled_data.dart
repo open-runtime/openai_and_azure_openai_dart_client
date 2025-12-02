@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_batch_cancelled_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCancelledData with WebhookBatchCancelledDataMappable {
   const WebhookBatchCancelledData({
     required this.id,

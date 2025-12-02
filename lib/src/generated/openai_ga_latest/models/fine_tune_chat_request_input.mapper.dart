@@ -17,7 +17,7 @@ class FineTuneChatRequestInputMapper
       MapperContainer.globals.use(
         _instance = FineTuneChatRequestInputMapper._(),
       );
-      FineTuneChatRequestInputMessagesMessagesUnionMapper.ensureInitialized();
+      FineTuneChatRequestInputMessagesUnionMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
     }
@@ -27,12 +27,12 @@ class FineTuneChatRequestInputMapper
   @override
   final String id = 'FineTuneChatRequestInput';
 
-  static List<FineTuneChatRequestInputMessagesMessagesUnion>? _$messages(
+  static List<FineTuneChatRequestInputMessagesUnion>? _$messages(
     FineTuneChatRequestInput v,
   ) => v.messages;
   static const Field<
     FineTuneChatRequestInput,
-    List<FineTuneChatRequestInputMessagesMessagesUnion>
+    List<FineTuneChatRequestInputMessagesUnion>
   >
   _f$messages = Field('messages', _$messages, opt: true);
   static List<ChatCompletionTool>? _$tools(FineTuneChatRequestInput v) =>
@@ -61,6 +61,10 @@ class FineTuneChatRequestInputMapper
     #parallelToolCalls: _f$parallelToolCalls,
     #functions: _f$functions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneChatRequestInput _instantiate(DecodingData data) {
     return FineTuneChatRequestInput(
@@ -143,11 +147,11 @@ abstract class FineTuneChatRequestInputCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    FineTuneChatRequestInputMessagesMessagesUnion,
-    FineTuneChatRequestInputMessagesMessagesUnionCopyWith<
+    FineTuneChatRequestInputMessagesUnion,
+    FineTuneChatRequestInputMessagesUnionCopyWith<
       $R,
-      FineTuneChatRequestInputMessagesMessagesUnion,
-      FineTuneChatRequestInputMessagesMessagesUnion
+      FineTuneChatRequestInputMessagesUnion,
+      FineTuneChatRequestInputMessagesUnion
     >
   >?
   get messages;
@@ -168,7 +172,7 @@ abstract class FineTuneChatRequestInputCopyWith<
   >?
   get functions;
   $R call({
-    List<FineTuneChatRequestInputMessagesMessagesUnion>? messages,
+    List<FineTuneChatRequestInputMessagesUnion>? messages,
     List<ChatCompletionTool>? tools,
     bool? parallelToolCalls,
     List<ChatCompletionFunctions>? functions,
@@ -190,11 +194,11 @@ class _FineTuneChatRequestInputCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    FineTuneChatRequestInputMessagesMessagesUnion,
-    FineTuneChatRequestInputMessagesMessagesUnionCopyWith<
+    FineTuneChatRequestInputMessagesUnion,
+    FineTuneChatRequestInputMessagesUnionCopyWith<
       $R,
-      FineTuneChatRequestInputMessagesMessagesUnion,
-      FineTuneChatRequestInputMessagesMessagesUnion
+      FineTuneChatRequestInputMessagesUnion,
+      FineTuneChatRequestInputMessagesUnion
     >
   >?
   get messages => $value.messages != null

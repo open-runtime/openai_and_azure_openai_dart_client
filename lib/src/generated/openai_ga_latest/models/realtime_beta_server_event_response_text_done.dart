@@ -9,7 +9,7 @@ part 'realtime_beta_server_event_response_text_done.mapper.dart';
 /// Returned when the text value of an "output_text" content part is done streaming. Also.
 /// emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseTextDone with RealtimeBetaServerEventResponseTextDoneMappable {
   const RealtimeBetaServerEventResponseTextDone({
     required this.eventId,

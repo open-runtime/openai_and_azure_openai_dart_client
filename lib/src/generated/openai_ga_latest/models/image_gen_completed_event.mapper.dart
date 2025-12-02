@@ -93,6 +93,10 @@ class ImageGenCompletedEventMapper
     #outputFormat: _f$outputFormat,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenCompletedEvent _instantiate(DecodingData data) {
     return ImageGenCompletedEvent(

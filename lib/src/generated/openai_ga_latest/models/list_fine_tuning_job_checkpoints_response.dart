@@ -9,7 +9,7 @@ import 'list_fine_tuning_job_checkpoints_response_object_object_enum.dart';
 
 part 'list_fine_tuning_job_checkpoints_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListFineTuningJobCheckpointsResponse with ListFineTuningJobCheckpointsResponseMappable {
   const ListFineTuningJobCheckpointsResponse({
     required this.data,

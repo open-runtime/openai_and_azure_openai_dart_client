@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_checkpoint_permission_created_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCheckpointPermissionCreatedData with AuditLogCheckpointPermissionCreatedDataMappable {
   const AuditLogCheckpointPermissionCreatedData({
     this.projectId,

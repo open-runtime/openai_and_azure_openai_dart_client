@@ -56,6 +56,10 @@ class PublicRoleListResourceMapper
     #hasMore: _f$hasMore,
     #next: _f$next,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PublicRoleListResource _instantiate(DecodingData data) {
     return PublicRoleListResource(

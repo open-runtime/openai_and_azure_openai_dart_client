@@ -11,7 +11,7 @@ import 'grader_score_model_type_type.dart';
 
 part 'eval_grader_score_model.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalGraderScoreModel with EvalGraderScoreModelMappable {
   const EvalGraderScoreModel({
     required this.type,
@@ -27,7 +27,7 @@ class EvalGraderScoreModel with EvalGraderScoreModelMappable {
   final String name;
   final String model;
   final List<EvalItem> input;
-  @MappableField(key: 'GraderScoreModelSamplingParams')
+  @MappableField(key: 'sampling_params')
   final GraderScoreModelSamplingParams? graderScoreModelSamplingParams;
   final List<num>? range;
   @MappableField(key: 'pass_threshold')

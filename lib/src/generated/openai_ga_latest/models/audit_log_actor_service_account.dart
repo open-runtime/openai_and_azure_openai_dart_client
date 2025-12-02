@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'audit_log_actor_service_account.mapper.dart';
 
 /// The service account that performed the audit logged action.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActorServiceAccount with AuditLogActorServiceAccountMappable {
   const AuditLogActorServiceAccount({
     this.id,

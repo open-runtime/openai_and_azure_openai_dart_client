@@ -17,7 +17,7 @@ class RealtimeCreateClientSecretResponseMapper
       MapperContainer.globals.use(
         _instance = RealtimeCreateClientSecretResponseMapper._(),
       );
-      RealtimeCreateClientSecretResponseSessionSessionUnionMapper.ensureInitialized();
+      RealtimeCreateClientSecretResponseSessionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -31,12 +31,12 @@ class RealtimeCreateClientSecretResponseMapper
   static int _$expiresAt(RealtimeCreateClientSecretResponse v) => v.expiresAt;
   static const Field<RealtimeCreateClientSecretResponse, int> _f$expiresAt =
       Field('expiresAt', _$expiresAt, key: r'expires_at');
-  static RealtimeCreateClientSecretResponseSessionSessionUnion _$session(
+  static RealtimeCreateClientSecretResponseSessionUnion _$session(
     RealtimeCreateClientSecretResponse v,
   ) => v.session;
   static const Field<
     RealtimeCreateClientSecretResponse,
-    RealtimeCreateClientSecretResponseSessionSessionUnion
+    RealtimeCreateClientSecretResponseSessionUnion
   >
   _f$session = Field('session', _$session);
 
@@ -46,6 +46,10 @@ class RealtimeCreateClientSecretResponseMapper
     #expiresAt: _f$expiresAt,
     #session: _f$session,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeCreateClientSecretResponse _instantiate(DecodingData data) {
     return RealtimeCreateClientSecretResponse(
@@ -134,16 +138,16 @@ abstract class RealtimeCreateClientSecretResponseCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeCreateClientSecretResponseSessionSessionUnionCopyWith<
+  RealtimeCreateClientSecretResponseSessionUnionCopyWith<
     $R,
-    RealtimeCreateClientSecretResponseSessionSessionUnion,
-    RealtimeCreateClientSecretResponseSessionSessionUnion
+    RealtimeCreateClientSecretResponseSessionUnion,
+    RealtimeCreateClientSecretResponseSessionUnion
   >
   get session;
   $R call({
     String? value,
     int? expiresAt,
-    RealtimeCreateClientSecretResponseSessionSessionUnion? session,
+    RealtimeCreateClientSecretResponseSessionUnion? session,
   });
   RealtimeCreateClientSecretResponseCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -167,17 +171,17 @@ class _RealtimeCreateClientSecretResponseCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeCreateClientSecretResponse> $mapper =
       RealtimeCreateClientSecretResponseMapper.ensureInitialized();
   @override
-  RealtimeCreateClientSecretResponseSessionSessionUnionCopyWith<
+  RealtimeCreateClientSecretResponseSessionUnionCopyWith<
     $R,
-    RealtimeCreateClientSecretResponseSessionSessionUnion,
-    RealtimeCreateClientSecretResponseSessionSessionUnion
+    RealtimeCreateClientSecretResponseSessionUnion,
+    RealtimeCreateClientSecretResponseSessionUnion
   >
   get session => $value.session.copyWith.$chain((v) => call(session: v));
   @override
   $R call({
     String? value,
     int? expiresAt,
-    RealtimeCreateClientSecretResponseSessionSessionUnion? session,
+    RealtimeCreateClientSecretResponseSessionUnion? session,
   }) => $apply(
     FieldCopyWithData({
       if (value != null) #value: value,

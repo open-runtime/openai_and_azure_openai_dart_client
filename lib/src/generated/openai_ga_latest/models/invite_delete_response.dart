@@ -8,7 +8,7 @@ import 'invite_delete_response_object_object_enum.dart';
 
 part 'invite_delete_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteDeleteResponse with InviteDeleteResponseMappable {
   const InviteDeleteResponse({
     required this.objectEnum,

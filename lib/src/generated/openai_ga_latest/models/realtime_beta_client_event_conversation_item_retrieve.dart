@@ -11,7 +11,7 @@ part 'realtime_beta_client_event_conversation_item_retrieve.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventConversationItemRetrieve with RealtimeBetaClientEventConversationItemRetrieveMappable {
   const RealtimeBetaClientEventConversationItemRetrieve({
     required this.type,

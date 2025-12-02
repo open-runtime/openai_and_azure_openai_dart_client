@@ -50,6 +50,10 @@ class AuditLogActorMapper extends ClassMapperBase<AuditLogActor> {
     #session: _f$session,
     #apiKey: _f$apiKey,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogActor _instantiate(DecodingData data) {
     return AuditLogActor(

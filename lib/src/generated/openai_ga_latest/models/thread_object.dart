@@ -11,7 +11,7 @@ import 'thread_object_tool_resources.dart';
 part 'thread_object.mapper.dart';
 
 /// Represents a thread that contains [messages](https://platform.openai.com/docs/api-reference/messages).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadObject with ThreadObjectMappable {
   const ThreadObject({
     required this.id,

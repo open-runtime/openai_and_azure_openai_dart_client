@@ -50,6 +50,10 @@ class CustomToolCallOutputMapper extends ClassMapperBase<CustomToolCallOutput> {
     #output: _f$output,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomToolCallOutput _instantiate(DecodingData data) {
     return CustomToolCallOutput(

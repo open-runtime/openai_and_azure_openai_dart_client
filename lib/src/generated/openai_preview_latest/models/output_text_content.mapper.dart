@@ -43,6 +43,10 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
     #annotations: _f$annotations,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputTextContent _instantiate(DecodingData data) {
     return OutputTextContent(

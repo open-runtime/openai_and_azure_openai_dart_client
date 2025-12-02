@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_certificates_activated_certificates.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCertificatesActivatedCertificates with AuditLogCertificatesActivatedCertificatesMappable {
   const AuditLogCertificatesActivatedCertificates({
     this.id,

@@ -8,7 +8,7 @@ import 'realtime_beta_response_usage_input_token_details_cached_tokens_details.d
 
 part 'realtime_beta_response_usage_input_token_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaResponseUsageInputTokenDetails with RealtimeBetaResponseUsageInputTokenDetailsMappable {
   const RealtimeBetaResponseUsageInputTokenDetails({
     this.cachedTokens,
@@ -26,7 +26,7 @@ class RealtimeBetaResponseUsageInputTokenDetails with RealtimeBetaResponseUsageI
   final int? imageTokens;
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
-  @MappableField(key: 'RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails')
+  @MappableField(key: 'cached_tokens_details')
   final RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails? realtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails;
 
   static RealtimeBetaResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) => RealtimeBetaResponseUsageInputTokenDetailsMapper.fromJson(json);

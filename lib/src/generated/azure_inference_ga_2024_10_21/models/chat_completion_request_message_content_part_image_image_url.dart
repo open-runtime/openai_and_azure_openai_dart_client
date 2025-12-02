@@ -8,7 +8,7 @@ import 'chat_completion_request_message_content_part_image_image_url_detail_deta
 
 part 'chat_completion_request_message_content_part_image_image_url.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartImageImageUrl with ChatCompletionRequestMessageContentPartImageImageUrlMappable {
   const ChatCompletionRequestMessageContentPartImageImageUrl({
     required this.url,

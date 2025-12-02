@@ -58,6 +58,10 @@ class VadConfigMapper extends ClassMapperBase<VadConfig> {
     #silenceDurationMs: _f$silenceDurationMs,
     #threshold: _f$threshold,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VadConfig _instantiate(DecodingData data) {
     return VadConfig(

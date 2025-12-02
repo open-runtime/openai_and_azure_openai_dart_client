@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'update_stored_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateStoredCompletionRequest with UpdateStoredCompletionRequestMappable {
   const UpdateStoredCompletionRequest({
     this.metadata,

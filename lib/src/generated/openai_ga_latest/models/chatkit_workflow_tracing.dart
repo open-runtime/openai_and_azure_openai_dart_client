@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chatkit_workflow_tracing.mapper.dart';
 
 /// Controls diagnostic tracing during the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatkitWorkflowTracing with ChatkitWorkflowTracingMappable {
   const ChatkitWorkflowTracing({
     required this.enabled,

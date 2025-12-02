@@ -57,7 +57,7 @@ class RealtimeBetaResponseUsageMapper
   _f$realtimeBetaResponseUsageInputTokenDetails = Field(
     'realtimeBetaResponseUsageInputTokenDetails',
     _$realtimeBetaResponseUsageInputTokenDetails,
-    key: r'RealtimeBetaResponseUsageInputTokenDetails',
+    key: r'input_token_details',
     opt: true,
   );
   static RealtimeBetaResponseUsageOutputTokenDetails?
@@ -70,7 +70,7 @@ class RealtimeBetaResponseUsageMapper
   _f$realtimeBetaResponseUsageOutputTokenDetails = Field(
     'realtimeBetaResponseUsageOutputTokenDetails',
     _$realtimeBetaResponseUsageOutputTokenDetails,
-    key: r'RealtimeBetaResponseUsageOutputTokenDetails',
+    key: r'output_token_details',
     opt: true,
   );
 
@@ -84,6 +84,10 @@ class RealtimeBetaResponseUsageMapper
     #realtimeBetaResponseUsageOutputTokenDetails:
         _f$realtimeBetaResponseUsageOutputTokenDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseUsage _instantiate(DecodingData data) {
     return RealtimeBetaResponseUsage(

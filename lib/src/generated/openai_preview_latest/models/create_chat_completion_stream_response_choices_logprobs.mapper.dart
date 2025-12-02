@@ -46,6 +46,10 @@ class CreateChatCompletionStreamResponseChoicesLogprobsMapper
   @override
   final MappableFields<CreateChatCompletionStreamResponseChoicesLogprobs>
   fields = const {#content: _f$content, #refusal: _f$refusal};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionStreamResponseChoicesLogprobs _instantiate(
     DecodingData data,

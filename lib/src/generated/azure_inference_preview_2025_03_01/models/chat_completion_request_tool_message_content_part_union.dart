@@ -9,7 +9,7 @@ import 'chat_completion_request_message_content_part_text.dart';
 
 part 'chat_completion_request_tool_message_content_part_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText])
 sealed class ChatCompletionRequestToolMessageContentPartUnion with ChatCompletionRequestToolMessageContentPartUnionMappable {
   const ChatCompletionRequestToolMessageContentPartUnion();
 
@@ -29,7 +29,7 @@ extension ChatCompletionRequestToolMessageContentPartUnionDeserializer on ChatCo
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText extends ChatCompletionRequestToolMessageContentPartUnion with ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartTextMappable {
   final ChatCompletionRequestMessageContentPartTextTypeType type;
   final String text;

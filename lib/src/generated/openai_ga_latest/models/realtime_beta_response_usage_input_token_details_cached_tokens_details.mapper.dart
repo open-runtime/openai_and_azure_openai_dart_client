@@ -80,6 +80,10 @@ class RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMapper
     #imageTokens: _f$imageTokens,
     #audioTokens: _f$audioTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails
   _instantiate(DecodingData data) {

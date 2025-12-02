@@ -42,6 +42,10 @@ class PublicUpdateOrganizationRoleBodyMapper
     #description: _f$description,
     #roleName: _f$roleName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PublicUpdateOrganizationRoleBody _instantiate(DecodingData data) {
     return PublicUpdateOrganizationRoleBody(

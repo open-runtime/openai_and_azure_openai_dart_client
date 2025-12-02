@@ -52,6 +52,10 @@ class RunStepDetailsToolCallsFileSearchObjectFileSearchMapper
   @override
   final MappableFields<RunStepDetailsToolCallsFileSearchObjectFileSearch>
   fields = const {#rankingOptions: _f$rankingOptions, #results: _f$results};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFileSearchObjectFileSearch _instantiate(
     DecodingData data,

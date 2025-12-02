@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_translation_response_json.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranslationResponseJson with CreateTranslationResponseJsonMappable {
   const CreateTranslationResponseJson({
     required this.text,

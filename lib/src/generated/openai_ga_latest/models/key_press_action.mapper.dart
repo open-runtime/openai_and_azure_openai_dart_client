@@ -40,6 +40,10 @@ class KeyPressActionMapper extends ClassMapperBase<KeyPressAction> {
     #keys: _f$keys,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static KeyPressAction _instantiate(DecodingData data) {
     return KeyPressAction(keys: data.dec(_f$keys), type: data.dec(_f$type));

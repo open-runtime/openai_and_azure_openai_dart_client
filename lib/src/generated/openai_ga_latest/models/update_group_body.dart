@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'update_group_body.mapper.dart';
 
 /// Request payload for updating the details of an existing group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateGroupBody with UpdateGroupBodyMappable {
   const UpdateGroupBody({
     required this.name,

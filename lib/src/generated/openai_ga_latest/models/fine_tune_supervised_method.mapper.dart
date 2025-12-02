@@ -38,6 +38,10 @@ class FineTuneSupervisedMethodMapper
   final MappableFields<FineTuneSupervisedMethod> fields = const {
     #hyperparameters: _f$hyperparameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneSupervisedMethod _instantiate(DecodingData data) {
     return FineTuneSupervisedMethod(

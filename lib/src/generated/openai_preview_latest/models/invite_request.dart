@@ -9,7 +9,7 @@ import 'invite_request_role_role.dart';
 
 part 'invite_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteRequest with InviteRequestMappable {
   const InviteRequest({
     required this.email,

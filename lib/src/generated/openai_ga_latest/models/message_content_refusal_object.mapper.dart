@@ -44,6 +44,10 @@ class MessageContentRefusalObjectMapper
     #type: _f$type,
     #refusal: _f$refusal,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentRefusalObject _instantiate(DecodingData data) {
     return MessageContentRefusalObject(

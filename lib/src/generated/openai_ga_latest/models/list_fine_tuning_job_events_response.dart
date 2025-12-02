@@ -9,7 +9,7 @@ import 'list_fine_tuning_job_events_response_object_object_enum.dart';
 
 part 'list_fine_tuning_job_events_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListFineTuningJobEventsResponse with ListFineTuningJobEventsResponseMappable {
   const ListFineTuningJobEventsResponse({
     required this.data,

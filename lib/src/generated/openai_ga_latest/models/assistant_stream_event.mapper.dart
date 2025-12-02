@@ -14,6 +14,7 @@ class AssistantStreamEventMapper extends ClassMapperBase<AssistantStreamEvent> {
   static AssistantStreamEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantStreamEventMapper._());
+      AssistantStreamEventErrorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,9 +24,17 @@ class AssistantStreamEventMapper extends ClassMapperBase<AssistantStreamEvent> {
 
   @override
   final MappableFields<AssistantStreamEvent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantStreamEvent _instantiate(DecodingData data) {
-    return AssistantStreamEvent();
+    throw MapperException.missingSubclass(
+      'AssistantStreamEvent',
+      'event',
+      '${data.value['event']}',
+    );
   }
 
   @override
@@ -41,55 +50,14 @@ class AssistantStreamEventMapper extends ClassMapperBase<AssistantStreamEvent> {
 }
 
 mixin AssistantStreamEventMappable {
-  String toJsonString() {
-    return AssistantStreamEventMapper.ensureInitialized()
-        .encodeJson<AssistantStreamEvent>(this as AssistantStreamEvent);
-  }
-
-  Map<String, dynamic> toJson() {
-    return AssistantStreamEventMapper.ensureInitialized()
-        .encodeMap<AssistantStreamEvent>(this as AssistantStreamEvent);
-  }
-
+  String toJsonString();
+  Map<String, dynamic> toJson();
   AssistantStreamEventCopyWith<
     AssistantStreamEvent,
     AssistantStreamEvent,
     AssistantStreamEvent
   >
-  get copyWith =>
-      _AssistantStreamEventCopyWithImpl<
-        AssistantStreamEvent,
-        AssistantStreamEvent
-      >(this as AssistantStreamEvent, $identity, $identity);
-  @override
-  String toString() {
-    return AssistantStreamEventMapper.ensureInitialized().stringifyValue(
-      this as AssistantStreamEvent,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return AssistantStreamEventMapper.ensureInitialized().equalsValue(
-      this as AssistantStreamEvent,
-      other,
-    );
-  }
-
-  @override
-  int get hashCode {
-    return AssistantStreamEventMapper.ensureInitialized().hashValue(
-      this as AssistantStreamEvent,
-    );
-  }
-}
-
-extension AssistantStreamEventValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, AssistantStreamEvent, $Out> {
-  AssistantStreamEventCopyWith<$R, AssistantStreamEvent, $Out>
-  get $asAssistantStreamEvent => $base.as(
-    (v, t, t2) => _AssistantStreamEventCopyWithImpl<$R, $Out>(v, t, t2),
-  );
+  get copyWith;
 }
 
 abstract class AssistantStreamEventCopyWith<
@@ -104,22 +72,172 @@ abstract class AssistantStreamEventCopyWith<
   );
 }
 
-class _AssistantStreamEventCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, AssistantStreamEvent, $Out>
-    implements AssistantStreamEventCopyWith<$R, AssistantStreamEvent, $Out> {
-  _AssistantStreamEventCopyWithImpl(super.value, super.then, super.then2);
+class AssistantStreamEventErrorMapper
+    extends SubClassMapperBase<AssistantStreamEventError> {
+  AssistantStreamEventErrorMapper._();
+
+  static AssistantStreamEventErrorMapper? _instance;
+  static AssistantStreamEventErrorMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance = AssistantStreamEventErrorMapper._(),
+      );
+      AssistantStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
+      AssistantStreamEventEventEventMapper.ensureInitialized();
+      ErrorMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
 
   @override
-  late final ClassMapperBase<AssistantStreamEvent> $mapper =
+  final String id = 'AssistantStreamEventError';
+
+  static AssistantStreamEventEventEvent _$event(AssistantStreamEventError v) =>
+      v.event;
+  static const Field<AssistantStreamEventError, AssistantStreamEventEventEvent>
+  _f$event = Field('event', _$event);
+  static Error _$data(AssistantStreamEventError v) => v.data;
+  static const Field<AssistantStreamEventError, Error> _f$data = Field(
+    'data',
+    _$data,
+  );
+
+  @override
+  final MappableFields<AssistantStreamEventError> fields = const {
+    #event: _f$event,
+    #data: _f$data,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'event';
+  @override
+  final dynamic discriminatorValue = 'error';
+  @override
+  late final ClassMapperBase superMapper =
       AssistantStreamEventMapper.ensureInitialized();
-  @override
-  $R call() => $apply(FieldCopyWithData({}));
-  @override
-  AssistantStreamEvent $make(CopyWithData data) => AssistantStreamEvent();
+
+  static AssistantStreamEventError _instantiate(DecodingData data) {
+    return AssistantStreamEventError(
+      event: data.dec(_f$event),
+      data: data.dec(_f$data),
+    );
+  }
 
   @override
-  AssistantStreamEventCopyWith<$R2, AssistantStreamEvent, $Out2>
+  final Function instantiate = _instantiate;
+
+  static AssistantStreamEventError fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<AssistantStreamEventError>(map);
+  }
+
+  static AssistantStreamEventError fromJsonString(String json) {
+    return ensureInitialized().decodeJson<AssistantStreamEventError>(json);
+  }
+}
+
+mixin AssistantStreamEventErrorMappable {
+  String toJsonString() {
+    return AssistantStreamEventErrorMapper.ensureInitialized()
+        .encodeJson<AssistantStreamEventError>(
+          this as AssistantStreamEventError,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return AssistantStreamEventErrorMapper.ensureInitialized()
+        .encodeMap<AssistantStreamEventError>(
+          this as AssistantStreamEventError,
+        );
+  }
+
+  AssistantStreamEventErrorCopyWith<
+    AssistantStreamEventError,
+    AssistantStreamEventError,
+    AssistantStreamEventError
+  >
+  get copyWith =>
+      _AssistantStreamEventErrorCopyWithImpl<
+        AssistantStreamEventError,
+        AssistantStreamEventError
+      >(this as AssistantStreamEventError, $identity, $identity);
+  @override
+  String toString() {
+    return AssistantStreamEventErrorMapper.ensureInitialized().stringifyValue(
+      this as AssistantStreamEventError,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return AssistantStreamEventErrorMapper.ensureInitialized().equalsValue(
+      this as AssistantStreamEventError,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return AssistantStreamEventErrorMapper.ensureInitialized().hashValue(
+      this as AssistantStreamEventError,
+    );
+  }
+}
+
+extension AssistantStreamEventErrorValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, AssistantStreamEventError, $Out> {
+  AssistantStreamEventErrorCopyWith<$R, AssistantStreamEventError, $Out>
+  get $asAssistantStreamEventError => $base.as(
+    (v, t, t2) => _AssistantStreamEventErrorCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class AssistantStreamEventErrorCopyWith<
+  $R,
+  $In extends AssistantStreamEventError,
+  $Out
+>
+    implements AssistantStreamEventCopyWith<$R, $In, $Out> {
+  ErrorCopyWith<$R, Error, Error> get data;
+  @override
+  $R call({AssistantStreamEventEventEvent? event, Error? data});
+  AssistantStreamEventErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _AssistantStreamEventErrorCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, AssistantStreamEventError, $Out>
+    implements
+        AssistantStreamEventErrorCopyWith<$R, AssistantStreamEventError, $Out> {
+  _AssistantStreamEventErrorCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<AssistantStreamEventError> $mapper =
+      AssistantStreamEventErrorMapper.ensureInitialized();
+  @override
+  ErrorCopyWith<$R, Error, Error> get data =>
+      $value.data.copyWith.$chain((v) => call(data: v));
+  @override
+  $R call({AssistantStreamEventEventEvent? event, Error? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
+  @override
+  AssistantStreamEventError $make(CopyWithData data) =>
+      AssistantStreamEventError(
+        event: data.get(#event, or: $value.event),
+        data: data.get(#data, or: $value.data),
+      );
+
+  @override
+  AssistantStreamEventErrorCopyWith<$R2, AssistantStreamEventError, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _AssistantStreamEventCopyWithImpl<$R2, $Out2>($value, $cast, t);
+      _AssistantStreamEventErrorCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 

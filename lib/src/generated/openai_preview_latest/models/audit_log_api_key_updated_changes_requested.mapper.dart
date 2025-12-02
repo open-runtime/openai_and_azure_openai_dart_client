@@ -33,6 +33,10 @@ class AuditLogApiKeyUpdatedChangesRequestedMapper
   final MappableFields<AuditLogApiKeyUpdatedChangesRequested> fields = const {
     #scopes: _f$scopes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogApiKeyUpdatedChangesRequested _instantiate(DecodingData data) {
     return AuditLogApiKeyUpdatedChangesRequested(scopes: data.dec(_f$scopes));

@@ -4,7 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_content_content_union.dart';
+import 'conversation_item.dart';
+import 'message_content_union.dart';
 import 'message_role.dart';
 import 'message_status.dart';
 import 'message_type_type.dart';
@@ -12,7 +13,7 @@ import 'message_type_type.dart';
 part 'message.mapper.dart';
 
 /// A message to or from the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Message with MessageMappable {
   const Message({
     required this.id,
@@ -25,7 +26,7 @@ class Message with MessageMappable {
   final String id;
   final MessageStatus status;
   final MessageRole role;
-  final List<MessageContentContentUnion> content;
+  final List<MessageContentUnion> content;
   final MessageTypeType type;
 
   static Message fromJson(Map<String, dynamic> json) => MessageMapper.fromJson(json);

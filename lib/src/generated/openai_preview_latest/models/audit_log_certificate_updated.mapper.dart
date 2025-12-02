@@ -42,6 +42,10 @@ class AuditLogCertificateUpdatedMapper
     #id: _f$id,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogCertificateUpdated _instantiate(DecodingData data) {
     return AuditLogCertificateUpdated(

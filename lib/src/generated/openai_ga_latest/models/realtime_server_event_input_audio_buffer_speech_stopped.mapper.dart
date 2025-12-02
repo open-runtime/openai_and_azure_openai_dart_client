@@ -50,6 +50,10 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
     #audioEndMs: _f$audioEndMs,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventInputAudioBufferSpeechStopped _instantiate(
     DecodingData data,

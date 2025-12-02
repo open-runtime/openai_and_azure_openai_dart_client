@@ -44,6 +44,10 @@ class CreateTranscriptionResponseJsonMapper
     #text: _f$text,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseJson _instantiate(DecodingData data) {
     return CreateTranscriptionResponseJson(

@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'local_shell_tool_param_type_type.dart';
+import 'tool.dart';
 
 part 'local_shell_tool_param.mapper.dart';
 
 /// A tool that allows the model to execute shell commands in a local environment.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LocalShellToolParam with LocalShellToolParamMappable {
   const LocalShellToolParam({
     this.type = LocalShellToolParamTypeType.localShell,

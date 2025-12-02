@@ -48,6 +48,10 @@ class FileUploadParamMapper extends ClassMapperBase<FileUploadParam> {
     #maxFileSize: _f$maxFileSize,
     #maxFiles: _f$maxFiles,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileUploadParam _instantiate(DecodingData data) {
     return FileUploadParam(

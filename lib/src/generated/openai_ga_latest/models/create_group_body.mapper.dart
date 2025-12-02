@@ -26,6 +26,10 @@ class CreateGroupBodyMapper extends ClassMapperBase<CreateGroupBody> {
 
   @override
   final MappableFields<CreateGroupBody> fields = const {#name: _f$name};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateGroupBody _instantiate(DecodingData data) {
     return CreateGroupBody(name: data.dec(_f$name));

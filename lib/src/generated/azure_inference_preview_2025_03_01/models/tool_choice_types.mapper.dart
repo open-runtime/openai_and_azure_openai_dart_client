@@ -30,6 +30,10 @@ class ToolChoiceTypesMapper extends ClassMapperBase<ToolChoiceTypes> {
 
   @override
   final MappableFields<ToolChoiceTypes> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ToolChoiceTypes _instantiate(DecodingData data) {
     return ToolChoiceTypes(type: data.dec(_f$type));

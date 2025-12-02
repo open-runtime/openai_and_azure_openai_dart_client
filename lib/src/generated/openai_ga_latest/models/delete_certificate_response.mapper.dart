@@ -41,6 +41,10 @@ class DeleteCertificateResponseMapper
     #objectField: _f$objectField,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteCertificateResponse _instantiate(DecodingData data) {
     return DeleteCertificateResponse(

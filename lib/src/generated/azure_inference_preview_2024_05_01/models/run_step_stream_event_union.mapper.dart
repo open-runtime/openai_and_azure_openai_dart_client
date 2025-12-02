@@ -33,6 +33,10 @@ class RunStepStreamEventUnionMapper
 
   @override
   final MappableFields<RunStepStreamEventUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('RunStepStreamEventUnion');
@@ -110,6 +114,10 @@ class RunStepStreamEventUnionVariant1Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant1 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant1(
@@ -295,6 +303,10 @@ class RunStepStreamEventUnionVariant2Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant2 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant2(
@@ -480,6 +492,10 @@ class RunStepStreamEventUnionVariant3Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant3 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant3(
@@ -666,6 +682,10 @@ class RunStepStreamEventUnionVariant4Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant4 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant4(
@@ -851,6 +871,10 @@ class RunStepStreamEventUnionVariant5Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant5 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant5(
@@ -1036,6 +1060,10 @@ class RunStepStreamEventUnionVariant6Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant6 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant6(
@@ -1221,6 +1249,10 @@ class RunStepStreamEventUnionVariant7Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepStreamEventUnionVariant7 _instantiate(DecodingData data) {
     return RunStepStreamEventUnionVariant7(

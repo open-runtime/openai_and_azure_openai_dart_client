@@ -6,11 +6,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_api_response_format_option.dart';
 import 'modify_assistant_request_tool_resources.dart';
-import 'modify_assistant_request_tools_tools_union.dart';
+import 'modify_assistant_request_tools_union.dart';
 
 part 'modify_assistant_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   const ModifyAssistantRequest({
     this.tools = const [],
@@ -25,7 +25,7 @@ class ModifyAssistantRequest with ModifyAssistantRequestMappable {
     this.responseFormat,
   });
 
-  final List<ModifyAssistantRequestToolsToolsUnion> tools;
+  final List<ModifyAssistantRequestToolsUnion> tools;
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
@@ -33,7 +33,7 @@ class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   final String? name;
   final String? description;
   final String? instructions;
-  @MappableField(key: 'ModifyAssistantRequestToolResources')
+  @MappableField(key: 'tool_resources')
   final ModifyAssistantRequestToolResources? modifyAssistantRequestToolResources;
   final dynamic? metadata;
   @MappableField(key: 'response_format')

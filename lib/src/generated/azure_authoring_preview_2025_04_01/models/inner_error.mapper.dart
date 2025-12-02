@@ -41,6 +41,10 @@ class InnerErrorMapper extends ClassMapperBase<InnerError> {
     #code: _f$code,
     #innererror: _f$innererror,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InnerError _instantiate(DecodingData data) {
     return InnerError(

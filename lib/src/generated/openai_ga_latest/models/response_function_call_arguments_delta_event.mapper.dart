@@ -60,6 +60,10 @@ class ResponseFunctionCallArgumentsDeltaEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFunctionCallArgumentsDeltaEvent _instantiate(
     DecodingData data,

@@ -37,6 +37,10 @@ class ToggleCertificatesRequestMapper
   final MappableFields<ToggleCertificatesRequest> fields = const {
     #certificateIds: _f$certificateIds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ToggleCertificatesRequest _instantiate(DecodingData data) {
     return ToggleCertificatesRequest(

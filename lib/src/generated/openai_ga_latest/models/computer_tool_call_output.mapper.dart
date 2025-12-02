@@ -75,6 +75,10 @@ class ComputerToolCallOutputMapper
     #status: _f$status,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerToolCallOutput _instantiate(DecodingData data) {
     return ComputerToolCallOutput(

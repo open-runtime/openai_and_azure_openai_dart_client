@@ -15,7 +15,7 @@ class OutputTextMapper extends ClassMapperBase<OutputText> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputTextMapper._());
       OutputTextTypeTypeMapper.ensureInitialized();
-      AnnotationUnionMapper.ensureInitialized();
+      AnnotationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,8 +30,8 @@ class OutputTextMapper extends ClassMapperBase<OutputText> {
   );
   static String _$text(OutputText v) => v.text;
   static const Field<OutputText, String> _f$text = Field('text', _$text);
-  static List<AnnotationUnion?> _$annotations(OutputText v) => v.annotations;
-  static const Field<OutputText, List<AnnotationUnion?>> _f$annotations = Field(
+  static List<Annotation> _$annotations(OutputText v) => v.annotations;
+  static const Field<OutputText, List<Annotation>> _f$annotations = Field(
     'annotations',
     _$annotations,
   );
@@ -42,6 +42,10 @@ class OutputTextMapper extends ClassMapperBase<OutputText> {
     #text: _f$text,
     #annotations: _f$annotations,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputText _instantiate(DecodingData data) {
     return OutputText(
@@ -111,16 +115,12 @@ extension OutputTextValueCopy<$R, $Out>
 
 abstract class OutputTextCopyWith<$R, $In extends OutputText, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  ListCopyWith<
-    $R,
-    AnnotationUnion?,
-    AnnotationUnionCopyWith<$R, AnnotationUnion, AnnotationUnion>?
-  >
+  ListCopyWith<$R, Annotation, AnnotationCopyWith<$R, Annotation, Annotation>>
   get annotations;
   $R call({
     OutputTextTypeType? type,
     String? text,
-    List<AnnotationUnion?>? annotations,
+    List<Annotation>? annotations,
   });
   OutputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -134,21 +134,17 @@ class _OutputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputText> $mapper =
       OutputTextMapper.ensureInitialized();
   @override
-  ListCopyWith<
-    $R,
-    AnnotationUnion?,
-    AnnotationUnionCopyWith<$R, AnnotationUnion, AnnotationUnion>?
-  >
+  ListCopyWith<$R, Annotation, AnnotationCopyWith<$R, Annotation, Annotation>>
   get annotations => ListCopyWith(
     $value.annotations,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(annotations: v),
   );
   @override
   $R call({
     OutputTextTypeType? type,
     String? text,
-    List<AnnotationUnion?>? annotations,
+    List<Annotation>? annotations,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

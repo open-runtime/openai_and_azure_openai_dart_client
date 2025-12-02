@@ -10,7 +10,7 @@ part 'assistants_api_response_format.mapper.dart';
 
 /// An object describing the expected output of the model. If `json_object` only `function` type `tools` are allowed to be passed to the Run. If `text` the model can return text or any value needed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormat with AssistantsApiResponseFormatMappable {
   const AssistantsApiResponseFormat({
     this.type = AssistantsApiResponseFormatTypeType.text,

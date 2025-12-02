@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_service_account_created_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogServiceAccountCreatedData with AuditLogServiceAccountCreatedDataMappable {
   const AuditLogServiceAccountCreatedData({
     this.role,

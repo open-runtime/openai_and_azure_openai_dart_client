@@ -59,6 +59,10 @@ class RealtimeServerEventConversationItemTruncatedMapper
         #contentIndex: _f$contentIndex,
         #audioEndMs: _f$audioEndMs,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemTruncated _instantiate(
     DecodingData data,

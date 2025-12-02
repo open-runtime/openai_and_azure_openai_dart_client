@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_tool.dart';
-import 'fine_tune_reinforcement_request_input_messages_messages_union.dart';
+import 'fine_tune_reinforcement_request_input_messages_union.dart';
 
 part 'fine_tune_reinforcement_request_input.mapper.dart';
 
@@ -14,14 +14,14 @@ part 'fine_tune_reinforcement_request_input.mapper.dart';
 /// Input messages may contain text or image content only. Audio and file input messages.
 /// are not currently supported for fine-tuning.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneReinforcementRequestInput with FineTuneReinforcementRequestInputMappable {
   const FineTuneReinforcementRequestInput({
     required this.messages,
     this.tools,
   });
 
-  final List<FineTuneReinforcementRequestInputMessagesMessagesUnion> messages;
+  final List<FineTuneReinforcementRequestInputMessagesUnion> messages;
   final List<ChatCompletionTool>? tools;
 
   static FineTuneReinforcementRequestInput fromJson(Map<String, dynamic> json) => FineTuneReinforcementRequestInputMapper.fromJson(json);

@@ -31,6 +31,10 @@ class ErrorResponseMapper extends ClassMapperBase<ErrorResponse> {
 
   @override
   final MappableFields<ErrorResponse> fields = const {#error: _f$error};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ErrorResponse _instantiate(DecodingData data) {
     return ErrorResponse(error: data.dec(_f$error));

@@ -85,6 +85,10 @@ class CreateVectorStoreRequestMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreRequest _instantiate(DecodingData data) {
     return CreateVectorStoreRequest(

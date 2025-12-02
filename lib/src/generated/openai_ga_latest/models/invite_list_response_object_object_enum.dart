@@ -10,9 +10,8 @@ part 'invite_list_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum InviteListResponseObjectObjectEnum {
-  /// The name has been replaced because it contains a keyword. Original name: `list`.
   @MappableValue('list') 
-  valueList,
+  list,
 
   @MappableValue('unknown') 
   unknown;

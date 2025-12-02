@@ -43,7 +43,7 @@ class CreateModerationResponseResultsMapper
   _f$createModerationResponseResultsCategories = Field(
     'createModerationResponseResultsCategories',
     _$createModerationResponseResultsCategories,
-    key: r'CreateModerationResponseResultsCategories',
+    key: r'categories',
   );
   static CreateModerationResponseResultsCategoryScores
   _$createModerationResponseResultsCategoryScores(
@@ -56,7 +56,7 @@ class CreateModerationResponseResultsMapper
   _f$createModerationResponseResultsCategoryScores = Field(
     'createModerationResponseResultsCategoryScores',
     _$createModerationResponseResultsCategoryScores,
-    key: r'CreateModerationResponseResultsCategoryScores',
+    key: r'category_scores',
   );
   static CreateModerationResponseResultsCategoryAppliedInputTypes
   _$createModerationResponseResultsCategoryAppliedInputTypes(
@@ -69,7 +69,7 @@ class CreateModerationResponseResultsMapper
   _f$createModerationResponseResultsCategoryAppliedInputTypes = Field(
     'createModerationResponseResultsCategoryAppliedInputTypes',
     _$createModerationResponseResultsCategoryAppliedInputTypes,
-    key: r'CreateModerationResponseResultsCategoryAppliedInputTypes',
+    key: r'category_applied_input_types',
   );
 
   @override
@@ -82,6 +82,10 @@ class CreateModerationResponseResultsMapper
     #createModerationResponseResultsCategoryAppliedInputTypes:
         _f$createModerationResponseResultsCategoryAppliedInputTypes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModerationResponseResults _instantiate(DecodingData data) {
     return CreateModerationResponseResults(

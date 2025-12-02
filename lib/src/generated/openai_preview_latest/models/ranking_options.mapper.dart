@@ -38,6 +38,10 @@ class RankingOptionsMapper extends ClassMapperBase<RankingOptions> {
     #ranker: _f$ranker,
     #scoreThreshold: _f$scoreThreshold,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RankingOptions _instantiate(DecodingData data) {
     return RankingOptions(

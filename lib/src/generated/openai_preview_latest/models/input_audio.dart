@@ -11,7 +11,7 @@ part 'input_audio.mapper.dart';
 
 /// An audio input to the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputAudio with InputAudioMappable {
   const InputAudio({
     required this.type,

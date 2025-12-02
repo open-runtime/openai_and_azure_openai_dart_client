@@ -10,7 +10,7 @@ part 'realtime_beta_server_event_conversation_item_retrieved.mapper.dart';
 
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemRetrieved with RealtimeBetaServerEventConversationItemRetrievedMappable {
   const RealtimeBetaServerEventConversationItemRetrieved({
     required this.eventId,

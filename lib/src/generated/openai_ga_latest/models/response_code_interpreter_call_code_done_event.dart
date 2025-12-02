@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_code_interpreter_call_code_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_code_interpreter_call_code_done_event.mapper.dart';
 
 /// Emitted when the code snippet is finalized by the code interpreter.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseCodeInterpreterCallCodeDoneEvent with ResponseCodeInterpreterCallCodeDoneEventMappable {
   const ResponseCodeInterpreterCallCodeDoneEvent({
     required this.type,

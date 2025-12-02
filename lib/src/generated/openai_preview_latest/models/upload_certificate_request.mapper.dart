@@ -41,6 +41,10 @@ class UploadCertificateRequestMapper
     #content: _f$content,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadCertificateRequest _instantiate(DecodingData data) {
     return UploadCertificateRequest(

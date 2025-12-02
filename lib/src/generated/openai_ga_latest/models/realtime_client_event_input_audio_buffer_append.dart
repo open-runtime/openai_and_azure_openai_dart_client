@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
+
 part 'realtime_client_event_input_audio_buffer_append.mapper.dart';
 
 /// Send this event to append audio bytes to the input audio buffer. The audio .
@@ -20,7 +22,7 @@ part 'realtime_client_event_input_audio_buffer_append.mapper.dart';
 /// VAD to be more responsive. Unlike most other client events, the server will .
 /// not send a confirmation response to this event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventInputAudioBufferAppend with RealtimeClientEventInputAudioBufferAppendMappable {
   const RealtimeClientEventInputAudioBufferAppend({
     required this.type,

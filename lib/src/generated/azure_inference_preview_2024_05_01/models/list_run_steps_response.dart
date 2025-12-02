@@ -8,7 +8,7 @@ import 'run_step_object.dart';
 
 part 'list_run_steps_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListRunStepsResponse with ListRunStepsResponseMappable {
   const ListRunStepsResponse({
     required this.objectField,

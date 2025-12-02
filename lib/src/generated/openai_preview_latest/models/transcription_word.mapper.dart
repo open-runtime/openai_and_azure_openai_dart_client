@@ -37,6 +37,10 @@ class TranscriptionWordMapper extends ClassMapperBase<TranscriptionWord> {
     #start: _f$start,
     #end: _f$end,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionWord _instantiate(DecodingData data) {
     return TranscriptionWord(

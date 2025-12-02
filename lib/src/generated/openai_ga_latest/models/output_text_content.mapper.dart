@@ -51,6 +51,10 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
     #logprobs: _f$logprobs,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputTextContent _instantiate(DecodingData data) {
     return OutputTextContent(

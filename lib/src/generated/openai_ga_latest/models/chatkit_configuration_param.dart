@@ -11,7 +11,7 @@ import 'history_param.dart';
 part 'chatkit_configuration_param.mapper.dart';
 
 /// Optional per-session configuration settings for ChatKit behavior.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatkitConfigurationParam with ChatkitConfigurationParamMappable {
   const ChatkitConfigurationParam({
     this.automaticThreadTitling,

@@ -47,6 +47,10 @@ class MessageContentImageFileObjectImageFileMapper
     #fileId: _f$fileId,
     #detail: _f$detail,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentImageFileObjectImageFile _instantiate(
     DecodingData data,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_run_result_counts.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunResultCounts with EvalRunResultCountsMappable {
   const EvalRunResultCounts({
     required this.errored,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'group_resource_with_success.mapper.dart';
 
 /// Response returned after updating a group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupResourceWithSuccess with GroupResourceWithSuccessMappable {
   const GroupResourceWithSuccess({
     required this.id,

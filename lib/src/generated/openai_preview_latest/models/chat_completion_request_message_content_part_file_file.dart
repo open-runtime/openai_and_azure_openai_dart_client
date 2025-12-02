@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_request_message_content_part_file_file.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartFileFile with ChatCompletionRequestMessageContentPartFileFileMappable {
   const ChatCompletionRequestMessageContentPartFileFile({
     this.filename,

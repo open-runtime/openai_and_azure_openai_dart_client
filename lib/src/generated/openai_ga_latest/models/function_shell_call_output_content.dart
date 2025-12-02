@@ -4,12 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_shell_call_output_content_outcome_outcome_union.dart';
+import 'function_shell_call_output_content_outcome_union.dart';
 
 part 'function_shell_call_output_content.mapper.dart';
 
 /// The content of a shell call output.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutputContent with FunctionShellCallOutputContentMappable {
   const FunctionShellCallOutputContent({
     required this.stdout,
@@ -20,7 +20,7 @@ class FunctionShellCallOutputContent with FunctionShellCallOutputContentMappable
 
   final String stdout;
   final String stderr;
-  final FunctionShellCallOutputContentOutcomeOutcomeUnion outcome;
+  final FunctionShellCallOutputContentOutcomeUnion outcome;
   @MappableField(key: 'created_by')
   final String? createdBy;
 

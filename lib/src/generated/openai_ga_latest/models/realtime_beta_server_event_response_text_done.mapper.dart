@@ -64,6 +64,10 @@ class RealtimeBetaServerEventResponseTextDoneMapper
     #contentIndex: _f$contentIndex,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseTextDone _instantiate(
     DecodingData data,

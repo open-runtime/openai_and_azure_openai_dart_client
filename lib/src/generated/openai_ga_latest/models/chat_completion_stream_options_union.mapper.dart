@@ -27,6 +27,10 @@ class ChatCompletionStreamOptionsUnionMapper
 
   @override
   final MappableFields<ChatCompletionStreamOptionsUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionStreamOptionsUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -92,12 +96,20 @@ class ChatCompletionStreamOptionsUnionVariant1Mapper
   static bool? _$includeUsage(ChatCompletionStreamOptionsUnionVariant1 v) =>
       v.includeUsage;
   static const Field<ChatCompletionStreamOptionsUnionVariant1, bool>
-  _f$includeUsage = Field('includeUsage', _$includeUsage);
+  _f$includeUsage = Field(
+    'includeUsage',
+    _$includeUsage,
+    key: r'include_usage',
+  );
   static bool? _$includeObfuscation(
     ChatCompletionStreamOptionsUnionVariant1 v,
   ) => v.includeObfuscation;
   static const Field<ChatCompletionStreamOptionsUnionVariant1, bool>
-  _f$includeObfuscation = Field('includeObfuscation', _$includeObfuscation);
+  _f$includeObfuscation = Field(
+    'includeObfuscation',
+    _$includeObfuscation,
+    key: r'include_obfuscation',
+  );
 
   @override
   final MappableFields<ChatCompletionStreamOptionsUnionVariant1> fields =
@@ -105,6 +117,10 @@ class ChatCompletionStreamOptionsUnionVariant1Mapper
         #includeUsage: _f$includeUsage,
         #includeObfuscation: _f$includeObfuscation,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionStreamOptionsUnionVariant1 _instantiate(
     DecodingData data,

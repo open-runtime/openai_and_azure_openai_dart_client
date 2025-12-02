@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'key_press_action_type_type.dart';
 
 part 'key_press_action.mapper.dart';
 
 /// A collection of keypresses the model would like to perform.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class KeyPressAction with KeyPressActionMappable {
   const KeyPressAction({
     required this.keys,

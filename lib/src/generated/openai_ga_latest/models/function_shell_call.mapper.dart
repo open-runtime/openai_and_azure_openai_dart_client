@@ -67,6 +67,10 @@ class FunctionShellCallMapper extends ClassMapperBase<FunctionShellCall> {
     #createdBy: _f$createdBy,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCall _instantiate(DecodingData data) {
     return FunctionShellCall(

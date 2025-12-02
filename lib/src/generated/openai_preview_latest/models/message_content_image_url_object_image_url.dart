@@ -8,7 +8,7 @@ import 'message_content_image_url_object_image_url_detail_detail.dart';
 
 part 'message_content_image_url_object_image_url.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentImageUrlObjectImageUrl with MessageContentImageUrlObjectImageUrlMappable {
   const MessageContentImageUrlObjectImageUrl({
     required this.url,

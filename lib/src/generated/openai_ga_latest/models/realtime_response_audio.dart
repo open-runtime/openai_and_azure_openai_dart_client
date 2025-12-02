@@ -8,13 +8,13 @@ import 'realtime_response_audio_output.dart';
 
 part 'realtime_response_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseAudio with RealtimeResponseAudioMappable {
   const RealtimeResponseAudio({
     this.realtimeResponseAudioOutput,
   });
 
-  @MappableField(key: 'RealtimeResponseAudioOutput')
+  @MappableField(key: 'output')
   final RealtimeResponseAudioOutput? realtimeResponseAudioOutput;
 
   static RealtimeResponseAudio fromJson(Map<String, dynamic> json) => RealtimeResponseAudioMapper.fromJson(json);

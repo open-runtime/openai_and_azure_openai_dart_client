@@ -4,16 +4,16 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_responses_run_data_source_input_messages_input_messages_union.dart';
+import 'create_eval_responses_run_data_source_input_messages_union.dart';
 import 'create_eval_responses_run_data_source_sampling_params.dart';
-import 'create_eval_responses_run_data_source_source_source_union.dart';
+import 'create_eval_responses_run_data_source_source_union.dart';
 import 'create_eval_responses_run_data_source_type_type.dart';
 
 part 'create_eval_responses_run_data_source.mapper.dart';
 
 /// A ResponsesRunDataSource object describing a model sampling configuration.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMappable {
   const CreateEvalResponsesRunDataSource({
     required this.source,
@@ -23,10 +23,10 @@ class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMapp
     this.type = CreateEvalResponsesRunDataSourceTypeType.responses,
   });
 
-  final CreateEvalResponsesRunDataSourceSourceSourceUnion source;
+  final CreateEvalResponsesRunDataSourceSourceUnion source;
   @MappableField(key: 'input_messages')
-  final CreateEvalResponsesRunDataSourceInputMessagesInputMessagesUnion? inputMessages;
-  @MappableField(key: 'CreateEvalResponsesRunDataSourceSamplingParams')
+  final CreateEvalResponsesRunDataSourceInputMessagesUnion? inputMessages;
+  @MappableField(key: 'sampling_params')
   final CreateEvalResponsesRunDataSourceSamplingParams? createEvalResponsesRunDataSourceSamplingParams;
   final String? model;
   final CreateEvalResponsesRunDataSourceTypeType type;

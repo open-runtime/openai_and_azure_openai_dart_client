@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'output_item.dart';
 import 'reasoning_item_status_status.dart';
 import 'reasoning_item_summary.dart';
 import 'reasoning_item_type_type.dart';
@@ -13,7 +14,7 @@ part 'reasoning_item.mapper.dart';
 /// A description of the chain of thought used by a reasoning model while generating.
 /// a response.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ReasoningItem with ReasoningItemMappable {
   const ReasoningItem({
     required this.type,

@@ -12,7 +12,7 @@ import 'system_compute_datasource_type.dart';
 part 'system_compute_storage.mapper.dart';
 
 /// Storage account
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SystemComputeStorage with SystemComputeStorageMappable {
   const SystemComputeStorage({
     required this.kind,

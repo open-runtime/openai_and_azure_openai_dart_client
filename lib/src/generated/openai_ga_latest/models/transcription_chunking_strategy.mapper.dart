@@ -26,6 +26,10 @@ class TranscriptionChunkingStrategyMapper
 
   @override
   final MappableFields<TranscriptionChunkingStrategy> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionChunkingStrategy _instantiate(DecodingData data) {
     return TranscriptionChunkingStrategy();

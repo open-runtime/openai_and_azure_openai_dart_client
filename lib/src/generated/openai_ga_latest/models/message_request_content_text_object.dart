@@ -9,7 +9,7 @@ import 'message_request_content_text_object_type_type.dart';
 part 'message_request_content_text_object.mapper.dart';
 
 /// The text content that is part of a message.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageRequestContentTextObject with MessageRequestContentTextObjectMappable {
   const MessageRequestContentTextObject({
     required this.type,

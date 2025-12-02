@@ -8,7 +8,7 @@ import 'vector_store_object.dart';
 
 part 'list_vector_stores_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListVectorStoresResponse with ListVectorStoresResponseMappable {
   const ListVectorStoresResponse({
     required this.objectField,

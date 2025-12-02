@@ -68,6 +68,10 @@ class DalleFilterResultsMapper extends ClassMapperBase<DalleFilterResults> {
     #jailbreak: _f$jailbreak,
     #customBlocklists: _f$customBlocklists,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleFilterResults _instantiate(DecodingData data) {
     return DalleFilterResults(

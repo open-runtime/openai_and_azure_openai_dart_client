@@ -23,6 +23,10 @@ class MetadataMapper extends ClassMapperBase<Metadata> {
 
   @override
   final MappableFields<Metadata> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Metadata _instantiate(DecodingData data) {
     return Metadata();

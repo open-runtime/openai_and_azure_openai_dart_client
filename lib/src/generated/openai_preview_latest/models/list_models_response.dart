@@ -9,7 +9,7 @@ import 'model.dart';
 
 part 'list_models_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListModelsResponse with ListModelsResponseMappable {
   const ListModelsResponse({
     required this.objectEnum,

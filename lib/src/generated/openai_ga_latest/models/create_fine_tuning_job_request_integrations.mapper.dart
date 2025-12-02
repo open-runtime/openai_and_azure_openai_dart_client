@@ -45,7 +45,7 @@ class CreateFineTuningJobRequestIntegrationsMapper
   _f$createFineTuningJobRequestIntegrationsWandb = Field(
     'createFineTuningJobRequestIntegrationsWandb',
     _$createFineTuningJobRequestIntegrationsWandb,
-    key: r'CreateFineTuningJobRequestIntegrationsWandb',
+    key: r'wandb',
   );
 
   @override
@@ -54,6 +54,10 @@ class CreateFineTuningJobRequestIntegrationsMapper
     #createFineTuningJobRequestIntegrationsWandb:
         _f$createFineTuningJobRequestIntegrationsWandb,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateFineTuningJobRequestIntegrations _instantiate(
     DecodingData data,

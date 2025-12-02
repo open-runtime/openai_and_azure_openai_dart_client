@@ -38,6 +38,10 @@ class RunObjectIncompleteDetailsMapper
   final MappableFields<RunObjectIncompleteDetails> fields = const {
     #reason: _f$reason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunObjectIncompleteDetails _instantiate(DecodingData data) {
     return RunObjectIncompleteDetails(reason: data.dec(_f$reason));

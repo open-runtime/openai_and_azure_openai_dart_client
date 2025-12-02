@@ -16,7 +16,7 @@ part 'fine_tuning_job.mapper.dart';
 
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJob with FineTuningJobMappable {
   const FineTuningJob({
     required this.id,
@@ -43,13 +43,13 @@ class FineTuningJob with FineTuningJobMappable {
   final String id;
   @MappableField(key: 'created_at')
   final int createdAt;
-  @MappableField(key: 'FineTuningJobError')
+  @MappableField(key: 'error')
   final FineTuningJobError? fineTuningJobError;
   @MappableField(key: 'fine_tuned_model')
   final String? fineTunedModel;
   @MappableField(key: 'finished_at')
   final int? finishedAt;
-  @MappableField(key: 'FineTuningJobHyperparameters')
+  @MappableField(key: 'hyperparameters')
   final FineTuningJobHyperparameters fineTuningJobHyperparameters;
   final String model;
   @MappableField(key: 'object')

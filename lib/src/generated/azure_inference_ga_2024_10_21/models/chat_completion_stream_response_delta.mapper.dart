@@ -41,7 +41,7 @@ class ChatCompletionStreamResponseDeltaMapper
   _f$chatCompletionStreamResponseDeltaFunctionCall = Field(
     'chatCompletionStreamResponseDeltaFunctionCall',
     _$chatCompletionStreamResponseDeltaFunctionCall,
-    key: r'ChatCompletionStreamResponseDeltaFunctionCall',
+    key: r'function_call',
     opt: true,
   );
   static List<ChatCompletionMessageToolCallChunk>? _$toolCalls(
@@ -73,6 +73,10 @@ class ChatCompletionStreamResponseDeltaMapper
     #role: _f$role,
     #refusal: _f$refusal,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionStreamResponseDelta _instantiate(DecodingData data) {
     return ChatCompletionStreamResponseDelta(

@@ -40,6 +40,10 @@ class RunStepDetailsToolCallsCodeOutputLogsObjectMapper
   @override
   final MappableFields<RunStepDetailsToolCallsCodeOutputLogsObject> fields =
       const {#type: _f$type, #logs: _f$logs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsCodeOutputLogsObject _instantiate(
     DecodingData data,

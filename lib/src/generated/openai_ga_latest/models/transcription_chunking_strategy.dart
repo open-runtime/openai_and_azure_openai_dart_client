@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'transcription_chunking_strategy.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptionChunkingStrategy with TranscriptionChunkingStrategyMappable {
   const TranscriptionChunkingStrategy();
 

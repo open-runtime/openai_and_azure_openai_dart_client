@@ -42,6 +42,10 @@ class ChatCompletionRequestMessageContentPartRefusalMapper
   @override
   final MappableFields<ChatCompletionRequestMessageContentPartRefusal> fields =
       const {#type: _f$type, #refusal: _f$refusal};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartRefusal _instantiate(
     DecodingData data,

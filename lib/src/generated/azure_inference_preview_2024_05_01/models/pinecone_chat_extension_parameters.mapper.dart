@@ -143,6 +143,10 @@ class PineconeChatExtensionParametersMapper
     #roleInformation: _f$roleInformation,
     #includeContexts: _f$includeContexts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PineconeChatExtensionParameters _instantiate(DecodingData data) {
     return PineconeChatExtensionParameters(

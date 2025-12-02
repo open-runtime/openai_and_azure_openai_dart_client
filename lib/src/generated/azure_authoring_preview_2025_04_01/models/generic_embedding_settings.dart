@@ -9,7 +9,7 @@ import 'base_connection.dart';
 part 'generic_embedding_settings.mapper.dart';
 
 /// Connection Embedding Settings
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GenericEmbeddingSettings with GenericEmbeddingSettingsMappable {
   const GenericEmbeddingSettings({
     this.connection,

@@ -17,7 +17,7 @@ class CreateEvalJsonlRunDataSourceMapper
       MapperContainer.globals.use(
         _instance = CreateEvalJsonlRunDataSourceMapper._(),
       );
-      CreateEvalJsonlRunDataSourceSourceSourceUnionMapper.ensureInitialized();
+      CreateEvalJsonlRunDataSourceSourceUnionMapper.ensureInitialized();
       CreateEvalJsonlRunDataSourceTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class CreateEvalJsonlRunDataSourceMapper
   @override
   final String id = 'CreateEvalJsonlRunDataSource';
 
-  static CreateEvalJsonlRunDataSourceSourceSourceUnion _$source(
+  static CreateEvalJsonlRunDataSourceSourceUnion _$source(
     CreateEvalJsonlRunDataSource v,
   ) => v.source;
   static const Field<
     CreateEvalJsonlRunDataSource,
-    CreateEvalJsonlRunDataSourceSourceSourceUnion
+    CreateEvalJsonlRunDataSourceSourceUnion
   >
   _f$source = Field('source', _$source);
   static CreateEvalJsonlRunDataSourceTypeType _$type(
@@ -53,6 +53,10 @@ class CreateEvalJsonlRunDataSourceMapper
     #source: _f$source,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalJsonlRunDataSource _instantiate(DecodingData data) {
     return CreateEvalJsonlRunDataSource(
@@ -134,14 +138,14 @@ abstract class CreateEvalJsonlRunDataSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalJsonlRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalJsonlRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalJsonlRunDataSourceSourceSourceUnion,
-    CreateEvalJsonlRunDataSourceSourceSourceUnion
+    CreateEvalJsonlRunDataSourceSourceUnion,
+    CreateEvalJsonlRunDataSourceSourceUnion
   >
   get source;
   $R call({
-    CreateEvalJsonlRunDataSourceSourceSourceUnion? source,
+    CreateEvalJsonlRunDataSourceSourceUnion? source,
     CreateEvalJsonlRunDataSourceTypeType? type,
   });
   CreateEvalJsonlRunDataSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -167,15 +171,15 @@ class _CreateEvalJsonlRunDataSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalJsonlRunDataSource> $mapper =
       CreateEvalJsonlRunDataSourceMapper.ensureInitialized();
   @override
-  CreateEvalJsonlRunDataSourceSourceSourceUnionCopyWith<
+  CreateEvalJsonlRunDataSourceSourceUnionCopyWith<
     $R,
-    CreateEvalJsonlRunDataSourceSourceSourceUnion,
-    CreateEvalJsonlRunDataSourceSourceSourceUnion
+    CreateEvalJsonlRunDataSourceSourceUnion,
+    CreateEvalJsonlRunDataSourceSourceUnion
   >
   get source => $value.source.copyWith.$chain((v) => call(source: v));
   @override
   $R call({
-    CreateEvalJsonlRunDataSourceSourceSourceUnion? source,
+    CreateEvalJsonlRunDataSourceSourceUnion? source,
     CreateEvalJsonlRunDataSourceTypeType? type,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class CreateMessageRequestAttachmentsMapper
       MapperContainer.globals.use(
         _instance = CreateMessageRequestAttachmentsMapper._(),
       );
-      CreateMessageRequestAttachmentsToolsToolsUnionMapper.ensureInitialized();
+      CreateMessageRequestAttachmentsToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,12 +32,12 @@ class CreateMessageRequestAttachmentsMapper
     key: r'file_id',
     opt: true,
   );
-  static List<CreateMessageRequestAttachmentsToolsToolsUnion>? _$tools(
+  static List<CreateMessageRequestAttachmentsToolsUnion>? _$tools(
     CreateMessageRequestAttachments v,
   ) => v.tools;
   static const Field<
     CreateMessageRequestAttachments,
-    List<CreateMessageRequestAttachmentsToolsToolsUnion>
+    List<CreateMessageRequestAttachmentsToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
 
@@ -46,6 +46,10 @@ class CreateMessageRequestAttachmentsMapper
     #fileId: _f$fileId,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateMessageRequestAttachments _instantiate(DecodingData data) {
     return CreateMessageRequestAttachments(
@@ -134,17 +138,17 @@ abstract class CreateMessageRequestAttachmentsCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    CreateMessageRequestAttachmentsToolsToolsUnion,
-    CreateMessageRequestAttachmentsToolsToolsUnionCopyWith<
+    CreateMessageRequestAttachmentsToolsUnion,
+    CreateMessageRequestAttachmentsToolsUnionCopyWith<
       $R,
-      CreateMessageRequestAttachmentsToolsToolsUnion,
-      CreateMessageRequestAttachmentsToolsToolsUnion
+      CreateMessageRequestAttachmentsToolsUnion,
+      CreateMessageRequestAttachmentsToolsUnion
     >
   >?
   get tools;
   $R call({
     String? fileId,
-    List<CreateMessageRequestAttachmentsToolsToolsUnion>? tools,
+    List<CreateMessageRequestAttachmentsToolsUnion>? tools,
   });
   CreateMessageRequestAttachmentsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -171,11 +175,11 @@ class _CreateMessageRequestAttachmentsCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CreateMessageRequestAttachmentsToolsToolsUnion,
-    CreateMessageRequestAttachmentsToolsToolsUnionCopyWith<
+    CreateMessageRequestAttachmentsToolsUnion,
+    CreateMessageRequestAttachmentsToolsUnionCopyWith<
       $R,
-      CreateMessageRequestAttachmentsToolsToolsUnion,
-      CreateMessageRequestAttachmentsToolsToolsUnion
+      CreateMessageRequestAttachmentsToolsUnion,
+      CreateMessageRequestAttachmentsToolsUnion
     >
   >?
   get tools => $value.tools != null

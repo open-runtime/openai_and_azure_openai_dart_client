@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'log_prob_properties.dart';
+import 'realtime_server_event.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_completed_type_type.dart';
 
 part 'realtime_server_event_conversation_item_input_audio_transcription_completed.mapper.dart';
@@ -20,7 +21,7 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_complete
 /// currently always `whisper-1`. Thus the transcript may diverge somewhat from .
 /// the model's interpretation, and should be treated as a rough guide.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionCompleted({
     required this.eventId,

@@ -95,6 +95,10 @@ class UploadResourceMapper extends ClassMapperBase<UploadResource> {
     #expiresAt: _f$expiresAt,
     #file: _f$file,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadResource _instantiate(DecodingData data) {
     return UploadResource(

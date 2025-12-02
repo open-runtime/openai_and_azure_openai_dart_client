@@ -40,6 +40,10 @@ class InviteRequestMapper extends ClassMapperBase<InviteRequest> {
     #role: _f$role,
     #projects: _f$projects,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteRequest _instantiate(DecodingData data) {
     return InviteRequest(

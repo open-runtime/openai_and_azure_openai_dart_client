@@ -42,6 +42,10 @@ class AudioWordMapper extends ClassMapperBase<AudioWord> {
     #start: _f$start,
     #end: _f$end,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AudioWord _instantiate(DecodingData data) {
     return AudioWord(

@@ -39,6 +39,10 @@ class HybridSearchOptionsMapper extends ClassMapperBase<HybridSearchOptions> {
     #embeddingWeight: _f$embeddingWeight,
     #textWeight: _f$textWeight,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static HybridSearchOptions _instantiate(DecodingData data) {
     return HybridSearchOptions(

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'annotation.dart';
 import 'file_path_type_type.dart';
 
 part 'file_path.mapper.dart';
 
 /// A path to a file.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FilePath with FilePathMappable {
   const FilePath({
     required this.type,

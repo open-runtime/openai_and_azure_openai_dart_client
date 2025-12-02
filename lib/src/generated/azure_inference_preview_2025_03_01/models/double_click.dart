@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'double_click_type_type.dart';
 
 part 'double_click.mapper.dart';
 
 /// A double click action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DoubleClick with DoubleClickMappable {
   const DoubleClick({
     required this.x,

@@ -92,6 +92,10 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
     #callId: _f$callId,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseFunctionCallArgumentsDone _instantiate(
     DecodingData data,

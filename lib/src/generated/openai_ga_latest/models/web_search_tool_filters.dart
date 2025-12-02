@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'web_search_tool_filters.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchToolFilters with WebSearchToolFiltersMappable {
   const WebSearchToolFilters({
     this.allowedDomains = const [],

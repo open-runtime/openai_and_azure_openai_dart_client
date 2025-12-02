@@ -9,7 +9,7 @@ import 'batch_file_expiration_after_anchor_anchor.dart';
 part 'batch_file_expiration_after.mapper.dart';
 
 /// The expiration policy for the output and/or error file that are generated for a batch.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchFileExpirationAfter with BatchFileExpirationAfterMappable {
   const BatchFileExpirationAfter({
     required this.anchor,

@@ -47,6 +47,10 @@ class CreateEvalLogsDataSourceConfigMapper
     #metadata: _f$metadata,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalLogsDataSourceConfig _instantiate(DecodingData data) {
     return CreateEvalLogsDataSourceConfig(

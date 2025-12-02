@@ -39,6 +39,10 @@ class InviteProjectGroupBodyMapper
     #groupId: _f$groupId,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteProjectGroupBody _instantiate(DecodingData data) {
     return InviteProjectGroupBody(

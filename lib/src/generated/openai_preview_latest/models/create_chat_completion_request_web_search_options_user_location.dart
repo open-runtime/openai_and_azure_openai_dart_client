@@ -9,7 +9,7 @@ import 'web_search_location.dart';
 
 part 'create_chat_completion_request_web_search_options_user_location.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequestWebSearchOptionsUserLocation with CreateChatCompletionRequestWebSearchOptionsUserLocationMappable {
   const CreateChatCompletionRequestWebSearchOptionsUserLocation({
     required this.type,

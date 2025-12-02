@@ -12,7 +12,7 @@ part 'webhook_eval_run_succeeded.mapper.dart';
 
 /// Sent when an eval run has succeeded.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunSucceeded with WebhookEvalRunSucceededMappable {
   const WebhookEvalRunSucceeded({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookEvalRunSucceeded with WebhookEvalRunSucceededMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookEvalRunSucceededData')
+  @MappableField(key: 'data')
   final WebhookEvalRunSucceededData webhookEvalRunSucceededData;
   final WebhookEvalRunSucceededTypeType type;
   @MappableField(key: 'object')

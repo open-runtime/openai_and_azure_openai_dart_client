@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_response.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_response_done.mapper.dart';
 
@@ -18,7 +19,7 @@ part 'realtime_server_event_response_done.mapper.dart';
 /// A response will contain all output items that were generated during the response, excluding.
 /// any audio content.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseDone with RealtimeServerEventResponseDoneMappable {
   const RealtimeServerEventResponseDone({
     required this.eventId,

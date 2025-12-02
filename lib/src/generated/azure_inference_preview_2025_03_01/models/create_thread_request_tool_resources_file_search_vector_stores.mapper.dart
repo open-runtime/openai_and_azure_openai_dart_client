@@ -23,7 +23,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresMapper
         _instance =
             CreateThreadRequestToolResourcesFileSearchVectorStoresMapper._(),
       );
-      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionMapper.ensureInitialized();
+      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,13 +39,13 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresMapper
     List<String>
   >
   _f$fileIds = Field('fileIds', _$fileIds, key: r'file_ids', opt: true);
-  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion?
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion?
   _$chunkingStrategy(
     CreateThreadRequestToolResourcesFileSearchVectorStores v,
   ) => v.chunkingStrategy;
   static const Field<
     CreateThreadRequestToolResourcesFileSearchVectorStores,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >
   _f$chunkingStrategy = Field(
     'chunkingStrategy',
@@ -69,6 +69,10 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequestToolResourcesFileSearchVectorStores _instantiate(
     DecodingData data,
@@ -186,15 +190,15 @@ abstract class CreateThreadRequestToolResourcesFileSearchVectorStoresCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get fileIds;
-  CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionCopyWith<
     $R,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion,
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >?
   get chunkingStrategy;
   $R call({
     List<String>? fileIds,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion?
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion?
     chunkingStrategy,
     dynamic metadata,
   });
@@ -244,10 +248,10 @@ class _CreateThreadRequestToolResourcesFileSearchVectorStoresCopyWithImpl<
         )
       : null;
   @override
-  CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionCopyWith<
     $R,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion,
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >?
   get chunkingStrategy => $value.chunkingStrategy?.copyWith.$chain(
     (v) => call(chunkingStrategy: v),

@@ -9,7 +9,7 @@ import 'batch_usage_output_tokens_details.dart';
 
 part 'batch_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchUsage with BatchUsageMappable {
   const BatchUsage({
     required this.inputTokens,
@@ -21,11 +21,11 @@ class BatchUsage with BatchUsageMappable {
 
   @MappableField(key: 'input_tokens')
   final int inputTokens;
-  @MappableField(key: 'BatchUsageInputTokensDetails')
+  @MappableField(key: 'input_tokens_details')
   final BatchUsageInputTokensDetails batchUsageInputTokensDetails;
   @MappableField(key: 'output_tokens')
   final int outputTokens;
-  @MappableField(key: 'BatchUsageOutputTokensDetails')
+  @MappableField(key: 'output_tokens_details')
   final BatchUsageOutputTokensDetails batchUsageOutputTokensDetails;
   @MappableField(key: 'total_tokens')
   final int totalTokens;

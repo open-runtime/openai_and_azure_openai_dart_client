@@ -8,7 +8,7 @@ part 'log_prob_properties.mapper.dart';
 
 /// A log probability object.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LogProbProperties with LogProbPropertiesMappable {
   const LogProbProperties({
     required this.token,

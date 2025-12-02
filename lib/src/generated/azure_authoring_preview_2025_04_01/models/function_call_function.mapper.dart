@@ -39,6 +39,10 @@ class FunctionCallFunctionMapper extends ClassMapperBase<FunctionCallFunction> {
     #name: _f$name,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionCallFunction _instantiate(DecodingData data) {
     return FunctionCallFunction(

@@ -34,6 +34,10 @@ class AssistantsNamedToolChoiceFunctionMapper
   final MappableFields<AssistantsNamedToolChoiceFunction> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsNamedToolChoiceFunction _instantiate(DecodingData data) {
     return AssistantsNamedToolChoiceFunction(name: data.dec(_f$name));

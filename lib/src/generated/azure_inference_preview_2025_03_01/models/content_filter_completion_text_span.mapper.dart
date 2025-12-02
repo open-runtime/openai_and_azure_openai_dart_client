@@ -46,6 +46,10 @@ class ContentFilterCompletionTextSpanMapper
     #completionStartOffset: _f$completionStartOffset,
     #completionEndOffset: _f$completionEndOffset,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterCompletionTextSpan _instantiate(DecodingData data) {
     return ContentFilterCompletionTextSpan(

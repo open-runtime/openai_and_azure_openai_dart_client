@@ -8,7 +8,7 @@ part 'realtime_call_refer_request.mapper.dart';
 
 /// Parameters required to transfer a SIP call to a new destination using the.
 /// Realtime API.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCallReferRequest with RealtimeCallReferRequestMappable {
   const RealtimeCallReferRequest({
     required this.targetUri,

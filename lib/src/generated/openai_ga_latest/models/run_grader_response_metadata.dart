@@ -8,7 +8,7 @@ import 'run_grader_response_metadata_errors.dart';
 
 part 'run_grader_response_metadata.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunGraderResponseMetadata with RunGraderResponseMetadataMappable {
   const RunGraderResponseMetadata({
     required this.name,
@@ -22,7 +22,7 @@ class RunGraderResponseMetadata with RunGraderResponseMetadataMappable {
 
   final String name;
   final String type;
-  @MappableField(key: 'RunGraderResponseMetadataErrors')
+  @MappableField(key: 'errors')
   final RunGraderResponseMetadataErrors runGraderResponseMetadataErrors;
   @MappableField(key: 'execution_time')
   final num executionTime;

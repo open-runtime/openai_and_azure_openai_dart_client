@@ -59,6 +59,10 @@ class AuditLogRoleAssignmentDeletedMapper
     #resourceId: _f$resourceId,
     #resourceType: _f$resourceType,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRoleAssignmentDeleted _instantiate(DecodingData data) {
     return AuditLogRoleAssignmentDeleted(

@@ -9,7 +9,7 @@ import 'ranker_version_type.dart';
 
 part 'ranking_options.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RankingOptions with RankingOptionsMappable {
   const RankingOptions({
     this.ranker,

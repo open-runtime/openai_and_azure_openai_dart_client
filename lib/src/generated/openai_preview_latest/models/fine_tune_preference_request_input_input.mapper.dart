@@ -17,7 +17,7 @@ class FineTunePreferenceRequestInputInputMapper
       MapperContainer.globals.use(
         _instance = FineTunePreferenceRequestInputInputMapper._(),
       );
-      FineTunePreferenceRequestInputInputMessagesMessagesUnionMapper.ensureInitialized();
+      FineTunePreferenceRequestInputInputMessagesUnionMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,11 +26,12 @@ class FineTunePreferenceRequestInputInputMapper
   @override
   final String id = 'FineTunePreferenceRequestInputInput';
 
-  static List<FineTunePreferenceRequestInputInputMessagesMessagesUnion>?
-  _$messages(FineTunePreferenceRequestInputInput v) => v.messages;
+  static List<FineTunePreferenceRequestInputInputMessagesUnion>? _$messages(
+    FineTunePreferenceRequestInputInput v,
+  ) => v.messages;
   static const Field<
     FineTunePreferenceRequestInputInput,
-    List<FineTunePreferenceRequestInputInputMessagesMessagesUnion>
+    List<FineTunePreferenceRequestInputInputMessagesUnion>
   >
   _f$messages = Field('messages', _$messages, opt: true);
   static List<ChatCompletionTool>? _$tools(
@@ -57,6 +58,10 @@ class FineTunePreferenceRequestInputInputMapper
     #tools: _f$tools,
     #parallelToolCalls: _f$parallelToolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTunePreferenceRequestInputInput _instantiate(DecodingData data) {
     return FineTunePreferenceRequestInputInput(
@@ -149,11 +154,11 @@ abstract class FineTunePreferenceRequestInputInputCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    FineTunePreferenceRequestInputInputMessagesMessagesUnion,
-    FineTunePreferenceRequestInputInputMessagesMessagesUnionCopyWith<
+    FineTunePreferenceRequestInputInputMessagesUnion,
+    FineTunePreferenceRequestInputInputMessagesUnionCopyWith<
       $R,
-      FineTunePreferenceRequestInputInputMessagesMessagesUnion,
-      FineTunePreferenceRequestInputInputMessagesMessagesUnion
+      FineTunePreferenceRequestInputInputMessagesUnion,
+      FineTunePreferenceRequestInputInputMessagesUnion
     >
   >?
   get messages;
@@ -164,7 +169,7 @@ abstract class FineTunePreferenceRequestInputInputCopyWith<
   >?
   get tools;
   $R call({
-    List<FineTunePreferenceRequestInputInputMessagesMessagesUnion>? messages,
+    List<FineTunePreferenceRequestInputInputMessagesUnion>? messages,
     List<ChatCompletionTool>? tools,
     bool? parallelToolCalls,
   });
@@ -192,11 +197,11 @@ class _FineTunePreferenceRequestInputInputCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    FineTunePreferenceRequestInputInputMessagesMessagesUnion,
-    FineTunePreferenceRequestInputInputMessagesMessagesUnionCopyWith<
+    FineTunePreferenceRequestInputInputMessagesUnion,
+    FineTunePreferenceRequestInputInputMessagesUnionCopyWith<
       $R,
-      FineTunePreferenceRequestInputInputMessagesMessagesUnion,
-      FineTunePreferenceRequestInputInputMessagesMessagesUnion
+      FineTunePreferenceRequestInputInputMessagesUnion,
+      FineTunePreferenceRequestInputInputMessagesUnion
     >
   >?
   get messages => $value.messages != null

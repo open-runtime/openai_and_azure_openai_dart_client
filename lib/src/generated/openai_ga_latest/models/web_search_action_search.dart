@@ -11,7 +11,7 @@ part 'web_search_action_search.mapper.dart';
 
 /// Action type "search" - Performs a web search query.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchActionSearch with WebSearchActionSearchMappable {
   const WebSearchActionSearch({
     required this.type,

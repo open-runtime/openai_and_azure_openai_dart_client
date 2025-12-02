@@ -56,6 +56,10 @@ class RealtimeBetaServerEventInputAudioBufferCommittedMapper
     #itemId: _f$itemId,
     #previousItemId: _f$previousItemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventInputAudioBufferCommitted _instantiate(
     DecodingData data,

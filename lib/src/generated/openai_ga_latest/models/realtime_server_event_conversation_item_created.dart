@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_conversation_item_created.mapper.dart';
 
@@ -18,7 +19,7 @@ part 'realtime_server_event_conversation_item_created.mapper.dart';
 ///   - The client has sent a `conversation.item.create` event to add a new Item.
 ///     to the Conversation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemCreated with RealtimeServerEventConversationItemCreatedMappable {
   const RealtimeServerEventConversationItemCreated({
     required this.eventId,

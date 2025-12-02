@@ -10,7 +10,7 @@ import 'filter_reason.dart';
 part 'retrieved_document.mapper.dart';
 
 /// The retrieved document.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RetrievedDocument with RetrievedDocumentMappable {
   const RetrievedDocument({
     required this.content,

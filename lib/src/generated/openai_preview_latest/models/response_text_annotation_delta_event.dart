@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
+import 'response_stream_event.dart';
 import 'response_text_annotation_delta_event_type_type.dart';
 
 part 'response_text_annotation_delta_event.mapper.dart';
 
 /// Emitted when a text annotation is added.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseTextAnnotationDeltaEvent with ResponseTextAnnotationDeltaEventMappable {
   const ResponseTextAnnotationDeltaEvent({
     required this.type,

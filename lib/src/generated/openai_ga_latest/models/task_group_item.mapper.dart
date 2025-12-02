@@ -70,6 +70,10 @@ class TaskGroupItemMapper extends ClassMapperBase<TaskGroupItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TaskGroupItem _instantiate(DecodingData data) {
     return TaskGroupItem(

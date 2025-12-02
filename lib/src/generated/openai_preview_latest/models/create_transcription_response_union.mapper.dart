@@ -28,6 +28,10 @@ class CreateTranscriptionResponseUnionMapper
 
   @override
   final MappableFields<CreateTranscriptionResponseUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -120,6 +124,10 @@ class CreateTranscriptionResponseUnionCreateTranscriptionResponseJsonMapper
     CreateTranscriptionResponseUnionCreateTranscriptionResponseJson
   >
   fields = const {#text: _f$text, #logprobs: _f$logprobs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseUnionCreateTranscriptionResponseJson
   _instantiate(DecodingData data) {
@@ -417,6 +425,10 @@ class CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJsonMapp
     #words: _f$words,
     #segments: _f$segments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson
   _instantiate(DecodingData data) {

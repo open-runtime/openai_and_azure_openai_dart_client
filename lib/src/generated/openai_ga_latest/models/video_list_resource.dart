@@ -8,7 +8,7 @@ import 'video_resource.dart';
 
 part 'video_list_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VideoListResource with VideoListResourceMappable {
   const VideoListResource({
     required this.data,

@@ -7,17 +7,19 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'prompt.dart';
 import 'realtime_session_create_request_ga_audio.dart';
 import 'realtime_session_create_request_ga_include_include.dart';
+import 'realtime_session_create_request_ga_max_output_tokens_union.dart';
+import 'realtime_session_create_request_ga_model_union.dart';
 import 'realtime_session_create_request_ga_output_modalities_output_modalities.dart';
-import 'realtime_session_create_request_ga_tool_choice_tool_choice_union.dart';
-import 'realtime_session_create_request_ga_tools_tools_union.dart';
-import 'realtime_session_create_request_ga_tracing_tracing_union.dart';
+import 'realtime_session_create_request_ga_tool_choice_union.dart';
+import 'realtime_session_create_request_ga_tools_union.dart';
+import 'realtime_session_create_request_ga_tracing_union.dart';
 import 'realtime_session_create_request_ga_type_type.dart';
 import 'realtime_truncation.dart';
 
 part 'realtime_session_create_request_ga.mapper.dart';
 
 /// Realtime session object configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestGa with RealtimeSessionCreateRequestGaMappable {
   const RealtimeSessionCreateRequestGa({
     required this.type,
@@ -31,25 +33,26 @@ class RealtimeSessionCreateRequestGa with RealtimeSessionCreateRequestGaMappable
     this.truncation,
     this.prompt,
     this.outputModalities = const [RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities.audio],
-    this.toolChoice = const RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantString(value: 'auto'),
+    this.toolChoice = const RealtimeSessionCreateRequestGaToolChoiceUnionVariantString(value: 'auto'),
   });
 
   final RealtimeSessionCreateRequestGaTypeType type;
-  final String? model;
+  @MappableField(hook: const RealtimeSessionCreateRequestGaModelUnionHook())
+  final RealtimeSessionCreateRequestGaModelUnion? model;
   final String? instructions;
-  @MappableField(key: 'RealtimeSessionCreateRequestGaAudio')
+  @MappableField(key: 'audio')
   final RealtimeSessionCreateRequestGaAudio? realtimeSessionCreateRequestGaAudio;
   final List<RealtimeSessionCreateRequestGaIncludeInclude>? include;
-  final RealtimeSessionCreateRequestGaTracingTracingUnion? tracing;
-  final List<RealtimeSessionCreateRequestGaToolsToolsUnion>? tools;
-  @MappableField(key: 'max_output_tokens')
-  final String? maxOutputTokens;
+  final RealtimeSessionCreateRequestGaTracingUnion? tracing;
+  final List<RealtimeSessionCreateRequestGaToolsUnion>? tools;
+  @MappableField(key: 'max_output_tokens', hook: const RealtimeSessionCreateRequestGaMaxOutputTokensUnionHook())
+  final RealtimeSessionCreateRequestGaMaxOutputTokensUnion? maxOutputTokens;
   final RealtimeTruncation? truncation;
   final Prompt? prompt;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities> outputModalities;
   @MappableField(key: 'tool_choice')
-  final RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion toolChoice;
+  final RealtimeSessionCreateRequestGaToolChoiceUnion toolChoice;
 
   static RealtimeSessionCreateRequestGa fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestGaMapper.fromJson(json);
 

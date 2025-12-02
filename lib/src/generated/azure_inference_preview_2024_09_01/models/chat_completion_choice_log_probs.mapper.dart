@@ -47,6 +47,10 @@ class ChatCompletionChoiceLogProbsMapper
     #content: _f$content,
     #refusal: _f$refusal,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionChoiceLogProbs _instantiate(DecodingData data) {
     return ChatCompletionChoiceLogProbs(

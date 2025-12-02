@@ -34,6 +34,10 @@ class EvalApiErrorMapper extends ClassMapperBase<EvalApiError> {
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalApiError _instantiate(DecodingData data) {
     return EvalApiError(code: data.dec(_f$code), message: data.dec(_f$message));

@@ -50,6 +50,10 @@ class AzureChatExtensionsMessageContextMapper
     #intent: _f$intent,
     #allRetrievedDocuments: _f$allRetrievedDocuments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureChatExtensionsMessageContext _instantiate(DecodingData data) {
     return AzureChatExtensionsMessageContext(

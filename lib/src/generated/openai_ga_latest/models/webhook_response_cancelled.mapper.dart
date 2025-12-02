@@ -45,7 +45,7 @@ class WebhookResponseCancelledMapper
   _f$webhookResponseCancelledData = Field(
     'webhookResponseCancelledData',
     _$webhookResponseCancelledData,
-    key: r'WebhookResponseCancelledData',
+    key: r'data',
   );
   static WebhookResponseCancelledTypeType _$type(WebhookResponseCancelled v) =>
       v.type;
@@ -68,6 +68,10 @@ class WebhookResponseCancelledMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseCancelled _instantiate(DecodingData data) {
     return WebhookResponseCancelled(

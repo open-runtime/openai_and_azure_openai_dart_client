@@ -9,7 +9,7 @@ import 'span_polygon.dart';
 part 'span.mapper.dart';
 
 /// A span object that represents a detected object and its bounding box information.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Span with SpanMappable {
   const Span({
     required this.text,

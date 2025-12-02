@@ -40,6 +40,10 @@ class MessageDeltaObjectDeltaMapper
     #role: _f$role,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaObjectDelta _instantiate(DecodingData data) {
     return MessageDeltaObjectDelta(

@@ -11,7 +11,7 @@ part 'chat_completion_message_tool_call.mapper.dart';
 
 /// A call to a function tool created by the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
   const ChatCompletionMessageToolCall({
     required this.id,
@@ -21,7 +21,7 @@ class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
 
   final String id;
   final ChatCompletionMessageToolCallTypeType type;
-  @MappableField(key: 'ChatCompletionMessageToolCallFunction')
+  @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 
   static ChatCompletionMessageToolCall fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallMapper.fromJson(json);

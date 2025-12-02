@@ -9,16 +9,16 @@ import 'create_thread_request_tool_resources_file_search.dart';
 
 part 'create_thread_request_tool_resources.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequestToolResources with CreateThreadRequestToolResourcesMappable {
   const CreateThreadRequestToolResources({
     this.createThreadRequestToolResourcesCodeInterpreter,
     this.createThreadRequestToolResourcesFileSearch,
   });
 
-  @MappableField(key: 'CreateThreadRequestToolResourcesCodeInterpreter')
+  @MappableField(key: 'code_interpreter')
   final CreateThreadRequestToolResourcesCodeInterpreter? createThreadRequestToolResourcesCodeInterpreter;
-  @MappableField(key: 'CreateThreadRequestToolResourcesFileSearch')
+  @MappableField(key: 'file_search')
   final CreateThreadRequestToolResourcesFileSearch? createThreadRequestToolResourcesFileSearch;
 
   static CreateThreadRequestToolResources fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesMapper.fromJson(json);

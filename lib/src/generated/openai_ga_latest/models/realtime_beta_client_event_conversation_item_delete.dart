@@ -11,7 +11,7 @@ part 'realtime_beta_client_event_conversation_item_delete.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventConversationItemDelete with RealtimeBetaClientEventConversationItemDeleteMappable {
   const RealtimeBetaClientEventConversationItemDelete({
     required this.type,

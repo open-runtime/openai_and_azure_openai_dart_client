@@ -42,7 +42,7 @@ class WebhookEvalRunSucceededMapper
   _f$webhookEvalRunSucceededData = Field(
     'webhookEvalRunSucceededData',
     _$webhookEvalRunSucceededData,
-    key: r'WebhookEvalRunSucceededData',
+    key: r'data',
   );
   static WebhookEvalRunSucceededTypeType _$type(WebhookEvalRunSucceeded v) =>
       v.type;
@@ -65,6 +65,10 @@ class WebhookEvalRunSucceededMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookEvalRunSucceeded _instantiate(DecodingData data) {
     return WebhookEvalRunSucceeded(

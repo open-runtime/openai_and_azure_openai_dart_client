@@ -40,6 +40,10 @@ class FileExpiresAfterMapper extends ClassMapperBase<FileExpiresAfter> {
     #anchor: _f$anchor,
     #seconds: _f$seconds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileExpiresAfter _instantiate(DecodingData data) {
     return FileExpiresAfter(

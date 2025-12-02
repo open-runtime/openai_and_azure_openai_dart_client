@@ -9,7 +9,7 @@ import 'message_content_delta.dart';
 
 part 'message_delta_object_delta.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaObjectDelta with MessageDeltaObjectDeltaMappable {
   const MessageDeltaObjectDelta({
     this.role,

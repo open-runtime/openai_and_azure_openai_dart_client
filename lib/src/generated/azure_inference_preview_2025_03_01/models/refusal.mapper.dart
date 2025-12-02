@@ -32,6 +32,10 @@ class RefusalMapper extends ClassMapperBase<Refusal> {
     #type: _f$type,
     #refusal: _f$refusal,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Refusal _instantiate(DecodingData data) {
     return Refusal(type: data.dec(_f$type), refusal: data.dec(_f$refusal));

@@ -56,6 +56,10 @@ class ResponseImageGenCallCompletedEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseImageGenCallCompletedEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallCompletedEvent(

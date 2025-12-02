@@ -9,7 +9,7 @@ import 'transcription_diarized_segment_type_type.dart';
 part 'transcription_diarized_segment.mapper.dart';
 
 /// A segment of diarized transcript text with speaker metadata.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptionDiarizedSegment with TranscriptionDiarizedSegmentMappable {
   const TranscriptionDiarizedSegment({
     required this.type,

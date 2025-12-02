@@ -34,6 +34,10 @@ class ProjectUserUpdateRequestMapper
   final MappableFields<ProjectUserUpdateRequest> fields = const {
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectUserUpdateRequest _instantiate(DecodingData data) {
     return ProjectUserUpdateRequest(role: data.dec(_f$role));

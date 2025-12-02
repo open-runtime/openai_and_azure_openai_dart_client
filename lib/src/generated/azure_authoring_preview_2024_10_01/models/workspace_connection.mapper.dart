@@ -39,6 +39,10 @@ class WorkspaceConnectionMapper extends ClassMapperBase<WorkspaceConnection> {
     #kind: _f$kind,
     #connectionId: _f$connectionId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WorkspaceConnection _instantiate(DecodingData data) {
     return WorkspaceConnection(

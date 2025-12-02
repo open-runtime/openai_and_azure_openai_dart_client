@@ -9,7 +9,7 @@ import 'compute_type.dart';
 part 'serverless_compute.mapper.dart';
 
 /// Serverless compute.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ServerlessCompute with ServerlessComputeMappable {
   const ServerlessCompute({
     required this.kind,

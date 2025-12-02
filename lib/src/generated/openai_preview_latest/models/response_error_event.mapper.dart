@@ -48,6 +48,10 @@ class ResponseErrorEventMapper extends ClassMapperBase<ResponseErrorEvent> {
     #message: _f$message,
     #param: _f$param,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseErrorEvent _instantiate(DecodingData data) {
     return ResponseErrorEvent(

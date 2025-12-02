@@ -35,7 +35,7 @@ class AssistantToolsFunctionMapper
   _f$assistantToolsFunctionFunction = Field(
     'assistantToolsFunctionFunction',
     _$assistantToolsFunctionFunction,
-    key: r'AssistantToolsFunctionFunction',
+    key: r'function',
   );
 
   @override
@@ -43,6 +43,10 @@ class AssistantToolsFunctionMapper
     #type: _f$type,
     #assistantToolsFunctionFunction: _f$assistantToolsFunctionFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFunction _instantiate(DecodingData data) {
     return AssistantToolsFunction(

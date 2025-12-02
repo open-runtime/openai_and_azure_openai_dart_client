@@ -60,6 +60,10 @@ class ListRunsResponseMapper extends ClassMapperBase<ListRunsResponse> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListRunsResponse _instantiate(DecodingData data) {
     return ListRunsResponse(

@@ -83,6 +83,10 @@ class UsageAudioSpeechesResultMapper
     #apiKeyId: _f$apiKeyId,
     #model: _f$model,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageAudioSpeechesResult _instantiate(DecodingData data) {
     return UsageAudioSpeechesResult(

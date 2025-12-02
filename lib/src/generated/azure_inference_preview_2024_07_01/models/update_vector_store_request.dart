@@ -8,7 +8,7 @@ import 'vector_store_expiration_after.dart';
 
 part 'update_vector_store_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateVectorStoreRequest with UpdateVectorStoreRequestMappable {
   const UpdateVectorStoreRequest({
     this.name,

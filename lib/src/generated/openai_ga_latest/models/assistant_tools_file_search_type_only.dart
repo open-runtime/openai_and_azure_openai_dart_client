@@ -8,7 +8,7 @@ import 'assistant_tools_file_search_type_only_type_type.dart';
 
 part 'assistant_tools_file_search_type_only.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFileSearchTypeOnly with AssistantToolsFileSearchTypeOnlyMappable {
   const AssistantToolsFileSearchTypeOnly({
     required this.type,

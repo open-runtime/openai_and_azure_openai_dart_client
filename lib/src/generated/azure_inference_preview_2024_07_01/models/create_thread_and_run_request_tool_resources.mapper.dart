@@ -37,7 +37,7 @@ class CreateThreadAndRunRequestToolResourcesMapper
   _f$createThreadAndRunRequestToolResourcesCodeInterpreter = Field(
     'createThreadAndRunRequestToolResourcesCodeInterpreter',
     _$createThreadAndRunRequestToolResourcesCodeInterpreter,
-    key: r'CreateThreadAndRunRequestToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static CreateThreadAndRunRequestToolResourcesFileSearch?
@@ -51,7 +51,7 @@ class CreateThreadAndRunRequestToolResourcesMapper
   _f$createThreadAndRunRequestToolResourcesFileSearch = Field(
     'createThreadAndRunRequestToolResourcesFileSearch',
     _$createThreadAndRunRequestToolResourcesFileSearch,
-    key: r'CreateThreadAndRunRequestToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -62,6 +62,10 @@ class CreateThreadAndRunRequestToolResourcesMapper
     #createThreadAndRunRequestToolResourcesFileSearch:
         _f$createThreadAndRunRequestToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestToolResources _instantiate(
     DecodingData data,

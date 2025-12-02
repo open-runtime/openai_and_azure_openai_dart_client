@@ -56,6 +56,10 @@ class DeletedConversationResourceMapper
     #id: _f$id,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeletedConversationResource _instantiate(DecodingData data) {
     return DeletedConversationResource(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_connect_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConnectParams with RealtimeConnectParamsMappable {
   const RealtimeConnectParams({
     this.model,

@@ -10,7 +10,7 @@ part 'realtime_client_event_transcription_session_update.mapper.dart';
 
 /// Send this event to update a transcription session.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventTranscriptionSessionUpdate with RealtimeClientEventTranscriptionSessionUpdateMappable {
   const RealtimeClientEventTranscriptionSessionUpdate({
     required this.type,

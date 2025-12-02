@@ -12,7 +12,7 @@ import 'prompt_filter_results.dart';
 part 'create_chat_completion_response.mapper.dart';
 
 /// Represents a chat completion response returned by model, based on the provided input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
   const CreateChatCompletionResponse({
     required this.id,

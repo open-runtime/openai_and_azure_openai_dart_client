@@ -47,6 +47,10 @@ class DeletedVideoResourceMapper extends ClassMapperBase<DeletedVideoResource> {
     #id: _f$id,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeletedVideoResource _instantiate(DecodingData data) {
     return DeletedVideoResource(

@@ -9,16 +9,16 @@ import 'assistant_object_tool_resources_file_search.dart';
 
 part 'assistant_object_tool_resources.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantObjectToolResources with AssistantObjectToolResourcesMappable {
   const AssistantObjectToolResources({
     this.assistantObjectToolResourcesCodeInterpreter,
     this.assistantObjectToolResourcesFileSearch,
   });
 
-  @MappableField(key: 'AssistantObjectToolResourcesCodeInterpreter')
+  @MappableField(key: 'code_interpreter')
   final AssistantObjectToolResourcesCodeInterpreter? assistantObjectToolResourcesCodeInterpreter;
-  @MappableField(key: 'AssistantObjectToolResourcesFileSearch')
+  @MappableField(key: 'file_search')
   final AssistantObjectToolResourcesFileSearch? assistantObjectToolResourcesFileSearch;
 
   static AssistantObjectToolResources fromJson(Map<String, dynamic> json) => AssistantObjectToolResourcesMapper.fromJson(json);

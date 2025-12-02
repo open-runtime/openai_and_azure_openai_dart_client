@@ -9,7 +9,7 @@ import 'realtime_response_usage_output_token_details.dart';
 
 part 'realtime_response_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseUsage with RealtimeResponseUsageMappable {
   const RealtimeResponseUsage({
     this.totalTokens,
@@ -25,9 +25,9 @@ class RealtimeResponseUsage with RealtimeResponseUsageMappable {
   final int? inputTokens;
   @MappableField(key: 'output_tokens')
   final int? outputTokens;
-  @MappableField(key: 'RealtimeResponseUsageInputTokenDetails')
+  @MappableField(key: 'input_token_details')
   final RealtimeResponseUsageInputTokenDetails? realtimeResponseUsageInputTokenDetails;
-  @MappableField(key: 'RealtimeResponseUsageOutputTokenDetails')
+  @MappableField(key: 'output_token_details')
   final RealtimeResponseUsageOutputTokenDetails? realtimeResponseUsageOutputTokenDetails;
 
   static RealtimeResponseUsage fromJson(Map<String, dynamic> json) => RealtimeResponseUsageMapper.fromJson(json);

@@ -20,7 +20,7 @@ import 'truncation_object.dart';
 part 'run_object.mapper.dart';
 
 /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObject with RunObjectMappable {
   const RunObject({
     required this.id,
@@ -62,9 +62,9 @@ class RunObject with RunObjectMappable {
   @MappableField(key: 'assistant_id')
   final String assistantId;
   final RunStatus status;
-  @MappableField(key: 'RunObjectRequiredAction')
+  @MappableField(key: 'required_action')
   final RunObjectRequiredAction? runObjectRequiredAction;
-  @MappableField(key: 'RunObjectLastError')
+  @MappableField(key: 'last_error')
   final RunObjectLastError? runObjectLastError;
   @MappableField(key: 'expires_at')
   final int? expiresAt;
@@ -76,7 +76,7 @@ class RunObject with RunObjectMappable {
   final int? failedAt;
   @MappableField(key: 'completed_at')
   final int? completedAt;
-  @MappableField(key: 'RunObjectIncompleteDetails')
+  @MappableField(key: 'incomplete_details')
   final RunObjectIncompleteDetails? runObjectIncompleteDetails;
   final String model;
   final String instructions;

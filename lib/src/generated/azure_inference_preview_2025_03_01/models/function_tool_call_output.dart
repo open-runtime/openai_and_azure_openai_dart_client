@@ -11,7 +11,7 @@ part 'function_tool_call_output.mapper.dart';
 
 /// The output of a function tool call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionToolCallOutput with FunctionToolCallOutputMappable {
   const FunctionToolCallOutput({
     required this.type,

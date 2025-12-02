@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'container_file_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerFileResource with ContainerFileResourceMappable {
   const ContainerFileResource({
     required this.id,

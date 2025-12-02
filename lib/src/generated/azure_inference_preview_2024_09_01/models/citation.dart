@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'citation.mapper.dart';
 
 /// citation information for a chat completions response message.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Citation with CitationMappable {
   const Citation({
     required this.content,

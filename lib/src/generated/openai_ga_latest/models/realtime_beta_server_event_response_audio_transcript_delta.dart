@@ -8,7 +8,7 @@ part 'realtime_beta_server_event_response_audio_transcript_delta.mapper.dart';
 
 /// Returned when the model-generated transcription of audio output is updated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseAudioTranscriptDelta with RealtimeBetaServerEventResponseAudioTranscriptDeltaMappable {
   const RealtimeBetaServerEventResponseAudioTranscriptDelta({
     required this.eventId,

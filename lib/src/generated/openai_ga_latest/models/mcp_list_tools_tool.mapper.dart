@@ -49,6 +49,10 @@ class McpListToolsToolMapper extends ClassMapperBase<McpListToolsTool> {
     #description: _f$description,
     #annotations: _f$annotations,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpListToolsTool _instantiate(DecodingData data) {
     return McpListToolsTool(

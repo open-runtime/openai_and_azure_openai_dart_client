@@ -42,7 +42,7 @@ class AuditLogOrganizationUpdatedMapper
   _f$auditLogOrganizationUpdatedChangesRequested = Field(
     'auditLogOrganizationUpdatedChangesRequested',
     _$auditLogOrganizationUpdatedChangesRequested,
-    key: r'AuditLogOrganizationUpdatedChangesRequested',
+    key: r'changes_requested',
     opt: true,
   );
 
@@ -52,6 +52,10 @@ class AuditLogOrganizationUpdatedMapper
     #auditLogOrganizationUpdatedChangesRequested:
         _f$auditLogOrganizationUpdatedChangesRequested,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogOrganizationUpdated _instantiate(DecodingData data) {
     return AuditLogOrganizationUpdated(

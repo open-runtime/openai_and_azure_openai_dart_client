@@ -10,7 +10,7 @@ import 'function_call_output_item_param_type_type.dart';
 part 'function_call_output_item_param.mapper.dart';
 
 /// The output of a function tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionCallOutputItemParam with FunctionCallOutputItemParamMappable {
   const FunctionCallOutputItemParam({
     required this.callId,

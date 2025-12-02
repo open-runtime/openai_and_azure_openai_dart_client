@@ -18,14 +18,16 @@ class RealtimeSessionCreateRequestGaMapper
         _instance = RealtimeSessionCreateRequestGaMapper._(),
       );
       RealtimeSessionCreateRequestGaTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaModelUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaAudioMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaIncludeIncludeMapper.ensureInitialized();
-      RealtimeSessionCreateRequestGaTracingTracingUnionMapper.ensureInitialized();
-      RealtimeSessionCreateRequestGaToolsToolsUnionMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaTracingUnionMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaToolsUnionMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaMaxOutputTokensUnionMapper.ensureInitialized();
       RealtimeTruncationUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaOutputModalitiesOutputModalitiesMapper.ensureInitialized();
-      RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaToolChoiceUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -41,11 +43,18 @@ class RealtimeSessionCreateRequestGaMapper
     RealtimeSessionCreateRequestGaTypeType
   >
   _f$type = Field('type', _$type);
-  static String? _$model(RealtimeSessionCreateRequestGa v) => v.model;
-  static const Field<RealtimeSessionCreateRequestGa, String> _f$model = Field(
+  static RealtimeSessionCreateRequestGaModelUnion? _$model(
+    RealtimeSessionCreateRequestGa v,
+  ) => v.model;
+  static const Field<
+    RealtimeSessionCreateRequestGa,
+    RealtimeSessionCreateRequestGaModelUnion
+  >
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
+    hook: const RealtimeSessionCreateRequestGaModelUnionHook(),
   );
   static String? _$instructions(RealtimeSessionCreateRequestGa v) =>
       v.instructions;
@@ -61,7 +70,7 @@ class RealtimeSessionCreateRequestGaMapper
   _f$realtimeSessionCreateRequestGaAudio = Field(
     'realtimeSessionCreateRequestGaAudio',
     _$realtimeSessionCreateRequestGaAudio,
-    key: r'RealtimeSessionCreateRequestGaAudio',
+    key: r'audio',
     opt: true,
   );
   static List<RealtimeSessionCreateRequestGaIncludeInclude>? _$include(
@@ -72,30 +81,35 @@ class RealtimeSessionCreateRequestGaMapper
     List<RealtimeSessionCreateRequestGaIncludeInclude>
   >
   _f$include = Field('include', _$include, opt: true);
-  static RealtimeSessionCreateRequestGaTracingTracingUnion? _$tracing(
+  static RealtimeSessionCreateRequestGaTracingUnion? _$tracing(
     RealtimeSessionCreateRequestGa v,
   ) => v.tracing;
   static const Field<
     RealtimeSessionCreateRequestGa,
-    RealtimeSessionCreateRequestGaTracingTracingUnion
+    RealtimeSessionCreateRequestGaTracingUnion
   >
   _f$tracing = Field('tracing', _$tracing, opt: true);
-  static List<RealtimeSessionCreateRequestGaToolsToolsUnion>? _$tools(
+  static List<RealtimeSessionCreateRequestGaToolsUnion>? _$tools(
     RealtimeSessionCreateRequestGa v,
   ) => v.tools;
   static const Field<
     RealtimeSessionCreateRequestGa,
-    List<RealtimeSessionCreateRequestGaToolsToolsUnion>
+    List<RealtimeSessionCreateRequestGaToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
-  static String? _$maxOutputTokens(RealtimeSessionCreateRequestGa v) =>
-      v.maxOutputTokens;
-  static const Field<RealtimeSessionCreateRequestGa, String>
+  static RealtimeSessionCreateRequestGaMaxOutputTokensUnion? _$maxOutputTokens(
+    RealtimeSessionCreateRequestGa v,
+  ) => v.maxOutputTokens;
+  static const Field<
+    RealtimeSessionCreateRequestGa,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion
+  >
   _f$maxOutputTokens = Field(
     'maxOutputTokens',
     _$maxOutputTokens,
     key: r'max_output_tokens',
     opt: true,
+    hook: const RealtimeSessionCreateRequestGaMaxOutputTokensUnionHook(),
   );
   static RealtimeTruncationUnion? _$truncation(
     RealtimeSessionCreateRequestGa v,
@@ -120,22 +134,21 @@ class RealtimeSessionCreateRequestGaMapper
       RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities.audio,
     ],
   );
-  static RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion _$toolChoice(
+  static RealtimeSessionCreateRequestGaToolChoiceUnion _$toolChoice(
     RealtimeSessionCreateRequestGa v,
   ) => v.toolChoice;
   static const Field<
     RealtimeSessionCreateRequestGa,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateRequestGaToolChoiceUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
     key: r'tool_choice',
     opt: true,
-    def:
-        const RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionVariantString(
-          value: 'auto',
-        ),
+    def: const RealtimeSessionCreateRequestGaToolChoiceUnionVariantString(
+      value: 'auto',
+    ),
   );
 
   @override
@@ -154,6 +167,10 @@ class RealtimeSessionCreateRequestGaMapper
     #outputModalities: _f$outputModalities,
     #toolChoice: _f$toolChoice,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateRequestGa _instantiate(DecodingData data) {
     return RealtimeSessionCreateRequestGa(
@@ -252,6 +269,12 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  RealtimeSessionCreateRequestGaModelUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestGaModelUnion,
+    RealtimeSessionCreateRequestGaModelUnion
+  >?
+  get model;
   RealtimeSessionCreateRequestGaAudioCopyWith<
     $R,
     RealtimeSessionCreateRequestGaAudio,
@@ -268,22 +291,28 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
     >
   >?
   get include;
-  RealtimeSessionCreateRequestGaTracingTracingUnionCopyWith<
+  RealtimeSessionCreateRequestGaTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaTracingTracingUnion,
-    RealtimeSessionCreateRequestGaTracingTracingUnion
+    RealtimeSessionCreateRequestGaTracingUnion,
+    RealtimeSessionCreateRequestGaTracingUnion
   >?
   get tracing;
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaToolsToolsUnion,
-    RealtimeSessionCreateRequestGaToolsToolsUnionCopyWith<
+    RealtimeSessionCreateRequestGaToolsUnion,
+    RealtimeSessionCreateRequestGaToolsUnionCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaToolsToolsUnion,
-      RealtimeSessionCreateRequestGaToolsToolsUnion
+      RealtimeSessionCreateRequestGaToolsUnion,
+      RealtimeSessionCreateRequestGaToolsUnion
     >
   >?
   get tools;
+  RealtimeSessionCreateRequestGaMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion
+  >?
+  get maxOutputTokens;
   RealtimeTruncationUnionCopyWith<
     $R,
     RealtimeTruncationUnion,
@@ -301,26 +330,26 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
     >
   >
   get outputModalities;
-  RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionCopyWith<
+  RealtimeSessionCreateRequestGaToolChoiceUnionCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateRequestGaToolChoiceUnion,
+    RealtimeSessionCreateRequestGaToolChoiceUnion
   >
   get toolChoice;
   $R call({
     RealtimeSessionCreateRequestGaTypeType? type,
-    String? model,
+    RealtimeSessionCreateRequestGaModelUnion? model,
     String? instructions,
     RealtimeSessionCreateRequestGaAudio? realtimeSessionCreateRequestGaAudio,
     List<RealtimeSessionCreateRequestGaIncludeInclude>? include,
-    RealtimeSessionCreateRequestGaTracingTracingUnion? tracing,
-    List<RealtimeSessionCreateRequestGaToolsToolsUnion>? tools,
-    String? maxOutputTokens,
+    RealtimeSessionCreateRequestGaTracingUnion? tracing,
+    List<RealtimeSessionCreateRequestGaToolsUnion>? tools,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion? maxOutputTokens,
     RealtimeTruncationUnion? truncation,
     PromptUnion? prompt,
     List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>?
     outputModalities,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeSessionCreateRequestGaToolChoiceUnion? toolChoice,
   });
   RealtimeSessionCreateRequestGaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -344,6 +373,13 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<RealtimeSessionCreateRequestGa> $mapper =
       RealtimeSessionCreateRequestGaMapper.ensureInitialized();
+  @override
+  RealtimeSessionCreateRequestGaModelUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestGaModelUnion,
+    RealtimeSessionCreateRequestGaModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   RealtimeSessionCreateRequestGaAudioCopyWith<
     $R,
@@ -372,20 +408,20 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  RealtimeSessionCreateRequestGaTracingTracingUnionCopyWith<
+  RealtimeSessionCreateRequestGaTracingUnionCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaTracingTracingUnion,
-    RealtimeSessionCreateRequestGaTracingTracingUnion
+    RealtimeSessionCreateRequestGaTracingUnion,
+    RealtimeSessionCreateRequestGaTracingUnion
   >?
   get tracing => $value.tracing?.copyWith.$chain((v) => call(tracing: v));
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaToolsToolsUnion,
-    RealtimeSessionCreateRequestGaToolsToolsUnionCopyWith<
+    RealtimeSessionCreateRequestGaToolsUnion,
+    RealtimeSessionCreateRequestGaToolsUnionCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaToolsToolsUnion,
-      RealtimeSessionCreateRequestGaToolsToolsUnion
+      RealtimeSessionCreateRequestGaToolsUnion,
+      RealtimeSessionCreateRequestGaToolsUnion
     >
   >?
   get tools => $value.tools != null
@@ -395,6 +431,14 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionCreateRequestGaMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion,
+    RealtimeSessionCreateRequestGaMaxOutputTokensUnion
+  >?
+  get maxOutputTokens =>
+      $value.maxOutputTokens?.copyWith.$chain((v) => call(maxOutputTokens: v));
   @override
   RealtimeTruncationUnionCopyWith<
     $R,
@@ -422,10 +466,10 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
     (v) => call(outputModalities: v),
   );
   @override
-  RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnionCopyWith<
+  RealtimeSessionCreateRequestGaToolChoiceUnionCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion
+    RealtimeSessionCreateRequestGaToolChoiceUnion,
+    RealtimeSessionCreateRequestGaToolChoiceUnion
   >
   get toolChoice =>
       $value.toolChoice.copyWith.$chain((v) => call(toolChoice: v));
@@ -443,7 +487,7 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
     Object? prompt = $none,
     List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>?
     outputModalities,
-    RealtimeSessionCreateRequestGaToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeSessionCreateRequestGaToolChoiceUnion? toolChoice,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

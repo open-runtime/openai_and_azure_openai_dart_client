@@ -40,7 +40,7 @@ class CreateEvalRunRequestDataSourceDataSourceMapper
   _f$createEvalCompletionsRunDataSourceSource = Field(
     'createEvalCompletionsRunDataSourceSource',
     _$createEvalCompletionsRunDataSourceSource,
-    key: r'CreateEvalCompletionsRunDataSourceSource',
+    key: r'source',
   );
   static CreateEvalJsonlRunDataSourceSourceSource _$source(
     CreateEvalRunRequestDataSourceDataSource v,
@@ -74,7 +74,7 @@ class CreateEvalRunRequestDataSourceDataSourceMapper
   _f$createEvalCompletionsRunDataSourceInputMessages = Field(
     'createEvalCompletionsRunDataSourceInputMessages',
     _$createEvalCompletionsRunDataSourceInputMessages,
-    key: r'CreateEvalCompletionsRunDataSourceInputMessages',
+    key: r'input_messages',
     opt: true,
   );
   static String? _$model(CreateEvalRunRequestDataSourceDataSource v) => v.model;
@@ -91,7 +91,7 @@ class CreateEvalRunRequestDataSourceDataSourceMapper
   _f$createEvalCompletionsRunDataSourceSamplingParams = Field(
     'createEvalCompletionsRunDataSourceSamplingParams',
     _$createEvalCompletionsRunDataSourceSamplingParams,
-    key: r'CreateEvalCompletionsRunDataSourceSamplingParams',
+    key: r'sampling_params',
     opt: true,
   );
 
@@ -108,6 +108,10 @@ class CreateEvalRunRequestDataSourceDataSourceMapper
         #createEvalCompletionsRunDataSourceSamplingParams:
             _f$createEvalCompletionsRunDataSourceSamplingParams,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRunRequestDataSourceDataSource _instantiate(
     DecodingData data,

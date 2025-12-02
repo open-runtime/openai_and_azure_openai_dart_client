@@ -118,6 +118,10 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     #attachments: _f$attachments,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageObject _instantiate(DecodingData data) {
     return MessageObject(

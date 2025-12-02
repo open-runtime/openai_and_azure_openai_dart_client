@@ -43,6 +43,10 @@ class AssistantsApiResponseFormatMapper
   final MappableFields<AssistantsApiResponseFormat> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormat _instantiate(DecodingData data) {
     return AssistantsApiResponseFormat(type: data.dec(_f$type));

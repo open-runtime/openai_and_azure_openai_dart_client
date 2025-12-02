@@ -9,7 +9,7 @@ import 'task_type.dart';
 part 'task_group_task.mapper.dart';
 
 /// Task entry that appears within a TaskGroup.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TaskGroupTask with TaskGroupTaskMappable {
   const TaskGroupTask({
     required this.type,

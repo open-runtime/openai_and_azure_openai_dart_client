@@ -68,6 +68,10 @@ class TranscriptTextSegmentEventMapper
     #text: _f$text,
     #speaker: _f$speaker,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextSegmentEvent _instantiate(DecodingData data) {
     return TranscriptTextSegmentEvent(

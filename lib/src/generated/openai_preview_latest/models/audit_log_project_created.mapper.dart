@@ -36,7 +36,7 @@ class AuditLogProjectCreatedMapper
   _f$auditLogProjectCreatedData = Field(
     'auditLogProjectCreatedData',
     _$auditLogProjectCreatedData,
-    key: r'AuditLogProjectCreatedData',
+    key: r'data',
     opt: true,
   );
 
@@ -45,6 +45,10 @@ class AuditLogProjectCreatedMapper
     #id: _f$id,
     #auditLogProjectCreatedData: _f$auditLogProjectCreatedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectCreated _instantiate(DecodingData data) {
     return AuditLogProjectCreated(

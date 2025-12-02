@@ -81,6 +81,10 @@ class CreateCompletionResponseMapper
     #systemFingerprint: _f$systemFingerprint,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionResponse _instantiate(DecodingData data) {
     return CreateCompletionResponse(

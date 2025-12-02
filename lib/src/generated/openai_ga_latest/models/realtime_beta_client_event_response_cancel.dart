@@ -10,7 +10,7 @@ part 'realtime_beta_client_event_response_cancel.mapper.dart';
 /// with a `response.done` event with a status of `response.status=cancelled`. If .
 /// there is no response to cancel, the server will respond with an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventResponseCancel with RealtimeBetaClientEventResponseCancelMappable {
   const RealtimeBetaClientEventResponseCancel({
     required this.type,

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'screenshot_type_type.dart';
 
 part 'screenshot.mapper.dart';
 
 /// A screenshot action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Screenshot with ScreenshotMappable {
   const Screenshot({
     this.type = ScreenshotTypeType.screenshot,

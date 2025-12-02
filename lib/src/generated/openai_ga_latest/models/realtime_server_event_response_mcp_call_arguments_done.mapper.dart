@@ -62,6 +62,10 @@ class RealtimeServerEventResponseMcpCallArgumentsDoneMapper
         #outputIndex: _f$outputIndex,
         #arguments: _f$arguments,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseMcpCallArgumentsDone _instantiate(
     DecodingData data,

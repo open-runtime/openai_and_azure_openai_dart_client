@@ -52,7 +52,7 @@ class CreateEmbeddingResponseMapper
   _f$createEmbeddingResponseUsage = Field(
     'createEmbeddingResponseUsage',
     _$createEmbeddingResponseUsage,
-    key: r'CreateEmbeddingResponseUsage',
+    key: r'usage',
   );
 
   @override
@@ -62,6 +62,10 @@ class CreateEmbeddingResponseMapper
     #objectEnum: _f$objectEnum,
     #createEmbeddingResponseUsage: _f$createEmbeddingResponseUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEmbeddingResponse _instantiate(DecodingData data) {
     return CreateEmbeddingResponse(

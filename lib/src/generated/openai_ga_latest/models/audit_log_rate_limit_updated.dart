@@ -8,7 +8,7 @@ import 'audit_log_rate_limit_updated_changes_requested.dart';
 
 part 'audit_log_rate_limit_updated.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogRateLimitUpdated with AuditLogRateLimitUpdatedMappable {
   const AuditLogRateLimitUpdated({
     this.id,
@@ -16,7 +16,7 @@ class AuditLogRateLimitUpdated with AuditLogRateLimitUpdatedMappable {
   });
 
   final String? id;
-  @MappableField(key: 'AuditLogRateLimitUpdatedChangesRequested')
+  @MappableField(key: 'changes_requested')
   final AuditLogRateLimitUpdatedChangesRequested? auditLogRateLimitUpdatedChangesRequested;
 
   static AuditLogRateLimitUpdated fromJson(Map<String, dynamic> json) => AuditLogRateLimitUpdatedMapper.fromJson(json);

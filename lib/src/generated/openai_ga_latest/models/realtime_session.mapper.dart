@@ -18,11 +18,13 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
       RealtimeSessionOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeSessionObjectObjectEnumMapper.ensureInitialized();
       RealtimeSessionModelModelMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       AudioTranscriptionMapper.ensureInitialized();
       RealtimeTurnDetectionMapper.ensureInitialized();
       RealtimeSessionInputAudioNoiseReductionMapper.ensureInitialized();
-      RealtimeSessionTracingTracingUnionMapper.ensureInitialized();
+      RealtimeSessionTracingUnionMapper.ensureInitialized();
       RealtimeFunctionToolMapper.ensureInitialized();
+      RealtimeSessionMaxResponseOutputTokensUnionMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
       RealtimeSessionIncludeIncludeMapper.ensureInitialized();
     }
@@ -107,11 +109,12 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     _$instructions,
     opt: true,
   );
-  static String? _$voice(RealtimeSession v) => v.voice;
-  static const Field<RealtimeSession, String> _f$voice = Field(
+  static VoiceIdsShared? _$voice(RealtimeSession v) => v.voice;
+  static const Field<RealtimeSession, VoiceIdsShared> _f$voice = Field(
     'voice',
     _$voice,
     opt: true,
+    hook: const VoiceIdsSharedHook(),
   );
   static AudioTranscription? _$inputAudioTranscription(RealtimeSession v) =>
       v.inputAudioTranscription;
@@ -138,25 +141,29 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
   _f$realtimeSessionInputAudioNoiseReduction = Field(
     'realtimeSessionInputAudioNoiseReduction',
     _$realtimeSessionInputAudioNoiseReduction,
-    key: r'RealtimeSessionInputAudioNoiseReduction',
+    key: r'input_audio_noise_reduction',
     opt: true,
   );
-  static RealtimeSessionTracingTracingUnion? _$tracing(RealtimeSession v) =>
-      v.tracing;
-  static const Field<RealtimeSession, RealtimeSessionTracingTracingUnion>
-  _f$tracing = Field('tracing', _$tracing, opt: true);
+  static RealtimeSessionTracingUnion? _$tracing(RealtimeSession v) => v.tracing;
+  static const Field<RealtimeSession, RealtimeSessionTracingUnion> _f$tracing =
+      Field('tracing', _$tracing, opt: true);
   static List<RealtimeFunctionTool>? _$tools(RealtimeSession v) => v.tools;
   static const Field<RealtimeSession, List<RealtimeFunctionTool>> _f$tools =
       Field('tools', _$tools, opt: true);
-  static String? _$maxResponseOutputTokens(RealtimeSession v) =>
-      v.maxResponseOutputTokens;
-  static const Field<RealtimeSession, String> _f$maxResponseOutputTokens =
-      Field(
-        'maxResponseOutputTokens',
-        _$maxResponseOutputTokens,
-        key: r'max_response_output_tokens',
-        opt: true,
-      );
+  static RealtimeSessionMaxResponseOutputTokensUnion? _$maxResponseOutputTokens(
+    RealtimeSession v,
+  ) => v.maxResponseOutputTokens;
+  static const Field<
+    RealtimeSession,
+    RealtimeSessionMaxResponseOutputTokensUnion
+  >
+  _f$maxResponseOutputTokens = Field(
+    'maxResponseOutputTokens',
+    _$maxResponseOutputTokens,
+    key: r'max_response_output_tokens',
+    opt: true,
+    hook: const RealtimeSessionMaxResponseOutputTokensUnionHook(),
+  );
   static int? _$expiresAt(RealtimeSession v) => v.expiresAt;
   static const Field<RealtimeSession, int> _f$expiresAt = Field(
     'expiresAt',
@@ -199,6 +206,10 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     #prompt: _f$prompt,
     #include: _f$include,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSession _instantiate(DecodingData data) {
     return RealtimeSession(
@@ -289,6 +300,7 @@ extension RealtimeSessionValueCopy<$R, $Out>
 
 abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   AudioTranscriptionCopyWith<$R, AudioTranscription, AudioTranscription>?
   get inputAudioTranscription;
   RealtimeTurnDetectionCopyWith<
@@ -303,10 +315,10 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     RealtimeSessionInputAudioNoiseReduction
   >?
   get realtimeSessionInputAudioNoiseReduction;
-  RealtimeSessionTracingTracingUnionCopyWith<
+  RealtimeSessionTracingUnionCopyWith<
     $R,
-    RealtimeSessionTracingTracingUnion,
-    RealtimeSessionTracingTracingUnion
+    RealtimeSessionTracingUnion,
+    RealtimeSessionTracingUnion
   >?
   get tracing;
   ListCopyWith<
@@ -315,6 +327,12 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     RealtimeFunctionToolCopyWith<$R, RealtimeFunctionTool, RealtimeFunctionTool>
   >?
   get tools;
+  RealtimeSessionMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionMaxResponseOutputTokensUnion,
+    RealtimeSessionMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens;
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   ListCopyWith<
     $R,
@@ -337,14 +355,14 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     dynamic modalities,
     RealtimeSessionModelModel? model,
     String? instructions,
-    String? voice,
+    VoiceIdsShared? voice,
     AudioTranscription? inputAudioTranscription,
     RealtimeTurnDetection? turnDetection,
     RealtimeSessionInputAudioNoiseReduction?
     realtimeSessionInputAudioNoiseReduction,
-    RealtimeSessionTracingTracingUnion? tracing,
+    RealtimeSessionTracingUnion? tracing,
     List<RealtimeFunctionTool>? tools,
-    String? maxResponseOutputTokens,
+    RealtimeSessionMaxResponseOutputTokensUnion? maxResponseOutputTokens,
     int? expiresAt,
     PromptUnion? prompt,
     List<RealtimeSessionIncludeInclude>? include,
@@ -362,6 +380,9 @@ class _RealtimeSessionCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<RealtimeSession> $mapper =
       RealtimeSessionMapper.ensureInitialized();
+  @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   AudioTranscriptionCopyWith<$R, AudioTranscription, AudioTranscription>?
   get inputAudioTranscription => $value.inputAudioTranscription?.copyWith
@@ -385,10 +406,10 @@ class _RealtimeSessionCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(realtimeSessionInputAudioNoiseReduction: v));
   @override
-  RealtimeSessionTracingTracingUnionCopyWith<
+  RealtimeSessionTracingUnionCopyWith<
     $R,
-    RealtimeSessionTracingTracingUnion,
-    RealtimeSessionTracingTracingUnion
+    RealtimeSessionTracingUnion,
+    RealtimeSessionTracingUnion
   >?
   get tracing => $value.tracing?.copyWith.$chain((v) => call(tracing: v));
   @override
@@ -404,6 +425,14 @@ class _RealtimeSessionCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionMaxResponseOutputTokensUnion,
+    RealtimeSessionMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens => $value.maxResponseOutputTokens?.copyWith
+      .$chain((v) => call(maxResponseOutputTokens: v));
   @override
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt =>
       $value.prompt?.copyWith.$chain((v) => call(prompt: v));

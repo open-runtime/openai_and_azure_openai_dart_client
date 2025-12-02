@@ -30,6 +30,10 @@ class DeploymentConnectionMapper extends ClassMapperBase<DeploymentConnection> {
 
   @override
   final MappableFields<DeploymentConnection> fields = const {#kind: _f$kind};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeploymentConnection _instantiate(DecodingData data) {
     return DeploymentConnection(kind: data.dec(_f$kind));

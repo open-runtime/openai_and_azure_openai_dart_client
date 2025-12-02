@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'output_content.dart';
 import 'reasoning_text_content_type_type.dart';
 
 part 'reasoning_text_content.mapper.dart';
 
 /// Reasoning text from the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ReasoningTextContent with ReasoningTextContentMappable {
   const ReasoningTextContent({
     required this.text,

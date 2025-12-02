@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'wait_type_type.dart';
 
 part 'wait.mapper.dart';
 
 /// A wait action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Wait with WaitMappable {
   const Wait({
     this.type = WaitTypeType.wait,

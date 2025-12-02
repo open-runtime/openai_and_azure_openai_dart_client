@@ -26,6 +26,10 @@ class VectorStoreFileAttributesMapper
 
   @override
   final MappableFields<VectorStoreFileAttributes> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileAttributes _instantiate(DecodingData data) {
     return VectorStoreFileAttributes();

@@ -82,8 +82,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper
   _f$realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError = Field(
     'realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError',
     _$realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError,
-    key:
-        r'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError',
+    key: r'error',
   );
 
   @override
@@ -98,6 +97,10 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedMapper
     #realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError:
         _f$realtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed
   _instantiate(DecodingData data) {

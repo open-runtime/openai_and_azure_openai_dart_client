@@ -9,7 +9,7 @@ import 'wand_b_integration_request.dart';
 
 part 'wand_b_integration_request_wrapper.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WandBIntegrationRequestWrapper with WandBIntegrationRequestWrapperMappable {
   const WandBIntegrationRequestWrapper({
     required this.type,

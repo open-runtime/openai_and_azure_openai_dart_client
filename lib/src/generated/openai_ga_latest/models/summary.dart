@@ -9,7 +9,7 @@ import 'summary_type_type.dart';
 part 'summary.mapper.dart';
 
 /// A summary text from the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Summary with SummaryMappable {
   const Summary({
     required this.text,

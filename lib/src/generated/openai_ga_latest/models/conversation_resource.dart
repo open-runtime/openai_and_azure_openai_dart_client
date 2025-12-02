@@ -8,7 +8,7 @@ import 'conversation_resource_object_object_enum.dart';
 
 part 'conversation_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ConversationResource with ConversationResourceMappable {
   const ConversationResource({
     required this.id,

@@ -62,6 +62,10 @@ class ListBatchesResponseMapper extends ClassMapperBase<ListBatchesResponse> {
     #firstId: _f$firstId,
     #lastId: _f$lastId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListBatchesResponse _instantiate(DecodingData data) {
     return ListBatchesResponse(

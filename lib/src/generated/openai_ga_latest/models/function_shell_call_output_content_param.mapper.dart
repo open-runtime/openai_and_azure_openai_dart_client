@@ -46,6 +46,10 @@ class FunctionShellCallOutputContentParamMapper
     #stderr: _f$stderr,
     #outcome: _f$outcome,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputContentParam _instantiate(DecodingData data) {
     return FunctionShellCallOutputContentParam(

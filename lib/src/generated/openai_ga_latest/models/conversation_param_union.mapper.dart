@@ -26,6 +26,10 @@ class ConversationParamUnionMapper
 
   @override
   final MappableFields<ConversationParamUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConversationParamUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ConversationParamUnion');
@@ -91,6 +95,10 @@ class ConversationParamUnionConversationParam2Mapper
   @override
   final MappableFields<ConversationParamUnionConversationParam2> fields =
       const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConversationParamUnionConversationParam2 _instantiate(
     DecodingData data,
@@ -253,6 +261,10 @@ class ConversationParamUnionVariantStringMapper
   final MappableFields<ConversationParamUnionVariantString> fields = const {
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConversationParamUnionVariantString _instantiate(DecodingData data) {
     return ConversationParamUnionVariantString(value: data.dec(_f$value));

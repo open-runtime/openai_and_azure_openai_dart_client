@@ -4,6 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'assistant_stream_event_event_event.dart';
+import 'error.dart';
+import 'error_event.dart';
+import 'error_event_event_event.dart';
+
 part 'assistant_stream_event.mapper.dart';
 
 /// Represents an event emitted when streaming a Run.
@@ -26,12 +31,42 @@ part 'assistant_stream_event.mapper.dart';
 /// in your code. See the [Assistants API quickstart](https://platform.openai.com/docs/assistants/overview) to learn how to.
 /// integrate the Assistants API with streaming.
 ///
-@MappableClass()
-class AssistantStreamEvent with AssistantStreamEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'event', includeSubClasses: [
+  AssistantStreamEventError
+])
+sealed class AssistantStreamEvent with AssistantStreamEventMappable {
   const AssistantStreamEvent();
 
-
-  static AssistantStreamEvent fromJson(Map<String, dynamic> json) => AssistantStreamEventMapper.fromJson(json);
-
+  static AssistantStreamEvent fromJson(Map<String, dynamic> json) {
+    return AssistantStreamEventUnionDeserializer.tryDeserialize(json);
+  }
 }
 
+extension AssistantStreamEventUnionDeserializer on AssistantStreamEvent {
+  static AssistantStreamEvent tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'event',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      AssistantStreamEventError: 'error',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[AssistantStreamEventError] => AssistantStreamEventErrorMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for AssistantStreamEvent'),
+    };
+  }
+}
+
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
+class AssistantStreamEventError extends AssistantStreamEvent with AssistantStreamEventErrorMappable {
+  final AssistantStreamEventEventEvent event;
+  final Error data;
+
+  const AssistantStreamEventError({
+    required this.event,
+    required this.data,
+  });
+}

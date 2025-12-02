@@ -68,6 +68,10 @@ class GraderScoreModelSamplingParamsMapper
     #maxCompletionsTokens: _f$maxCompletionsTokens,
     #reasoningEffort: _f$reasoningEffort,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderScoreModelSamplingParams _instantiate(DecodingData data) {
     return GraderScoreModelSamplingParams(

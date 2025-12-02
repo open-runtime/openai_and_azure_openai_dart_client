@@ -10,7 +10,7 @@ import 'file_expires_after.dart';
 part 'batch_create_request.mapper.dart';
 
 /// Defines the request to create a batch.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchCreateRequest with BatchCreateRequestMappable {
   const BatchCreateRequest({
     required this.endpoint,

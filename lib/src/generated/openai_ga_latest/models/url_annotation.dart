@@ -10,7 +10,7 @@ import 'url_annotation_type_type.dart';
 part 'url_annotation.mapper.dart';
 
 /// Annotation that references a URL.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UrlAnnotation with UrlAnnotationMappable {
   const UrlAnnotation({
     required this.source,

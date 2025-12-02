@@ -9,7 +9,7 @@ import 'eval_custom_data_source_config_type_type.dart';
 part 'eval_custom_data_source_config.mapper.dart';
 
 /// A CustomDataSourceConfig which specifies the schema of your `item` and optionally `sample` namespaces. The response schema defines the shape of the data that will be: - Used to define your testing criteria and - What data is required when creating a run
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalCustomDataSourceConfig with EvalCustomDataSourceConfigMappable {
   const EvalCustomDataSourceConfig({
     required this.schema,

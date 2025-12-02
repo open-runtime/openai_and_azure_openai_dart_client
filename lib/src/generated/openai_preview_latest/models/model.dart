@@ -9,7 +9,7 @@ import 'model_object_object_enum.dart';
 part 'model.mapper.dart';
 
 /// Describes an OpenAI model offering that can be used with the API.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Model with ModelMappable {
   const Model({
     required this.id,

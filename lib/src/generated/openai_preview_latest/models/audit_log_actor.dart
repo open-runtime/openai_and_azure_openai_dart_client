@@ -11,7 +11,7 @@ import 'audit_log_actor_type_type.dart';
 part 'audit_log_actor.mapper.dart';
 
 /// The actor who performed the audit logged action.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActor with AuditLogActorMappable {
   const AuditLogActor({
     this.type,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_message_tool_call_chunk_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCallChunkFunction with ChatCompletionMessageToolCallChunkFunctionMappable {
   const ChatCompletionMessageToolCallChunkFunction({
     this.name,

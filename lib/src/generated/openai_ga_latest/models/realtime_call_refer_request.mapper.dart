@@ -35,6 +35,10 @@ class RealtimeCallReferRequestMapper
   final MappableFields<RealtimeCallReferRequest> fields = const {
     #targetUri: _f$targetUri,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeCallReferRequest _instantiate(DecodingData data) {
     return RealtimeCallReferRequest(targetUri: data.dec(_f$targetUri));

@@ -4,10 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_response_mcp_call_arguments_done.mapper.dart';
 
 /// Returned when MCP tool call arguments are finalized during response generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseMcpCallArgumentsDone with RealtimeServerEventResponseMcpCallArgumentsDoneMappable {
   const RealtimeServerEventResponseMcpCallArgumentsDone({
     required this.eventId,

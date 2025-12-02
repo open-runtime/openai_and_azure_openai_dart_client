@@ -31,6 +31,10 @@ class AssistantsApiResponseFormatOptionUnionMapper
   @override
   final MappableFields<AssistantsApiResponseFormatOptionUnion> fields =
       const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnion _instantiate(
     DecodingData data,
@@ -115,6 +119,10 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatTextMapper
   @override
   final MappableFields<AssistantsApiResponseFormatOptionUnionResponseFormatText>
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionResponseFormatText _instantiate(
     DecodingData data,
@@ -331,6 +339,10 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatJsonObjectMapper
     AssistantsApiResponseFormatOptionUnionResponseFormatJsonObject
   >
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionResponseFormatJsonObject
   _instantiate(DecodingData data) {
@@ -558,6 +570,7 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatJsonSchemaMapper
   _f$responseFormatJsonSchemaJsonSchema = Field(
     'responseFormatJsonSchemaJsonSchema',
     _$responseFormatJsonSchemaJsonSchema,
+    key: r'json_schema',
   );
 
   @override
@@ -568,6 +581,10 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatJsonSchemaMapper
     #type: _f$type,
     #responseFormatJsonSchemaJsonSchema: _f$responseFormatJsonSchemaJsonSchema,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionResponseFormatJsonSchema
   _instantiate(DecodingData data) {
@@ -816,6 +833,10 @@ class AssistantsApiResponseFormatOptionUnionVariantStringMapper
   @override
   final MappableFields<AssistantsApiResponseFormatOptionUnionVariantString>
   fields = const {#value: _f$value};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionVariantString _instantiate(
     DecodingData data,

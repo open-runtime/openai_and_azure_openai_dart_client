@@ -48,6 +48,10 @@ class ElasticsearchChatExtensionConfigurationMapper
     #type: _f$type,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ElasticsearchChatExtensionConfiguration _instantiate(
     DecodingData data,

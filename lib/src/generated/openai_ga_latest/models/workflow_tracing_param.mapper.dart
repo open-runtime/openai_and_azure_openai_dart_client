@@ -32,6 +32,10 @@ class WorkflowTracingParamMapper extends ClassMapperBase<WorkflowTracingParam> {
   final MappableFields<WorkflowTracingParam> fields = const {
     #enabled: _f$enabled,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WorkflowTracingParam _instantiate(DecodingData data) {
     return WorkflowTracingParam(enabled: data.dec(_f$enabled));

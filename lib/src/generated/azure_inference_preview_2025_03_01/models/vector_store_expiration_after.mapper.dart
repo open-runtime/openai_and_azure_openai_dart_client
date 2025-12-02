@@ -44,6 +44,10 @@ class VectorStoreExpirationAfterMapper
     #anchor: _f$anchor,
     #days: _f$days,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreExpirationAfter _instantiate(DecodingData data) {
     return VectorStoreExpirationAfter(

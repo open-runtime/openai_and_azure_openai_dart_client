@@ -9,7 +9,7 @@ import 'compute_type.dart';
 part 'job_compute.mapper.dart';
 
 /// The compute settings of the job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class JobCompute with JobComputeMappable {
   const JobCompute({
     required this.kind,

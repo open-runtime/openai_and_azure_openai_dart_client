@@ -40,6 +40,10 @@ class ResponseReasoningSummaryPartAddedEventPartMapper
   @override
   final MappableFields<ResponseReasoningSummaryPartAddedEventPart> fields =
       const {#type: _f$type, #text: _f$text};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseReasoningSummaryPartAddedEventPart _instantiate(
     DecodingData data,

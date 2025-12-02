@@ -39,6 +39,10 @@ class AuditLogActorUserMapper extends ClassMapperBase<AuditLogActorUser> {
     #id: _f$id,
     #email: _f$email,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogActorUser _instantiate(DecodingData data) {
     return AuditLogActorUser(id: data.dec(_f$id), email: data.dec(_f$email));

@@ -46,7 +46,7 @@ class CompletionsCreateResponseChoicesMapper
   _f$completionsCreateResponseChoicesLogprobs = Field(
     'completionsCreateResponseChoicesLogprobs',
     _$completionsCreateResponseChoicesLogprobs,
-    key: r'CompletionsCreateResponseChoicesLogprobs',
+    key: r'logprobs',
     opt: true,
   );
   static String? _$finishReason(CompletionsCreateResponseChoices v) =>
@@ -76,6 +76,10 @@ class CompletionsCreateResponseChoicesMapper
     #finishReason: _f$finishReason,
     #contentFilterResults: _f$contentFilterResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionsCreateResponseChoices _instantiate(DecodingData data) {
     return CompletionsCreateResponseChoices(

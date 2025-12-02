@@ -10,17 +10,18 @@ import 'realtime_function_tool.dart';
 import 'realtime_session_include_include.dart';
 import 'realtime_session_input_audio_format_input_audio_format.dart';
 import 'realtime_session_input_audio_noise_reduction.dart';
+import 'realtime_session_max_response_output_tokens_union.dart';
 import 'realtime_session_model_model.dart';
 import 'realtime_session_object_object_enum.dart';
 import 'realtime_session_output_audio_format_output_audio_format.dart';
-import 'realtime_session_tracing_tracing_union.dart';
+import 'realtime_session_tracing_union.dart';
 import 'realtime_turn_detection.dart';
 import 'voice_ids_shared.dart';
 
 part 'realtime_session.mapper.dart';
 
 /// Realtime session object for the beta interface.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSession with RealtimeSessionMappable {
   const RealtimeSession({
     this.inputAudioFormat = RealtimeSessionInputAudioFormatInputAudioFormat.pcm16,
@@ -59,17 +60,18 @@ class RealtimeSession with RealtimeSessionMappable {
   final dynamic? modalities;
   final RealtimeSessionModelModel? model;
   final String? instructions;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
   @MappableField(key: 'input_audio_transcription')
   final AudioTranscription? inputAudioTranscription;
   @MappableField(key: 'turn_detection')
   final RealtimeTurnDetection? turnDetection;
-  @MappableField(key: 'RealtimeSessionInputAudioNoiseReduction')
+  @MappableField(key: 'input_audio_noise_reduction')
   final RealtimeSessionInputAudioNoiseReduction? realtimeSessionInputAudioNoiseReduction;
-  final RealtimeSessionTracingTracingUnion? tracing;
+  final RealtimeSessionTracingUnion? tracing;
   final List<RealtimeFunctionTool>? tools;
-  @MappableField(key: 'max_response_output_tokens')
-  final String? maxResponseOutputTokens;
+  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionMaxResponseOutputTokensUnionHook())
+  final RealtimeSessionMaxResponseOutputTokensUnion? maxResponseOutputTokens;
   @MappableField(key: 'expires_at')
   final int? expiresAt;
   final Prompt? prompt;

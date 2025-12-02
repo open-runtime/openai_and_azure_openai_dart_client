@@ -35,7 +35,7 @@ class AuditLogInviteSentMapper extends ClassMapperBase<AuditLogInviteSent> {
   _f$auditLogInviteSentData = Field(
     'auditLogInviteSentData',
     _$auditLogInviteSentData,
-    key: r'AuditLogInviteSentData',
+    key: r'data',
     opt: true,
   );
 
@@ -44,6 +44,10 @@ class AuditLogInviteSentMapper extends ClassMapperBase<AuditLogInviteSent> {
     #id: _f$id,
     #auditLogInviteSentData: _f$auditLogInviteSentData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogInviteSent _instantiate(DecodingData data) {
     return AuditLogInviteSent(

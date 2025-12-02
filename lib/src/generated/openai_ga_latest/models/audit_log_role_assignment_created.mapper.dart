@@ -59,6 +59,10 @@ class AuditLogRoleAssignmentCreatedMapper
     #resourceId: _f$resourceId,
     #resourceType: _f$resourceType,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRoleAssignmentCreated _instantiate(DecodingData data) {
     return AuditLogRoleAssignmentCreated(

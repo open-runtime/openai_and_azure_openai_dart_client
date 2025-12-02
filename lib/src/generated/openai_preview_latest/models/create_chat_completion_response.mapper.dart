@@ -87,6 +87,10 @@ class CreateChatCompletionResponseMapper
     #systemFingerprint: _f$systemFingerprint,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionResponse _instantiate(DecodingData data) {
     return CreateChatCompletionResponse(

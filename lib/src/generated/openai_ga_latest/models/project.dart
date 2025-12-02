@@ -10,7 +10,7 @@ import 'project_status_status.dart';
 part 'project.mapper.dart';
 
 /// Represents an individual project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Project with ProjectMappable {
   const Project({
     required this.id,

@@ -36,6 +36,10 @@ class ChatCompletionStreamOptionsMapper
   final MappableFields<ChatCompletionStreamOptions> fields = const {
     #includeUsage: _f$includeUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionStreamOptions _instantiate(DecodingData data) {
     return ChatCompletionStreamOptions(includeUsage: data.dec(_f$includeUsage));

@@ -37,7 +37,7 @@ class CreateAssistantRequestToolResourcesMapper
   _f$createAssistantRequestToolResourcesCodeInterpreter = Field(
     'createAssistantRequestToolResourcesCodeInterpreter',
     _$createAssistantRequestToolResourcesCodeInterpreter,
-    key: r'CreateAssistantRequestToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static CreateAssistantRequestToolResourcesFileSearch?
@@ -51,7 +51,7 @@ class CreateAssistantRequestToolResourcesMapper
   _f$createAssistantRequestToolResourcesFileSearch = Field(
     'createAssistantRequestToolResourcesFileSearch',
     _$createAssistantRequestToolResourcesFileSearch,
-    key: r'CreateAssistantRequestToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -62,6 +62,10 @@ class CreateAssistantRequestToolResourcesMapper
     #createAssistantRequestToolResourcesFileSearch:
         _f$createAssistantRequestToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateAssistantRequestToolResources _instantiate(DecodingData data) {
     return CreateAssistantRequestToolResources(

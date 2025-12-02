@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_named_tool_choice_custom_custom.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionNamedToolChoiceCustomCustom with ChatCompletionNamedToolChoiceCustomCustomMappable {
   const ChatCompletionNamedToolChoiceCustomCustom({
     required this.name,

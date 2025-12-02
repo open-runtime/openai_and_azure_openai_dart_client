@@ -12,7 +12,7 @@ part 'webhook_response_failed.mapper.dart';
 
 /// Sent when a background response has failed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseFailed with WebhookResponseFailedMappable {
   const WebhookResponseFailed({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookResponseFailed with WebhookResponseFailedMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookResponseFailedData')
+  @MappableField(key: 'data')
   final WebhookResponseFailedData webhookResponseFailedData;
   final WebhookResponseFailedTypeType type;
   @MappableField(key: 'object')

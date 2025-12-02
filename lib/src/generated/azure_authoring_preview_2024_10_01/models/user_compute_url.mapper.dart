@@ -62,6 +62,10 @@ class UserComputeUrlMapper extends ClassMapperBase<UserComputeUrl> {
     #chunking: _f$chunking,
     #embeddings: _f$embeddings,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserComputeUrl _instantiate(DecodingData data) {
     return UserComputeUrl(

@@ -9,13 +9,14 @@ import 'image_gen_completed_event_output_format_output_format.dart';
 import 'image_gen_completed_event_quality_quality.dart';
 import 'image_gen_completed_event_size_size.dart';
 import 'image_gen_completed_event_type_type.dart';
+import 'image_gen_stream_event.dart';
 import 'images_usage.dart';
 
 part 'image_gen_completed_event.mapper.dart';
 
 /// Emitted when image generation has completed and the final image is available.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenCompletedEvent with ImageGenCompletedEventMappable {
   const ImageGenCompletedEvent({
     required this.type,

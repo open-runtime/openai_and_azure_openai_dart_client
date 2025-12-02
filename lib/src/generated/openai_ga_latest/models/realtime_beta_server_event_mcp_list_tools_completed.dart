@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_mcp_list_tools_completed.mapper.dart';
 
 /// Returned when listing MCP tools has completed for an item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventMcpListToolsCompleted with RealtimeBetaServerEventMcpListToolsCompletedMappable {
   const RealtimeBetaServerEventMcpListToolsCompleted({
     required this.eventId,

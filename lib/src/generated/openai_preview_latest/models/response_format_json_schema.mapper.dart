@@ -40,7 +40,7 @@ class ResponseFormatJsonSchemaMapper
   _f$responseFormatJsonSchemaJsonSchema = Field(
     'responseFormatJsonSchemaJsonSchema',
     _$responseFormatJsonSchemaJsonSchema,
-    key: r'ResponseFormatJsonSchemaJsonSchema',
+    key: r'json_schema',
   );
 
   @override
@@ -48,6 +48,10 @@ class ResponseFormatJsonSchemaMapper
     #type: _f$type,
     #responseFormatJsonSchemaJsonSchema: _f$responseFormatJsonSchemaJsonSchema,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatJsonSchema _instantiate(DecodingData data) {
     return ResponseFormatJsonSchema(

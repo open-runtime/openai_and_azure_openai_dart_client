@@ -16,7 +16,7 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
       MapperContainer.globals.use(_instance = WebSearchToolCallMapper._());
       WebSearchToolCallTypeTypeMapper.ensureInitialized();
       WebSearchToolCallStatusStatusMapper.ensureInitialized();
-      WebSearchToolCallActionActionUnionMapper.ensureInitialized();
+      WebSearchToolCallActionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -33,9 +33,8 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
       v.status;
   static const Field<WebSearchToolCall, WebSearchToolCallStatusStatus>
   _f$status = Field('status', _$status);
-  static WebSearchToolCallActionActionUnion _$action(WebSearchToolCall v) =>
-      v.action;
-  static const Field<WebSearchToolCall, WebSearchToolCallActionActionUnion>
+  static WebSearchToolCallActionUnion _$action(WebSearchToolCall v) => v.action;
+  static const Field<WebSearchToolCall, WebSearchToolCallActionUnion>
   _f$action = Field('action', _$action);
 
   @override
@@ -45,6 +44,10 @@ class WebSearchToolCallMapper extends ClassMapperBase<WebSearchToolCall> {
     #status: _f$status,
     #action: _f$action,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchToolCall _instantiate(DecodingData data) {
     return WebSearchToolCall(
@@ -126,17 +129,17 @@ abstract class WebSearchToolCallCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  WebSearchToolCallActionActionUnionCopyWith<
+  WebSearchToolCallActionUnionCopyWith<
     $R,
-    WebSearchToolCallActionActionUnion,
-    WebSearchToolCallActionActionUnion
+    WebSearchToolCallActionUnion,
+    WebSearchToolCallActionUnion
   >
   get action;
   $R call({
     String? id,
     WebSearchToolCallTypeType? type,
     WebSearchToolCallStatusStatus? status,
-    WebSearchToolCallActionActionUnion? action,
+    WebSearchToolCallActionUnion? action,
   });
   WebSearchToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -152,10 +155,10 @@ class _WebSearchToolCallCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WebSearchToolCall> $mapper =
       WebSearchToolCallMapper.ensureInitialized();
   @override
-  WebSearchToolCallActionActionUnionCopyWith<
+  WebSearchToolCallActionUnionCopyWith<
     $R,
-    WebSearchToolCallActionActionUnion,
-    WebSearchToolCallActionActionUnion
+    WebSearchToolCallActionUnion,
+    WebSearchToolCallActionUnion
   >
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
@@ -163,7 +166,7 @@ class _WebSearchToolCallCopyWithImpl<$R, $Out>
     String? id,
     WebSearchToolCallTypeType? type,
     WebSearchToolCallStatusStatus? status,
-    WebSearchToolCallActionActionUnion? action,
+    WebSearchToolCallActionUnion? action,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chat_session_history.mapper.dart';
 
 /// History retention preferences returned for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionHistory with ChatSessionHistoryMappable {
   const ChatSessionHistory({
     required this.enabled,

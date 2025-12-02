@@ -12,7 +12,7 @@ import 'prompt_filter_results.dart';
 
 part 'create_chat_completion_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
   const CreateChatCompletionResponse({
     required this.id,

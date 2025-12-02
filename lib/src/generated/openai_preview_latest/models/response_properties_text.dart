@@ -8,7 +8,7 @@ import 'text_response_format_configuration.dart';
 
 part 'response_properties_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponsePropertiesText with ResponsePropertiesTextMappable {
   const ResponsePropertiesText({
     this.format,

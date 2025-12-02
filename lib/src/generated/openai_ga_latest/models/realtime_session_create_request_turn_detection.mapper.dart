@@ -59,6 +59,10 @@ class RealtimeSessionCreateRequestTurnDetectionMapper
         #prefixPaddingMs: _f$prefixPaddingMs,
         #silenceDurationMs: _f$silenceDurationMs,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateRequestTurnDetection _instantiate(
     DecodingData data,

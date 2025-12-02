@@ -18,7 +18,7 @@ part 'eval.mapper.dart';
 ///  - See how well my chatbot handles customer support.
 ///  - Check if o3-mini is better at my usecase than gpt-4o.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Eval with EvalMappable {
   const Eval({
     required this.createdAt,

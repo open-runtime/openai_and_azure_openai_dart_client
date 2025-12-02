@@ -9,7 +9,7 @@ import 'code_interpreter_output_image_type_type.dart';
 part 'code_interpreter_output_image.mapper.dart';
 
 /// The image output from the code interpreter.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterOutputImage with CodeInterpreterOutputImageMappable {
   const CodeInterpreterOutputImage({
     required this.url,

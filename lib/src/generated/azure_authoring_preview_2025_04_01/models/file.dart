@@ -11,7 +11,7 @@ import 'type_discriminator.dart';
 part 'file.mapper.dart';
 
 /// A file is a document usable for training and validation. It can also be a service generated document with result details.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class File with FileMappable {
   const File({
     required this.purpose,

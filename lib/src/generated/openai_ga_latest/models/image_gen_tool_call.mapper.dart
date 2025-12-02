@@ -44,6 +44,10 @@ class ImageGenToolCallMapper extends ClassMapperBase<ImageGenToolCall> {
     #status: _f$status,
     #result: _f$result,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenToolCall _instantiate(DecodingData data) {
     return ImageGenToolCall(

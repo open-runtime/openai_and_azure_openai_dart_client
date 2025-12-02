@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'azure_machine_learning_index_chat_extension_parameters_authentication_authentication_union.dart';
+import 'azure_machine_learning_index_chat_extension_parameters_authentication_union.dart';
 import 'on_your_data_context_property.dart';
 
 part 'azure_machine_learning_index_chat_extension_parameters.mapper.dart';
 
 /// Parameters for the Azure Machine Learning vector index chat extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureMachineLearningIndexChatExtensionParameters with AzureMachineLearningIndexChatExtensionParametersMappable {
   const AzureMachineLearningIndexChatExtensionParameters({
     required this.authentication,
@@ -27,7 +27,7 @@ class AzureMachineLearningIndexChatExtensionParameters with AzureMachineLearning
     this.includeContexts,
   });
 
-  final AzureMachineLearningIndexChatExtensionParametersAuthenticationAuthenticationUnion authentication;
+  final AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion authentication;
   @MappableField(key: 'project_resource_id')
   final String projectResourceId;
   final String name;

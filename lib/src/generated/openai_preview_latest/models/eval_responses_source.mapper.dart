@@ -120,6 +120,10 @@ class EvalResponsesSourceMapper extends ClassMapperBase<EvalResponsesSource> {
     #users: _f$users,
     #allowParallelToolCalls: _f$allowParallelToolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalResponsesSource _instantiate(DecodingData data) {
     return EvalResponsesSource(

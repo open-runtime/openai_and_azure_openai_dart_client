@@ -48,6 +48,10 @@ class EvaluationDeleteResponseMapper
     #evalId: _f$evalId,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvaluationDeleteResponse _instantiate(DecodingData data) {
     return EvaluationDeleteResponse(

@@ -52,7 +52,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
   _f$runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter = Field(
     'runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter',
     _$runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
-    key: r'RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
 
@@ -65,6 +65,10 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
         #runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter:
             _f$runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsCodeObject _instantiate(
     DecodingData data,

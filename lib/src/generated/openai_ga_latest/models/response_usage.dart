@@ -12,7 +12,7 @@ part 'response_usage.mapper.dart';
 /// Represents token usage details including input tokens, output tokens,.
 /// a breakdown of output tokens, and the total tokens used.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseUsage with ResponseUsageMappable {
   const ResponseUsage({
     required this.inputTokens,
@@ -24,11 +24,11 @@ class ResponseUsage with ResponseUsageMappable {
 
   @MappableField(key: 'input_tokens')
   final int inputTokens;
-  @MappableField(key: 'ResponseUsageInputTokensDetails')
+  @MappableField(key: 'input_tokens_details')
   final ResponseUsageInputTokensDetails responseUsageInputTokensDetails;
   @MappableField(key: 'output_tokens')
   final int outputTokens;
-  @MappableField(key: 'ResponseUsageOutputTokensDetails')
+  @MappableField(key: 'output_tokens_details')
   final ResponseUsageOutputTokensDetails responseUsageOutputTokensDetails;
   @MappableField(key: 'total_tokens')
   final int totalTokens;

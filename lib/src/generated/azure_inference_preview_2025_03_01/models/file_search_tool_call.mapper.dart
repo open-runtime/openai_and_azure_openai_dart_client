@@ -51,6 +51,10 @@ class FileSearchToolCallMapper extends ClassMapperBase<FileSearchToolCall> {
     #queries: _f$queries,
     #results: _f$results,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchToolCall _instantiate(DecodingData data) {
     return FileSearchToolCall(

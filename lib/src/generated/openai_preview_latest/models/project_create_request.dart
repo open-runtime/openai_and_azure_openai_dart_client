@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'project_create_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectCreateRequest with ProjectCreateRequestMappable {
   const ProjectCreateRequest({
     required this.name,

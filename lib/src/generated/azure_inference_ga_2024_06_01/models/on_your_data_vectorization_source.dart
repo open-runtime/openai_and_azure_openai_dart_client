@@ -9,7 +9,7 @@ import 'on_your_data_vectorization_source_type.dart';
 part 'on_your_data_vectorization_source.mapper.dart';
 
 /// An abstract representation of a vectorization source for Azure OpenAI On Your Data with vector search.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataVectorizationSource with OnYourDataVectorizationSourceMappable {
   const OnYourDataVectorizationSource({
     required this.type,

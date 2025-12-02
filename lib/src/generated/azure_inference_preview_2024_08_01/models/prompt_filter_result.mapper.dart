@@ -45,6 +45,10 @@ class PromptFilterResultMapper extends ClassMapperBase<PromptFilterResult> {
     #promptIndex: _f$promptIndex,
     #contentFilterResults: _f$contentFilterResults,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PromptFilterResult _instantiate(DecodingData data) {
     return PromptFilterResult(

@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_response_output_item_added.mapper.dart';
 
 /// Returned when a new Item is created during Response generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseOutputItemAdded with RealtimeServerEventResponseOutputItemAddedMappable {
   const RealtimeServerEventResponseOutputItemAdded({
     required this.eventId,

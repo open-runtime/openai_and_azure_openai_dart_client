@@ -8,7 +8,7 @@ import 'run_object_incomplete_details_reason_reason.dart';
 
 part 'run_object_incomplete_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectIncompleteDetails with RunObjectIncompleteDetailsMappable {
   const RunObjectIncompleteDetails({
     this.reason,

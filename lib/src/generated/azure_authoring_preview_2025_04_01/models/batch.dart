@@ -12,7 +12,7 @@ import 'type_discriminator.dart';
 part 'batch.mapper.dart';
 
 /// Defines the values of a batch.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Batch with BatchMappable {
   const Batch({
     required this.id,

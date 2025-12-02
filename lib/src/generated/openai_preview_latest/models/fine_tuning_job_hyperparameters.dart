@@ -4,22 +4,26 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'fine_tuning_job_hyperparameters_batch_size_union.dart';
+import 'fine_tuning_job_hyperparameters_learning_rate_multiplier_union.dart';
+import 'fine_tuning_job_hyperparameters_n_epochs_union.dart';
+
 part 'fine_tuning_job_hyperparameters.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobHyperparameters with FineTuningJobHyperparametersMappable {
   const FineTuningJobHyperparameters({
-    this.batchSize = 'auto',
-    this.learningRateMultiplier = 'auto',
-    this.nEpochs = 'auto',
+    this.batchSize = const FineTuningJobHyperparametersBatchSizeUnionVariantString(value: 'auto'),
+    this.learningRateMultiplier = const FineTuningJobHyperparametersLearningRateMultiplierUnionVariantString(value: 'auto'),
+    this.nEpochs = const FineTuningJobHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
-  @MappableField(key: 'batch_size')
-  final String batchSize;
-  @MappableField(key: 'learning_rate_multiplier')
-  final String learningRateMultiplier;
-  @MappableField(key: 'n_epochs')
-  final String nEpochs;
+  @MappableField(key: 'batch_size', hook: const FineTuningJobHyperparametersBatchSizeUnionHook())
+  final FineTuningJobHyperparametersBatchSizeUnion batchSize;
+  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook())
+  final FineTuningJobHyperparametersLearningRateMultiplierUnion learningRateMultiplier;
+  @MappableField(key: 'n_epochs', hook: const FineTuningJobHyperparametersNEpochsUnionHook())
+  final FineTuningJobHyperparametersNEpochsUnion nEpochs;
 
   static FineTuningJobHyperparameters fromJson(Map<String, dynamic> json) => FineTuningJobHyperparametersMapper.fromJson(json);
 

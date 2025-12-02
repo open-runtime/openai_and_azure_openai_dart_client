@@ -60,6 +60,10 @@ class ResponseCustomToolCallInputDoneEventMapper
     #itemId: _f$itemId,
     #input: _f$input,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCustomToolCallInputDoneEvent _instantiate(DecodingData data) {
     return ResponseCustomToolCallInputDoneEvent(

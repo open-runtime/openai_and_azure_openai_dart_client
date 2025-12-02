@@ -71,6 +71,10 @@ class LocalShellExecActionMapper extends ClassMapperBase<LocalShellExecAction> {
     #user: _f$user,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LocalShellExecAction _instantiate(DecodingData data) {
     return LocalShellExecAction(

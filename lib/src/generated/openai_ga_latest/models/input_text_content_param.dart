@@ -9,7 +9,7 @@ import 'input_text_content_param_type_type.dart';
 part 'input_text_content_param.mapper.dart';
 
 /// A text input to the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputTextContentParam with InputTextContentParamMappable {
   const InputTextContentParam({
     required this.text,

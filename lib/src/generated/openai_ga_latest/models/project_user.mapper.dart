@@ -54,6 +54,10 @@ class ProjectUserMapper extends ClassMapperBase<ProjectUser> {
     #role: _f$role,
     #addedAt: _f$addedAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectUser _instantiate(DecodingData data) {
     return ProjectUser(

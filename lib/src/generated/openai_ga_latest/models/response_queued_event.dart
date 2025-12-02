@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_model.dart';
 import 'response_queued_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_queued_event.mapper.dart';
 
 /// Emitted when a response is queued and waiting to be processed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseQueuedEvent with ResponseQueuedEventMappable {
   const ResponseQueuedEvent({
     required this.type,

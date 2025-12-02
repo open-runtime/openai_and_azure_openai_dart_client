@@ -99,6 +99,10 @@ class RealtimeConversationItemWithReferenceMapper
     #arguments: _f$arguments,
     #output: _f$output,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemWithReference _instantiate(DecodingData data) {
     return RealtimeConversationItemWithReference(

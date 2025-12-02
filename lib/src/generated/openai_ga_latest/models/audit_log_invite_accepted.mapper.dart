@@ -31,6 +31,10 @@ class AuditLogInviteAcceptedMapper
 
   @override
   final MappableFields<AuditLogInviteAccepted> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogInviteAccepted _instantiate(DecodingData data) {
     return AuditLogInviteAccepted(id: data.dec(_f$id));

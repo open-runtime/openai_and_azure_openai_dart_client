@@ -37,6 +37,10 @@ class TextContentMapper extends ClassMapperBase<TextContent> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TextContent _instantiate(DecodingData data) {
     return TextContent(text: data.dec(_f$text), type: data.dec(_f$type));

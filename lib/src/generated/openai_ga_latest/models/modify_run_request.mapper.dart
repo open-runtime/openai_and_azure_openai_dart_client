@@ -33,6 +33,10 @@ class ModifyRunRequestMapper extends ClassMapperBase<ModifyRunRequest> {
   final MappableFields<ModifyRunRequest> fields = const {
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyRunRequest _instantiate(DecodingData data) {
     return ModifyRunRequest(metadata: data.dec(_f$metadata));

@@ -8,7 +8,7 @@ import 'audit_log_organization_updated_changes_requested_settings.dart';
 
 part 'audit_log_organization_updated_changes_requested.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogOrganizationUpdatedChangesRequested with AuditLogOrganizationUpdatedChangesRequestedMappable {
   const AuditLogOrganizationUpdatedChangesRequested({
     this.title,
@@ -20,7 +20,7 @@ class AuditLogOrganizationUpdatedChangesRequested with AuditLogOrganizationUpdat
   final String? title;
   final String? description;
   final String? name;
-  @MappableField(key: 'AuditLogOrganizationUpdatedChangesRequestedSettings')
+  @MappableField(key: 'settings')
   final AuditLogOrganizationUpdatedChangesRequestedSettings? auditLogOrganizationUpdatedChangesRequestedSettings;
 
   static AuditLogOrganizationUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogOrganizationUpdatedChangesRequestedMapper.fromJson(json);

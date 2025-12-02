@@ -48,6 +48,10 @@ class RealtimeServerEventResponseDoneMapper
     #type: _f$type,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseDone _instantiate(DecodingData data) {
     return RealtimeServerEventResponseDone(

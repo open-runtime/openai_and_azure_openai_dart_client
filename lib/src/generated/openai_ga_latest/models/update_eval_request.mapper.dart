@@ -40,6 +40,10 @@ class UpdateEvalRequestMapper extends ClassMapperBase<UpdateEvalRequest> {
     #name: _f$name,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateEvalRequest _instantiate(DecodingData data) {
     return UpdateEvalRequest(

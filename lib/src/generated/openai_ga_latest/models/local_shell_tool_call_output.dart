@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'item_resource.dart';
 import 'local_shell_tool_call_output_status_status.dart';
 import 'local_shell_tool_call_output_type_type.dart';
 
@@ -11,7 +13,7 @@ part 'local_shell_tool_call_output.mapper.dart';
 
 /// The output of a local shell tool call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LocalShellToolCallOutput with LocalShellToolCallOutputMappable {
   const LocalShellToolCallOutput({
     required this.type,

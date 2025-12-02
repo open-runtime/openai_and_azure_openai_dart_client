@@ -13,7 +13,7 @@ part 'realtime_beta_server_event_conversation_item_truncated.mapper.dart';
 /// This action will truncate the audio and remove the server-side text transcript .
 /// to ensure there is no text in the context that hasn't been heard by the user.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemTruncated with RealtimeBetaServerEventConversationItemTruncatedMappable {
   const RealtimeBetaServerEventConversationItemTruncated({
     required this.eventId,

@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_incomplete_event_type_type.dart';
 import 'response_model.dart';
+import 'response_stream_event.dart';
 
 part 'response_incomplete_event.mapper.dart';
 
 /// An event that is emitted when a response finishes as incomplete.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseIncompleteEvent with ResponseIncompleteEventMappable {
   const ResponseIncompleteEvent({
     required this.type,

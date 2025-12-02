@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_json_logprobs.dart';
-import 'create_transcription_response_json_usage_usage_union.dart';
+import 'create_transcription_response_json_usage_union.dart';
 
 part 'create_transcription_response_json.mapper.dart';
 
 /// Represents a transcription response returned by model, based on the provided input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseJson with CreateTranscriptionResponseJsonMappable {
   const CreateTranscriptionResponseJson({
     required this.text,
@@ -20,7 +20,7 @@ class CreateTranscriptionResponseJson with CreateTranscriptionResponseJsonMappab
 
   final String text;
   final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
-  final CreateTranscriptionResponseJsonUsageUsageUnion? usage;
+  final CreateTranscriptionResponseJsonUsageUnion? usage;
 
   static CreateTranscriptionResponseJson fromJson(Map<String, dynamic> json) => CreateTranscriptionResponseJsonMapper.fromJson(json);
 

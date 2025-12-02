@@ -12,7 +12,7 @@ part 'webhook_fine_tuning_job_succeeded.mapper.dart';
 
 /// Sent when a fine-tuning job has succeeded.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookFineTuningJobSucceeded with WebhookFineTuningJobSucceededMappable {
   const WebhookFineTuningJobSucceeded({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookFineTuningJobSucceeded with WebhookFineTuningJobSucceededMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookFineTuningJobSucceededData')
+  @MappableField(key: 'data')
   final WebhookFineTuningJobSucceededData webhookFineTuningJobSucceededData;
   final WebhookFineTuningJobSucceededTypeType type;
   @MappableField(key: 'object')

@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'model_list.mapper.dart';
 
 /// Represents a list of models.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelList with ModelListMappable {
   const ModelList({
     this.objectField,

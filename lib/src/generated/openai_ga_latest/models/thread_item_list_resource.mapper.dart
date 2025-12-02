@@ -63,6 +63,10 @@ class ThreadItemListResourceMapper
     #hasMore: _f$hasMore,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadItemListResource _instantiate(DecodingData data) {
     return ThreadItemListResource(

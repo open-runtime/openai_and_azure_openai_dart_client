@@ -55,6 +55,10 @@ class InputFileMapper extends ClassMapperBase<InputFile> {
     #filename: _f$filename,
     #fileData: _f$fileData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputFile _instantiate(DecodingData data) {
     return InputFile(

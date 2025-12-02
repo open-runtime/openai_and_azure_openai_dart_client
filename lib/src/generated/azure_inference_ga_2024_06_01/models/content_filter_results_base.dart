@@ -11,7 +11,7 @@ import 'error_base.dart';
 part 'content_filter_results_base.mapper.dart';
 
 /// Information about the content filtering results.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterResultsBase with ContentFilterResultsBaseMappable {
   const ContentFilterResultsBase({
     this.sexual,

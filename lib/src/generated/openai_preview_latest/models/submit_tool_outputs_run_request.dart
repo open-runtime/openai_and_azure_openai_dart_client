@@ -8,7 +8,7 @@ import 'submit_tool_outputs_run_request_tool_outputs.dart';
 
 part 'submit_tool_outputs_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SubmitToolOutputsRunRequest with SubmitToolOutputsRunRequestMappable {
   const SubmitToolOutputsRunRequest({
     required this.toolOutputs,

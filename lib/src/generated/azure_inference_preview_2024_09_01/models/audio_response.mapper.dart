@@ -26,6 +26,10 @@ class AudioResponseMapper extends ClassMapperBase<AudioResponse> {
 
   @override
   final MappableFields<AudioResponse> fields = const {#text: _f$text};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AudioResponse _instantiate(DecodingData data) {
     return AudioResponse(text: data.dec(_f$text));

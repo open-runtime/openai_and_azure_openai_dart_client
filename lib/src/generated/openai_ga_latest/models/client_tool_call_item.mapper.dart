@@ -95,6 +95,10 @@ class ClientToolCallItemMapper extends ClassMapperBase<ClientToolCallItem> {
     #objectEnum: _f$objectEnum,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ClientToolCallItem _instantiate(DecodingData data) {
     return ClientToolCallItem(

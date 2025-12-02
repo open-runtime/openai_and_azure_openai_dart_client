@@ -42,6 +42,10 @@ class FileListMapper extends ClassMapperBase<FileList> {
     #objectField: _f$objectField,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileList _instantiate(DecodingData data) {
     return FileList(

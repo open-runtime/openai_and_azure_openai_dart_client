@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_text_annotations_file_path_object_file_path.dart';
 import 'message_content_text_annotations_file_path_object_type_type.dart';
+import 'text_annotation.dart';
 
 part 'message_content_text_annotations_file_path_object.mapper.dart';
 
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextAnnotationsFilePathObject with MessageContentTextAnnotationsFilePathObjectMappable {
   const MessageContentTextAnnotationsFilePathObject({
     required this.type,
@@ -22,7 +23,7 @@ class MessageContentTextAnnotationsFilePathObject with MessageContentTextAnnotat
 
   final MessageContentTextAnnotationsFilePathObjectTypeType type;
   final String text;
-  @MappableField(key: 'MessageContentTextAnnotationsFilePathObjectFilePath')
+  @MappableField(key: 'file_path')
   final MessageContentTextAnnotationsFilePathObjectFilePath messageContentTextAnnotationsFilePathObjectFilePath;
   @MappableField(key: 'start_index')
   final int startIndex;

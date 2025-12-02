@@ -8,7 +8,7 @@ import 'noise_reduction_type.dart';
 
 part 'realtime_transcription_session_create_request_input_audio_noise_reduction.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction with RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMappable {
   const RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction({
     this.type,

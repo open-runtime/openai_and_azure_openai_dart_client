@@ -78,6 +78,10 @@ class EvalStoredCompletionsSourceMapper
     #metadata: _f$metadata,
     #model: _f$model,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalStoredCompletionsSource _instantiate(DecodingData data) {
     return EvalStoredCompletionsSource(

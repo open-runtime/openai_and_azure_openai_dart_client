@@ -14,7 +14,7 @@ import 'images_response_size_size.dart';
 part 'images_response.mapper.dart';
 
 /// The response from the image generation endpoint.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesResponse with ImagesResponseMappable {
   const ImagesResponse({
     required this.created,

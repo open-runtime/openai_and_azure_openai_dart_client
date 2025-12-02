@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'assistants_named_tool_choice_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsNamedToolChoiceFunction with AssistantsNamedToolChoiceFunctionMappable {
   const AssistantsNamedToolChoiceFunction({
     required this.name,

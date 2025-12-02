@@ -40,6 +40,10 @@ class WebSearchActionOpenPageMapper
     #type: _f$type,
     #url: _f$url,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchActionOpenPage _instantiate(DecodingData data) {
     return WebSearchActionOpenPage(

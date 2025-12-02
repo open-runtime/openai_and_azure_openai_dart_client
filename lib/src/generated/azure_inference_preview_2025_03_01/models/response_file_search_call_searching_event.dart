@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_file_search_call_searching_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_file_search_call_searching_event.mapper.dart';
 
 /// Emitted when a file search is currently searching.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingEventMappable {
   const ResponseFileSearchCallSearchingEvent({
     required this.type,

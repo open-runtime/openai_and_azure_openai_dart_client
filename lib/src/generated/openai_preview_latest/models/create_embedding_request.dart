@@ -5,10 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_embedding_request_encoding_format_encoding_format.dart';
+import 'create_embedding_request_model_union.dart';
 
 part 'create_embedding_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEmbeddingRequest with CreateEmbeddingRequestMappable {
   const CreateEmbeddingRequest({
     required this.input,
@@ -19,7 +20,8 @@ class CreateEmbeddingRequest with CreateEmbeddingRequestMappable {
   });
 
   final String input;
-  final String model;
+  @MappableField(hook: const CreateEmbeddingRequestModelUnionHook())
+  final CreateEmbeddingRequestModelUnion model;
   final int? dimensions;
   final String? user;
   @MappableField(key: 'encoding_format')

@@ -45,6 +45,10 @@ class WebSearchActionSearchMapper
     #query: _f$query,
     #sources: _f$sources,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchActionSearch _instantiate(DecodingData data) {
     return WebSearchActionSearch(

@@ -33,7 +33,7 @@ class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
   _f$speechAudioDoneEventUsage = Field(
     'speechAudioDoneEventUsage',
     _$speechAudioDoneEventUsage,
-    key: r'SpeechAudioDoneEventUsage',
+    key: r'usage',
   );
 
   @override
@@ -41,6 +41,10 @@ class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
     #type: _f$type,
     #speechAudioDoneEventUsage: _f$speechAudioDoneEventUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SpeechAudioDoneEvent _instantiate(DecodingData data) {
     return SpeechAudioDoneEvent(

@@ -9,7 +9,7 @@ import 'content_filter_prompt_results.dart';
 part 'prompt_filter_result.mapper.dart';
 
 /// Content filtering results for a single prompt in the request.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PromptFilterResult with PromptFilterResultMappable {
   const PromptFilterResult({
     this.promptIndex,

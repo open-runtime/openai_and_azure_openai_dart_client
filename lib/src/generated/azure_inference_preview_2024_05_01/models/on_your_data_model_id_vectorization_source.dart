@@ -10,7 +10,7 @@ part 'on_your_data_model_id_vectorization_source.mapper.dart';
 
 /// The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based.
 /// on a search service model ID. Currently only supported by Elasticsearch®.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataModelIdVectorizationSource with OnYourDataModelIdVectorizationSourceMappable {
   const OnYourDataModelIdVectorizationSource({
     required this.type,

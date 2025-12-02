@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_conversation_item_input_audio_transcription_segment.mapper.dart';
 
 /// Returned when an input audio transcription segment is identified for an item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment with RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({
     required this.eventId,

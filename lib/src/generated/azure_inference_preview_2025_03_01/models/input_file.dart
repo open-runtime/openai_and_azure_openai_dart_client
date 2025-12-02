@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'input_content.dart';
 import 'input_file_type_type.dart';
 
 part 'input_file.mapper.dart';
 
 /// A file input to the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputFile with InputFileMappable {
   const InputFile({
     required this.type,

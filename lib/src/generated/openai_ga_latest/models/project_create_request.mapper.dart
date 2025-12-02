@@ -41,6 +41,10 @@ class ProjectCreateRequestMapper extends ClassMapperBase<ProjectCreateRequest> {
     #name: _f$name,
     #geography: _f$geography,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectCreateRequest _instantiate(DecodingData data) {
     return ProjectCreateRequest(

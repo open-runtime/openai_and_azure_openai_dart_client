@@ -18,6 +18,7 @@ class CreateThreadAndRunRequestMapper
         _instance = CreateThreadAndRunRequestMapper._(),
       );
       CreateThreadRequestMapper.ensureInitialized();
+      CreateThreadAndRunRequestModelUnionMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       CreateThreadAndRunRequestToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -55,11 +56,18 @@ class CreateThreadAndRunRequestMapper
   static CreateThreadRequest? _$thread(CreateThreadAndRunRequest v) => v.thread;
   static const Field<CreateThreadAndRunRequest, CreateThreadRequest> _f$thread =
       Field('thread', _$thread, opt: true);
-  static String? _$model(CreateThreadAndRunRequest v) => v.model;
-  static const Field<CreateThreadAndRunRequest, String> _f$model = Field(
+  static CreateThreadAndRunRequestModelUnion? _$model(
+    CreateThreadAndRunRequest v,
+  ) => v.model;
+  static const Field<
+    CreateThreadAndRunRequest,
+    CreateThreadAndRunRequestModelUnion
+  >
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
+    hook: const CreateThreadAndRunRequestModelUnionHook(),
   );
   static String? _$instructions(CreateThreadAndRunRequest v) => v.instructions;
   static const Field<CreateThreadAndRunRequest, String> _f$instructions = Field(
@@ -80,7 +88,7 @@ class CreateThreadAndRunRequestMapper
   _f$createThreadAndRunRequestToolResources = Field(
     'createThreadAndRunRequestToolResources',
     _$createThreadAndRunRequestToolResources,
-    key: r'CreateThreadAndRunRequestToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static Metadata? _$metadata(CreateThreadAndRunRequest v) => v.metadata;
@@ -177,6 +185,10 @@ class CreateThreadAndRunRequestMapper
     #parallelToolCalls: _f$parallelToolCalls,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequest _instantiate(DecodingData data) {
     return CreateThreadAndRunRequest(
@@ -277,6 +289,12 @@ abstract class CreateThreadAndRunRequestCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   CreateThreadRequestCopyWith<$R, CreateThreadRequest, CreateThreadRequest>?
   get thread;
+  CreateThreadAndRunRequestModelUnionCopyWith<
+    $R,
+    CreateThreadAndRunRequestModelUnion,
+    CreateThreadAndRunRequestModelUnion
+  >?
+  get model;
   ListCopyWith<
     $R,
     AssistantTool,
@@ -309,7 +327,7 @@ abstract class CreateThreadAndRunRequestCopyWith<
     num? temperature,
     num? topP,
     CreateThreadRequest? thread,
-    String? model,
+    CreateThreadAndRunRequestModelUnion? model,
     String? instructions,
     List<AssistantTool>? tools,
     CreateThreadAndRunRequestToolResources?
@@ -340,6 +358,13 @@ class _CreateThreadAndRunRequestCopyWithImpl<$R, $Out>
   @override
   CreateThreadRequestCopyWith<$R, CreateThreadRequest, CreateThreadRequest>?
   get thread => $value.thread?.copyWith.$chain((v) => call(thread: v));
+  @override
+  CreateThreadAndRunRequestModelUnionCopyWith<
+    $R,
+    CreateThreadAndRunRequestModelUnion,
+    CreateThreadAndRunRequestModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ListCopyWith<
     $R,

@@ -18,7 +18,7 @@ class CodeInterpreterToolCallMapper
         _instance = CodeInterpreterToolCallMapper._(),
       );
       CodeInterpreterToolCallStatusStatusMapper.ensureInitialized();
-      CodeInterpreterToolCallOutputsOutputsUnionMapper.ensureInitialized();
+      CodeInterpreterToolCallOutputsUnionMapper.ensureInitialized();
       CodeInterpreterToolCallTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -48,12 +48,12 @@ class CodeInterpreterToolCallMapper
     'code',
     _$code,
   );
-  static List<CodeInterpreterToolCallOutputsOutputsUnion>? _$outputs(
+  static List<CodeInterpreterToolCallOutputsUnion>? _$outputs(
     CodeInterpreterToolCall v,
   ) => v.outputs;
   static const Field<
     CodeInterpreterToolCall,
-    List<CodeInterpreterToolCallOutputsOutputsUnion>
+    List<CodeInterpreterToolCallOutputsUnion>
   >
   _f$outputs = Field('outputs', _$outputs);
   static CodeInterpreterToolCallTypeType _$type(CodeInterpreterToolCall v) =>
@@ -75,6 +75,10 @@ class CodeInterpreterToolCallMapper
     #outputs: _f$outputs,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CodeInterpreterToolCall _instantiate(DecodingData data) {
     return CodeInterpreterToolCall(
@@ -159,11 +163,11 @@ abstract class CodeInterpreterToolCallCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    CodeInterpreterToolCallOutputsOutputsUnion,
-    CodeInterpreterToolCallOutputsOutputsUnionCopyWith<
+    CodeInterpreterToolCallOutputsUnion,
+    CodeInterpreterToolCallOutputsUnionCopyWith<
       $R,
-      CodeInterpreterToolCallOutputsOutputsUnion,
-      CodeInterpreterToolCallOutputsOutputsUnion
+      CodeInterpreterToolCallOutputsUnion,
+      CodeInterpreterToolCallOutputsUnion
     >
   >?
   get outputs;
@@ -172,7 +176,7 @@ abstract class CodeInterpreterToolCallCopyWith<
     CodeInterpreterToolCallStatusStatus? status,
     String? containerId,
     String? code,
-    List<CodeInterpreterToolCallOutputsOutputsUnion>? outputs,
+    List<CodeInterpreterToolCallOutputsUnion>? outputs,
     CodeInterpreterToolCallTypeType? type,
   });
   CodeInterpreterToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -192,11 +196,11 @@ class _CodeInterpreterToolCallCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CodeInterpreterToolCallOutputsOutputsUnion,
-    CodeInterpreterToolCallOutputsOutputsUnionCopyWith<
+    CodeInterpreterToolCallOutputsUnion,
+    CodeInterpreterToolCallOutputsUnionCopyWith<
       $R,
-      CodeInterpreterToolCallOutputsOutputsUnion,
-      CodeInterpreterToolCallOutputsOutputsUnion
+      CodeInterpreterToolCallOutputsUnion,
+      CodeInterpreterToolCallOutputsUnion
     >
   >?
   get outputs => $value.outputs != null

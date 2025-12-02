@@ -9,16 +9,16 @@ import 'create_thread_and_run_request_without_stream_tool_resources_file_search.
 
 part 'create_thread_and_run_request_without_stream_tool_resources.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadAndRunRequestWithoutStreamToolResources with CreateThreadAndRunRequestWithoutStreamToolResourcesMappable {
   const CreateThreadAndRunRequestWithoutStreamToolResources({
     this.createThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter,
     this.createThreadAndRunRequestWithoutStreamToolResourcesFileSearch,
   });
 
-  @MappableField(key: 'CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter')
+  @MappableField(key: 'code_interpreter')
   final CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter? createThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter;
-  @MappableField(key: 'CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch')
+  @MappableField(key: 'file_search')
   final CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch? createThreadAndRunRequestWithoutStreamToolResourcesFileSearch;
 
   static CreateThreadAndRunRequestWithoutStreamToolResources fromJson(Map<String, dynamic> json) => CreateThreadAndRunRequestWithoutStreamToolResourcesMapper.fromJson(json);

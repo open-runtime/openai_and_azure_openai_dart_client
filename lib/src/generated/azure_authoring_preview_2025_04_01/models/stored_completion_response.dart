@@ -10,7 +10,7 @@ import 'usage.dart';
 
 part 'stored_completion_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionResponse with StoredCompletionResponseMappable {
   const StoredCompletionResponse({
     this.id,

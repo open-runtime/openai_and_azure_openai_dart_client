@@ -10,7 +10,7 @@ import 'run_step_delta_step_details_tool_calls_code_object_type_type.dart';
 part 'run_step_delta_step_details_tool_calls_code_object.mapper.dart';
 
 /// Details of the Code Interpreter tool call the run step was involved in.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsCodeObject with RunStepDeltaStepDetailsToolCallsCodeObjectMappable {
   const RunStepDeltaStepDetailsToolCallsCodeObject({
     required this.indexField,
@@ -23,7 +23,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObject with RunStepDeltaStepDetailsToo
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeObjectTypeType type;
   final String? id;
-  @MappableField(key: 'RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter')
+  @MappableField(key: 'code_interpreter')
   final RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
 
   static RunStepDeltaStepDetailsToolCallsCodeObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeObjectMapper.fromJson(json);

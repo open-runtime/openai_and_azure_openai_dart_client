@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_conversation_item_truncate_type_type.dart';
 
 part 'realtime_client_event_conversation_item_truncate.mapper.dart';
@@ -20,7 +21,7 @@ part 'realtime_client_event_conversation_item_truncate.mapper.dart';
 /// If successful, the server will respond with a `conversation.item.truncated` .
 /// event. .
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventConversationItemTruncate with RealtimeClientEventConversationItemTruncateMappable {
   const RealtimeClientEventConversationItemTruncate({
     required this.type,

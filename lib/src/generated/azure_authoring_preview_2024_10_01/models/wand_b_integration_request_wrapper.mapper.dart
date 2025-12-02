@@ -39,6 +39,10 @@ class WandBIntegrationRequestWrapperMapper
     #type: _f$type,
     #wandb: _f$wandb,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WandBIntegrationRequestWrapper _instantiate(DecodingData data) {
     return WandBIntegrationRequestWrapper(

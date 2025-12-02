@@ -69,6 +69,10 @@ class StoredCompletionListMapper extends ClassMapperBase<StoredCompletionList> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StoredCompletionList _instantiate(DecodingData data) {
     return StoredCompletionList(

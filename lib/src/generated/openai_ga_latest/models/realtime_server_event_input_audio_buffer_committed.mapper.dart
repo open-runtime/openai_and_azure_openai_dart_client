@@ -56,6 +56,10 @@ class RealtimeServerEventInputAudioBufferCommittedMapper
         #itemId: _f$itemId,
         #previousItemId: _f$previousItemId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventInputAudioBufferCommitted _instantiate(
     DecodingData data,

@@ -9,7 +9,7 @@ import 'project_api_key_list_response_object_object_enum.dart';
 
 part 'project_api_key_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKeyListResponse with ProjectApiKeyListResponseMappable {
   const ProjectApiKeyListResponse({
     required this.objectEnum,

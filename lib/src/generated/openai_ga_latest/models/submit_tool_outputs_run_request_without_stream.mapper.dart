@@ -36,6 +36,10 @@ class SubmitToolOutputsRunRequestWithoutStreamMapper
   @override
   final MappableFields<SubmitToolOutputsRunRequestWithoutStream> fields =
       const {#toolOutputs: _f$toolOutputs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SubmitToolOutputsRunRequestWithoutStream _instantiate(
     DecodingData data,

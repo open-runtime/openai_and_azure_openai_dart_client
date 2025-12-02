@@ -139,6 +139,10 @@ class CreateEvalRequestTestingCriteriaTestingCriteriaMapper
         #range: _f$range,
         #samplingParams: _f$samplingParams,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRequestTestingCriteriaTestingCriteria _instantiate(
     DecodingData data,

@@ -49,6 +49,10 @@ class RealtimeMcpListToolsMapper extends ClassMapperBase<RealtimeMcpListTools> {
     #tools: _f$tools,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeMcpListTools _instantiate(DecodingData data) {
     return RealtimeMcpListTools(

@@ -70,6 +70,10 @@ class IngestionJobRunMapper extends ClassMapperBase<IngestionJobRun> {
     #warnings: _f$warnings,
     #progress: _f$progress,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobRun _instantiate(DecodingData data) {
     return IngestionJobRun(

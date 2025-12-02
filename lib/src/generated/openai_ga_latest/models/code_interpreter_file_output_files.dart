@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'code_interpreter_file_output_files.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterFileOutputFiles with CodeInterpreterFileOutputFilesMappable {
   const CodeInterpreterFileOutputFiles({
     required this.mimeType,

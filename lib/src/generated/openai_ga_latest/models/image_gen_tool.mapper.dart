@@ -49,7 +49,7 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
   _f$imageGenToolInputImageMask = Field(
     'imageGenToolInputImageMask',
     _$imageGenToolInputImageMask,
-    key: r'ImageGenToolInputImageMask',
+    key: r'input_image_mask',
     opt: true,
   );
   static ImageGenToolModelModel _$model(ImageGenTool v) => v.model;
@@ -133,6 +133,10 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
     #background: _f$background,
     #partialImages: _f$partialImages,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenTool _instantiate(DecodingData data) {
     return ImageGenTool(

@@ -8,13 +8,13 @@ import 'realtime_transcription_session_create_response_ga_audio_input.dart';
 
 part 'realtime_transcription_session_create_response_ga_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponseGaAudio with RealtimeTranscriptionSessionCreateResponseGaAudioMappable {
   const RealtimeTranscriptionSessionCreateResponseGaAudio({
     this.realtimeTranscriptionSessionCreateResponseGaAudioInput,
   });
 
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseGaAudioInput')
+  @MappableField(key: 'input')
   final RealtimeTranscriptionSessionCreateResponseGaAudioInput? realtimeTranscriptionSessionCreateResponseGaAudioInput;
 
   static RealtimeTranscriptionSessionCreateResponseGaAudio fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseGaAudioMapper.fromJson(json);

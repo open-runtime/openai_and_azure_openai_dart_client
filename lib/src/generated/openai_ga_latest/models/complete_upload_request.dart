@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'complete_upload_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompleteUploadRequest with CompleteUploadRequestMappable {
   const CompleteUploadRequest({
     required this.partIds,

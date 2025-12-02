@@ -10,8 +10,8 @@ import 'chat_completion_stream_options.dart';
 import 'chat_completion_tool.dart';
 import 'chat_completion_tool_choice_option.dart';
 import 'create_chat_completion_request_audio.dart';
-import 'create_chat_completion_request_function_call_function_call_union.dart';
-import 'create_chat_completion_request_response_format_response_format_union.dart';
+import 'create_chat_completion_request_function_call_union.dart';
+import 'create_chat_completion_request_response_format_union.dart';
 import 'create_chat_completion_request_web_search_options.dart';
 import 'metadata.dart';
 import 'model_ids_shared.dart';
@@ -24,7 +24,7 @@ import 'stop_configuration.dart';
 
 part 'create_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   const CreateChatCompletionRequest({
     required this.metadata,
@@ -65,6 +65,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'service_tier')
   final ServiceTier? serviceTier;
   final List<ChatCompletionRequestMessage> messages;
+  @MappableField(hook: const ModelIdsSharedHook())
   final ModelIdsShared model;
   @MappableField(key: 'logit_bias')
   final Map<String, int>? logitBias;
@@ -73,13 +74,13 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final ReasoningEffort? reasoningEffort;
   @MappableField(key: 'max_completion_tokens')
   final int? maxCompletionTokens;
-  @MappableField(key: 'CreateChatCompletionRequestWebSearchOptions')
+  @MappableField(key: 'web_search_options')
   final CreateChatCompletionRequestWebSearchOptions? createChatCompletionRequestWebSearchOptions;
   @MappableField(key: 'top_logprobs')
   final int? topLogprobs;
   @MappableField(key: 'response_format')
-  final CreateChatCompletionRequestResponseFormatResponseFormatUnion? responseFormat;
-  @MappableField(key: 'CreateChatCompletionRequestAudio')
+  final CreateChatCompletionRequestResponseFormatUnion? responseFormat;
+  @MappableField(key: 'audio')
   final CreateChatCompletionRequestAudio? createChatCompletionRequestAudio;
   final StopConfiguration? stop;
   @MappableField(key: 'max_tokens')
@@ -94,7 +95,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'parallel_tool_calls')
   final ParallelToolCalls? parallelToolCalls;
   @MappableField(key: 'function_call')
-  final CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall;
+  final CreateChatCompletionRequestFunctionCallUnion? functionCall;
   final List<ChatCompletionFunctions>? functions;
   final num? temperature;
   @MappableField(key: 'top_p')

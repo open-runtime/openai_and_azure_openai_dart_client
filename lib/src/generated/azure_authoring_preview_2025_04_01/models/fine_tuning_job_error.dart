@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'fine_tuning_job_error.mapper.dart';
 
 /// For fine-tuning jobs that have failed, this will contain more information on the cause of the failure.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobError with FineTuningJobErrorMappable {
   const FineTuningJobError({
     this.code,

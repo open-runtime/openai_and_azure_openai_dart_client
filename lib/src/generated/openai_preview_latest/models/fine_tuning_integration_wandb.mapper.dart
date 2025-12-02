@@ -55,6 +55,10 @@ class FineTuningIntegrationWandbMapper
     #entity: _f$entity,
     #tags: _f$tags,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningIntegrationWandb _instantiate(DecodingData data) {
     return FineTuningIntegrationWandb(

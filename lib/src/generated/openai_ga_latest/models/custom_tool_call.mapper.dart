@@ -52,6 +52,10 @@ class CustomToolCallMapper extends ClassMapperBase<CustomToolCall> {
     #input: _f$input,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomToolCall _instantiate(DecodingData data) {
     return CustomToolCall(

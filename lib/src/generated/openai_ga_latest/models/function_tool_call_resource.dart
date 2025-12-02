@@ -9,7 +9,7 @@ import 'function_tool_call_type_type.dart';
 
 part 'function_tool_call_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionToolCallResource with FunctionToolCallResourceMappable {
   const FunctionToolCallResource({
     required this.id,

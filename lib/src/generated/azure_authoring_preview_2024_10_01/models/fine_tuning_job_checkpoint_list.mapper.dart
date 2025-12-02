@@ -53,6 +53,10 @@ class FineTuningJobCheckpointListMapper
     #data: _f$data,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobCheckpointList _instantiate(DecodingData data) {
     return FineTuningJobCheckpointList(

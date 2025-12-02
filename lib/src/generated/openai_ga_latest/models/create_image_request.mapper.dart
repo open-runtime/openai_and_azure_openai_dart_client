@@ -21,6 +21,7 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
       CreateImageRequestModerationModerationMapper.ensureInitialized();
       CreateImageRequestBackgroundBackgroundMapper.ensureInitialized();
       CreateImageRequestStyleStyleMapper.ensureInitialized();
+      CreateImageRequestModelUnionMapper.ensureInitialized();
       PartialImagesMapper.ensureInitialized();
     }
     return _instance!;
@@ -124,11 +125,13 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     opt: true,
     def: CreateImageRequestStyleStyle.vivid,
   );
-  static String? _$model(CreateImageRequest v) => v.model;
-  static const Field<CreateImageRequest, String> _f$model = Field(
+  static CreateImageRequestModelUnion? _$model(CreateImageRequest v) => v.model;
+  static const Field<CreateImageRequest, CreateImageRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
+    hook: const CreateImageRequestModelUnionHook(),
   );
   static PartialImages? _$partialImages(CreateImageRequest v) =>
       v.partialImages;
@@ -163,6 +166,10 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     #partialImages: _f$partialImages,
     #user: _f$user,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateImageRequest _instantiate(DecodingData data) {
     return CreateImageRequest(
@@ -254,6 +261,12 @@ abstract class CreateImageRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateImageRequestModelUnionCopyWith<
+    $R,
+    CreateImageRequestModelUnion,
+    CreateImageRequestModelUnion
+  >?
+  get model;
   PartialImagesCopyWith<$R, PartialImages, PartialImages>? get partialImages;
   $R call({
     String? prompt,
@@ -267,7 +280,7 @@ abstract class CreateImageRequestCopyWith<
     CreateImageRequestModerationModeration? moderation,
     CreateImageRequestBackgroundBackground? background,
     CreateImageRequestStyleStyle? style,
-    String? model,
+    CreateImageRequestModelUnion? model,
     PartialImages? partialImages,
     String? user,
   });
@@ -284,6 +297,13 @@ class _CreateImageRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateImageRequest> $mapper =
       CreateImageRequestMapper.ensureInitialized();
+  @override
+  CreateImageRequestModelUnionCopyWith<
+    $R,
+    CreateImageRequestModelUnion,
+    CreateImageRequestModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   PartialImagesCopyWith<$R, PartialImages, PartialImages>? get partialImages =>
       $value.partialImages?.copyWith.$chain((v) => call(partialImages: v));

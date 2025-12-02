@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'crawling_settings.mapper.dart';
 
 /// Crawling settings
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CrawlingSettings with CrawlingSettingsMappable {
   const CrawlingSettings({
     this.maxCrawlDepth,

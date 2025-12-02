@@ -18,7 +18,7 @@ import 'eval_text_similarity_grader_type_type.dart';
 
 part 'eval_testing_criteria_testing_criteria.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalTestingCriteriaTestingCriteria with EvalTestingCriteriaTestingCriteriaMappable {
   const EvalTestingCriteriaTestingCriteria({
     required this.input,

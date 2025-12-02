@@ -8,7 +8,7 @@ import 'invite_request_projects_role_role.dart';
 
 part 'invite_request_projects.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteRequestProjects with InviteRequestProjectsMappable {
   const InviteRequestProjects({
     required this.id,

@@ -55,7 +55,7 @@ class RealtimeResponseUsageMapper
   _f$realtimeResponseUsageInputTokenDetails = Field(
     'realtimeResponseUsageInputTokenDetails',
     _$realtimeResponseUsageInputTokenDetails,
-    key: r'RealtimeResponseUsageInputTokenDetails',
+    key: r'input_token_details',
     opt: true,
   );
   static RealtimeResponseUsageOutputTokenDetails?
@@ -68,7 +68,7 @@ class RealtimeResponseUsageMapper
   _f$realtimeResponseUsageOutputTokenDetails = Field(
     'realtimeResponseUsageOutputTokenDetails',
     _$realtimeResponseUsageOutputTokenDetails,
-    key: r'RealtimeResponseUsageOutputTokenDetails',
+    key: r'output_token_details',
     opt: true,
   );
 
@@ -82,6 +82,10 @@ class RealtimeResponseUsageMapper
     #realtimeResponseUsageOutputTokenDetails:
         _f$realtimeResponseUsageOutputTokenDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseUsage _instantiate(DecodingData data) {
     return RealtimeResponseUsage(

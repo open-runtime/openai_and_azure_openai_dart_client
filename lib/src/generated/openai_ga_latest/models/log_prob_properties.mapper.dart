@@ -43,6 +43,10 @@ class LogProbPropertiesMapper extends ClassMapperBase<LogProbProperties> {
     #logprob: _f$logprob,
     #bytes: _f$bytes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LogProbProperties _instantiate(DecodingData data) {
     return LogProbProperties(

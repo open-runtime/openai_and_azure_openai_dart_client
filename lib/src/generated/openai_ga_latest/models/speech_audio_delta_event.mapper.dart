@@ -38,6 +38,10 @@ class SpeechAudioDeltaEventMapper
     #type: _f$type,
     #audio: _f$audio,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SpeechAudioDeltaEvent _instantiate(DecodingData data) {
     return SpeechAudioDeltaEvent(

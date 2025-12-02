@@ -49,6 +49,10 @@ class SpeechAudioDoneEventUsageMapper
     #outputTokens: _f$outputTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SpeechAudioDoneEventUsage _instantiate(DecodingData data) {
     return SpeechAudioDoneEventUsage(

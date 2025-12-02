@@ -32,6 +32,10 @@ class ActiveStatusMapper extends ClassMapperBase<ActiveStatus> {
 
   @override
   final MappableFields<ActiveStatus> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ActiveStatus _instantiate(DecodingData data) {
     return ActiveStatus(type: data.dec(_f$type));

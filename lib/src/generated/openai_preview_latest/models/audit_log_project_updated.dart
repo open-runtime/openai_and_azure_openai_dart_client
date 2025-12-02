@@ -8,7 +8,7 @@ import 'audit_log_project_updated_changes_requested.dart';
 
 part 'audit_log_project_updated.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogProjectUpdated with AuditLogProjectUpdatedMappable {
   const AuditLogProjectUpdated({
     this.id,
@@ -16,7 +16,7 @@ class AuditLogProjectUpdated with AuditLogProjectUpdatedMappable {
   });
 
   final String? id;
-  @MappableField(key: 'AuditLogProjectUpdatedChangesRequested')
+  @MappableField(key: 'changes_requested')
   final AuditLogProjectUpdatedChangesRequested? auditLogProjectUpdatedChangesRequested;
 
   static AuditLogProjectUpdated fromJson(Map<String, dynamic> json) => AuditLogProjectUpdatedMapper.fromJson(json);

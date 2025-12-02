@@ -15,6 +15,7 @@ class CreateEmbeddingRequestMapper
   static CreateEmbeddingRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateEmbeddingRequestMapper._());
+      CreateEmbeddingRequestModelUnionMapper.ensureInitialized();
       CreateEmbeddingRequestEncodingFormatEncodingFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -28,10 +29,13 @@ class CreateEmbeddingRequestMapper
     'input',
     _$input,
   );
-  static String _$model(CreateEmbeddingRequest v) => v.model;
-  static const Field<CreateEmbeddingRequest, String> _f$model = Field(
+  static CreateEmbeddingRequestModelUnion _$model(CreateEmbeddingRequest v) =>
+      v.model;
+  static const Field<CreateEmbeddingRequest, CreateEmbeddingRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
+    hook: const CreateEmbeddingRequestModelUnionHook(),
   );
   static int? _$dimensions(CreateEmbeddingRequest v) => v.dimensions;
   static const Field<CreateEmbeddingRequest, int> _f$dimensions = Field(
@@ -68,6 +72,10 @@ class CreateEmbeddingRequestMapper
     #user: _f$user,
     #encodingFormat: _f$encodingFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEmbeddingRequest _instantiate(DecodingData data) {
     return CreateEmbeddingRequest(
@@ -149,9 +157,15 @@ abstract class CreateEmbeddingRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateEmbeddingRequestModelUnionCopyWith<
+    $R,
+    CreateEmbeddingRequestModelUnion,
+    CreateEmbeddingRequestModelUnion
+  >
+  get model;
   $R call({
     String? input,
-    String? model,
+    CreateEmbeddingRequestModelUnion? model,
     int? dimensions,
     String? user,
     CreateEmbeddingRequestEncodingFormatEncodingFormat? encodingFormat,
@@ -171,9 +185,16 @@ class _CreateEmbeddingRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEmbeddingRequest> $mapper =
       CreateEmbeddingRequestMapper.ensureInitialized();
   @override
+  CreateEmbeddingRequestModelUnionCopyWith<
+    $R,
+    CreateEmbeddingRequestModelUnion,
+    CreateEmbeddingRequestModelUnion
+  >
+  get model => $value.model.copyWith.$chain((v) => call(model: v));
+  @override
   $R call({
     String? input,
-    String? model,
+    CreateEmbeddingRequestModelUnion? model,
     Object? dimensions = $none,
     Object? user = $none,
     CreateEmbeddingRequestEncodingFormatEncodingFormat? encodingFormat,

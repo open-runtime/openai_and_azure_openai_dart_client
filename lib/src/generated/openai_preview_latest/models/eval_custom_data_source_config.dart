@@ -13,7 +13,7 @@ part 'eval_custom_data_source_config.mapper.dart';
 /// - Used to define your testing criteria and.
 /// - What data is required when creating a run.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalCustomDataSourceConfig with EvalCustomDataSourceConfigMappable {
   const EvalCustomDataSourceConfig({
     required this.schema,

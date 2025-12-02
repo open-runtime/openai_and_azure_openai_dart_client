@@ -64,6 +64,10 @@ class VectorStoreSearchResultItemMapper
     #attributes: _f$attributes,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchResultItem _instantiate(DecodingData data) {
     return VectorStoreSearchResultItem(

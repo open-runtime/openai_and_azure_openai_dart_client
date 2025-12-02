@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'state_variables_union.dart';
 import 'workflow_tracing_param.dart';
 
 part 'workflow_param.mapper.dart';
 
 /// Workflow reference and overrides applied to the chat session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkflowParam with WorkflowParamMappable {
   const WorkflowParam({
     required this.id,
@@ -20,8 +21,8 @@ class WorkflowParam with WorkflowParamMappable {
 
   final String id;
   final String? version;
-  @MappableField(key: 'state_variables')
-  final Map<String, String>? stateVariables;
+  @MappableField(key: 'state_variables', hook: const StateVariablesUnionHook())
+  final Map<String, StateVariablesUnion>? stateVariables;
   final WorkflowTracingParam? tracing;
 
   static WorkflowParam fromJson(Map<String, dynamic> json) => WorkflowParamMapper.fromJson(json);

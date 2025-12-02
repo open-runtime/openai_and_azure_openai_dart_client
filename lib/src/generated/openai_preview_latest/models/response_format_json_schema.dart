@@ -12,7 +12,7 @@ part 'response_format_json_schema.mapper.dart';
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatJsonSchema with ResponseFormatJsonSchemaMappable {
   const ResponseFormatJsonSchema({
     required this.type,
@@ -20,7 +20,7 @@ class ResponseFormatJsonSchema with ResponseFormatJsonSchemaMappable {
   });
 
   final ResponseFormatJsonSchemaTypeType type;
-  @MappableField(key: 'ResponseFormatJsonSchemaJsonSchema')
+  @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 
   static ResponseFormatJsonSchema fromJson(Map<String, dynamic> json) => ResponseFormatJsonSchemaMapper.fromJson(json);

@@ -13,16 +13,16 @@ import 'chat_completion_tool.dart';
 import 'chat_completion_tool_choice_option.dart';
 import 'chat_completions_request_common.dart';
 import 'create_chat_completion_request_audio.dart';
-import 'create_chat_completion_request_function_call_function_call_union.dart';
+import 'create_chat_completion_request_function_call_union.dart';
 import 'create_chat_completion_request_reasoning_effort_reasoning_effort.dart';
-import 'create_chat_completion_request_response_format_response_format_union.dart';
+import 'create_chat_completion_request_response_format_union.dart';
 import 'parallel_tool_calls.dart';
 import 'prediction_content.dart';
 import 'user_security_context.dart';
 
 part 'create_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   const CreateChatCompletionRequest({
     required this.stop,
@@ -74,12 +74,12 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final int? topLogprobs;
   final ChatCompletionModalities? modalities;
   final PredictionContent? prediction;
-  @MappableField(key: 'CreateChatCompletionRequestAudio')
+  @MappableField(key: 'audio')
   final CreateChatCompletionRequestAudio? createChatCompletionRequestAudio;
   @MappableField(key: 'parallel_tool_calls')
   final ParallelToolCalls? parallelToolCalls;
   @MappableField(key: 'response_format')
-  final CreateChatCompletionRequestResponseFormatResponseFormatUnion? responseFormat;
+  final CreateChatCompletionRequestResponseFormatUnion? responseFormat;
   final int? seed;
   @MappableField(key: 'stream_options')
   final ChatCompletionStreamOptions? streamOptions;
@@ -87,7 +87,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'tool_choice')
   final ChatCompletionToolChoiceOption? toolChoice;
   @MappableField(key: 'function_call')
-  final CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall;
+  final CreateChatCompletionRequestFunctionCallUnion? functionCall;
   final List<ChatCompletionFunctions>? functions;
   @MappableField(key: 'user_security_context')
   final UserSecurityContext? userSecurityContext;

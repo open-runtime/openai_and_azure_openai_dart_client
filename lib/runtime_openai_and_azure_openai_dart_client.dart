@@ -53,6 +53,16 @@ library runtime_openai_and_azure_openai_dart_client;
 // client based on provider (OpenAI/Azure) and API version configuration.
 
 export 'src/unified/unified_client.dart';
+export 'src/unified/unified_client_extensions.dart';
+
+// ═══════════════════════════════════════════════════════════════════════════
+// Unified Request/Response Helpers
+// ═══════════════════════════════════════════════════════════════════════════
+// Simplified request composition and response extraction that works across
+// all API specs (OpenAI GA, OpenAI Preview, Azure Inference versions).
+
+export 'src/shared/unified_request_helpers.dart';
+export 'src/shared/unified_response_helpers.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SSE (Server-Sent Events) Support

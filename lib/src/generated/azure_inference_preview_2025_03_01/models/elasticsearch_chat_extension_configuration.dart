@@ -11,7 +11,7 @@ part 'elasticsearch_chat_extension_configuration.mapper.dart';
 
 /// A specific representation of configurable options for Elasticsearch when using it as an Azure OpenAI chat.
 /// extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ElasticsearchChatExtensionConfiguration with ElasticsearchChatExtensionConfigurationMappable {
   const ElasticsearchChatExtensionConfiguration({
     required this.type,

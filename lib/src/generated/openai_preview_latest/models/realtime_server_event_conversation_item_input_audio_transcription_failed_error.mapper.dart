@@ -74,6 +74,10 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMappe
     #message: _f$message,
     #param: _f$param,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
   _instantiate(DecodingData data) {

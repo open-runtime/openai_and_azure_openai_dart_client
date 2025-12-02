@@ -11,7 +11,7 @@ import 'user_role_assignment_object_object_enum.dart';
 part 'user_role_assignment.mapper.dart';
 
 /// Role assignment linking a user to a role.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserRoleAssignment with UserRoleAssignmentMappable {
   const UserRoleAssignment({
     required this.objectEnum,

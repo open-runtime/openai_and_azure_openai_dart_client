@@ -8,12 +8,13 @@ import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_request_assistant_message_audio.dart';
 import 'chat_completion_request_assistant_message_function_call.dart';
 import 'chat_completion_request_assistant_message_role_role.dart';
+import 'chat_completion_request_message.dart';
 
 part 'chat_completion_request_assistant_message.mapper.dart';
 
 /// Messages sent by the model in response to user messages.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantMessageMappable {
   const ChatCompletionRequestAssistantMessage({
     required this.role,

@@ -118,6 +118,10 @@ class ContentFilterChoiceResultsMapper
     #protectedMaterialCode: _f$protectedMaterialCode,
     #ungroundedMaterial: _f$ungroundedMaterial,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterChoiceResults _instantiate(DecodingData data) {
     return ContentFilterChoiceResults(

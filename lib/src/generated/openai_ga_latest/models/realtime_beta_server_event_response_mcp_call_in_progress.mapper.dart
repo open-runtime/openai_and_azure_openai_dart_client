@@ -51,6 +51,10 @@ class RealtimeBetaServerEventResponseMcpCallInProgressMapper
     #outputIndex: _f$outputIndex,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseMcpCallInProgress _instantiate(
     DecodingData data,

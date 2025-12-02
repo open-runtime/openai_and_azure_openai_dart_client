@@ -10,7 +10,7 @@ import 'function_shell_call_output_item_param_type_type.dart';
 part 'function_shell_call_output_item_param.mapper.dart';
 
 /// The streamed output items emitted by a function shell tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutputItemParam with FunctionShellCallOutputItemParamMappable {
   const FunctionShellCallOutputItemParam({
     required this.callId,

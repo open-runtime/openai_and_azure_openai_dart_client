@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_output_audio_buffer_stopped_type_type.dart';
 
 part 'realtime_server_event_output_audio_buffer_stopped.mapper.dart';
@@ -13,7 +14,7 @@ part 'realtime_server_event_output_audio_buffer_stopped.mapper.dart';
 /// data has been sent to the client (`response.done`).
 /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventOutputAudioBufferStopped with RealtimeServerEventOutputAudioBufferStoppedMappable {
   const RealtimeServerEventOutputAudioBufferStopped({
     required this.eventId,

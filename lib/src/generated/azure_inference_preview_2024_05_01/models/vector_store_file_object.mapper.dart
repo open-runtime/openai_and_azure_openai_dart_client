@@ -64,7 +64,7 @@ class VectorStoreFileObjectMapper
   _f$vectorStoreFileObjectLastError = Field(
     'vectorStoreFileObjectLastError',
     _$vectorStoreFileObjectLastError,
-    key: r'VectorStoreFileObjectLastError',
+    key: r'last_error',
   );
 
   @override
@@ -77,6 +77,10 @@ class VectorStoreFileObjectMapper
     #status: _f$status,
     #vectorStoreFileObjectLastError: _f$vectorStoreFileObjectLastError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileObject _instantiate(DecodingData data) {
     return VectorStoreFileObject(

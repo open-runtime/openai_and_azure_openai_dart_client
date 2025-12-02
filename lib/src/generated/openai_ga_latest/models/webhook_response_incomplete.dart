@@ -12,7 +12,7 @@ part 'webhook_response_incomplete.mapper.dart';
 
 /// Sent when a background response has been interrupted.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseIncomplete with WebhookResponseIncompleteMappable {
   const WebhookResponseIncomplete({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookResponseIncomplete with WebhookResponseIncompleteMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookResponseIncompleteData')
+  @MappableField(key: 'data')
   final WebhookResponseIncompleteData webhookResponseIncompleteData;
   final WebhookResponseIncompleteTypeType type;
   @MappableField(key: 'object')

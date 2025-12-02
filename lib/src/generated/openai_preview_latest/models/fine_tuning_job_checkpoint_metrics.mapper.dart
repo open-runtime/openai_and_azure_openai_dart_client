@@ -91,6 +91,10 @@ class FineTuningJobCheckpointMetricsMapper
     #fullValidLoss: _f$fullValidLoss,
     #fullValidMeanTokenAccuracy: _f$fullValidMeanTokenAccuracy,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobCheckpointMetrics _instantiate(DecodingData data) {
     return FineTuningJobCheckpointMetrics(

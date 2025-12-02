@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_content.dart';
 import 'response_content_part_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_content_part_done_event.mapper.dart';
 
 /// Emitted when a content part is done.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseContentPartDoneEvent with ResponseContentPartDoneEventMappable {
   const ResponseContentPartDoneEvent({
     required this.type,

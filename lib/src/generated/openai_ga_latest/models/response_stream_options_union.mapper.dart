@@ -27,6 +27,10 @@ class ResponseStreamOptionsUnionMapper
 
   @override
   final MappableFields<ResponseStreamOptionsUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseStreamOptionsUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ResponseStreamOptionsUnion');
@@ -88,12 +92,20 @@ class ResponseStreamOptionsUnionVariant1Mapper
   static bool? _$includeObfuscation(ResponseStreamOptionsUnionVariant1 v) =>
       v.includeObfuscation;
   static const Field<ResponseStreamOptionsUnionVariant1, bool>
-  _f$includeObfuscation = Field('includeObfuscation', _$includeObfuscation);
+  _f$includeObfuscation = Field(
+    'includeObfuscation',
+    _$includeObfuscation,
+    key: r'include_obfuscation',
+  );
 
   @override
   final MappableFields<ResponseStreamOptionsUnionVariant1> fields = const {
     #includeObfuscation: _f$includeObfuscation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseStreamOptionsUnionVariant1 _instantiate(DecodingData data) {
     return ResponseStreamOptionsUnionVariant1(

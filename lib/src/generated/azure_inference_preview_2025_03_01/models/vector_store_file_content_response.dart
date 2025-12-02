@@ -10,7 +10,7 @@ import 'vector_store_file_content_response_object_object_enum.dart';
 part 'vector_store_file_content_response.mapper.dart';
 
 /// Represents the parsed content of a vector store file.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileContentResponse with VectorStoreFileContentResponseMappable {
   const VectorStoreFileContentResponse({
     required this.objectEnum,

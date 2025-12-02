@@ -57,6 +57,10 @@ class CapabilitiesMapper extends ClassMapperBase<Capabilities> {
     #chatCompletion: _f$chatCompletion,
     #embeddings: _f$embeddings,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Capabilities _instantiate(DecodingData data) {
     return Capabilities(

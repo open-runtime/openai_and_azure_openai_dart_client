@@ -14,7 +14,7 @@ class GraderMultiMapper extends ClassMapperBase<GraderMulti> {
   static GraderMultiMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderMultiMapper._());
-      GraderMultiGradersGradersUnionMapper.ensureInitialized();
+      GraderMultiGradersUnionMapper.ensureInitialized();
       GraderMultiTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -25,9 +25,11 @@ class GraderMultiMapper extends ClassMapperBase<GraderMulti> {
 
   static String _$name(GraderMulti v) => v.name;
   static const Field<GraderMulti, String> _f$name = Field('name', _$name);
-  static GraderMultiGradersGradersUnion _$graders(GraderMulti v) => v.graders;
-  static const Field<GraderMulti, GraderMultiGradersGradersUnion> _f$graders =
-      Field('graders', _$graders);
+  static GraderMultiGradersUnion _$graders(GraderMulti v) => v.graders;
+  static const Field<GraderMulti, GraderMultiGradersUnion> _f$graders = Field(
+    'graders',
+    _$graders,
+  );
   static String _$calculateOutput(GraderMulti v) => v.calculateOutput;
   static const Field<GraderMulti, String> _f$calculateOutput = Field(
     'calculateOutput',
@@ -49,6 +51,10 @@ class GraderMultiMapper extends ClassMapperBase<GraderMulti> {
     #calculateOutput: _f$calculateOutput,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderMulti _instantiate(DecodingData data) {
     return GraderMulti(
@@ -119,15 +125,15 @@ extension GraderMultiValueCopy<$R, $Out>
 
 abstract class GraderMultiCopyWith<$R, $In extends GraderMulti, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  GraderMultiGradersGradersUnionCopyWith<
+  GraderMultiGradersUnionCopyWith<
     $R,
-    GraderMultiGradersGradersUnion,
-    GraderMultiGradersGradersUnion
+    GraderMultiGradersUnion,
+    GraderMultiGradersUnion
   >
   get graders;
   $R call({
     String? name,
-    GraderMultiGradersGradersUnion? graders,
+    GraderMultiGradersUnion? graders,
     String? calculateOutput,
     GraderMultiTypeType? type,
   });
@@ -143,16 +149,16 @@ class _GraderMultiCopyWithImpl<$R, $Out>
   late final ClassMapperBase<GraderMulti> $mapper =
       GraderMultiMapper.ensureInitialized();
   @override
-  GraderMultiGradersGradersUnionCopyWith<
+  GraderMultiGradersUnionCopyWith<
     $R,
-    GraderMultiGradersGradersUnion,
-    GraderMultiGradersGradersUnion
+    GraderMultiGradersUnion,
+    GraderMultiGradersUnion
   >
   get graders => $value.graders.copyWith.$chain((v) => call(graders: v));
   @override
   $R call({
     String? name,
-    GraderMultiGradersGradersUnion? graders,
+    GraderMultiGradersUnion? graders,
     String? calculateOutput,
     GraderMultiTypeType? type,
   }) => $apply(

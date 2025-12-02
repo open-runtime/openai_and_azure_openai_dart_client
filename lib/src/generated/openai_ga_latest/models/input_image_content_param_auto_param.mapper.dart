@@ -60,6 +60,10 @@ class InputImageContentParamAutoParamMapper
     #detail: _f$detail,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputImageContentParamAutoParam _instantiate(DecodingData data) {
     return InputImageContentParamAutoParam(

@@ -53,6 +53,10 @@ class CitationMapper extends ClassMapperBase<Citation> {
     #filepath: _f$filepath,
     #chunkId: _f$chunkId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Citation _instantiate(DecodingData data) {
     return Citation(

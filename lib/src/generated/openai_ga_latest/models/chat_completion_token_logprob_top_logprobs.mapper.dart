@@ -40,6 +40,10 @@ class ChatCompletionTokenLogprobTopLogprobsMapper
     #logprob: _f$logprob,
     #bytes: _f$bytes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionTokenLogprobTopLogprobs _instantiate(DecodingData data) {
     return ChatCompletionTokenLogprobTopLogprobs(

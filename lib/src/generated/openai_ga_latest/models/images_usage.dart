@@ -10,7 +10,7 @@ part 'images_usage.mapper.dart';
 
 /// For `gpt-image-1` only, the token usage information for the image generation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesUsage with ImagesUsageMappable {
   const ImagesUsage({
     required this.totalTokens,
@@ -25,7 +25,7 @@ class ImagesUsage with ImagesUsageMappable {
   final int inputTokens;
   @MappableField(key: 'output_tokens')
   final int outputTokens;
-  @MappableField(key: 'ImagesUsageInputTokensDetails')
+  @MappableField(key: 'input_tokens_details')
   final ImagesUsageInputTokensDetails imagesUsageInputTokensDetails;
 
   static ImagesUsage fromJson(Map<String, dynamic> json) => ImagesUsageMapper.fromJson(json);

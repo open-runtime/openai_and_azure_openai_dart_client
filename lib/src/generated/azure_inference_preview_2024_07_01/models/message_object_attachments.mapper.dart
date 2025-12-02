@@ -17,7 +17,7 @@ class MessageObjectAttachmentsMapper
       MapperContainer.globals.use(
         _instance = MessageObjectAttachmentsMapper._(),
       );
-      MessageObjectAttachmentsToolsToolsUnionMapper.ensureInitialized();
+      MessageObjectAttachmentsToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,12 +32,12 @@ class MessageObjectAttachmentsMapper
     key: r'file_id',
     opt: true,
   );
-  static List<MessageObjectAttachmentsToolsToolsUnion>? _$tools(
+  static List<MessageObjectAttachmentsToolsUnion>? _$tools(
     MessageObjectAttachments v,
   ) => v.tools;
   static const Field<
     MessageObjectAttachments,
-    List<MessageObjectAttachmentsToolsToolsUnion>
+    List<MessageObjectAttachmentsToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
 
@@ -46,6 +46,10 @@ class MessageObjectAttachmentsMapper
     #fileId: _f$fileId,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageObjectAttachments _instantiate(DecodingData data) {
     return MessageObjectAttachments(
@@ -126,18 +130,15 @@ abstract class MessageObjectAttachmentsCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    MessageObjectAttachmentsToolsToolsUnion,
-    MessageObjectAttachmentsToolsToolsUnionCopyWith<
+    MessageObjectAttachmentsToolsUnion,
+    MessageObjectAttachmentsToolsUnionCopyWith<
       $R,
-      MessageObjectAttachmentsToolsToolsUnion,
-      MessageObjectAttachmentsToolsToolsUnion
+      MessageObjectAttachmentsToolsUnion,
+      MessageObjectAttachmentsToolsUnion
     >
   >?
   get tools;
-  $R call({
-    String? fileId,
-    List<MessageObjectAttachmentsToolsToolsUnion>? tools,
-  });
+  $R call({String? fileId, List<MessageObjectAttachmentsToolsUnion>? tools});
   MessageObjectAttachmentsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -155,11 +156,11 @@ class _MessageObjectAttachmentsCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    MessageObjectAttachmentsToolsToolsUnion,
-    MessageObjectAttachmentsToolsToolsUnionCopyWith<
+    MessageObjectAttachmentsToolsUnion,
+    MessageObjectAttachmentsToolsUnionCopyWith<
       $R,
-      MessageObjectAttachmentsToolsToolsUnion,
-      MessageObjectAttachmentsToolsToolsUnion
+      MessageObjectAttachmentsToolsUnion,
+      MessageObjectAttachmentsToolsUnion
     >
   >?
   get tools => $value.tools != null

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'create_speech_request_model_union.dart';
 import 'create_speech_request_response_format_response_format.dart';
 import 'create_speech_request_stream_format_stream_format.dart';
 import 'voice_ids_shared.dart';
 
 part 'create_speech_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateSpeechRequest with CreateSpeechRequestMappable {
   const CreateSpeechRequest({
     required this.model,
@@ -22,8 +23,10 @@ class CreateSpeechRequest with CreateSpeechRequestMappable {
     this.instructions,
   });
 
-  final String model;
+  @MappableField(hook: const CreateSpeechRequestModelUnionHook())
+  final CreateSpeechRequestModelUnion model;
   final String input;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
   @MappableField(key: 'response_format')
   final CreateSpeechRequestResponseFormatResponseFormat responseFormat;

@@ -73,6 +73,10 @@ class FunctionCallOutputItemParamMapper
     #id: _f$id,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionCallOutputItemParam _instantiate(DecodingData data) {
     return FunctionCallOutputItemParam(

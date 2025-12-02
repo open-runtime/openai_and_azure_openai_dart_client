@@ -69,6 +69,10 @@ class CompletionsCreateResponseChoicesLogprobsMapper
         #topLogprobs: _f$topLogprobs,
         #textOffset: _f$textOffset,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionsCreateResponseChoicesLogprobs _instantiate(
     DecodingData data,

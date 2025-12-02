@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'log_prob_properties.dart';
+import 'realtime_server_event.dart';
 
 part 'realtime_server_event_conversation_item_input_audio_transcription_delta.mapper.dart';
 
 /// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationItemInputAudioTranscriptionDelta with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({
     required this.eventId,

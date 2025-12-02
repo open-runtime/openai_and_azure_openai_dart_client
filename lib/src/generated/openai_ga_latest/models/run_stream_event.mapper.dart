@@ -23,6 +23,10 @@ class RunStreamEventMapper extends ClassMapperBase<RunStreamEvent> {
 
   @override
   final MappableFields<RunStreamEvent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEvent _instantiate(DecodingData data) {
     return RunStreamEvent();

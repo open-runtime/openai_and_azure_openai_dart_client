@@ -12,7 +12,7 @@ import 'eval_item_type_type.dart';
 part 'create_eval_item.mapper.dart';
 
 /// A chat message that makes up the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalItem with CreateEvalItemMappable {
   const CreateEvalItem({
     required this.content,

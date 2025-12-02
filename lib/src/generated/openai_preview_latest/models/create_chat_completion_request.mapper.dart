@@ -18,18 +18,19 @@ class CreateChatCompletionRequestMapper
         _instance = CreateChatCompletionRequestMapper._(),
       );
       ServiceTierMapper.ensureInitialized();
-      ChatCompletionRequestMessageUnionMapper.ensureInitialized();
+      ChatCompletionRequestMessageMapper.ensureInitialized();
+      ModelIdsSharedMapper.ensureInitialized();
       ResponseModalitiesMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       CreateChatCompletionRequestWebSearchOptionsMapper.ensureInitialized();
-      CreateChatCompletionRequestResponseFormatResponseFormatUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized();
       CreateChatCompletionRequestAudioMapper.ensureInitialized();
       StopConfigurationMapper.ensureInitialized();
       PredictionContentMapper.ensureInitialized();
       ChatCompletionStreamOptionsMapper.ensureInitialized();
       ChatCompletionToolMapper.ensureInitialized();
       ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
-      CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestFunctionCallUnionMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
     }
     return _instance!;
@@ -51,19 +52,17 @@ class CreateChatCompletionRequestMapper
       v.serviceTier;
   static const Field<CreateChatCompletionRequest, ServiceTier> _f$serviceTier =
       Field('serviceTier', _$serviceTier, key: r'service_tier');
-  static List<ChatCompletionRequestMessageUnion?> _$messages(
+  static List<ChatCompletionRequestMessage> _$messages(
     CreateChatCompletionRequest v,
   ) => v.messages;
   static const Field<
     CreateChatCompletionRequest,
-    List<ChatCompletionRequestMessageUnion?>
+    List<ChatCompletionRequestMessage>
   >
   _f$messages = Field('messages', _$messages);
-  static String? _$model(CreateChatCompletionRequest v) => v.model;
-  static const Field<CreateChatCompletionRequest, String> _f$model = Field(
-    'model',
-    _$model,
-  );
+  static ModelIdsShared _$model(CreateChatCompletionRequest v) => v.model;
+  static const Field<CreateChatCompletionRequest, ModelIdsShared> _f$model =
+      Field('model', _$model, hook: const ModelIdsSharedHook());
   static Map<String, int>? _$logitBias(CreateChatCompletionRequest v) =>
       v.logitBias;
   static const Field<CreateChatCompletionRequest, Map<String, int>>
@@ -101,7 +100,7 @@ class CreateChatCompletionRequestMapper
   _f$createChatCompletionRequestWebSearchOptions = Field(
     'createChatCompletionRequestWebSearchOptions',
     _$createChatCompletionRequestWebSearchOptions,
-    key: r'CreateChatCompletionRequestWebSearchOptions',
+    key: r'web_search_options',
     opt: true,
   );
   static int? _$topLogprobs(CreateChatCompletionRequest v) => v.topLogprobs;
@@ -111,11 +110,12 @@ class CreateChatCompletionRequestMapper
     key: r'top_logprobs',
     opt: true,
   );
-  static CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-  _$responseFormat(CreateChatCompletionRequest v) => v.responseFormat;
+  static CreateChatCompletionRequestResponseFormatUnion? _$responseFormat(
+    CreateChatCompletionRequest v,
+  ) => v.responseFormat;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -133,7 +133,7 @@ class CreateChatCompletionRequestMapper
   _f$createChatCompletionRequestAudio = Field(
     'createChatCompletionRequestAudio',
     _$createChatCompletionRequestAudio,
-    key: r'CreateChatCompletionRequestAudio',
+    key: r'audio',
     opt: true,
   );
   static StopConfiguration? _$stop(CreateChatCompletionRequest v) => v.stop;
@@ -192,11 +192,12 @@ class CreateChatCompletionRequestMapper
         key: r'parallel_tool_calls',
         opt: true,
       );
-  static CreateChatCompletionRequestFunctionCallFunctionCallUnion?
-  _$functionCall(CreateChatCompletionRequest v) => v.functionCall;
+  static CreateChatCompletionRequestFunctionCallUnion? _$functionCall(
+    CreateChatCompletionRequest v,
+  ) => v.functionCall;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion
   >
   _f$functionCall = Field(
     'functionCall',
@@ -308,6 +309,10 @@ class CreateChatCompletionRequestMapper
     #logprobs: _f$logprobs,
     #n: _f$n,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequest _instantiate(DecodingData data) {
     return CreateChatCompletionRequest(
@@ -427,14 +432,15 @@ abstract class CreateChatCompletionRequestCopyWith<
   get metadata;
   ListCopyWith<
     $R,
-    ChatCompletionRequestMessageUnion?,
-    ChatCompletionRequestMessageUnionCopyWith<
+    ChatCompletionRequestMessage,
+    ChatCompletionRequestMessageCopyWith<
       $R,
-      ChatCompletionRequestMessageUnion,
-      ChatCompletionRequestMessageUnion
-    >?
+      ChatCompletionRequestMessage,
+      ChatCompletionRequestMessage
+    >
   >
   get messages;
+  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model;
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias;
   CreateChatCompletionRequestWebSearchOptionsCopyWith<
     $R,
@@ -442,10 +448,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     CreateChatCompletionRequestWebSearchOptions
   >?
   get createChatCompletionRequestWebSearchOptions;
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat;
   CreateChatCompletionRequestAudioCopyWith<
@@ -475,10 +481,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     ChatCompletionToolChoiceOptionUnion
   >?
   get toolChoice;
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall;
   ListCopyWith<
@@ -495,8 +501,8 @@ abstract class CreateChatCompletionRequestCopyWith<
     Map<String, String>? metadata,
     String? user,
     ServiceTier? serviceTier,
-    List<ChatCompletionRequestMessageUnion?>? messages,
-    String? model,
+    List<ChatCompletionRequestMessage>? messages,
+    ModelIdsShared? model,
     Map<String, int>? logitBias,
     ResponseModalities? modalities,
     ReasoningEffort? reasoningEffort,
@@ -504,8 +510,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     CreateChatCompletionRequestWebSearchOptions?
     createChatCompletionRequestWebSearchOptions,
     int? topLogprobs,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-    responseFormat,
+    CreateChatCompletionRequestResponseFormatUnion? responseFormat,
     CreateChatCompletionRequestAudio? createChatCompletionRequestAudio,
     StopConfiguration? stop,
     int? maxTokens,
@@ -515,7 +520,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     List<ChatCompletionTool>? tools,
     ChatCompletionToolChoiceOptionUnion? toolChoice,
     bool? parallelToolCalls,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
+    CreateChatCompletionRequestFunctionCallUnion? functionCall,
     List<ChatCompletionFunctions>? functions,
     num? temperature,
     num? topP,
@@ -560,18 +565,21 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    ChatCompletionRequestMessageUnion?,
-    ChatCompletionRequestMessageUnionCopyWith<
+    ChatCompletionRequestMessage,
+    ChatCompletionRequestMessageCopyWith<
       $R,
-      ChatCompletionRequestMessageUnion,
-      ChatCompletionRequestMessageUnion
-    >?
+      ChatCompletionRequestMessage,
+      ChatCompletionRequestMessage
+    >
   >
   get messages => ListCopyWith(
     $value.messages,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(messages: v),
   );
+  @override
+  ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model =>
+      $value.model.copyWith.$chain((v) => call(model: v));
   @override
   MapCopyWith<$R, String, int, ObjectCopyWith<$R, int, int>>? get logitBias =>
       $value.logitBias != null
@@ -592,10 +600,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(createChatCompletionRequestWebSearchOptions: v));
   @override
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));
@@ -646,10 +654,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));
   @override
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall =>
       $value.functionCall?.copyWith.$chain((v) => call(functionCall: v));
@@ -675,8 +683,8 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
     Object? metadata = $none,
     Object? user = $none,
     Object? serviceTier = $none,
-    List<ChatCompletionRequestMessageUnion?>? messages,
-    Object? model = $none,
+    List<ChatCompletionRequestMessage>? messages,
+    ModelIdsShared? model,
     Object? logitBias = $none,
     Object? modalities = $none,
     Object? reasoningEffort = $none,
@@ -709,7 +717,7 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
       if (user != $none) #user: user,
       if (serviceTier != $none) #serviceTier: serviceTier,
       if (messages != null) #messages: messages,
-      if (model != $none) #model: model,
+      if (model != null) #model: model,
       if (logitBias != $none) #logitBias: logitBias,
       if (modalities != $none) #modalities: modalities,
       if (reasoningEffort != $none) #reasoningEffort: reasoningEffort,

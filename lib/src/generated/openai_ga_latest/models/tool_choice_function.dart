@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'tool_choice_function_type_type.dart';
+import 'tool_choice_param.dart';
 
 part 'tool_choice_function.mapper.dart';
 
 /// Use this option to force the model to call a specific function.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolChoiceFunction with ToolChoiceFunctionMappable {
   const ToolChoiceFunction({
     required this.type,

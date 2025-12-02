@@ -40,6 +40,10 @@ class MoveMapper extends ClassMapperBase<Move> {
     #y: _f$y,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Move _instantiate(DecodingData data) {
     return Move(x: data.dec(_f$x), y: data.dec(_f$y), type: data.dec(_f$type));

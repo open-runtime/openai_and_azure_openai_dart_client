@@ -45,6 +45,10 @@ class FileImportMapper extends ClassMapperBase<FileImport> {
     #filename: _f$filename,
     #contentUrl: _f$contentUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileImport _instantiate(DecodingData data) {
     return FileImport(

@@ -18,7 +18,7 @@ class CreateVectorStoreRequestMapper
         _instance = CreateVectorStoreRequestMapper._(),
       );
       VectorStoreExpirationAfterMapper.ensureInitialized();
-      CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnionMapper.ensureInitialized();
+      CreateVectorStoreRequestChunkingStrategyUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -49,11 +49,12 @@ class CreateVectorStoreRequestMapper
     key: r'expires_after',
     opt: true,
   );
-  static CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion?
-  _$chunkingStrategy(CreateVectorStoreRequest v) => v.chunkingStrategy;
+  static CreateVectorStoreRequestChunkingStrategyUnion? _$chunkingStrategy(
+    CreateVectorStoreRequest v,
+  ) => v.chunkingStrategy;
   static const Field<
     CreateVectorStoreRequest,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion
+    CreateVectorStoreRequestChunkingStrategyUnion
   >
   _f$chunkingStrategy = Field(
     'chunkingStrategy',
@@ -74,6 +75,10 @@ class CreateVectorStoreRequestMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreRequest _instantiate(DecodingData data) {
     return CreateVectorStoreRequest(
@@ -162,10 +167,10 @@ abstract class CreateVectorStoreRequestCopyWith<
     VectorStoreExpirationAfter
   >?
   get expiresAfter;
-  CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateVectorStoreRequestChunkingStrategyUnionCopyWith<
     $R,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion
+    CreateVectorStoreRequestChunkingStrategyUnion,
+    CreateVectorStoreRequestChunkingStrategyUnion
   >?
   get chunkingStrategy;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
@@ -174,8 +179,7 @@ abstract class CreateVectorStoreRequestCopyWith<
     List<String>? fileIds,
     String? name,
     VectorStoreExpirationAfter? expiresAfter,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion?
-    chunkingStrategy,
+    CreateVectorStoreRequestChunkingStrategyUnion? chunkingStrategy,
     Map<String, String>? metadata,
   });
   CreateVectorStoreRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -210,10 +214,10 @@ class _CreateVectorStoreRequestCopyWithImpl<$R, $Out>
   get expiresAfter =>
       $value.expiresAfter?.copyWith.$chain((v) => call(expiresAfter: v));
   @override
-  CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateVectorStoreRequestChunkingStrategyUnionCopyWith<
     $R,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion,
-    CreateVectorStoreRequestChunkingStrategyChunkingStrategyUnion
+    CreateVectorStoreRequestChunkingStrategyUnion,
+    CreateVectorStoreRequestChunkingStrategyUnion
   >?
   get chunkingStrategy => $value.chunkingStrategy?.copyWith.$chain(
     (v) => call(chunkingStrategy: v),

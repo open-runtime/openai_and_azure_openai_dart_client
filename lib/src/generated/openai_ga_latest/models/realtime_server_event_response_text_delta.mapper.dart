@@ -63,6 +63,10 @@ class RealtimeServerEventResponseTextDeltaMapper
     #contentIndex: _f$contentIndex,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseTextDelta _instantiate(DecodingData data) {
     return RealtimeServerEventResponseTextDelta(

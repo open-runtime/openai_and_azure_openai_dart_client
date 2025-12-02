@@ -23,6 +23,10 @@ class StopConfigurationMapper extends ClassMapperBase<StopConfiguration> {
 
   @override
   final MappableFields<StopConfiguration> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StopConfiguration _instantiate(DecodingData data) {
     return StopConfiguration();

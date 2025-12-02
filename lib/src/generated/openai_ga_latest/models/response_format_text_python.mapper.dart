@@ -34,6 +34,10 @@ class ResponseFormatTextPythonMapper
   final MappableFields<ResponseFormatTextPython> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatTextPython _instantiate(DecodingData data) {
     return ResponseFormatTextPython(type: data.dec(_f$type));

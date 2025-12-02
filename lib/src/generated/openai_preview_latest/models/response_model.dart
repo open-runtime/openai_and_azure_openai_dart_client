@@ -13,7 +13,7 @@ import 'response_model_incomplete_details.dart';
 import 'response_model_object_object_enum.dart';
 import 'response_model_status_status.dart';
 import 'response_properties_text.dart';
-import 'response_properties_tool_choice_tool_choice_union.dart';
+import 'response_properties_tool_choice_union.dart';
 import 'response_properties_truncation_truncation.dart';
 import 'response_usage.dart';
 import 'service_tier.dart';
@@ -21,7 +21,7 @@ import 'tool.dart';
 
 part 'response_model.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseModel with ResponseModelMappable {
   const ResponseModel({
     required this.id,
@@ -56,7 +56,7 @@ class ResponseModel with ResponseModelMappable {
   @MappableField(key: 'created_at')
   final num createdAt;
   final ResponseError? error;
-  @MappableField(key: 'ResponseModelIncompleteDetails')
+  @MappableField(key: 'incomplete_details')
   final ResponseModelIncompleteDetails? responseModelIncompleteDetails;
   final List<OutputItem> output;
   final num? temperature;
@@ -76,11 +76,11 @@ class ResponseModel with ResponseModelMappable {
   @MappableField(key: 'max_output_tokens')
   final int? maxOutputTokens;
   final String? instructions;
-  @MappableField(key: 'ResponsePropertiesText')
+  @MappableField(key: 'text')
   final ResponsePropertiesText? responsePropertiesText;
   final List<Tool>? tools;
   @MappableField(key: 'tool_choice')
-  final ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice;
+  final ResponsePropertiesToolChoiceUnion? toolChoice;
   final ResponseModelStatusStatus? status;
   @MappableField(key: 'output_text')
   final String? outputText;

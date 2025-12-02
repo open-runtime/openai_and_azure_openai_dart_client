@@ -4,14 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_mcp_tool_call_error_error_union.dart';
+import 'realtime_conversation_item.dart';
+import 'realtime_mcp_tool_call_error_union.dart';
 import 'realtime_mcp_tool_call_type_type.dart';
 
 part 'realtime_mcp_tool_call.mapper.dart';
 
 /// A Realtime item representing an invocation of a tool on an MCP server.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpToolCall with RealtimeMcpToolCallMappable {
   const RealtimeMcpToolCall({
     required this.type,
@@ -33,7 +34,7 @@ class RealtimeMcpToolCall with RealtimeMcpToolCallMappable {
   @MappableField(key: 'approval_request_id')
   final String? approvalRequestId;
   final String? output;
-  final RealtimeMcpToolCallErrorErrorUnion? error;
+  final RealtimeMcpToolCallErrorUnion? error;
 
   static RealtimeMcpToolCall fromJson(Map<String, dynamic> json) => RealtimeMcpToolCallMapper.fromJson(json);
 

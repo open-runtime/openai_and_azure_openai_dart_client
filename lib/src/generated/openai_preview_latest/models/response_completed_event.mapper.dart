@@ -39,6 +39,10 @@ class ResponseCompletedEventMapper
     #type: _f$type,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCompletedEvent _instantiate(DecodingData data) {
     return ResponseCompletedEvent(

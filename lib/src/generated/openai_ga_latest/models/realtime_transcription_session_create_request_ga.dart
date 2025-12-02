@@ -11,7 +11,7 @@ import 'realtime_transcription_session_create_request_ga_type_type.dart';
 part 'realtime_transcription_session_create_request_ga.mapper.dart';
 
 /// Realtime transcription session object configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateRequestGa with RealtimeTranscriptionSessionCreateRequestGaMappable {
   const RealtimeTranscriptionSessionCreateRequestGa({
     required this.type,
@@ -20,7 +20,7 @@ class RealtimeTranscriptionSessionCreateRequestGa with RealtimeTranscriptionSess
   });
 
   final RealtimeTranscriptionSessionCreateRequestGaTypeType type;
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestGaAudio')
+  @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
   final List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>? include;
 

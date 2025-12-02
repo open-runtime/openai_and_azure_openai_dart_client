@@ -12,7 +12,7 @@ part 'file_search_ranking_options.mapper.dart';
 ///
 /// See the [file search tool documentation](https://platform.openai.com/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchRankingOptions with FileSearchRankingOptionsMappable {
   const FileSearchRankingOptions({
     required this.scoreThreshold,

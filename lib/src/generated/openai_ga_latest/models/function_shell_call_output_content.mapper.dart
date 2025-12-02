@@ -17,7 +17,7 @@ class FunctionShellCallOutputContentMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputContentMapper._(),
       );
-      FunctionShellCallOutputContentOutcomeOutcomeUnionMapper.ensureInitialized();
+      FunctionShellCallOutputContentOutcomeUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,12 +35,12 @@ class FunctionShellCallOutputContentMapper
     'stderr',
     _$stderr,
   );
-  static FunctionShellCallOutputContentOutcomeOutcomeUnion _$outcome(
+  static FunctionShellCallOutputContentOutcomeUnion _$outcome(
     FunctionShellCallOutputContent v,
   ) => v.outcome;
   static const Field<
     FunctionShellCallOutputContent,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion
+    FunctionShellCallOutputContentOutcomeUnion
   >
   _f$outcome = Field('outcome', _$outcome);
   static String? _$createdBy(FunctionShellCallOutputContent v) => v.createdBy;
@@ -54,6 +54,10 @@ class FunctionShellCallOutputContentMapper
     #outcome: _f$outcome,
     #createdBy: _f$createdBy,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputContent _instantiate(DecodingData data) {
     return FunctionShellCallOutputContent(
@@ -142,16 +146,16 @@ abstract class FunctionShellCallOutputContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  FunctionShellCallOutputContentOutcomeOutcomeUnionCopyWith<
+  FunctionShellCallOutputContentOutcomeUnionCopyWith<
     $R,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion
+    FunctionShellCallOutputContentOutcomeUnion,
+    FunctionShellCallOutputContentOutcomeUnion
   >
   get outcome;
   $R call({
     String? stdout,
     String? stderr,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion? outcome,
+    FunctionShellCallOutputContentOutcomeUnion? outcome,
     String? createdBy,
   });
   FunctionShellCallOutputContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -177,17 +181,17 @@ class _FunctionShellCallOutputContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellCallOutputContent> $mapper =
       FunctionShellCallOutputContentMapper.ensureInitialized();
   @override
-  FunctionShellCallOutputContentOutcomeOutcomeUnionCopyWith<
+  FunctionShellCallOutputContentOutcomeUnionCopyWith<
     $R,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion
+    FunctionShellCallOutputContentOutcomeUnion,
+    FunctionShellCallOutputContentOutcomeUnion
   >
   get outcome => $value.outcome.copyWith.$chain((v) => call(outcome: v));
   @override
   $R call({
     String? stdout,
     String? stderr,
-    FunctionShellCallOutputContentOutcomeOutcomeUnion? outcome,
+    FunctionShellCallOutputContentOutcomeUnion? outcome,
     Object? createdBy = $none,
   }) => $apply(
     FieldCopyWithData({

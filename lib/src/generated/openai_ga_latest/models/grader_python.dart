@@ -10,7 +10,7 @@ part 'grader_python.mapper.dart';
 
 /// A PythonGrader object that runs a python script on the input.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderPython with GraderPythonMappable {
   const GraderPython({
     required this.type,

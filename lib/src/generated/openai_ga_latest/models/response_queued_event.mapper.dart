@@ -44,6 +44,10 @@ class ResponseQueuedEventMapper extends ClassMapperBase<ResponseQueuedEvent> {
     #response: _f$response,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseQueuedEvent _instantiate(DecodingData data) {
     return ResponseQueuedEvent(

@@ -34,6 +34,10 @@ class ModifyCertificateRequestMapper
   final MappableFields<ModifyCertificateRequest> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyCertificateRequest _instantiate(DecodingData data) {
     return ModifyCertificateRequest(name: data.dec(_f$name));

@@ -8,7 +8,7 @@ import 'system_compute_datasource_type.dart';
 
 part 'system_compute_datasource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SystemComputeDatasource with SystemComputeDatasourceMappable {
   const SystemComputeDatasource({
     required this.kind,

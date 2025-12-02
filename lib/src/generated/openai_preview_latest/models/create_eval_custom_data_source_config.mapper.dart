@@ -59,6 +59,10 @@ class CreateEvalCustomDataSourceConfigMapper
     #type: _f$type,
     #includeSampleSchema: _f$includeSampleSchema,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCustomDataSourceConfig _instantiate(DecodingData data) {
     return CreateEvalCustomDataSourceConfig(

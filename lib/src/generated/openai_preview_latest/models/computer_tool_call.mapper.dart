@@ -14,7 +14,7 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
   static ComputerToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerToolCallMapper._());
-      ComputerActionUnionMapper.ensureInitialized();
+      ComputerActionMapper.ensureInitialized();
       ComputerToolCallSafetyCheckMapper.ensureInitialized();
       ComputerToolCallStatusStatusMapper.ensureInitialized();
       ComputerToolCallTypeTypeMapper.ensureInitialized();
@@ -33,8 +33,8 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
     _$callId,
     key: r'call_id',
   );
-  static ComputerActionUnion? _$action(ComputerToolCall v) => v.action;
-  static const Field<ComputerToolCall, ComputerActionUnion> _f$action = Field(
+  static ComputerAction _$action(ComputerToolCall v) => v.action;
+  static const Field<ComputerToolCall, ComputerAction> _f$action = Field(
     'action',
     _$action,
   );
@@ -68,6 +68,10 @@ class ComputerToolCallMapper extends ClassMapperBase<ComputerToolCall> {
     #status: _f$status,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerToolCall _instantiate(DecodingData data) {
     return ComputerToolCall(
@@ -142,8 +146,7 @@ extension ComputerToolCallValueCopy<$R, $Out>
 
 abstract class ComputerToolCallCopyWith<$R, $In extends ComputerToolCall, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  ComputerActionUnionCopyWith<$R, ComputerActionUnion, ComputerActionUnion>?
-  get action;
+  ComputerActionCopyWith<$R, ComputerAction, ComputerAction> get action;
   ListCopyWith<
     $R,
     ComputerToolCallSafetyCheck,
@@ -157,7 +160,7 @@ abstract class ComputerToolCallCopyWith<$R, $In extends ComputerToolCall, $Out>
   $R call({
     String? id,
     String? callId,
-    ComputerActionUnion? action,
+    ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
     ComputerToolCallStatusStatus? status,
     ComputerToolCallTypeType? type,
@@ -176,8 +179,8 @@ class _ComputerToolCallCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ComputerToolCall> $mapper =
       ComputerToolCallMapper.ensureInitialized();
   @override
-  ComputerActionUnionCopyWith<$R, ComputerActionUnion, ComputerActionUnion>?
-  get action => $value.action?.copyWith.$chain((v) => call(action: v));
+  ComputerActionCopyWith<$R, ComputerAction, ComputerAction> get action =>
+      $value.action.copyWith.$chain((v) => call(action: v));
   @override
   ListCopyWith<
     $R,
@@ -197,7 +200,7 @@ class _ComputerToolCallCopyWithImpl<$R, $Out>
   $R call({
     String? id,
     String? callId,
-    Object? action = $none,
+    ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
     ComputerToolCallStatusStatus? status,
     ComputerToolCallTypeType? type,
@@ -205,7 +208,7 @@ class _ComputerToolCallCopyWithImpl<$R, $Out>
     FieldCopyWithData({
       if (id != null) #id: id,
       if (callId != null) #callId: callId,
-      if (action != $none) #action: action,
+      if (action != null) #action: action,
       if (pendingSafetyChecks != null)
         #pendingSafetyChecks: pendingSafetyChecks,
       if (status != null) #status: status,

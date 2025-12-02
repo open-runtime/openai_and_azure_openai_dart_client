@@ -9,7 +9,7 @@ import 'create_moderation_response_results.dart';
 part 'create_moderation_response.mapper.dart';
 
 /// Represents if a given text input is potentially harmful.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationResponse with CreateModerationResponseMappable {
   const CreateModerationResponse({
     required this.id,

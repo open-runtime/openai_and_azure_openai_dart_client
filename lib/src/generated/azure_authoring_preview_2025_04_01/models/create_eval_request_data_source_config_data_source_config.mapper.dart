@@ -69,6 +69,10 @@ class CreateEvalRequestDataSourceConfigDataSourceConfigMapper
     #includeSampleSchema: _f$includeSampleSchema,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRequestDataSourceConfigDataSourceConfig _instantiate(
     DecodingData data,

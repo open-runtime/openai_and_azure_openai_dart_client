@@ -11,7 +11,7 @@ import 'vector_store_file_batch_object_status_status.dart';
 part 'vector_store_file_batch_object.mapper.dart';
 
 /// A batch of files attached to a vector store.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileBatchObject with VectorStoreFileBatchObjectMappable {
   const VectorStoreFileBatchObject({
     required this.id,
@@ -30,7 +30,7 @@ class VectorStoreFileBatchObject with VectorStoreFileBatchObjectMappable {
   @MappableField(key: 'vector_store_id')
   final String vectorStoreId;
   final VectorStoreFileBatchObjectStatusStatus status;
-  @MappableField(key: 'VectorStoreFileBatchObjectFileCounts')
+  @MappableField(key: 'file_counts')
   final VectorStoreFileBatchObjectFileCounts vectorStoreFileBatchObjectFileCounts;
 
   static VectorStoreFileBatchObject fromJson(Map<String, dynamic> json) => VectorStoreFileBatchObjectMapper.fromJson(json);

@@ -9,7 +9,7 @@ part 'realtime_beta_server_event_input_audio_buffer_cleared.mapper.dart';
 /// Returned when the input audio buffer is cleared by the client with a .
 /// `input_audio_buffer.clear` event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventInputAudioBufferCleared with RealtimeBetaServerEventInputAudioBufferClearedMappable {
   const RealtimeBetaServerEventInputAudioBufferCleared({
     required this.eventId,

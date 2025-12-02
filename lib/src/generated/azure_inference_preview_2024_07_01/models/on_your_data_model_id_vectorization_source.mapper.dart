@@ -42,6 +42,10 @@ class OnYourDataModelIdVectorizationSourceMapper
     #type: _f$type,
     #modelId: _f$modelId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataModelIdVectorizationSource _instantiate(DecodingData data) {
     return OnYourDataModelIdVectorizationSource(

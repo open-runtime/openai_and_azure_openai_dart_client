@@ -30,7 +30,7 @@ class ResponseItemListObjectObjectEnumMapper
   ResponseItemListObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ResponseItemListObjectObjectEnum.valueList;
+        return ResponseItemListObjectObjectEnum.list;
       case 'unknown':
         return ResponseItemListObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class ResponseItemListObjectObjectEnumMapper
   @override
   dynamic encode(ResponseItemListObjectObjectEnum self) {
     switch (self) {
-      case ResponseItemListObjectObjectEnum.valueList:
+      case ResponseItemListObjectObjectEnum.list:
         return 'list';
       case ResponseItemListObjectObjectEnum.unknown:
         return 'unknown';

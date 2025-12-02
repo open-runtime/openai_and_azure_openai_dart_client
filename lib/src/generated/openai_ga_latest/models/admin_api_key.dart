@@ -9,7 +9,7 @@ import 'admin_api_key_owner.dart';
 part 'admin_api_key.mapper.dart';
 
 /// Represents an individual Admin API key in an org.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKey with AdminApiKeyMappable {
   const AdminApiKey({
     required this.objectField,
@@ -32,7 +32,7 @@ class AdminApiKey with AdminApiKeyMappable {
   final int createdAt;
   @MappableField(key: 'last_used_at')
   final int? lastUsedAt;
-  @MappableField(key: 'AdminApiKeyOwner')
+  @MappableField(key: 'owner')
   final AdminApiKeyOwner adminApiKeyOwner;
   final String? value;
 

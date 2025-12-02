@@ -36,6 +36,10 @@ class RunStepDetailsMessageCreationObjectMessageCreationMapper
   @override
   final MappableFields<RunStepDetailsMessageCreationObjectMessageCreation>
   fields = const {#messageId: _f$messageId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsMessageCreationObjectMessageCreation _instantiate(
     DecodingData data,

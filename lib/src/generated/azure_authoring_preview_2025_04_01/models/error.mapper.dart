@@ -55,6 +55,10 @@ class ErrorMapper extends ClassMapperBase<Error> {
     #details: _f$details,
     #innererror: _f$innererror,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Error _instantiate(DecodingData data) {
     return Error(

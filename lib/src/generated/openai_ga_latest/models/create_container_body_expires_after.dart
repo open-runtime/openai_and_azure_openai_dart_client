@@ -8,7 +8,7 @@ import 'create_container_body_expires_after_anchor_anchor.dart';
 
 part 'create_container_body_expires_after.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateContainerBodyExpiresAfter with CreateContainerBodyExpiresAfterMappable {
   const CreateContainerBodyExpiresAfter({
     required this.anchor,

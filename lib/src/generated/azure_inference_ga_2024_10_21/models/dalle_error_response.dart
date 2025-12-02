@@ -8,7 +8,7 @@ import 'dalle_error.dart';
 
 part 'dalle_error_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleErrorResponse with DalleErrorResponseMappable {
   const DalleErrorResponse({
     this.error,

@@ -31,6 +31,10 @@ class FineTuneDpoMethodMapper extends ClassMapperBase<FineTuneDpoMethod> {
   final MappableFields<FineTuneDpoMethod> fields = const {
     #hyperparameters: _f$hyperparameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneDpoMethod _instantiate(DecodingData data) {
     return FineTuneDpoMethod(hyperparameters: data.dec(_f$hyperparameters));

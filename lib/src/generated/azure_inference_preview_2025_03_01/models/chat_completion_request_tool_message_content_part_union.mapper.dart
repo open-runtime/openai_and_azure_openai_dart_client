@@ -29,6 +29,10 @@ class ChatCompletionRequestToolMessageContentPartUnionMapper
   @override
   final MappableFields<ChatCompletionRequestToolMessageContentPartUnion>
   fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestToolMessageContentPartUnion _instantiate(
     DecodingData data,
@@ -128,6 +132,10 @@ class ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessa
     ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText
   >
   fields = const {#type: _f$type, #text: _f$text};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText
   _instantiate(DecodingData data) {

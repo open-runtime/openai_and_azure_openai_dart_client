@@ -9,7 +9,7 @@ import 'run_object_required_action_submit_tool_outputs.dart';
 
 part 'run_object_required_action.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectRequiredAction with RunObjectRequiredActionMappable {
   const RunObjectRequiredAction({
     required this.type,
@@ -17,7 +17,7 @@ class RunObjectRequiredAction with RunObjectRequiredActionMappable {
   });
 
   final RunObjectRequiredActionTypeType type;
-  @MappableField(key: 'RunObjectRequiredActionSubmitToolOutputs')
+  @MappableField(key: 'submit_tool_outputs')
   final RunObjectRequiredActionSubmitToolOutputs runObjectRequiredActionSubmitToolOutputs;
 
   static RunObjectRequiredAction fromJson(Map<String, dynamic> json) => RunObjectRequiredActionMapper.fromJson(json);

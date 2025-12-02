@@ -6,13 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_tool_call_status_status.dart';
 import 'function_tool_call_type_type.dart';
+import 'output_item.dart';
 
 part 'function_tool_call.mapper.dart';
 
 /// A tool call to run a function. See the .
 /// [function calling guide](/docs/guides/function-calling) for more information.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionToolCall with FunctionToolCallMappable {
   const FunctionToolCall({
     required this.type,

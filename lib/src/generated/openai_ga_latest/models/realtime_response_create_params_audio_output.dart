@@ -9,13 +9,14 @@ import 'voice_ids_shared.dart';
 
 part 'realtime_response_create_params_audio_output.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsAudioOutput with RealtimeResponseCreateParamsAudioOutputMappable {
   const RealtimeResponseCreateParamsAudioOutput({
-    this.voice = 'alloy',
+    this.voice = const VoiceIdsSharedVariantString(value: 'alloy'),
     this.format,
   });
 
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
   final RealtimeAudioFormats? format;
 

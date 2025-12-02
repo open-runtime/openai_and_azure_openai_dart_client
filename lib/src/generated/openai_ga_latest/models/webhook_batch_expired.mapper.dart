@@ -39,7 +39,7 @@ class WebhookBatchExpiredMapper extends ClassMapperBase<WebhookBatchExpired> {
   _f$webhookBatchExpiredData = Field(
     'webhookBatchExpiredData',
     _$webhookBatchExpiredData,
-    key: r'WebhookBatchExpiredData',
+    key: r'data',
   );
   static WebhookBatchExpiredTypeType _$type(WebhookBatchExpired v) => v.type;
   static const Field<WebhookBatchExpired, WebhookBatchExpiredTypeType> _f$type =
@@ -58,6 +58,10 @@ class WebhookBatchExpiredMapper extends ClassMapperBase<WebhookBatchExpired> {
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchExpired _instantiate(DecodingData data) {
     return WebhookBatchExpired(

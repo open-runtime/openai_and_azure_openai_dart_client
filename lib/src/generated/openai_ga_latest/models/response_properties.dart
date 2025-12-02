@@ -14,7 +14,7 @@ import 'tools_array.dart';
 
 part 'response_properties.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseProperties with ResponsePropertiesMappable {
   const ResponseProperties({
     this.background = false,

@@ -72,6 +72,10 @@ class ContentFilterPromptResultsMapper
     #error: _f$error,
     #jailbreak: _f$jailbreak,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterPromptResults _instantiate(DecodingData data) {
     return ContentFilterPromptResults(

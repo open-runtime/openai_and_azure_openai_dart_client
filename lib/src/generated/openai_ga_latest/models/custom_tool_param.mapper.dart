@@ -14,7 +14,7 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
   static CustomToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomToolParamMapper._());
-      CustomToolParamFormatFormatUnionMapper.ensureInitialized();
+      CustomToolParamFormatUnionMapper.ensureInitialized();
       CustomToolParamTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,10 +31,9 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
     _$description,
     opt: true,
   );
-  static CustomToolParamFormatFormatUnion? _$format(CustomToolParam v) =>
-      v.format;
-  static const Field<CustomToolParam, CustomToolParamFormatFormatUnion>
-  _f$format = Field('format', _$format, opt: true);
+  static CustomToolParamFormatUnion? _$format(CustomToolParam v) => v.format;
+  static const Field<CustomToolParam, CustomToolParamFormatUnion> _f$format =
+      Field('format', _$format, opt: true);
   static CustomToolParamTypeType _$type(CustomToolParam v) => v.type;
   static const Field<CustomToolParam, CustomToolParamTypeType> _f$type = Field(
     'type',
@@ -50,6 +49,10 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
     #format: _f$format,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomToolParam _instantiate(DecodingData data) {
     return CustomToolParam(
@@ -122,16 +125,16 @@ extension CustomToolParamValueCopy<$R, $Out>
 
 abstract class CustomToolParamCopyWith<$R, $In extends CustomToolParam, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  CustomToolParamFormatFormatUnionCopyWith<
+  CustomToolParamFormatUnionCopyWith<
     $R,
-    CustomToolParamFormatFormatUnion,
-    CustomToolParamFormatFormatUnion
+    CustomToolParamFormatUnion,
+    CustomToolParamFormatUnion
   >?
   get format;
   $R call({
     String? name,
     String? description,
-    CustomToolParamFormatFormatUnion? format,
+    CustomToolParamFormatUnion? format,
     CustomToolParamTypeType? type,
   });
   CustomToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -148,10 +151,10 @@ class _CustomToolParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CustomToolParam> $mapper =
       CustomToolParamMapper.ensureInitialized();
   @override
-  CustomToolParamFormatFormatUnionCopyWith<
+  CustomToolParamFormatUnionCopyWith<
     $R,
-    CustomToolParamFormatFormatUnion,
-    CustomToolParamFormatFormatUnion
+    CustomToolParamFormatUnion,
+    CustomToolParamFormatUnion
   >?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
   @override

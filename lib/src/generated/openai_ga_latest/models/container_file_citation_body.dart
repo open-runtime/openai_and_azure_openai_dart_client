@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'annotation.dart';
 import 'container_file_citation_body_type_type.dart';
 
 part 'container_file_citation_body.mapper.dart';
 
 /// A citation for a container file used to generate a model response.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerFileCitationBody with ContainerFileCitationBodyMappable {
   const ContainerFileCitationBody({
     required this.containerId,

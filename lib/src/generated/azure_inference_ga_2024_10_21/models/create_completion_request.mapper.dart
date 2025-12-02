@@ -151,6 +151,10 @@ class CreateCompletionRequestMapper
     #temperature: _f$temperature,
     #topP: _f$topP,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionRequest _instantiate(DecodingData data) {
     return CreateCompletionRequest(

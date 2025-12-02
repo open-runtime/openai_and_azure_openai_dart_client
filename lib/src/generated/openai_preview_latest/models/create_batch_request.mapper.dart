@@ -56,6 +56,10 @@ class CreateBatchRequestMapper extends ClassMapperBase<CreateBatchRequest> {
     #completionWindow: _f$completionWindow,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateBatchRequest _instantiate(DecodingData data) {
     return CreateBatchRequest(

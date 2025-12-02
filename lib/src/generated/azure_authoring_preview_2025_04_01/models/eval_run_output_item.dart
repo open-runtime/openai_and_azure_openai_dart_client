@@ -10,7 +10,7 @@ import 'eval_run_output_item_sample.dart';
 part 'eval_run_output_item.mapper.dart';
 
 /// A schema representing an evaluation run output item.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItem with EvalRunOutputItemMappable {
   const EvalRunOutputItem({
     required this.createdAt,
@@ -37,7 +37,7 @@ class EvalRunOutputItem with EvalRunOutputItemMappable {
   final List<dynamic> results;
   @MappableField(key: 'run_id')
   final String runId;
-  @MappableField(key: 'EvalRunOutputItemSample')
+  @MappableField(key: 'sample')
   final EvalRunOutputItemSample evalRunOutputItemSample;
   final String status;
   @MappableField(key: 'object')

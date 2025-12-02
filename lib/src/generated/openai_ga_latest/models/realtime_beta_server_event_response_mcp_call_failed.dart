@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_mcp_call_failed.mapper.dart';
 
 /// Returned when an MCP tool call has failed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseMcpCallFailed with RealtimeBetaServerEventResponseMcpCallFailedMappable {
   const RealtimeBetaServerEventResponseMcpCallFailed({
     required this.eventId,

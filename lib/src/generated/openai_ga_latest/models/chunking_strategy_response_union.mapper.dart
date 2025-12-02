@@ -17,8 +17,8 @@ class ChunkingStrategyResponseUnionMapper
       MapperContainer.globals.use(
         _instance = ChunkingStrategyResponseUnionMapper._(),
       );
-      ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized();
-      ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized();
+      ChunkingStrategyResponseUnionStaticMapper.ensureInitialized();
+      ChunkingStrategyResponseUnionOtherMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,9 +28,17 @@ class ChunkingStrategyResponseUnionMapper
 
   @override
   final MappableFields<ChunkingStrategyResponseUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChunkingStrategyResponseUnion _instantiate(DecodingData data) {
-    throw MapperException.missingConstructor('ChunkingStrategyResponseUnion');
+    throw MapperException.missingSubclass(
+      'ChunkingStrategyResponseUnion',
+      'type',
+      '${data.value['type']}',
+    );
   }
 
   @override
@@ -68,23 +76,19 @@ abstract class ChunkingStrategyResponseUnionCopyWith<
   );
 }
 
-class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper
-    extends
-        ClassMapperBase<
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-        > {
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper._();
+class ChunkingStrategyResponseUnionStaticMapper
+    extends SubClassMapperBase<ChunkingStrategyResponseUnionStatic> {
+  ChunkingStrategyResponseUnionStaticMapper._();
 
-  static ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper?
-  _instance;
-  static ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper
-  ensureInitialized() {
+  static ChunkingStrategyResponseUnionStaticMapper? _instance;
+  static ChunkingStrategyResponseUnionStaticMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper._(),
+        _instance = ChunkingStrategyResponseUnionStaticMapper._(),
       );
-      ChunkingStrategyResponseUnionMapper.ensureInitialized();
+      ChunkingStrategyResponseUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       StaticChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
@@ -92,35 +96,45 @@ class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper
   }
 
   @override
-  final String id =
-      'ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam';
+  final String id = 'ChunkingStrategyResponseUnionStatic';
 
   static StaticChunkingStrategyResponseParamTypeType _$type(
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam v,
+    ChunkingStrategyResponseUnionStatic v,
   ) => v.type;
   static const Field<
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionStatic,
     StaticChunkingStrategyResponseParamTypeType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam v,
+    ChunkingStrategyResponseUnionStatic v,
   ) => v.staticField;
   static const Field<
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionStatic,
     StaticChunkingStrategy
   >
-  _f$staticField = Field('staticField', _$staticField);
+  _f$staticField = Field('staticField', _$staticField, key: r'static');
 
   @override
-  final MappableFields<
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-  >
-  fields = const {#type: _f$type, #staticField: _f$staticField};
+  final MappableFields<ChunkingStrategyResponseUnionStatic> fields = const {
+    #type: _f$type,
+    #staticField: _f$staticField,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-  _instantiate(DecodingData data) {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'static';
+  @override
+  late final ClassMapperBase superMapper =
+      ChunkingStrategyResponseUnionMapper.ensureInitialized();
+
+  static ChunkingStrategyResponseUnionStatic _instantiate(DecodingData data) {
+    return ChunkingStrategyResponseUnionStatic(
       type: data.dec(_f$type),
       staticField: data.dec(_f$staticField),
     );
@@ -129,114 +143,81 @@ class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-    >(map);
+  static ChunkingStrategyResponseUnionStatic fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized().decodeMap<ChunkingStrategyResponseUnionStatic>(
+      map,
+    );
   }
 
-  static ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-    >(json);
+  static ChunkingStrategyResponseUnionStatic fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ChunkingStrategyResponseUnionStatic>(
+      json,
+    );
   }
 }
 
-mixin ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMappable {
+mixin ChunkingStrategyResponseUnionStaticMappable {
   String toJsonString() {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized()
-        .encodeJson<
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-        >(
-          this
-              as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    return ChunkingStrategyResponseUnionStaticMapper.ensureInitialized()
+        .encodeJson<ChunkingStrategyResponseUnionStatic>(
+          this as ChunkingStrategyResponseUnionStatic,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized()
-        .encodeMap<
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-        >(
-          this
-              as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    return ChunkingStrategyResponseUnionStaticMapper.ensureInitialized()
+        .encodeMap<ChunkingStrategyResponseUnionStatic>(
+          this as ChunkingStrategyResponseUnionStatic,
         );
   }
 
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
+  ChunkingStrategyResponseUnionStaticCopyWith<
+    ChunkingStrategyResponseUnionStatic,
+    ChunkingStrategyResponseUnionStatic,
+    ChunkingStrategyResponseUnionStatic
   >
   get copyWith =>
-      _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithImpl<
-        ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-        ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-      >(
-        this
-            as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-        $identity,
-        $identity,
-      );
+      _ChunkingStrategyResponseUnionStaticCopyWithImpl<
+        ChunkingStrategyResponseUnionStatic,
+        ChunkingStrategyResponseUnionStatic
+      >(this as ChunkingStrategyResponseUnionStatic, $identity, $identity);
   @override
   String toString() {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-        );
+    return ChunkingStrategyResponseUnionStaticMapper.ensureInitialized()
+        .stringifyValue(this as ChunkingStrategyResponseUnionStatic);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-          other,
-        );
+    return ChunkingStrategyResponseUnionStaticMapper.ensureInitialized()
+        .equalsValue(this as ChunkingStrategyResponseUnionStatic, other);
   }
 
   @override
   int get hashCode {
-    return ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-        );
+    return ChunkingStrategyResponseUnionStaticMapper.ensureInitialized()
+        .hashValue(this as ChunkingStrategyResponseUnionStatic);
   }
 }
 
-extension ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-          $Out
-        > {
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
+extension ChunkingStrategyResponseUnionStaticValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChunkingStrategyResponseUnionStatic, $Out> {
+  ChunkingStrategyResponseUnionStaticCopyWith<
     $R,
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionStatic,
     $Out
   >
-  get $asChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam =>
-      $base.as(
-        (v, t, t2) =>
-            _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChunkingStrategyResponseUnionStatic => $base.as(
+    (v, t, t2) =>
+        _ChunkingStrategyResponseUnionStaticCopyWithImpl<$R, $Out>(v, t, t2),
+  );
 }
 
-abstract class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
+abstract class ChunkingStrategyResponseUnionStaticCopyWith<
   $R,
-  $In extends ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+  $In extends ChunkingStrategyResponseUnionStatic,
   $Out
 >
     implements ChunkingStrategyResponseUnionCopyWith<$R, $In, $Out> {
@@ -251,42 +232,27 @@ abstract class ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamC
     StaticChunkingStrategyResponseParamTypeType? type,
     StaticChunkingStrategy? staticField,
   });
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChunkingStrategyResponseUnionStaticCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
-          $Out
-        >
+class _ChunkingStrategyResponseUnionStaticCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ChunkingStrategyResponseUnionStatic, $Out>
     implements
-        ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
+        ChunkingStrategyResponseUnionStaticCopyWith<
           $R,
-          ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+          ChunkingStrategyResponseUnionStatic,
           $Out
         > {
-  _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithImpl(
+  _ChunkingStrategyResponseUnionStaticCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam
-  >
-  $mapper =
-      ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamMapper.ensureInitialized();
+  late final ClassMapperBase<ChunkingStrategyResponseUnionStatic> $mapper =
+      ChunkingStrategyResponseUnionStaticMapper.ensureInitialized();
   @override
   StaticChunkingStrategyCopyWith<
     $R,
@@ -306,245 +272,199 @@ class _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithI
     }),
   );
   @override
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam $make(
-    CopyWithData data,
-  ) => ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam(
-    type: data.get(#type, or: $value.type),
-    staticField: data.get(#staticField, or: $value.staticField),
-  );
+  ChunkingStrategyResponseUnionStatic $make(CopyWithData data) =>
+      ChunkingStrategyResponseUnionStatic(
+        type: data.get(#type, or: $value.type),
+        staticField: data.get(#staticField, or: $value.staticField),
+      );
 
   @override
-  ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWith<
+  ChunkingStrategyResponseUnionStaticCopyWith<
     $R2,
-    ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionStatic,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChunkingStrategyResponseUnionStaticChunkingStrategyResponseParamCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChunkingStrategyResponseUnionStaticCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 
-class ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper
-    extends
-        ClassMapperBase<
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-        > {
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper._();
+class ChunkingStrategyResponseUnionOtherMapper
+    extends SubClassMapperBase<ChunkingStrategyResponseUnionOther> {
+  ChunkingStrategyResponseUnionOtherMapper._();
 
-  static ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper?
-  _instance;
-  static ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper
-  ensureInitialized() {
+  static ChunkingStrategyResponseUnionOtherMapper? _instance;
+  static ChunkingStrategyResponseUnionOtherMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper._(),
+        _instance = ChunkingStrategyResponseUnionOtherMapper._(),
       );
-      ChunkingStrategyResponseUnionMapper.ensureInitialized();
+      ChunkingStrategyResponseUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       OtherChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
 
   @override
-  final String id =
-      'ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam';
+  final String id = 'ChunkingStrategyResponseUnionOther';
 
   static OtherChunkingStrategyResponseParamTypeType _$type(
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam v,
+    ChunkingStrategyResponseUnionOther v,
   ) => v.type;
   static const Field<
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionOther,
     OtherChunkingStrategyResponseParamTypeType
   >
   _f$type = Field('type', _$type);
 
   @override
-  final MappableFields<
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-  >
-  fields = const {#type: _f$type};
+  final MappableFields<ChunkingStrategyResponseUnionOther> fields = const {
+    #type: _f$type,
+  };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-  _instantiate(DecodingData data) {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam(
-      type: data.dec(_f$type),
-    );
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'other';
+  @override
+  late final ClassMapperBase superMapper =
+      ChunkingStrategyResponseUnionMapper.ensureInitialized();
+
+  static ChunkingStrategyResponseUnionOther _instantiate(DecodingData data) {
+    return ChunkingStrategyResponseUnionOther(type: data.dec(_f$type));
   }
 
   @override
   final Function instantiate = _instantiate;
 
-  static ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-    >(map);
+  static ChunkingStrategyResponseUnionOther fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ChunkingStrategyResponseUnionOther>(
+      map,
+    );
   }
 
-  static ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-    >(json);
+  static ChunkingStrategyResponseUnionOther fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ChunkingStrategyResponseUnionOther>(
+      json,
+    );
   }
 }
 
-mixin ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMappable {
+mixin ChunkingStrategyResponseUnionOtherMappable {
   String toJsonString() {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized()
-        .encodeJson<
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-        >(
-          this
-              as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+    return ChunkingStrategyResponseUnionOtherMapper.ensureInitialized()
+        .encodeJson<ChunkingStrategyResponseUnionOther>(
+          this as ChunkingStrategyResponseUnionOther,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized()
-        .encodeMap<
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-        >(
-          this
-              as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+    return ChunkingStrategyResponseUnionOtherMapper.ensureInitialized()
+        .encodeMap<ChunkingStrategyResponseUnionOther>(
+          this as ChunkingStrategyResponseUnionOther,
         );
   }
 
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
+  ChunkingStrategyResponseUnionOtherCopyWith<
+    ChunkingStrategyResponseUnionOther,
+    ChunkingStrategyResponseUnionOther,
+    ChunkingStrategyResponseUnionOther
   >
   get copyWith =>
-      _ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWithImpl<
-        ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-        ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-      >(
-        this as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-        $identity,
-        $identity,
-      );
+      _ChunkingStrategyResponseUnionOtherCopyWithImpl<
+        ChunkingStrategyResponseUnionOther,
+        ChunkingStrategyResponseUnionOther
+      >(this as ChunkingStrategyResponseUnionOther, $identity, $identity);
   @override
   String toString() {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-        );
+    return ChunkingStrategyResponseUnionOtherMapper.ensureInitialized()
+        .stringifyValue(this as ChunkingStrategyResponseUnionOther);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-          other,
-        );
+    return ChunkingStrategyResponseUnionOtherMapper.ensureInitialized()
+        .equalsValue(this as ChunkingStrategyResponseUnionOther, other);
   }
 
   @override
   int get hashCode {
-    return ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-        );
+    return ChunkingStrategyResponseUnionOtherMapper.ensureInitialized()
+        .hashValue(this as ChunkingStrategyResponseUnionOther);
   }
 }
 
-extension ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-          $Out
-        > {
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
+extension ChunkingStrategyResponseUnionOtherValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChunkingStrategyResponseUnionOther, $Out> {
+  ChunkingStrategyResponseUnionOtherCopyWith<
     $R,
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionOther,
     $Out
   >
-  get $asChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam =>
-      $base.as(
-        (v, t, t2) =>
-            _ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChunkingStrategyResponseUnionOther => $base.as(
+    (v, t, t2) =>
+        _ChunkingStrategyResponseUnionOtherCopyWithImpl<$R, $Out>(v, t, t2),
+  );
 }
 
-abstract class ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
+abstract class ChunkingStrategyResponseUnionOtherCopyWith<
   $R,
-  $In extends ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+  $In extends ChunkingStrategyResponseUnionOther,
   $Out
 >
     implements ChunkingStrategyResponseUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({OtherChunkingStrategyResponseParamTypeType? type});
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChunkingStrategyResponseUnionOtherCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWithImpl<
-  $R,
-  $Out
->
-    extends
-        ClassCopyWithBase<
-          $R,
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
-          $Out
-        >
+class _ChunkingStrategyResponseUnionOtherCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ChunkingStrategyResponseUnionOther, $Out>
     implements
-        ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
+        ChunkingStrategyResponseUnionOtherCopyWith<
           $R,
-          ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+          ChunkingStrategyResponseUnionOther,
           $Out
         > {
-  _ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWithImpl(
+  _ChunkingStrategyResponseUnionOtherCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam
-  >
-  $mapper =
-      ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamMapper.ensureInitialized();
+  late final ClassMapperBase<ChunkingStrategyResponseUnionOther> $mapper =
+      ChunkingStrategyResponseUnionOtherMapper.ensureInitialized();
   @override
   $R call({OtherChunkingStrategyResponseParamTypeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam $make(
-    CopyWithData data,
-  ) => ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam(
-    type: data.get(#type, or: $value.type),
-  );
+  ChunkingStrategyResponseUnionOther $make(CopyWithData data) =>
+      ChunkingStrategyResponseUnionOther(
+        type: data.get(#type, or: $value.type),
+      );
 
   @override
-  ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWith<
+  ChunkingStrategyResponseUnionOtherCopyWith<
     $R2,
-    ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParam,
+    ChunkingStrategyResponseUnionOther,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChunkingStrategyResponseUnionOtherChunkingStrategyResponseParamCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChunkingStrategyResponseUnionOtherCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 

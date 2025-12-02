@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_error_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_error_event.mapper.dart';
 
 /// Emitted when an error occurs.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseErrorEvent with ResponseErrorEventMappable {
   const ResponseErrorEvent({
     required this.type,

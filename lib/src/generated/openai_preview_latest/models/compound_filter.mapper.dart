@@ -15,7 +15,7 @@ class CompoundFilterMapper extends ClassMapperBase<CompoundFilter> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CompoundFilterMapper._());
       CompoundFilterTypeTypeMapper.ensureInitialized();
-      CompoundFilterFiltersFiltersUnionMapper.ensureInitialized();
+      CompoundFilterFiltersUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,9 +28,9 @@ class CompoundFilterMapper extends ClassMapperBase<CompoundFilter> {
     'type',
     _$type,
   );
-  static List<CompoundFilterFiltersFiltersUnion> _$filters(CompoundFilter v) =>
+  static List<CompoundFilterFiltersUnion> _$filters(CompoundFilter v) =>
       v.filters;
-  static const Field<CompoundFilter, List<CompoundFilterFiltersFiltersUnion>>
+  static const Field<CompoundFilter, List<CompoundFilterFiltersUnion>>
   _f$filters = Field('filters', _$filters);
 
   @override
@@ -38,6 +38,10 @@ class CompoundFilterMapper extends ClassMapperBase<CompoundFilter> {
     #type: _f$type,
     #filters: _f$filters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompoundFilter _instantiate(DecodingData data) {
     return CompoundFilter(
@@ -110,17 +114,17 @@ abstract class CompoundFilterCopyWith<$R, $In extends CompoundFilter, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    CompoundFilterFiltersFiltersUnion,
-    CompoundFilterFiltersFiltersUnionCopyWith<
+    CompoundFilterFiltersUnion,
+    CompoundFilterFiltersUnionCopyWith<
       $R,
-      CompoundFilterFiltersFiltersUnion,
-      CompoundFilterFiltersFiltersUnion
+      CompoundFilterFiltersUnion,
+      CompoundFilterFiltersUnion
     >
   >
   get filters;
   $R call({
     CompoundFilterTypeType? type,
-    List<CompoundFilterFiltersFiltersUnion>? filters,
+    List<CompoundFilterFiltersUnion>? filters,
   });
   CompoundFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -138,11 +142,11 @@ class _CompoundFilterCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CompoundFilterFiltersFiltersUnion,
-    CompoundFilterFiltersFiltersUnionCopyWith<
+    CompoundFilterFiltersUnion,
+    CompoundFilterFiltersUnionCopyWith<
       $R,
-      CompoundFilterFiltersFiltersUnion,
-      CompoundFilterFiltersFiltersUnion
+      CompoundFilterFiltersUnion,
+      CompoundFilterFiltersUnion
     >
   >
   get filters => ListCopyWith(
@@ -153,7 +157,7 @@ class _CompoundFilterCopyWithImpl<$R, $Out>
   @override
   $R call({
     CompoundFilterTypeType? type,
-    List<CompoundFilterFiltersFiltersUnion>? filters,
+    List<CompoundFilterFiltersUnion>? filters,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

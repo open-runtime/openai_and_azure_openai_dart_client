@@ -4,7 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_client_event_session_update_session_session_union.dart';
+import 'realtime_client_event.dart';
+import 'realtime_client_event_session_update_session_union.dart';
 
 part 'realtime_client_event_session_update.mapper.dart';
 
@@ -18,7 +19,7 @@ part 'realtime_client_event_session_update.mapper.dart';
 /// `instructions`, pass an empty string. To clear a field like `tools`, pass an empty array.
 /// To clear a field like `turn_detection`, pass `null`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventSessionUpdate with RealtimeClientEventSessionUpdateMappable {
   const RealtimeClientEventSessionUpdate({
     required this.type,
@@ -27,7 +28,7 @@ class RealtimeClientEventSessionUpdate with RealtimeClientEventSessionUpdateMapp
   });
 
   final dynamic type;
-  final RealtimeClientEventSessionUpdateSessionSessionUnion session;
+  final RealtimeClientEventSessionUpdateSessionUnion session;
   @MappableField(key: 'event_id')
   final String? eventId;
 

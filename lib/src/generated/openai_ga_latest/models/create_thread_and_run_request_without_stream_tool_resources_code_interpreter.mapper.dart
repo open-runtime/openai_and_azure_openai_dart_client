@@ -51,6 +51,10 @@ class CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreterMapper
     CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter
   >
   fields = const {#fileIds: _f$fileIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter
   _instantiate(DecodingData data) {

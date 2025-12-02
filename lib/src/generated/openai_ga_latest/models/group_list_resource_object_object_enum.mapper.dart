@@ -30,7 +30,7 @@ class GroupListResourceObjectObjectEnumMapper
   GroupListResourceObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return GroupListResourceObjectObjectEnum.valueList;
+        return GroupListResourceObjectObjectEnum.list;
       case 'unknown':
         return GroupListResourceObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class GroupListResourceObjectObjectEnumMapper
   @override
   dynamic encode(GroupListResourceObjectObjectEnum self) {
     switch (self) {
-      case GroupListResourceObjectObjectEnum.valueList:
+      case GroupListResourceObjectObjectEnum.list:
         return 'list';
       case GroupListResourceObjectObjectEnum.unknown:
         return 'unknown';

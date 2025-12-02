@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chat_session_file_upload.mapper.dart';
 
 /// Upload permissions and limits applied to the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionFileUpload with ChatSessionFileUploadMappable {
   const ChatSessionFileUpload({
     required this.enabled,

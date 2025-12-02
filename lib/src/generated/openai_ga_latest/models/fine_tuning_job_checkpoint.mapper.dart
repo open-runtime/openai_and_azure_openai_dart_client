@@ -55,7 +55,7 @@ class FineTuningJobCheckpointMapper
   _f$fineTuningJobCheckpointMetrics = Field(
     'fineTuningJobCheckpointMetrics',
     _$fineTuningJobCheckpointMetrics,
-    key: r'FineTuningJobCheckpointMetrics',
+    key: r'metrics',
   );
   static String _$fineTuningJobId(FineTuningJobCheckpoint v) =>
       v.fineTuningJobId;
@@ -80,6 +80,10 @@ class FineTuningJobCheckpointMapper
     #fineTuningJobId: _f$fineTuningJobId,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobCheckpoint _instantiate(DecodingData data) {
     return FineTuningJobCheckpoint(

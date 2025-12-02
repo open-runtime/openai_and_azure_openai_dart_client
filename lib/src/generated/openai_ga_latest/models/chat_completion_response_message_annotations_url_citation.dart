@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_response_message_annotations_url_citation.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionResponseMessageAnnotationsUrlCitation with ChatCompletionResponseMessageAnnotationsUrlCitationMappable {
   const ChatCompletionResponseMessageAnnotationsUrlCitation({
     required this.endIndex,

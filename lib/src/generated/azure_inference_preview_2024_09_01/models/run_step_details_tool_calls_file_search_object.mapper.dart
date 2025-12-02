@@ -47,6 +47,10 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
     #type: _f$type,
     #fileSearch: _f$fileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFileSearchObject _instantiate(
     DecodingData data,

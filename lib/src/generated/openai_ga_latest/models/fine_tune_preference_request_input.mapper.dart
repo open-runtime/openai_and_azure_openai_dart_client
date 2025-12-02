@@ -36,7 +36,7 @@ class FineTunePreferenceRequestInputMapper
   _f$fineTunePreferenceRequestInputInput = Field(
     'fineTunePreferenceRequestInputInput',
     _$fineTunePreferenceRequestInputInput,
-    key: r'FineTunePreferenceRequestInputInput',
+    key: r'input',
     opt: true,
   );
   static List<ChatCompletionRequestAssistantMessage>? _$preferredOutput(
@@ -73,6 +73,10 @@ class FineTunePreferenceRequestInputMapper
     #preferredOutput: _f$preferredOutput,
     #nonPreferredOutput: _f$nonPreferredOutput,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTunePreferenceRequestInput _instantiate(DecodingData data) {
     return FineTunePreferenceRequestInput(

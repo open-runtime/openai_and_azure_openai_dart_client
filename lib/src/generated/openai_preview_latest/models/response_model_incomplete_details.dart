@@ -8,7 +8,7 @@ import 'response_model_incomplete_details_reason_reason.dart';
 
 part 'response_model_incomplete_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseModelIncompleteDetails with ResponseModelIncompleteDetailsMappable {
   const ResponseModelIncompleteDetails({
     this.reason,

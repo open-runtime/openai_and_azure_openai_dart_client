@@ -78,6 +78,10 @@ class ImagesResponseMapper extends ClassMapperBase<ImagesResponse> {
     #quality: _f$quality,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImagesResponse _instantiate(DecodingData data) {
     return ImagesResponse(

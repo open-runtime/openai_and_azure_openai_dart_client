@@ -54,7 +54,7 @@ class ChatCompletionMessageToolCallChunkMapper
   _f$chatCompletionMessageToolCallChunkFunction = Field(
     'chatCompletionMessageToolCallChunkFunction',
     _$chatCompletionMessageToolCallChunkFunction,
-    key: r'ChatCompletionMessageToolCallChunkFunction',
+    key: r'function',
     opt: true,
   );
 
@@ -66,6 +66,10 @@ class ChatCompletionMessageToolCallChunkMapper
     #chatCompletionMessageToolCallChunkFunction:
         _f$chatCompletionMessageToolCallChunkFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageToolCallChunk _instantiate(DecodingData data) {
     return ChatCompletionMessageToolCallChunk(

@@ -9,7 +9,7 @@ import 'group_object_object_enum.dart';
 part 'group.mapper.dart';
 
 /// Summary information about a group returned in role assignment responses.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Group with GroupMappable {
   const Group({
     required this.objectEnum,

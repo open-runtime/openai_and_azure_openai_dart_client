@@ -77,6 +77,10 @@ class UploadMapper extends ClassMapperBase<Upload> {
     #objectEnum: _f$objectEnum,
     #file: _f$file,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Upload _instantiate(DecodingData data) {
     return Upload(

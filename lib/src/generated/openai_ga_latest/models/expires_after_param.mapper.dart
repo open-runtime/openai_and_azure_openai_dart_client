@@ -42,6 +42,10 @@ class ExpiresAfterParamMapper extends ClassMapperBase<ExpiresAfterParam> {
     #seconds: _f$seconds,
     #anchor: _f$anchor,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ExpiresAfterParam _instantiate(DecodingData data) {
     return ExpiresAfterParam(

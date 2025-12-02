@@ -40,6 +40,10 @@ class EvalJsonlFileIdSourceMapper
     #id: _f$id,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalJsonlFileIdSource _instantiate(DecodingData data) {
     return EvalJsonlFileIdSource(id: data.dec(_f$id), type: data.dec(_f$type));

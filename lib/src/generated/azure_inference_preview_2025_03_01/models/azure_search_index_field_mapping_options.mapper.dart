@@ -95,6 +95,10 @@ class AzureSearchIndexFieldMappingOptionsMapper
     #vectorFields: _f$vectorFields,
     #imageVectorFields: _f$imageVectorFields,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureSearchIndexFieldMappingOptions _instantiate(DecodingData data) {
     return AzureSearchIndexFieldMappingOptions(

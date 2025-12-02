@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'input_content.dart';
 import 'input_text_type_type.dart';
 
 part 'input_text.mapper.dart';
 
 /// A text input to the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputText with InputTextMappable {
   const InputText({
     required this.type,

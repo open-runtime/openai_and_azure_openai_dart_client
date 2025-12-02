@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'transcription_word.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptionWord with TranscriptionWordMappable {
   const TranscriptionWord({
     required this.word,

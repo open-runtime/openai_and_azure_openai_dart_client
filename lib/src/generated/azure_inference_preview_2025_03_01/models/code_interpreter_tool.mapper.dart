@@ -37,6 +37,10 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
     #type: _f$type,
     #fileIds: _f$fileIds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CodeInterpreterTool _instantiate(DecodingData data) {
     return CodeInterpreterTool(

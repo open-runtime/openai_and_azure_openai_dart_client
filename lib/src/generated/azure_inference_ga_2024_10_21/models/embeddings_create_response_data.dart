@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'embeddings_create_response_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EmbeddingsCreateResponseData with EmbeddingsCreateResponseDataMappable {
   const EmbeddingsCreateResponseData({
     required this.indexField,

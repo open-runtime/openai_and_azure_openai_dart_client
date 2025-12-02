@@ -45,6 +45,10 @@ class ChatCompletionDeletedMapper
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionDeleted _instantiate(DecodingData data) {
     return ChatCompletionDeleted(

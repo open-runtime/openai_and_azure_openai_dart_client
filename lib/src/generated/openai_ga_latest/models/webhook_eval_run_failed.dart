@@ -12,7 +12,7 @@ part 'webhook_eval_run_failed.mapper.dart';
 
 /// Sent when an eval run has failed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunFailed with WebhookEvalRunFailedMappable {
   const WebhookEvalRunFailed({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookEvalRunFailed with WebhookEvalRunFailedMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookEvalRunFailedData')
+  @MappableField(key: 'data')
   final WebhookEvalRunFailedData webhookEvalRunFailedData;
   final WebhookEvalRunFailedTypeType type;
   @MappableField(key: 'object')

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'function_shell_action.mapper.dart';
 
 /// Execute a shell command.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellAction with FunctionShellActionMappable {
   const FunctionShellAction({
     required this.commands,

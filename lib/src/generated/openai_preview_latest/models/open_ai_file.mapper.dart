@@ -79,6 +79,10 @@ class OpenAiFileMapper extends ClassMapperBase<OpenAiFile> {
     #expiresAt: _f$expiresAt,
     #statusDetails: _f$statusDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OpenAiFile _instantiate(DecodingData data) {
     return OpenAiFile(

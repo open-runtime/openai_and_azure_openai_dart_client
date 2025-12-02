@@ -11,7 +11,7 @@ part 'mongo_db_chat_extension_configuration.mapper.dart';
 
 /// A specific representation of configurable options for Mongo DB when using it as an Azure OpenAI chat.
 /// extension.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MongoDbChatExtensionConfiguration with MongoDbChatExtensionConfigurationMappable {
   const MongoDbChatExtensionConfiguration({
     required this.type,

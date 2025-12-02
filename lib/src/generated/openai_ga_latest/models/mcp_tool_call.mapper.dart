@@ -81,6 +81,10 @@ class McpToolCallMapper extends ClassMapperBase<McpToolCall> {
     #status: _f$status,
     #approvalRequestId: _f$approvalRequestId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpToolCall _instantiate(DecodingData data) {
     return McpToolCall(

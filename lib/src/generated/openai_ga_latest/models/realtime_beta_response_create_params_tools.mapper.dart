@@ -52,6 +52,10 @@ class RealtimeBetaResponseCreateParamsToolsMapper
     #description: _f$description,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseCreateParamsTools _instantiate(DecodingData data) {
     return RealtimeBetaResponseCreateParamsTools(

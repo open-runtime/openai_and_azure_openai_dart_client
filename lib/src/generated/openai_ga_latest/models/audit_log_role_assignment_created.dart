@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_role_assignment_created.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogRoleAssignmentCreated with AuditLogRoleAssignmentCreatedMappable {
   const AuditLogRoleAssignmentCreated({
     this.id,

@@ -32,6 +32,10 @@ class ChatCompletionNamedToolChoiceFunctionMapper
   final MappableFields<ChatCompletionNamedToolChoiceFunction> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionNamedToolChoiceFunction _instantiate(DecodingData data) {
     return ChatCompletionNamedToolChoiceFunction(name: data.dec(_f$name));

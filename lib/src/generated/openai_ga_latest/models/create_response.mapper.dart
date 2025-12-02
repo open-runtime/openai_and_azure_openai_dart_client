@@ -261,6 +261,10 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     #streamOptions: _f$streamOptions,
     #conversation: _f$conversation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateResponse _instantiate(DecodingData data) {
     return CreateResponse(

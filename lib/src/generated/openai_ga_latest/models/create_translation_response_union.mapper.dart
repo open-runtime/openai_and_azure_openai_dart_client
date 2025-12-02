@@ -28,6 +28,10 @@ class CreateTranslationResponseUnionMapper
 
   @override
   final MappableFields<CreateTranslationResponseUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranslationResponseUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('CreateTranslationResponseUnion');
@@ -107,6 +111,10 @@ class CreateTranslationResponseUnionCreateTranslationResponseJsonMapper
     CreateTranslationResponseUnionCreateTranslationResponseJson
   >
   fields = const {#text: _f$text};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranslationResponseUnionCreateTranslationResponseJson
   _instantiate(DecodingData data) {
@@ -350,6 +358,10 @@ class CreateTranslationResponseUnionCreateTranslationResponseVerboseJsonMapper
     #text: _f$text,
     #segments: _f$segments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranslationResponseUnionCreateTranslationResponseVerboseJson
   _instantiate(DecodingData data) {

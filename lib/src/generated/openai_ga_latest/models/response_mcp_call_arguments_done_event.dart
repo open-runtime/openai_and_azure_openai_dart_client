@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_mcp_call_arguments_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_mcp_call_arguments_done_event.mapper.dart';
 
 /// Emitted when the arguments for an MCP tool call are finalized.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseMcpCallArgumentsDoneEvent with ResponseMcpCallArgumentsDoneEventMappable {
   const ResponseMcpCallArgumentsDoneEvent({
     required this.type,

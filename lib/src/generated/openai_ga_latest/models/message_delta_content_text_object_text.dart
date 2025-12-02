@@ -8,7 +8,7 @@ import 'text_annotation_delta.dart';
 
 part 'message_delta_content_text_object_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentTextObjectText with MessageDeltaContentTextObjectTextMappable {
   const MessageDeltaContentTextObjectText({
     this.value,

@@ -43,6 +43,10 @@ class AssistantToolsFunctionFunctionMapper
     #name: _f$name,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFunctionFunction _instantiate(DecodingData data) {
     return AssistantToolsFunctionFunction(

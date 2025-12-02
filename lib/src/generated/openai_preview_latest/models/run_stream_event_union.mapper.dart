@@ -33,6 +33,10 @@ class RunStreamEventUnionMapper extends ClassMapperBase<RunStreamEventUnion> {
 
   @override
   final MappableFields<RunStreamEventUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('RunStreamEventUnion');
@@ -112,6 +116,10 @@ class RunStreamEventUnionVariant1Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant1 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant1(
@@ -282,6 +290,10 @@ class RunStreamEventUnionVariant2Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant2 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant2(
@@ -452,6 +464,10 @@ class RunStreamEventUnionVariant3Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant3 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant3(
@@ -622,6 +638,10 @@ class RunStreamEventUnionVariant4Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant4 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant4(
@@ -792,6 +812,10 @@ class RunStreamEventUnionVariant5Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant5 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant5(
@@ -962,6 +986,10 @@ class RunStreamEventUnionVariant6Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant6 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant6(
@@ -1132,6 +1160,10 @@ class RunStreamEventUnionVariant7Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant7 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant7(
@@ -1302,6 +1334,10 @@ class RunStreamEventUnionVariant8Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant8 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant8(
@@ -1472,6 +1508,10 @@ class RunStreamEventUnionVariant9Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant9 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant9(
@@ -1642,6 +1682,10 @@ class RunStreamEventUnionVariant10Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStreamEventUnionVariant10 _instantiate(DecodingData data) {
     return RunStreamEventUnionVariant10(

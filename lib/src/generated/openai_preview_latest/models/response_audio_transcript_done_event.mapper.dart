@@ -38,6 +38,10 @@ class ResponseAudioTranscriptDoneEventMapper
   final MappableFields<ResponseAudioTranscriptDoneEvent> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseAudioTranscriptDoneEvent _instantiate(DecodingData data) {
     return ResponseAudioTranscriptDoneEvent(type: data.dec(_f$type));

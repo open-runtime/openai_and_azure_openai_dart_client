@@ -4,60 +4,73 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'chat_completion_message_custom_tool_call.dart';
 import 'chat_completion_message_custom_tool_call_custom.dart';
 import 'chat_completion_message_custom_tool_call_type_type.dart';
+import 'chat_completion_message_tool_call.dart';
 import 'chat_completion_message_tool_call_function.dart';
 import 'chat_completion_message_tool_call_type_type.dart';
-import 'chat_completion_message_tool_call.dart';
-import 'chat_completion_message_custom_tool_call.dart';
 
 part 'chat_completion_message_tool_calls_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall, ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall])
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
+  ChatCompletionMessageToolCallsUnionFunction,
+  ChatCompletionMessageToolCallsUnionCustom
+])
 sealed class ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionMappable {
   const ChatCompletionMessageToolCallsUnion();
 
   static ChatCompletionMessageToolCallsUnion fromJson(Map<String, dynamic> json) {
     return ChatCompletionMessageToolCallsUnionDeserializer.tryDeserialize(json);
   }
+
 }
 
 extension ChatCompletionMessageToolCallsUnionDeserializer on ChatCompletionMessageToolCallsUnion {
-  static ChatCompletionMessageToolCallsUnion tryDeserialize(Map<String, dynamic> json) {
-    try {
-      return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.fromJson(json);
-    } catch (_) {}
-    try {
-      return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.fromJson(json);
-    } catch (_) {}
-
-
-    throw FormatException('Could not determine the correct type for ChatCompletionMessageToolCallsUnion from: $json');
+  static ChatCompletionMessageToolCallsUnion tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'type',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      ChatCompletionMessageToolCallsUnionFunction: 'function',
+      ChatCompletionMessageToolCallsUnionCustom: 'custom',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[ChatCompletionMessageToolCallsUnionFunction] => ChatCompletionMessageToolCallsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[ChatCompletionMessageToolCallsUnionCustom] => ChatCompletionMessageToolCallsUnionCustomMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChatCompletionMessageToolCallsUnion'),
+    };
   }
 }
 
-@MappableClass()
-class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class ChatCompletionMessageToolCallsUnionFunction extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionFunctionMappable {
   final String id;
   final ChatCompletionMessageToolCallTypeType type;
+  @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 
-  const ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall({
+  const ChatCompletionMessageToolCallsUnionFunction({
     required this.id,
     required this.type,
     required this.chatCompletionMessageToolCallFunction,
   });
-}
 
-@MappableClass()
-class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMappable {
+}
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class ChatCompletionMessageToolCallsUnionCustom extends ChatCompletionMessageToolCallsUnion with ChatCompletionMessageToolCallsUnionCustomMappable {
   final String id;
   final ChatCompletionMessageCustomToolCallTypeType type;
+  @MappableField(key: 'custom')
   final ChatCompletionMessageCustomToolCallCustom chatCompletionMessageCustomToolCallCustom;
 
-  const ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall({
+  const ChatCompletionMessageToolCallsUnionCustom({
     required this.id,
     required this.type,
     required this.chatCompletionMessageCustomToolCallCustom,
   });
+
 }

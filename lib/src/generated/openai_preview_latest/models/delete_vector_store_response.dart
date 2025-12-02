@@ -8,7 +8,7 @@ import 'delete_vector_store_response_object_object_enum.dart';
 
 part 'delete_vector_store_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteVectorStoreResponse with DeleteVectorStoreResponseMappable {
   const DeleteVectorStoreResponse({
     required this.id,

@@ -9,7 +9,7 @@ import 'on_your_data_authentication_type.dart';
 part 'on_your_data_system_assigned_managed_identity_authentication_options.mapper.dart';
 
 /// The authentication options for Azure OpenAI On Your Data when using a system-assigned managed identity.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataSystemAssignedManagedIdentityAuthenticationOptions with OnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
   const OnYourDataSystemAssignedManagedIdentityAuthenticationOptions({
     required this.type,

@@ -50,6 +50,10 @@ class RealtimeTranscriptionSessionCreateResponseClientSecretMapper
   @override
   final MappableFields<RealtimeTranscriptionSessionCreateResponseClientSecret>
   fields = const {#value: _f$value, #expiresAt: _f$expiresAt};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateResponseClientSecret _instantiate(
     DecodingData data,

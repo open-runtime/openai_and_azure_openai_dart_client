@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTurnDetection with RealtimeTurnDetectionMappable {
   const RealtimeTurnDetection();
 

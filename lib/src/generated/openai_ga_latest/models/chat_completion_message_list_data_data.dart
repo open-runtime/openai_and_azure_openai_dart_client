@@ -10,11 +10,11 @@ import 'chat_completion_response_message_annotations.dart';
 import 'chat_completion_response_message_audio.dart';
 import 'chat_completion_response_message_function_call.dart';
 import 'chat_completion_response_message_role_role.dart';
-import 'data_content_parts_content_parts_union.dart';
+import 'data_content_parts_union.dart';
 
 part 'chat_completion_message_list_data_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageListDataData with ChatCompletionMessageListDataDataMappable {
   const ChatCompletionMessageListDataData({
     required this.content,
@@ -35,11 +35,11 @@ class ChatCompletionMessageListDataData with ChatCompletionMessageListDataDataMa
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
   final List<ChatCompletionResponseMessageAnnotations>? annotations;
-  @MappableField(key: 'ChatCompletionResponseMessageFunctionCall')
+  @MappableField(key: 'function_call')
   final ChatCompletionResponseMessageFunctionCall? chatCompletionResponseMessageFunctionCall;
   final ChatCompletionResponseMessageAudio? audio;
   @MappableField(key: 'content_parts')
-  final List<DataContentPartsContentPartsUnion>? contentParts;
+  final List<DataContentPartsUnion>? contentParts;
 
   static ChatCompletionMessageListDataData fromJson(Map<String, dynamic> json) => ChatCompletionMessageListDataDataMapper.fromJson(json);
 

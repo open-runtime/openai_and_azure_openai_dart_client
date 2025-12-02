@@ -23,6 +23,10 @@ class MessageStreamEventMapper extends ClassMapperBase<MessageStreamEvent> {
 
   @override
   final MappableFields<MessageStreamEvent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageStreamEvent _instantiate(DecodingData data) {
     return MessageStreamEvent();

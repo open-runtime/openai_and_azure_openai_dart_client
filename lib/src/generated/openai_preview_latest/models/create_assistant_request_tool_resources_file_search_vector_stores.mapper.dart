@@ -23,7 +23,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper
         _instance =
             CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper._(),
       );
-      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionMapper.ensureInitialized();
+      CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,13 +39,13 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper
     List<String>
   >
   _f$fileIds = Field('fileIds', _$fileIds, key: r'file_ids', opt: true);
-  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion?
+  static CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion?
   _$chunkingStrategy(
     CreateAssistantRequestToolResourcesFileSearchVectorStores v,
   ) => v.chunkingStrategy;
   static const Field<
     CreateAssistantRequestToolResourcesFileSearchVectorStores,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >
   _f$chunkingStrategy = Field(
     'chunkingStrategy',
@@ -71,6 +71,10 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateAssistantRequestToolResourcesFileSearchVectorStores _instantiate(
     DecodingData data,
@@ -189,17 +193,17 @@ abstract class CreateAssistantRequestToolResourcesFileSearchVectorStoresCopyWith
 >
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get fileIds;
-  CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionCopyWith<
     $R,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion,
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >?
   get chunkingStrategy;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
   $R call({
     List<String>? fileIds,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion?
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion?
     chunkingStrategy,
     Map<String, String>? metadata,
   });
@@ -249,10 +253,10 @@ class _CreateAssistantRequestToolResourcesFileSearchVectorStoresCopyWithImpl<
         )
       : null;
   @override
-  CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionCopyWith<
+  CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionCopyWith<
     $R,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion,
-    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion,
+    CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion
   >?
   get chunkingStrategy => $value.chunkingStrategy?.copyWith.$chain(
     (v) => call(chunkingStrategy: v),

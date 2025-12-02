@@ -38,6 +38,10 @@ class ChatCompletionRequestMessageMapper
   final MappableFields<ChatCompletionRequestMessage> fields = const {
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestMessage(role: data.dec(_f$role));

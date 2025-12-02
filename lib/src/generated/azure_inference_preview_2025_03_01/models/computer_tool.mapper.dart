@@ -52,6 +52,10 @@ class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
     #displayHeight: _f$displayHeight,
     #environment: _f$environment,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerTool _instantiate(DecodingData data) {
     return ComputerTool(

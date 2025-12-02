@@ -130,6 +130,10 @@ class UsageCompletionsResultMapper
     #batch: _f$batch,
     #serviceTier: _f$serviceTier,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageCompletionsResult _instantiate(DecodingData data) {
     return UsageCompletionsResult(

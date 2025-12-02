@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_session_input_audio_transcription.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionInputAudioTranscription with RealtimeSessionInputAudioTranscriptionMappable {
   const RealtimeSessionInputAudioTranscription({
     this.model,

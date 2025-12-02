@@ -38,6 +38,10 @@ class TruncationObjectMapper extends ClassMapperBase<TruncationObject> {
     #type: _f$type,
     #lastMessages: _f$lastMessages,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TruncationObject _instantiate(DecodingData data) {
     return TruncationObject(

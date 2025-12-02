@@ -51,6 +51,10 @@ class ChatCompletionRequestMessageContentPartImageImageUrlMapper
   @override
   final MappableFields<ChatCompletionRequestMessageContentPartImageImageUrl>
   fields = const {#url: _f$url, #detail: _f$detail};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartImageImageUrl _instantiate(
     DecodingData data,

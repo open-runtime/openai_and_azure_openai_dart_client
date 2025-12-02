@@ -8,7 +8,7 @@ import 'run_tool_call_object.dart';
 
 part 'run_object_required_action_submit_tool_outputs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectRequiredActionSubmitToolOutputs with RunObjectRequiredActionSubmitToolOutputsMappable {
   const RunObjectRequiredActionSubmitToolOutputs({
     required this.toolCalls,

@@ -30,7 +30,7 @@ class ChatCompletionMessageListObjectObjectEnumMapper
   ChatCompletionMessageListObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ChatCompletionMessageListObjectObjectEnum.valueList;
+        return ChatCompletionMessageListObjectObjectEnum.list;
       case 'unknown':
         return ChatCompletionMessageListObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class ChatCompletionMessageListObjectObjectEnumMapper
   @override
   dynamic encode(ChatCompletionMessageListObjectObjectEnum self) {
     switch (self) {
-      case ChatCompletionMessageListObjectObjectEnum.valueList:
+      case ChatCompletionMessageListObjectObjectEnum.list:
         return 'list';
       case ChatCompletionMessageListObjectObjectEnum.unknown:
         return 'unknown';

@@ -5,14 +5,15 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'comparison_filter_type_type.dart';
-import 'compound_filter_filters_filters_union.dart';
+import 'comparison_filter_value_union.dart';
+import 'compound_filter_filters_union.dart';
 import 'compound_filter_type_type.dart';
 import 'comparison_filter.dart';
 import 'compound_filter.dart';
 
 part 'filters_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [FiltersUnionComparisonFilter, FiltersUnionCompoundFilter])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FiltersUnionComparisonFilter, FiltersUnionCompoundFilter])
 sealed class FiltersUnion with FiltersUnionMappable {
   const FiltersUnion();
 
@@ -35,11 +36,11 @@ extension FiltersUnionDeserializer on FiltersUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FiltersUnionComparisonFilter extends FiltersUnion with FiltersUnionComparisonFilterMappable {
   final ComparisonFilterTypeType type;
   final String key;
-  final String value;
+  final ComparisonFilterValueUnion value;
 
   const FiltersUnionComparisonFilter({
     required this.type,
@@ -48,10 +49,10 @@ class FiltersUnionComparisonFilter extends FiltersUnion with FiltersUnionCompari
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FiltersUnionCompoundFilter extends FiltersUnion with FiltersUnionCompoundFilterMappable {
   final CompoundFilterTypeType type;
-  final List<CompoundFilterFiltersFiltersUnion> filters;
+  final List<CompoundFilterFiltersUnion> filters;
 
   const FiltersUnionCompoundFilter({
     required this.type,

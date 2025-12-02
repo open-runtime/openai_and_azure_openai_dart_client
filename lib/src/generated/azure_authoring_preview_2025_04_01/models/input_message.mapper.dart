@@ -49,6 +49,10 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
     #content: _f$content,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputMessage _instantiate(DecodingData data) {
     return InputMessage(

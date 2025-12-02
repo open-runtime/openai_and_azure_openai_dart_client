@@ -45,7 +45,7 @@ class ChatCompletionResponseMessageAnnotationsMapper
   _f$chatCompletionResponseMessageAnnotationsUrlCitation = Field(
     'chatCompletionResponseMessageAnnotationsUrlCitation',
     _$chatCompletionResponseMessageAnnotationsUrlCitation,
-    key: r'ChatCompletionResponseMessageAnnotationsUrlCitation',
+    key: r'url_citation',
   );
 
   @override
@@ -55,6 +55,10 @@ class ChatCompletionResponseMessageAnnotationsMapper
         #chatCompletionResponseMessageAnnotationsUrlCitation:
             _f$chatCompletionResponseMessageAnnotationsUrlCitation,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessageAnnotations _instantiate(
     DecodingData data,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'image_gen_tool_input_image_mask.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenToolInputImageMask with ImageGenToolInputImageMaskMappable {
   const ImageGenToolInputImageMask({
     this.imageUrl,

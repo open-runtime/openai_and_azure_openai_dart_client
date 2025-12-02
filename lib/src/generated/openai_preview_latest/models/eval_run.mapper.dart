@@ -17,7 +17,7 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
       EvalRunResultCountsMapper.ensureInitialized();
       EvalRunPerModelUsageMapper.ensureInitialized();
       EvalRunPerTestingCriteriaResultsMapper.ensureInitialized();
-      EvalRunDataSourceDataSourceUnionMapper.ensureInitialized();
+      EvalRunDataSourceUnionMapper.ensureInitialized();
       EvalApiErrorMapper.ensureInitialized();
       EvalRunObjectObjectEnumMapper.ensureInitialized();
     }
@@ -59,7 +59,7 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
       Field(
         'evalRunResultCounts',
         _$evalRunResultCounts,
-        key: r'EvalRunResultCounts',
+        key: r'result_counts',
       );
   static List<EvalRunPerModelUsage> _$perModelUsage(EvalRun v) =>
       v.perModelUsage;
@@ -74,10 +74,12 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
     _$perTestingCriteriaResults,
     key: r'per_testing_criteria_results',
   );
-  static EvalRunDataSourceDataSourceUnion _$dataSource(EvalRun v) =>
-      v.dataSource;
-  static const Field<EvalRun, EvalRunDataSourceDataSourceUnion> _f$dataSource =
-      Field('dataSource', _$dataSource, key: r'data_source');
+  static EvalRunDataSourceUnion _$dataSource(EvalRun v) => v.dataSource;
+  static const Field<EvalRun, EvalRunDataSourceUnion> _f$dataSource = Field(
+    'dataSource',
+    _$dataSource,
+    key: r'data_source',
+  );
   static Map<String, String>? _$metadata(EvalRun v) => v.metadata;
   static const Field<EvalRun, Map<String, String>> _f$metadata = Field(
     'metadata',
@@ -111,6 +113,10 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
     #error: _f$error,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRun _instantiate(DecodingData data) {
     return EvalRun(
@@ -206,10 +212,10 @@ abstract class EvalRunCopyWith<$R, $In extends EvalRun, $Out>
     >
   >
   get perTestingCriteriaResults;
-  EvalRunDataSourceDataSourceUnionCopyWith<
+  EvalRunDataSourceUnionCopyWith<
     $R,
-    EvalRunDataSourceDataSourceUnion,
-    EvalRunDataSourceDataSourceUnion
+    EvalRunDataSourceUnion,
+    EvalRunDataSourceUnion
   >
   get dataSource;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
@@ -226,7 +232,7 @@ abstract class EvalRunCopyWith<$R, $In extends EvalRun, $Out>
     EvalRunResultCounts? evalRunResultCounts,
     List<EvalRunPerModelUsage>? perModelUsage,
     List<EvalRunPerTestingCriteriaResults>? perTestingCriteriaResults,
-    EvalRunDataSourceDataSourceUnion? dataSource,
+    EvalRunDataSourceUnion? dataSource,
     Map<String, String>? metadata,
     EvalApiError? error,
     EvalRunObjectObjectEnum? objectEnum,
@@ -274,10 +280,10 @@ class _EvalRunCopyWithImpl<$R, $Out>
     (v) => call(perTestingCriteriaResults: v),
   );
   @override
-  EvalRunDataSourceDataSourceUnionCopyWith<
+  EvalRunDataSourceUnionCopyWith<
     $R,
-    EvalRunDataSourceDataSourceUnion,
-    EvalRunDataSourceDataSourceUnion
+    EvalRunDataSourceUnion,
+    EvalRunDataSourceUnion
   >
   get dataSource =>
       $value.dataSource.copyWith.$chain((v) => call(dataSource: v));
@@ -305,7 +311,7 @@ class _EvalRunCopyWithImpl<$R, $Out>
     EvalRunResultCounts? evalRunResultCounts,
     List<EvalRunPerModelUsage>? perModelUsage,
     List<EvalRunPerTestingCriteriaResults>? perTestingCriteriaResults,
-    EvalRunDataSourceDataSourceUnion? dataSource,
+    EvalRunDataSourceUnion? dataSource,
     Object? metadata = $none,
     EvalApiError? error,
     EvalRunObjectObjectEnum? objectEnum,

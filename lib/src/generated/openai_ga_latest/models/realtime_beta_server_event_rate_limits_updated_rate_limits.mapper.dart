@@ -64,6 +64,10 @@ class RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper
     #remaining: _f$remaining,
     #resetSeconds: _f$resetSeconds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventRateLimitsUpdatedRateLimits _instantiate(
     DecodingData data,

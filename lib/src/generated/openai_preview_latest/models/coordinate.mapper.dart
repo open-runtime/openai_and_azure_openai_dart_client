@@ -28,6 +28,10 @@ class CoordinateMapper extends ClassMapperBase<Coordinate> {
 
   @override
   final MappableFields<Coordinate> fields = const {#x: _f$x, #y: _f$y};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Coordinate _instantiate(DecodingData data) {
     return Coordinate(x: data.dec(_f$x), y: data.dec(_f$y));

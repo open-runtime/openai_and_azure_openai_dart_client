@@ -12,13 +12,13 @@ import 'run_object_last_error.dart';
 import 'run_object_object_object_enum.dart';
 import 'run_object_required_action.dart';
 import 'run_object_status_status.dart';
-import 'run_object_tools_tools_union.dart';
+import 'run_object_tools_union.dart';
 import 'truncation_object.dart';
 
 part 'run_object.mapper.dart';
 
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObject with RunObjectMappable {
   const RunObject({
     required this.id,
@@ -59,9 +59,9 @@ class RunObject with RunObjectMappable {
   @MappableField(key: 'assistant_id')
   final String assistantId;
   final RunObjectStatusStatus status;
-  @MappableField(key: 'RunObjectRequiredAction')
+  @MappableField(key: 'required_action')
   final RunObjectRequiredAction? runObjectRequiredAction;
-  @MappableField(key: 'RunObjectLastError')
+  @MappableField(key: 'last_error')
   final RunObjectLastError? runObjectLastError;
   @MappableField(key: 'expires_at')
   final int expiresAt;
@@ -73,7 +73,7 @@ class RunObject with RunObjectMappable {
   final int? failedAt;
   @MappableField(key: 'completed_at')
   final int? completedAt;
-  @MappableField(key: 'RunObjectIncompleteDetails')
+  @MappableField(key: 'incomplete_details')
   final RunObjectIncompleteDetails? runObjectIncompleteDetails;
   final String model;
   final String instructions;
@@ -92,7 +92,7 @@ class RunObject with RunObjectMappable {
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
-  final List<RunObjectToolsToolsUnion> tools;
+  final List<RunObjectToolsUnion> tools;
 
   static RunObject fromJson(Map<String, dynamic> json) => RunObjectMapper.fromJson(json);
 

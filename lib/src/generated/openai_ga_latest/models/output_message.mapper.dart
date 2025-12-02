@@ -52,6 +52,10 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
     #content: _f$content,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputMessage _instantiate(DecodingData data) {
     return OutputMessage(

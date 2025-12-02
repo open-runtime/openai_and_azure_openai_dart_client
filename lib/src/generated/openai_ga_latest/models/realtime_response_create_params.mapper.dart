@@ -17,10 +17,12 @@ class RealtimeResponseCreateParamsMapper
       MapperContainer.globals.use(
         _instance = RealtimeResponseCreateParamsMapper._(),
       );
-      RealtimeResponseCreateParamsToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      RealtimeResponseCreateParamsToolChoiceUnionMapper.ensureInitialized();
       RealtimeResponseCreateParamsOutputModalitiesOutputModalitiesMapper.ensureInitialized();
       RealtimeResponseCreateParamsAudioMapper.ensureInitialized();
-      RealtimeResponseCreateParamsToolsToolsUnionMapper.ensureInitialized();
+      RealtimeResponseCreateParamsToolsUnionMapper.ensureInitialized();
+      RealtimeResponseCreateParamsMaxOutputTokensUnionMapper.ensureInitialized();
+      RealtimeResponseCreateParamsConversationUnionMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       PromptUnionMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
@@ -31,22 +33,21 @@ class RealtimeResponseCreateParamsMapper
   @override
   final String id = 'RealtimeResponseCreateParams';
 
-  static RealtimeResponseCreateParamsToolChoiceToolChoiceUnion _$toolChoice(
+  static RealtimeResponseCreateParamsToolChoiceUnion _$toolChoice(
     RealtimeResponseCreateParams v,
   ) => v.toolChoice;
   static const Field<
     RealtimeResponseCreateParams,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion
+    RealtimeResponseCreateParamsToolChoiceUnion
   >
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
     key: r'tool_choice',
     opt: true,
-    def:
-        const RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString(
-          value: 'auto',
-        ),
+    def: const RealtimeResponseCreateParamsToolChoiceUnionVariantString(
+      value: 'auto',
+    ),
   );
   static List<RealtimeResponseCreateParamsOutputModalitiesOutputModalities>?
   _$outputModalities(RealtimeResponseCreateParams v) => v.outputModalities;
@@ -74,30 +75,44 @@ class RealtimeResponseCreateParamsMapper
   _f$realtimeResponseCreateParamsAudio = Field(
     'realtimeResponseCreateParamsAudio',
     _$realtimeResponseCreateParamsAudio,
-    key: r'RealtimeResponseCreateParamsAudio',
+    key: r'audio',
     opt: true,
   );
-  static List<RealtimeResponseCreateParamsToolsToolsUnion>? _$tools(
+  static List<RealtimeResponseCreateParamsToolsUnion>? _$tools(
     RealtimeResponseCreateParams v,
   ) => v.tools;
   static const Field<
     RealtimeResponseCreateParams,
-    List<RealtimeResponseCreateParamsToolsToolsUnion>
+    List<RealtimeResponseCreateParamsToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
-  static String? _$maxOutputTokens(RealtimeResponseCreateParams v) =>
-      v.maxOutputTokens;
-  static const Field<RealtimeResponseCreateParams, String> _f$maxOutputTokens =
-      Field(
-        'maxOutputTokens',
-        _$maxOutputTokens,
-        key: r'max_output_tokens',
-        opt: true,
-      );
-  static String? _$conversation(RealtimeResponseCreateParams v) =>
-      v.conversation;
-  static const Field<RealtimeResponseCreateParams, String> _f$conversation =
-      Field('conversation', _$conversation, opt: true);
+  static RealtimeResponseCreateParamsMaxOutputTokensUnion? _$maxOutputTokens(
+    RealtimeResponseCreateParams v,
+  ) => v.maxOutputTokens;
+  static const Field<
+    RealtimeResponseCreateParams,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion
+  >
+  _f$maxOutputTokens = Field(
+    'maxOutputTokens',
+    _$maxOutputTokens,
+    key: r'max_output_tokens',
+    opt: true,
+    hook: const RealtimeResponseCreateParamsMaxOutputTokensUnionHook(),
+  );
+  static RealtimeResponseCreateParamsConversationUnion? _$conversation(
+    RealtimeResponseCreateParams v,
+  ) => v.conversation;
+  static const Field<
+    RealtimeResponseCreateParams,
+    RealtimeResponseCreateParamsConversationUnion
+  >
+  _f$conversation = Field(
+    'conversation',
+    _$conversation,
+    opt: true,
+    hook: const RealtimeResponseCreateParamsConversationUnionHook(),
+  );
   static Metadata? _$metadata(RealtimeResponseCreateParams v) => v.metadata;
   static const Field<RealtimeResponseCreateParams, Metadata> _f$metadata =
       Field('metadata', _$metadata, opt: true);
@@ -126,6 +141,10 @@ class RealtimeResponseCreateParamsMapper
     #prompt: _f$prompt,
     #input: _f$input,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseCreateParams _instantiate(DecodingData data) {
     return RealtimeResponseCreateParams(
@@ -217,10 +236,10 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<
+  RealtimeResponseCreateParamsToolChoiceUnionCopyWith<
     $R,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion
+    RealtimeResponseCreateParamsToolChoiceUnion,
+    RealtimeResponseCreateParamsToolChoiceUnion
   >
   get toolChoice;
   ListCopyWith<
@@ -241,14 +260,26 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   get realtimeResponseCreateParamsAudio;
   ListCopyWith<
     $R,
-    RealtimeResponseCreateParamsToolsToolsUnion,
-    RealtimeResponseCreateParamsToolsToolsUnionCopyWith<
+    RealtimeResponseCreateParamsToolsUnion,
+    RealtimeResponseCreateParamsToolsUnionCopyWith<
       $R,
-      RealtimeResponseCreateParamsToolsToolsUnion,
-      RealtimeResponseCreateParamsToolsToolsUnion
+      RealtimeResponseCreateParamsToolsUnion,
+      RealtimeResponseCreateParamsToolsUnion
     >
   >?
   get tools;
+  RealtimeResponseCreateParamsMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion
+  >?
+  get maxOutputTokens;
+  RealtimeResponseCreateParamsConversationUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsConversationUnion,
+    RealtimeResponseCreateParamsConversationUnion
+  >?
+  get conversation;
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   ListCopyWith<
@@ -262,14 +293,14 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   >?
   get input;
   $R call({
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeResponseCreateParamsToolChoiceUnion? toolChoice,
     List<RealtimeResponseCreateParamsOutputModalitiesOutputModalities>?
     outputModalities,
     String? instructions,
     RealtimeResponseCreateParamsAudio? realtimeResponseCreateParamsAudio,
-    List<RealtimeResponseCreateParamsToolsToolsUnion>? tools,
-    String? maxOutputTokens,
-    String? conversation,
+    List<RealtimeResponseCreateParamsToolsUnion>? tools,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion? maxOutputTokens,
+    RealtimeResponseCreateParamsConversationUnion? conversation,
     Metadata? metadata,
     PromptUnion? prompt,
     List<RealtimeConversationItem>? input,
@@ -297,10 +328,10 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeResponseCreateParams> $mapper =
       RealtimeResponseCreateParamsMapper.ensureInitialized();
   @override
-  RealtimeResponseCreateParamsToolChoiceToolChoiceUnionCopyWith<
+  RealtimeResponseCreateParamsToolChoiceUnionCopyWith<
     $R,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion,
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion
+    RealtimeResponseCreateParamsToolChoiceUnion,
+    RealtimeResponseCreateParamsToolChoiceUnion
   >
   get toolChoice =>
       $value.toolChoice.copyWith.$chain((v) => call(toolChoice: v));
@@ -334,11 +365,11 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeResponseCreateParamsToolsToolsUnion,
-    RealtimeResponseCreateParamsToolsToolsUnionCopyWith<
+    RealtimeResponseCreateParamsToolsUnion,
+    RealtimeResponseCreateParamsToolsUnionCopyWith<
       $R,
-      RealtimeResponseCreateParamsToolsToolsUnion,
-      RealtimeResponseCreateParamsToolsToolsUnion
+      RealtimeResponseCreateParamsToolsUnion,
+      RealtimeResponseCreateParamsToolsUnion
     >
   >?
   get tools => $value.tools != null
@@ -348,6 +379,22 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeResponseCreateParamsMaxOutputTokensUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion,
+    RealtimeResponseCreateParamsMaxOutputTokensUnion
+  >?
+  get maxOutputTokens =>
+      $value.maxOutputTokens?.copyWith.$chain((v) => call(maxOutputTokens: v));
+  @override
+  RealtimeResponseCreateParamsConversationUnionCopyWith<
+    $R,
+    RealtimeResponseCreateParamsConversationUnion,
+    RealtimeResponseCreateParamsConversationUnion
+  >?
+  get conversation =>
+      $value.conversation?.copyWith.$chain((v) => call(conversation: v));
   @override
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata =>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
@@ -373,7 +420,7 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    RealtimeResponseCreateParamsToolChoiceToolChoiceUnion? toolChoice,
+    RealtimeResponseCreateParamsToolChoiceUnion? toolChoice,
     Object? outputModalities = $none,
     Object? instructions = $none,
     Object? realtimeResponseCreateParamsAudio = $none,

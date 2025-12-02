@@ -44,6 +44,10 @@ class EvalFileRunDataSourceMapper
     #fileId: _f$fileId,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalFileRunDataSource _instantiate(DecodingData data) {
     return EvalFileRunDataSource(

@@ -32,6 +32,10 @@ class MessageDeltaContentImageFileObjectImageFileMapper
   @override
   final MappableFields<MessageDeltaContentImageFileObjectImageFile> fields =
       const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentImageFileObjectImageFile _instantiate(
     DecodingData data,

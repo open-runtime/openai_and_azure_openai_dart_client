@@ -9,7 +9,7 @@ import 'expires_after_param_anchor_anchor.dart';
 part 'expires_after_param.mapper.dart';
 
 /// Controls when the session expires relative to an anchor timestamp.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ExpiresAfterParam with ExpiresAfterParamMappable {
   const ExpiresAfterParam({
     required this.seconds,

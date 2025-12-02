@@ -35,6 +35,10 @@ class AuditLogApiKeyCreatedDataMapper
   final MappableFields<AuditLogApiKeyCreatedData> fields = const {
     #scopes: _f$scopes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogApiKeyCreatedData _instantiate(DecodingData data) {
     return AuditLogApiKeyCreatedData(scopes: data.dec(_f$scopes));

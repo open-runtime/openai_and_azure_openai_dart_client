@@ -45,6 +45,10 @@ class FunctionShellActionMapper extends ClassMapperBase<FunctionShellAction> {
     #timeoutMs: _f$timeoutMs,
     #maxOutputLength: _f$maxOutputLength,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellAction _instantiate(DecodingData data) {
     return FunctionShellAction(

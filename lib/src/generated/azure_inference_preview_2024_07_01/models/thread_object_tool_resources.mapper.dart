@@ -36,7 +36,7 @@ class ThreadObjectToolResourcesMapper
   _f$threadObjectToolResourcesCodeInterpreter = Field(
     'threadObjectToolResourcesCodeInterpreter',
     _$threadObjectToolResourcesCodeInterpreter,
-    key: r'ThreadObjectToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static ThreadObjectToolResourcesFileSearch?
@@ -49,7 +49,7 @@ class ThreadObjectToolResourcesMapper
   _f$threadObjectToolResourcesFileSearch = Field(
     'threadObjectToolResourcesFileSearch',
     _$threadObjectToolResourcesFileSearch,
-    key: r'ThreadObjectToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -60,6 +60,10 @@ class ThreadObjectToolResourcesMapper
     #threadObjectToolResourcesFileSearch:
         _f$threadObjectToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadObjectToolResources _instantiate(DecodingData data) {
     return ThreadObjectToolResources(

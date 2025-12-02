@@ -36,6 +36,10 @@ class AuditLogGroupCreatedDataMapper
   final MappableFields<AuditLogGroupCreatedData> fields = const {
     #groupName: _f$groupName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogGroupCreatedData _instantiate(DecodingData data) {
     return AuditLogGroupCreatedData(groupName: data.dec(_f$groupName));

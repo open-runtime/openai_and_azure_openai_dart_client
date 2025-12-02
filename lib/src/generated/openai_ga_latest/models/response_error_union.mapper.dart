@@ -24,6 +24,10 @@ class ResponseErrorUnionMapper extends ClassMapperBase<ResponseErrorUnion> {
 
   @override
   final MappableFields<ResponseErrorUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseErrorUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ResponseErrorUnion');
@@ -97,6 +101,10 @@ class ResponseErrorUnionVariant1Mapper
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseErrorUnionVariant1 _instantiate(DecodingData data) {
     return ResponseErrorUnionVariant1(

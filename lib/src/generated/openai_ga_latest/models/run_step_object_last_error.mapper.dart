@@ -38,6 +38,10 @@ class RunStepObjectLastErrorMapper
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepObjectLastError _instantiate(DecodingData data) {
     return RunStepObjectLastError(

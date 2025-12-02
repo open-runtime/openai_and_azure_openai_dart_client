@@ -36,7 +36,7 @@ class AuditLogApiKeyCreatedMapper
   _f$auditLogApiKeyCreatedData = Field(
     'auditLogApiKeyCreatedData',
     _$auditLogApiKeyCreatedData,
-    key: r'AuditLogApiKeyCreatedData',
+    key: r'data',
     opt: true,
   );
 
@@ -45,6 +45,10 @@ class AuditLogApiKeyCreatedMapper
     #id: _f$id,
     #auditLogApiKeyCreatedData: _f$auditLogApiKeyCreatedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogApiKeyCreated _instantiate(DecodingData data) {
     return AuditLogApiKeyCreated(

@@ -10,7 +10,7 @@ import 'eval_score_model_grader_type_type.dart';
 part 'eval_score_model_grader.mapper.dart';
 
 /// A ScoreModelGrader object that uses a model to assign a score to the input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalScoreModelGrader with EvalScoreModelGraderMappable {
   const EvalScoreModelGrader({
     required this.input,

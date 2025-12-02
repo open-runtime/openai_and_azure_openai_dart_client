@@ -11,7 +11,7 @@ part 'fine_tuning_job_checkpoint.mapper.dart';
 
 /// The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobCheckpoint with FineTuningJobCheckpointMappable {
   const FineTuningJobCheckpoint({
     required this.id,
@@ -30,7 +30,7 @@ class FineTuningJobCheckpoint with FineTuningJobCheckpointMappable {
   final String fineTunedModelCheckpoint;
   @MappableField(key: 'step_number')
   final int stepNumber;
-  @MappableField(key: 'FineTuningJobCheckpointMetrics')
+  @MappableField(key: 'metrics')
   final FineTuningJobCheckpointMetrics fineTuningJobCheckpointMetrics;
   @MappableField(key: 'fine_tuning_job_id')
   final String fineTuningJobId;

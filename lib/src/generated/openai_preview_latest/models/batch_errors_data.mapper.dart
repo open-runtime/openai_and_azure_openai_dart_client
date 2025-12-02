@@ -53,6 +53,10 @@ class BatchErrorsDataMapper extends ClassMapperBase<BatchErrorsData> {
     #param: _f$param,
     #line: _f$line,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchErrorsData _instantiate(DecodingData data) {
     return BatchErrorsData(

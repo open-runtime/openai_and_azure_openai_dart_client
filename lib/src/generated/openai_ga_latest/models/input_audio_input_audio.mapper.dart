@@ -37,6 +37,10 @@ class InputAudioInputAudioMapper extends ClassMapperBase<InputAudioInputAudio> {
     #data: _f$data,
     #format: _f$format,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputAudioInputAudio _instantiate(DecodingData data) {
     return InputAudioInputAudio(

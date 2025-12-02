@@ -48,6 +48,10 @@ class CreateChatCompletionRequestAudioMapper
     #voice: _f$voice,
     #format: _f$format,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequestAudio _instantiate(DecodingData data) {
     return CreateChatCompletionRequestAudio(

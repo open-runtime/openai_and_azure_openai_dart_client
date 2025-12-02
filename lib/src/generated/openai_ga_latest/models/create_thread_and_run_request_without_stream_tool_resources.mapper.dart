@@ -40,7 +40,7 @@ class CreateThreadAndRunRequestWithoutStreamToolResourcesMapper
   _f$createThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter = Field(
     'createThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter',
     _$createThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter,
-    key: r'CreateThreadAndRunRequestWithoutStreamToolResourcesCodeInterpreter',
+    key: r'code_interpreter',
     opt: true,
   );
   static CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch?
@@ -54,7 +54,7 @@ class CreateThreadAndRunRequestWithoutStreamToolResourcesMapper
   _f$createThreadAndRunRequestWithoutStreamToolResourcesFileSearch = Field(
     'createThreadAndRunRequestWithoutStreamToolResourcesFileSearch',
     _$createThreadAndRunRequestWithoutStreamToolResourcesFileSearch,
-    key: r'CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch',
+    key: r'file_search',
     opt: true,
   );
 
@@ -66,6 +66,10 @@ class CreateThreadAndRunRequestWithoutStreamToolResourcesMapper
     #createThreadAndRunRequestWithoutStreamToolResourcesFileSearch:
         _f$createThreadAndRunRequestWithoutStreamToolResourcesFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestWithoutStreamToolResources _instantiate(
     DecodingData data,

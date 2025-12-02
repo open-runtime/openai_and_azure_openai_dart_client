@@ -49,6 +49,10 @@ class AuditLogCertificateDeletedMapper
     #name: _f$name,
     #certificate: _f$certificate,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogCertificateDeleted _instantiate(DecodingData data) {
     return AuditLogCertificateDeleted(

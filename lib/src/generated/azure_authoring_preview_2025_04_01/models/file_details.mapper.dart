@@ -65,6 +65,10 @@ class FileDetailsMapper extends ClassMapperBase<FileDetails> {
     #storageAccountUri: _f$storageAccountUri,
     #storageContainerName: _f$storageContainerName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileDetails _instantiate(DecodingData data) {
     return FileDetails(

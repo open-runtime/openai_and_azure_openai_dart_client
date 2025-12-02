@@ -8,7 +8,7 @@ import 'audit_log_certificates_deactivated_certificates.dart';
 
 part 'audit_log_certificates_deactivated.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCertificatesDeactivated with AuditLogCertificatesDeactivatedMappable {
   const AuditLogCertificatesDeactivated({
     this.certificates,

@@ -62,6 +62,10 @@ class UserComputeDatasetMapper extends ClassMapperBase<UserComputeDataset> {
     #chunking: _f$chunking,
     #embeddings: _f$embeddings,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserComputeDataset _instantiate(DecodingData data) {
     return UserComputeDataset(

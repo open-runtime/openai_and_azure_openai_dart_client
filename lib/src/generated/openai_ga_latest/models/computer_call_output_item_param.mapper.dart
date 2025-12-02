@@ -84,6 +84,10 @@ class ComputerCallOutputItemParamMapper
     #acknowledgedSafetyChecks: _f$acknowledgedSafetyChecks,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerCallOutputItemParam _instantiate(DecodingData data) {
     return ComputerCallOutputItemParam(

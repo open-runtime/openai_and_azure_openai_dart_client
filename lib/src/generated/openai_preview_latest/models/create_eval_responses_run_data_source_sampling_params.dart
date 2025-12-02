@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_eval_responses_run_data_source_sampling_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSourceSamplingParams with CreateEvalResponsesRunDataSourceSamplingParamsMappable {
   const CreateEvalResponsesRunDataSourceSamplingParams({
     this.maxCompletionTokens,

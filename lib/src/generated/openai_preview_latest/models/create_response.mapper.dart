@@ -19,7 +19,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
-      ResponsePropertiesToolChoiceToolChoiceUnionMapper.ensureInitialized();
+      ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
       IncludableMapper.ensureInitialized();
       ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
     }
@@ -82,7 +82,7 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
   _f$responsePropertiesText = Field(
     'responsePropertiesText',
     _$responsePropertiesText,
-    key: r'ResponsePropertiesText',
+    key: r'text',
     opt: true,
   );
   static List<Tool>? _$tools(CreateResponse v) => v.tools;
@@ -91,13 +91,9 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     _$tools,
     opt: true,
   );
-  static ResponsePropertiesToolChoiceToolChoiceUnion? _$toolChoice(
-    CreateResponse v,
-  ) => v.toolChoice;
-  static const Field<
-    CreateResponse,
-    ResponsePropertiesToolChoiceToolChoiceUnion
-  >
+  static ResponsePropertiesToolChoiceUnion? _$toolChoice(CreateResponse v) =>
+      v.toolChoice;
+  static const Field<CreateResponse, ResponsePropertiesToolChoiceUnion>
   _f$toolChoice = Field(
     'toolChoice',
     _$toolChoice,
@@ -180,6 +176,10 @@ class CreateResponseMapper extends ClassMapperBase<CreateResponse> {
     #store: _f$store,
     #stream: _f$stream,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateResponse _instantiate(DecodingData data) {
     return CreateResponse(
@@ -283,10 +283,10 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
   >?
   get responsePropertiesText;
   ListCopyWith<$R, Tool, ToolCopyWith<$R, Tool, Tool>>? get tools;
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice;
   ListCopyWith<$R, Includable, ObjectCopyWith<$R, Includable, Includable>>?
@@ -303,7 +303,7 @@ abstract class CreateResponseCopyWith<$R, $In extends CreateResponse, $Out>
     String? instructions,
     ResponsePropertiesText? responsePropertiesText,
     List<Tool>? tools,
-    ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice,
+    ResponsePropertiesToolChoiceUnion? toolChoice,
     List<Includable>? include,
     num? temperature,
     num? topP,
@@ -363,10 +363,10 @@ class _CreateResponseCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ResponsePropertiesToolChoiceToolChoiceUnionCopyWith<
+  ResponsePropertiesToolChoiceUnionCopyWith<
     $R,
-    ResponsePropertiesToolChoiceToolChoiceUnion,
-    ResponsePropertiesToolChoiceToolChoiceUnion
+    ResponsePropertiesToolChoiceUnion,
+    ResponsePropertiesToolChoiceUnion
   >?
   get toolChoice =>
       $value.toolChoice?.copyWith.$chain((v) => call(toolChoice: v));

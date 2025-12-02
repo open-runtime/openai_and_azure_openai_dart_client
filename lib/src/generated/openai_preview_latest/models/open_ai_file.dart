@@ -11,7 +11,7 @@ import 'open_ai_file_status_status.dart';
 part 'open_ai_file.mapper.dart';
 
 /// The `File` object represents a document that has been uploaded to OpenAI.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OpenAiFile with OpenAiFileMappable {
   const OpenAiFile({
     required this.id,

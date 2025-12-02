@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'create_speech_response_stream_event.dart';
 import 'speech_audio_delta_event_type_type.dart';
 
 part 'speech_audio_delta_event.mapper.dart';
 
 /// Emitted for each chunk of audio data generated during speech synthesis.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SpeechAudioDeltaEvent with SpeechAudioDeltaEventMappable {
   const SpeechAudioDeltaEvent({
     required this.type,

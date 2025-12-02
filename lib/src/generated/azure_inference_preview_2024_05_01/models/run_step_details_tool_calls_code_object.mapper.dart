@@ -50,7 +50,7 @@ class RunStepDetailsToolCallsCodeObjectMapper
   _f$runStepDetailsToolCallsCodeObjectCodeInterpreter = Field(
     'runStepDetailsToolCallsCodeObjectCodeInterpreter',
     _$runStepDetailsToolCallsCodeObjectCodeInterpreter,
-    key: r'RunStepDetailsToolCallsCodeObjectCodeInterpreter',
+    key: r'code_interpreter',
   );
 
   @override
@@ -60,6 +60,10 @@ class RunStepDetailsToolCallsCodeObjectMapper
     #runStepDetailsToolCallsCodeObjectCodeInterpreter:
         _f$runStepDetailsToolCallsCodeObjectCodeInterpreter,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsCodeObject _instantiate(DecodingData data) {
     return RunStepDetailsToolCallsCodeObject(

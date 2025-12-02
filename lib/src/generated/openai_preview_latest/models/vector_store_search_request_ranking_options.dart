@@ -8,7 +8,7 @@ import 'vector_store_search_request_ranking_options_ranker_ranker.dart';
 
 part 'vector_store_search_request_ranking_options.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchRequestRankingOptions with VectorStoreSearchRequestRankingOptionsMappable {
   const VectorStoreSearchRequestRankingOptions({
     this.ranker = VectorStoreSearchRequestRankingOptionsRankerRanker.auto,

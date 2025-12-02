@@ -35,6 +35,10 @@ class ChatSessionRateLimitsMapper
   final MappableFields<ChatSessionRateLimits> fields = const {
     #maxRequestsPer1Minute: _f$maxRequestsPer1Minute,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatSessionRateLimits _instantiate(DecodingData data) {
     return ChatSessionRateLimits(

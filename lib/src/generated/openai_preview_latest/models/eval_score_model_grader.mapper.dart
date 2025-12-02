@@ -72,6 +72,10 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
     #passThreshold: _f$passThreshold,
     #range: _f$range,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalScoreModelGrader _instantiate(DecodingData data) {
     return EvalScoreModelGrader(

@@ -57,7 +57,7 @@ class EvalRunOutputItemListMapper
     _$objectEnum,
     key: r'object',
     opt: true,
-    def: EvalRunOutputItemListObjectObjectEnum.valueList,
+    def: EvalRunOutputItemListObjectObjectEnum.list,
   );
 
   @override
@@ -68,6 +68,10 @@ class EvalRunOutputItemListMapper
     #hasMore: _f$hasMore,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemList _instantiate(DecodingData data) {
     return EvalRunOutputItemList(

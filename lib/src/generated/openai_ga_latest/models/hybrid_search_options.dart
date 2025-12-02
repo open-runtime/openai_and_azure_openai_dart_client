@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'hybrid_search_options.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class HybridSearchOptions with HybridSearchOptionsMappable {
   const HybridSearchOptions({
     required this.embeddingWeight,

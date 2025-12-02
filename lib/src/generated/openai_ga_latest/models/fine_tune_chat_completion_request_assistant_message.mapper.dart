@@ -100,6 +100,10 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
         #functionCall: _f$functionCall,
         #weight: _f$weight,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneChatCompletionRequestAssistantMessage _instantiate(
     DecodingData data,

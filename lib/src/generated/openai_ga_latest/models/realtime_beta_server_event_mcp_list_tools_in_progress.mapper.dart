@@ -41,6 +41,10 @@ class RealtimeBetaServerEventMcpListToolsInProgressMapper
   @override
   final MappableFields<RealtimeBetaServerEventMcpListToolsInProgress> fields =
       const {#eventId: _f$eventId, #type: _f$type, #itemId: _f$itemId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventMcpListToolsInProgress _instantiate(
     DecodingData data,

@@ -11,7 +11,7 @@ part 'prediction_content.mapper.dart';
 /// Static predicted output content, such as the content of a text file that is.
 /// being regenerated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PredictionContent with PredictionContentMappable {
   const PredictionContent({
     required this.type,

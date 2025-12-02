@@ -8,7 +8,7 @@ import 'token_counts_resource_object_object_enum.dart';
 
 part 'token_counts_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TokenCountsResource with TokenCountsResourceMappable {
   const TokenCountsResource({
     required this.inputTokens,

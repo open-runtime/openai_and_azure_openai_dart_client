@@ -28,6 +28,10 @@ class ResponseFormatTextMapper extends ClassMapperBase<ResponseFormatText> {
 
   @override
   final MappableFields<ResponseFormatText> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFormatText _instantiate(DecodingData data) {
     return ResponseFormatText(type: data.dec(_f$type));

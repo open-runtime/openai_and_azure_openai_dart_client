@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_token_logprob_top_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionTokenLogprobTopLogprobs with ChatCompletionTokenLogprobTopLogprobsMappable {
   const ChatCompletionTokenLogprobTopLogprobs({
     required this.token,

@@ -48,7 +48,7 @@ class MessageContentTextAnnotationsFilePathObjectMapper
   _f$messageContentTextAnnotationsFilePathObjectFilePath = Field(
     'messageContentTextAnnotationsFilePathObjectFilePath',
     _$messageContentTextAnnotationsFilePathObjectFilePath,
-    key: r'MessageContentTextAnnotationsFilePathObjectFilePath',
+    key: r'file_path',
   );
   static int _$startIndex(MessageContentTextAnnotationsFilePathObject v) =>
       v.startIndex;
@@ -69,6 +69,10 @@ class MessageContentTextAnnotationsFilePathObjectMapper
         #startIndex: _f$startIndex,
         #endIndex: _f$endIndex,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextAnnotationsFilePathObject _instantiate(
     DecodingData data,

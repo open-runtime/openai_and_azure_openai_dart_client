@@ -5,14 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_diarized_json_task_task.dart';
-import 'create_transcription_response_diarized_json_usage_usage_union.dart';
+import 'create_transcription_response_diarized_json_usage_union.dart';
 import 'transcription_diarized_segment.dart';
 
 part 'create_transcription_response_diarized_json.mapper.dart';
 
 /// Represents a diarized transcription response returned by the model, including the combined transcript and speaker-segment annotations.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseDiarizedJson with CreateTranscriptionResponseDiarizedJsonMappable {
   const CreateTranscriptionResponseDiarizedJson({
     required this.task,
@@ -26,7 +26,7 @@ class CreateTranscriptionResponseDiarizedJson with CreateTranscriptionResponseDi
   final num duration;
   final String text;
   final List<TranscriptionDiarizedSegment> segments;
-  final CreateTranscriptionResponseDiarizedJsonUsageUsageUnion? usage;
+  final CreateTranscriptionResponseDiarizedJsonUsageUnion? usage;
 
   static CreateTranscriptionResponseDiarizedJson fromJson(Map<String, dynamic> json) => CreateTranscriptionResponseDiarizedJsonMapper.fromJson(json);
 

@@ -82,6 +82,10 @@ class ChatCompletionResponseMessageMapper
     #functionCall: _f$functionCall,
     #context: _f$context,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessage _instantiate(DecodingData data) {
     return ChatCompletionResponseMessage(

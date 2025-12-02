@@ -32,6 +32,10 @@ class WebhookBatchCompletedDataMapper
 
   @override
   final MappableFields<WebhookBatchCompletedData> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchCompletedData _instantiate(DecodingData data) {
     return WebhookBatchCompletedData(id: data.dec(_f$id));

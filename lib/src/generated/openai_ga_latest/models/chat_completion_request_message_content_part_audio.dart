@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_audio_input_audio.dart';
 import 'chat_completion_request_message_content_part_audio_type_type.dart';
+import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_audio.mapper.dart';
 
 /// Learn about [audio inputs](https://platform.openai.com/docs/guides/audio).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartAudio with ChatCompletionRequestMessageContentPartAudioMappable {
   const ChatCompletionRequestMessageContentPartAudio({
     required this.type,
@@ -19,7 +20,7 @@ class ChatCompletionRequestMessageContentPartAudio with ChatCompletionRequestMes
   });
 
   final ChatCompletionRequestMessageContentPartAudioTypeType type;
-  @MappableField(key: 'ChatCompletionRequestMessageContentPartAudioInputAudio')
+  @MappableField(key: 'input_audio')
   final ChatCompletionRequestMessageContentPartAudioInputAudio chatCompletionRequestMessageContentPartAudioInputAudio;
 
   static ChatCompletionRequestMessageContentPartAudio fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartAudioMapper.fromJson(json);

@@ -17,7 +17,6 @@ class RealtimeServerEventErrorMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventErrorMapper._(),
       );
-      RealtimeServerEventErrorErrorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,39 +24,49 @@ class RealtimeServerEventErrorMapper
   @override
   final String id = 'RealtimeServerEventError';
 
-  static String _$eventId(RealtimeServerEventError v) => v.eventId;
-  static const Field<RealtimeServerEventError, String> _f$eventId = Field(
-    'eventId',
-    _$eventId,
-    key: r'event_id',
-  );
-  static dynamic _$type(RealtimeServerEventError v) => v.type;
-  static const Field<RealtimeServerEventError, dynamic> _f$type = Field(
+  static String? _$type(RealtimeServerEventError v) => v.type;
+  static const Field<RealtimeServerEventError, String> _f$type = Field(
     'type',
     _$type,
+    opt: true,
   );
-  static RealtimeServerEventErrorError _$realtimeServerEventErrorError(
-    RealtimeServerEventError v,
-  ) => v.realtimeServerEventErrorError;
-  static const Field<RealtimeServerEventError, RealtimeServerEventErrorError>
-  _f$realtimeServerEventErrorError = Field(
-    'realtimeServerEventErrorError',
-    _$realtimeServerEventErrorError,
-    key: r'RealtimeServerEventErrorError',
+  static String? _$code(RealtimeServerEventError v) => v.code;
+  static const Field<RealtimeServerEventError, String> _f$code = Field(
+    'code',
+    _$code,
+    opt: true,
+  );
+  static String? _$message(RealtimeServerEventError v) => v.message;
+  static const Field<RealtimeServerEventError, String> _f$message = Field(
+    'message',
+    _$message,
+    opt: true,
+  );
+  static String? _$param(RealtimeServerEventError v) => v.param;
+  static const Field<RealtimeServerEventError, String> _f$param = Field(
+    'param',
+    _$param,
+    opt: true,
   );
 
   @override
   final MappableFields<RealtimeServerEventError> fields = const {
-    #eventId: _f$eventId,
     #type: _f$type,
-    #realtimeServerEventErrorError: _f$realtimeServerEventErrorError,
+    #code: _f$code,
+    #message: _f$message,
+    #param: _f$param,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventError _instantiate(DecodingData data) {
     return RealtimeServerEventError(
-      eventId: data.dec(_f$eventId),
       type: data.dec(_f$type),
-      realtimeServerEventErrorError: data.dec(_f$realtimeServerEventErrorError),
+      code: data.dec(_f$code),
+      message: data.dec(_f$message),
+      param: data.dec(_f$param),
     );
   }
 
@@ -131,17 +140,7 @@ abstract class RealtimeServerEventErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeServerEventErrorErrorCopyWith<
-    $R,
-    RealtimeServerEventErrorError,
-    RealtimeServerEventErrorError
-  >
-  get realtimeServerEventErrorError;
-  $R call({
-    String? eventId,
-    dynamic type,
-    RealtimeServerEventErrorError? realtimeServerEventErrorError,
-  });
+  $R call({String? type, String? code, String? message, String? param});
   RealtimeServerEventErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -157,36 +156,25 @@ class _RealtimeServerEventErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeServerEventError> $mapper =
       RealtimeServerEventErrorMapper.ensureInitialized();
   @override
-  RealtimeServerEventErrorErrorCopyWith<
-    $R,
-    RealtimeServerEventErrorError,
-    RealtimeServerEventErrorError
-  >
-  get realtimeServerEventErrorError => $value
-      .realtimeServerEventErrorError
-      .copyWith
-      .$chain((v) => call(realtimeServerEventErrorError: v));
-  @override
   $R call({
-    String? eventId,
     Object? type = $none,
-    RealtimeServerEventErrorError? realtimeServerEventErrorError,
+    Object? code = $none,
+    Object? message = $none,
+    Object? param = $none,
   }) => $apply(
     FieldCopyWithData({
-      if (eventId != null) #eventId: eventId,
       if (type != $none) #type: type,
-      if (realtimeServerEventErrorError != null)
-        #realtimeServerEventErrorError: realtimeServerEventErrorError,
+      if (code != $none) #code: code,
+      if (message != $none) #message: message,
+      if (param != $none) #param: param,
     }),
   );
   @override
   RealtimeServerEventError $make(CopyWithData data) => RealtimeServerEventError(
-    eventId: data.get(#eventId, or: $value.eventId),
     type: data.get(#type, or: $value.type),
-    realtimeServerEventErrorError: data.get(
-      #realtimeServerEventErrorError,
-      or: $value.realtimeServerEventErrorError,
-    ),
+    code: data.get(#code, or: $value.code),
+    message: data.get(#message, or: $value.message),
+    param: data.get(#param, or: $value.param),
   );
 
   @override

@@ -42,6 +42,10 @@ class ResponseLogProbTopLogprobsMapper
     #token: _f$token,
     #logprob: _f$logprob,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseLogProbTopLogprobs _instantiate(DecodingData data) {
     return ResponseLogProbTopLogprobs(

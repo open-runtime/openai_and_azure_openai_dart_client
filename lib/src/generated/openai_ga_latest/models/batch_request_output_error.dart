@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'batch_request_output_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutputError with BatchRequestOutputErrorMappable {
   const BatchRequestOutputError({
     this.code,

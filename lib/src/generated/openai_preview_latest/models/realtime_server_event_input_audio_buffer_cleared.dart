@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_input_audio_buffer_cleared_type_type.dart';
 
 part 'realtime_server_event_input_audio_buffer_cleared.mapper.dart';
@@ -11,7 +12,7 @@ part 'realtime_server_event_input_audio_buffer_cleared.mapper.dart';
 /// Returned when the input audio buffer is cleared by the client with a .
 /// `input_audio_buffer.clear` event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventInputAudioBufferCleared with RealtimeServerEventInputAudioBufferClearedMappable {
   const RealtimeServerEventInputAudioBufferCleared({
     required this.eventId,

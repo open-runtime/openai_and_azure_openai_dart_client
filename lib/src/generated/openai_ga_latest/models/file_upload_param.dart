@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'file_upload_param.mapper.dart';
 
 /// Controls whether users can upload files.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileUploadParam with FileUploadParamMappable {
   const FileUploadParam({
     this.enabled,

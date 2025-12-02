@@ -9,7 +9,7 @@ import 'vector_store_expiration_after_anchor_anchor.dart';
 part 'vector_store_expiration_after.mapper.dart';
 
 /// The expiration policy for a vector store.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreExpirationAfter with VectorStoreExpirationAfterMappable {
   const VectorStoreExpirationAfter({
     required this.anchor,

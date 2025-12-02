@@ -42,6 +42,10 @@ class AuditLogExternalKeyRegisteredMapper
     #id: _f$id,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogExternalKeyRegistered _instantiate(DecodingData data) {
     return AuditLogExternalKeyRegistered(

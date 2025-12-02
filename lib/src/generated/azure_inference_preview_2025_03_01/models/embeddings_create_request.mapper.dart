@@ -65,6 +65,10 @@ class EmbeddingsCreateRequestMapper
     #encodingFormat: _f$encodingFormat,
     #dimensions: _f$dimensions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EmbeddingsCreateRequest _instantiate(DecodingData data) {
     return EmbeddingsCreateRequest(

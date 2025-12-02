@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_completion_response_choices_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateCompletionResponseChoicesLogprobs with CreateCompletionResponseChoicesLogprobsMappable {
   const CreateCompletionResponseChoicesLogprobs({
     this.textOffset,

@@ -170,6 +170,10 @@ class StoredCompletionResponseMapper
     #choices: _f$choices,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StoredCompletionResponse _instantiate(DecodingData data) {
     return StoredCompletionResponse(

@@ -53,6 +53,10 @@ class WebSearchLocationMapper extends ClassMapperBase<WebSearchLocation> {
     #city: _f$city,
     #timezone: _f$timezone,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchLocation _instantiate(DecodingData data) {
     return WebSearchLocation(

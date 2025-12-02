@@ -7,11 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'file_search_tool_type_type.dart';
 import 'filters.dart';
 import 'ranking_options.dart';
+import 'tool.dart';
 
 part 'file_search_tool.mapper.dart';
 
 /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchTool with FileSearchToolMappable {
   const FileSearchTool({
     required this.vectorStoreIds,

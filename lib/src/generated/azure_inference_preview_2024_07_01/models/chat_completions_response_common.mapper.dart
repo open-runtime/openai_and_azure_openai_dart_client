@@ -71,6 +71,10 @@ class ChatCompletionsResponseCommonMapper
     #usage: _f$usage,
     #systemFingerprint: _f$systemFingerprint,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionsResponseCommon _instantiate(DecodingData data) {
     return ChatCompletionsResponseCommon(

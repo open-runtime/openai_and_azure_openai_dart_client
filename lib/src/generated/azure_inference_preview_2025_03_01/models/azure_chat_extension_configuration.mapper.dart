@@ -34,6 +34,10 @@ class AzureChatExtensionConfigurationMapper
   final MappableFields<AzureChatExtensionConfiguration> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureChatExtensionConfiguration _instantiate(DecodingData data) {
     return AzureChatExtensionConfiguration(type: data.dec(_f$type));

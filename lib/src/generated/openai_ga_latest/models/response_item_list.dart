@@ -9,7 +9,7 @@ import 'item_resource.dart';
 part 'response_item_list.mapper.dart';
 
 /// A list of Response items.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseItemList with ResponseItemListMappable {
   const ResponseItemList({
     required this.objectField,

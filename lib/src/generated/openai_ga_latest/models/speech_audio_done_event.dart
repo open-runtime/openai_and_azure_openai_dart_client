@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'create_speech_response_stream_event.dart';
 import 'speech_audio_done_event_type_type.dart';
 import 'speech_audio_done_event_usage.dart';
 
 part 'speech_audio_done_event.mapper.dart';
 
 /// Emitted when the speech synthesis is complete and all audio has been streamed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SpeechAudioDoneEvent with SpeechAudioDoneEventMappable {
   const SpeechAudioDoneEvent({
     required this.type,
@@ -18,7 +19,7 @@ class SpeechAudioDoneEvent with SpeechAudioDoneEventMappable {
   });
 
   final SpeechAudioDoneEventTypeType type;
-  @MappableField(key: 'SpeechAudioDoneEventUsage')
+  @MappableField(key: 'usage')
   final SpeechAudioDoneEventUsage speechAudioDoneEventUsage;
 
   static SpeechAudioDoneEvent fromJson(Map<String, dynamic> json) => SpeechAudioDoneEventMapper.fromJson(json);

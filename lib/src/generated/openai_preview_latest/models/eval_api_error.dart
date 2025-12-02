@@ -8,7 +8,7 @@ part 'eval_api_error.mapper.dart';
 
 /// An object representing an error response from the Eval API.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalApiError with EvalApiErrorMappable {
   const EvalApiError({
     required this.code,

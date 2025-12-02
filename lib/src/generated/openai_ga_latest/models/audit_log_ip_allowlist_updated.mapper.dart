@@ -40,6 +40,10 @@ class AuditLogIpAllowlistUpdatedMapper
     #id: _f$id,
     #allowedIps: _f$allowedIps,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogIpAllowlistUpdated _instantiate(DecodingData data) {
     return AuditLogIpAllowlistUpdated(

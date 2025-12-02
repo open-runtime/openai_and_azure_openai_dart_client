@@ -9,13 +9,14 @@ import 'create_chat_completion_request_audio_format_format.dart';
 
 part 'create_chat_completion_request_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequestAudio with CreateChatCompletionRequestAudioMappable {
   const CreateChatCompletionRequestAudio({
     required this.voice,
     required this.format,
   });
 
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
   final CreateChatCompletionRequestAudioFormatFormat format;
 

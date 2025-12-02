@@ -63,6 +63,10 @@ class ApproximateLocationMapper extends ClassMapperBase<ApproximateLocation> {
     #timezone: _f$timezone,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApproximateLocation _instantiate(DecodingData data) {
     return ApproximateLocation(

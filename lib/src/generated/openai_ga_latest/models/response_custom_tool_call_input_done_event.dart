@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_custom_tool_call_input_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_custom_tool_call_input_done_event.mapper.dart';
 
 /// Event indicating that input for a custom tool call is complete.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseCustomToolCallInputDoneEvent with ResponseCustomToolCallInputDoneEventMappable {
   const ResponseCustomToolCallInputDoneEvent({
     required this.type,

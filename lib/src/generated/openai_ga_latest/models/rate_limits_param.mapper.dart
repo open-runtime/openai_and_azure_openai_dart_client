@@ -34,6 +34,10 @@ class RateLimitsParamMapper extends ClassMapperBase<RateLimitsParam> {
   final MappableFields<RateLimitsParam> fields = const {
     #maxRequestsPer1Minute: _f$maxRequestsPer1Minute,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RateLimitsParam _instantiate(DecodingData data) {
     return RateLimitsParam(

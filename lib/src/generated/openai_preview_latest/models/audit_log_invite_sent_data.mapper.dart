@@ -40,6 +40,10 @@ class AuditLogInviteSentDataMapper
     #email: _f$email,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogInviteSentData _instantiate(DecodingData data) {
     return AuditLogInviteSentData(

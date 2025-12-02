@@ -42,6 +42,10 @@ class CreateEmbeddingResponseUsageMapper
     #promptTokens: _f$promptTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEmbeddingResponseUsage _instantiate(DecodingData data) {
     return CreateEmbeddingResponseUsage(

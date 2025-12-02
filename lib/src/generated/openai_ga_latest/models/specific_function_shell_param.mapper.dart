@@ -43,6 +43,10 @@ class SpecificFunctionShellParamMapper
   final MappableFields<SpecificFunctionShellParam> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SpecificFunctionShellParam _instantiate(DecodingData data) {
     return SpecificFunctionShellParam(type: data.dec(_f$type));

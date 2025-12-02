@@ -18,7 +18,7 @@ class MessageDeltaObjectDeltaMapper
         _instance = MessageDeltaObjectDeltaMapper._(),
       );
       MessageDeltaObjectDeltaRoleRoleMapper.ensureInitialized();
-      MessageDeltaObjectDeltaContentContentUnionMapper.ensureInitialized();
+      MessageDeltaObjectDeltaContentUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class MessageDeltaObjectDeltaMapper
       v.role;
   static const Field<MessageDeltaObjectDelta, MessageDeltaObjectDeltaRoleRole>
   _f$role = Field('role', _$role, opt: true);
-  static List<MessageDeltaObjectDeltaContentContentUnion>? _$content(
+  static List<MessageDeltaObjectDeltaContentUnion>? _$content(
     MessageDeltaObjectDelta v,
   ) => v.content;
   static const Field<
     MessageDeltaObjectDelta,
-    List<MessageDeltaObjectDeltaContentContentUnion>
+    List<MessageDeltaObjectDeltaContentUnion>
   >
   _f$content = Field('content', _$content, opt: true);
 
@@ -44,6 +44,10 @@ class MessageDeltaObjectDeltaMapper
     #role: _f$role,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaObjectDelta _instantiate(DecodingData data) {
     return MessageDeltaObjectDelta(
@@ -124,17 +128,17 @@ abstract class MessageDeltaObjectDeltaCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    MessageDeltaObjectDeltaContentContentUnion,
-    MessageDeltaObjectDeltaContentContentUnionCopyWith<
+    MessageDeltaObjectDeltaContentUnion,
+    MessageDeltaObjectDeltaContentUnionCopyWith<
       $R,
-      MessageDeltaObjectDeltaContentContentUnion,
-      MessageDeltaObjectDeltaContentContentUnion
+      MessageDeltaObjectDeltaContentUnion,
+      MessageDeltaObjectDeltaContentUnion
     >
   >?
   get content;
   $R call({
     MessageDeltaObjectDeltaRoleRole? role,
-    List<MessageDeltaObjectDeltaContentContentUnion>? content,
+    List<MessageDeltaObjectDeltaContentUnion>? content,
   });
   MessageDeltaObjectDeltaCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -153,11 +157,11 @@ class _MessageDeltaObjectDeltaCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    MessageDeltaObjectDeltaContentContentUnion,
-    MessageDeltaObjectDeltaContentContentUnionCopyWith<
+    MessageDeltaObjectDeltaContentUnion,
+    MessageDeltaObjectDeltaContentUnionCopyWith<
       $R,
-      MessageDeltaObjectDeltaContentContentUnion,
-      MessageDeltaObjectDeltaContentContentUnion
+      MessageDeltaObjectDeltaContentUnion,
+      MessageDeltaObjectDeltaContentUnion
     >
   >?
   get content => $value.content != null

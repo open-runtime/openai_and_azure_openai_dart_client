@@ -33,7 +33,7 @@ class ListFineTuningJobEventsResponseObjectObjectEnumMapper
   ListFineTuningJobEventsResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ListFineTuningJobEventsResponseObjectObjectEnum.valueList;
+        return ListFineTuningJobEventsResponseObjectObjectEnum.list;
       case 'unknown':
         return ListFineTuningJobEventsResponseObjectObjectEnum.unknown;
       default:
@@ -44,7 +44,7 @@ class ListFineTuningJobEventsResponseObjectObjectEnumMapper
   @override
   dynamic encode(ListFineTuningJobEventsResponseObjectObjectEnum self) {
     switch (self) {
-      case ListFineTuningJobEventsResponseObjectObjectEnum.valueList:
+      case ListFineTuningJobEventsResponseObjectObjectEnum.list:
         return 'list';
       case ListFineTuningJobEventsResponseObjectObjectEnum.unknown:
         return 'unknown';

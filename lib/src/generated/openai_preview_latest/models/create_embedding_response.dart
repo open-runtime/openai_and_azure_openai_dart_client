@@ -10,7 +10,7 @@ import 'embedding.dart';
 
 part 'create_embedding_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEmbeddingResponse with CreateEmbeddingResponseMappable {
   const CreateEmbeddingResponse({
     required this.data,
@@ -23,7 +23,7 @@ class CreateEmbeddingResponse with CreateEmbeddingResponseMappable {
   final String model;
   @MappableField(key: 'object')
   final CreateEmbeddingResponseObjectObjectEnum objectEnum;
-  @MappableField(key: 'CreateEmbeddingResponseUsage')
+  @MappableField(key: 'usage')
   final CreateEmbeddingResponseUsage createEmbeddingResponseUsage;
 
   static CreateEmbeddingResponse fromJson(Map<String, dynamic> json) => CreateEmbeddingResponseMapper.fromJson(json);

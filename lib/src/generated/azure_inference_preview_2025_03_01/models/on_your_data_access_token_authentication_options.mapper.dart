@@ -46,6 +46,10 @@ class OnYourDataAccessTokenAuthenticationOptionsMapper
   @override
   final MappableFields<OnYourDataAccessTokenAuthenticationOptions> fields =
       const {#type: _f$type, #accessToken: _f$accessToken};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataAccessTokenAuthenticationOptions _instantiate(
     DecodingData data,

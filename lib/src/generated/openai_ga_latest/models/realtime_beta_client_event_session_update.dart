@@ -19,7 +19,7 @@ part 'realtime_beta_client_event_session_update.mapper.dart';
 /// Only the fields that are present are updated. To clear a field like.
 /// `instructions`, pass an empty string.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventSessionUpdate with RealtimeBetaClientEventSessionUpdateMappable {
   const RealtimeBetaClientEventSessionUpdate({
     required this.type,

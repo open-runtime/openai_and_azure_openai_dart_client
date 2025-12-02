@@ -36,7 +36,7 @@ class RealtimeResponseCreateParamsAudioMapper
   _f$realtimeResponseCreateParamsAudioOutput = Field(
     'realtimeResponseCreateParamsAudioOutput',
     _$realtimeResponseCreateParamsAudioOutput,
-    key: r'RealtimeResponseCreateParamsAudioOutput',
+    key: r'output',
     opt: true,
   );
 
@@ -45,6 +45,10 @@ class RealtimeResponseCreateParamsAudioMapper
     #realtimeResponseCreateParamsAudioOutput:
         _f$realtimeResponseCreateParamsAudioOutput,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseCreateParamsAudio _instantiate(DecodingData data) {
     return RealtimeResponseCreateParamsAudio(

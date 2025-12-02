@@ -9,7 +9,7 @@ import 'input_file_content_param_type_type.dart';
 part 'input_file_content_param.mapper.dart';
 
 /// A file input to the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputFileContentParam with InputFileContentParamMappable {
   const InputFileContentParam({
     this.fileId,

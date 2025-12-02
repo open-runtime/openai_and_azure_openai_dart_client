@@ -52,6 +52,10 @@ class ChatCompletionAllowedToolsChoiceMapper
     #type: _f$type,
     #allowedTools: _f$allowedTools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionAllowedToolsChoice _instantiate(DecodingData data) {
     return ChatCompletionAllowedToolsChoice(

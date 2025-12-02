@@ -21,6 +21,13 @@ openapi_generator:
   json_serializer: dart_mappable
   include_if_null: false
   
+  # dart_mappable specific options:
+  # - dart_mappable_ignore_null: Exclude null values from JSON output
+  # - dart_mappable_include_type_id: Include __type discriminator field for sealed classes
+  # For OpenAI/Azure APIs, we want clean JSON without null values or __type fields
+  dart_mappable_ignore_null: true
+  dart_mappable_include_type_id: false
+  
   # HTTP Client Configuration - Enable all options for maximum flexibility
   default_content_type: "application/json"
   extras_parameter_by_default: true

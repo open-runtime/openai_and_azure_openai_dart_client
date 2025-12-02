@@ -38,6 +38,10 @@ class AuditLogIpAllowlistConfigActivatedMapper
   final MappableFields<AuditLogIpAllowlistConfigActivated> fields = const {
     #configs: _f$configs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogIpAllowlistConfigActivated _instantiate(DecodingData data) {
     return AuditLogIpAllowlistConfigActivated(configs: data.dec(_f$configs));

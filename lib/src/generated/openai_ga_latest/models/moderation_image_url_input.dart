@@ -10,7 +10,7 @@ import 'moderation_image_url_input_type_type.dart';
 part 'moderation_image_url_input.mapper.dart';
 
 /// An object describing an image to classify.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModerationImageUrlInput with ModerationImageUrlInputMappable {
   const ModerationImageUrlInput({
     required this.type,
@@ -18,7 +18,7 @@ class ModerationImageUrlInput with ModerationImageUrlInputMappable {
   });
 
   final ModerationImageUrlInputTypeType type;
-  @MappableField(key: 'ModerationImageUrlInputImageUrl')
+  @MappableField(key: 'image_url')
   final ModerationImageUrlInputImageUrl moderationImageUrlInputImageUrl;
 
   static ModerationImageUrlInput fromJson(Map<String, dynamic> json) => ModerationImageUrlInputMapper.fromJson(json);

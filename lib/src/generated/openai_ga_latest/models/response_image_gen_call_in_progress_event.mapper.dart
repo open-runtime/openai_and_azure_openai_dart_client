@@ -56,6 +56,10 @@ class ResponseImageGenCallInProgressEventMapper
     #itemId: _f$itemId,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseImageGenCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallInProgressEvent(

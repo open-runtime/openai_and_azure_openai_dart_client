@@ -40,6 +40,10 @@ class UploadFileCompleteBodyMapper
     #partIds: _f$partIds,
     #md5: _f$md5,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadFileCompleteBody _instantiate(DecodingData data) {
     return UploadFileCompleteBody(

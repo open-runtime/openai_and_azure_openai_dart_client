@@ -34,7 +34,7 @@ class ListPaginatedFineTuningJobsResponseObjectObjectEnumMapper
   ListPaginatedFineTuningJobsResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ListPaginatedFineTuningJobsResponseObjectObjectEnum.valueList;
+        return ListPaginatedFineTuningJobsResponseObjectObjectEnum.list;
       case 'unknown':
         return ListPaginatedFineTuningJobsResponseObjectObjectEnum.unknown;
       default:
@@ -45,7 +45,7 @@ class ListPaginatedFineTuningJobsResponseObjectObjectEnumMapper
   @override
   dynamic encode(ListPaginatedFineTuningJobsResponseObjectObjectEnum self) {
     switch (self) {
-      case ListPaginatedFineTuningJobsResponseObjectObjectEnum.valueList:
+      case ListPaginatedFineTuningJobsResponseObjectObjectEnum.list:
         return 'list';
       case ListPaginatedFineTuningJobsResponseObjectObjectEnum.unknown:
         return 'unknown';

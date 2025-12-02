@@ -35,6 +35,10 @@ class InviteRequestProjectsMapper
     #id: _f$id,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteRequestProjects _instantiate(DecodingData data) {
     return InviteRequestProjects(id: data.dec(_f$id), role: data.dec(_f$role));

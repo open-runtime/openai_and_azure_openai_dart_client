@@ -38,6 +38,10 @@ class CompletionUsageCompletionTokensDetailsMapper
   final MappableFields<CompletionUsageCompletionTokensDetails> fields = const {
     #reasoningTokens: _f$reasoningTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsageCompletionTokensDetails _instantiate(
     DecodingData data,

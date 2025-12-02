@@ -10,7 +10,7 @@ import 'role_list_resource_object_object_enum.dart';
 part 'role_list_resource.mapper.dart';
 
 /// Paginated list of roles assigned to a principal.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RoleListResource with RoleListResourceMappable {
   const RoleListResource({
     required this.objectEnum,

@@ -37,6 +37,10 @@ class RunObjectRequiredActionSubmitToolOutputsMapper
   @override
   final MappableFields<RunObjectRequiredActionSubmitToolOutputs> fields =
       const {#toolCalls: _f$toolCalls};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunObjectRequiredActionSubmitToolOutputs _instantiate(
     DecodingData data,

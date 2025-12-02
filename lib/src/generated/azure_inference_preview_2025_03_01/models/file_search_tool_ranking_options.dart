@@ -8,7 +8,7 @@ import 'file_search_tool_ranking_options_ranker_ranker.dart';
 
 part 'file_search_tool_ranking_options.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchToolRankingOptions with FileSearchToolRankingOptionsMappable {
   const FileSearchToolRankingOptions({
     this.ranker = FileSearchToolRankingOptionsRankerRanker.auto,

@@ -70,6 +70,10 @@ class CompletionUsageCompletionTokensDetailsMapper
     #reasoningTokens: _f$reasoningTokens,
     #rejectedPredictionTokens: _f$rejectedPredictionTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsageCompletionTokensDetails _instantiate(
     DecodingData data,

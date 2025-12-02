@@ -13,7 +13,7 @@ import 'vector_store_file_object_status_status.dart';
 part 'vector_store_file_object.mapper.dart';
 
 /// A list of files attached to a vector store.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileObject with VectorStoreFileObjectMappable {
   const VectorStoreFileObject({
     required this.id,

@@ -5,6 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
+import 'realtime_server_event.dart';
 import 'realtime_server_event_response_output_item_done_type_type.dart';
 
 part 'realtime_server_event_response_output_item_done.mapper.dart';
@@ -12,7 +13,7 @@ part 'realtime_server_event_response_output_item_done.mapper.dart';
 /// Returned when an Item is done streaming. Also emitted when a Response is .
 /// interrupted, incomplete, or cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseOutputItemDone with RealtimeServerEventResponseOutputItemDoneMappable {
   const RealtimeServerEventResponseOutputItemDone({
     required this.eventId,

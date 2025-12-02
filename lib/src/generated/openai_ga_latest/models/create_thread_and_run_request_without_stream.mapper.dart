@@ -18,6 +18,7 @@ class CreateThreadAndRunRequestWithoutStreamMapper
         _instance = CreateThreadAndRunRequestWithoutStreamMapper._(),
       );
       CreateThreadRequestMapper.ensureInitialized();
+      CreateThreadAndRunRequestWithoutStreamModelUnionMapper.ensureInitialized();
       AssistantToolMapper.ensureInitialized();
       CreateThreadAndRunRequestWithoutStreamToolResourcesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -50,9 +51,19 @@ class CreateThreadAndRunRequestWithoutStreamMapper
     CreateThreadRequest
   >
   _f$thread = Field('thread', _$thread, opt: true);
-  static String? _$model(CreateThreadAndRunRequestWithoutStream v) => v.model;
-  static const Field<CreateThreadAndRunRequestWithoutStream, String> _f$model =
-      Field('model', _$model, opt: true);
+  static CreateThreadAndRunRequestWithoutStreamModelUnion? _$model(
+    CreateThreadAndRunRequestWithoutStream v,
+  ) => v.model;
+  static const Field<
+    CreateThreadAndRunRequestWithoutStream,
+    CreateThreadAndRunRequestWithoutStreamModelUnion
+  >
+  _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+    hook: const CreateThreadAndRunRequestWithoutStreamModelUnionHook(),
+  );
   static String? _$instructions(CreateThreadAndRunRequestWithoutStream v) =>
       v.instructions;
   static const Field<CreateThreadAndRunRequestWithoutStream, String>
@@ -76,7 +87,7 @@ class CreateThreadAndRunRequestWithoutStreamMapper
   _f$createThreadAndRunRequestWithoutStreamToolResources = Field(
     'createThreadAndRunRequestWithoutStreamToolResources',
     _$createThreadAndRunRequestWithoutStreamToolResources,
-    key: r'CreateThreadAndRunRequestWithoutStreamToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static Metadata? _$metadata(CreateThreadAndRunRequestWithoutStream v) =>
@@ -166,6 +177,10 @@ class CreateThreadAndRunRequestWithoutStreamMapper
     #parallelToolCalls: _f$parallelToolCalls,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestWithoutStream _instantiate(
     DecodingData data,
@@ -272,6 +287,12 @@ abstract class CreateThreadAndRunRequestWithoutStreamCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   CreateThreadRequestCopyWith<$R, CreateThreadRequest, CreateThreadRequest>?
   get thread;
+  CreateThreadAndRunRequestWithoutStreamModelUnionCopyWith<
+    $R,
+    CreateThreadAndRunRequestWithoutStreamModelUnion,
+    CreateThreadAndRunRequestWithoutStreamModelUnion
+  >?
+  get model;
   ListCopyWith<
     $R,
     AssistantTool,
@@ -304,7 +325,7 @@ abstract class CreateThreadAndRunRequestWithoutStreamCopyWith<
     num? temperature,
     num? topP,
     CreateThreadRequest? thread,
-    String? model,
+    CreateThreadAndRunRequestWithoutStreamModelUnion? model,
     String? instructions,
     List<AssistantTool>? tools,
     CreateThreadAndRunRequestWithoutStreamToolResources?
@@ -341,6 +362,13 @@ class _CreateThreadAndRunRequestWithoutStreamCopyWithImpl<$R, $Out>
   @override
   CreateThreadRequestCopyWith<$R, CreateThreadRequest, CreateThreadRequest>?
   get thread => $value.thread?.copyWith.$chain((v) => call(thread: v));
+  @override
+  CreateThreadAndRunRequestWithoutStreamModelUnionCopyWith<
+    $R,
+    CreateThreadAndRunRequestWithoutStreamModelUnion,
+    CreateThreadAndRunRequestWithoutStreamModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   ListCopyWith<
     $R,

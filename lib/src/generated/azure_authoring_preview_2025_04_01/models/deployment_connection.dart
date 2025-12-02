@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'deployment_connection.mapper.dart';
 
 /// Relative deployment connection.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeploymentConnection with DeploymentConnectionMappable {
   const DeploymentConnection({
     required this.kind,

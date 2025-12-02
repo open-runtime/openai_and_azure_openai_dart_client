@@ -68,6 +68,10 @@ class RealtimeServerEventResponseMcpCallArgumentsDeltaMapper
     #delta: _f$delta,
     #obfuscation: _f$obfuscation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseMcpCallArgumentsDelta _instantiate(
     DecodingData data,

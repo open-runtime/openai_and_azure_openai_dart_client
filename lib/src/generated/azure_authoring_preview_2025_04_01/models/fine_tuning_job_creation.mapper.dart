@@ -83,6 +83,10 @@ class FineTuningJobCreationMapper
     #integrations: _f$integrations,
     #method: _f$method,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobCreation _instantiate(DecodingData data) {
     return FineTuningJobCreation(

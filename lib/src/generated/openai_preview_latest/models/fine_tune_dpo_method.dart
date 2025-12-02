@@ -9,13 +9,13 @@ import 'fine_tune_dpo_method_hyperparameters.dart';
 part 'fine_tune_dpo_method.mapper.dart';
 
 /// Configuration for the DPO fine-tuning method.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneDpoMethod with FineTuneDpoMethodMappable {
   const FineTuneDpoMethod({
     this.fineTuneDpoMethodHyperparameters,
   });
 
-  @MappableField(key: 'FineTuneDpoMethodHyperparameters')
+  @MappableField(key: 'hyperparameters')
   final FineTuneDpoMethodHyperparameters? fineTuneDpoMethodHyperparameters;
 
   static FineTuneDpoMethod fromJson(Map<String, dynamic> json) => FineTuneDpoMethodMapper.fromJson(json);

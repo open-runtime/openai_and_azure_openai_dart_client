@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_stream_options.dart';
+import 'create_completion_request_model_union.dart';
 import 'stop_configuration.dart';
 
 part 'create_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateCompletionRequest with CreateCompletionRequestMappable {
   const CreateCompletionRequest({
     required this.model,
@@ -32,7 +33,8 @@ class CreateCompletionRequest with CreateCompletionRequestMappable {
     this.topP = 1,
   });
 
-  final String model;
+  @MappableField(hook: const CreateCompletionRequestModelUnionHook())
+  final CreateCompletionRequestModelUnion model;
   @MappableField(key: 'logit_bias')
   final Map<String, int>? logitBias;
   final int? logprobs;

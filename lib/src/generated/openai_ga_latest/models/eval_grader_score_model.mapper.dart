@@ -49,7 +49,7 @@ class EvalGraderScoreModelMapper extends ClassMapperBase<EvalGraderScoreModel> {
   _f$graderScoreModelSamplingParams = Field(
     'graderScoreModelSamplingParams',
     _$graderScoreModelSamplingParams,
-    key: r'GraderScoreModelSamplingParams',
+    key: r'sampling_params',
     opt: true,
   );
   static List<num>? _$range(EvalGraderScoreModel v) => v.range;
@@ -76,6 +76,10 @@ class EvalGraderScoreModelMapper extends ClassMapperBase<EvalGraderScoreModel> {
     #range: _f$range,
     #passThreshold: _f$passThreshold,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalGraderScoreModel _instantiate(DecodingData data) {
     return EvalGraderScoreModel(

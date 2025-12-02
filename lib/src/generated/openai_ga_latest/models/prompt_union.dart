@@ -8,7 +8,7 @@ import 'response_prompt_variables.dart';
 
 part 'prompt_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [PromptUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [PromptUnionVariant1])
 sealed class PromptUnion with PromptUnionMappable {
   const PromptUnion();
 
@@ -28,7 +28,7 @@ extension PromptUnionDeserializer on PromptUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PromptUnionVariant1 extends PromptUnion with PromptUnionVariant1Mappable {
   final String id;
   final String? version;

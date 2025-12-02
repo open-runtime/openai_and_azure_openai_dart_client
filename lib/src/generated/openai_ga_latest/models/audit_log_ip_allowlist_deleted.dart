@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_ip_allowlist_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogIpAllowlistDeleted with AuditLogIpAllowlistDeletedMappable {
   const AuditLogIpAllowlistDeleted({
     this.id,

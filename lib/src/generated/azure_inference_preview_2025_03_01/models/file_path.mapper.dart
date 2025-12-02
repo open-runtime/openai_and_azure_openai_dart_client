@@ -46,6 +46,10 @@ class FilePathMapper extends ClassMapperBase<FilePath> {
     #fileId: _f$fileId,
     #indexField: _f$indexField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FilePath _instantiate(DecodingData data) {
     return FilePath(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'comparison_filter_value_items.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComparisonFilterValueItems with ComparisonFilterValueItemsMappable {
   const ComparisonFilterValueItems();
 

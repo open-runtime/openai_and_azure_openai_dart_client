@@ -10,7 +10,7 @@ import 'images_response_usage.dart';
 part 'images_response.mapper.dart';
 
 /// The response from the image generation endpoint.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesResponse with ImagesResponseMappable {
   const ImagesResponse({
     required this.created,
@@ -20,7 +20,7 @@ class ImagesResponse with ImagesResponseMappable {
 
   final int created;
   final List<Image>? data;
-  @MappableField(key: 'ImagesResponseUsage')
+  @MappableField(key: 'usage')
   final ImagesResponseUsage? imagesResponseUsage;
 
   static ImagesResponse fromJson(Map<String, dynamic> json) => ImagesResponseMapper.fromJson(json);

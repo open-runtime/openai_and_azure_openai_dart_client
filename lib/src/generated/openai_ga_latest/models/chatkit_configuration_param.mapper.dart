@@ -51,6 +51,10 @@ class ChatkitConfigurationParamMapper
     #fileUpload: _f$fileUpload,
     #history: _f$history,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatkitConfigurationParam _instantiate(DecodingData data) {
     return ChatkitConfigurationParam(

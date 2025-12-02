@@ -42,6 +42,10 @@ class BatchRequestOutputErrorMapper
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestOutputError _instantiate(DecodingData data) {
     return BatchRequestOutputError(

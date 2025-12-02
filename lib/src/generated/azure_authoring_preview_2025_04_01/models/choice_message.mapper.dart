@@ -48,6 +48,10 @@ class ChoiceMessageMapper extends ClassMapperBase<ChoiceMessage> {
     #role: _f$role,
     #toolCalls: _f$toolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChoiceMessage _instantiate(DecodingData data) {
     return ChoiceMessage(

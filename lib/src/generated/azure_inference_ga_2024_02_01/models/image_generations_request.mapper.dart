@@ -84,6 +84,10 @@ class ImageGenerationsRequestMapper
     #style: _f$style,
     #n: _f$n,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenerationsRequest _instantiate(DecodingData data) {
     return ImageGenerationsRequest(

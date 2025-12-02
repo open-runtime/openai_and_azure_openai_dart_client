@@ -35,6 +35,10 @@ class UpdateChatCompletionRequestMapper
   final MappableFields<UpdateChatCompletionRequest> fields = const {
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateChatCompletionRequest _instantiate(DecodingData data) {
     return UpdateChatCompletionRequest(metadata: data.dec(_f$metadata));

@@ -17,7 +17,7 @@ class CustomToolChatCompletionsCustomMapper
       MapperContainer.globals.use(
         _instance = CustomToolChatCompletionsCustomMapper._(),
       );
-      CustomToolChatCompletionsCustomFormatFormatUnionMapper.ensureInitialized();
+      CustomToolChatCompletionsCustomFormatUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,12 +34,12 @@ class CustomToolChatCompletionsCustomMapper
       v.description;
   static const Field<CustomToolChatCompletionsCustom, String> _f$description =
       Field('description', _$description, opt: true);
-  static CustomToolChatCompletionsCustomFormatFormatUnion? _$format(
+  static CustomToolChatCompletionsCustomFormatUnion? _$format(
     CustomToolChatCompletionsCustom v,
   ) => v.format;
   static const Field<
     CustomToolChatCompletionsCustom,
-    CustomToolChatCompletionsCustomFormatFormatUnion
+    CustomToolChatCompletionsCustomFormatUnion
   >
   _f$format = Field('format', _$format, opt: true);
 
@@ -49,6 +49,10 @@ class CustomToolChatCompletionsCustomMapper
     #description: _f$description,
     #format: _f$format,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomToolChatCompletionsCustom _instantiate(DecodingData data) {
     return CustomToolChatCompletionsCustom(
@@ -136,16 +140,16 @@ abstract class CustomToolChatCompletionsCustomCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CustomToolChatCompletionsCustomFormatFormatUnionCopyWith<
+  CustomToolChatCompletionsCustomFormatUnionCopyWith<
     $R,
-    CustomToolChatCompletionsCustomFormatFormatUnion,
-    CustomToolChatCompletionsCustomFormatFormatUnion
+    CustomToolChatCompletionsCustomFormatUnion,
+    CustomToolChatCompletionsCustomFormatUnion
   >?
   get format;
   $R call({
     String? name,
     String? description,
-    CustomToolChatCompletionsCustomFormatFormatUnion? format,
+    CustomToolChatCompletionsCustomFormatUnion? format,
   });
   CustomToolChatCompletionsCustomCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -170,10 +174,10 @@ class _CustomToolChatCompletionsCustomCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CustomToolChatCompletionsCustom> $mapper =
       CustomToolChatCompletionsCustomMapper.ensureInitialized();
   @override
-  CustomToolChatCompletionsCustomFormatFormatUnionCopyWith<
+  CustomToolChatCompletionsCustomFormatUnionCopyWith<
     $R,
-    CustomToolChatCompletionsCustomFormatFormatUnion,
-    CustomToolChatCompletionsCustomFormatFormatUnion
+    CustomToolChatCompletionsCustomFormatUnion,
+    CustomToolChatCompletionsCustomFormatUnion
   >?
   get format => $value.format?.copyWith.$chain((v) => call(format: v));
   @override

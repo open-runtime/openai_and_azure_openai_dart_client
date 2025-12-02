@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'modify_certificate_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyCertificateRequest with ModifyCertificateRequestMappable {
   const ModifyCertificateRequest({
     required this.name,

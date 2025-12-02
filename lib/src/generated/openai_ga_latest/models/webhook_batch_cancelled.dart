@@ -12,7 +12,7 @@ part 'webhook_batch_cancelled.mapper.dart';
 
 /// Sent when a batch API request has been cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCancelled with WebhookBatchCancelledMappable {
   const WebhookBatchCancelled({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookBatchCancelled with WebhookBatchCancelledMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookBatchCancelledData')
+  @MappableField(key: 'data')
   final WebhookBatchCancelledData webhookBatchCancelledData;
   final WebhookBatchCancelledTypeType type;
   @MappableField(key: 'object')

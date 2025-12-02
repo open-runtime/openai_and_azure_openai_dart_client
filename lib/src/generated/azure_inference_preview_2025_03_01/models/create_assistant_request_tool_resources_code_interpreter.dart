@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_assistant_request_tool_resources_code_interpreter.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequestToolResourcesCodeInterpreter with CreateAssistantRequestToolResourcesCodeInterpreterMappable {
   const CreateAssistantRequestToolResourcesCodeInterpreter({
     this.fileIds = const [],

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'scroll_type_type.dart';
 
 part 'scroll.mapper.dart';
 
 /// A scroll action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Scroll with ScrollMappable {
   const Scroll({
     required this.x,

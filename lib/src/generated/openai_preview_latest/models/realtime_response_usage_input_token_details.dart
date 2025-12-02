@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_response_usage_input_token_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseUsageInputTokenDetails with RealtimeResponseUsageInputTokenDetailsMappable {
   const RealtimeResponseUsageInputTokenDetails({
     this.cachedTokens,

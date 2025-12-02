@@ -39,6 +39,10 @@ class AuditLogProjectMapper extends ClassMapperBase<AuditLogProject> {
     #id: _f$id,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProject _instantiate(DecodingData data) {
     return AuditLogProject(id: data.dec(_f$id), name: data.dec(_f$name));

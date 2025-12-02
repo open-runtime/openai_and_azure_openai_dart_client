@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'thread_item.dart';
 import 'widget_message_item_object_object_enum.dart';
 import 'widget_message_item_type_type.dart';
 
 part 'widget_message_item.mapper.dart';
 
 /// Thread item that renders a widget payload.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WidgetMessageItem with WidgetMessageItemMappable {
   const WidgetMessageItem({
     required this.id,

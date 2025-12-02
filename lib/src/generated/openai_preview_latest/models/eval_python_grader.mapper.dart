@@ -55,6 +55,10 @@ class EvalPythonGraderMapper extends ClassMapperBase<EvalPythonGrader> {
     #passThreshold: _f$passThreshold,
     #imageTag: _f$imageTag,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalPythonGrader _instantiate(DecodingData data) {
     return EvalPythonGrader(

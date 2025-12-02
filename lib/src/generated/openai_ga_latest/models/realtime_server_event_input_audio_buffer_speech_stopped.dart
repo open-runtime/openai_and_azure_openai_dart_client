@@ -4,13 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_input_audio_buffer_speech_stopped.mapper.dart';
 
 /// Returned in `server_vad` mode when the server detects the end of speech in .
 /// the audio buffer. The server will also send an `conversation.item.created` .
 /// event with the user message item that is created from the audio buffer.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventInputAudioBufferSpeechStopped with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
   const RealtimeServerEventInputAudioBufferSpeechStopped({
     required this.eventId,

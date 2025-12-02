@@ -41,6 +41,10 @@ class UrlAnnotationMapper extends ClassMapperBase<UrlAnnotation> {
     #source: _f$source,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UrlAnnotation _instantiate(DecodingData data) {
     return UrlAnnotation(source: data.dec(_f$source), type: data.dec(_f$type));

@@ -41,6 +41,10 @@ class UserDeleteResponseMapper extends ClassMapperBase<UserDeleteResponse> {
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserDeleteResponse _instantiate(DecodingData data) {
     return UserDeleteResponse(

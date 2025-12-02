@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'completion_usage.mapper.dart';
 
 /// Usage statistics for the completion request.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsage with CompletionUsageMappable {
   const CompletionUsage({
     required this.promptTokens,

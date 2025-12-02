@@ -8,7 +8,7 @@ import 'project_service_account_delete_response_object_object_enum.dart';
 
 part 'project_service_account_delete_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountDeleteResponse with ProjectServiceAccountDeleteResponseMappable {
   const ProjectServiceAccountDeleteResponse({
     required this.objectEnum,

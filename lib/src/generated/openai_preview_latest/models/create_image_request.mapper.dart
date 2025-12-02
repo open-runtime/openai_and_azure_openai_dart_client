@@ -14,6 +14,7 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
   static CreateImageRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateImageRequestMapper._());
+      CreateImageRequestModelUnionMapper.ensureInitialized();
       CreateImageRequestQualityQualityMapper.ensureInitialized();
       CreateImageRequestResponseFormatResponseFormatMapper.ensureInitialized();
       CreateImageRequestOutputFormatOutputFormatMapper.ensureInitialized();
@@ -39,12 +40,14 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     _$user,
     opt: true,
   );
-  static String? _$model(CreateImageRequest v) => v.model;
-  static const Field<CreateImageRequest, String> _f$model = Field(
+  static CreateImageRequestModelUnion? _$model(CreateImageRequest v) => v.model;
+  static const Field<CreateImageRequest, CreateImageRequestModelUnion>
+  _f$model = Field(
     'model',
     _$model,
     opt: true,
-    def: 'dall-e-2',
+    def: const CreateImageRequestModelUnionVariantString(value: 'dall-e-2'),
+    hook: const CreateImageRequestModelUnionHook(),
   );
   static int? _$n(CreateImageRequest v) => v.n;
   static const Field<CreateImageRequest, int> _f$n = Field(
@@ -145,6 +148,10 @@ class CreateImageRequestMapper extends ClassMapperBase<CreateImageRequest> {
     #background: _f$background,
     #style: _f$style,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateImageRequest _instantiate(DecodingData data) {
     return CreateImageRequest(
@@ -234,10 +241,16 @@ abstract class CreateImageRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  CreateImageRequestModelUnionCopyWith<
+    $R,
+    CreateImageRequestModelUnion,
+    CreateImageRequestModelUnion
+  >?
+  get model;
   $R call({
     String? prompt,
     String? user,
-    String? model,
+    CreateImageRequestModelUnion? model,
     int? n,
     CreateImageRequestQualityQuality? quality,
     CreateImageRequestResponseFormatResponseFormat? responseFormat,
@@ -261,6 +274,13 @@ class _CreateImageRequestCopyWithImpl<$R, $Out>
   @override
   late final ClassMapperBase<CreateImageRequest> $mapper =
       CreateImageRequestMapper.ensureInitialized();
+  @override
+  CreateImageRequestModelUnionCopyWith<
+    $R,
+    CreateImageRequestModelUnion,
+    CreateImageRequestModelUnion
+  >?
+  get model => $value.model?.copyWith.$chain((v) => call(model: v));
   @override
   $R call({
     String? prompt,

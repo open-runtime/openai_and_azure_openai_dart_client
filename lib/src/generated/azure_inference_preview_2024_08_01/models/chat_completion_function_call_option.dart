@@ -8,7 +8,7 @@ part 'chat_completion_function_call_option.mapper.dart';
 
 /// Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionFunctionCallOption with ChatCompletionFunctionCallOptionMappable {
   const ChatCompletionFunctionCallOption({
     required this.name,

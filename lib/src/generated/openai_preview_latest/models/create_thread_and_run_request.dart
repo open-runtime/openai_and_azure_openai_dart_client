@@ -6,8 +6,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_api_response_format_option.dart';
 import 'assistants_api_tool_choice_option.dart';
+import 'create_thread_and_run_request_model_union.dart';
 import 'create_thread_and_run_request_tool_resources.dart';
-import 'create_thread_and_run_request_tools_tools_union.dart';
+import 'create_thread_and_run_request_tools_union.dart';
 import 'create_thread_request.dart';
 import 'metadata.dart';
 import 'parallel_tool_calls.dart';
@@ -15,7 +16,7 @@ import 'truncation_object.dart';
 
 part 'create_thread_and_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   const CreateThreadAndRunRequest({
     required this.assistantId,
@@ -42,10 +43,11 @@ class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   @MappableField(key: 'top_p')
   final num? topP;
   final CreateThreadRequest? thread;
-  final String? model;
+  @MappableField(hook: const CreateThreadAndRunRequestModelUnionHook())
+  final CreateThreadAndRunRequestModelUnion? model;
   final String? instructions;
-  final List<CreateThreadAndRunRequestToolsToolsUnion>? tools;
-  @MappableField(key: 'CreateThreadAndRunRequestToolResources')
+  final List<CreateThreadAndRunRequestToolsUnion>? tools;
+  @MappableField(key: 'tool_resources')
   final CreateThreadAndRunRequestToolResources? createThreadAndRunRequestToolResources;
   final Metadata? metadata;
   final bool? stream;

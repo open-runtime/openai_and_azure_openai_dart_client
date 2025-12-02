@@ -66,6 +66,10 @@ class CreateChatCompletionResponseChoicesMapper
     #message: _f$message,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionResponseChoices _instantiate(DecodingData data) {
     return CreateChatCompletionResponseChoices(

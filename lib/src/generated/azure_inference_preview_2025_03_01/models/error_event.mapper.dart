@@ -36,6 +36,10 @@ class ErrorEventMapper extends ClassMapperBase<ErrorEvent> {
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ErrorEvent _instantiate(DecodingData data) {
     return ErrorEvent(event: data.dec(_f$event), data: data.dec(_f$data));

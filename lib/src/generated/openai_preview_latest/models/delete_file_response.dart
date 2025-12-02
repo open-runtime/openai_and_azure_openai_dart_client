@@ -8,7 +8,7 @@ import 'delete_file_response_object_object_enum.dart';
 
 part 'delete_file_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteFileResponse with DeleteFileResponseMappable {
   const DeleteFileResponse({
     required this.id,

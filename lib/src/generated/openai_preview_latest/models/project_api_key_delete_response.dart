@@ -8,7 +8,7 @@ import 'project_api_key_delete_response_object_object_enum.dart';
 
 part 'project_api_key_delete_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKeyDeleteResponse with ProjectApiKeyDeleteResponseMappable {
   const ProjectApiKeyDeleteResponse({
     required this.objectEnum,

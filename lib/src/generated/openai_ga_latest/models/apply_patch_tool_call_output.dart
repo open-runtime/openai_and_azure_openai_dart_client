@@ -6,11 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_call_output_status.dart';
 import 'apply_patch_tool_call_output_type_type.dart';
+import 'conversation_item.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'apply_patch_tool_call_output.mapper.dart';
 
 /// The output emitted by an apply patch tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchToolCallOutput with ApplyPatchToolCallOutputMappable {
   const ApplyPatchToolCallOutput({
     required this.id,

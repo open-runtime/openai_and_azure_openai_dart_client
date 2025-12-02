@@ -11,7 +11,7 @@ part 'input_audio.mapper.dart';
 
 /// An audio input to the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputAudio with InputAudioMappable {
   const InputAudio({
     required this.type,
@@ -19,7 +19,7 @@ class InputAudio with InputAudioMappable {
   });
 
   final InputAudioTypeType type;
-  @MappableField(key: 'InputAudioInputAudio')
+  @MappableField(key: 'input_audio')
   final InputAudioInputAudio inputAudioInputAudio;
 
   static InputAudio fromJson(Map<String, dynamic> json) => InputAudioMapper.fromJson(json);

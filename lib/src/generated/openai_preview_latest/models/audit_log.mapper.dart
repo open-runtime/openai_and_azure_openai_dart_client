@@ -73,7 +73,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   static const Field<AuditLog, AuditLogProject> _f$auditLogProject = Field(
     'auditLogProject',
     _$auditLogProject,
-    key: r'AuditLogProject',
+    key: r'project',
     opt: true,
   );
   static AuditLogApiKeyCreated? _$auditLogApiKeyCreated(AuditLog v) =>
@@ -82,7 +82,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogApiKeyCreated',
         _$auditLogApiKeyCreated,
-        key: r'AuditLogApiKeyCreated',
+        key: r'api_key.created',
         opt: true,
       );
   static AuditLogApiKeyUpdated? _$auditLogApiKeyUpdated(AuditLog v) =>
@@ -91,7 +91,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogApiKeyUpdated',
         _$auditLogApiKeyUpdated,
-        key: r'AuditLogApiKeyUpdated',
+        key: r'api_key.updated',
         opt: true,
       );
   static AuditLogApiKeyDeleted? _$auditLogApiKeyDeleted(AuditLog v) =>
@@ -100,7 +100,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogApiKeyDeleted',
         _$auditLogApiKeyDeleted,
-        key: r'AuditLogApiKeyDeleted',
+        key: r'api_key.deleted',
         opt: true,
       );
   static AuditLogCheckpointPermissionCreated?
@@ -110,7 +110,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCheckpointPermissionCreated = Field(
     'auditLogCheckpointPermissionCreated',
     _$auditLogCheckpointPermissionCreated,
-    key: r'AuditLogCheckpointPermissionCreated',
+    key: r'checkpoint_permission.created',
     opt: true,
   );
   static AuditLogCheckpointPermissionDeleted?
@@ -120,7 +120,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCheckpointPermissionDeleted = Field(
     'auditLogCheckpointPermissionDeleted',
     _$auditLogCheckpointPermissionDeleted,
-    key: r'AuditLogCheckpointPermissionDeleted',
+    key: r'checkpoint_permission.deleted',
     opt: true,
   );
   static AuditLogInviteSent? _$auditLogInviteSent(AuditLog v) =>
@@ -129,7 +129,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogInviteSent',
         _$auditLogInviteSent,
-        key: r'AuditLogInviteSent',
+        key: r'invite.sent',
         opt: true,
       );
   static AuditLogInviteAccepted? _$auditLogInviteAccepted(AuditLog v) =>
@@ -138,7 +138,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogInviteAccepted = Field(
     'auditLogInviteAccepted',
     _$auditLogInviteAccepted,
-    key: r'AuditLogInviteAccepted',
+    key: r'invite.accepted',
     opt: true,
   );
   static AuditLogInviteDeleted? _$auditLogInviteDeleted(AuditLog v) =>
@@ -147,7 +147,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogInviteDeleted',
         _$auditLogInviteDeleted,
-        key: r'AuditLogInviteDeleted',
+        key: r'invite.deleted',
         opt: true,
       );
   static AuditLogLoginFailed? _$auditLogLoginFailed(AuditLog v) =>
@@ -156,7 +156,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogLoginFailed',
         _$auditLogLoginFailed,
-        key: r'AuditLogLoginFailed',
+        key: r'login.failed',
         opt: true,
       );
   static AuditLogLogoutFailed? _$auditLogLogoutFailed(AuditLog v) =>
@@ -165,7 +165,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogLogoutFailed',
         _$auditLogLogoutFailed,
-        key: r'AuditLogLogoutFailed',
+        key: r'logout.failed',
         opt: true,
       );
   static AuditLogOrganizationUpdated? _$auditLogOrganizationUpdated(
@@ -175,7 +175,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogOrganizationUpdated = Field(
     'auditLogOrganizationUpdated',
     _$auditLogOrganizationUpdated,
-    key: r'AuditLogOrganizationUpdated',
+    key: r'organization.updated',
     opt: true,
   );
   static AuditLogProjectCreated? _$auditLogProjectCreated(AuditLog v) =>
@@ -184,7 +184,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogProjectCreated = Field(
     'auditLogProjectCreated',
     _$auditLogProjectCreated,
-    key: r'AuditLogProjectCreated',
+    key: r'project.created',
     opt: true,
   );
   static AuditLogProjectUpdated? _$auditLogProjectUpdated(AuditLog v) =>
@@ -193,7 +193,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogProjectUpdated = Field(
     'auditLogProjectUpdated',
     _$auditLogProjectUpdated,
-    key: r'AuditLogProjectUpdated',
+    key: r'project.updated',
     opt: true,
   );
   static AuditLogProjectArchived? _$auditLogProjectArchived(AuditLog v) =>
@@ -202,7 +202,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogProjectArchived = Field(
     'auditLogProjectArchived',
     _$auditLogProjectArchived,
-    key: r'AuditLogProjectArchived',
+    key: r'project.archived',
     opt: true,
   );
   static AuditLogRateLimitUpdated? _$auditLogRateLimitUpdated(AuditLog v) =>
@@ -211,7 +211,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogRateLimitUpdated = Field(
     'auditLogRateLimitUpdated',
     _$auditLogRateLimitUpdated,
-    key: r'AuditLogRateLimitUpdated',
+    key: r'rate_limit.updated',
     opt: true,
   );
   static AuditLogRateLimitDeleted? _$auditLogRateLimitDeleted(AuditLog v) =>
@@ -220,7 +220,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogRateLimitDeleted = Field(
     'auditLogRateLimitDeleted',
     _$auditLogRateLimitDeleted,
-    key: r'AuditLogRateLimitDeleted',
+    key: r'rate_limit.deleted',
     opt: true,
   );
   static AuditLogServiceAccountCreated? _$auditLogServiceAccountCreated(
@@ -230,7 +230,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogServiceAccountCreated = Field(
     'auditLogServiceAccountCreated',
     _$auditLogServiceAccountCreated,
-    key: r'AuditLogServiceAccountCreated',
+    key: r'service_account.created',
     opt: true,
   );
   static AuditLogServiceAccountUpdated? _$auditLogServiceAccountUpdated(
@@ -240,7 +240,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogServiceAccountUpdated = Field(
     'auditLogServiceAccountUpdated',
     _$auditLogServiceAccountUpdated,
-    key: r'AuditLogServiceAccountUpdated',
+    key: r'service_account.updated',
     opt: true,
   );
   static AuditLogServiceAccountDeleted? _$auditLogServiceAccountDeleted(
@@ -250,7 +250,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogServiceAccountDeleted = Field(
     'auditLogServiceAccountDeleted',
     _$auditLogServiceAccountDeleted,
-    key: r'AuditLogServiceAccountDeleted',
+    key: r'service_account.deleted',
     opt: true,
   );
   static AuditLogUserAdded? _$auditLogUserAdded(AuditLog v) =>
@@ -258,7 +258,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   static const Field<AuditLog, AuditLogUserAdded> _f$auditLogUserAdded = Field(
     'auditLogUserAdded',
     _$auditLogUserAdded,
-    key: r'AuditLogUserAdded',
+    key: r'user.added',
     opt: true,
   );
   static AuditLogUserUpdated? _$auditLogUserUpdated(AuditLog v) =>
@@ -267,7 +267,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogUserUpdated',
         _$auditLogUserUpdated,
-        key: r'AuditLogUserUpdated',
+        key: r'user.updated',
         opt: true,
       );
   static AuditLogUserDeleted? _$auditLogUserDeleted(AuditLog v) =>
@@ -276,7 +276,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
       Field(
         'auditLogUserDeleted',
         _$auditLogUserDeleted,
-        key: r'AuditLogUserDeleted',
+        key: r'user.deleted',
         opt: true,
       );
   static AuditLogCertificateCreated? _$auditLogCertificateCreated(AuditLog v) =>
@@ -285,7 +285,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCertificateCreated = Field(
     'auditLogCertificateCreated',
     _$auditLogCertificateCreated,
-    key: r'AuditLogCertificateCreated',
+    key: r'certificate.created',
     opt: true,
   );
   static AuditLogCertificateUpdated? _$auditLogCertificateUpdated(AuditLog v) =>
@@ -294,7 +294,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCertificateUpdated = Field(
     'auditLogCertificateUpdated',
     _$auditLogCertificateUpdated,
-    key: r'AuditLogCertificateUpdated',
+    key: r'certificate.updated',
     opt: true,
   );
   static AuditLogCertificateDeleted? _$auditLogCertificateDeleted(AuditLog v) =>
@@ -303,7 +303,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCertificateDeleted = Field(
     'auditLogCertificateDeleted',
     _$auditLogCertificateDeleted,
-    key: r'AuditLogCertificateDeleted',
+    key: r'certificate.deleted',
     opt: true,
   );
   static AuditLogCertificatesActivated? _$auditLogCertificatesActivated(
@@ -313,7 +313,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCertificatesActivated = Field(
     'auditLogCertificatesActivated',
     _$auditLogCertificatesActivated,
-    key: r'AuditLogCertificatesActivated',
+    key: r'certificates.activated',
     opt: true,
   );
   static AuditLogCertificatesDeactivated? _$auditLogCertificatesDeactivated(
@@ -323,7 +323,7 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
   _f$auditLogCertificatesDeactivated = Field(
     'auditLogCertificatesDeactivated',
     _$auditLogCertificatesDeactivated,
-    key: r'AuditLogCertificatesDeactivated',
+    key: r'certificates.deactivated',
     opt: true,
   );
 
@@ -364,6 +364,10 @@ class AuditLogMapper extends ClassMapperBase<AuditLog> {
     #auditLogCertificatesActivated: _f$auditLogCertificatesActivated,
     #auditLogCertificatesDeactivated: _f$auditLogCertificatesDeactivated,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLog _instantiate(DecodingData data) {
     return AuditLog(

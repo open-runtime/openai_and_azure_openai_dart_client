@@ -8,7 +8,7 @@ import 'delete_message_response_object_object_enum.dart';
 
 part 'delete_message_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteMessageResponse with DeleteMessageResponseMappable {
   const DeleteMessageResponse({
     required this.id,

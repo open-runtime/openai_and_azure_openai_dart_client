@@ -135,6 +135,10 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper
     #createResponse: _f$createResponse,
     #interruptResponse: _f$interruptResponse,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequestTurnDetection _instantiate(
     DecodingData data,

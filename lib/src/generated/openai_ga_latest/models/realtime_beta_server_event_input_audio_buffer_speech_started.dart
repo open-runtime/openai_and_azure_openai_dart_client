@@ -17,7 +17,7 @@ part 'realtime_beta_server_event_input_audio_buffer_speech_started.mapper.dart';
 /// `input_audio_buffer.speech_stopped` event (unless the client manually commits .
 /// the audio buffer during VAD activation).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventInputAudioBufferSpeechStarted with RealtimeBetaServerEventInputAudioBufferSpeechStartedMappable {
   const RealtimeBetaServerEventInputAudioBufferSpeechStarted({
     required this.eventId,

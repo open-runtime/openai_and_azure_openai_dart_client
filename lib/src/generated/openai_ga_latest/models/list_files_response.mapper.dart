@@ -60,6 +60,10 @@ class ListFilesResponseMapper extends ClassMapperBase<ListFilesResponse> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListFilesResponse _instantiate(DecodingData data) {
     return ListFilesResponse(

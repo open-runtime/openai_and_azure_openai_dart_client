@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_jsonl_file_content_source_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalJsonlFileContentSourceContent with EvalJsonlFileContentSourceContentMappable {
   const EvalJsonlFileContentSourceContent({
     required this.item,

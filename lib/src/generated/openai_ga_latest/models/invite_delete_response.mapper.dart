@@ -41,6 +41,10 @@ class InviteDeleteResponseMapper extends ClassMapperBase<InviteDeleteResponse> {
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteDeleteResponse _instantiate(DecodingData data) {
     return InviteDeleteResponse(

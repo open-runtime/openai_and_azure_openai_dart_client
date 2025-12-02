@@ -16,7 +16,7 @@ part 'realtime_beta_client_event_conversation_item_create.mapper.dart';
 /// If successful, the server will respond with a `conversation.item.created` .
 /// event, otherwise an `error` event will be sent.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventConversationItemCreate with RealtimeBetaClientEventConversationItemCreateMappable {
   const RealtimeBetaClientEventConversationItemCreate({
     required this.type,

@@ -8,7 +8,7 @@ part 'coordinate.mapper.dart';
 
 /// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Coordinate with CoordinateMappable {
   const Coordinate({
     required this.x,

@@ -12,7 +12,7 @@ part 'realtime_transcription_session_create_response_ga.mapper.dart';
 
 /// A Realtime transcription session configuration object.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponseGa with RealtimeTranscriptionSessionCreateResponseGaMappable {
   const RealtimeTranscriptionSessionCreateResponseGa({
     required this.type,
@@ -30,7 +30,7 @@ class RealtimeTranscriptionSessionCreateResponseGa with RealtimeTranscriptionSes
   @MappableField(key: 'expires_at')
   final int? expiresAt;
   final List<RealtimeTranscriptionSessionCreateResponseGaIncludeInclude>? include;
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateResponseGaAudio')
+  @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateResponseGaAudio? realtimeTranscriptionSessionCreateResponseGaAudio;
 
   static RealtimeTranscriptionSessionCreateResponseGa fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseGaMapper.fromJson(json);

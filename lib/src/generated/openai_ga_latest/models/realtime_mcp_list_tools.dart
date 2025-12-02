@@ -5,13 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'mcp_list_tools_tool.dart';
+import 'realtime_conversation_item.dart';
 import 'realtime_mcp_list_tools_type_type.dart';
 
 part 'realtime_mcp_list_tools.mapper.dart';
 
 /// A Realtime item listing tools available on an MCP server.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpListTools with RealtimeMcpListToolsMappable {
   const RealtimeMcpListTools({
     required this.type,

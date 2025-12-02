@@ -9,14 +9,15 @@ import 'voice_ids_shared.dart';
 
 part 'realtime_session_create_request_ga_audio_output.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestGaAudioOutput with RealtimeSessionCreateRequestGaAudioOutputMappable {
   const RealtimeSessionCreateRequestGaAudioOutput({
-    this.voice = 'alloy',
+    this.voice = const VoiceIdsSharedVariantString(value: 'alloy'),
     this.speed = 1,
     this.format,
   });
 
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
   final num speed;
   final RealtimeAudioFormats? format;

@@ -42,6 +42,10 @@ class EvalRunOutputItemSampleOutputMapper
     #role: _f$role,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemSampleOutput _instantiate(DecodingData data) {
     return EvalRunOutputItemSampleOutput(

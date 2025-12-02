@@ -30,7 +30,7 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
   _f$completionUsageCompletionTokensDetails = Field(
     'completionUsageCompletionTokensDetails',
     _$completionUsageCompletionTokensDetails,
-    key: r'CompletionUsageCompletionTokensDetails',
+    key: r'completion_tokens_details',
     opt: true,
   );
   static CompletionUsagePromptTokensDetails?
@@ -40,7 +40,7 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
   _f$completionUsagePromptTokensDetails = Field(
     'completionUsagePromptTokensDetails',
     _$completionUsagePromptTokensDetails,
-    key: r'CompletionUsagePromptTokensDetails',
+    key: r'prompt_tokens_details',
     opt: true,
   );
   static int _$completionTokens(CompletionUsage v) => v.completionTokens;
@@ -77,6 +77,10 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
     #promptTokens: _f$promptTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsage _instantiate(DecodingData data) {
     return CompletionUsage(

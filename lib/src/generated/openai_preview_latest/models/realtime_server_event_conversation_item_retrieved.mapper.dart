@@ -51,6 +51,10 @@ class RealtimeServerEventConversationItemRetrievedMapper
   @override
   final MappableFields<RealtimeServerEventConversationItemRetrieved> fields =
       const {#eventId: _f$eventId, #type: _f$type, #item: _f$item};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemRetrieved _instantiate(
     DecodingData data,

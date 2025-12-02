@@ -9,7 +9,7 @@ import 'list_batches_response_object_object_enum.dart';
 
 part 'list_batches_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListBatchesResponse with ListBatchesResponseMappable {
   const ListBatchesResponse({
     required this.data,

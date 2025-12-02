@@ -59,6 +59,10 @@ class ContainerListResourceMapper
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContainerListResource _instantiate(DecodingData data) {
     return ContainerListResource(

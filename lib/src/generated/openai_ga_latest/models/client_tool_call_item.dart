@@ -7,11 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'client_tool_call_item_object_object_enum.dart';
 import 'client_tool_call_item_type_type.dart';
 import 'client_tool_call_status.dart';
+import 'thread_item.dart';
 
 part 'client_tool_call_item.mapper.dart';
 
 /// Record of a client side tool invocation initiated by the assistant.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ClientToolCallItem with ClientToolCallItemMappable {
   const ClientToolCallItem({
     required this.id,

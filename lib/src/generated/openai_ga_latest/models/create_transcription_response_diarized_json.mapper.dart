@@ -19,7 +19,7 @@ class CreateTranscriptionResponseDiarizedJsonMapper
       );
       CreateTranscriptionResponseDiarizedJsonTaskTaskMapper.ensureInitialized();
       TranscriptionDiarizedSegmentMapper.ensureInitialized();
-      CreateTranscriptionResponseDiarizedJsonUsageUsageUnionMapper.ensureInitialized();
+      CreateTranscriptionResponseDiarizedJsonUsageUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -50,12 +50,12 @@ class CreateTranscriptionResponseDiarizedJsonMapper
     List<TranscriptionDiarizedSegment>
   >
   _f$segments = Field('segments', _$segments);
-  static CreateTranscriptionResponseDiarizedJsonUsageUsageUnion? _$usage(
+  static CreateTranscriptionResponseDiarizedJsonUsageUnion? _$usage(
     CreateTranscriptionResponseDiarizedJson v,
   ) => v.usage;
   static const Field<
     CreateTranscriptionResponseDiarizedJson,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion
+    CreateTranscriptionResponseDiarizedJsonUsageUnion
   >
   _f$usage = Field('usage', _$usage, opt: true);
 
@@ -67,6 +67,10 @@ class CreateTranscriptionResponseDiarizedJsonMapper
     #segments: _f$segments,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseDiarizedJson _instantiate(
     DecodingData data,
@@ -173,10 +177,10 @@ abstract class CreateTranscriptionResponseDiarizedJsonCopyWith<
     >
   >
   get segments;
-  CreateTranscriptionResponseDiarizedJsonUsageUsageUnionCopyWith<
+  CreateTranscriptionResponseDiarizedJsonUsageUnionCopyWith<
     $R,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion
+    CreateTranscriptionResponseDiarizedJsonUsageUnion,
+    CreateTranscriptionResponseDiarizedJsonUsageUnion
   >?
   get usage;
   $R call({
@@ -184,7 +188,7 @@ abstract class CreateTranscriptionResponseDiarizedJsonCopyWith<
     num? duration,
     String? text,
     List<TranscriptionDiarizedSegment>? segments,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion? usage,
+    CreateTranscriptionResponseDiarizedJsonUsageUnion? usage,
   });
   CreateTranscriptionResponseDiarizedJsonCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -223,10 +227,10 @@ class _CreateTranscriptionResponseDiarizedJsonCopyWithImpl<$R, $Out>
     (v) => call(segments: v),
   );
   @override
-  CreateTranscriptionResponseDiarizedJsonUsageUsageUnionCopyWith<
+  CreateTranscriptionResponseDiarizedJsonUsageUnionCopyWith<
     $R,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion,
-    CreateTranscriptionResponseDiarizedJsonUsageUsageUnion
+    CreateTranscriptionResponseDiarizedJsonUsageUnion,
+    CreateTranscriptionResponseDiarizedJsonUsageUnion
   >?
   get usage => $value.usage?.copyWith.$chain((v) => call(usage: v));
   @override

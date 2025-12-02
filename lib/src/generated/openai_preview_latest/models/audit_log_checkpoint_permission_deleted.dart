@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_checkpoint_permission_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCheckpointPermissionDeleted with AuditLogCheckpointPermissionDeletedMappable {
   const AuditLogCheckpointPermissionDeleted({
     this.id,

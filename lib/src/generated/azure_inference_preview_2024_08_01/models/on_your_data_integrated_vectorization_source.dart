@@ -9,7 +9,7 @@ import 'on_your_data_vectorization_source_type.dart';
 part 'on_your_data_integrated_vectorization_source.mapper.dart';
 
 /// Represents the integrated vectorizer defined within the search resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataIntegratedVectorizationSource with OnYourDataIntegratedVectorizationSourceMappable {
   const OnYourDataIntegratedVectorizationSource({
     required this.type,

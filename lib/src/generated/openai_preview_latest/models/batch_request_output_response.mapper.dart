@@ -51,6 +51,10 @@ class BatchRequestOutputResponseMapper
     #requestId: _f$requestId,
     #body: _f$body,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestOutputResponse _instantiate(DecodingData data) {
     return BatchRequestOutputResponse(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError with RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedErrorMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError({
     this.type,

@@ -174,6 +174,10 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     #parallelToolCalls: _f$parallelToolCalls,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateRunRequest _instantiate(DecodingData data) {
     return CreateRunRequest(

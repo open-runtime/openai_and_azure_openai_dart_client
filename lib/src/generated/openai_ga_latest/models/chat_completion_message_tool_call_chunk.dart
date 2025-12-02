@@ -9,7 +9,7 @@ import 'chat_completion_message_tool_call_chunk_type_type.dart';
 
 part 'chat_completion_message_tool_call_chunk.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCallChunk with ChatCompletionMessageToolCallChunkMappable {
   const ChatCompletionMessageToolCallChunk({
     required this.indexField,
@@ -22,7 +22,7 @@ class ChatCompletionMessageToolCallChunk with ChatCompletionMessageToolCallChunk
   final int indexField;
   final String? id;
   final ChatCompletionMessageToolCallChunkTypeType? type;
-  @MappableField(key: 'ChatCompletionMessageToolCallChunkFunction')
+  @MappableField(key: 'function')
   final ChatCompletionMessageToolCallChunkFunction? chatCompletionMessageToolCallChunkFunction;
 
   static ChatCompletionMessageToolCallChunk fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallChunkMapper.fromJson(json);

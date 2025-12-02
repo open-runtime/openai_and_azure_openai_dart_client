@@ -29,6 +29,10 @@ class AssistantsApiResponseFormatOptionUnionMapper
   @override
   final MappableFields<AssistantsApiResponseFormatOptionUnion> fields =
       const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnion _instantiate(
     DecodingData data,
@@ -116,6 +120,10 @@ class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMapper
     AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat
   >
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat
   _instantiate(DecodingData data) {
@@ -332,6 +340,10 @@ class AssistantsApiResponseFormatOptionUnionVariantStringMapper
   @override
   final MappableFields<AssistantsApiResponseFormatOptionUnionVariantString>
   fields = const {#value: _f$value};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantsApiResponseFormatOptionUnionVariantString _instantiate(
     DecodingData data,

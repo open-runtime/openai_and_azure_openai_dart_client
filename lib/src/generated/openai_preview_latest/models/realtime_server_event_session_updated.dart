@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_session_updated_type_type.dart';
 import 'realtime_session.dart';
 
@@ -12,7 +13,7 @@ part 'realtime_server_event_session_updated.mapper.dart';
 /// Returned when a session is updated with a `session.update` event, unless .
 /// there is an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventSessionUpdated with RealtimeServerEventSessionUpdatedMappable {
   const RealtimeServerEventSessionUpdated({
     required this.eventId,

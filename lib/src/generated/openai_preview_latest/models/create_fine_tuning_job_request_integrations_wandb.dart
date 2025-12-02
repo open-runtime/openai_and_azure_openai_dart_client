@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_fine_tuning_job_request_integrations_wandb.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateFineTuningJobRequestIntegrationsWandb with CreateFineTuningJobRequestIntegrationsWandbMappable {
   const CreateFineTuningJobRequestIntegrationsWandb({
     required this.project,

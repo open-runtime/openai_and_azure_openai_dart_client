@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_transcription_session_create_response_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateResponseTurnDetection with RealtimeTranscriptionSessionCreateResponseTurnDetectionMappable {
   const RealtimeTranscriptionSessionCreateResponseTurnDetection({
     this.type,

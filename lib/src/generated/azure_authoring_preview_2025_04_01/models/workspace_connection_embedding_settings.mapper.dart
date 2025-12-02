@@ -43,6 +43,10 @@ class WorkspaceConnectionEmbeddingSettingsMapper
     #deploymentName: _f$deploymentName,
     #modelName: _f$modelName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WorkspaceConnectionEmbeddingSettings _instantiate(DecodingData data) {
     return WorkspaceConnectionEmbeddingSettings(

@@ -33,6 +33,10 @@ class ResponseUsageOutputTokensDetailsMapper
   final MappableFields<ResponseUsageOutputTokensDetails> fields = const {
     #reasoningTokens: _f$reasoningTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseUsageOutputTokensDetails _instantiate(DecodingData data) {
     return ResponseUsageOutputTokensDetails(

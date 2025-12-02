@@ -46,7 +46,7 @@ class RealtimeBetaServerEventErrorMapper
   _f$realtimeBetaServerEventErrorError = Field(
     'realtimeBetaServerEventErrorError',
     _$realtimeBetaServerEventErrorError,
-    key: r'RealtimeBetaServerEventErrorError',
+    key: r'error',
   );
 
   @override
@@ -55,6 +55,10 @@ class RealtimeBetaServerEventErrorMapper
     #type: _f$type,
     #realtimeBetaServerEventErrorError: _f$realtimeBetaServerEventErrorError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventError _instantiate(DecodingData data) {
     return RealtimeBetaServerEventError(

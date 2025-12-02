@@ -25,6 +25,10 @@ class CreateEvalItemUnionMapper extends ClassMapperBase<CreateEvalItemUnion> {
 
   @override
   final MappableFields<CreateEvalItemUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalItemUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('CreateEvalItemUnion');
@@ -99,6 +103,10 @@ class CreateEvalItemUnionVariant1Mapper
     #role: _f$role,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalItemUnionVariant1 _instantiate(DecodingData data) {
     return CreateEvalItemUnionVariant1(
@@ -237,7 +245,7 @@ class CreateEvalItemUnionEvalItemMapper
       );
       CreateEvalItemUnionMapper.ensureInitialized();
       EvalItemRoleRoleMapper.ensureInitialized();
-      EvalItemContentContentUnionMapper.ensureInitialized();
+      EvalItemContentUnionMapper.ensureInitialized();
       EvalItemTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -249,9 +257,9 @@ class CreateEvalItemUnionEvalItemMapper
   static EvalItemRoleRole _$role(CreateEvalItemUnionEvalItem v) => v.role;
   static const Field<CreateEvalItemUnionEvalItem, EvalItemRoleRole> _f$role =
       Field('role', _$role);
-  static EvalItemContentContentUnion _$content(CreateEvalItemUnionEvalItem v) =>
+  static EvalItemContentUnion _$content(CreateEvalItemUnionEvalItem v) =>
       v.content;
-  static const Field<CreateEvalItemUnionEvalItem, EvalItemContentContentUnion>
+  static const Field<CreateEvalItemUnionEvalItem, EvalItemContentUnion>
   _f$content = Field('content', _$content);
   static EvalItemTypeType? _$type(CreateEvalItemUnionEvalItem v) => v.type;
   static const Field<CreateEvalItemUnionEvalItem, EvalItemTypeType> _f$type =
@@ -263,6 +271,10 @@ class CreateEvalItemUnionEvalItemMapper
     #content: _f$content,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalItemUnionEvalItem _instantiate(DecodingData data) {
     return CreateEvalItemUnionEvalItem(
@@ -346,16 +358,12 @@ abstract class CreateEvalItemUnionEvalItemCopyWith<
   $Out
 >
     implements CreateEvalItemUnionCopyWith<$R, $In, $Out> {
-  EvalItemContentContentUnionCopyWith<
-    $R,
-    EvalItemContentContentUnion,
-    EvalItemContentContentUnion
-  >
+  EvalItemContentUnionCopyWith<$R, EvalItemContentUnion, EvalItemContentUnion>
   get content;
   @override
   $R call({
     EvalItemRoleRole? role,
-    EvalItemContentContentUnion? content,
+    EvalItemContentUnion? content,
     EvalItemTypeType? type,
   });
   CreateEvalItemUnionEvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -381,16 +389,12 @@ class _CreateEvalItemUnionEvalItemCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalItemUnionEvalItem> $mapper =
       CreateEvalItemUnionEvalItemMapper.ensureInitialized();
   @override
-  EvalItemContentContentUnionCopyWith<
-    $R,
-    EvalItemContentContentUnion,
-    EvalItemContentContentUnion
-  >
+  EvalItemContentUnionCopyWith<$R, EvalItemContentUnion, EvalItemContentUnion>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
     EvalItemRoleRole? role,
-    EvalItemContentContentUnion? content,
+    EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(
     FieldCopyWithData({

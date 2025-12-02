@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_item_content_content_union.dart';
+import 'eval_item_content_union.dart';
 import 'eval_item_role_role.dart';
 import 'eval_item_type_type.dart';
 import 'eval_item.dart';
@@ -12,7 +12,7 @@ import 'eval_item.dart';
 part 'create_eval_item_union.mapper.dart';
 
 /// A chat message that makes up the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
-@MappableClass(includeSubClasses: [CreateEvalItemUnionVariant1, CreateEvalItemUnionEvalItem])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateEvalItemUnionVariant1, CreateEvalItemUnionEvalItem])
 sealed class CreateEvalItemUnion with CreateEvalItemUnionMappable {
   const CreateEvalItemUnion();
 
@@ -35,7 +35,7 @@ extension CreateEvalItemUnionDeserializer on CreateEvalItemUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalItemUnionVariant1 extends CreateEvalItemUnion with CreateEvalItemUnionVariant1Mappable {
   final String role;
   final String content;
@@ -46,10 +46,10 @@ class CreateEvalItemUnionVariant1 extends CreateEvalItemUnion with CreateEvalIte
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalItemUnionEvalItem extends CreateEvalItemUnion with CreateEvalItemUnionEvalItemMappable {
   final EvalItemRoleRole role;
-  final EvalItemContentContentUnion content;
+  final EvalItemContentUnion content;
   final EvalItemTypeType? type;
 
   const CreateEvalItemUnionEvalItem({

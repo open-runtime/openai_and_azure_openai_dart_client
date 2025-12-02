@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_mcp_call_arguments_delta.mapper.dart';
 
 /// Returned when MCP tool call arguments are updated during response generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseMcpCallArgumentsDelta with RealtimeBetaServerEventResponseMcpCallArgumentsDeltaMappable {
   const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({
     required this.eventId,

@@ -63,6 +63,10 @@ class ContentFilterResultsBaseMapper
     #profanity: _f$profanity,
     #error: _f$error,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterResultsBase _instantiate(DecodingData data) {
     return ContentFilterResultsBase(

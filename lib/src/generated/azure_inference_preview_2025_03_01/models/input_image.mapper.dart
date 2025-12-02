@@ -57,6 +57,10 @@ class InputImageMapper extends ClassMapperBase<InputImage> {
     #imageUrl: _f$imageUrl,
     #fileId: _f$fileId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputImage _instantiate(DecodingData data) {
     return InputImage(

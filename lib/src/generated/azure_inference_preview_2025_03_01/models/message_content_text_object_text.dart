@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_content_text_object_text_annotations_annotations_union.dart';
+import 'message_content_text_object_text_annotations_union.dart';
 
 part 'message_content_text_object_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextObjectText with MessageContentTextObjectTextMappable {
   const MessageContentTextObjectText({
     required this.value,
@@ -16,7 +16,7 @@ class MessageContentTextObjectText with MessageContentTextObjectTextMappable {
   });
 
   final String value;
-  final List<MessageContentTextObjectTextAnnotationsAnnotationsUnion> annotations;
+  final List<MessageContentTextObjectTextAnnotationsUnion> annotations;
 
   static MessageContentTextObjectText fromJson(Map<String, dynamic> json) => MessageContentTextObjectTextMapper.fromJson(json);
 

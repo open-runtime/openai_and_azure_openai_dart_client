@@ -32,6 +32,10 @@ class ScreenshotMapper extends ClassMapperBase<Screenshot> {
 
   @override
   final MappableFields<Screenshot> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Screenshot _instantiate(DecodingData data) {
     return Screenshot(type: data.dec(_f$type));

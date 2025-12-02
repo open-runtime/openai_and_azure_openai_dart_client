@@ -53,6 +53,10 @@ class ReasoningMapper extends ClassMapperBase<Reasoning> {
     #summary: _f$summary,
     #generateSummary: _f$generateSummary,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Reasoning _instantiate(DecodingData data) {
     return Reasoning(

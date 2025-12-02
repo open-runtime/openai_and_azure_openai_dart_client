@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_call_reject_request.mapper.dart';
 
 /// Parameters used to decline an incoming SIP call handled by the Realtime API.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCallRejectRequest with RealtimeCallRejectRequestMappable {
   const RealtimeCallRejectRequest({
     this.statusCode,

@@ -60,6 +60,10 @@ class RealtimeBetaClientEventConversationItemTruncateMapper
         #audioEndMs: _f$audioEndMs,
         #eventId: _f$eventId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaClientEventConversationItemTruncate _instantiate(
     DecodingData data,

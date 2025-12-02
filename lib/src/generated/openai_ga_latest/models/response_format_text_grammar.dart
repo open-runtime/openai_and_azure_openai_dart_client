@@ -11,7 +11,7 @@ part 'response_format_text_grammar.mapper.dart';
 /// A custom grammar for the model to follow when generating text.
 /// Learn more in the [custom grammars guide](https://platform.openai.com/docs/guides/custom-grammars).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatTextGrammar with ResponseFormatTextGrammarMappable {
   const ResponseFormatTextGrammar({
     required this.type,

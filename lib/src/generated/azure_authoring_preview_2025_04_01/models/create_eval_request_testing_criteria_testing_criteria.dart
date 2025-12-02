@@ -19,7 +19,7 @@ import 'eval_text_similarity_grader_type_type.dart';
 
 part 'create_eval_request_testing_criteria_testing_criteria.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRequestTestingCriteriaTestingCriteria with CreateEvalRequestTestingCriteriaTestingCriteriaMappable {
   const CreateEvalRequestTestingCriteriaTestingCriteria({
     required this.input,

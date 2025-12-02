@@ -59,6 +59,10 @@ class ResponseItemListMapper extends ClassMapperBase<ResponseItemList> {
     #firstId: _f$firstId,
     #lastId: _f$lastId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseItemList _instantiate(DecodingData data) {
     return ResponseItemList(

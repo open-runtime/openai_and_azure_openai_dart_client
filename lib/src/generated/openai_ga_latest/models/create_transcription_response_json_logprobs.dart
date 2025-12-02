@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_transcription_response_json_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseJsonLogprobs with CreateTranscriptionResponseJsonLogprobsMappable {
   const CreateTranscriptionResponseJsonLogprobs({
     this.token,

@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_text_annotations_file_citation_object_file_citation.dart';
 import 'message_content_text_annotations_file_citation_object_type_type.dart';
+import 'text_annotation.dart';
 
 part 'message_content_text_annotations_file_citation_object.mapper.dart';
 
 /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextAnnotationsFileCitationObject with MessageContentTextAnnotationsFileCitationObjectMappable {
   const MessageContentTextAnnotationsFileCitationObject({
     required this.type,
@@ -22,7 +23,7 @@ class MessageContentTextAnnotationsFileCitationObject with MessageContentTextAnn
 
   final MessageContentTextAnnotationsFileCitationObjectTypeType type;
   final String text;
-  @MappableField(key: 'MessageContentTextAnnotationsFileCitationObjectFileCitation')
+  @MappableField(key: 'file_citation')
   final MessageContentTextAnnotationsFileCitationObjectFileCitation messageContentTextAnnotationsFileCitationObjectFileCitation;
   @MappableField(key: 'start_index')
   final int startIndex;

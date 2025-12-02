@@ -39,6 +39,10 @@ class RealtimeServerEventMcpListToolsInProgressMapper
   @override
   final MappableFields<RealtimeServerEventMcpListToolsInProgress> fields =
       const {#eventId: _f$eventId, #type: _f$type, #itemId: _f$itemId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventMcpListToolsInProgress _instantiate(
     DecodingData data,

@@ -27,7 +27,7 @@ class TypeDiscriminatorMapper extends EnumMapper<TypeDiscriminator> {
   TypeDiscriminator decode(dynamic value) {
     switch (value) {
       case 'list':
-        return TypeDiscriminator.valueList;
+        return TypeDiscriminator.list;
       case 'fine_tuning.job':
         return TypeDiscriminator.undefined0;
       case 'file':
@@ -56,7 +56,7 @@ class TypeDiscriminatorMapper extends EnumMapper<TypeDiscriminator> {
   @override
   dynamic encode(TypeDiscriminator self) {
     switch (self) {
-      case TypeDiscriminator.valueList:
+      case TypeDiscriminator.list:
         return 'list';
       case TypeDiscriminator.undefined0:
         return 'fine_tuning.job';

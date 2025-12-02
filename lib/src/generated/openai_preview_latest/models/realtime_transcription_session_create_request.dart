@@ -12,7 +12,7 @@ import 'realtime_transcription_session_create_request_turn_detection.dart';
 part 'realtime_transcription_session_create_request.mapper.dart';
 
 /// Realtime transcription session object configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateRequest with RealtimeTranscriptionSessionCreateRequestMappable {
   const RealtimeTranscriptionSessionCreateRequest({
     required this.realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction,
@@ -23,14 +23,14 @@ class RealtimeTranscriptionSessionCreateRequest with RealtimeTranscriptionSessio
     this.include,
   });
 
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction')
+  @MappableField(key: 'input_audio_noise_reduction')
   final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_format')
   final RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat inputAudioFormat;
   final dynamic? modalities;
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestInputAudioTranscription')
+  @MappableField(key: 'input_audio_transcription')
   final RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? realtimeTranscriptionSessionCreateRequestInputAudioTranscription;
-  @MappableField(key: 'RealtimeTranscriptionSessionCreateRequestTurnDetection')
+  @MappableField(key: 'turn_detection')
   final RealtimeTranscriptionSessionCreateRequestTurnDetection? realtimeTranscriptionSessionCreateRequestTurnDetection;
   final List<String>? include;
 

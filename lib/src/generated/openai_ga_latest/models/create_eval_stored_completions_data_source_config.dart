@@ -10,7 +10,7 @@ part 'create_eval_stored_completions_data_source_config.mapper.dart';
 
 /// Deprecated in favor of LogsDataSourceConfig.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalStoredCompletionsDataSourceConfig with CreateEvalStoredCompletionsDataSourceConfigMappable {
   const CreateEvalStoredCompletionsDataSourceConfig({
     this.metadata,

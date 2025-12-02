@@ -16,7 +16,7 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
       MapperContainer.globals.use(_instance = OutputMessageMapper._());
       OutputMessageTypeTypeMapper.ensureInitialized();
       OutputMessageRoleRoleMapper.ensureInitialized();
-      OutputContentUnionMapper.ensureInitialized();
+      OutputContentMapper.ensureInitialized();
       OutputMessageStatusStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -37,9 +37,11 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
     'role',
     _$role,
   );
-  static List<OutputContentUnion?> _$content(OutputMessage v) => v.content;
-  static const Field<OutputMessage, List<OutputContentUnion?>> _f$content =
-      Field('content', _$content);
+  static List<OutputContent> _$content(OutputMessage v) => v.content;
+  static const Field<OutputMessage, List<OutputContent>> _f$content = Field(
+    'content',
+    _$content,
+  );
   static OutputMessageStatusStatus _$status(OutputMessage v) => v.status;
   static const Field<OutputMessage, OutputMessageStatusStatus> _f$status =
       Field('status', _$status);
@@ -52,6 +54,10 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
     #content: _f$content,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OutputMessage _instantiate(DecodingData data) {
     return OutputMessage(
@@ -127,15 +133,15 @@ abstract class OutputMessageCopyWith<$R, $In extends OutputMessage, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    OutputContentUnion?,
-    OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
+    OutputContent,
+    OutputContentCopyWith<$R, OutputContent, OutputContent>
   >
   get content;
   $R call({
     String? id,
     OutputMessageTypeType? type,
     OutputMessageRoleRole? role,
-    List<OutputContentUnion?>? content,
+    List<OutputContent>? content,
     OutputMessageStatusStatus? status,
   });
   OutputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -152,12 +158,12 @@ class _OutputMessageCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    OutputContentUnion?,
-    OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
+    OutputContent,
+    OutputContentCopyWith<$R, OutputContent, OutputContent>
   >
   get content => ListCopyWith(
     $value.content,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(content: v),
   );
   @override
@@ -165,7 +171,7 @@ class _OutputMessageCopyWithImpl<$R, $Out>
     String? id,
     OutputMessageTypeType? type,
     OutputMessageRoleRole? role,
-    List<OutputContentUnion?>? content,
+    List<OutputContent>? content,
     OutputMessageStatusStatus? status,
   }) => $apply(
     FieldCopyWithData({

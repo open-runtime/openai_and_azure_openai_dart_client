@@ -61,6 +61,10 @@ class InputFileContentMapper extends ClassMapperBase<InputFileContent> {
     #fileData: _f$fileData,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputFileContent _instantiate(DecodingData data) {
     return InputFileContent(

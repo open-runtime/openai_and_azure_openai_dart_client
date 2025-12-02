@@ -9,7 +9,7 @@ import 'usage_audio_speeches_result_object_object_enum.dart';
 part 'usage_audio_speeches_result.mapper.dart';
 
 /// The aggregated audio speeches usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageAudioSpeechesResult with UsageAudioSpeechesResultMappable {
   const UsageAudioSpeechesResult({
     required this.objectEnum,

@@ -14,7 +14,7 @@ part 'eval_logs_data_source_config.mapper.dart';
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
 /// `item` and `sample` are both defined when using this data source config.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalLogsDataSourceConfig with EvalLogsDataSourceConfigMappable {
   const EvalLogsDataSourceConfig({
     required this.schema,

@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_output_text_annotations_annotations_union.dart';
+import 'response_output_text_annotations_union.dart';
 import 'response_output_text_type_type.dart';
 
 part 'response_output_text.mapper.dart';
 
 /// Assistant response text accompanied by optional annotations.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseOutputText with ResponseOutputTextMappable {
   const ResponseOutputText({
     required this.text,
@@ -19,7 +19,7 @@ class ResponseOutputText with ResponseOutputTextMappable {
   });
 
   final String text;
-  final List<ResponseOutputTextAnnotationsAnnotationsUnion> annotations;
+  final List<ResponseOutputTextAnnotationsUnion> annotations;
   final ResponseOutputTextTypeType type;
 
   static ResponseOutputText fromJson(Map<String, dynamic> json) => ResponseOutputTextMapper.fromJson(json);

@@ -9,7 +9,7 @@ import 'usage_completions_result_object_object_enum.dart';
 part 'usage_completions_result.mapper.dart';
 
 /// The aggregated completions usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageCompletionsResult with UsageCompletionsResultMappable {
   const UsageCompletionsResult({
     required this.objectEnum,

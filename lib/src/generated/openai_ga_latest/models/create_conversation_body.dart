@@ -9,7 +9,7 @@ import 'metadata.dart';
 
 part 'create_conversation_body.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateConversationBody with CreateConversationBodyMappable {
   const CreateConversationBody({
     this.metadata,

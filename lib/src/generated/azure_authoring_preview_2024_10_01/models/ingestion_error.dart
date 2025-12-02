@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'ingestion_error.mapper.dart';
 
 /// The details of the ingestion error
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionError with IngestionErrorMappable {
   const IngestionError({
     this.message,

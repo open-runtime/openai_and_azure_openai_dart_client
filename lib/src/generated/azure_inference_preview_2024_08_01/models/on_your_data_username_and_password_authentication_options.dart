@@ -9,7 +9,7 @@ import 'on_your_data_authentication_type.dart';
 part 'on_your_data_username_and_password_authentication_options.mapper.dart';
 
 /// The authentication options for Azure OpenAI On Your Data when using a username and a password.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataUsernameAndPasswordAuthenticationOptions with OnYourDataUsernameAndPasswordAuthenticationOptionsMappable {
   const OnYourDataUsernameAndPasswordAuthenticationOptions({
     required this.type,

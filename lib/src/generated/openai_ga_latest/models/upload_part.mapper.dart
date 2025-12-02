@@ -47,6 +47,10 @@ class UploadPartMapper extends ClassMapperBase<UploadPart> {
     #uploadId: _f$uploadId,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadPart _instantiate(DecodingData data) {
     return UploadPart(

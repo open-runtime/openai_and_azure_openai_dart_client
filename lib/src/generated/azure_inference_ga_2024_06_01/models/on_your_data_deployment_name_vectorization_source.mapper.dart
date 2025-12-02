@@ -47,6 +47,10 @@ class OnYourDataDeploymentNameVectorizationSourceMapper
   @override
   final MappableFields<OnYourDataDeploymentNameVectorizationSource> fields =
       const {#type: _f$type, #deploymentName: _f$deploymentName};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataDeploymentNameVectorizationSource _instantiate(
     DecodingData data,

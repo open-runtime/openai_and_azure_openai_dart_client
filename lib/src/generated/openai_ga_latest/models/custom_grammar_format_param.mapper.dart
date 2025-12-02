@@ -50,6 +50,10 @@ class CustomGrammarFormatParamMapper
     #definition: _f$definition,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomGrammarFormatParam _instantiate(DecodingData data) {
     return CustomGrammarFormatParam(

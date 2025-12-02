@@ -34,6 +34,10 @@ class WebhookRealtimeCallIncomingDataSipHeadersMapper
   @override
   final MappableFields<WebhookRealtimeCallIncomingDataSipHeaders> fields =
       const {#name: _f$name, #value: _f$value};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookRealtimeCallIncomingDataSipHeaders _instantiate(
     DecodingData data,

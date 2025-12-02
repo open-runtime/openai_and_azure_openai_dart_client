@@ -62,6 +62,10 @@ class ThreadListResourceMapper extends ClassMapperBase<ThreadListResource> {
     #hasMore: _f$hasMore,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadListResource _instantiate(DecodingData data) {
     return ThreadListResource(

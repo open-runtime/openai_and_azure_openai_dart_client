@@ -34,6 +34,10 @@ class ContentFilterResultBaseMapper
   final MappableFields<ContentFilterResultBase> fields = const {
     #filtered: _f$filtered,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterResultBase _instantiate(DecodingData data) {
     return ContentFilterResultBase(filtered: data.dec(_f$filtered));

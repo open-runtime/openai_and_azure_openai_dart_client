@@ -59,6 +59,10 @@ class ResponseTextDoneEventMapper
     #contentIndex: _f$contentIndex,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextDoneEvent _instantiate(DecodingData data) {
     return ResponseTextDoneEvent(

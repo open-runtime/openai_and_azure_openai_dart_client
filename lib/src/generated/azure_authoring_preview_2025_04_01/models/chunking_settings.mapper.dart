@@ -33,6 +33,10 @@ class ChunkingSettingsMapper extends ClassMapperBase<ChunkingSettings> {
   final MappableFields<ChunkingSettings> fields = const {
     #maxChunkSizeInTokens: _f$maxChunkSizeInTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChunkingSettings _instantiate(DecodingData data) {
     return ChunkingSettings(

@@ -37,7 +37,7 @@ class ModerationImageUrlInputMapper
   _f$moderationImageUrlInputImageUrl = Field(
     'moderationImageUrlInputImageUrl',
     _$moderationImageUrlInputImageUrl,
-    key: r'ModerationImageUrlInputImageUrl',
+    key: r'image_url',
   );
 
   @override
@@ -45,6 +45,10 @@ class ModerationImageUrlInputMapper
     #type: _f$type,
     #moderationImageUrlInputImageUrl: _f$moderationImageUrlInputImageUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModerationImageUrlInput _instantiate(DecodingData data) {
     return ModerationImageUrlInput(

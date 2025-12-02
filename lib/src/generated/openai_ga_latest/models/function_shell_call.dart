@@ -4,14 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
 import 'function_shell_action.dart';
 import 'function_shell_call_type_type.dart';
+import 'item_resource.dart';
 import 'local_shell_call_status.dart';
+import 'output_item.dart';
 
 part 'function_shell_call.mapper.dart';
 
 /// A tool call that executes one or more shell commands in a managed environment.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCall with FunctionShellCallMappable {
   const FunctionShellCall({
     required this.id,

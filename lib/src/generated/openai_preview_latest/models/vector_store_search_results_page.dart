@@ -9,7 +9,7 @@ import 'vector_store_search_results_page_object_object_enum.dart';
 
 part 'vector_store_search_results_page.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchResultsPage with VectorStoreSearchResultsPageMappable {
   const VectorStoreSearchResultsPage({
     required this.objectEnum,

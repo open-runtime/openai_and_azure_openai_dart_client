@@ -9,7 +9,7 @@ import 'list_paginated_fine_tuning_jobs_response_object_object_enum.dart';
 
 part 'list_paginated_fine_tuning_jobs_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListPaginatedFineTuningJobsResponse with ListPaginatedFineTuningJobsResponseMappable {
   const ListPaginatedFineTuningJobsResponse({
     required this.data,

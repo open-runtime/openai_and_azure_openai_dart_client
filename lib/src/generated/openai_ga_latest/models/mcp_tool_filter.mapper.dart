@@ -41,6 +41,10 @@ class McpToolFilterMapper extends ClassMapperBase<McpToolFilter> {
     #toolNames: _f$toolNames,
     #readOnly: _f$readOnly,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpToolFilter _instantiate(DecodingData data) {
     return McpToolFilter(

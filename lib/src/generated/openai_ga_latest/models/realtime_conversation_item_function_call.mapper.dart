@@ -75,6 +75,10 @@ class RealtimeConversationItemFunctionCallMapper
     #status: _f$status,
     #callId: _f$callId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeConversationItemFunctionCall _instantiate(DecodingData data) {
     return RealtimeConversationItemFunctionCall(

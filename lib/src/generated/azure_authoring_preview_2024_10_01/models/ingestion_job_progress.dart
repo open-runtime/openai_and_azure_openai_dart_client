@@ -8,7 +8,7 @@ import 'ingestion_job_stage_progress.dart';
 
 part 'ingestion_job_progress.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobProgress with IngestionJobProgressMappable {
   const IngestionJobProgress({
     required this.stageProgress,

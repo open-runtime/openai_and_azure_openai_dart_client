@@ -22,7 +22,7 @@ class ChatCompletionMessageListDataDataMapper
       ChatCompletionResponseMessageAnnotationsMapper.ensureInitialized();
       ChatCompletionResponseMessageFunctionCallMapper.ensureInitialized();
       ChatCompletionResponseMessageAudioMapper.ensureInitialized();
-      DataContentPartsContentPartsUnionMapper.ensureInitialized();
+      DataContentPartsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -76,7 +76,7 @@ class ChatCompletionMessageListDataDataMapper
   _f$chatCompletionResponseMessageFunctionCall = Field(
     'chatCompletionResponseMessageFunctionCall',
     _$chatCompletionResponseMessageFunctionCall,
-    key: r'ChatCompletionResponseMessageFunctionCall',
+    key: r'function_call',
     opt: true,
   );
   static ChatCompletionResponseMessageAudio? _$audio(
@@ -87,12 +87,12 @@ class ChatCompletionMessageListDataDataMapper
     ChatCompletionResponseMessageAudio
   >
   _f$audio = Field('audio', _$audio, opt: true);
-  static List<DataContentPartsContentPartsUnion>? _$contentParts(
+  static List<DataContentPartsUnion>? _$contentParts(
     ChatCompletionMessageListDataData v,
   ) => v.contentParts;
   static const Field<
     ChatCompletionMessageListDataData,
-    List<DataContentPartsContentPartsUnion>
+    List<DataContentPartsUnion>
   >
   _f$contentParts = Field(
     'contentParts',
@@ -114,6 +114,10 @@ class ChatCompletionMessageListDataDataMapper
     #audio: _f$audio,
     #contentParts: _f$contentParts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageListDataData _instantiate(DecodingData data) {
     return ChatCompletionMessageListDataData(
@@ -244,11 +248,11 @@ abstract class ChatCompletionMessageListDataDataCopyWith<
   get audio;
   ListCopyWith<
     $R,
-    DataContentPartsContentPartsUnion,
-    DataContentPartsContentPartsUnionCopyWith<
+    DataContentPartsUnion,
+    DataContentPartsUnionCopyWith<
       $R,
-      DataContentPartsContentPartsUnion,
-      DataContentPartsContentPartsUnion
+      DataContentPartsUnion,
+      DataContentPartsUnion
     >
   >?
   get contentParts;
@@ -262,7 +266,7 @@ abstract class ChatCompletionMessageListDataDataCopyWith<
     ChatCompletionResponseMessageFunctionCall?
     chatCompletionResponseMessageFunctionCall,
     ChatCompletionResponseMessageAudio? audio,
-    List<DataContentPartsContentPartsUnion>? contentParts,
+    List<DataContentPartsUnion>? contentParts,
   });
   ChatCompletionMessageListDataDataCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -340,11 +344,11 @@ class _ChatCompletionMessageListDataDataCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    DataContentPartsContentPartsUnion,
-    DataContentPartsContentPartsUnionCopyWith<
+    DataContentPartsUnion,
+    DataContentPartsUnionCopyWith<
       $R,
-      DataContentPartsContentPartsUnion,
-      DataContentPartsContentPartsUnion
+      DataContentPartsUnion,
+      DataContentPartsUnion
     >
   >?
   get contentParts => $value.contentParts != null

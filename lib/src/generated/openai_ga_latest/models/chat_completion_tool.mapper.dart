@@ -36,6 +36,10 @@ class ChatCompletionToolMapper extends ClassMapperBase<ChatCompletionTool> {
     #type: _f$type,
     #functionField: _f$functionField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionTool _instantiate(DecodingData data) {
     return ChatCompletionTool(

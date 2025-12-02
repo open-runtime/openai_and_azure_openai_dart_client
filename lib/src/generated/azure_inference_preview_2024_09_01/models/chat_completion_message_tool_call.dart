@@ -9,7 +9,7 @@ import 'tool_call_type.dart';
 
 part 'chat_completion_message_tool_call.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
   const ChatCompletionMessageToolCall({
     required this.id,
@@ -19,7 +19,7 @@ class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
 
   final String id;
   final ToolCallType type;
-  @MappableField(key: 'ChatCompletionMessageToolCallFunction')
+  @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 
   static ChatCompletionMessageToolCall fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallMapper.fromJson(json);

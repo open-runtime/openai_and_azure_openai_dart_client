@@ -34,7 +34,7 @@ class AuditLogUserAddedMapper extends ClassMapperBase<AuditLogUserAdded> {
   _f$auditLogUserAddedData = Field(
     'auditLogUserAddedData',
     _$auditLogUserAddedData,
-    key: r'AuditLogUserAddedData',
+    key: r'data',
     opt: true,
   );
 
@@ -43,6 +43,10 @@ class AuditLogUserAddedMapper extends ClassMapperBase<AuditLogUserAdded> {
     #id: _f$id,
     #auditLogUserAddedData: _f$auditLogUserAddedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogUserAdded _instantiate(DecodingData data) {
     return AuditLogUserAdded(

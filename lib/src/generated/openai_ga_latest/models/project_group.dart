@@ -9,7 +9,7 @@ import 'project_group_object_object_enum.dart';
 part 'project_group.mapper.dart';
 
 /// Details about a group's membership in a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectGroup with ProjectGroupMappable {
   const ProjectGroup({
     required this.objectEnum,

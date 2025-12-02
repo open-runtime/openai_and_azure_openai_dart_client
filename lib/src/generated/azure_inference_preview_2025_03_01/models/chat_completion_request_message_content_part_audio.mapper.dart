@@ -46,7 +46,7 @@ class ChatCompletionRequestMessageContentPartAudioMapper
   _f$chatCompletionRequestMessageContentPartAudioInputAudio = Field(
     'chatCompletionRequestMessageContentPartAudioInputAudio',
     _$chatCompletionRequestMessageContentPartAudioInputAudio,
-    key: r'ChatCompletionRequestMessageContentPartAudioInputAudio',
+    key: r'input_audio',
   );
 
   @override
@@ -56,6 +56,10 @@ class ChatCompletionRequestMessageContentPartAudioMapper
         #chatCompletionRequestMessageContentPartAudioInputAudio:
             _f$chatCompletionRequestMessageContentPartAudioInputAudio,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartAudio _instantiate(
     DecodingData data,

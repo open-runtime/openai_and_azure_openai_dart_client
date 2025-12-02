@@ -9,7 +9,7 @@ import 'create_fine_tuning_job_request_integrations_wandb.dart';
 
 part 'create_fine_tuning_job_request_integrations.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateFineTuningJobRequestIntegrations with CreateFineTuningJobRequestIntegrationsMappable {
   const CreateFineTuningJobRequestIntegrations({
     required this.type,
@@ -17,7 +17,7 @@ class CreateFineTuningJobRequestIntegrations with CreateFineTuningJobRequestInte
   });
 
   final CreateFineTuningJobRequestIntegrationsTypeType type;
-  @MappableField(key: 'CreateFineTuningJobRequestIntegrationsWandb')
+  @MappableField(key: 'wandb')
   final CreateFineTuningJobRequestIntegrationsWandb createFineTuningJobRequestIntegrationsWandb;
 
   static CreateFineTuningJobRequestIntegrations fromJson(Map<String, dynamic> json) => CreateFineTuningJobRequestIntegrationsMapper.fromJson(json);

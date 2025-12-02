@@ -11,14 +11,14 @@ part 'eval_list.mapper.dart';
 
 /// An object representing a list of evals.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalList with EvalListMappable {
   const EvalList({
     required this.data,
     required this.firstId,
     required this.lastId,
     required this.hasMore,
-    this.objectEnum = EvalListObjectObjectEnum.valueList,
+    this.objectEnum = EvalListObjectObjectEnum.list,
   });
 
   final List<Eval> data;

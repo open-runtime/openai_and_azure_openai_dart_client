@@ -9,7 +9,7 @@ import 'create_transcription_response_json_logprobs.dart';
 part 'create_transcription_response_json.mapper.dart';
 
 /// Represents a transcription response returned by model, based on the provided input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseJson with CreateTranscriptionResponseJsonMappable {
   const CreateTranscriptionResponseJson({
     required this.text,

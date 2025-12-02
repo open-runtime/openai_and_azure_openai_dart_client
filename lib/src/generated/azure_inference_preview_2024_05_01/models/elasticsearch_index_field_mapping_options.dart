@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'elasticsearch_index_field_mapping_options.mapper.dart';
 
 /// Optional settings to control how fields are processed when using a configured Elasticsearch® resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ElasticsearchIndexFieldMappingOptions with ElasticsearchIndexFieldMappingOptionsMappable {
   const ElasticsearchIndexFieldMappingOptions({
     this.titleField,

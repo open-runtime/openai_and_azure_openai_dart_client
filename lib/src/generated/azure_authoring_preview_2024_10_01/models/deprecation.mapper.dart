@@ -39,6 +39,10 @@ class DeprecationMapper extends ClassMapperBase<Deprecation> {
     #inference: _f$inference,
     #fineTune: _f$fineTune,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Deprecation _instantiate(DecodingData data) {
     return Deprecation(

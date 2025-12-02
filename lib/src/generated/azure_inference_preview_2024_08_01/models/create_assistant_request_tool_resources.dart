@@ -9,16 +9,16 @@ import 'create_assistant_request_tool_resources_file_search.dart';
 
 part 'create_assistant_request_tool_resources.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequestToolResources with CreateAssistantRequestToolResourcesMappable {
   const CreateAssistantRequestToolResources({
     this.createAssistantRequestToolResourcesCodeInterpreter,
     this.createAssistantRequestToolResourcesFileSearch,
   });
 
-  @MappableField(key: 'CreateAssistantRequestToolResourcesCodeInterpreter')
+  @MappableField(key: 'code_interpreter')
   final CreateAssistantRequestToolResourcesCodeInterpreter? createAssistantRequestToolResourcesCodeInterpreter;
-  @MappableField(key: 'CreateAssistantRequestToolResourcesFileSearch')
+  @MappableField(key: 'file_search')
   final CreateAssistantRequestToolResourcesFileSearch? createAssistantRequestToolResourcesFileSearch;
 
   static CreateAssistantRequestToolResources fromJson(Map<String, dynamic> json) => CreateAssistantRequestToolResourcesMapper.fromJson(json);

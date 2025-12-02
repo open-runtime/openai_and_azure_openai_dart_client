@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'batches_list.mapper.dart';
 
 /// Represents a list of batches.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchesList with BatchesListMappable {
   const BatchesList({
     this.objectField,

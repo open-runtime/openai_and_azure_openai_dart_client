@@ -65,6 +65,10 @@ class FineTuningJobEventMapper extends ClassMapperBase<FineTuningJobEvent> {
     #type: _f$type,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobEvent _instantiate(DecodingData data) {
     return FineTuningJobEvent(

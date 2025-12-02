@@ -74,6 +74,10 @@ class FunctionShellCallOutputItemParamMapper
     #id: _f$id,
     #maxOutputLength: _f$maxOutputLength,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputItemParam _instantiate(DecodingData data) {
     return FunctionShellCallOutputItemParam(

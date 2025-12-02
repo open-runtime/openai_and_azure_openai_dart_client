@@ -45,6 +45,10 @@ class TokenCountsResourceMapper extends ClassMapperBase<TokenCountsResource> {
     #inputTokens: _f$inputTokens,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TokenCountsResource _instantiate(DecodingData data) {
     return TokenCountsResource(

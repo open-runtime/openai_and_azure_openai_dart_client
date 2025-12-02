@@ -15,7 +15,7 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputMessageResourceMapper._());
       InputMessageRoleRoleMapper.ensureInitialized();
-      InputContentUnionMapper.ensureInitialized();
+      InputContentMapper.ensureInitialized();
       InputMessageTypeTypeMapper.ensureInitialized();
       InputMessageStatusStatusMapper.ensureInitialized();
     }
@@ -28,10 +28,9 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
   static InputMessageRoleRole _$role(InputMessageResource v) => v.role;
   static const Field<InputMessageResource, InputMessageRoleRole> _f$role =
       Field('role', _$role);
-  static List<InputContentUnion?> _$content(InputMessageResource v) =>
-      v.content;
-  static const Field<InputMessageResource, List<InputContentUnion?>>
-  _f$content = Field('content', _$content);
+  static List<InputContent> _$content(InputMessageResource v) => v.content;
+  static const Field<InputMessageResource, List<InputContent>> _f$content =
+      Field('content', _$content);
   static String _$id(InputMessageResource v) => v.id;
   static const Field<InputMessageResource, String> _f$id = Field('id', _$id);
   static InputMessageTypeType? _$type(InputMessageResource v) => v.type;
@@ -49,6 +48,10 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
     #type: _f$type,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputMessageResource _instantiate(DecodingData data) {
     return InputMessageResource(
@@ -132,13 +135,13 @@ abstract class InputMessageResourceCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
+    InputContent,
+    InputContentCopyWith<$R, InputContent, InputContent>
   >
   get content;
   $R call({
     InputMessageRoleRole? role,
-    List<InputContentUnion?>? content,
+    List<InputContent>? content,
     String? id,
     InputMessageTypeType? type,
     InputMessageStatusStatus? status,
@@ -159,18 +162,18 @@ class _InputMessageResourceCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
+    InputContent,
+    InputContentCopyWith<$R, InputContent, InputContent>
   >
   get content => ListCopyWith(
     $value.content,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(content: v),
   );
   @override
   $R call({
     InputMessageRoleRole? role,
-    List<InputContentUnion?>? content,
+    List<InputContent>? content,
     String? id,
     Object? type = $none,
     Object? status = $none,

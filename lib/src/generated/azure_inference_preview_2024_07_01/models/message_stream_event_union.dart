@@ -14,7 +14,7 @@ import 'message_stream_event_union_variant5_event_event.dart';
 
 part 'message_stream_event_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [MessageStreamEventUnionVariant1, MessageStreamEventUnionVariant2, MessageStreamEventUnionVariant3, MessageStreamEventUnionVariant4, MessageStreamEventUnionVariant5])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [MessageStreamEventUnionVariant1, MessageStreamEventUnionVariant2, MessageStreamEventUnionVariant3, MessageStreamEventUnionVariant4, MessageStreamEventUnionVariant5])
 sealed class MessageStreamEventUnion with MessageStreamEventUnionMappable {
   const MessageStreamEventUnion();
 
@@ -46,7 +46,7 @@ extension MessageStreamEventUnionDeserializer on MessageStreamEventUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant1 extends MessageStreamEventUnion with MessageStreamEventUnionVariant1Mappable {
   final MessageStreamEventUnionVariant1EventEvent event;
   final MessageObject data;
@@ -57,7 +57,7 @@ class MessageStreamEventUnionVariant1 extends MessageStreamEventUnion with Messa
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant2 extends MessageStreamEventUnion with MessageStreamEventUnionVariant2Mappable {
   final MessageStreamEventUnionVariant2EventEvent event;
   final MessageObject data;
@@ -68,7 +68,7 @@ class MessageStreamEventUnionVariant2 extends MessageStreamEventUnion with Messa
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant3 extends MessageStreamEventUnion with MessageStreamEventUnionVariant3Mappable {
   final MessageStreamEventUnionVariant3EventEvent event;
   final MessageDeltaObject data;
@@ -79,7 +79,7 @@ class MessageStreamEventUnionVariant3 extends MessageStreamEventUnion with Messa
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant4 extends MessageStreamEventUnion with MessageStreamEventUnionVariant4Mappable {
   final MessageStreamEventUnionVariant4EventEvent event;
   final MessageObject data;
@@ -90,7 +90,7 @@ class MessageStreamEventUnionVariant4 extends MessageStreamEventUnion with Messa
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageStreamEventUnionVariant5 extends MessageStreamEventUnion with MessageStreamEventUnionVariant5Mappable {
   final MessageStreamEventUnionVariant5EventEvent event;
   final MessageObject data;

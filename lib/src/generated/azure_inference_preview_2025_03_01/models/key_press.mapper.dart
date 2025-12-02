@@ -37,6 +37,10 @@ class KeyPressMapper extends ClassMapperBase<KeyPress> {
     #keys: _f$keys,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static KeyPress _instantiate(DecodingData data) {
     return KeyPress(keys: data.dec(_f$keys), type: data.dec(_f$type));

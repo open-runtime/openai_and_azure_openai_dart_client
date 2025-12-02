@@ -14,7 +14,7 @@ class CreateEvalRunRequestMapper extends ClassMapperBase<CreateEvalRunRequest> {
   static CreateEvalRunRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateEvalRunRequestMapper._());
-      CreateEvalRunRequestDataSourceDataSourceUnionMapper.ensureInitialized();
+      CreateEvalRunRequestDataSourceUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,13 +22,10 @@ class CreateEvalRunRequestMapper extends ClassMapperBase<CreateEvalRunRequest> {
   @override
   final String id = 'CreateEvalRunRequest';
 
-  static CreateEvalRunRequestDataSourceDataSourceUnion _$dataSource(
+  static CreateEvalRunRequestDataSourceUnion _$dataSource(
     CreateEvalRunRequest v,
   ) => v.dataSource;
-  static const Field<
-    CreateEvalRunRequest,
-    CreateEvalRunRequestDataSourceDataSourceUnion
-  >
+  static const Field<CreateEvalRunRequest, CreateEvalRunRequestDataSourceUnion>
   _f$dataSource = Field('dataSource', _$dataSource, key: r'data_source');
   static String? _$name(CreateEvalRunRequest v) => v.name;
   static const Field<CreateEvalRunRequest, String> _f$name = Field(
@@ -46,6 +43,10 @@ class CreateEvalRunRequestMapper extends ClassMapperBase<CreateEvalRunRequest> {
     #name: _f$name,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRunRequest _instantiate(DecodingData data) {
     return CreateEvalRunRequest(
@@ -125,16 +126,16 @@ abstract class CreateEvalRunRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  CreateEvalRunRequestDataSourceDataSourceUnionCopyWith<
+  CreateEvalRunRequestDataSourceUnionCopyWith<
     $R,
-    CreateEvalRunRequestDataSourceDataSourceUnion,
-    CreateEvalRunRequestDataSourceDataSourceUnion
+    CreateEvalRunRequestDataSourceUnion,
+    CreateEvalRunRequestDataSourceUnion
   >
   get dataSource;
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
   $R call({
-    CreateEvalRunRequestDataSourceDataSourceUnion? dataSource,
+    CreateEvalRunRequestDataSourceUnion? dataSource,
     String? name,
     Map<String, String>? metadata,
   });
@@ -152,10 +153,10 @@ class _CreateEvalRunRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateEvalRunRequest> $mapper =
       CreateEvalRunRequestMapper.ensureInitialized();
   @override
-  CreateEvalRunRequestDataSourceDataSourceUnionCopyWith<
+  CreateEvalRunRequestDataSourceUnionCopyWith<
     $R,
-    CreateEvalRunRequestDataSourceDataSourceUnion,
-    CreateEvalRunRequestDataSourceDataSourceUnion
+    CreateEvalRunRequestDataSourceUnion,
+    CreateEvalRunRequestDataSourceUnion
   >
   get dataSource =>
       $value.dataSource.copyWith.$chain((v) => call(dataSource: v));
@@ -170,7 +171,7 @@ class _CreateEvalRunRequestCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    CreateEvalRunRequestDataSourceDataSourceUnion? dataSource,
+    CreateEvalRunRequestDataSourceUnion? dataSource,
     Object? name = $none,
     Object? metadata = $none,
   }) => $apply(

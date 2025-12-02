@@ -39,6 +39,10 @@ class ErrorBaseMapper extends ClassMapperBase<ErrorBase> {
     #code: _f$code,
     #message: _f$message,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ErrorBase _instantiate(DecodingData data) {
     return ErrorBase(code: data.dec(_f$code), message: data.dec(_f$message));

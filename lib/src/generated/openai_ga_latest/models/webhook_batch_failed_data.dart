@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_batch_failed_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchFailedData with WebhookBatchFailedDataMappable {
   const WebhookBatchFailedData({
     required this.id,

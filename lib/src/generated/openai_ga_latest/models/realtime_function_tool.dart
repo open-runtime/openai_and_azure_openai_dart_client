@@ -8,7 +8,7 @@ import 'realtime_function_tool_type_type.dart';
 
 part 'realtime_function_tool.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeFunctionTool with RealtimeFunctionToolMappable {
   const RealtimeFunctionTool({
     this.type,

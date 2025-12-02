@@ -8,7 +8,7 @@ import 'delete_thread_response_object_object_enum.dart';
 
 part 'delete_thread_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteThreadResponse with DeleteThreadResponseMappable {
   const DeleteThreadResponse({
     required this.id,

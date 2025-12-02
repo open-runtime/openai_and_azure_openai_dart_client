@@ -34,6 +34,10 @@ class SummaryMapper extends ClassMapperBase<Summary> {
 
   @override
   final MappableFields<Summary> fields = const {#text: _f$text, #type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Summary _instantiate(DecodingData data) {
     return Summary(text: data.dec(_f$text), type: data.dec(_f$type));

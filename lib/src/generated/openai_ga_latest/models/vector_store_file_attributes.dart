@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'vector_store_file_attributes.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileAttributes with VectorStoreFileAttributesMappable {
   const VectorStoreFileAttributes();
 

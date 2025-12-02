@@ -47,6 +47,10 @@ class ResponseFileSearchCallInProgressEventMapper
     #outputIndex: _f$outputIndex,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFileSearchCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseFileSearchCallInProgressEvent(

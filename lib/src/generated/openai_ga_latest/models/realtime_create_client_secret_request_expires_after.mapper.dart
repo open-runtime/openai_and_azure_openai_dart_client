@@ -47,6 +47,10 @@ class RealtimeCreateClientSecretRequestExpiresAfterMapper
   @override
   final MappableFields<RealtimeCreateClientSecretRequestExpiresAfter> fields =
       const {#anchor: _f$anchor, #seconds: _f$seconds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeCreateClientSecretRequestExpiresAfter _instantiate(
     DecodingData data,

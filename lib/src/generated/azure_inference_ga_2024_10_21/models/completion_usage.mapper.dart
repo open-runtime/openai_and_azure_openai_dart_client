@@ -47,7 +47,7 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
   _f$completionUsageCompletionTokensDetails = Field(
     'completionUsageCompletionTokensDetails',
     _$completionUsageCompletionTokensDetails,
-    key: r'CompletionUsageCompletionTokensDetails',
+    key: r'completion_tokens_details',
     opt: true,
   );
 
@@ -59,6 +59,10 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
     #completionUsageCompletionTokensDetails:
         _f$completionUsageCompletionTokensDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsage _instantiate(DecodingData data) {
     return CompletionUsage(

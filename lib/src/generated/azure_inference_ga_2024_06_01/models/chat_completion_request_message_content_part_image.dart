@@ -9,7 +9,7 @@ import 'image_detail_level.dart';
 
 part 'chat_completion_request_message_content_part_image.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMessageContentPartImageMappable {
   const ChatCompletionRequestMessageContentPartImage({
     required this.type,

@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_rate_limits_updated_rate_limits.dart';
 
 part 'realtime_server_event_rate_limits_updated.mapper.dart';
@@ -13,7 +14,7 @@ part 'realtime_server_event_rate_limits_updated.mapper.dart';
 /// tokens, the rate limits shown here reflect that reservation, which is then .
 /// adjusted accordingly once the Response is completed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventRateLimitsUpdated with RealtimeServerEventRateLimitsUpdatedMappable {
   const RealtimeServerEventRateLimitsUpdated({
     required this.eventId,

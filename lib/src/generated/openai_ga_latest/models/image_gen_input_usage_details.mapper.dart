@@ -42,6 +42,10 @@ class ImageGenInputUsageDetailsMapper
     #textTokens: _f$textTokens,
     #imageTokens: _f$imageTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenInputUsageDetails _instantiate(DecodingData data) {
     return ImageGenInputUsageDetails(

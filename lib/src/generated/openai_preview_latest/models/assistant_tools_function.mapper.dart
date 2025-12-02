@@ -38,6 +38,10 @@ class AssistantToolsFunctionMapper
     #type: _f$type,
     #functionField: _f$functionField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFunction _instantiate(DecodingData data) {
     return AssistantToolsFunction(

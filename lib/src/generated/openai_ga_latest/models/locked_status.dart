@@ -9,7 +9,7 @@ import 'locked_status_type_type.dart';
 part 'locked_status.mapper.dart';
 
 /// Indicates that a thread is locked and cannot accept new input.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LockedStatus with LockedStatusMappable {
   const LockedStatus({
     required this.reason,

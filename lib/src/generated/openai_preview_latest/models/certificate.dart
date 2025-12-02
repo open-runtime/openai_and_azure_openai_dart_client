@@ -10,7 +10,7 @@ import 'certificate_object_object_enum.dart';
 part 'certificate.mapper.dart';
 
 /// Represents an individual `certificate` uploaded to the organization.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Certificate with CertificateMappable {
   const Certificate({
     required this.objectEnum,
@@ -27,7 +27,7 @@ class Certificate with CertificateMappable {
   final String name;
   @MappableField(key: 'created_at')
   final int createdAt;
-  @MappableField(key: 'CertificateCertificateDetails')
+  @MappableField(key: 'certificate_details')
   final CertificateCertificateDetails certificateCertificateDetails;
   final bool? active;
 

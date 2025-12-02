@@ -46,6 +46,10 @@ class RealtimeBetaClientEventSessionUpdateMapper
     #session: _f$session,
     #eventId: _f$eventId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaClientEventSessionUpdate _instantiate(DecodingData data) {
     return RealtimeBetaClientEventSessionUpdate(

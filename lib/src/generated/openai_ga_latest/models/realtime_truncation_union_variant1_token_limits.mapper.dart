@@ -38,6 +38,10 @@ class RealtimeTruncationUnionVariant1TokenLimitsMapper
   @override
   final MappableFields<RealtimeTruncationUnionVariant1TokenLimits> fields =
       const {#postInstructions: _f$postInstructions};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTruncationUnionVariant1TokenLimits _instantiate(
     DecodingData data,

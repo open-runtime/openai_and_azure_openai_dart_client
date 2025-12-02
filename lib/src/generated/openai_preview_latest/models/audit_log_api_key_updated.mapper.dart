@@ -39,7 +39,7 @@ class AuditLogApiKeyUpdatedMapper
   _f$auditLogApiKeyUpdatedChangesRequested = Field(
     'auditLogApiKeyUpdatedChangesRequested',
     _$auditLogApiKeyUpdatedChangesRequested,
-    key: r'AuditLogApiKeyUpdatedChangesRequested',
+    key: r'changes_requested',
     opt: true,
   );
 
@@ -49,6 +49,10 @@ class AuditLogApiKeyUpdatedMapper
     #auditLogApiKeyUpdatedChangesRequested:
         _f$auditLogApiKeyUpdatedChangesRequested,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogApiKeyUpdated _instantiate(DecodingData data) {
     return AuditLogApiKeyUpdated(

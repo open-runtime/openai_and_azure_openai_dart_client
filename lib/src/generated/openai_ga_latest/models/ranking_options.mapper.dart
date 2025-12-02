@@ -47,6 +47,10 @@ class RankingOptionsMapper extends ClassMapperBase<RankingOptions> {
     #scoreThreshold: _f$scoreThreshold,
     #hybridSearch: _f$hybridSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RankingOptions _instantiate(DecodingData data) {
     return RankingOptions(

@@ -9,7 +9,7 @@ import 'invite_list_response_object_object_enum.dart';
 
 part 'invite_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteListResponse with InviteListResponseMappable {
   const InviteListResponse({
     required this.objectEnum,

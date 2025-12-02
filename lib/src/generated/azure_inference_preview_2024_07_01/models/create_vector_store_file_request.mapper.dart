@@ -50,6 +50,10 @@ class CreateVectorStoreFileRequestMapper
     #fileId: _f$fileId,
     #chunkingStrategy: _f$chunkingStrategy,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreFileRequest _instantiate(DecodingData data) {
     return CreateVectorStoreFileRequest(

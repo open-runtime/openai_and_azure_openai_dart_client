@@ -176,6 +176,10 @@ class CreateRunRequestWithoutStreamMapper
     #parallelToolCalls: _f$parallelToolCalls,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateRunRequestWithoutStream _instantiate(DecodingData data) {
     return CreateRunRequestWithoutStream(

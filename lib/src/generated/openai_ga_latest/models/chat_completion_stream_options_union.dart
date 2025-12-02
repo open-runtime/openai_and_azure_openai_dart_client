@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_stream_options_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ChatCompletionStreamOptionsUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ChatCompletionStreamOptionsUnionVariant1])
 sealed class ChatCompletionStreamOptionsUnion with ChatCompletionStreamOptionsUnionMappable {
   const ChatCompletionStreamOptionsUnion();
 
@@ -26,9 +26,11 @@ extension ChatCompletionStreamOptionsUnionDeserializer on ChatCompletionStreamOp
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionStreamOptionsUnionVariant1 extends ChatCompletionStreamOptionsUnion with ChatCompletionStreamOptionsUnionVariant1Mappable {
+  @MappableField(key: 'include_usage')
   final bool? includeUsage;
+  @MappableField(key: 'include_obfuscation')
   final bool? includeObfuscation;
 
   const ChatCompletionStreamOptionsUnionVariant1({

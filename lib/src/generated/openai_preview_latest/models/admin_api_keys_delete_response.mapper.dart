@@ -50,6 +50,10 @@ class AdminApiKeysDeleteResponseMapper
     #objectField: _f$objectField,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AdminApiKeysDeleteResponse _instantiate(DecodingData data) {
     return AdminApiKeysDeleteResponse(

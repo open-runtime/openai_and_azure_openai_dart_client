@@ -68,6 +68,10 @@ class CreateEvalLabelModelGraderMapper
     #passingLabels: _f$passingLabels,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalLabelModelGrader _instantiate(DecodingData data) {
     return CreateEvalLabelModelGrader(

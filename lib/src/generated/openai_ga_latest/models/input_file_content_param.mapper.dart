@@ -68,6 +68,10 @@ class InputFileContentParamMapper
     #fileUrl: _f$fileUrl,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputFileContentParam _instantiate(DecodingData data) {
     return InputFileContentParam(

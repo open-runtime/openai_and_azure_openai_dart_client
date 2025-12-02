@@ -74,6 +74,10 @@ class SystemComputeUrlMapper extends ClassMapperBase<SystemComputeUrl> {
     #chunking: _f$chunking,
     #embeddings: _f$embeddings,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SystemComputeUrl _instantiate(DecodingData data) {
     return SystemComputeUrl(

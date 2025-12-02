@@ -8,7 +8,7 @@ import 'vector_store_search_result_content_object_type_type.dart';
 
 part 'vector_store_search_result_content_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchResultContentObject with VectorStoreSearchResultContentObjectMappable {
   const VectorStoreSearchResultContentObject({
     required this.type,

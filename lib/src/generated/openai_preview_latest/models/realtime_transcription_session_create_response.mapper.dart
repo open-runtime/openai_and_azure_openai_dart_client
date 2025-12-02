@@ -38,7 +38,7 @@ class RealtimeTranscriptionSessionCreateResponseMapper
   _f$realtimeTranscriptionSessionCreateResponseClientSecret = Field(
     'realtimeTranscriptionSessionCreateResponseClientSecret',
     _$realtimeTranscriptionSessionCreateResponseClientSecret,
-    key: r'RealtimeTranscriptionSessionCreateResponseClientSecret',
+    key: r'client_secret',
   );
   static dynamic _$modalities(RealtimeTranscriptionSessionCreateResponse v) =>
       v.modalities;
@@ -65,7 +65,7 @@ class RealtimeTranscriptionSessionCreateResponseMapper
   _f$realtimeTranscriptionSessionCreateResponseInputAudioTranscription = Field(
     'realtimeTranscriptionSessionCreateResponseInputAudioTranscription',
     _$realtimeTranscriptionSessionCreateResponseInputAudioTranscription,
-    key: r'RealtimeTranscriptionSessionCreateResponseInputAudioTranscription',
+    key: r'input_audio_transcription',
     opt: true,
   );
   static RealtimeTranscriptionSessionCreateResponseTurnDetection?
@@ -79,7 +79,7 @@ class RealtimeTranscriptionSessionCreateResponseMapper
   _f$realtimeTranscriptionSessionCreateResponseTurnDetection = Field(
     'realtimeTranscriptionSessionCreateResponseTurnDetection',
     _$realtimeTranscriptionSessionCreateResponseTurnDetection,
-    key: r'RealtimeTranscriptionSessionCreateResponseTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
 
@@ -95,6 +95,10 @@ class RealtimeTranscriptionSessionCreateResponseMapper
     #realtimeTranscriptionSessionCreateResponseTurnDetection:
         _f$realtimeTranscriptionSessionCreateResponseTurnDetection,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateResponse _instantiate(
     DecodingData data,

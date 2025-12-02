@@ -13,7 +13,7 @@ import 'realtime_conversation_item_with_reference_type_type.dart';
 part 'realtime_conversation_item_with_reference.mapper.dart';
 
 /// The item to add to the conversation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemWithReference with RealtimeConversationItemWithReferenceMappable {
   const RealtimeConversationItemWithReference({
     this.id,

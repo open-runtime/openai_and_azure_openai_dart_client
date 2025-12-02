@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'invite_project_group_body.mapper.dart';
 
 /// Request payload for granting a group access to a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteProjectGroupBody with InviteProjectGroupBodyMappable {
   const InviteProjectGroupBody({
     required this.groupId,

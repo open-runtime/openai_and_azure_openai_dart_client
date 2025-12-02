@@ -17,6 +17,7 @@ class VectorStoreSearchResultItemMapper
       MapperContainer.globals.use(
         _instance = VectorStoreSearchResultItemMapper._(),
       );
+      VectorStoreFileAttributesUnionMapper.ensureInitialized();
       VectorStoreSearchResultContentObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,9 +42,13 @@ class VectorStoreSearchResultItemMapper
     'score',
     _$score,
   );
-  static Map<String, String>? _$attributes(VectorStoreSearchResultItem v) =>
-      v.attributes;
-  static const Field<VectorStoreSearchResultItem, Map<String, String>>
+  static Map<String, VectorStoreFileAttributesUnion>? _$attributes(
+    VectorStoreSearchResultItem v,
+  ) => v.attributes;
+  static const Field<
+    VectorStoreSearchResultItem,
+    Map<String, VectorStoreFileAttributesUnion>
+  >
   _f$attributes = Field('attributes', _$attributes);
   static List<VectorStoreSearchResultContentObject> _$content(
     VectorStoreSearchResultItem v,
@@ -62,6 +67,10 @@ class VectorStoreSearchResultItemMapper
     #attributes: _f$attributes,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchResultItem _instantiate(DecodingData data) {
     return VectorStoreSearchResultItem(
@@ -147,7 +156,16 @@ abstract class VectorStoreSearchResultItemCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes;
   ListCopyWith<
     $R,
@@ -163,7 +181,7 @@ abstract class VectorStoreSearchResultItemCopyWith<
     String? fileId,
     String? filename,
     num? score,
-    Map<String, String>? attributes,
+    Map<String, VectorStoreFileAttributesUnion>? attributes,
     List<VectorStoreSearchResultContentObject>? content,
   });
   VectorStoreSearchResultItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -189,11 +207,20 @@ class _VectorStoreSearchResultItemCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VectorStoreSearchResultItem> $mapper =
       VectorStoreSearchResultItemMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes => $value.attributes != null
       ? MapCopyWith(
           $value.attributes!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(attributes: v),
         )
       : null;

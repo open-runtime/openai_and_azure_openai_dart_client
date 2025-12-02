@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_eval_run_succeeded_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunSucceededData with WebhookEvalRunSucceededDataMappable {
   const WebhookEvalRunSucceededData({
     required this.id,

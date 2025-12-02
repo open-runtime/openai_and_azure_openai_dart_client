@@ -29,6 +29,10 @@ class LineMapper extends ClassMapperBase<Line> {
 
   @override
   final MappableFields<Line> fields = const {#text: _f$text, #spans: _f$spans};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Line _instantiate(DecodingData data) {
     return Line(text: data.dec(_f$text), spans: data.dec(_f$spans));

@@ -45,6 +45,10 @@ class ModifyAssistantRequestToolResourcesCodeInterpreterMapper
   @override
   final MappableFields<ModifyAssistantRequestToolResourcesCodeInterpreter>
   fields = const {#fileIds: _f$fileIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyAssistantRequestToolResourcesCodeInterpreter _instantiate(
     DecodingData data,

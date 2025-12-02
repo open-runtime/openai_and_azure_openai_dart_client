@@ -11,7 +11,7 @@ import 'apply_patch_tool_call_item_param_type_type.dart';
 part 'apply_patch_tool_call_item_param.mapper.dart';
 
 /// A tool call representing a request to create, delete, or update files using diff patches.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchToolCallItemParam with ApplyPatchToolCallItemParamMappable {
   const ApplyPatchToolCallItemParam({
     required this.callId,

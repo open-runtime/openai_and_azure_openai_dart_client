@@ -32,6 +32,10 @@ class MessageContentImageFileObjectImageFileMapper
   final MappableFields<MessageContentImageFileObjectImageFile> fields = const {
     #fileId: _f$fileId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentImageFileObjectImageFile _instantiate(
     DecodingData data,

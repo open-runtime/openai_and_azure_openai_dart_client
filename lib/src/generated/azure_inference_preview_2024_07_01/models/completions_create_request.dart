@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'completions_create_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionsCreateRequest with CompletionsCreateRequestMappable {
   const CompletionsCreateRequest({
     required this.logprobs,

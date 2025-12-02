@@ -13,7 +13,7 @@ import 'system_compute_datasource_type.dart';
 part 'system_compute_url.mapper.dart';
 
 /// Urls
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SystemComputeUrl with SystemComputeUrlMappable {
   const SystemComputeUrl({
     required this.kind,

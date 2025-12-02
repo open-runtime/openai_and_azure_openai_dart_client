@@ -8,7 +8,7 @@ import 'realtime_conversation_item_message_system_content_type_type.dart';
 
 part 'realtime_conversation_item_message_system_content.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageSystemContent with RealtimeConversationItemMessageSystemContentMappable {
   const RealtimeConversationItemMessageSystemContent({
     this.type,

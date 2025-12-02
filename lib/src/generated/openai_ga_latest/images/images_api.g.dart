@@ -32,7 +32,7 @@ class _ImagesApi implements ImagesApi {
     bool? stream = false,
     Quality? quality = Quality.auto,
     MultipartFile? mask,
-    String? model,
+    ModelUnion? model,
     String? user,
     InputFidelity? inputFidelity,
     PartialImages? partialImages,
@@ -76,9 +76,9 @@ class _ImagesApi implements ImagesApi {
     if (mask != null) {
       _data.files.add(MapEntry('mask', mask));
     }
-    if (model != null) {
-      _data.fields.add(MapEntry('model', model));
-    }
+    _data.fields.add(
+      MapEntry('model', jsonEncode(model ?? <String, dynamic>{})),
+    );
     if (user != null) {
       _data.fields.add(MapEntry('user', user));
     }
@@ -155,7 +155,7 @@ class _ImagesApi implements ImagesApi {
     int? n = 1,
     ResponseFormat2? responseFormat = ResponseFormat2.url,
     Size2? size = Size2.value1024x1024,
-    String? model,
+    ModelUnion? model,
     String? user,
     Map<String, dynamic>? extras,
     RequestOptions? options,
@@ -176,9 +176,9 @@ class _ImagesApi implements ImagesApi {
     if (size != null) {
       _data.fields.add(MapEntry('size', size.toJson()));
     }
-    if (model != null) {
-      _data.fields.add(MapEntry('model', model));
-    }
+    _data.fields.add(
+      MapEntry('model', jsonEncode(model ?? <String, dynamic>{})),
+    );
     if (user != null) {
       _data.fields.add(MapEntry('user', user));
     }

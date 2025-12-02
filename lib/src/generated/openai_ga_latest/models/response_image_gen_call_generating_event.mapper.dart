@@ -56,6 +56,10 @@ class ResponseImageGenCallGeneratingEventMapper
     #itemId: _f$itemId,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseImageGenCallGeneratingEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallGeneratingEvent(

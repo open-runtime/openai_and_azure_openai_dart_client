@@ -51,6 +51,10 @@ class RealtimeSessionToolsMapper extends ClassMapperBase<RealtimeSessionTools> {
     #description: _f$description,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionTools _instantiate(DecodingData data) {
     return RealtimeSessionTools(

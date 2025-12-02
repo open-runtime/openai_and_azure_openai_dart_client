@@ -9,16 +9,16 @@ import 'realtime_session_create_request_ga_audio_output.dart';
 
 part 'realtime_session_create_request_ga_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestGaAudio with RealtimeSessionCreateRequestGaAudioMappable {
   const RealtimeSessionCreateRequestGaAudio({
     this.realtimeSessionCreateRequestGaAudioInput,
     this.realtimeSessionCreateRequestGaAudioOutput,
   });
 
-  @MappableField(key: 'RealtimeSessionCreateRequestGaAudioInput')
+  @MappableField(key: 'input')
   final RealtimeSessionCreateRequestGaAudioInput? realtimeSessionCreateRequestGaAudioInput;
-  @MappableField(key: 'RealtimeSessionCreateRequestGaAudioOutput')
+  @MappableField(key: 'output')
   final RealtimeSessionCreateRequestGaAudioOutput? realtimeSessionCreateRequestGaAudioOutput;
 
   static RealtimeSessionCreateRequestGaAudio fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestGaAudioMapper.fromJson(json);

@@ -48,6 +48,10 @@ class ListPaginatedFineTuningJobsResponseMapper
     #hasMore: _f$hasMore,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListPaginatedFineTuningJobsResponse _instantiate(DecodingData data) {
     return ListPaginatedFineTuningJobsResponse(

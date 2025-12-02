@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'fine_tuning_job_list.mapper.dart';
 
 /// Represents a list of fine tunes.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobList with FineTuningJobListMappable {
   const FineTuningJobList({
     this.objectField,

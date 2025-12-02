@@ -75,6 +75,10 @@ class RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper
     #audioEndMs: _f$audioEndMs,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventInputAudioBufferTimeoutTriggered _instantiate(
     DecodingData data,

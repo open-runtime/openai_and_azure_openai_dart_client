@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_step_delta_step_details_tool_calls_function_object_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsFunctionObjectFunction with RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionMappable {
   const RunStepDeltaStepDetailsToolCallsFunctionObjectFunction({
     this.name,

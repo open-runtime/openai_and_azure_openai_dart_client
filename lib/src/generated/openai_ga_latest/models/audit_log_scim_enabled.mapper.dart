@@ -30,6 +30,10 @@ class AuditLogScimEnabledMapper extends ClassMapperBase<AuditLogScimEnabled> {
 
   @override
   final MappableFields<AuditLogScimEnabled> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogScimEnabled _instantiate(DecodingData data) {
     return AuditLogScimEnabled(id: data.dec(_f$id));

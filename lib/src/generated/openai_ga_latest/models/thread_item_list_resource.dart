@@ -9,7 +9,7 @@ import 'thread_item.dart';
 part 'thread_item_list_resource.mapper.dart';
 
 /// A paginated list of thread items rendered for the ChatKit API.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadItemListResource with ThreadItemListResourceMappable {
   const ThreadItemListResource({
     required this.data,

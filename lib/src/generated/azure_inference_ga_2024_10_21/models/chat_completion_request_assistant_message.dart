@@ -7,10 +7,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_request_assistant_message_function_call.dart';
 import 'chat_completion_request_assistant_message_role_role.dart';
+import 'chat_completion_request_message.dart';
 
 part 'chat_completion_request_assistant_message.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantMessageMappable {
   const ChatCompletionRequestAssistantMessage({
     required this.role,
@@ -27,7 +28,7 @@ class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantM
   final String? name;
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
-  @MappableField(key: 'ChatCompletionRequestAssistantMessageFunctionCall')
+  @MappableField(key: 'function_call')
   final ChatCompletionRequestAssistantMessageFunctionCall? chatCompletionRequestAssistantMessageFunctionCall;
 
   static ChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestAssistantMessageMapper.fromJson(json);

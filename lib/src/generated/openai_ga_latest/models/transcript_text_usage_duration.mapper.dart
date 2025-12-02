@@ -44,6 +44,10 @@ class TranscriptTextUsageDurationMapper
     #type: _f$type,
     #seconds: _f$seconds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextUsageDuration _instantiate(DecodingData data) {
     return TranscriptTextUsageDuration(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'toggle_certificates_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ToggleCertificatesRequest with ToggleCertificatesRequestMappable {
   const ToggleCertificatesRequest({
     required this.certificateIds,

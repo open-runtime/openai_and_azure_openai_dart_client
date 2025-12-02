@@ -55,6 +55,10 @@ class ComputerScreenshotImageMapper
     #fileId: _f$fileId,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerScreenshotImage _instantiate(DecodingData data) {
     return ComputerScreenshotImage(

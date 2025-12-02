@@ -4,28 +4,21 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_server_event_error_error.dart';
-import 'realtime_server_event_error_type_type.dart';
-
 part 'realtime_server_event_error.mapper.dart';
 
-/// Returned when an error occurs, which could be a client problem or a server .
-/// problem. Most errors are recoverable and the session will stay open, we .
-/// recommend to implementors to monitor and log error messages by default.
-///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventError with RealtimeServerEventErrorMappable {
   const RealtimeServerEventError({
-    required this.eventId,
-    required this.type,
-    required this.realtimeServerEventErrorError,
+    this.type,
+    this.code,
+    this.message,
+    this.param,
   });
 
-  @MappableField(key: 'event_id')
-  final String eventId;
-  final RealtimeServerEventErrorTypeType type;
-  @MappableField(key: 'RealtimeServerEventErrorError')
-  final RealtimeServerEventErrorError realtimeServerEventErrorError;
+  final String? type;
+  final String? code;
+  final String? message;
+  final String? param;
 
   static RealtimeServerEventError fromJson(Map<String, dynamic> json) => RealtimeServerEventErrorMapper.fromJson(json);
 

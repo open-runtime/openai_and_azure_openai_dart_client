@@ -34,7 +34,7 @@ class InputAudioMapper extends ClassMapperBase<InputAudio> {
       Field(
         'inputAudioInputAudio',
         _$inputAudioInputAudio,
-        key: r'InputAudioInputAudio',
+        key: r'input_audio',
       );
 
   @override
@@ -42,6 +42,10 @@ class InputAudioMapper extends ClassMapperBase<InputAudio> {
     #type: _f$type,
     #inputAudioInputAudio: _f$inputAudioInputAudio,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputAudio _instantiate(DecodingData data) {
     return InputAudio(

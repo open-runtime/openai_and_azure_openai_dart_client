@@ -51,6 +51,10 @@ class CertificateCertificateDetailsMapper
     #expiresAt: _f$expiresAt,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CertificateCertificateDetails _instantiate(DecodingData data) {
     return CertificateCertificateDetails(

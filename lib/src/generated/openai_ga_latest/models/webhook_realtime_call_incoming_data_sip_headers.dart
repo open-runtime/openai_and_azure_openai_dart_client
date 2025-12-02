@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_realtime_call_incoming_data_sip_headers.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookRealtimeCallIncomingDataSipHeaders with WebhookRealtimeCallIncomingDataSipHeadersMappable {
   const WebhookRealtimeCallIncomingDataSipHeaders({
     required this.name,

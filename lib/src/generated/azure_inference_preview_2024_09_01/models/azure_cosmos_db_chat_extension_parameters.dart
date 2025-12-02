@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'azure_cosmos_db_chat_extension_parameters_embedding_dependency_embedding_dependency_union.dart';
+import 'azure_cosmos_db_chat_extension_parameters_embedding_dependency_union.dart';
 import 'azure_cosmos_db_field_mapping_options.dart';
 import 'on_your_data_connection_string_authentication_options.dart';
 import 'on_your_data_context_property.dart';
@@ -13,7 +13,7 @@ part 'azure_cosmos_db_chat_extension_parameters.mapper.dart';
 
 /// Parameters to use when configuring Azure OpenAI On Your Data chat extensions when using Azure Cosmos DB for.
 /// MongoDB vCore.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureCosmosDbChatExtensionParameters with AzureCosmosDbChatExtensionParametersMappable {
   const AzureCosmosDbChatExtensionParameters({
     required this.authentication,
@@ -40,7 +40,7 @@ class AzureCosmosDbChatExtensionParameters with AzureCosmosDbChatExtensionParame
   @MappableField(key: 'fields_mapping')
   final AzureCosmosDbFieldMappingOptions fieldsMapping;
   @MappableField(key: 'embedding_dependency')
-  final AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion embeddingDependency;
+  final AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion embeddingDependency;
   @MappableField(key: 'allow_partial_result')
   final bool allowPartialResult;
   @MappableField(key: 'top_n_documents')

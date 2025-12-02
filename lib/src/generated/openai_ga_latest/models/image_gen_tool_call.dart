@@ -4,14 +4,17 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
 import 'image_gen_tool_call_status_status.dart';
 import 'image_gen_tool_call_type_type.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'image_gen_tool_call.mapper.dart';
 
 /// An image generation request made by the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenToolCall with ImageGenToolCallMappable {
   const ImageGenToolCall({
     required this.type,

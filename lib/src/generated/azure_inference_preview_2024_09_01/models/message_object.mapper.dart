@@ -18,7 +18,7 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
       MessageObjectStatusStatusMapper.ensureInitialized();
       MessageObjectIncompleteDetailsMapper.ensureInitialized();
       MessageObjectRoleRoleMapper.ensureInitialized();
-      MessageObjectContentContentUnionMapper.ensureInitialized();
+      MessageObjectContentUnionMapper.ensureInitialized();
       MessageObjectAttachmentsMapper.ensureInitialized();
     }
     return _instance!;
@@ -55,7 +55,7 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
   _f$messageObjectIncompleteDetails = Field(
     'messageObjectIncompleteDetails',
     _$messageObjectIncompleteDetails,
-    key: r'MessageObjectIncompleteDetails',
+    key: r'incomplete_details',
   );
   static int? _$completedAt(MessageObject v) => v.completedAt;
   static const Field<MessageObject, int> _f$completedAt = Field(
@@ -74,9 +74,9 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     'role',
     _$role,
   );
-  static List<MessageObjectContentContentUnion> _$content(MessageObject v) =>
+  static List<MessageObjectContentUnion> _$content(MessageObject v) =>
       v.content;
-  static const Field<MessageObject, List<MessageObjectContentContentUnion>>
+  static const Field<MessageObject, List<MessageObjectContentUnion>>
   _f$content = Field('content', _$content);
   static String? _$assistantId(MessageObject v) => v.assistantId;
   static const Field<MessageObject, String> _f$assistantId = Field(
@@ -117,6 +117,10 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     #attachments: _f$attachments,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageObject _instantiate(DecodingData data) {
     return MessageObject(
@@ -209,11 +213,11 @@ abstract class MessageObjectCopyWith<$R, $In extends MessageObject, $Out>
   get messageObjectIncompleteDetails;
   ListCopyWith<
     $R,
-    MessageObjectContentContentUnion,
-    MessageObjectContentContentUnionCopyWith<
+    MessageObjectContentUnion,
+    MessageObjectContentUnionCopyWith<
       $R,
-      MessageObjectContentContentUnion,
-      MessageObjectContentContentUnion
+      MessageObjectContentUnion,
+      MessageObjectContentUnion
     >
   >
   get content;
@@ -237,7 +241,7 @@ abstract class MessageObjectCopyWith<$R, $In extends MessageObject, $Out>
     int? completedAt,
     int? incompleteAt,
     MessageObjectRoleRole? role,
-    List<MessageObjectContentContentUnion>? content,
+    List<MessageObjectContentUnion>? content,
     String? assistantId,
     String? runId,
     List<MessageObjectAttachments>? attachments,
@@ -267,11 +271,11 @@ class _MessageObjectCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    MessageObjectContentContentUnion,
-    MessageObjectContentContentUnionCopyWith<
+    MessageObjectContentUnion,
+    MessageObjectContentUnionCopyWith<
       $R,
-      MessageObjectContentContentUnion,
-      MessageObjectContentContentUnion
+      MessageObjectContentUnion,
+      MessageObjectContentUnion
     >
   >
   get content => ListCopyWith(
@@ -307,7 +311,7 @@ class _MessageObjectCopyWithImpl<$R, $Out>
     Object? completedAt = $none,
     Object? incompleteAt = $none,
     MessageObjectRoleRole? role,
-    List<MessageObjectContentContentUnion>? content,
+    List<MessageObjectContentUnion>? content,
     Object? assistantId = $none,
     Object? runId = $none,
     Object? attachments = $none,

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'annotation.dart';
 import 'url_citation_type_type.dart';
 
 part 'url_citation.mapper.dart';
 
 /// A citation for a web resource used to generate a model response.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UrlCitation with UrlCitationMappable {
   const UrlCitation({
     required this.url,

@@ -10,7 +10,7 @@ import 'create_chat_completion_response_choices_logprobs.dart';
 
 part 'create_chat_completion_response_choices.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponseChoices with CreateChatCompletionResponseChoicesMappable {
   const CreateChatCompletionResponseChoices({
     required this.finishReason,
@@ -24,7 +24,7 @@ class CreateChatCompletionResponseChoices with CreateChatCompletionResponseChoic
   @MappableField(key: 'index')
   final int indexField;
   final ChatCompletionResponseMessage message;
-  @MappableField(key: 'CreateChatCompletionResponseChoicesLogprobs')
+  @MappableField(key: 'logprobs')
   final CreateChatCompletionResponseChoicesLogprobs? createChatCompletionResponseChoicesLogprobs;
 
   static CreateChatCompletionResponseChoices fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesMapper.fromJson(json);

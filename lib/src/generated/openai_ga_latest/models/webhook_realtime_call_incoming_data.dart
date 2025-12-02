@@ -8,7 +8,7 @@ import 'webhook_realtime_call_incoming_data_sip_headers.dart';
 
 part 'webhook_realtime_call_incoming_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookRealtimeCallIncomingData with WebhookRealtimeCallIncomingDataMappable {
   const WebhookRealtimeCallIncomingData({
     required this.callId,

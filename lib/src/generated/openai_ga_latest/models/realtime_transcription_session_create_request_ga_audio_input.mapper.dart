@@ -55,12 +55,13 @@ class RealtimeTranscriptionSessionCreateRequestGaAudioInputMapper
     RealtimeTranscriptionSessionCreateRequestGaAudioInput,
     RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction
   >
-  _f$realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction = Field(
-    'realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction',
-    _$realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction,
-    key: r'RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction',
-    opt: true,
-  );
+  _f$realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction =
+      Field(
+        'realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction',
+        _$realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction,
+        key: r'noise_reduction',
+        opt: true,
+      );
   static RealtimeTurnDetection? _$turnDetection(
     RealtimeTranscriptionSessionCreateRequestGaAudioInput v,
   ) => v.turnDetection;
@@ -84,6 +85,10 @@ class RealtimeTranscriptionSessionCreateRequestGaAudioInputMapper
         _f$realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction,
     #turnDetection: _f$turnDetection,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequestGaAudioInput _instantiate(
     DecodingData data,

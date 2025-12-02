@@ -8,7 +8,7 @@ import 'input_message.dart';
 
 part 'stored_completion_messages.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionMessages with StoredCompletionMessagesMappable {
   const StoredCompletionMessages({
     this.objectField,

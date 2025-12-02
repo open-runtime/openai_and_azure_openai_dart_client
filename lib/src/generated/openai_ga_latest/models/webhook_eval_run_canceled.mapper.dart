@@ -40,7 +40,7 @@ class WebhookEvalRunCanceledMapper
   _f$webhookEvalRunCanceledData = Field(
     'webhookEvalRunCanceledData',
     _$webhookEvalRunCanceledData,
-    key: r'WebhookEvalRunCanceledData',
+    key: r'data',
   );
   static WebhookEvalRunCanceledTypeType _$type(WebhookEvalRunCanceled v) =>
       v.type;
@@ -63,6 +63,10 @@ class WebhookEvalRunCanceledMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookEvalRunCanceled _instantiate(DecodingData data) {
     return WebhookEvalRunCanceled(

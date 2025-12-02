@@ -8,7 +8,7 @@ import 'audit_log_invite_sent_data.dart';
 
 part 'audit_log_invite_sent.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogInviteSent with AuditLogInviteSentMappable {
   const AuditLogInviteSent({
     this.id,
@@ -16,7 +16,7 @@ class AuditLogInviteSent with AuditLogInviteSentMappable {
   });
 
   final String? id;
-  @MappableField(key: 'AuditLogInviteSentData')
+  @MappableField(key: 'data')
   final AuditLogInviteSentData? auditLogInviteSentData;
 
   static AuditLogInviteSent fromJson(Map<String, dynamic> json) => AuditLogInviteSentMapper.fromJson(json);

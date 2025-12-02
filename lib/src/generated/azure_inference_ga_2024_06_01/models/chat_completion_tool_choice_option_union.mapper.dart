@@ -28,6 +28,10 @@ class ChatCompletionToolChoiceOptionUnionMapper
 
   @override
   final MappableFields<ChatCompletionToolChoiceOptionUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionToolChoiceOptionUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -121,6 +125,7 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMapper
   _f$chatCompletionNamedToolChoiceFunction = Field(
     'chatCompletionNamedToolChoiceFunction',
     _$chatCompletionNamedToolChoiceFunction,
+    key: r'function',
   );
 
   @override
@@ -132,6 +137,10 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMapper
     #chatCompletionNamedToolChoiceFunction:
         _f$chatCompletionNamedToolChoiceFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice
   _instantiate(DecodingData data) {
@@ -378,6 +387,10 @@ class ChatCompletionToolChoiceOptionUnionVariantStringMapper
   @override
   final MappableFields<ChatCompletionToolChoiceOptionUnionVariantString>
   fields = const {#value: _f$value};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionToolChoiceOptionUnionVariantString _instantiate(
     DecodingData data,

@@ -49,6 +49,10 @@ class EvalRunPerTestingCriteriaResultsMapper
     #passed: _f$passed,
     #testingCriteria: _f$testingCriteria,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunPerTestingCriteriaResults _instantiate(DecodingData data) {
     return EvalRunPerTestingCriteriaResults(

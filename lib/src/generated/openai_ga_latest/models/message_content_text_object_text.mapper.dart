@@ -40,6 +40,10 @@ class MessageContentTextObjectTextMapper
     #value: _f$value,
     #annotations: _f$annotations,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextObjectText _instantiate(DecodingData data) {
     return MessageContentTextObjectText(

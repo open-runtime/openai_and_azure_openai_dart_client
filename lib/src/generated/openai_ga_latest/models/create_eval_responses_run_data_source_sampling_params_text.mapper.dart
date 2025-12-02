@@ -40,6 +40,10 @@ class CreateEvalResponsesRunDataSourceSamplingParamsTextMapper
   @override
   final MappableFields<CreateEvalResponsesRunDataSourceSamplingParamsText>
   fields = const {#format: _f$format};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalResponsesRunDataSourceSamplingParamsText _instantiate(
     DecodingData data,

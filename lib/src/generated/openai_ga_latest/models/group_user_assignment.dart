@@ -9,7 +9,7 @@ import 'group_user_assignment_object_object_enum.dart';
 part 'group_user_assignment.mapper.dart';
 
 /// Confirmation payload returned after adding a user to a group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupUserAssignment with GroupUserAssignmentMappable {
   const GroupUserAssignment({
     required this.objectEnum,

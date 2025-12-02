@@ -65,6 +65,10 @@ class ResponseFunctionCallArgumentsDoneEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseFunctionCallArgumentsDoneEvent _instantiate(
     DecodingData data,

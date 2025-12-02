@@ -10,7 +10,7 @@ import 'transcript_text_usage_tokens_type_type.dart';
 part 'transcript_text_usage_tokens.mapper.dart';
 
 /// Usage statistics for models billed by token usage.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextUsageTokens with TranscriptTextUsageTokensMappable {
   const TranscriptTextUsageTokens({
     required this.type,
@@ -27,7 +27,7 @@ class TranscriptTextUsageTokens with TranscriptTextUsageTokensMappable {
   final int outputTokens;
   @MappableField(key: 'total_tokens')
   final int totalTokens;
-  @MappableField(key: 'TranscriptTextUsageTokensInputTokenDetails')
+  @MappableField(key: 'input_token_details')
   final TranscriptTextUsageTokensInputTokenDetails? transcriptTextUsageTokensInputTokenDetails;
 
   static TranscriptTextUsageTokens fromJson(Map<String, dynamic> json) => TranscriptTextUsageTokensMapper.fromJson(json);

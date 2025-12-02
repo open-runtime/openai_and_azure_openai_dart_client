@@ -43,6 +43,10 @@ class GroupRoleAssignmentMapper extends ClassMapperBase<GroupRoleAssignment> {
     #group: _f$group,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupRoleAssignment _instantiate(DecodingData data) {
     return GroupRoleAssignment(

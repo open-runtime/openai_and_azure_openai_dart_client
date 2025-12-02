@@ -12,7 +12,7 @@ part 'upload.mapper.dart';
 
 /// The Upload object can accept byte chunks in the form of Parts.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Upload with UploadMappable {
   const Upload({
     required this.id,

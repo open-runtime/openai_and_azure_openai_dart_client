@@ -54,7 +54,7 @@ class ChatCompletionListMapper extends ClassMapperBase<ChatCompletionList> {
     _$objectEnum,
     key: r'object',
     opt: true,
-    def: ChatCompletionListObjectObjectEnum.valueList,
+    def: ChatCompletionListObjectObjectEnum.list,
   );
 
   @override
@@ -65,6 +65,10 @@ class ChatCompletionListMapper extends ClassMapperBase<ChatCompletionList> {
     #hasMore: _f$hasMore,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionList _instantiate(DecodingData data) {
     return ChatCompletionList(

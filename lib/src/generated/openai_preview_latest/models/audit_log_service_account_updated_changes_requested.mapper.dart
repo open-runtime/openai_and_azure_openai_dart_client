@@ -33,6 +33,10 @@ class AuditLogServiceAccountUpdatedChangesRequestedMapper
   @override
   final MappableFields<AuditLogServiceAccountUpdatedChangesRequested> fields =
       const {#role: _f$role};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogServiceAccountUpdatedChangesRequested _instantiate(
     DecodingData data,

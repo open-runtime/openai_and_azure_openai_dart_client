@@ -17,7 +17,13 @@ class FineTuneReinforcementHyperparametersMapper
       MapperContainer.globals.use(
         _instance = FineTuneReinforcementHyperparametersMapper._(),
       );
+      FineTuneReinforcementHyperparametersLearningRateMultiplierUnionMapper.ensureInitialized();
+      FineTuneReinforcementHyperparametersComputeMultiplierUnionMapper.ensureInitialized();
+      FineTuneReinforcementHyperparametersBatchSizeUnionMapper.ensureInitialized();
+      FineTuneReinforcementHyperparametersNEpochsUnionMapper.ensureInitialized();
       FineTuneReinforcementHyperparametersReasoningEffortReasoningEffortMapper.ensureInitialized();
+      FineTuneReinforcementHyperparametersEvalIntervalUnionMapper.ensureInitialized();
+      FineTuneReinforcementHyperparametersEvalSamplesUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,38 +31,70 @@ class FineTuneReinforcementHyperparametersMapper
   @override
   final String id = 'FineTuneReinforcementHyperparameters';
 
-  static String? _$learningRateMultiplier(
-    FineTuneReinforcementHyperparameters v,
-  ) => v.learningRateMultiplier;
-  static const Field<FineTuneReinforcementHyperparameters, String>
+  static FineTuneReinforcementHyperparametersLearningRateMultiplierUnion?
+  _$learningRateMultiplier(FineTuneReinforcementHyperparameters v) =>
+      v.learningRateMultiplier;
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion
+  >
   _f$learningRateMultiplier = Field(
     'learningRateMultiplier',
     _$learningRateMultiplier,
     key: r'learning_rate_multiplier',
     opt: true,
+    hook:
+        const FineTuneReinforcementHyperparametersLearningRateMultiplierUnionHook(),
   );
-  static String? _$computeMultiplier(FineTuneReinforcementHyperparameters v) =>
+  static FineTuneReinforcementHyperparametersComputeMultiplierUnion?
+  _$computeMultiplier(FineTuneReinforcementHyperparameters v) =>
       v.computeMultiplier;
-  static const Field<FineTuneReinforcementHyperparameters, String>
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion
+  >
   _f$computeMultiplier = Field(
     'computeMultiplier',
     _$computeMultiplier,
     key: r'compute_multiplier',
     opt: true,
+    hook:
+        const FineTuneReinforcementHyperparametersComputeMultiplierUnionHook(),
   );
-  static String _$batchSize(FineTuneReinforcementHyperparameters v) =>
-      v.batchSize;
-  static const Field<FineTuneReinforcementHyperparameters, String>
+  static FineTuneReinforcementHyperparametersBatchSizeUnion _$batchSize(
+    FineTuneReinforcementHyperparameters v,
+  ) => v.batchSize;
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersBatchSizeUnion
+  >
   _f$batchSize = Field(
     'batchSize',
     _$batchSize,
     key: r'batch_size',
     opt: true,
-    def: 'auto',
+    def: const FineTuneReinforcementHyperparametersBatchSizeUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuneReinforcementHyperparametersBatchSizeUnionHook(),
   );
-  static String _$nEpochs(FineTuneReinforcementHyperparameters v) => v.nEpochs;
-  static const Field<FineTuneReinforcementHyperparameters, String> _f$nEpochs =
-      Field('nEpochs', _$nEpochs, key: r'n_epochs', opt: true, def: 'auto');
+  static FineTuneReinforcementHyperparametersNEpochsUnion _$nEpochs(
+    FineTuneReinforcementHyperparameters v,
+  ) => v.nEpochs;
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersNEpochsUnion
+  >
+  _f$nEpochs = Field(
+    'nEpochs',
+    _$nEpochs,
+    key: r'n_epochs',
+    opt: true,
+    def: const FineTuneReinforcementHyperparametersNEpochsUnionVariantString(
+      value: 'auto',
+    ),
+    hook: const FineTuneReinforcementHyperparametersNEpochsUnionHook(),
+  );
   static FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort
   _$reasoningEffort(FineTuneReinforcementHyperparameters v) =>
       v.reasoningEffort;
@@ -72,25 +110,41 @@ class FineTuneReinforcementHyperparametersMapper
     def: FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort
         .valueDefault,
   );
-  static String _$evalInterval(FineTuneReinforcementHyperparameters v) =>
-      v.evalInterval;
-  static const Field<FineTuneReinforcementHyperparameters, String>
+  static FineTuneReinforcementHyperparametersEvalIntervalUnion _$evalInterval(
+    FineTuneReinforcementHyperparameters v,
+  ) => v.evalInterval;
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion
+  >
   _f$evalInterval = Field(
     'evalInterval',
     _$evalInterval,
     key: r'eval_interval',
     opt: true,
-    def: 'auto',
+    def:
+        const FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString(
+          value: 'auto',
+        ),
+    hook: const FineTuneReinforcementHyperparametersEvalIntervalUnionHook(),
   );
-  static String _$evalSamples(FineTuneReinforcementHyperparameters v) =>
-      v.evalSamples;
-  static const Field<FineTuneReinforcementHyperparameters, String>
+  static FineTuneReinforcementHyperparametersEvalSamplesUnion _$evalSamples(
+    FineTuneReinforcementHyperparameters v,
+  ) => v.evalSamples;
+  static const Field<
+    FineTuneReinforcementHyperparameters,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion
+  >
   _f$evalSamples = Field(
     'evalSamples',
     _$evalSamples,
     key: r'eval_samples',
     opt: true,
-    def: 'auto',
+    def:
+        const FineTuneReinforcementHyperparametersEvalSamplesUnionVariantString(
+          value: 'auto',
+        ),
+    hook: const FineTuneReinforcementHyperparametersEvalSamplesUnionHook(),
   );
 
   @override
@@ -103,6 +157,10 @@ class FineTuneReinforcementHyperparametersMapper
     #evalInterval: _f$evalInterval,
     #evalSamples: _f$evalSamples,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneReinforcementHyperparameters _instantiate(DecodingData data) {
     return FineTuneReinforcementHyperparameters(
@@ -197,15 +255,53 @@ abstract class FineTuneReinforcementHyperparametersCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  FineTuneReinforcementHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion
+  >?
+  get learningRateMultiplier;
+  FineTuneReinforcementHyperparametersComputeMultiplierUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion
+  >?
+  get computeMultiplier;
+  FineTuneReinforcementHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersBatchSizeUnion,
+    FineTuneReinforcementHyperparametersBatchSizeUnion
+  >
+  get batchSize;
+  FineTuneReinforcementHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersNEpochsUnion,
+    FineTuneReinforcementHyperparametersNEpochsUnion
+  >
+  get nEpochs;
+  FineTuneReinforcementHyperparametersEvalIntervalUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion
+  >
+  get evalInterval;
+  FineTuneReinforcementHyperparametersEvalSamplesUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion
+  >
+  get evalSamples;
   $R call({
-    String? learningRateMultiplier,
-    String? computeMultiplier,
-    String? batchSize,
-    String? nEpochs,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion?
+    learningRateMultiplier,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion?
+    computeMultiplier,
+    FineTuneReinforcementHyperparametersBatchSizeUnion? batchSize,
+    FineTuneReinforcementHyperparametersNEpochsUnion? nEpochs,
     FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort?
     reasoningEffort,
-    String? evalInterval,
-    String? evalSamples,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion? evalInterval,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion? evalSamples,
   });
   FineTuneReinforcementHyperparametersCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -229,15 +325,63 @@ class _FineTuneReinforcementHyperparametersCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FineTuneReinforcementHyperparameters> $mapper =
       FineTuneReinforcementHyperparametersMapper.ensureInitialized();
   @override
+  FineTuneReinforcementHyperparametersLearningRateMultiplierUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion,
+    FineTuneReinforcementHyperparametersLearningRateMultiplierUnion
+  >?
+  get learningRateMultiplier => $value.learningRateMultiplier?.copyWith.$chain(
+    (v) => call(learningRateMultiplier: v),
+  );
+  @override
+  FineTuneReinforcementHyperparametersComputeMultiplierUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnion
+  >?
+  get computeMultiplier => $value.computeMultiplier?.copyWith.$chain(
+    (v) => call(computeMultiplier: v),
+  );
+  @override
+  FineTuneReinforcementHyperparametersBatchSizeUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersBatchSizeUnion,
+    FineTuneReinforcementHyperparametersBatchSizeUnion
+  >
+  get batchSize => $value.batchSize.copyWith.$chain((v) => call(batchSize: v));
+  @override
+  FineTuneReinforcementHyperparametersNEpochsUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersNEpochsUnion,
+    FineTuneReinforcementHyperparametersNEpochsUnion
+  >
+  get nEpochs => $value.nEpochs.copyWith.$chain((v) => call(nEpochs: v));
+  @override
+  FineTuneReinforcementHyperparametersEvalIntervalUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion
+  >
+  get evalInterval =>
+      $value.evalInterval.copyWith.$chain((v) => call(evalInterval: v));
+  @override
+  FineTuneReinforcementHyperparametersEvalSamplesUnionCopyWith<
+    $R,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion
+  >
+  get evalSamples =>
+      $value.evalSamples.copyWith.$chain((v) => call(evalSamples: v));
+  @override
   $R call({
     Object? learningRateMultiplier = $none,
     Object? computeMultiplier = $none,
-    String? batchSize,
-    String? nEpochs,
+    FineTuneReinforcementHyperparametersBatchSizeUnion? batchSize,
+    FineTuneReinforcementHyperparametersNEpochsUnion? nEpochs,
     FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort?
     reasoningEffort,
-    String? evalInterval,
-    String? evalSamples,
+    FineTuneReinforcementHyperparametersEvalIntervalUnion? evalInterval,
+    FineTuneReinforcementHyperparametersEvalSamplesUnion? evalSamples,
   }) => $apply(
     FieldCopyWithData({
       if (learningRateMultiplier != $none)

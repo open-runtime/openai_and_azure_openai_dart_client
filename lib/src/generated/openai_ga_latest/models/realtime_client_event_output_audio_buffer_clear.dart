@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
+
 part 'realtime_client_event_output_audio_buffer_clear.mapper.dart';
 
 /// **WebRTC Only:** Emit to cut off the current audio response. This will trigger the server to.
@@ -12,7 +14,7 @@ part 'realtime_client_event_output_audio_buffer_clear.mapper.dart';
 /// generation of the current response.
 /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventOutputAudioBufferClear with RealtimeClientEventOutputAudioBufferClearMappable {
   const RealtimeClientEventOutputAudioBufferClear({
     required this.type,

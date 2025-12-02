@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'log_prob_properties.dart';
 import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_type_type.dart';
-import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_usage_usage_union.dart';
+import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_usage_union.dart';
 
 part 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed.mapper.dart';
 
@@ -21,7 +21,7 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_com
 /// The transcript may diverge somewhat from the model's interpretation, and.
 /// should be treated as a rough guide.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted with RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted({
     required this.eventId,
@@ -41,7 +41,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted wi
   @MappableField(key: 'content_index')
   final int contentIndex;
   final String transcript;
-  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUsageUnion usage;
+  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion usage;
   final List<LogProbProperties>? logprobs;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json);

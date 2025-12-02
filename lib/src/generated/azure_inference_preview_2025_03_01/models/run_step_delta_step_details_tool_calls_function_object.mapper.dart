@@ -53,7 +53,7 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
   _f$runStepDeltaStepDetailsToolCallsFunctionObjectFunction = Field(
     'runStepDeltaStepDetailsToolCallsFunctionObjectFunction',
     _$runStepDeltaStepDetailsToolCallsFunctionObjectFunction,
-    key: r'RunStepDeltaStepDetailsToolCallsFunctionObjectFunction',
+    key: r'function',
     opt: true,
   );
 
@@ -66,6 +66,10 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
         #runStepDeltaStepDetailsToolCallsFunctionObjectFunction:
             _f$runStepDeltaStepDetailsToolCallsFunctionObjectFunction,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsFunctionObject _instantiate(
     DecodingData data,

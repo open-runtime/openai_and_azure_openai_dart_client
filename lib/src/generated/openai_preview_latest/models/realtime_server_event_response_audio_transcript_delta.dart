@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_response_audio_transcript_delta_type_type.dart';
 
 part 'realtime_server_event_response_audio_transcript_delta.mapper.dart';
 
 /// Returned when the model-generated transcription of audio output is updated.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseAudioTranscriptDelta with RealtimeServerEventResponseAudioTranscriptDeltaMappable {
   const RealtimeServerEventResponseAudioTranscriptDelta({
     required this.eventId,

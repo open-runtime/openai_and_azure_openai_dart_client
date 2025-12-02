@@ -9,7 +9,7 @@ import 'group_user_deleted_resource_object_object_enum.dart';
 part 'group_user_deleted_resource.mapper.dart';
 
 /// Confirmation payload returned after removing a user from a group.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupUserDeletedResource with GroupUserDeletedResourceMappable {
   const GroupUserDeletedResource({
     required this.objectEnum,

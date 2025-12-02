@@ -69,6 +69,10 @@ class AdminApiKeyOwnerMapper extends ClassMapperBase<AdminApiKeyOwner> {
     #createdAt: _f$createdAt,
     #role: _f$role,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AdminApiKeyOwner _instantiate(DecodingData data) {
     return AdminApiKeyOwner(

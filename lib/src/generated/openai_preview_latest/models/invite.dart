@@ -12,7 +12,7 @@ import 'invite_status_status.dart';
 part 'invite.mapper.dart';
 
 /// Represents an individual `invite` to the organization.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Invite with InviteMappable {
   const Invite({
     required this.objectEnum,

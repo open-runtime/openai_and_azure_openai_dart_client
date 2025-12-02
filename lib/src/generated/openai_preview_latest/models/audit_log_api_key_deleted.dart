@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_api_key_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyDeleted with AuditLogApiKeyDeletedMappable {
   const AuditLogApiKeyDeleted({
     this.id,

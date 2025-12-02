@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_step_delta_step_details_message_creation_object_message_creation.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsMessageCreationObjectMessageCreation with RunStepDeltaStepDetailsMessageCreationObjectMessageCreationMappable {
   const RunStepDeltaStepDetailsMessageCreationObjectMessageCreation({
     this.messageId,

@@ -54,6 +54,10 @@ class ResponseMcpCallInProgressEventMapper
     #outputIndex: _f$outputIndex,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseMcpCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseMcpCallInProgressEvent(

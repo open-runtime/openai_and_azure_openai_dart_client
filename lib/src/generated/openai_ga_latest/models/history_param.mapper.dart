@@ -40,6 +40,10 @@ class HistoryParamMapper extends ClassMapperBase<HistoryParam> {
     #enabled: _f$enabled,
     #recentThreads: _f$recentThreads,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static HistoryParam _instantiate(DecodingData data) {
     return HistoryParam(

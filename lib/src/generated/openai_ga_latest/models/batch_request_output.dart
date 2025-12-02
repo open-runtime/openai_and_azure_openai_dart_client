@@ -10,7 +10,7 @@ import 'batch_request_output_response.dart';
 part 'batch_request_output.mapper.dart';
 
 /// The per-line object of the batch output and error files
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutput with BatchRequestOutputMappable {
   const BatchRequestOutput({
     this.id,

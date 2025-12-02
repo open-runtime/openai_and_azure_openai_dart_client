@@ -9,7 +9,7 @@ import 'project_rate_limit_object_object_enum.dart';
 part 'project_rate_limit.mapper.dart';
 
 /// Represents a project rate limit config.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectRateLimit with ProjectRateLimitMappable {
   const ProjectRateLimit({
     required this.objectEnum,

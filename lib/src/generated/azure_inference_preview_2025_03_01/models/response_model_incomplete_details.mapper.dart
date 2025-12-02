@@ -38,6 +38,10 @@ class ResponseModelIncompleteDetailsMapper
   final MappableFields<ResponseModelIncompleteDetails> fields = const {
     #reason: _f$reason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseModelIncompleteDetails _instantiate(DecodingData data) {
     return ResponseModelIncompleteDetails(reason: data.dec(_f$reason));

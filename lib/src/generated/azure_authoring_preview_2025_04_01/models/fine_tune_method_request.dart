@@ -8,7 +8,7 @@ import 'fine_tuning_method_type.dart';
 
 part 'fine_tune_method_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneMethodRequest with FineTuneMethodRequestMappable {
   const FineTuneMethodRequest({
     required this.type,

@@ -9,7 +9,7 @@ import 'purpose.dart';
 part 'file_details.mapper.dart';
 
 /// A file detail is a document used by batch service to fetch file blob details.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileDetails with FileDetailsMappable {
   const FileDetails({
     required this.filename,

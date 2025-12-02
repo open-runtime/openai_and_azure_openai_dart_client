@@ -39,6 +39,10 @@ class FileCreateMapper extends ClassMapperBase<FileCreate> {
     #purpose: _f$purpose,
     #contentUrl: _f$contentUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileCreate _instantiate(DecodingData data) {
     return FileCreate(

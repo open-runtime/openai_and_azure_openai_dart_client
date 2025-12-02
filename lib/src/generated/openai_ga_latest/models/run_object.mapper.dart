@@ -66,16 +66,12 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
   _f$runObjectRequiredAction = Field(
     'runObjectRequiredAction',
     _$runObjectRequiredAction,
-    key: r'RunObjectRequiredAction',
+    key: r'required_action',
   );
   static RunObjectLastError? _$runObjectLastError(RunObject v) =>
       v.runObjectLastError;
   static const Field<RunObject, RunObjectLastError> _f$runObjectLastError =
-      Field(
-        'runObjectLastError',
-        _$runObjectLastError,
-        key: r'RunObjectLastError',
-      );
+      Field('runObjectLastError', _$runObjectLastError, key: r'last_error');
   static int? _$expiresAt(RunObject v) => v.expiresAt;
   static const Field<RunObject, int> _f$expiresAt = Field(
     'expiresAt',
@@ -113,7 +109,7 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
   _f$runObjectIncompleteDetails = Field(
     'runObjectIncompleteDetails',
     _$runObjectIncompleteDetails,
-    key: r'RunObjectIncompleteDetails',
+    key: r'incomplete_details',
   );
   static String _$model(RunObject v) => v.model;
   static const Field<RunObject, String> _f$model = Field('model', _$model);
@@ -221,6 +217,10 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     #topP: _f$topP,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunObject _instantiate(DecodingData data) {
     return RunObject(

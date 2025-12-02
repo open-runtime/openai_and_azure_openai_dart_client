@@ -55,7 +55,7 @@ class RealtimeSessionCreateResponseAudioInputMapper
   _f$realtimeSessionCreateResponseAudioInputNoiseReduction = Field(
     'realtimeSessionCreateResponseAudioInputNoiseReduction',
     _$realtimeSessionCreateResponseAudioInputNoiseReduction,
-    key: r'RealtimeSessionCreateResponseAudioInputNoiseReduction',
+    key: r'noise_reduction',
     opt: true,
   );
   static RealtimeSessionCreateResponseAudioInputTurnDetection?
@@ -69,7 +69,7 @@ class RealtimeSessionCreateResponseAudioInputMapper
   _f$realtimeSessionCreateResponseAudioInputTurnDetection = Field(
     'realtimeSessionCreateResponseAudioInputTurnDetection',
     _$realtimeSessionCreateResponseAudioInputTurnDetection,
-    key: r'RealtimeSessionCreateResponseAudioInputTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
 
@@ -82,6 +82,10 @@ class RealtimeSessionCreateResponseAudioInputMapper
     #realtimeSessionCreateResponseAudioInputTurnDetection:
         _f$realtimeSessionCreateResponseAudioInputTurnDetection,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponseAudioInput _instantiate(
     DecodingData data,

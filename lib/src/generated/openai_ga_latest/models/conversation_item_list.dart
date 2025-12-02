@@ -9,7 +9,7 @@ import 'conversation_item.dart';
 part 'conversation_item_list.mapper.dart';
 
 /// A list of Conversation items.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ConversationItemList with ConversationItemListMappable {
   const ConversationItemList({
     required this.objectField,

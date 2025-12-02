@@ -10,7 +10,7 @@ import 'service_tier.dart';
 
 part 'create_model_response_properties.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModelResponseProperties with CreateModelResponsePropertiesMappable {
   const CreateModelResponseProperties({
     this.temperature = 1,

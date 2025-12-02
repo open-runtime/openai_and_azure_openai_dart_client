@@ -42,6 +42,10 @@ class CreateThreadAndRunRequestToolResourcesFileSearchMapper
   @override
   final MappableFields<CreateThreadAndRunRequestToolResourcesFileSearch>
   fields = const {#vectorStoreIds: _f$vectorStoreIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequestToolResourcesFileSearch _instantiate(
     DecodingData data,

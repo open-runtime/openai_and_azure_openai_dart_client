@@ -9,16 +9,16 @@ import 'realtime_session_create_response_audio_output.dart';
 
 part 'realtime_session_create_response_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseAudio with RealtimeSessionCreateResponseAudioMappable {
   const RealtimeSessionCreateResponseAudio({
     this.realtimeSessionCreateResponseAudioInput,
     this.realtimeSessionCreateResponseAudioOutput,
   });
 
-  @MappableField(key: 'RealtimeSessionCreateResponseAudioInput')
+  @MappableField(key: 'input')
   final RealtimeSessionCreateResponseAudioInput? realtimeSessionCreateResponseAudioInput;
-  @MappableField(key: 'RealtimeSessionCreateResponseAudioOutput')
+  @MappableField(key: 'output')
   final RealtimeSessionCreateResponseAudioOutput? realtimeSessionCreateResponseAudioOutput;
 
   static RealtimeSessionCreateResponseAudio fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioMapper.fromJson(json);

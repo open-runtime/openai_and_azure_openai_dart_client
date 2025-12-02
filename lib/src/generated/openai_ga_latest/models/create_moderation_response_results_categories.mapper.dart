@@ -122,6 +122,10 @@ class CreateModerationResponseResultsCategoriesMapper
         #violence: _f$violence,
         #violenceGraphic: _f$violenceGraphic,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModerationResponseResultsCategories _instantiate(
     DecodingData data,

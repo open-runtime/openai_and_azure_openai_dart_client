@@ -39,7 +39,7 @@ class WebhookEvalRunFailedMapper extends ClassMapperBase<WebhookEvalRunFailed> {
   _f$webhookEvalRunFailedData = Field(
     'webhookEvalRunFailedData',
     _$webhookEvalRunFailedData,
-    key: r'WebhookEvalRunFailedData',
+    key: r'data',
   );
   static WebhookEvalRunFailedTypeType _$type(WebhookEvalRunFailed v) => v.type;
   static const Field<WebhookEvalRunFailed, WebhookEvalRunFailedTypeType>
@@ -58,6 +58,10 @@ class WebhookEvalRunFailedMapper extends ClassMapperBase<WebhookEvalRunFailed> {
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookEvalRunFailed _instantiate(DecodingData data) {
     return WebhookEvalRunFailed(

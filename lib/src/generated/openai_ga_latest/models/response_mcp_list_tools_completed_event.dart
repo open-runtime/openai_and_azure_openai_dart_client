@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_mcp_list_tools_completed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_mcp_list_tools_completed_event.mapper.dart';
 
 /// Emitted when the list of available MCP tools has been successfully retrieved.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseMcpListToolsCompletedEvent with ResponseMcpListToolsCompletedEventMappable {
   const ResponseMcpListToolsCompletedEvent({
     required this.type,

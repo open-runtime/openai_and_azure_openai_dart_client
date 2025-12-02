@@ -37,6 +37,10 @@ class EffectiveAtMapper extends ClassMapperBase<EffectiveAt> {
     #lt: _f$lt,
     #lte: _f$lte,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EffectiveAt _instantiate(DecodingData data) {
     return EffectiveAt(

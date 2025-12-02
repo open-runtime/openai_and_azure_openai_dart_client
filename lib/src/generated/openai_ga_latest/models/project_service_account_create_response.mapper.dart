@@ -72,6 +72,10 @@ class ProjectServiceAccountCreateResponseMapper
     #createdAt: _f$createdAt,
     #apiKey: _f$apiKey,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectServiceAccountCreateResponse _instantiate(DecodingData data) {
     return ProjectServiceAccountCreateResponse(

@@ -23,6 +23,10 @@ class RealtimeAudioFormatsMapper extends ClassMapperBase<RealtimeAudioFormats> {
 
   @override
   final MappableFields<RealtimeAudioFormats> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeAudioFormats _instantiate(DecodingData data) {
     return RealtimeAudioFormats();

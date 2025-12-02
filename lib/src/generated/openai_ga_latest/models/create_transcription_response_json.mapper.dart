@@ -18,7 +18,7 @@ class CreateTranscriptionResponseJsonMapper
         _instance = CreateTranscriptionResponseJsonMapper._(),
       );
       CreateTranscriptionResponseJsonLogprobsMapper.ensureInitialized();
-      CreateTranscriptionResponseJsonUsageUsageUnionMapper.ensureInitialized();
+      CreateTranscriptionResponseJsonUsageUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,12 +39,12 @@ class CreateTranscriptionResponseJsonMapper
     List<CreateTranscriptionResponseJsonLogprobs>
   >
   _f$logprobs = Field('logprobs', _$logprobs, opt: true);
-  static CreateTranscriptionResponseJsonUsageUsageUnion? _$usage(
+  static CreateTranscriptionResponseJsonUsageUnion? _$usage(
     CreateTranscriptionResponseJson v,
   ) => v.usage;
   static const Field<
     CreateTranscriptionResponseJson,
-    CreateTranscriptionResponseJsonUsageUsageUnion
+    CreateTranscriptionResponseJsonUsageUnion
   >
   _f$usage = Field('usage', _$usage, opt: true);
 
@@ -54,6 +54,10 @@ class CreateTranscriptionResponseJsonMapper
     #logprobs: _f$logprobs,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranscriptionResponseJson _instantiate(DecodingData data) {
     return CreateTranscriptionResponseJson(
@@ -151,16 +155,16 @@ abstract class CreateTranscriptionResponseJsonCopyWith<
     >
   >?
   get logprobs;
-  CreateTranscriptionResponseJsonUsageUsageUnionCopyWith<
+  CreateTranscriptionResponseJsonUsageUnionCopyWith<
     $R,
-    CreateTranscriptionResponseJsonUsageUsageUnion,
-    CreateTranscriptionResponseJsonUsageUsageUnion
+    CreateTranscriptionResponseJsonUsageUnion,
+    CreateTranscriptionResponseJsonUsageUnion
   >?
   get usage;
   $R call({
     String? text,
     List<CreateTranscriptionResponseJsonLogprobs>? logprobs,
-    CreateTranscriptionResponseJsonUsageUsageUnion? usage,
+    CreateTranscriptionResponseJsonUsageUnion? usage,
   });
   CreateTranscriptionResponseJsonCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -202,10 +206,10 @@ class _CreateTranscriptionResponseJsonCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  CreateTranscriptionResponseJsonUsageUsageUnionCopyWith<
+  CreateTranscriptionResponseJsonUsageUnionCopyWith<
     $R,
-    CreateTranscriptionResponseJsonUsageUsageUnion,
-    CreateTranscriptionResponseJsonUsageUsageUnion
+    CreateTranscriptionResponseJsonUsageUnion,
+    CreateTranscriptionResponseJsonUsageUnion
   >?
   get usage => $value.usage?.copyWith.$chain((v) => call(usage: v));
   @override

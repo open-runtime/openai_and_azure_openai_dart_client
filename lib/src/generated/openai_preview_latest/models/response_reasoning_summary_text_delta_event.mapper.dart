@@ -60,6 +60,10 @@ class ResponseReasoningSummaryTextDeltaEventMapper
     #summaryIndex: _f$summaryIndex,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseReasoningSummaryTextDeltaEvent _instantiate(
     DecodingData data,

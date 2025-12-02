@@ -9,7 +9,7 @@ import 'function_object.dart';
 
 part 'assistant_tools_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFunction with AssistantToolsFunctionMappable {
   const AssistantToolsFunction({
     required this.type,

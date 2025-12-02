@@ -42,6 +42,10 @@ class ChatCompletionRequestMessageUserMapper
     #role: _f$role,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageUser _instantiate(DecodingData data) {
     return ChatCompletionRequestMessageUser(

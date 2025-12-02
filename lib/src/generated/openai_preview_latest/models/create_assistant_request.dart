@@ -6,13 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistants_api_response_format_option.dart';
 import 'create_assistant_request_tool_resources.dart';
-import 'create_assistant_request_tools_tools_union.dart';
+import 'create_assistant_request_tools_union.dart';
 import 'metadata.dart';
 import 'reasoning_effort.dart';
 
 part 'create_assistant_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequest with CreateAssistantRequestMappable {
   const CreateAssistantRequest({
     required this.model,
@@ -29,7 +29,7 @@ class CreateAssistantRequest with CreateAssistantRequestMappable {
   });
 
   final String model;
-  final List<CreateAssistantRequestToolsToolsUnion> tools;
+  final List<CreateAssistantRequestToolsUnion> tools;
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
@@ -38,7 +38,7 @@ class CreateAssistantRequest with CreateAssistantRequestMappable {
   final String? instructions;
   @MappableField(key: 'reasoning_effort')
   final ReasoningEffort? reasoningEffort;
-  @MappableField(key: 'CreateAssistantRequestToolResources')
+  @MappableField(key: 'tool_resources')
   final CreateAssistantRequestToolResources? createAssistantRequestToolResources;
   final Metadata? metadata;
   @MappableField(key: 'response_format')

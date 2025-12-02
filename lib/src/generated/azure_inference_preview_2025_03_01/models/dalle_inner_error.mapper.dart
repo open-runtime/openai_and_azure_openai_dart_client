@@ -52,6 +52,10 @@ class DalleInnerErrorMapper extends ClassMapperBase<DalleInnerError> {
     #contentFilterResults: _f$contentFilterResults,
     #revisedPrompt: _f$revisedPrompt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleInnerError _instantiate(DecodingData data) {
     return DalleInnerError(

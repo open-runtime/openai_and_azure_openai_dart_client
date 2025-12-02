@@ -39,6 +39,10 @@ class RealtimeSessionCreateRequestInputAudioTranscriptionMapper
   @override
   final MappableFields<RealtimeSessionCreateRequestInputAudioTranscription>
   fields = const {#model: _f$model};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateRequestInputAudioTranscription _instantiate(
     DecodingData data,

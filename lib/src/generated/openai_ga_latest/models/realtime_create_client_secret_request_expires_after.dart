@@ -8,7 +8,7 @@ import 'realtime_create_client_secret_request_expires_after_anchor_anchor.dart';
 
 part 'realtime_create_client_secret_request_expires_after.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCreateClientSecretRequestExpiresAfter with RealtimeCreateClientSecretRequestExpiresAfterMappable {
   const RealtimeCreateClientSecretRequestExpiresAfter({
     this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor.createdAt,

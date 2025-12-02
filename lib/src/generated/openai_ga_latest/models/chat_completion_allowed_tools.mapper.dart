@@ -42,6 +42,10 @@ class ChatCompletionAllowedToolsMapper
     #mode: _f$mode,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionAllowedTools _instantiate(DecodingData data) {
     return ChatCompletionAllowedTools(

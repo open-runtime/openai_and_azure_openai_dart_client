@@ -31,6 +31,10 @@ class AuditLogUserAddedDataMapper
 
   @override
   final MappableFields<AuditLogUserAddedData> fields = const {#role: _f$role};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogUserAddedData _instantiate(DecodingData data) {
     return AuditLogUserAddedData(role: data.dec(_f$role));

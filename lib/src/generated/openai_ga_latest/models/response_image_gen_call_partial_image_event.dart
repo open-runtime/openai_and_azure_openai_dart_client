@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_image_gen_call_partial_image_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_image_gen_call_partial_image_event.mapper.dart';
 
 /// Emitted when a partial image is available during image generation streaming.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseImageGenCallPartialImageEvent with ResponseImageGenCallPartialImageEventMappable {
   const ResponseImageGenCallPartialImageEvent({
     required this.type,

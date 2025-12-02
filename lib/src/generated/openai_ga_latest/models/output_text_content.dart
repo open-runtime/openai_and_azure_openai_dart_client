@@ -6,12 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'log_prob.dart';
+import 'output_content.dart';
+import 'output_message_content.dart';
 import 'output_text_content_type_type.dart';
 
 part 'output_text_content.mapper.dart';
 
 /// A text output from the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputTextContent with OutputTextContentMappable {
   const OutputTextContent({
     required this.text,

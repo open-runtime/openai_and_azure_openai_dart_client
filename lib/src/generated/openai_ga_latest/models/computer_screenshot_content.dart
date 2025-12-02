@@ -9,7 +9,7 @@ import 'computer_screenshot_content_type_type.dart';
 part 'computer_screenshot_content.mapper.dart';
 
 /// A screenshot of a computer.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerScreenshotContent with ComputerScreenshotContentMappable {
   const ComputerScreenshotContent({
     required this.imageUrl,

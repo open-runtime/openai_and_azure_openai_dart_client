@@ -23,6 +23,10 @@ class ResponseModalitiesMapper extends ClassMapperBase<ResponseModalities> {
 
   @override
   final MappableFields<ResponseModalities> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseModalities _instantiate(DecodingData data) {
     return ResponseModalities();

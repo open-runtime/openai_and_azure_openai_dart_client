@@ -12,7 +12,7 @@ import 'audio_word.dart';
 part 'audio_verbose_response.mapper.dart';
 
 /// Translation or transcription response when response_format was verbose_json
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioVerboseResponse with AudioVerboseResponseMappable {
   const AudioVerboseResponse({
     required this.text,

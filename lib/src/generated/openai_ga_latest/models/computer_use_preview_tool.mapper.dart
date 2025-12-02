@@ -57,6 +57,10 @@ class ComputerUsePreviewToolMapper
     #displayHeight: _f$displayHeight,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComputerUsePreviewTool _instantiate(DecodingData data) {
     return ComputerUsePreviewTool(

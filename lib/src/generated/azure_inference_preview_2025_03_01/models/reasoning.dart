@@ -14,7 +14,7 @@ part 'reasoning.mapper.dart';
 /// Configuration options for .
 /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Reasoning with ReasoningMappable {
   const Reasoning({
     required this.effort,

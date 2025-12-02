@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'fine_tuning_job_checkpoint_list.mapper.dart';
 
 /// Represents a list of checkpoints.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobCheckpointList with FineTuningJobCheckpointListMappable {
   const FineTuningJobCheckpointList({
     this.objectField,

@@ -35,6 +35,10 @@ class DragMapper extends ClassMapperBase<Drag> {
 
   @override
   final MappableFields<Drag> fields = const {#path: _f$path, #type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Drag _instantiate(DecodingData data) {
     return Drag(path: data.dec(_f$path), type: data.dec(_f$type));

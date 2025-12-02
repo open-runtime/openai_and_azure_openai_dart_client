@@ -43,6 +43,10 @@ class FunctionShellCallOutputTimeoutOutcomeMapper
   final MappableFields<FunctionShellCallOutputTimeoutOutcome> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputTimeoutOutcome _instantiate(DecodingData data) {
     return FunctionShellCallOutputTimeoutOutcome(type: data.dec(_f$type));

@@ -54,6 +54,10 @@ class FineTuningHyperParametersMapper
     #batchSize: _f$batchSize,
     #learningRateMultiplier: _f$learningRateMultiplier,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningHyperParameters _instantiate(DecodingData data) {
     return FineTuningHyperParameters(

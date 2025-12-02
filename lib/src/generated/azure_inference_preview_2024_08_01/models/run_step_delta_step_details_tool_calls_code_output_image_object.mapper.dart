@@ -53,7 +53,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper
   _f$runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage = Field(
     'runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage',
     _$runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage,
-    key: r'RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage',
+    key: r'image',
     opt: true,
   );
 
@@ -65,6 +65,10 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper
     #runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage:
         _f$runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsCodeOutputImageObject _instantiate(
     DecodingData data,

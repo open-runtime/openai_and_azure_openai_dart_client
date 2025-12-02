@@ -8,17 +8,19 @@ import 'metadata.dart';
 import 'prompt.dart';
 import 'realtime_conversation_item.dart';
 import 'realtime_response_create_params_audio.dart';
+import 'realtime_response_create_params_conversation_union.dart';
+import 'realtime_response_create_params_max_output_tokens_union.dart';
 import 'realtime_response_create_params_output_modalities_output_modalities.dart';
-import 'realtime_response_create_params_tool_choice_tool_choice_union.dart';
-import 'realtime_response_create_params_tools_tools_union.dart';
+import 'realtime_response_create_params_tool_choice_union.dart';
+import 'realtime_response_create_params_tools_union.dart';
 
 part 'realtime_response_create_params.mapper.dart';
 
 /// Create a new Realtime response with these parameters
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   const RealtimeResponseCreateParams({
-    this.toolChoice = const RealtimeResponseCreateParamsToolChoiceToolChoiceUnionVariantString(value: 'auto'),
+    this.toolChoice = const RealtimeResponseCreateParamsToolChoiceUnionVariantString(value: 'auto'),
     this.outputModalities,
     this.instructions,
     this.realtimeResponseCreateParamsAudio,
@@ -31,16 +33,17 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   });
 
   @MappableField(key: 'tool_choice')
-  final RealtimeResponseCreateParamsToolChoiceToolChoiceUnion toolChoice;
+  final RealtimeResponseCreateParamsToolChoiceUnion toolChoice;
   @MappableField(key: 'output_modalities')
   final List<RealtimeResponseCreateParamsOutputModalitiesOutputModalities>? outputModalities;
   final String? instructions;
-  @MappableField(key: 'RealtimeResponseCreateParamsAudio')
+  @MappableField(key: 'audio')
   final RealtimeResponseCreateParamsAudio? realtimeResponseCreateParamsAudio;
-  final List<RealtimeResponseCreateParamsToolsToolsUnion>? tools;
-  @MappableField(key: 'max_output_tokens')
-  final String? maxOutputTokens;
-  final String? conversation;
+  final List<RealtimeResponseCreateParamsToolsUnion>? tools;
+  @MappableField(key: 'max_output_tokens', hook: const RealtimeResponseCreateParamsMaxOutputTokensUnionHook())
+  final RealtimeResponseCreateParamsMaxOutputTokensUnion? maxOutputTokens;
+  @MappableField(hook: const RealtimeResponseCreateParamsConversationUnionHook())
+  final RealtimeResponseCreateParamsConversationUnion? conversation;
   final Metadata? metadata;
   final Prompt? prompt;
   final List<RealtimeConversationItem>? input;

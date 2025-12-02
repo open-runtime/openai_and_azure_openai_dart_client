@@ -8,7 +8,7 @@ import 'create_upload_request_purpose_purpose.dart';
 
 part 'create_upload_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateUploadRequest with CreateUploadRequestMappable {
   const CreateUploadRequest({
     required this.filename,

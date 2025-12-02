@@ -12,7 +12,7 @@ part 'webhook_batch_failed.mapper.dart';
 
 /// Sent when a batch API request has failed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchFailed with WebhookBatchFailedMappable {
   const WebhookBatchFailed({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookBatchFailed with WebhookBatchFailedMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookBatchFailedData')
+  @MappableField(key: 'data')
   final WebhookBatchFailedData webhookBatchFailedData;
   final WebhookBatchFailedTypeType type;
   @MappableField(key: 'object')

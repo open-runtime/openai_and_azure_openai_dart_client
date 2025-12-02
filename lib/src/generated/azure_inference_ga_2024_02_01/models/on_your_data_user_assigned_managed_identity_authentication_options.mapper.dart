@@ -62,6 +62,10 @@ class OnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper
     #type: _f$type,
     #managedIdentityResourceId: _f$managedIdentityResourceId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataUserAssignedManagedIdentityAuthenticationOptions
   _instantiate(DecodingData data) {

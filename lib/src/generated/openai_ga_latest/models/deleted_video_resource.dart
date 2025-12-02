@@ -9,7 +9,7 @@ import 'deleted_video_resource_object_object_enum.dart';
 part 'deleted_video_resource.mapper.dart';
 
 /// Confirmation payload returned after deleting a video.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeletedVideoResource with DeletedVideoResourceMappable {
   const DeletedVideoResource({
     required this.deleted,

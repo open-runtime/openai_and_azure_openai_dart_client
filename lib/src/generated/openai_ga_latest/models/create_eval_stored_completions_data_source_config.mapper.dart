@@ -46,6 +46,10 @@ class CreateEvalStoredCompletionsDataSourceConfigMapper
   @override
   final MappableFields<CreateEvalStoredCompletionsDataSourceConfig> fields =
       const {#metadata: _f$metadata, #type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalStoredCompletionsDataSourceConfig _instantiate(
     DecodingData data,

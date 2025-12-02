@@ -10,7 +10,7 @@ import 'project_api_key_owner.dart';
 part 'project_api_key.mapper.dart';
 
 /// Represents an individual API key in a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKey with ProjectApiKeyMappable {
   const ProjectApiKey({
     required this.objectEnum,
@@ -32,7 +32,7 @@ class ProjectApiKey with ProjectApiKeyMappable {
   @MappableField(key: 'last_used_at')
   final int lastUsedAt;
   final String id;
-  @MappableField(key: 'ProjectApiKeyOwner')
+  @MappableField(key: 'owner')
   final ProjectApiKeyOwner projectApiKeyOwner;
 
   static ProjectApiKey fromJson(Map<String, dynamic> json) => ProjectApiKeyMapper.fromJson(json);

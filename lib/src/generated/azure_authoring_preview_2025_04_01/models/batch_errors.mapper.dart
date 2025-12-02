@@ -41,6 +41,10 @@ class BatchErrorsMapper extends ClassMapperBase<BatchErrors> {
     #objectField: _f$objectField,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchErrors _instantiate(DecodingData data) {
     return BatchErrors(

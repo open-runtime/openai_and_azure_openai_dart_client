@@ -46,6 +46,10 @@ class GenericEmbeddingSettingsMapper
     #deploymentName: _f$deploymentName,
     #modelName: _f$modelName,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GenericEmbeddingSettings _instantiate(DecodingData data) {
     return GenericEmbeddingSettings(

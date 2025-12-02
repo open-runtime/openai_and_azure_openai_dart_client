@@ -10,9 +10,8 @@ part 'user_list_resource_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum UserListResourceObjectObjectEnum {
-  /// The name has been replaced because it contains a keyword. Original name: `list`.
   @MappableValue('list') 
-  valueList,
+  list,
 
   @MappableValue('unknown') 
   unknown;

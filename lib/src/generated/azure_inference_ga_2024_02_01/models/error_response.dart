@@ -8,7 +8,7 @@ import 'error.dart';
 
 part 'error_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ErrorResponse with ErrorResponseMappable {
   const ErrorResponse({
     this.error,

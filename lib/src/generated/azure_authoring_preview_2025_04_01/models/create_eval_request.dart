@@ -10,7 +10,7 @@ import 'metadata.dart';
 
 part 'create_eval_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRequest with CreateEvalRequestMappable {
   const CreateEvalRequest({
     required this.dataSourceConfig,

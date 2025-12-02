@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'grader_multi_graders_graders_union.dart';
+import 'grader_multi_graders_union.dart';
 import 'grader_multi_type_type.dart';
 
 part 'grader_multi.mapper.dart';
 
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderMulti with GraderMultiMappable {
   const GraderMulti({
     required this.name,
@@ -20,7 +20,7 @@ class GraderMulti with GraderMultiMappable {
   });
 
   final String name;
-  final GraderMultiGradersGradersUnion graders;
+  final GraderMultiGradersUnion graders;
   @MappableField(key: 'calculate_output')
   final String calculateOutput;
   final GraderMultiTypeType type;

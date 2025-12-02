@@ -42,6 +42,10 @@ class StaticChunkingStrategyMapper
     #maxChunkSizeTokens: _f$maxChunkSizeTokens,
     #chunkOverlapTokens: _f$chunkOverlapTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StaticChunkingStrategy _instantiate(DecodingData data) {
     return StaticChunkingStrategy(

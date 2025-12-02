@@ -39,6 +39,10 @@ class InferenceOptionsMapper extends ClassMapperBase<InferenceOptions> {
     #toolChoice: _f$toolChoice,
     #model: _f$model,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InferenceOptions _instantiate(DecodingData data) {
     return InferenceOptions(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'response_prompt_variables.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponsePromptVariables with ResponsePromptVariablesMappable {
   const ResponsePromptVariables();
 

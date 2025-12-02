@@ -62,6 +62,10 @@ class VideoListResourceMapper extends ClassMapperBase<VideoListResource> {
     #hasMore: _f$hasMore,
     #objectField: _f$objectField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VideoListResource _instantiate(DecodingData data) {
     return VideoListResource(

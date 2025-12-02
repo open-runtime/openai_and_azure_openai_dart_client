@@ -280,6 +280,10 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     #usage: _f$usage,
     #conversation: _f$conversation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseModel _instantiate(DecodingData data) {
     return ResponseModel(

@@ -9,7 +9,7 @@ import 'chat_completion_response_message_annotations_url_citation.dart';
 
 part 'chat_completion_response_message_annotations.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionResponseMessageAnnotations with ChatCompletionResponseMessageAnnotationsMappable {
   const ChatCompletionResponseMessageAnnotations({
     required this.type,
@@ -17,7 +17,7 @@ class ChatCompletionResponseMessageAnnotations with ChatCompletionResponseMessag
   });
 
   final ChatCompletionResponseMessageAnnotationsTypeType type;
-  @MappableField(key: 'ChatCompletionResponseMessageAnnotationsUrlCitation')
+  @MappableField(key: 'url_citation')
   final ChatCompletionResponseMessageAnnotationsUrlCitation chatCompletionResponseMessageAnnotationsUrlCitation;
 
   static ChatCompletionResponseMessageAnnotations fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageAnnotationsMapper.fromJson(json);

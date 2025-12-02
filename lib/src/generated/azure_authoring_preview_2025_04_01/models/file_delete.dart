@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'file_delete.mapper.dart';
 
 /// Defines the response for File Delete.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileDelete with FileDeleteMappable {
   const FileDelete({
     required this.objectField,

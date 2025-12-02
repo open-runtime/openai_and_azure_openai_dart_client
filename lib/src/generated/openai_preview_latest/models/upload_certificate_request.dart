@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'upload_certificate_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadCertificateRequest with UploadCertificateRequestMappable {
   const UploadCertificateRequest({
     required this.content,

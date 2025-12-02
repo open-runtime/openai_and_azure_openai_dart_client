@@ -40,6 +40,10 @@ class CompleteUploadRequestMapper
     #partIds: _f$partIds,
     #md5: _f$md5,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompleteUploadRequest _instantiate(DecodingData data) {
     return CompleteUploadRequest(

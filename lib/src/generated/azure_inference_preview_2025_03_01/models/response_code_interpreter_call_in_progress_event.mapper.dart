@@ -58,6 +58,10 @@ class ResponseCodeInterpreterCallInProgressEventMapper
         #outputIndex: _f$outputIndex,
         #codeInterpreterCall: _f$codeInterpreterCall,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCodeInterpreterCallInProgressEvent _instantiate(
     DecodingData data,

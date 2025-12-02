@@ -41,7 +41,7 @@ class ResponseUsageMapper extends ClassMapperBase<ResponseUsage> {
   _f$responseUsageOutputTokensDetails = Field(
     'responseUsageOutputTokensDetails',
     _$responseUsageOutputTokensDetails,
-    key: r'ResponseUsageOutputTokensDetails',
+    key: r'output_tokens_details',
   );
   static int _$totalTokens(ResponseUsage v) => v.totalTokens;
   static const Field<ResponseUsage, int> _f$totalTokens = Field(
@@ -57,6 +57,10 @@ class ResponseUsageMapper extends ClassMapperBase<ResponseUsage> {
     #responseUsageOutputTokensDetails: _f$responseUsageOutputTokensDetails,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseUsage _instantiate(DecodingData data) {
     return ResponseUsage(

@@ -12,7 +12,7 @@ part 'webhook_response_completed.mapper.dart';
 
 /// Sent when a background response has been completed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCompleted with WebhookResponseCompletedMappable {
   const WebhookResponseCompleted({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookResponseCompleted with WebhookResponseCompletedMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookResponseCompletedData')
+  @MappableField(key: 'data')
   final WebhookResponseCompletedData webhookResponseCompletedData;
   final WebhookResponseCompletedTypeType type;
   @MappableField(key: 'object')

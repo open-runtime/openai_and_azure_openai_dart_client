@@ -8,7 +8,7 @@ import 'images_response_usage_input_tokens_details.dart';
 
 part 'images_response_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesResponseUsage with ImagesResponseUsageMappable {
   const ImagesResponseUsage({
     required this.totalTokens,
@@ -23,7 +23,7 @@ class ImagesResponseUsage with ImagesResponseUsageMappable {
   final int inputTokens;
   @MappableField(key: 'output_tokens')
   final int outputTokens;
-  @MappableField(key: 'ImagesResponseUsageInputTokensDetails')
+  @MappableField(key: 'input_tokens_details')
   final ImagesResponseUsageInputTokensDetails imagesResponseUsageInputTokensDetails;
 
   static ImagesResponseUsage fromJson(Map<String, dynamic> json) => ImagesResponseUsageMapper.fromJson(json);

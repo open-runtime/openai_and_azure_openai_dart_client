@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_step_completion_usage_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [RunStepCompletionUsageUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RunStepCompletionUsageUnionVariant1])
 sealed class RunStepCompletionUsageUnion with RunStepCompletionUsageUnionMappable {
   const RunStepCompletionUsageUnion();
 
@@ -26,10 +26,13 @@ extension RunStepCompletionUsageUnionDeserializer on RunStepCompletionUsageUnion
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepCompletionUsageUnionVariant1 extends RunStepCompletionUsageUnion with RunStepCompletionUsageUnionVariant1Mappable {
+  @MappableField(key: 'completion_tokens')
   final int completionTokens;
+  @MappableField(key: 'prompt_tokens')
   final int promptTokens;
+  @MappableField(key: 'total_tokens')
   final int totalTokens;
 
   const RunStepCompletionUsageUnionVariant1({

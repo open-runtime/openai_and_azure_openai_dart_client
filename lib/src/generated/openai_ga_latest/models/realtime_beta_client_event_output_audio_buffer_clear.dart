@@ -12,7 +12,7 @@ part 'realtime_beta_client_event_output_audio_buffer_clear.mapper.dart';
 /// generation of the current response.
 /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventOutputAudioBufferClear with RealtimeBetaClientEventOutputAudioBufferClearMappable {
   const RealtimeBetaClientEventOutputAudioBufferClear({
     required this.type,

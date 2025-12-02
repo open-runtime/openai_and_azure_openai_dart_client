@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'output_content.dart';
 import 'refusal_content_type_type.dart';
 
 part 'refusal_content.mapper.dart';
 
 /// A refusal from the model.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RefusalContent with RefusalContentMappable {
   const RefusalContent({
     required this.refusal,

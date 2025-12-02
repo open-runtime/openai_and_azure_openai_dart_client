@@ -28,6 +28,10 @@ class AssistantToolsCodeMapper extends ClassMapperBase<AssistantToolsCode> {
 
   @override
   final MappableFields<AssistantToolsCode> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsCode _instantiate(DecodingData data) {
     return AssistantToolsCode(type: data.dec(_f$type));

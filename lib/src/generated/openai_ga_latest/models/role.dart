@@ -9,7 +9,7 @@ import 'role_object_object_enum.dart';
 part 'role.mapper.dart';
 
 /// Details about a role that can be assigned through the public Roles API.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Role with RoleMappable {
   const Role({
     required this.objectEnum,

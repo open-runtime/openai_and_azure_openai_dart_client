@@ -8,7 +8,7 @@ import 'chat_completion_token_logprob.dart';
 
 part 'create_chat_completion_stream_response_choices_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionStreamResponseChoicesLogprobs with CreateChatCompletionStreamResponseChoicesLogprobsMappable {
   const CreateChatCompletionStreamResponseChoicesLogprobs({
     required this.content,

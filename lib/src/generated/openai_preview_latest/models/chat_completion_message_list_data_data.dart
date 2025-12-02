@@ -13,7 +13,7 @@ import 'chat_completion_response_message_role_role.dart';
 
 part 'chat_completion_message_list_data_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageListDataData with ChatCompletionMessageListDataDataMappable {
   const ChatCompletionMessageListDataData({
     required this.content,
@@ -33,9 +33,9 @@ class ChatCompletionMessageListDataData with ChatCompletionMessageListDataDataMa
   @MappableField(key: 'tool_calls')
   final ChatCompletionMessageToolCalls? toolCalls;
   final List<ChatCompletionResponseMessageAnnotations>? annotations;
-  @MappableField(key: 'ChatCompletionResponseMessageFunctionCall')
+  @MappableField(key: 'function_call')
   final ChatCompletionResponseMessageFunctionCall? chatCompletionResponseMessageFunctionCall;
-  @MappableField(key: 'ChatCompletionResponseMessageAudio')
+  @MappableField(key: 'audio')
   final ChatCompletionResponseMessageAudio? chatCompletionResponseMessageAudio;
 
   static ChatCompletionMessageListDataData fromJson(Map<String, dynamic> json) => ChatCompletionMessageListDataDataMapper.fromJson(json);

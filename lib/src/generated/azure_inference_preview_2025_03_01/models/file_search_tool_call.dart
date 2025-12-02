@@ -7,13 +7,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'file_search_tool_call_results.dart';
 import 'file_search_tool_call_status_status.dart';
 import 'file_search_tool_call_type_type.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'file_search_tool_call.mapper.dart';
 
 /// The results of a file search tool call. See the .
 /// [file search guide](/docs/guides/tools-file-search) for more information.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchToolCall with FileSearchToolCallMappable {
   const FileSearchToolCall({
     required this.id,

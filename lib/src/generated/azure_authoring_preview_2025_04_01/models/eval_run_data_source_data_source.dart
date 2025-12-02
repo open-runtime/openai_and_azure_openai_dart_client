@@ -16,7 +16,7 @@ import 'create_eval_jsonl_run_data_source_type_type.dart';
 part 'eval_run_data_source_data_source.mapper.dart';
 
 /// Information about the run's data source.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunDataSourceDataSource with EvalRunDataSourceDataSourceMappable {
   const EvalRunDataSourceDataSource({
     required this.createEvalCompletionsRunDataSourceSource,
@@ -27,14 +27,14 @@ class EvalRunDataSourceDataSource with EvalRunDataSourceDataSourceMappable {
     this.createEvalCompletionsRunDataSourceSamplingParams,
   });
 
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceSource')
+  @MappableField(key: 'source')
   final CreateEvalCompletionsRunDataSourceSource createEvalCompletionsRunDataSourceSource;
   final CreateEvalJsonlRunDataSourceSourceSource source;
   final CreateEvalJsonlRunDataSourceTypeType type;
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceInputMessages')
+  @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessages? createEvalCompletionsRunDataSourceInputMessages;
   final String? model;
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceSamplingParams')
+  @MappableField(key: 'sampling_params')
   final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
 
   static EvalRunDataSourceDataSource fromJson(Map<String, dynamic> json) => EvalRunDataSourceDataSourceMapper.fromJson(json);

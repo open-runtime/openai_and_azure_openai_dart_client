@@ -7,14 +7,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'realtime_function_tool.dart';
 import 'realtime_session_create_response_audio.dart';
 import 'realtime_session_create_response_include_include.dart';
-import 'realtime_session_create_response_tracing_tracing_union.dart';
+import 'realtime_session_create_response_max_output_tokens_union.dart';
+import 'realtime_session_create_response_tracing_union.dart';
 import 'realtime_session_create_response_turn_detection.dart';
 
 part 'realtime_session_create_response.mapper.dart';
 
 /// A Realtime session configuration object.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   const RealtimeSessionCreateResponse({
     this.id,
@@ -42,16 +43,16 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   @MappableField(key: 'output_modalities')
   final dynamic? outputModalities;
   final String? instructions;
-  @MappableField(key: 'RealtimeSessionCreateResponseAudio')
+  @MappableField(key: 'audio')
   final RealtimeSessionCreateResponseAudio? realtimeSessionCreateResponseAudio;
-  final RealtimeSessionCreateResponseTracingTracingUnion? tracing;
-  @MappableField(key: 'RealtimeSessionCreateResponseTurnDetection')
+  final RealtimeSessionCreateResponseTracingUnion? tracing;
+  @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateResponseTurnDetection? realtimeSessionCreateResponseTurnDetection;
   final List<RealtimeFunctionTool>? tools;
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
-  @MappableField(key: 'max_output_tokens')
-  final String? maxOutputTokens;
+  @MappableField(key: 'max_output_tokens', hook: const RealtimeSessionCreateResponseMaxOutputTokensUnionHook())
+  final RealtimeSessionCreateResponseMaxOutputTokensUnion? maxOutputTokens;
 
   static RealtimeSessionCreateResponse fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseMapper.fromJson(json);
 

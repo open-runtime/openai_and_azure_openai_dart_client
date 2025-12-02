@@ -44,6 +44,10 @@ class GroupUserDeletedResourceMapper
     #objectEnum: _f$objectEnum,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupUserDeletedResource _instantiate(DecodingData data) {
     return GroupUserDeletedResource(

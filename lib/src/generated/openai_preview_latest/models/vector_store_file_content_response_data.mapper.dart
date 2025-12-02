@@ -36,6 +36,10 @@ class VectorStoreFileContentResponseDataMapper
     #type: _f$type,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileContentResponseData _instantiate(DecodingData data) {
     return VectorStoreFileContentResponseData(

@@ -32,6 +32,10 @@ class WebhookResponseFailedDataMapper
 
   @override
   final MappableFields<WebhookResponseFailedData> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseFailedData _instantiate(DecodingData data) {
     return WebhookResponseFailedData(id: data.dec(_f$id));

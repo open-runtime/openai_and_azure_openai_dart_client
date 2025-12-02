@@ -44,6 +44,10 @@ class AuditLogCheckpointPermissionCreatedDataMapper
     #projectId: _f$projectId,
     #fineTunedModelCheckpoint: _f$fineTunedModelCheckpoint,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogCheckpointPermissionCreatedData _instantiate(
     DecodingData data,

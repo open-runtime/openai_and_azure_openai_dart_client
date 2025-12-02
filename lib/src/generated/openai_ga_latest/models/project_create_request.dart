@@ -8,7 +8,7 @@ import 'project_create_request_geography_geography.dart';
 
 part 'project_create_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectCreateRequest with ProjectCreateRequestMappable {
   const ProjectCreateRequest({
     required this.name,

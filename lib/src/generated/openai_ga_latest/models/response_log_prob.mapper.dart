@@ -48,6 +48,10 @@ class ResponseLogProbMapper extends ClassMapperBase<ResponseLogProb> {
     #logprob: _f$logprob,
     #topLogprobs: _f$topLogprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseLogProb _instantiate(DecodingData data) {
     return ResponseLogProb(

@@ -39,6 +39,10 @@ class LogprobMapper extends ClassMapperBase<Logprob> {
     #token: _f$token,
     #logprob: _f$logprob,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Logprob _instantiate(DecodingData data) {
     return Logprob(token: data.dec(_f$token), logprob: data.dec(_f$logprob));

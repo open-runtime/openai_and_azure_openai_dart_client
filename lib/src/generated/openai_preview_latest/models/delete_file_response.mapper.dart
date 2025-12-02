@@ -41,6 +41,10 @@ class DeleteFileResponseMapper extends ClassMapperBase<DeleteFileResponse> {
     #objectEnum: _f$objectEnum,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteFileResponse _instantiate(DecodingData data) {
     return DeleteFileResponse(

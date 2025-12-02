@@ -72,6 +72,10 @@ class ResponseTextDeltaEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextDeltaEvent _instantiate(DecodingData data) {
     return ResponseTextDeltaEvent(

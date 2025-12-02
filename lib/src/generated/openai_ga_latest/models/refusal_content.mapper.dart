@@ -40,6 +40,10 @@ class RefusalContentMapper extends ClassMapperBase<RefusalContent> {
     #refusal: _f$refusal,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RefusalContent _instantiate(DecodingData data) {
     return RefusalContent(

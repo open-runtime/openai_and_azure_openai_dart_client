@@ -9,7 +9,7 @@ import 'target_type.dart';
 part 'azure_ai_search_index.mapper.dart';
 
 /// Azure AI Search Index.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureAiSearchIndex with AzureAiSearchIndexMappable {
   const AzureAiSearchIndex({
     required this.kind,

@@ -5,13 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
+import 'output_content.dart';
 import 'output_text_type_type.dart';
 
 part 'output_text.mapper.dart';
 
 /// A text output from the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputText with OutputTextMappable {
   const OutputText({
     required this.type,

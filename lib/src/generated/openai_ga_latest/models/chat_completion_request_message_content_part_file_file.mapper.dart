@@ -47,6 +47,10 @@ class ChatCompletionRequestMessageContentPartFileFileMapper
         #fileData: _f$fileData,
         #fileId: _f$fileId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPartFileFile _instantiate(
     DecodingData data,

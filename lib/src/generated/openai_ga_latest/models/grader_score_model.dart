@@ -12,7 +12,7 @@ part 'grader_score_model.mapper.dart';
 
 /// A ScoreModelGrader object that uses a model to assign a score to the input.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderScoreModel with GraderScoreModelMappable {
   const GraderScoreModel({
     required this.type,
@@ -27,7 +27,7 @@ class GraderScoreModel with GraderScoreModelMappable {
   final String name;
   final String model;
   final List<EvalItem> input;
-  @MappableField(key: 'GraderScoreModelSamplingParams')
+  @MappableField(key: 'sampling_params')
   final GraderScoreModelSamplingParams? graderScoreModelSamplingParams;
   final List<num>? range;
 

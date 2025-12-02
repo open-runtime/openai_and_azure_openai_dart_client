@@ -8,7 +8,7 @@ import 'approximate_location_type_type.dart';
 
 part 'approximate_location.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApproximateLocation with ApproximateLocationMappable {
   const ApproximateLocation({
     this.country,

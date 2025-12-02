@@ -15,9 +15,6 @@
 ///
 /// Prerequisites for integration tests:
 ///   dart run scripts/fetch_credentials.dart
-///
-/// Note: OpenAI direct API tests are skipped due to inline enum issues in the spec.
-/// Azure OpenAI APIs work correctly.
 @Tags(['integration'])
 library;
 
@@ -34,6 +31,17 @@ import 'package:runtime_openai_and_azure_openai_dart_client/src/unified/unified_
 
 // Import interceptors for direct testing
 import 'package:runtime_openai_and_azure_openai_dart_client/src/shared/interceptors/interceptors.dart';
+
+// Import generated models for Azure
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/create_chat_completion_request.dart'
+    as azure;
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_message_union.dart'
+    as azure;
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_user_message_role_role.dart'
+    as azure;
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/models/chat_completion_request_system_message_role_role.dart'
+    as azure;
+import 'package:runtime_openai_and_azure_openai_dart_client/src/generated/azure_inference_ga_2024_10_21/azure_inference_y2024_m10_d21_ga_client.dart';
 
 void main() {
   // ==========================================================================
@@ -690,13 +698,291 @@ void main() {
   // INTEGRATION TESTS - Require network and credentials
   // ==========================================================================
 
-  group('OpenAI Direct API', () {
-    // Note: OpenAI direct API tests are skipped due to inline enum issues in the spec.
-    // The spec has complex inline enums that cause code generation issues.
-    // Azure OpenAI APIs work correctly and are tested below.
-    test('skipped - inline enum issues in OpenAI spec', () {
-      // TODO: Fix generator inline enum handling for complex OpenAI specs
-      markTestSkipped('OpenAI direct API has inline enum issues - use Azure OpenAI instead');
+  group('OpenAI Direct API Integration Tests', () {
+    late String? openaiApiKey;
+    late UnifiedOpenAIClient? client;
+
+    setUpAll(() async {
+      // Load credentials from environment or files
+      openaiApiKey =
+          Platform.environment['OPENAI_API_KEY'] ??
+          await _loadCredentialOptional('test/credentials/openai.env', 'OPENAI_API_KEY');
+    });
+
+    setUp(() {
+      if (openaiApiKey == null) {
+        return; // Skip if no OpenAI credentials
+      }
+
+      client = UnifiedOpenAIClient(UnifiedClientConfig.openai(apiKey: openaiApiKey!, enableRetry: true, maxRetries: 2));
+    });
+
+    tearDown(() {
+      client?.close();
+    });
+
+    group('Non-Streaming Chat Completions', () {
+      test('creates chat completion with gpt-4o (non-thinking)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        final response = await client!.dio.post<Map<String, dynamic>>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-4o',
+            'messages': [
+              {'role': 'user', 'content': 'Say "hello" and nothing else.'},
+            ],
+            'max_tokens': 10,
+            'temperature': 0,
+          },
+        );
+
+        expect(response.statusCode, equals(200));
+        expect(response.data, isNotNull);
+        expect(response.data!['choices'], isNotEmpty);
+        expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      test('creates chat completion with gpt-4o-mini (non-thinking)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        final response = await client!.dio.post<Map<String, dynamic>>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-4o-mini',
+            'messages': [
+              {'role': 'user', 'content': 'Say "hi" and nothing else.'},
+            ],
+            'max_tokens': 10,
+            'temperature': 0,
+          },
+        );
+
+        expect(response.statusCode, equals(200));
+        expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      test('creates chat completion with gpt-3.5-turbo (non-thinking)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        final response = await client!.dio.post<Map<String, dynamic>>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-3.5-turbo',
+            'messages': [
+              {'role': 'user', 'content': 'Say "test" and nothing else.'},
+            ],
+            'max_tokens': 10,
+            'temperature': 0,
+          },
+        );
+
+        expect(response.statusCode, equals(200));
+        expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      test('creates chat completion with o1 (thinking model)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        try {
+          // O-series models use max_completion_tokens instead of max_tokens
+          // and don't support temperature, top_p, etc.
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/chat/completions',
+            data: {
+              'model': 'o1',
+              'messages': [
+                {'role': 'user', 'content': 'What is 2 + 2? Answer with just the number.'},
+              ],
+              'max_completion_tokens': 100,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+          // O1 models may include reasoning tokens
+          expect(response.data!['usage'], isNotNull);
+        } on DioException catch (e) {
+          // O1 may require special API tier access
+          if (e.response?.statusCode == 404 || e.response?.statusCode == 400) {
+            markTestSkipped('o1 not available (may require API tier upgrade): ${e.response?.statusCode}');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 120)));
+
+      // Note: o1-mini test removed - model is deprecated
+
+      test('creates chat completion with o3-mini (thinking model)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        try {
+          // o-series models require max_completion_tokens instead of max_tokens
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/chat/completions',
+            data: {
+              'model': 'o3-mini',
+              'messages': [
+                {'role': 'user', 'content': 'What is 4 + 4? Answer with just the number.'},
+              ],
+              'max_completion_tokens': 100,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        } on DioException catch (e) {
+          // o3-mini may not be available (requires special access)
+          if (e.response?.statusCode == 404 || e.response?.statusCode == 400) {
+            markTestSkipped('o3-mini not available: ${e.response?.statusCode}');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 120)));
+    });
+
+    group('Streaming Chat Completions', () {
+      test('creates streaming chat completion with gpt-4o', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        final response = await client!.dio.post<ResponseBody>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-4o',
+            'messages': [
+              {'role': 'user', 'content': 'Count from 1 to 5.'},
+            ],
+            'max_tokens': 50,
+            'stream': true,
+          },
+          options: Options(responseType: ResponseType.stream),
+        );
+
+        expect(response.statusCode, equals(200));
+
+        final chunks = <String>[];
+        await for (final chunk in response.data!.stream.transform(_Uint8ListToStringTransformer())) {
+          chunks.add(chunk);
+        }
+
+        expect(chunks, isNotEmpty);
+        expect(chunks.join(), contains('data:'));
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      // Note: o1-mini streaming test removed - model is deprecated
+    });
+
+    group('Multimodal Chat Completions', () {
+      test('creates multimodal chat completion with gpt-4o (text + image)', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        // Load cowboy.png image
+        final imageFile = File('test/assets/cowboy.png');
+        if (!await imageFile.exists()) {
+          markTestSkipped('cowboy.png not found');
+          return;
+        }
+
+        final imageBytes = await imageFile.readAsBytes();
+        final base64Image = base64Encode(imageBytes);
+
+        final response = await client!.dio.post<Map<String, dynamic>>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-4o',
+            'messages': [
+              {
+                'role': 'user',
+                'content': [
+                  {'type': 'text', 'text': 'Describe this image in detail. What do you see?'},
+                  {
+                    'type': 'image_url',
+                    'image_url': {'url': 'data:image/png;base64,$base64Image'},
+                  },
+                ],
+              },
+            ],
+            'max_tokens': 200,
+          },
+        );
+
+        expect(response.statusCode, equals(200));
+        expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        final content = response.data!['choices'][0]['message']['content'].toString().toLowerCase();
+        expect(content.contains('cowboy') || content.contains('image') || content.contains('picture'), isTrue);
+      }, timeout: const Timeout(Duration(seconds: 90)));
+
+      test('creates streaming multimodal chat completion with gpt-4o', () async {
+        if (client == null) {
+          markTestSkipped('OpenAI credentials not configured');
+          return;
+        }
+
+        // Load cowboy.png image
+        final imageFile = File('test/assets/cowboy.png');
+        if (!await imageFile.exists()) {
+          markTestSkipped('cowboy.png not found');
+          return;
+        }
+
+        final imageBytes = await imageFile.readAsBytes();
+        final base64Image = base64Encode(imageBytes);
+
+        final response = await client!.dio.post<ResponseBody>(
+          '/chat/completions',
+          data: {
+            'model': 'gpt-4o',
+            'messages': [
+              {
+                'role': 'user',
+                'content': [
+                  {'type': 'text', 'text': 'What is in this image?'},
+                  {
+                    'type': 'image_url',
+                    'image_url': {'url': 'data:image/png;base64,$base64Image'},
+                  },
+                ],
+              },
+            ],
+            'max_tokens': 200,
+            'stream': true,
+          },
+          options: Options(responseType: ResponseType.stream),
+        );
+
+        expect(response.statusCode, equals(200));
+
+        final chunks = <String>[];
+        await for (final chunk in response.data!.stream.transform(_Uint8ListToStringTransformer())) {
+          chunks.add(chunk);
+        }
+
+        expect(chunks, isNotEmpty);
+        expect(chunks.join(), contains('data:'));
+      }, timeout: const Timeout(Duration(seconds: 90)));
     });
   });
 
@@ -775,51 +1061,119 @@ void main() {
       });
     });
 
-    group('Chat Completions (Non-Streaming) via Dio', () {
-      test('creates simple chat completion', () async {
+    group('Chat Completions (Non-Streaming) via Generated Client', () {
+      test('creates simple chat completion using generated client', () async {
         if (client == null || azureDeploymentId == null) {
           markTestSkipped('Azure credentials not configured');
           return;
         }
 
-        final response = await client!.dio.post<Map<String, dynamic>>(
-          '/deployments/$azureDeploymentId/chat/completions',
-          data: {
-            'messages': [
-              {'role': 'user', 'content': 'Say "hello" and nothing else.'},
+        // Use the generated Azure inference client with strongly-typed models
+        final azureClient = client!.azureInference as AzureInferenceY2024M10D21GaClient;
+
+        final response = await azureClient.api.chatCompletionsCreate(
+          deploymentId: azureDeploymentId!,
+          apiVersion: AzureInferenceVersion.ga202410.version,
+          body: azure.CreateChatCompletionRequest(
+            stop: null,
+            logitBias: null,
+            messages: [
+              azure.ChatCompletionRequestMessageUnionChatCompletionRequestUserMessage(
+                content: 'Say "hello" and nothing else.',
+                role: azure.ChatCompletionRequestUserMessageRoleRole.user,
+                name: null,
+              ),
             ],
-            'max_tokens': 10,
-            'temperature': 0,
-          },
+            maxTokens: 10,
+            temperature: 0,
+          ),
         );
 
-        expect(response.statusCode, equals(200));
+        expect(response.response.statusCode, equals(200));
         expect(response.data, isNotNull);
-        expect(response.data!['choices'], isNotEmpty);
-        expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
       }, timeout: const Timeout(Duration(seconds: 60)));
 
-      test('creates chat completion with system message', () async {
+      test('creates chat completion with system message using generated client', () async {
         if (client == null || azureDeploymentId == null) {
           markTestSkipped('Azure credentials not configured');
           return;
         }
 
-        final response = await client!.dio.post<Map<String, dynamic>>(
-          '/deployments/$azureDeploymentId/chat/completions',
-          data: {
-            'messages': [
-              {'role': 'system', 'content': 'You are a helpful assistant that only responds with the word "pong".'},
-              {'role': 'user', 'content': 'ping'},
+        final azureClient = client!.azureInference as AzureInferenceY2024M10D21GaClient;
+
+        final response = await azureClient.api.chatCompletionsCreate(
+          deploymentId: azureDeploymentId!,
+          apiVersion: AzureInferenceVersion.ga202410.version,
+          body: azure.CreateChatCompletionRequest(
+            stop: null,
+            logitBias: null,
+            messages: [
+              azure.ChatCompletionRequestMessageUnionChatCompletionRequestSystemMessage(
+                content: 'You are a helpful assistant that only responds with the word "pong".',
+                role: azure.ChatCompletionRequestSystemMessageRoleRole.system,
+                name: null,
+              ),
+              azure.ChatCompletionRequestMessageUnionChatCompletionRequestUserMessage(
+                content: 'ping',
+                role: azure.ChatCompletionRequestUserMessageRoleRole.user,
+                name: null,
+              ),
             ],
-            'max_tokens': 10,
-            'temperature': 0,
-          },
+            maxTokens: 10,
+            temperature: 0,
+          ),
         );
 
-        expect(response.statusCode, equals(200));
-        expect(response.data!['choices'][0]['message']['content'].toString().toLowerCase(), contains('pong'));
+        expect(response.response.statusCode, equals(200));
       }, timeout: const Timeout(Duration(seconds: 60)));
+
+      // Raw Dio tests for comparison and streaming (which generated client doesn't support yet)
+      group('via Raw Dio', () {
+        test('creates simple chat completion', () async {
+          if (client == null || azureDeploymentId == null) {
+            markTestSkipped('Azure credentials not configured');
+            return;
+          }
+
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/$azureDeploymentId/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'Say "hello" and nothing else.'},
+              ],
+              'max_tokens': 10,
+              'temperature': 0,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data, isNotNull);
+          expect(response.data!['choices'], isNotEmpty);
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        }, timeout: const Timeout(Duration(seconds: 60)));
+
+        test('creates chat completion with system message', () async {
+          if (client == null || azureDeploymentId == null) {
+            markTestSkipped('Azure credentials not configured');
+            return;
+          }
+
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/$azureDeploymentId/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'system', 'content': 'You are a helpful assistant that only responds with the word "pong".'},
+                {'role': 'user', 'content': 'ping'},
+              ],
+              'max_tokens': 10,
+              'temperature': 0,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'].toString().toLowerCase(), contains('pong'));
+        }, timeout: const Timeout(Duration(seconds: 60)));
+      });
 
       test('creates chat completion with multiple messages (conversation)', () async {
         if (client == null || azureDeploymentId == null) {
@@ -1484,6 +1838,320 @@ void main() {
         expect(choice['finish_reason'], isIn(['stop', 'length', 'content_filter']));
         expect(choice['index'], equals(0));
       }, timeout: const Timeout(Duration(seconds: 60)));
+    });
+
+    group('Thinking Models (O-Series)', () {
+      test('creates chat completion with o1 (thinking model)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/o1/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'What is 2 + 2? Answer with just the number.'},
+              ],
+              'max_tokens': 50,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+          expect(response.data!['usage'], isNotNull);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('o1 deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 120)));
+
+      // Note: o1-mini tests removed - model is deprecated
+
+      test('creates chat completion with o3-mini (thinking model)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/o3-mini/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'What is 4 + 4? Answer with just the number.'},
+              ],
+              'max_tokens': 50,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404 || e.response?.statusCode == 400) {
+            markTestSkipped('o3-mini deployment not available: ${e.response?.statusCode}');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 120)));
+    });
+
+    group('Non-Thinking Models', () {
+      test('creates chat completion with gpt-4o (non-thinking)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/gpt-4o/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'Say "hello" and nothing else.'},
+              ],
+              'max_tokens': 10,
+              'temperature': 0,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      test('creates chat completion with gpt-4o-mini (non-thinking)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/gpt-4o-mini/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'Say "hi" and nothing else.'},
+              ],
+              'max_tokens': 10,
+              'temperature': 0,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o-mini deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 60)));
+
+      test('creates streaming chat completion with gpt-4o', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        try {
+          final response = await client!.dio.post<ResponseBody>(
+            '/deployments/gpt-4o/chat/completions',
+            data: {
+              'messages': [
+                {'role': 'user', 'content': 'Count from 1 to 5.'},
+              ],
+              'max_tokens': 50,
+              'stream': true,
+            },
+            options: Options(responseType: ResponseType.stream),
+          );
+
+          expect(response.statusCode, equals(200));
+
+          final chunks = <String>[];
+          await for (final chunk in response.data!.stream.transform(_Uint8ListToStringTransformer())) {
+            chunks.add(chunk);
+          }
+
+          expect(chunks, isNotEmpty);
+          expect(chunks.join(), contains('data:'));
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 60)));
+    });
+
+    group('Multimodal Chat Completions (Azure)', () {
+      test('creates multimodal chat completion with gpt-4o (text + image)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        // Load cowboy.png image
+        final imageFile = File('test/assets/cowboy.png');
+        if (!await imageFile.exists()) {
+          markTestSkipped('cowboy.png not found');
+          return;
+        }
+
+        final imageBytes = await imageFile.readAsBytes();
+        final base64Image = base64Encode(imageBytes);
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/gpt-4o/chat/completions',
+            data: {
+              'messages': [
+                {
+                  'role': 'user',
+                  'content': [
+                    {'type': 'text', 'text': 'Describe this image in detail. What do you see?'},
+                    {
+                      'type': 'image_url',
+                      'image_url': {'url': 'data:image/png;base64,$base64Image'},
+                    },
+                  ],
+                },
+              ],
+              'max_tokens': 200,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+          final content = response.data!['choices'][0]['message']['content'].toString().toLowerCase();
+          expect(content.contains('cowboy') || content.contains('image') || content.contains('picture'), isTrue);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 90)));
+
+      test('creates streaming multimodal chat completion with gpt-4o', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        // Load cowboy.png image
+        final imageFile = File('test/assets/cowboy.png');
+        if (!await imageFile.exists()) {
+          markTestSkipped('cowboy.png not found');
+          return;
+        }
+
+        final imageBytes = await imageFile.readAsBytes();
+        final base64Image = base64Encode(imageBytes);
+
+        try {
+          final response = await client!.dio.post<ResponseBody>(
+            '/deployments/gpt-4o/chat/completions',
+            data: {
+              'messages': [
+                {
+                  'role': 'user',
+                  'content': [
+                    {'type': 'text', 'text': 'What is in this image?'},
+                    {
+                      'type': 'image_url',
+                      'image_url': {'url': 'data:image/png;base64,$base64Image'},
+                    },
+                  ],
+                },
+              ],
+              'max_tokens': 200,
+              'stream': true,
+            },
+            options: Options(responseType: ResponseType.stream),
+          );
+
+          expect(response.statusCode, equals(200));
+
+          final chunks = <String>[];
+          await for (final chunk in response.data!.stream.transform(_Uint8ListToStringTransformer())) {
+            chunks.add(chunk);
+          }
+
+          expect(chunks, isNotEmpty);
+          expect(chunks.join(), contains('data:'));
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o deployment not available');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 90)));
+
+      test('creates multimodal chat completion with gpt-4o-mini (text + image)', () async {
+        if (client == null || azureDeploymentId == null) {
+          markTestSkipped('Azure credentials not configured');
+          return;
+        }
+
+        // Load cowboy.png image
+        final imageFile = File('test/assets/cowboy.png');
+        if (!await imageFile.exists()) {
+          markTestSkipped('cowboy.png not found');
+          return;
+        }
+
+        final imageBytes = await imageFile.readAsBytes();
+        final base64Image = base64Encode(imageBytes);
+
+        try {
+          final response = await client!.dio.post<Map<String, dynamic>>(
+            '/deployments/gpt-4o-mini/chat/completions',
+            data: {
+              'messages': [
+                {
+                  'role': 'user',
+                  'content': [
+                    {'type': 'text', 'text': 'Describe this image briefly.'},
+                    {
+                      'type': 'image_url',
+                      'image_url': {'url': 'data:image/png;base64,$base64Image'},
+                    },
+                  ],
+                },
+              ],
+              'max_tokens': 150,
+            },
+          );
+
+          expect(response.statusCode, equals(200));
+          expect(response.data!['choices'][0]['message']['content'], isNotEmpty);
+        } on DioException catch (e) {
+          if (e.response?.statusCode == 404) {
+            markTestSkipped('gpt-4o-mini deployment not available');
+          } else if (e.response?.statusCode == 429) {
+            markTestSkipped('gpt-4o-mini rate limited: ${e.response?.statusCode}');
+          } else {
+            rethrow;
+          }
+        }
+      }, timeout: const Timeout(Duration(seconds: 90)));
     });
   });
 

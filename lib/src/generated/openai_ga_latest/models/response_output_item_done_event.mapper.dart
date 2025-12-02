@@ -57,6 +57,10 @@ class ResponseOutputItemDoneEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #item: _f$item,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseOutputItemDoneEvent _instantiate(DecodingData data) {
     return ResponseOutputItemDoneEvent(

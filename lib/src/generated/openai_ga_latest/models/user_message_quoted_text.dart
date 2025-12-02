@@ -9,7 +9,7 @@ import 'user_message_quoted_text_type_type.dart';
 part 'user_message_quoted_text.mapper.dart';
 
 /// Quoted snippet that the user referenced in their message.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserMessageQuotedText with UserMessageQuotedTextMappable {
   const UserMessageQuotedText({
     required this.text,

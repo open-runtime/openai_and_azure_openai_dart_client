@@ -11,7 +11,7 @@ import 'thread_object_tool_resources.dart';
 part 'thread_object.mapper.dart';
 
 /// Represents a thread that contains [messages](/docs/api-reference/messages).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadObject with ThreadObjectMappable {
   const ThreadObject({
     required this.id,
@@ -26,7 +26,7 @@ class ThreadObject with ThreadObjectMappable {
   final ThreadObjectObjectObjectEnum objectEnum;
   @MappableField(key: 'created_at')
   final int createdAt;
-  @MappableField(key: 'ThreadObjectToolResources')
+  @MappableField(key: 'tool_resources')
   final ThreadObjectToolResources? threadObjectToolResources;
   final Metadata? metadata;
 

@@ -42,6 +42,10 @@ class ResponseAudioTranscriptDeltaEventMapper
     #type: _f$type,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseAudioTranscriptDeltaEvent _instantiate(DecodingData data) {
     return ResponseAudioTranscriptDeltaEvent(

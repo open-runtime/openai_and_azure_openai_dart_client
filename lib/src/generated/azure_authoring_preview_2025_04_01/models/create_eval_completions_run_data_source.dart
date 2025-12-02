@@ -12,7 +12,7 @@ import 'create_eval_completions_run_data_source_type_type.dart';
 part 'create_eval_completions_run_data_source.mapper.dart';
 
 /// A CompletionsRunDataSource object describing a model sampling configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSourceMappable {
   const CreateEvalCompletionsRunDataSource({
     required this.createEvalCompletionsRunDataSourceSource,
@@ -22,13 +22,13 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
     this.createEvalCompletionsRunDataSourceSamplingParams,
   });
 
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceSource')
+  @MappableField(key: 'source')
   final CreateEvalCompletionsRunDataSourceSource createEvalCompletionsRunDataSourceSource;
   final CreateEvalCompletionsRunDataSourceTypeType type;
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceInputMessages')
+  @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessages? createEvalCompletionsRunDataSourceInputMessages;
   final String? model;
-  @MappableField(key: 'CreateEvalCompletionsRunDataSourceSamplingParams')
+  @MappableField(key: 'sampling_params')
   final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
 
   static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceMapper.fromJson(json);

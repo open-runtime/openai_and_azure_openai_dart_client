@@ -10,7 +10,7 @@ import 'dalle_filter_results.dart';
 part 'image_result.mapper.dart';
 
 /// The image url or encoded image if successful, and an error otherwise.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageResult with ImageResultMappable {
   const ImageResult({
     this.url,

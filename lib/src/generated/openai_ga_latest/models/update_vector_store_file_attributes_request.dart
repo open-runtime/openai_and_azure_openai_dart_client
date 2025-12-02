@@ -8,7 +8,7 @@ import 'vector_store_file_attributes.dart';
 
 part 'update_vector_store_file_attributes_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateVectorStoreFileAttributesRequest with UpdateVectorStoreFileAttributesRequestMappable {
   const UpdateVectorStoreFileAttributesRequest({
     required this.attributes,

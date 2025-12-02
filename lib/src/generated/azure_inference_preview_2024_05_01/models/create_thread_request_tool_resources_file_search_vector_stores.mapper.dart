@@ -50,6 +50,10 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresMapper
   @override
   final MappableFields<CreateThreadRequestToolResourcesFileSearchVectorStores>
   fields = const {#fileIds: _f$fileIds, #metadata: _f$metadata};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequestToolResourcesFileSearchVectorStores _instantiate(
     DecodingData data,

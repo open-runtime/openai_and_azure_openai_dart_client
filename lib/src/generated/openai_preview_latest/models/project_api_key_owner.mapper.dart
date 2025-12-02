@@ -49,6 +49,10 @@ class ProjectApiKeyOwnerMapper extends ClassMapperBase<ProjectApiKeyOwner> {
     #user: _f$user,
     #serviceAccount: _f$serviceAccount,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectApiKeyOwner _instantiate(DecodingData data) {
     return ProjectApiKeyOwner(

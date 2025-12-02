@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_item.dart';
 import 'response_output_item_added_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_output_item_added_event.mapper.dart';
 
 /// Emitted when a new output item is added.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseOutputItemAddedEvent with ResponseOutputItemAddedEventMappable {
   const ResponseOutputItemAddedEvent({
     required this.type,

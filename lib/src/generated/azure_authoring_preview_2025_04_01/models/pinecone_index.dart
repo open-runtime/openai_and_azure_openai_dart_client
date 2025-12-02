@@ -9,7 +9,7 @@ import 'target_type.dart';
 part 'pinecone_index.mapper.dart';
 
 /// Pinecone Index.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeIndex with PineconeIndexMappable {
   const PineconeIndex({
     required this.kind,

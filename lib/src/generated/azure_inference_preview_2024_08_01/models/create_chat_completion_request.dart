@@ -10,12 +10,12 @@ import 'chat_completion_request_message.dart';
 import 'chat_completion_tool.dart';
 import 'chat_completion_tool_choice_option.dart';
 import 'chat_completions_request_common.dart';
-import 'create_chat_completion_request_function_call_function_call_union.dart';
-import 'create_chat_completion_request_response_format_response_format_union.dart';
+import 'create_chat_completion_request_function_call_union.dart';
+import 'create_chat_completion_request_response_format_union.dart';
 
 part 'create_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   const CreateChatCompletionRequest({
     required this.stop,
@@ -52,13 +52,13 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'top_logprobs')
   final int? topLogprobs;
   @MappableField(key: 'response_format')
-  final CreateChatCompletionRequestResponseFormatResponseFormatUnion? responseFormat;
+  final CreateChatCompletionRequestResponseFormatUnion? responseFormat;
   final int? seed;
   final List<ChatCompletionTool>? tools;
   @MappableField(key: 'tool_choice')
   final ChatCompletionToolChoiceOption? toolChoice;
   @MappableField(key: 'function_call')
-  final CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall;
+  final CreateChatCompletionRequestFunctionCallUnion? functionCall;
   final List<ChatCompletionFunctions>? functions;
   final num? temperature;
   @MappableField(key: 'top_p')

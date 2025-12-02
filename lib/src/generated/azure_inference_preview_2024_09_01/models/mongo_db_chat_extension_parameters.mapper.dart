@@ -19,7 +19,7 @@ class MongoDbChatExtensionParametersMapper
       );
       OnYourDataUsernameAndPasswordAuthenticationOptionsMapper.ensureInitialized();
       MongoDbFieldMappingOptionsMapper.ensureInitialized();
-      MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMapper.ensureInitialized();
+      MongoDbChatExtensionParametersEmbeddingDependencyUnionMapper.ensureInitialized();
       OnYourDataContextPropertyMapper.ensureInitialized();
     }
     return _instance!;
@@ -65,12 +65,12 @@ class MongoDbChatExtensionParametersMapper
     _$fieldsMapping,
     key: r'fields_mapping',
   );
-  static MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+  static MongoDbChatExtensionParametersEmbeddingDependencyUnion
   _$embeddingDependency(MongoDbChatExtensionParameters v) =>
       v.embeddingDependency;
   static const Field<
     MongoDbChatExtensionParameters,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion
   >
   _f$embeddingDependency = Field(
     'embeddingDependency',
@@ -149,6 +149,10 @@ class MongoDbChatExtensionParametersMapper
     #strictness: _f$strictness,
     #includeContexts: _f$includeContexts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MongoDbChatExtensionParameters _instantiate(DecodingData data) {
     return MongoDbChatExtensionParameters(
@@ -259,10 +263,10 @@ abstract class MongoDbChatExtensionParametersCopyWith<
     MongoDbFieldMappingOptions
   >
   get fieldsMapping;
-  MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  MongoDbChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion,
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion
   >
   get embeddingDependency;
   ListCopyWith<
@@ -279,8 +283,7 @@ abstract class MongoDbChatExtensionParametersCopyWith<
     String? appName,
     String? indexName,
     MongoDbFieldMappingOptions? fieldsMapping,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
-    embeddingDependency,
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion? embeddingDependency,
     bool? allowPartialResult,
     int? topNDocuments,
     int? maxSearchQueries,
@@ -327,10 +330,10 @@ class _MongoDbChatExtensionParametersCopyWithImpl<$R, $Out>
   get fieldsMapping =>
       $value.fieldsMapping.copyWith.$chain((v) => call(fieldsMapping: v));
   @override
-  MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionCopyWith<
+  MongoDbChatExtensionParametersEmbeddingDependencyUnionCopyWith<
     $R,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion,
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion
   >
   get embeddingDependency => $value.embeddingDependency.copyWith.$chain(
     (v) => call(embeddingDependency: v),
@@ -357,8 +360,7 @@ class _MongoDbChatExtensionParametersCopyWithImpl<$R, $Out>
     String? appName,
     String? indexName,
     MongoDbFieldMappingOptions? fieldsMapping,
-    MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion?
-    embeddingDependency,
+    MongoDbChatExtensionParametersEmbeddingDependencyUnion? embeddingDependency,
     bool? allowPartialResult,
     Object? topNDocuments = $none,
     Object? maxSearchQueries = $none,

@@ -74,7 +74,7 @@ class ChatCompletionResponseMessageMapper
   _f$chatCompletionResponseMessageFunctionCall = Field(
     'chatCompletionResponseMessageFunctionCall',
     _$chatCompletionResponseMessageFunctionCall,
-    key: r'ChatCompletionResponseMessageFunctionCall',
+    key: r'function_call',
     opt: true,
   );
   static ChatCompletionResponseMessageAudio?
@@ -87,7 +87,7 @@ class ChatCompletionResponseMessageMapper
   _f$chatCompletionResponseMessageAudio = Field(
     'chatCompletionResponseMessageAudio',
     _$chatCompletionResponseMessageAudio,
-    key: r'ChatCompletionResponseMessageAudio',
+    key: r'audio',
     opt: true,
   );
 
@@ -102,6 +102,10 @@ class ChatCompletionResponseMessageMapper
         _f$chatCompletionResponseMessageFunctionCall,
     #chatCompletionResponseMessageAudio: _f$chatCompletionResponseMessageAudio,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionResponseMessage _instantiate(DecodingData data) {
     return ChatCompletionResponseMessage(

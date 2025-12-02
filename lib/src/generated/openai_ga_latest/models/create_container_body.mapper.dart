@@ -41,7 +41,7 @@ class CreateContainerBodyMapper extends ClassMapperBase<CreateContainerBody> {
   _f$createContainerBodyExpiresAfter = Field(
     'createContainerBodyExpiresAfter',
     _$createContainerBodyExpiresAfter,
-    key: r'CreateContainerBodyExpiresAfter',
+    key: r'expires_after',
     opt: true,
   );
 
@@ -51,6 +51,10 @@ class CreateContainerBodyMapper extends ClassMapperBase<CreateContainerBody> {
     #fileIds: _f$fileIds,
     #createContainerBodyExpiresAfter: _f$createContainerBodyExpiresAfter,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateContainerBody _instantiate(DecodingData data) {
     return CreateContainerBody(

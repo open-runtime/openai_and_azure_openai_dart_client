@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'workspace_connection.mapper.dart';
 
 /// AML Workspace connection.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkspaceConnection with WorkspaceConnectionMappable {
   const WorkspaceConnection({
     required this.kind,

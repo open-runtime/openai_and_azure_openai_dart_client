@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'item_resource.dart';
+import 'output_item.dart';
 import 'output_message_content.dart';
 import 'output_message_role_role.dart';
 import 'output_message_status_status.dart';
@@ -13,7 +15,7 @@ part 'output_message.mapper.dart';
 
 /// An output message from the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputMessage with OutputMessageMappable {
   const OutputMessage({
     required this.id,

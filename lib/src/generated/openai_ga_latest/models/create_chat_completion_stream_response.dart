@@ -15,7 +15,7 @@ part 'create_chat_completion_stream_response.mapper.dart';
 /// by the model, based on the provided input. .
 /// [Learn more](https://platform.openai.com/docs/guides/streaming-responses).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionStreamResponse with CreateChatCompletionStreamResponseMappable {
   const CreateChatCompletionStreamResponse({
     required this.id,

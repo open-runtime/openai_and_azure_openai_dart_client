@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_fine_tuning_job_request_hyperparameters.dart';
 import 'create_fine_tuning_job_request_integrations.dart';
+import 'create_fine_tuning_job_request_model_union.dart';
 import 'fine_tune_method.dart';
 import 'metadata.dart';
 
 part 'create_fine_tuning_job_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateFineTuningJobRequest with CreateFineTuningJobRequestMappable {
   const CreateFineTuningJobRequest({
     required this.model,
@@ -25,11 +26,12 @@ class CreateFineTuningJobRequest with CreateFineTuningJobRequestMappable {
     this.metadata,
   });
 
-  final String model;
+  @MappableField(hook: const CreateFineTuningJobRequestModelUnionHook())
+  final CreateFineTuningJobRequestModelUnion model;
   @MappableField(key: 'training_file')
   final String trainingFile;
   final String? suffix;
-  @MappableField(key: 'CreateFineTuningJobRequestHyperparameters')
+  @MappableField(key: 'hyperparameters')
   final CreateFineTuningJobRequestHyperparameters? createFineTuningJobRequestHyperparameters;
   @MappableField(key: 'validation_file')
   final String? validationFile;

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_create_client_secret_request_expires_after.dart';
-import 'realtime_create_client_secret_request_session_session_union.dart';
+import 'realtime_create_client_secret_request_session_union.dart';
 
 part 'realtime_create_client_secret_request.mapper.dart';
 
@@ -13,16 +13,16 @@ part 'realtime_create_client_secret_request.mapper.dart';
 /// either a realtime or a transcription session configuration.
 /// [Learn more about the Realtime API](https://platform.openai.com/docs/guides/realtime).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCreateClientSecretRequest with RealtimeCreateClientSecretRequestMappable {
   const RealtimeCreateClientSecretRequest({
     this.realtimeCreateClientSecretRequestExpiresAfter,
     this.session,
   });
 
-  @MappableField(key: 'RealtimeCreateClientSecretRequestExpiresAfter')
+  @MappableField(key: 'expires_after')
   final RealtimeCreateClientSecretRequestExpiresAfter? realtimeCreateClientSecretRequestExpiresAfter;
-  final RealtimeCreateClientSecretRequestSessionSessionUnion? session;
+  final RealtimeCreateClientSecretRequestSessionUnion? session;
 
   static RealtimeCreateClientSecretRequest fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretRequestMapper.fromJson(json);
 

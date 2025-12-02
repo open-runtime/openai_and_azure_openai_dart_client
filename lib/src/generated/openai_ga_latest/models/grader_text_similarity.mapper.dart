@@ -66,6 +66,10 @@ class GraderTextSimilarityMapper extends ClassMapperBase<GraderTextSimilarity> {
     #evaluationMetric: _f$evaluationMetric,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GraderTextSimilarity _instantiate(DecodingData data) {
     return GraderTextSimilarity(

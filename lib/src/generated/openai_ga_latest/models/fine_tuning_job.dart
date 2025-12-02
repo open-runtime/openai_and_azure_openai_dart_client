@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'fine_tune_method.dart';
-import 'fine_tuning_integration.dart';
 import 'fine_tuning_job_error.dart';
 import 'fine_tuning_job_hyperparameters.dart';
+import 'fine_tuning_job_integrations_union.dart';
 import 'fine_tuning_job_object_object_enum.dart';
 import 'fine_tuning_job_status_status.dart';
 import 'metadata.dart';
@@ -16,7 +16,7 @@ part 'fine_tuning_job.mapper.dart';
 
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJob with FineTuningJobMappable {
   const FineTuningJob({
     required this.id,
@@ -48,7 +48,7 @@ class FineTuningJob with FineTuningJobMappable {
   final String? fineTunedModel;
   @MappableField(key: 'finished_at')
   final int? finishedAt;
-  @MappableField(key: 'FineTuningJobHyperparameters')
+  @MappableField(key: 'hyperparameters')
   final FineTuningJobHyperparameters fineTuningJobHyperparameters;
   final String model;
   @MappableField(key: 'object')
@@ -65,7 +65,7 @@ class FineTuningJob with FineTuningJobMappable {
   @MappableField(key: 'validation_file')
   final String? validationFile;
   final int seed;
-  final List<FineTuningIntegration>? integrations;
+  final List<FineTuningJobIntegrationsUnion>? integrations;
   @MappableField(key: 'estimated_finish')
   final int? estimatedFinish;
   final FineTuneMethod? method;

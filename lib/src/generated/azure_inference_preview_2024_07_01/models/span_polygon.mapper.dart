@@ -28,6 +28,10 @@ class SpanPolygonMapper extends ClassMapperBase<SpanPolygon> {
 
   @override
   final MappableFields<SpanPolygon> fields = const {#x: _f$x, #y: _f$y};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SpanPolygon _instantiate(DecodingData data) {
     return SpanPolygon(x: data.dec(_f$x), y: data.dec(_f$y));

@@ -53,6 +53,10 @@ class BatchErrorMapper extends ClassMapperBase<BatchError> {
     #param: _f$param,
     #line: _f$line,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchError _instantiate(DecodingData data) {
     return BatchError(

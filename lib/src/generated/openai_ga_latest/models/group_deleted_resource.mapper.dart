@@ -41,6 +41,10 @@ class GroupDeletedResourceMapper extends ClassMapperBase<GroupDeletedResource> {
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupDeletedResource _instantiate(DecodingData data) {
     return GroupDeletedResource(

@@ -63,6 +63,10 @@ class AudioVerboseResponseMapper extends ClassMapperBase<AudioVerboseResponse> {
     #segments: _f$segments,
     #words: _f$words,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AudioVerboseResponse _instantiate(DecodingData data) {
     return AudioVerboseResponse(

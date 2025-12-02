@@ -38,6 +38,10 @@ class ConnectionStringConnectionMapper
     #kind: _f$kind,
     #connectionString: _f$connectionString,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ConnectionStringConnection _instantiate(DecodingData data) {
     return ConnectionStringConnection(

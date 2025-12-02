@@ -35,7 +35,7 @@ class FineTuningIntegrationMapper
   _f$fineTuningIntegrationWandb = Field(
     'fineTuningIntegrationWandb',
     _$fineTuningIntegrationWandb,
-    key: r'FineTuningIntegrationWandb',
+    key: r'wandb',
   );
 
   @override
@@ -43,6 +43,10 @@ class FineTuningIntegrationMapper
     #type: _f$type,
     #fineTuningIntegrationWandb: _f$fineTuningIntegrationWandb,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningIntegration _instantiate(DecodingData data) {
     return FineTuningIntegration(

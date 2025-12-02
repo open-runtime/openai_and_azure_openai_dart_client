@@ -81,6 +81,10 @@ class EvalStoredCompletionsSourceMapper
     #limit: _f$limit,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalStoredCompletionsSource _instantiate(DecodingData data) {
     return EvalStoredCompletionsSource(

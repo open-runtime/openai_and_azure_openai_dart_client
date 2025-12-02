@@ -8,7 +8,7 @@ import 'vector_store_expiration_after.dart';
 
 part 'create_vector_store_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreRequest with CreateVectorStoreRequestMappable {
   const CreateVectorStoreRequest({
     this.fileIds,

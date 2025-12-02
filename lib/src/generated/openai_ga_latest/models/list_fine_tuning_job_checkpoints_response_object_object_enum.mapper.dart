@@ -34,7 +34,7 @@ class ListFineTuningJobCheckpointsResponseObjectObjectEnumMapper
   ListFineTuningJobCheckpointsResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ListFineTuningJobCheckpointsResponseObjectObjectEnum.valueList;
+        return ListFineTuningJobCheckpointsResponseObjectObjectEnum.list;
       case 'unknown':
         return ListFineTuningJobCheckpointsResponseObjectObjectEnum.unknown;
       default:
@@ -45,7 +45,7 @@ class ListFineTuningJobCheckpointsResponseObjectObjectEnumMapper
   @override
   dynamic encode(ListFineTuningJobCheckpointsResponseObjectObjectEnum self) {
     switch (self) {
-      case ListFineTuningJobCheckpointsResponseObjectObjectEnum.valueList:
+      case ListFineTuningJobCheckpointsResponseObjectObjectEnum.list:
         return 'list';
       case ListFineTuningJobCheckpointsResponseObjectObjectEnum.unknown:
         return 'unknown';

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_external_key_registered.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogExternalKeyRegistered with AuditLogExternalKeyRegisteredMappable {
   const AuditLogExternalKeyRegistered({
     this.id,

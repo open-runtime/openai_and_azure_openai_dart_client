@@ -8,7 +8,7 @@ import 'eval_jsonl_file_id_source_type_type.dart';
 
 part 'eval_jsonl_file_id_source.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalJsonlFileIdSource with EvalJsonlFileIdSourceMappable {
   const EvalJsonlFileIdSource({
     required this.id,

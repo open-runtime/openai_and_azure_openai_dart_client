@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_mcp_call_completed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_mcp_call_completed_event.mapper.dart';
 
 /// Emitted when an MCP  tool call has completed successfully.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseMcpCallCompletedEvent with ResponseMcpCallCompletedEventMappable {
   const ResponseMcpCallCompletedEvent({
     required this.type,

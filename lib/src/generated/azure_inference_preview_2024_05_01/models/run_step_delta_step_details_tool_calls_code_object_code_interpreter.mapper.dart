@@ -23,7 +23,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper
         _instance =
             RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -40,15 +40,13 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper
   >
   _f$input = Field('input', _$input, opt: true);
   static List<
-    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
+    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
   >?
   _$outputs(RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter v) =>
       v.outputs;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
-    List<
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
-    >
+    List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>
   >
   _f$outputs = Field('outputs', _$outputs, opt: true);
 
@@ -57,6 +55,10 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter
   >
   fields = const {#input: _f$input, #outputs: _f$outputs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter _instantiate(
     DecodingData data,
@@ -175,19 +177,17 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionCopyWith<
+    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionCopyWith<
       $R,
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
     >
   >?
   get outputs;
   $R call({
     String? input,
-    List<
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
-    >?
+    List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>?
     outputs,
   });
   RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith<
@@ -229,11 +229,11 @@ class _RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnionCopyWith<
+    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+    RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionCopyWith<
       $R,
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion,
-      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsOutputsUnion
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion,
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
     >
   >?
   get outputs => $value.outputs != null

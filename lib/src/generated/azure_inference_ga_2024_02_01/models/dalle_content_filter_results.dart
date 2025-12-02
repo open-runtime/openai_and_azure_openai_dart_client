@@ -9,7 +9,7 @@ import 'content_filter_severity_result.dart';
 part 'dalle_content_filter_results.mapper.dart';
 
 /// Information about the content filtering results.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleContentFilterResults with DalleContentFilterResultsMappable {
   const DalleContentFilterResults({
     this.sexual,

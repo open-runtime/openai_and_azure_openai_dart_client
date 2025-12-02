@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_server_event_response_audio_delta.mapper.dart';
 
 /// Returned when the model-generated audio is updated.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseAudioDelta with RealtimeBetaServerEventResponseAudioDeltaMappable {
   const RealtimeBetaServerEventResponseAudioDelta({
     required this.eventId,

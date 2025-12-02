@@ -68,6 +68,10 @@ class CreateVectorStoreFileBatchRequestMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #attributes: _f$attributes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreFileBatchRequest _instantiate(DecodingData data) {
     return CreateVectorStoreFileBatchRequest(

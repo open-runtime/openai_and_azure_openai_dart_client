@@ -9,7 +9,7 @@ import 'usage_images_result_object_object_enum.dart';
 part 'usage_images_result.mapper.dart';
 
 /// The aggregated images usage details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageImagesResult with UsageImagesResultMappable {
   const UsageImagesResult({
     required this.objectEnum,

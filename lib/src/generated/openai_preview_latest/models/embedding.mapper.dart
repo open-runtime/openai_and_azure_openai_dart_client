@@ -43,6 +43,10 @@ class EmbeddingMapper extends ClassMapperBase<Embedding> {
     #embedding: _f$embedding,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Embedding _instantiate(DecodingData data) {
     return Embedding(

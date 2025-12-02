@@ -42,6 +42,10 @@ class CreateConversationBodyMapper
     #metadata: _f$metadata,
     #items: _f$items,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateConversationBody _instantiate(DecodingData data) {
     return CreateConversationBody(

@@ -17,8 +17,8 @@ class ChatCompletionMessageToolCallsUnionMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionMessageToolCallsUnionMapper._(),
       );
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized();
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized();
+      ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized();
+      ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,10 +28,16 @@ class ChatCompletionMessageToolCallsUnionMapper
 
   @override
   final MappableFields<ChatCompletionMessageToolCallsUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageToolCallsUnion _instantiate(DecodingData data) {
-    throw MapperException.missingConstructor(
+    throw MapperException.missingSubclass(
       'ChatCompletionMessageToolCallsUnion',
+      'type',
+      '${data.value['type']}',
     );
   }
 
@@ -75,23 +81,18 @@ abstract class ChatCompletionMessageToolCallsUnionCopyWith<
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper
-    extends
-        ClassMapperBase<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-        > {
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper._();
+class ChatCompletionMessageToolCallsUnionFunctionMapper
+    extends SubClassMapperBase<ChatCompletionMessageToolCallsUnionFunction> {
+  ChatCompletionMessageToolCallsUnionFunctionMapper._();
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper?
-  _instance;
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper
-  ensureInitialized() {
+  static ChatCompletionMessageToolCallsUnionFunctionMapper? _instance;
+  static ChatCompletionMessageToolCallsUnionFunctionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper._(),
+        _instance = ChatCompletionMessageToolCallsUnionFunctionMapper._(),
       );
-      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized();
+      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionMessageToolCallTypeTypeMapper.ensureInitialized();
       ChatCompletionMessageToolCallFunctionMapper.ensureInitialized();
     }
@@ -99,52 +100,58 @@ class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper
   }
 
   @override
-  final String id =
-      'ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall';
+  final String id = 'ChatCompletionMessageToolCallsUnionFunction';
 
-  static String _$id(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall v,
-  ) => v.id;
-  static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-    String
-  >
+  static String _$id(ChatCompletionMessageToolCallsUnionFunction v) => v.id;
+  static const Field<ChatCompletionMessageToolCallsUnionFunction, String>
   _f$id = Field('id', _$id);
   static ChatCompletionMessageToolCallTypeType _$type(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall v,
+    ChatCompletionMessageToolCallsUnionFunction v,
   ) => v.type;
   static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    ChatCompletionMessageToolCallsUnionFunction,
     ChatCompletionMessageToolCallTypeType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionMessageToolCallFunction
   _$chatCompletionMessageToolCallFunction(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall v,
+    ChatCompletionMessageToolCallsUnionFunction v,
   ) => v.chatCompletionMessageToolCallFunction;
   static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    ChatCompletionMessageToolCallsUnionFunction,
     ChatCompletionMessageToolCallFunction
   >
   _f$chatCompletionMessageToolCallFunction = Field(
     'chatCompletionMessageToolCallFunction',
     _$chatCompletionMessageToolCallFunction,
+    key: r'function',
   );
 
   @override
-  final MappableFields<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-  >
-  fields = const {
-    #id: _f$id,
-    #type: _f$type,
-    #chatCompletionMessageToolCallFunction:
-        _f$chatCompletionMessageToolCallFunction,
-  };
+  final MappableFields<ChatCompletionMessageToolCallsUnionFunction> fields =
+      const {
+        #id: _f$id,
+        #type: _f$type,
+        #chatCompletionMessageToolCallFunction:
+            _f$chatCompletionMessageToolCallFunction,
+      };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-  _instantiate(DecodingData data) {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized();
+
+  static ChatCompletionMessageToolCallsUnionFunction _instantiate(
+    DecodingData data,
+  ) {
+    return ChatCompletionMessageToolCallsUnionFunction(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       chatCompletionMessageToolCallFunction: data.dec(
@@ -156,114 +163,92 @@ class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-    >(map);
+  static ChatCompletionMessageToolCallsUnionFunction fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ChatCompletionMessageToolCallsUnionFunction>(map);
   }
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-    >(json);
+  static ChatCompletionMessageToolCallsUnionFunction fromJsonString(
+    String json,
+  ) {
+    return ensureInitialized()
+        .decodeJson<ChatCompletionMessageToolCallsUnionFunction>(json);
   }
 }
 
-mixin ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMappable {
+mixin ChatCompletionMessageToolCallsUnionFunctionMappable {
   String toJsonString() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized()
-        .encodeJson<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-        >(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    return ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized()
+        .encodeJson<ChatCompletionMessageToolCallsUnionFunction>(
+          this as ChatCompletionMessageToolCallsUnionFunction,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized()
-        .encodeMap<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-        >(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    return ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized()
+        .encodeMap<ChatCompletionMessageToolCallsUnionFunction>(
+          this as ChatCompletionMessageToolCallsUnionFunction,
         );
   }
 
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
+  ChatCompletionMessageToolCallsUnionFunctionCopyWith<
+    ChatCompletionMessageToolCallsUnionFunction,
+    ChatCompletionMessageToolCallsUnionFunction,
+    ChatCompletionMessageToolCallsUnionFunction
   >
   get copyWith =>
-      _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithImpl<
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
+      _ChatCompletionMessageToolCallsUnionFunctionCopyWithImpl<
+        ChatCompletionMessageToolCallsUnionFunction,
+        ChatCompletionMessageToolCallsUnionFunction
       >(
-        this
-            as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+        this as ChatCompletionMessageToolCallsUnionFunction,
         $identity,
         $identity,
       );
   @override
   String toString() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-        );
+    return ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized()
+        .stringifyValue(this as ChatCompletionMessageToolCallsUnionFunction);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized()
+    return ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized()
         .equalsValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+          this as ChatCompletionMessageToolCallsUnionFunction,
           other,
         );
   }
 
   @override
   int get hashCode {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-        );
+    return ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized()
+        .hashValue(this as ChatCompletionMessageToolCallsUnionFunction);
   }
 }
 
-extension ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-          $Out
-        > {
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
+extension ChatCompletionMessageToolCallsUnionFunctionValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChatCompletionMessageToolCallsUnionFunction, $Out> {
+  ChatCompletionMessageToolCallsUnionFunctionCopyWith<
     $R,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    ChatCompletionMessageToolCallsUnionFunction,
     $Out
   >
-  get $asChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall =>
-      $base.as(
-        (v, t, t2) =>
-            _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChatCompletionMessageToolCallsUnionFunction => $base.as(
+    (v, t, t2) =>
+        _ChatCompletionMessageToolCallsUnionFunctionCopyWithImpl<$R, $Out>(
+          v,
+          t,
+          t2,
+        ),
+  );
 }
 
-abstract class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
+abstract class ChatCompletionMessageToolCallsUnionFunctionCopyWith<
   $R,
-  $In extends ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+  $In extends ChatCompletionMessageToolCallsUnionFunction,
   $Out
 >
     implements ChatCompletionMessageToolCallsUnionCopyWith<$R, $In, $Out> {
@@ -280,42 +265,29 @@ abstract class ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallC
     ChatCompletionMessageToolCallFunction?
     chatCompletionMessageToolCallFunction,
   });
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChatCompletionMessageToolCallsUnionFunctionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithImpl<
-  $R,
-  $Out
->
+class _ChatCompletionMessageToolCallsUnionFunctionCopyWithImpl<$R, $Out>
     extends
-        ClassCopyWithBase<
-          $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
-          $Out
-        >
+        ClassCopyWithBase<$R, ChatCompletionMessageToolCallsUnionFunction, $Out>
     implements
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
+        ChatCompletionMessageToolCallsUnionFunctionCopyWith<
           $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+          ChatCompletionMessageToolCallsUnionFunction,
           $Out
         > {
-  _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithImpl(
+  _ChatCompletionMessageToolCallsUnionFunctionCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall
-  >
+  late final ClassMapperBase<ChatCompletionMessageToolCallsUnionFunction>
   $mapper =
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallMapper.ensureInitialized();
+      ChatCompletionMessageToolCallsUnionFunctionMapper.ensureInitialized();
   @override
   ChatCompletionMessageToolCallFunctionCopyWith<
     $R,
@@ -342,47 +314,42 @@ class _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithI
     }),
   );
   @override
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall $make(
-    CopyWithData data,
-  ) => ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall(
-    id: data.get(#id, or: $value.id),
-    type: data.get(#type, or: $value.type),
-    chatCompletionMessageToolCallFunction: data.get(
-      #chatCompletionMessageToolCallFunction,
-      or: $value.chatCompletionMessageToolCallFunction,
-    ),
-  );
+  ChatCompletionMessageToolCallsUnionFunction $make(CopyWithData data) =>
+      ChatCompletionMessageToolCallsUnionFunction(
+        id: data.get(#id, or: $value.id),
+        type: data.get(#type, or: $value.type),
+        chatCompletionMessageToolCallFunction: data.get(
+          #chatCompletionMessageToolCallFunction,
+          or: $value.chatCompletionMessageToolCallFunction,
+        ),
+      );
 
   @override
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWith<
+  ChatCompletionMessageToolCallsUnionFunctionCopyWith<
     $R2,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCall,
+    ChatCompletionMessageToolCallsUnionFunction,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChatCompletionMessageToolCallsUnionChatCompletionMessageToolCallCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChatCompletionMessageToolCallsUnionFunctionCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 
-class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper
-    extends
-        ClassMapperBase<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-        > {
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper._();
+class ChatCompletionMessageToolCallsUnionCustomMapper
+    extends SubClassMapperBase<ChatCompletionMessageToolCallsUnionCustom> {
+  ChatCompletionMessageToolCallsUnionCustomMapper._();
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper?
-  _instance;
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper
-  ensureInitialized() {
+  static ChatCompletionMessageToolCallsUnionCustomMapper? _instance;
+  static ChatCompletionMessageToolCallsUnionCustomMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper._(),
+        _instance = ChatCompletionMessageToolCallsUnionCustomMapper._(),
       );
-      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized();
+      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionMessageCustomToolCallTypeTypeMapper.ensureInitialized();
       ChatCompletionMessageCustomToolCallCustomMapper.ensureInitialized();
     }
@@ -390,52 +357,58 @@ class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapp
   }
 
   @override
-  final String id =
-      'ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall';
+  final String id = 'ChatCompletionMessageToolCallsUnionCustom';
 
-  static String _$id(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall v,
-  ) => v.id;
-  static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-    String
-  >
-  _f$id = Field('id', _$id);
+  static String _$id(ChatCompletionMessageToolCallsUnionCustom v) => v.id;
+  static const Field<ChatCompletionMessageToolCallsUnionCustom, String> _f$id =
+      Field('id', _$id);
   static ChatCompletionMessageCustomToolCallTypeType _$type(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall v,
+    ChatCompletionMessageToolCallsUnionCustom v,
   ) => v.type;
   static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    ChatCompletionMessageToolCallsUnionCustom,
     ChatCompletionMessageCustomToolCallTypeType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionMessageCustomToolCallCustom
   _$chatCompletionMessageCustomToolCallCustom(
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall v,
+    ChatCompletionMessageToolCallsUnionCustom v,
   ) => v.chatCompletionMessageCustomToolCallCustom;
   static const Field<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    ChatCompletionMessageToolCallsUnionCustom,
     ChatCompletionMessageCustomToolCallCustom
   >
   _f$chatCompletionMessageCustomToolCallCustom = Field(
     'chatCompletionMessageCustomToolCallCustom',
     _$chatCompletionMessageCustomToolCallCustom,
+    key: r'custom',
   );
 
   @override
-  final MappableFields<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-  >
-  fields = const {
-    #id: _f$id,
-    #type: _f$type,
-    #chatCompletionMessageCustomToolCallCustom:
-        _f$chatCompletionMessageCustomToolCallCustom,
-  };
+  final MappableFields<ChatCompletionMessageToolCallsUnionCustom> fields =
+      const {
+        #id: _f$id,
+        #type: _f$type,
+        #chatCompletionMessageCustomToolCallCustom:
+            _f$chatCompletionMessageCustomToolCallCustom,
+      };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-  _instantiate(DecodingData data) {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'custom';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionMessageToolCallsUnionMapper.ensureInitialized();
+
+  static ChatCompletionMessageToolCallsUnionCustom _instantiate(
+    DecodingData data,
+  ) {
+    return ChatCompletionMessageToolCallsUnionCustom(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       chatCompletionMessageCustomToolCallCustom: data.dec(
@@ -447,114 +420,87 @@ class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapp
   @override
   final Function instantiate = _instantiate;
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-    >(map);
+  static ChatCompletionMessageToolCallsUnionCustom fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ChatCompletionMessageToolCallsUnionCustom>(map);
   }
 
-  static ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-    >(json);
+  static ChatCompletionMessageToolCallsUnionCustom fromJsonString(String json) {
+    return ensureInitialized()
+        .decodeJson<ChatCompletionMessageToolCallsUnionCustom>(json);
   }
 }
 
-mixin ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMappable {
+mixin ChatCompletionMessageToolCallsUnionCustomMappable {
   String toJsonString() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized()
-        .encodeJson<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-        >(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    return ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized()
+        .encodeJson<ChatCompletionMessageToolCallsUnionCustom>(
+          this as ChatCompletionMessageToolCallsUnionCustom,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized()
-        .encodeMap<
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-        >(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    return ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized()
+        .encodeMap<ChatCompletionMessageToolCallsUnionCustom>(
+          this as ChatCompletionMessageToolCallsUnionCustom,
         );
   }
 
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
+  ChatCompletionMessageToolCallsUnionCustomCopyWith<
+    ChatCompletionMessageToolCallsUnionCustom,
+    ChatCompletionMessageToolCallsUnionCustom,
+    ChatCompletionMessageToolCallsUnionCustom
   >
   get copyWith =>
-      _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWithImpl<
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
+      _ChatCompletionMessageToolCallsUnionCustomCopyWithImpl<
+        ChatCompletionMessageToolCallsUnionCustom,
+        ChatCompletionMessageToolCallsUnionCustom
       >(
-        this
-            as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+        this as ChatCompletionMessageToolCallsUnionCustom,
         $identity,
         $identity,
       );
   @override
   String toString() {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized()
-        .stringifyValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-        );
+    return ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized()
+        .stringifyValue(this as ChatCompletionMessageToolCallsUnionCustom);
   }
 
   @override
   bool operator ==(Object other) {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized()
-        .equalsValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-          other,
-        );
+    return ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized()
+        .equalsValue(this as ChatCompletionMessageToolCallsUnionCustom, other);
   }
 
   @override
   int get hashCode {
-    return ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-        );
+    return ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized()
+        .hashValue(this as ChatCompletionMessageToolCallsUnionCustom);
   }
 }
 
-extension ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallValueCopy<
-  $R,
-  $Out
->
-    on
-        ObjectCopyWith<
-          $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-          $Out
-        > {
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
+extension ChatCompletionMessageToolCallsUnionCustomValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ChatCompletionMessageToolCallsUnionCustom, $Out> {
+  ChatCompletionMessageToolCallsUnionCustomCopyWith<
     $R,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    ChatCompletionMessageToolCallsUnionCustom,
     $Out
   >
-  get $asChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall =>
-      $base.as(
-        (v, t, t2) =>
-            _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChatCompletionMessageToolCallsUnionCustom => $base.as(
+    (v, t, t2) =>
+        _ChatCompletionMessageToolCallsUnionCustomCopyWithImpl<$R, $Out>(
+          v,
+          t,
+          t2,
+        ),
+  );
 }
 
-abstract class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
+abstract class ChatCompletionMessageToolCallsUnionCustomCopyWith<
   $R,
-  $In extends ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+  $In extends ChatCompletionMessageToolCallsUnionCustom,
   $Out
 >
     implements ChatCompletionMessageToolCallsUnionCopyWith<$R, $In, $Out> {
@@ -571,42 +517,28 @@ abstract class ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToo
     ChatCompletionMessageCustomToolCallCustom?
     chatCompletionMessageCustomToolCallCustom,
   });
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChatCompletionMessageToolCallsUnionCustomCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWithImpl<
-  $R,
-  $Out
->
+class _ChatCompletionMessageToolCallsUnionCustomCopyWithImpl<$R, $Out>
     extends
-        ClassCopyWithBase<
-          $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
-          $Out
-        >
+        ClassCopyWithBase<$R, ChatCompletionMessageToolCallsUnionCustom, $Out>
     implements
-        ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
+        ChatCompletionMessageToolCallsUnionCustomCopyWith<
           $R,
-          ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+          ChatCompletionMessageToolCallsUnionCustom,
           $Out
         > {
-  _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWithImpl(
+  _ChatCompletionMessageToolCallsUnionCustomCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall
-  >
-  $mapper =
-      ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallMapper.ensureInitialized();
+  late final ClassMapperBase<ChatCompletionMessageToolCallsUnionCustom>
+  $mapper = ChatCompletionMessageToolCallsUnionCustomMapper.ensureInitialized();
   @override
   ChatCompletionMessageCustomToolCallCustomCopyWith<
     $R,
@@ -633,27 +565,27 @@ class _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCop
     }),
   );
   @override
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall $make(
-    CopyWithData data,
-  ) => ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall(
-    id: data.get(#id, or: $value.id),
-    type: data.get(#type, or: $value.type),
-    chatCompletionMessageCustomToolCallCustom: data.get(
-      #chatCompletionMessageCustomToolCallCustom,
-      or: $value.chatCompletionMessageCustomToolCallCustom,
-    ),
-  );
+  ChatCompletionMessageToolCallsUnionCustom $make(CopyWithData data) =>
+      ChatCompletionMessageToolCallsUnionCustom(
+        id: data.get(#id, or: $value.id),
+        type: data.get(#type, or: $value.type),
+        chatCompletionMessageCustomToolCallCustom: data.get(
+          #chatCompletionMessageCustomToolCallCustom,
+          or: $value.chatCompletionMessageCustomToolCallCustom,
+        ),
+      );
 
   @override
-  ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWith<
+  ChatCompletionMessageToolCallsUnionCustomCopyWith<
     $R2,
-    ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCall,
+    ChatCompletionMessageToolCallsUnionCustom,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChatCompletionMessageToolCallsUnionChatCompletionMessageCustomToolCallCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChatCompletionMessageToolCallsUnionCustomCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 

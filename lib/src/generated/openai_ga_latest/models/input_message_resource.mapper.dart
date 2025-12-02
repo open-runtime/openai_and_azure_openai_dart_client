@@ -48,6 +48,10 @@ class InputMessageResourceMapper extends ClassMapperBase<InputMessageResource> {
     #type: _f$type,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputMessageResource _instantiate(DecodingData data) {
     return InputMessageResource(

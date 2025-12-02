@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'static_chunking_strategy.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StaticChunkingStrategy with StaticChunkingStrategyMappable {
   const StaticChunkingStrategy({
     required this.maxChunkSizeTokens,

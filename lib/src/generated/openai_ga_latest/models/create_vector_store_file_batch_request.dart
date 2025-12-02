@@ -10,7 +10,7 @@ import 'vector_store_file_attributes.dart';
 
 part 'create_vector_store_file_batch_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreFileBatchRequest with CreateVectorStoreFileBatchRequestMappable {
   const CreateVectorStoreFileBatchRequest({
     this.fileIds,

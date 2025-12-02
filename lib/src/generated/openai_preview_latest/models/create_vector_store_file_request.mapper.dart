@@ -18,6 +18,7 @@ class CreateVectorStoreFileRequestMapper
         _instance = CreateVectorStoreFileRequestMapper._(),
       );
       ChunkingStrategyRequestParamUnionMapper.ensureInitialized();
+      VectorStoreFileAttributesUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -44,9 +45,13 @@ class CreateVectorStoreFileRequestMapper
     key: r'chunking_strategy',
     opt: true,
   );
-  static Map<String, String>? _$attributes(CreateVectorStoreFileRequest v) =>
-      v.attributes;
-  static const Field<CreateVectorStoreFileRequest, Map<String, String>>
+  static Map<String, VectorStoreFileAttributesUnion>? _$attributes(
+    CreateVectorStoreFileRequest v,
+  ) => v.attributes;
+  static const Field<
+    CreateVectorStoreFileRequest,
+    Map<String, VectorStoreFileAttributesUnion>
+  >
   _f$attributes = Field('attributes', _$attributes, opt: true);
 
   @override
@@ -55,6 +60,10 @@ class CreateVectorStoreFileRequestMapper
     #chunkingStrategy: _f$chunkingStrategy,
     #attributes: _f$attributes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreFileRequest _instantiate(DecodingData data) {
     return CreateVectorStoreFileRequest(
@@ -143,12 +152,21 @@ abstract class CreateVectorStoreFileRequestCopyWith<
     ChunkingStrategyRequestParamUnion
   >?
   get chunkingStrategy;
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes;
   $R call({
     String? fileId,
     ChunkingStrategyRequestParamUnion? chunkingStrategy,
-    Map<String, String>? attributes,
+    Map<String, VectorStoreFileAttributesUnion>? attributes,
   });
   CreateVectorStoreFileRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -182,11 +200,20 @@ class _CreateVectorStoreFileRequestCopyWithImpl<$R, $Out>
     (v) => call(chunkingStrategy: v),
   );
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes => $value.attributes != null
       ? MapCopyWith(
           $value.attributes!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(attributes: v),
         )
       : null;

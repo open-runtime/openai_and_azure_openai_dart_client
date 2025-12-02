@@ -73,6 +73,10 @@ class PineconeFieldMappingOptionsMapper
     #filepathField: _f$filepathField,
     #contentFieldsSeparator: _f$contentFieldsSeparator,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PineconeFieldMappingOptions _instantiate(DecodingData data) {
     return PineconeFieldMappingOptions(

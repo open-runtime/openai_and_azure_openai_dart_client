@@ -67,6 +67,10 @@ class EvalRunPerModelUsageMapper extends ClassMapperBase<EvalRunPerModelUsage> {
     #totalTokens: _f$totalTokens,
     #cachedTokens: _f$cachedTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunPerModelUsage _instantiate(DecodingData data) {
     return EvalRunPerModelUsage(

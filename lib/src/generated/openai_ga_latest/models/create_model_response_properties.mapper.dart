@@ -105,6 +105,10 @@ class CreateModelResponsePropertiesMapper
     #serviceTier: _f$serviceTier,
     #promptCacheRetention: _f$promptCacheRetention,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModelResponseProperties _instantiate(DecodingData data) {
     return CreateModelResponseProperties(

@@ -8,7 +8,7 @@ import 'response_format_json_object_type_type.dart';
 
 part 'response_format_json_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatJsonObject with ResponseFormatJsonObjectMappable {
   const ResponseFormatJsonObject({
     required this.type,

@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_client_event_conversation_item_retrieve_type_type.dart';
 
 part 'realtime_client_event_conversation_item_retrieve.mapper.dart';
@@ -13,7 +14,7 @@ part 'realtime_client_event_conversation_item_retrieve.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventConversationItemRetrieve with RealtimeClientEventConversationItemRetrieveMappable {
   const RealtimeClientEventConversationItemRetrieve({
     required this.type,

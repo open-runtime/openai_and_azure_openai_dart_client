@@ -62,6 +62,10 @@ class CreateCompletionResponseChoicesMapper
     #logprobs: _f$logprobs,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionResponseChoices _instantiate(DecodingData data) {
     return CreateCompletionResponseChoices(

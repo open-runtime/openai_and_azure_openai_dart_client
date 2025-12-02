@@ -34,6 +34,10 @@ class ChatCompletionMessageCustomToolCallCustomMapper
   @override
   final MappableFields<ChatCompletionMessageCustomToolCallCustom> fields =
       const {#name: _f$name, #input: _f$input};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageCustomToolCallCustom _instantiate(
     DecodingData data,

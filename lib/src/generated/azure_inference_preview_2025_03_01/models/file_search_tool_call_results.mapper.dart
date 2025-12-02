@@ -17,6 +17,7 @@ class FileSearchToolCallResultsMapper
       MapperContainer.globals.use(
         _instance = FileSearchToolCallResultsMapper._(),
       );
+      VectorStoreFileAttributesUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -43,9 +44,13 @@ class FileSearchToolCallResultsMapper
     _$filename,
     opt: true,
   );
-  static Map<String, String>? _$attributes(FileSearchToolCallResults v) =>
-      v.attributes;
-  static const Field<FileSearchToolCallResults, Map<String, String>>
+  static Map<String, VectorStoreFileAttributesUnion>? _$attributes(
+    FileSearchToolCallResults v,
+  ) => v.attributes;
+  static const Field<
+    FileSearchToolCallResults,
+    Map<String, VectorStoreFileAttributesUnion>
+  >
   _f$attributes = Field('attributes', _$attributes, opt: true);
   static double? _$score(FileSearchToolCallResults v) => v.score;
   static const Field<FileSearchToolCallResults, double> _f$score = Field(
@@ -62,6 +67,10 @@ class FileSearchToolCallResultsMapper
     #attributes: _f$attributes,
     #score: _f$score,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileSearchToolCallResults _instantiate(DecodingData data) {
     return FileSearchToolCallResults(
@@ -147,13 +156,22 @@ abstract class FileSearchToolCallResultsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes;
   $R call({
     String? fileId,
     String? text,
     String? filename,
-    Map<String, String>? attributes,
+    Map<String, VectorStoreFileAttributesUnion>? attributes,
     double? score,
   });
   FileSearchToolCallResultsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -171,11 +189,20 @@ class _FileSearchToolCallResultsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileSearchToolCallResults> $mapper =
       FileSearchToolCallResultsMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes => $value.attributes != null
       ? MapCopyWith(
           $value.attributes!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(attributes: v),
         )
       : null;

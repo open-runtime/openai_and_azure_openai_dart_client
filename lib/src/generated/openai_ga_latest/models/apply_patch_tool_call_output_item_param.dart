@@ -10,7 +10,7 @@ import 'apply_patch_tool_call_output_item_param_type_type.dart';
 part 'apply_patch_tool_call_output_item_param.mapper.dart';
 
 /// The streamed output emitted by an apply patch tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApplyPatchToolCallOutputItemParam with ApplyPatchToolCallOutputItemParamMappable {
   const ApplyPatchToolCallOutputItemParam({
     required this.callId,

@@ -10,7 +10,7 @@ part 'code_interpreter_tool.mapper.dart';
 
 /// A tool that runs code.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterTool with CodeInterpreterToolMappable {
   const CodeInterpreterTool({
     required this.type,

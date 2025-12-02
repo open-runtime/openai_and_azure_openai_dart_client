@@ -48,6 +48,10 @@ class OnYourDataEncodedApiKeyAuthenticationOptionsMapper
   @override
   final MappableFields<OnYourDataEncodedApiKeyAuthenticationOptions> fields =
       const {#type: _f$type, #encodedApiKey: _f$encodedApiKey};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataEncodedApiKeyAuthenticationOptions _instantiate(
     DecodingData data,

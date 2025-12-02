@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_create_client_secret_response_session_session_union.dart';
+import 'realtime_create_client_secret_response_session_union.dart';
 
 part 'realtime_create_client_secret_response.mapper.dart';
 
 /// Response from creating a session and client secret for the Realtime API.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCreateClientSecretResponse with RealtimeCreateClientSecretResponseMappable {
   const RealtimeCreateClientSecretResponse({
     required this.value,
@@ -21,7 +21,7 @@ class RealtimeCreateClientSecretResponse with RealtimeCreateClientSecretResponse
   final String value;
   @MappableField(key: 'expires_at')
   final int expiresAt;
-  final RealtimeCreateClientSecretResponseSessionSessionUnion session;
+  final RealtimeCreateClientSecretResponseSessionUnion session;
 
   static RealtimeCreateClientSecretResponse fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretResponseMapper.fromJson(json);
 

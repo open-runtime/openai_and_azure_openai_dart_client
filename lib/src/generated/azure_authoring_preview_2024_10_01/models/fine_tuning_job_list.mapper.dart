@@ -46,6 +46,10 @@ class FineTuningJobListMapper extends ClassMapperBase<FineTuningJobList> {
     #data: _f$data,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobList _instantiate(DecodingData data) {
     return FineTuningJobList(

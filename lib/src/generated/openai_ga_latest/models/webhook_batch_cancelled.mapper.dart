@@ -40,7 +40,7 @@ class WebhookBatchCancelledMapper
   _f$webhookBatchCancelledData = Field(
     'webhookBatchCancelledData',
     _$webhookBatchCancelledData,
-    key: r'WebhookBatchCancelledData',
+    key: r'data',
   );
   static WebhookBatchCancelledTypeType _$type(WebhookBatchCancelled v) =>
       v.type;
@@ -63,6 +63,10 @@ class WebhookBatchCancelledMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchCancelled _instantiate(DecodingData data) {
     return WebhookBatchCancelled(

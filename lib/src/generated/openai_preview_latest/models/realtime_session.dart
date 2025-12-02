@@ -7,6 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'realtime_session_input_audio_format_input_audio_format.dart';
 import 'realtime_session_input_audio_noise_reduction.dart';
 import 'realtime_session_input_audio_transcription.dart';
+import 'realtime_session_max_response_output_tokens_union.dart';
 import 'realtime_session_model_model.dart';
 import 'realtime_session_output_audio_format_output_audio_format.dart';
 import 'realtime_session_tools.dart';
@@ -16,7 +17,7 @@ import 'voice_ids_shared.dart';
 part 'realtime_session.mapper.dart';
 
 /// Realtime session object configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSession with RealtimeSessionMappable {
   const RealtimeSession({
     required this.realtimeSessionInputAudioNoiseReduction,
@@ -35,7 +36,7 @@ class RealtimeSession with RealtimeSessionMappable {
     this.maxResponseOutputTokens,
   });
 
-  @MappableField(key: 'RealtimeSessionInputAudioNoiseReduction')
+  @MappableField(key: 'input_audio_noise_reduction')
   final RealtimeSessionInputAudioNoiseReduction realtimeSessionInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_format')
   final RealtimeSessionInputAudioFormatInputAudioFormat inputAudioFormat;
@@ -48,14 +49,15 @@ class RealtimeSession with RealtimeSessionMappable {
   final dynamic? modalities;
   final RealtimeSessionModelModel? model;
   final String? instructions;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
-  @MappableField(key: 'RealtimeSessionInputAudioTranscription')
+  @MappableField(key: 'input_audio_transcription')
   final RealtimeSessionInputAudioTranscription? realtimeSessionInputAudioTranscription;
-  @MappableField(key: 'RealtimeSessionTurnDetection')
+  @MappableField(key: 'turn_detection')
   final RealtimeSessionTurnDetection? realtimeSessionTurnDetection;
   final List<RealtimeSessionTools>? tools;
-  @MappableField(key: 'max_response_output_tokens')
-  final String? maxResponseOutputTokens;
+  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionMaxResponseOutputTokensUnionHook())
+  final RealtimeSessionMaxResponseOutputTokensUnion? maxResponseOutputTokens;
 
   static RealtimeSession fromJson(Map<String, dynamic> json) => RealtimeSessionMapper.fromJson(json);
 

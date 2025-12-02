@@ -43,7 +43,7 @@ class RealtimeServerEventConversationCreatedMapper
   _f$realtimeServerEventConversationCreatedConversation = Field(
     'realtimeServerEventConversationCreatedConversation',
     _$realtimeServerEventConversationCreatedConversation,
-    key: r'RealtimeServerEventConversationCreatedConversation',
+    key: r'conversation',
   );
 
   @override
@@ -53,6 +53,10 @@ class RealtimeServerEventConversationCreatedMapper
     #realtimeServerEventConversationCreatedConversation:
         _f$realtimeServerEventConversationCreatedConversation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationCreated _instantiate(
     DecodingData data,

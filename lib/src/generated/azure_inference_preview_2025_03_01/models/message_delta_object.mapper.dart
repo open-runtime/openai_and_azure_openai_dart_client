@@ -37,7 +37,7 @@ class MessageDeltaObjectMapper extends ClassMapperBase<MessageDeltaObject> {
   _f$messageDeltaObjectDelta = Field(
     'messageDeltaObjectDelta',
     _$messageDeltaObjectDelta,
-    key: r'MessageDeltaObjectDelta',
+    key: r'delta',
   );
 
   @override
@@ -46,6 +46,10 @@ class MessageDeltaObjectMapper extends ClassMapperBase<MessageDeltaObject> {
     #objectEnum: _f$objectEnum,
     #messageDeltaObjectDelta: _f$messageDeltaObjectDelta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaObject _instantiate(DecodingData data) {
     return MessageDeltaObject(

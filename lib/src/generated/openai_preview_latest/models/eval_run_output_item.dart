@@ -11,7 +11,7 @@ part 'eval_run_output_item.mapper.dart';
 
 /// A schema representing an evaluation run output item.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItem with EvalRunOutputItemMappable {
   const EvalRunOutputItem({
     required this.id,
@@ -39,7 +39,7 @@ class EvalRunOutputItem with EvalRunOutputItemMappable {
   @MappableField(key: 'datasource_item')
   final dynamic datasourceItem;
   final List<dynamic> results;
-  @MappableField(key: 'EvalRunOutputItemSample')
+  @MappableField(key: 'sample')
   final EvalRunOutputItemSample evalRunOutputItemSample;
   @MappableField(key: 'object')
   final EvalRunOutputItemObjectObjectEnum objectEnum;

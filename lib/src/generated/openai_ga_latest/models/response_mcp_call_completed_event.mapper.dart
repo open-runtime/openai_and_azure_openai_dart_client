@@ -57,6 +57,10 @@ class ResponseMcpCallCompletedEventMapper
     #outputIndex: _f$outputIndex,
     #sequenceNumber: _f$sequenceNumber,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseMcpCallCompletedEvent _instantiate(DecodingData data) {
     return ResponseMcpCallCompletedEvent(

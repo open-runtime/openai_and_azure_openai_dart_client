@@ -7,8 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'prompt.dart';
 import 'realtime_session_create_request_client_secret.dart';
 import 'realtime_session_create_request_input_audio_transcription.dart';
+import 'realtime_session_create_request_max_response_output_tokens_union.dart';
 import 'realtime_session_create_request_tools.dart';
-import 'realtime_session_create_request_tracing_tracing_union.dart';
+import 'realtime_session_create_request_tracing_union.dart';
 import 'realtime_session_create_request_turn_detection.dart';
 import 'realtime_truncation.dart';
 import 'voice_ids_shared.dart';
@@ -18,7 +19,7 @@ part 'realtime_session_create_request.mapper.dart';
 /// A new Realtime session configuration, with an ephemeral key. Default TTL.
 /// for keys is one minute.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   const RealtimeSessionCreateRequest({
     required this.realtimeSessionCreateRequestClientSecret,
@@ -39,27 +40,28 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
     this.prompt,
   });
 
-  @MappableField(key: 'RealtimeSessionCreateRequestClientSecret')
+  @MappableField(key: 'client_secret')
   final RealtimeSessionCreateRequestClientSecret realtimeSessionCreateRequestClientSecret;
   final num speed;
   final dynamic? modalities;
   final String? instructions;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
   @MappableField(key: 'input_audio_format')
   final String? inputAudioFormat;
   @MappableField(key: 'output_audio_format')
   final String? outputAudioFormat;
-  @MappableField(key: 'RealtimeSessionCreateRequestInputAudioTranscription')
+  @MappableField(key: 'input_audio_transcription')
   final RealtimeSessionCreateRequestInputAudioTranscription? realtimeSessionCreateRequestInputAudioTranscription;
-  final RealtimeSessionCreateRequestTracingTracingUnion? tracing;
-  @MappableField(key: 'RealtimeSessionCreateRequestTurnDetection')
+  final RealtimeSessionCreateRequestTracingUnion? tracing;
+  @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateRequestTurnDetection? realtimeSessionCreateRequestTurnDetection;
   final List<RealtimeSessionCreateRequestTools>? tools;
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
   final num? temperature;
-  @MappableField(key: 'max_response_output_tokens')
-  final String? maxResponseOutputTokens;
+  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook())
+  final RealtimeSessionCreateRequestMaxResponseOutputTokensUnion? maxResponseOutputTokens;
   final RealtimeTruncation? truncation;
   final Prompt? prompt;
 

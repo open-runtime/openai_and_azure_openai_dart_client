@@ -60,6 +60,10 @@ class AuditLogOrganizationUpdatedChangesRequestedSettingsMapper
     #threadsUiVisibility: _f$threadsUiVisibility,
     #usageDashboardVisibility: _f$usageDashboardVisibility,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogOrganizationUpdatedChangesRequestedSettings _instantiate(
     DecodingData data,

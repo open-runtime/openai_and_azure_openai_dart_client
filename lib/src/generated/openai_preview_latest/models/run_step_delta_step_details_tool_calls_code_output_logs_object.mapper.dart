@@ -53,6 +53,10 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper
   @override
   final MappableFields<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject>
   fields = const {#indexField: _f$indexField, #type: _f$type, #logs: _f$logs};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject _instantiate(
     DecodingData data,

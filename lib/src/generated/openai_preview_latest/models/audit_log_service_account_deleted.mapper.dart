@@ -35,6 +35,10 @@ class AuditLogServiceAccountDeletedMapper
   final MappableFields<AuditLogServiceAccountDeleted> fields = const {
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogServiceAccountDeleted _instantiate(DecodingData data) {
     return AuditLogServiceAccountDeleted(id: data.dec(_f$id));

@@ -9,7 +9,7 @@ import 'project_rate_limit_list_response_object_object_enum.dart';
 
 part 'project_rate_limit_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectRateLimitListResponse with ProjectRateLimitListResponseMappable {
   const ProjectRateLimitListResponse({
     required this.objectEnum,

@@ -25,6 +25,10 @@ class ContentUnionMapper extends ClassMapperBase<ContentUnion> {
 
   @override
   final MappableFields<ContentUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ContentUnion');
@@ -74,6 +78,10 @@ class ContentUnionInputContentMapper
 
   @override
   final MappableFields<ContentUnionInputContent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentUnionInputContent _instantiate(DecodingData data) {
     return ContentUnionInputContent();
@@ -197,6 +205,10 @@ class ContentUnionOutputContentMapper
 
   @override
   final MappableFields<ContentUnionOutputContent> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentUnionOutputContent _instantiate(DecodingData data) {
     return ContentUnionOutputContent();

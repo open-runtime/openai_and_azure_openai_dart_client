@@ -30,7 +30,7 @@ class ListCertificatesResponseObjectObjectEnumMapper
   ListCertificatesResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ListCertificatesResponseObjectObjectEnum.valueList;
+        return ListCertificatesResponseObjectObjectEnum.list;
       case 'unknown':
         return ListCertificatesResponseObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class ListCertificatesResponseObjectObjectEnumMapper
   @override
   dynamic encode(ListCertificatesResponseObjectObjectEnum self) {
     switch (self) {
-      case ListCertificatesResponseObjectObjectEnum.valueList:
+      case ListCertificatesResponseObjectObjectEnum.list:
         return 'list';
       case ListCertificatesResponseObjectObjectEnum.unknown:
         return 'unknown';

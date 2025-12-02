@@ -9,7 +9,7 @@ import 'ingestion_job_run.dart';
 part 'ingestion_job_run_list.mapper.dart';
 
 /// Represents a list of ingestion job runs.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobRunList with IngestionJobRunListMappable {
   const IngestionJobRunList({
     this.nextLink,

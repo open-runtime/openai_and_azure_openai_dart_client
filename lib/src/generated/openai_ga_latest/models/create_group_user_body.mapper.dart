@@ -30,6 +30,10 @@ class CreateGroupUserBodyMapper extends ClassMapperBase<CreateGroupUserBody> {
 
   @override
   final MappableFields<CreateGroupUserBody> fields = const {#userId: _f$userId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateGroupUserBody _instantiate(DecodingData data) {
     return CreateGroupUserBody(userId: data.dec(_f$userId));

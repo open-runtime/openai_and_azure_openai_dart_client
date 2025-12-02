@@ -12,7 +12,7 @@ part 'webhook_response_cancelled.mapper.dart';
 
 /// Sent when a background response has been cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCancelled with WebhookResponseCancelledMappable {
   const WebhookResponseCancelled({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookResponseCancelled with WebhookResponseCancelledMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookResponseCancelledData')
+  @MappableField(key: 'data')
   final WebhookResponseCancelledData webhookResponseCancelledData;
   final WebhookResponseCancelledTypeType type;
   @MappableField(key: 'object')

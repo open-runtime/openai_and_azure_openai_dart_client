@@ -65,6 +65,10 @@ class IngestionJobStageProgressMapper
     #state: _f$state,
     #subStageProgress: _f$subStageProgress,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobStageProgress _instantiate(DecodingData data) {
     return IngestionJobStageProgress(

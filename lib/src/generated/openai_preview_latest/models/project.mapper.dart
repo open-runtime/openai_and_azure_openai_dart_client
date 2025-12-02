@@ -61,6 +61,10 @@ class ProjectMapper extends ClassMapperBase<Project> {
     #status: _f$status,
     #archivedAt: _f$archivedAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Project _instantiate(DecodingData data) {
     return Project(

@@ -41,6 +41,10 @@ class SummaryTextContentMapper extends ClassMapperBase<SummaryTextContent> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SummaryTextContent _instantiate(DecodingData data) {
     return SummaryTextContent(text: data.dec(_f$text), type: data.dec(_f$type));

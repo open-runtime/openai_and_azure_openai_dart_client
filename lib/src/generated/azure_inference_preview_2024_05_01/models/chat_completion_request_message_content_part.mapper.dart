@@ -38,6 +38,10 @@ class ChatCompletionRequestMessageContentPartMapper
   final MappableFields<ChatCompletionRequestMessageContentPart> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageContentPart _instantiate(
     DecodingData data,

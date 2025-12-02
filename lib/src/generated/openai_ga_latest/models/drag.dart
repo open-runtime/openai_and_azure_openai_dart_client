@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'drag_point.dart';
 import 'drag_type_type.dart';
 
@@ -11,7 +12,7 @@ part 'drag.mapper.dart';
 
 /// A drag action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Drag with DragMappable {
   const Drag({
     required this.path,

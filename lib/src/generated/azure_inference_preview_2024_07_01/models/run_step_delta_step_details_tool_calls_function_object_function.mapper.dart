@@ -58,6 +58,10 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionMapper
   @override
   final MappableFields<RunStepDeltaStepDetailsToolCallsFunctionObjectFunction>
   fields = const {#name: _f$name, #arguments: _f$arguments, #output: _f$output};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsFunctionObjectFunction _instantiate(
     DecodingData data,

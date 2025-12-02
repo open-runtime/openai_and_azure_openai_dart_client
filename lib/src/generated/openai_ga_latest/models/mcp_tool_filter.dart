@@ -8,7 +8,7 @@ part 'mcp_tool_filter.mapper.dart';
 
 /// A filter object to specify which tools are allowed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpToolFilter with McpToolFilterMappable {
   const McpToolFilter({
     this.toolNames,

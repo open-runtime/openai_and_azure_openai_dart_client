@@ -38,6 +38,10 @@ class ChatCompletionRequestAssistantMessageFunctionCallMapper
   @override
   final MappableFields<ChatCompletionRequestAssistantMessageFunctionCall>
   fields = const {#arguments: _f$arguments, #name: _f$name};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestAssistantMessageFunctionCall _instantiate(
     DecodingData data,

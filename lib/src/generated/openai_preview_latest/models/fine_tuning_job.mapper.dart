@@ -38,11 +38,7 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
   static FineTuningJobError? _$fineTuningJobError(FineTuningJob v) =>
       v.fineTuningJobError;
   static const Field<FineTuningJob, FineTuningJobError> _f$fineTuningJobError =
-      Field(
-        'fineTuningJobError',
-        _$fineTuningJobError,
-        key: r'FineTuningJobError',
-      );
+      Field('fineTuningJobError', _$fineTuningJobError, key: r'error');
   static String? _$fineTunedModel(FineTuningJob v) => v.fineTunedModel;
   static const Field<FineTuningJob, String> _f$fineTunedModel = Field(
     'fineTunedModel',
@@ -62,7 +58,7 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
   _f$fineTuningJobHyperparameters = Field(
     'fineTuningJobHyperparameters',
     _$fineTuningJobHyperparameters,
-    key: r'FineTuningJobHyperparameters',
+    key: r'hyperparameters',
   );
   static String _$model(FineTuningJob v) => v.model;
   static const Field<FineTuningJob, String> _f$model = Field('model', _$model);
@@ -151,6 +147,10 @@ class FineTuningJobMapper extends ClassMapperBase<FineTuningJob> {
     #method: _f$method,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJob _instantiate(DecodingData data) {
     return FineTuningJob(

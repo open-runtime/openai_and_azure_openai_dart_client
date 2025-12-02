@@ -48,6 +48,10 @@ class ChatCompletionFunctionsMapper
     #description: _f$description,
     #parameters: _f$parameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionFunctions _instantiate(DecodingData data) {
     return ChatCompletionFunctions(

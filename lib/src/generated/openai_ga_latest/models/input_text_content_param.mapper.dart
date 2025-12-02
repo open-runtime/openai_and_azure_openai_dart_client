@@ -43,6 +43,10 @@ class InputTextContentParamMapper
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputTextContentParam _instantiate(DecodingData data) {
     return InputTextContentParam(

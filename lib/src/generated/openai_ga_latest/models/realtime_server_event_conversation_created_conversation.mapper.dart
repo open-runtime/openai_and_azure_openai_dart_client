@@ -48,6 +48,10 @@ class RealtimeServerEventConversationCreatedConversationMapper
   @override
   final MappableFields<RealtimeServerEventConversationCreatedConversation>
   fields = const {#id: _f$id, #objectField: _f$objectField};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationCreatedConversation _instantiate(
     DecodingData data,

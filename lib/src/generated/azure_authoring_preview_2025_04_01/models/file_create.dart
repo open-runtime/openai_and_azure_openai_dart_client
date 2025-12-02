@@ -9,7 +9,7 @@ import 'purpose.dart';
 part 'file_create.mapper.dart';
 
 /// Defines a document to import from an external content url to be usable with Azure OpenAI.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileCreate with FileCreateMappable {
   const FileCreate({
     required this.purpose,

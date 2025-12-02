@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_conversation_created_conversation.dart';
 
 part 'realtime_server_event_conversation_created.mapper.dart';
 
 /// Returned when a conversation is created. Emitted right after session creation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversationCreated with RealtimeServerEventConversationCreatedMappable {
   const RealtimeServerEventConversationCreated({
     required this.eventId,
@@ -21,7 +22,7 @@ class RealtimeServerEventConversationCreated with RealtimeServerEventConversatio
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
-  @MappableField(key: 'RealtimeServerEventConversationCreatedConversation')
+  @MappableField(key: 'conversation')
   final RealtimeServerEventConversationCreatedConversation realtimeServerEventConversationCreatedConversation;
 
   static RealtimeServerEventConversationCreated fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationCreatedMapper.fromJson(json);

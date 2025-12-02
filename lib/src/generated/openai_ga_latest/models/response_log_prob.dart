@@ -12,7 +12,7 @@ part 'response_log_prob.mapper.dart';
 /// a particular token at a given position in the sequence. Less-negative (higher) .
 /// logprob values indicate greater model confidence in that token choice.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseLogProb with ResponseLogProbMappable {
   const ResponseLogProb({
     required this.token,

@@ -35,7 +35,7 @@ class FineTuneSupervisedMethodMapper
   _f$fineTuneSupervisedMethodHyperparameters = Field(
     'fineTuneSupervisedMethodHyperparameters',
     _$fineTuneSupervisedMethodHyperparameters,
-    key: r'FineTuneSupervisedMethodHyperparameters',
+    key: r'hyperparameters',
     opt: true,
   );
 
@@ -44,6 +44,10 @@ class FineTuneSupervisedMethodMapper
     #fineTuneSupervisedMethodHyperparameters:
         _f$fineTuneSupervisedMethodHyperparameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneSupervisedMethod _instantiate(DecodingData data) {
     return FineTuneSupervisedMethod(

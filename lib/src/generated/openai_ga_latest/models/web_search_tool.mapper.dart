@@ -69,6 +69,10 @@ class WebSearchToolMapper extends ClassMapperBase<WebSearchTool> {
     #type: _f$type,
     #searchContextSize: _f$searchContextSize,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebSearchTool _instantiate(DecodingData data) {
     return WebSearchTool(

@@ -10,7 +10,7 @@ part 'on_your_data_deployment_name_vectorization_source.mapper.dart';
 
 /// The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based.
 /// on an internal embeddings model deployment name in the same Azure OpenAI resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataDeploymentNameVectorizationSource with OnYourDataDeploymentNameVectorizationSourceMappable {
   const OnYourDataDeploymentNameVectorizationSource({
     required this.type,

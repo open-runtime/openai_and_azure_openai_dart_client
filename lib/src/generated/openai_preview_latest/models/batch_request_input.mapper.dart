@@ -46,6 +46,10 @@ class BatchRequestInputMapper extends ClassMapperBase<BatchRequestInput> {
     #method: _f$method,
     #url: _f$url,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestInput _instantiate(DecodingData data) {
     return BatchRequestInput(

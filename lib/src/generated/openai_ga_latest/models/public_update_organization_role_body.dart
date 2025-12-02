@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'public_update_organization_role_body.mapper.dart';
 
 /// Request payload for updating an existing role.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PublicUpdateOrganizationRoleBody with PublicUpdateOrganizationRoleBodyMappable {
   const PublicUpdateOrganizationRoleBody({
     this.permissions,

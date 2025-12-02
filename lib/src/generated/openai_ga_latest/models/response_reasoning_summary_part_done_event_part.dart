@@ -8,7 +8,7 @@ import 'response_reasoning_summary_part_done_event_part_type_type.dart';
 
 part 'response_reasoning_summary_part_done_event_part.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseReasoningSummaryPartDoneEventPart with ResponseReasoningSummaryPartDoneEventPartMappable {
   const ResponseReasoningSummaryPartDoneEventPart({
     required this.type,

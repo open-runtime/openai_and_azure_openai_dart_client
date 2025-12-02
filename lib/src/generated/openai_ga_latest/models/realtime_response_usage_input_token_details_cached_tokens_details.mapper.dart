@@ -79,6 +79,10 @@ class RealtimeResponseUsageInputTokenDetailsCachedTokensDetailsMapper
     #imageTokens: _f$imageTokens,
     #audioTokens: _f$audioTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeResponseUsageInputTokenDetailsCachedTokensDetails _instantiate(
     DecodingData data,

@@ -74,6 +74,10 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedErrorM
     #message: _f$message,
     #param: _f$param,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError
   _instantiate(DecodingData data) {

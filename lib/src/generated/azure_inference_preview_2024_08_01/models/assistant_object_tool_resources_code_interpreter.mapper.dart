@@ -39,6 +39,10 @@ class AssistantObjectToolResourcesCodeInterpreterMapper
   @override
   final MappableFields<AssistantObjectToolResourcesCodeInterpreter> fields =
       const {#fileIds: _f$fileIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantObjectToolResourcesCodeInterpreter _instantiate(
     DecodingData data,

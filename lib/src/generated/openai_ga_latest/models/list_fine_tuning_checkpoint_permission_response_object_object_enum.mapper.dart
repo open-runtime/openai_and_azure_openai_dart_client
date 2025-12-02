@@ -38,8 +38,7 @@ class ListFineTuningCheckpointPermissionResponseObjectObjectEnumMapper
   ) {
     switch (value) {
       case 'list':
-        return ListFineTuningCheckpointPermissionResponseObjectObjectEnum
-            .valueList;
+        return ListFineTuningCheckpointPermissionResponseObjectObjectEnum.list;
       case 'unknown':
         return ListFineTuningCheckpointPermissionResponseObjectObjectEnum
             .unknown;
@@ -53,7 +52,7 @@ class ListFineTuningCheckpointPermissionResponseObjectObjectEnumMapper
     ListFineTuningCheckpointPermissionResponseObjectObjectEnum self,
   ) {
     switch (self) {
-      case ListFineTuningCheckpointPermissionResponseObjectObjectEnum.valueList:
+      case ListFineTuningCheckpointPermissionResponseObjectObjectEnum.list:
         return 'list';
       case ListFineTuningCheckpointPermissionResponseObjectObjectEnum.unknown:
         return 'unknown';

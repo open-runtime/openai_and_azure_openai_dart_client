@@ -35,6 +35,10 @@ class ChatCompletionMessageToolCallChunkFunctionMapper
   @override
   final MappableFields<ChatCompletionMessageToolCallChunkFunction> fields =
       const {#name: _f$name, #arguments: _f$arguments};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageToolCallChunkFunction _instantiate(
     DecodingData data,

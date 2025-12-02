@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'compound_filter_filters_filters_union.dart';
+import 'compound_filter_filters_union.dart';
 import 'compound_filter_type_type.dart';
 
 part 'compound_filter.mapper.dart';
 
 /// Combine multiple filters using `and` or `or`.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompoundFilter with CompoundFilterMappable {
   const CompoundFilter({
     required this.type,
@@ -18,7 +18,7 @@ class CompoundFilter with CompoundFilterMappable {
   });
 
   final CompoundFilterTypeType type;
-  final List<CompoundFilterFiltersFiltersUnion> filters;
+  final List<CompoundFilterFiltersUnion> filters;
 
   static CompoundFilter fromJson(Map<String, dynamic> json) => CompoundFilterMapper.fromJson(json);
 

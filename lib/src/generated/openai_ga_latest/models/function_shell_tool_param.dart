@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_shell_tool_param_type_type.dart';
+import 'tool.dart';
 
 part 'function_shell_tool_param.mapper.dart';
 
 /// A tool that allows the model to execute shell commands.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellToolParam with FunctionShellToolParamMappable {
   const FunctionShellToolParam({
     this.type = FunctionShellToolParamTypeType.shell,

@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'batch_output_reference.mapper.dart';
 
 /// The Azure Storage folder to store output.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchOutputReference with BatchOutputReferenceMappable {
   const BatchOutputReference({
     this.url,

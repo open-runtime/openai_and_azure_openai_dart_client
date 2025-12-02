@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_request_assistant_message_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestAssistantMessageAudio with ChatCompletionRequestAssistantMessageAudioMappable {
   const ChatCompletionRequestAssistantMessageAudio({
     required this.id,

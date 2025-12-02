@@ -44,6 +44,10 @@ class CodeInterpreterTextOutputMapper
     #type: _f$type,
     #logs: _f$logs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CodeInterpreterTextOutput _instantiate(DecodingData data) {
     return CodeInterpreterTextOutput(

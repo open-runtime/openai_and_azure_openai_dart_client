@@ -75,6 +75,10 @@ class AzureCosmosDbFieldMappingOptionsMapper
     #filepathField: _f$filepathField,
     #contentFieldsSeparator: _f$contentFieldsSeparator,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureCosmosDbFieldMappingOptions _instantiate(DecodingData data) {
     return AzureCosmosDbFieldMappingOptions(

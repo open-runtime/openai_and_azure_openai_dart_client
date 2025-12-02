@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_organization_updated_changes_requested.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogOrganizationUpdatedChangesRequested with AuditLogOrganizationUpdatedChangesRequestedMappable {
   const AuditLogOrganizationUpdatedChangesRequested({
     this.title,

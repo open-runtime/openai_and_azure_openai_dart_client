@@ -13,7 +13,7 @@ part 'computer_tool_call_output.mapper.dart';
 
 /// The output of a computer tool call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerToolCallOutput with ComputerToolCallOutputMappable {
   const ComputerToolCallOutput({
     required this.callId,

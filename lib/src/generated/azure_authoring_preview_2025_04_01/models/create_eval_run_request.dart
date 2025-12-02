@@ -9,7 +9,7 @@ import 'metadata.dart';
 
 part 'create_eval_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRunRequest with CreateEvalRunRequestMappable {
   const CreateEvalRunRequest({
     required this.dataSource,

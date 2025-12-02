@@ -37,6 +37,10 @@ class IngestionJobRunListMapper extends ClassMapperBase<IngestionJobRunList> {
     #nextLink: _f$nextLink,
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobRunList _instantiate(DecodingData data) {
     return IngestionJobRunList(

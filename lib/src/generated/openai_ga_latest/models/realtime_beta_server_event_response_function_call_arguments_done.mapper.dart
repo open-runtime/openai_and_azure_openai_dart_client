@@ -98,6 +98,10 @@ class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMapper
     #callId: _f$callId,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseFunctionCallArgumentsDone _instantiate(
     DecodingData data,

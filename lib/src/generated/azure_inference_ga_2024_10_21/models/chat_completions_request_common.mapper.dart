@@ -109,6 +109,10 @@ class ChatCompletionsRequestCommonMapper
     #presencePenalty: _f$presencePenalty,
     #frequencyPenalty: _f$frequencyPenalty,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionsRequestCommon _instantiate(DecodingData data) {
     return ChatCompletionsRequestCommon(

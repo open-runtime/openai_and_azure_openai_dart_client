@@ -46,6 +46,10 @@ class CompletionUsageMapper extends ClassMapperBase<CompletionUsage> {
     #completionTokens: _f$completionTokens,
     #totalTokens: _f$totalTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CompletionUsage _instantiate(DecodingData data) {
     return CompletionUsage(

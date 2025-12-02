@@ -20,17 +20,17 @@ class CreateChatCompletionRequestMapper
       ChatCompletionRequestMessageMapper.ensureInitialized();
       ModelIdsSharedMapper.ensureInitialized();
       ModelResponsePropertiesPromptCacheRetentionPromptCacheRetentionMapper.ensureInitialized();
-      CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestFunctionCallUnionMapper.ensureInitialized();
       ResponseModalitiesMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
-      CreateChatCompletionRequestToolsToolsUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestToolsUnionMapper.ensureInitialized();
       CreateChatCompletionRequestWebSearchOptionsMapper.ensureInitialized();
-      CreateChatCompletionRequestResponseFormatResponseFormatUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized();
       CreateChatCompletionRequestAudioMapper.ensureInitialized();
       ChatCompletionStreamOptionsUnionMapper.ensureInitialized();
       ChatCompletionFunctionsMapper.ensureInitialized();
-      PredictionContentMapper.ensureInitialized();
+      CreateChatCompletionRequestPredictionUnionMapper.ensureInitialized();
       StopConfigurationMapper.ensureInitialized();
     }
     return _instance!;
@@ -53,7 +53,7 @@ class CreateChatCompletionRequestMapper
   _f$messages = Field('messages', _$messages);
   static ModelIdsShared _$model(CreateChatCompletionRequest v) => v.model;
   static const Field<CreateChatCompletionRequest, ModelIdsShared> _f$model =
-      Field('model', _$model);
+      Field('model', _$model, hook: const ModelIdsSharedHook());
   static String? _$verbosity(CreateChatCompletionRequest v) => v.verbosity;
   static const Field<CreateChatCompletionRequest, String> _f$verbosity = Field(
     'verbosity',
@@ -107,11 +107,12 @@ class CreateChatCompletionRequestMapper
     key: r'top_logprobs',
     opt: true,
   );
-  static CreateChatCompletionRequestFunctionCallFunctionCallUnion?
-  _$functionCall(CreateChatCompletionRequest v) => v.functionCall;
+  static CreateChatCompletionRequestFunctionCallUnion? _$functionCall(
+    CreateChatCompletionRequest v,
+  ) => v.functionCall;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion
   >
   _f$functionCall = Field(
     'functionCall',
@@ -160,12 +161,12 @@ class CreateChatCompletionRequestMapper
     key: r'tool_choice',
     opt: true,
   );
-  static List<CreateChatCompletionRequestToolsToolsUnion>? _$tools(
+  static List<CreateChatCompletionRequestToolsUnion>? _$tools(
     CreateChatCompletionRequest v,
   ) => v.tools;
   static const Field<
     CreateChatCompletionRequest,
-    List<CreateChatCompletionRequestToolsToolsUnion>
+    List<CreateChatCompletionRequestToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
   static CreateChatCompletionRequestWebSearchOptions?
@@ -179,14 +180,15 @@ class CreateChatCompletionRequestMapper
   _f$createChatCompletionRequestWebSearchOptions = Field(
     'createChatCompletionRequestWebSearchOptions',
     _$createChatCompletionRequestWebSearchOptions,
-    key: r'CreateChatCompletionRequestWebSearchOptions',
+    key: r'web_search_options',
     opt: true,
   );
-  static CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-  _$responseFormat(CreateChatCompletionRequest v) => v.responseFormat;
+  static CreateChatCompletionRequestResponseFormatUnion? _$responseFormat(
+    CreateChatCompletionRequest v,
+  ) => v.responseFormat;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion
   >
   _f$responseFormat = Field(
     'responseFormat',
@@ -204,7 +206,7 @@ class CreateChatCompletionRequestMapper
   _f$createChatCompletionRequestAudio = Field(
     'createChatCompletionRequestAudio',
     _$createChatCompletionRequestAudio,
-    key: r'CreateChatCompletionRequestAudio',
+    key: r'audio',
     opt: true,
   );
   static ChatCompletionStreamOptionsUnion? _$streamOptions(
@@ -240,9 +242,13 @@ class CreateChatCompletionRequestMapper
         key: r'parallel_tool_calls',
         opt: true,
       );
-  static PredictionContent? _$prediction(CreateChatCompletionRequest v) =>
-      v.prediction;
-  static const Field<CreateChatCompletionRequest, PredictionContent>
+  static CreateChatCompletionRequestPredictionUnion? _$prediction(
+    CreateChatCompletionRequest v,
+  ) => v.prediction;
+  static const Field<
+    CreateChatCompletionRequest,
+    CreateChatCompletionRequestPredictionUnion
+  >
   _f$prediction = Field('prediction', _$prediction, opt: true);
   static StopConfiguration? _$stop(CreateChatCompletionRequest v) => v.stop;
   static const Field<CreateChatCompletionRequest, StopConfiguration> _f$stop =
@@ -357,6 +363,10 @@ class CreateChatCompletionRequestMapper
     #n: _f$n,
     #maxTokens: _f$maxTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequest _instantiate(DecodingData data) {
     return CreateChatCompletionRequest(
@@ -488,10 +498,10 @@ abstract class CreateChatCompletionRequestCopyWith<
   >
   get messages;
   ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model;
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall;
   ResponseModalitiesCopyWith<$R, ResponseModalities, ResponseModalities>?
@@ -505,11 +515,11 @@ abstract class CreateChatCompletionRequestCopyWith<
   get toolChoice;
   ListCopyWith<
     $R,
-    CreateChatCompletionRequestToolsToolsUnion,
-    CreateChatCompletionRequestToolsToolsUnionCopyWith<
+    CreateChatCompletionRequestToolsUnion,
+    CreateChatCompletionRequestToolsUnionCopyWith<
       $R,
-      CreateChatCompletionRequestToolsToolsUnion,
-      CreateChatCompletionRequestToolsToolsUnion
+      CreateChatCompletionRequestToolsUnion,
+      CreateChatCompletionRequestToolsUnion
     >
   >?
   get tools;
@@ -519,10 +529,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     CreateChatCompletionRequestWebSearchOptions
   >?
   get createChatCompletionRequestWebSearchOptions;
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat;
   CreateChatCompletionRequestAudioCopyWith<
@@ -547,7 +557,11 @@ abstract class CreateChatCompletionRequestCopyWith<
     >
   >?
   get functions;
-  PredictionContentCopyWith<$R, PredictionContent, PredictionContent>?
+  CreateChatCompletionRequestPredictionUnionCopyWith<
+    $R,
+    CreateChatCompletionRequestPredictionUnion,
+    CreateChatCompletionRequestPredictionUnion
+  >?
   get prediction;
   StopConfigurationCopyWith<$R, StopConfiguration, StopConfiguration>? get stop;
   $R call({
@@ -562,23 +576,22 @@ abstract class CreateChatCompletionRequestCopyWith<
     ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention?
     promptCacheRetention,
     int? topLogprobs,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
+    CreateChatCompletionRequestFunctionCallUnion? functionCall,
     ResponseModalities? modalities,
     Metadata? metadata,
     String? reasoningEffort,
     int? maxCompletionTokens,
     ChatCompletionToolChoiceOptionUnion? toolChoice,
-    List<CreateChatCompletionRequestToolsToolsUnion>? tools,
+    List<CreateChatCompletionRequestToolsUnion>? tools,
     CreateChatCompletionRequestWebSearchOptions?
     createChatCompletionRequestWebSearchOptions,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion?
-    responseFormat,
+    CreateChatCompletionRequestResponseFormatUnion? responseFormat,
     CreateChatCompletionRequestAudio? createChatCompletionRequestAudio,
     ChatCompletionStreamOptionsUnion? streamOptions,
     int? seed,
     List<ChatCompletionFunctions>? functions,
     bool? parallelToolCalls,
-    PredictionContent? prediction,
+    CreateChatCompletionRequestPredictionUnion? prediction,
     StopConfiguration? stop,
     num? topP,
     num? temperature,
@@ -640,10 +653,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   ModelIdsSharedCopyWith<$R, ModelIdsShared, ModelIdsShared> get model =>
       $value.model.copyWith.$chain((v) => call(model: v));
   @override
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall =>
       $value.functionCall?.copyWith.$chain((v) => call(functionCall: v));
@@ -665,11 +678,11 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CreateChatCompletionRequestToolsToolsUnion,
-    CreateChatCompletionRequestToolsToolsUnionCopyWith<
+    CreateChatCompletionRequestToolsUnion,
+    CreateChatCompletionRequestToolsUnionCopyWith<
       $R,
-      CreateChatCompletionRequestToolsToolsUnion,
-      CreateChatCompletionRequestToolsToolsUnion
+      CreateChatCompletionRequestToolsUnion,
+      CreateChatCompletionRequestToolsUnion
     >
   >?
   get tools => $value.tools != null
@@ -690,10 +703,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(createChatCompletionRequestWebSearchOptions: v));
   @override
-  CreateChatCompletionRequestResponseFormatResponseFormatUnionCopyWith<
+  CreateChatCompletionRequestResponseFormatUnionCopyWith<
     $R,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion,
-    CreateChatCompletionRequestResponseFormatResponseFormatUnion
+    CreateChatCompletionRequestResponseFormatUnion,
+    CreateChatCompletionRequestResponseFormatUnion
   >?
   get responseFormat =>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));
@@ -733,7 +746,11 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  PredictionContentCopyWith<$R, PredictionContent, PredictionContent>?
+  CreateChatCompletionRequestPredictionUnionCopyWith<
+    $R,
+    CreateChatCompletionRequestPredictionUnion,
+    CreateChatCompletionRequestPredictionUnion
+  >?
   get prediction =>
       $value.prediction?.copyWith.$chain((v) => call(prediction: v));
   @override

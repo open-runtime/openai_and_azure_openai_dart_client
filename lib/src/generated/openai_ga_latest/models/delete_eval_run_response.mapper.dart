@@ -49,6 +49,10 @@ class DeleteEvalRunResponseMapper
     #deleted: _f$deleted,
     #runId: _f$runId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteEvalRunResponse _instantiate(DecodingData data) {
     return DeleteEvalRunResponse(

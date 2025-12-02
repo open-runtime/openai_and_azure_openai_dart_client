@@ -81,6 +81,10 @@ class CreateEvalStoredCompletionsRunDataSourceMapper
         #metadata: _f$metadata,
         #model: _f$model,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalStoredCompletionsRunDataSource _instantiate(
     DecodingData data,

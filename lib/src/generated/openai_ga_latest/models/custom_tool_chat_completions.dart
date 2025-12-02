@@ -11,7 +11,7 @@ part 'custom_tool_chat_completions.mapper.dart';
 
 /// A custom tool that processes input using a specified format.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolChatCompletions with CustomToolChatCompletionsMappable {
   const CustomToolChatCompletions({
     required this.type,
@@ -19,7 +19,7 @@ class CustomToolChatCompletions with CustomToolChatCompletionsMappable {
   });
 
   final CustomToolChatCompletionsTypeType type;
-  @MappableField(key: 'CustomToolChatCompletionsCustom')
+  @MappableField(key: 'custom')
   final CustomToolChatCompletionsCustom customToolChatCompletionsCustom;
 
   static CustomToolChatCompletions fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsMapper.fromJson(json);

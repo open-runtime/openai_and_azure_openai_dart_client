@@ -12,7 +12,7 @@ part 'grader_label_model.mapper.dart';
 /// A LabelModelGrader object which uses a model to assign labels to each item.
 /// in the evaluation.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderLabelModel with GraderLabelModelMappable {
   const GraderLabelModel({
     required this.type,

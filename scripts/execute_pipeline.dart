@@ -122,6 +122,7 @@ Future<void> _generateRetrofitClients({bool verbose = false}) async {
   final result = await Process.run('dart', [
     'run',
     'openapi_retrofit_generator',
+    if (verbose) '-v', // Verbose logging (debug level)
   ], workingDirectory: Directory.current.path);
 
   if (result.exitCode != 0) {

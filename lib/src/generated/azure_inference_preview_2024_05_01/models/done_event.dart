@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'assistant_stream_event.dart';
 import 'done_event_data_data.dart';
 import 'done_event_event_event.dart';
 
 part 'done_event.mapper.dart';
 
 /// Occurs when a stream ends.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DoneEvent with DoneEventMappable {
   const DoneEvent({
     required this.event,

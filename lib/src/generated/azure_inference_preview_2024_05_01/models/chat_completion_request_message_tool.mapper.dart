@@ -47,6 +47,10 @@ class ChatCompletionRequestMessageToolMapper
     #toolCallId: _f$toolCallId,
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionRequestMessageTool _instantiate(DecodingData data) {
     return ChatCompletionRequestMessageTool(

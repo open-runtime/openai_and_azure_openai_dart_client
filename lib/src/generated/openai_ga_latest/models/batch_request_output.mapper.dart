@@ -51,6 +51,10 @@ class BatchRequestOutputMapper extends ClassMapperBase<BatchRequestOutput> {
     #response: _f$response,
     #error: _f$error,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestOutput _instantiate(DecodingData data) {
     return BatchRequestOutput(

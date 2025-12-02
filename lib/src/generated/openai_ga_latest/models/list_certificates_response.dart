@@ -9,7 +9,7 @@ import 'list_certificates_response_object_object_enum.dart';
 
 part 'list_certificates_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListCertificatesResponse with ListCertificatesResponseMappable {
   const ListCertificatesResponse({
     required this.data,

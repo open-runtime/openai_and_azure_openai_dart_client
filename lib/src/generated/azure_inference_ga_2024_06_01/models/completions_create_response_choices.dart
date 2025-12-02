@@ -9,7 +9,7 @@ import 'content_filter_choice_results.dart';
 
 part 'completions_create_response_choices.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionsCreateResponseChoices with CompletionsCreateResponseChoicesMappable {
   const CompletionsCreateResponseChoices({
     this.text,
@@ -22,7 +22,7 @@ class CompletionsCreateResponseChoices with CompletionsCreateResponseChoicesMapp
   final String? text;
   @MappableField(key: 'index')
   final int? indexField;
-  @MappableField(key: 'CompletionsCreateResponseChoicesLogprobs')
+  @MappableField(key: 'logprobs')
   final CompletionsCreateResponseChoicesLogprobs? completionsCreateResponseChoicesLogprobs;
   @MappableField(key: 'finish_reason')
   final String? finishReason;

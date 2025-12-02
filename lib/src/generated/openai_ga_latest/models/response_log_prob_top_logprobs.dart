@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'response_log_prob_top_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseLogProbTopLogprobs with ResponseLogProbTopLogprobsMappable {
   const ResponseLogProbTopLogprobs({
     this.token,

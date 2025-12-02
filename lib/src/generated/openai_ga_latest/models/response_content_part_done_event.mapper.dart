@@ -70,6 +70,10 @@ class ResponseContentPartDoneEventMapper
     #sequenceNumber: _f$sequenceNumber,
     #partField: _f$partField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseContentPartDoneEvent _instantiate(DecodingData data) {
     return ResponseContentPartDoneEvent(

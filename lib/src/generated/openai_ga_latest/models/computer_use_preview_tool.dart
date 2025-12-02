@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_environment.dart';
 import 'computer_use_preview_tool_type_type.dart';
+import 'tool.dart';
 
 part 'computer_use_preview_tool.mapper.dart';
 
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerUsePreviewTool with ComputerUsePreviewToolMappable {
   const ComputerUsePreviewTool({
     required this.environment,

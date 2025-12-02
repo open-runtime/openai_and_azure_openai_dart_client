@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chat_session_rate_limits.mapper.dart';
 
 /// Active per-minute request limit for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionRateLimits with ChatSessionRateLimitsMappable {
   const ChatSessionRateLimits({
     required this.maxRequestsPer1Minute,

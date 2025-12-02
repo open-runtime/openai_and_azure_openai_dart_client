@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_reasoning_text_done_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_reasoning_text_done_event.mapper.dart';
 
 /// Emitted when a reasoning text is completed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseReasoningTextDoneEvent with ResponseReasoningTextDoneEventMappable {
   const ResponseReasoningTextDoneEvent({
     required this.type,

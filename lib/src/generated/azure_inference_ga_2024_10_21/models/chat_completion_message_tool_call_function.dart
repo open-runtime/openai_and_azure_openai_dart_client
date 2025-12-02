@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'chat_completion_message_tool_call_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCallFunction with ChatCompletionMessageToolCallFunctionMappable {
   const ChatCompletionMessageToolCallFunction({
     required this.name,

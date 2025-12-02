@@ -38,6 +38,10 @@ class ChatCompletionChoiceLogProbsMapper
   final MappableFields<ChatCompletionChoiceLogProbs> fields = const {
     #content: _f$content,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionChoiceLogProbs _instantiate(DecodingData data) {
     return ChatCompletionChoiceLogProbs(content: data.dec(_f$content));

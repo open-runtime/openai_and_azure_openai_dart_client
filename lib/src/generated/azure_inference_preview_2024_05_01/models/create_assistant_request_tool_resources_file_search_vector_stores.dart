@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_assistant_request_tool_resources_file_search_vector_stores.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequestToolResourcesFileSearchVectorStores with CreateAssistantRequestToolResourcesFileSearchVectorStoresMappable {
   const CreateAssistantRequestToolResourcesFileSearchVectorStores({
     this.fileIds,

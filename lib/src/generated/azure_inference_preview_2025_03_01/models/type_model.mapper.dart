@@ -37,6 +37,10 @@ class TypeModelMapper extends ClassMapperBase<TypeModel> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TypeModel _instantiate(DecodingData data) {
     return TypeModel(text: data.dec(_f$text), type: data.dec(_f$type));

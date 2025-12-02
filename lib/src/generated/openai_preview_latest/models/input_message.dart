@@ -15,7 +15,7 @@ part 'input_message.mapper.dart';
 /// hierarchy. Instructions given with the `developer` or `system` role take.
 /// precedence over instructions given with the `user` role.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputMessage with InputMessageMappable {
   const InputMessage({
     required this.role,

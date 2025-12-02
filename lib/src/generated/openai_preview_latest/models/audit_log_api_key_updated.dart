@@ -8,7 +8,7 @@ import 'audit_log_api_key_updated_changes_requested.dart';
 
 part 'audit_log_api_key_updated.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyUpdated with AuditLogApiKeyUpdatedMappable {
   const AuditLogApiKeyUpdated({
     this.id,
@@ -16,7 +16,7 @@ class AuditLogApiKeyUpdated with AuditLogApiKeyUpdatedMappable {
   });
 
   final String? id;
-  @MappableField(key: 'AuditLogApiKeyUpdatedChangesRequested')
+  @MappableField(key: 'changes_requested')
   final AuditLogApiKeyUpdatedChangesRequested? auditLogApiKeyUpdatedChangesRequested;
 
   static AuditLogApiKeyUpdated fromJson(Map<String, dynamic> json) => AuditLogApiKeyUpdatedMapper.fromJson(json);

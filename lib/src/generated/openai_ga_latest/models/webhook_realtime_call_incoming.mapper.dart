@@ -48,7 +48,7 @@ class WebhookRealtimeCallIncomingMapper
   _f$webhookRealtimeCallIncomingData = Field(
     'webhookRealtimeCallIncomingData',
     _$webhookRealtimeCallIncomingData,
-    key: r'WebhookRealtimeCallIncomingData',
+    key: r'data',
   );
   static WebhookRealtimeCallIncomingTypeType _$type(
     WebhookRealtimeCallIncoming v,
@@ -75,6 +75,10 @@ class WebhookRealtimeCallIncomingMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookRealtimeCallIncoming _instantiate(DecodingData data) {
     return WebhookRealtimeCallIncoming(

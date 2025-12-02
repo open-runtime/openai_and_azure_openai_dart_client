@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'response_stream_event.dart';
 import 'response_web_search_call_completed_event_type_type.dart';
 
 part 'response_web_search_call_completed_event.mapper.dart';
 
 /// Emitted when a web search call is completed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseWebSearchCallCompletedEvent with ResponseWebSearchCallCompletedEventMappable {
   const ResponseWebSearchCallCompletedEvent({
     required this.type,

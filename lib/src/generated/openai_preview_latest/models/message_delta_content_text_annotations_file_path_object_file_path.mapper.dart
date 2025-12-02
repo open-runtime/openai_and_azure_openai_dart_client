@@ -42,6 +42,10 @@ class MessageDeltaContentTextAnnotationsFilePathObjectFilePathMapper
   @override
   final MappableFields<MessageDeltaContentTextAnnotationsFilePathObjectFilePath>
   fields = const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextAnnotationsFilePathObjectFilePath _instantiate(
     DecodingData data,

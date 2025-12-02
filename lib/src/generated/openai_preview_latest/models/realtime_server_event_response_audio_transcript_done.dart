@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_response_audio_transcript_done_type_type.dart';
 
 part 'realtime_server_event_response_audio_transcript_done.mapper.dart';
@@ -12,7 +13,7 @@ part 'realtime_server_event_response_audio_transcript_done.mapper.dart';
 /// streaming. Also emitted when a Response is interrupted, incomplete, or.
 /// cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseAudioTranscriptDone with RealtimeServerEventResponseAudioTranscriptDoneMappable {
   const RealtimeServerEventResponseAudioTranscriptDone({
     required this.eventId,

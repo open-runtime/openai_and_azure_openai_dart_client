@@ -39,6 +39,10 @@ class BatchOutputReferenceMapper extends ClassMapperBase<BatchOutputReference> {
     #url: _f$url,
     #delimiter: _f$delimiter,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchOutputReference _instantiate(DecodingData data) {
     return BatchOutputReference(

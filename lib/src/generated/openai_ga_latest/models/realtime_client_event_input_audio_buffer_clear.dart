@@ -4,12 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
+
 part 'realtime_client_event_input_audio_buffer_clear.mapper.dart';
 
 /// Send this event to clear the audio bytes in the buffer. The server will .
 /// respond with an `input_audio_buffer.cleared` event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventInputAudioBufferClear with RealtimeClientEventInputAudioBufferClearMappable {
   const RealtimeClientEventInputAudioBufferClear({
     required this.type,

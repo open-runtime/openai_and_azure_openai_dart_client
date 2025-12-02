@@ -62,6 +62,10 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
         #code: _f$code,
         #sequenceNumber: _f$sequenceNumber,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCodeInterpreterCallCodeDoneEvent _instantiate(
     DecodingData data,

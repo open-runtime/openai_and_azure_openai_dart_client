@@ -47,6 +47,10 @@ class DeleteAssistantResponseMapper
     #deleted: _f$deleted,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DeleteAssistantResponse _instantiate(DecodingData data) {
     return DeleteAssistantResponse(

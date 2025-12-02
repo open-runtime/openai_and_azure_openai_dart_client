@@ -41,6 +41,10 @@ class ReasoningTextContentMapper extends ClassMapperBase<ReasoningTextContent> {
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ReasoningTextContent _instantiate(DecodingData data) {
     return ReasoningTextContent(

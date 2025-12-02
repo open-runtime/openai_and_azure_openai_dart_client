@@ -8,7 +8,7 @@ import 'batch_errors_data.dart';
 
 part 'batch_errors.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchErrors with BatchErrorsMappable {
   const BatchErrors({
     this.objectField,

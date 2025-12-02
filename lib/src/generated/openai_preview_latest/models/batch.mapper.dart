@@ -62,7 +62,7 @@ class BatchMapper extends ClassMapperBase<Batch> {
   static const Field<Batch, BatchErrors> _f$batchErrors = Field(
     'batchErrors',
     _$batchErrors,
-    key: r'BatchErrors',
+    key: r'errors',
     opt: true,
   );
   static String? _$outputFileId(Batch v) => v.outputFileId;
@@ -140,7 +140,7 @@ class BatchMapper extends ClassMapperBase<Batch> {
   static const Field<Batch, BatchRequestCounts> _f$batchRequestCounts = Field(
     'batchRequestCounts',
     _$batchRequestCounts,
-    key: r'BatchRequestCounts',
+    key: r'request_counts',
     opt: true,
   );
   static Map<String, String>? _$metadata(Batch v) => v.metadata;
@@ -173,6 +173,10 @@ class BatchMapper extends ClassMapperBase<Batch> {
     #batchRequestCounts: _f$batchRequestCounts,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Batch _instantiate(DecodingData data) {
     return Batch(

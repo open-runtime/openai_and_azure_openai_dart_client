@@ -37,6 +37,10 @@ class FileExpirationAfterMapper extends ClassMapperBase<FileExpirationAfter> {
     #anchor: _f$anchor,
     #seconds: _f$seconds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FileExpirationAfter _instantiate(DecodingData data) {
     return FileExpirationAfter(

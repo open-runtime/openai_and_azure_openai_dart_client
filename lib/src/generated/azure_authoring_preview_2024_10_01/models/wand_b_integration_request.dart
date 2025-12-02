@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'wand_b_integration_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WandBIntegrationRequest with WandBIntegrationRequestMappable {
   const WandBIntegrationRequest({
     required this.project,

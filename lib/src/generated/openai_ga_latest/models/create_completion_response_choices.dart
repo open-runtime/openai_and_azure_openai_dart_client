@@ -9,7 +9,7 @@ import 'create_completion_response_choices_logprobs.dart';
 
 part 'create_completion_response_choices.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateCompletionResponseChoices with CreateCompletionResponseChoicesMappable {
   const CreateCompletionResponseChoices({
     required this.finishReason,

@@ -44,6 +44,10 @@ class BatchFileExpirationAfterMapper
     #anchor: _f$anchor,
     #seconds: _f$seconds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchFileExpirationAfter _instantiate(DecodingData data) {
     return BatchFileExpirationAfter(

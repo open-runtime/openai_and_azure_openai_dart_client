@@ -72,6 +72,10 @@ class UsageAudioTranscriptionsResultMapper
     #apiKeyId: _f$apiKeyId,
     #model: _f$model,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageAudioTranscriptionsResult _instantiate(DecodingData data) {
     return UsageAudioTranscriptionsResult(

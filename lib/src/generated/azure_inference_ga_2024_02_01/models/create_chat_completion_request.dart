@@ -10,12 +10,12 @@ import 'chat_completion_request_message.dart';
 import 'chat_completion_tool.dart';
 import 'chat_completion_tool_choice_option.dart';
 import 'chat_completions_request_common.dart';
-import 'create_chat_completion_request_function_call_function_call_union.dart';
+import 'create_chat_completion_request_function_call_union.dart';
 import 'create_chat_completion_request_response_format.dart';
 
 part 'create_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   const CreateChatCompletionRequest({
     required this.stop,
@@ -45,14 +45,14 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final List<ChatCompletionRequestMessage>? messages;
   @MappableField(key: 'data_sources')
   final List<AzureChatExtensionConfiguration>? dataSources;
-  @MappableField(key: 'CreateChatCompletionRequestResponseFormat')
+  @MappableField(key: 'response_format')
   final CreateChatCompletionRequestResponseFormat? createChatCompletionRequestResponseFormat;
   final List<ChatCompletionTool>? tools;
   @MappableField(key: 'tool_choice')
   final ChatCompletionToolChoiceOption? toolChoice;
   final List<ChatCompletionFunction>? functions;
   @MappableField(key: 'function_call')
-  final CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall;
+  final CreateChatCompletionRequestFunctionCallUnion? functionCall;
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;

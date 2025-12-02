@@ -66,6 +66,10 @@ class McpApprovalResponseResourceMapper
     #approve: _f$approve,
     #reason: _f$reason,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpApprovalResponseResource _instantiate(DecodingData data) {
     return McpApprovalResponseResource(

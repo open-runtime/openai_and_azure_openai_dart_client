@@ -10,7 +10,7 @@ import 'content_filter_result_base.dart';
 
 part 'content_filter_detected_with_completion_text_spans_result.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedWithCompletionTextSpansResult with ContentFilterDetectedWithCompletionTextSpansResultMappable {
   const ContentFilterDetectedWithCompletionTextSpansResult({
     required this.contentFilterDetectedResult,

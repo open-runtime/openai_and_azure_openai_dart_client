@@ -95,6 +95,10 @@ class AssignedRoleDetailsMapper extends ClassMapperBase<AssignedRoleDetails> {
     #createdByUserObj: _f$createdByUserObj,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssignedRoleDetails _instantiate(DecodingData data) {
     return AssignedRoleDetails(

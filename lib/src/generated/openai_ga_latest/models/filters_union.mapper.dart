@@ -25,6 +25,10 @@ class FiltersUnionMapper extends ClassMapperBase<FiltersUnion> {
 
   @override
   final MappableFields<FiltersUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FiltersUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('FiltersUnion');
@@ -66,6 +70,7 @@ class FiltersUnionComparisonFilterMapper
       );
       FiltersUnionMapper.ensureInitialized();
       ComparisonFilterTypeTypeMapper.ensureInitialized();
+      ComparisonFilterValueUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -82,11 +87,10 @@ class FiltersUnionComparisonFilterMapper
     'key',
     _$key,
   );
-  static String _$value(FiltersUnionComparisonFilter v) => v.value;
-  static const Field<FiltersUnionComparisonFilter, String> _f$value = Field(
-    'value',
-    _$value,
-  );
+  static ComparisonFilterValueUnion _$value(FiltersUnionComparisonFilter v) =>
+      v.value;
+  static const Field<FiltersUnionComparisonFilter, ComparisonFilterValueUnion>
+  _f$value = Field('value', _$value);
 
   @override
   final MappableFields<FiltersUnionComparisonFilter> fields = const {
@@ -94,6 +98,10 @@ class FiltersUnionComparisonFilterMapper
     #key: _f$key,
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FiltersUnionComparisonFilter _instantiate(DecodingData data) {
     return FiltersUnionComparisonFilter(
@@ -176,8 +184,18 @@ abstract class FiltersUnionComparisonFilterCopyWith<
   $Out
 >
     implements FiltersUnionCopyWith<$R, $In, $Out> {
+  ComparisonFilterValueUnionCopyWith<
+    $R,
+    ComparisonFilterValueUnion,
+    ComparisonFilterValueUnion
+  >
+  get value;
   @override
-  $R call({ComparisonFilterTypeType? type, String? key, String? value});
+  $R call({
+    ComparisonFilterTypeType? type,
+    String? key,
+    ComparisonFilterValueUnion? value,
+  });
   FiltersUnionComparisonFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -201,14 +219,24 @@ class _FiltersUnionComparisonFilterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FiltersUnionComparisonFilter> $mapper =
       FiltersUnionComparisonFilterMapper.ensureInitialized();
   @override
-  $R call({ComparisonFilterTypeType? type, String? key, String? value}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (key != null) #key: key,
-          if (value != null) #value: value,
-        }),
-      );
+  ComparisonFilterValueUnionCopyWith<
+    $R,
+    ComparisonFilterValueUnion,
+    ComparisonFilterValueUnion
+  >
+  get value => $value.value.copyWith.$chain((v) => call(value: v));
+  @override
+  $R call({
+    ComparisonFilterTypeType? type,
+    String? key,
+    ComparisonFilterValueUnion? value,
+  }) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (key != null) #key: key,
+      if (value != null) #value: value,
+    }),
+  );
   @override
   FiltersUnionComparisonFilter $make(CopyWithData data) =>
       FiltersUnionComparisonFilter(
@@ -235,7 +263,7 @@ class FiltersUnionCompoundFilterMapper
       );
       FiltersUnionMapper.ensureInitialized();
       CompoundFilterTypeTypeMapper.ensureInitialized();
-      CompoundFilterFiltersFiltersUnionMapper.ensureInitialized();
+      CompoundFilterFiltersUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -246,12 +274,12 @@ class FiltersUnionCompoundFilterMapper
   static CompoundFilterTypeType _$type(FiltersUnionCompoundFilter v) => v.type;
   static const Field<FiltersUnionCompoundFilter, CompoundFilterTypeType>
   _f$type = Field('type', _$type);
-  static List<CompoundFilterFiltersFiltersUnion> _$filters(
+  static List<CompoundFilterFiltersUnion> _$filters(
     FiltersUnionCompoundFilter v,
   ) => v.filters;
   static const Field<
     FiltersUnionCompoundFilter,
-    List<CompoundFilterFiltersFiltersUnion>
+    List<CompoundFilterFiltersUnion>
   >
   _f$filters = Field('filters', _$filters);
 
@@ -260,6 +288,10 @@ class FiltersUnionCompoundFilterMapper
     #type: _f$type,
     #filters: _f$filters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FiltersUnionCompoundFilter _instantiate(DecodingData data) {
     return FiltersUnionCompoundFilter(
@@ -344,18 +376,18 @@ abstract class FiltersUnionCompoundFilterCopyWith<
     implements FiltersUnionCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    CompoundFilterFiltersFiltersUnion,
-    CompoundFilterFiltersFiltersUnionCopyWith<
+    CompoundFilterFiltersUnion,
+    CompoundFilterFiltersUnionCopyWith<
       $R,
-      CompoundFilterFiltersFiltersUnion,
-      CompoundFilterFiltersFiltersUnion
+      CompoundFilterFiltersUnion,
+      CompoundFilterFiltersUnion
     >
   >
   get filters;
   @override
   $R call({
     CompoundFilterTypeType? type,
-    List<CompoundFilterFiltersFiltersUnion>? filters,
+    List<CompoundFilterFiltersUnion>? filters,
   });
   FiltersUnionCompoundFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -378,11 +410,11 @@ class _FiltersUnionCompoundFilterCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CompoundFilterFiltersFiltersUnion,
-    CompoundFilterFiltersFiltersUnionCopyWith<
+    CompoundFilterFiltersUnion,
+    CompoundFilterFiltersUnionCopyWith<
       $R,
-      CompoundFilterFiltersFiltersUnion,
-      CompoundFilterFiltersFiltersUnion
+      CompoundFilterFiltersUnion,
+      CompoundFilterFiltersUnion
     >
   >
   get filters => ListCopyWith(
@@ -393,7 +425,7 @@ class _FiltersUnionCompoundFilterCopyWithImpl<$R, $Out>
   @override
   $R call({
     CompoundFilterTypeType? type,
-    List<CompoundFilterFiltersFiltersUnion>? filters,
+    List<CompoundFilterFiltersUnion>? filters,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

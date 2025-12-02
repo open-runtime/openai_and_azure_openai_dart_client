@@ -52,6 +52,10 @@ class UsageResponseMapper extends ClassMapperBase<UsageResponse> {
     #hasMore: _f$hasMore,
     #nextPage: _f$nextPage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageResponse _instantiate(DecodingData data) {
     return UsageResponse(

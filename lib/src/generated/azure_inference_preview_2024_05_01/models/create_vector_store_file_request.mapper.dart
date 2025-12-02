@@ -35,6 +35,10 @@ class CreateVectorStoreFileRequestMapper
   final MappableFields<CreateVectorStoreFileRequest> fields = const {
     #fileId: _f$fileId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateVectorStoreFileRequest _instantiate(DecodingData data) {
     return CreateVectorStoreFileRequest(fileId: data.dec(_f$fileId));

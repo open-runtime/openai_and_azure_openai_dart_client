@@ -46,7 +46,7 @@ class RunStepDetailsToolCallsCodeOutputImageObjectMapper
   _f$runStepDetailsToolCallsCodeOutputImageObjectImage = Field(
     'runStepDetailsToolCallsCodeOutputImageObjectImage',
     _$runStepDetailsToolCallsCodeOutputImageObjectImage,
-    key: r'RunStepDetailsToolCallsCodeOutputImageObjectImage',
+    key: r'image',
   );
 
   @override
@@ -56,6 +56,10 @@ class RunStepDetailsToolCallsCodeOutputImageObjectMapper
         #runStepDetailsToolCallsCodeOutputImageObjectImage:
             _f$runStepDetailsToolCallsCodeOutputImageObjectImage,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsCodeOutputImageObject _instantiate(
     DecodingData data,

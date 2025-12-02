@@ -36,6 +36,10 @@ class RealtimeSessionCreateResponseGaClientSecretMapper
   @override
   final MappableFields<RealtimeSessionCreateResponseGaClientSecret> fields =
       const {#value: _f$value, #expiresAt: _f$expiresAt};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponseGaClientSecret _instantiate(
     DecodingData data,

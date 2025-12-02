@@ -8,7 +8,7 @@ import 'container_resource_expires_after.dart';
 
 part 'container_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerResource with ContainerResourceMappable {
   const ContainerResource({
     required this.id,
@@ -26,7 +26,7 @@ class ContainerResource with ContainerResourceMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String status;
-  @MappableField(key: 'ContainerResourceExpiresAfter')
+  @MappableField(key: 'expires_after')
   final ContainerResourceExpiresAfter? containerResourceExpiresAfter;
 
   static ContainerResource fromJson(Map<String, dynamic> json) => ContainerResourceMapper.fromJson(json);

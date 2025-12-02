@@ -14,7 +14,7 @@ part 'response_text_param.mapper.dart';
 /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text).
 /// - [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseTextParam with ResponseTextParamMappable {
   const ResponseTextParam({
     this.format,

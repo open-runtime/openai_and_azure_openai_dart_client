@@ -11,7 +11,7 @@ part 'run_step_delta_object.mapper.dart';
 
 /// Represents a run step delta i.e. any changed fields on a run step during streaming.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaObject with RunStepDeltaObjectMappable {
   const RunStepDeltaObject({
     required this.id,
@@ -22,7 +22,7 @@ class RunStepDeltaObject with RunStepDeltaObjectMappable {
   final String id;
   @MappableField(key: 'object')
   final RunStepDeltaObjectObjectObjectEnum objectEnum;
-  @MappableField(key: 'RunStepDeltaObjectDelta')
+  @MappableField(key: 'delta')
   final RunStepDeltaObjectDelta runStepDeltaObjectDelta;
 
   static RunStepDeltaObject fromJson(Map<String, dynamic> json) => RunStepDeltaObjectMapper.fromJson(json);

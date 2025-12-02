@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'custom_tool_chat_completions_custom_format_format_union.dart';
+import 'custom_tool_chat_completions_custom_format_union.dart';
 
 part 'custom_tool_chat_completions_custom.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolChatCompletionsCustom with CustomToolChatCompletionsCustomMappable {
   const CustomToolChatCompletionsCustom({
     required this.name,
@@ -18,7 +18,7 @@ class CustomToolChatCompletionsCustom with CustomToolChatCompletionsCustomMappab
 
   final String name;
   final String? description;
-  final CustomToolChatCompletionsCustomFormatFormatUnion? format;
+  final CustomToolChatCompletionsCustomFormatUnion? format;
 
   static CustomToolChatCompletionsCustom fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsCustomMapper.fromJson(json);
 

@@ -44,7 +44,7 @@ class ChatCompletionMessageToolCallMapper
   _f$chatCompletionMessageToolCallFunction = Field(
     'chatCompletionMessageToolCallFunction',
     _$chatCompletionMessageToolCallFunction,
-    key: r'ChatCompletionMessageToolCallFunction',
+    key: r'function',
   );
 
   @override
@@ -54,6 +54,10 @@ class ChatCompletionMessageToolCallMapper
     #chatCompletionMessageToolCallFunction:
         _f$chatCompletionMessageToolCallFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionMessageToolCall _instantiate(DecodingData data) {
     return ChatCompletionMessageToolCall(

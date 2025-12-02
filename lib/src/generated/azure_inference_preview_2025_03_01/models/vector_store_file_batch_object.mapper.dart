@@ -68,7 +68,7 @@ class VectorStoreFileBatchObjectMapper
   _f$vectorStoreFileBatchObjectFileCounts = Field(
     'vectorStoreFileBatchObjectFileCounts',
     _$vectorStoreFileBatchObjectFileCounts,
-    key: r'VectorStoreFileBatchObjectFileCounts',
+    key: r'file_counts',
   );
 
   @override
@@ -81,6 +81,10 @@ class VectorStoreFileBatchObjectMapper
     #vectorStoreFileBatchObjectFileCounts:
         _f$vectorStoreFileBatchObjectFileCounts,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileBatchObject _instantiate(DecodingData data) {
     return VectorStoreFileBatchObject(

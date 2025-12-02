@@ -26,6 +26,10 @@ class ResponsePromptVariablesMapper
 
   @override
   final MappableFields<ResponsePromptVariables> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponsePromptVariables _instantiate(DecodingData data) {
     return ResponsePromptVariables();

@@ -20,7 +20,7 @@ import 'create_moderation_response_results_category_applied_input_types_violence
 
 part 'create_moderation_response_results_category_applied_input_types.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationResponseResultsCategoryAppliedInputTypes with CreateModerationResponseResultsCategoryAppliedInputTypesMappable {
   const CreateModerationResponseResultsCategoryAppliedInputTypes({
     required this.hate,

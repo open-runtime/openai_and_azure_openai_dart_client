@@ -56,6 +56,10 @@ class CreateUploadRequestMapper extends ClassMapperBase<CreateUploadRequest> {
     #mimeType: _f$mimeType,
     #expiresAfter: _f$expiresAfter,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateUploadRequest _instantiate(DecodingData data) {
     return CreateUploadRequest(

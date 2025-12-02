@@ -41,6 +41,10 @@ class AuditLogActorSessionMapper extends ClassMapperBase<AuditLogActorSession> {
     #user: _f$user,
     #ipAddress: _f$ipAddress,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogActorSession _instantiate(DecodingData data) {
     return AuditLogActorSession(

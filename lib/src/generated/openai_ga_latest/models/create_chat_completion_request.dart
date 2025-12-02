@@ -9,15 +9,15 @@ import 'chat_completion_request_message.dart';
 import 'chat_completion_stream_options.dart';
 import 'chat_completion_tool_choice_option.dart';
 import 'create_chat_completion_request_audio.dart';
-import 'create_chat_completion_request_function_call_function_call_union.dart';
-import 'create_chat_completion_request_response_format_response_format_union.dart';
-import 'create_chat_completion_request_tools_tools_union.dart';
+import 'create_chat_completion_request_function_call_union.dart';
+import 'create_chat_completion_request_prediction_union.dart';
+import 'create_chat_completion_request_response_format_union.dart';
+import 'create_chat_completion_request_tools_union.dart';
 import 'create_chat_completion_request_web_search_options.dart';
 import 'metadata.dart';
 import 'model_ids_shared.dart';
 import 'model_response_properties_prompt_cache_retention_prompt_cache_retention.dart';
 import 'parallel_tool_calls.dart';
-import 'prediction_content.dart';
 import 'reasoning_effort.dart';
 import 'response_modalities.dart';
 import 'service_tier.dart';
@@ -26,7 +26,7 @@ import 'verbosity.dart';
 
 part 'create_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   const CreateChatCompletionRequest({
     required this.logitBias,
@@ -69,6 +69,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'logit_bias')
   final Map<String, int>? logitBias;
   final List<ChatCompletionRequestMessage> messages;
+  @MappableField(hook: const ModelIdsSharedHook())
   final ModelIdsShared model;
   final Verbosity? verbosity;
   final String? user;
@@ -83,7 +84,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'top_logprobs')
   final int? topLogprobs;
   @MappableField(key: 'function_call')
-  final CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall;
+  final CreateChatCompletionRequestFunctionCallUnion? functionCall;
   final ResponseModalities? modalities;
   final Metadata? metadata;
   @MappableField(key: 'reasoning_effort')
@@ -92,12 +93,12 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final int? maxCompletionTokens;
   @MappableField(key: 'tool_choice')
   final ChatCompletionToolChoiceOption? toolChoice;
-  final List<CreateChatCompletionRequestToolsToolsUnion>? tools;
-  @MappableField(key: 'CreateChatCompletionRequestWebSearchOptions')
+  final List<CreateChatCompletionRequestToolsUnion>? tools;
+  @MappableField(key: 'web_search_options')
   final CreateChatCompletionRequestWebSearchOptions? createChatCompletionRequestWebSearchOptions;
   @MappableField(key: 'response_format')
-  final CreateChatCompletionRequestResponseFormatResponseFormatUnion? responseFormat;
-  @MappableField(key: 'CreateChatCompletionRequestAudio')
+  final CreateChatCompletionRequestResponseFormatUnion? responseFormat;
+  @MappableField(key: 'audio')
   final CreateChatCompletionRequestAudio? createChatCompletionRequestAudio;
   @MappableField(key: 'stream_options')
   final ChatCompletionStreamOptions? streamOptions;
@@ -105,7 +106,7 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final List<ChatCompletionFunctions>? functions;
   @MappableField(key: 'parallel_tool_calls')
   final ParallelToolCalls? parallelToolCalls;
-  final PredictionContent? prediction;
+  final CreateChatCompletionRequestPredictionUnion? prediction;
   final StopConfiguration? stop;
   @MappableField(key: 'top_p')
   final num? topP;

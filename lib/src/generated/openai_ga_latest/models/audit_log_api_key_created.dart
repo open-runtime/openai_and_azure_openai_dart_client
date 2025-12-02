@@ -8,7 +8,7 @@ import 'audit_log_api_key_created_data.dart';
 
 part 'audit_log_api_key_created.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyCreated with AuditLogApiKeyCreatedMappable {
   const AuditLogApiKeyCreated({
     this.id,
@@ -16,7 +16,7 @@ class AuditLogApiKeyCreated with AuditLogApiKeyCreatedMappable {
   });
 
   final String? id;
-  @MappableField(key: 'AuditLogApiKeyCreatedData')
+  @MappableField(key: 'data')
   final AuditLogApiKeyCreatedData? auditLogApiKeyCreatedData;
 
   static AuditLogApiKeyCreated fromJson(Map<String, dynamic> json) => AuditLogApiKeyCreatedMapper.fromJson(json);

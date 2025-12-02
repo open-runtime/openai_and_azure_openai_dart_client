@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'file_list.mapper.dart';
 
 /// Represents a list of files.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileList with FileListMappable {
   const FileList({
     this.objectField,

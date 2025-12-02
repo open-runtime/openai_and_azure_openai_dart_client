@@ -9,14 +9,14 @@ import 'web_search_context_size.dart';
 
 part 'create_chat_completion_request_web_search_options.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequestWebSearchOptions with CreateChatCompletionRequestWebSearchOptionsMappable {
   const CreateChatCompletionRequestWebSearchOptions({
     this.createChatCompletionRequestWebSearchOptionsUserLocation,
     this.searchContextSize,
   });
 
-  @MappableField(key: 'CreateChatCompletionRequestWebSearchOptionsUserLocation')
+  @MappableField(key: 'user_location')
   final CreateChatCompletionRequestWebSearchOptionsUserLocation? createChatCompletionRequestWebSearchOptionsUserLocation;
   @MappableField(key: 'search_context_size')
   final WebSearchContextSize? searchContextSize;

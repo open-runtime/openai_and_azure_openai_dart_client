@@ -55,6 +55,10 @@ class FileMapper extends ClassMapperBase<File> {
     #id: _f$id,
     #bytes: _f$bytes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static File _instantiate(DecodingData data) {
     return File(

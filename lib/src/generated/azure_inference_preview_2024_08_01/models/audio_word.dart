@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'audio_word.mapper.dart';
 
 /// Transcription or translation word.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioWord with AudioWordMappable {
   const AudioWord({
     this.word,

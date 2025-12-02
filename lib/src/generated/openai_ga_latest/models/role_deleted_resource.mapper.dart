@@ -41,6 +41,10 @@ class RoleDeletedResourceMapper extends ClassMapperBase<RoleDeletedResource> {
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RoleDeletedResource _instantiate(DecodingData data) {
     return RoleDeletedResource(

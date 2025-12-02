@@ -38,6 +38,10 @@ class ChatSessionHistoryMapper extends ClassMapperBase<ChatSessionHistory> {
     #enabled: _f$enabled,
     #recentThreads: _f$recentThreads,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatSessionHistory _instantiate(DecodingData data) {
     return ChatSessionHistory(

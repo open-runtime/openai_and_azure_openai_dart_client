@@ -36,6 +36,10 @@ class DpoMethodMapper extends ClassMapperBase<DpoMethod> {
 
   @override
   final MappableFields<DpoMethod> fields = const {#type: _f$type, #dpo: _f$dpo};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DpoMethod _instantiate(DecodingData data) {
     return DpoMethod(type: data.dec(_f$type), dpo: data.dec(_f$dpo));

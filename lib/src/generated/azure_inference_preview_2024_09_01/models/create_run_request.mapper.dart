@@ -15,7 +15,7 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateRunRequestMapper._());
       CreateMessageRequestMapper.ensureInitialized();
-      CreateRunRequestToolsToolsUnionMapper.ensureInitialized();
+      CreateRunRequestToolsUnionMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
       AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
@@ -77,9 +77,9 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     key: r'additional_messages',
     opt: true,
   );
-  static List<CreateRunRequestToolsToolsUnion>? _$tools(CreateRunRequest v) =>
+  static List<CreateRunRequestToolsUnion>? _$tools(CreateRunRequest v) =>
       v.tools;
-  static const Field<CreateRunRequest, List<CreateRunRequestToolsToolsUnion>>
+  static const Field<CreateRunRequest, List<CreateRunRequestToolsUnion>>
   _f$tools = Field('tools', _$tools, opt: true);
   static dynamic _$metadata(CreateRunRequest v) => v.metadata;
   static const Field<CreateRunRequest, dynamic> _f$metadata = Field(
@@ -163,6 +163,10 @@ class CreateRunRequestMapper extends ClassMapperBase<CreateRunRequest> {
     #parallelToolCalls: _f$parallelToolCalls,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateRunRequest _instantiate(DecodingData data) {
     return CreateRunRequest(
@@ -255,11 +259,11 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
   get additionalMessages;
   ListCopyWith<
     $R,
-    CreateRunRequestToolsToolsUnion,
-    CreateRunRequestToolsToolsUnionCopyWith<
+    CreateRunRequestToolsUnion,
+    CreateRunRequestToolsUnionCopyWith<
       $R,
-      CreateRunRequestToolsToolsUnion,
-      CreateRunRequestToolsToolsUnion
+      CreateRunRequestToolsUnion,
+      CreateRunRequestToolsUnion
     >
   >?
   get tools;
@@ -285,7 +289,7 @@ abstract class CreateRunRequestCopyWith<$R, $In extends CreateRunRequest, $Out>
     String? instructions,
     String? additionalInstructions,
     List<CreateMessageRequest>? additionalMessages,
-    List<CreateRunRequestToolsToolsUnion>? tools,
+    List<CreateRunRequestToolsUnion>? tools,
     dynamic metadata,
     bool? stream,
     int? maxPromptTokens,
@@ -324,11 +328,11 @@ class _CreateRunRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CreateRunRequestToolsToolsUnion,
-    CreateRunRequestToolsToolsUnionCopyWith<
+    CreateRunRequestToolsUnion,
+    CreateRunRequestToolsUnionCopyWith<
       $R,
-      CreateRunRequestToolsToolsUnion,
-      CreateRunRequestToolsToolsUnion
+      CreateRunRequestToolsUnion,
+      CreateRunRequestToolsUnion
     >
   >?
   get tools => $value.tools != null

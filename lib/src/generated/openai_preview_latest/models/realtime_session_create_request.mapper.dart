@@ -21,9 +21,11 @@ class RealtimeSessionCreateRequestMapper
       RealtimeSessionCreateRequestInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionCreateRequestOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeSessionCreateRequestModelModelMapper.ensureInitialized();
+      VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateRequestInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateRequestTurnDetectionMapper.ensureInitialized();
       RealtimeSessionCreateRequestToolsMapper.ensureInitialized();
+      RealtimeSessionCreateRequestMaxResponseOutputTokensUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -42,7 +44,7 @@ class RealtimeSessionCreateRequestMapper
   _f$realtimeSessionCreateRequestInputAudioNoiseReduction = Field(
     'realtimeSessionCreateRequestInputAudioNoiseReduction',
     _$realtimeSessionCreateRequestInputAudioNoiseReduction,
-    key: r'RealtimeSessionCreateRequestInputAudioNoiseReduction',
+    key: r'input_audio_noise_reduction',
   );
   static RealtimeSessionCreateRequestInputAudioFormatInputAudioFormat
   _$inputAudioFormat(RealtimeSessionCreateRequest v) => v.inputAudioFormat;
@@ -101,12 +103,9 @@ class RealtimeSessionCreateRequestMapper
       v.instructions;
   static const Field<RealtimeSessionCreateRequest, String> _f$instructions =
       Field('instructions', _$instructions, opt: true);
-  static String? _$voice(RealtimeSessionCreateRequest v) => v.voice;
-  static const Field<RealtimeSessionCreateRequest, String> _f$voice = Field(
-    'voice',
-    _$voice,
-    opt: true,
-  );
+  static VoiceIdsShared? _$voice(RealtimeSessionCreateRequest v) => v.voice;
+  static const Field<RealtimeSessionCreateRequest, VoiceIdsShared> _f$voice =
+      Field('voice', _$voice, opt: true, hook: const VoiceIdsSharedHook());
   static RealtimeSessionCreateRequestInputAudioTranscription?
   _$realtimeSessionCreateRequestInputAudioTranscription(
     RealtimeSessionCreateRequest v,
@@ -118,7 +117,7 @@ class RealtimeSessionCreateRequestMapper
   _f$realtimeSessionCreateRequestInputAudioTranscription = Field(
     'realtimeSessionCreateRequestInputAudioTranscription',
     _$realtimeSessionCreateRequestInputAudioTranscription,
-    key: r'RealtimeSessionCreateRequestInputAudioTranscription',
+    key: r'input_audio_transcription',
     opt: true,
   );
   static RealtimeSessionCreateRequestTurnDetection?
@@ -131,7 +130,7 @@ class RealtimeSessionCreateRequestMapper
   _f$realtimeSessionCreateRequestTurnDetection = Field(
     'realtimeSessionCreateRequestTurnDetection',
     _$realtimeSessionCreateRequestTurnDetection,
-    key: r'RealtimeSessionCreateRequestTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
   static List<RealtimeSessionCreateRequestTools>? _$tools(
@@ -142,14 +141,19 @@ class RealtimeSessionCreateRequestMapper
     List<RealtimeSessionCreateRequestTools>
   >
   _f$tools = Field('tools', _$tools, opt: true);
-  static String? _$maxResponseOutputTokens(RealtimeSessionCreateRequest v) =>
+  static RealtimeSessionCreateRequestMaxResponseOutputTokensUnion?
+  _$maxResponseOutputTokens(RealtimeSessionCreateRequest v) =>
       v.maxResponseOutputTokens;
-  static const Field<RealtimeSessionCreateRequest, String>
+  static const Field<
+    RealtimeSessionCreateRequest,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+  >
   _f$maxResponseOutputTokens = Field(
     'maxResponseOutputTokens',
     _$maxResponseOutputTokens,
     key: r'max_response_output_tokens',
     opt: true,
+    hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook(),
   );
 
   @override
@@ -171,6 +175,10 @@ class RealtimeSessionCreateRequestMapper
     #tools: _f$tools,
     #maxResponseOutputTokens: _f$maxResponseOutputTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateRequest _instantiate(DecodingData data) {
     return RealtimeSessionCreateRequest(
@@ -275,6 +283,7 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     RealtimeSessionCreateRequestInputAudioNoiseReduction
   >
   get realtimeSessionCreateRequestInputAudioNoiseReduction;
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice;
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,
     RealtimeSessionCreateRequestInputAudioTranscription,
@@ -297,6 +306,12 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     >
   >?
   get tools;
+  RealtimeSessionCreateRequestMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens;
   $R call({
     RealtimeSessionCreateRequestInputAudioNoiseReduction?
     realtimeSessionCreateRequestInputAudioNoiseReduction,
@@ -309,13 +324,14 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     dynamic modalities,
     RealtimeSessionCreateRequestModelModel? model,
     String? instructions,
-    String? voice,
+    VoiceIdsShared? voice,
     RealtimeSessionCreateRequestInputAudioTranscription?
     realtimeSessionCreateRequestInputAudioTranscription,
     RealtimeSessionCreateRequestTurnDetection?
     realtimeSessionCreateRequestTurnDetection,
     List<RealtimeSessionCreateRequestTools>? tools,
-    String? maxResponseOutputTokens,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion?
+    maxResponseOutputTokens,
   });
   RealtimeSessionCreateRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -351,6 +367,9 @@ class _RealtimeSessionCreateRequestCopyWithImpl<$R, $Out>
       .$chain(
         (v) => call(realtimeSessionCreateRequestInputAudioNoiseReduction: v),
       );
+  @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared>? get voice =>
+      $value.voice?.copyWith.$chain((v) => call(voice: v));
   @override
   RealtimeSessionCreateRequestInputAudioTranscriptionCopyWith<
     $R,
@@ -390,6 +409,14 @@ class _RealtimeSessionCreateRequestCopyWithImpl<$R, $Out>
           (v) => call(tools: v),
         )
       : null;
+  @override
+  RealtimeSessionCreateRequestMaxResponseOutputTokensUnionCopyWith<
+    $R,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+  >?
+  get maxResponseOutputTokens => $value.maxResponseOutputTokens?.copyWith
+      .$chain((v) => call(maxResponseOutputTokens: v));
   @override
   $R call({
     RealtimeSessionCreateRequestInputAudioNoiseReduction?

@@ -31,6 +31,10 @@ class SupervisedMethodRequestMapper
 
   @override
   final MappableFields<SupervisedMethodRequest> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SupervisedMethodRequest _instantiate(DecodingData data) {
     return SupervisedMethodRequest(type: data.dec(_f$type));

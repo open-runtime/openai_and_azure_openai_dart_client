@@ -46,6 +46,10 @@ class RealtimeBetaResponseUsageOutputTokenDetailsMapper
   @override
   final MappableFields<RealtimeBetaResponseUsageOutputTokenDetails> fields =
       const {#textTokens: _f$textTokens, #audioTokens: _f$audioTokens};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaResponseUsageOutputTokenDetails _instantiate(
     DecodingData data,

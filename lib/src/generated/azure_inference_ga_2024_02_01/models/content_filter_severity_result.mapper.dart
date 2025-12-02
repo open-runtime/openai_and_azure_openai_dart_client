@@ -44,6 +44,10 @@ class ContentFilterSeverityResultMapper
     #filtered: _f$filtered,
     #severity: _f$severity,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterSeverityResult _instantiate(DecodingData data) {
     return ContentFilterSeverityResult(

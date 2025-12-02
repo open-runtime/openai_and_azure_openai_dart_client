@@ -62,6 +62,10 @@ class ModelResponsePropertiesMapper
     #user: _f$user,
     #serviceTier: _f$serviceTier,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelResponseProperties _instantiate(DecodingData data) {
     return ModelResponseProperties(

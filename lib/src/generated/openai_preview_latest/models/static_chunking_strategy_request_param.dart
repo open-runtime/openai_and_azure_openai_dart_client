@@ -10,7 +10,7 @@ import 'static_chunking_strategy_request_param_type_type.dart';
 part 'static_chunking_strategy_request_param.mapper.dart';
 
 /// Customize your own chunking strategy by setting chunk size and chunk overlap.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StaticChunkingStrategyRequestParam with StaticChunkingStrategyRequestParamMappable {
   const StaticChunkingStrategyRequestParam({
     required this.type,

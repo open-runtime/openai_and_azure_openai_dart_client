@@ -57,6 +57,10 @@ class RealtimeServerEventConversationItemDoneMapper
     #item: _f$item,
     #previousItemId: _f$previousItemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemDone _instantiate(
     DecodingData data,

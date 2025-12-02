@@ -14,7 +14,7 @@ import 'wand_b_integration_request_wrapper.dart';
 part 'fine_tuning_job.mapper.dart';
 
 /// Defines the values of a fine tune job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJob with FineTuningJobMappable {
   const FineTuningJob({
     required this.model,

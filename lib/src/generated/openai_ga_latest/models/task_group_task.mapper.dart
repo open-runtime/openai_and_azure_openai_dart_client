@@ -41,6 +41,10 @@ class TaskGroupTaskMapper extends ClassMapperBase<TaskGroupTask> {
     #heading: _f$heading,
     #summary: _f$summary,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TaskGroupTask _instantiate(DecodingData data) {
     return TaskGroupTask(

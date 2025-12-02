@@ -9,7 +9,7 @@ import 'item_reference_param_type_type.dart';
 part 'item_reference_param.mapper.dart';
 
 /// An internal identifier for an item to reference.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ItemReferenceParam with ItemReferenceParamMappable {
   const ItemReferenceParam({
     required this.id,

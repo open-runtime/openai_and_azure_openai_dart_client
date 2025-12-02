@@ -8,7 +8,7 @@ import 'chat_completion_request_message_content_part_type.dart';
 
 part 'chat_completion_request_message_content_part_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartText with ChatCompletionRequestMessageContentPartTextMappable {
   const ChatCompletionRequestMessageContentPartText({
     required this.type,

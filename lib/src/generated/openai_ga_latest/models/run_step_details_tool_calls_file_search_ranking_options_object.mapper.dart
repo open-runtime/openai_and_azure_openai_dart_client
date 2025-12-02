@@ -49,6 +49,10 @@ class RunStepDetailsToolCallsFileSearchRankingOptionsObjectMapper
   @override
   final MappableFields<RunStepDetailsToolCallsFileSearchRankingOptionsObject>
   fields = const {#ranker: _f$ranker, #scoreThreshold: _f$scoreThreshold};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFileSearchRankingOptionsObject _instantiate(
     DecodingData data,

@@ -11,7 +11,7 @@ part 'realtime_beta_server_event_transcription_session_updated.mapper.dart';
 /// Returned when a transcription session is updated with a `transcription_session.update` event, unless .
 /// there is an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventTranscriptionSessionUpdated with RealtimeBetaServerEventTranscriptionSessionUpdatedMappable {
   const RealtimeBetaServerEventTranscriptionSessionUpdated({
     required this.eventId,

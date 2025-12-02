@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'certificate_certificate_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CertificateCertificateDetails with CertificateCertificateDetailsMappable {
   const CertificateCertificateDetails({
     this.validAt,

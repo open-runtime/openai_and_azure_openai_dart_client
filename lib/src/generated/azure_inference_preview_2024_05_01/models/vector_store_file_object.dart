@@ -11,7 +11,7 @@ import 'vector_store_file_object_status_status.dart';
 part 'vector_store_file_object.mapper.dart';
 
 /// A list of files attached to a vector store.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileObject with VectorStoreFileObjectMappable {
   const VectorStoreFileObject({
     required this.id,
@@ -33,7 +33,7 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   @MappableField(key: 'vector_store_id')
   final String vectorStoreId;
   final VectorStoreFileObjectStatusStatus status;
-  @MappableField(key: 'VectorStoreFileObjectLastError')
+  @MappableField(key: 'last_error')
   final VectorStoreFileObjectLastError? vectorStoreFileObjectLastError;
 
   static VectorStoreFileObject fromJson(Map<String, dynamic> json) => VectorStoreFileObjectMapper.fromJson(json);

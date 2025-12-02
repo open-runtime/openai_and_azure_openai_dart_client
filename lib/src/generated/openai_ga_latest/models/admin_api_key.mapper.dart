@@ -55,7 +55,7 @@ class AdminApiKeyMapper extends ClassMapperBase<AdminApiKey> {
   static const Field<AdminApiKey, AdminApiKeyOwner> _f$adminApiKeyOwner = Field(
     'adminApiKeyOwner',
     _$adminApiKeyOwner,
-    key: r'AdminApiKeyOwner',
+    key: r'owner',
   );
   static String? _$value(AdminApiKey v) => v.value;
   static const Field<AdminApiKey, String> _f$value = Field(
@@ -75,6 +75,10 @@ class AdminApiKeyMapper extends ClassMapperBase<AdminApiKey> {
     #adminApiKeyOwner: _f$adminApiKeyOwner,
     #value: _f$value,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AdminApiKey _instantiate(DecodingData data) {
     return AdminApiKey(

@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_delta_content_text_object_text_annotations_annotations_union.dart';
+import 'message_delta_content_text_object_text_annotations_union.dart';
 
 part 'message_delta_content_text_object_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentTextObjectText with MessageDeltaContentTextObjectTextMappable {
   const MessageDeltaContentTextObjectText({
     this.value,
@@ -16,7 +16,7 @@ class MessageDeltaContentTextObjectText with MessageDeltaContentTextObjectTextMa
   });
 
   final String? value;
-  final List<MessageDeltaContentTextObjectTextAnnotationsAnnotationsUnion>? annotations;
+  final List<MessageDeltaContentTextObjectTextAnnotationsUnion>? annotations;
 
   static MessageDeltaContentTextObjectText fromJson(Map<String, dynamic> json) => MessageDeltaContentTextObjectTextMapper.fromJson(json);
 

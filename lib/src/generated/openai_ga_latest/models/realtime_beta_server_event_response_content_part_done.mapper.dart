@@ -66,7 +66,7 @@ class RealtimeBetaServerEventResponseContentPartDoneMapper
   _f$realtimeBetaServerEventResponseContentPartDonePart = Field(
     'realtimeBetaServerEventResponseContentPartDonePart',
     _$realtimeBetaServerEventResponseContentPartDonePart,
-    key: r'RealtimeBetaServerEventResponseContentPartDonePart',
+    key: r'part',
   );
 
   @override
@@ -81,6 +81,10 @@ class RealtimeBetaServerEventResponseContentPartDoneMapper
         #realtimeBetaServerEventResponseContentPartDonePart:
             _f$realtimeBetaServerEventResponseContentPartDonePart,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseContentPartDone _instantiate(
     DecodingData data,

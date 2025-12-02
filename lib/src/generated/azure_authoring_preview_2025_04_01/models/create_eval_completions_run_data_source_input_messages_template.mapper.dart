@@ -50,6 +50,10 @@ class CreateEvalCompletionsRunDataSourceInputMessagesTemplateMapper
   @override
   final MappableFields<CreateEvalCompletionsRunDataSourceInputMessagesTemplate>
   fields = const {#content: _f$content, #role: _f$role};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCompletionsRunDataSourceInputMessagesTemplate _instantiate(
     DecodingData data,

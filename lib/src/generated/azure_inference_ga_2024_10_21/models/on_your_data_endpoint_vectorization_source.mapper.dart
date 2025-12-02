@@ -53,6 +53,10 @@ class OnYourDataEndpointVectorizationSourceMapper
     #authentication: _f$authentication,
     #endpoint: _f$endpoint,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataEndpointVectorizationSource _instantiate(DecodingData data) {
     return OnYourDataEndpointVectorizationSource(

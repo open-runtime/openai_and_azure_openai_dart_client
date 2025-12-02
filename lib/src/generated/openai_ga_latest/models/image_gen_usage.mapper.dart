@@ -56,6 +56,10 @@ class ImageGenUsageMapper extends ClassMapperBase<ImageGenUsage> {
     #outputTokens: _f$outputTokens,
     #inputTokensDetails: _f$inputTokensDetails,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenUsage _instantiate(DecodingData data) {
     return ImageGenUsage(

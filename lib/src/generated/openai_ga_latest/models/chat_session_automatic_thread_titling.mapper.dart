@@ -32,6 +32,10 @@ class ChatSessionAutomaticThreadTitlingMapper
   final MappableFields<ChatSessionAutomaticThreadTitling> fields = const {
     #enabled: _f$enabled,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatSessionAutomaticThreadTitling _instantiate(DecodingData data) {
     return ChatSessionAutomaticThreadTitling(enabled: data.dec(_f$enabled));

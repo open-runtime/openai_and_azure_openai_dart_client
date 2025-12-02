@@ -63,6 +63,10 @@ class AuditLogRoleCreatedMapper extends ClassMapperBase<AuditLogRoleCreated> {
     #resourceType: _f$resourceType,
     #resourceId: _f$resourceId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRoleCreated _instantiate(DecodingData data) {
     return AuditLogRoleCreated(

@@ -68,6 +68,10 @@ class CreateCompletionResponseChoicesLogprobsMapper
     #tokens: _f$tokens,
     #topLogprobs: _f$topLogprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionResponseChoicesLogprobs _instantiate(
     DecodingData data,

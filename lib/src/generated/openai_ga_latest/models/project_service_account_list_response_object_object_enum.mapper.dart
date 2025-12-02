@@ -33,7 +33,7 @@ class ProjectServiceAccountListResponseObjectObjectEnumMapper
   ProjectServiceAccountListResponseObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return ProjectServiceAccountListResponseObjectObjectEnum.valueList;
+        return ProjectServiceAccountListResponseObjectObjectEnum.list;
       case 'unknown':
         return ProjectServiceAccountListResponseObjectObjectEnum.unknown;
       default:
@@ -44,7 +44,7 @@ class ProjectServiceAccountListResponseObjectObjectEnumMapper
   @override
   dynamic encode(ProjectServiceAccountListResponseObjectObjectEnum self) {
     switch (self) {
-      case ProjectServiceAccountListResponseObjectObjectEnum.valueList:
+      case ProjectServiceAccountListResponseObjectObjectEnum.list:
         return 'list';
       case ProjectServiceAccountListResponseObjectObjectEnum.unknown:
         return 'unknown';

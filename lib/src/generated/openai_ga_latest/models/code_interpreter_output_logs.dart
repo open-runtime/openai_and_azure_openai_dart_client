@@ -9,7 +9,7 @@ import 'code_interpreter_output_logs_type_type.dart';
 part 'code_interpreter_output_logs.mapper.dart';
 
 /// The logs output from the code interpreter.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterOutputLogs with CodeInterpreterOutputLogsMappable {
   const CodeInterpreterOutputLogs({
     required this.logs,

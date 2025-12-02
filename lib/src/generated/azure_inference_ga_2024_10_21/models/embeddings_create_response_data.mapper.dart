@@ -43,6 +43,10 @@ class EmbeddingsCreateResponseDataMapper
     #objectField: _f$objectField,
     #embedding: _f$embedding,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EmbeddingsCreateResponseData _instantiate(DecodingData data) {
     return EmbeddingsCreateResponseData(

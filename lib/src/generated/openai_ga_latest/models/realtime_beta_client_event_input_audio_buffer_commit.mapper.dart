@@ -37,6 +37,10 @@ class RealtimeBetaClientEventInputAudioBufferCommitMapper
   @override
   final MappableFields<RealtimeBetaClientEventInputAudioBufferCommit> fields =
       const {#type: _f$type, #eventId: _f$eventId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaClientEventInputAudioBufferCommit _instantiate(
     DecodingData data,

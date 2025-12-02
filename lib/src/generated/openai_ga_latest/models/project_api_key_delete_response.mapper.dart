@@ -50,6 +50,10 @@ class ProjectApiKeyDeleteResponseMapper
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectApiKeyDeleteResponse _instantiate(DecodingData data) {
     return ProjectApiKeyDeleteResponse(

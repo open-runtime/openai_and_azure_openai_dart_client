@@ -9,7 +9,7 @@ import 'audit_log_actor_user.dart';
 part 'audit_log_actor_session.mapper.dart';
 
 /// The session in which the audit logged action was performed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActorSession with AuditLogActorSessionMappable {
   const AuditLogActorSession({
     this.user,

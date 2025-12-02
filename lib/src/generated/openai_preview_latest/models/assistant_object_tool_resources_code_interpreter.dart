@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'assistant_object_tool_resources_code_interpreter.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantObjectToolResourcesCodeInterpreter with AssistantObjectToolResourcesCodeInterpreterMappable {
   const AssistantObjectToolResourcesCodeInterpreter({
     this.fileIds = const [],

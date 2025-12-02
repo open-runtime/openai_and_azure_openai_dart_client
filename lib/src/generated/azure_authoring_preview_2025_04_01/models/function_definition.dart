@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'function_definition.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionDefinition with FunctionDefinitionMappable {
   const FunctionDefinition({
     this.parameters,

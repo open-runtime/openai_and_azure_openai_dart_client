@@ -17,7 +17,7 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
       RunStepObjectObjectObjectEnumMapper.ensureInitialized();
       RunStepObjectTypeTypeMapper.ensureInitialized();
       RunStepObjectStatusStatusMapper.ensureInitialized();
-      RunStepObjectStepDetailsStepDetailsUnionMapper.ensureInitialized();
+      RunStepObjectStepDetailsUnionMapper.ensureInitialized();
       RunStepObjectLastErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -64,10 +64,9 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
   static RunStepObjectStatusStatus _$status(RunStepObject v) => v.status;
   static const Field<RunStepObject, RunStepObjectStatusStatus> _f$status =
       Field('status', _$status);
-  static RunStepObjectStepDetailsStepDetailsUnion _$stepDetails(
-    RunStepObject v,
-  ) => v.stepDetails;
-  static const Field<RunStepObject, RunStepObjectStepDetailsStepDetailsUnion>
+  static RunStepObjectStepDetailsUnion _$stepDetails(RunStepObject v) =>
+      v.stepDetails;
+  static const Field<RunStepObject, RunStepObjectStepDetailsUnion>
   _f$stepDetails = Field('stepDetails', _$stepDetails, key: r'step_details');
   static RunStepObjectLastError? _$runStepObjectLastError(RunStepObject v) =>
       v.runStepObjectLastError;
@@ -75,7 +74,7 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
   _f$runStepObjectLastError = Field(
     'runStepObjectLastError',
     _$runStepObjectLastError,
-    key: r'RunStepObjectLastError',
+    key: r'last_error',
   );
   static int? _$expiredAt(RunStepObject v) => v.expiredAt;
   static const Field<RunStepObject, int> _f$expiredAt = Field(
@@ -125,6 +124,10 @@ class RunStepObjectMapper extends ClassMapperBase<RunStepObject> {
     #completedAt: _f$completedAt,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepObject _instantiate(DecodingData data) {
     return RunStepObject(
@@ -208,10 +211,10 @@ extension RunStepObjectValueCopy<$R, $Out>
 
 abstract class RunStepObjectCopyWith<$R, $In extends RunStepObject, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  RunStepObjectStepDetailsStepDetailsUnionCopyWith<
+  RunStepObjectStepDetailsUnionCopyWith<
     $R,
-    RunStepObjectStepDetailsStepDetailsUnion,
-    RunStepObjectStepDetailsStepDetailsUnion
+    RunStepObjectStepDetailsUnion,
+    RunStepObjectStepDetailsUnion
   >
   get stepDetails;
   RunStepObjectLastErrorCopyWith<
@@ -229,7 +232,7 @@ abstract class RunStepObjectCopyWith<$R, $In extends RunStepObject, $Out>
     String? runId,
     RunStepObjectTypeType? type,
     RunStepObjectStatusStatus? status,
-    RunStepObjectStepDetailsStepDetailsUnion? stepDetails,
+    RunStepObjectStepDetailsUnion? stepDetails,
     RunStepObjectLastError? runStepObjectLastError,
     int? expiredAt,
     int? cancelledAt,
@@ -249,10 +252,10 @@ class _RunStepObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RunStepObject> $mapper =
       RunStepObjectMapper.ensureInitialized();
   @override
-  RunStepObjectStepDetailsStepDetailsUnionCopyWith<
+  RunStepObjectStepDetailsUnionCopyWith<
     $R,
-    RunStepObjectStepDetailsStepDetailsUnion,
-    RunStepObjectStepDetailsStepDetailsUnion
+    RunStepObjectStepDetailsUnion,
+    RunStepObjectStepDetailsUnion
   >
   get stepDetails =>
       $value.stepDetails.copyWith.$chain((v) => call(stepDetails: v));
@@ -275,7 +278,7 @@ class _RunStepObjectCopyWithImpl<$R, $Out>
     String? runId,
     RunStepObjectTypeType? type,
     RunStepObjectStatusStatus? status,
-    RunStepObjectStepDetailsStepDetailsUnion? stepDetails,
+    RunStepObjectStepDetailsUnion? stepDetails,
     Object? runStepObjectLastError = $none,
     Object? expiredAt = $none,
     Object? cancelledAt = $none,

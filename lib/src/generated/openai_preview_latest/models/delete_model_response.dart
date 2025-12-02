@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'delete_model_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteModelResponse with DeleteModelResponseMappable {
   const DeleteModelResponse({
     required this.id,

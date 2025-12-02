@@ -11,7 +11,7 @@ part 'run_step_delta_object.mapper.dart';
 
 /// Represents a run step delta i.e. any changed fields on a run step during streaming.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaObject with RunStepDeltaObjectMappable {
   const RunStepDeltaObject({
     required this.id,

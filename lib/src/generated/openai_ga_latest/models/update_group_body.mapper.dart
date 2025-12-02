@@ -26,6 +26,10 @@ class UpdateGroupBodyMapper extends ClassMapperBase<UpdateGroupBody> {
 
   @override
   final MappableFields<UpdateGroupBody> fields = const {#name: _f$name};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateGroupBody _instantiate(DecodingData data) {
     return UpdateGroupBody(name: data.dec(_f$name));

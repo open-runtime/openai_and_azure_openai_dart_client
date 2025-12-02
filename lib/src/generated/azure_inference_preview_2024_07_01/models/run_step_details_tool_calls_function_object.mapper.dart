@@ -48,7 +48,7 @@ class RunStepDetailsToolCallsFunctionObjectMapper
   _f$runStepDetailsToolCallsFunctionObjectFunction = Field(
     'runStepDetailsToolCallsFunctionObjectFunction',
     _$runStepDetailsToolCallsFunctionObjectFunction,
-    key: r'RunStepDetailsToolCallsFunctionObjectFunction',
+    key: r'function',
   );
 
   @override
@@ -58,6 +58,10 @@ class RunStepDetailsToolCallsFunctionObjectMapper
     #runStepDetailsToolCallsFunctionObjectFunction:
         _f$runStepDetailsToolCallsFunctionObjectFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFunctionObject _instantiate(DecodingData data) {
     return RunStepDetailsToolCallsFunctionObject(

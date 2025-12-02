@@ -33,6 +33,10 @@ class AuditLogProjectArchivedMapper
 
   @override
   final MappableFields<AuditLogProjectArchived> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectArchived _instantiate(DecodingData data) {
     return AuditLogProjectArchived(id: data.dec(_f$id));

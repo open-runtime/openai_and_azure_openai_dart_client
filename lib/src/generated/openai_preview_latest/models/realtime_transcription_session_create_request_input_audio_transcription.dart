@@ -8,7 +8,7 @@ import 'realtime_transcription_session_create_request_input_audio_transcription_
 
 part 'realtime_transcription_session_create_request_input_audio_transcription.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTranscriptionSessionCreateRequestInputAudioTranscription with RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionMappable {
   const RealtimeTranscriptionSessionCreateRequestInputAudioTranscription({
     this.model,

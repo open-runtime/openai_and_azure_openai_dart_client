@@ -9,7 +9,7 @@ import 'eval_jsonl_file_content_source_type_type.dart';
 
 part 'eval_jsonl_file_content_source.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalJsonlFileContentSource with EvalJsonlFileContentSourceMappable {
   const EvalJsonlFileContentSource({
     required this.content,

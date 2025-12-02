@@ -39,7 +39,7 @@ class WebhookBatchFailedMapper extends ClassMapperBase<WebhookBatchFailed> {
   _f$webhookBatchFailedData = Field(
     'webhookBatchFailedData',
     _$webhookBatchFailedData,
-    key: r'WebhookBatchFailedData',
+    key: r'data',
   );
   static WebhookBatchFailedTypeType _$type(WebhookBatchFailed v) => v.type;
   static const Field<WebhookBatchFailed, WebhookBatchFailedTypeType> _f$type =
@@ -58,6 +58,10 @@ class WebhookBatchFailedMapper extends ClassMapperBase<WebhookBatchFailed> {
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookBatchFailed _instantiate(DecodingData data) {
     return WebhookBatchFailed(

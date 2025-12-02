@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_session_create_request_turn_detection.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestTurnDetection with RealtimeSessionCreateRequestTurnDetectionMappable {
   const RealtimeSessionCreateRequestTurnDetection({
     this.type,

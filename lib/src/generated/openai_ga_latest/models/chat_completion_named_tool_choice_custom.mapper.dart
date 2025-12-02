@@ -45,7 +45,7 @@ class ChatCompletionNamedToolChoiceCustomMapper
   _f$chatCompletionNamedToolChoiceCustomCustom = Field(
     'chatCompletionNamedToolChoiceCustomCustom',
     _$chatCompletionNamedToolChoiceCustomCustom,
-    key: r'ChatCompletionNamedToolChoiceCustomCustom',
+    key: r'custom',
   );
 
   @override
@@ -54,6 +54,10 @@ class ChatCompletionNamedToolChoiceCustomMapper
     #chatCompletionNamedToolChoiceCustomCustom:
         _f$chatCompletionNamedToolChoiceCustomCustom,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionNamedToolChoiceCustom _instantiate(DecodingData data) {
     return ChatCompletionNamedToolChoiceCustom(

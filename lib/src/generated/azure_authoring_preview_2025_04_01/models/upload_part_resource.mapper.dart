@@ -62,6 +62,10 @@ class UploadPartResourceMapper extends ClassMapperBase<UploadPartResource> {
     #uploadId: _f$uploadId,
     #azureBlockId: _f$azureBlockId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UploadPartResource _instantiate(DecodingData data) {
     return UploadPartResource(

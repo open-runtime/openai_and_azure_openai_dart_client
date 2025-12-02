@@ -45,6 +45,10 @@ class MessageDeltaContentImageUrlObjectImageUrlMapper
   @override
   final MappableFields<MessageDeltaContentImageUrlObjectImageUrl> fields =
       const {#detail: _f$detail, #url: _f$url};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentImageUrlObjectImageUrl _instantiate(
     DecodingData data,

@@ -43,6 +43,10 @@ class CreateThreadRequestToolResourcesCodeInterpreterMapper
   @override
   final MappableFields<CreateThreadRequestToolResourcesCodeInterpreter> fields =
       const {#fileIds: _f$fileIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadRequestToolResourcesCodeInterpreter _instantiate(
     DecodingData data,

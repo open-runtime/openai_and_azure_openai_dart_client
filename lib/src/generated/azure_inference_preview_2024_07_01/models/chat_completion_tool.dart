@@ -9,7 +9,7 @@ import 'chat_completion_tool_type.dart';
 
 part 'chat_completion_tool.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionTool with ChatCompletionToolMappable {
   const ChatCompletionTool({
     required this.type,
@@ -17,7 +17,7 @@ class ChatCompletionTool with ChatCompletionToolMappable {
   });
 
   final ChatCompletionToolType type;
-  @MappableField(key: 'ChatCompletionToolFunction')
+  @MappableField(key: 'function')
   final ChatCompletionToolFunction chatCompletionToolFunction;
 
   static ChatCompletionTool fromJson(Map<String, dynamic> json) => ChatCompletionToolMapper.fromJson(json);

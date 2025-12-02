@@ -12,7 +12,7 @@ import 'function_call_item_status.dart';
 part 'computer_call_output_item_param.mapper.dart';
 
 /// The output of a computer tool call.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerCallOutputItemParam with ComputerCallOutputItemParamMappable {
   const ComputerCallOutputItemParam({
     required this.callId,

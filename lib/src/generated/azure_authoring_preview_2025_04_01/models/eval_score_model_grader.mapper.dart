@@ -72,6 +72,10 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
     #range: _f$range,
     #samplingParams: _f$samplingParams,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalScoreModelGrader _instantiate(DecodingData data) {
     return EvalScoreModelGrader(

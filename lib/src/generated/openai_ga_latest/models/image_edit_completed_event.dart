@@ -9,13 +9,14 @@ import 'image_edit_completed_event_output_format_output_format.dart';
 import 'image_edit_completed_event_quality_quality.dart';
 import 'image_edit_completed_event_size_size.dart';
 import 'image_edit_completed_event_type_type.dart';
+import 'image_edit_stream_event.dart';
 import 'images_usage.dart';
 
 part 'image_edit_completed_event.mapper.dart';
 
 /// Emitted when image editing has completed and the final image is available.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageEditCompletedEvent with ImageEditCompletedEventMappable {
   const ImageEditCompletedEvent({
     required this.type,

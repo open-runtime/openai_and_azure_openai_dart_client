@@ -54,6 +54,10 @@ class OnYourDataUsernameAndPasswordAuthenticationOptionsMapper
     #username: _f$username,
     #password: _f$password,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataUsernameAndPasswordAuthenticationOptions _instantiate(
     DecodingData data,

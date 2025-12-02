@@ -8,7 +8,7 @@ import 'user_delete_response_object_object_enum.dart';
 
 part 'user_delete_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserDeleteResponse with UserDeleteResponseMappable {
   const UserDeleteResponse({
     required this.objectEnum,

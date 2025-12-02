@@ -5,12 +5,13 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_mcp_list_tools_failed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_mcp_list_tools_failed_event.mapper.dart';
 
 /// Emitted when the attempt to list available MCP tools has failed.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseMcpListToolsFailedEvent with ResponseMcpListToolsFailedEventMappable {
   const ResponseMcpListToolsFailedEvent({
     required this.type,

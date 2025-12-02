@@ -49,6 +49,10 @@ class AzureMachineLearningIndexChatExtensionConfigurationMapper
   @override
   final MappableFields<AzureMachineLearningIndexChatExtensionConfiguration>
   fields = const {#type: _f$type, #parameters: _f$parameters};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureMachineLearningIndexChatExtensionConfiguration _instantiate(
     DecodingData data,

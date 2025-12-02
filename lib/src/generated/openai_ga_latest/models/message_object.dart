@@ -15,7 +15,7 @@ import 'metadata.dart';
 part 'message_object.mapper.dart';
 
 /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageObject with MessageObjectMappable {
   const MessageObject({
     required this.id,

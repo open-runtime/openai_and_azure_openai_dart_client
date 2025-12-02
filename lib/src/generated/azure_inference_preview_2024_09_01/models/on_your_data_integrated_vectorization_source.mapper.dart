@@ -38,6 +38,10 @@ class OnYourDataIntegratedVectorizationSourceMapper
   final MappableFields<OnYourDataIntegratedVectorizationSource> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataIntegratedVectorizationSource _instantiate(
     DecodingData data,

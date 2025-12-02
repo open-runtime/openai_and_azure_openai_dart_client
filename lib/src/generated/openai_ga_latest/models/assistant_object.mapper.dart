@@ -118,6 +118,10 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
     #responseFormat: _f$responseFormat,
     #tools: _f$tools,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantObject _instantiate(DecodingData data) {
     return AssistantObject(

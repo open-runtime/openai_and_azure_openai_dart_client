@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'connection_string_connection.mapper.dart';
 
 /// Connection string connection.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ConnectionStringConnection with ConnectionStringConnectionMappable {
   const ConnectionStringConnection({
     required this.kind,

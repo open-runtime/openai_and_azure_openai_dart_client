@@ -24,6 +24,10 @@ class PromptUnionMapper extends ClassMapperBase<PromptUnion> {
 
   @override
   final MappableFields<PromptUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PromptUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('PromptUnion');
@@ -87,6 +91,10 @@ class PromptUnionVariant1Mapper extends ClassMapperBase<PromptUnionVariant1> {
     #version: _f$version,
     #variables: _f$variables,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static PromptUnionVariant1 _instantiate(DecodingData data) {
     return PromptUnionVariant1(

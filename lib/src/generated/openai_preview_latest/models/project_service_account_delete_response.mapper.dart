@@ -48,6 +48,10 @@ class ProjectServiceAccountDeleteResponseMapper
     #id: _f$id,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectServiceAccountDeleteResponse _instantiate(DecodingData data) {
     return ProjectServiceAccountDeleteResponse(

@@ -46,6 +46,10 @@ class ToolChoiceMcpMapper extends ClassMapperBase<ToolChoiceMcp> {
     #serverLabel: _f$serverLabel,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ToolChoiceMcp _instantiate(DecodingData data) {
     return ToolChoiceMcp(

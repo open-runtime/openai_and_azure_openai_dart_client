@@ -11,7 +11,7 @@ part 'tool_choice_types.mapper.dart';
 /// Indicates that the model should use a built-in tool to generate a response.
 /// [Learn more about built-in tools](/docs/guides/tools).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolChoiceTypes with ToolChoiceTypesMappable {
   const ToolChoiceTypes({
     required this.type,

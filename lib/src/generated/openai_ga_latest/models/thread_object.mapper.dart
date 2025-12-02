@@ -54,6 +54,10 @@ class ThreadObjectMapper extends ClassMapperBase<ThreadObject> {
     #toolResources: _f$toolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadObject _instantiate(DecodingData data) {
     return ThreadObject(

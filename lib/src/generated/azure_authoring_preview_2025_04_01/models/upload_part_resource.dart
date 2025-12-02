@@ -8,7 +8,7 @@ import 'type_discriminator.dart';
 
 part 'upload_part_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadPartResource with UploadPartResourceMappable {
   const UploadPartResource({
     this.objectField,

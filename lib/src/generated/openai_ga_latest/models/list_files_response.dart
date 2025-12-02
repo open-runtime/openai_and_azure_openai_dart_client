@@ -8,7 +8,7 @@ import 'open_ai_file.dart';
 
 part 'list_files_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ListFilesResponse with ListFilesResponseMappable {
   const ListFilesResponse({
     required this.objectField,

@@ -10,7 +10,7 @@ import 'completion_usage_prompt_tokens_details.dart';
 part 'completion_usage.mapper.dart';
 
 /// Usage statistics for the completion request.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsage with CompletionUsageMappable {
   const CompletionUsage({
     this.completionUsageCompletionTokensDetails,
@@ -20,9 +20,9 @@ class CompletionUsage with CompletionUsageMappable {
     this.totalTokens = 0,
   });
 
-  @MappableField(key: 'CompletionUsageCompletionTokensDetails')
+  @MappableField(key: 'completion_tokens_details')
   final CompletionUsageCompletionTokensDetails? completionUsageCompletionTokensDetails;
-  @MappableField(key: 'CompletionUsagePromptTokensDetails')
+  @MappableField(key: 'prompt_tokens_details')
   final CompletionUsagePromptTokensDetails? completionUsagePromptTokensDetails;
   @MappableField(key: 'completion_tokens')
   final int completionTokens;

@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_tool_call.dart';
 import 'response_code_interpreter_call_in_progress_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_code_interpreter_call_in_progress_event.mapper.dart';
 
 /// Emitted when a code interpreter call is in progress.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseCodeInterpreterCallInProgressEvent with ResponseCodeInterpreterCallInProgressEventMappable {
   const ResponseCodeInterpreterCallInProgressEvent({
     required this.type,

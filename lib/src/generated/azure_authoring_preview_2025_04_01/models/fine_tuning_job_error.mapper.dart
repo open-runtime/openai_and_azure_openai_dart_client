@@ -46,6 +46,10 @@ class FineTuningJobErrorMapper extends ClassMapperBase<FineTuningJobError> {
     #message: _f$message,
     #param: _f$param,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuningJobError _instantiate(DecodingData data) {
     return FineTuningJobError(

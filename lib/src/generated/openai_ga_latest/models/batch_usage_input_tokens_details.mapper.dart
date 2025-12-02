@@ -35,6 +35,10 @@ class BatchUsageInputTokensDetailsMapper
   final MappableFields<BatchUsageInputTokensDetails> fields = const {
     #cachedTokens: _f$cachedTokens,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchUsageInputTokensDetails _instantiate(DecodingData data) {
     return BatchUsageInputTokensDetails(

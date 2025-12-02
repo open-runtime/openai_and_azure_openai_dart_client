@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chatkit_workflow_tracing.dart';
+import 'state_variables_union.dart';
 
 part 'chatkit_workflow.mapper.dart';
 
 /// Workflow metadata and state returned for the session.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatkitWorkflow with ChatkitWorkflowMappable {
   const ChatkitWorkflow({
     required this.id,
@@ -20,8 +21,8 @@ class ChatkitWorkflow with ChatkitWorkflowMappable {
 
   final String id;
   final String? version;
-  @MappableField(key: 'state_variables')
-  final Map<String, String>? stateVariables;
+  @MappableField(key: 'state_variables', hook: const StateVariablesUnionHook())
+  final Map<String, StateVariablesUnion>? stateVariables;
   final ChatkitWorkflowTracing tracing;
 
   static ChatkitWorkflow fromJson(Map<String, dynamic> json) => ChatkitWorkflowMapper.fromJson(json);

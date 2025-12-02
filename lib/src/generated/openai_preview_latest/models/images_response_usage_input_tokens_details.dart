@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'images_response_usage_input_tokens_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesResponseUsageInputTokensDetails with ImagesResponseUsageInputTokensDetailsMappable {
   const ImagesResponseUsageInputTokensDetails({
     required this.textTokens,

@@ -38,6 +38,10 @@ class OtherChunkingStrategyResponseParamMapper
   final MappableFields<OtherChunkingStrategyResponseParam> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OtherChunkingStrategyResponseParam _instantiate(DecodingData data) {
     return OtherChunkingStrategyResponseParam(type: data.dec(_f$type));

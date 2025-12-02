@@ -8,7 +8,7 @@ import 'purpose.dart';
 
 part 'upload_file_start_body.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadFileStartBody with UploadFileStartBodyMappable {
   const UploadFileStartBody({
     required this.purpose,

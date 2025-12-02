@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_client_event.dart';
 import 'realtime_response_create_params.dart';
 
 part 'realtime_client_event_response_create.mapper.dart';
@@ -34,7 +35,7 @@ part 'realtime_client_event_response_create.mapper.dart';
 /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting.
 /// raw Items and references to existing Items.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventResponseCreate with RealtimeClientEventResponseCreateMappable {
   const RealtimeClientEventResponseCreate({
     required this.type,

@@ -60,6 +60,10 @@ class ReasoningItemMapper extends ClassMapperBase<ReasoningItem> {
     #content: _f$content,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ReasoningItem _instantiate(DecodingData data) {
     return ReasoningItem(

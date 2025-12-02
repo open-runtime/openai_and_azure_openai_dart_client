@@ -14,7 +14,7 @@ import 'video_status.dart';
 part 'video_resource.mapper.dart';
 
 /// Structured information describing a generated video job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VideoResource with VideoResourceMappable {
   const VideoResource({
     required this.id,

@@ -10,7 +10,7 @@ import 'run_step_details_message_creation_object_type_type.dart';
 part 'run_step_details_message_creation_object.mapper.dart';
 
 /// Details of the message creation by the run step.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsMessageCreationObject with RunStepDetailsMessageCreationObjectMappable {
   const RunStepDetailsMessageCreationObject({
     required this.type,
@@ -18,7 +18,7 @@ class RunStepDetailsMessageCreationObject with RunStepDetailsMessageCreationObje
   });
 
   final RunStepDetailsMessageCreationObjectTypeType type;
-  @MappableField(key: 'RunStepDetailsMessageCreationObjectMessageCreation')
+  @MappableField(key: 'message_creation')
   final RunStepDetailsMessageCreationObjectMessageCreation runStepDetailsMessageCreationObjectMessageCreation;
 
   static RunStepDetailsMessageCreationObject fromJson(Map<String, dynamic> json) => RunStepDetailsMessageCreationObjectMapper.fromJson(json);

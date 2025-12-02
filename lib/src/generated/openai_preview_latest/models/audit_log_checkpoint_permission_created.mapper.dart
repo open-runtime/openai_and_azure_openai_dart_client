@@ -42,7 +42,7 @@ class AuditLogCheckpointPermissionCreatedMapper
   _f$auditLogCheckpointPermissionCreatedData = Field(
     'auditLogCheckpointPermissionCreatedData',
     _$auditLogCheckpointPermissionCreatedData,
-    key: r'AuditLogCheckpointPermissionCreatedData',
+    key: r'data',
     opt: true,
   );
 
@@ -52,6 +52,10 @@ class AuditLogCheckpointPermissionCreatedMapper
     #auditLogCheckpointPermissionCreatedData:
         _f$auditLogCheckpointPermissionCreatedData,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogCheckpointPermissionCreated _instantiate(DecodingData data) {
     return AuditLogCheckpointPermissionCreated(

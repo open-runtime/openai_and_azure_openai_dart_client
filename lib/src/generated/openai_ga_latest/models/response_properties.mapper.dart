@@ -116,6 +116,10 @@ class ResponsePropertiesMapper extends ClassMapperBase<ResponseProperties> {
     #toolChoice: _f$toolChoice,
     #prompt: _f$prompt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseProperties _instantiate(DecodingData data) {
     return ResponseProperties(

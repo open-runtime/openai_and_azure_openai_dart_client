@@ -55,6 +55,10 @@ class WandBIntegrationRequestMapper
     #entity: _f$entity,
     #tags: _f$tags,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WandBIntegrationRequest _instantiate(DecodingData data) {
     return WandBIntegrationRequest(

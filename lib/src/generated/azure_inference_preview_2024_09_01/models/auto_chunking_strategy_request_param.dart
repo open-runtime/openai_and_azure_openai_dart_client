@@ -9,7 +9,7 @@ import 'auto_chunking_strategy_request_param_type_type.dart';
 part 'auto_chunking_strategy_request_param.mapper.dart';
 
 /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AutoChunkingStrategyRequestParam with AutoChunkingStrategyRequestParamMappable {
   const AutoChunkingStrategyRequestParam({
     required this.type,

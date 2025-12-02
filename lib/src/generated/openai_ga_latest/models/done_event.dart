@@ -10,7 +10,7 @@ import 'done_event_event_event.dart';
 part 'done_event.mapper.dart';
 
 /// Occurs when a stream ends.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DoneEvent with DoneEventMappable {
   const DoneEvent({
     required this.event,

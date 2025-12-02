@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'reasoning_effort.dart';
-import 'create_eval_completions_run_data_source_sampling_params_response_format_response_format_union.dart';
+import 'create_eval_completions_run_data_source_sampling_params_response_format_union.dart';
 import 'chat_completion_tool.dart';
 
 part 'create_eval_completions_run_data_source_sampling_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletionsRunDataSourceSamplingParamsMappable {
   const CreateEvalCompletionsRunDataSourceSamplingParams({
     this.temperature = 1,
@@ -31,7 +31,7 @@ class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletion
   @MappableField(key: 'max_completion_tokens')
   final int? maxCompletionTokens;
   @MappableField(key: 'response_format')
-  final CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatResponseFormatUnion? responseFormat;
+  final CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion? responseFormat;
   final List<ChatCompletionTool>? tools;
 
   static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);

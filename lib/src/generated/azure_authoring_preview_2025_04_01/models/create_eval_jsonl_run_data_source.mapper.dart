@@ -53,6 +53,10 @@ class CreateEvalJsonlRunDataSourceMapper
     #source: _f$source,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalJsonlRunDataSource _instantiate(DecodingData data) {
     return CreateEvalJsonlRunDataSource(

@@ -46,6 +46,10 @@ class OnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper
     OnYourDataSystemAssignedManagedIdentityAuthenticationOptions
   >
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataSystemAssignedManagedIdentityAuthenticationOptions
   _instantiate(DecodingData data) {

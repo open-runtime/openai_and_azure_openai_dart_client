@@ -14,8 +14,8 @@ class EvalMapper extends ClassMapperBase<Eval> {
   static EvalMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalMapper._());
-      EvalDataSourceConfigDataSourceConfigUnionMapper.ensureInitialized();
-      EvalTestingCriteriaTestingCriteriaUnionMapper.ensureInitialized();
+      EvalDataSourceConfigUnionMapper.ensureInitialized();
+      EvalTestingCriteriaUnionMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       EvalObjectObjectEnumMapper.ensureInitialized();
     }
@@ -29,23 +29,14 @@ class EvalMapper extends ClassMapperBase<Eval> {
   static const Field<Eval, String> _f$id = Field('id', _$id);
   static String _$name(Eval v) => v.name;
   static const Field<Eval, String> _f$name = Field('name', _$name);
-  static EvalDataSourceConfigDataSourceConfigUnion _$dataSourceConfig(Eval v) =>
+  static EvalDataSourceConfigUnion _$dataSourceConfig(Eval v) =>
       v.dataSourceConfig;
-  static const Field<Eval, EvalDataSourceConfigDataSourceConfigUnion>
-  _f$dataSourceConfig = Field(
-    'dataSourceConfig',
-    _$dataSourceConfig,
-    key: r'data_source_config',
-  );
-  static List<EvalTestingCriteriaTestingCriteriaUnion> _$testingCriteria(
-    Eval v,
-  ) => v.testingCriteria;
-  static const Field<Eval, List<EvalTestingCriteriaTestingCriteriaUnion>>
-  _f$testingCriteria = Field(
-    'testingCriteria',
-    _$testingCriteria,
-    key: r'testing_criteria',
-  );
+  static const Field<Eval, EvalDataSourceConfigUnion> _f$dataSourceConfig =
+      Field('dataSourceConfig', _$dataSourceConfig, key: r'data_source_config');
+  static List<EvalTestingCriteriaUnion> _$testingCriteria(Eval v) =>
+      v.testingCriteria;
+  static const Field<Eval, List<EvalTestingCriteriaUnion>> _f$testingCriteria =
+      Field('testingCriteria', _$testingCriteria, key: r'testing_criteria');
   static int _$createdAt(Eval v) => v.createdAt;
   static const Field<Eval, int> _f$createdAt = Field(
     'createdAt',
@@ -76,6 +67,10 @@ class EvalMapper extends ClassMapperBase<Eval> {
     #metadata: _f$metadata,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Eval _instantiate(DecodingData data) {
     return Eval(
@@ -135,19 +130,19 @@ extension EvalValueCopy<$R, $Out> on ObjectCopyWith<$R, Eval, $Out> {
 
 abstract class EvalCopyWith<$R, $In extends Eval, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  EvalDataSourceConfigDataSourceConfigUnionCopyWith<
+  EvalDataSourceConfigUnionCopyWith<
     $R,
-    EvalDataSourceConfigDataSourceConfigUnion,
-    EvalDataSourceConfigDataSourceConfigUnion
+    EvalDataSourceConfigUnion,
+    EvalDataSourceConfigUnion
   >
   get dataSourceConfig;
   ListCopyWith<
     $R,
-    EvalTestingCriteriaTestingCriteriaUnion,
-    EvalTestingCriteriaTestingCriteriaUnionCopyWith<
+    EvalTestingCriteriaUnion,
+    EvalTestingCriteriaUnionCopyWith<
       $R,
-      EvalTestingCriteriaTestingCriteriaUnion,
-      EvalTestingCriteriaTestingCriteriaUnion
+      EvalTestingCriteriaUnion,
+      EvalTestingCriteriaUnion
     >
   >
   get testingCriteria;
@@ -155,8 +150,8 @@ abstract class EvalCopyWith<$R, $In extends Eval, $Out>
   $R call({
     String? id,
     String? name,
-    EvalDataSourceConfigDataSourceConfigUnion? dataSourceConfig,
-    List<EvalTestingCriteriaTestingCriteriaUnion>? testingCriteria,
+    EvalDataSourceConfigUnion? dataSourceConfig,
+    List<EvalTestingCriteriaUnion>? testingCriteria,
     int? createdAt,
     Metadata? metadata,
     EvalObjectObjectEnum? objectEnum,
@@ -171,21 +166,21 @@ class _EvalCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Eval, $Out>
   @override
   late final ClassMapperBase<Eval> $mapper = EvalMapper.ensureInitialized();
   @override
-  EvalDataSourceConfigDataSourceConfigUnionCopyWith<
+  EvalDataSourceConfigUnionCopyWith<
     $R,
-    EvalDataSourceConfigDataSourceConfigUnion,
-    EvalDataSourceConfigDataSourceConfigUnion
+    EvalDataSourceConfigUnion,
+    EvalDataSourceConfigUnion
   >
   get dataSourceConfig =>
       $value.dataSourceConfig.copyWith.$chain((v) => call(dataSourceConfig: v));
   @override
   ListCopyWith<
     $R,
-    EvalTestingCriteriaTestingCriteriaUnion,
-    EvalTestingCriteriaTestingCriteriaUnionCopyWith<
+    EvalTestingCriteriaUnion,
+    EvalTestingCriteriaUnionCopyWith<
       $R,
-      EvalTestingCriteriaTestingCriteriaUnion,
-      EvalTestingCriteriaTestingCriteriaUnion
+      EvalTestingCriteriaUnion,
+      EvalTestingCriteriaUnion
     >
   >
   get testingCriteria => ListCopyWith(
@@ -200,8 +195,8 @@ class _EvalCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Eval, $Out>
   $R call({
     String? id,
     String? name,
-    EvalDataSourceConfigDataSourceConfigUnion? dataSourceConfig,
-    List<EvalTestingCriteriaTestingCriteriaUnion>? testingCriteria,
+    EvalDataSourceConfigUnion? dataSourceConfig,
+    List<EvalTestingCriteriaUnion>? testingCriteria,
     int? createdAt,
     Metadata? metadata,
     EvalObjectObjectEnum? objectEnum,

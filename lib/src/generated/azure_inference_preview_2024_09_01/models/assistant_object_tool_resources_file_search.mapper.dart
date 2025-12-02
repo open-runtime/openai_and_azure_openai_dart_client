@@ -39,6 +39,10 @@ class AssistantObjectToolResourcesFileSearchMapper
   final MappableFields<AssistantObjectToolResourcesFileSearch> fields = const {
     #vectorStoreIds: _f$vectorStoreIds,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantObjectToolResourcesFileSearch _instantiate(
     DecodingData data,

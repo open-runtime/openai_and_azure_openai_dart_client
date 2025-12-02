@@ -44,6 +44,10 @@ class ImageMapper extends ClassMapperBase<Image> {
     #url: _f$url,
     #revisedPrompt: _f$revisedPrompt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Image _instantiate(DecodingData data) {
     return Image(

@@ -11,7 +11,7 @@ part 'grader_text_similarity.mapper.dart';
 
 /// A TextSimilarityGrader object which grades text based on similarity metrics.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class GraderTextSimilarity with GraderTextSimilarityMappable {
   const GraderTextSimilarity({
     required this.name,

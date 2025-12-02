@@ -42,6 +42,10 @@ class VectorStoreSearchResultContentObjectMapper
     #type: _f$type,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchResultContentObject _instantiate(DecodingData data) {
     return VectorStoreSearchResultContentObject(

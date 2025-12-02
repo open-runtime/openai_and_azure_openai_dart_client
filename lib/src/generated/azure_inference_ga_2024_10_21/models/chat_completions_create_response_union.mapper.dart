@@ -17,8 +17,8 @@ class ChatCompletionsCreateResponseUnionMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionsCreateResponseUnionMapper._(),
       );
-      ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized();
-      ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,10 +28,16 @@ class ChatCompletionsCreateResponseUnionMapper
 
   @override
   final MappableFields<ChatCompletionsCreateResponseUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionsCreateResponseUnion _instantiate(DecodingData data) {
-    throw MapperException.missingConstructor(
+    throw MapperException.missingSubclass(
       'ChatCompletionsCreateResponseUnion',
+      'object',
+      '${data.value['object']}',
     );
   }
 
@@ -73,23 +79,21 @@ abstract class ChatCompletionsCreateResponseUnionCopyWith<
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper
+class ChatCompletionsCreateResponseUnionChatCompletionMapper
     extends
-        ClassMapperBase<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-        > {
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper._();
+        SubClassMapperBase<ChatCompletionsCreateResponseUnionChatCompletion> {
+  ChatCompletionsCreateResponseUnionChatCompletionMapper._();
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper?
-  _instance;
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper
+  static ChatCompletionsCreateResponseUnionChatCompletionMapper? _instance;
+  static ChatCompletionsCreateResponseUnionChatCompletionMapper
   ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance =
-            ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper._(),
+        _instance = ChatCompletionsCreateResponseUnionChatCompletionMapper._(),
       );
-      ChatCompletionsCreateResponseUnionMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       PromptFilterResultMapper.ensureInitialized();
       CreateChatCompletionResponseChoicesMapper.ensureInitialized();
       CreateChatCompletionResponseObjectObjectEnumMapper.ensureInitialized();
@@ -99,78 +103,68 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper
   }
 
   @override
-  final String id =
-      'ChatCompletionsCreateResponseUnionCreateChatCompletionResponse';
+  final String id = 'ChatCompletionsCreateResponseUnionChatCompletion';
 
-  static String _$id(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
-  ) => v.id;
-  static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    String
-  >
+  static String _$id(ChatCompletionsCreateResponseUnionChatCompletion v) =>
+      v.id;
+  static const Field<ChatCompletionsCreateResponseUnionChatCompletion, String>
   _f$id = Field('id', _$id);
   static List<PromptFilterResult>? _$promptFilterResults(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletion v,
   ) => v.promptFilterResults;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     List<PromptFilterResult>
   >
-  _f$promptFilterResults = Field('promptFilterResults', _$promptFilterResults);
+  _f$promptFilterResults = Field(
+    'promptFilterResults',
+    _$promptFilterResults,
+    key: r'prompt_filter_results',
+  );
   static List<CreateChatCompletionResponseChoices> _$choices(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletion v,
   ) => v.choices;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     List<CreateChatCompletionResponseChoices>
   >
   _f$choices = Field('choices', _$choices);
-  static int _$created(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
-  ) => v.created;
-  static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    int
-  >
+  static int _$created(ChatCompletionsCreateResponseUnionChatCompletion v) =>
+      v.created;
+  static const Field<ChatCompletionsCreateResponseUnionChatCompletion, int>
   _f$created = Field('created', _$created);
-  static String _$model(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
-  ) => v.model;
-  static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    String
-  >
+  static String _$model(ChatCompletionsCreateResponseUnionChatCompletion v) =>
+      v.model;
+  static const Field<ChatCompletionsCreateResponseUnionChatCompletion, String>
   _f$model = Field('model', _$model);
   static String? _$systemFingerprint(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletion v,
   ) => v.systemFingerprint;
-  static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    String
-  >
-  _f$systemFingerprint = Field('systemFingerprint', _$systemFingerprint);
+  static const Field<ChatCompletionsCreateResponseUnionChatCompletion, String>
+  _f$systemFingerprint = Field(
+    'systemFingerprint',
+    _$systemFingerprint,
+    key: r'system_fingerprint',
+  );
   static CreateChatCompletionResponseObjectObjectEnum _$objectEnum(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletion v,
   ) => v.objectEnum;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     CreateChatCompletionResponseObjectObjectEnum
   >
-  _f$objectEnum = Field('objectEnum', _$objectEnum);
+  _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
   static CompletionUsage? _$usage(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletion v,
   ) => v.usage;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     CompletionUsage
   >
   _f$usage = Field('usage', _$usage);
 
   @override
-  final MappableFields<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-  >
+  final MappableFields<ChatCompletionsCreateResponseUnionChatCompletion>
   fields = const {
     #id: _f$id,
     #promptFilterResults: _f$promptFilterResults,
@@ -181,10 +175,23 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper
     #objectEnum: _f$objectEnum,
     #usage: _f$usage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-  _instantiate(DecodingData data) {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponse(
+  @override
+  final String discriminatorKey = 'object';
+  @override
+  final dynamic discriminatorValue = 'chat.completion';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionsCreateResponseUnionMapper.ensureInitialized();
+
+  static ChatCompletionsCreateResponseUnionChatCompletion _instantiate(
+    DecodingData data,
+  ) {
+    return ChatCompletionsCreateResponseUnionChatCompletion(
       id: data.dec(_f$id),
       promptFilterResults: data.dec(_f$promptFilterResults),
       choices: data.dec(_f$choices),
@@ -199,112 +206,99 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-    >(map);
+  static ChatCompletionsCreateResponseUnionChatCompletion fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ChatCompletionsCreateResponseUnionChatCompletion>(map);
   }
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-    >(json);
+  static ChatCompletionsCreateResponseUnionChatCompletion fromJsonString(
+    String json,
+  ) {
+    return ensureInitialized()
+        .decodeJson<ChatCompletionsCreateResponseUnionChatCompletion>(json);
   }
 }
 
-mixin ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMappable {
+mixin ChatCompletionsCreateResponseUnionChatCompletionMappable {
   String toJsonString() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized()
-        .encodeJson<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-        >(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    return ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized()
+        .encodeJson<ChatCompletionsCreateResponseUnionChatCompletion>(
+          this as ChatCompletionsCreateResponseUnionChatCompletion,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized()
-        .encodeMap<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-        >(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    return ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized()
+        .encodeMap<ChatCompletionsCreateResponseUnionChatCompletion>(
+          this as ChatCompletionsCreateResponseUnionChatCompletion,
         );
   }
 
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
+  ChatCompletionsCreateResponseUnionChatCompletionCopyWith<
+    ChatCompletionsCreateResponseUnionChatCompletion,
+    ChatCompletionsCreateResponseUnionChatCompletion,
+    ChatCompletionsCreateResponseUnionChatCompletion
   >
   get copyWith =>
-      _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImpl<
-        ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-        ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
+      _ChatCompletionsCreateResponseUnionChatCompletionCopyWithImpl<
+        ChatCompletionsCreateResponseUnionChatCompletion,
+        ChatCompletionsCreateResponseUnionChatCompletion
       >(
-        this as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+        this as ChatCompletionsCreateResponseUnionChatCompletion,
         $identity,
         $identity,
       );
   @override
   String toString() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized()
+    return ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized()
         .stringifyValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+          this as ChatCompletionsCreateResponseUnionChatCompletion,
         );
   }
 
   @override
   bool operator ==(Object other) {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized()
+    return ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized()
         .equalsValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+          this as ChatCompletionsCreateResponseUnionChatCompletion,
           other,
         );
   }
 
   @override
   int get hashCode {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized()
-        .hashValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
-        );
+    return ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized()
+        .hashValue(this as ChatCompletionsCreateResponseUnionChatCompletion);
   }
 }
 
-extension ChatCompletionsCreateResponseUnionCreateChatCompletionResponseValueCopy<
-  $R,
-  $Out
->
+extension ChatCompletionsCreateResponseUnionChatCompletionValueCopy<$R, $Out>
     on
         ObjectCopyWith<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+          ChatCompletionsCreateResponseUnionChatCompletion,
           $Out
         > {
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
+  ChatCompletionsCreateResponseUnionChatCompletionCopyWith<
     $R,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     $Out
   >
-  get $asChatCompletionsCreateResponseUnionCreateChatCompletionResponse => $base.as(
+  get $asChatCompletionsCreateResponseUnionChatCompletion => $base.as(
     (v, t, t2) =>
-        _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImpl<
-          $R,
-          $Out
-        >(v, t, t2),
+        _ChatCompletionsCreateResponseUnionChatCompletionCopyWithImpl<$R, $Out>(
+          v,
+          t,
+          t2,
+        ),
   );
 }
 
-abstract class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
+abstract class ChatCompletionsCreateResponseUnionChatCompletionCopyWith<
   $R,
-  $In extends ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+  $In extends ChatCompletionsCreateResponseUnionChatCompletion,
   $Out
 >
     implements ChatCompletionsCreateResponseUnionCopyWith<$R, $In, $Out> {
@@ -336,42 +330,33 @@ abstract class ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCop
     CreateChatCompletionResponseObjectObjectEnum? objectEnum,
     CompletionUsage? usage,
   });
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChatCompletionsCreateResponseUnionChatCompletionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImpl<
-  $R,
-  $Out
->
+class _ChatCompletionsCreateResponseUnionChatCompletionCopyWithImpl<$R, $Out>
     extends
         ClassCopyWithBase<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+          ChatCompletionsCreateResponseUnionChatCompletion,
           $Out
         >
     implements
-        ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
+        ChatCompletionsCreateResponseUnionChatCompletionCopyWith<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+          ChatCompletionsCreateResponseUnionChatCompletion,
           $Out
         > {
-  _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImpl(
+  _ChatCompletionsCreateResponseUnionChatCompletionCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse
-  >
+  late final ClassMapperBase<ChatCompletionsCreateResponseUnionChatCompletion>
   $mapper =
-      ChatCompletionsCreateResponseUnionCreateChatCompletionResponseMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionChatCompletionMapper.ensureInitialized();
   @override
   ListCopyWith<
     $R,
@@ -427,55 +412,56 @@ class _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImp
     }),
   );
   @override
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponse $make(
-    CopyWithData data,
-  ) => ChatCompletionsCreateResponseUnionCreateChatCompletionResponse(
-    id: data.get(#id, or: $value.id),
-    promptFilterResults: data.get(
-      #promptFilterResults,
-      or: $value.promptFilterResults,
-    ),
-    choices: data.get(#choices, or: $value.choices),
-    created: data.get(#created, or: $value.created),
-    model: data.get(#model, or: $value.model),
-    systemFingerprint: data.get(
-      #systemFingerprint,
-      or: $value.systemFingerprint,
-    ),
-    objectEnum: data.get(#objectEnum, or: $value.objectEnum),
-    usage: data.get(#usage, or: $value.usage),
-  );
+  ChatCompletionsCreateResponseUnionChatCompletion $make(CopyWithData data) =>
+      ChatCompletionsCreateResponseUnionChatCompletion(
+        id: data.get(#id, or: $value.id),
+        promptFilterResults: data.get(
+          #promptFilterResults,
+          or: $value.promptFilterResults,
+        ),
+        choices: data.get(#choices, or: $value.choices),
+        created: data.get(#created, or: $value.created),
+        model: data.get(#model, or: $value.model),
+        systemFingerprint: data.get(
+          #systemFingerprint,
+          or: $value.systemFingerprint,
+        ),
+        objectEnum: data.get(#objectEnum, or: $value.objectEnum),
+        usage: data.get(#usage, or: $value.usage),
+      );
 
   @override
-  ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWith<
+  ChatCompletionsCreateResponseUnionChatCompletionCopyWith<
     $R2,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionResponse,
+    ChatCompletionsCreateResponseUnionChatCompletion,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChatCompletionsCreateResponseUnionCreateChatCompletionResponseCopyWithImpl<
-        $R2,
-        $Out2
-      >($value, $cast, t);
+      _ChatCompletionsCreateResponseUnionChatCompletionCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
 }
 
-class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper
+class ChatCompletionsCreateResponseUnionChatCompletionChunkMapper
     extends
-        ClassMapperBase<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
+        SubClassMapperBase<
+          ChatCompletionsCreateResponseUnionChatCompletionChunk
         > {
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper._();
+  ChatCompletionsCreateResponseUnionChatCompletionChunkMapper._();
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper?
-  _instance;
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper
+  static ChatCompletionsCreateResponseUnionChatCompletionChunkMapper? _instance;
+  static ChatCompletionsCreateResponseUnionChatCompletionChunkMapper
   ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance =
-            ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper._(),
+            ChatCompletionsCreateResponseUnionChatCompletionChunkMapper._(),
       );
-      ChatCompletionsCreateResponseUnionMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       CreateChatCompletionStreamResponseChoicesMapper.ensureInitialized();
       CreateChatCompletionStreamResponseObjectObjectEnumMapper.ensureInitialized();
     }
@@ -483,62 +469,59 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper
   }
 
   @override
-  final String id =
-      'ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse';
+  final String id = 'ChatCompletionsCreateResponseUnionChatCompletionChunk';
 
-  static String _$id(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
-  ) => v.id;
+  static String _$id(ChatCompletionsCreateResponseUnionChatCompletionChunk v) =>
+      v.id;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     String
   >
   _f$id = Field('id', _$id);
   static List<CreateChatCompletionStreamResponseChoices> _$choices(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk v,
   ) => v.choices;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     List<CreateChatCompletionStreamResponseChoices>
   >
   _f$choices = Field('choices', _$choices);
   static int _$created(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk v,
   ) => v.created;
-  static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
-    int
-  >
+  static const Field<ChatCompletionsCreateResponseUnionChatCompletionChunk, int>
   _f$created = Field('created', _$created);
   static String _$model(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk v,
   ) => v.model;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     String
   >
   _f$model = Field('model', _$model);
   static String? _$systemFingerprint(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk v,
   ) => v.systemFingerprint;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     String
   >
-  _f$systemFingerprint = Field('systemFingerprint', _$systemFingerprint);
+  _f$systemFingerprint = Field(
+    'systemFingerprint',
+    _$systemFingerprint,
+    key: r'system_fingerprint',
+  );
   static CreateChatCompletionStreamResponseObjectObjectEnum _$objectEnum(
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse v,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk v,
   ) => v.objectEnum;
   static const Field<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     CreateChatCompletionStreamResponseObjectObjectEnum
   >
-  _f$objectEnum = Field('objectEnum', _$objectEnum);
+  _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
 
   @override
-  final MappableFields<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-  >
+  final MappableFields<ChatCompletionsCreateResponseUnionChatCompletionChunk>
   fields = const {
     #id: _f$id,
     #choices: _f$choices,
@@ -547,10 +530,23 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper
     #systemFingerprint: _f$systemFingerprint,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-  _instantiate(DecodingData data) {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse(
+  @override
+  final String discriminatorKey = 'object';
+  @override
+  final dynamic discriminatorValue = 'chat.completion.chunk';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionsCreateResponseUnionMapper.ensureInitialized();
+
+  static ChatCompletionsCreateResponseUnionChatCompletionChunk _instantiate(
+    DecodingData data,
+  ) {
+    return ChatCompletionsCreateResponseUnionChatCompletionChunk(
       id: data.dec(_f$id),
       choices: data.dec(_f$choices),
       created: data.dec(_f$created),
@@ -563,114 +559,105 @@ class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-  fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<
-      ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-    >(map);
+  static ChatCompletionsCreateResponseUnionChatCompletionChunk fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ChatCompletionsCreateResponseUnionChatCompletionChunk>(map);
   }
 
-  static ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-  fromJsonString(String json) {
-    return ensureInitialized().decodeJson<
-      ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-    >(json);
+  static ChatCompletionsCreateResponseUnionChatCompletionChunk fromJsonString(
+    String json,
+  ) {
+    return ensureInitialized()
+        .decodeJson<ChatCompletionsCreateResponseUnionChatCompletionChunk>(
+          json,
+        );
   }
 }
 
-mixin ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMappable {
+mixin ChatCompletionsCreateResponseUnionChatCompletionChunkMappable {
   String toJsonString() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized()
-        .encodeJson<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-        >(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    return ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized()
+        .encodeJson<ChatCompletionsCreateResponseUnionChatCompletionChunk>(
+          this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized()
-        .encodeMap<
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
-        >(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    return ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized()
+        .encodeMap<ChatCompletionsCreateResponseUnionChatCompletionChunk>(
+          this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
         );
   }
 
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
+  ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk
   >
   get copyWith =>
-      _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWithImpl<
-        ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
-        ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
+      _ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWithImpl<
+        ChatCompletionsCreateResponseUnionChatCompletionChunk,
+        ChatCompletionsCreateResponseUnionChatCompletionChunk
       >(
-        this
-            as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+        this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
         $identity,
         $identity,
       );
   @override
   String toString() {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized()
+    return ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized()
         .stringifyValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
         );
   }
 
   @override
   bool operator ==(Object other) {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized()
+    return ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized()
         .equalsValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
           other,
         );
   }
 
   @override
   int get hashCode {
-    return ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized()
+    return ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized()
         .hashValue(
-          this
-              as ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          this as ChatCompletionsCreateResponseUnionChatCompletionChunk,
         );
   }
 }
 
-extension ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseValueCopy<
+extension ChatCompletionsCreateResponseUnionChatCompletionChunkValueCopy<
   $R,
   $Out
 >
     on
         ObjectCopyWith<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          ChatCompletionsCreateResponseUnionChatCompletionChunk,
           $Out
         > {
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
+  ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<
     $R,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     $Out
   >
-  get $asChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse =>
-      $base.as(
-        (v, t, t2) =>
-            _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWithImpl<
-              $R,
-              $Out
-            >(v, t, t2),
-      );
+  get $asChatCompletionsCreateResponseUnionChatCompletionChunk => $base.as(
+    (v, t, t2) =>
+        _ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWithImpl<
+          $R,
+          $Out
+        >(v, t, t2),
+  );
 }
 
-abstract class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
+abstract class ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<
   $R,
-  $In extends ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+  $In extends ChatCompletionsCreateResponseUnionChatCompletionChunk,
   $Out
 >
     implements ChatCompletionsCreateResponseUnionCopyWith<$R, $In, $Out> {
@@ -693,31 +680,27 @@ abstract class ChatCompletionsCreateResponseUnionCreateChatCompletionStreamRespo
     String? systemFingerprint,
     CreateChatCompletionStreamResponseObjectObjectEnum? objectEnum,
   });
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
-    $R2,
-    $In,
-    $Out2
-  >
+  ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWithImpl<
+class _ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWithImpl<
   $R,
   $Out
 >
     extends
         ClassCopyWithBase<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          ChatCompletionsCreateResponseUnionChatCompletionChunk,
           $Out
         >
     implements
-        ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
+        ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<
           $R,
-          ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+          ChatCompletionsCreateResponseUnionChatCompletionChunk,
           $Out
         > {
-  _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWithImpl(
+  _ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWithImpl(
     super.value,
     super.then,
     super.then2,
@@ -725,10 +708,10 @@ class _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyW
 
   @override
   late final ClassMapperBase<
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse
+    ChatCompletionsCreateResponseUnionChatCompletionChunk
   >
   $mapper =
-      ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseMapper.ensureInitialized();
+      ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.ensureInitialized();
   @override
   ListCopyWith<
     $R,
@@ -763,9 +746,9 @@ class _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyW
     }),
   );
   @override
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse $make(
+  ChatCompletionsCreateResponseUnionChatCompletionChunk $make(
     CopyWithData data,
-  ) => ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse(
+  ) => ChatCompletionsCreateResponseUnionChatCompletionChunk(
     id: data.get(#id, or: $value.id),
     choices: data.get(#choices, or: $value.choices),
     created: data.get(#created, or: $value.created),
@@ -778,13 +761,13 @@ class _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyW
   );
 
   @override
-  ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWith<
+  ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWith<
     $R2,
-    ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponse,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
     $Out2
   >
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ChatCompletionsCreateResponseUnionCreateChatCompletionStreamResponseCopyWithImpl<
+      _ChatCompletionsCreateResponseUnionChatCompletionChunkCopyWithImpl<
         $R2,
         $Out2
       >($value, $cast, t);

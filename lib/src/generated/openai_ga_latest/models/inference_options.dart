@@ -9,7 +9,7 @@ import 'tool_choice.dart';
 part 'inference_options.mapper.dart';
 
 /// Model and tool overrides applied when generating the assistant response.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InferenceOptions with InferenceOptionsMappable {
   const InferenceOptions({
     required this.toolChoice,

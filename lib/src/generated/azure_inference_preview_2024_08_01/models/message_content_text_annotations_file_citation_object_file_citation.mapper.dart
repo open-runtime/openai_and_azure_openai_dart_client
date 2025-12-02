@@ -45,6 +45,10 @@ class MessageContentTextAnnotationsFileCitationObjectFileCitationMapper
     MessageContentTextAnnotationsFileCitationObjectFileCitation
   >
   fields = const {#fileId: _f$fileId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextAnnotationsFileCitationObjectFileCitation
   _instantiate(DecodingData data) {

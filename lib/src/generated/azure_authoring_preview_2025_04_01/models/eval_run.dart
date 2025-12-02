@@ -15,7 +15,7 @@ import 'metadata.dart';
 part 'eval_run.mapper.dart';
 
 /// A schema representing an evaluation run.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRun with EvalRunMappable {
   const EvalRun({
     required this.createdAt,
@@ -51,7 +51,7 @@ class EvalRun with EvalRunMappable {
   final List<EvalRunPerTestingCriteriaResults> perTestingCriteriaResults;
   @MappableField(key: 'report_url')
   final String reportUrl;
-  @MappableField(key: 'EvalRunResultCounts')
+  @MappableField(key: 'result_counts')
   final EvalRunResultCounts evalRunResultCounts;
   final String status;
   @MappableField(key: 'object')

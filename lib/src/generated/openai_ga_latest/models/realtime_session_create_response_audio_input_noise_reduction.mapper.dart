@@ -40,6 +40,10 @@ class RealtimeSessionCreateResponseAudioInputNoiseReductionMapper
   @override
   final MappableFields<RealtimeSessionCreateResponseAudioInputNoiseReduction>
   fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeSessionCreateResponseAudioInputNoiseReduction _instantiate(
     DecodingData data,

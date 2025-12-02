@@ -30,6 +30,10 @@ class FineTuneMethodMapper extends ClassMapperBase<FineTuneMethod> {
 
   @override
   final MappableFields<FineTuneMethod> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneMethod _instantiate(DecodingData data) {
     return FineTuneMethod(type: data.dec(_f$type));

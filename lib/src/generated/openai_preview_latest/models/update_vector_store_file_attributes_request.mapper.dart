@@ -17,6 +17,7 @@ class UpdateVectorStoreFileAttributesRequestMapper
       MapperContainer.globals.use(
         _instance = UpdateVectorStoreFileAttributesRequestMapper._(),
       );
+      VectorStoreFileAttributesUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,12 +25,12 @@ class UpdateVectorStoreFileAttributesRequestMapper
   @override
   final String id = 'UpdateVectorStoreFileAttributesRequest';
 
-  static Map<String, String>? _$attributes(
+  static Map<String, VectorStoreFileAttributesUnion>? _$attributes(
     UpdateVectorStoreFileAttributesRequest v,
   ) => v.attributes;
   static const Field<
     UpdateVectorStoreFileAttributesRequest,
-    Map<String, String>
+    Map<String, VectorStoreFileAttributesUnion>
   >
   _f$attributes = Field('attributes', _$attributes);
 
@@ -37,6 +38,10 @@ class UpdateVectorStoreFileAttributesRequestMapper
   final MappableFields<UpdateVectorStoreFileAttributesRequest> fields = const {
     #attributes: _f$attributes,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UpdateVectorStoreFileAttributesRequest _instantiate(
     DecodingData data,
@@ -125,9 +130,18 @@ abstract class UpdateVectorStoreFileAttributesRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes;
-  $R call({Map<String, String>? attributes});
+  $R call({Map<String, VectorStoreFileAttributesUnion>? attributes});
   UpdateVectorStoreFileAttributesRequestCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -150,11 +164,20 @@ class _UpdateVectorStoreFileAttributesRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UpdateVectorStoreFileAttributesRequest> $mapper =
       UpdateVectorStoreFileAttributesRequestMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    VectorStoreFileAttributesUnion,
+    VectorStoreFileAttributesUnionCopyWith<
+      $R,
+      VectorStoreFileAttributesUnion,
+      VectorStoreFileAttributesUnion
+    >
+  >?
   get attributes => $value.attributes != null
       ? MapCopyWith(
           $value.attributes!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(attributes: v),
         )
       : null;

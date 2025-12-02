@@ -4,15 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_tool_call_outputs_outputs_union.dart';
+import 'code_interpreter_tool_call_outputs_union.dart';
 import 'code_interpreter_tool_call_status_status.dart';
 import 'code_interpreter_tool_call_type_type.dart';
+import 'conversation_item.dart';
+import 'item_resource.dart';
+import 'output_item.dart';
 
 part 'code_interpreter_tool_call.mapper.dart';
 
 /// A tool call to run code.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
   const CodeInterpreterToolCall({
     required this.id,
@@ -28,7 +31,7 @@ class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
   @MappableField(key: 'container_id')
   final String containerId;
   final String? code;
-  final List<CodeInterpreterToolCallOutputsOutputsUnion>? outputs;
+  final List<CodeInterpreterToolCallOutputsUnion>? outputs;
   final CodeInterpreterToolCallTypeType type;
 
   static CodeInterpreterToolCall fromJson(Map<String, dynamic> json) => CodeInterpreterToolCallMapper.fromJson(json);

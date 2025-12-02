@@ -9,7 +9,7 @@ import 'embeddings_create_response_usage.dart';
 
 part 'embeddings_create_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EmbeddingsCreateResponse with EmbeddingsCreateResponseMappable {
   const EmbeddingsCreateResponse({
     required this.objectField,
@@ -22,7 +22,7 @@ class EmbeddingsCreateResponse with EmbeddingsCreateResponseMappable {
   final String objectField;
   final String model;
   final List<EmbeddingsCreateResponseData> data;
-  @MappableField(key: 'EmbeddingsCreateResponseUsage')
+  @MappableField(key: 'usage')
   final EmbeddingsCreateResponseUsage embeddingsCreateResponseUsage;
 
   static EmbeddingsCreateResponse fromJson(Map<String, dynamic> json) => EmbeddingsCreateResponseMapper.fromJson(json);

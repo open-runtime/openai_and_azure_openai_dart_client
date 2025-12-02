@@ -10,7 +10,7 @@ import 'user_list_resource_object_object_enum.dart';
 part 'user_list_resource.mapper.dart';
 
 /// Paginated list of user objects returned when inspecting group membership.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserListResource with UserListResourceMappable {
   const UserListResource({
     required this.objectEnum,

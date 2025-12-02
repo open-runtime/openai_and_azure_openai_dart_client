@@ -15,7 +15,7 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputMessageMapper._());
       InputMessageRoleRoleMapper.ensureInitialized();
-      InputContentUnionMapper.ensureInitialized();
+      InputContentMapper.ensureInitialized();
       InputMessageTypeTypeMapper.ensureInitialized();
       InputMessageStatusStatusMapper.ensureInitialized();
     }
@@ -30,8 +30,8 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
     'role',
     _$role,
   );
-  static List<InputContentUnion?> _$content(InputMessage v) => v.content;
-  static const Field<InputMessage, List<InputContentUnion?>> _f$content = Field(
+  static List<InputContent> _$content(InputMessage v) => v.content;
+  static const Field<InputMessage, List<InputContent>> _f$content = Field(
     'content',
     _$content,
   );
@@ -55,6 +55,10 @@ class InputMessageMapper extends ClassMapperBase<InputMessage> {
     #type: _f$type,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InputMessage _instantiate(DecodingData data) {
     return InputMessage(
@@ -129,13 +133,13 @@ abstract class InputMessageCopyWith<$R, $In extends InputMessage, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
+    InputContent,
+    InputContentCopyWith<$R, InputContent, InputContent>
   >
   get content;
   $R call({
     InputMessageRoleRole? role,
-    List<InputContentUnion?>? content,
+    List<InputContent>? content,
     InputMessageTypeType? type,
     InputMessageStatusStatus? status,
   });
@@ -153,18 +157,18 @@ class _InputMessageCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
+    InputContent,
+    InputContentCopyWith<$R, InputContent, InputContent>
   >
   get content => ListCopyWith(
     $value.content,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(content: v),
   );
   @override
   $R call({
     InputMessageRoleRole? role,
-    List<InputContentUnion?>? content,
+    List<InputContent>? content,
     Object? type = $none,
     Object? status = $none,
   }) => $apply(

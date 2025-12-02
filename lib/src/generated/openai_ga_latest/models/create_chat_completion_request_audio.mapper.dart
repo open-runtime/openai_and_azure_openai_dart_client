@@ -17,6 +17,7 @@ class CreateChatCompletionRequestAudioMapper
       MapperContainer.globals.use(
         _instance = CreateChatCompletionRequestAudioMapper._(),
       );
+      VoiceIdsSharedMapper.ensureInitialized();
       CreateChatCompletionRequestAudioFormatFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -25,11 +26,9 @@ class CreateChatCompletionRequestAudioMapper
   @override
   final String id = 'CreateChatCompletionRequestAudio';
 
-  static String? _$voice(CreateChatCompletionRequestAudio v) => v.voice;
-  static const Field<CreateChatCompletionRequestAudio, String> _f$voice = Field(
-    'voice',
-    _$voice,
-  );
+  static VoiceIdsShared _$voice(CreateChatCompletionRequestAudio v) => v.voice;
+  static const Field<CreateChatCompletionRequestAudio, VoiceIdsShared>
+  _f$voice = Field('voice', _$voice, hook: const VoiceIdsSharedHook());
   static CreateChatCompletionRequestAudioFormatFormat _$format(
     CreateChatCompletionRequestAudio v,
   ) => v.format;
@@ -44,6 +43,10 @@ class CreateChatCompletionRequestAudioMapper
     #voice: _f$voice,
     #format: _f$format,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequestAudio _instantiate(DecodingData data) {
     return CreateChatCompletionRequestAudio(
@@ -130,8 +133,9 @@ abstract class CreateChatCompletionRequestAudioCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice;
   $R call({
-    String? voice,
+    VoiceIdsShared? voice,
     CreateChatCompletionRequestAudioFormatFormat? format,
   });
   CreateChatCompletionRequestAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -157,12 +161,15 @@ class _CreateChatCompletionRequestAudioCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateChatCompletionRequestAudio> $mapper =
       CreateChatCompletionRequestAudioMapper.ensureInitialized();
   @override
+  VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice =>
+      $value.voice.copyWith.$chain((v) => call(voice: v));
+  @override
   $R call({
-    Object? voice = $none,
+    VoiceIdsShared? voice,
     CreateChatCompletionRequestAudioFormatFormat? format,
   }) => $apply(
     FieldCopyWithData({
-      if (voice != $none) #voice: voice,
+      if (voice != null) #voice: voice,
       if (format != null) #format: format,
     }),
   );

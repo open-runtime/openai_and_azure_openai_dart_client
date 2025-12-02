@@ -42,6 +42,10 @@ class LogProbMapper extends ClassMapperBase<LogProb> {
     #bytes: _f$bytes,
     #topLogprobs: _f$topLogprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static LogProb _instantiate(DecodingData data) {
     return LogProb(

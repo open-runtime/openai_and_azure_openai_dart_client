@@ -10,7 +10,7 @@ import 'metadata.dart';
 
 part 'create_batch_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateBatchRequest with CreateBatchRequestMappable {
   const CreateBatchRequest({
     required this.inputFileId,

@@ -33,6 +33,10 @@ class AuditLogExternalKeyRemovedMapper
 
   @override
   final MappableFields<AuditLogExternalKeyRemoved> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogExternalKeyRemoved _instantiate(DecodingData data) {
     return AuditLogExternalKeyRemoved(id: data.dec(_f$id));

@@ -4,14 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'on_your_data_endpoint_vectorization_source_authentication_authentication_union.dart';
+import 'on_your_data_endpoint_vectorization_source_authentication_union.dart';
 import 'on_your_data_vectorization_source_type.dart';
 
 part 'on_your_data_endpoint_vectorization_source.mapper.dart';
 
 /// The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based.
 /// on a public Azure OpenAI endpoint call for embeddings.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataEndpointVectorizationSource with OnYourDataEndpointVectorizationSourceMappable {
   const OnYourDataEndpointVectorizationSource({
     required this.type,
@@ -22,7 +22,7 @@ class OnYourDataEndpointVectorizationSource with OnYourDataEndpointVectorization
 
   final OnYourDataVectorizationSourceType type;
   final String? endpoint;
-  final OnYourDataEndpointVectorizationSourceAuthenticationAuthenticationUnion? authentication;
+  final OnYourDataEndpointVectorizationSourceAuthenticationUnion? authentication;
   final int? dimensions;
 
   static OnYourDataEndpointVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataEndpointVectorizationSourceMapper.fromJson(json);

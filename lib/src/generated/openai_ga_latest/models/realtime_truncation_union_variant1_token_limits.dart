@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_truncation_union_variant1_token_limits.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTruncationUnionVariant1TokenLimits with RealtimeTruncationUnionVariant1TokenLimitsMappable {
   const RealtimeTruncationUnionVariant1TokenLimits({
     this.postInstructions,

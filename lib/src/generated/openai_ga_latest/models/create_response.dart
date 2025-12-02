@@ -21,7 +21,7 @@ import 'tools_array.dart';
 
 part 'create_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateResponse with CreateResponseMappable {
   const CreateResponse({
     this.temperature = 1,

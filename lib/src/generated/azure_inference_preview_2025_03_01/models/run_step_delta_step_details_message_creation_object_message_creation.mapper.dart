@@ -45,6 +45,10 @@ class RunStepDeltaStepDetailsMessageCreationObjectMessageCreationMapper
     RunStepDeltaStepDetailsMessageCreationObjectMessageCreation
   >
   fields = const {#messageId: _f$messageId};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsMessageCreationObjectMessageCreation
   _instantiate(DecodingData data) {

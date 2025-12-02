@@ -80,6 +80,10 @@ class TranscriptionSegmentMapper extends ClassMapperBase<TranscriptionSegment> {
     #compressionRatio: _f$compressionRatio,
     #noSpeechProb: _f$noSpeechProb,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionSegment _instantiate(DecodingData data) {
     return TranscriptionSegment(

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'transcript_text_done_event_logprobs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextDoneEventLogprobs with TranscriptTextDoneEventLogprobsMappable {
   const TranscriptTextDoneEventLogprobs({
     this.token,

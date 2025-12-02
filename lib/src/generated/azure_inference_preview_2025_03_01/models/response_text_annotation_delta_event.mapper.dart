@@ -18,7 +18,7 @@ class ResponseTextAnnotationDeltaEventMapper
         _instance = ResponseTextAnnotationDeltaEventMapper._(),
       );
       ResponseTextAnnotationDeltaEventTypeTypeMapper.ensureInitialized();
-      AnnotationUnionMapper.ensureInitialized();
+      AnnotationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -48,9 +48,9 @@ class ResponseTextAnnotationDeltaEventMapper
       v.annotationIndex;
   static const Field<ResponseTextAnnotationDeltaEvent, int> _f$annotationIndex =
       Field('annotationIndex', _$annotationIndex, key: r'annotation_index');
-  static AnnotationUnion? _$annotation(ResponseTextAnnotationDeltaEvent v) =>
+  static Annotation _$annotation(ResponseTextAnnotationDeltaEvent v) =>
       v.annotation;
-  static const Field<ResponseTextAnnotationDeltaEvent, AnnotationUnion>
+  static const Field<ResponseTextAnnotationDeltaEvent, Annotation>
   _f$annotation = Field('annotation', _$annotation);
 
   @override
@@ -62,6 +62,10 @@ class ResponseTextAnnotationDeltaEventMapper
     #annotationIndex: _f$annotationIndex,
     #annotation: _f$annotation,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseTextAnnotationDeltaEvent _instantiate(DecodingData data) {
     return ResponseTextAnnotationDeltaEvent(
@@ -152,14 +156,14 @@ abstract class ResponseTextAnnotationDeltaEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  AnnotationUnionCopyWith<$R, AnnotationUnion, AnnotationUnion>? get annotation;
+  AnnotationCopyWith<$R, Annotation, Annotation> get annotation;
   $R call({
     ResponseTextAnnotationDeltaEventTypeType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
     int? annotationIndex,
-    AnnotationUnion? annotation,
+    Annotation? annotation,
   });
   ResponseTextAnnotationDeltaEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -184,9 +188,8 @@ class _ResponseTextAnnotationDeltaEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseTextAnnotationDeltaEvent> $mapper =
       ResponseTextAnnotationDeltaEventMapper.ensureInitialized();
   @override
-  AnnotationUnionCopyWith<$R, AnnotationUnion, AnnotationUnion>?
-  get annotation =>
-      $value.annotation?.copyWith.$chain((v) => call(annotation: v));
+  AnnotationCopyWith<$R, Annotation, Annotation> get annotation =>
+      $value.annotation.copyWith.$chain((v) => call(annotation: v));
   @override
   $R call({
     ResponseTextAnnotationDeltaEventTypeType? type,
@@ -194,7 +197,7 @@ class _ResponseTextAnnotationDeltaEventCopyWithImpl<$R, $Out>
     int? outputIndex,
     int? contentIndex,
     int? annotationIndex,
-    Object? annotation = $none,
+    Annotation? annotation,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -202,7 +205,7 @@ class _ResponseTextAnnotationDeltaEventCopyWithImpl<$R, $Out>
       if (outputIndex != null) #outputIndex: outputIndex,
       if (contentIndex != null) #contentIndex: contentIndex,
       if (annotationIndex != null) #annotationIndex: annotationIndex,
-      if (annotation != $none) #annotation: annotation,
+      if (annotation != null) #annotation: annotation,
     }),
   );
   @override

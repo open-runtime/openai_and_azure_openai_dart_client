@@ -52,6 +52,10 @@ class AttachmentMapper extends ClassMapperBase<Attachment> {
     #mimeType: _f$mimeType,
     #previewUrl: _f$previewUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Attachment _instantiate(DecodingData data) {
     return Attachment(

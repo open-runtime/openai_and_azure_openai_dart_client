@@ -65,6 +65,10 @@ class ProjectRateLimitListResponseMapper
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectRateLimitListResponse _instantiate(DecodingData data) {
     return ProjectRateLimitListResponse(

@@ -53,6 +53,10 @@ class AssistantToolsFileSearchFileSearchMapper
     #maxNumResults: _f$maxNumResults,
     #rankingOptions: _f$rankingOptions,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantToolsFileSearchFileSearch _instantiate(DecodingData data) {
     return AssistantToolsFileSearchFileSearch(

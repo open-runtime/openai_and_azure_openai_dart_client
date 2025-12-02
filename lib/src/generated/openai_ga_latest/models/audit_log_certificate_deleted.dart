@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_certificate_deleted.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCertificateDeleted with AuditLogCertificateDeletedMappable {
   const AuditLogCertificateDeleted({
     this.id,

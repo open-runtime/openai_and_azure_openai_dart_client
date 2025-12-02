@@ -12,7 +12,7 @@ part 'realtime_beta_server_event_session_created.mapper.dart';
 /// connection is established as the first server event. This event will contain.
 /// the default Session configuration.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventSessionCreated with RealtimeBetaServerEventSessionCreatedMappable {
   const RealtimeBetaServerEventSessionCreated({
     required this.eventId,

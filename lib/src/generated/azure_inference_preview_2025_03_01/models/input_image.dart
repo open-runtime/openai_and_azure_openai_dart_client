@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'input_content.dart';
 import 'input_image_detail_detail.dart';
 import 'input_image_type_type.dart';
 
@@ -11,7 +12,7 @@ part 'input_image.mapper.dart';
 
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class InputImage with InputImageMappable {
   const InputImage({
     required this.type,

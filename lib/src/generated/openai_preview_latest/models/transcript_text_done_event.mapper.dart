@@ -50,6 +50,10 @@ class TranscriptTextDoneEventMapper
     #text: _f$text,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextDoneEvent _instantiate(DecodingData data) {
     return TranscriptTextDoneEvent(

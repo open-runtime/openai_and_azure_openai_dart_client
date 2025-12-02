@@ -10,7 +10,7 @@ import 'create_eval_responses_run_data_source_sampling_params_text.dart';
 
 part 'create_eval_responses_run_data_source_sampling_params.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSourceSamplingParams with CreateEvalResponsesRunDataSourceSamplingParamsMappable {
   const CreateEvalResponsesRunDataSourceSamplingParams({
     this.temperature = 1,
@@ -31,7 +31,7 @@ class CreateEvalResponsesRunDataSourceSamplingParams with CreateEvalResponsesRun
   @MappableField(key: 'max_completion_tokens')
   final int? maxCompletionTokens;
   final List<Tool>? tools;
-  @MappableField(key: 'CreateEvalResponsesRunDataSourceSamplingParamsText')
+  @MappableField(key: 'text')
   final CreateEvalResponsesRunDataSourceSamplingParamsText? createEvalResponsesRunDataSourceSamplingParamsText;
 
   static CreateEvalResponsesRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceSamplingParamsMapper.fromJson(json);

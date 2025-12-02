@@ -59,6 +59,10 @@ class UserListResponseMapper extends ClassMapperBase<UserListResponse> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserListResponse _instantiate(DecodingData data) {
     return UserListResponse(

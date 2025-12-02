@@ -9,7 +9,7 @@ import 'content_filter_severity_result_severity_severity.dart';
 
 part 'content_filter_severity_result.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterSeverityResult with ContentFilterSeverityResultMappable {
   const ContentFilterSeverityResult({
     required this.filtered,

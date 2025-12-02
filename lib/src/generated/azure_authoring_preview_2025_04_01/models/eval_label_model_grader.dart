@@ -10,7 +10,7 @@ import 'eval_label_model_grader_type_type.dart';
 part 'eval_label_model_grader.mapper.dart';
 
 /// A LabelModelGrader object which uses a model to assign labels to each item in the evaluation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalLabelModelGrader with EvalLabelModelGraderMappable {
   const EvalLabelModelGrader({
     required this.input,

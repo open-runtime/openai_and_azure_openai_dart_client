@@ -73,6 +73,10 @@ class ApplyPatchToolCallOutputMapper
     #createdBy: _f$createdBy,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApplyPatchToolCallOutput _instantiate(DecodingData data) {
     return ApplyPatchToolCallOutput(

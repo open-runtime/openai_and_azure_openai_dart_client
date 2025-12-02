@@ -55,6 +55,10 @@ class OnYourDataDeploymentNameVectorizationSourceMapper
         #deploymentName: _f$deploymentName,
         #dimensions: _f$dimensions,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataDeploymentNameVectorizationSource _instantiate(
     DecodingData data,

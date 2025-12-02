@@ -4,6 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
+
 part 'realtime_server_event_input_audio_buffer_speech_started.mapper.dart';
 
 /// Sent by the server when in `server_vad` mode to indicate that speech has been .
@@ -17,7 +19,7 @@ part 'realtime_server_event_input_audio_buffer_speech_started.mapper.dart';
 /// `input_audio_buffer.speech_stopped` event (unless the client manually commits .
 /// the audio buffer during VAD activation).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventInputAudioBufferSpeechStarted with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
   const RealtimeServerEventInputAudioBufferSpeechStarted({
     required this.eventId,

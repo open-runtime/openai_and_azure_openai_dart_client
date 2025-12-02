@@ -7,11 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'task_group_item_object_object_enum.dart';
 import 'task_group_item_type_type.dart';
 import 'task_group_task.dart';
+import 'thread_item.dart';
 
 part 'task_group_item.mapper.dart';
 
 /// Collection of workflow tasks grouped together in the thread.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TaskGroupItem with TaskGroupItemMappable {
   const TaskGroupItem({
     required this.id,

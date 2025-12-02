@@ -8,7 +8,7 @@ import 'content_filter_result_base.dart';
 
 part 'content_filter_detected_result.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedResult with ContentFilterDetectedResultMappable {
   const ContentFilterDetectedResult({
     required this.filtered,

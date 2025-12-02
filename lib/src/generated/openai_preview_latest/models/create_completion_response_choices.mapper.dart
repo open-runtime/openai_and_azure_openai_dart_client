@@ -52,7 +52,7 @@ class CreateCompletionResponseChoicesMapper
   _f$createCompletionResponseChoicesLogprobs = Field(
     'createCompletionResponseChoicesLogprobs',
     _$createCompletionResponseChoicesLogprobs,
-    key: r'CreateCompletionResponseChoicesLogprobs',
+    key: r'logprobs',
   );
   static String _$text(CreateCompletionResponseChoices v) => v.text;
   static const Field<CreateCompletionResponseChoices, String> _f$text = Field(
@@ -68,6 +68,10 @@ class CreateCompletionResponseChoicesMapper
         _f$createCompletionResponseChoicesLogprobs,
     #text: _f$text,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateCompletionResponseChoices _instantiate(DecodingData data) {
     return CreateCompletionResponseChoices(

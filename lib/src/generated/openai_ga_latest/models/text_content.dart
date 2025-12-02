@@ -9,7 +9,7 @@ import 'text_content_type_type.dart';
 part 'text_content.mapper.dart';
 
 /// A text content.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TextContent with TextContentMappable {
   const TextContent({
     required this.text,

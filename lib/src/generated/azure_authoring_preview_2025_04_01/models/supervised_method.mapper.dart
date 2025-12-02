@@ -30,6 +30,10 @@ class SupervisedMethodMapper extends ClassMapperBase<SupervisedMethod> {
 
   @override
   final MappableFields<SupervisedMethod> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static SupervisedMethod _instantiate(DecodingData data) {
     return SupervisedMethod(type: data.dec(_f$type));

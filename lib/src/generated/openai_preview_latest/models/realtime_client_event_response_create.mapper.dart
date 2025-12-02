@@ -52,6 +52,10 @@ class RealtimeClientEventResponseCreateMapper
     #eventId: _f$eventId,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventResponseCreate _instantiate(DecodingData data) {
     return RealtimeClientEventResponseCreate(

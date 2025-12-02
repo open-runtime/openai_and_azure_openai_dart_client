@@ -39,7 +39,7 @@ class RealtimeTranscriptionSessionCreateRequestMapper
   _f$realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction = Field(
     'realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction',
     _$realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction,
-    key: r'RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction',
+    key: r'input_audio_noise_reduction',
   );
   static RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat
   _$inputAudioFormat(RealtimeTranscriptionSessionCreateRequest v) =>
@@ -72,7 +72,7 @@ class RealtimeTranscriptionSessionCreateRequestMapper
   _f$realtimeTranscriptionSessionCreateRequestInputAudioTranscription = Field(
     'realtimeTranscriptionSessionCreateRequestInputAudioTranscription',
     _$realtimeTranscriptionSessionCreateRequestInputAudioTranscription,
-    key: r'RealtimeTranscriptionSessionCreateRequestInputAudioTranscription',
+    key: r'input_audio_transcription',
     opt: true,
   );
   static RealtimeTranscriptionSessionCreateRequestTurnDetection?
@@ -86,7 +86,7 @@ class RealtimeTranscriptionSessionCreateRequestMapper
   _f$realtimeTranscriptionSessionCreateRequestTurnDetection = Field(
     'realtimeTranscriptionSessionCreateRequestTurnDetection',
     _$realtimeTranscriptionSessionCreateRequestTurnDetection,
-    key: r'RealtimeTranscriptionSessionCreateRequestTurnDetection',
+    key: r'turn_detection',
     opt: true,
   );
   static List<String>? _$include(RealtimeTranscriptionSessionCreateRequest v) =>
@@ -107,6 +107,10 @@ class RealtimeTranscriptionSessionCreateRequestMapper
         _f$realtimeTranscriptionSessionCreateRequestTurnDetection,
     #include: _f$include,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeTranscriptionSessionCreateRequest _instantiate(
     DecodingData data,

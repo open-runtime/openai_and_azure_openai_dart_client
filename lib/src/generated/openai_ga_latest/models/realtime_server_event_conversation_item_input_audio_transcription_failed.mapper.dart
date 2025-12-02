@@ -77,12 +77,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
   >
-  _f$realtimeServerEventConversationItemInputAudioTranscriptionFailedError = Field(
-    'realtimeServerEventConversationItemInputAudioTranscriptionFailedError',
-    _$realtimeServerEventConversationItemInputAudioTranscriptionFailedError,
-    key:
-        r'RealtimeServerEventConversationItemInputAudioTranscriptionFailedError',
-  );
+  _f$realtimeServerEventConversationItemInputAudioTranscriptionFailedError =
+      Field(
+        'realtimeServerEventConversationItemInputAudioTranscriptionFailedError',
+        _$realtimeServerEventConversationItemInputAudioTranscriptionFailedError,
+        key: r'error',
+      );
 
   @override
   final MappableFields<
@@ -96,6 +96,10 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     #realtimeServerEventConversationItemInputAudioTranscriptionFailedError:
         _f$realtimeServerEventConversationItemInputAudioTranscriptionFailedError,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionFailed
   _instantiate(DecodingData data) {

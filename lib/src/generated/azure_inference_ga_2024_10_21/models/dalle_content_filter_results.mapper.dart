@@ -49,6 +49,10 @@ class DalleContentFilterResultsMapper
     #hate: _f$hate,
     #selfHarm: _f$selfHarm,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleContentFilterResults _instantiate(DecodingData data) {
     return DalleContentFilterResults(

@@ -8,7 +8,7 @@ import 'realtime_session_tools_type_type.dart';
 
 part 'realtime_session_tools.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionTools with RealtimeSessionToolsMappable {
   const RealtimeSessionTools({
     this.type,

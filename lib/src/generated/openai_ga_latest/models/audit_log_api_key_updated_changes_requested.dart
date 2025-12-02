@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'audit_log_api_key_updated_changes_requested.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyUpdatedChangesRequested with AuditLogApiKeyUpdatedChangesRequestedMappable {
   const AuditLogApiKeyUpdatedChangesRequested({
     this.scopes,

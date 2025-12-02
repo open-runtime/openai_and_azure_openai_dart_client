@@ -47,6 +47,10 @@ class EndpointKeyConnectionMapper
     #endpoint: _f$endpoint,
     #key: _f$key,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EndpointKeyConnection _instantiate(DecodingData data) {
     return EndpointKeyConnection(

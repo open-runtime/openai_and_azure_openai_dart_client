@@ -51,6 +51,10 @@ class CreateTranslationResponseVerboseJsonMapper
     #text: _f$text,
     #segments: _f$segments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateTranslationResponseVerboseJson _instantiate(DecodingData data) {
     return CreateTranslationResponseVerboseJson(

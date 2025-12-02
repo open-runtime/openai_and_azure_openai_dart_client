@@ -18,7 +18,7 @@ class CreateThreadAndRunRequestMapper
         _instance = CreateThreadAndRunRequestMapper._(),
       );
       CreateThreadRequestMapper.ensureInitialized();
-      CreateThreadAndRunRequestToolsToolsUnionMapper.ensureInitialized();
+      CreateThreadAndRunRequestToolsUnionMapper.ensureInitialized();
       CreateThreadAndRunRequestToolResourcesMapper.ensureInitialized();
       TruncationObjectMapper.ensureInitialized();
       AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
@@ -66,12 +66,12 @@ class CreateThreadAndRunRequestMapper
     _$instructions,
     opt: true,
   );
-  static List<CreateThreadAndRunRequestToolsToolsUnion>? _$tools(
+  static List<CreateThreadAndRunRequestToolsUnion>? _$tools(
     CreateThreadAndRunRequest v,
   ) => v.tools;
   static const Field<
     CreateThreadAndRunRequest,
-    List<CreateThreadAndRunRequestToolsToolsUnion>
+    List<CreateThreadAndRunRequestToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true);
   static CreateThreadAndRunRequestToolResources?
@@ -84,7 +84,7 @@ class CreateThreadAndRunRequestMapper
   _f$createThreadAndRunRequestToolResources = Field(
     'createThreadAndRunRequestToolResources',
     _$createThreadAndRunRequestToolResources,
-    key: r'CreateThreadAndRunRequestToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static dynamic _$metadata(CreateThreadAndRunRequest v) => v.metadata;
@@ -171,6 +171,10 @@ class CreateThreadAndRunRequestMapper
     #toolChoice: _f$toolChoice,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateThreadAndRunRequest _instantiate(DecodingData data) {
     return CreateThreadAndRunRequest(
@@ -272,11 +276,11 @@ abstract class CreateThreadAndRunRequestCopyWith<
   get thread;
   ListCopyWith<
     $R,
-    CreateThreadAndRunRequestToolsToolsUnion,
-    CreateThreadAndRunRequestToolsToolsUnionCopyWith<
+    CreateThreadAndRunRequestToolsUnion,
+    CreateThreadAndRunRequestToolsUnionCopyWith<
       $R,
-      CreateThreadAndRunRequestToolsToolsUnion,
-      CreateThreadAndRunRequestToolsToolsUnion
+      CreateThreadAndRunRequestToolsUnion,
+      CreateThreadAndRunRequestToolsUnion
     >
   >?
   get tools;
@@ -307,7 +311,7 @@ abstract class CreateThreadAndRunRequestCopyWith<
     CreateThreadRequest? thread,
     String? model,
     String? instructions,
-    List<CreateThreadAndRunRequestToolsToolsUnion>? tools,
+    List<CreateThreadAndRunRequestToolsUnion>? tools,
     CreateThreadAndRunRequestToolResources?
     createThreadAndRunRequestToolResources,
     dynamic metadata,
@@ -338,11 +342,11 @@ class _CreateThreadAndRunRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    CreateThreadAndRunRequestToolsToolsUnion,
-    CreateThreadAndRunRequestToolsToolsUnionCopyWith<
+    CreateThreadAndRunRequestToolsUnion,
+    CreateThreadAndRunRequestToolsUnionCopyWith<
       $R,
-      CreateThreadAndRunRequestToolsToolsUnion,
-      CreateThreadAndRunRequestToolsToolsUnion
+      CreateThreadAndRunRequestToolsUnion,
+      CreateThreadAndRunRequestToolsUnion
     >
   >?
   get tools => $value.tools != null

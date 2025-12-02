@@ -42,7 +42,7 @@ class ThreadObjectMapper extends ClassMapperBase<ThreadObject> {
   _f$threadObjectToolResources = Field(
     'threadObjectToolResources',
     _$threadObjectToolResources,
-    key: r'ThreadObjectToolResources',
+    key: r'tool_resources',
   );
   static dynamic _$metadata(ThreadObject v) => v.metadata;
   static const Field<ThreadObject, dynamic> _f$metadata = Field(
@@ -58,6 +58,10 @@ class ThreadObjectMapper extends ClassMapperBase<ThreadObject> {
     #threadObjectToolResources: _f$threadObjectToolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadObject _instantiate(DecodingData data) {
     return ThreadObject(

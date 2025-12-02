@@ -90,6 +90,10 @@ class CreateChatCompletionResponseMapper
     #promptFilterResults: _f$promptFilterResults,
     #choices: _f$choices,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionResponse _instantiate(DecodingData data) {
     return CreateChatCompletionResponse(

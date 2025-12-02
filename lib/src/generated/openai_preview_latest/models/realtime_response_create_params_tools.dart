@@ -8,7 +8,7 @@ import 'realtime_response_create_params_tools_type_type.dart';
 
 part 'realtime_response_create_params_tools.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsTools with RealtimeResponseCreateParamsToolsMappable {
   const RealtimeResponseCreateParamsTools({
     this.type,

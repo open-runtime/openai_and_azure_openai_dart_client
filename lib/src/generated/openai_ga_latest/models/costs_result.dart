@@ -10,7 +10,7 @@ import 'costs_result_object_object_enum.dart';
 part 'costs_result.mapper.dart';
 
 /// The aggregated costs details of the specific time bucket.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CostsResult with CostsResultMappable {
   const CostsResult({
     required this.objectEnum,
@@ -21,7 +21,7 @@ class CostsResult with CostsResultMappable {
 
   @MappableField(key: 'object')
   final CostsResultObjectObjectEnum objectEnum;
-  @MappableField(key: 'CostsResultAmount')
+  @MappableField(key: 'amount')
   final CostsResultAmount? costsResultAmount;
   @MappableField(key: 'line_item')
   final String? lineItem;

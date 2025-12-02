@@ -11,7 +11,7 @@ part 'realtime_beta_server_event_session_updated.mapper.dart';
 /// Returned when a session is updated with a `session.update` event, unless.
 /// there is an error.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventSessionUpdated with RealtimeBetaServerEventSessionUpdatedMappable {
   const RealtimeBetaServerEventSessionUpdated({
     required this.eventId,

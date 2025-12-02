@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'public_create_organization_role_body.mapper.dart';
 
 /// Request payload for creating a custom role.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PublicCreateOrganizationRoleBody with PublicCreateOrganizationRoleBodyMappable {
   const PublicCreateOrganizationRoleBody({
     required this.roleName,

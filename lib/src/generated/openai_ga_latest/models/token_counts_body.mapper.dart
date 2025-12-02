@@ -110,6 +110,10 @@ class TokenCountsBodyMapper extends ClassMapperBase<TokenCountsBody> {
     #toolChoice: _f$toolChoice,
     #parallelToolCalls: _f$parallelToolCalls,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TokenCountsBody _instantiate(DecodingData data) {
     return TokenCountsBody(

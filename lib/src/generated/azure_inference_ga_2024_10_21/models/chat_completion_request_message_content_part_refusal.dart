@@ -4,11 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'chat_completion_request_assistant_message_content_part.dart';
 import 'chat_completion_request_message_content_part_refusal_type_type.dart';
 
 part 'chat_completion_request_message_content_part_refusal.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartRefusal with ChatCompletionRequestMessageContentPartRefusalMappable {
   const ChatCompletionRequestMessageContentPartRefusal({
     required this.type,

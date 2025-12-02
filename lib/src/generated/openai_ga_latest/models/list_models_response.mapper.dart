@@ -39,6 +39,10 @@ class ListModelsResponseMapper extends ClassMapperBase<ListModelsResponse> {
     #objectEnum: _f$objectEnum,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ListModelsResponse _instantiate(DecodingData data) {
     return ListModelsResponse(

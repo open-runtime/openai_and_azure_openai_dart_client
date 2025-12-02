@@ -8,7 +8,7 @@ import 'audio_transcription_model_model.dart';
 
 part 'audio_transcription.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioTranscription with AudioTranscriptionMappable {
   const AudioTranscription({
     this.model,

@@ -7,13 +7,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'model_ids_responses.dart';
 import 'reasoning.dart';
 import 'response_properties_text.dart';
-import 'response_properties_tool_choice_tool_choice_union.dart';
+import 'response_properties_tool_choice_union.dart';
 import 'response_properties_truncation_truncation.dart';
 import 'tool.dart';
 
 part 'response_properties.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseProperties with ResponsePropertiesMappable {
   const ResponseProperties({
     this.truncation = ResponsePropertiesTruncationTruncation.disabled,
@@ -35,11 +35,11 @@ class ResponseProperties with ResponsePropertiesMappable {
   @MappableField(key: 'max_output_tokens')
   final int? maxOutputTokens;
   final String? instructions;
-  @MappableField(key: 'ResponsePropertiesText')
+  @MappableField(key: 'text')
   final ResponsePropertiesText? responsePropertiesText;
   final List<Tool>? tools;
   @MappableField(key: 'tool_choice')
-  final ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice;
+  final ResponsePropertiesToolChoiceUnion? toolChoice;
 
   static ResponseProperties fromJson(Map<String, dynamic> json) => ResponsePropertiesMapper.fromJson(json);
 

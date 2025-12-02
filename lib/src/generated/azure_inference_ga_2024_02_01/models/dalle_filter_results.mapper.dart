@@ -56,6 +56,10 @@ class DalleFilterResultsMapper extends ClassMapperBase<DalleFilterResults> {
     #profanity: _f$profanity,
     #jailbreak: _f$jailbreak,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static DalleFilterResults _instantiate(DecodingData data) {
     return DalleFilterResults(

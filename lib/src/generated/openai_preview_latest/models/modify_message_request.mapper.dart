@@ -29,6 +29,10 @@ class ModifyMessageRequestMapper extends ClassMapperBase<ModifyMessageRequest> {
   final MappableFields<ModifyMessageRequest> fields = const {
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyMessageRequest _instantiate(DecodingData data) {
     return ModifyMessageRequest(metadata: data.dec(_f$metadata));

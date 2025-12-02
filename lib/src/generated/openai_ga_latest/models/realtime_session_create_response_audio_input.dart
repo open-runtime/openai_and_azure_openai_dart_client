@@ -11,7 +11,7 @@ import 'realtime_session_create_response_audio_input_turn_detection.dart';
 
 part 'realtime_session_create_response_audio_input.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseAudioInput with RealtimeSessionCreateResponseAudioInputMappable {
   const RealtimeSessionCreateResponseAudioInput({
     this.format,
@@ -22,9 +22,9 @@ class RealtimeSessionCreateResponseAudioInput with RealtimeSessionCreateResponse
 
   final RealtimeAudioFormats? format;
   final AudioTranscription? transcription;
-  @MappableField(key: 'RealtimeSessionCreateResponseAudioInputNoiseReduction')
+  @MappableField(key: 'noise_reduction')
   final RealtimeSessionCreateResponseAudioInputNoiseReduction? realtimeSessionCreateResponseAudioInputNoiseReduction;
-  @MappableField(key: 'RealtimeSessionCreateResponseAudioInputTurnDetection')
+  @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateResponseAudioInputTurnDetection? realtimeSessionCreateResponseAudioInputTurnDetection;
 
   static RealtimeSessionCreateResponseAudioInput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioInputMapper.fromJson(json);

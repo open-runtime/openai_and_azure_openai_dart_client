@@ -123,6 +123,10 @@ class ModifyAssistantRequestMapper
     #metadata: _f$metadata,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyAssistantRequest _instantiate(DecodingData data) {
     return ModifyAssistantRequest(

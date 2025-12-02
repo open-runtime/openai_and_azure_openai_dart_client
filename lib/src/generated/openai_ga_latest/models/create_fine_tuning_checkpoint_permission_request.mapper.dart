@@ -33,6 +33,10 @@ class CreateFineTuningCheckpointPermissionRequestMapper
   @override
   final MappableFields<CreateFineTuningCheckpointPermissionRequest> fields =
       const {#projectIds: _f$projectIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateFineTuningCheckpointPermissionRequest _instantiate(
     DecodingData data,

@@ -12,7 +12,7 @@ part 'error.mapper.dart';
 
 /// Error content as defined in the Microsoft REST guidelines.///
 /// (https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#7102-error-condition-responses).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Error with ErrorMappable {
   const Error({
     required this.code,

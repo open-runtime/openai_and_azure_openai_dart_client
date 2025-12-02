@@ -25,6 +25,10 @@ class ThreadStreamEventUnionMapper
 
   @override
   final MappableFields<ThreadStreamEventUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadStreamEventUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor('ThreadStreamEventUnion');
@@ -108,6 +112,10 @@ class ThreadStreamEventUnionVariant1Mapper
     #event: _f$event,
     #data: _f$data,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ThreadStreamEventUnionVariant1 _instantiate(DecodingData data) {
     return ThreadStreamEventUnionVariant1(

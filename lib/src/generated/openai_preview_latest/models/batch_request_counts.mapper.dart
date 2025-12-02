@@ -43,6 +43,10 @@ class BatchRequestCountsMapper extends ClassMapperBase<BatchRequestCounts> {
     #completed: _f$completed,
     #failed: _f$failed,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static BatchRequestCounts _instantiate(DecodingData data) {
     return BatchRequestCounts(

@@ -52,11 +52,7 @@ class ProjectApiKeyMapper extends ClassMapperBase<ProjectApiKey> {
   static ProjectApiKeyOwner _$projectApiKeyOwner(ProjectApiKey v) =>
       v.projectApiKeyOwner;
   static const Field<ProjectApiKey, ProjectApiKeyOwner> _f$projectApiKeyOwner =
-      Field(
-        'projectApiKeyOwner',
-        _$projectApiKeyOwner,
-        key: r'ProjectApiKeyOwner',
-      );
+      Field('projectApiKeyOwner', _$projectApiKeyOwner, key: r'owner');
 
   @override
   final MappableFields<ProjectApiKey> fields = const {
@@ -68,6 +64,10 @@ class ProjectApiKeyMapper extends ClassMapperBase<ProjectApiKey> {
     #id: _f$id,
     #projectApiKeyOwner: _f$projectApiKeyOwner,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectApiKey _instantiate(DecodingData data) {
     return ProjectApiKey(

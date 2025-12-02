@@ -40,7 +40,7 @@ class WebhookResponseFailedMapper
   _f$webhookResponseFailedData = Field(
     'webhookResponseFailedData',
     _$webhookResponseFailedData,
-    key: r'WebhookResponseFailedData',
+    key: r'data',
   );
   static WebhookResponseFailedTypeType _$type(WebhookResponseFailed v) =>
       v.type;
@@ -63,6 +63,10 @@ class WebhookResponseFailedMapper
     #type: _f$type,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WebhookResponseFailed _instantiate(DecodingData data) {
     return WebhookResponseFailed(

@@ -9,7 +9,7 @@ import 'voice_ids_shared.dart';
 
 part 'realtime_session_create_response_audio_output.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseAudioOutput with RealtimeSessionCreateResponseAudioOutputMappable {
   const RealtimeSessionCreateResponseAudioOutput({
     this.format,
@@ -18,6 +18,7 @@ class RealtimeSessionCreateResponseAudioOutput with RealtimeSessionCreateRespons
   });
 
   final RealtimeAudioFormats? format;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
   final num? speed;
 

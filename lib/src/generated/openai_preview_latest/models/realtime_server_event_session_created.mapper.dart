@@ -48,6 +48,10 @@ class RealtimeServerEventSessionCreatedMapper
     #type: _f$type,
     #session: _f$session,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventSessionCreated _instantiate(DecodingData data) {
     return RealtimeServerEventSessionCreated(

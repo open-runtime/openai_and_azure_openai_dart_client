@@ -9,7 +9,7 @@ import 'on_your_data_authentication_type.dart';
 part 'on_your_data_authentication_options.mapper.dart';
 
 /// The authentication options for Azure OpenAI On Your Data.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataAuthenticationOptions with OnYourDataAuthenticationOptionsMappable {
   const OnYourDataAuthenticationOptions({
     required this.type,

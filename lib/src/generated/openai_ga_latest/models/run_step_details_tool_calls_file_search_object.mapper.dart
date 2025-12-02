@@ -48,7 +48,7 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
   _f$runStepDetailsToolCallsFileSearchObjectFileSearch = Field(
     'runStepDetailsToolCallsFileSearchObjectFileSearch',
     _$runStepDetailsToolCallsFileSearchObjectFileSearch,
-    key: r'RunStepDetailsToolCallsFileSearchObjectFileSearch',
+    key: r'file_search',
   );
 
   @override
@@ -58,6 +58,10 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
     #runStepDetailsToolCallsFileSearchObjectFileSearch:
         _f$runStepDetailsToolCallsFileSearchObjectFileSearch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFileSearchObject _instantiate(
     DecodingData data,

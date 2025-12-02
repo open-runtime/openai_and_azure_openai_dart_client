@@ -8,7 +8,7 @@ import 'chat_completion_request_message_content_part_audio_input_audio_format_fo
 
 part 'chat_completion_request_message_content_part_audio_input_audio.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartAudioInputAudio with ChatCompletionRequestMessageContentPartAudioInputAudioMappable {
   const ChatCompletionRequestMessageContentPartAudioInputAudio({
     required this.data,

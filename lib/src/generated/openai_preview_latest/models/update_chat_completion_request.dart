@@ -8,7 +8,7 @@ import 'metadata.dart';
 
 part 'update_chat_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateChatCompletionRequest with UpdateChatCompletionRequestMappable {
   const UpdateChatCompletionRequest({
     required this.metadata,

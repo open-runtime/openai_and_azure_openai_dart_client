@@ -34,6 +34,10 @@ class ModerationImageUrlInputImageUrlMapper
   final MappableFields<ModerationImageUrlInputImageUrl> fields = const {
     #url: _f$url,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModerationImageUrlInputImageUrl _instantiate(DecodingData data) {
     return ModerationImageUrlInputImageUrl(url: data.dec(_f$url));

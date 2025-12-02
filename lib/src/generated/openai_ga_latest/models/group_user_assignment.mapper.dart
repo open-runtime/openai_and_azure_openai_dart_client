@@ -46,6 +46,10 @@ class GroupUserAssignmentMapper extends ClassMapperBase<GroupUserAssignment> {
     #userId: _f$userId,
     #groupId: _f$groupId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static GroupUserAssignment _instantiate(DecodingData data) {
     return GroupUserAssignment(

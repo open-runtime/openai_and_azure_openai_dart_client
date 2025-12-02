@@ -46,7 +46,7 @@ class RunStepDeltaStepDetailsMessageCreationObjectMapper
   _f$runStepDeltaStepDetailsMessageCreationObjectMessageCreation = Field(
     'runStepDeltaStepDetailsMessageCreationObjectMessageCreation',
     _$runStepDeltaStepDetailsMessageCreationObjectMessageCreation,
-    key: r'RunStepDeltaStepDetailsMessageCreationObjectMessageCreation',
+    key: r'message_creation',
     opt: true,
   );
 
@@ -57,6 +57,10 @@ class RunStepDeltaStepDetailsMessageCreationObjectMapper
         #runStepDeltaStepDetailsMessageCreationObjectMessageCreation:
             _f$runStepDeltaStepDetailsMessageCreationObjectMessageCreation,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsMessageCreationObject _instantiate(
     DecodingData data,

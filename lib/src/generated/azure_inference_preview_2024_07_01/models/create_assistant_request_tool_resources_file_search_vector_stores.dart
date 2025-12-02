@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_assistant_request_tool_resources_file_search_vector_stores_chunking_strategy_chunking_strategy_union.dart';
+import 'create_assistant_request_tool_resources_file_search_vector_stores_chunking_strategy_union.dart';
 
 part 'create_assistant_request_tool_resources_file_search_vector_stores.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequestToolResourcesFileSearchVectorStores with CreateAssistantRequestToolResourcesFileSearchVectorStoresMappable {
   const CreateAssistantRequestToolResourcesFileSearchVectorStores({
     this.fileIds,
@@ -19,7 +19,7 @@ class CreateAssistantRequestToolResourcesFileSearchVectorStores with CreateAssis
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
   @MappableField(key: 'chunking_strategy')
-  final CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion? chunkingStrategy;
+  final CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion? chunkingStrategy;
   final dynamic? metadata;
 
   static CreateAssistantRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateAssistantRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);

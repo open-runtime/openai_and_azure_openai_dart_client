@@ -60,6 +60,10 @@ class CreateEvalCompletionsRunDataSourceInputMessagesMapper
         #template: _f$template,
         #itemReference: _f$itemReference,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalCompletionsRunDataSourceInputMessages _instantiate(
     DecodingData data,

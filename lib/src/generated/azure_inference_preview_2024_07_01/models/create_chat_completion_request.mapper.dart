@@ -23,7 +23,7 @@ class CreateChatCompletionRequestMapper
       ChatCompletionToolMapper.ensureInitialized();
       ChatCompletionToolChoiceOptionUnionMapper.ensureInitialized();
       ChatCompletionFunctionMapper.ensureInitialized();
-      CreateChatCompletionRequestFunctionCallFunctionCallUnionMapper.ensureInitialized();
+      CreateChatCompletionRequestFunctionCallUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -87,7 +87,7 @@ class CreateChatCompletionRequestMapper
   _f$createChatCompletionRequestResponseFormat = Field(
     'createChatCompletionRequestResponseFormat',
     _$createChatCompletionRequestResponseFormat,
-    key: r'CreateChatCompletionRequestResponseFormat',
+    key: r'response_format',
     opt: true,
   );
   static List<ChatCompletionTool>? _$tools(CreateChatCompletionRequest v) =>
@@ -112,11 +112,12 @@ class CreateChatCompletionRequestMapper
   ) => v.functions;
   static const Field<CreateChatCompletionRequest, List<ChatCompletionFunction>>
   _f$functions = Field('functions', _$functions, opt: true);
-  static CreateChatCompletionRequestFunctionCallFunctionCallUnion?
-  _$functionCall(CreateChatCompletionRequest v) => v.functionCall;
+  static CreateChatCompletionRequestFunctionCallUnion? _$functionCall(
+    CreateChatCompletionRequest v,
+  ) => v.functionCall;
   static const Field<
     CreateChatCompletionRequest,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion
   >
   _f$functionCall = Field(
     'functionCall',
@@ -220,6 +221,10 @@ class CreateChatCompletionRequestMapper
     #seed: _f$seed,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequest _instantiate(DecodingData data) {
     return CreateChatCompletionRequest(
@@ -371,10 +376,10 @@ abstract class CreateChatCompletionRequestCopyWith<
     >
   >?
   get functions;
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall;
   $R call({
@@ -389,7 +394,7 @@ abstract class CreateChatCompletionRequestCopyWith<
     List<ChatCompletionTool>? tools,
     ChatCompletionToolChoiceOptionUnion? toolChoice,
     List<ChatCompletionFunction>? functions,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion? functionCall,
+    CreateChatCompletionRequestFunctionCallUnion? functionCall,
     num? temperature,
     num? topP,
     bool? stream,
@@ -514,10 +519,10 @@ class _CreateChatCompletionRequestCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  CreateChatCompletionRequestFunctionCallFunctionCallUnionCopyWith<
+  CreateChatCompletionRequestFunctionCallUnionCopyWith<
     $R,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion,
-    CreateChatCompletionRequestFunctionCallFunctionCallUnion
+    CreateChatCompletionRequestFunctionCallUnion,
+    CreateChatCompletionRequestFunctionCallUnion
   >?
   get functionCall =>
       $value.functionCall?.copyWith.$chain((v) => call(functionCall: v));

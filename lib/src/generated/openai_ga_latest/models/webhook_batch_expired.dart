@@ -12,7 +12,7 @@ part 'webhook_batch_expired.mapper.dart';
 
 /// Sent when a batch API request has expired.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchExpired with WebhookBatchExpiredMappable {
   const WebhookBatchExpired({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookBatchExpired with WebhookBatchExpiredMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookBatchExpiredData')
+  @MappableField(key: 'data')
   final WebhookBatchExpiredData webhookBatchExpiredData;
   final WebhookBatchExpiredTypeType type;
   @MappableField(key: 'object')

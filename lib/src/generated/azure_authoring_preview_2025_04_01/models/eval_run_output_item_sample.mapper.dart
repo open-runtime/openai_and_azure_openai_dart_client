@@ -91,7 +91,7 @@ class EvalRunOutputItemSampleMapper
   _f$evalRunOutputItemSampleUsage = Field(
     'evalRunOutputItemSampleUsage',
     _$evalRunOutputItemSampleUsage,
-    key: r'EvalRunOutputItemSampleUsage',
+    key: r'usage',
   );
 
   @override
@@ -107,6 +107,10 @@ class EvalRunOutputItemSampleMapper
     #topP: _f$topP,
     #evalRunOutputItemSampleUsage: _f$evalRunOutputItemSampleUsage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRunOutputItemSample _instantiate(DecodingData data) {
     return EvalRunOutputItemSample(

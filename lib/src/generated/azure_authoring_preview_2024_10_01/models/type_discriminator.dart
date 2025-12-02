@@ -9,9 +9,8 @@ part 'type_discriminator.mapper.dart';
 /// Defines the type of an object.
 @MappableEnum(defaultValue: 'unknown')
 enum TypeDiscriminator {
-  /// The name has been replaced because it contains a keyword. Original name: `list`.
   @MappableValue('list') 
-  valueList,
+  list,
 
   /// Incorrect name has been replaced. Original name: `fine_tuning.job`.
   @MappableValue('fine_tuning.job') 

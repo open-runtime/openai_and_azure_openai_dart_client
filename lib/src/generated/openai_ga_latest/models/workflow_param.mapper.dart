@@ -14,6 +14,7 @@ class WorkflowParamMapper extends ClassMapperBase<WorkflowParam> {
   static WorkflowParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WorkflowParamMapper._());
+      StateVariablesUnionMapper.ensureInitialized();
       WorkflowTracingParamMapper.ensureInitialized();
     }
     return _instance!;
@@ -30,15 +31,16 @@ class WorkflowParamMapper extends ClassMapperBase<WorkflowParam> {
     _$version,
     opt: true,
   );
-  static Map<String, String>? _$stateVariables(WorkflowParam v) =>
+  static Map<String, StateVariablesUnion>? _$stateVariables(WorkflowParam v) =>
       v.stateVariables;
-  static const Field<WorkflowParam, Map<String, String>> _f$stateVariables =
-      Field(
-        'stateVariables',
-        _$stateVariables,
-        key: r'state_variables',
-        opt: true,
-      );
+  static const Field<WorkflowParam, Map<String, StateVariablesUnion>>
+  _f$stateVariables = Field(
+    'stateVariables',
+    _$stateVariables,
+    key: r'state_variables',
+    opt: true,
+    hook: const StateVariablesUnionHook(),
+  );
   static WorkflowTracingParam? _$tracing(WorkflowParam v) => v.tracing;
   static const Field<WorkflowParam, WorkflowTracingParam> _f$tracing = Field(
     'tracing',
@@ -53,6 +55,10 @@ class WorkflowParamMapper extends ClassMapperBase<WorkflowParam> {
     #stateVariables: _f$stateVariables,
     #tracing: _f$tracing,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static WorkflowParam _instantiate(DecodingData data) {
     return WorkflowParam(
@@ -125,14 +131,19 @@ extension WorkflowParamValueCopy<$R, $Out>
 
 abstract class WorkflowParamCopyWith<$R, $In extends WorkflowParam, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    StateVariablesUnion,
+    StateVariablesUnionCopyWith<$R, StateVariablesUnion, StateVariablesUnion>
+  >?
   get stateVariables;
   WorkflowTracingParamCopyWith<$R, WorkflowTracingParam, WorkflowTracingParam>?
   get tracing;
   $R call({
     String? id,
     String? version,
-    Map<String, String>? stateVariables,
+    Map<String, StateVariablesUnion>? stateVariables,
     WorkflowTracingParam? tracing,
   });
   WorkflowParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -147,11 +158,16 @@ class _WorkflowParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WorkflowParam> $mapper =
       WorkflowParamMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
+  MapCopyWith<
+    $R,
+    String,
+    StateVariablesUnion,
+    StateVariablesUnionCopyWith<$R, StateVariablesUnion, StateVariablesUnion>
+  >?
   get stateVariables => $value.stateVariables != null
       ? MapCopyWith(
           $value.stateVariables!,
-          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v, t) => v.copyWith.$chain(t),
           (v) => call(stateVariables: v),
         )
       : null;

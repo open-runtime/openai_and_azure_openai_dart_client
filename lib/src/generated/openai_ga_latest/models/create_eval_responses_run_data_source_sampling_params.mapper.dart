@@ -73,7 +73,7 @@ class CreateEvalResponsesRunDataSourceSamplingParamsMapper
   _f$createEvalResponsesRunDataSourceSamplingParamsText = Field(
     'createEvalResponsesRunDataSourceSamplingParamsText',
     _$createEvalResponsesRunDataSourceSamplingParamsText,
-    key: r'CreateEvalResponsesRunDataSourceSamplingParamsText',
+    key: r'text',
     opt: true,
   );
 
@@ -89,6 +89,10 @@ class CreateEvalResponsesRunDataSourceSamplingParamsMapper
         #createEvalResponsesRunDataSourceSamplingParamsText:
             _f$createEvalResponsesRunDataSourceSamplingParamsText,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalResponsesRunDataSourceSamplingParams _instantiate(
     DecodingData data,

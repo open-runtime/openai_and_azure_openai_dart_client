@@ -105,6 +105,10 @@ class ImageGenPartialImageEventMapper
     #outputFormat: _f$outputFormat,
     #partialImageIndex: _f$partialImageIndex,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ImageGenPartialImageEvent _instantiate(DecodingData data) {
     return ImageGenPartialImageEvent(

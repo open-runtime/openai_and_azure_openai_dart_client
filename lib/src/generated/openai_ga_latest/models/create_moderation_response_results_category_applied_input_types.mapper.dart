@@ -242,6 +242,10 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
     #violence: _f$violence,
     #violenceGraphic: _f$violenceGraphic,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateModerationResponseResultsCategoryAppliedInputTypes _instantiate(
     DecodingData data,

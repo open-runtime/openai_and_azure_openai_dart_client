@@ -8,7 +8,7 @@ part 'eval_run_output_item_result.mapper.dart';
 
 /// A single grader result for an evaluation run output item.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemResult with EvalRunOutputItemResultMappable {
   const EvalRunOutputItemResult({
     required this.name,

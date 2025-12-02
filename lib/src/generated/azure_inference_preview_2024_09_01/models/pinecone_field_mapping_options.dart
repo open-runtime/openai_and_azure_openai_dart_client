@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'pinecone_field_mapping_options.mapper.dart';
 
 /// Optional settings to control how fields are processed when using a configured Pinecone resource.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeFieldMappingOptions with PineconeFieldMappingOptionsMappable {
   const PineconeFieldMappingOptions({
     required this.contentFields,

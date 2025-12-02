@@ -8,7 +8,7 @@ import 'admin_api_key.dart';
 
 part 'api_key_list.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ApiKeyList with ApiKeyListMappable {
   const ApiKeyList({
     this.objectField,

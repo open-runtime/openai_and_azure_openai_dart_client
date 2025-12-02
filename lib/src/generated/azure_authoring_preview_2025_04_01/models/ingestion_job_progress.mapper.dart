@@ -32,6 +32,10 @@ class IngestionJobProgressMapper extends ClassMapperBase<IngestionJobProgress> {
   final MappableFields<IngestionJobProgress> fields = const {
     #stageProgress: _f$stageProgress,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobProgress _instantiate(DecodingData data) {
     return IngestionJobProgress(stageProgress: data.dec(_f$stageProgress));

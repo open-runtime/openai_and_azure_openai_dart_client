@@ -68,7 +68,7 @@ class ResponseReasoningSummaryPartDoneEventMapper
   _f$responseReasoningSummaryPartDoneEventPart = Field(
     'responseReasoningSummaryPartDoneEventPart',
     _$responseReasoningSummaryPartDoneEventPart,
-    key: r'ResponseReasoningSummaryPartDoneEventPart',
+    key: r'part',
   );
 
   @override
@@ -81,6 +81,10 @@ class ResponseReasoningSummaryPartDoneEventMapper
     #responseReasoningSummaryPartDoneEventPart:
         _f$responseReasoningSummaryPartDoneEventPart,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseReasoningSummaryPartDoneEvent _instantiate(DecodingData data) {
     return ResponseReasoningSummaryPartDoneEvent(

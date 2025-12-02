@@ -8,7 +8,7 @@ import 'assistant_tools_file_search_type_type.dart';
 
 part 'assistant_tools_file_search.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFileSearch with AssistantToolsFileSearchMappable {
   const AssistantToolsFileSearch({
     required this.type,

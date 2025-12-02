@@ -6,14 +6,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'attachment.dart';
 import 'inference_options.dart';
-import 'user_message_item_content_content_union.dart';
+import 'thread_item.dart';
+import 'user_message_item_content_union.dart';
 import 'user_message_item_object_object_enum.dart';
 import 'user_message_item_type_type.dart';
 
 part 'user_message_item.mapper.dart';
 
 /// User-authored messages within a thread.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserMessageItem with UserMessageItemMappable {
   const UserMessageItem({
     required this.id,
@@ -31,7 +32,7 @@ class UserMessageItem with UserMessageItemMappable {
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final List<UserMessageItemContentContentUnion> content;
+  final List<UserMessageItemContentUnion> content;
   final List<Attachment> attachments;
   @MappableField(key: 'inference_options')
   final InferenceOptions? inferenceOptions;

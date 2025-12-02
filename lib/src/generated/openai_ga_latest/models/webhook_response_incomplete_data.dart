@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_response_incomplete_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseIncompleteData with WebhookResponseIncompleteDataMappable {
   const WebhookResponseIncompleteData({
     required this.id,

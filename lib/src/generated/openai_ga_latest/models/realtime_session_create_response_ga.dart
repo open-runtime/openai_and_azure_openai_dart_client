@@ -8,10 +8,12 @@ import 'prompt.dart';
 import 'realtime_session_create_response_ga_audio.dart';
 import 'realtime_session_create_response_ga_client_secret.dart';
 import 'realtime_session_create_response_ga_include_include.dart';
+import 'realtime_session_create_response_ga_max_output_tokens_union.dart';
+import 'realtime_session_create_response_ga_model_union.dart';
 import 'realtime_session_create_response_ga_output_modalities_output_modalities.dart';
-import 'realtime_session_create_response_ga_tool_choice_tool_choice_union.dart';
-import 'realtime_session_create_response_ga_tools_tools_union.dart';
-import 'realtime_session_create_response_ga_tracing_tracing_union.dart';
+import 'realtime_session_create_response_ga_tool_choice_union.dart';
+import 'realtime_session_create_response_ga_tools_union.dart';
+import 'realtime_session_create_response_ga_tracing_union.dart';
 import 'realtime_session_create_response_ga_type_type.dart';
 import 'realtime_truncation.dart';
 
@@ -20,7 +22,7 @@ part 'realtime_session_create_response_ga.mapper.dart';
 /// A new Realtime session configuration, with an ephemeral key. Default TTL.
 /// for keys is one minute.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGa with RealtimeSessionCreateResponseGaMappable {
   const RealtimeSessionCreateResponseGa({
     required this.realtimeSessionCreateResponseGaClientSecret,
@@ -35,27 +37,28 @@ class RealtimeSessionCreateResponseGa with RealtimeSessionCreateResponseGaMappab
     this.truncation,
     this.prompt,
     this.outputModalities = const [RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities.audio],
-    this.toolChoice = const RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnionVariantString(value: 'auto'),
+    this.toolChoice = const RealtimeSessionCreateResponseGaToolChoiceUnionVariantString(value: 'auto'),
   });
 
-  @MappableField(key: 'RealtimeSessionCreateResponseGaClientSecret')
+  @MappableField(key: 'client_secret')
   final RealtimeSessionCreateResponseGaClientSecret realtimeSessionCreateResponseGaClientSecret;
   final RealtimeSessionCreateResponseGaTypeType type;
-  final String? model;
+  @MappableField(hook: const RealtimeSessionCreateResponseGaModelUnionHook())
+  final RealtimeSessionCreateResponseGaModelUnion? model;
   final String? instructions;
-  @MappableField(key: 'RealtimeSessionCreateResponseGaAudio')
+  @MappableField(key: 'audio')
   final RealtimeSessionCreateResponseGaAudio? realtimeSessionCreateResponseGaAudio;
   final List<RealtimeSessionCreateResponseGaIncludeInclude>? include;
-  final RealtimeSessionCreateResponseGaTracingTracingUnion? tracing;
-  final List<RealtimeSessionCreateResponseGaToolsToolsUnion>? tools;
-  @MappableField(key: 'max_output_tokens')
-  final String? maxOutputTokens;
+  final RealtimeSessionCreateResponseGaTracingUnion? tracing;
+  final List<RealtimeSessionCreateResponseGaToolsUnion>? tools;
+  @MappableField(key: 'max_output_tokens', hook: const RealtimeSessionCreateResponseGaMaxOutputTokensUnionHook())
+  final RealtimeSessionCreateResponseGaMaxOutputTokensUnion? maxOutputTokens;
   final RealtimeTruncation? truncation;
   final Prompt? prompt;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities> outputModalities;
   @MappableField(key: 'tool_choice')
-  final RealtimeSessionCreateResponseGaToolChoiceToolChoiceUnion toolChoice;
+  final RealtimeSessionCreateResponseGaToolChoiceUnion toolChoice;
 
   static RealtimeSessionCreateResponseGa fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaMapper.fromJson(json);
 

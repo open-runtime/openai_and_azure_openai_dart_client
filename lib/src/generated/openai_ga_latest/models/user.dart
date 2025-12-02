@@ -10,7 +10,7 @@ import 'user_role_role.dart';
 part 'user.mapper.dart';
 
 /// Represents an individual `user` within an organization.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class User with UserMappable {
   const User({
     required this.objectEnum,

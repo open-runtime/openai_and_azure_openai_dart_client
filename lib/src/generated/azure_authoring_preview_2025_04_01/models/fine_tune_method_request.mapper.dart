@@ -29,6 +29,10 @@ class FineTuneMethodRequestMapper
 
   @override
   final MappableFields<FineTuneMethodRequest> fields = const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneMethodRequest _instantiate(DecodingData data) {
     return FineTuneMethodRequest(type: data.dec(_f$type));

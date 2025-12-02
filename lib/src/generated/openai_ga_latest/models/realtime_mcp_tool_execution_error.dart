@@ -8,7 +8,7 @@ import 'realtime_mcp_tool_execution_error_type_type.dart';
 
 part 'realtime_mcp_tool_execution_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpToolExecutionError with RealtimeMcpToolExecutionErrorMappable {
   const RealtimeMcpToolExecutionError({
     required this.type,

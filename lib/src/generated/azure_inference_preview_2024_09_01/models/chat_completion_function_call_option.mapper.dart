@@ -34,6 +34,10 @@ class ChatCompletionFunctionCallOptionMapper
   final MappableFields<ChatCompletionFunctionCallOption> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionFunctionCallOption _instantiate(DecodingData data) {
     return ChatCompletionFunctionCallOption(name: data.dec(_f$name));

@@ -36,6 +36,10 @@ class ToolChoiceFunctionMapper extends ClassMapperBase<ToolChoiceFunction> {
     #type: _f$type,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ToolChoiceFunction _instantiate(DecodingData data) {
     return ToolChoiceFunction(type: data.dec(_f$type), name: data.dec(_f$name));

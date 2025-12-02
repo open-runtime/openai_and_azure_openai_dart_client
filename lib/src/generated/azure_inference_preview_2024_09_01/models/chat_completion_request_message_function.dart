@@ -4,11 +4,23 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'chat_completion_message_tool_calls.dart';
+import 'chat_completion_request_assistant_message.dart';
+import 'chat_completion_request_function_message.dart';
+import 'chat_completion_request_message_function_call.dart';
 import 'chat_completion_request_message_function_role_role.dart';
+import 'chat_completion_request_message_role_role.dart';
+import 'chat_completion_request_message_role_role2.dart';
+import 'chat_completion_request_message_role_role3.dart';
+import 'chat_completion_request_message_role_role4.dart';
+import 'chat_completion_request_message_role_role5.dart';
+import 'chat_completion_request_system_message.dart';
+import 'chat_completion_request_tool_message.dart';
+import 'chat_completion_request_user_message.dart';
 
 part 'chat_completion_request_message_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageFunction with ChatCompletionRequestMessageFunctionMappable {
   const ChatCompletionRequestMessageFunction({
     this.role,

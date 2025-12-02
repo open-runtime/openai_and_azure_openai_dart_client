@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_grader_request_grader_grader_union.dart';
+import 'run_grader_request_grader_union.dart';
 
 part 'run_grader_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunGraderRequest with RunGraderRequestMappable {
   const RunGraderRequest({
     required this.grader,
@@ -16,7 +16,7 @@ class RunGraderRequest with RunGraderRequestMappable {
     this.item,
   });
 
-  final RunGraderRequestGraderGraderUnion grader;
+  final RunGraderRequestGraderUnion grader;
   @MappableField(key: 'model_sample')
   final String modelSample;
   final dynamic? item;

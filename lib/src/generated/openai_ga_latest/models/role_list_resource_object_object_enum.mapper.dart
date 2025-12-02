@@ -30,7 +30,7 @@ class RoleListResourceObjectObjectEnumMapper
   RoleListResourceObjectObjectEnum decode(dynamic value) {
     switch (value) {
       case 'list':
-        return RoleListResourceObjectObjectEnum.valueList;
+        return RoleListResourceObjectObjectEnum.list;
       case 'unknown':
         return RoleListResourceObjectObjectEnum.unknown;
       default:
@@ -41,7 +41,7 @@ class RoleListResourceObjectObjectEnumMapper
   @override
   dynamic encode(RoleListResourceObjectObjectEnum self) {
     switch (self) {
-      case RoleListResourceObjectObjectEnum.valueList:
+      case RoleListResourceObjectObjectEnum.list:
         return 'list';
       case RoleListResourceObjectObjectEnum.unknown:
         return 'unknown';

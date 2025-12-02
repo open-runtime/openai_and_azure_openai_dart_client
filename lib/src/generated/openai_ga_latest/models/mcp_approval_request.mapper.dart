@@ -52,6 +52,10 @@ class McpApprovalRequestMapper extends ClassMapperBase<McpApprovalRequest> {
     #name: _f$name,
     #arguments: _f$arguments,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static McpApprovalRequest _instantiate(DecodingData data) {
     return McpApprovalRequest(

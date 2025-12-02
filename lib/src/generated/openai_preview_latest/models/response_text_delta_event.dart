@@ -4,12 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'response_stream_event.dart';
 import 'response_text_delta_event_type_type.dart';
 
 part 'response_text_delta_event.mapper.dart';
 
 /// Emitted when there is an additional text delta.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseTextDeltaEvent with ResponseTextDeltaEventMappable {
   const ResponseTextDeltaEvent({
     required this.type,

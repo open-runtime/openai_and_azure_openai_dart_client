@@ -7,11 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'task_item_object_object_enum.dart';
 import 'task_item_type_type.dart';
 import 'task_type.dart';
+import 'thread_item.dart';
 
 part 'task_item.mapper.dart';
 
 /// Task emitted by the workflow to show progress and status updates.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TaskItem with TaskItemMappable {
   const TaskItem({
     required this.id,

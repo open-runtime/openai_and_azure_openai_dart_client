@@ -17,7 +17,7 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
       AssistantObjectObjectObjectEnumMapper.ensureInitialized();
       AssistantObjectToolResourcesMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
-      AssistantObjectToolsToolsUnionMapper.ensureInitialized();
+      AssistantObjectToolsUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -66,7 +66,7 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
   _f$assistantObjectToolResources = Field(
     'assistantObjectToolResources',
     _$assistantObjectToolResources,
-    key: r'AssistantObjectToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static AssistantsApiResponseFormatOptionUnion? _$responseFormat(
@@ -79,9 +79,8 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
     key: r'response_format',
     opt: true,
   );
-  static List<AssistantObjectToolsToolsUnion> _$tools(AssistantObject v) =>
-      v.tools;
-  static const Field<AssistantObject, List<AssistantObjectToolsToolsUnion>>
+  static List<AssistantObjectToolsUnion> _$tools(AssistantObject v) => v.tools;
+  static const Field<AssistantObject, List<AssistantObjectToolsUnion>>
   _f$tools = Field('tools', _$tools, opt: true, def: const []);
   static num? _$temperature(AssistantObject v) => v.temperature;
   static const Field<AssistantObject, num> _f$temperature = Field(
@@ -115,6 +114,10 @@ class AssistantObjectMapper extends ClassMapperBase<AssistantObject> {
     #temperature: _f$temperature,
     #topP: _f$topP,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AssistantObject _instantiate(DecodingData data) {
     return AssistantObject(
@@ -210,11 +213,11 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
   get responseFormat;
   ListCopyWith<
     $R,
-    AssistantObjectToolsToolsUnion,
-    AssistantObjectToolsToolsUnionCopyWith<
+    AssistantObjectToolsUnion,
+    AssistantObjectToolsUnionCopyWith<
       $R,
-      AssistantObjectToolsToolsUnion,
-      AssistantObjectToolsToolsUnion
+      AssistantObjectToolsUnion,
+      AssistantObjectToolsUnion
     >
   >
   get tools;
@@ -229,7 +232,7 @@ abstract class AssistantObjectCopyWith<$R, $In extends AssistantObject, $Out>
     dynamic metadata,
     AssistantObjectToolResources? assistantObjectToolResources,
     AssistantsApiResponseFormatOptionUnion? responseFormat,
-    List<AssistantObjectToolsToolsUnion>? tools,
+    List<AssistantObjectToolsUnion>? tools,
     num? temperature,
     num? topP,
   });
@@ -267,11 +270,11 @@ class _AssistantObjectCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    AssistantObjectToolsToolsUnion,
-    AssistantObjectToolsToolsUnionCopyWith<
+    AssistantObjectToolsUnion,
+    AssistantObjectToolsUnionCopyWith<
       $R,
-      AssistantObjectToolsToolsUnion,
-      AssistantObjectToolsToolsUnion
+      AssistantObjectToolsUnion,
+      AssistantObjectToolsUnion
     >
   >
   get tools => ListCopyWith(
@@ -291,7 +294,7 @@ class _AssistantObjectCopyWithImpl<$R, $Out>
     Object? metadata = $none,
     Object? assistantObjectToolResources = $none,
     Object? responseFormat = $none,
-    List<AssistantObjectToolsToolsUnion>? tools,
+    List<AssistantObjectToolsUnion>? tools,
     Object? temperature = $none,
     Object? topP = $none,
   }) => $apply(

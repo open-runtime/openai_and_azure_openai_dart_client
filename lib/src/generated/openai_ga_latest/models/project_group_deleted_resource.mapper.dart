@@ -44,6 +44,10 @@ class ProjectGroupDeletedResourceMapper
     #objectEnum: _f$objectEnum,
     #deleted: _f$deleted,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectGroupDeletedResource _instantiate(DecodingData data) {
     return ProjectGroupDeletedResource(

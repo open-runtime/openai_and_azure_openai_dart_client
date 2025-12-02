@@ -8,7 +8,7 @@ import 'function_call_function.dart';
 
 part 'tool_call.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolCall with ToolCallMappable {
   const ToolCall({
     this.type,

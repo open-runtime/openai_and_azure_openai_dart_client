@@ -18,7 +18,7 @@ class RealtimeCreateClientSecretRequestMapper
         _instance = RealtimeCreateClientSecretRequestMapper._(),
       );
       RealtimeCreateClientSecretRequestExpiresAfterMapper.ensureInitialized();
-      RealtimeCreateClientSecretRequestSessionSessionUnionMapper.ensureInitialized();
+      RealtimeCreateClientSecretRequestSessionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,15 +37,15 @@ class RealtimeCreateClientSecretRequestMapper
   _f$realtimeCreateClientSecretRequestExpiresAfter = Field(
     'realtimeCreateClientSecretRequestExpiresAfter',
     _$realtimeCreateClientSecretRequestExpiresAfter,
-    key: r'RealtimeCreateClientSecretRequestExpiresAfter',
+    key: r'expires_after',
     opt: true,
   );
-  static RealtimeCreateClientSecretRequestSessionSessionUnion? _$session(
+  static RealtimeCreateClientSecretRequestSessionUnion? _$session(
     RealtimeCreateClientSecretRequest v,
   ) => v.session;
   static const Field<
     RealtimeCreateClientSecretRequest,
-    RealtimeCreateClientSecretRequestSessionSessionUnion
+    RealtimeCreateClientSecretRequestSessionUnion
   >
   _f$session = Field('session', _$session, opt: true);
 
@@ -55,6 +55,10 @@ class RealtimeCreateClientSecretRequestMapper
         _f$realtimeCreateClientSecretRequestExpiresAfter,
     #session: _f$session,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeCreateClientSecretRequest _instantiate(DecodingData data) {
     return RealtimeCreateClientSecretRequest(
@@ -150,16 +154,16 @@ abstract class RealtimeCreateClientSecretRequestCopyWith<
     RealtimeCreateClientSecretRequestExpiresAfter
   >?
   get realtimeCreateClientSecretRequestExpiresAfter;
-  RealtimeCreateClientSecretRequestSessionSessionUnionCopyWith<
+  RealtimeCreateClientSecretRequestSessionUnionCopyWith<
     $R,
-    RealtimeCreateClientSecretRequestSessionSessionUnion,
-    RealtimeCreateClientSecretRequestSessionSessionUnion
+    RealtimeCreateClientSecretRequestSessionUnion,
+    RealtimeCreateClientSecretRequestSessionUnion
   >?
   get session;
   $R call({
     RealtimeCreateClientSecretRequestExpiresAfter?
     realtimeCreateClientSecretRequestExpiresAfter,
-    RealtimeCreateClientSecretRequestSessionSessionUnion? session,
+    RealtimeCreateClientSecretRequestSessionUnion? session,
   });
   RealtimeCreateClientSecretRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -194,10 +198,10 @@ class _RealtimeCreateClientSecretRequestCopyWithImpl<$R, $Out>
       ?.copyWith
       .$chain((v) => call(realtimeCreateClientSecretRequestExpiresAfter: v));
   @override
-  RealtimeCreateClientSecretRequestSessionSessionUnionCopyWith<
+  RealtimeCreateClientSecretRequestSessionUnionCopyWith<
     $R,
-    RealtimeCreateClientSecretRequestSessionSessionUnion,
-    RealtimeCreateClientSecretRequestSessionSessionUnion
+    RealtimeCreateClientSecretRequestSessionUnion,
+    RealtimeCreateClientSecretRequestSessionUnion
   >?
   get session => $value.session?.copyWith.$chain((v) => call(session: v));
   @override

@@ -12,7 +12,7 @@ import 'reasoning_effort.dart';
 
 part 'create_assistant_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateAssistantRequest with CreateAssistantRequestMappable {
   const CreateAssistantRequest({
     required this.model,

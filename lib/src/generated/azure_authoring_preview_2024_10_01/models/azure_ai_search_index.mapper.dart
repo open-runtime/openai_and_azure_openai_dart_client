@@ -39,6 +39,10 @@ class AzureAiSearchIndexMapper extends ClassMapperBase<AzureAiSearchIndex> {
     #kind: _f$kind,
     #connectionId: _f$connectionId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AzureAiSearchIndex _instantiate(DecodingData data) {
     return AzureAiSearchIndex(

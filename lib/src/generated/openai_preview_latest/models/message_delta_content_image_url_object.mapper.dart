@@ -48,7 +48,7 @@ class MessageDeltaContentImageUrlObjectMapper
   _f$messageDeltaContentImageUrlObjectImageUrl = Field(
     'messageDeltaContentImageUrlObjectImageUrl',
     _$messageDeltaContentImageUrlObjectImageUrl,
-    key: r'MessageDeltaContentImageUrlObjectImageUrl',
+    key: r'image_url',
     opt: true,
   );
 
@@ -59,6 +59,10 @@ class MessageDeltaContentImageUrlObjectMapper
     #messageDeltaContentImageUrlObjectImageUrl:
         _f$messageDeltaContentImageUrlObjectImageUrl,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentImageUrlObject _instantiate(DecodingData data) {
     return MessageDeltaContentImageUrlObject(

@@ -46,6 +46,10 @@ class TranscriptTextUsageTokensInputTokenDetailsMapper
   @override
   final MappableFields<TranscriptTextUsageTokensInputTokenDetails> fields =
       const {#textTokens: _f$textTokens, #audioTokens: _f$audioTokens};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptTextUsageTokensInputTokenDetails _instantiate(
     DecodingData data,

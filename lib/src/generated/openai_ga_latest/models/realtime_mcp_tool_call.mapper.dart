@@ -15,7 +15,7 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcpToolCallMapper._());
       RealtimeMcpToolCallTypeTypeMapper.ensureInitialized();
-      RealtimeMcpToolCallErrorErrorUnionMapper.ensureInitialized();
+      RealtimeMcpToolCallErrorUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -58,9 +58,9 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
     _$output,
     opt: true,
   );
-  static RealtimeMcpToolCallErrorErrorUnion? _$error(RealtimeMcpToolCall v) =>
+  static RealtimeMcpToolCallErrorUnion? _$error(RealtimeMcpToolCall v) =>
       v.error;
-  static const Field<RealtimeMcpToolCall, RealtimeMcpToolCallErrorErrorUnion>
+  static const Field<RealtimeMcpToolCall, RealtimeMcpToolCallErrorUnion>
   _f$error = Field('error', _$error, opt: true);
 
   @override
@@ -74,6 +74,10 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
     #output: _f$output,
     #error: _f$error,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeMcpToolCall _instantiate(DecodingData data) {
     return RealtimeMcpToolCall(
@@ -158,10 +162,10 @@ abstract class RealtimeMcpToolCallCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeMcpToolCallErrorErrorUnionCopyWith<
+  RealtimeMcpToolCallErrorUnionCopyWith<
     $R,
-    RealtimeMcpToolCallErrorErrorUnion,
-    RealtimeMcpToolCallErrorErrorUnion
+    RealtimeMcpToolCallErrorUnion,
+    RealtimeMcpToolCallErrorUnion
   >?
   get error;
   $R call({
@@ -172,7 +176,7 @@ abstract class RealtimeMcpToolCallCopyWith<
     String? arguments,
     String? approvalRequestId,
     String? output,
-    RealtimeMcpToolCallErrorErrorUnion? error,
+    RealtimeMcpToolCallErrorUnion? error,
   });
   RealtimeMcpToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -188,10 +192,10 @@ class _RealtimeMcpToolCallCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeMcpToolCall> $mapper =
       RealtimeMcpToolCallMapper.ensureInitialized();
   @override
-  RealtimeMcpToolCallErrorErrorUnionCopyWith<
+  RealtimeMcpToolCallErrorUnionCopyWith<
     $R,
-    RealtimeMcpToolCallErrorErrorUnion,
-    RealtimeMcpToolCallErrorErrorUnion
+    RealtimeMcpToolCallErrorUnion,
+    RealtimeMcpToolCallErrorUnion
   >?
   get error => $value.error?.copyWith.$chain((v) => call(error: v));
   @override

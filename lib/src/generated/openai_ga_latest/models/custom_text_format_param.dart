@@ -9,7 +9,7 @@ import 'custom_text_format_param_type_type.dart';
 part 'custom_text_format_param.mapper.dart';
 
 /// Unconstrained free-form text.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomTextFormatParam with CustomTextFormatParamMappable {
   const CustomTextFormatParam({
     this.type = CustomTextFormatParamTypeType.text,

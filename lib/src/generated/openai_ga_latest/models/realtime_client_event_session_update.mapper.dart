@@ -17,7 +17,7 @@ class RealtimeClientEventSessionUpdateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventSessionUpdateMapper._(),
       );
-      RealtimeClientEventSessionUpdateSessionSessionUnionMapper.ensureInitialized();
+      RealtimeClientEventSessionUpdateSessionUnionMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeClientEventSessionUpdateMapper
     'type',
     _$type,
   );
-  static RealtimeClientEventSessionUpdateSessionSessionUnion _$session(
+  static RealtimeClientEventSessionUpdateSessionUnion _$session(
     RealtimeClientEventSessionUpdate v,
   ) => v.session;
   static const Field<
     RealtimeClientEventSessionUpdate,
-    RealtimeClientEventSessionUpdateSessionSessionUnion
+    RealtimeClientEventSessionUpdateSessionUnion
   >
   _f$session = Field('session', _$session);
   static String? _$eventId(RealtimeClientEventSessionUpdate v) => v.eventId;
@@ -48,6 +48,10 @@ class RealtimeClientEventSessionUpdateMapper
     #session: _f$session,
     #eventId: _f$eventId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventSessionUpdate _instantiate(DecodingData data) {
     return RealtimeClientEventSessionUpdate(
@@ -135,15 +139,15 @@ abstract class RealtimeClientEventSessionUpdateCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  RealtimeClientEventSessionUpdateSessionSessionUnionCopyWith<
+  RealtimeClientEventSessionUpdateSessionUnionCopyWith<
     $R,
-    RealtimeClientEventSessionUpdateSessionSessionUnion,
-    RealtimeClientEventSessionUpdateSessionSessionUnion
+    RealtimeClientEventSessionUpdateSessionUnion,
+    RealtimeClientEventSessionUpdateSessionUnion
   >
   get session;
   $R call({
     dynamic type,
-    RealtimeClientEventSessionUpdateSessionSessionUnion? session,
+    RealtimeClientEventSessionUpdateSessionUnion? session,
     String? eventId,
   });
   RealtimeClientEventSessionUpdateCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -169,16 +173,16 @@ class _RealtimeClientEventSessionUpdateCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeClientEventSessionUpdate> $mapper =
       RealtimeClientEventSessionUpdateMapper.ensureInitialized();
   @override
-  RealtimeClientEventSessionUpdateSessionSessionUnionCopyWith<
+  RealtimeClientEventSessionUpdateSessionUnionCopyWith<
     $R,
-    RealtimeClientEventSessionUpdateSessionSessionUnion,
-    RealtimeClientEventSessionUpdateSessionSessionUnion
+    RealtimeClientEventSessionUpdateSessionUnion,
+    RealtimeClientEventSessionUpdateSessionUnion
   >
   get session => $value.session.copyWith.$chain((v) => call(session: v));
   @override
   $R call({
     Object? type = $none,
-    RealtimeClientEventSessionUpdateSessionSessionUnion? session,
+    RealtimeClientEventSessionUpdateSessionUnion? session,
     Object? eventId = $none,
   }) => $apply(
     FieldCopyWithData({

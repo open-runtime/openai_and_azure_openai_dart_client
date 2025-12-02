@@ -48,6 +48,10 @@ class CodeInterpreterFileOutputMapper
     #type: _f$type,
     #files: _f$files,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CodeInterpreterFileOutput _instantiate(DecodingData data) {
     return CodeInterpreterFileOutput(

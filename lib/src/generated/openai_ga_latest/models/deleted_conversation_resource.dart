@@ -8,7 +8,7 @@ import 'deleted_conversation_resource_object_object_enum.dart';
 
 part 'deleted_conversation_resource.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeletedConversationResource with DeletedConversationResourceMappable {
   const DeletedConversationResource({
     required this.deleted,

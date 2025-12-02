@@ -9,6 +9,7 @@ import 'package:retrofit/error_logger.dart';
 
 import '../models/create_image_request.dart';
 import '../models/images_response.dart';
+import '../models/model_union.dart';
 import '../models/quality.dart';
 import '../models/response_format2.dart';
 import '../models/size.dart';
@@ -52,7 +53,7 @@ abstract class ImagesApi {
   Future<HttpResponse<ImagesResponse>> createImageEdit({
     @Part(name: 'image') required String image,
     @Part(name: 'prompt') required String prompt,
-    @Part(name: 'model') String? model = 'dall-e-2',
+    @Part(name: 'model') ModelUnion? model = const ModelUnionVariantString(value: 'dall-e-2'),
     @Part(name: 'n') int? n = 1,
     @Part(name: 'size') Size? size = Size.value1024x1024,
     @Part(name: 'response_format') ResponseFormat2? responseFormat = ResponseFormat2.url,
@@ -91,7 +92,7 @@ abstract class ImagesApi {
   Future<HttpResponse<ImagesResponse>> createImageVariation({
     @Part(name: 'image') required MultipartFile image,
     @Part(name: 'user') String? user,
-    @Part(name: 'model') String? model = 'dall-e-2',
+    @Part(name: 'model') ModelUnion? model = const ModelUnionVariantString(value: 'dall-e-2'),
     @Part(name: 'n') int? n = 1,
     @Part(name: 'response_format') ResponseFormat2? responseFormat = ResponseFormat2.url,
     @Part(name: 'size') Size2? size = Size2.value1024x1024,

@@ -44,6 +44,10 @@ class RealtimeBetaServerEventRateLimitsUpdatedMapper
   @override
   final MappableFields<RealtimeBetaServerEventRateLimitsUpdated> fields =
       const {#eventId: _f$eventId, #type: _f$type, #rateLimits: _f$rateLimits};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventRateLimitsUpdated _instantiate(
     DecodingData data,

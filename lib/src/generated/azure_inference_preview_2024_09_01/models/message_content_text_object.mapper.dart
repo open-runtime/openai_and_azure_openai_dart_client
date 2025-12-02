@@ -37,7 +37,7 @@ class MessageContentTextObjectMapper
   _f$messageContentTextObjectText = Field(
     'messageContentTextObjectText',
     _$messageContentTextObjectText,
-    key: r'MessageContentTextObjectText',
+    key: r'text',
   );
 
   @override
@@ -45,6 +45,10 @@ class MessageContentTextObjectMapper
     #type: _f$type,
     #messageContentTextObjectText: _f$messageContentTextObjectText,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageContentTextObject _instantiate(DecodingData data) {
     return MessageContentTextObject(

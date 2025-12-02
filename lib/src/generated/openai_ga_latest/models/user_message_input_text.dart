@@ -9,7 +9,7 @@ import 'user_message_input_text_type_type.dart';
 part 'user_message_input_text.mapper.dart';
 
 /// Text block that a user contributed to the thread.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserMessageInputText with UserMessageInputTextMappable {
   const UserMessageInputText({
     required this.text,

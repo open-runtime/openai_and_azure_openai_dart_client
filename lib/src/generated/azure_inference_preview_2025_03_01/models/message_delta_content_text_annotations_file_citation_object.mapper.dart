@@ -61,7 +61,7 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
   _f$messageDeltaContentTextAnnotationsFileCitationObjectFileCitation = Field(
     'messageDeltaContentTextAnnotationsFileCitationObjectFileCitation',
     _$messageDeltaContentTextAnnotationsFileCitationObjectFileCitation,
-    key: r'MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation',
+    key: r'file_citation',
     opt: true,
   );
   static int? _$startIndex(
@@ -91,6 +91,10 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
     #startIndex: _f$startIndex,
     #endIndex: _f$endIndex,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MessageDeltaContentTextAnnotationsFileCitationObject _instantiate(
     DecodingData data,

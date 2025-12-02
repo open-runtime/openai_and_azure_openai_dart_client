@@ -15,7 +15,7 @@ class ModifyAssistantRequestMapper
   static ModifyAssistantRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ModifyAssistantRequestMapper._());
-      ModifyAssistantRequestToolsToolsUnionMapper.ensureInitialized();
+      ModifyAssistantRequestToolsUnionMapper.ensureInitialized();
       ReasoningEffortMapper.ensureInitialized();
       ModifyAssistantRequestToolResourcesMapper.ensureInitialized();
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
@@ -26,12 +26,12 @@ class ModifyAssistantRequestMapper
   @override
   final String id = 'ModifyAssistantRequest';
 
-  static List<ModifyAssistantRequestToolsToolsUnion> _$tools(
+  static List<ModifyAssistantRequestToolsUnion> _$tools(
     ModifyAssistantRequest v,
   ) => v.tools;
   static const Field<
     ModifyAssistantRequest,
-    List<ModifyAssistantRequestToolsToolsUnion>
+    List<ModifyAssistantRequestToolsUnion>
   >
   _f$tools = Field('tools', _$tools, opt: true, def: const []);
   static num? _$temperature(ModifyAssistantRequest v) => v.temperature;
@@ -92,7 +92,7 @@ class ModifyAssistantRequestMapper
   _f$modifyAssistantRequestToolResources = Field(
     'modifyAssistantRequestToolResources',
     _$modifyAssistantRequestToolResources,
-    key: r'ModifyAssistantRequestToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static Map<String, String>? _$metadata(ModifyAssistantRequest v) =>
@@ -128,6 +128,10 @@ class ModifyAssistantRequestMapper
     #metadata: _f$metadata,
     #responseFormat: _f$responseFormat,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyAssistantRequest _instantiate(DecodingData data) {
     return ModifyAssistantRequest(
@@ -219,11 +223,11 @@ abstract class ModifyAssistantRequestCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    ModifyAssistantRequestToolsToolsUnion,
-    ModifyAssistantRequestToolsToolsUnionCopyWith<
+    ModifyAssistantRequestToolsUnion,
+    ModifyAssistantRequestToolsUnionCopyWith<
       $R,
-      ModifyAssistantRequestToolsToolsUnion,
-      ModifyAssistantRequestToolsToolsUnion
+      ModifyAssistantRequestToolsUnion,
+      ModifyAssistantRequestToolsUnion
     >
   >
   get tools;
@@ -242,7 +246,7 @@ abstract class ModifyAssistantRequestCopyWith<
   >?
   get responseFormat;
   $R call({
-    List<ModifyAssistantRequestToolsToolsUnion>? tools,
+    List<ModifyAssistantRequestToolsUnion>? tools,
     num? temperature,
     num? topP,
     String? model,
@@ -271,11 +275,11 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    ModifyAssistantRequestToolsToolsUnion,
-    ModifyAssistantRequestToolsToolsUnionCopyWith<
+    ModifyAssistantRequestToolsUnion,
+    ModifyAssistantRequestToolsUnionCopyWith<
       $R,
-      ModifyAssistantRequestToolsToolsUnion,
-      ModifyAssistantRequestToolsToolsUnion
+      ModifyAssistantRequestToolsUnion,
+      ModifyAssistantRequestToolsUnion
     >
   >
   get tools => ListCopyWith(
@@ -312,7 +316,7 @@ class _ModifyAssistantRequestCopyWithImpl<$R, $Out>
       $value.responseFormat?.copyWith.$chain((v) => call(responseFormat: v));
   @override
   $R call({
-    List<ModifyAssistantRequestToolsToolsUnion>? tools,
+    List<ModifyAssistantRequestToolsUnion>? tools,
     Object? temperature = $none,
     Object? topP = $none,
     Object? model = $none,

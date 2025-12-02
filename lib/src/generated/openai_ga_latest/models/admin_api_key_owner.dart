@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'admin_api_key_owner.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKeyOwner with AdminApiKeyOwnerMappable {
   const AdminApiKeyOwner({
     this.type,

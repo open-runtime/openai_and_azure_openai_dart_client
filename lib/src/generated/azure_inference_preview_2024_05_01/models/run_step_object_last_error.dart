@@ -8,7 +8,7 @@ import 'run_step_object_last_error_code_code.dart';
 
 part 'run_step_object_last_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepObjectLastError with RunStepObjectLastErrorMappable {
   const RunStepObjectLastError({
     required this.code,

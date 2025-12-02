@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'thread_resource_object_object_enum.dart';
-import 'thread_resource_status_status_union.dart';
+import 'thread_resource_status_union.dart';
 
 part 'thread_resource.mapper.dart';
 
 /// Represents a ChatKit thread and its current status.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadResource with ThreadResourceMappable {
   const ThreadResource({
     required this.id,
@@ -25,7 +25,7 @@ class ThreadResource with ThreadResourceMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String? title;
-  final ThreadResourceStatusStatusUnion status;
+  final ThreadResourceStatusUnion status;
   final String user;
   @MappableField(key: 'object')
   final ThreadResourceObjectObjectEnum objectEnum;

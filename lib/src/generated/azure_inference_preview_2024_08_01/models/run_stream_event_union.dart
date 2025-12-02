@@ -17,7 +17,7 @@ import 'run_stream_event_union_variant9_event_event.dart';
 
 part 'run_stream_event_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [RunStreamEventUnionVariant1, RunStreamEventUnionVariant2, RunStreamEventUnionVariant3, RunStreamEventUnionVariant4, RunStreamEventUnionVariant5, RunStreamEventUnionVariant6, RunStreamEventUnionVariant7, RunStreamEventUnionVariant8, RunStreamEventUnionVariant9])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RunStreamEventUnionVariant1, RunStreamEventUnionVariant2, RunStreamEventUnionVariant3, RunStreamEventUnionVariant4, RunStreamEventUnionVariant5, RunStreamEventUnionVariant6, RunStreamEventUnionVariant7, RunStreamEventUnionVariant8, RunStreamEventUnionVariant9])
 sealed class RunStreamEventUnion with RunStreamEventUnionMappable {
   const RunStreamEventUnion();
 
@@ -61,7 +61,7 @@ extension RunStreamEventUnionDeserializer on RunStreamEventUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant1 extends RunStreamEventUnion with RunStreamEventUnionVariant1Mappable {
   final RunStreamEventUnionVariant1EventEvent event;
   final RunObject data;
@@ -72,7 +72,7 @@ class RunStreamEventUnionVariant1 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant2 extends RunStreamEventUnion with RunStreamEventUnionVariant2Mappable {
   final RunStreamEventUnionVariant2EventEvent event;
   final RunObject data;
@@ -83,7 +83,7 @@ class RunStreamEventUnionVariant2 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant3 extends RunStreamEventUnion with RunStreamEventUnionVariant3Mappable {
   final RunStreamEventUnionVariant3EventEvent event;
   final RunObject data;
@@ -94,7 +94,7 @@ class RunStreamEventUnionVariant3 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant4 extends RunStreamEventUnion with RunStreamEventUnionVariant4Mappable {
   final RunStreamEventUnionVariant4EventEvent event;
   final RunObject data;
@@ -105,7 +105,7 @@ class RunStreamEventUnionVariant4 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant5 extends RunStreamEventUnion with RunStreamEventUnionVariant5Mappable {
   final RunStreamEventUnionVariant5EventEvent event;
   final RunObject data;
@@ -116,7 +116,7 @@ class RunStreamEventUnionVariant5 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant6 extends RunStreamEventUnion with RunStreamEventUnionVariant6Mappable {
   final RunStreamEventUnionVariant6EventEvent event;
   final RunObject data;
@@ -127,7 +127,7 @@ class RunStreamEventUnionVariant6 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant7 extends RunStreamEventUnion with RunStreamEventUnionVariant7Mappable {
   final RunStreamEventUnionVariant7EventEvent event;
   final RunObject data;
@@ -138,7 +138,7 @@ class RunStreamEventUnionVariant7 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant8 extends RunStreamEventUnion with RunStreamEventUnionVariant8Mappable {
   final RunStreamEventUnionVariant8EventEvent event;
   final RunObject data;
@@ -149,7 +149,7 @@ class RunStreamEventUnionVariant8 extends RunStreamEventUnion with RunStreamEven
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStreamEventUnionVariant9 extends RunStreamEventUnion with RunStreamEventUnionVariant9Mappable {
   final RunStreamEventUnionVariant9EventEvent event;
   final RunObject data;

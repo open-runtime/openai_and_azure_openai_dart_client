@@ -44,7 +44,7 @@ class CertificateMapper extends ClassMapperBase<Certificate> {
   _f$certificateCertificateDetails = Field(
     'certificateCertificateDetails',
     _$certificateCertificateDetails,
-    key: r'CertificateCertificateDetails',
+    key: r'certificate_details',
   );
   static bool? _$active(Certificate v) => v.active;
   static const Field<Certificate, bool> _f$active = Field(
@@ -62,6 +62,10 @@ class CertificateMapper extends ClassMapperBase<Certificate> {
     #certificateCertificateDetails: _f$certificateCertificateDetails,
     #active: _f$active,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Certificate _instantiate(DecodingData data) {
     return Certificate(

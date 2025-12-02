@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'submit_tool_outputs_run_request_without_stream_tool_outputs.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class SubmitToolOutputsRunRequestWithoutStreamToolOutputs with SubmitToolOutputsRunRequestWithoutStreamToolOutputsMappable {
   const SubmitToolOutputsRunRequestWithoutStreamToolOutputs({
     this.toolCallId,

@@ -44,7 +44,7 @@ class ChatCompletionNamedToolChoiceMapper
   _f$chatCompletionNamedToolChoiceFunction = Field(
     'chatCompletionNamedToolChoiceFunction',
     _$chatCompletionNamedToolChoiceFunction,
-    key: r'ChatCompletionNamedToolChoiceFunction',
+    key: r'function',
   );
 
   @override
@@ -53,6 +53,10 @@ class ChatCompletionNamedToolChoiceMapper
     #chatCompletionNamedToolChoiceFunction:
         _f$chatCompletionNamedToolChoiceFunction,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ChatCompletionNamedToolChoice _instantiate(DecodingData data) {
     return ChatCompletionNamedToolChoice(

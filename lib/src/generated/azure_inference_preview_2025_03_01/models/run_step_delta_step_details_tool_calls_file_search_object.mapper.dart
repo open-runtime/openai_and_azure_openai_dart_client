@@ -56,6 +56,10 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
     #fileSearch: _f$fileSearch,
     #id: _f$id,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDeltaStepDetailsToolCallsFileSearchObject _instantiate(
     DecodingData data,

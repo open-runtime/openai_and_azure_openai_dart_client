@@ -59,6 +59,10 @@ class ProjectGroupMapper extends ClassMapperBase<ProjectGroup> {
     #groupName: _f$groupName,
     #createdAt: _f$createdAt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ProjectGroup _instantiate(DecodingData data) {
     return ProjectGroup(

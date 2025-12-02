@@ -37,6 +37,10 @@ class ErrorMapper extends ClassMapperBase<Error> {
     #param: _f$param,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static Error _instantiate(DecodingData data) {
     return Error(

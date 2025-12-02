@@ -47,6 +47,10 @@ class ResponseWebSearchCallSearchingEventMapper
     #outputIndex: _f$outputIndex,
     #itemId: _f$itemId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseWebSearchCallSearchingEvent _instantiate(DecodingData data) {
     return ResponseWebSearchCallSearchingEvent(

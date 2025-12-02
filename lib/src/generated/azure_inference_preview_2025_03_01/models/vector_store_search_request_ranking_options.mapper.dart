@@ -54,6 +54,10 @@ class VectorStoreSearchRequestRankingOptionsMapper
     #ranker: _f$ranker,
     #scoreThreshold: _f$scoreThreshold,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchRequestRankingOptions _instantiate(
     DecodingData data,

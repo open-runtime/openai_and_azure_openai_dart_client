@@ -8,7 +8,7 @@ import 'project_user.dart';
 
 part 'project_user_list_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUserListResponse with ProjectUserListResponseMappable {
   const ProjectUserListResponse({
     required this.objectField,

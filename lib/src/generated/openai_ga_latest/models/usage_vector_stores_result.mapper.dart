@@ -53,6 +53,10 @@ class UsageVectorStoresResultMapper
     #usageBytes: _f$usageBytes,
     #projectId: _f$projectId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageVectorStoresResult _instantiate(DecodingData data) {
     return UsageVectorStoresResult(

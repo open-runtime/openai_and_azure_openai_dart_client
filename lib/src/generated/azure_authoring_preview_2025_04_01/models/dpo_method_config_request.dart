@@ -9,7 +9,7 @@ import 'dpo_hyperparams_request.dart';
 part 'dpo_method_config_request.mapper.dart';
 
 /// Configuration for dpo finetuning method. Includes DPO specific hyperparameters
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DpoMethodConfigRequest with DpoMethodConfigRequestMappable {
   const DpoMethodConfigRequest({
     this.hyperparameters,

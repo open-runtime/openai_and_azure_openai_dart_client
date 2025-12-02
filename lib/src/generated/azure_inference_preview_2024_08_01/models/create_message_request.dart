@@ -9,7 +9,7 @@ import 'create_message_request_role_role.dart';
 
 part 'create_message_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateMessageRequest with CreateMessageRequestMappable {
   const CreateMessageRequest({
     required this.role,

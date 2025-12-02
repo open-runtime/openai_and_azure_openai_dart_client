@@ -8,7 +8,7 @@ part 'computer_tool_call_safety_check.mapper.dart';
 
 /// A pending safety check for the computer call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerToolCallSafetyCheck with ComputerToolCallSafetyCheckMappable {
   const ComputerToolCallSafetyCheck({
     required this.id,

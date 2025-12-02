@@ -4,11 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'run_step_delta_step_details_tool_call.dart';
 import 'run_step_delta_step_details_tool_calls_file_search_object_type_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_file_search_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallsFileSearchObject with RunStepDeltaStepDetailsToolCallsFileSearchObjectMappable {
   const RunStepDeltaStepDetailsToolCallsFileSearchObject({
     required this.indexField,

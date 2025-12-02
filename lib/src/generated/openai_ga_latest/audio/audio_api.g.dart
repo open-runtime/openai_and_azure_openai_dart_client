@@ -58,7 +58,7 @@ class _AudioApi implements AudioApi {
   @override
   Future<HttpResponse<CreateTranscriptionResponseUnion>> createTranscription({
     required MultipartFile file,
-    required String model,
+    required ModelUnion model,
     num? temperature = 0,
     List<TimestampGranularities>? timestampGranularities = const [
       TimestampGranularities.segment,
@@ -81,7 +81,7 @@ class _AudioApi implements AudioApi {
     final _headers = <String, dynamic>{};
     final _data = FormData();
     _data.files.add(MapEntry('file', file));
-    _data.fields.add(MapEntry('model', model));
+    _data.fields.add(MapEntry('model', jsonEncode(model)));
     if (temperature != null) {
       _data.fields.add(MapEntry('temperature', temperature.toString()));
     }
@@ -141,7 +141,7 @@ class _AudioApi implements AudioApi {
   @override
   Future<HttpResponse<CreateTranslationResponseUnion>> createTranslation({
     required MultipartFile file,
-    required String model,
+    required ModelUnion model,
     ResponseFormat? responseFormat = ResponseFormat.valueJson,
     num? temperature = 0,
     String? prompt,
@@ -155,7 +155,7 @@ class _AudioApi implements AudioApi {
     final _headers = <String, dynamic>{};
     final _data = FormData();
     _data.files.add(MapEntry('file', file));
-    _data.fields.add(MapEntry('model', model));
+    _data.fields.add(MapEntry('model', jsonEncode(model)));
     if (responseFormat != null) {
       _data.fields.add(MapEntry('response_format', responseFormat.toJson()));
     }

@@ -8,7 +8,7 @@ import 'text_annotation.dart';
 
 part 'message_content_text_object_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextObjectText with MessageContentTextObjectTextMappable {
   const MessageContentTextObjectText({
     required this.value,

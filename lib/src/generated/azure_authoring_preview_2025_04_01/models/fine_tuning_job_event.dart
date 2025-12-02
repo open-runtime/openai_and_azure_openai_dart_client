@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 
 part 'fine_tuning_job_event.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobEvent with FineTuningJobEventMappable {
   const FineTuningJobEvent({
     required this.createdAt,

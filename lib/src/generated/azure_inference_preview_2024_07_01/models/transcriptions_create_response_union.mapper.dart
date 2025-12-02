@@ -28,6 +28,10 @@ class TranscriptionsCreateResponseUnionMapper
 
   @override
   final MappableFields<TranscriptionsCreateResponseUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionsCreateResponseUnion _instantiate(DecodingData data) {
     throw MapperException.missingConstructor(
@@ -101,6 +105,10 @@ class TranscriptionsCreateResponseUnionAudioResponseMapper
   @override
   final MappableFields<TranscriptionsCreateResponseUnionAudioResponse> fields =
       const {#text: _f$text};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionsCreateResponseUnionAudioResponse _instantiate(
     DecodingData data,
@@ -283,6 +291,10 @@ class TranscriptionsCreateResponseUnionAudioVerboseResponseMapper
   @override
   final MappableFields<TranscriptionsCreateResponseUnionAudioVerboseResponse>
   fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static TranscriptionsCreateResponseUnionAudioVerboseResponse _instantiate(
     DecodingData data,

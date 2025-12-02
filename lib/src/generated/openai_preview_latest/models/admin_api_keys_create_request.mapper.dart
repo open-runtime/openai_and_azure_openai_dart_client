@@ -34,6 +34,10 @@ class AdminApiKeysCreateRequestMapper
   final MappableFields<AdminApiKeysCreateRequest> fields = const {
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AdminApiKeysCreateRequest _instantiate(DecodingData data) {
     return AdminApiKeysCreateRequest(name: data.dec(_f$name));

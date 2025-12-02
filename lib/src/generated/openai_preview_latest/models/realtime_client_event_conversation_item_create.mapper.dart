@@ -65,6 +65,10 @@ class RealtimeClientEventConversationItemCreateMapper
         #eventId: _f$eventId,
         #previousItemId: _f$previousItemId,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeClientEventConversationItemCreate _instantiate(
     DecodingData data,

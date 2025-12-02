@@ -13,7 +13,7 @@ import 'metadata.dart';
 part 'eval_data_source_config_data_source_config.mapper.dart';
 
 /// Configuration of data sources used in runs of the evaluation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalDataSourceConfigDataSourceConfig with EvalDataSourceConfigDataSourceConfigMappable {
   const EvalDataSourceConfigDataSourceConfig({
     required this.schema,

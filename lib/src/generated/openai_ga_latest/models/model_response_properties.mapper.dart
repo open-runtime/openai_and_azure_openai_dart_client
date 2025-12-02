@@ -109,6 +109,10 @@ class ModelResponsePropertiesMapper
     #serviceTier: _f$serviceTier,
     #promptCacheRetention: _f$promptCacheRetention,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModelResponseProperties _instantiate(DecodingData data) {
     return ModelResponseProperties(

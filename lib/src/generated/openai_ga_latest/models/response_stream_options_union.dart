@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'response_stream_options_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [ResponseStreamOptionsUnionVariant1])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ResponseStreamOptionsUnionVariant1])
 sealed class ResponseStreamOptionsUnion with ResponseStreamOptionsUnionMappable {
   const ResponseStreamOptionsUnion();
 
@@ -26,8 +26,9 @@ extension ResponseStreamOptionsUnionDeserializer on ResponseStreamOptionsUnion {
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseStreamOptionsUnionVariant1 extends ResponseStreamOptionsUnion with ResponseStreamOptionsUnionVariant1Mappable {
+  @MappableField(key: 'include_obfuscation')
   final bool? includeObfuscation;
 
   const ResponseStreamOptionsUnionVariant1({

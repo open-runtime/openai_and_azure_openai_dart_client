@@ -68,6 +68,10 @@ class ContentFilterDetectedWithCompletionTextSpansResultMapper
     #detected: _f$detected,
     #details: _f$details,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContentFilterDetectedWithCompletionTextSpansResult _instantiate(
     DecodingData data,

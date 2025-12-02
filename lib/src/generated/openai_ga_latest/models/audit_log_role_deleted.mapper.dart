@@ -30,6 +30,10 @@ class AuditLogRoleDeletedMapper extends ClassMapperBase<AuditLogRoleDeleted> {
 
   @override
   final MappableFields<AuditLogRoleDeleted> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogRoleDeleted _instantiate(DecodingData data) {
     return AuditLogRoleDeleted(id: data.dec(_f$id));

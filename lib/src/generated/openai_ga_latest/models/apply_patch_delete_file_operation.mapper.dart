@@ -49,6 +49,10 @@ class ApplyPatchDeleteFileOperationMapper
     #path: _f$path,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ApplyPatchDeleteFileOperation _instantiate(DecodingData data) {
     return ApplyPatchDeleteFileOperation(

@@ -63,6 +63,10 @@ class InviteListResponseMapper extends ClassMapperBase<InviteListResponse> {
     #lastId: _f$lastId,
     #hasMore: _f$hasMore,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static InviteListResponse _instantiate(DecodingData data) {
     return InviteListResponse(

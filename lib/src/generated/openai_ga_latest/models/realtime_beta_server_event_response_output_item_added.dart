@@ -9,7 +9,7 @@ import 'realtime_conversation_item.dart';
 part 'realtime_beta_server_event_response_output_item_added.mapper.dart';
 
 /// Returned when a new Item is created during Response generation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventResponseOutputItemAdded with RealtimeBetaServerEventResponseOutputItemAddedMappable {
   const RealtimeBetaServerEventResponseOutputItemAdded({
     required this.eventId,

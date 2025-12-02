@@ -11,7 +11,7 @@ import 'input_text_content_type_type.dart';
 part 'eval_item_content_content.mapper.dart';
 
 /// Text inputs to the model - can contain template strings.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentContent with EvalItemContentContentMappable {
   const EvalItemContentContent({
     required this.type,

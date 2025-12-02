@@ -51,6 +51,10 @@ class FunctionToolMapper extends ClassMapperBase<FunctionTool> {
     #strict: _f$strict,
     #description: _f$description,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionTool _instantiate(DecodingData data) {
     return FunctionTool(

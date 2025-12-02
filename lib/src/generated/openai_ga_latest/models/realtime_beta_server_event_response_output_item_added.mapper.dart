@@ -61,6 +61,10 @@ class RealtimeBetaServerEventResponseOutputItemAddedMapper
         #outputIndex: _f$outputIndex,
         #item: _f$item,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventResponseOutputItemAdded _instantiate(
     DecodingData data,

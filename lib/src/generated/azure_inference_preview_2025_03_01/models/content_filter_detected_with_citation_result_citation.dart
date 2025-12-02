@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'content_filter_detected_with_citation_result_citation.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedWithCitationResultCitation with ContentFilterDetectedWithCitationResultCitationMappable {
   const ContentFilterDetectedWithCitationResultCitation({
     this.url,

@@ -12,7 +12,7 @@ import 'create_transcription_response_verbose_json.dart';
 
 part 'create_transcription_response_union.mapper.dart';
 
-@MappableClass(includeSubClasses: [CreateTranscriptionResponseUnionCreateTranscriptionResponseJson, CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson])
+@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateTranscriptionResponseUnionCreateTranscriptionResponseJson, CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson])
 sealed class CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionMappable {
   const CreateTranscriptionResponseUnion();
 
@@ -35,7 +35,7 @@ extension CreateTranscriptionResponseUnionDeserializer on CreateTranscriptionRes
   }
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseUnionCreateTranscriptionResponseJson extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionCreateTranscriptionResponseJsonMappable {
   final String text;
   final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
@@ -46,7 +46,7 @@ class CreateTranscriptionResponseUnionCreateTranscriptionResponseJson extends Cr
   });
 }
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJsonMappable {
   final String language;
   final num duration;

@@ -43,6 +43,10 @@ class UserMessageQuotedTextMapper
     #text: _f$text,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UserMessageQuotedText _instantiate(DecodingData data) {
     return UserMessageQuotedText(

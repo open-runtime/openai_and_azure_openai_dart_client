@@ -38,6 +38,10 @@ class OnYourDataAuthenticationOptionsMapper
   final MappableFields<OnYourDataAuthenticationOptions> fields = const {
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static OnYourDataAuthenticationOptions _instantiate(DecodingData data) {
     return OnYourDataAuthenticationOptions(type: data.dec(_f$type));

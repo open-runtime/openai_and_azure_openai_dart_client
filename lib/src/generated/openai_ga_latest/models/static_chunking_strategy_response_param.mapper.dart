@@ -48,6 +48,10 @@ class StaticChunkingStrategyResponseParamMapper
     #type: _f$type,
     #staticField: _f$staticField,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StaticChunkingStrategyResponseParam _instantiate(DecodingData data) {
     return StaticChunkingStrategyResponseParam(

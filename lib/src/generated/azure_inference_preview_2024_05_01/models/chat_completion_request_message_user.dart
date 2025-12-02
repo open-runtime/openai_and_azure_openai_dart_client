@@ -8,7 +8,7 @@ import 'chat_completion_request_message_role.dart';
 
 part 'chat_completion_request_message_user.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageUser with ChatCompletionRequestMessageUserMappable {
   const ChatCompletionRequestMessageUser({
     required this.role,

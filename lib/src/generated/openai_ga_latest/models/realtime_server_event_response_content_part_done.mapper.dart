@@ -63,7 +63,7 @@ class RealtimeServerEventResponseContentPartDoneMapper
   _f$realtimeServerEventResponseContentPartDonePart = Field(
     'realtimeServerEventResponseContentPartDonePart',
     _$realtimeServerEventResponseContentPartDonePart,
-    key: r'RealtimeServerEventResponseContentPartDonePart',
+    key: r'part',
   );
 
   @override
@@ -78,6 +78,10 @@ class RealtimeServerEventResponseContentPartDoneMapper
         #realtimeServerEventResponseContentPartDonePart:
             _f$realtimeServerEventResponseContentPartDonePart,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseContentPartDone _instantiate(
     DecodingData data,

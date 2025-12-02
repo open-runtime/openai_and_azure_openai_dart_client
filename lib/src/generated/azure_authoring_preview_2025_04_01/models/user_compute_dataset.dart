@@ -12,7 +12,7 @@ import 'workspace_connection_embedding_settings.dart';
 part 'user_compute_dataset.mapper.dart';
 
 /// Storage account
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeDataset with UserComputeDatasetMappable {
   const UserComputeDataset({
     required this.kind,

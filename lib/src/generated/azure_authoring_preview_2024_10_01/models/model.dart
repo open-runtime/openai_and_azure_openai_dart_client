@@ -13,7 +13,7 @@ import 'type_discriminator.dart';
 part 'model.mapper.dart';
 
 /// A model is either a base model or the result of a successful fine tune job.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Model with ModelMappable {
   const Model({
     required this.capabilities,

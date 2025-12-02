@@ -8,7 +8,7 @@ import 'function_parameters.dart';
 
 part 'function_object.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionObject with FunctionObjectMappable {
   const FunctionObject({
     required this.name,

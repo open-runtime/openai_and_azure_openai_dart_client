@@ -5,10 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_format_text_type_type.dart';
+import 'text_response_format_configuration.dart';
 
 part 'response_format_text.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatText with ResponseFormatTextMappable {
   const ResponseFormatText({
     required this.type,

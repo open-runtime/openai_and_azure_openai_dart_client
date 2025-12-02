@@ -29,7 +29,7 @@ class ModifyThreadRequestMapper extends ClassMapperBase<ModifyThreadRequest> {
   _f$modifyThreadRequestToolResources = Field(
     'modifyThreadRequestToolResources',
     _$modifyThreadRequestToolResources,
-    key: r'ModifyThreadRequestToolResources',
+    key: r'tool_resources',
     opt: true,
   );
   static dynamic _$metadata(ModifyThreadRequest v) => v.metadata;
@@ -44,6 +44,10 @@ class ModifyThreadRequestMapper extends ClassMapperBase<ModifyThreadRequest> {
     #modifyThreadRequestToolResources: _f$modifyThreadRequestToolResources,
     #metadata: _f$metadata,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyThreadRequest _instantiate(DecodingData data) {
     return ModifyThreadRequest(

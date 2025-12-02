@@ -80,7 +80,7 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
       Field(
         'evalRunResultCounts',
         _$evalRunResultCounts,
-        key: r'EvalRunResultCounts',
+        key: r'result_counts',
       );
   static String _$status(EvalRun v) => v.status;
   static const Field<EvalRun, String> _f$status = Field('status', _$status);
@@ -110,6 +110,10 @@ class EvalRunMapper extends ClassMapperBase<EvalRun> {
     #status: _f$status,
     #objectEnum: _f$objectEnum,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalRun _instantiate(DecodingData data) {
     return EvalRun(

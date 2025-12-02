@@ -90,6 +90,10 @@ class AudioSegmentMapper extends ClassMapperBase<AudioSegment> {
     #compressionRatio: _f$compressionRatio,
     #noSpeechProb: _f$noSpeechProb,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AudioSegment _instantiate(DecodingData data) {
     return AudioSegment(

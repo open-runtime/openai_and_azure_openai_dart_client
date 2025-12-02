@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_tool_call_object_function.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunToolCallObjectFunction with RunToolCallObjectFunctionMappable {
   const RunToolCallObjectFunction({
     required this.name,

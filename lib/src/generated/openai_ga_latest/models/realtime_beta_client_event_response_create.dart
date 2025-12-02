@@ -33,7 +33,7 @@ part 'realtime_beta_client_event_response_create.mapper.dart';
 /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting.
 /// raw Items and references to existing Items.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventResponseCreate with RealtimeBetaClientEventResponseCreateMappable {
   const RealtimeBetaClientEventResponseCreate({
     required this.type,

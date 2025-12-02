@@ -15,7 +15,7 @@ import 'truncation_object.dart';
 
 part 'create_run_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateRunRequest with CreateRunRequestMappable {
   const CreateRunRequest({
     required this.assistantId,

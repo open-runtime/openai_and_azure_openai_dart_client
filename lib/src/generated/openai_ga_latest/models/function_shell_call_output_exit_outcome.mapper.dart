@@ -47,6 +47,10 @@ class FunctionShellCallOutputExitOutcomeMapper
     #exitCode: _f$exitCode,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallOutputExitOutcome _instantiate(DecodingData data) {
     return FunctionShellCallOutputExitOutcome(

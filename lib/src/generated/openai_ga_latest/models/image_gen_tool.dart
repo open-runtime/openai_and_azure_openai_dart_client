@@ -13,12 +13,13 @@ import 'image_gen_tool_quality_quality.dart';
 import 'image_gen_tool_size_size.dart';
 import 'image_gen_tool_type_type.dart';
 import 'input_fidelity.dart';
+import 'tool.dart';
 
 part 'image_gen_tool.mapper.dart';
 
 /// A tool that generates images using a model like `gpt-image-1`.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenTool with ImageGenToolMappable {
   const ImageGenTool({
     required this.type,
@@ -37,7 +38,7 @@ class ImageGenTool with ImageGenToolMappable {
   final ImageGenToolTypeType type;
   @MappableField(key: 'input_fidelity')
   final InputFidelity? inputFidelity;
-  @MappableField(key: 'ImageGenToolInputImageMask')
+  @MappableField(key: 'input_image_mask')
   final ImageGenToolInputImageMask? imageGenToolInputImageMask;
   final ImageGenToolModelModel model;
   final ImageGenToolQualityQuality quality;

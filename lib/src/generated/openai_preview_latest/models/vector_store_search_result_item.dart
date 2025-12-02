@@ -9,7 +9,7 @@ import 'vector_store_search_result_content_object.dart';
 
 part 'vector_store_search_result_item.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchResultItem with VectorStoreSearchResultItemMappable {
   const VectorStoreSearchResultItem({
     required this.fileId,

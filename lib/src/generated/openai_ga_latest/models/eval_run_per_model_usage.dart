@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'eval_run_per_model_usage.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunPerModelUsage with EvalRunPerModelUsageMappable {
   const EvalRunPerModelUsage({
     required this.modelName,

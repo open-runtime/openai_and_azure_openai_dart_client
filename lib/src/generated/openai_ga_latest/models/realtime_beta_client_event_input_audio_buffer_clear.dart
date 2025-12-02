@@ -9,7 +9,7 @@ part 'realtime_beta_client_event_input_audio_buffer_clear.mapper.dart';
 /// Send this event to clear the audio bytes in the buffer. The server will .
 /// respond with an `input_audio_buffer.cleared` event.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventInputAudioBufferClear with RealtimeBetaClientEventInputAudioBufferClearMappable {
   const RealtimeBetaClientEventInputAudioBufferClear({
     required this.type,

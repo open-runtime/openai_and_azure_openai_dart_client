@@ -8,7 +8,7 @@ import 'type_discriminator.dart';
 
 part 'fine_tuning_job_checkpoint.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobCheckpoint with FineTuningJobCheckpointMappable {
   const FineTuningJobCheckpoint({
     required this.createdAt,

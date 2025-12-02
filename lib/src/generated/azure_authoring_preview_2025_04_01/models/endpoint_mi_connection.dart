@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'endpoint_mi_connection.mapper.dart';
 
 /// Endpoint Managed Identity connection.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EndpointMiConnection with EndpointMiConnectionMappable {
   const EndpointMiConnection({
     required this.kind,

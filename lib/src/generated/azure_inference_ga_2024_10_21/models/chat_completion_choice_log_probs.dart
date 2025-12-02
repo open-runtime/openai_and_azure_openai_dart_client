@@ -9,7 +9,7 @@ import 'chat_completion_token_logprob.dart';
 part 'chat_completion_choice_log_probs.mapper.dart';
 
 /// Log probability information for the choice.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionChoiceLogProbs with ChatCompletionChoiceLogProbsMappable {
   const ChatCompletionChoiceLogProbs({
     required this.content,

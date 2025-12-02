@@ -9,12 +9,13 @@ import 'image_gen_partial_image_event_output_format_output_format.dart';
 import 'image_gen_partial_image_event_quality_quality.dart';
 import 'image_gen_partial_image_event_size_size.dart';
 import 'image_gen_partial_image_event_type_type.dart';
+import 'image_gen_stream_event.dart';
 
 part 'image_gen_partial_image_event.mapper.dart';
 
 /// Emitted when a partial image is available during image generation streaming.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenPartialImageEvent with ImageGenPartialImageEventMappable {
   const ImageGenPartialImageEvent({
     required this.type,

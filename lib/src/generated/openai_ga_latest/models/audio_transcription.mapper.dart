@@ -44,6 +44,10 @@ class AudioTranscriptionMapper extends ClassMapperBase<AudioTranscription> {
     #language: _f$language,
     #prompt: _f$prompt,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AudioTranscription _instantiate(DecodingData data) {
     return AudioTranscription(

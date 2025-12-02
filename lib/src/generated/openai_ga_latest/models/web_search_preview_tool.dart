@@ -11,7 +11,7 @@ import 'web_search_preview_tool_type_type.dart';
 part 'web_search_preview_tool.mapper.dart';
 
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchPreviewTool with WebSearchPreviewToolMappable {
   const WebSearchPreviewTool({
     this.userLocation,

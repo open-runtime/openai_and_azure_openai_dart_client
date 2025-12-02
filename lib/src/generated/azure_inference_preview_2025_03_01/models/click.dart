@@ -6,12 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'click_button_button.dart';
 import 'click_type_type.dart';
+import 'computer_action.dart';
 
 part 'click.mapper.dart';
 
 /// A click action.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class Click with ClickMappable {
   const Click({
     required this.button,

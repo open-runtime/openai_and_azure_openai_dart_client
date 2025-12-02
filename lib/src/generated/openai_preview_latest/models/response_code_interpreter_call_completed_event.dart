@@ -6,11 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_tool_call.dart';
 import 'response_code_interpreter_call_completed_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_code_interpreter_call_completed_event.mapper.dart';
 
 /// Emitted when the code interpreter call is completed.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseCodeInterpreterCallCompletedEvent with ResponseCodeInterpreterCallCompletedEventMappable {
   const ResponseCodeInterpreterCallCompletedEvent({
     required this.type,

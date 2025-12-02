@@ -63,6 +63,10 @@ class CreateEvalRequestMapper extends ClassMapperBase<CreateEvalRequest> {
     #metadata: _f$metadata,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateEvalRequest _instantiate(DecodingData data) {
     return CreateEvalRequest(

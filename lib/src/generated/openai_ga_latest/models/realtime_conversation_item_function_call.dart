@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_conversation_item.dart';
 import 'realtime_conversation_item_function_call_object_object_enum.dart';
 import 'realtime_conversation_item_function_call_status_status.dart';
 import 'realtime_conversation_item_function_call_type_type.dart';
@@ -11,7 +12,7 @@ import 'realtime_conversation_item_function_call_type_type.dart';
 part 'realtime_conversation_item_function_call.mapper.dart';
 
 /// A function call item in a Realtime conversation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemFunctionCall with RealtimeConversationItemFunctionCallMappable {
   const RealtimeConversationItemFunctionCall({
     required this.type,

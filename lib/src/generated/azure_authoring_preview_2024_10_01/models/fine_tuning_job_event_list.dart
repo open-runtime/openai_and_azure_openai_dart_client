@@ -10,7 +10,7 @@ import 'type_discriminator.dart';
 part 'fine_tuning_job_event_list.mapper.dart';
 
 /// Represents a list of events.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobEventList with FineTuningJobEventListMappable {
   const FineTuningJobEventList({
     this.objectField,

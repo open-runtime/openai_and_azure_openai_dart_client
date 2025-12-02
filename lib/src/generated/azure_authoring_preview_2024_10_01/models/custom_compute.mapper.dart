@@ -39,6 +39,10 @@ class CustomComputeMapper extends ClassMapperBase<CustomCompute> {
     #kind: _f$kind,
     #computeId: _f$computeId,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CustomCompute _instantiate(DecodingData data) {
     return CustomCompute(

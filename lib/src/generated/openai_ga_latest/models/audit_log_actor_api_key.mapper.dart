@@ -56,6 +56,10 @@ class AuditLogActorApiKeyMapper extends ClassMapperBase<AuditLogActorApiKey> {
     #user: _f$user,
     #serviceAccount: _f$serviceAccount,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogActorApiKey _instantiate(DecodingData data) {
     return AuditLogActorApiKey(

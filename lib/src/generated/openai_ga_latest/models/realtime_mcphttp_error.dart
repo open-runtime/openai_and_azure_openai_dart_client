@@ -8,7 +8,7 @@ import 'realtime_mcphttp_error_type_type.dart';
 
 part 'realtime_mcphttp_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcphttpError with RealtimeMcphttpErrorMappable {
   const RealtimeMcphttpError({
     required this.type,

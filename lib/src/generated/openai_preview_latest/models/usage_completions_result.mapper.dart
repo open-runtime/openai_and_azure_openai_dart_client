@@ -122,6 +122,10 @@ class UsageCompletionsResultMapper
     #model: _f$model,
     #batch: _f$batch,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UsageCompletionsResult _instantiate(DecodingData data) {
     return UsageCompletionsResult(

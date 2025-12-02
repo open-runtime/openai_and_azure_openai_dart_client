@@ -8,7 +8,7 @@ import 'vector_store_file_object_last_error_code_code.dart';
 
 part 'vector_store_file_object_last_error.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileObjectLastError with VectorStoreFileObjectLastErrorMappable {
   const VectorStoreFileObjectLastError({
     required this.code,

@@ -38,6 +38,10 @@ class ModifyThreadRequestToolResourcesFileSearchMapper
   @override
   final MappableFields<ModifyThreadRequestToolResourcesFileSearch> fields =
       const {#vectorStoreIds: _f$vectorStoreIds};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ModifyThreadRequestToolResourcesFileSearch _instantiate(
     DecodingData data,

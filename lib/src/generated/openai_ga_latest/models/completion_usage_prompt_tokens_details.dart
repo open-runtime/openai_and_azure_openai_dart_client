@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'completion_usage_prompt_tokens_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsagePromptTokensDetails with CompletionUsagePromptTokensDetailsMappable {
   const CompletionUsagePromptTokensDetails({
     this.audioTokens = 0,

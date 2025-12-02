@@ -40,7 +40,7 @@ class RunObjectRequiredActionMapper
   _f$runObjectRequiredActionSubmitToolOutputs = Field(
     'runObjectRequiredActionSubmitToolOutputs',
     _$runObjectRequiredActionSubmitToolOutputs,
-    key: r'RunObjectRequiredActionSubmitToolOutputs',
+    key: r'submit_tool_outputs',
   );
 
   @override
@@ -49,6 +49,10 @@ class RunObjectRequiredActionMapper
     #runObjectRequiredActionSubmitToolOutputs:
         _f$runObjectRequiredActionSubmitToolOutputs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunObjectRequiredAction _instantiate(DecodingData data) {
     return RunObjectRequiredAction(

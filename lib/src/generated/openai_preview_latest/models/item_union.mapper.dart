@@ -14,15 +14,14 @@ class ItemUnionMapper extends ClassMapperBase<ItemUnion> {
   static ItemUnionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemUnionMapper._());
-      ItemUnionInputMessageMapper.ensureInitialized();
-      ItemUnionOutputMessageMapper.ensureInitialized();
-      ItemUnionFileSearchToolCallMapper.ensureInitialized();
-      ItemUnionComputerToolCallMapper.ensureInitialized();
-      ItemUnionComputerCallOutputItemParamMapper.ensureInitialized();
-      ItemUnionWebSearchToolCallMapper.ensureInitialized();
-      ItemUnionFunctionToolCallMapper.ensureInitialized();
-      ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized();
-      ItemUnionReasoningItemMapper.ensureInitialized();
+      ItemUnionMessageMapper.ensureInitialized();
+      ItemUnionFileSearchCallMapper.ensureInitialized();
+      ItemUnionComputerCallMapper.ensureInitialized();
+      ItemUnionComputerCallOutputMapper.ensureInitialized();
+      ItemUnionWebSearchCallMapper.ensureInitialized();
+      ItemUnionFunctionCallMapper.ensureInitialized();
+      ItemUnionFunctionCallOutputMapper.ensureInitialized();
+      ItemUnionReasoningMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,9 +31,17 @@ class ItemUnionMapper extends ClassMapperBase<ItemUnion> {
 
   @override
   final MappableFields<ItemUnion> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ItemUnion _instantiate(DecodingData data) {
-    throw MapperException.missingConstructor('ItemUnion');
+    throw MapperException.missingSubclass(
+      'ItemUnion',
+      'type',
+      '${data.value['type']}',
+    );
   }
 
   @override
@@ -61,241 +68,68 @@ abstract class ItemUnionCopyWith<$R, $In extends ItemUnion, $Out>
   ItemUnionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class ItemUnionInputMessageMapper
-    extends ClassMapperBase<ItemUnionInputMessage> {
-  ItemUnionInputMessageMapper._();
+class ItemUnionMessageMapper extends SubClassMapperBase<ItemUnionMessage> {
+  ItemUnionMessageMapper._();
 
-  static ItemUnionInputMessageMapper? _instance;
-  static ItemUnionInputMessageMapper ensureInitialized() {
+  static ItemUnionMessageMapper? _instance;
+  static ItemUnionMessageMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(_instance = ItemUnionInputMessageMapper._());
-      ItemUnionMapper.ensureInitialized();
-      InputMessageTypeTypeMapper.ensureInitialized();
-      InputMessageRoleRoleMapper.ensureInitialized();
-      InputMessageStatusStatusMapper.ensureInitialized();
-      InputContentUnionMapper.ensureInitialized();
-    }
-    return _instance!;
-  }
-
-  @override
-  final String id = 'ItemUnionInputMessage';
-
-  static InputMessageTypeType? _$type(ItemUnionInputMessage v) => v.type;
-  static const Field<ItemUnionInputMessage, InputMessageTypeType> _f$type =
-      Field('type', _$type);
-  static InputMessageRoleRole _$role(ItemUnionInputMessage v) => v.role;
-  static const Field<ItemUnionInputMessage, InputMessageRoleRole> _f$role =
-      Field('role', _$role);
-  static InputMessageStatusStatus? _$status(ItemUnionInputMessage v) =>
-      v.status;
-  static const Field<ItemUnionInputMessage, InputMessageStatusStatus>
-  _f$status = Field('status', _$status);
-  static List<InputContentUnion?> _$content(ItemUnionInputMessage v) =>
-      v.content;
-  static const Field<ItemUnionInputMessage, List<InputContentUnion?>>
-  _f$content = Field('content', _$content);
-
-  @override
-  final MappableFields<ItemUnionInputMessage> fields = const {
-    #type: _f$type,
-    #role: _f$role,
-    #status: _f$status,
-    #content: _f$content,
-  };
-
-  static ItemUnionInputMessage _instantiate(DecodingData data) {
-    return ItemUnionInputMessage(
-      type: data.dec(_f$type),
-      role: data.dec(_f$role),
-      status: data.dec(_f$status),
-      content: data.dec(_f$content),
-    );
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static ItemUnionInputMessage fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionInputMessage>(map);
-  }
-
-  static ItemUnionInputMessage fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionInputMessage>(json);
-  }
-}
-
-mixin ItemUnionInputMessageMappable {
-  String toJsonString() {
-    return ItemUnionInputMessageMapper.ensureInitialized()
-        .encodeJson<ItemUnionInputMessage>(this as ItemUnionInputMessage);
-  }
-
-  Map<String, dynamic> toJson() {
-    return ItemUnionInputMessageMapper.ensureInitialized()
-        .encodeMap<ItemUnionInputMessage>(this as ItemUnionInputMessage);
-  }
-
-  ItemUnionInputMessageCopyWith<
-    ItemUnionInputMessage,
-    ItemUnionInputMessage,
-    ItemUnionInputMessage
-  >
-  get copyWith =>
-      _ItemUnionInputMessageCopyWithImpl<
-        ItemUnionInputMessage,
-        ItemUnionInputMessage
-      >(this as ItemUnionInputMessage, $identity, $identity);
-  @override
-  String toString() {
-    return ItemUnionInputMessageMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionInputMessage,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return ItemUnionInputMessageMapper.ensureInitialized().equalsValue(
-      this as ItemUnionInputMessage,
-      other,
-    );
-  }
-
-  @override
-  int get hashCode {
-    return ItemUnionInputMessageMapper.ensureInitialized().hashValue(
-      this as ItemUnionInputMessage,
-    );
-  }
-}
-
-extension ItemUnionInputMessageValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionInputMessage, $Out> {
-  ItemUnionInputMessageCopyWith<$R, ItemUnionInputMessage, $Out>
-  get $asItemUnionInputMessage => $base.as(
-    (v, t, t2) => _ItemUnionInputMessageCopyWithImpl<$R, $Out>(v, t, t2),
-  );
-}
-
-abstract class ItemUnionInputMessageCopyWith<
-  $R,
-  $In extends ItemUnionInputMessage,
-  $Out
->
-    implements ItemUnionCopyWith<$R, $In, $Out> {
-  ListCopyWith<
-    $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
-  >
-  get content;
-  @override
-  $R call({
-    InputMessageTypeType? type,
-    InputMessageRoleRole? role,
-    InputMessageStatusStatus? status,
-    List<InputContentUnion?>? content,
-  });
-  ItemUnionInputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
-    Then<$Out2, $R2> t,
-  );
-}
-
-class _ItemUnionInputMessageCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionInputMessage, $Out>
-    implements ItemUnionInputMessageCopyWith<$R, ItemUnionInputMessage, $Out> {
-  _ItemUnionInputMessageCopyWithImpl(super.value, super.then, super.then2);
-
-  @override
-  late final ClassMapperBase<ItemUnionInputMessage> $mapper =
-      ItemUnionInputMessageMapper.ensureInitialized();
-  @override
-  ListCopyWith<
-    $R,
-    InputContentUnion?,
-    InputContentUnionCopyWith<$R, InputContentUnion, InputContentUnion>?
-  >
-  get content => ListCopyWith(
-    $value.content,
-    (v, t) => v?.copyWith.$chain(t),
-    (v) => call(content: v),
-  );
-  @override
-  $R call({
-    Object? type = $none,
-    InputMessageRoleRole? role,
-    Object? status = $none,
-    List<InputContentUnion?>? content,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != $none) #type: type,
-      if (role != null) #role: role,
-      if (status != $none) #status: status,
-      if (content != null) #content: content,
-    }),
-  );
-  @override
-  ItemUnionInputMessage $make(CopyWithData data) => ItemUnionInputMessage(
-    type: data.get(#type, or: $value.type),
-    role: data.get(#role, or: $value.role),
-    status: data.get(#status, or: $value.status),
-    content: data.get(#content, or: $value.content),
-  );
-
-  @override
-  ItemUnionInputMessageCopyWith<$R2, ItemUnionInputMessage, $Out2>
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionInputMessageCopyWithImpl<$R2, $Out2>($value, $cast, t);
-}
-
-class ItemUnionOutputMessageMapper
-    extends ClassMapperBase<ItemUnionOutputMessage> {
-  ItemUnionOutputMessageMapper._();
-
-  static ItemUnionOutputMessageMapper? _instance;
-  static ItemUnionOutputMessageMapper ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(_instance = ItemUnionOutputMessageMapper._());
-      ItemUnionMapper.ensureInitialized();
+      MapperContainer.globals.use(_instance = ItemUnionMessageMapper._());
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       OutputMessageTypeTypeMapper.ensureInitialized();
       OutputMessageRoleRoleMapper.ensureInitialized();
-      OutputContentUnionMapper.ensureInitialized();
+      OutputContentMapper.ensureInitialized();
       OutputMessageStatusStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
 
   @override
-  final String id = 'ItemUnionOutputMessage';
+  final String id = 'ItemUnionMessage';
 
-  static String _$id(ItemUnionOutputMessage v) => v.id;
-  static const Field<ItemUnionOutputMessage, String> _f$id = Field('id', _$id);
-  static OutputMessageTypeType _$type(ItemUnionOutputMessage v) => v.type;
-  static const Field<ItemUnionOutputMessage, OutputMessageTypeType> _f$type =
-      Field('type', _$type);
-  static OutputMessageRoleRole _$role(ItemUnionOutputMessage v) => v.role;
-  static const Field<ItemUnionOutputMessage, OutputMessageRoleRole> _f$role =
-      Field('role', _$role);
-  static List<OutputContentUnion?> _$content(ItemUnionOutputMessage v) =>
-      v.content;
-  static const Field<ItemUnionOutputMessage, List<OutputContentUnion?>>
-  _f$content = Field('content', _$content);
-  static OutputMessageStatusStatus _$status(ItemUnionOutputMessage v) =>
-      v.status;
-  static const Field<ItemUnionOutputMessage, OutputMessageStatusStatus>
-  _f$status = Field('status', _$status);
+  static String _$id(ItemUnionMessage v) => v.id;
+  static const Field<ItemUnionMessage, String> _f$id = Field('id', _$id);
+  static OutputMessageTypeType _$type(ItemUnionMessage v) => v.type;
+  static const Field<ItemUnionMessage, OutputMessageTypeType> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static OutputMessageRoleRole _$role(ItemUnionMessage v) => v.role;
+  static const Field<ItemUnionMessage, OutputMessageRoleRole> _f$role = Field(
+    'role',
+    _$role,
+  );
+  static List<OutputContent> _$content(ItemUnionMessage v) => v.content;
+  static const Field<ItemUnionMessage, List<OutputContent>> _f$content = Field(
+    'content',
+    _$content,
+  );
+  static OutputMessageStatusStatus _$status(ItemUnionMessage v) => v.status;
+  static const Field<ItemUnionMessage, OutputMessageStatusStatus> _f$status =
+      Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionOutputMessage> fields = const {
+  final MappableFields<ItemUnionMessage> fields = const {
     #id: _f$id,
     #type: _f$type,
     #role: _f$role,
     #content: _f$content,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionOutputMessage _instantiate(DecodingData data) {
-    return ItemUnionOutputMessage(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'message';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionMessage _instantiate(DecodingData data) {
+    return ItemUnionMessage(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       role: data.dec(_f$role),
@@ -307,77 +141,69 @@ class ItemUnionOutputMessageMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionOutputMessage fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionOutputMessage>(map);
+  static ItemUnionMessage fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionMessage>(map);
   }
 
-  static ItemUnionOutputMessage fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionOutputMessage>(json);
+  static ItemUnionMessage fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionMessage>(json);
   }
 }
 
-mixin ItemUnionOutputMessageMappable {
+mixin ItemUnionMessageMappable {
   String toJsonString() {
-    return ItemUnionOutputMessageMapper.ensureInitialized()
-        .encodeJson<ItemUnionOutputMessage>(this as ItemUnionOutputMessage);
+    return ItemUnionMessageMapper.ensureInitialized()
+        .encodeJson<ItemUnionMessage>(this as ItemUnionMessage);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionOutputMessageMapper.ensureInitialized()
-        .encodeMap<ItemUnionOutputMessage>(this as ItemUnionOutputMessage);
+    return ItemUnionMessageMapper.ensureInitialized()
+        .encodeMap<ItemUnionMessage>(this as ItemUnionMessage);
   }
 
-  ItemUnionOutputMessageCopyWith<
-    ItemUnionOutputMessage,
-    ItemUnionOutputMessage,
-    ItemUnionOutputMessage
-  >
+  ItemUnionMessageCopyWith<ItemUnionMessage, ItemUnionMessage, ItemUnionMessage>
   get copyWith =>
-      _ItemUnionOutputMessageCopyWithImpl<
-        ItemUnionOutputMessage,
-        ItemUnionOutputMessage
-      >(this as ItemUnionOutputMessage, $identity, $identity);
+      _ItemUnionMessageCopyWithImpl<ItemUnionMessage, ItemUnionMessage>(
+        this as ItemUnionMessage,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
-    return ItemUnionOutputMessageMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionOutputMessage,
+    return ItemUnionMessageMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionMessage,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionOutputMessageMapper.ensureInitialized().equalsValue(
-      this as ItemUnionOutputMessage,
+    return ItemUnionMessageMapper.ensureInitialized().equalsValue(
+      this as ItemUnionMessage,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionOutputMessageMapper.ensureInitialized().hashValue(
-      this as ItemUnionOutputMessage,
+    return ItemUnionMessageMapper.ensureInitialized().hashValue(
+      this as ItemUnionMessage,
     );
   }
 }
 
-extension ItemUnionOutputMessageValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionOutputMessage, $Out> {
-  ItemUnionOutputMessageCopyWith<$R, ItemUnionOutputMessage, $Out>
-  get $asItemUnionOutputMessage => $base.as(
-    (v, t, t2) => _ItemUnionOutputMessageCopyWithImpl<$R, $Out>(v, t, t2),
-  );
+extension ItemUnionMessageValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionMessage, $Out> {
+  ItemUnionMessageCopyWith<$R, ItemUnionMessage, $Out>
+  get $asItemUnionMessage =>
+      $base.as((v, t, t2) => _ItemUnionMessageCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
-abstract class ItemUnionOutputMessageCopyWith<
-  $R,
-  $In extends ItemUnionOutputMessage,
-  $Out
->
+abstract class ItemUnionMessageCopyWith<$R, $In extends ItemUnionMessage, $Out>
     implements ItemUnionCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    OutputContentUnion?,
-    OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
+    OutputContent,
+    OutputContentCopyWith<$R, OutputContent, OutputContent>
   >
   get content;
   @override
@@ -385,32 +211,31 @@ abstract class ItemUnionOutputMessageCopyWith<
     String? id,
     OutputMessageTypeType? type,
     OutputMessageRoleRole? role,
-    List<OutputContentUnion?>? content,
+    List<OutputContent>? content,
     OutputMessageStatusStatus? status,
   });
-  ItemUnionOutputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionOutputMessageCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionOutputMessage, $Out>
-    implements
-        ItemUnionOutputMessageCopyWith<$R, ItemUnionOutputMessage, $Out> {
-  _ItemUnionOutputMessageCopyWithImpl(super.value, super.then, super.then2);
+class _ItemUnionMessageCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionMessage, $Out>
+    implements ItemUnionMessageCopyWith<$R, ItemUnionMessage, $Out> {
+  _ItemUnionMessageCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionOutputMessage> $mapper =
-      ItemUnionOutputMessageMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionMessage> $mapper =
+      ItemUnionMessageMapper.ensureInitialized();
   @override
   ListCopyWith<
     $R,
-    OutputContentUnion?,
-    OutputContentUnionCopyWith<$R, OutputContentUnion, OutputContentUnion>?
+    OutputContent,
+    OutputContentCopyWith<$R, OutputContent, OutputContent>
   >
   get content => ListCopyWith(
     $value.content,
-    (v, t) => v?.copyWith.$chain(t),
+    (v, t) => v.copyWith.$chain(t),
     (v) => call(content: v),
   );
   @override
@@ -418,7 +243,7 @@ class _ItemUnionOutputMessageCopyWithImpl<$R, $Out>
     String? id,
     OutputMessageTypeType? type,
     OutputMessageRoleRole? role,
-    List<OutputContentUnion?>? content,
+    List<OutputContent>? content,
     OutputMessageStatusStatus? status,
   }) => $apply(
     FieldCopyWithData({
@@ -430,7 +255,7 @@ class _ItemUnionOutputMessageCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionOutputMessage $make(CopyWithData data) => ItemUnionOutputMessage(
+  ItemUnionMessage $make(CopyWithData data) => ItemUnionMessage(
     id: data.get(#id, or: $value.id),
     type: data.get(#type, or: $value.type),
     role: data.get(#role, or: $value.role),
@@ -439,22 +264,22 @@ class _ItemUnionOutputMessageCopyWithImpl<$R, $Out>
   );
 
   @override
-  ItemUnionOutputMessageCopyWith<$R2, ItemUnionOutputMessage, $Out2>
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionOutputMessageCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  ItemUnionMessageCopyWith<$R2, ItemUnionMessage, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  ) => _ItemUnionMessageCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionFileSearchToolCallMapper
-    extends ClassMapperBase<ItemUnionFileSearchToolCall> {
-  ItemUnionFileSearchToolCallMapper._();
+class ItemUnionFileSearchCallMapper
+    extends SubClassMapperBase<ItemUnionFileSearchCall> {
+  ItemUnionFileSearchCallMapper._();
 
-  static ItemUnionFileSearchToolCallMapper? _instance;
-  static ItemUnionFileSearchToolCallMapper ensureInitialized() {
+  static ItemUnionFileSearchCallMapper? _instance;
+  static ItemUnionFileSearchCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance = ItemUnionFileSearchToolCallMapper._(),
+        _instance = ItemUnionFileSearchCallMapper._(),
       );
-      ItemUnionMapper.ensureInitialized();
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       FileSearchToolCallTypeTypeMapper.ensureInitialized();
       FileSearchToolCallStatusStatusMapper.ensureInitialized();
       FileSearchToolCallResultsMapper.ensureInitialized();
@@ -463,48 +288,50 @@ class ItemUnionFileSearchToolCallMapper
   }
 
   @override
-  final String id = 'ItemUnionFileSearchToolCall';
+  final String id = 'ItemUnionFileSearchCall';
 
-  static String _$id(ItemUnionFileSearchToolCall v) => v.id;
-  static const Field<ItemUnionFileSearchToolCall, String> _f$id = Field(
-    'id',
-    _$id,
-  );
-  static FileSearchToolCallTypeType _$type(ItemUnionFileSearchToolCall v) =>
-      v.type;
-  static const Field<ItemUnionFileSearchToolCall, FileSearchToolCallTypeType>
+  static String _$id(ItemUnionFileSearchCall v) => v.id;
+  static const Field<ItemUnionFileSearchCall, String> _f$id = Field('id', _$id);
+  static FileSearchToolCallTypeType _$type(ItemUnionFileSearchCall v) => v.type;
+  static const Field<ItemUnionFileSearchCall, FileSearchToolCallTypeType>
   _f$type = Field('type', _$type);
-  static FileSearchToolCallStatusStatus _$status(
-    ItemUnionFileSearchToolCall v,
-  ) => v.status;
-  static const Field<
-    ItemUnionFileSearchToolCall,
-    FileSearchToolCallStatusStatus
-  >
+  static FileSearchToolCallStatusStatus _$status(ItemUnionFileSearchCall v) =>
+      v.status;
+  static const Field<ItemUnionFileSearchCall, FileSearchToolCallStatusStatus>
   _f$status = Field('status', _$status);
-  static List<String> _$queries(ItemUnionFileSearchToolCall v) => v.queries;
-  static const Field<ItemUnionFileSearchToolCall, List<String>> _f$queries =
-      Field('queries', _$queries);
+  static List<String> _$queries(ItemUnionFileSearchCall v) => v.queries;
+  static const Field<ItemUnionFileSearchCall, List<String>> _f$queries = Field(
+    'queries',
+    _$queries,
+  );
   static List<FileSearchToolCallResults>? _$results(
-    ItemUnionFileSearchToolCall v,
+    ItemUnionFileSearchCall v,
   ) => v.results;
-  static const Field<
-    ItemUnionFileSearchToolCall,
-    List<FileSearchToolCallResults>
-  >
+  static const Field<ItemUnionFileSearchCall, List<FileSearchToolCallResults>>
   _f$results = Field('results', _$results);
 
   @override
-  final MappableFields<ItemUnionFileSearchToolCall> fields = const {
+  final MappableFields<ItemUnionFileSearchCall> fields = const {
     #id: _f$id,
     #type: _f$type,
     #status: _f$status,
     #queries: _f$queries,
     #results: _f$results,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionFileSearchToolCall _instantiate(DecodingData data) {
-    return ItemUnionFileSearchToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search_call';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionFileSearchCall _instantiate(DecodingData data) {
+    return ItemUnionFileSearchCall(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       status: data.dec(_f$status),
@@ -516,74 +343,70 @@ class ItemUnionFileSearchToolCallMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionFileSearchToolCall fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionFileSearchToolCall>(map);
+  static ItemUnionFileSearchCall fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionFileSearchCall>(map);
   }
 
-  static ItemUnionFileSearchToolCall fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionFileSearchToolCall>(json);
+  static ItemUnionFileSearchCall fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionFileSearchCall>(json);
   }
 }
 
-mixin ItemUnionFileSearchToolCallMappable {
+mixin ItemUnionFileSearchCallMappable {
   String toJsonString() {
-    return ItemUnionFileSearchToolCallMapper.ensureInitialized()
-        .encodeJson<ItemUnionFileSearchToolCall>(
-          this as ItemUnionFileSearchToolCall,
-        );
+    return ItemUnionFileSearchCallMapper.ensureInitialized()
+        .encodeJson<ItemUnionFileSearchCall>(this as ItemUnionFileSearchCall);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionFileSearchToolCallMapper.ensureInitialized()
-        .encodeMap<ItemUnionFileSearchToolCall>(
-          this as ItemUnionFileSearchToolCall,
-        );
+    return ItemUnionFileSearchCallMapper.ensureInitialized()
+        .encodeMap<ItemUnionFileSearchCall>(this as ItemUnionFileSearchCall);
   }
 
-  ItemUnionFileSearchToolCallCopyWith<
-    ItemUnionFileSearchToolCall,
-    ItemUnionFileSearchToolCall,
-    ItemUnionFileSearchToolCall
+  ItemUnionFileSearchCallCopyWith<
+    ItemUnionFileSearchCall,
+    ItemUnionFileSearchCall,
+    ItemUnionFileSearchCall
   >
   get copyWith =>
-      _ItemUnionFileSearchToolCallCopyWithImpl<
-        ItemUnionFileSearchToolCall,
-        ItemUnionFileSearchToolCall
-      >(this as ItemUnionFileSearchToolCall, $identity, $identity);
+      _ItemUnionFileSearchCallCopyWithImpl<
+        ItemUnionFileSearchCall,
+        ItemUnionFileSearchCall
+      >(this as ItemUnionFileSearchCall, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionFileSearchToolCallMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionFileSearchToolCall,
+    return ItemUnionFileSearchCallMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionFileSearchCall,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionFileSearchToolCallMapper.ensureInitialized().equalsValue(
-      this as ItemUnionFileSearchToolCall,
+    return ItemUnionFileSearchCallMapper.ensureInitialized().equalsValue(
+      this as ItemUnionFileSearchCall,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionFileSearchToolCallMapper.ensureInitialized().hashValue(
-      this as ItemUnionFileSearchToolCall,
+    return ItemUnionFileSearchCallMapper.ensureInitialized().hashValue(
+      this as ItemUnionFileSearchCall,
     );
   }
 }
 
-extension ItemUnionFileSearchToolCallValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionFileSearchToolCall, $Out> {
-  ItemUnionFileSearchToolCallCopyWith<$R, ItemUnionFileSearchToolCall, $Out>
-  get $asItemUnionFileSearchToolCall => $base.as(
-    (v, t, t2) => _ItemUnionFileSearchToolCallCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionFileSearchCallValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionFileSearchCall, $Out> {
+  ItemUnionFileSearchCallCopyWith<$R, ItemUnionFileSearchCall, $Out>
+  get $asItemUnionFileSearchCall => $base.as(
+    (v, t, t2) => _ItemUnionFileSearchCallCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionFileSearchToolCallCopyWith<
+abstract class ItemUnionFileSearchCallCopyWith<
   $R,
-  $In extends ItemUnionFileSearchToolCall,
+  $In extends ItemUnionFileSearchCall,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -606,28 +429,20 @@ abstract class ItemUnionFileSearchToolCallCopyWith<
     List<String>? queries,
     List<FileSearchToolCallResults>? results,
   });
-  ItemUnionFileSearchToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionFileSearchCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionFileSearchToolCallCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionFileSearchToolCall, $Out>
+class _ItemUnionFileSearchCallCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionFileSearchCall, $Out>
     implements
-        ItemUnionFileSearchToolCallCopyWith<
-          $R,
-          ItemUnionFileSearchToolCall,
-          $Out
-        > {
-  _ItemUnionFileSearchToolCallCopyWithImpl(
-    super.value,
-    super.then,
-    super.then2,
-  );
+        ItemUnionFileSearchCallCopyWith<$R, ItemUnionFileSearchCall, $Out> {
+  _ItemUnionFileSearchCallCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionFileSearchToolCall> $mapper =
-      ItemUnionFileSearchToolCallMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionFileSearchCall> $mapper =
+      ItemUnionFileSearchCallMapper.ensureInitialized();
   @override
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get queries =>
       ListCopyWith(
@@ -669,34 +484,31 @@ class _ItemUnionFileSearchToolCallCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionFileSearchToolCall $make(CopyWithData data) =>
-      ItemUnionFileSearchToolCall(
-        id: data.get(#id, or: $value.id),
-        type: data.get(#type, or: $value.type),
-        status: data.get(#status, or: $value.status),
-        queries: data.get(#queries, or: $value.queries),
-        results: data.get(#results, or: $value.results),
-      );
+  ItemUnionFileSearchCall $make(CopyWithData data) => ItemUnionFileSearchCall(
+    id: data.get(#id, or: $value.id),
+    type: data.get(#type, or: $value.type),
+    status: data.get(#status, or: $value.status),
+    queries: data.get(#queries, or: $value.queries),
+    results: data.get(#results, or: $value.results),
+  );
 
   @override
-  ItemUnionFileSearchToolCallCopyWith<$R2, ItemUnionFileSearchToolCall, $Out2>
+  ItemUnionFileSearchCallCopyWith<$R2, ItemUnionFileSearchCall, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionFileSearchToolCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
+      _ItemUnionFileSearchCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionComputerToolCallMapper
-    extends ClassMapperBase<ItemUnionComputerToolCall> {
-  ItemUnionComputerToolCallMapper._();
+class ItemUnionComputerCallMapper
+    extends SubClassMapperBase<ItemUnionComputerCall> {
+  ItemUnionComputerCallMapper._();
 
-  static ItemUnionComputerToolCallMapper? _instance;
-  static ItemUnionComputerToolCallMapper ensureInitialized() {
+  static ItemUnionComputerCallMapper? _instance;
+  static ItemUnionComputerCallMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance = ItemUnionComputerToolCallMapper._(),
-      );
-      ItemUnionMapper.ensureInitialized();
+      MapperContainer.globals.use(_instance = ItemUnionComputerCallMapper._());
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       ComputerToolCallTypeTypeMapper.ensureInitialized();
-      ComputerActionUnionMapper.ensureInitialized();
+      ComputerActionMapper.ensureInitialized();
       ComputerToolCallSafetyCheckMapper.ensureInitialized();
       ComputerToolCallStatusStatusMapper.ensureInitialized();
     }
@@ -704,39 +516,40 @@ class ItemUnionComputerToolCallMapper
   }
 
   @override
-  final String id = 'ItemUnionComputerToolCall';
+  final String id = 'ItemUnionComputerCall';
 
-  static ComputerToolCallTypeType _$type(ItemUnionComputerToolCall v) => v.type;
-  static const Field<ItemUnionComputerToolCall, ComputerToolCallTypeType>
-  _f$type = Field('type', _$type);
-  static String _$id(ItemUnionComputerToolCall v) => v.id;
-  static const Field<ItemUnionComputerToolCall, String> _f$id = Field(
-    'id',
-    _$id,
-  );
-  static String _$callId(ItemUnionComputerToolCall v) => v.callId;
-  static const Field<ItemUnionComputerToolCall, String> _f$callId = Field(
+  static ComputerToolCallTypeType _$type(ItemUnionComputerCall v) => v.type;
+  static const Field<ItemUnionComputerCall, ComputerToolCallTypeType> _f$type =
+      Field('type', _$type);
+  static String _$id(ItemUnionComputerCall v) => v.id;
+  static const Field<ItemUnionComputerCall, String> _f$id = Field('id', _$id);
+  static String _$callId(ItemUnionComputerCall v) => v.callId;
+  static const Field<ItemUnionComputerCall, String> _f$callId = Field(
     'callId',
     _$callId,
+    key: r'call_id',
   );
-  static ComputerActionUnion? _$action(ItemUnionComputerToolCall v) => v.action;
-  static const Field<ItemUnionComputerToolCall, ComputerActionUnion> _f$action =
-      Field('action', _$action);
+  static ComputerAction _$action(ItemUnionComputerCall v) => v.action;
+  static const Field<ItemUnionComputerCall, ComputerAction> _f$action = Field(
+    'action',
+    _$action,
+  );
   static List<ComputerToolCallSafetyCheck> _$pendingSafetyChecks(
-    ItemUnionComputerToolCall v,
+    ItemUnionComputerCall v,
   ) => v.pendingSafetyChecks;
-  static const Field<
-    ItemUnionComputerToolCall,
-    List<ComputerToolCallSafetyCheck>
-  >
-  _f$pendingSafetyChecks = Field('pendingSafetyChecks', _$pendingSafetyChecks);
-  static ComputerToolCallStatusStatus _$status(ItemUnionComputerToolCall v) =>
+  static const Field<ItemUnionComputerCall, List<ComputerToolCallSafetyCheck>>
+  _f$pendingSafetyChecks = Field(
+    'pendingSafetyChecks',
+    _$pendingSafetyChecks,
+    key: r'pending_safety_checks',
+  );
+  static ComputerToolCallStatusStatus _$status(ItemUnionComputerCall v) =>
       v.status;
-  static const Field<ItemUnionComputerToolCall, ComputerToolCallStatusStatus>
+  static const Field<ItemUnionComputerCall, ComputerToolCallStatusStatus>
   _f$status = Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionComputerToolCall> fields = const {
+  final MappableFields<ItemUnionComputerCall> fields = const {
     #type: _f$type,
     #id: _f$id,
     #callId: _f$callId,
@@ -744,9 +557,20 @@ class ItemUnionComputerToolCallMapper
     #pendingSafetyChecks: _f$pendingSafetyChecks,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionComputerToolCall _instantiate(DecodingData data) {
-    return ItemUnionComputerToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'computer_call';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionComputerCall _instantiate(DecodingData data) {
+    return ItemUnionComputerCall(
       type: data.dec(_f$type),
       id: data.dec(_f$id),
       callId: data.dec(_f$callId),
@@ -759,79 +583,74 @@ class ItemUnionComputerToolCallMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionComputerToolCall fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionComputerToolCall>(map);
+  static ItemUnionComputerCall fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionComputerCall>(map);
   }
 
-  static ItemUnionComputerToolCall fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionComputerToolCall>(json);
+  static ItemUnionComputerCall fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionComputerCall>(json);
   }
 }
 
-mixin ItemUnionComputerToolCallMappable {
+mixin ItemUnionComputerCallMappable {
   String toJsonString() {
-    return ItemUnionComputerToolCallMapper.ensureInitialized()
-        .encodeJson<ItemUnionComputerToolCall>(
-          this as ItemUnionComputerToolCall,
-        );
+    return ItemUnionComputerCallMapper.ensureInitialized()
+        .encodeJson<ItemUnionComputerCall>(this as ItemUnionComputerCall);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionComputerToolCallMapper.ensureInitialized()
-        .encodeMap<ItemUnionComputerToolCall>(
-          this as ItemUnionComputerToolCall,
-        );
+    return ItemUnionComputerCallMapper.ensureInitialized()
+        .encodeMap<ItemUnionComputerCall>(this as ItemUnionComputerCall);
   }
 
-  ItemUnionComputerToolCallCopyWith<
-    ItemUnionComputerToolCall,
-    ItemUnionComputerToolCall,
-    ItemUnionComputerToolCall
+  ItemUnionComputerCallCopyWith<
+    ItemUnionComputerCall,
+    ItemUnionComputerCall,
+    ItemUnionComputerCall
   >
   get copyWith =>
-      _ItemUnionComputerToolCallCopyWithImpl<
-        ItemUnionComputerToolCall,
-        ItemUnionComputerToolCall
-      >(this as ItemUnionComputerToolCall, $identity, $identity);
+      _ItemUnionComputerCallCopyWithImpl<
+        ItemUnionComputerCall,
+        ItemUnionComputerCall
+      >(this as ItemUnionComputerCall, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionComputerToolCallMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionComputerToolCall,
+    return ItemUnionComputerCallMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionComputerCall,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionComputerToolCallMapper.ensureInitialized().equalsValue(
-      this as ItemUnionComputerToolCall,
+    return ItemUnionComputerCallMapper.ensureInitialized().equalsValue(
+      this as ItemUnionComputerCall,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionComputerToolCallMapper.ensureInitialized().hashValue(
-      this as ItemUnionComputerToolCall,
+    return ItemUnionComputerCallMapper.ensureInitialized().hashValue(
+      this as ItemUnionComputerCall,
     );
   }
 }
 
-extension ItemUnionComputerToolCallValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionComputerToolCall, $Out> {
-  ItemUnionComputerToolCallCopyWith<$R, ItemUnionComputerToolCall, $Out>
-  get $asItemUnionComputerToolCall => $base.as(
-    (v, t, t2) => _ItemUnionComputerToolCallCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionComputerCallValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionComputerCall, $Out> {
+  ItemUnionComputerCallCopyWith<$R, ItemUnionComputerCall, $Out>
+  get $asItemUnionComputerCall => $base.as(
+    (v, t, t2) => _ItemUnionComputerCallCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionComputerToolCallCopyWith<
+abstract class ItemUnionComputerCallCopyWith<
   $R,
-  $In extends ItemUnionComputerToolCall,
+  $In extends ItemUnionComputerCall,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
-  ComputerActionUnionCopyWith<$R, ComputerActionUnion, ComputerActionUnion>?
-  get action;
+  ComputerActionCopyWith<$R, ComputerAction, ComputerAction> get action;
   ListCopyWith<
     $R,
     ComputerToolCallSafetyCheck,
@@ -847,27 +666,26 @@ abstract class ItemUnionComputerToolCallCopyWith<
     ComputerToolCallTypeType? type,
     String? id,
     String? callId,
-    ComputerActionUnion? action,
+    ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
     ComputerToolCallStatusStatus? status,
   });
-  ItemUnionComputerToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionComputerCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionComputerToolCallCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionComputerToolCall, $Out>
-    implements
-        ItemUnionComputerToolCallCopyWith<$R, ItemUnionComputerToolCall, $Out> {
-  _ItemUnionComputerToolCallCopyWithImpl(super.value, super.then, super.then2);
+class _ItemUnionComputerCallCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionComputerCall, $Out>
+    implements ItemUnionComputerCallCopyWith<$R, ItemUnionComputerCall, $Out> {
+  _ItemUnionComputerCallCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionComputerToolCall> $mapper =
-      ItemUnionComputerToolCallMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionComputerCall> $mapper =
+      ItemUnionComputerCallMapper.ensureInitialized();
   @override
-  ComputerActionUnionCopyWith<$R, ComputerActionUnion, ComputerActionUnion>?
-  get action => $value.action?.copyWith.$chain((v) => call(action: v));
+  ComputerActionCopyWith<$R, ComputerAction, ComputerAction> get action =>
+      $value.action.copyWith.$chain((v) => call(action: v));
   @override
   ListCopyWith<
     $R,
@@ -888,7 +706,7 @@ class _ItemUnionComputerToolCallCopyWithImpl<$R, $Out>
     ComputerToolCallTypeType? type,
     String? id,
     String? callId,
-    Object? action = $none,
+    ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
     ComputerToolCallStatusStatus? status,
   }) => $apply(
@@ -896,43 +714,42 @@ class _ItemUnionComputerToolCallCopyWithImpl<$R, $Out>
       if (type != null) #type: type,
       if (id != null) #id: id,
       if (callId != null) #callId: callId,
-      if (action != $none) #action: action,
+      if (action != null) #action: action,
       if (pendingSafetyChecks != null)
         #pendingSafetyChecks: pendingSafetyChecks,
       if (status != null) #status: status,
     }),
   );
   @override
-  ItemUnionComputerToolCall $make(CopyWithData data) =>
-      ItemUnionComputerToolCall(
-        type: data.get(#type, or: $value.type),
-        id: data.get(#id, or: $value.id),
-        callId: data.get(#callId, or: $value.callId),
-        action: data.get(#action, or: $value.action),
-        pendingSafetyChecks: data.get(
-          #pendingSafetyChecks,
-          or: $value.pendingSafetyChecks,
-        ),
-        status: data.get(#status, or: $value.status),
-      );
+  ItemUnionComputerCall $make(CopyWithData data) => ItemUnionComputerCall(
+    type: data.get(#type, or: $value.type),
+    id: data.get(#id, or: $value.id),
+    callId: data.get(#callId, or: $value.callId),
+    action: data.get(#action, or: $value.action),
+    pendingSafetyChecks: data.get(
+      #pendingSafetyChecks,
+      or: $value.pendingSafetyChecks,
+    ),
+    status: data.get(#status, or: $value.status),
+  );
 
   @override
-  ItemUnionComputerToolCallCopyWith<$R2, ItemUnionComputerToolCall, $Out2>
+  ItemUnionComputerCallCopyWith<$R2, ItemUnionComputerCall, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionComputerToolCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
+      _ItemUnionComputerCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionComputerCallOutputItemParamMapper
-    extends ClassMapperBase<ItemUnionComputerCallOutputItemParam> {
-  ItemUnionComputerCallOutputItemParamMapper._();
+class ItemUnionComputerCallOutputMapper
+    extends SubClassMapperBase<ItemUnionComputerCallOutput> {
+  ItemUnionComputerCallOutputMapper._();
 
-  static ItemUnionComputerCallOutputItemParamMapper? _instance;
-  static ItemUnionComputerCallOutputItemParamMapper ensureInitialized() {
+  static ItemUnionComputerCallOutputMapper? _instance;
+  static ItemUnionComputerCallOutputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance = ItemUnionComputerCallOutputItemParamMapper._(),
+        _instance = ItemUnionComputerCallOutputMapper._(),
       );
-      ItemUnionMapper.ensureInitialized();
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       ComputerCallOutputItemParamTypeTypeMapper.ensureInitialized();
       ComputerScreenshotImageMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
@@ -942,52 +759,54 @@ class ItemUnionComputerCallOutputItemParamMapper
   }
 
   @override
-  final String id = 'ItemUnionComputerCallOutputItemParam';
+  final String id = 'ItemUnionComputerCallOutput';
 
-  static String? _$id(ItemUnionComputerCallOutputItemParam v) => v.id;
-  static const Field<ItemUnionComputerCallOutputItemParam, String> _f$id =
-      Field('id', _$id);
-  static String _$callId(ItemUnionComputerCallOutputItemParam v) => v.callId;
-  static const Field<ItemUnionComputerCallOutputItemParam, String> _f$callId =
-      Field('callId', _$callId);
+  static String? _$id(ItemUnionComputerCallOutput v) => v.id;
+  static const Field<ItemUnionComputerCallOutput, String> _f$id = Field(
+    'id',
+    _$id,
+  );
+  static String _$callId(ItemUnionComputerCallOutput v) => v.callId;
+  static const Field<ItemUnionComputerCallOutput, String> _f$callId = Field(
+    'callId',
+    _$callId,
+    key: r'call_id',
+  );
   static ComputerCallOutputItemParamTypeType _$type(
-    ItemUnionComputerCallOutputItemParam v,
+    ItemUnionComputerCallOutput v,
   ) => v.type;
   static const Field<
-    ItemUnionComputerCallOutputItemParam,
+    ItemUnionComputerCallOutput,
     ComputerCallOutputItemParamTypeType
   >
   _f$type = Field('type', _$type);
-  static ComputerScreenshotImage _$output(
-    ItemUnionComputerCallOutputItemParam v,
-  ) => v.output;
-  static const Field<
-    ItemUnionComputerCallOutputItemParam,
-    ComputerScreenshotImage
-  >
+  static ComputerScreenshotImage _$output(ItemUnionComputerCallOutput v) =>
+      v.output;
+  static const Field<ItemUnionComputerCallOutput, ComputerScreenshotImage>
   _f$output = Field('output', _$output);
   static List<ComputerCallSafetyCheckParam>? _$acknowledgedSafetyChecks(
-    ItemUnionComputerCallOutputItemParam v,
+    ItemUnionComputerCallOutput v,
   ) => v.acknowledgedSafetyChecks;
   static const Field<
-    ItemUnionComputerCallOutputItemParam,
+    ItemUnionComputerCallOutput,
     List<ComputerCallSafetyCheckParam>
   >
   _f$acknowledgedSafetyChecks = Field(
     'acknowledgedSafetyChecks',
     _$acknowledgedSafetyChecks,
+    key: r'acknowledged_safety_checks',
   );
   static ComputerCallOutputItemParamStatusStatus? _$status(
-    ItemUnionComputerCallOutputItemParam v,
+    ItemUnionComputerCallOutput v,
   ) => v.status;
   static const Field<
-    ItemUnionComputerCallOutputItemParam,
+    ItemUnionComputerCallOutput,
     ComputerCallOutputItemParamStatusStatus
   >
   _f$status = Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionComputerCallOutputItemParam> fields = const {
+  final MappableFields<ItemUnionComputerCallOutput> fields = const {
     #id: _f$id,
     #callId: _f$callId,
     #type: _f$type,
@@ -995,9 +814,20 @@ class ItemUnionComputerCallOutputItemParamMapper
     #acknowledgedSafetyChecks: _f$acknowledgedSafetyChecks,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionComputerCallOutputItemParam _instantiate(DecodingData data) {
-    return ItemUnionComputerCallOutputItemParam(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'computer_call_output';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionComputerCallOutput _instantiate(DecodingData data) {
+    return ItemUnionComputerCallOutput(
       id: data.dec(_f$id),
       callId: data.dec(_f$callId),
       type: data.dec(_f$type),
@@ -1010,81 +840,74 @@ class ItemUnionComputerCallOutputItemParamMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionComputerCallOutputItemParam fromJson(
-    Map<String, dynamic> map,
-  ) {
-    return ensureInitialized().decodeMap<ItemUnionComputerCallOutputItemParam>(
-      map,
-    );
+  static ItemUnionComputerCallOutput fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionComputerCallOutput>(map);
   }
 
-  static ItemUnionComputerCallOutputItemParam fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionComputerCallOutputItemParam>(
-      json,
-    );
+  static ItemUnionComputerCallOutput fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionComputerCallOutput>(json);
   }
 }
 
-mixin ItemUnionComputerCallOutputItemParamMappable {
+mixin ItemUnionComputerCallOutputMappable {
   String toJsonString() {
-    return ItemUnionComputerCallOutputItemParamMapper.ensureInitialized()
-        .encodeJson<ItemUnionComputerCallOutputItemParam>(
-          this as ItemUnionComputerCallOutputItemParam,
+    return ItemUnionComputerCallOutputMapper.ensureInitialized()
+        .encodeJson<ItemUnionComputerCallOutput>(
+          this as ItemUnionComputerCallOutput,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionComputerCallOutputItemParamMapper.ensureInitialized()
-        .encodeMap<ItemUnionComputerCallOutputItemParam>(
-          this as ItemUnionComputerCallOutputItemParam,
+    return ItemUnionComputerCallOutputMapper.ensureInitialized()
+        .encodeMap<ItemUnionComputerCallOutput>(
+          this as ItemUnionComputerCallOutput,
         );
   }
 
-  ItemUnionComputerCallOutputItemParamCopyWith<
-    ItemUnionComputerCallOutputItemParam,
-    ItemUnionComputerCallOutputItemParam,
-    ItemUnionComputerCallOutputItemParam
+  ItemUnionComputerCallOutputCopyWith<
+    ItemUnionComputerCallOutput,
+    ItemUnionComputerCallOutput,
+    ItemUnionComputerCallOutput
   >
   get copyWith =>
-      _ItemUnionComputerCallOutputItemParamCopyWithImpl<
-        ItemUnionComputerCallOutputItemParam,
-        ItemUnionComputerCallOutputItemParam
-      >(this as ItemUnionComputerCallOutputItemParam, $identity, $identity);
+      _ItemUnionComputerCallOutputCopyWithImpl<
+        ItemUnionComputerCallOutput,
+        ItemUnionComputerCallOutput
+      >(this as ItemUnionComputerCallOutput, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionComputerCallOutputItemParamMapper.ensureInitialized()
-        .stringifyValue(this as ItemUnionComputerCallOutputItemParam);
+    return ItemUnionComputerCallOutputMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionComputerCallOutput,
+    );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionComputerCallOutputItemParamMapper.ensureInitialized()
-        .equalsValue(this as ItemUnionComputerCallOutputItemParam, other);
+    return ItemUnionComputerCallOutputMapper.ensureInitialized().equalsValue(
+      this as ItemUnionComputerCallOutput,
+      other,
+    );
   }
 
   @override
   int get hashCode {
-    return ItemUnionComputerCallOutputItemParamMapper.ensureInitialized()
-        .hashValue(this as ItemUnionComputerCallOutputItemParam);
+    return ItemUnionComputerCallOutputMapper.ensureInitialized().hashValue(
+      this as ItemUnionComputerCallOutput,
+    );
   }
 }
 
-extension ItemUnionComputerCallOutputItemParamValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionComputerCallOutputItemParam, $Out> {
-  ItemUnionComputerCallOutputItemParamCopyWith<
-    $R,
-    ItemUnionComputerCallOutputItemParam,
-    $Out
-  >
-  get $asItemUnionComputerCallOutputItemParam => $base.as(
-    (v, t, t2) =>
-        _ItemUnionComputerCallOutputItemParamCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionComputerCallOutputValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionComputerCallOutput, $Out> {
+  ItemUnionComputerCallOutputCopyWith<$R, ItemUnionComputerCallOutput, $Out>
+  get $asItemUnionComputerCallOutput => $base.as(
+    (v, t, t2) => _ItemUnionComputerCallOutputCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionComputerCallOutputItemParamCopyWith<
+abstract class ItemUnionComputerCallOutputCopyWith<
   $R,
-  $In extends ItemUnionComputerCallOutputItemParam,
+  $In extends ItemUnionComputerCallOutput,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -1113,27 +936,28 @@ abstract class ItemUnionComputerCallOutputItemParamCopyWith<
     List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
     ComputerCallOutputItemParamStatusStatus? status,
   });
-  ItemUnionComputerCallOutputItemParamCopyWith<$R2, $In, $Out2>
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+  ItemUnionComputerCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
 }
 
-class _ItemUnionComputerCallOutputItemParamCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionComputerCallOutputItemParam, $Out>
+class _ItemUnionComputerCallOutputCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionComputerCallOutput, $Out>
     implements
-        ItemUnionComputerCallOutputItemParamCopyWith<
+        ItemUnionComputerCallOutputCopyWith<
           $R,
-          ItemUnionComputerCallOutputItemParam,
+          ItemUnionComputerCallOutput,
           $Out
         > {
-  _ItemUnionComputerCallOutputItemParamCopyWithImpl(
+  _ItemUnionComputerCallOutputCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<ItemUnionComputerCallOutputItemParam> $mapper =
-      ItemUnionComputerCallOutputItemParamMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionComputerCallOutput> $mapper =
+      ItemUnionComputerCallOutputMapper.ensureInitialized();
   @override
   ComputerScreenshotImageCopyWith<
     $R,
@@ -1178,8 +1002,8 @@ class _ItemUnionComputerCallOutputItemParamCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionComputerCallOutputItemParam $make(CopyWithData data) =>
-      ItemUnionComputerCallOutputItemParam(
+  ItemUnionComputerCallOutput $make(CopyWithData data) =>
+      ItemUnionComputerCallOutput(
         id: data.get(#id, or: $value.id),
         callId: data.get(#callId, or: $value.callId),
         type: data.get(#type, or: $value.type),
@@ -1192,30 +1016,20 @@ class _ItemUnionComputerCallOutputItemParamCopyWithImpl<$R, $Out>
       );
 
   @override
-  ItemUnionComputerCallOutputItemParamCopyWith<
-    $R2,
-    ItemUnionComputerCallOutputItemParam,
-    $Out2
-  >
+  ItemUnionComputerCallOutputCopyWith<$R2, ItemUnionComputerCallOutput, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionComputerCallOutputItemParamCopyWithImpl<$R2, $Out2>(
-        $value,
-        $cast,
-        t,
-      );
+      _ItemUnionComputerCallOutputCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionWebSearchToolCallMapper
-    extends ClassMapperBase<ItemUnionWebSearchToolCall> {
-  ItemUnionWebSearchToolCallMapper._();
+class ItemUnionWebSearchCallMapper
+    extends SubClassMapperBase<ItemUnionWebSearchCall> {
+  ItemUnionWebSearchCallMapper._();
 
-  static ItemUnionWebSearchToolCallMapper? _instance;
-  static ItemUnionWebSearchToolCallMapper ensureInitialized() {
+  static ItemUnionWebSearchCallMapper? _instance;
+  static ItemUnionWebSearchCallMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance = ItemUnionWebSearchToolCallMapper._(),
-      );
-      ItemUnionMapper.ensureInitialized();
+      MapperContainer.globals.use(_instance = ItemUnionWebSearchCallMapper._());
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       WebSearchToolCallTypeTypeMapper.ensureInitialized();
       WebSearchToolCallStatusStatusMapper.ensureInitialized();
     }
@@ -1223,31 +1037,38 @@ class ItemUnionWebSearchToolCallMapper
   }
 
   @override
-  final String id = 'ItemUnionWebSearchToolCall';
+  final String id = 'ItemUnionWebSearchCall';
 
-  static String _$id(ItemUnionWebSearchToolCall v) => v.id;
-  static const Field<ItemUnionWebSearchToolCall, String> _f$id = Field(
-    'id',
-    _$id,
-  );
-  static WebSearchToolCallTypeType _$type(ItemUnionWebSearchToolCall v) =>
-      v.type;
-  static const Field<ItemUnionWebSearchToolCall, WebSearchToolCallTypeType>
+  static String _$id(ItemUnionWebSearchCall v) => v.id;
+  static const Field<ItemUnionWebSearchCall, String> _f$id = Field('id', _$id);
+  static WebSearchToolCallTypeType _$type(ItemUnionWebSearchCall v) => v.type;
+  static const Field<ItemUnionWebSearchCall, WebSearchToolCallTypeType>
   _f$type = Field('type', _$type);
-  static WebSearchToolCallStatusStatus _$status(ItemUnionWebSearchToolCall v) =>
+  static WebSearchToolCallStatusStatus _$status(ItemUnionWebSearchCall v) =>
       v.status;
-  static const Field<ItemUnionWebSearchToolCall, WebSearchToolCallStatusStatus>
+  static const Field<ItemUnionWebSearchCall, WebSearchToolCallStatusStatus>
   _f$status = Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionWebSearchToolCall> fields = const {
+  final MappableFields<ItemUnionWebSearchCall> fields = const {
     #id: _f$id,
     #type: _f$type,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionWebSearchToolCall _instantiate(DecodingData data) {
-    return ItemUnionWebSearchToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'web_search_call';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionWebSearchCall _instantiate(DecodingData data) {
+    return ItemUnionWebSearchCall(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       status: data.dec(_f$status),
@@ -1257,74 +1078,70 @@ class ItemUnionWebSearchToolCallMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionWebSearchToolCall fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionWebSearchToolCall>(map);
+  static ItemUnionWebSearchCall fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionWebSearchCall>(map);
   }
 
-  static ItemUnionWebSearchToolCall fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionWebSearchToolCall>(json);
+  static ItemUnionWebSearchCall fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionWebSearchCall>(json);
   }
 }
 
-mixin ItemUnionWebSearchToolCallMappable {
+mixin ItemUnionWebSearchCallMappable {
   String toJsonString() {
-    return ItemUnionWebSearchToolCallMapper.ensureInitialized()
-        .encodeJson<ItemUnionWebSearchToolCall>(
-          this as ItemUnionWebSearchToolCall,
-        );
+    return ItemUnionWebSearchCallMapper.ensureInitialized()
+        .encodeJson<ItemUnionWebSearchCall>(this as ItemUnionWebSearchCall);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionWebSearchToolCallMapper.ensureInitialized()
-        .encodeMap<ItemUnionWebSearchToolCall>(
-          this as ItemUnionWebSearchToolCall,
-        );
+    return ItemUnionWebSearchCallMapper.ensureInitialized()
+        .encodeMap<ItemUnionWebSearchCall>(this as ItemUnionWebSearchCall);
   }
 
-  ItemUnionWebSearchToolCallCopyWith<
-    ItemUnionWebSearchToolCall,
-    ItemUnionWebSearchToolCall,
-    ItemUnionWebSearchToolCall
+  ItemUnionWebSearchCallCopyWith<
+    ItemUnionWebSearchCall,
+    ItemUnionWebSearchCall,
+    ItemUnionWebSearchCall
   >
   get copyWith =>
-      _ItemUnionWebSearchToolCallCopyWithImpl<
-        ItemUnionWebSearchToolCall,
-        ItemUnionWebSearchToolCall
-      >(this as ItemUnionWebSearchToolCall, $identity, $identity);
+      _ItemUnionWebSearchCallCopyWithImpl<
+        ItemUnionWebSearchCall,
+        ItemUnionWebSearchCall
+      >(this as ItemUnionWebSearchCall, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionWebSearchToolCallMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionWebSearchToolCall,
+    return ItemUnionWebSearchCallMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionWebSearchCall,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionWebSearchToolCallMapper.ensureInitialized().equalsValue(
-      this as ItemUnionWebSearchToolCall,
+    return ItemUnionWebSearchCallMapper.ensureInitialized().equalsValue(
+      this as ItemUnionWebSearchCall,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionWebSearchToolCallMapper.ensureInitialized().hashValue(
-      this as ItemUnionWebSearchToolCall,
+    return ItemUnionWebSearchCallMapper.ensureInitialized().hashValue(
+      this as ItemUnionWebSearchCall,
     );
   }
 }
 
-extension ItemUnionWebSearchToolCallValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionWebSearchToolCall, $Out> {
-  ItemUnionWebSearchToolCallCopyWith<$R, ItemUnionWebSearchToolCall, $Out>
-  get $asItemUnionWebSearchToolCall => $base.as(
-    (v, t, t2) => _ItemUnionWebSearchToolCallCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionWebSearchCallValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionWebSearchCall, $Out> {
+  ItemUnionWebSearchCallCopyWith<$R, ItemUnionWebSearchCall, $Out>
+  get $asItemUnionWebSearchCall => $base.as(
+    (v, t, t2) => _ItemUnionWebSearchCallCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionWebSearchToolCallCopyWith<
+abstract class ItemUnionWebSearchCallCopyWith<
   $R,
-  $In extends ItemUnionWebSearchToolCall,
+  $In extends ItemUnionWebSearchCall,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -1334,24 +1151,20 @@ abstract class ItemUnionWebSearchToolCallCopyWith<
     WebSearchToolCallTypeType? type,
     WebSearchToolCallStatusStatus? status,
   });
-  ItemUnionWebSearchToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionWebSearchCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionWebSearchToolCallCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionWebSearchToolCall, $Out>
+class _ItemUnionWebSearchCallCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionWebSearchCall, $Out>
     implements
-        ItemUnionWebSearchToolCallCopyWith<
-          $R,
-          ItemUnionWebSearchToolCall,
-          $Out
-        > {
-  _ItemUnionWebSearchToolCallCopyWithImpl(super.value, super.then, super.then2);
+        ItemUnionWebSearchCallCopyWith<$R, ItemUnionWebSearchCall, $Out> {
+  _ItemUnionWebSearchCallCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionWebSearchToolCall> $mapper =
-      ItemUnionWebSearchToolCallMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionWebSearchCall> $mapper =
+      ItemUnionWebSearchCallMapper.ensureInitialized();
   @override
   $R call({
     String? id,
@@ -1365,30 +1178,27 @@ class _ItemUnionWebSearchToolCallCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionWebSearchToolCall $make(CopyWithData data) =>
-      ItemUnionWebSearchToolCall(
-        id: data.get(#id, or: $value.id),
-        type: data.get(#type, or: $value.type),
-        status: data.get(#status, or: $value.status),
-      );
+  ItemUnionWebSearchCall $make(CopyWithData data) => ItemUnionWebSearchCall(
+    id: data.get(#id, or: $value.id),
+    type: data.get(#type, or: $value.type),
+    status: data.get(#status, or: $value.status),
+  );
 
   @override
-  ItemUnionWebSearchToolCallCopyWith<$R2, ItemUnionWebSearchToolCall, $Out2>
+  ItemUnionWebSearchCallCopyWith<$R2, ItemUnionWebSearchCall, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionWebSearchToolCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
+      _ItemUnionWebSearchCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionFunctionToolCallMapper
-    extends ClassMapperBase<ItemUnionFunctionToolCall> {
-  ItemUnionFunctionToolCallMapper._();
+class ItemUnionFunctionCallMapper
+    extends SubClassMapperBase<ItemUnionFunctionCall> {
+  ItemUnionFunctionCallMapper._();
 
-  static ItemUnionFunctionToolCallMapper? _instance;
-  static ItemUnionFunctionToolCallMapper ensureInitialized() {
+  static ItemUnionFunctionCallMapper? _instance;
+  static ItemUnionFunctionCallMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(
-        _instance = ItemUnionFunctionToolCallMapper._(),
-      );
-      ItemUnionMapper.ensureInitialized();
+      MapperContainer.globals.use(_instance = ItemUnionFunctionCallMapper._());
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       FunctionToolCallTypeTypeMapper.ensureInitialized();
       FunctionToolCallStatusStatusMapper.ensureInitialized();
     }
@@ -1396,38 +1206,36 @@ class ItemUnionFunctionToolCallMapper
   }
 
   @override
-  final String id = 'ItemUnionFunctionToolCall';
+  final String id = 'ItemUnionFunctionCall';
 
-  static String? _$id(ItemUnionFunctionToolCall v) => v.id;
-  static const Field<ItemUnionFunctionToolCall, String> _f$id = Field(
-    'id',
-    _$id,
-  );
-  static FunctionToolCallTypeType _$type(ItemUnionFunctionToolCall v) => v.type;
-  static const Field<ItemUnionFunctionToolCall, FunctionToolCallTypeType>
-  _f$type = Field('type', _$type);
-  static String _$callId(ItemUnionFunctionToolCall v) => v.callId;
-  static const Field<ItemUnionFunctionToolCall, String> _f$callId = Field(
+  static String? _$id(ItemUnionFunctionCall v) => v.id;
+  static const Field<ItemUnionFunctionCall, String> _f$id = Field('id', _$id);
+  static FunctionToolCallTypeType _$type(ItemUnionFunctionCall v) => v.type;
+  static const Field<ItemUnionFunctionCall, FunctionToolCallTypeType> _f$type =
+      Field('type', _$type);
+  static String _$callId(ItemUnionFunctionCall v) => v.callId;
+  static const Field<ItemUnionFunctionCall, String> _f$callId = Field(
     'callId',
     _$callId,
+    key: r'call_id',
   );
-  static String _$name(ItemUnionFunctionToolCall v) => v.name;
-  static const Field<ItemUnionFunctionToolCall, String> _f$name = Field(
+  static String _$name(ItemUnionFunctionCall v) => v.name;
+  static const Field<ItemUnionFunctionCall, String> _f$name = Field(
     'name',
     _$name,
   );
-  static String _$arguments(ItemUnionFunctionToolCall v) => v.arguments;
-  static const Field<ItemUnionFunctionToolCall, String> _f$arguments = Field(
+  static String _$arguments(ItemUnionFunctionCall v) => v.arguments;
+  static const Field<ItemUnionFunctionCall, String> _f$arguments = Field(
     'arguments',
     _$arguments,
   );
-  static FunctionToolCallStatusStatus? _$status(ItemUnionFunctionToolCall v) =>
+  static FunctionToolCallStatusStatus? _$status(ItemUnionFunctionCall v) =>
       v.status;
-  static const Field<ItemUnionFunctionToolCall, FunctionToolCallStatusStatus>
+  static const Field<ItemUnionFunctionCall, FunctionToolCallStatusStatus>
   _f$status = Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionFunctionToolCall> fields = const {
+  final MappableFields<ItemUnionFunctionCall> fields = const {
     #id: _f$id,
     #type: _f$type,
     #callId: _f$callId,
@@ -1435,9 +1243,20 @@ class ItemUnionFunctionToolCallMapper
     #arguments: _f$arguments,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionFunctionToolCall _instantiate(DecodingData data) {
-    return ItemUnionFunctionToolCall(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function_call';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionFunctionCall _instantiate(DecodingData data) {
+    return ItemUnionFunctionCall(
       id: data.dec(_f$id),
       type: data.dec(_f$type),
       callId: data.dec(_f$callId),
@@ -1450,74 +1269,70 @@ class ItemUnionFunctionToolCallMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionFunctionToolCall fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionFunctionToolCall>(map);
+  static ItemUnionFunctionCall fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionFunctionCall>(map);
   }
 
-  static ItemUnionFunctionToolCall fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionFunctionToolCall>(json);
+  static ItemUnionFunctionCall fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionFunctionCall>(json);
   }
 }
 
-mixin ItemUnionFunctionToolCallMappable {
+mixin ItemUnionFunctionCallMappable {
   String toJsonString() {
-    return ItemUnionFunctionToolCallMapper.ensureInitialized()
-        .encodeJson<ItemUnionFunctionToolCall>(
-          this as ItemUnionFunctionToolCall,
-        );
+    return ItemUnionFunctionCallMapper.ensureInitialized()
+        .encodeJson<ItemUnionFunctionCall>(this as ItemUnionFunctionCall);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionFunctionToolCallMapper.ensureInitialized()
-        .encodeMap<ItemUnionFunctionToolCall>(
-          this as ItemUnionFunctionToolCall,
-        );
+    return ItemUnionFunctionCallMapper.ensureInitialized()
+        .encodeMap<ItemUnionFunctionCall>(this as ItemUnionFunctionCall);
   }
 
-  ItemUnionFunctionToolCallCopyWith<
-    ItemUnionFunctionToolCall,
-    ItemUnionFunctionToolCall,
-    ItemUnionFunctionToolCall
+  ItemUnionFunctionCallCopyWith<
+    ItemUnionFunctionCall,
+    ItemUnionFunctionCall,
+    ItemUnionFunctionCall
   >
   get copyWith =>
-      _ItemUnionFunctionToolCallCopyWithImpl<
-        ItemUnionFunctionToolCall,
-        ItemUnionFunctionToolCall
-      >(this as ItemUnionFunctionToolCall, $identity, $identity);
+      _ItemUnionFunctionCallCopyWithImpl<
+        ItemUnionFunctionCall,
+        ItemUnionFunctionCall
+      >(this as ItemUnionFunctionCall, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionFunctionToolCallMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionFunctionToolCall,
+    return ItemUnionFunctionCallMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionFunctionCall,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionFunctionToolCallMapper.ensureInitialized().equalsValue(
-      this as ItemUnionFunctionToolCall,
+    return ItemUnionFunctionCallMapper.ensureInitialized().equalsValue(
+      this as ItemUnionFunctionCall,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionFunctionToolCallMapper.ensureInitialized().hashValue(
-      this as ItemUnionFunctionToolCall,
+    return ItemUnionFunctionCallMapper.ensureInitialized().hashValue(
+      this as ItemUnionFunctionCall,
     );
   }
 }
 
-extension ItemUnionFunctionToolCallValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionFunctionToolCall, $Out> {
-  ItemUnionFunctionToolCallCopyWith<$R, ItemUnionFunctionToolCall, $Out>
-  get $asItemUnionFunctionToolCall => $base.as(
-    (v, t, t2) => _ItemUnionFunctionToolCallCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionFunctionCallValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionFunctionCall, $Out> {
+  ItemUnionFunctionCallCopyWith<$R, ItemUnionFunctionCall, $Out>
+  get $asItemUnionFunctionCall => $base.as(
+    (v, t, t2) => _ItemUnionFunctionCallCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionFunctionToolCallCopyWith<
+abstract class ItemUnionFunctionCallCopyWith<
   $R,
-  $In extends ItemUnionFunctionToolCall,
+  $In extends ItemUnionFunctionCall,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -1530,20 +1345,19 @@ abstract class ItemUnionFunctionToolCallCopyWith<
     String? arguments,
     FunctionToolCallStatusStatus? status,
   });
-  ItemUnionFunctionToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionFunctionCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionFunctionToolCallCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionFunctionToolCall, $Out>
-    implements
-        ItemUnionFunctionToolCallCopyWith<$R, ItemUnionFunctionToolCall, $Out> {
-  _ItemUnionFunctionToolCallCopyWithImpl(super.value, super.then, super.then2);
+class _ItemUnionFunctionCallCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionFunctionCall, $Out>
+    implements ItemUnionFunctionCallCopyWith<$R, ItemUnionFunctionCall, $Out> {
+  _ItemUnionFunctionCallCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionFunctionToolCall> $mapper =
-      ItemUnionFunctionToolCallMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionFunctionCall> $mapper =
+      ItemUnionFunctionCallMapper.ensureInitialized();
   @override
   $R call({
     Object? id = $none,
@@ -1563,33 +1377,32 @@ class _ItemUnionFunctionToolCallCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionFunctionToolCall $make(CopyWithData data) =>
-      ItemUnionFunctionToolCall(
-        id: data.get(#id, or: $value.id),
-        type: data.get(#type, or: $value.type),
-        callId: data.get(#callId, or: $value.callId),
-        name: data.get(#name, or: $value.name),
-        arguments: data.get(#arguments, or: $value.arguments),
-        status: data.get(#status, or: $value.status),
-      );
+  ItemUnionFunctionCall $make(CopyWithData data) => ItemUnionFunctionCall(
+    id: data.get(#id, or: $value.id),
+    type: data.get(#type, or: $value.type),
+    callId: data.get(#callId, or: $value.callId),
+    name: data.get(#name, or: $value.name),
+    arguments: data.get(#arguments, or: $value.arguments),
+    status: data.get(#status, or: $value.status),
+  );
 
   @override
-  ItemUnionFunctionToolCallCopyWith<$R2, ItemUnionFunctionToolCall, $Out2>
+  ItemUnionFunctionCallCopyWith<$R2, ItemUnionFunctionCall, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionFunctionToolCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
+      _ItemUnionFunctionCallCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionFunctionCallOutputItemParamMapper
-    extends ClassMapperBase<ItemUnionFunctionCallOutputItemParam> {
-  ItemUnionFunctionCallOutputItemParamMapper._();
+class ItemUnionFunctionCallOutputMapper
+    extends SubClassMapperBase<ItemUnionFunctionCallOutput> {
+  ItemUnionFunctionCallOutputMapper._();
 
-  static ItemUnionFunctionCallOutputItemParamMapper? _instance;
-  static ItemUnionFunctionCallOutputItemParamMapper ensureInitialized() {
+  static ItemUnionFunctionCallOutputMapper? _instance;
+  static ItemUnionFunctionCallOutputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(
-        _instance = ItemUnionFunctionCallOutputItemParamMapper._(),
+        _instance = ItemUnionFunctionCallOutputMapper._(),
       );
-      ItemUnionMapper.ensureInitialized();
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       FunctionCallOutputItemParamTypeTypeMapper.ensureInitialized();
       FunctionCallOutputItemParamStatusStatusMapper.ensureInitialized();
     }
@@ -1597,45 +1410,63 @@ class ItemUnionFunctionCallOutputItemParamMapper
   }
 
   @override
-  final String id = 'ItemUnionFunctionCallOutputItemParam';
+  final String id = 'ItemUnionFunctionCallOutput';
 
-  static String? _$id(ItemUnionFunctionCallOutputItemParam v) => v.id;
-  static const Field<ItemUnionFunctionCallOutputItemParam, String> _f$id =
-      Field('id', _$id);
-  static String _$callId(ItemUnionFunctionCallOutputItemParam v) => v.callId;
-  static const Field<ItemUnionFunctionCallOutputItemParam, String> _f$callId =
-      Field('callId', _$callId);
+  static String? _$id(ItemUnionFunctionCallOutput v) => v.id;
+  static const Field<ItemUnionFunctionCallOutput, String> _f$id = Field(
+    'id',
+    _$id,
+  );
+  static String _$callId(ItemUnionFunctionCallOutput v) => v.callId;
+  static const Field<ItemUnionFunctionCallOutput, String> _f$callId = Field(
+    'callId',
+    _$callId,
+    key: r'call_id',
+  );
   static FunctionCallOutputItemParamTypeType _$type(
-    ItemUnionFunctionCallOutputItemParam v,
+    ItemUnionFunctionCallOutput v,
   ) => v.type;
   static const Field<
-    ItemUnionFunctionCallOutputItemParam,
+    ItemUnionFunctionCallOutput,
     FunctionCallOutputItemParamTypeType
   >
   _f$type = Field('type', _$type);
-  static String _$output(ItemUnionFunctionCallOutputItemParam v) => v.output;
-  static const Field<ItemUnionFunctionCallOutputItemParam, String> _f$output =
-      Field('output', _$output);
+  static String _$output(ItemUnionFunctionCallOutput v) => v.output;
+  static const Field<ItemUnionFunctionCallOutput, String> _f$output = Field(
+    'output',
+    _$output,
+  );
   static FunctionCallOutputItemParamStatusStatus? _$status(
-    ItemUnionFunctionCallOutputItemParam v,
+    ItemUnionFunctionCallOutput v,
   ) => v.status;
   static const Field<
-    ItemUnionFunctionCallOutputItemParam,
+    ItemUnionFunctionCallOutput,
     FunctionCallOutputItemParamStatusStatus
   >
   _f$status = Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionFunctionCallOutputItemParam> fields = const {
+  final MappableFields<ItemUnionFunctionCallOutput> fields = const {
     #id: _f$id,
     #callId: _f$callId,
     #type: _f$type,
     #output: _f$output,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionFunctionCallOutputItemParam _instantiate(DecodingData data) {
-    return ItemUnionFunctionCallOutputItemParam(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function_call_output';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionFunctionCallOutput _instantiate(DecodingData data) {
+    return ItemUnionFunctionCallOutput(
       id: data.dec(_f$id),
       callId: data.dec(_f$callId),
       type: data.dec(_f$type),
@@ -1647,81 +1478,74 @@ class ItemUnionFunctionCallOutputItemParamMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionFunctionCallOutputItemParam fromJson(
-    Map<String, dynamic> map,
-  ) {
-    return ensureInitialized().decodeMap<ItemUnionFunctionCallOutputItemParam>(
-      map,
-    );
+  static ItemUnionFunctionCallOutput fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionFunctionCallOutput>(map);
   }
 
-  static ItemUnionFunctionCallOutputItemParam fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionFunctionCallOutputItemParam>(
-      json,
-    );
+  static ItemUnionFunctionCallOutput fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionFunctionCallOutput>(json);
   }
 }
 
-mixin ItemUnionFunctionCallOutputItemParamMappable {
+mixin ItemUnionFunctionCallOutputMappable {
   String toJsonString() {
-    return ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized()
-        .encodeJson<ItemUnionFunctionCallOutputItemParam>(
-          this as ItemUnionFunctionCallOutputItemParam,
+    return ItemUnionFunctionCallOutputMapper.ensureInitialized()
+        .encodeJson<ItemUnionFunctionCallOutput>(
+          this as ItemUnionFunctionCallOutput,
         );
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized()
-        .encodeMap<ItemUnionFunctionCallOutputItemParam>(
-          this as ItemUnionFunctionCallOutputItemParam,
+    return ItemUnionFunctionCallOutputMapper.ensureInitialized()
+        .encodeMap<ItemUnionFunctionCallOutput>(
+          this as ItemUnionFunctionCallOutput,
         );
   }
 
-  ItemUnionFunctionCallOutputItemParamCopyWith<
-    ItemUnionFunctionCallOutputItemParam,
-    ItemUnionFunctionCallOutputItemParam,
-    ItemUnionFunctionCallOutputItemParam
+  ItemUnionFunctionCallOutputCopyWith<
+    ItemUnionFunctionCallOutput,
+    ItemUnionFunctionCallOutput,
+    ItemUnionFunctionCallOutput
   >
   get copyWith =>
-      _ItemUnionFunctionCallOutputItemParamCopyWithImpl<
-        ItemUnionFunctionCallOutputItemParam,
-        ItemUnionFunctionCallOutputItemParam
-      >(this as ItemUnionFunctionCallOutputItemParam, $identity, $identity);
+      _ItemUnionFunctionCallOutputCopyWithImpl<
+        ItemUnionFunctionCallOutput,
+        ItemUnionFunctionCallOutput
+      >(this as ItemUnionFunctionCallOutput, $identity, $identity);
   @override
   String toString() {
-    return ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized()
-        .stringifyValue(this as ItemUnionFunctionCallOutputItemParam);
+    return ItemUnionFunctionCallOutputMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionFunctionCallOutput,
+    );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized()
-        .equalsValue(this as ItemUnionFunctionCallOutputItemParam, other);
+    return ItemUnionFunctionCallOutputMapper.ensureInitialized().equalsValue(
+      this as ItemUnionFunctionCallOutput,
+      other,
+    );
   }
 
   @override
   int get hashCode {
-    return ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized()
-        .hashValue(this as ItemUnionFunctionCallOutputItemParam);
+    return ItemUnionFunctionCallOutputMapper.ensureInitialized().hashValue(
+      this as ItemUnionFunctionCallOutput,
+    );
   }
 }
 
-extension ItemUnionFunctionCallOutputItemParamValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionFunctionCallOutputItemParam, $Out> {
-  ItemUnionFunctionCallOutputItemParamCopyWith<
-    $R,
-    ItemUnionFunctionCallOutputItemParam,
-    $Out
-  >
-  get $asItemUnionFunctionCallOutputItemParam => $base.as(
-    (v, t, t2) =>
-        _ItemUnionFunctionCallOutputItemParamCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionFunctionCallOutputValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionFunctionCallOutput, $Out> {
+  ItemUnionFunctionCallOutputCopyWith<$R, ItemUnionFunctionCallOutput, $Out>
+  get $asItemUnionFunctionCallOutput => $base.as(
+    (v, t, t2) => _ItemUnionFunctionCallOutputCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionFunctionCallOutputItemParamCopyWith<
+abstract class ItemUnionFunctionCallOutputCopyWith<
   $R,
-  $In extends ItemUnionFunctionCallOutputItemParam,
+  $In extends ItemUnionFunctionCallOutput,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -1733,27 +1557,28 @@ abstract class ItemUnionFunctionCallOutputItemParamCopyWith<
     String? output,
     FunctionCallOutputItemParamStatusStatus? status,
   });
-  ItemUnionFunctionCallOutputItemParamCopyWith<$R2, $In, $Out2>
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+  ItemUnionFunctionCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
 }
 
-class _ItemUnionFunctionCallOutputItemParamCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionFunctionCallOutputItemParam, $Out>
+class _ItemUnionFunctionCallOutputCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionFunctionCallOutput, $Out>
     implements
-        ItemUnionFunctionCallOutputItemParamCopyWith<
+        ItemUnionFunctionCallOutputCopyWith<
           $R,
-          ItemUnionFunctionCallOutputItemParam,
+          ItemUnionFunctionCallOutput,
           $Out
         > {
-  _ItemUnionFunctionCallOutputItemParamCopyWithImpl(
+  _ItemUnionFunctionCallOutputCopyWithImpl(
     super.value,
     super.then,
     super.then2,
   );
 
   @override
-  late final ClassMapperBase<ItemUnionFunctionCallOutputItemParam> $mapper =
-      ItemUnionFunctionCallOutputItemParamMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionFunctionCallOutput> $mapper =
+      ItemUnionFunctionCallOutputMapper.ensureInitialized();
   @override
   $R call({
     Object? id = $none,
@@ -1771,8 +1596,8 @@ class _ItemUnionFunctionCallOutputItemParamCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionFunctionCallOutputItemParam $make(CopyWithData data) =>
-      ItemUnionFunctionCallOutputItemParam(
+  ItemUnionFunctionCallOutput $make(CopyWithData data) =>
+      ItemUnionFunctionCallOutput(
         id: data.get(#id, or: $value.id),
         callId: data.get(#callId, or: $value.callId),
         type: data.get(#type, or: $value.type),
@@ -1781,28 +1606,19 @@ class _ItemUnionFunctionCallOutputItemParamCopyWithImpl<$R, $Out>
       );
 
   @override
-  ItemUnionFunctionCallOutputItemParamCopyWith<
-    $R2,
-    ItemUnionFunctionCallOutputItemParam,
-    $Out2
-  >
+  ItemUnionFunctionCallOutputCopyWith<$R2, ItemUnionFunctionCallOutput, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionFunctionCallOutputItemParamCopyWithImpl<$R2, $Out2>(
-        $value,
-        $cast,
-        t,
-      );
+      _ItemUnionFunctionCallOutputCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
-class ItemUnionReasoningItemMapper
-    extends ClassMapperBase<ItemUnionReasoningItem> {
-  ItemUnionReasoningItemMapper._();
+class ItemUnionReasoningMapper extends SubClassMapperBase<ItemUnionReasoning> {
+  ItemUnionReasoningMapper._();
 
-  static ItemUnionReasoningItemMapper? _instance;
-  static ItemUnionReasoningItemMapper ensureInitialized() {
+  static ItemUnionReasoningMapper? _instance;
+  static ItemUnionReasoningMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(_instance = ItemUnionReasoningItemMapper._());
-      ItemUnionMapper.ensureInitialized();
+      MapperContainer.globals.use(_instance = ItemUnionReasoningMapper._());
+      ItemUnionMapper.ensureInitialized().addSubMapper(_instance!);
       ReasoningItemTypeTypeMapper.ensureInitialized();
       ReasoningItemSummaryMapper.ensureInitialized();
       ReasoningItemStatusStatusMapper.ensureInitialized();
@@ -1811,32 +1627,44 @@ class ItemUnionReasoningItemMapper
   }
 
   @override
-  final String id = 'ItemUnionReasoningItem';
+  final String id = 'ItemUnionReasoning';
 
-  static ReasoningItemTypeType _$type(ItemUnionReasoningItem v) => v.type;
-  static const Field<ItemUnionReasoningItem, ReasoningItemTypeType> _f$type =
-      Field('type', _$type);
-  static String _$id(ItemUnionReasoningItem v) => v.id;
-  static const Field<ItemUnionReasoningItem, String> _f$id = Field('id', _$id);
-  static List<ReasoningItemSummary> _$summary(ItemUnionReasoningItem v) =>
+  static ReasoningItemTypeType _$type(ItemUnionReasoning v) => v.type;
+  static const Field<ItemUnionReasoning, ReasoningItemTypeType> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static String _$id(ItemUnionReasoning v) => v.id;
+  static const Field<ItemUnionReasoning, String> _f$id = Field('id', _$id);
+  static List<ReasoningItemSummary> _$summary(ItemUnionReasoning v) =>
       v.summary;
-  static const Field<ItemUnionReasoningItem, List<ReasoningItemSummary>>
+  static const Field<ItemUnionReasoning, List<ReasoningItemSummary>>
   _f$summary = Field('summary', _$summary);
-  static ReasoningItemStatusStatus? _$status(ItemUnionReasoningItem v) =>
-      v.status;
-  static const Field<ItemUnionReasoningItem, ReasoningItemStatusStatus>
-  _f$status = Field('status', _$status);
+  static ReasoningItemStatusStatus? _$status(ItemUnionReasoning v) => v.status;
+  static const Field<ItemUnionReasoning, ReasoningItemStatusStatus> _f$status =
+      Field('status', _$status);
 
   @override
-  final MappableFields<ItemUnionReasoningItem> fields = const {
+  final MappableFields<ItemUnionReasoning> fields = const {
     #type: _f$type,
     #id: _f$id,
     #summary: _f$summary,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
-  static ItemUnionReasoningItem _instantiate(DecodingData data) {
-    return ItemUnionReasoningItem(
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'reasoning';
+  @override
+  late final ClassMapperBase superMapper = ItemUnionMapper.ensureInitialized();
+
+  static ItemUnionReasoning _instantiate(DecodingData data) {
+    return ItemUnionReasoning(
       type: data.dec(_f$type),
       id: data.dec(_f$id),
       summary: data.dec(_f$summary),
@@ -1847,70 +1675,71 @@ class ItemUnionReasoningItemMapper
   @override
   final Function instantiate = _instantiate;
 
-  static ItemUnionReasoningItem fromJson(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<ItemUnionReasoningItem>(map);
+  static ItemUnionReasoning fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<ItemUnionReasoning>(map);
   }
 
-  static ItemUnionReasoningItem fromJsonString(String json) {
-    return ensureInitialized().decodeJson<ItemUnionReasoningItem>(json);
+  static ItemUnionReasoning fromJsonString(String json) {
+    return ensureInitialized().decodeJson<ItemUnionReasoning>(json);
   }
 }
 
-mixin ItemUnionReasoningItemMappable {
+mixin ItemUnionReasoningMappable {
   String toJsonString() {
-    return ItemUnionReasoningItemMapper.ensureInitialized()
-        .encodeJson<ItemUnionReasoningItem>(this as ItemUnionReasoningItem);
+    return ItemUnionReasoningMapper.ensureInitialized()
+        .encodeJson<ItemUnionReasoning>(this as ItemUnionReasoning);
   }
 
   Map<String, dynamic> toJson() {
-    return ItemUnionReasoningItemMapper.ensureInitialized()
-        .encodeMap<ItemUnionReasoningItem>(this as ItemUnionReasoningItem);
+    return ItemUnionReasoningMapper.ensureInitialized()
+        .encodeMap<ItemUnionReasoning>(this as ItemUnionReasoning);
   }
 
-  ItemUnionReasoningItemCopyWith<
-    ItemUnionReasoningItem,
-    ItemUnionReasoningItem,
-    ItemUnionReasoningItem
+  ItemUnionReasoningCopyWith<
+    ItemUnionReasoning,
+    ItemUnionReasoning,
+    ItemUnionReasoning
   >
   get copyWith =>
-      _ItemUnionReasoningItemCopyWithImpl<
-        ItemUnionReasoningItem,
-        ItemUnionReasoningItem
-      >(this as ItemUnionReasoningItem, $identity, $identity);
+      _ItemUnionReasoningCopyWithImpl<ItemUnionReasoning, ItemUnionReasoning>(
+        this as ItemUnionReasoning,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
-    return ItemUnionReasoningItemMapper.ensureInitialized().stringifyValue(
-      this as ItemUnionReasoningItem,
+    return ItemUnionReasoningMapper.ensureInitialized().stringifyValue(
+      this as ItemUnionReasoning,
     );
   }
 
   @override
   bool operator ==(Object other) {
-    return ItemUnionReasoningItemMapper.ensureInitialized().equalsValue(
-      this as ItemUnionReasoningItem,
+    return ItemUnionReasoningMapper.ensureInitialized().equalsValue(
+      this as ItemUnionReasoning,
       other,
     );
   }
 
   @override
   int get hashCode {
-    return ItemUnionReasoningItemMapper.ensureInitialized().hashValue(
-      this as ItemUnionReasoningItem,
+    return ItemUnionReasoningMapper.ensureInitialized().hashValue(
+      this as ItemUnionReasoning,
     );
   }
 }
 
-extension ItemUnionReasoningItemValueCopy<$R, $Out>
-    on ObjectCopyWith<$R, ItemUnionReasoningItem, $Out> {
-  ItemUnionReasoningItemCopyWith<$R, ItemUnionReasoningItem, $Out>
-  get $asItemUnionReasoningItem => $base.as(
-    (v, t, t2) => _ItemUnionReasoningItemCopyWithImpl<$R, $Out>(v, t, t2),
+extension ItemUnionReasoningValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ItemUnionReasoning, $Out> {
+  ItemUnionReasoningCopyWith<$R, ItemUnionReasoning, $Out>
+  get $asItemUnionReasoning => $base.as(
+    (v, t, t2) => _ItemUnionReasoningCopyWithImpl<$R, $Out>(v, t, t2),
   );
 }
 
-abstract class ItemUnionReasoningItemCopyWith<
+abstract class ItemUnionReasoningCopyWith<
   $R,
-  $In extends ItemUnionReasoningItem,
+  $In extends ItemUnionReasoning,
   $Out
 >
     implements ItemUnionCopyWith<$R, $In, $Out> {
@@ -1927,20 +1756,19 @@ abstract class ItemUnionReasoningItemCopyWith<
     List<ReasoningItemSummary>? summary,
     ReasoningItemStatusStatus? status,
   });
-  ItemUnionReasoningItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+  ItemUnionReasoningCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
 }
 
-class _ItemUnionReasoningItemCopyWithImpl<$R, $Out>
-    extends ClassCopyWithBase<$R, ItemUnionReasoningItem, $Out>
-    implements
-        ItemUnionReasoningItemCopyWith<$R, ItemUnionReasoningItem, $Out> {
-  _ItemUnionReasoningItemCopyWithImpl(super.value, super.then, super.then2);
+class _ItemUnionReasoningCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, ItemUnionReasoning, $Out>
+    implements ItemUnionReasoningCopyWith<$R, ItemUnionReasoning, $Out> {
+  _ItemUnionReasoningCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<ItemUnionReasoningItem> $mapper =
-      ItemUnionReasoningItemMapper.ensureInitialized();
+  late final ClassMapperBase<ItemUnionReasoning> $mapper =
+      ItemUnionReasoningMapper.ensureInitialized();
   @override
   ListCopyWith<
     $R,
@@ -1967,7 +1795,7 @@ class _ItemUnionReasoningItemCopyWithImpl<$R, $Out>
     }),
   );
   @override
-  ItemUnionReasoningItem $make(CopyWithData data) => ItemUnionReasoningItem(
+  ItemUnionReasoning $make(CopyWithData data) => ItemUnionReasoning(
     type: data.get(#type, or: $value.type),
     id: data.get(#id, or: $value.id),
     summary: data.get(#summary, or: $value.summary),
@@ -1975,8 +1803,8 @@ class _ItemUnionReasoningItemCopyWithImpl<$R, $Out>
   );
 
   @override
-  ItemUnionReasoningItemCopyWith<$R2, ItemUnionReasoningItem, $Out2>
-  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _ItemUnionReasoningItemCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  ItemUnionReasoningCopyWith<$R2, ItemUnionReasoning, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  ) => _ItemUnionReasoningCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 

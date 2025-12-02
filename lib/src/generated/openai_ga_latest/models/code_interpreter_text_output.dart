@@ -10,7 +10,7 @@ part 'code_interpreter_text_output.mapper.dart';
 
 /// The output of a code interpreter tool call that is text.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterTextOutput with CodeInterpreterTextOutputMappable {
   const CodeInterpreterTextOutput({
     required this.type,

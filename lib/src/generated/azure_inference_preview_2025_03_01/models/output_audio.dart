@@ -10,7 +10,7 @@ part 'output_audio.mapper.dart';
 
 /// An audio output from the model.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputAudio with OutputAudioMappable {
   const OutputAudio({
     required this.type,

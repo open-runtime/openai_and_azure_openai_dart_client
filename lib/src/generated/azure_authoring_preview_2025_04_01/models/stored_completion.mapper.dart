@@ -155,6 +155,10 @@ class StoredCompletionMapper extends ClassMapperBase<StoredCompletion> {
     #metadata: _f$metadata,
     #choices: _f$choices,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static StoredCompletion _instantiate(DecodingData data) {
     return StoredCompletion(

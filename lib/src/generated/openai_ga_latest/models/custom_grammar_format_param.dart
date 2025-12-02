@@ -10,7 +10,7 @@ import 'grammar_syntax1.dart';
 part 'custom_grammar_format_param.mapper.dart';
 
 /// A grammar defined by the user.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomGrammarFormatParam with CustomGrammarFormatParamMappable {
   const CustomGrammarFormatParam({
     required this.syntax,

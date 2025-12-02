@@ -8,7 +8,7 @@ import 'metadata.dart';
 
 part 'update_eval_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateEvalRequest with UpdateEvalRequestMappable {
   const UpdateEvalRequest({
     this.name,

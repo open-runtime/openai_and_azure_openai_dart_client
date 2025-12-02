@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'create_completion_request.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateCompletionRequest with CreateCompletionRequestMappable {
   const CreateCompletionRequest({
     required this.logitBias,

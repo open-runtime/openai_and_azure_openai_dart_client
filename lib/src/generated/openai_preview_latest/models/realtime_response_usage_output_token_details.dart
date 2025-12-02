@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'realtime_response_usage_output_token_details.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseUsageOutputTokenDetails with RealtimeResponseUsageOutputTokenDetailsMappable {
   const RealtimeResponseUsageOutputTokenDetails({
     this.textTokens,

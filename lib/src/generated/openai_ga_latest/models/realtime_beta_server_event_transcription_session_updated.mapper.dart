@@ -52,6 +52,10 @@ class RealtimeBetaServerEventTranscriptionSessionUpdatedMapper
   @override
   final MappableFields<RealtimeBetaServerEventTranscriptionSessionUpdated>
   fields = const {#eventId: _f$eventId, #type: _f$type, #session: _f$session};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventTranscriptionSessionUpdated _instantiate(
     DecodingData data,

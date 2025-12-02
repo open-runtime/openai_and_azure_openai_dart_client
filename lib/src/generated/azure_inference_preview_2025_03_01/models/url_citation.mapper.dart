@@ -52,6 +52,10 @@ class UrlCitationMapper extends ClassMapperBase<UrlCitation> {
     #startIndex: _f$startIndex,
     #endIndex: _f$endIndex,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static UrlCitation _instantiate(DecodingData data) {
     return UrlCitation(

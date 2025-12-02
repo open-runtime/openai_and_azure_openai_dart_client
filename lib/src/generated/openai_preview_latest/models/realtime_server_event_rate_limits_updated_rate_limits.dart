@@ -8,7 +8,7 @@ import 'realtime_server_event_rate_limits_updated_rate_limits_name_name.dart';
 
 part 'realtime_server_event_rate_limits_updated_rate_limits.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventRateLimitsUpdatedRateLimits with RealtimeServerEventRateLimitsUpdatedRateLimitsMappable {
   const RealtimeServerEventRateLimitsUpdatedRateLimits({
     this.name,

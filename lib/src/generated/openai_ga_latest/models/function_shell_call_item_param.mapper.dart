@@ -69,6 +69,10 @@ class FunctionShellCallItemParamMapper
     #id: _f$id,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionShellCallItemParam _instantiate(DecodingData data) {
     return FunctionShellCallItemParam(

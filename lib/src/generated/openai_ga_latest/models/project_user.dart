@@ -10,7 +10,7 @@ import 'project_user_role_role.dart';
 part 'project_user.mapper.dart';
 
 /// Represents an individual user in a project.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUser with ProjectUserMappable {
   const ProjectUser({
     required this.objectEnum,

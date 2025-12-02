@@ -4,22 +4,23 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'mcp_tool_allowed_tools_allowed_tools_union.dart';
+import 'mcp_tool_allowed_tools_union.dart';
 import 'mcp_tool_connector_id_connector_id.dart';
-import 'mcp_tool_require_approval_require_approval_union.dart';
+import 'mcp_tool_require_approval_union.dart';
 import 'mcp_tool_type_type.dart';
+import 'tool.dart';
 
 part 'mcp_tool.mapper.dart';
 
 /// Give the model access to additional tools via remote Model Context Protocol.
 /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class McpTool with McpToolMappable {
   const McpTool({
     required this.type,
     required this.serverLabel,
-    this.requireApproval = const McpToolRequireApprovalRequireApprovalUnionVariantString(value: 'always'),
+    this.requireApproval = const McpToolRequireApprovalUnionVariantString(value: 'always'),
     this.serverUrl,
     this.connectorId,
     this.authorization,
@@ -32,7 +33,7 @@ class McpTool with McpToolMappable {
   @MappableField(key: 'server_label')
   final String serverLabel;
   @MappableField(key: 'require_approval')
-  final McpToolRequireApprovalRequireApprovalUnion? requireApproval;
+  final McpToolRequireApprovalUnion? requireApproval;
   @MappableField(key: 'server_url')
   final String? serverUrl;
   @MappableField(key: 'connector_id')
@@ -42,7 +43,7 @@ class McpTool with McpToolMappable {
   final String? serverDescription;
   final Map<String, String>? headers;
   @MappableField(key: 'allowed_tools')
-  final McpToolAllowedToolsAllowedToolsUnion? allowedTools;
+  final McpToolAllowedToolsUnion? allowedTools;
 
   static McpTool fromJson(Map<String, dynamic> json) => McpToolMapper.fromJson(json);
 

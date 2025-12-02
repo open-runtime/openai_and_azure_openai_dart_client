@@ -4,15 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'conversation_item.dart';
+import 'item_resource.dart';
 import 'local_shell_exec_action.dart';
 import 'local_shell_tool_call_status_status.dart';
 import 'local_shell_tool_call_type_type.dart';
+import 'output_item.dart';
 
 part 'local_shell_tool_call.mapper.dart';
 
 /// A tool call to run a command on the local shell.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class LocalShellToolCall with LocalShellToolCallMappable {
   const LocalShellToolCall({
     required this.type,

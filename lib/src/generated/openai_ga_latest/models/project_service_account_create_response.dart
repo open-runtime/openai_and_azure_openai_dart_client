@@ -10,7 +10,7 @@ import 'project_service_account_create_response_role_role.dart';
 
 part 'project_service_account_create_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountCreateResponse with ProjectServiceAccountCreateResponseMappable {
   const ProjectServiceAccountCreateResponse({
     required this.objectEnum,

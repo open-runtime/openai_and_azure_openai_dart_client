@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'audio_segment.mapper.dart';
 
 /// Transcription or translation segment.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioSegment with AudioSegmentMappable {
   const AudioSegment({
     this.id,

@@ -67,6 +67,10 @@ class FunctionToolCallOutputResourceMapper
     #output: _f$output,
     #status: _f$status,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FunctionToolCallOutputResource _instantiate(DecodingData data) {
     return FunctionToolCallOutputResource(

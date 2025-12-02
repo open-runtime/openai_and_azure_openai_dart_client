@@ -26,6 +26,10 @@ class ComparisonFilterValueItemsMapper
 
   @override
   final MappableFields<ComparisonFilterValueItems> fields = const {};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ComparisonFilterValueItems _instantiate(DecodingData data) {
     return ComparisonFilterValueItems();

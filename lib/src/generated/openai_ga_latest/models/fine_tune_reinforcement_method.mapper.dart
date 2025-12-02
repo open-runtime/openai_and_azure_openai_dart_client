@@ -17,7 +17,7 @@ class FineTuneReinforcementMethodMapper
       MapperContainer.globals.use(
         _instance = FineTuneReinforcementMethodMapper._(),
       );
-      FineTuneReinforcementMethodGraderGraderUnionMapper.ensureInitialized();
+      FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized();
       FineTuneReinforcementHyperparametersMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class FineTuneReinforcementMethodMapper
   @override
   final String id = 'FineTuneReinforcementMethod';
 
-  static FineTuneReinforcementMethodGraderGraderUnion _$grader(
+  static FineTuneReinforcementMethodGraderUnion _$grader(
     FineTuneReinforcementMethod v,
   ) => v.grader;
   static const Field<
     FineTuneReinforcementMethod,
-    FineTuneReinforcementMethodGraderGraderUnion
+    FineTuneReinforcementMethodGraderUnion
   >
   _f$grader = Field('grader', _$grader);
   static FineTuneReinforcementHyperparameters? _$hyperparameters(
@@ -48,6 +48,10 @@ class FineTuneReinforcementMethodMapper
     #grader: _f$grader,
     #hyperparameters: _f$hyperparameters,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static FineTuneReinforcementMethod _instantiate(DecodingData data) {
     return FineTuneReinforcementMethod(
@@ -130,10 +134,10 @@ abstract class FineTuneReinforcementMethodCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  FineTuneReinforcementMethodGraderGraderUnionCopyWith<
+  FineTuneReinforcementMethodGraderUnionCopyWith<
     $R,
-    FineTuneReinforcementMethodGraderGraderUnion,
-    FineTuneReinforcementMethodGraderGraderUnion
+    FineTuneReinforcementMethodGraderUnion,
+    FineTuneReinforcementMethodGraderUnion
   >
   get grader;
   FineTuneReinforcementHyperparametersCopyWith<
@@ -143,7 +147,7 @@ abstract class FineTuneReinforcementMethodCopyWith<
   >?
   get hyperparameters;
   $R call({
-    FineTuneReinforcementMethodGraderGraderUnion? grader,
+    FineTuneReinforcementMethodGraderUnion? grader,
     FineTuneReinforcementHyperparameters? hyperparameters,
   });
   FineTuneReinforcementMethodCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -169,10 +173,10 @@ class _FineTuneReinforcementMethodCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FineTuneReinforcementMethod> $mapper =
       FineTuneReinforcementMethodMapper.ensureInitialized();
   @override
-  FineTuneReinforcementMethodGraderGraderUnionCopyWith<
+  FineTuneReinforcementMethodGraderUnionCopyWith<
     $R,
-    FineTuneReinforcementMethodGraderGraderUnion,
-    FineTuneReinforcementMethodGraderGraderUnion
+    FineTuneReinforcementMethodGraderUnion,
+    FineTuneReinforcementMethodGraderUnion
   >
   get grader => $value.grader.copyWith.$chain((v) => call(grader: v));
   @override
@@ -185,7 +189,7 @@ class _FineTuneReinforcementMethodCopyWithImpl<$R, $Out>
       $value.hyperparameters?.copyWith.$chain((v) => call(hyperparameters: v));
   @override
   $R call({
-    FineTuneReinforcementMethodGraderGraderUnion? grader,
+    FineTuneReinforcementMethodGraderUnion? grader,
     Object? hyperparameters = $none,
   }) => $apply(
     FieldCopyWithData({

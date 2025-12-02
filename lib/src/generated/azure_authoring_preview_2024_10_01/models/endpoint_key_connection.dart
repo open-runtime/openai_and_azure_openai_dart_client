@@ -9,7 +9,7 @@ import 'connection_type.dart';
 part 'endpoint_key_connection.mapper.dart';
 
 /// Endpoint key connection.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EndpointKeyConnection with EndpointKeyConnectionMappable {
   const EndpointKeyConnection({
     required this.kind,

@@ -33,6 +33,10 @@ class ToolChoiceCustomMapper extends ClassMapperBase<ToolChoiceCustom> {
     #type: _f$type,
     #name: _f$name,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ToolChoiceCustom _instantiate(DecodingData data) {
     return ToolChoiceCustom(type: data.dec(_f$type), name: data.dec(_f$name));

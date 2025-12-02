@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_conversation_item.dart';
 import 'realtime_mcp_approval_response_type_type.dart';
 
 part 'realtime_mcp_approval_response.mapper.dart';
 
 /// A Realtime item responding to an MCP approval request.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeMcpApprovalResponse with RealtimeMcpApprovalResponseMappable {
   const RealtimeMcpApprovalResponse({
     required this.type,

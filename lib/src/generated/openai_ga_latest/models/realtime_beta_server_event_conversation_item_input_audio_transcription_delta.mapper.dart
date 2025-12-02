@@ -98,6 +98,10 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMapper
     #delta: _f$delta,
     #logprobs: _f$logprobs,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta
   _instantiate(DecodingData data) {

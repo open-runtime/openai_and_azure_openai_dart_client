@@ -7,6 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'realtime_session_create_request_input_audio_format_input_audio_format.dart';
 import 'realtime_session_create_request_input_audio_noise_reduction.dart';
 import 'realtime_session_create_request_input_audio_transcription.dart';
+import 'realtime_session_create_request_max_response_output_tokens_union.dart';
 import 'realtime_session_create_request_model_model.dart';
 import 'realtime_session_create_request_output_audio_format_output_audio_format.dart';
 import 'realtime_session_create_request_tools.dart';
@@ -16,7 +17,7 @@ import 'voice_ids_shared.dart';
 part 'realtime_session_create_request.mapper.dart';
 
 /// Realtime session object configuration.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   const RealtimeSessionCreateRequest({
     required this.realtimeSessionCreateRequestInputAudioNoiseReduction,
@@ -34,7 +35,7 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
     this.maxResponseOutputTokens,
   });
 
-  @MappableField(key: 'RealtimeSessionCreateRequestInputAudioNoiseReduction')
+  @MappableField(key: 'input_audio_noise_reduction')
   final RealtimeSessionCreateRequestInputAudioNoiseReduction realtimeSessionCreateRequestInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_format')
   final RealtimeSessionCreateRequestInputAudioFormatInputAudioFormat inputAudioFormat;
@@ -46,14 +47,15 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   final dynamic? modalities;
   final RealtimeSessionCreateRequestModelModel? model;
   final String? instructions;
+  @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
-  @MappableField(key: 'RealtimeSessionCreateRequestInputAudioTranscription')
+  @MappableField(key: 'input_audio_transcription')
   final RealtimeSessionCreateRequestInputAudioTranscription? realtimeSessionCreateRequestInputAudioTranscription;
-  @MappableField(key: 'RealtimeSessionCreateRequestTurnDetection')
+  @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateRequestTurnDetection? realtimeSessionCreateRequestTurnDetection;
   final List<RealtimeSessionCreateRequestTools>? tools;
-  @MappableField(key: 'max_response_output_tokens')
-  final String? maxResponseOutputTokens;
+  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook())
+  final RealtimeSessionCreateRequestMaxResponseOutputTokensUnion? maxResponseOutputTokens;
 
   static RealtimeSessionCreateRequest fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestMapper.fromJson(json);
 

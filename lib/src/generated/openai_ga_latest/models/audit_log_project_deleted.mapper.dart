@@ -31,6 +31,10 @@ class AuditLogProjectDeletedMapper
 
   @override
   final MappableFields<AuditLogProjectDeleted> fields = const {#id: _f$id};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static AuditLogProjectDeleted _instantiate(DecodingData data) {
     return AuditLogProjectDeleted(id: data.dec(_f$id));

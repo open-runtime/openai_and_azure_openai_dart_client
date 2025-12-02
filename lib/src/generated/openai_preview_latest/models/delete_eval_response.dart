@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'delete_eval_response.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteEvalResponse with DeleteEvalResponseMappable {
   const DeleteEvalResponse({
     required this.objectField,

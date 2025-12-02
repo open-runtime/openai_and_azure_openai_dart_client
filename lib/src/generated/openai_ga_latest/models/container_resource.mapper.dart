@@ -50,7 +50,7 @@ class ContainerResourceMapper extends ClassMapperBase<ContainerResource> {
   _f$containerResourceExpiresAfter = Field(
     'containerResourceExpiresAfter',
     _$containerResourceExpiresAfter,
-    key: r'ContainerResourceExpiresAfter',
+    key: r'expires_after',
     opt: true,
   );
 
@@ -63,6 +63,10 @@ class ContainerResourceMapper extends ClassMapperBase<ContainerResource> {
     #status: _f$status,
     #containerResourceExpiresAfter: _f$containerResourceExpiresAfter,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContainerResource _instantiate(DecodingData data) {
     return ContainerResource(

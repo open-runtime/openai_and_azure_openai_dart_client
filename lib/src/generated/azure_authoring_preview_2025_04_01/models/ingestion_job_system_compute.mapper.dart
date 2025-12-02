@@ -76,6 +76,10 @@ class IngestionJobSystemComputeMapper
     #completionAction: _f$completionAction,
     #dataRefreshIntervalInHours: _f$dataRefreshIntervalInHours,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static IngestionJobSystemCompute _instantiate(DecodingData data) {
     return IngestionJobSystemCompute(

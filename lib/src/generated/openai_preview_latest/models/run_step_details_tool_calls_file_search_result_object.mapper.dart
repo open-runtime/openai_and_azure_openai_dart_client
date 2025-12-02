@@ -55,6 +55,10 @@ class RunStepDetailsToolCallsFileSearchResultObjectMapper
         #score: _f$score,
         #content: _f$content,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RunStepDetailsToolCallsFileSearchResultObject _instantiate(
     DecodingData data,

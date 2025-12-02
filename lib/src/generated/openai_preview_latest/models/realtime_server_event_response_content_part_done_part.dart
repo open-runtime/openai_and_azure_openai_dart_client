@@ -8,7 +8,7 @@ import 'realtime_server_event_response_content_part_done_part_type_type.dart';
 
 part 'realtime_server_event_response_content_part_done_part.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseContentPartDonePart with RealtimeServerEventResponseContentPartDonePartMappable {
   const RealtimeServerEventResponseContentPartDonePart({
     this.type,

@@ -15,7 +15,7 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalItemMapper._());
       EvalItemRoleRoleMapper.ensureInitialized();
-      EvalItemContentContentUnionMapper.ensureInitialized();
+      EvalItemContentUnionMapper.ensureInitialized();
       EvalItemTypeTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,8 +29,8 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
     'role',
     _$role,
   );
-  static EvalItemContentContentUnion _$content(EvalItem v) => v.content;
-  static const Field<EvalItem, EvalItemContentContentUnion> _f$content = Field(
+  static EvalItemContentUnion _$content(EvalItem v) => v.content;
+  static const Field<EvalItem, EvalItemContentUnion> _f$content = Field(
     'content',
     _$content,
   );
@@ -47,6 +47,10 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
     #content: _f$content,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static EvalItem _instantiate(DecodingData data) {
     return EvalItem(
@@ -113,15 +117,11 @@ extension EvalItemValueCopy<$R, $Out> on ObjectCopyWith<$R, EvalItem, $Out> {
 
 abstract class EvalItemCopyWith<$R, $In extends EvalItem, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  EvalItemContentContentUnionCopyWith<
-    $R,
-    EvalItemContentContentUnion,
-    EvalItemContentContentUnion
-  >
+  EvalItemContentUnionCopyWith<$R, EvalItemContentUnion, EvalItemContentUnion>
   get content;
   $R call({
     EvalItemRoleRole? role,
-    EvalItemContentContentUnion? content,
+    EvalItemContentUnion? content,
     EvalItemTypeType? type,
   });
   EvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -136,16 +136,12 @@ class _EvalItemCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalItem> $mapper =
       EvalItemMapper.ensureInitialized();
   @override
-  EvalItemContentContentUnionCopyWith<
-    $R,
-    EvalItemContentContentUnion,
-    EvalItemContentContentUnion
-  >
+  EvalItemContentUnionCopyWith<$R, EvalItemContentUnion, EvalItemContentUnion>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
     EvalItemRoleRole? role,
-    EvalItemContentContentUnion? content,
+    EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(
     FieldCopyWithData({

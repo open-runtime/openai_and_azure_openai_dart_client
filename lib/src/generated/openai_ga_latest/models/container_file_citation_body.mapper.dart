@@ -77,6 +77,10 @@ class ContainerFileCitationBodyMapper
     #filename: _f$filename,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ContainerFileCitationBody _instantiate(DecodingData data) {
     return ContainerFileCitationBody(

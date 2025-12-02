@@ -49,6 +49,10 @@ class VectorStoreFileBatchObjectFileCountsMapper
     #cancelled: _f$cancelled,
     #total: _f$total,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreFileBatchObjectFileCounts _instantiate(DecodingData data) {
     return VectorStoreFileBatchObjectFileCounts(

@@ -11,7 +11,7 @@ part 'eval_responses_source.mapper.dart';
 
 /// A EvalResponsesSource object describing a run data source configuration.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalResponsesSource with EvalResponsesSourceMappable {
   const EvalResponsesSource({
     required this.type,

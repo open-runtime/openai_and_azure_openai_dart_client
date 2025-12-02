@@ -37,6 +37,10 @@ class ResponseCreatedEventMapper extends ClassMapperBase<ResponseCreatedEvent> {
     #type: _f$type,
     #response: _f$response,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static ResponseCreatedEvent _instantiate(DecodingData data) {
     return ResponseCreatedEvent(

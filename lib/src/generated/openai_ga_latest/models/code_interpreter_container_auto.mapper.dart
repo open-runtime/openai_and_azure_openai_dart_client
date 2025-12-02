@@ -58,6 +58,10 @@ class CodeInterpreterContainerAutoMapper
     #memoryLimit: _f$memoryLimit,
     #type: _f$type,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CodeInterpreterContainerAuto _instantiate(DecodingData data) {
     return CodeInterpreterContainerAuto(

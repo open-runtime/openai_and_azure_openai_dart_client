@@ -4,54 +4,65 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'auto_chunking_strategy_request_param.dart';
 import 'auto_chunking_strategy_request_param_type_type.dart';
 import 'static_chunking_strategy.dart';
-import 'static_chunking_strategy_request_param_type_type.dart';
-import 'auto_chunking_strategy_request_param.dart';
 import 'static_chunking_strategy_request_param.dart';
+import 'static_chunking_strategy_request_param_type_type.dart';
 
 part 'chunking_strategy_request_param_union.mapper.dart';
 
-/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
-@MappableClass(includeSubClasses: [ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam, ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam])
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
+  ChunkingStrategyRequestParamUnionAuto,
+  ChunkingStrategyRequestParamUnionStatic
+])
 sealed class ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionMappable {
   const ChunkingStrategyRequestParamUnion();
 
   static ChunkingStrategyRequestParamUnion fromJson(Map<String, dynamic> json) {
     return ChunkingStrategyRequestParamUnionDeserializer.tryDeserialize(json);
   }
+
 }
 
 extension ChunkingStrategyRequestParamUnionDeserializer on ChunkingStrategyRequestParamUnion {
-  static ChunkingStrategyRequestParamUnion tryDeserialize(Map<String, dynamic> json) {
-    try {
-      return ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMapper.fromJson(json);
-    } catch (_) {}
-    try {
-      return ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMapper.fromJson(json);
-    } catch (_) {}
-
-
-    throw FormatException('Could not determine the correct type for ChunkingStrategyRequestParamUnion from: $json');
+  static ChunkingStrategyRequestParamUnion tryDeserialize(
+    Map<String, dynamic> json, {
+    String key = 'type',
+    Map<Type, Object?>? mapping,
+  }) {
+    final mappingFallback = const <Type, Object?>{
+      ChunkingStrategyRequestParamUnionAuto: 'auto',
+      ChunkingStrategyRequestParamUnionStatic: 'static',
+    };
+    final value = json[key];
+    final effective = mapping ?? mappingFallback;
+    return switch (value) {
+      _ when value == effective[ChunkingStrategyRequestParamUnionAuto] => ChunkingStrategyRequestParamUnionAutoMapper.fromJson(json),
+      _ when value == effective[ChunkingStrategyRequestParamUnionStatic] => ChunkingStrategyRequestParamUnionStaticMapper.fromJson(json),
+      _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChunkingStrategyRequestParamUnion'),
+    };
   }
 }
 
-@MappableClass()
-class ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'auto')
+class ChunkingStrategyRequestParamUnionAuto extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionAutoMappable {
   final AutoChunkingStrategyRequestParamTypeType type;
 
-  const ChunkingStrategyRequestParamUnionAutoChunkingStrategyRequestParam({
+  const ChunkingStrategyRequestParamUnionAuto({
     required this.type,
   });
-}
 
-@MappableClass()
-class ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParamMappable {
+}
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
+class ChunkingStrategyRequestParamUnionStatic extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionStaticMappable {
   final StaticChunkingStrategyRequestParamTypeType type;
+  @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
-  const ChunkingStrategyRequestParamUnionStaticChunkingStrategyRequestParam({
+  const ChunkingStrategyRequestParamUnionStatic({
     required this.type,
     required this.staticField,
   });
+
 }

@@ -4,11 +4,12 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'chat_completion_request_message.dart';
 import 'chat_completion_request_tool_message_role_role.dart';
 
 part 'chat_completion_request_tool_message.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestToolMessage with ChatCompletionRequestToolMessageMappable {
   const ChatCompletionRequestToolMessage({
     required this.role,

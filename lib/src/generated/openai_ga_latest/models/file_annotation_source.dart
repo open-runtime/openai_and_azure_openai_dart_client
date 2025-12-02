@@ -9,7 +9,7 @@ import 'file_annotation_source_type_type.dart';
 part 'file_annotation_source.mapper.dart';
 
 /// Attachment source referenced by an annotation.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class FileAnnotationSource with FileAnnotationSourceMappable {
   const FileAnnotationSource({
     required this.filename,

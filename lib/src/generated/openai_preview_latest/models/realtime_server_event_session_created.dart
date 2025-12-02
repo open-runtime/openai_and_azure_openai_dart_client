@@ -4,6 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'realtime_server_event.dart';
 import 'realtime_server_event_session_created_type_type.dart';
 import 'realtime_session.dart';
 
@@ -13,7 +14,7 @@ part 'realtime_server_event_session_created.mapper.dart';
 /// connection is established as the first server event. This event will contain .
 /// the default Session configuration.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventSessionCreated with RealtimeServerEventSessionCreatedMappable {
   const RealtimeServerEventSessionCreated({
     required this.eventId,

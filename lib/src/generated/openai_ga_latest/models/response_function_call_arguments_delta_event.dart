@@ -5,11 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_function_call_arguments_delta_event_type_type.dart';
+import 'response_stream_event.dart';
 
 part 'response_function_call_arguments_delta_event.mapper.dart';
 
 /// Emitted when there is a partial function-call arguments delta.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFunctionCallArgumentsDeltaEvent with ResponseFunctionCallArgumentsDeltaEventMappable {
   const ResponseFunctionCallArgumentsDeltaEvent({
     required this.type,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_fine_tuning_job_succeeded_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookFineTuningJobSucceededData with WebhookFineTuningJobSucceededDataMappable {
   const WebhookFineTuningJobSucceededData({
     required this.id,

@@ -4,13 +4,14 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
+import 'computer_action.dart';
 import 'type_model_type_type.dart';
 
 part 'type_model.mapper.dart';
 
 /// An action to type in text.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class TypeModel with TypeModelMappable {
   const TypeModel({
     required this.text,

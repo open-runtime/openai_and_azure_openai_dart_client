@@ -12,7 +12,7 @@ part 'webhook_realtime_call_incoming.mapper.dart';
 
 /// Sent when Realtime API Receives a incoming SIP call.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookRealtimeCallIncoming with WebhookRealtimeCallIncomingMappable {
   const WebhookRealtimeCallIncoming({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookRealtimeCallIncoming with WebhookRealtimeCallIncomingMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookRealtimeCallIncomingData')
+  @MappableField(key: 'data')
   final WebhookRealtimeCallIncomingData webhookRealtimeCallIncomingData;
   final WebhookRealtimeCallIncomingTypeType type;
   @MappableField(key: 'object')

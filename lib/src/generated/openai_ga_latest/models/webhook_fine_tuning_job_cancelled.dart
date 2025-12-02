@@ -12,7 +12,7 @@ part 'webhook_fine_tuning_job_cancelled.mapper.dart';
 
 /// Sent when a fine-tuning job has been cancelled.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookFineTuningJobCancelled with WebhookFineTuningJobCancelledMappable {
   const WebhookFineTuningJobCancelled({
     required this.createdAt,
@@ -25,7 +25,7 @@ class WebhookFineTuningJobCancelled with WebhookFineTuningJobCancelledMappable {
   @MappableField(key: 'created_at')
   final int createdAt;
   final String id;
-  @MappableField(key: 'WebhookFineTuningJobCancelledData')
+  @MappableField(key: 'data')
   final WebhookFineTuningJobCancelledData webhookFineTuningJobCancelledData;
   final WebhookFineTuningJobCancelledTypeType type;
   @MappableField(key: 'object')

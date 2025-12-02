@@ -11,7 +11,7 @@ part 'create_eval_logs_data_source_config.mapper.dart';
 /// A data source config which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
 ///
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalLogsDataSourceConfig with CreateEvalLogsDataSourceConfigMappable {
   const CreateEvalLogsDataSourceConfig({
     this.metadata,

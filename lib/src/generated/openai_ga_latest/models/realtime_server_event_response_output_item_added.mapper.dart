@@ -58,6 +58,10 @@ class RealtimeServerEventResponseOutputItemAddedMapper
         #outputIndex: _f$outputIndex,
         #item: _f$item,
       };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseOutputItemAdded _instantiate(
     DecodingData data,

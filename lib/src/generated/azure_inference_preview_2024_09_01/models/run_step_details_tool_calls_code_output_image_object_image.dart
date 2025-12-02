@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'run_step_details_tool_calls_code_output_image_object_image.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsCodeOutputImageObjectImage with RunStepDetailsToolCallsCodeOutputImageObjectImageMappable {
   const RunStepDetailsToolCallsCodeOutputImageObjectImage({
     required this.fileId,

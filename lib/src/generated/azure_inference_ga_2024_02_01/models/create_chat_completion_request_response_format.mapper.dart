@@ -37,6 +37,10 @@ class CreateChatCompletionRequestResponseFormatMapper
   @override
   final MappableFields<CreateChatCompletionRequestResponseFormat> fields =
       const {#type: _f$type};
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static CreateChatCompletionRequestResponseFormat _instantiate(
     DecodingData data,

@@ -67,6 +67,10 @@ class VectorStoreSearchResultsPageMapper
     #hasMore: _f$hasMore,
     #nextPage: _f$nextPage,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static VectorStoreSearchResultsPage _instantiate(DecodingData data) {
     return VectorStoreSearchResultsPage(

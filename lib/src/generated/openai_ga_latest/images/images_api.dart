@@ -11,6 +11,7 @@ import '../models/background.dart';
 import '../models/create_image_request.dart';
 import '../models/images_response.dart';
 import '../models/input_fidelity.dart';
+import '../models/model_union.dart';
 import '../models/output_format.dart';
 import '../models/partial_images.dart';
 import '../models/quality.dart';
@@ -90,7 +91,7 @@ abstract class ImagesApi {
     @Part(name: 'stream') bool? stream = false,
     @Part(name: 'quality') Quality? quality = Quality.auto,
     @Part(name: 'mask') MultipartFile? mask,
-    @Part(name: 'model') String? model,
+    @Part(name: 'model') ModelUnion? model,
     @Part(name: 'user') String? user,
     @Part(name: 'input_fidelity') InputFidelity? inputFidelity,
     @Part(name: 'partial_images') PartialImages? partialImages,
@@ -132,7 +133,7 @@ abstract class ImagesApi {
     @Part(name: 'n') int? n = 1,
     @Part(name: 'response_format') ResponseFormat2? responseFormat = ResponseFormat2.url,
     @Part(name: 'size') Size2? size = Size2.value1024x1024,
-    @Part(name: 'model') String? model,
+    @Part(name: 'model') ModelUnion? model,
     @Part(name: 'user') String? user,
     @Extras() Map<String, dynamic>? extras,
     @DioOptions() RequestOptions? options,

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'webhook_batch_expired_data.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchExpiredData with WebhookBatchExpiredDataMappable {
   const WebhookBatchExpiredData({
     required this.id,

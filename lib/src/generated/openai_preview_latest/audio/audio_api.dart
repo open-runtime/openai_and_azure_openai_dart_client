@@ -11,6 +11,7 @@ import '../models/audio_response_format.dart';
 import '../models/create_speech_request.dart';
 import '../models/create_transcription_response_union.dart';
 import '../models/create_translation_response_union.dart';
+import '../models/model_union.dart';
 import '../models/response_format.dart';
 import '../models/timestamp_granularities.dart';
 import '../models/transcription_include.dart';
@@ -69,7 +70,7 @@ abstract class AudioApi {
   @POST('/audio/transcriptions')
   Future<HttpResponse<CreateTranscriptionResponseUnion>> createTranscription({
     @Part(name: 'file') required MultipartFile file,
-    @Part(name: 'model') required String model,
+    @Part(name: 'model') required ModelUnion model,
     @Part(name: 'temperature') num? temperature = 0,
     @Part(name: 'timestamp_granularities[]') List<TimestampGranularities>? timestampGranularities = const [TimestampGranularities.segment],
     @Part(name: 'stream') bool? stream = false,
@@ -100,7 +101,7 @@ abstract class AudioApi {
   @POST('/audio/translations')
   Future<HttpResponse<CreateTranslationResponseUnion>> createTranslation({
     @Part(name: 'file') required MultipartFile file,
-    @Part(name: 'model') required String model,
+    @Part(name: 'model') required ModelUnion model,
     @Part(name: 'response_format') ResponseFormat? responseFormat = ResponseFormat.valueJson,
     @Part(name: 'temperature') num? temperature = 0,
     @Part(name: 'prompt') String? prompt,

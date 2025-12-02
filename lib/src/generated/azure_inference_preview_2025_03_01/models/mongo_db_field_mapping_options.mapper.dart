@@ -78,6 +78,10 @@ class MongoDbFieldMappingOptionsMapper
     #filepathField: _f$filepathField,
     #contentFieldsSeparator: _f$contentFieldsSeparator,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static MongoDbFieldMappingOptions _instantiate(DecodingData data) {
     return MongoDbFieldMappingOptions(

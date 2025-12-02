@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'stored_completion_delete.mapper.dart';
 
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionDelete with StoredCompletionDeleteMappable {
   const StoredCompletionDelete({
     required this.objectField,

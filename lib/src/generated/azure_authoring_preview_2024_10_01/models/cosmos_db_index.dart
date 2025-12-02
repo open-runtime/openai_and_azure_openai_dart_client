@@ -9,7 +9,7 @@ import 'target_type.dart';
 part 'cosmos_db_index.mapper.dart';
 
 /// CosmosDB Index.
-@MappableClass()
+@MappableClass(ignoreNull: true, includeTypeId: false)
 class CosmosDbIndex with CosmosDbIndexMappable {
   const CosmosDbIndex({
     required this.kind,

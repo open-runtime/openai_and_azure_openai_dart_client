@@ -92,6 +92,10 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
     #callId: _f$callId,
     #delta: _f$delta,
   };
+  @override
+  final bool ignoreNull = true;
+  @override
+  bool includeTypeId<T>(_) => false;
 
   static RealtimeServerEventResponseFunctionCallArgumentsDelta _instantiate(
     DecodingData data,
