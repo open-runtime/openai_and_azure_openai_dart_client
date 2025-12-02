@@ -1,0 +1,186 @@
+# =============================================================================
+# CI Workflow for open-runtime/openai_and_azure_openai_dart_client
+# =============================================================================
+# Runs on:
+#   - Push to main
+#   - Pull requests to main
+#
+# Steps:
+#   1. Checkout with submodules
+#   2. Analyze code
+#   3. Format code (commit if changed)
+#   4. Generate SDK (commented out for now)
+#   5. Run tests (commented out for now)
+# =============================================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel in-progress runs when new commits are pushed
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # =============================================================================
+  # Analyze and Format
+  # =============================================================================
+  analyze:
+    name: 🧹 Analyze & Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout source code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive  # Include git submodules (openapi_retrofit_generator)
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🎯 Install Dart SDK
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: 📋 Report version
+        run: dart --version
+
+      - name: 📚 Install dependencies
+        run: dart pub get
+
+      - name: 🧹 Check formatting
+        id: format_check
+        run: |
+          # Check if files need formatting (line length 120 matches repo conventions)
+          if ! dart format --line-length=120 --output=none --set-exit-if-changed .; then
+            echo "needs_format=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_format=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📝 Format and commit if needed
+        if: steps.format_check.outputs.needs_format == 'true' && github.event_name == 'push'
+        run: |
+          # Format all Dart files
+          dart format --line-length=120 .
+          
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "style: format code with dart format --line-length=120"
+            git push
+            echo "✅ Formatted code committed"
+          else
+            echo "✅ No formatting changes needed"
+          fi
+
+      - name: 🔍 Analyze code
+        run: |
+          # Report analysis issues but don't fail on warnings (review them)
+          dart analyze . || echo "⚠️ Analysis warnings found - review above"
+
+  # =============================================================================
+  # Generate SDK (Commented out - enable when ready)
+  # =============================================================================
+  # generate:
+  #   name: 🔄 Generate SDK
+  #   needs: analyze
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: 📥 Checkout source code
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
+  #         submodules: recursive
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #
+  #     - name: 🎯 Install Dart SDK
+  #       uses: dart-lang/setup-dart@v1
+  #       with:
+  #         sdk: stable
+  #
+  #     - name: 📚 Install dependencies
+  #       run: dart pub get
+  #
+  #     - name: 🔄 Run OpenAPI generator
+  #       run: dart run openapi_retrofit_generator
+  #
+  #     - name: 🔧 Run build_runner
+  #       run: dart run build_runner build -d
+  #
+  #     - name: 📝 Commit generated files if changed
+  #       run: |
+  #         # Configure git
+  #         git config --local user.email "github-actions[bot]@users.noreply.github.com"
+  #         git config --local user.name "github-actions[bot]"
+  #         
+  #         # Check if there are changes in generated files
+  #         if [ -n "$(git status --porcelain lib/src/generated/)" ]; then
+  #           git add lib/src/generated/
+  #           git commit -m "chore: regenerate SDK from OpenAPI specs"
+  #           git push
+  #           echo "✅ Generated files committed"
+  #         else
+  #           echo "✅ No changes to generated files"
+  #         fi
+
+  # =============================================================================
+  # Integration Tests (Commented out - requires GCP credentials)
+  # =============================================================================
+  # test:
+  #   name: 🧪 Integration Tests
+  #   needs: [analyze]  # or [generate] when enabled
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: 📥 Checkout source code
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
+  #         submodules: recursive
+  #
+  #     - name: 🎯 Install Dart SDK
+  #       uses: dart-lang/setup-dart@v1
+  #       with:
+  #         sdk: stable
+  #
+  #     - name: 📚 Install dependencies
+  #       run: dart pub get
+  #
+  #     - name: 🔐 Authenticate to Google Cloud
+  #       uses: google-github-actions/auth@v2
+  #       with:
+  #         credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+  #
+  #     - name: 📥 Fetch credentials from Secret Manager
+  #       run: dart run scripts/fetch_credentials.dart --force
+  #
+  #     - name: 🧪 Run unit tests
+  #       run: |
+  #         dart test test/unified_response_helpers_test.dart --reporter expanded
+  #         dart test test/openai_ga_edge_cases_test.dart --reporter expanded
+  #
+  #     - name: 🧪 Run integration tests
+  #       run: |
+  #         dart test test/integration_test.dart --reporter expanded
+  #         dart test test/unified_end_2_end_test.dart --reporter expanded
+  #
+  #     - name: 📋 Test Summary
+  #       if: always()
+  #       run: |
+  #         echo "## 🧪 Test Results" >> $GITHUB_STEP_SUMMARY
+  #         echo "" >> $GITHUB_STEP_SUMMARY
+  #         echo "Tests completed. Check the logs for details." >> $GITHUB_STEP_SUMMARY
+

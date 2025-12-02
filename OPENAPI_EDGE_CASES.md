@@ -11,6 +11,11 @@ This document details the complex edge cases encountered when generating Dart co
 5. [Const Values Without Type](#5-const-values-without-type)
 6. [Mixed Union Default Values](#6-mixed-union-default-values)
 7. [Dynamic/Object Type String Defaults](#7-dynamicobject-type-string-defaults)
+8. [Inferred Discriminators for Implicit Polymorphism](#8-inferred-discriminators-for-implicit-polymorphism)
+9. [Primitive Union Serialization with MappingHook](#9-primitive-union-serialization-with-mappinghook)
+10. [Duplicate Word Prevention in Generated Names](#10-duplicate-word-prevention-in-generated-names)
+11. [jsonKey Preservation for Inline Objects](#11-jsonkey-preservation-for-inline-objects)
+12. [MappableField Annotations in Discriminated Union Variants](#12-mappablefield-annotations-in-discriminated-union-variants)
 
 ---
 
@@ -523,7 +528,505 @@ final description = switch (hyperparams.batchSize) {
 
 ---
 
+## 8. Inferred Discriminators for Implicit Polymorphism
+
+### OpenAPI Spec Pattern
+
+Azure OpenAI specifications (and some other APIs) use **implicit polymorphism** without explicit `discriminator` objects. Instead, each message type variant has a single-value enum for the `role` property:
+
+```json
+// Azure ChatCompletionRequestMessage (oneOf without explicit discriminator)
+{
+  "oneOf": [
+    { "$ref": "#/components/schemas/ChatCompletionRequestUserMessage" },
+    { "$ref": "#/components/schemas/ChatCompletionRequestSystemMessage" },
+    { "$ref": "#/components/schemas/ChatCompletionRequestAssistantMessage" }
+  ]
+}
+
+// ChatCompletionRequestUserMessage (single-value enum implies type)
+{
+  "type": "object",
+  "required": ["role", "content"],
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": ["user"]  // Single value = implicit discriminator!
+    },
+    "content": { "type": "string" }
+  }
+}
+
+// ChatCompletionRequestSystemMessage
+{
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": ["system"]  // Different single value
+    }
+  }
+}
+```
+
+### Problem
+
+Without an explicit `discriminator` object:
+```json
+"discriminator": {
+  "propertyName": "role",
+  "mapping": {
+    "user": "#/components/schemas/ChatCompletionRequestUserMessage",
+    "system": "#/components/schemas/ChatCompletionRequestSystemMessage"
+  }
+}
+```
+
+The generator cannot determine:
+1. Which property discriminates between variants
+2. What value maps to which variant class
+
+This causes `dart_mappable` to fail with:
+```
+MapperException: Cannot instantiate class ChatCompletionRequestMessage,
+did you forget to specify a subclass for [ role: 'system' ]?
+```
+
+### Solution
+
+Added `_inferDiscriminatorFromVariants()` to detect discriminators from single-value enums:
+
+```dart
+// In open_api_parser.dart:
+({String? propertyName, Map<String, String>? mapping}) _inferDiscriminatorFromVariants(
+  List<Map<String, dynamic>> variants,
+) {
+  // Find properties that exist in ALL variants with single-value enums
+  final candidateProperties = <String, Map<String, String>>{};
+  
+  for (final variant in variants) {
+    final properties = variant['properties'] as Map<String, dynamic>?;
+    if (properties == null) continue;
+    
+    for (final entry in properties.entries) {
+      final propSchema = entry.value as Map<String, dynamic>;
+      final enumValues = propSchema['enum'] as List?;
+      
+      // Single-value enum = discriminator candidate
+      if (enumValues != null && enumValues.length == 1) {
+        final discriminatorValue = enumValues.first.toString();
+        candidateProperties
+            .putIfAbsent(entry.key, () => {})
+            [discriminatorValue] = variant['\$ref'] ?? variant['title'];
+      }
+    }
+  }
+  
+  // Return property that appears in ALL variants with unique values
+  for (final entry in candidateProperties.entries) {
+    if (entry.value.length == variants.length) {
+      return (propertyName: entry.key, mapping: entry.value);
+    }
+  }
+  
+  return (propertyName: null, mapping: null);
+}
+```
+
+### Generated Dart Code
+
+```dart
+// chat_completion_request_message.dart
+@MappableClass(
+  discriminatorKey: 'role',
+  includeSubClasses: [
+    ChatCompletionRequestMessageUser,
+    ChatCompletionRequestMessageSystem,
+    ChatCompletionRequestMessageAssistant,
+  ],
+)
+sealed class ChatCompletionRequestMessage {...}
+
+@MappableClass(discriminatorValue: 'user')  // Inferred!
+class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage {
+  final ChatCompletionRequestMessageRole2 role;  // Always 'user'
+  final String content;
+}
+
+@MappableClass(discriminatorValue: 'system')  // Inferred!
+class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage {
+  final ChatCompletionRequestMessageRole role;  // Always 'system'
+  final String content;
+}
+```
+
+### Key Files
+- **Parser**: `open_api_parser.dart` - `_inferDiscriminatorFromVariants()`, `_parseDiscriminatorInfo()`
+
+---
+
+## 9. Primitive Union Serialization with MappingHook
+
+### OpenAPI Spec Pattern
+
+Primitive unions (string, int, enum-only) serialize to raw values, not wrapped objects:
+
+```json
+// ModelIdsShared - union of string OR enum
+{
+  "anyOf": [
+    { "type": "string" },
+    { "type": "string", "enum": ["gpt-4o", "gpt-4o-mini", ...] }
+  ]
+}
+
+// API expects raw string in JSON:
+{ "model": "gpt-4o" }
+
+// NOT wrapped:
+{ "model": { "value": "gpt-4o" } }
+```
+
+### Problem
+
+`dart_mappable` by default wraps all variant values in objects. When deserializing:
+```
+MapperException: Expected a value of type Map<String, dynamic>, 
+but got type String.
+```
+
+And when serializing, the output is `{"value": "gpt-4o"}` instead of `"gpt-4o"`.
+
+### Solution
+
+Added a custom `MappingHook` for primitive unions to intercept serialization/deserialization:
+
+```dart
+// In dart_dart_mappable_dto_template.dart (_generatePrimitiveUnionMappableExtension):
+
+/// Hook to deserialize primitive unions from raw values
+class ${className}Hook extends MappingHook {
+  const ${className}Hook();
+
+  @override
+  Object? beforeDecode(Object? value) {
+    if (value is Map<String, dynamic>) {
+      return value;  // Already wrapped, let mapper handle
+    }
+    // Raw primitive - try to deserialize manually
+    final result = ${className}UnionDeserializer.tryDeserialize(value);
+    if (result != null) {
+      return result;  // Return deserialized object directly
+    }
+    return value;  // Fallback
+  }
+
+  @override
+  Object? beforeEncode(Object? value) {
+    if (value is ${className}) {
+      return value.toJsonValue();  // Return raw value, not wrapped
+    }
+    return value;
+  }
+}
+
+/// Extension to get raw JSON value
+extension ${className}ToJsonValue on ${className} {
+  dynamic toJsonValue() {
+    return switch (this) {
+      ${className}VariantString v => v.value,
+      ${className}VariantEnum v => v.value.toValue(),  // Get @MappableValue string
+      ${className}VariantInt v => v.value,
+      // ... other variants
+    };
+  }
+}
+
+/// Deserializer for raw primitive values
+extension ${className}UnionDeserializer on ${className} {
+  static ${className}? tryDeserialize(Object? value) {
+    if (value is String) {
+      // Try enum first
+      for (final e in ${enumTypeName}.values) {
+        if (e.toValue() == value) {
+          return ${className}VariantEnum(value: e);
+        }
+      }
+      // Fallback to string variant
+      return ${className}VariantString(value: value);
+    }
+    if (value is int) return ${className}VariantInt(value: value);
+    return null;
+  }
+}
+```
+
+### Generated Dart Code
+
+```dart
+// model_ids_shared.dart
+@MappableClass(hook: ModelIdsSharedHook())
+sealed class ModelIdsShared {...}
+
+class ModelIdsSharedHook extends MappingHook {
+  const ModelIdsSharedHook();
+
+  @override
+  Object? beforeDecode(Object? value) {
+    if (value is Map<String, dynamic>) return value;
+    final result = ModelIdsSharedUnionDeserializer.tryDeserialize(value);
+    if (result != null) return result;
+    return value;
+  }
+
+  @override
+  Object? beforeEncode(Object? value) {
+    if (value is ModelIdsShared) return value.toJsonValue();
+    return value;
+  }
+}
+```
+
+### Usage
+
+```dart
+// Both work identically:
+final req1 = CreateChatCompletionRequest(
+  model: ModelIdsSharedVariantString(value: 'gpt-4o'),
+  messages: [...],
+);
+
+final req2 = CreateChatCompletionRequest.fromJson({
+  'model': 'gpt-4o',  // Raw string automatically wrapped
+  'messages': [...],
+});
+
+// Serializes to raw value:
+print(req1.toJson()['model']);  // 'gpt-4o' (not {'value': 'gpt-4o'})
+```
+
+### Key Files
+- **Template**: `dart_dart_mappable_dto_template.dart` - `_generatePrimitiveUnionMappableExtension()`, `_isPrimitiveUnion()`
+
+---
+
+## 10. Duplicate Word Prevention in Generated Names
+
+### Problem
+
+When generating inline enum names for discriminated union properties, the naming convention can produce duplicated words:
+
+```
+ChatCompletionRequestMessage + Role + Role (from property name)
+= ChatCompletionRequestMessageRoleRole  ❌
+```
+
+This happens when:
+1. Parent class already ends with the property name's suffix
+2. Property name is appended without checking for overlap
+
+### Solution
+
+Added duplicate detection in `protectName()`:
+
+```dart
+// In open_api_parser.dart (protectName):
+String protectName(String name, String? additionalName) {
+  var finalName = name;
+  
+  if (additionalName != null && additionalName.isNotEmpty) {
+    final additionalCamel = additionalName.toPascal;
+    
+    // Avoid duplicate words: "ChatCompletionRequestMessageRole" + "Role"
+    // should NOT become "ChatCompletionRequestMessageRoleRole"
+    if (finalName.endsWith(additionalCamel)) {
+      // Already ends with this word, don't append again
+      // Just use as-is
+    } else {
+      finalName = '$finalName$additionalCamel';
+    }
+  }
+  
+  return finalName;
+}
+```
+
+### Before Fix
+
+```dart
+// Generated enum name with duplication:
+enum ChatCompletionRequestMessageRoleRole2 {  // ❌ RoleRole
+  @MappableValue('user')
+  user,
+}
+```
+
+### After Fix
+
+```dart
+// Clean enum name without duplication:
+enum ChatCompletionRequestMessageRole2 {  // ✓ Just Role
+  @MappableValue('user')
+  user,
+}
+```
+
+### Key Files
+- **Parser**: `open_api_parser.dart` - `protectName()` function
+
+---
+
+## 11. jsonKey Preservation for Inline Objects
+
+### Problem
+
+When generating inline object types for nested properties, the `jsonKey` was incorrectly set to the generated type name instead of the original JSON property name:
+
+```json
+// OpenAPI spec:
+{
+  "properties": {
+    "usage": {  // JSON key is "usage"
+      "type": "object",
+      "properties": {
+        "prompt_tokens": { "type": "integer" }
+      }
+    }
+  }
+}
+```
+
+Generated code was using the type name as `jsonKey`:
+
+```dart
+// WRONG - @MappableField key was the generated class name:
+@MappableField(key: 'EmbeddingsCreateResponseUsage')  // ❌
+final EmbeddingsCreateResponseUsage? usage;
+```
+
+This caused deserialization failures:
+```
+MapperException: Parameter EmbeddingsCreateResponseUsage is missing.
+```
+
+### Solution
+
+Fixed `_findType()` to use the original property name for `jsonKey`:
+
+```dart
+// In open_api_parser.dart (_findType, around line 2239):
+return (
+  type: UniversalType(
+    type: type,
+    name: newName.toCamel,
+    description: description,
+    format: format,
+    jsonKey: name,  // Use original property name, NOT generated type name
+    defaultValue: defaultValue,
+    nullable: ...,
+  ),
+  import: type,
+);
+```
+
+### After Fix
+
+```dart
+// Correct @MappableField with original JSON key:
+@MappableField(key: 'usage')  // ✓ Matches JSON
+final EmbeddingsCreateResponseUsage? usage;
+```
+
+### Key Files
+- **Parser**: `open_api_parser.dart` - `_findType()` function
+
+---
+
+## 12. MappableField Annotations in Discriminated Union Variants
+
+### Problem
+
+Properties in discriminated union variant classes that have different `jsonKey` values were missing `@MappableField(key: ...)` annotations:
+
+```json
+// OpenAPI spec has "object" as JSON key:
+{
+  "properties": {
+    "object": {
+      "type": "string",
+      "enum": ["chat.completion"]
+    }
+  }
+}
+```
+
+The Dart property was renamed to avoid the reserved word `object`:
+
+```dart
+// Property renamed, but missing @MappableField:
+final ChatCompletionObjectEnum objectEnum;  // jsonKey should be "object"
+```
+
+This caused deserialization failures:
+```
+MapperException: Parameter objectEnum is missing.
+```
+
+### Solution
+
+Updated `_generateDiscriminatedWrapperClasses()` to check if `jsonKey` differs from `propName`:
+
+```dart
+// In dart_dart_mappable_dto_template.dart (_generateDiscriminatedWrapperClasses):
+final directProperties = filteredProperties
+    .map((prop) {
+      final jsonKey = prop.jsonKey;
+      final propName = prop.name!;
+      
+      // Add @MappableField if JSON key differs from property name
+      if (jsonKey != null && jsonKey != propName) {
+        return "@MappableField(key: '$jsonKey')\n  final ${prop.toSuitableType()} $propName;";
+      }
+      return 'final ${prop.toSuitableType()} $propName;';
+    })
+    .join('\n');
+```
+
+### After Fix
+
+```dart
+// Proper @MappableField annotation:
+@MappableClass(discriminatorValue: 'chat.completion')
+class ChatCompletionsCreateResponseUnionChatCompletion 
+    extends ChatCompletionsCreateResponseUnion {
+  
+  @MappableField(key: 'object')  // ✓ Maps to JSON correctly
+  final ChatCompletionObjectEnum objectEnum;
+  
+  // ... other properties
+}
+```
+
+### Key Files
+- **Template**: `dart_dart_mappable_dto_template.dart` - `_generateDiscriminatedWrapperClasses()`
+
+---
+
 ## Summary of Generator Changes
+
+| Edge Case | Parser Change | Template Change |
+|-----------|--------------|-----------------|
+| String enum refs | `_isStringEnumRef()`, `_getRefEnumValues()` | - |
+| Pure string anyOf | Check `allStrings`, create typedef | - |
+| Invalid array defaults | `_validateArrayDefault()` | Skip empty defaults |
+| Optional non-nullable | - | Add `?` if no valid default |
+| Const without type | - | Quote in `protectDefaultValue` |
+| Union defaults | Create `VariantString` variant | Use variant constructor |
+| Dynamic string defaults | - | Quote strings for dynamic |
+| Inferred discriminators | `_inferDiscriminatorFromVariants()` | `discriminatorValue` annotation |
+| Primitive union serialization | Track `isPrimitiveUnion` | `MappingHook`, `toJsonValue()` |
+| Duplicate word prevention | `protectName()` duplicate check | - |
+| jsonKey for inline objects | `_findType()` jsonKey fix | - |
+| MappableField in variants | - | Add `@MappableField(key:)` |
 
 | Edge Case | Parser Change | Template Change |
 |-----------|--------------|-----------------|
@@ -545,12 +1048,24 @@ final description = switch (hyperparams.batchSize) {
 - Updated `_createUnionComponentClass()` for string variants
 - Updated `_findType()` inline anyOf handling
 - Only set `enumType` for actual enums
+- Added `_inferDiscriminatorFromVariants()` for implicit polymorphism
+- Added `_parseDiscriminatorInfo()` to check explicit then inferred discriminators
+- Fixed `protectName()` to prevent duplicate words (e.g., `RoleRole`)
+- Fixed `_findType()` to use original property name for `jsonKey` in inline objects
 
 ### Template (`dart_dart_mappable_dto_template.dart`)
 - Updated `_defaultValue()` for union types
 - Updated `getDefaultValue()` to skip empty
 - Updated `_fieldsToString()` for optional nullable
 - Skip invalid collection defaults
+- Added `_isPrimitiveUnion()` to detect string/int/bool-only unions
+- Added `_generatePrimitiveUnionMappableExtension()` for `MappingHook`
+- Added `toJsonValue()` extension for raw serialization
+- Added `tryDeserialize()` for raw deserialization
+- Updated `_generateDiscriminatedWrapperClasses()` to add `@MappableField(key:)` annotations
+
+### Model (`universal_type.dart`)
+- Added `isPrimitiveUnion` flag to track primitive-only unions
 
 ### Utils (`type_utils.dart`)
 - Enhanced `protectDefaultValue()` for dynamic/Object types
@@ -558,5 +1073,9 @@ final description = switch (hyperparams.batchSize) {
 
 ## Testing
 
-All edge cases are covered by the integration tests in `test/integration_test.dart` and the new edge case tests in `test/openai_ga_edge_cases_test.dart`.
+All edge cases are covered by:
+- `test/integration_test.dart` - Full integration tests with real API calls
+- `test/openai_ga_edge_cases_test.dart` - Unit tests for edge case patterns
+- `test/unified_end_2_end_test.dart` - Cross-provider tests with typed SDK
+- `test/debug_serialization.dart` - Serialization verification
 
