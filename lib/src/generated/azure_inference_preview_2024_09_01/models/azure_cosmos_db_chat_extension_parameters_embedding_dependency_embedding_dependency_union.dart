@@ -1,0 +1,47 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'on_your_data_endpoint_vectorization_source.dart';
+import 'on_your_data_deployment_name_vectorization_source.dart';
+
+part 'azure_cosmos_db_chat_extension_parameters_embedding_dependency_embedding_dependency_union.mapper.dart';
+
+@MappableClass(includeSubClasses: [AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource, AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource])
+sealed class AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMappable {
+  const AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion();
+
+  static AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion fromJson(Map<String, dynamic> json) {
+    return AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionDeserializer.tryDeserialize(json);
+  }
+}
+
+extension AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionDeserializer on AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion {
+  static AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion tryDeserialize(Map<String, dynamic> json) {
+    try {
+      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMapper.fromJson(json);
+    } catch (_) {}
+    try {
+      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMapper.fromJson(json);
+    } catch (_) {}
+
+
+    throw FormatException('Could not determine the correct type for AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion from: $json');
+  }
+}
+
+@MappableClass()
+class AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMappable {
+
+
+  const AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource();
+}
+
+@MappableClass()
+class AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMappable {
+
+
+  const AzureCosmosDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource();
+}

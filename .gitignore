@@ -1,0 +1,27 @@
+# Note: Generated code is NOT ignored - clients need it
+# If you want to regenerate: dart run scripts/execute_pipeline.dart
+
+# Archived old generator outputs
+archive/
+
+# Build artifacts
+.dart_tool/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test credentials (NEVER commit)
+test/credentials/*.env
+test/credentials/openai.env
+test/credentials/azure.env
+
+# Dependencies
+pubspec.lock
+

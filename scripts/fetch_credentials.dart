@@ -1,0 +1,193 @@
+/// Fetches credentials from GCP Secret Manager and writes them to local files.
+///
+/// Usage:
+///   dart run scripts/fetch_credentials.dart
+///   dart run scripts/fetch_credentials.dart --force
+///
+/// This script fetches:
+///   - OpenAI API key -> test/credentials/openai.env
+///   - Azure credentials -> test/credentials/azure.env
+///
+/// Prerequisites:
+///   - `gcloud auth application-default login` for local development
+///   - Or service account credentials for CI
+library;
+
+import 'dart:io';
+
+import 'package:googleapis/secretmanager/v1.dart' as secretmanager;
+import 'package:googleapis_auth/auth_io.dart' as auth;
+
+/// GCP Project configuration
+const String gcpProjectId = '226509373556';
+
+/// Secret IDs in GCP Secret Manager
+const String openaiSecretId = 'openApiKey';
+const String azurePrimaryKeySecretId = 'azureOpenAIPrimaryKey';
+const String azureSecondaryKeySecretId = 'azureOpenAISecondaryKey';
+const String azureResourceNameSecretId = 'azureOpenAIResourceName';
+
+/// Output directory for credentials
+final String credentialsDir = 'test/credentials';
+
+Future<void> main(List<String> args) async {
+  final verbose = args.contains('--verbose') || args.contains('-v');
+  final force = args.contains('--force') || args.contains('-f');
+
+  print('🔐 Fetching credentials from GCP Secret Manager...');
+  print('   Project: $gcpProjectId\n');
+
+  // Check if credentials already exist
+  final openaiEnvFile = File('$credentialsDir/openai.env');
+  final azureEnvFile = File('$credentialsDir/azure.env');
+
+  if (!force && await openaiEnvFile.exists() && await azureEnvFile.exists()) {
+    print('✅ Credentials already exist in $credentialsDir/');
+    print('   Use --force to re-fetch from Secret Manager');
+    return;
+  }
+
+  // Ensure credentials directory exists
+  await Directory(credentialsDir).create(recursive: true);
+
+  try {
+    // Get authenticated client
+    final httpClient = await _getAuthenticatedClient();
+
+    try {
+      // Fetch OpenAI credentials
+      print('📥 Fetching OpenAI API key...');
+      final openaiApiKey = await _getSecretValue(httpClient, secretId: openaiSecretId, verbose: verbose);
+
+      // Write OpenAI credentials
+      await _writeOpenAICredentials(openaiEnvFile, openaiApiKey);
+      print('   ✓ Written to ${openaiEnvFile.path}');
+
+      // Fetch Azure credentials
+      print('📥 Fetching Azure OpenAI credentials...');
+
+      String? azurePrimaryKey;
+      String? azureSecondaryKey;
+      String? azureResourceName;
+
+      try {
+        azurePrimaryKey = await _getSecretValue(httpClient, secretId: azurePrimaryKeySecretId, verbose: verbose);
+      } catch (e) {
+        print('   ⚠ Azure primary key not found in Secret Manager');
+        if (verbose) print('     Error: $e');
+      }
+
+      try {
+        azureSecondaryKey = await _getSecretValue(httpClient, secretId: azureSecondaryKeySecretId, verbose: verbose);
+      } catch (e) {
+        print('   ⚠ Azure secondary key not found in Secret Manager');
+        if (verbose) print('     Error: $e');
+      }
+
+      try {
+        azureResourceName = await _getSecretValue(httpClient, secretId: azureResourceNameSecretId, verbose: verbose);
+      } catch (e) {
+        print('   ⚠ Azure resource name not found in Secret Manager');
+        if (verbose) print('     Error: $e');
+      }
+
+      // Write Azure credentials
+      await _writeAzureCredentials(
+        azureEnvFile,
+        primaryKey: azurePrimaryKey,
+        secondaryKey: azureSecondaryKey,
+        resourceName: azureResourceName,
+      );
+      print('   ✓ Written to ${azureEnvFile.path}');
+
+      print('\n✅ Credentials fetched successfully!');
+      print('\nYou can now run tests with:');
+      print('   dart test test/integration_test.dart');
+    } finally {
+      httpClient.close();
+    }
+  } catch (e) {
+    print('\n❌ Error fetching credentials: $e');
+    print('\nMake sure you have authenticated:');
+    print('   gcloud auth application-default login');
+    print('\nOr set GOOGLE_APPLICATION_CREDENTIALS environment variable.');
+    exit(1);
+  }
+}
+
+Future<auth.AuthClient> _getAuthenticatedClient() async {
+  return auth.clientViaApplicationDefaultCredentials(scopes: [secretmanager.SecretManagerApi.cloudPlatformScope]);
+}
+
+Future<String> _getSecretValue(
+  auth.AuthClient httpClient, {
+  required String secretId,
+  String versionId = 'latest',
+  bool verbose = false,
+}) async {
+  final secretApi = secretmanager.SecretManagerApi(httpClient);
+  final name = 'projects/$gcpProjectId/secrets/$secretId/versions/$versionId';
+
+  if (verbose) {
+    print('   Fetching: $name');
+  }
+
+  final response = await secretApi.projects.secrets.versions.access(name);
+
+  if (response.payload?.data == null) {
+    throw Exception('Secret payload is empty for $secretId');
+  }
+
+  return String.fromCharCodes(response.payload!.dataAsBytes);
+}
+
+Future<void> _writeOpenAICredentials(File file, String apiKey) async {
+  final content =
+      '''# OpenAI Credentials
+# Generated by scripts/fetch_credentials.dart
+# This file is git-ignored for security
+
+# OpenAI API Key
+OPENAI_API_KEY=$apiKey
+
+# Organization ID (optional)
+# OPENAI_ORG_ID=
+
+# Base URL (optional, for custom endpoints)
+# OPENAI_BASE_URL=https://api.openai.com/v1
+''';
+
+  await file.writeAsString(content);
+}
+
+Future<void> _writeAzureCredentials(File file, {String? primaryKey, String? secondaryKey, String? resourceName}) async {
+  final effectivePrimaryKey = primaryKey ?? '<YOUR_PRIMARY_KEY>';
+  final effectiveSecondaryKey = secondaryKey ?? '<YOUR_SECONDARY_KEY>';
+  final effectiveResourceName = resourceName ?? 'your-resource-name';
+
+  final content =
+      '''# Azure OpenAI Credentials
+# Generated by scripts/fetch_credentials.dart
+# This file is git-ignored for security
+
+# Primary API Key
+AZURE_OPENAI_API_KEY=$effectivePrimaryKey
+
+# Secondary API Key (backup)
+AZURE_OPENAI_SECONDARY_KEY=$effectiveSecondaryKey
+
+# Resource Name (used to construct endpoint)
+AZURE_OPENAI_RESOURCE_NAME=$effectiveResourceName
+
+# Deployment ID (your model deployment name)
+AZURE_OPENAI_DEPLOYMENT_ID=gpt-4o
+
+# API Version
+AZURE_OPENAI_API_VERSION=2024-10-21
+
+# Constructed Endpoint
+# https://{AZURE_OPENAI_RESOURCE_NAME}.openai.azure.com/openai
+''';
+
+  await file.writeAsString(content);
+}

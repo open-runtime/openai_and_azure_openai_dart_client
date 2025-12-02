@@ -1,0 +1,24 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'realtime_create_client_secret_request_expires_after_anchor_anchor.dart';
+
+part 'realtime_create_client_secret_request_expires_after.mapper.dart';
+
+@MappableClass()
+class RealtimeCreateClientSecretRequestExpiresAfter with RealtimeCreateClientSecretRequestExpiresAfterMappable {
+  const RealtimeCreateClientSecretRequestExpiresAfter({
+    this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor.createdAt,
+    this.seconds = 600,
+  });
+
+  final RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor anchor;
+  final int seconds;
+
+  static RealtimeCreateClientSecretRequestExpiresAfter fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretRequestExpiresAfterMapper.fromJson(json);
+
+}
+

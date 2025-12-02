@@ -1,0 +1,37 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'eval_stored_completions_source_type_type.dart';
+import 'metadata.dart';
+
+part 'eval_stored_completions_source.mapper.dart';
+
+/// A StoredCompletionsRunDataSource configuration describing a set of filters.
+///
+@MappableClass()
+class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
+  const EvalStoredCompletionsSource({
+    this.metadata,
+    this.model,
+    this.createdAfter,
+    this.createdBefore,
+    this.limit,
+    this.type = EvalStoredCompletionsSourceTypeType.storedCompletions,
+  });
+
+  final Metadata? metadata;
+  final String? model;
+  @MappableField(key: 'created_after')
+  final int? createdAfter;
+  @MappableField(key: 'created_before')
+  final int? createdBefore;
+  final int? limit;
+  final EvalStoredCompletionsSourceTypeType type;
+
+  static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) => EvalStoredCompletionsSourceMapper.fromJson(json);
+
+}
+

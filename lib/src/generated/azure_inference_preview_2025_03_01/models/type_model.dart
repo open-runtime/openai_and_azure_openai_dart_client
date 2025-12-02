@@ -1,0 +1,26 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'type_model_type_type.dart';
+
+part 'type_model.mapper.dart';
+
+/// An action to type in text.
+///
+@MappableClass()
+class TypeModel with TypeModelMappable {
+  const TypeModel({
+    required this.text,
+    this.type = TypeModelTypeType.type,
+  });
+
+  final String text;
+  final TypeModelTypeType type;
+
+  static TypeModel fromJson(Map<String, dynamic> json) => TypeModelMapper.fromJson(json);
+
+}
+

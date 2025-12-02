@@ -1,0 +1,27 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'message_content_text_object_text.dart';
+import 'message_content_text_object_type_type.dart';
+
+part 'message_content_text_object.mapper.dart';
+
+/// The text content that is part of a message.
+@MappableClass()
+class MessageContentTextObject with MessageContentTextObjectMappable {
+  const MessageContentTextObject({
+    required this.type,
+    required this.messageContentTextObjectText,
+  });
+
+  final MessageContentTextObjectTypeType type;
+  @MappableField(key: 'MessageContentTextObjectText')
+  final MessageContentTextObjectText messageContentTextObjectText;
+
+  static MessageContentTextObject fromJson(Map<String, dynamic> json) => MessageContentTextObjectMapper.fromJson(json);
+
+}
+

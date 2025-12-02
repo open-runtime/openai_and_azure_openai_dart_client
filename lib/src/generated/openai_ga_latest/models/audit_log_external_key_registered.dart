@@ -1,0 +1,22 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'audit_log_external_key_registered.mapper.dart';
+
+@MappableClass()
+class AuditLogExternalKeyRegistered with AuditLogExternalKeyRegisteredMappable {
+  const AuditLogExternalKeyRegistered({
+    this.id,
+    this.data,
+  });
+
+  final String? id;
+  final dynamic data;
+
+  static AuditLogExternalKeyRegistered fromJson(Map<String, dynamic> json) => AuditLogExternalKeyRegisteredMapper.fromJson(json);
+
+}
+

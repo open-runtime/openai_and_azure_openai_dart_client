@@ -1,0 +1,146 @@
+# OpenAPI Retrofit Generator Configuration
+# Multi-schema configuration for OpenAI and Azure OpenAI APIs
+#
+# Each schema is generated to its OWN directory to avoid enum/model collisions.
+# Directory names match spec file names in snake_case (e.g., azure_inference_preview_2024_10_01).
+# The unified client layer (`lib/src/unified/unified_client.dart`) maps everything together.
+#
+# Run with:
+#   dart run openapi_retrofit_generator
+#   dart run build_runner build -d
+
+openapi_generator:
+  # ============================================================================
+  # ROOT-LEVEL DEFAULTS (Apply to all schemas)
+  # ============================================================================
+  
+  # Base output directory - each schema adds its own subdirectory
+  output_directory: lib/src/generated
+  
+  # Serialization
+  json_serializer: dart_mappable
+  include_if_null: false
+  
+  # HTTP Client Configuration - Enable all options for maximum flexibility
+  default_content_type: "application/json"
+  extras_parameter_by_default: true
+  dio_options_parameter_by_default: true
+  original_http_response: true
+  
+  # Client Generation & Organization
+  root_client: true
+  client_postfix: Api
+  put_clients_in_folder: false
+  
+  # Method Naming - Use operationId instead of path
+  path_method_name: false
+  
+  # Enum Generation - Add 'unknown' for forward compatibility
+  unknown_enum_value: true
+  
+  # File Organization
+  merge_clients: false
+  export_file: true
+  merge_outputs: false
+  mark_files_as_generated: true
+  
+  # Advanced Type Handling
+  use_x_nullable: true
+  default_client: api
+  
+  # ============================================================================
+  # SCHEMAS - Each has its own output_directory to avoid collisions
+  # Directory names match spec filenames in snake_case
+  # Total: 12 APIs (2 OpenAI + 8 Azure Inference + 2 Azure Authoring)
+  # ============================================================================
+  schemes:
+    # ==========================================================================
+    # OpenAI Direct APIs (2)
+    # ==========================================================================
+    
+    # OpenAI GA Latest - Main OpenAI API (Stainless documented spec)
+    - schema_path: spec/downloaded/openai-ga-latest.json
+      output_directory: lib/src/generated/openai_ga_latest
+      name: openai_ga_latest
+      root_client_name: OpenAILatestGAClient
+    
+    # OpenAI Preview Latest - Preview/Manual spec from GitHub
+    - schema_path: spec/downloaded/openai-direct-manual.json
+      output_directory: lib/src/generated/openai_preview_latest
+      name: openai_preview_latest
+      root_client_name: OpenAIPreviewLatestClient
+    
+    # ==========================================================================
+    # Azure OpenAI Inference API - Preview (5)
+    # Chat, Completions, Embeddings, Images, Audio
+    # ==========================================================================
+    
+    # Azure OpenAI Inference Preview 2025-03-01 - Latest preview
+    - schema_path: spec/downloaded/azure-inference-preview-2025-03-01.json
+      output_directory: lib/src/generated/azure_inference_preview_2025_03_01
+      name: azure_inference_preview_2025_03_01
+      root_client_name: AzureInferenceY2025M03D01PreviewClient
+    
+    # Azure OpenAI Inference Preview 2024-09-01
+    - schema_path: spec/downloaded/azure-inference-preview-2024-09-01.json
+      output_directory: lib/src/generated/azure_inference_preview_2024_09_01
+      name: azure_inference_preview_2024_09_01
+      root_client_name: AzureInferenceY2024M09D01PreviewClient
+    
+    # Azure OpenAI Inference Preview 2024-08-01
+    - schema_path: spec/downloaded/azure-inference-preview-2024-08-01.json
+      output_directory: lib/src/generated/azure_inference_preview_2024_08_01
+      name: azure_inference_preview_2024_08_01
+      root_client_name: AzureInferenceY2024M08D01PreviewClient
+    
+    # Azure OpenAI Inference Preview 2024-07-01
+    - schema_path: spec/downloaded/azure-inference-preview-2024-07-01.json
+      output_directory: lib/src/generated/azure_inference_preview_2024_07_01
+      name: azure_inference_preview_2024_07_01
+      root_client_name: AzureInferenceY2024M07D01PreviewClient
+    
+    # Azure OpenAI Inference Preview 2024-05-01
+    - schema_path: spec/downloaded/azure-inference-preview-2024-05-01.json
+      output_directory: lib/src/generated/azure_inference_preview_2024_05_01
+      name: azure_inference_preview_2024_05_01
+      root_client_name: AzureInferenceY2024M05D01PreviewClient
+    
+    # ==========================================================================
+    # Azure OpenAI Inference API - GA (3)
+    # ==========================================================================
+    
+    # Azure OpenAI Inference GA 2024-10-21 - Latest GA
+    - schema_path: spec/downloaded/azure-inference-ga-2024-10-21.json
+      output_directory: lib/src/generated/azure_inference_ga_2024_10_21
+      name: azure_inference_ga_2024_10_21
+      root_client_name: AzureInferenceY2024M10D21GAClient
+    
+    # Azure OpenAI Inference GA 2024-06-01
+    - schema_path: spec/downloaded/azure-inference-ga-2024-06-01.json
+      output_directory: lib/src/generated/azure_inference_ga_2024_06_01
+      name: azure_inference_ga_2024_06_01
+      root_client_name: AzureInferenceY2024M06D01GAClient
+    
+    # Azure OpenAI Inference GA 2024-02-01
+    - schema_path: spec/downloaded/azure-inference-ga-2024-02-01.json
+      output_directory: lib/src/generated/azure_inference_ga_2024_02_01
+      name: azure_inference_ga_2024_02_01
+      root_client_name: AzureInferenceY2024M02D01GAClient
+    
+    # ==========================================================================
+    # Azure OpenAI Authoring API - Preview (2)
+    # Deployments, Fine-tuning, Evaluations, Files, Models
+    # No GA versions available yet
+    # ==========================================================================
+    
+    # Azure OpenAI Authoring Preview 2025-04-01 - Latest
+    - schema_path: spec/downloaded/azure-authoring-preview-2025-04-01.json
+      output_directory: lib/src/generated/azure_authoring_preview_2025_04_01
+      name: azure_authoring_preview_2025_04_01
+      root_client_name: AzureAuthoringY2025M04D01PreviewClient
+    
+    # Azure OpenAI Authoring Preview 2024-10-01
+    - schema_path: spec/downloaded/azure-authoring-preview-2024-10-01.json
+      output_directory: lib/src/generated/azure_authoring_preview_2024_10_01
+      name: azure_authoring_preview_2024_10_01
+      root_client_name: AzureAuthoringY2024M10D01PreviewClient

@@ -1,0 +1,37 @@
+name: runtime_openai_and_azure_openai_dart_client
+description: Type-safe Dart client for OpenAI and Azure OpenAI APIs with unified interface, smart retry, fallback keys, and streaming support.
+version: 0.1.0
+repository: https://github.com/open-runtime/openai_and_azure_openai_dart_client
+homepage: https://github.com/open-runtime/openai_and_azure_openai_dart_client
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  dart_mappable: ^4.6.1
+  dio: ^5.9.0
+  retrofit: ^4.9.0
+  json_annotation: ^4.9.0
+  # Sentry for error tracking (optional - only used if configured)
+  sentry: ^9.8.0
+  sentry_dio: ^9.8.0
+  # Smart retry for transient failures (rate limits, timeouts, etc.)
+  dio_smart_retry: ^7.0.0
+  # Token counting for context window validation (GPT-4, GPT-4o, o1, etc.)
+  tiktoken_tokenizer_gpt4o_o1: ^1.2.1
+  # Google Cloud Logging API (optional - for direct API logging with ADC)
+  googleapis: ^15.0.0
+  googleapis_auth: ^2.0.0
+
+dev_dependencies:
+  build_runner: ^2.10.0
+  build: ^4.0.3
+  test: ^1.28.0
+  yaml: ^3.1.3
+  dart_mappable_builder: ^4.6.0
+  path: ^1.9.0
+  # Retrofit generator - using local forked version with enum fixes
+  openapi_retrofit_generator:
+    path: openapi_retrofit_generator
+  retrofit_generator: ^10.2.0
+

@@ -1,0 +1,25 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'code_interpreter_output_image_type_type.dart';
+
+part 'code_interpreter_output_image.mapper.dart';
+
+/// The image output from the code interpreter.
+@MappableClass()
+class CodeInterpreterOutputImage with CodeInterpreterOutputImageMappable {
+  const CodeInterpreterOutputImage({
+    required this.url,
+    this.type = CodeInterpreterOutputImageTypeType.image,
+  });
+
+  final String url;
+  final CodeInterpreterOutputImageTypeType type;
+
+  static CodeInterpreterOutputImage fromJson(Map<String, dynamic> json) => CodeInterpreterOutputImageMapper.fromJson(json);
+
+}
+

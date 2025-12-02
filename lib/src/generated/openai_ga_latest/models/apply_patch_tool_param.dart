@@ -1,0 +1,23 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'apply_patch_tool_param_type_type.dart';
+
+part 'apply_patch_tool_param.mapper.dart';
+
+/// Allows the assistant to create, delete, or update files using unified diffs.
+@MappableClass()
+class ApplyPatchToolParam with ApplyPatchToolParamMappable {
+  const ApplyPatchToolParam({
+    this.type = ApplyPatchToolParamTypeType.applyPatch,
+  });
+
+  final ApplyPatchToolParamTypeType type;
+
+  static ApplyPatchToolParam fromJson(Map<String, dynamic> json) => ApplyPatchToolParamMapper.fromJson(json);
+
+}
+

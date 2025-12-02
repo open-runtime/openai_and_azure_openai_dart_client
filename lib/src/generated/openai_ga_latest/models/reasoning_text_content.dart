@@ -1,0 +1,25 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'reasoning_text_content_type_type.dart';
+
+part 'reasoning_text_content.mapper.dart';
+
+/// Reasoning text from the model.
+@MappableClass()
+class ReasoningTextContent with ReasoningTextContentMappable {
+  const ReasoningTextContent({
+    required this.text,
+    this.type = ReasoningTextContentTypeType.reasoningText,
+  });
+
+  final String text;
+  final ReasoningTextContentTypeType type;
+
+  static ReasoningTextContent fromJson(Map<String, dynamic> json) => ReasoningTextContentMapper.fromJson(json);
+
+}
+

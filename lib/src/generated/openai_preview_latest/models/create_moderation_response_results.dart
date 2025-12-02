@@ -1,0 +1,33 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'create_moderation_response_results_categories.dart';
+import 'create_moderation_response_results_category_scores.dart';
+import 'create_moderation_response_results_category_applied_input_types.dart';
+
+part 'create_moderation_response_results.mapper.dart';
+
+@MappableClass()
+class CreateModerationResponseResults with CreateModerationResponseResultsMappable {
+  const CreateModerationResponseResults({
+    required this.flagged,
+    required this.createModerationResponseResultsCategories,
+    required this.createModerationResponseResultsCategoryScores,
+    required this.createModerationResponseResultsCategoryAppliedInputTypes,
+  });
+
+  final bool flagged;
+  @MappableField(key: 'CreateModerationResponseResultsCategories')
+  final CreateModerationResponseResultsCategories createModerationResponseResultsCategories;
+  @MappableField(key: 'CreateModerationResponseResultsCategoryScores')
+  final CreateModerationResponseResultsCategoryScores createModerationResponseResultsCategoryScores;
+  @MappableField(key: 'CreateModerationResponseResultsCategoryAppliedInputTypes')
+  final CreateModerationResponseResultsCategoryAppliedInputTypes createModerationResponseResultsCategoryAppliedInputTypes;
+
+  static CreateModerationResponseResults fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsMapper.fromJson(json);
+
+}
+

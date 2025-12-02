@@ -1,0 +1,47 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'on_your_data_endpoint_vectorization_source.dart';
+import 'on_your_data_deployment_name_vectorization_source.dart';
+
+part 'mongo_db_chat_extension_parameters_embedding_dependency_embedding_dependency_union.mapper.dart';
+
+@MappableClass(includeSubClasses: [MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource, MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource])
+sealed class MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionMappable {
+  const MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion();
+
+  static MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion fromJson(Map<String, dynamic> json) {
+    return MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionDeserializer.tryDeserialize(json);
+  }
+}
+
+extension MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionDeserializer on MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion {
+  static MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion tryDeserialize(Map<String, dynamic> json) {
+    try {
+      return MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMapper.fromJson(json);
+    } catch (_) {}
+    try {
+      return MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMapper.fromJson(json);
+    } catch (_) {}
+
+
+    throw FormatException('Could not determine the correct type for MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion from: $json');
+  }
+}
+
+@MappableClass()
+class MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource extends MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMappable {
+
+
+  const MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource();
+}
+
+@MappableClass()
+class MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource extends MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnion with MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMappable {
+
+
+  const MongoDbChatExtensionParametersEmbeddingDependencyEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource();
+}

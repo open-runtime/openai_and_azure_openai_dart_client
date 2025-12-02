@@ -1,0 +1,26 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'create_fine_tuning_job_request_integrations_type_type.dart';
+import 'create_fine_tuning_job_request_integrations_wandb.dart';
+
+part 'create_fine_tuning_job_request_integrations.mapper.dart';
+
+@MappableClass()
+class CreateFineTuningJobRequestIntegrations with CreateFineTuningJobRequestIntegrationsMappable {
+  const CreateFineTuningJobRequestIntegrations({
+    required this.type,
+    required this.createFineTuningJobRequestIntegrationsWandb,
+  });
+
+  final CreateFineTuningJobRequestIntegrationsTypeType type;
+  @MappableField(key: 'CreateFineTuningJobRequestIntegrationsWandb')
+  final CreateFineTuningJobRequestIntegrationsWandb createFineTuningJobRequestIntegrationsWandb;
+
+  static CreateFineTuningJobRequestIntegrations fromJson(Map<String, dynamic> json) => CreateFineTuningJobRequestIntegrationsMapper.fromJson(json);
+
+}
+

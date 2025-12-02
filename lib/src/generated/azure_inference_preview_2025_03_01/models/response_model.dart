@@ -1,0 +1,87 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'metadata.dart';
+import 'output_item.dart';
+import 'reasoning.dart';
+import 'response_error.dart';
+import 'response_model_incomplete_details.dart';
+import 'response_model_object_object_enum.dart';
+import 'response_model_status_status.dart';
+import 'response_properties_text.dart';
+import 'response_properties_tool_choice_tool_choice_union.dart';
+import 'response_properties_truncation_truncation.dart';
+import 'response_usage.dart';
+import 'tool.dart';
+
+part 'response_model.mapper.dart';
+
+@MappableClass()
+class ResponseModel with ResponseModelMappable {
+  const ResponseModel({
+    required this.id,
+    required this.objectEnum,
+    required this.createdAt,
+    required this.error,
+    required this.responseModelIncompleteDetails,
+    required this.output,
+    this.temperature = 1,
+    this.topP = 1,
+    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.parallelToolCalls = true,
+    this.model,
+    this.metadata,
+    this.user,
+    this.previousResponseId,
+    this.reasoning,
+    this.maxOutputTokens,
+    this.instructions,
+    this.responsePropertiesText,
+    this.tools,
+    this.toolChoice,
+    this.status,
+    this.outputText,
+    this.usage,
+  });
+
+  final String id;
+  @MappableField(key: 'object')
+  final ResponseModelObjectObjectEnum objectEnum;
+  @MappableField(key: 'created_at')
+  final num createdAt;
+  final ResponseError? error;
+  @MappableField(key: 'ResponseModelIncompleteDetails')
+  final ResponseModelIncompleteDetails? responseModelIncompleteDetails;
+  final List<OutputItem> output;
+  final num? temperature;
+  @MappableField(key: 'top_p')
+  final num? topP;
+  final ResponsePropertiesTruncationTruncation? truncation;
+  @MappableField(key: 'parallel_tool_calls')
+  final bool parallelToolCalls;
+  final String? model;
+  final Metadata? metadata;
+  final String? user;
+  @MappableField(key: 'previous_response_id')
+  final String? previousResponseId;
+  final Reasoning? reasoning;
+  @MappableField(key: 'max_output_tokens')
+  final int? maxOutputTokens;
+  final String? instructions;
+  @MappableField(key: 'ResponsePropertiesText')
+  final ResponsePropertiesText? responsePropertiesText;
+  final List<Tool>? tools;
+  @MappableField(key: 'tool_choice')
+  final ResponsePropertiesToolChoiceToolChoiceUnion? toolChoice;
+  final ResponseModelStatusStatus? status;
+  @MappableField(key: 'output_text')
+  final String? outputText;
+  final ResponseUsage? usage;
+
+  static ResponseModel fromJson(Map<String, dynamic> json) => ResponseModelMapper.fromJson(json);
+
+}
+

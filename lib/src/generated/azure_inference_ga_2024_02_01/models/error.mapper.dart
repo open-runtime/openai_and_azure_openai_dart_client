@@ -1,0 +1,163 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
+// ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
+
+part of 'error.dart';
+
+class ErrorMapper extends ClassMapperBase<Error> {
+  ErrorMapper._();
+
+  static ErrorMapper? _instance;
+  static ErrorMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = ErrorMapper._());
+      InnerErrorMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'Error';
+
+  static String? _$code(Error v) => v.code;
+  static const Field<Error, String> _f$code = Field('code', _$code, opt: true);
+  static String? _$message(Error v) => v.message;
+  static const Field<Error, String> _f$message = Field(
+    'message',
+    _$message,
+    opt: true,
+  );
+  static String? _$param(Error v) => v.param;
+  static const Field<Error, String> _f$param = Field(
+    'param',
+    _$param,
+    opt: true,
+  );
+  static String? _$type(Error v) => v.type;
+  static const Field<Error, String> _f$type = Field('type', _$type, opt: true);
+  static InnerError? _$innerError(Error v) => v.innerError;
+  static const Field<Error, InnerError> _f$innerError = Field(
+    'innerError',
+    _$innerError,
+    key: r'inner_error',
+    opt: true,
+  );
+
+  @override
+  final MappableFields<Error> fields = const {
+    #code: _f$code,
+    #message: _f$message,
+    #param: _f$param,
+    #type: _f$type,
+    #innerError: _f$innerError,
+  };
+
+  static Error _instantiate(DecodingData data) {
+    return Error(
+      code: data.dec(_f$code),
+      message: data.dec(_f$message),
+      param: data.dec(_f$param),
+      type: data.dec(_f$type),
+      innerError: data.dec(_f$innerError),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static Error fromJson(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<Error>(map);
+  }
+
+  static Error fromJsonString(String json) {
+    return ensureInitialized().decodeJson<Error>(json);
+  }
+}
+
+mixin ErrorMappable {
+  String toJsonString() {
+    return ErrorMapper.ensureInitialized().encodeJson<Error>(this as Error);
+  }
+
+  Map<String, dynamic> toJson() {
+    return ErrorMapper.ensureInitialized().encodeMap<Error>(this as Error);
+  }
+
+  ErrorCopyWith<Error, Error, Error> get copyWith =>
+      _ErrorCopyWithImpl<Error, Error>(this as Error, $identity, $identity);
+  @override
+  String toString() {
+    return ErrorMapper.ensureInitialized().stringifyValue(this as Error);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return ErrorMapper.ensureInitialized().equalsValue(this as Error, other);
+  }
+
+  @override
+  int get hashCode {
+    return ErrorMapper.ensureInitialized().hashValue(this as Error);
+  }
+}
+
+extension ErrorValueCopy<$R, $Out> on ObjectCopyWith<$R, Error, $Out> {
+  ErrorCopyWith<$R, Error, $Out> get $asError =>
+      $base.as((v, t, t2) => _ErrorCopyWithImpl<$R, $Out>(v, t, t2));
+}
+
+abstract class ErrorCopyWith<$R, $In extends Error, $Out>
+    implements ClassCopyWith<$R, $In, $Out> {
+  InnerErrorCopyWith<$R, InnerError, InnerError>? get innerError;
+  $R call({
+    String? code,
+    String? message,
+    String? param,
+    String? type,
+    InnerError? innerError,
+  });
+  ErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _ErrorCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Error, $Out>
+    implements ErrorCopyWith<$R, Error, $Out> {
+  _ErrorCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<Error> $mapper = ErrorMapper.ensureInitialized();
+  @override
+  InnerErrorCopyWith<$R, InnerError, InnerError>? get innerError =>
+      $value.innerError?.copyWith.$chain((v) => call(innerError: v));
+  @override
+  $R call({
+    Object? code = $none,
+    Object? message = $none,
+    Object? param = $none,
+    Object? type = $none,
+    Object? innerError = $none,
+  }) => $apply(
+    FieldCopyWithData({
+      if (code != $none) #code: code,
+      if (message != $none) #message: message,
+      if (param != $none) #param: param,
+      if (type != $none) #type: type,
+      if (innerError != $none) #innerError: innerError,
+    }),
+  );
+  @override
+  Error $make(CopyWithData data) => Error(
+    code: data.get(#code, or: $value.code),
+    message: data.get(#message, or: $value.message),
+    param: data.get(#param, or: $value.param),
+    type: data.get(#type, or: $value.type),
+    innerError: data.get(#innerError, or: $value.innerError),
+  );
+
+  @override
+  ErrorCopyWith<$R2, Error, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _ErrorCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+

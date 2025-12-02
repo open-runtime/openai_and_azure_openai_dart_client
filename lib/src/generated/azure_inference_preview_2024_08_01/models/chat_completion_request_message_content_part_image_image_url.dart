@@ -1,0 +1,24 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'chat_completion_request_message_content_part_image_image_url_detail_detail.dart';
+
+part 'chat_completion_request_message_content_part_image_image_url.mapper.dart';
+
+@MappableClass()
+class ChatCompletionRequestMessageContentPartImageImageUrl with ChatCompletionRequestMessageContentPartImageImageUrlMappable {
+  const ChatCompletionRequestMessageContentPartImageImageUrl({
+    required this.url,
+    this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail.auto,
+  });
+
+  final String url;
+  final ChatCompletionRequestMessageContentPartImageImageUrlDetailDetail detail;
+
+  static ChatCompletionRequestMessageContentPartImageImageUrl fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartImageImageUrlMapper.fromJson(json);
+
+}
+

@@ -1,0 +1,27 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'connection_type.dart';
+
+part 'endpoint_mi_connection.mapper.dart';
+
+/// Endpoint Managed Identity connection.
+@MappableClass()
+class EndpointMiConnection with EndpointMiConnectionMappable {
+  const EndpointMiConnection({
+    required this.kind,
+    this.endpoint,
+    this.resourceId,
+  });
+
+  final ConnectionType kind;
+  final String? endpoint;
+  final String? resourceId;
+
+  static EndpointMiConnection fromJson(Map<String, dynamic> json) => EndpointMiConnectionMapper.fromJson(json);
+
+}
+

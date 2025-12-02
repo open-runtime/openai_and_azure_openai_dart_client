@@ -1,0 +1,20 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'audit_log_invite_accepted.mapper.dart';
+
+@MappableClass()
+class AuditLogInviteAccepted with AuditLogInviteAcceptedMappable {
+  const AuditLogInviteAccepted({
+    this.id,
+  });
+
+  final String? id;
+
+  static AuditLogInviteAccepted fromJson(Map<String, dynamic> json) => AuditLogInviteAcceptedMapper.fromJson(json);
+
+}
+

@@ -1,0 +1,13 @@
+# Required configuration for dart_mappable with openapi_retrofit_generator
+# This renames the methods to avoid conflicts between dart_mappable and retrofit
+global_options:
+  dart_mappable_builder:
+    runs_before:
+      - retrofit_generator
+    options:
+      # Method renaming required for retrofit compatibility
+      renameMethods:
+        fromJson: fromJsonString   # Renamed to avoid conflict with retrofit
+        toJson: toJsonString       # Renamed to avoid conflict with retrofit
+        fromMap: fromJson          # Must be exactly "fromJson" for retrofit compatibility
+        toMap: toJson              # Must be exactly "toJson" for retrofit compatibility

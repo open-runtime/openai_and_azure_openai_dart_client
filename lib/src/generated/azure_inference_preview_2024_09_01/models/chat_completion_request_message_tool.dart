@@ -1,0 +1,23 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'chat_completion_request_message_tool.mapper.dart';
+
+@MappableClass()
+class ChatCompletionRequestMessageTool with ChatCompletionRequestMessageToolMappable {
+  const ChatCompletionRequestMessageTool({
+    this.toolCallId,
+    this.content,
+  });
+
+  @MappableField(key: 'tool_call_id')
+  final String? toolCallId;
+  final String? content;
+
+  static ChatCompletionRequestMessageTool fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageToolMapper.fromJson(json);
+
+}
+

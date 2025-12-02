@@ -1,0 +1,29 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'group_response.mapper.dart';
+
+/// Details about an organization group.
+@MappableClass()
+class GroupResponse with GroupResponseMappable {
+  const GroupResponse({
+    required this.id,
+    required this.name,
+    required this.createdAt,
+    required this.isScimManaged,
+  });
+
+  final String id;
+  final String name;
+  @MappableField(key: 'created_at')
+  final int createdAt;
+  @MappableField(key: 'is_scim_managed')
+  final bool isScimManaged;
+
+  static GroupResponse fromJson(Map<String, dynamic> json) => GroupResponseMapper.fromJson(json);
+
+}
+

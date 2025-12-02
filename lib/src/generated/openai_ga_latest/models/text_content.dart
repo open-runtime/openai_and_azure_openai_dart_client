@@ -1,0 +1,25 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'text_content_type_type.dart';
+
+part 'text_content.mapper.dart';
+
+/// A text content.
+@MappableClass()
+class TextContent with TextContentMappable {
+  const TextContent({
+    required this.text,
+    this.type = TextContentTypeType.text,
+  });
+
+  final String text;
+  final TextContentTypeType type;
+
+  static TextContent fromJson(Map<String, dynamic> json) => TextContentMapper.fromJson(json);
+
+}
+

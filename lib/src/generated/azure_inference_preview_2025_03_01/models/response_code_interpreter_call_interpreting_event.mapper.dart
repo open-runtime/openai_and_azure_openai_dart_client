@@ -1,0 +1,249 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
+// ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
+
+part of 'response_code_interpreter_call_interpreting_event.dart';
+
+class ResponseCodeInterpreterCallInterpretingEventMapper
+    extends ClassMapperBase<ResponseCodeInterpreterCallInterpretingEvent> {
+  ResponseCodeInterpreterCallInterpretingEventMapper._();
+
+  static ResponseCodeInterpreterCallInterpretingEventMapper? _instance;
+  static ResponseCodeInterpreterCallInterpretingEventMapper
+  ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance = ResponseCodeInterpreterCallInterpretingEventMapper._(),
+      );
+      ResponseCodeInterpreterCallInterpretingEventTypeTypeMapper.ensureInitialized();
+      CodeInterpreterToolCallMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'ResponseCodeInterpreterCallInterpretingEvent';
+
+  static ResponseCodeInterpreterCallInterpretingEventTypeType _$type(
+    ResponseCodeInterpreterCallInterpretingEvent v,
+  ) => v.type;
+  static const Field<
+    ResponseCodeInterpreterCallInterpretingEvent,
+    ResponseCodeInterpreterCallInterpretingEventTypeType
+  >
+  _f$type = Field('type', _$type);
+  static int _$outputIndex(ResponseCodeInterpreterCallInterpretingEvent v) =>
+      v.outputIndex;
+  static const Field<ResponseCodeInterpreterCallInterpretingEvent, int>
+  _f$outputIndex = Field('outputIndex', _$outputIndex, key: r'output_index');
+  static CodeInterpreterToolCall _$codeInterpreterCall(
+    ResponseCodeInterpreterCallInterpretingEvent v,
+  ) => v.codeInterpreterCall;
+  static const Field<
+    ResponseCodeInterpreterCallInterpretingEvent,
+    CodeInterpreterToolCall
+  >
+  _f$codeInterpreterCall = Field(
+    'codeInterpreterCall',
+    _$codeInterpreterCall,
+    key: r'code_interpreter_call',
+  );
+
+  @override
+  final MappableFields<ResponseCodeInterpreterCallInterpretingEvent> fields =
+      const {
+        #type: _f$type,
+        #outputIndex: _f$outputIndex,
+        #codeInterpreterCall: _f$codeInterpreterCall,
+      };
+
+  static ResponseCodeInterpreterCallInterpretingEvent _instantiate(
+    DecodingData data,
+  ) {
+    return ResponseCodeInterpreterCallInterpretingEvent(
+      type: data.dec(_f$type),
+      outputIndex: data.dec(_f$outputIndex),
+      codeInterpreterCall: data.dec(_f$codeInterpreterCall),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static ResponseCodeInterpreterCallInterpretingEvent fromJson(
+    Map<String, dynamic> map,
+  ) {
+    return ensureInitialized()
+        .decodeMap<ResponseCodeInterpreterCallInterpretingEvent>(map);
+  }
+
+  static ResponseCodeInterpreterCallInterpretingEvent fromJsonString(
+    String json,
+  ) {
+    return ensureInitialized()
+        .decodeJson<ResponseCodeInterpreterCallInterpretingEvent>(json);
+  }
+}
+
+mixin ResponseCodeInterpreterCallInterpretingEventMappable {
+  String toJsonString() {
+    return ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized()
+        .encodeJson<ResponseCodeInterpreterCallInterpretingEvent>(
+          this as ResponseCodeInterpreterCallInterpretingEvent,
+        );
+  }
+
+  Map<String, dynamic> toJson() {
+    return ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized()
+        .encodeMap<ResponseCodeInterpreterCallInterpretingEvent>(
+          this as ResponseCodeInterpreterCallInterpretingEvent,
+        );
+  }
+
+  ResponseCodeInterpreterCallInterpretingEventCopyWith<
+    ResponseCodeInterpreterCallInterpretingEvent,
+    ResponseCodeInterpreterCallInterpretingEvent,
+    ResponseCodeInterpreterCallInterpretingEvent
+  >
+  get copyWith =>
+      _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl<
+        ResponseCodeInterpreterCallInterpretingEvent,
+        ResponseCodeInterpreterCallInterpretingEvent
+      >(
+        this as ResponseCodeInterpreterCallInterpretingEvent,
+        $identity,
+        $identity,
+      );
+  @override
+  String toString() {
+    return ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized()
+        .stringifyValue(this as ResponseCodeInterpreterCallInterpretingEvent);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized()
+        .equalsValue(
+          this as ResponseCodeInterpreterCallInterpretingEvent,
+          other,
+        );
+  }
+
+  @override
+  int get hashCode {
+    return ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized()
+        .hashValue(this as ResponseCodeInterpreterCallInterpretingEvent);
+  }
+}
+
+extension ResponseCodeInterpreterCallInterpretingEventValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, ResponseCodeInterpreterCallInterpretingEvent, $Out> {
+  ResponseCodeInterpreterCallInterpretingEventCopyWith<
+    $R,
+    ResponseCodeInterpreterCallInterpretingEvent,
+    $Out
+  >
+  get $asResponseCodeInterpreterCallInterpretingEvent => $base.as(
+    (v, t, t2) =>
+        _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl<$R, $Out>(
+          v,
+          t,
+          t2,
+        ),
+  );
+}
+
+abstract class ResponseCodeInterpreterCallInterpretingEventCopyWith<
+  $R,
+  $In extends ResponseCodeInterpreterCallInterpretingEvent,
+  $Out
+>
+    implements ClassCopyWith<$R, $In, $Out> {
+  CodeInterpreterToolCallCopyWith<
+    $R,
+    CodeInterpreterToolCall,
+    CodeInterpreterToolCall
+  >
+  get codeInterpreterCall;
+  $R call({
+    ResponseCodeInterpreterCallInterpretingEventTypeType? type,
+    int? outputIndex,
+    CodeInterpreterToolCall? codeInterpreterCall,
+  });
+  ResponseCodeInterpreterCallInterpretingEventCopyWith<$R2, $In, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl<$R, $Out>
+    extends
+        ClassCopyWithBase<
+          $R,
+          ResponseCodeInterpreterCallInterpretingEvent,
+          $Out
+        >
+    implements
+        ResponseCodeInterpreterCallInterpretingEventCopyWith<
+          $R,
+          ResponseCodeInterpreterCallInterpretingEvent,
+          $Out
+        > {
+  _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<ResponseCodeInterpreterCallInterpretingEvent>
+  $mapper =
+      ResponseCodeInterpreterCallInterpretingEventMapper.ensureInitialized();
+  @override
+  CodeInterpreterToolCallCopyWith<
+    $R,
+    CodeInterpreterToolCall,
+    CodeInterpreterToolCall
+  >
+  get codeInterpreterCall => $value.codeInterpreterCall.copyWith.$chain(
+    (v) => call(codeInterpreterCall: v),
+  );
+  @override
+  $R call({
+    ResponseCodeInterpreterCallInterpretingEventTypeType? type,
+    int? outputIndex,
+    CodeInterpreterToolCall? codeInterpreterCall,
+  }) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (outputIndex != null) #outputIndex: outputIndex,
+      if (codeInterpreterCall != null)
+        #codeInterpreterCall: codeInterpreterCall,
+    }),
+  );
+  @override
+  ResponseCodeInterpreterCallInterpretingEvent $make(CopyWithData data) =>
+      ResponseCodeInterpreterCallInterpretingEvent(
+        type: data.get(#type, or: $value.type),
+        outputIndex: data.get(#outputIndex, or: $value.outputIndex),
+        codeInterpreterCall: data.get(
+          #codeInterpreterCall,
+          or: $value.codeInterpreterCall,
+        ),
+      );
+
+  @override
+  ResponseCodeInterpreterCallInterpretingEventCopyWith<
+    $R2,
+    ResponseCodeInterpreterCallInterpretingEvent,
+    $Out2
+  >
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl<$R2, $Out2>(
+        $value,
+        $cast,
+        t,
+      );
+}
+

@@ -1,0 +1,55 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'create_thread_request_tool_resources_file_search_vector_stores_chunking_strategy_chunking_strategy_union_variant1_type_type.dart';
+import 'create_thread_request_tool_resources_file_search_vector_stores_chunking_strategy_chunking_strategy_union_variant2_static.dart';
+import 'create_thread_request_tool_resources_file_search_vector_stores_chunking_strategy_chunking_strategy_union_variant2_type_type.dart';
+
+part 'create_thread_request_tool_resources_file_search_vector_stores_chunking_strategy_chunking_strategy_union.mapper.dart';
+
+/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+@MappableClass(includeSubClasses: [CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1, CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2])
+sealed class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion with CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionMappable {
+  const CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion();
+
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion fromJson(Map<String, dynamic> json) {
+    return CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionDeserializer.tryDeserialize(json);
+  }
+}
+
+extension CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionDeserializer on CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion {
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion tryDeserialize(Map<String, dynamic> json) {
+    try {
+      return CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1Mapper.fromJson(json);
+    } catch (_) {}
+    try {
+      return CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2Mapper.fromJson(json);
+    } catch (_) {}
+
+
+    throw FormatException('Could not determine the correct type for CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion from: $json');
+  }
+}
+
+@MappableClass()
+class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1 extends CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion with CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1Mappable {
+  final CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1TypeType type;
+
+  const CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant1({
+    required this.type,
+  });
+}
+
+@MappableClass()
+class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2 extends CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnion with CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2Mappable {
+  final CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2TypeType type;
+  final CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2Static createThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2Static;
+
+  const CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2({
+    required this.type,
+    required this.createThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyChunkingStrategyUnionVariant2Static,
+  });
+}

@@ -1,0 +1,16 @@
+analyzer:
+  exclude:
+    - lib/src/generated/**
+  errors:
+    avoid_print: ignore
+    invalid_annotation_target: ignore
+    unused_import: warning
+    unused_local_variable: warning
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_print
+    - prefer_single_quotes
+    - require_trailing_commas
+

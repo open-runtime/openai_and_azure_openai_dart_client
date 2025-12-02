@@ -1,0 +1,21 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'audit_log_actor_service_account.mapper.dart';
+
+/// The service account that performed the audit logged action.
+@MappableClass()
+class AuditLogActorServiceAccount with AuditLogActorServiceAccountMappable {
+  const AuditLogActorServiceAccount({
+    this.id,
+  });
+
+  final String? id;
+
+  static AuditLogActorServiceAccount fromJson(Map<String, dynamic> json) => AuditLogActorServiceAccountMapper.fromJson(json);
+
+}
+

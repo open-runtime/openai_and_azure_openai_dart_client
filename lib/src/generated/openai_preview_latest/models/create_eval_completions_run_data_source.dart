@@ -1,0 +1,37 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'create_eval_completions_run_data_source_input_messages_input_messages_union.dart';
+import 'create_eval_completions_run_data_source_sampling_params.dart';
+import 'create_eval_completions_run_data_source_source_source_union.dart';
+import 'create_eval_completions_run_data_source_type_type.dart';
+
+part 'create_eval_completions_run_data_source.mapper.dart';
+
+/// A CompletionsRunDataSource object describing a model sampling configuration.
+///
+@MappableClass()
+class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSourceMappable {
+  const CreateEvalCompletionsRunDataSource({
+    required this.source,
+    this.inputMessages,
+    this.createEvalCompletionsRunDataSourceSamplingParams,
+    this.model,
+    this.type = CreateEvalCompletionsRunDataSourceTypeType.completions,
+  });
+
+  final CreateEvalCompletionsRunDataSourceSourceSourceUnion source;
+  @MappableField(key: 'input_messages')
+  final CreateEvalCompletionsRunDataSourceInputMessagesInputMessagesUnion? inputMessages;
+  @MappableField(key: 'CreateEvalCompletionsRunDataSourceSamplingParams')
+  final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
+  final String? model;
+  final CreateEvalCompletionsRunDataSourceTypeType type;
+
+  static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
+
+}
+

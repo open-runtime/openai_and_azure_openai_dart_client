@@ -1,0 +1,35 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'realtime_response_usage_input_token_details_cached_tokens_details.dart';
+
+part 'realtime_response_usage_input_token_details.mapper.dart';
+
+@MappableClass()
+class RealtimeResponseUsageInputTokenDetails with RealtimeResponseUsageInputTokenDetailsMappable {
+  const RealtimeResponseUsageInputTokenDetails({
+    this.cachedTokens,
+    this.textTokens,
+    this.imageTokens,
+    this.audioTokens,
+    this.realtimeResponseUsageInputTokenDetailsCachedTokensDetails,
+  });
+
+  @MappableField(key: 'cached_tokens')
+  final int? cachedTokens;
+  @MappableField(key: 'text_tokens')
+  final int? textTokens;
+  @MappableField(key: 'image_tokens')
+  final int? imageTokens;
+  @MappableField(key: 'audio_tokens')
+  final int? audioTokens;
+  @MappableField(key: 'RealtimeResponseUsageInputTokenDetailsCachedTokensDetails')
+  final RealtimeResponseUsageInputTokenDetailsCachedTokensDetails? realtimeResponseUsageInputTokenDetailsCachedTokensDetails;
+
+  static RealtimeResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) => RealtimeResponseUsageInputTokenDetailsMapper.fromJson(json);
+
+}
+

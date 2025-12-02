@@ -1,0 +1,58 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+import 'on_your_data_api_key_authentication_options.dart';
+import 'on_your_data_system_assigned_managed_identity_authentication_options.dart';
+import 'on_your_data_user_assigned_managed_identity_authentication_options.dart';
+
+part 'azure_search_chat_extension_parameters_authentication_authentication_union.mapper.dart';
+
+@MappableClass(includeSubClasses: [AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataApiKeyAuthenticationOptions, AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions, AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions])
+sealed class AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionMappable {
+  const AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion();
+
+  static AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion fromJson(Map<String, dynamic> json) {
+    return AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionDeserializer.tryDeserialize(json);
+  }
+}
+
+extension AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionDeserializer on AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion {
+  static AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion tryDeserialize(Map<String, dynamic> json) {
+    try {
+      return AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMapper.fromJson(json);
+    } catch (_) {}
+    try {
+      return AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+    } catch (_) {}
+    try {
+      return AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+    } catch (_) {}
+
+
+    throw FormatException('Could not determine the correct type for AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion from: $json');
+  }
+}
+
+@MappableClass()
+class AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataApiKeyAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMappable {
+
+
+  const AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataApiKeyAuthenticationOptions();
+}
+
+@MappableClass()
+class AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
+
+
+  const AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions();
+}
+
+@MappableClass()
+class AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
+
+
+  const AzureSearchChatExtensionParametersAuthenticationAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions();
+}
