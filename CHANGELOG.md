@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.1](https://github.com/open-runtime/openai_and_azure_openai_dart_client/compare/v0.1.0...v0.1.1) (2025-12-02)
 
+### 🚀 Release Highlights
+
+This release refines the code generation quality with cleaner enum naming (eliminating duplicate words like `RoleRole` → `Role`) and enhanced polymorphic type support for discriminated unions in Azure OpenAPI specs. The forked `openapi_retrofit_generator` now handles complex edge cases including inferred discriminators and primitive unions, producing more maintainable SDK code. All 205 integration tests continue to pass, ensuring production-ready stability across both OpenAI and Azure OpenAI providers.
 
 ### Features
 
