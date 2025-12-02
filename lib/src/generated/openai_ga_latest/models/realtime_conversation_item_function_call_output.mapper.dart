@@ -17,9 +17,9 @@ class RealtimeConversationItemFunctionCallOutputMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemFunctionCallOutputMapper._(),
       );
-      RealtimeConversationItemFunctionCallOutputTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemFunctionCallOutputTypeMapper.ensureInitialized();
       RealtimeConversationItemFunctionCallOutputObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemFunctionCallOutputStatusStatusMapper.ensureInitialized();
+      RealtimeConversationItemFunctionCallOutputStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,12 +27,12 @@ class RealtimeConversationItemFunctionCallOutputMapper
   @override
   final String id = 'RealtimeConversationItemFunctionCallOutput';
 
-  static RealtimeConversationItemFunctionCallOutputTypeType _$type(
+  static RealtimeConversationItemFunctionCallOutputType _$type(
     RealtimeConversationItemFunctionCallOutput v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemFunctionCallOutput,
-    RealtimeConversationItemFunctionCallOutputTypeType
+    RealtimeConversationItemFunctionCallOutputType
   >
   _f$type = Field('type', _$type);
   static String _$callId(RealtimeConversationItemFunctionCallOutput v) =>
@@ -53,12 +53,12 @@ class RealtimeConversationItemFunctionCallOutputMapper
     RealtimeConversationItemFunctionCallOutputObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object', opt: true);
-  static RealtimeConversationItemFunctionCallOutputStatusStatus? _$status(
+  static RealtimeConversationItemFunctionCallOutputStatus? _$status(
     RealtimeConversationItemFunctionCallOutput v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemFunctionCallOutput,
-    RealtimeConversationItemFunctionCallOutputStatusStatus
+    RealtimeConversationItemFunctionCallOutputStatus
   >
   _f$status = Field('status', _$status, opt: true);
 
@@ -180,12 +180,12 @@ abstract class RealtimeConversationItemFunctionCallOutputCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemFunctionCallOutputTypeType? type,
+    RealtimeConversationItemFunctionCallOutputType? type,
     String? callId,
     String? output,
     String? id,
     RealtimeConversationItemFunctionCallOutputObjectObjectEnum? objectEnum,
-    RealtimeConversationItemFunctionCallOutputStatusStatus? status,
+    RealtimeConversationItemFunctionCallOutputStatus? status,
   });
   RealtimeConversationItemFunctionCallOutputCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -212,7 +212,7 @@ class _RealtimeConversationItemFunctionCallOutputCopyWithImpl<$R, $Out>
       RealtimeConversationItemFunctionCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeConversationItemFunctionCallOutputTypeType? type,
+    RealtimeConversationItemFunctionCallOutputType? type,
     String? callId,
     String? output,
     Object? id = $none,

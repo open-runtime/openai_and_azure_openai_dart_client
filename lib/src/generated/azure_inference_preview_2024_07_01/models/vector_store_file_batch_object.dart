@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'vector_store_file_batch_object_file_counts.dart';
 import 'vector_store_file_batch_object_object_object_enum.dart';
-import 'vector_store_file_batch_object_status_status.dart';
+import 'vector_store_file_batch_object_status.dart';
 
 part 'vector_store_file_batch_object.mapper.dart';
 
@@ -29,7 +29,7 @@ class VectorStoreFileBatchObject with VectorStoreFileBatchObjectMappable {
   final int createdAt;
   @MappableField(key: 'vector_store_id')
   final String vectorStoreId;
-  final VectorStoreFileBatchObjectStatusStatus status;
+  final VectorStoreFileBatchObjectStatus status;
   @MappableField(key: 'file_counts')
   final VectorStoreFileBatchObjectFileCounts vectorStoreFileBatchObjectFileCounts;
 

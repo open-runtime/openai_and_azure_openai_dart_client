@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'item_resource.dart';
-import 'mcp_approval_response_resource_type_type.dart';
+import 'mcp_approval_response_resource_type.dart';
 
 part 'mcp_approval_response_resource.mapper.dart';
 
@@ -22,7 +22,7 @@ class McpApprovalResponseResource with McpApprovalResponseResourceMappable {
     this.reason,
   });
 
-  final McpApprovalResponseResourceTypeType type;
+  final McpApprovalResponseResourceType type;
   final String id;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;

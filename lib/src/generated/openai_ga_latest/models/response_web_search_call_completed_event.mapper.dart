@@ -17,7 +17,7 @@ class ResponseWebSearchCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseWebSearchCallCompletedEventMapper._(),
       );
-      ResponseWebSearchCallCompletedEventTypeTypeMapper.ensureInitialized();
+      ResponseWebSearchCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseWebSearchCallCompletedEventMapper
   @override
   final String id = 'ResponseWebSearchCallCompletedEvent';
 
-  static ResponseWebSearchCallCompletedEventTypeType _$type(
+  static ResponseWebSearchCallCompletedEventType _$type(
     ResponseWebSearchCallCompletedEvent v,
   ) => v.type;
   static const Field<
     ResponseWebSearchCallCompletedEvent,
-    ResponseWebSearchCallCompletedEventTypeType
+    ResponseWebSearchCallCompletedEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseWebSearchCallCompletedEvent v) =>
@@ -152,7 +152,7 @@ abstract class ResponseWebSearchCallCompletedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseWebSearchCallCompletedEventTypeType? type,
+    ResponseWebSearchCallCompletedEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,
@@ -180,7 +180,7 @@ class _ResponseWebSearchCallCompletedEventCopyWithImpl<$R, $Out>
       ResponseWebSearchCallCompletedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseWebSearchCallCompletedEventTypeType? type,
+    ResponseWebSearchCallCompletedEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,

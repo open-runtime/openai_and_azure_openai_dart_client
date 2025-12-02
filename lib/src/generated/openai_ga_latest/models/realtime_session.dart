@@ -7,11 +7,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'audio_transcription.dart';
 import 'prompt.dart';
 import 'realtime_function_tool.dart';
-import 'realtime_session_include_include.dart';
+import 'realtime_session_include.dart';
 import 'realtime_session_input_audio_format_input_audio_format.dart';
 import 'realtime_session_input_audio_noise_reduction.dart';
 import 'realtime_session_max_response_output_tokens_union.dart';
-import 'realtime_session_model_model.dart';
+import 'realtime_session_model.dart';
 import 'realtime_session_object_object_enum.dart';
 import 'realtime_session_output_audio_format_output_audio_format.dart';
 import 'realtime_session_tracing_union.dart';
@@ -58,7 +58,7 @@ class RealtimeSession with RealtimeSessionMappable {
   @MappableField(key: 'object')
   final RealtimeSessionObjectObjectEnum? objectEnum;
   final dynamic? modalities;
-  final RealtimeSessionModelModel? model;
+  final RealtimeSessionModel? model;
   final String? instructions;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
@@ -75,7 +75,7 @@ class RealtimeSession with RealtimeSessionMappable {
   @MappableField(key: 'expires_at')
   final int? expiresAt;
   final Prompt? prompt;
-  final List<RealtimeSessionIncludeInclude>? include;
+  final List<RealtimeSessionInclude>? include;
 
   static RealtimeSession fromJson(Map<String, dynamic> json) => RealtimeSessionMapper.fromJson(json);
 

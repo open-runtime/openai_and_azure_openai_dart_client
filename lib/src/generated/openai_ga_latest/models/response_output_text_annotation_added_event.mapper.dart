@@ -17,7 +17,7 @@ class ResponseOutputTextAnnotationAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseOutputTextAnnotationAddedEventMapper._(),
       );
-      ResponseOutputTextAnnotationAddedEventTypeTypeMapper.ensureInitialized();
+      ResponseOutputTextAnnotationAddedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseOutputTextAnnotationAddedEventMapper
   @override
   final String id = 'ResponseOutputTextAnnotationAddedEvent';
 
-  static ResponseOutputTextAnnotationAddedEventTypeType _$type(
+  static ResponseOutputTextAnnotationAddedEventType _$type(
     ResponseOutputTextAnnotationAddedEvent v,
   ) => v.type;
   static const Field<
     ResponseOutputTextAnnotationAddedEvent,
-    ResponseOutputTextAnnotationAddedEventTypeType
+    ResponseOutputTextAnnotationAddedEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseOutputTextAnnotationAddedEvent v) => v.itemId;
@@ -178,7 +178,7 @@ abstract class ResponseOutputTextAnnotationAddedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseOutputTextAnnotationAddedEventTypeType? type,
+    ResponseOutputTextAnnotationAddedEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -209,7 +209,7 @@ class _ResponseOutputTextAnnotationAddedEventCopyWithImpl<$R, $Out>
       ResponseOutputTextAnnotationAddedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseOutputTextAnnotationAddedEventTypeType? type,
+    ResponseOutputTextAnnotationAddedEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

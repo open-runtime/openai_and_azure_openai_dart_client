@@ -93,7 +93,7 @@ class FunctionShellCallOutputOutcomeParamTimeoutMapper
       );
       FunctionShellCallOutputOutcomeParamMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      FunctionShellCallOutputOutcomeParamTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputOutcomeParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -101,12 +101,12 @@ class FunctionShellCallOutputOutcomeParamTimeoutMapper
   @override
   final String id = 'FunctionShellCallOutputOutcomeParamTimeout';
 
-  static FunctionShellCallOutputOutcomeParamTypeType _$type(
+  static FunctionShellCallOutputOutcomeParamType _$type(
     FunctionShellCallOutputOutcomeParamTimeout v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputOutcomeParamTimeout,
-    FunctionShellCallOutputOutcomeParamTypeType
+    FunctionShellCallOutputOutcomeParamType
   >
   _f$type = Field('type', _$type);
 
@@ -222,7 +222,7 @@ abstract class FunctionShellCallOutputOutcomeParamTimeoutCopyWith<
 >
     implements FunctionShellCallOutputOutcomeParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({FunctionShellCallOutputOutcomeParamTypeType? type});
+  $R call({FunctionShellCallOutputOutcomeParamType? type});
   FunctionShellCallOutputOutcomeParamTimeoutCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -247,7 +247,7 @@ class _FunctionShellCallOutputOutcomeParamTimeoutCopyWithImpl<$R, $Out>
   $mapper =
       FunctionShellCallOutputOutcomeParamTimeoutMapper.ensureInitialized();
   @override
-  $R call({FunctionShellCallOutputOutcomeParamTypeType? type}) =>
+  $R call({FunctionShellCallOutputOutcomeParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   FunctionShellCallOutputOutcomeParamTimeout $make(CopyWithData data) =>
@@ -281,7 +281,7 @@ class FunctionShellCallOutputOutcomeParamExitMapper
       );
       FunctionShellCallOutputOutcomeParamMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      FunctionShellCallOutputOutcomeParamTypeType2Mapper.ensureInitialized();
+      FunctionShellCallOutputOutcomeParamType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -289,12 +289,12 @@ class FunctionShellCallOutputOutcomeParamExitMapper
   @override
   final String id = 'FunctionShellCallOutputOutcomeParamExit';
 
-  static FunctionShellCallOutputOutcomeParamTypeType2 _$type(
+  static FunctionShellCallOutputOutcomeParamType2 _$type(
     FunctionShellCallOutputOutcomeParamExit v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputOutcomeParamExit,
-    FunctionShellCallOutputOutcomeParamTypeType2
+    FunctionShellCallOutputOutcomeParamType2
   >
   _f$type = Field('type', _$type);
   static int _$exitCode(FunctionShellCallOutputOutcomeParamExit v) =>
@@ -413,7 +413,7 @@ abstract class FunctionShellCallOutputOutcomeParamExitCopyWith<
 >
     implements FunctionShellCallOutputOutcomeParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({FunctionShellCallOutputOutcomeParamTypeType2? type, int? exitCode});
+  $R call({FunctionShellCallOutputOutcomeParamType2? type, int? exitCode});
   FunctionShellCallOutputOutcomeParamExitCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -436,15 +436,13 @@ class _FunctionShellCallOutputOutcomeParamExitCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellCallOutputOutcomeParamExit> $mapper =
       FunctionShellCallOutputOutcomeParamExitMapper.ensureInitialized();
   @override
-  $R call({
-    FunctionShellCallOutputOutcomeParamTypeType2? type,
-    int? exitCode,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (exitCode != null) #exitCode: exitCode,
-    }),
-  );
+  $R call({FunctionShellCallOutputOutcomeParamType2? type, int? exitCode}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (exitCode != null) #exitCode: exitCode,
+        }),
+      );
   @override
   FunctionShellCallOutputOutcomeParamExit $make(CopyWithData data) =>
       FunctionShellCallOutputOutcomeParamExit(

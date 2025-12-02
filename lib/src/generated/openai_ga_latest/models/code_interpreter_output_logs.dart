@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_output_logs_type_type.dart';
+import 'code_interpreter_output_logs_type.dart';
 
 part 'code_interpreter_output_logs.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'code_interpreter_output_logs.mapper.dart';
 class CodeInterpreterOutputLogs with CodeInterpreterOutputLogsMappable {
   const CodeInterpreterOutputLogs({
     required this.logs,
-    this.type = CodeInterpreterOutputLogsTypeType.logs,
+    this.type = CodeInterpreterOutputLogsType.logs,
   });
 
   final String logs;
-  final CodeInterpreterOutputLogsTypeType type;
+  final CodeInterpreterOutputLogsType type;
 
   static CodeInterpreterOutputLogs fromJson(Map<String, dynamic> json) => CodeInterpreterOutputLogsMapper.fromJson(json);
 

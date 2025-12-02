@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_session_create_request_turn_detection_type_type.dart';
-import 'realtime_session_create_request_turn_detection_eagerness_eagerness.dart';
+import 'realtime_session_create_request_turn_detection_type.dart';
+import 'realtime_session_create_request_turn_detection_eagerness.dart';
 
 part 'realtime_session_create_request_turn_detection.mapper.dart';
 
@@ -15,8 +15,8 @@ class RealtimeSessionCreateRequestTurnDetection with RealtimeSessionCreateReques
     this.threshold,
     this.prefixPaddingMs,
     this.silenceDurationMs,
-    this.type = RealtimeSessionCreateRequestTurnDetectionTypeType.serverVad,
-    this.eagerness = RealtimeSessionCreateRequestTurnDetectionEagernessEagerness.auto,
+    this.type = RealtimeSessionCreateRequestTurnDetectionType.serverVad,
+    this.eagerness = RealtimeSessionCreateRequestTurnDetectionEagerness.auto,
     this.createResponse = true,
     this.interruptResponse = true,
   });
@@ -26,8 +26,8 @@ class RealtimeSessionCreateRequestTurnDetection with RealtimeSessionCreateReques
   final int? prefixPaddingMs;
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
-  final RealtimeSessionCreateRequestTurnDetectionTypeType type;
-  final RealtimeSessionCreateRequestTurnDetectionEagernessEagerness eagerness;
+  final RealtimeSessionCreateRequestTurnDetectionType type;
+  final RealtimeSessionCreateRequestTurnDetectionEagerness eagerness;
   @MappableField(key: 'create_response')
   final bool createResponse;
   @MappableField(key: 'interrupt_response')

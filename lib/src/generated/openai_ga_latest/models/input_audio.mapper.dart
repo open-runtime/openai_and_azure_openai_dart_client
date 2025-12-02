@@ -14,7 +14,7 @@ class InputAudioMapper extends ClassMapperBase<InputAudio> {
   static InputAudioMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputAudioMapper._());
-      InputAudioTypeTypeMapper.ensureInitialized();
+      InputAudioTypeMapper.ensureInitialized();
       InputAudioInputAudioMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class InputAudioMapper extends ClassMapperBase<InputAudio> {
   @override
   final String id = 'InputAudio';
 
-  static InputAudioTypeType _$type(InputAudio v) => v.type;
-  static const Field<InputAudio, InputAudioTypeType> _f$type = Field(
+  static InputAudioType _$type(InputAudio v) => v.type;
+  static const Field<InputAudio, InputAudioType> _f$type = Field(
     'type',
     _$type,
   );
@@ -116,10 +116,7 @@ abstract class InputAudioCopyWith<$R, $In extends InputAudio, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   InputAudioInputAudioCopyWith<$R, InputAudioInputAudio, InputAudioInputAudio>
   get inputAudioInputAudio;
-  $R call({
-    InputAudioTypeType? type,
-    InputAudioInputAudio? inputAudioInputAudio,
-  });
+  $R call({InputAudioType? type, InputAudioInputAudio? inputAudioInputAudio});
   InputAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -137,16 +134,14 @@ class _InputAudioCopyWithImpl<$R, $Out>
     (v) => call(inputAudioInputAudio: v),
   );
   @override
-  $R call({
-    InputAudioTypeType? type,
-    InputAudioInputAudio? inputAudioInputAudio,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (inputAudioInputAudio != null)
-        #inputAudioInputAudio: inputAudioInputAudio,
-    }),
-  );
+  $R call({InputAudioType? type, InputAudioInputAudio? inputAudioInputAudio}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (inputAudioInputAudio != null)
+            #inputAudioInputAudio: inputAudioInputAudio,
+        }),
+      );
   @override
   InputAudio $make(CopyWithData data) => InputAudio(
     type: data.get(#type, or: $value.type),

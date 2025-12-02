@@ -19,7 +19,7 @@ class ApplyPatchToolCallItemParamMapper
       );
       ApplyPatchCallStatusParamMapper.ensureInitialized();
       ApplyPatchOperationParamMapper.ensureInitialized();
-      ApplyPatchToolCallItemParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchToolCallItemParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -47,18 +47,18 @@ class ApplyPatchToolCallItemParamMapper
     _$id,
     opt: true,
   );
-  static ApplyPatchToolCallItemParamTypeType _$type(
+  static ApplyPatchToolCallItemParamType _$type(
     ApplyPatchToolCallItemParam v,
   ) => v.type;
   static const Field<
     ApplyPatchToolCallItemParam,
-    ApplyPatchToolCallItemParamTypeType
+    ApplyPatchToolCallItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchToolCallItemParamTypeType.applyPatchCall,
+    def: ApplyPatchToolCallItemParamType.applyPatchCall,
   );
 
   @override
@@ -169,7 +169,7 @@ abstract class ApplyPatchToolCallItemParamCopyWith<
     ApplyPatchCallStatusParam? status,
     ApplyPatchOperationParam? operation,
     String? id,
-    ApplyPatchToolCallItemParamTypeType? type,
+    ApplyPatchToolCallItemParamType? type,
   });
   ApplyPatchToolCallItemParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -206,7 +206,7 @@ class _ApplyPatchToolCallItemParamCopyWithImpl<$R, $Out>
     ApplyPatchCallStatusParam? status,
     ApplyPatchOperationParam? operation,
     Object? id = $none,
-    ApplyPatchToolCallItemParamTypeType? type,
+    ApplyPatchToolCallItemParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (callId != null) #callId: callId,

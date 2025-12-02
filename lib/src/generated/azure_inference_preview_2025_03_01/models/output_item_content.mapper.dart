@@ -14,7 +14,7 @@ class OutputItemContentMapper extends ClassMapperBase<OutputItemContent> {
   static OutputItemContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemContentMapper._());
-      OutputItemContentTypeTypeMapper.ensureInitialized();
+      OutputItemContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class OutputItemContentMapper extends ClassMapperBase<OutputItemContent> {
   @override
   final String id = 'OutputItemContent';
 
-  static OutputItemContentTypeType _$type(OutputItemContent v) => v.type;
-  static const Field<OutputItemContent, OutputItemContentTypeType> _f$type =
-      Field('type', _$type);
+  static OutputItemContentType _$type(OutputItemContent v) => v.type;
+  static const Field<OutputItemContent, OutputItemContentType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$text(OutputItemContent v) => v.text;
   static const Field<OutputItemContent, String> _f$text = Field('text', _$text);
 
@@ -113,7 +115,7 @@ abstract class OutputItemContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({OutputItemContentTypeType? type, String? text});
+  $R call({OutputItemContentType? type, String? text});
   OutputItemContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -128,7 +130,7 @@ class _OutputItemContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputItemContent> $mapper =
       OutputItemContentMapper.ensureInitialized();
   @override
-  $R call({OutputItemContentTypeType? type, String? text}) => $apply(
+  $R call({OutputItemContentType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

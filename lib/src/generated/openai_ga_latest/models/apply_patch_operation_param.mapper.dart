@@ -90,7 +90,7 @@ class ApplyPatchOperationParamCreateFileMapper
       ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchOperationParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchOperationParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,12 +98,12 @@ class ApplyPatchOperationParamCreateFileMapper
   @override
   final String id = 'ApplyPatchOperationParamCreateFile';
 
-  static ApplyPatchOperationParamTypeType _$type(
+  static ApplyPatchOperationParamType _$type(
     ApplyPatchOperationParamCreateFile v,
   ) => v.type;
   static const Field<
     ApplyPatchOperationParamCreateFile,
-    ApplyPatchOperationParamTypeType
+    ApplyPatchOperationParamType
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchOperationParamCreateFile v) => v.path;
@@ -220,7 +220,7 @@ abstract class ApplyPatchOperationParamCreateFileCopyWith<
 >
     implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ApplyPatchOperationParamTypeType? type, String? path, String? diff});
+  $R call({ApplyPatchOperationParamType? type, String? path, String? diff});
   ApplyPatchOperationParamCreateFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -243,17 +243,14 @@ class _ApplyPatchOperationParamCreateFileCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchOperationParamCreateFile> $mapper =
       ApplyPatchOperationParamCreateFileMapper.ensureInitialized();
   @override
-  $R call({
-    ApplyPatchOperationParamTypeType? type,
-    String? path,
-    String? diff,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (path != null) #path: path,
-      if (diff != null) #diff: diff,
-    }),
-  );
+  $R call({ApplyPatchOperationParamType? type, String? path, String? diff}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (path != null) #path: path,
+          if (diff != null) #diff: diff,
+        }),
+      );
   @override
   ApplyPatchOperationParamCreateFile $make(CopyWithData data) =>
       ApplyPatchOperationParamCreateFile(
@@ -289,7 +286,7 @@ class ApplyPatchOperationParamDeleteFileMapper
       ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchOperationParamTypeType2Mapper.ensureInitialized();
+      ApplyPatchOperationParamType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -297,12 +294,12 @@ class ApplyPatchOperationParamDeleteFileMapper
   @override
   final String id = 'ApplyPatchOperationParamDeleteFile';
 
-  static ApplyPatchOperationParamTypeType2 _$type(
+  static ApplyPatchOperationParamType2 _$type(
     ApplyPatchOperationParamDeleteFile v,
   ) => v.type;
   static const Field<
     ApplyPatchOperationParamDeleteFile,
-    ApplyPatchOperationParamTypeType2
+    ApplyPatchOperationParamType2
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchOperationParamDeleteFile v) => v.path;
@@ -414,7 +411,7 @@ abstract class ApplyPatchOperationParamDeleteFileCopyWith<
 >
     implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({ApplyPatchOperationParamTypeType2? type, String? path});
+  $R call({ApplyPatchOperationParamType2? type, String? path});
   ApplyPatchOperationParamDeleteFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -437,7 +434,7 @@ class _ApplyPatchOperationParamDeleteFileCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchOperationParamDeleteFile> $mapper =
       ApplyPatchOperationParamDeleteFileMapper.ensureInitialized();
   @override
-  $R call({ApplyPatchOperationParamTypeType2? type, String? path}) => $apply(
+  $R call({ApplyPatchOperationParamType2? type, String? path}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (path != null) #path: path,
@@ -477,7 +474,7 @@ class ApplyPatchOperationParamUpdateFileMapper
       ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      ApplyPatchOperationParamTypeType3Mapper.ensureInitialized();
+      ApplyPatchOperationParamType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -485,12 +482,12 @@ class ApplyPatchOperationParamUpdateFileMapper
   @override
   final String id = 'ApplyPatchOperationParamUpdateFile';
 
-  static ApplyPatchOperationParamTypeType3 _$type(
+  static ApplyPatchOperationParamType3 _$type(
     ApplyPatchOperationParamUpdateFile v,
   ) => v.type;
   static const Field<
     ApplyPatchOperationParamUpdateFile,
-    ApplyPatchOperationParamTypeType3
+    ApplyPatchOperationParamType3
   >
   _f$type = Field('type', _$type);
   static String _$path(ApplyPatchOperationParamUpdateFile v) => v.path;
@@ -607,11 +604,7 @@ abstract class ApplyPatchOperationParamUpdateFileCopyWith<
 >
     implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ApplyPatchOperationParamTypeType3? type,
-    String? path,
-    String? diff,
-  });
+  $R call({ApplyPatchOperationParamType3? type, String? path, String? diff});
   ApplyPatchOperationParamUpdateFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -634,17 +627,14 @@ class _ApplyPatchOperationParamUpdateFileCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchOperationParamUpdateFile> $mapper =
       ApplyPatchOperationParamUpdateFileMapper.ensureInitialized();
   @override
-  $R call({
-    ApplyPatchOperationParamTypeType3? type,
-    String? path,
-    String? diff,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (path != null) #path: path,
-      if (diff != null) #diff: diff,
-    }),
-  );
+  $R call({ApplyPatchOperationParamType3? type, String? path, String? diff}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (path != null) #path: path,
+          if (diff != null) #diff: diff,
+        }),
+      );
   @override
   ApplyPatchOperationParamUpdateFile $make(CopyWithData data) =>
       ApplyPatchOperationParamUpdateFile(

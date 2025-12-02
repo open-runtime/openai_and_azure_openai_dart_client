@@ -15,7 +15,7 @@ class FineTuningIntegrationMapper
   static FineTuningIntegrationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FineTuningIntegrationMapper._());
-      FineTuningIntegrationTypeTypeMapper.ensureInitialized();
+      FineTuningIntegrationTypeMapper.ensureInitialized();
       FineTuningIntegrationWandbMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,10 +24,9 @@ class FineTuningIntegrationMapper
   @override
   final String id = 'FineTuningIntegration';
 
-  static FineTuningIntegrationTypeType _$type(FineTuningIntegration v) =>
-      v.type;
-  static const Field<FineTuningIntegration, FineTuningIntegrationTypeType>
-  _f$type = Field('type', _$type);
+  static FineTuningIntegrationType _$type(FineTuningIntegration v) => v.type;
+  static const Field<FineTuningIntegration, FineTuningIntegrationType> _f$type =
+      Field('type', _$type);
   static FineTuningIntegrationWandb _$fineTuningIntegrationWandb(
     FineTuningIntegration v,
   ) => v.fineTuningIntegrationWandb;
@@ -132,7 +131,7 @@ abstract class FineTuningIntegrationCopyWith<
   >
   get fineTuningIntegrationWandb;
   $R call({
-    FineTuningIntegrationTypeType? type,
+    FineTuningIntegrationType? type,
     FineTuningIntegrationWandb? fineTuningIntegrationWandb,
   });
   FineTuningIntegrationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -158,7 +157,7 @@ class _FineTuningIntegrationCopyWithImpl<$R, $Out>
       .$chain((v) => call(fineTuningIntegrationWandb: v));
   @override
   $R call({
-    FineTuningIntegrationTypeType? type,
+    FineTuningIntegrationType? type,
     FineTuningIntegrationWandb? fineTuningIntegrationWandb,
   }) => $apply(
     FieldCopyWithData({

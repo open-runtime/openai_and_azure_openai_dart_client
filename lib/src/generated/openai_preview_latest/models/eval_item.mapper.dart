@@ -14,9 +14,9 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
   static EvalItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalItemMapper._());
-      EvalItemRoleRoleMapper.ensureInitialized();
+      EvalItemRoleMapper.ensureInitialized();
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,18 +24,15 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
   @override
   final String id = 'EvalItem';
 
-  static EvalItemRoleRole _$role(EvalItem v) => v.role;
-  static const Field<EvalItem, EvalItemRoleRole> _f$role = Field(
-    'role',
-    _$role,
-  );
+  static EvalItemRole _$role(EvalItem v) => v.role;
+  static const Field<EvalItem, EvalItemRole> _f$role = Field('role', _$role);
   static EvalItemContentUnion _$content(EvalItem v) => v.content;
   static const Field<EvalItem, EvalItemContentUnion> _f$content = Field(
     'content',
     _$content,
   );
-  static EvalItemTypeType? _$type(EvalItem v) => v.type;
-  static const Field<EvalItem, EvalItemTypeType> _f$type = Field(
+  static EvalItemType? _$type(EvalItem v) => v.type;
+  static const Field<EvalItem, EvalItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
@@ -120,9 +117,9 @@ abstract class EvalItemCopyWith<$R, $In extends EvalItem, $Out>
   EvalItemContentUnionCopyWith<$R, EvalItemContentUnion, EvalItemContentUnion>
   get content;
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
-    EvalItemTypeType? type,
+    EvalItemType? type,
   });
   EvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -140,7 +137,7 @@ class _EvalItemCopyWithImpl<$R, $Out>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(

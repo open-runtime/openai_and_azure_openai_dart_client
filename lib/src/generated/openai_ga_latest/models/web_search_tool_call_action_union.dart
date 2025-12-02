@@ -8,12 +8,12 @@ import 'conversation_item_action_union.dart';
 import 'item_resource_action_union.dart';
 import 'output_item_action_union.dart';
 import 'web_search_action_find.dart';
-import 'web_search_action_find_type_type.dart';
+import 'web_search_action_find_type.dart';
 import 'web_search_action_open_page.dart';
-import 'web_search_action_open_page_type_type.dart';
+import 'web_search_action_open_page_type.dart';
 import 'web_search_action_search.dart';
 import 'web_search_action_search_sources.dart';
-import 'web_search_action_search_type_type.dart';
+import 'web_search_action_search_type.dart';
 
 part 'web_search_tool_call_action_union.mapper.dart';
 
@@ -55,7 +55,7 @@ extension WebSearchToolCallActionUnionDeserializer on WebSearchToolCallActionUni
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
 class WebSearchToolCallActionUnionSearch extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionSearchMappable {
-  final WebSearchActionSearchTypeType type;
+  final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
@@ -68,7 +68,7 @@ class WebSearchToolCallActionUnionSearch extends WebSearchToolCallActionUnion wi
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
 class WebSearchToolCallActionUnionOpenPage extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionOpenPageMappable {
-  final WebSearchActionOpenPageTypeType type;
+  final WebSearchActionOpenPageType type;
   final String url;
 
   const WebSearchToolCallActionUnionOpenPage({
@@ -79,7 +79,7 @@ class WebSearchToolCallActionUnionOpenPage extends WebSearchToolCallActionUnion 
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
 class WebSearchToolCallActionUnionFind extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionFindMappable {
-  final WebSearchActionFindTypeType type;
+  final WebSearchActionFindType type;
   final String url;
   final String pattern;
 

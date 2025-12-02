@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'custom_tool_chat_completions_custom.dart';
-import 'custom_tool_chat_completions_type_type.dart';
+import 'custom_tool_chat_completions_type.dart';
 
 part 'custom_tool_chat_completions.mapper.dart';
 
@@ -18,7 +18,7 @@ class CustomToolChatCompletions with CustomToolChatCompletionsMappable {
     required this.customToolChatCompletionsCustom,
   });
 
-  final CustomToolChatCompletionsTypeType type;
+  final CustomToolChatCompletionsType type;
   @MappableField(key: 'custom')
   final CustomToolChatCompletionsCustom customToolChatCompletionsCustom;
 

@@ -94,7 +94,7 @@ class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMapper
             AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMapper._(),
       );
       AssistantsApiToolChoiceOptionUnionMapper.ensureInitialized();
-      AssistantsNamedToolChoiceTypeTypeMapper.ensureInitialized();
+      AssistantsNamedToolChoiceTypeMapper.ensureInitialized();
       AssistantsNamedToolChoiceFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -104,12 +104,12 @@ class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMapper
   final String id =
       'AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice';
 
-  static AssistantsNamedToolChoiceTypeType _$type(
+  static AssistantsNamedToolChoiceType _$type(
     AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice v,
   ) => v.type;
   static const Field<
     AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice,
-    AssistantsNamedToolChoiceTypeType
+    AssistantsNamedToolChoiceType
   >
   _f$type = Field('type', _$type);
   static AssistantsNamedToolChoiceFunction? _$assistantsNamedToolChoiceFunction(
@@ -261,7 +261,7 @@ abstract class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceCopyWi
   get assistantsNamedToolChoiceFunction;
   @override
   $R call({
-    AssistantsNamedToolChoiceTypeType? type,
+    AssistantsNamedToolChoiceType? type,
     AssistantsNamedToolChoiceFunction? assistantsNamedToolChoiceFunction,
   });
   AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceCopyWith<
@@ -312,7 +312,7 @@ class _AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceCopyWithImpl<
       .$chain((v) => call(assistantsNamedToolChoiceFunction: v));
   @override
   $R call({
-    AssistantsNamedToolChoiceTypeType? type,
+    AssistantsNamedToolChoiceType? type,
     Object? assistantsNamedToolChoiceFunction = $none,
   }) => $apply(
     FieldCopyWithData({

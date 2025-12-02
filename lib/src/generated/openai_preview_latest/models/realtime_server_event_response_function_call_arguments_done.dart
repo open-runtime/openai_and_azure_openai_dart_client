@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_response_function_call_arguments_done_type_type.dart';
+import 'realtime_server_event_response_function_call_arguments_done_type.dart';
 
 part 'realtime_server_event_response_function_call_arguments_done.mapper.dart';
 
@@ -26,7 +26,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDone with RealtimeServerEv
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseFunctionCallArgumentsDoneTypeType type;
+  final RealtimeServerEventResponseFunctionCallArgumentsDoneType type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')

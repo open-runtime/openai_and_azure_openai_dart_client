@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'content_filter_result_base.dart';
-import 'content_filter_severity_result_severity_severity.dart';
+import 'content_filter_severity_result_severity.dart';
 
 part 'content_filter_severity_result.mapper.dart';
 
@@ -17,7 +17,7 @@ class ContentFilterSeverityResult with ContentFilterSeverityResultMappable {
   });
 
   final bool filtered;
-  final ContentFilterSeverityResultSeveritySeverity? severity;
+  final ContentFilterSeverityResultSeverity? severity;
 
   static ContentFilterSeverityResult fromJson(Map<String, dynamic> json) => ContentFilterSeverityResultMapper.fromJson(json);
 

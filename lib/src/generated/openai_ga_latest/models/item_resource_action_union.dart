@@ -6,12 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item_action_union.dart';
 import 'web_search_action_find.dart';
-import 'web_search_action_find_type_type.dart';
+import 'web_search_action_find_type.dart';
 import 'web_search_action_open_page.dart';
-import 'web_search_action_open_page_type_type.dart';
+import 'web_search_action_open_page_type.dart';
 import 'web_search_action_search.dart';
 import 'web_search_action_search_sources.dart';
-import 'web_search_action_search_type_type.dart';
+import 'web_search_action_search_type.dart';
 
 part 'item_resource_action_union.mapper.dart';
 
@@ -53,7 +53,7 @@ extension ItemResourceActionUnionDeserializer on ItemResourceActionUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
 class ItemResourceActionUnionSearch extends ItemResourceActionUnion with ItemResourceActionUnionSearchMappable {
-  final WebSearchActionSearchTypeType type;
+  final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
@@ -66,7 +66,7 @@ class ItemResourceActionUnionSearch extends ItemResourceActionUnion with ItemRes
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
 class ItemResourceActionUnionOpenPage extends ItemResourceActionUnion with ItemResourceActionUnionOpenPageMappable {
-  final WebSearchActionOpenPageTypeType type;
+  final WebSearchActionOpenPageType type;
   final String url;
 
   const ItemResourceActionUnionOpenPage({
@@ -77,7 +77,7 @@ class ItemResourceActionUnionOpenPage extends ItemResourceActionUnion with ItemR
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
 class ItemResourceActionUnionFind extends ItemResourceActionUnion with ItemResourceActionUnionFindMappable {
-  final WebSearchActionFindTypeType type;
+  final WebSearchActionFindType type;
   final String url;
   final String pattern;
 

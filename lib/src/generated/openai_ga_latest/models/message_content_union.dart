@@ -6,30 +6,30 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'computer_screenshot_content.dart';
-import 'computer_screenshot_content_type_type.dart';
+import 'computer_screenshot_content_type.dart';
 import 'conversation_item_content_union.dart';
 import 'function_and_custom_tool_call_output.dart';
 import 'image_detail.dart';
 import 'input_content.dart';
 import 'input_file_content.dart';
-import 'input_file_content_type_type.dart';
+import 'input_file_content_type.dart';
 import 'input_image_content.dart';
-import 'input_image_content_type_type.dart';
+import 'input_image_content_type.dart';
 import 'input_text_content.dart';
-import 'input_text_content_type_type.dart';
+import 'input_text_content_type.dart';
 import 'log_prob.dart';
 import 'output_content.dart';
 import 'output_message_content.dart';
 import 'output_text_content.dart';
-import 'output_text_content_type_type.dart';
+import 'output_text_content_type.dart';
 import 'reasoning_text_content.dart';
-import 'reasoning_text_content_type_type.dart';
+import 'reasoning_text_content_type.dart';
 import 'refusal_content.dart';
-import 'refusal_content_type_type.dart';
+import 'refusal_content_type.dart';
 import 'summary_text_content.dart';
-import 'summary_text_content_type_type.dart';
+import 'summary_text_content_type.dart';
 import 'text_content.dart';
-import 'text_content_type_type.dart';
+import 'text_content_type.dart';
 
 part 'message_content_union.mapper.dart';
 
@@ -89,7 +89,7 @@ extension MessageContentUnionDeserializer on MessageContentUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
 class MessageContentUnionInputText extends MessageContentUnion with MessageContentUnionInputTextMappable {
-  final InputTextContentTypeType type;
+  final InputTextContentType type;
   final String text;
 
   const MessageContentUnionInputText({
@@ -100,7 +100,7 @@ class MessageContentUnionInputText extends MessageContentUnion with MessageConte
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
 class MessageContentUnionOutputText extends MessageContentUnion with MessageContentUnionOutputTextMappable {
-  final OutputTextContentTypeType type;
+  final OutputTextContentType type;
   final String text;
   final List<Annotation> annotations;
   final List<LogProb>? logprobs;
@@ -115,7 +115,7 @@ class MessageContentUnionOutputText extends MessageContentUnion with MessageCont
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class MessageContentUnionText extends MessageContentUnion with MessageContentUnionTextMappable {
-  final TextContentTypeType type;
+  final TextContentType type;
   final String text;
 
   const MessageContentUnionText({
@@ -126,7 +126,7 @@ class MessageContentUnionText extends MessageContentUnion with MessageContentUni
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'summary_text')
 class MessageContentUnionSummaryText extends MessageContentUnion with MessageContentUnionSummaryTextMappable {
-  final SummaryTextContentTypeType type;
+  final SummaryTextContentType type;
   final String text;
 
   const MessageContentUnionSummaryText({
@@ -137,7 +137,7 @@ class MessageContentUnionSummaryText extends MessageContentUnion with MessageCon
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
 class MessageContentUnionReasoningText extends MessageContentUnion with MessageContentUnionReasoningTextMappable {
-  final ReasoningTextContentTypeType type;
+  final ReasoningTextContentType type;
   final String text;
 
   const MessageContentUnionReasoningText({
@@ -148,7 +148,7 @@ class MessageContentUnionReasoningText extends MessageContentUnion with MessageC
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class MessageContentUnionRefusal extends MessageContentUnion with MessageContentUnionRefusalMappable {
-  final RefusalContentTypeType type;
+  final RefusalContentType type;
   final String refusal;
 
   const MessageContentUnionRefusal({
@@ -159,7 +159,7 @@ class MessageContentUnionRefusal extends MessageContentUnion with MessageContent
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
 class MessageContentUnionInputImage extends MessageContentUnion with MessageContentUnionInputImageMappable {
-  final InputImageContentTypeType type;
+  final InputImageContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
@@ -176,7 +176,7 @@ class MessageContentUnionInputImage extends MessageContentUnion with MessageCont
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_screenshot')
 class MessageContentUnionComputerScreenshot extends MessageContentUnion with MessageContentUnionComputerScreenshotMappable {
-  final ComputerScreenshotContentTypeType type;
+  final ComputerScreenshotContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
@@ -191,7 +191,7 @@ class MessageContentUnionComputerScreenshot extends MessageContentUnion with Mes
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
 class MessageContentUnionInputFile extends MessageContentUnion with MessageContentUnionInputFileMappable {
-  final InputFileContentTypeType type;
+  final InputFileContentType type;
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? filename;

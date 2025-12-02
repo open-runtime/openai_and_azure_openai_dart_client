@@ -7,21 +7,21 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'message_content_image_file.dart';
 import 'message_content_image_file_object.dart';
 import 'message_content_image_file_object_image_file.dart';
-import 'message_content_image_file_object_type_type.dart';
+import 'message_content_image_file_object_type.dart';
 import 'message_content_image_url.dart';
 import 'message_content_image_url_object.dart';
 import 'message_content_image_url_object_image_url.dart';
-import 'message_content_image_url_object_type_type.dart';
+import 'message_content_image_url_object_type.dart';
 import 'message_content_refusal_object.dart';
-import 'message_content_refusal_object_type_type.dart';
+import 'message_content_refusal_object_type.dart';
 import 'message_content_text.dart';
 import 'message_content_text_object.dart';
 import 'message_content_text_object_text.dart';
-import 'message_content_text_object_type_type.dart';
-import 'message_content_type_type.dart';
-import 'message_content_type_type2.dart';
-import 'message_content_type_type3.dart';
-import 'message_content_type_type4.dart';
+import 'message_content_text_object_type.dart';
+import 'message_content_type.dart';
+import 'message_content_type2.dart';
+import 'message_content_type3.dart';
+import 'message_content_type4.dart';
 
 part 'message_content.mapper.dart';
 
@@ -65,7 +65,7 @@ extension MessageContentUnionDeserializer on MessageContent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_file')
 class MessageContentImageFile extends MessageContent with MessageContentImageFileMappable {
-  final MessageContentTypeType type;
+  final MessageContentType type;
   @MappableField(key: 'image_file')
   final MessageContentImageFile messageContentImageFile;
 
@@ -77,7 +77,7 @@ class MessageContentImageFile extends MessageContent with MessageContentImageFil
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
 class MessageContentImageUrl extends MessageContent with MessageContentImageUrlMappable {
-  final MessageContentTypeType2 type;
+  final MessageContentType2 type;
   @MappableField(key: 'image_url')
   final MessageContentImageUrl messageContentImageUrl;
 
@@ -89,7 +89,7 @@ class MessageContentImageUrl extends MessageContent with MessageContentImageUrlM
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class MessageContentText extends MessageContent with MessageContentTextMappable {
-  final MessageContentTypeType3 type;
+  final MessageContentType3 type;
   @MappableField(key: 'text')
   final MessageContentText messageContentText;
 
@@ -101,7 +101,7 @@ class MessageContentText extends MessageContent with MessageContentTextMappable 
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class MessageContentRefusal extends MessageContent with MessageContentRefusalMappable {
-  final MessageContentTypeType4 type;
+  final MessageContentType4 type;
   final String refusal;
 
   const MessageContentRefusal({

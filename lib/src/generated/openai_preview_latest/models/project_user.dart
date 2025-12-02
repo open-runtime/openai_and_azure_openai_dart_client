@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'project_user_object_object_enum.dart';
-import 'project_user_role_role.dart';
+import 'project_user_role.dart';
 
 part 'project_user.mapper.dart';
 
@@ -26,7 +26,7 @@ class ProjectUser with ProjectUserMappable {
   final String id;
   final String name;
   final String email;
-  final ProjectUserRoleRole role;
+  final ProjectUserRole role;
   @MappableField(key: 'added_at')
   final int addedAt;
 

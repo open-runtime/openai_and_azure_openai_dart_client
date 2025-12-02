@@ -96,7 +96,7 @@ class RealtimeSessionCreateRequestGaToolsUnionFunctionMapper
       );
       RealtimeSessionCreateRequestGaToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RealtimeFunctionToolTypeTypeMapper.ensureInitialized();
+      RealtimeFunctionToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -104,12 +104,12 @@ class RealtimeSessionCreateRequestGaToolsUnionFunctionMapper
   @override
   final String id = 'RealtimeSessionCreateRequestGaToolsUnionFunction';
 
-  static RealtimeFunctionToolTypeType? _$type(
+  static RealtimeFunctionToolType? _$type(
     RealtimeSessionCreateRequestGaToolsUnionFunction v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateRequestGaToolsUnionFunction,
-    RealtimeFunctionToolTypeType
+    RealtimeFunctionToolType
   >
   _f$type = Field('type', _$type);
   static String? _$name(RealtimeSessionCreateRequestGaToolsUnionFunction v) =>
@@ -260,7 +260,7 @@ abstract class RealtimeSessionCreateRequestGaToolsUnionFunctionCopyWith<
     implements RealtimeSessionCreateRequestGaToolsUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    RealtimeFunctionToolTypeType? type,
+    RealtimeFunctionToolType? type,
     String? name,
     String? description,
     dynamic parameters,
@@ -341,7 +341,7 @@ class RealtimeSessionCreateRequestGaToolsUnionMcpMapper
       );
       RealtimeSessionCreateRequestGaToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      McpToolTypeTypeMapper.ensureInitialized();
+      McpToolTypeMapper.ensureInitialized();
       McpToolConnectorIdConnectorIdMapper.ensureInitialized();
       McpToolAllowedToolsUnionMapper.ensureInitialized();
       McpToolRequireApprovalUnionMapper.ensureInitialized();
@@ -352,13 +352,9 @@ class RealtimeSessionCreateRequestGaToolsUnionMcpMapper
   @override
   final String id = 'RealtimeSessionCreateRequestGaToolsUnionMcp';
 
-  static McpToolTypeType _$type(
-    RealtimeSessionCreateRequestGaToolsUnionMcp v,
-  ) => v.type;
-  static const Field<
-    RealtimeSessionCreateRequestGaToolsUnionMcp,
-    McpToolTypeType
-  >
+  static McpToolType _$type(RealtimeSessionCreateRequestGaToolsUnionMcp v) =>
+      v.type;
+  static const Field<RealtimeSessionCreateRequestGaToolsUnionMcp, McpToolType>
   _f$type = Field('type', _$type);
   static String _$serverLabel(RealtimeSessionCreateRequestGaToolsUnionMcp v) =>
       v.serverLabel;
@@ -573,7 +569,7 @@ abstract class RealtimeSessionCreateRequestGaToolsUnionMcpCopyWith<
   get requireApproval;
   @override
   $R call({
-    McpToolTypeType? type,
+    McpToolType? type,
     String? serverLabel,
     String? serverUrl,
     McpToolConnectorIdConnectorId? connectorId,
@@ -633,7 +629,7 @@ class _RealtimeSessionCreateRequestGaToolsUnionMcpCopyWithImpl<$R, $Out>
       $value.requireApproval?.copyWith.$chain((v) => call(requireApproval: v));
   @override
   $R call({
-    McpToolTypeType? type,
+    McpToolType? type,
     String? serverLabel,
     Object? serverUrl = $none,
     Object? connectorId = $none,

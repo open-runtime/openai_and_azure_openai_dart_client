@@ -16,7 +16,7 @@ class VectorStoreFileObjectMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = VectorStoreFileObjectMapper._());
       VectorStoreFileObjectObjectObjectEnumMapper.ensureInitialized();
-      VectorStoreFileObjectStatusStatusMapper.ensureInitialized();
+      VectorStoreFileObjectStatusMapper.ensureInitialized();
       VectorStoreFileObjectLastErrorMapper.ensureInitialized();
       ChunkingStrategyResponseUnionMapper.ensureInitialized();
       VectorStoreFileAttributesMapper.ensureInitialized();
@@ -55,9 +55,9 @@ class VectorStoreFileObjectMapper
     _$vectorStoreId,
     key: r'vector_store_id',
   );
-  static VectorStoreFileObjectStatusStatus _$status(VectorStoreFileObject v) =>
+  static VectorStoreFileObjectStatus _$status(VectorStoreFileObject v) =>
       v.status;
-  static const Field<VectorStoreFileObject, VectorStoreFileObjectStatusStatus>
+  static const Field<VectorStoreFileObject, VectorStoreFileObjectStatus>
   _f$status = Field('status', _$status);
   static VectorStoreFileObjectLastError? _$lastError(VectorStoreFileObject v) =>
       v.lastError;
@@ -203,7 +203,7 @@ abstract class VectorStoreFileObjectCopyWith<
     int? usageBytes,
     int? createdAt,
     String? vectorStoreId,
-    VectorStoreFileObjectStatusStatus? status,
+    VectorStoreFileObjectStatus? status,
     VectorStoreFileObjectLastError? lastError,
     ChunkingStrategyResponseUnion? chunkingStrategy,
     VectorStoreFileAttributes? attributes,
@@ -252,7 +252,7 @@ class _VectorStoreFileObjectCopyWithImpl<$R, $Out>
     int? usageBytes,
     int? createdAt,
     String? vectorStoreId,
-    VectorStoreFileObjectStatusStatus? status,
+    VectorStoreFileObjectStatus? status,
     Object? lastError = $none,
     Object? chunkingStrategy = $none,
     Object? attributes = $none,

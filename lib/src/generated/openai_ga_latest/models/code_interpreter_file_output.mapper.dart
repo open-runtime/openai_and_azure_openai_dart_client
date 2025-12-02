@@ -17,7 +17,7 @@ class CodeInterpreterFileOutputMapper
       MapperContainer.globals.use(
         _instance = CodeInterpreterFileOutputMapper._(),
       );
-      CodeInterpreterFileOutputTypeTypeMapper.ensureInitialized();
+      CodeInterpreterFileOutputTypeMapper.ensureInitialized();
       CodeInterpreterFileOutputFilesMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,9 @@ class CodeInterpreterFileOutputMapper
   @override
   final String id = 'CodeInterpreterFileOutput';
 
-  static CodeInterpreterFileOutputTypeType _$type(
-    CodeInterpreterFileOutput v,
-  ) => v.type;
-  static const Field<
-    CodeInterpreterFileOutput,
-    CodeInterpreterFileOutputTypeType
-  >
+  static CodeInterpreterFileOutputType _$type(CodeInterpreterFileOutput v) =>
+      v.type;
+  static const Field<CodeInterpreterFileOutput, CodeInterpreterFileOutputType>
   _f$type = Field('type', _$type);
   static List<CodeInterpreterFileOutputFiles> _$files(
     CodeInterpreterFileOutput v,
@@ -145,7 +141,7 @@ abstract class CodeInterpreterFileOutputCopyWith<
   >
   get files;
   $R call({
-    CodeInterpreterFileOutputTypeType? type,
+    CodeInterpreterFileOutputType? type,
     List<CodeInterpreterFileOutputFiles>? files,
   });
   CodeInterpreterFileOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -179,7 +175,7 @@ class _CodeInterpreterFileOutputCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CodeInterpreterFileOutputTypeType? type,
+    CodeInterpreterFileOutputType? type,
     List<CodeInterpreterFileOutputFiles>? files,
   }) => $apply(
     FieldCopyWithData({

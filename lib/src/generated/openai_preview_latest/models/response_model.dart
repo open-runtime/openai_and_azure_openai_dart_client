@@ -11,10 +11,10 @@ import 'reasoning.dart';
 import 'response_error.dart';
 import 'response_model_incomplete_details.dart';
 import 'response_model_object_object_enum.dart';
-import 'response_model_status_status.dart';
+import 'response_model_status.dart';
 import 'response_properties_text.dart';
 import 'response_properties_tool_choice_union.dart';
-import 'response_properties_truncation_truncation.dart';
+import 'response_properties_truncation.dart';
 import 'response_usage.dart';
 import 'service_tier.dart';
 import 'tool.dart';
@@ -32,7 +32,7 @@ class ResponseModel with ResponseModelMappable {
     required this.output,
     this.temperature = 1,
     this.topP = 1,
-    this.truncation = ResponsePropertiesTruncationTruncation.disabled,
+    this.truncation = ResponsePropertiesTruncation.disabled,
     this.parallelToolCalls = true,
     this.metadata,
     this.user,
@@ -62,7 +62,7 @@ class ResponseModel with ResponseModelMappable {
   final num? temperature;
   @MappableField(key: 'top_p')
   final num? topP;
-  final ResponsePropertiesTruncationTruncation? truncation;
+  final ResponsePropertiesTruncation? truncation;
   @MappableField(key: 'parallel_tool_calls')
   final bool parallelToolCalls;
   final Metadata? metadata;
@@ -81,7 +81,7 @@ class ResponseModel with ResponseModelMappable {
   final List<Tool>? tools;
   @MappableField(key: 'tool_choice')
   final ResponsePropertiesToolChoiceUnion? toolChoice;
-  final ResponseModelStatusStatus? status;
+  final ResponseModelStatus? status;
   @MappableField(key: 'output_text')
   final String? outputText;
   final ResponseUsage? usage;

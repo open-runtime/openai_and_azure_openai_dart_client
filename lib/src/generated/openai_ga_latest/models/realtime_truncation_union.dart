@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_truncation_union_variant1_token_limits.dart';
-import 'realtime_truncation_union_variant1_type_type.dart';
+import 'realtime_truncation_union_variant1_type.dart';
 
 part 'realtime_truncation_union.mapper.dart';
 
@@ -39,7 +39,7 @@ extension RealtimeTruncationUnionDeserializer on RealtimeTruncationUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTruncationUnionVariant1 extends RealtimeTruncationUnion with RealtimeTruncationUnionVariant1Mappable {
-  final RealtimeTruncationUnionVariant1TypeType type;
+  final RealtimeTruncationUnionVariant1Type type;
   @MappableField(key: 'retention_ratio')
   final num retentionRatio;
   @MappableField(key: 'token_limits')

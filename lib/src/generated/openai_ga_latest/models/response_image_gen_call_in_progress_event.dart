@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_image_gen_call_in_progress_event_type_type.dart';
+import 'response_image_gen_call_in_progress_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_image_gen_call_in_progress_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseImageGenCallInProgressEvent with ResponseImageGenCallInProgressEve
     required this.sequenceNumber,
   });
 
-  final ResponseImageGenCallInProgressEventTypeType type;
+  final ResponseImageGenCallInProgressEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

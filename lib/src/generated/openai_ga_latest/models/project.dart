@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'project_object_object_enum.dart';
-import 'project_status_status.dart';
+import 'project_status.dart';
 
 part 'project.mapper.dart';
 
@@ -27,7 +27,7 @@ class Project with ProjectMappable {
   final String name;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final ProjectStatusStatus status;
+  final ProjectStatus status;
   @MappableField(key: 'archived_at')
   final int? archivedAt;
 

@@ -17,8 +17,8 @@ class RealtimeResponseStatusDetailsMapper
       MapperContainer.globals.use(
         _instance = RealtimeResponseStatusDetailsMapper._(),
       );
-      RealtimeResponseStatusDetailsTypeTypeMapper.ensureInitialized();
-      RealtimeResponseStatusDetailsReasonReasonMapper.ensureInitialized();
+      RealtimeResponseStatusDetailsTypeMapper.ensureInitialized();
+      RealtimeResponseStatusDetailsReasonMapper.ensureInitialized();
       RealtimeResponseStatusDetailsErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,20 +27,20 @@ class RealtimeResponseStatusDetailsMapper
   @override
   final String id = 'RealtimeResponseStatusDetails';
 
-  static RealtimeResponseStatusDetailsTypeType? _$type(
+  static RealtimeResponseStatusDetailsType? _$type(
     RealtimeResponseStatusDetails v,
   ) => v.type;
   static const Field<
     RealtimeResponseStatusDetails,
-    RealtimeResponseStatusDetailsTypeType
+    RealtimeResponseStatusDetailsType
   >
   _f$type = Field('type', _$type, opt: true);
-  static RealtimeResponseStatusDetailsReasonReason? _$reason(
+  static RealtimeResponseStatusDetailsReason? _$reason(
     RealtimeResponseStatusDetails v,
   ) => v.reason;
   static const Field<
     RealtimeResponseStatusDetails,
-    RealtimeResponseStatusDetailsReasonReason
+    RealtimeResponseStatusDetailsReason
   >
   _f$reason = Field('reason', _$reason, opt: true);
   static RealtimeResponseStatusDetailsError?
@@ -159,8 +159,8 @@ abstract class RealtimeResponseStatusDetailsCopyWith<
   >?
   get realtimeResponseStatusDetailsError;
   $R call({
-    RealtimeResponseStatusDetailsTypeType? type,
-    RealtimeResponseStatusDetailsReasonReason? reason,
+    RealtimeResponseStatusDetailsType? type,
+    RealtimeResponseStatusDetailsReason? reason,
     RealtimeResponseStatusDetailsError? realtimeResponseStatusDetailsError,
   });
   RealtimeResponseStatusDetailsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(

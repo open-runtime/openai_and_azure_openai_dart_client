@@ -14,9 +14,9 @@ class EasyInputMessageMapper extends ClassMapperBase<EasyInputMessage> {
   static EasyInputMessageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EasyInputMessageMapper._());
-      EasyInputMessageRoleRoleMapper.ensureInitialized();
+      EasyInputMessageRoleMapper.ensureInitialized();
       EasyInputMessageContentUnionMapper.ensureInitialized();
-      EasyInputMessageTypeTypeMapper.ensureInitialized();
+      EasyInputMessageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,16 +24,21 @@ class EasyInputMessageMapper extends ClassMapperBase<EasyInputMessage> {
   @override
   final String id = 'EasyInputMessage';
 
-  static EasyInputMessageRoleRole _$role(EasyInputMessage v) => v.role;
-  static const Field<EasyInputMessage, EasyInputMessageRoleRole> _f$role =
-      Field('role', _$role);
+  static EasyInputMessageRole _$role(EasyInputMessage v) => v.role;
+  static const Field<EasyInputMessage, EasyInputMessageRole> _f$role = Field(
+    'role',
+    _$role,
+  );
   static EasyInputMessageContentUnion _$content(EasyInputMessage v) =>
       v.content;
   static const Field<EasyInputMessage, EasyInputMessageContentUnion>
   _f$content = Field('content', _$content);
-  static EasyInputMessageTypeType? _$type(EasyInputMessage v) => v.type;
-  static const Field<EasyInputMessage, EasyInputMessageTypeType> _f$type =
-      Field('type', _$type, opt: true);
+  static EasyInputMessageType? _$type(EasyInputMessage v) => v.type;
+  static const Field<EasyInputMessage, EasyInputMessageType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+  );
 
   @override
   final MappableFields<EasyInputMessage> fields = const {
@@ -123,9 +128,9 @@ abstract class EasyInputMessageCopyWith<$R, $In extends EasyInputMessage, $Out>
   >
   get content;
   $R call({
-    EasyInputMessageRoleRole? role,
+    EasyInputMessageRole? role,
     EasyInputMessageContentUnion? content,
-    EasyInputMessageTypeType? type,
+    EasyInputMessageType? type,
   });
   EasyInputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -149,7 +154,7 @@ class _EasyInputMessageCopyWithImpl<$R, $Out>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EasyInputMessageRoleRole? role,
+    EasyInputMessageRole? role,
     EasyInputMessageContentUnion? content,
     Object? type = $none,
   }) => $apply(

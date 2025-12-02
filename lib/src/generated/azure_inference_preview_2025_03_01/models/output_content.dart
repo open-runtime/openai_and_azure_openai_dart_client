@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'output_content_type_type.dart';
-import 'output_content_type_type2.dart';
+import 'output_content_type.dart';
+import 'output_content_type2.dart';
 import 'output_text.dart';
-import 'output_text_type_type.dart';
+import 'output_text_type.dart';
 import 'refusal.dart';
-import 'refusal_type_type.dart';
+import 'refusal_type.dart';
 
 part 'output_content.mapper.dart';
 
@@ -48,7 +48,7 @@ extension OutputContentUnionDeserializer on OutputContent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
 class OutputContentOutputText extends OutputContent with OutputContentOutputTextMappable {
-  final OutputContentTypeType type;
+  final OutputContentType type;
   final String text;
   final List<Annotation> annotations;
 
@@ -61,7 +61,7 @@ class OutputContentOutputText extends OutputContent with OutputContentOutputText
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class OutputContentRefusal extends OutputContent with OutputContentRefusalMappable {
-  final OutputContentTypeType2 type;
+  final OutputContentType2 type;
   final String refusal;
 
   const OutputContentRefusal({

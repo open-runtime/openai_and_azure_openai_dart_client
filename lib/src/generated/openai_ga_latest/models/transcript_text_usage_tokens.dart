@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'transcript_text_usage_tokens_input_token_details.dart';
-import 'transcript_text_usage_tokens_type_type.dart';
+import 'transcript_text_usage_tokens_type.dart';
 
 part 'transcript_text_usage_tokens.mapper.dart';
 
@@ -20,7 +20,7 @@ class TranscriptTextUsageTokens with TranscriptTextUsageTokensMappable {
     this.transcriptTextUsageTokensInputTokenDetails,
   });
 
-  final TranscriptTextUsageTokensTypeType type;
+  final TranscriptTextUsageTokensType type;
   @MappableField(key: 'input_tokens')
   final int inputTokens;
   @MappableField(key: 'output_tokens')

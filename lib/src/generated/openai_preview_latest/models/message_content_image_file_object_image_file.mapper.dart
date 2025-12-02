@@ -17,7 +17,7 @@ class MessageContentImageFileObjectImageFileMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageFileObjectImageFileMapper._(),
       );
-      MessageContentImageFileObjectImageFileDetailDetailMapper.ensureInitialized();
+      MessageContentImageFileObjectImageFileDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class MessageContentImageFileObjectImageFileMapper
   static String _$fileId(MessageContentImageFileObjectImageFile v) => v.fileId;
   static const Field<MessageContentImageFileObjectImageFile, String> _f$fileId =
       Field('fileId', _$fileId, key: r'file_id');
-  static MessageContentImageFileObjectImageFileDetailDetail _$detail(
+  static MessageContentImageFileObjectImageFileDetail _$detail(
     MessageContentImageFileObjectImageFile v,
   ) => v.detail;
   static const Field<
     MessageContentImageFileObjectImageFile,
-    MessageContentImageFileObjectImageFileDetailDetail
+    MessageContentImageFileObjectImageFileDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentImageFileObjectImageFileDetailDetail.auto,
+    def: MessageContentImageFileObjectImageFileDetail.auto,
   );
 
   @override
@@ -142,7 +142,7 @@ abstract class MessageContentImageFileObjectImageFileCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? fileId,
-    MessageContentImageFileObjectImageFileDetailDetail? detail,
+    MessageContentImageFileObjectImageFileDetail? detail,
   });
   MessageContentImageFileObjectImageFileCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -168,7 +168,7 @@ class _MessageContentImageFileObjectImageFileCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? fileId,
-    MessageContentImageFileObjectImageFileDetailDetail? detail,
+    MessageContentImageFileObjectImageFileDetail? detail,
   }) => $apply(
     FieldCopyWithData({
       if (fileId != null) #fileId: fileId,

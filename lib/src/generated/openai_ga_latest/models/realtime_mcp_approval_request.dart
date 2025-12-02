@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
-import 'realtime_mcp_approval_request_type_type.dart';
+import 'realtime_mcp_approval_request_type.dart';
 
 part 'realtime_mcp_approval_request.mapper.dart';
 
@@ -21,7 +21,7 @@ class RealtimeMcpApprovalRequest with RealtimeMcpApprovalRequestMappable {
     required this.arguments,
   });
 
-  final RealtimeMcpApprovalRequestTypeType type;
+  final RealtimeMcpApprovalRequestType type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

@@ -6,9 +6,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_object_tools_union.dart';
 import 'assistant_tools_code.dart';
-import 'assistant_tools_code_type_type.dart';
+import 'assistant_tools_code_type.dart';
 import 'assistant_tools_file_search_type_only.dart';
-import 'assistant_tools_file_search_type_only_type_type.dart';
+import 'assistant_tools_file_search_type_only_type.dart';
 import 'create_assistant_request_tools_union.dart';
 import 'create_message_request_attachments_tools_union.dart';
 import 'create_run_request_tools_union.dart';
@@ -51,7 +51,7 @@ extension MessageObjectAttachmentsToolsUnionDeserializer on MessageObjectAttachm
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class MessageObjectAttachmentsToolsUnionCodeInterpreter extends MessageObjectAttachmentsToolsUnion with MessageObjectAttachmentsToolsUnionCodeInterpreterMappable {
-  final AssistantToolsCodeTypeType type;
+  final AssistantToolsCodeType type;
 
   const MessageObjectAttachmentsToolsUnionCodeInterpreter({
     required this.type,
@@ -60,7 +60,7 @@ class MessageObjectAttachmentsToolsUnionCodeInterpreter extends MessageObjectAtt
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class MessageObjectAttachmentsToolsUnionFileSearch extends MessageObjectAttachmentsToolsUnion with MessageObjectAttachmentsToolsUnionFileSearchMappable {
-  final AssistantToolsFileSearchTypeOnlyTypeType type;
+  final AssistantToolsFileSearchTypeOnlyType type;
 
   const MessageObjectAttachmentsToolsUnionFileSearch({
     required this.type,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'key_press_action_type_type.dart';
+import 'key_press_action_type.dart';
 
 part 'key_press_action.mapper.dart';
 
@@ -14,11 +14,11 @@ part 'key_press_action.mapper.dart';
 class KeyPressAction with KeyPressActionMappable {
   const KeyPressAction({
     required this.keys,
-    this.type = KeyPressActionTypeType.keypress,
+    this.type = KeyPressActionType.keypress,
   });
 
   final List<String> keys;
-  final KeyPressActionTypeType type;
+  final KeyPressActionType type;
 
   static KeyPressAction fromJson(Map<String, dynamic> json) => KeyPressActionMapper.fromJson(json);
 

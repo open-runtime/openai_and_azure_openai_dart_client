@@ -15,7 +15,7 @@ class ComparisonFilterMapper extends ClassMapperBase<ComparisonFilter> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComparisonFilterMapper._());
       ComparisonFilterValueUnionMapper.ensureInitialized();
-      ComparisonFilterTypeTypeMapper.ensureInitialized();
+      ComparisonFilterTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,9 +28,13 @@ class ComparisonFilterMapper extends ClassMapperBase<ComparisonFilter> {
   static ComparisonFilterValueUnion _$value(ComparisonFilter v) => v.value;
   static const Field<ComparisonFilter, ComparisonFilterValueUnion> _f$value =
       Field('value', _$value, hook: const ComparisonFilterValueUnionHook());
-  static ComparisonFilterTypeType _$type(ComparisonFilter v) => v.type;
-  static const Field<ComparisonFilter, ComparisonFilterTypeType> _f$type =
-      Field('type', _$type, opt: true, def: ComparisonFilterTypeType.eq);
+  static ComparisonFilterType _$type(ComparisonFilter v) => v.type;
+  static const Field<ComparisonFilter, ComparisonFilterType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: ComparisonFilterType.eq,
+  );
 
   @override
   final MappableFields<ComparisonFilter> fields = const {
@@ -122,7 +126,7 @@ abstract class ComparisonFilterCopyWith<$R, $In extends ComparisonFilter, $Out>
   $R call({
     String? key,
     ComparisonFilterValueUnion? value,
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
   });
   ComparisonFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -148,7 +152,7 @@ class _ComparisonFilterCopyWithImpl<$R, $Out>
   $R call({
     String? key,
     ComparisonFilterValueUnion? value,
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
   }) => $apply(
     FieldCopyWithData({
       if (key != null) #key: key,

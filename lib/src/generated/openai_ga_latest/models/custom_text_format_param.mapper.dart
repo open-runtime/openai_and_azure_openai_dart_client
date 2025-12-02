@@ -15,7 +15,7 @@ class CustomTextFormatParamMapper
   static CustomTextFormatParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomTextFormatParamMapper._());
-      CustomTextFormatParamTypeTypeMapper.ensureInitialized();
+      CustomTextFormatParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,15 +23,9 @@ class CustomTextFormatParamMapper
   @override
   final String id = 'CustomTextFormatParam';
 
-  static CustomTextFormatParamTypeType _$type(CustomTextFormatParam v) =>
-      v.type;
-  static const Field<CustomTextFormatParam, CustomTextFormatParamTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: CustomTextFormatParamTypeType.text,
-  );
+  static CustomTextFormatParamType _$type(CustomTextFormatParam v) => v.type;
+  static const Field<CustomTextFormatParam, CustomTextFormatParamType> _f$type =
+      Field('type', _$type, opt: true, def: CustomTextFormatParamType.text);
 
   @override
   final MappableFields<CustomTextFormatParam> fields = const {#type: _f$type};
@@ -114,7 +108,7 @@ abstract class CustomTextFormatParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({CustomTextFormatParamTypeType? type});
+  $R call({CustomTextFormatParamType? type});
   CustomTextFormatParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +123,7 @@ class _CustomTextFormatParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CustomTextFormatParam> $mapper =
       CustomTextFormatParamMapper.ensureInitialized();
   @override
-  $R call({CustomTextFormatParamTypeType? type}) =>
+  $R call({CustomTextFormatParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CustomTextFormatParam $make(CopyWithData data) =>

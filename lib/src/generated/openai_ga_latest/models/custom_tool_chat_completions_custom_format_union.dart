@@ -4,9 +4,9 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'custom_tool_chat_completions_custom_format_union_variant1_type_type.dart';
+import 'custom_tool_chat_completions_custom_format_union_variant1_type.dart';
 import 'custom_tool_chat_completions_custom_format_union_variant2_grammar.dart';
-import 'custom_tool_chat_completions_custom_format_union_variant2_type_type.dart';
+import 'custom_tool_chat_completions_custom_format_union_variant2_type.dart';
 
 part 'custom_tool_chat_completions_custom_format_union.mapper.dart';
 
@@ -37,7 +37,7 @@ extension CustomToolChatCompletionsCustomFormatUnionDeserializer on CustomToolCh
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolChatCompletionsCustomFormatUnionVariant1 extends CustomToolChatCompletionsCustomFormatUnion with CustomToolChatCompletionsCustomFormatUnionVariant1Mappable {
-  final CustomToolChatCompletionsCustomFormatUnionVariant1TypeType type;
+  final CustomToolChatCompletionsCustomFormatUnionVariant1Type type;
 
   const CustomToolChatCompletionsCustomFormatUnionVariant1({
     required this.type,
@@ -46,7 +46,7 @@ class CustomToolChatCompletionsCustomFormatUnionVariant1 extends CustomToolChatC
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolChatCompletionsCustomFormatUnionVariant2 extends CustomToolChatCompletionsCustomFormatUnion with CustomToolChatCompletionsCustomFormatUnionVariant2Mappable {
-  final CustomToolChatCompletionsCustomFormatUnionVariant2TypeType type;
+  final CustomToolChatCompletionsCustomFormatUnionVariant2Type type;
   @MappableField(key: 'grammar')
   final CustomToolChatCompletionsCustomFormatUnionVariant2Grammar customToolChatCompletionsCustomFormatUnionVariant2Grammar;
 

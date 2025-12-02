@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_beta_server_event_response_content_part_done_part_type_type.dart';
+import 'realtime_beta_server_event_response_content_part_done_part_type.dart';
 
 part 'realtime_beta_server_event_response_content_part_done_part.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeBetaServerEventResponseContentPartDonePart with RealtimeBetaServer
     this.transcript,
   });
 
-  final RealtimeBetaServerEventResponseContentPartDonePartTypeType? type;
+  final RealtimeBetaServerEventResponseContentPartDonePartType? type;
   final String? text;
   final String? audio;
   final String? transcript;

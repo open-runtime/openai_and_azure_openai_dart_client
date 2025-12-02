@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_content_delta_image_url_detail_detail.dart';
+import 'message_content_delta_image_url_detail.dart';
 
 part 'message_content_delta_image_url.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentDeltaImageUrl with MessageContentDeltaImageUrlMappable {
   const MessageContentDeltaImageUrl({
-    this.detail = MessageContentDeltaImageUrlDetailDetail.auto,
+    this.detail = MessageContentDeltaImageUrlDetail.auto,
     this.url,
   });
 
-  final MessageContentDeltaImageUrlDetailDetail detail;
+  final MessageContentDeltaImageUrlDetail detail;
   final String? url;
 
   static MessageContentDeltaImageUrl fromJson(Map<String, dynamic> json) => MessageContentDeltaImageUrlMapper.fromJson(json);

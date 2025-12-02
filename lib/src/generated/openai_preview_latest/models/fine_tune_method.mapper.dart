@@ -14,7 +14,7 @@ class FineTuneMethodMapper extends ClassMapperBase<FineTuneMethod> {
   static FineTuneMethodMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FineTuneMethodMapper._());
-      FineTuneMethodTypeTypeMapper.ensureInitialized();
+      FineTuneMethodTypeMapper.ensureInitialized();
       FineTuneSupervisedMethodMapper.ensureInitialized();
       FineTuneDpoMethodMapper.ensureInitialized();
     }
@@ -24,8 +24,8 @@ class FineTuneMethodMapper extends ClassMapperBase<FineTuneMethod> {
   @override
   final String id = 'FineTuneMethod';
 
-  static FineTuneMethodTypeType? _$type(FineTuneMethod v) => v.type;
-  static const Field<FineTuneMethod, FineTuneMethodTypeType> _f$type = Field(
+  static FineTuneMethodType? _$type(FineTuneMethod v) => v.type;
+  static const Field<FineTuneMethod, FineTuneMethodType> _f$type = Field(
     'type',
     _$type,
     opt: true,
@@ -130,7 +130,7 @@ abstract class FineTuneMethodCopyWith<$R, $In extends FineTuneMethod, $Out>
   get supervised;
   FineTuneDpoMethodCopyWith<$R, FineTuneDpoMethod, FineTuneDpoMethod>? get dpo;
   $R call({
-    FineTuneMethodTypeType? type,
+    FineTuneMethodType? type,
     FineTuneSupervisedMethod? supervised,
     FineTuneDpoMethod? dpo,
   });

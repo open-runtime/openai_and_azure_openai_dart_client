@@ -17,10 +17,10 @@ class ImageEditPartialImageEventMapper
       MapperContainer.globals.use(
         _instance = ImageEditPartialImageEventMapper._(),
       );
-      ImageEditPartialImageEventTypeTypeMapper.ensureInitialized();
-      ImageEditPartialImageEventSizeSizeMapper.ensureInitialized();
-      ImageEditPartialImageEventQualityQualityMapper.ensureInitialized();
-      ImageEditPartialImageEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageEditPartialImageEventTypeMapper.ensureInitialized();
+      ImageEditPartialImageEventSizeMapper.ensureInitialized();
+      ImageEditPartialImageEventQualityMapper.ensureInitialized();
+      ImageEditPartialImageEventBackgroundMapper.ensureInitialized();
       ImageEditPartialImageEventOutputFormatOutputFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,13 +29,9 @@ class ImageEditPartialImageEventMapper
   @override
   final String id = 'ImageEditPartialImageEvent';
 
-  static ImageEditPartialImageEventTypeType _$type(
-    ImageEditPartialImageEvent v,
-  ) => v.type;
-  static const Field<
-    ImageEditPartialImageEvent,
-    ImageEditPartialImageEventTypeType
-  >
+  static ImageEditPartialImageEventType _$type(ImageEditPartialImageEvent v) =>
+      v.type;
+  static const Field<ImageEditPartialImageEvent, ImageEditPartialImageEventType>
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageEditPartialImageEvent v) => v.b64Json;
   static const Field<ImageEditPartialImageEvent, String> _f$b64Json = Field(
@@ -49,28 +45,24 @@ class ImageEditPartialImageEventMapper
     _$createdAt,
     key: r'created_at',
   );
-  static ImageEditPartialImageEventSizeSize _$size(
-    ImageEditPartialImageEvent v,
-  ) => v.size;
-  static const Field<
-    ImageEditPartialImageEvent,
-    ImageEditPartialImageEventSizeSize
-  >
+  static ImageEditPartialImageEventSize _$size(ImageEditPartialImageEvent v) =>
+      v.size;
+  static const Field<ImageEditPartialImageEvent, ImageEditPartialImageEventSize>
   _f$size = Field('size', _$size);
-  static ImageEditPartialImageEventQualityQuality _$quality(
+  static ImageEditPartialImageEventQuality _$quality(
     ImageEditPartialImageEvent v,
   ) => v.quality;
   static const Field<
     ImageEditPartialImageEvent,
-    ImageEditPartialImageEventQualityQuality
+    ImageEditPartialImageEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageEditPartialImageEventBackgroundBackground _$background(
+  static ImageEditPartialImageEventBackground _$background(
     ImageEditPartialImageEvent v,
   ) => v.background;
   static const Field<
     ImageEditPartialImageEvent,
-    ImageEditPartialImageEventBackgroundBackground
+    ImageEditPartialImageEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageEditPartialImageEventOutputFormatOutputFormat _$outputFormat(
@@ -198,12 +190,12 @@ abstract class ImageEditPartialImageEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ImageEditPartialImageEventTypeType? type,
+    ImageEditPartialImageEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditPartialImageEventSizeSize? size,
-    ImageEditPartialImageEventQualityQuality? quality,
-    ImageEditPartialImageEventBackgroundBackground? background,
+    ImageEditPartialImageEventSize? size,
+    ImageEditPartialImageEventQuality? quality,
+    ImageEditPartialImageEventBackground? background,
     ImageEditPartialImageEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   });
@@ -227,12 +219,12 @@ class _ImageEditPartialImageEventCopyWithImpl<$R, $Out>
       ImageEditPartialImageEventMapper.ensureInitialized();
   @override
   $R call({
-    ImageEditPartialImageEventTypeType? type,
+    ImageEditPartialImageEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditPartialImageEventSizeSize? size,
-    ImageEditPartialImageEventQualityQuality? quality,
-    ImageEditPartialImageEventBackgroundBackground? background,
+    ImageEditPartialImageEventSize? size,
+    ImageEditPartialImageEventQuality? quality,
+    ImageEditPartialImageEventBackground? background,
     ImageEditPartialImageEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   }) => $apply(

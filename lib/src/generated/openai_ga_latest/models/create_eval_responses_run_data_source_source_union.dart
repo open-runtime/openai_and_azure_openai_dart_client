@@ -8,11 +8,11 @@ import 'create_eval_completions_run_data_source_source_union.dart';
 import 'create_eval_jsonl_run_data_source_source_union.dart';
 import 'eval_jsonl_file_content_source.dart';
 import 'eval_jsonl_file_content_source_content.dart';
-import 'eval_jsonl_file_content_source_type_type.dart';
+import 'eval_jsonl_file_content_source_type.dart';
 import 'eval_jsonl_file_id_source.dart';
-import 'eval_jsonl_file_id_source_type_type.dart';
+import 'eval_jsonl_file_id_source_type.dart';
 import 'eval_responses_source.dart';
-import 'eval_responses_source_type_type.dart';
+import 'eval_responses_source_type.dart';
 import 'reasoning_effort.dart';
 
 part 'create_eval_responses_run_data_source_source_union.mapper.dart';
@@ -55,7 +55,7 @@ extension CreateEvalResponsesRunDataSourceSourceUnionDeserializer on CreateEvalR
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
 class CreateEvalResponsesRunDataSourceSourceUnionFileContent extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionFileContentMappable {
-  final EvalJsonlFileContentSourceTypeType type;
+  final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
   const CreateEvalResponsesRunDataSourceSourceUnionFileContent({
@@ -66,7 +66,7 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileContent extends CreateEvalR
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
 class CreateEvalResponsesRunDataSourceSourceUnionFileId extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionFileIdMappable {
-  final EvalJsonlFileIdSourceTypeType type;
+  final EvalJsonlFileIdSourceType type;
   final String id;
 
   const CreateEvalResponsesRunDataSourceSourceUnionFileId({
@@ -77,7 +77,7 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileId extends CreateEvalRespon
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
 class CreateEvalResponsesRunDataSourceSourceUnionResponses extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionResponsesMappable {
-  final EvalResponsesSourceTypeType type;
+  final EvalResponsesSourceType type;
   final dynamic metadata;
   final String? model;
   @MappableField(key: 'instructions_search')

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content.dart';
-import 'message_content_refusal_object_type_type.dart';
+import 'message_content_refusal_object_type.dart';
 
 part 'message_content_refusal_object.mapper.dart';
 
@@ -17,7 +17,7 @@ class MessageContentRefusalObject with MessageContentRefusalObjectMappable {
     required this.refusal,
   });
 
-  final MessageContentRefusalObjectTypeType type;
+  final MessageContentRefusalObjectType type;
   final String refusal;
 
   static MessageContentRefusalObject fromJson(Map<String, dynamic> json) => MessageContentRefusalObjectMapper.fromJson(json);

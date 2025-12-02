@@ -14,7 +14,7 @@ class ModerationTextInputMapper extends ClassMapperBase<ModerationTextInput> {
   static ModerationTextInputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ModerationTextInputMapper._());
-      ModerationTextInputTypeTypeMapper.ensureInitialized();
+      ModerationTextInputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class ModerationTextInputMapper extends ClassMapperBase<ModerationTextInput> {
   @override
   final String id = 'ModerationTextInput';
 
-  static ModerationTextInputTypeType _$type(ModerationTextInput v) => v.type;
-  static const Field<ModerationTextInput, ModerationTextInputTypeType> _f$type =
+  static ModerationTextInputType _$type(ModerationTextInput v) => v.type;
+  static const Field<ModerationTextInput, ModerationTextInputType> _f$type =
       Field('type', _$type);
   static String _$text(ModerationTextInput v) => v.text;
   static const Field<ModerationTextInput, String> _f$text = Field(
@@ -118,7 +118,7 @@ abstract class ModerationTextInputCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ModerationTextInputTypeType? type, String? text});
+  $R call({ModerationTextInputType? type, String? text});
   ModerationTextInputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -133,7 +133,7 @@ class _ModerationTextInputCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ModerationTextInput> $mapper =
       ModerationTextInputMapper.ensureInitialized();
   @override
-  $R call({ModerationTextInputTypeType? type, String? text}) => $apply(
+  $R call({ModerationTextInputType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

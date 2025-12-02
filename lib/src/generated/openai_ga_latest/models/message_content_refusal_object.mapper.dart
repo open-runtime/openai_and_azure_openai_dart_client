@@ -17,7 +17,7 @@ class MessageContentRefusalObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentRefusalObjectMapper._(),
       );
-      MessageContentRefusalObjectTypeTypeMapper.ensureInitialized();
+      MessageContentRefusalObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class MessageContentRefusalObjectMapper
   @override
   final String id = 'MessageContentRefusalObject';
 
-  static MessageContentRefusalObjectTypeType _$type(
+  static MessageContentRefusalObjectType _$type(
     MessageContentRefusalObject v,
   ) => v.type;
   static const Field<
     MessageContentRefusalObject,
-    MessageContentRefusalObjectTypeType
+    MessageContentRefusalObjectType
   >
   _f$type = Field('type', _$type);
   static String _$refusal(MessageContentRefusalObject v) => v.refusal;
@@ -130,7 +130,7 @@ abstract class MessageContentRefusalObjectCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({MessageContentRefusalObjectTypeType? type, String? refusal});
+  $R call({MessageContentRefusalObjectType? type, String? refusal});
   MessageContentRefusalObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -154,13 +154,12 @@ class _MessageContentRefusalObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentRefusalObject> $mapper =
       MessageContentRefusalObjectMapper.ensureInitialized();
   @override
-  $R call({MessageContentRefusalObjectTypeType? type, String? refusal}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (refusal != null) #refusal: refusal,
-        }),
-      );
+  $R call({MessageContentRefusalObjectType? type, String? refusal}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (refusal != null) #refusal: refusal,
+    }),
+  );
   @override
   MessageContentRefusalObject $make(CopyWithData data) =>
       MessageContentRefusalObject(

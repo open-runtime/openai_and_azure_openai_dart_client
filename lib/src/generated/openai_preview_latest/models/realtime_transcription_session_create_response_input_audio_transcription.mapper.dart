@@ -23,7 +23,7 @@ class RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionMapper
         _instance =
             RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionMapper._(),
       );
-      RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelModelMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,13 +32,13 @@ class RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionMapper
   final String id =
       'RealtimeTranscriptionSessionCreateResponseInputAudioTranscription';
 
-  static RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelModel?
+  static RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel?
   _$model(
     RealtimeTranscriptionSessionCreateResponseInputAudioTranscription v,
   ) => v.model;
   static const Field<
     RealtimeTranscriptionSessionCreateResponseInputAudioTranscription,
-    RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelModel
+    RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel
   >
   _f$model = Field('model', _$model, opt: true);
   static String? _$language(
@@ -192,7 +192,7 @@ abstract class RealtimeTranscriptionSessionCreateResponseInputAudioTranscription
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelModel?
+    RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel?
     model,
     String? language,
     String? prompt,

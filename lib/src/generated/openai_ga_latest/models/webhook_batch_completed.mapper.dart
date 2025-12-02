@@ -16,7 +16,7 @@ class WebhookBatchCompletedMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookBatchCompletedMapper._());
       WebhookBatchCompletedDataMapper.ensureInitialized();
-      WebhookBatchCompletedTypeTypeMapper.ensureInitialized();
+      WebhookBatchCompletedTypeMapper.ensureInitialized();
       WebhookBatchCompletedObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -42,10 +42,9 @@ class WebhookBatchCompletedMapper
     _$webhookBatchCompletedData,
     key: r'data',
   );
-  static WebhookBatchCompletedTypeType _$type(WebhookBatchCompleted v) =>
-      v.type;
-  static const Field<WebhookBatchCompleted, WebhookBatchCompletedTypeType>
-  _f$type = Field('type', _$type);
+  static WebhookBatchCompletedType _$type(WebhookBatchCompleted v) => v.type;
+  static const Field<WebhookBatchCompleted, WebhookBatchCompletedType> _f$type =
+      Field('type', _$type);
   static WebhookBatchCompletedObjectObjectEnum? _$objectEnum(
     WebhookBatchCompleted v,
   ) => v.objectEnum;
@@ -158,7 +157,7 @@ abstract class WebhookBatchCompletedCopyWith<
     int? createdAt,
     String? id,
     WebhookBatchCompletedData? webhookBatchCompletedData,
-    WebhookBatchCompletedTypeType? type,
+    WebhookBatchCompletedType? type,
     WebhookBatchCompletedObjectObjectEnum? objectEnum,
   });
   WebhookBatchCompletedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -187,7 +186,7 @@ class _WebhookBatchCompletedCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookBatchCompletedData? webhookBatchCompletedData,
-    WebhookBatchCompletedTypeType? type,
+    WebhookBatchCompletedType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

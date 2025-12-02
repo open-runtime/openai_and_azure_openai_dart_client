@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_tool_call_status_status.dart';
-import 'code_interpreter_tool_call_type_type.dart';
+import 'code_interpreter_tool_call_status.dart';
+import 'code_interpreter_tool_call_type.dart';
 import 'code_interpreter_tool_output.dart';
 
 part 'code_interpreter_tool_call.mapper.dart';
@@ -23,9 +23,9 @@ class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
   });
 
   final String id;
-  final CodeInterpreterToolCallTypeType type;
+  final CodeInterpreterToolCallType type;
   final String code;
-  final CodeInterpreterToolCallStatusStatus status;
+  final CodeInterpreterToolCallStatus status;
   final List<CodeInterpreterToolOutput> results;
 
   static CodeInterpreterToolCall fromJson(Map<String, dynamic> json) => CodeInterpreterToolCallMapper.fromJson(json);

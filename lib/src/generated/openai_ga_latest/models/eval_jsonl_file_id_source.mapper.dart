@@ -15,7 +15,7 @@ class EvalJsonlFileIdSourceMapper
   static EvalJsonlFileIdSourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalJsonlFileIdSourceMapper._());
-      EvalJsonlFileIdSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileIdSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,15 +25,9 @@ class EvalJsonlFileIdSourceMapper
 
   static String _$id(EvalJsonlFileIdSource v) => v.id;
   static const Field<EvalJsonlFileIdSource, String> _f$id = Field('id', _$id);
-  static EvalJsonlFileIdSourceTypeType _$type(EvalJsonlFileIdSource v) =>
-      v.type;
-  static const Field<EvalJsonlFileIdSource, EvalJsonlFileIdSourceTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: EvalJsonlFileIdSourceTypeType.fileId,
-  );
+  static EvalJsonlFileIdSourceType _$type(EvalJsonlFileIdSource v) => v.type;
+  static const Field<EvalJsonlFileIdSource, EvalJsonlFileIdSourceType> _f$type =
+      Field('type', _$type, opt: true, def: EvalJsonlFileIdSourceType.fileId);
 
   @override
   final MappableFields<EvalJsonlFileIdSource> fields = const {
@@ -119,7 +113,7 @@ abstract class EvalJsonlFileIdSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? id, EvalJsonlFileIdSourceTypeType? type});
+  $R call({String? id, EvalJsonlFileIdSourceType? type});
   EvalJsonlFileIdSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +128,7 @@ class _EvalJsonlFileIdSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalJsonlFileIdSource> $mapper =
       EvalJsonlFileIdSourceMapper.ensureInitialized();
   @override
-  $R call({String? id, EvalJsonlFileIdSourceTypeType? type}) => $apply(
+  $R call({String? id, EvalJsonlFileIdSourceType? type}) => $apply(
     FieldCopyWithData({if (id != null) #id: id, if (type != null) #type: type}),
   );
   @override

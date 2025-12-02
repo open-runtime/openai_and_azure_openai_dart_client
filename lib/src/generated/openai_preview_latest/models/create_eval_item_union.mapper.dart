@@ -244,9 +244,9 @@ class CreateEvalItemUnionEvalItemMapper
         _instance = CreateEvalItemUnionEvalItemMapper._(),
       );
       CreateEvalItemUnionMapper.ensureInitialized();
-      EvalItemRoleRoleMapper.ensureInitialized();
+      EvalItemRoleMapper.ensureInitialized();
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -254,16 +254,20 @@ class CreateEvalItemUnionEvalItemMapper
   @override
   final String id = 'CreateEvalItemUnionEvalItem';
 
-  static EvalItemRoleRole _$role(CreateEvalItemUnionEvalItem v) => v.role;
-  static const Field<CreateEvalItemUnionEvalItem, EvalItemRoleRole> _f$role =
-      Field('role', _$role);
+  static EvalItemRole _$role(CreateEvalItemUnionEvalItem v) => v.role;
+  static const Field<CreateEvalItemUnionEvalItem, EvalItemRole> _f$role = Field(
+    'role',
+    _$role,
+  );
   static EvalItemContentUnion _$content(CreateEvalItemUnionEvalItem v) =>
       v.content;
   static const Field<CreateEvalItemUnionEvalItem, EvalItemContentUnion>
   _f$content = Field('content', _$content);
-  static EvalItemTypeType? _$type(CreateEvalItemUnionEvalItem v) => v.type;
-  static const Field<CreateEvalItemUnionEvalItem, EvalItemTypeType> _f$type =
-      Field('type', _$type);
+  static EvalItemType? _$type(CreateEvalItemUnionEvalItem v) => v.type;
+  static const Field<CreateEvalItemUnionEvalItem, EvalItemType> _f$type = Field(
+    'type',
+    _$type,
+  );
 
   @override
   final MappableFields<CreateEvalItemUnionEvalItem> fields = const {
@@ -362,9 +366,9 @@ abstract class CreateEvalItemUnionEvalItemCopyWith<
   get content;
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
-    EvalItemTypeType? type,
+    EvalItemType? type,
   });
   CreateEvalItemUnionEvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -393,7 +397,7 @@ class _CreateEvalItemUnionEvalItemCopyWithImpl<$R, $Out>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     EvalItemContentUnion? content,
     Object? type = $none,
   }) => $apply(

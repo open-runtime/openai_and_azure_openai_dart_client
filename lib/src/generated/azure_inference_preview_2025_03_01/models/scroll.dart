@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'scroll_type_type.dart';
+import 'scroll_type.dart';
 
 part 'scroll.mapper.dart';
 
@@ -18,7 +18,7 @@ class Scroll with ScrollMappable {
     required this.y,
     required this.scrollX,
     required this.scrollY,
-    this.type = ScrollTypeType.scroll,
+    this.type = ScrollType.scroll,
   });
 
   final int x;
@@ -27,7 +27,7 @@ class Scroll with ScrollMappable {
   final int scrollX;
   @MappableField(key: 'scroll_y')
   final int scrollY;
-  final ScrollTypeType type;
+  final ScrollType type;
 
   static Scroll fromJson(Map<String, dynamic> json) => ScrollMapper.fromJson(json);
 

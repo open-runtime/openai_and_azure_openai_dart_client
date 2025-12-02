@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'auto_chunking_strategy_request_param_type_type.dart';
+import 'auto_chunking_strategy_request_param_type.dart';
 
 part 'auto_chunking_strategy_request_param.mapper.dart';
 
@@ -15,7 +15,7 @@ class AutoChunkingStrategyRequestParam with AutoChunkingStrategyRequestParamMapp
     required this.type,
   });
 
-  final AutoChunkingStrategyRequestParamTypeType type;
+  final AutoChunkingStrategyRequestParamType type;
 
   static AutoChunkingStrategyRequestParam fromJson(Map<String, dynamic> json) => AutoChunkingStrategyRequestParamMapper.fromJson(json);
 

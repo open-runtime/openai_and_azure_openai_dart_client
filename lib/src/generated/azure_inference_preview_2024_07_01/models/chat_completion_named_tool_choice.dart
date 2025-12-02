@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_named_tool_choice_function.dart';
-import 'chat_completion_named_tool_choice_type_type.dart';
+import 'chat_completion_named_tool_choice_type.dart';
 
 part 'chat_completion_named_tool_choice.mapper.dart';
 
@@ -17,7 +17,7 @@ class ChatCompletionNamedToolChoice with ChatCompletionNamedToolChoiceMappable {
     required this.chatCompletionNamedToolChoiceFunction,
   });
 
-  final ChatCompletionNamedToolChoiceTypeType type;
+  final ChatCompletionNamedToolChoiceType type;
   @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction chatCompletionNamedToolChoiceFunction;
 

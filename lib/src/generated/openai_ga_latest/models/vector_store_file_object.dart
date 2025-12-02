@@ -8,7 +8,7 @@ import 'chunking_strategy_response.dart';
 import 'vector_store_file_attributes.dart';
 import 'vector_store_file_object_last_error.dart';
 import 'vector_store_file_object_object_object_enum.dart';
-import 'vector_store_file_object_status_status.dart';
+import 'vector_store_file_object_status.dart';
 
 part 'vector_store_file_object.mapper.dart';
 
@@ -36,7 +36,7 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   final int createdAt;
   @MappableField(key: 'vector_store_id')
   final String vectorStoreId;
-  final VectorStoreFileObjectStatusStatus status;
+  final VectorStoreFileObjectStatus status;
   @MappableField(key: 'last_error')
   final VectorStoreFileObjectLastError? lastError;
   @MappableField(key: 'chunking_strategy')

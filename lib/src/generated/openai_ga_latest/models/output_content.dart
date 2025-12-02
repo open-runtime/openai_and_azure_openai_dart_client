@@ -6,15 +6,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'log_prob.dart';
-import 'output_content_type_type.dart';
-import 'output_content_type_type2.dart';
-import 'output_content_type_type3.dart';
+import 'output_content_type.dart';
+import 'output_content_type2.dart';
+import 'output_content_type3.dart';
 import 'output_text_content.dart';
-import 'output_text_content_type_type.dart';
+import 'output_text_content_type.dart';
 import 'reasoning_text_content.dart';
-import 'reasoning_text_content_type_type.dart';
+import 'reasoning_text_content_type.dart';
 import 'refusal_content.dart';
-import 'refusal_content_type_type.dart';
+import 'refusal_content_type.dart';
 
 part 'output_content.mapper.dart';
 
@@ -55,7 +55,7 @@ extension OutputContentUnionDeserializer on OutputContent {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
 class OutputContentOutputText extends OutputContent with OutputContentOutputTextMappable {
-  final OutputContentTypeType type;
+  final OutputContentType type;
   final String text;
   final List<Annotation> annotations;
   final List<LogProb>? logprobs;
@@ -70,7 +70,7 @@ class OutputContentOutputText extends OutputContent with OutputContentOutputText
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class OutputContentRefusal extends OutputContent with OutputContentRefusalMappable {
-  final OutputContentTypeType2 type;
+  final OutputContentType2 type;
   final String refusal;
 
   const OutputContentRefusal({
@@ -81,7 +81,7 @@ class OutputContentRefusal extends OutputContent with OutputContentRefusalMappab
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
 class OutputContentReasoningText extends OutputContent with OutputContentReasoningTextMappable {
-  final OutputContentTypeType3 type;
+  final OutputContentType3 type;
   final String text;
 
   const OutputContentReasoningText({

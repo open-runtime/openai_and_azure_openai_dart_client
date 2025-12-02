@@ -88,7 +88,7 @@ class RunStreamEventUnionVariant1Mapper
         _instance = RunStreamEventUnionVariant1Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant1EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant1EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -97,12 +97,12 @@ class RunStreamEventUnionVariant1Mapper
   @override
   final String id = 'RunStreamEventUnionVariant1';
 
-  static RunStreamEventUnionVariant1EventEvent _$event(
+  static RunStreamEventUnionVariant1Event _$event(
     RunStreamEventUnionVariant1 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant1,
-    RunStreamEventUnionVariant1EventEvent
+    RunStreamEventUnionVariant1Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant1 v) => v.data;
@@ -204,7 +204,7 @@ abstract class RunStreamEventUnionVariant1CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant1EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant1Event? event, RunObject? data});
   RunStreamEventUnionVariant1CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -231,13 +231,12 @@ class _RunStreamEventUnionVariant1CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant1EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant1Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant1 $make(CopyWithData data) =>
       RunStreamEventUnionVariant1(
@@ -262,7 +261,7 @@ class RunStreamEventUnionVariant2Mapper
         _instance = RunStreamEventUnionVariant2Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant2EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant2EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -271,12 +270,12 @@ class RunStreamEventUnionVariant2Mapper
   @override
   final String id = 'RunStreamEventUnionVariant2';
 
-  static RunStreamEventUnionVariant2EventEvent _$event(
+  static RunStreamEventUnionVariant2Event _$event(
     RunStreamEventUnionVariant2 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant2,
-    RunStreamEventUnionVariant2EventEvent
+    RunStreamEventUnionVariant2Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant2 v) => v.data;
@@ -378,7 +377,7 @@ abstract class RunStreamEventUnionVariant2CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant2EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant2Event? event, RunObject? data});
   RunStreamEventUnionVariant2CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -405,13 +404,12 @@ class _RunStreamEventUnionVariant2CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant2EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant2Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant2 $make(CopyWithData data) =>
       RunStreamEventUnionVariant2(
@@ -436,7 +434,7 @@ class RunStreamEventUnionVariant3Mapper
         _instance = RunStreamEventUnionVariant3Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant3EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant3EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -445,12 +443,12 @@ class RunStreamEventUnionVariant3Mapper
   @override
   final String id = 'RunStreamEventUnionVariant3';
 
-  static RunStreamEventUnionVariant3EventEvent _$event(
+  static RunStreamEventUnionVariant3Event _$event(
     RunStreamEventUnionVariant3 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant3,
-    RunStreamEventUnionVariant3EventEvent
+    RunStreamEventUnionVariant3Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant3 v) => v.data;
@@ -552,7 +550,7 @@ abstract class RunStreamEventUnionVariant3CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant3EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant3Event? event, RunObject? data});
   RunStreamEventUnionVariant3CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -579,13 +577,12 @@ class _RunStreamEventUnionVariant3CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant3EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant3Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant3 $make(CopyWithData data) =>
       RunStreamEventUnionVariant3(
@@ -610,7 +607,7 @@ class RunStreamEventUnionVariant4Mapper
         _instance = RunStreamEventUnionVariant4Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant4EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant4EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -619,12 +616,12 @@ class RunStreamEventUnionVariant4Mapper
   @override
   final String id = 'RunStreamEventUnionVariant4';
 
-  static RunStreamEventUnionVariant4EventEvent _$event(
+  static RunStreamEventUnionVariant4Event _$event(
     RunStreamEventUnionVariant4 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant4,
-    RunStreamEventUnionVariant4EventEvent
+    RunStreamEventUnionVariant4Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant4 v) => v.data;
@@ -726,7 +723,7 @@ abstract class RunStreamEventUnionVariant4CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant4EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant4Event? event, RunObject? data});
   RunStreamEventUnionVariant4CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -753,13 +750,12 @@ class _RunStreamEventUnionVariant4CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant4EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant4Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant4 $make(CopyWithData data) =>
       RunStreamEventUnionVariant4(
@@ -784,7 +780,7 @@ class RunStreamEventUnionVariant5Mapper
         _instance = RunStreamEventUnionVariant5Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant5EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant5EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -793,12 +789,12 @@ class RunStreamEventUnionVariant5Mapper
   @override
   final String id = 'RunStreamEventUnionVariant5';
 
-  static RunStreamEventUnionVariant5EventEvent _$event(
+  static RunStreamEventUnionVariant5Event _$event(
     RunStreamEventUnionVariant5 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant5,
-    RunStreamEventUnionVariant5EventEvent
+    RunStreamEventUnionVariant5Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant5 v) => v.data;
@@ -900,7 +896,7 @@ abstract class RunStreamEventUnionVariant5CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant5EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant5Event? event, RunObject? data});
   RunStreamEventUnionVariant5CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -927,13 +923,12 @@ class _RunStreamEventUnionVariant5CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant5EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant5Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant5 $make(CopyWithData data) =>
       RunStreamEventUnionVariant5(
@@ -958,7 +953,7 @@ class RunStreamEventUnionVariant6Mapper
         _instance = RunStreamEventUnionVariant6Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant6EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant6EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -967,12 +962,12 @@ class RunStreamEventUnionVariant6Mapper
   @override
   final String id = 'RunStreamEventUnionVariant6';
 
-  static RunStreamEventUnionVariant6EventEvent _$event(
+  static RunStreamEventUnionVariant6Event _$event(
     RunStreamEventUnionVariant6 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant6,
-    RunStreamEventUnionVariant6EventEvent
+    RunStreamEventUnionVariant6Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant6 v) => v.data;
@@ -1074,7 +1069,7 @@ abstract class RunStreamEventUnionVariant6CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant6EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant6Event? event, RunObject? data});
   RunStreamEventUnionVariant6CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1101,13 +1096,12 @@ class _RunStreamEventUnionVariant6CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant6EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant6Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant6 $make(CopyWithData data) =>
       RunStreamEventUnionVariant6(
@@ -1132,7 +1126,7 @@ class RunStreamEventUnionVariant7Mapper
         _instance = RunStreamEventUnionVariant7Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant7EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant7EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -1141,12 +1135,12 @@ class RunStreamEventUnionVariant7Mapper
   @override
   final String id = 'RunStreamEventUnionVariant7';
 
-  static RunStreamEventUnionVariant7EventEvent _$event(
+  static RunStreamEventUnionVariant7Event _$event(
     RunStreamEventUnionVariant7 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant7,
-    RunStreamEventUnionVariant7EventEvent
+    RunStreamEventUnionVariant7Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant7 v) => v.data;
@@ -1248,7 +1242,7 @@ abstract class RunStreamEventUnionVariant7CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant7EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant7Event? event, RunObject? data});
   RunStreamEventUnionVariant7CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1275,13 +1269,12 @@ class _RunStreamEventUnionVariant7CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant7EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant7Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant7 $make(CopyWithData data) =>
       RunStreamEventUnionVariant7(
@@ -1306,7 +1299,7 @@ class RunStreamEventUnionVariant8Mapper
         _instance = RunStreamEventUnionVariant8Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant8EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant8EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -1315,12 +1308,12 @@ class RunStreamEventUnionVariant8Mapper
   @override
   final String id = 'RunStreamEventUnionVariant8';
 
-  static RunStreamEventUnionVariant8EventEvent _$event(
+  static RunStreamEventUnionVariant8Event _$event(
     RunStreamEventUnionVariant8 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant8,
-    RunStreamEventUnionVariant8EventEvent
+    RunStreamEventUnionVariant8Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant8 v) => v.data;
@@ -1422,7 +1415,7 @@ abstract class RunStreamEventUnionVariant8CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant8EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant8Event? event, RunObject? data});
   RunStreamEventUnionVariant8CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1449,13 +1442,12 @@ class _RunStreamEventUnionVariant8CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant8EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant8Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant8 $make(CopyWithData data) =>
       RunStreamEventUnionVariant8(
@@ -1480,7 +1472,7 @@ class RunStreamEventUnionVariant9Mapper
         _instance = RunStreamEventUnionVariant9Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant9EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant9EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -1489,12 +1481,12 @@ class RunStreamEventUnionVariant9Mapper
   @override
   final String id = 'RunStreamEventUnionVariant9';
 
-  static RunStreamEventUnionVariant9EventEvent _$event(
+  static RunStreamEventUnionVariant9Event _$event(
     RunStreamEventUnionVariant9 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant9,
-    RunStreamEventUnionVariant9EventEvent
+    RunStreamEventUnionVariant9Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant9 v) => v.data;
@@ -1596,7 +1588,7 @@ abstract class RunStreamEventUnionVariant9CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant9EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant9Event? event, RunObject? data});
   RunStreamEventUnionVariant9CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1623,13 +1615,12 @@ class _RunStreamEventUnionVariant9CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant9EventEvent? event, RunObject? data}) =>
-      $apply(
-        FieldCopyWithData({
-          if (event != null) #event: event,
-          if (data != null) #data: data,
-        }),
-      );
+  $R call({RunStreamEventUnionVariant9Event? event, RunObject? data}) => $apply(
+    FieldCopyWithData({
+      if (event != null) #event: event,
+      if (data != null) #data: data,
+    }),
+  );
   @override
   RunStreamEventUnionVariant9 $make(CopyWithData data) =>
       RunStreamEventUnionVariant9(
@@ -1654,7 +1645,7 @@ class RunStreamEventUnionVariant10Mapper
         _instance = RunStreamEventUnionVariant10Mapper._(),
       );
       RunStreamEventUnionMapper.ensureInitialized();
-      RunStreamEventUnionVariant10EventEventMapper.ensureInitialized();
+      RunStreamEventUnionVariant10EventMapper.ensureInitialized();
       RunObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -1663,12 +1654,12 @@ class RunStreamEventUnionVariant10Mapper
   @override
   final String id = 'RunStreamEventUnionVariant10';
 
-  static RunStreamEventUnionVariant10EventEvent _$event(
+  static RunStreamEventUnionVariant10Event _$event(
     RunStreamEventUnionVariant10 v,
   ) => v.event;
   static const Field<
     RunStreamEventUnionVariant10,
-    RunStreamEventUnionVariant10EventEvent
+    RunStreamEventUnionVariant10Event
   >
   _f$event = Field('event', _$event);
   static RunObject _$data(RunStreamEventUnionVariant10 v) => v.data;
@@ -1769,7 +1760,7 @@ abstract class RunStreamEventUnionVariant10CopyWith<
     implements RunStreamEventUnionCopyWith<$R, $In, $Out> {
   RunObjectCopyWith<$R, RunObject, RunObject> get data;
   @override
-  $R call({RunStreamEventUnionVariant10EventEvent? event, RunObject? data});
+  $R call({RunStreamEventUnionVariant10Event? event, RunObject? data});
   RunStreamEventUnionVariant10CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -1796,7 +1787,7 @@ class _RunStreamEventUnionVariant10CopyWithImpl<$R, $Out>
   RunObjectCopyWith<$R, RunObject, RunObject> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({RunStreamEventUnionVariant10EventEvent? event, RunObject? data}) =>
+  $R call({RunStreamEventUnionVariant10Event? event, RunObject? data}) =>
       $apply(
         FieldCopyWithData({
           if (event != null) #event: event,

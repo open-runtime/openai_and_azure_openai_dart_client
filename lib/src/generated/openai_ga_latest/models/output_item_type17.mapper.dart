@@ -1,0 +1,55 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
+// ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
+
+part of 'output_item_type17.dart';
+
+class OutputItemType17Mapper extends EnumMapper<OutputItemType17> {
+  OutputItemType17Mapper._();
+
+  static OutputItemType17Mapper? _instance;
+  static OutputItemType17Mapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = OutputItemType17Mapper._());
+    }
+    return _instance!;
+  }
+
+  static OutputItemType17 fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  OutputItemType17 decode(dynamic value) {
+    switch (value) {
+      case 'custom_tool_call':
+        return OutputItemType17.customToolCall;
+      case 'unknown':
+        return OutputItemType17.unknown;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(OutputItemType17 self) {
+    switch (self) {
+      case OutputItemType17.customToolCall:
+        return 'custom_tool_call';
+      case OutputItemType17.unknown:
+        return 'unknown';
+    }
+  }
+}
+
+extension OutputItemType17MapperExtension on OutputItemType17 {
+  dynamic toValue() {
+    OutputItemType17Mapper.ensureInitialized();
+    return MapperContainer.globals.toValue<OutputItemType17>(this);
+  }
+}
+

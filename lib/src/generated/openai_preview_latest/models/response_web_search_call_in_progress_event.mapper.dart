@@ -17,7 +17,7 @@ class ResponseWebSearchCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseWebSearchCallInProgressEventMapper._(),
       );
-      ResponseWebSearchCallInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseWebSearchCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseWebSearchCallInProgressEventMapper
   @override
   final String id = 'ResponseWebSearchCallInProgressEvent';
 
-  static ResponseWebSearchCallInProgressEventTypeType _$type(
+  static ResponseWebSearchCallInProgressEventType _$type(
     ResponseWebSearchCallInProgressEvent v,
   ) => v.type;
   static const Field<
     ResponseWebSearchCallInProgressEvent,
-    ResponseWebSearchCallInProgressEventTypeType
+    ResponseWebSearchCallInProgressEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseWebSearchCallInProgressEvent v) =>
@@ -142,7 +142,7 @@ abstract class ResponseWebSearchCallInProgressEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseWebSearchCallInProgressEventTypeType? type,
+    ResponseWebSearchCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
   });
@@ -169,7 +169,7 @@ class _ResponseWebSearchCallInProgressEventCopyWithImpl<$R, $Out>
       ResponseWebSearchCallInProgressEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseWebSearchCallInProgressEventTypeType? type,
+    ResponseWebSearchCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(

@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_item_content_union_variant2_type_type.dart';
-import 'input_text_content_type_type.dart';
+import 'eval_item_content_union_variant2_type.dart';
+import 'input_text_content_type.dart';
 import 'input_text_content.dart';
 
 part 'eval_item_content_union.mapper.dart';
@@ -40,7 +40,7 @@ extension EvalItemContentUnionDeserializer on EvalItemContentUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionInputTextContent extends EvalItemContentUnion with EvalItemContentUnionInputTextContentMappable {
-  final InputTextContentTypeType type;
+  final InputTextContentType type;
   final String text;
 
   const EvalItemContentUnionInputTextContent({
@@ -51,7 +51,7 @@ class EvalItemContentUnionInputTextContent extends EvalItemContentUnion with Eva
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionVariant2 extends EvalItemContentUnion with EvalItemContentUnionVariant2Mappable {
-  final EvalItemContentUnionVariant2TypeType type;
+  final EvalItemContentUnionVariant2Type type;
   final String text;
 
   const EvalItemContentUnionVariant2({

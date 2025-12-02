@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'prediction_content.dart';
-import 'prediction_content_type_type.dart';
+import 'prediction_content_type.dart';
 
 part 'create_chat_completion_request_prediction_union.mapper.dart';
 
@@ -41,7 +41,7 @@ extension CreateChatCompletionRequestPredictionUnionDeserializer on CreateChatCo
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'content')
 class CreateChatCompletionRequestPredictionUnionContent extends CreateChatCompletionRequestPredictionUnion with CreateChatCompletionRequestPredictionUnionContentMappable {
-  final PredictionContentTypeType type;
+  final PredictionContentType type;
   final String content;
 
   const CreateChatCompletionRequestPredictionUnionContent({

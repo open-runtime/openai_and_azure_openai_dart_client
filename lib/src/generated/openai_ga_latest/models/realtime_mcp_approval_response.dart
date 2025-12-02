@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
-import 'realtime_mcp_approval_response_type_type.dart';
+import 'realtime_mcp_approval_response_type.dart';
 
 part 'realtime_mcp_approval_response.mapper.dart';
 
@@ -21,7 +21,7 @@ class RealtimeMcpApprovalResponse with RealtimeMcpApprovalResponseMappable {
     this.reason,
   });
 
-  final RealtimeMcpApprovalResponseTypeType type;
+  final RealtimeMcpApprovalResponseType type;
   final String id;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;

@@ -17,7 +17,7 @@ class RealtimeServerEventRateLimitsMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventRateLimitsMapper._(),
       );
-      RealtimeServerEventRateLimitsNameNameMapper.ensureInitialized();
+      RealtimeServerEventRateLimitsNameMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeServerEventRateLimitsMapper
   @override
   final String id = 'RealtimeServerEventRateLimits';
 
-  static RealtimeServerEventRateLimitsNameName? _$name(
+  static RealtimeServerEventRateLimitsName? _$name(
     RealtimeServerEventRateLimits v,
   ) => v.name;
   static const Field<
     RealtimeServerEventRateLimits,
-    RealtimeServerEventRateLimitsNameName
+    RealtimeServerEventRateLimitsName
   >
   _f$name = Field('name', _$name, opt: true);
   static int? _$limit(RealtimeServerEventRateLimits v) => v.limit;
@@ -145,7 +145,7 @@ abstract class RealtimeServerEventRateLimitsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeServerEventRateLimitsNameName? name,
+    RealtimeServerEventRateLimitsName? name,
     int? limit,
     int? remaining,
     num? resetSeconds,

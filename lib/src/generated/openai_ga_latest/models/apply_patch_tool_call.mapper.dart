@@ -16,7 +16,7 @@ class ApplyPatchToolCallMapper extends ClassMapperBase<ApplyPatchToolCall> {
       MapperContainer.globals.use(_instance = ApplyPatchToolCallMapper._());
       ApplyPatchCallStatusMapper.ensureInitialized();
       ApplyPatchToolCallOperationUnionMapper.ensureInitialized();
-      ApplyPatchToolCallTypeTypeMapper.ensureInitialized();
+      ApplyPatchToolCallTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -46,13 +46,13 @@ class ApplyPatchToolCallMapper extends ClassMapperBase<ApplyPatchToolCall> {
     key: r'created_by',
     opt: true,
   );
-  static ApplyPatchToolCallTypeType _$type(ApplyPatchToolCall v) => v.type;
-  static const Field<ApplyPatchToolCall, ApplyPatchToolCallTypeType> _f$type =
+  static ApplyPatchToolCallType _$type(ApplyPatchToolCall v) => v.type;
+  static const Field<ApplyPatchToolCall, ApplyPatchToolCallType> _f$type =
       Field(
         'type',
         _$type,
         opt: true,
-        def: ApplyPatchToolCallTypeType.applyPatchCall,
+        def: ApplyPatchToolCallType.applyPatchCall,
       );
 
   @override
@@ -163,7 +163,7 @@ abstract class ApplyPatchToolCallCopyWith<
     ApplyPatchCallStatus? status,
     ApplyPatchToolCallOperationUnion? operation,
     String? createdBy,
-    ApplyPatchToolCallTypeType? type,
+    ApplyPatchToolCallType? type,
   });
   ApplyPatchToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -192,7 +192,7 @@ class _ApplyPatchToolCallCopyWithImpl<$R, $Out>
     ApplyPatchCallStatus? status,
     ApplyPatchToolCallOperationUnion? operation,
     Object? createdBy = $none,
-    ApplyPatchToolCallTypeType? type,
+    ApplyPatchToolCallType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

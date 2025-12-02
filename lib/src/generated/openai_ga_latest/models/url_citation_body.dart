@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'url_citation_body_type_type.dart';
+import 'url_citation_body_type.dart';
 
 part 'url_citation_body.mapper.dart';
 
@@ -17,7 +17,7 @@ class UrlCitationBody with UrlCitationBodyMappable {
     required this.startIndex,
     required this.endIndex,
     required this.title,
-    this.type = UrlCitationBodyTypeType.urlCitation,
+    this.type = UrlCitationBodyType.urlCitation,
   });
 
   final String url;
@@ -26,7 +26,7 @@ class UrlCitationBody with UrlCitationBodyMappable {
   @MappableField(key: 'end_index')
   final int endIndex;
   final String title;
-  final UrlCitationBodyTypeType type;
+  final UrlCitationBodyType type;
 
   static UrlCitationBody fromJson(Map<String, dynamic> json) => UrlCitationBodyMapper.fromJson(json);
 

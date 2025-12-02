@@ -17,7 +17,7 @@ class RealtimeServerEventResponseContentPartDoneMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseContentPartDoneMapper._(),
       );
-      RealtimeServerEventResponseContentPartDoneTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseContentPartDoneTypeMapper.ensureInitialized();
       RealtimeServerEventResponseContentPartDonePartMapper.ensureInitialized();
     }
     return _instance!;
@@ -30,12 +30,12 @@ class RealtimeServerEventResponseContentPartDoneMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseContentPartDone, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseContentPartDoneTypeType _$type(
+  static RealtimeServerEventResponseContentPartDoneType _$type(
     RealtimeServerEventResponseContentPartDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseContentPartDone,
-    RealtimeServerEventResponseContentPartDoneTypeType
+    RealtimeServerEventResponseContentPartDoneType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseContentPartDone v) =>
@@ -202,7 +202,7 @@ abstract class RealtimeServerEventResponseContentPartDoneCopyWith<
   get realtimeServerEventResponseContentPartDonePart;
   $R call({
     String? eventId,
-    RealtimeServerEventResponseContentPartDoneTypeType? type,
+    RealtimeServerEventResponseContentPartDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -246,7 +246,7 @@ class _RealtimeServerEventResponseContentPartDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseContentPartDoneTypeType? type,
+    RealtimeServerEventResponseContentPartDoneType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

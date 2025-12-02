@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'function_shell_call_output_content.dart';
-import 'function_shell_call_output_type_type.dart';
+import 'function_shell_call_output_type.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
 
@@ -21,7 +21,7 @@ class FunctionShellCallOutput with FunctionShellCallOutputMappable {
     required this.output,
     required this.maxOutputLength,
     this.createdBy,
-    this.type = FunctionShellCallOutputTypeType.shellCallOutput,
+    this.type = FunctionShellCallOutputType.shellCallOutput,
   });
 
   final String id;
@@ -32,7 +32,7 @@ class FunctionShellCallOutput with FunctionShellCallOutputMappable {
   final int? maxOutputLength;
   @MappableField(key: 'created_by')
   final String? createdBy;
-  final FunctionShellCallOutputTypeType type;
+  final FunctionShellCallOutputType type;
 
   static FunctionShellCallOutput fromJson(Map<String, dynamic> json) => FunctionShellCallOutputMapper.fromJson(json);
 

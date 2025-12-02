@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'vector_store_expiration_after.dart';
 import 'vector_store_object_file_counts.dart';
 import 'vector_store_object_object_object_enum.dart';
-import 'vector_store_object_status_status.dart';
+import 'vector_store_object_status.dart';
 
 part 'vector_store_object.mapper.dart';
 
@@ -38,7 +38,7 @@ class VectorStoreObject with VectorStoreObjectMappable {
   final int usageBytes;
   @MappableField(key: 'file_counts')
   final VectorStoreObjectFileCounts vectorStoreObjectFileCounts;
-  final VectorStoreObjectStatusStatus status;
+  final VectorStoreObjectStatus status;
   @MappableField(key: 'last_active_at')
   final int? lastActiveAt;
   final dynamic metadata;

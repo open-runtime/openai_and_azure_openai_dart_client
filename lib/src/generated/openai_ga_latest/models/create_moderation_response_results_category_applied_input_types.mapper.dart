@@ -23,19 +23,19 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
         _instance =
             CreateModerationResponseResultsCategoryAppliedInputTypesMapper._(),
       );
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateHateMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreateningMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassmentMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreateningMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicitMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolentMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentMapper.ensureInitialized();
       CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmSelfHarmMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntentMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructionsMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexualMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinorsMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolenceMapper.ensureInitialized();
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphicMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceMapper.ensureInitialized();
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -43,15 +43,15 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   @override
   final String id = 'CreateModerationResponseResultsCategoryAppliedInputTypes';
 
-  static List<CreateModerationResponseResultsCategoryAppliedInputTypesHateHate>
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>
   _$hate(CreateModerationResponseResultsCategoryAppliedInputTypes v) => v.hate;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesHateHate>
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>
   >
   _f$hate = Field('hate', _$hate);
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
   >
   _$hateThreatening(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
@@ -59,7 +59,7 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
     >
   >
   _f$hateThreatening = Field(
@@ -68,19 +68,17 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
     key: r'hate/threatening',
   );
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassment
   >
   _$harassment(CreateModerationResponseResultsCategoryAppliedInputTypes v) =>
       v.harassment;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
-    >
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>
   >
   _f$harassment = Field('harassment', _$harassment);
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
   >
   _$harassmentThreatening(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
@@ -88,7 +86,7 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
     >
   >
   _f$harassmentThreatening = Field(
@@ -96,27 +94,23 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
     _$harassmentThreatening,
     key: r'harassment/threatening',
   );
-  static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit
-  >
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>
   _$illicit(CreateModerationResponseResultsCategoryAppliedInputTypes v) =>
       v.illicit;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit>
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>
   >
   _f$illicit = Field('illicit', _$illicit);
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
+    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent
   >
   _$illicitViolent(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
   ) => v.illicitViolent;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
-    >
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent>
   >
   _f$illicitViolent = Field(
     'illicitViolent',
@@ -136,16 +130,14 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   >
   _f$selfHarm = Field('selfHarm', _$selfHarm, key: r'self-harm');
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent
   >
   _$selfHarmIntent(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
   ) => v.selfHarmIntent;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
-    >
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent>
   >
   _f$selfHarmIntent = Field(
     'selfHarmIntent',
@@ -153,7 +145,7 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
     key: r'self-harm/intent',
   );
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
   >
   _$selfHarmInstructions(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
@@ -161,7 +153,7 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
     >
   >
   _f$selfHarmInstructions = Field(
@@ -169,46 +161,38 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
     _$selfHarmInstructions,
     key: r'self-harm/instructions',
   );
-  static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual
-  >
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>
   _$sexual(CreateModerationResponseResultsCategoryAppliedInputTypes v) =>
       v.sexual;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual>
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>
   >
   _f$sexual = Field('sexual', _$sexual);
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
+    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors
   >
   _$sexualMinors(CreateModerationResponseResultsCategoryAppliedInputTypes v) =>
       v.sexualMinors;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
-    >
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>
   >
   _f$sexualMinors = Field(
     'sexualMinors',
     _$sexualMinors,
     key: r'sexual/minors',
   );
-  static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
-  >
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>
   _$violence(CreateModerationResponseResultsCategoryAppliedInputTypes v) =>
       v.violence;
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
-    >
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>
   >
   _f$violence = Field('violence', _$violence);
   static List<
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
   >
   _$violenceGraphic(
     CreateModerationResponseResultsCategoryAppliedInputTypes v,
@@ -216,7 +200,7 @@ class CreateModerationResponseResultsCategoryAppliedInputTypesMapper
   static const Field<
     CreateModerationResponseResultsCategoryAppliedInputTypes,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
     >
   >
   _f$violenceGraphic = Field(
@@ -375,61 +359,61 @@ abstract class CreateModerationResponseResultsCategoryAppliedInputTypesCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHateHate,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHate,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateHate,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateHate
+      CreateModerationResponseResultsCategoryAppliedInputTypesHate,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHate
     >
   >
   get hate;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
     >
   >
   get hateThreatening;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassment,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassment,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassment
     >
   >
   get harassment;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
     >
   >
   get harassmentThreatening;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit,
+    CreateModerationResponseResultsCategoryAppliedInputTypesIllicit,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicit,
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicit
     >
   >
   get illicit;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent,
+    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent,
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent
     >
   >
   get illicitViolent;
@@ -445,85 +429,80 @@ abstract class CreateModerationResponseResultsCategoryAppliedInputTypesCopyWith<
   get selfHarm;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent
     >
   >
   get selfHarmIntent;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
     >
   >
   get selfHarmInstructions;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSexual,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexual,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexual
     >
   >
   get sexual;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors
     >
   >
   get sexualMinors;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence,
+    CreateModerationResponseResultsCategoryAppliedInputTypesViolence,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolence,
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolence
     >
   >
   get violence;
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic,
+    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic,
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
     >
   >
   get violenceGraphic;
   $R call({
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesHateHate>?
-    hate,
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>? hate,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
     >?
     hateThreatening,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>?
     harassment,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
     >?
     harassmentThreatening,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>?
     illicit,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent
     >?
     illicitViolent,
     List<
@@ -531,25 +510,21 @@ abstract class CreateModerationResponseResultsCategoryAppliedInputTypesCopyWith<
     >?
     selfHarm,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent
     >?
     selfHarmIntent,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
     >?
     selfHarmInstructions,
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual>?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>?
     sexual,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>?
     sexualMinors,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>?
     violence,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
     >?
     violenceGraphic,
   });
@@ -592,11 +567,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHateHate,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHate,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateHate,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateHate
+      CreateModerationResponseResultsCategoryAppliedInputTypesHate,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHate
     >
   >
   get hate => ListCopyWith(
@@ -607,11 +582,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
     >
   >
   get hateThreatening => ListCopyWith(
@@ -622,11 +597,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassment,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassment,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassment
     >
   >
   get harassment => ListCopyWith(
@@ -637,11 +612,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening,
+    CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening,
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening,
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
     >
   >
   get harassmentThreatening => ListCopyWith(
@@ -652,11 +627,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit,
+    CreateModerationResponseResultsCategoryAppliedInputTypesIllicit,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicit,
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicit
     >
   >
   get illicit => ListCopyWith(
@@ -667,11 +642,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent,
+    CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent,
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent,
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent
     >
   >
   get illicitViolent => ListCopyWith(
@@ -697,11 +672,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent
     >
   >
   get selfHarmIntent => ListCopyWith(
@@ -712,11 +687,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
     >
   >
   get selfHarmInstructions => ListCopyWith(
@@ -727,11 +702,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSexual,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexual,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexual
     >
   >
   get sexual => ListCopyWith(
@@ -742,11 +717,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors,
+    CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors,
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors,
+      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors
     >
   >
   get sexualMinors => ListCopyWith(
@@ -757,11 +732,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence,
+    CreateModerationResponseResultsCategoryAppliedInputTypesViolence,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolence,
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolence
     >
   >
   get violence => ListCopyWith(
@@ -772,11 +747,11 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic,
+    CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic,
     ObjectCopyWith<
       $R,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic,
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic,
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
     >
   >
   get violenceGraphic => ListCopyWith(
@@ -786,26 +761,21 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
   );
   @override
   $R call({
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesHateHate>?
-    hate,
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>? hate,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreateningHateThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening
     >?
     hateThreatening,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentHarassment
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>?
     harassment,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreateningHarassmentThreatening
+      CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening
     >?
     harassmentThreatening,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitIllicit
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>?
     illicit,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolentIllicitViolent
+      CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent
     >?
     illicitViolent,
     List<
@@ -813,25 +783,21 @@ class _CreateModerationResponseResultsCategoryAppliedInputTypesCopyWithImpl<
     >?
     selfHarm,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntentSelfHarmIntent
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent
     >?
     selfHarmIntent,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructionsSelfHarmInstructions
+      CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions
     >?
     selfHarmInstructions,
-    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualSexual>?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>?
     sexual,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinorsSexualMinors
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>?
     sexualMinors,
-    List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceViolence
-    >?
+    List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>?
     violence,
     List<
-      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphicViolenceGraphic
+      CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic
     >?
     violenceGraphic,
   }) => $apply(

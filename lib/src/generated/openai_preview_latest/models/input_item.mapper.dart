@@ -69,9 +69,9 @@ class InputItemMessageMapper extends SubClassMapperBase<InputItemMessage> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputItemMessageMapper._());
       InputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      InputItemRoleRoleMapper.ensureInitialized();
+      InputItemRoleMapper.ensureInitialized();
       InputItemContentUnionMapper.ensureInitialized();
-      InputItemTypeTypeMapper.ensureInitialized();
+      InputItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -79,16 +79,16 @@ class InputItemMessageMapper extends SubClassMapperBase<InputItemMessage> {
   @override
   final String id = 'InputItemMessage';
 
-  static InputItemRoleRole _$role(InputItemMessage v) => v.role;
-  static const Field<InputItemMessage, InputItemRoleRole> _f$role = Field(
+  static InputItemRole _$role(InputItemMessage v) => v.role;
+  static const Field<InputItemMessage, InputItemRole> _f$role = Field(
     'role',
     _$role,
   );
   static InputItemContentUnion _$content(InputItemMessage v) => v.content;
   static const Field<InputItemMessage, InputItemContentUnion> _f$content =
       Field('content', _$content);
-  static InputItemTypeType? _$type(InputItemMessage v) => v.type;
-  static const Field<InputItemMessage, InputItemTypeType> _f$type = Field(
+  static InputItemType? _$type(InputItemMessage v) => v.type;
+  static const Field<InputItemMessage, InputItemType> _f$type = Field(
     'type',
     _$type,
   );
@@ -189,9 +189,9 @@ abstract class InputItemMessageCopyWith<$R, $In extends InputItemMessage, $Out>
   get content;
   @override
   $R call({
-    InputItemRoleRole? role,
+    InputItemRole? role,
     InputItemContentUnion? content,
-    InputItemTypeType? type,
+    InputItemType? type,
   });
   InputItemMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -215,7 +215,7 @@ class _InputItemMessageCopyWithImpl<$R, $Out>
   get content => $value.content.copyWith.$chain((v) => call(content: v));
   @override
   $R call({
-    InputItemRoleRole? role,
+    InputItemRole? role,
     InputItemContentUnion? content,
     Object? type = $none,
   }) => $apply(

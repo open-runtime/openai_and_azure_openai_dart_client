@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'mcp_tool_allowed_tools_union.dart';
 import 'mcp_tool_connector_id_connector_id.dart';
 import 'mcp_tool_require_approval_union.dart';
-import 'mcp_tool_type_type.dart';
+import 'mcp_tool_type.dart';
 import 'tool.dart';
 
 part 'mcp_tool.mapper.dart';
@@ -29,7 +29,7 @@ class McpTool with McpToolMappable {
     this.allowedTools,
   });
 
-  final McpToolTypeType type;
+  final McpToolType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   @MappableField(key: 'require_approval')

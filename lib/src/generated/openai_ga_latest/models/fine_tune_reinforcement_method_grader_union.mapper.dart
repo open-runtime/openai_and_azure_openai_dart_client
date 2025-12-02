@@ -99,8 +99,8 @@ class FineTuneReinforcementMethodGraderUnionStringCheckMapper
       );
       FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      GraderStringCheckTypeTypeMapper.ensureInitialized();
-      GraderStringCheckOperationOperationMapper.ensureInitialized();
+      GraderStringCheckTypeMapper.ensureInitialized();
+      GraderStringCheckOperationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -108,12 +108,12 @@ class FineTuneReinforcementMethodGraderUnionStringCheckMapper
   @override
   final String id = 'FineTuneReinforcementMethodGraderUnionStringCheck';
 
-  static GraderStringCheckTypeType _$type(
+  static GraderStringCheckType _$type(
     FineTuneReinforcementMethodGraderUnionStringCheck v,
   ) => v.type;
   static const Field<
     FineTuneReinforcementMethodGraderUnionStringCheck,
-    GraderStringCheckTypeType
+    GraderStringCheckType
   >
   _f$type = Field('type', _$type);
   static String _$name(FineTuneReinforcementMethodGraderUnionStringCheck v) =>
@@ -129,12 +129,12 @@ class FineTuneReinforcementMethodGraderUnionStringCheckMapper
   ) => v.reference;
   static const Field<FineTuneReinforcementMethodGraderUnionStringCheck, String>
   _f$reference = Field('reference', _$reference);
-  static GraderStringCheckOperationOperation _$operation(
+  static GraderStringCheckOperation _$operation(
     FineTuneReinforcementMethodGraderUnionStringCheck v,
   ) => v.operation;
   static const Field<
     FineTuneReinforcementMethodGraderUnionStringCheck,
-    GraderStringCheckOperationOperation
+    GraderStringCheckOperation
   >
   _f$operation = Field('operation', _$operation);
 
@@ -272,11 +272,11 @@ abstract class FineTuneReinforcementMethodGraderUnionStringCheckCopyWith<
     implements FineTuneReinforcementMethodGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   });
   FineTuneReinforcementMethodGraderUnionStringCheckCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -307,11 +307,11 @@ class _FineTuneReinforcementMethodGraderUnionStringCheckCopyWithImpl<$R, $Out>
       FineTuneReinforcementMethodGraderUnionStringCheckMapper.ensureInitialized();
   @override
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -361,7 +361,7 @@ class FineTuneReinforcementMethodGraderUnionTextSimilarityMapper
       );
       FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      GraderTextSimilarityTypeTypeMapper.ensureInitialized();
+      GraderTextSimilarityTypeMapper.ensureInitialized();
       GraderTextSimilarityEvaluationMetricEvaluationMetricMapper.ensureInitialized();
     }
     return _instance!;
@@ -370,12 +370,12 @@ class FineTuneReinforcementMethodGraderUnionTextSimilarityMapper
   @override
   final String id = 'FineTuneReinforcementMethodGraderUnionTextSimilarity';
 
-  static GraderTextSimilarityTypeType _$type(
+  static GraderTextSimilarityType _$type(
     FineTuneReinforcementMethodGraderUnionTextSimilarity v,
   ) => v.type;
   static const Field<
     FineTuneReinforcementMethodGraderUnionTextSimilarity,
-    GraderTextSimilarityTypeType
+    GraderTextSimilarityType
   >
   _f$type = Field('type', _$type);
   static String _$name(
@@ -554,7 +554,7 @@ abstract class FineTuneReinforcementMethodGraderUnionTextSimilarityCopyWith<
     implements FineTuneReinforcementMethodGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
     String? name,
     String? input,
     String? reference,
@@ -594,7 +594,7 @@ class _FineTuneReinforcementMethodGraderUnionTextSimilarityCopyWithImpl<
       FineTuneReinforcementMethodGraderUnionTextSimilarityMapper.ensureInitialized();
   @override
   $R call({
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
     String? name,
     String? input,
     String? reference,
@@ -645,7 +645,7 @@ class FineTuneReinforcementMethodGraderUnionPythonMapper
       );
       FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      GraderPythonTypeTypeMapper.ensureInitialized();
+      GraderPythonTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -653,12 +653,12 @@ class FineTuneReinforcementMethodGraderUnionPythonMapper
   @override
   final String id = 'FineTuneReinforcementMethodGraderUnionPython';
 
-  static GraderPythonTypeType _$type(
+  static GraderPythonType _$type(
     FineTuneReinforcementMethodGraderUnionPython v,
   ) => v.type;
   static const Field<
     FineTuneReinforcementMethodGraderUnionPython,
-    GraderPythonTypeType
+    GraderPythonType
   >
   _f$type = Field('type', _$type);
   static String _$name(FineTuneReinforcementMethodGraderUnionPython v) =>
@@ -800,7 +800,7 @@ abstract class FineTuneReinforcementMethodGraderUnionPythonCopyWith<
     implements FineTuneReinforcementMethodGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     String? imageTag,
@@ -834,7 +834,7 @@ class _FineTuneReinforcementMethodGraderUnionPythonCopyWithImpl<$R, $Out>
       FineTuneReinforcementMethodGraderUnionPythonMapper.ensureInitialized();
   @override
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     Object? imageTag = $none,
@@ -883,7 +883,7 @@ class FineTuneReinforcementMethodGraderUnionScoreModelMapper
       );
       FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      GraderScoreModelTypeTypeMapper.ensureInitialized();
+      GraderScoreModelTypeMapper.ensureInitialized();
       GraderScoreModelSamplingParamsMapper.ensureInitialized();
       EvalItemMapper.ensureInitialized();
     }
@@ -893,12 +893,12 @@ class FineTuneReinforcementMethodGraderUnionScoreModelMapper
   @override
   final String id = 'FineTuneReinforcementMethodGraderUnionScoreModel';
 
-  static GraderScoreModelTypeType _$type(
+  static GraderScoreModelType _$type(
     FineTuneReinforcementMethodGraderUnionScoreModel v,
   ) => v.type;
   static const Field<
     FineTuneReinforcementMethodGraderUnionScoreModel,
-    GraderScoreModelTypeType
+    GraderScoreModelType
   >
   _f$type = Field('type', _$type);
   static String _$name(FineTuneReinforcementMethodGraderUnionScoreModel v) =>
@@ -1086,7 +1086,7 @@ abstract class FineTuneReinforcementMethodGraderUnionScoreModelCopyWith<
   ListCopyWith<$R, num, ObjectCopyWith<$R, num, num>>? get range;
   @override
   $R call({
-    GraderScoreModelTypeType? type,
+    GraderScoreModelType? type,
     String? name,
     String? model,
     GraderScoreModelSamplingParams? graderScoreModelSamplingParams,
@@ -1148,7 +1148,7 @@ class _FineTuneReinforcementMethodGraderUnionScoreModelCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    GraderScoreModelTypeType? type,
+    GraderScoreModelType? type,
     String? name,
     String? model,
     Object? graderScoreModelSamplingParams = $none,
@@ -1205,7 +1205,7 @@ class FineTuneReinforcementMethodGraderUnionMultiMapper
       );
       FineTuneReinforcementMethodGraderUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      GraderMultiTypeTypeMapper.ensureInitialized();
+      GraderMultiTypeMapper.ensureInitialized();
       GraderMultiGradersUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -1214,12 +1214,12 @@ class FineTuneReinforcementMethodGraderUnionMultiMapper
   @override
   final String id = 'FineTuneReinforcementMethodGraderUnionMulti';
 
-  static GraderMultiTypeType _$type(
+  static GraderMultiType _$type(
     FineTuneReinforcementMethodGraderUnionMulti v,
   ) => v.type;
   static const Field<
     FineTuneReinforcementMethodGraderUnionMulti,
-    GraderMultiTypeType
+    GraderMultiType
   >
   _f$type = Field('type', _$type);
   static String _$name(FineTuneReinforcementMethodGraderUnionMulti v) => v.name;
@@ -1375,7 +1375,7 @@ abstract class FineTuneReinforcementMethodGraderUnionMultiCopyWith<
   get graders;
   @override
   $R call({
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,
@@ -1412,7 +1412,7 @@ class _FineTuneReinforcementMethodGraderUnionMultiCopyWithImpl<$R, $Out>
   get graders => $value.graders.copyWith.$chain((v) => call(graders: v));
   @override
   $R call({
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'file_annotation_source.dart';
-import 'file_annotation_type_type.dart';
+import 'file_annotation_type.dart';
 
 part 'file_annotation.mapper.dart';
 
@@ -14,11 +14,11 @@ part 'file_annotation.mapper.dart';
 class FileAnnotation with FileAnnotationMappable {
   const FileAnnotation({
     required this.source,
-    this.type = FileAnnotationTypeType.file,
+    this.type = FileAnnotationType.file,
   });
 
   final FileAnnotationSource source;
-  final FileAnnotationTypeType type;
+  final FileAnnotationType type;
 
   static FileAnnotation fromJson(Map<String, dynamic> json) => FileAnnotationMapper.fromJson(json);
 

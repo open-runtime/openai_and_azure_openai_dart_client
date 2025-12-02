@@ -5,16 +5,16 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_tool_file_search.dart';
-import 'assistant_tool_type_type.dart';
-import 'assistant_tool_type_type2.dart';
-import 'assistant_tool_type_type3.dart';
+import 'assistant_tool_type.dart';
+import 'assistant_tool_type2.dart';
+import 'assistant_tool_type3.dart';
 import 'assistant_tools_code.dart';
-import 'assistant_tools_code_type_type.dart';
+import 'assistant_tools_code_type.dart';
 import 'assistant_tools_file_search.dart';
 import 'assistant_tools_file_search_file_search.dart';
-import 'assistant_tools_file_search_type_type.dart';
+import 'assistant_tools_file_search_type.dart';
 import 'assistant_tools_function.dart';
-import 'assistant_tools_function_type_type.dart';
+import 'assistant_tools_function_type.dart';
 import 'function_object.dart';
 
 part 'assistant_tool.mapper.dart';
@@ -56,7 +56,7 @@ extension AssistantToolUnionDeserializer on AssistantTool {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class AssistantToolCodeInterpreter extends AssistantTool with AssistantToolCodeInterpreterMappable {
-  final AssistantToolTypeType type;
+  final AssistantToolType type;
 
   const AssistantToolCodeInterpreter({
     required this.type,
@@ -65,7 +65,7 @@ class AssistantToolCodeInterpreter extends AssistantTool with AssistantToolCodeI
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class AssistantToolFileSearch extends AssistantTool with AssistantToolFileSearchMappable {
-  final AssistantToolTypeType2 type;
+  final AssistantToolType2 type;
   @MappableField(key: 'file_search')
   final AssistantToolFileSearch? assistantToolFileSearch;
 
@@ -77,7 +77,7 @@ class AssistantToolFileSearch extends AssistantTool with AssistantToolFileSearch
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class AssistantToolFunction extends AssistantTool with AssistantToolFunctionMappable {
-  final AssistantToolTypeType3 type;
+  final AssistantToolType3 type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 

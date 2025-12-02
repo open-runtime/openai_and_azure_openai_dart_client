@@ -17,7 +17,7 @@ class ChatCompletionResponseMessageMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionResponseMessageMapper._(),
       );
-      ChatCompletionResponseMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionResponseMessageRoleMapper.ensureInitialized();
       ChatCompletionMessageToolCallsUnionMapper.ensureInitialized();
       ChatCompletionResponseMessageAnnotationsMapper.ensureInitialized();
       ChatCompletionResponseMessageFunctionCallMapper.ensureInitialized();
@@ -39,12 +39,12 @@ class ChatCompletionResponseMessageMapper
     'refusal',
     _$refusal,
   );
-  static ChatCompletionResponseMessageRoleRole _$role(
+  static ChatCompletionResponseMessageRole _$role(
     ChatCompletionResponseMessage v,
   ) => v.role;
   static const Field<
     ChatCompletionResponseMessage,
-    ChatCompletionResponseMessageRoleRole
+    ChatCompletionResponseMessageRole
   >
   _f$role = Field('role', _$role);
   static List<ChatCompletionMessageToolCallsUnion>? _$toolCalls(
@@ -225,7 +225,7 @@ abstract class ChatCompletionResponseMessageCopyWith<
   $R call({
     String? content,
     String? refusal,
-    ChatCompletionResponseMessageRoleRole? role,
+    ChatCompletionResponseMessageRole? role,
     List<ChatCompletionMessageToolCallsUnion>? toolCalls,
     List<ChatCompletionResponseMessageAnnotations>? annotations,
     ChatCompletionResponseMessageFunctionCall?
@@ -309,7 +309,7 @@ class _ChatCompletionResponseMessageCopyWithImpl<$R, $Out>
   $R call({
     Object? content = $none,
     Object? refusal = $none,
-    ChatCompletionResponseMessageRoleRole? role,
+    ChatCompletionResponseMessageRole? role,
     Object? toolCalls = $none,
     Object? annotations = $none,
     Object? chatCompletionResponseMessageFunctionCall = $none,

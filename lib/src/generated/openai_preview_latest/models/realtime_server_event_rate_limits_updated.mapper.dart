@@ -17,7 +17,7 @@ class RealtimeServerEventRateLimitsUpdatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventRateLimitsUpdatedMapper._(),
       );
-      RealtimeServerEventRateLimitsUpdatedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventRateLimitsUpdatedTypeMapper.ensureInitialized();
       RealtimeServerEventRateLimitsUpdatedRateLimitsMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,12 +29,12 @@ class RealtimeServerEventRateLimitsUpdatedMapper
   static String _$eventId(RealtimeServerEventRateLimitsUpdated v) => v.eventId;
   static const Field<RealtimeServerEventRateLimitsUpdated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventRateLimitsUpdatedTypeType _$type(
+  static RealtimeServerEventRateLimitsUpdatedType _$type(
     RealtimeServerEventRateLimitsUpdated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventRateLimitsUpdated,
-    RealtimeServerEventRateLimitsUpdatedTypeType
+    RealtimeServerEventRateLimitsUpdatedType
   >
   _f$type = Field('type', _$type);
   static List<RealtimeServerEventRateLimitsUpdatedRateLimits> _$rateLimits(
@@ -158,7 +158,7 @@ abstract class RealtimeServerEventRateLimitsUpdatedCopyWith<
   get rateLimits;
   $R call({
     String? eventId,
-    RealtimeServerEventRateLimitsUpdatedTypeType? type,
+    RealtimeServerEventRateLimitsUpdatedType? type,
     List<RealtimeServerEventRateLimitsUpdatedRateLimits>? rateLimits,
   });
   RealtimeServerEventRateLimitsUpdatedCopyWith<$R2, $In, $Out2>
@@ -200,7 +200,7 @@ class _RealtimeServerEventRateLimitsUpdatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventRateLimitsUpdatedTypeType? type,
+    RealtimeServerEventRateLimitsUpdatedType? type,
     List<RealtimeServerEventRateLimitsUpdatedRateLimits>? rateLimits,
   }) => $apply(
     FieldCopyWithData({

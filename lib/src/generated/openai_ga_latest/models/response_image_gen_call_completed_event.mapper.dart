@@ -17,7 +17,7 @@ class ResponseImageGenCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseImageGenCallCompletedEventMapper._(),
       );
-      ResponseImageGenCallCompletedEventTypeTypeMapper.ensureInitialized();
+      ResponseImageGenCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseImageGenCallCompletedEventMapper
   @override
   final String id = 'ResponseImageGenCallCompletedEvent';
 
-  static ResponseImageGenCallCompletedEventTypeType _$type(
+  static ResponseImageGenCallCompletedEventType _$type(
     ResponseImageGenCallCompletedEvent v,
   ) => v.type;
   static const Field<
     ResponseImageGenCallCompletedEvent,
-    ResponseImageGenCallCompletedEventTypeType
+    ResponseImageGenCallCompletedEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseImageGenCallCompletedEvent v) =>
@@ -150,7 +150,7 @@ abstract class ResponseImageGenCallCompletedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseImageGenCallCompletedEventTypeType? type,
+    ResponseImageGenCallCompletedEventType? type,
     int? outputIndex,
     int? sequenceNumber,
     String? itemId,
@@ -178,7 +178,7 @@ class _ResponseImageGenCallCompletedEventCopyWithImpl<$R, $Out>
       ResponseImageGenCallCompletedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseImageGenCallCompletedEventTypeType? type,
+    ResponseImageGenCallCompletedEventType? type,
     int? outputIndex,
     int? sequenceNumber,
     String? itemId,

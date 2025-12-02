@@ -17,8 +17,8 @@ class ComputerToolCallOutputMapper
       MapperContainer.globals.use(_instance = ComputerToolCallOutputMapper._());
       ComputerScreenshotImageMapper.ensureInitialized();
       ComputerToolCallSafetyCheckMapper.ensureInitialized();
-      ComputerToolCallOutputStatusStatusMapper.ensureInitialized();
-      ComputerToolCallOutputTypeTypeMapper.ensureInitialized();
+      ComputerToolCallOutputStatusMapper.ensureInitialized();
+      ComputerToolCallOutputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -51,19 +51,17 @@ class ComputerToolCallOutputMapper
     key: r'acknowledged_safety_checks',
     opt: true,
   );
-  static ComputerToolCallOutputStatusStatus? _$status(
-    ComputerToolCallOutput v,
-  ) => v.status;
-  static const Field<ComputerToolCallOutput, ComputerToolCallOutputStatusStatus>
+  static ComputerToolCallOutputStatus? _$status(ComputerToolCallOutput v) =>
+      v.status;
+  static const Field<ComputerToolCallOutput, ComputerToolCallOutputStatus>
   _f$status = Field('status', _$status, opt: true);
-  static ComputerToolCallOutputTypeType _$type(ComputerToolCallOutput v) =>
-      v.type;
-  static const Field<ComputerToolCallOutput, ComputerToolCallOutputTypeType>
+  static ComputerToolCallOutputType _$type(ComputerToolCallOutput v) => v.type;
+  static const Field<ComputerToolCallOutput, ComputerToolCallOutputType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ComputerToolCallOutputTypeType.computerCallOutput,
+    def: ComputerToolCallOutputType.computerCallOutput,
   );
 
   @override
@@ -182,8 +180,8 @@ abstract class ComputerToolCallOutputCopyWith<
     ComputerScreenshotImage? output,
     String? id,
     List<ComputerToolCallSafetyCheck>? acknowledgedSafetyChecks,
-    ComputerToolCallOutputStatusStatus? status,
-    ComputerToolCallOutputTypeType? type,
+    ComputerToolCallOutputStatus? status,
+    ComputerToolCallOutputType? type,
   });
   ComputerToolCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -230,7 +228,7 @@ class _ComputerToolCallOutputCopyWithImpl<$R, $Out>
     Object? id = $none,
     Object? acknowledgedSafetyChecks = $none,
     Object? status = $none,
-    ComputerToolCallOutputTypeType? type,
+    ComputerToolCallOutputType? type,
   }) => $apply(
     FieldCopyWithData({
       if (callId != null) #callId: callId,

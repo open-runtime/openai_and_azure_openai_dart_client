@@ -17,7 +17,7 @@ class ResponseFormatTextPythonMapper
       MapperContainer.globals.use(
         _instance = ResponseFormatTextPythonMapper._(),
       );
-      ResponseFormatTextPythonTypeTypeMapper.ensureInitialized();
+      ResponseFormatTextPythonTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseFormatTextPythonMapper
   @override
   final String id = 'ResponseFormatTextPython';
 
-  static ResponseFormatTextPythonTypeType _$type(ResponseFormatTextPython v) =>
+  static ResponseFormatTextPythonType _$type(ResponseFormatTextPython v) =>
       v.type;
-  static const Field<ResponseFormatTextPython, ResponseFormatTextPythonTypeType>
+  static const Field<ResponseFormatTextPython, ResponseFormatTextPythonType>
   _f$type = Field('type', _$type);
 
   @override
@@ -113,7 +113,7 @@ abstract class ResponseFormatTextPythonCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseFormatTextPythonTypeType? type});
+  $R call({ResponseFormatTextPythonType? type});
   ResponseFormatTextPythonCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +129,7 @@ class _ResponseFormatTextPythonCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseFormatTextPython> $mapper =
       ResponseFormatTextPythonMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatTextPythonTypeType? type}) =>
+  $R call({ResponseFormatTextPythonType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseFormatTextPython $make(CopyWithData data) =>

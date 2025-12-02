@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'file_expiration_after_anchor_anchor.dart';
+import 'file_expiration_after_anchor.dart';
 
 part 'file_expiration_after.mapper.dart';
 
@@ -16,7 +16,7 @@ class FileExpirationAfter with FileExpirationAfterMappable {
     required this.seconds,
   });
 
-  final FileExpirationAfterAnchorAnchor anchor;
+  final FileExpirationAfterAnchor anchor;
   final int seconds;
 
   static FileExpirationAfter fromJson(Map<String, dynamic> json) => FileExpirationAfterMapper.fromJson(json);

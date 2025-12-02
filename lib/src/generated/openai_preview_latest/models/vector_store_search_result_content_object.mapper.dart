@@ -17,7 +17,7 @@ class VectorStoreSearchResultContentObjectMapper
       MapperContainer.globals.use(
         _instance = VectorStoreSearchResultContentObjectMapper._(),
       );
-      VectorStoreSearchResultContentObjectTypeTypeMapper.ensureInitialized();
+      VectorStoreSearchResultContentObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class VectorStoreSearchResultContentObjectMapper
   @override
   final String id = 'VectorStoreSearchResultContentObject';
 
-  static VectorStoreSearchResultContentObjectTypeType _$type(
+  static VectorStoreSearchResultContentObjectType _$type(
     VectorStoreSearchResultContentObject v,
   ) => v.type;
   static const Field<
     VectorStoreSearchResultContentObject,
-    VectorStoreSearchResultContentObjectTypeType
+    VectorStoreSearchResultContentObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(VectorStoreSearchResultContentObject v) => v.text;
@@ -135,7 +135,7 @@ abstract class VectorStoreSearchResultContentObjectCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({VectorStoreSearchResultContentObjectTypeType? type, String? text});
+  $R call({VectorStoreSearchResultContentObjectType? type, String? text});
   VectorStoreSearchResultContentObjectCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -158,7 +158,7 @@ class _VectorStoreSearchResultContentObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VectorStoreSearchResultContentObject> $mapper =
       VectorStoreSearchResultContentObjectMapper.ensureInitialized();
   @override
-  $R call({VectorStoreSearchResultContentObjectTypeType? type, String? text}) =>
+  $R call({VectorStoreSearchResultContentObjectType? type, String? text}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

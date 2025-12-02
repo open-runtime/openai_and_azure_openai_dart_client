@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_step_delta_step_details_tool_calls_code_output_logs_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_code_output_logs_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_code_output_logs_object.mapper.dart';
 
@@ -19,7 +19,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject with RunStepDeltaStep
 
   @MappableField(key: 'index')
   final int indexField;
-  final RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type;
   final String? logs;
 
   static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);

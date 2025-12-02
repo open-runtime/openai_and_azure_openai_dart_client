@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'audio_transcription_model_model.dart';
+import 'audio_transcription_model.dart';
 
 part 'audio_transcription.mapper.dart';
 
@@ -16,7 +16,7 @@ class AudioTranscription with AudioTranscriptionMappable {
     this.prompt,
   });
 
-  final AudioTranscriptionModelModel? model;
+  final AudioTranscriptionModel? model;
   final String? language;
   final String? prompt;
 

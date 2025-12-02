@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_output_image.dart';
-import 'code_interpreter_output_image_type_type.dart';
+import 'code_interpreter_output_image_type.dart';
 import 'code_interpreter_output_logs.dart';
-import 'code_interpreter_output_logs_type_type.dart';
+import 'code_interpreter_output_logs_type.dart';
 import 'code_interpreter_tool_call_outputs_union.dart';
 import 'conversation_item_outputs_union.dart';
 
@@ -48,7 +48,7 @@ extension ItemResourceOutputsUnionDeserializer on ItemResourceOutputsUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class ItemResourceOutputsUnionLogs extends ItemResourceOutputsUnion with ItemResourceOutputsUnionLogsMappable {
-  final CodeInterpreterOutputLogsTypeType type;
+  final CodeInterpreterOutputLogsType type;
   final String logs;
 
   const ItemResourceOutputsUnionLogs({
@@ -59,7 +59,7 @@ class ItemResourceOutputsUnionLogs extends ItemResourceOutputsUnion with ItemRes
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
 class ItemResourceOutputsUnionImage extends ItemResourceOutputsUnion with ItemResourceOutputsUnionImageMappable {
-  final CodeInterpreterOutputImageTypeType type;
+  final CodeInterpreterOutputImageType type;
   final String url;
 
   const ItemResourceOutputsUnionImage({

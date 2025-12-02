@@ -4,13 +4,13 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_speech_response_stream_event_type_type.dart';
-import 'create_speech_response_stream_event_type_type2.dart';
+import 'create_speech_response_stream_event_type.dart';
+import 'create_speech_response_stream_event_type2.dart';
 import 'create_speech_response_stream_event_usage.dart';
 import 'speech_audio_delta_event.dart';
-import 'speech_audio_delta_event_type_type.dart';
+import 'speech_audio_delta_event_type.dart';
 import 'speech_audio_done_event.dart';
-import 'speech_audio_done_event_type_type.dart';
+import 'speech_audio_done_event_type.dart';
 import 'speech_audio_done_event_usage.dart';
 
 part 'create_speech_response_stream_event.mapper.dart';
@@ -49,7 +49,7 @@ extension CreateSpeechResponseStreamEventUnionDeserializer on CreateSpeechRespon
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'speech.audio.delta')
 class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechResponseStreamEvent with CreateSpeechResponseStreamEventSpeechAudioDeltaMappable {
-  final CreateSpeechResponseStreamEventTypeType type;
+  final CreateSpeechResponseStreamEventType type;
   final String audio;
 
   const CreateSpeechResponseStreamEventSpeechAudioDelta({
@@ -60,7 +60,7 @@ class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechRespon
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'speech.audio.done')
 class CreateSpeechResponseStreamEventSpeechAudioDone extends CreateSpeechResponseStreamEvent with CreateSpeechResponseStreamEventSpeechAudioDoneMappable {
-  final CreateSpeechResponseStreamEventTypeType2 type;
+  final CreateSpeechResponseStreamEventType2 type;
   @MappableField(key: 'usage')
   final CreateSpeechResponseStreamEventUsage createSpeechResponseStreamEventUsage;
 

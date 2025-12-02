@@ -17,7 +17,7 @@ class MessageContentImageUrlObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageUrlObjectMapper._(),
       );
-      MessageContentImageUrlObjectTypeTypeMapper.ensureInitialized();
+      MessageContentImageUrlObjectTypeMapper.ensureInitialized();
       MessageContentImageUrlObjectImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class MessageContentImageUrlObjectMapper
   @override
   final String id = 'MessageContentImageUrlObject';
 
-  static MessageContentImageUrlObjectTypeType _$type(
+  static MessageContentImageUrlObjectType _$type(
     MessageContentImageUrlObject v,
   ) => v.type;
   static const Field<
     MessageContentImageUrlObject,
-    MessageContentImageUrlObjectTypeType
+    MessageContentImageUrlObjectType
   >
   _f$type = Field('type', _$type);
   static MessageContentImageUrlObjectImageUrl
@@ -147,7 +147,7 @@ abstract class MessageContentImageUrlObjectCopyWith<
   >
   get messageContentImageUrlObjectImageUrl;
   $R call({
-    MessageContentImageUrlObjectTypeType? type,
+    MessageContentImageUrlObjectType? type,
     MessageContentImageUrlObjectImageUrl? messageContentImageUrlObjectImageUrl,
   });
   MessageContentImageUrlObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -184,7 +184,7 @@ class _MessageContentImageUrlObjectCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentImageUrlObjectImageUrl: v));
   @override
   $R call({
-    MessageContentImageUrlObjectTypeType? type,
+    MessageContentImageUrlObjectType? type,
     MessageContentImageUrlObjectImageUrl? messageContentImageUrlObjectImageUrl,
   }) => $apply(
     FieldCopyWithData({

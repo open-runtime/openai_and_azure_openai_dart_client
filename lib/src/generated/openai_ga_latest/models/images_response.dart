@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'image.dart';
 import 'image_gen_usage.dart';
-import 'images_response_background_background.dart';
+import 'images_response_background.dart';
 import 'images_response_output_format_output_format.dart';
-import 'images_response_quality_quality.dart';
-import 'images_response_size_size.dart';
+import 'images_response_quality.dart';
+import 'images_response_size.dart';
 
 part 'images_response.mapper.dart';
 
@@ -28,11 +28,11 @@ class ImagesResponse with ImagesResponseMappable {
 
   final int created;
   final List<Image>? data;
-  final ImagesResponseBackgroundBackground? background;
+  final ImagesResponseBackground? background;
   @MappableField(key: 'output_format')
   final ImagesResponseOutputFormatOutputFormat? outputFormat;
-  final ImagesResponseSizeSize? size;
-  final ImagesResponseQualityQuality? quality;
+  final ImagesResponseSize? size;
+  final ImagesResponseQuality? quality;
   final ImageGenUsage? usage;
 
   static ImagesResponse fromJson(Map<String, dynamic> json) => ImagesResponseMapper.fromJson(json);

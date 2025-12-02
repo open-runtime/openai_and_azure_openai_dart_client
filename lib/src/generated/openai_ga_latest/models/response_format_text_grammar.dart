@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_format_text_grammar_type_type.dart';
+import 'response_format_text_grammar_type.dart';
 
 part 'response_format_text_grammar.mapper.dart';
 
@@ -18,7 +18,7 @@ class ResponseFormatTextGrammar with ResponseFormatTextGrammarMappable {
     required this.grammar,
   });
 
-  final ResponseFormatTextGrammarTypeType type;
+  final ResponseFormatTextGrammarType type;
   final String grammar;
 
   static ResponseFormatTextGrammar fromJson(Map<String, dynamic> json) => ResponseFormatTextGrammarMapper.fromJson(json);

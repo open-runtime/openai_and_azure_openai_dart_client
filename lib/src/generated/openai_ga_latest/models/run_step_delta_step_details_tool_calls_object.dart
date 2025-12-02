@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_tool_call.dart';
-import 'run_step_delta_step_details_tool_calls_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_object.mapper.dart';
 
@@ -17,7 +17,7 @@ class RunStepDeltaStepDetailsToolCallsObject with RunStepDeltaStepDetailsToolCal
     this.toolCalls,
   });
 
-  final RunStepDeltaStepDetailsToolCallsObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDeltaStepDetailsToolCall>? toolCalls;
 

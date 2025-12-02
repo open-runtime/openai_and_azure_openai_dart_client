@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'text_content_type_type.dart';
+import 'text_content_type.dart';
 
 part 'text_content.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'text_content.mapper.dart';
 class TextContent with TextContentMappable {
   const TextContent({
     required this.text,
-    this.type = TextContentTypeType.text,
+    this.type = TextContentType.text,
   });
 
   final String text;
-  final TextContentTypeType type;
+  final TextContentType type;
 
   static TextContent fromJson(Map<String, dynamic> json) => TextContentMapper.fromJson(json);
 

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
 import 'realtime_server_event.dart';
-import 'realtime_server_event_response_output_item_added_type_type.dart';
+import 'realtime_server_event_response_output_item_added_type.dart';
 
 part 'realtime_server_event_response_output_item_added.mapper.dart';
 
@@ -23,7 +23,7 @@ class RealtimeServerEventResponseOutputItemAdded with RealtimeServerEventRespons
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseOutputItemAddedTypeType type;
+  final RealtimeServerEventResponseOutputItemAddedType type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'output_index')

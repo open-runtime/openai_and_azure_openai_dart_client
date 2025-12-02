@@ -85,7 +85,7 @@ class ThreadItemContentUnionInputTextMapper
         _instance = ThreadItemContentUnionInputTextMapper._(),
       );
       ThreadItemContentUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      UserMessageInputTextTypeTypeMapper.ensureInitialized();
+      UserMessageInputTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -93,13 +93,9 @@ class ThreadItemContentUnionInputTextMapper
   @override
   final String id = 'ThreadItemContentUnionInputText';
 
-  static UserMessageInputTextTypeType _$type(
-    ThreadItemContentUnionInputText v,
-  ) => v.type;
-  static const Field<
-    ThreadItemContentUnionInputText,
-    UserMessageInputTextTypeType
-  >
+  static UserMessageInputTextType _$type(ThreadItemContentUnionInputText v) =>
+      v.type;
+  static const Field<ThreadItemContentUnionInputText, UserMessageInputTextType>
   _f$type = Field('type', _$type);
   static String _$text(ThreadItemContentUnionInputText v) => v.text;
   static const Field<ThreadItemContentUnionInputText, String> _f$text = Field(
@@ -211,7 +207,7 @@ abstract class ThreadItemContentUnionInputTextCopyWith<
 >
     implements ThreadItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({UserMessageInputTextTypeType? type, String? text});
+  $R call({UserMessageInputTextType? type, String? text});
   ThreadItemContentUnionInputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -235,7 +231,7 @@ class _ThreadItemContentUnionInputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadItemContentUnionInputText> $mapper =
       ThreadItemContentUnionInputTextMapper.ensureInitialized();
   @override
-  $R call({UserMessageInputTextTypeType? type, String? text}) => $apply(
+  $R call({UserMessageInputTextType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,
@@ -273,7 +269,7 @@ class ThreadItemContentUnionQuotedTextMapper
         _instance = ThreadItemContentUnionQuotedTextMapper._(),
       );
       ThreadItemContentUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      UserMessageQuotedTextTypeTypeMapper.ensureInitialized();
+      UserMessageQuotedTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -281,12 +277,11 @@ class ThreadItemContentUnionQuotedTextMapper
   @override
   final String id = 'ThreadItemContentUnionQuotedText';
 
-  static UserMessageQuotedTextTypeType _$type(
-    ThreadItemContentUnionQuotedText v,
-  ) => v.type;
+  static UserMessageQuotedTextType _$type(ThreadItemContentUnionQuotedText v) =>
+      v.type;
   static const Field<
     ThreadItemContentUnionQuotedText,
-    UserMessageQuotedTextTypeType
+    UserMessageQuotedTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(ThreadItemContentUnionQuotedText v) => v.text;
@@ -399,7 +394,7 @@ abstract class ThreadItemContentUnionQuotedTextCopyWith<
 >
     implements ThreadItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({UserMessageQuotedTextTypeType? type, String? text});
+  $R call({UserMessageQuotedTextType? type, String? text});
   ThreadItemContentUnionQuotedTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -423,7 +418,7 @@ class _ThreadItemContentUnionQuotedTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ThreadItemContentUnionQuotedText> $mapper =
       ThreadItemContentUnionQuotedTextMapper.ensureInitialized();
   @override
-  $R call({UserMessageQuotedTextTypeType? type, String? text}) => $apply(
+  $R call({UserMessageQuotedTextType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

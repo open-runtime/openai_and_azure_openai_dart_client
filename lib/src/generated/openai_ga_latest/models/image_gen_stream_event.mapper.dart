@@ -85,10 +85,10 @@ class ImageGenStreamEventImageGenerationPartialImageMapper
         _instance = ImageGenStreamEventImageGenerationPartialImageMapper._(),
       );
       ImageGenStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ImageGenStreamEventTypeTypeMapper.ensureInitialized();
-      ImageGenStreamEventSizeSizeMapper.ensureInitialized();
-      ImageGenStreamEventQualityQualityMapper.ensureInitialized();
-      ImageGenStreamEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageGenStreamEventTypeMapper.ensureInitialized();
+      ImageGenStreamEventSizeMapper.ensureInitialized();
+      ImageGenStreamEventQualityMapper.ensureInitialized();
+      ImageGenStreamEventBackgroundMapper.ensureInitialized();
       ImageGenStreamEventOutputFormatOutputFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -97,12 +97,12 @@ class ImageGenStreamEventImageGenerationPartialImageMapper
   @override
   final String id = 'ImageGenStreamEventImageGenerationPartialImage';
 
-  static ImageGenStreamEventTypeType _$type(
+  static ImageGenStreamEventType _$type(
     ImageGenStreamEventImageGenerationPartialImage v,
   ) => v.type;
   static const Field<
     ImageGenStreamEventImageGenerationPartialImage,
-    ImageGenStreamEventTypeType
+    ImageGenStreamEventType
   >
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageGenStreamEventImageGenerationPartialImage v) =>
@@ -113,28 +113,28 @@ class ImageGenStreamEventImageGenerationPartialImageMapper
       v.createdAt;
   static const Field<ImageGenStreamEventImageGenerationPartialImage, int>
   _f$createdAt = Field('createdAt', _$createdAt, key: r'created_at');
-  static ImageGenStreamEventSizeSize _$size(
+  static ImageGenStreamEventSize _$size(
     ImageGenStreamEventImageGenerationPartialImage v,
   ) => v.size;
   static const Field<
     ImageGenStreamEventImageGenerationPartialImage,
-    ImageGenStreamEventSizeSize
+    ImageGenStreamEventSize
   >
   _f$size = Field('size', _$size);
-  static ImageGenStreamEventQualityQuality _$quality(
+  static ImageGenStreamEventQuality _$quality(
     ImageGenStreamEventImageGenerationPartialImage v,
   ) => v.quality;
   static const Field<
     ImageGenStreamEventImageGenerationPartialImage,
-    ImageGenStreamEventQualityQuality
+    ImageGenStreamEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageGenStreamEventBackgroundBackground _$background(
+  static ImageGenStreamEventBackground _$background(
     ImageGenStreamEventImageGenerationPartialImage v,
   ) => v.background;
   static const Field<
     ImageGenStreamEventImageGenerationPartialImage,
-    ImageGenStreamEventBackgroundBackground
+    ImageGenStreamEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageGenStreamEventOutputFormatOutputFormat _$outputFormat(
@@ -298,12 +298,12 @@ abstract class ImageGenStreamEventImageGenerationPartialImageCopyWith<
     implements ImageGenStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ImageGenStreamEventTypeType? type,
+    ImageGenStreamEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenStreamEventSizeSize? size,
-    ImageGenStreamEventQualityQuality? quality,
-    ImageGenStreamEventBackgroundBackground? background,
+    ImageGenStreamEventSize? size,
+    ImageGenStreamEventQuality? quality,
+    ImageGenStreamEventBackground? background,
     ImageGenStreamEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   });
@@ -336,12 +336,12 @@ class _ImageGenStreamEventImageGenerationPartialImageCopyWithImpl<$R, $Out>
       ImageGenStreamEventImageGenerationPartialImageMapper.ensureInitialized();
   @override
   $R call({
-    ImageGenStreamEventTypeType? type,
+    ImageGenStreamEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenStreamEventSizeSize? size,
-    ImageGenStreamEventQualityQuality? quality,
-    ImageGenStreamEventBackgroundBackground? background,
+    ImageGenStreamEventSize? size,
+    ImageGenStreamEventQuality? quality,
+    ImageGenStreamEventBackground? background,
     ImageGenStreamEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   }) => $apply(
@@ -397,10 +397,10 @@ class ImageGenStreamEventImageGenerationCompletedMapper
         _instance = ImageGenStreamEventImageGenerationCompletedMapper._(),
       );
       ImageGenStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ImageGenStreamEventTypeType2Mapper.ensureInitialized();
-      ImageGenStreamEventSizeSizeMapper.ensureInitialized();
-      ImageGenStreamEventQualityQualityMapper.ensureInitialized();
-      ImageGenStreamEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageGenStreamEventType2Mapper.ensureInitialized();
+      ImageGenStreamEventSizeMapper.ensureInitialized();
+      ImageGenStreamEventQualityMapper.ensureInitialized();
+      ImageGenStreamEventBackgroundMapper.ensureInitialized();
       ImageGenStreamEventOutputFormatOutputFormatMapper.ensureInitialized();
       ImagesUsageMapper.ensureInitialized();
     }
@@ -410,12 +410,12 @@ class ImageGenStreamEventImageGenerationCompletedMapper
   @override
   final String id = 'ImageGenStreamEventImageGenerationCompleted';
 
-  static ImageGenStreamEventTypeType2 _$type(
+  static ImageGenStreamEventType2 _$type(
     ImageGenStreamEventImageGenerationCompleted v,
   ) => v.type;
   static const Field<
     ImageGenStreamEventImageGenerationCompleted,
-    ImageGenStreamEventTypeType2
+    ImageGenStreamEventType2
   >
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageGenStreamEventImageGenerationCompleted v) =>
@@ -426,28 +426,28 @@ class ImageGenStreamEventImageGenerationCompletedMapper
       v.createdAt;
   static const Field<ImageGenStreamEventImageGenerationCompleted, int>
   _f$createdAt = Field('createdAt', _$createdAt, key: r'created_at');
-  static ImageGenStreamEventSizeSize _$size(
+  static ImageGenStreamEventSize _$size(
     ImageGenStreamEventImageGenerationCompleted v,
   ) => v.size;
   static const Field<
     ImageGenStreamEventImageGenerationCompleted,
-    ImageGenStreamEventSizeSize
+    ImageGenStreamEventSize
   >
   _f$size = Field('size', _$size);
-  static ImageGenStreamEventQualityQuality _$quality(
+  static ImageGenStreamEventQuality _$quality(
     ImageGenStreamEventImageGenerationCompleted v,
   ) => v.quality;
   static const Field<
     ImageGenStreamEventImageGenerationCompleted,
-    ImageGenStreamEventQualityQuality
+    ImageGenStreamEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageGenStreamEventBackgroundBackground _$background(
+  static ImageGenStreamEventBackground _$background(
     ImageGenStreamEventImageGenerationCompleted v,
   ) => v.background;
   static const Field<
     ImageGenStreamEventImageGenerationCompleted,
-    ImageGenStreamEventBackgroundBackground
+    ImageGenStreamEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageGenStreamEventOutputFormatOutputFormat _$outputFormat(
@@ -602,12 +602,12 @@ abstract class ImageGenStreamEventImageGenerationCompletedCopyWith<
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
   @override
   $R call({
-    ImageGenStreamEventTypeType2? type,
+    ImageGenStreamEventType2? type,
     String? b64Json,
     int? createdAt,
-    ImageGenStreamEventSizeSize? size,
-    ImageGenStreamEventQualityQuality? quality,
-    ImageGenStreamEventBackgroundBackground? background,
+    ImageGenStreamEventSize? size,
+    ImageGenStreamEventQuality? quality,
+    ImageGenStreamEventBackground? background,
     ImageGenStreamEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   });
@@ -639,12 +639,12 @@ class _ImageGenStreamEventImageGenerationCompletedCopyWithImpl<$R, $Out>
       $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    ImageGenStreamEventTypeType2? type,
+    ImageGenStreamEventType2? type,
     String? b64Json,
     int? createdAt,
-    ImageGenStreamEventSizeSize? size,
-    ImageGenStreamEventQualityQuality? quality,
-    ImageGenStreamEventBackgroundBackground? background,
+    ImageGenStreamEventSize? size,
+    ImageGenStreamEventQuality? quality,
+    ImageGenStreamEventBackground? background,
     ImageGenStreamEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   }) => $apply(

@@ -14,7 +14,7 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
   static EvalScoreModelGraderMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalScoreModelGraderMapper._());
-      EvalScoreModelGraderTypeTypeMapper.ensureInitialized();
+      EvalScoreModelGraderTypeMapper.ensureInitialized();
       EvalItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,9 @@ class EvalScoreModelGraderMapper extends ClassMapperBase<EvalScoreModelGrader> {
   @override
   final String id = 'EvalScoreModelGrader';
 
-  static EvalScoreModelGraderTypeType _$type(EvalScoreModelGrader v) => v.type;
-  static const Field<EvalScoreModelGrader, EvalScoreModelGraderTypeType>
-  _f$type = Field('type', _$type);
+  static EvalScoreModelGraderType _$type(EvalScoreModelGrader v) => v.type;
+  static const Field<EvalScoreModelGrader, EvalScoreModelGraderType> _f$type =
+      Field('type', _$type);
   static String _$name(EvalScoreModelGrader v) => v.name;
   static const Field<EvalScoreModelGrader, String> _f$name = Field(
     'name',
@@ -163,7 +163,7 @@ abstract class EvalScoreModelGraderCopyWith<
   get input;
   ListCopyWith<$R, num, ObjectCopyWith<$R, num, num>>? get range;
   $R call({
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     String? name,
     String? model,
     List<EvalItem>? input,
@@ -202,7 +202,7 @@ class _EvalScoreModelGraderCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     String? name,
     String? model,
     List<EvalItem>? input,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_speech_response_stream_event.dart';
-import 'speech_audio_done_event_type_type.dart';
+import 'speech_audio_done_event_type.dart';
 import 'speech_audio_done_event_usage.dart';
 
 part 'speech_audio_done_event.mapper.dart';
@@ -18,7 +18,7 @@ class SpeechAudioDoneEvent with SpeechAudioDoneEventMappable {
     required this.speechAudioDoneEventUsage,
   });
 
-  final SpeechAudioDoneEventTypeType type;
+  final SpeechAudioDoneEventType type;
   @MappableField(key: 'usage')
   final SpeechAudioDoneEventUsage speechAudioDoneEventUsage;
 

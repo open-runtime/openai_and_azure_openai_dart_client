@@ -14,7 +14,7 @@ class VadConfigMapper extends ClassMapperBase<VadConfig> {
   static VadConfigMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = VadConfigMapper._());
-      VadConfigTypeTypeMapper.ensureInitialized();
+      VadConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,11 +22,8 @@ class VadConfigMapper extends ClassMapperBase<VadConfig> {
   @override
   final String id = 'VadConfig';
 
-  static VadConfigTypeType _$type(VadConfig v) => v.type;
-  static const Field<VadConfig, VadConfigTypeType> _f$type = Field(
-    'type',
-    _$type,
-  );
+  static VadConfigType _$type(VadConfig v) => v.type;
+  static const Field<VadConfig, VadConfigType> _f$type = Field('type', _$type);
   static int _$prefixPaddingMs(VadConfig v) => v.prefixPaddingMs;
   static const Field<VadConfig, int> _f$prefixPaddingMs = Field(
     'prefixPaddingMs',
@@ -132,7 +129,7 @@ extension VadConfigValueCopy<$R, $Out> on ObjectCopyWith<$R, VadConfig, $Out> {
 abstract class VadConfigCopyWith<$R, $In extends VadConfig, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    VadConfigTypeType? type,
+    VadConfigType? type,
     int? prefixPaddingMs,
     int? silenceDurationMs,
     num? threshold,
@@ -150,7 +147,7 @@ class _VadConfigCopyWithImpl<$R, $Out>
       VadConfigMapper.ensureInitialized();
   @override
   $R call({
-    VadConfigTypeType? type,
+    VadConfigType? type,
     int? prefixPaddingMs,
     int? silenceDurationMs,
     num? threshold,

@@ -17,7 +17,7 @@ class CreateEvalLabelModelGraderMapper
       MapperContainer.globals.use(
         _instance = CreateEvalLabelModelGraderMapper._(),
       );
-      CreateEvalLabelModelGraderTypeTypeMapper.ensureInitialized();
+      CreateEvalLabelModelGraderTypeMapper.ensureInitialized();
       CreateEvalItemUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,13 +26,9 @@ class CreateEvalLabelModelGraderMapper
   @override
   final String id = 'CreateEvalLabelModelGrader';
 
-  static CreateEvalLabelModelGraderTypeType _$type(
-    CreateEvalLabelModelGrader v,
-  ) => v.type;
-  static const Field<
-    CreateEvalLabelModelGrader,
-    CreateEvalLabelModelGraderTypeType
-  >
+  static CreateEvalLabelModelGraderType _$type(CreateEvalLabelModelGrader v) =>
+      v.type;
+  static const Field<CreateEvalLabelModelGrader, CreateEvalLabelModelGraderType>
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalLabelModelGrader v) => v.name;
   static const Field<CreateEvalLabelModelGrader, String> _f$name = Field(
@@ -169,7 +165,7 @@ abstract class CreateEvalLabelModelGraderCopyWith<
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>
   get passingLabels;
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,
@@ -221,7 +217,7 @@ class _CreateEvalLabelModelGraderCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,

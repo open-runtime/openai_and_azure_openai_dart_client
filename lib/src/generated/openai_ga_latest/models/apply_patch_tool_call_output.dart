@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_call_output_status.dart';
-import 'apply_patch_tool_call_output_type_type.dart';
+import 'apply_patch_tool_call_output_type.dart';
 import 'conversation_item.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
@@ -21,7 +21,7 @@ class ApplyPatchToolCallOutput with ApplyPatchToolCallOutputMappable {
     required this.status,
     this.output,
     this.createdBy,
-    this.type = ApplyPatchToolCallOutputTypeType.applyPatchCallOutput,
+    this.type = ApplyPatchToolCallOutputType.applyPatchCallOutput,
   });
 
   final String id;
@@ -31,7 +31,7 @@ class ApplyPatchToolCallOutput with ApplyPatchToolCallOutputMappable {
   final String? output;
   @MappableField(key: 'created_by')
   final String? createdBy;
-  final ApplyPatchToolCallOutputTypeType type;
+  final ApplyPatchToolCallOutputType type;
 
   static ApplyPatchToolCallOutput fromJson(Map<String, dynamic> json) => ApplyPatchToolCallOutputMapper.fromJson(json);
 

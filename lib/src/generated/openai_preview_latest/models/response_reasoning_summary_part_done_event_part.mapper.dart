@@ -17,7 +17,7 @@ class ResponseReasoningSummaryPartDoneEventPartMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryPartDoneEventPartMapper._(),
       );
-      ResponseReasoningSummaryPartDoneEventPartTypeTypeMapper.ensureInitialized();
+      ResponseReasoningSummaryPartDoneEventPartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseReasoningSummaryPartDoneEventPartMapper
   @override
   final String id = 'ResponseReasoningSummaryPartDoneEventPart';
 
-  static ResponseReasoningSummaryPartDoneEventPartTypeType _$type(
+  static ResponseReasoningSummaryPartDoneEventPartType _$type(
     ResponseReasoningSummaryPartDoneEventPart v,
   ) => v.type;
   static const Field<
     ResponseReasoningSummaryPartDoneEventPart,
-    ResponseReasoningSummaryPartDoneEventPartTypeType
+    ResponseReasoningSummaryPartDoneEventPartType
   >
   _f$type = Field('type', _$type);
   static String _$text(ResponseReasoningSummaryPartDoneEventPart v) => v.text;
@@ -141,10 +141,7 @@ abstract class ResponseReasoningSummaryPartDoneEventPartCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    ResponseReasoningSummaryPartDoneEventPartTypeType? type,
-    String? text,
-  });
+  $R call({ResponseReasoningSummaryPartDoneEventPartType? type, String? text});
   ResponseReasoningSummaryPartDoneEventPartCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -169,7 +166,7 @@ class _ResponseReasoningSummaryPartDoneEventPartCopyWithImpl<$R, $Out>
   $mapper = ResponseReasoningSummaryPartDoneEventPartMapper.ensureInitialized();
   @override
   $R call({
-    ResponseReasoningSummaryPartDoneEventPartTypeType? type,
+    ResponseReasoningSummaryPartDoneEventPartType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({

@@ -18,7 +18,7 @@ class EvalJsonlFileContentSourceMapper
         _instance = EvalJsonlFileContentSourceMapper._(),
       );
       EvalJsonlFileContentSourceContentMapper.ensureInitialized();
-      EvalJsonlFileContentSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileContentSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,18 +34,14 @@ class EvalJsonlFileContentSourceMapper
     List<EvalJsonlFileContentSourceContent>
   >
   _f$content = Field('content', _$content);
-  static EvalJsonlFileContentSourceTypeType _$type(
-    EvalJsonlFileContentSource v,
-  ) => v.type;
-  static const Field<
-    EvalJsonlFileContentSource,
-    EvalJsonlFileContentSourceTypeType
-  >
+  static EvalJsonlFileContentSourceType _$type(EvalJsonlFileContentSource v) =>
+      v.type;
+  static const Field<EvalJsonlFileContentSource, EvalJsonlFileContentSourceType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalJsonlFileContentSourceTypeType.fileContent,
+    def: EvalJsonlFileContentSourceType.fileContent,
   );
 
   @override
@@ -151,7 +147,7 @@ abstract class EvalJsonlFileContentSourceCopyWith<
   get content;
   $R call({
     List<EvalJsonlFileContentSourceContent>? content,
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
   });
   EvalJsonlFileContentSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -189,7 +185,7 @@ class _EvalJsonlFileContentSourceCopyWithImpl<$R, $Out>
   @override
   $R call({
     List<EvalJsonlFileContentSourceContent>? content,
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (content != null) #content: content,

@@ -18,7 +18,7 @@ class EvalStoredCompletionsSourceMapper
         _instance = EvalStoredCompletionsSourceMapper._(),
       );
       MetadataMapper.ensureInitialized();
-      EvalStoredCompletionsSourceTypeTypeMapper.ensureInitialized();
+      EvalStoredCompletionsSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -58,18 +58,18 @@ class EvalStoredCompletionsSourceMapper
     _$limit,
     opt: true,
   );
-  static EvalStoredCompletionsSourceTypeType _$type(
+  static EvalStoredCompletionsSourceType _$type(
     EvalStoredCompletionsSource v,
   ) => v.type;
   static const Field<
     EvalStoredCompletionsSource,
-    EvalStoredCompletionsSourceTypeType
+    EvalStoredCompletionsSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalStoredCompletionsSourceTypeType.storedCompletions,
+    def: EvalStoredCompletionsSourceType.storedCompletions,
   );
 
   @override
@@ -178,7 +178,7 @@ abstract class EvalStoredCompletionsSourceCopyWith<
     int? createdAfter,
     int? createdBefore,
     int? limit,
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
   });
   EvalStoredCompletionsSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -212,7 +212,7 @@ class _EvalStoredCompletionsSourceCopyWithImpl<$R, $Out>
     Object? createdAfter = $none,
     Object? createdBefore = $none,
     Object? limit = $none,
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (metadata != $none) #metadata: metadata,

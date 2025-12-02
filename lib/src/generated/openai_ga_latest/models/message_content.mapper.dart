@@ -78,7 +78,7 @@ class MessageContentImageFileMapper
         _instance = MessageContentImageFileMapper._(),
       );
       MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentTypeTypeMapper.ensureInitialized();
+      MessageContentTypeMapper.ensureInitialized();
       MessageContentImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -87,8 +87,8 @@ class MessageContentImageFileMapper
   @override
   final String id = 'MessageContentImageFile';
 
-  static MessageContentTypeType _$type(MessageContentImageFile v) => v.type;
-  static const Field<MessageContentImageFile, MessageContentTypeType> _f$type =
+  static MessageContentType _$type(MessageContentImageFile v) => v.type;
+  static const Field<MessageContentImageFile, MessageContentType> _f$type =
       Field('type', _$type);
   static MessageContentImageFile _$messageContentImageFile(
     MessageContentImageFile v,
@@ -203,7 +203,7 @@ abstract class MessageContentImageFileCopyWith<
   get messageContentImageFile;
   @override
   $R call({
-    MessageContentTypeType? type,
+    MessageContentType? type,
     MessageContentImageFile? messageContentImageFile,
   });
   MessageContentImageFileCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -231,7 +231,7 @@ class _MessageContentImageFileCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    MessageContentTypeType? type,
+    MessageContentType? type,
     MessageContentImageFile? messageContentImageFile,
   }) => $apply(
     FieldCopyWithData({
@@ -264,7 +264,7 @@ class MessageContentImageUrlMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageContentImageUrlMapper._());
       MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentTypeType2Mapper.ensureInitialized();
+      MessageContentType2Mapper.ensureInitialized();
       MessageContentImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -273,8 +273,8 @@ class MessageContentImageUrlMapper
   @override
   final String id = 'MessageContentImageUrl';
 
-  static MessageContentTypeType2 _$type(MessageContentImageUrl v) => v.type;
-  static const Field<MessageContentImageUrl, MessageContentTypeType2> _f$type =
+  static MessageContentType2 _$type(MessageContentImageUrl v) => v.type;
+  static const Field<MessageContentImageUrl, MessageContentType2> _f$type =
       Field('type', _$type);
   static MessageContentImageUrl _$messageContentImageUrl(
     MessageContentImageUrl v,
@@ -389,7 +389,7 @@ abstract class MessageContentImageUrlCopyWith<
   get messageContentImageUrl;
   @override
   $R call({
-    MessageContentTypeType2? type,
+    MessageContentType2? type,
     MessageContentImageUrl? messageContentImageUrl,
   });
   MessageContentImageUrlCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -417,7 +417,7 @@ class _MessageContentImageUrlCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    MessageContentTypeType2? type,
+    MessageContentType2? type,
     MessageContentImageUrl? messageContentImageUrl,
   }) => $apply(
     FieldCopyWithData({
@@ -449,7 +449,7 @@ class MessageContentTextMapper extends SubClassMapperBase<MessageContentText> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageContentTextMapper._());
       MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentTypeType3Mapper.ensureInitialized();
+      MessageContentType3Mapper.ensureInitialized();
       MessageContentTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -458,9 +458,11 @@ class MessageContentTextMapper extends SubClassMapperBase<MessageContentText> {
   @override
   final String id = 'MessageContentText';
 
-  static MessageContentTypeType3 _$type(MessageContentText v) => v.type;
-  static const Field<MessageContentText, MessageContentTypeType3> _f$type =
-      Field('type', _$type);
+  static MessageContentType3 _$type(MessageContentText v) => v.type;
+  static const Field<MessageContentText, MessageContentType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static MessageContentText _$messageContentText(MessageContentText v) =>
       v.messageContentText;
   static const Field<MessageContentText, MessageContentText>
@@ -569,10 +571,7 @@ abstract class MessageContentTextCopyWith<
   MessageContentTextCopyWith<$R, MessageContentText, MessageContentText>
   get messageContentText;
   @override
-  $R call({
-    MessageContentTypeType3? type,
-    MessageContentText? messageContentText,
-  });
+  $R call({MessageContentType3? type, MessageContentText? messageContentText});
   MessageContentTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -593,7 +592,7 @@ class _MessageContentTextCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    MessageContentTypeType3? type,
+    MessageContentType3? type,
     MessageContentText? messageContentText,
   }) => $apply(
     FieldCopyWithData({
@@ -625,7 +624,7 @@ class MessageContentRefusalMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageContentRefusalMapper._());
       MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentTypeType4Mapper.ensureInitialized();
+      MessageContentType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -633,8 +632,8 @@ class MessageContentRefusalMapper
   @override
   final String id = 'MessageContentRefusal';
 
-  static MessageContentTypeType4 _$type(MessageContentRefusal v) => v.type;
-  static const Field<MessageContentRefusal, MessageContentTypeType4> _f$type =
+  static MessageContentType4 _$type(MessageContentRefusal v) => v.type;
+  static const Field<MessageContentRefusal, MessageContentType4> _f$type =
       Field('type', _$type);
   static String _$refusal(MessageContentRefusal v) => v.refusal;
   static const Field<MessageContentRefusal, String> _f$refusal = Field(
@@ -738,7 +737,7 @@ abstract class MessageContentRefusalCopyWith<
 >
     implements MessageContentCopyWith<$R, $In, $Out> {
   @override
-  $R call({MessageContentTypeType4? type, String? refusal});
+  $R call({MessageContentType4? type, String? refusal});
   MessageContentRefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -753,7 +752,7 @@ class _MessageContentRefusalCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentRefusal> $mapper =
       MessageContentRefusalMapper.ensureInitialized();
   @override
-  $R call({MessageContentTypeType4? type, String? refusal}) => $apply(
+  $R call({MessageContentType4? type, String? refusal}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (refusal != null) #refusal: refusal,

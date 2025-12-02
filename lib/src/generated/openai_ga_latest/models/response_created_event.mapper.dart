@@ -14,7 +14,7 @@ class ResponseCreatedEventMapper extends ClassMapperBase<ResponseCreatedEvent> {
   static ResponseCreatedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseCreatedEventMapper._());
-      ResponseCreatedEventTypeTypeMapper.ensureInitialized();
+      ResponseCreatedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,9 @@ class ResponseCreatedEventMapper extends ClassMapperBase<ResponseCreatedEvent> {
   @override
   final String id = 'ResponseCreatedEvent';
 
-  static ResponseCreatedEventTypeType _$type(ResponseCreatedEvent v) => v.type;
-  static const Field<ResponseCreatedEvent, ResponseCreatedEventTypeType>
-  _f$type = Field('type', _$type);
+  static ResponseCreatedEventType _$type(ResponseCreatedEvent v) => v.type;
+  static const Field<ResponseCreatedEvent, ResponseCreatedEventType> _f$type =
+      Field('type', _$type);
   static ResponseModel _$response(ResponseCreatedEvent v) => v.response;
   static const Field<ResponseCreatedEvent, ResponseModel> _f$response = Field(
     'response',
@@ -129,7 +129,7 @@ abstract class ResponseCreatedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseCreatedEventTypeType? type,
+    ResponseCreatedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   });
@@ -151,7 +151,7 @@ class _ResponseCreatedEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseCreatedEventTypeType? type,
+    ResponseCreatedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   }) => $apply(

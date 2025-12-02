@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_response_completed_data.dart';
 import 'webhook_response_completed_object_object_enum.dart';
-import 'webhook_response_completed_type_type.dart';
+import 'webhook_response_completed_type.dart';
 
 part 'webhook_response_completed.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookResponseCompleted with WebhookResponseCompletedMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookResponseCompletedData webhookResponseCompletedData;
-  final WebhookResponseCompletedTypeType type;
+  final WebhookResponseCompletedType type;
   @MappableField(key: 'object')
   final WebhookResponseCompletedObjectObjectEnum? objectEnum;
 

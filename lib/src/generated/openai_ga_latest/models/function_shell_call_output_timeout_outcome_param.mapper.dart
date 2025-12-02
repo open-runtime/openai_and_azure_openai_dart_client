@@ -17,7 +17,7 @@ class FunctionShellCallOutputTimeoutOutcomeParamMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputTimeoutOutcomeParamMapper._(),
       );
-      FunctionShellCallOutputTimeoutOutcomeParamTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputTimeoutOutcomeParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class FunctionShellCallOutputTimeoutOutcomeParamMapper
   @override
   final String id = 'FunctionShellCallOutputTimeoutOutcomeParam';
 
-  static FunctionShellCallOutputTimeoutOutcomeParamTypeType _$type(
+  static FunctionShellCallOutputTimeoutOutcomeParamType _$type(
     FunctionShellCallOutputTimeoutOutcomeParam v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputTimeoutOutcomeParam,
-    FunctionShellCallOutputTimeoutOutcomeParamTypeType
+    FunctionShellCallOutputTimeoutOutcomeParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputTimeoutOutcomeParamTypeType.timeout,
+    def: FunctionShellCallOutputTimeoutOutcomeParamType.timeout,
   );
 
   @override
@@ -142,7 +142,7 @@ abstract class FunctionShellCallOutputTimeoutOutcomeParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FunctionShellCallOutputTimeoutOutcomeParamTypeType? type});
+  $R call({FunctionShellCallOutputTimeoutOutcomeParamType? type});
   FunctionShellCallOutputTimeoutOutcomeParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -167,7 +167,7 @@ class _FunctionShellCallOutputTimeoutOutcomeParamCopyWithImpl<$R, $Out>
   $mapper =
       FunctionShellCallOutputTimeoutOutcomeParamMapper.ensureInitialized();
   @override
-  $R call({FunctionShellCallOutputTimeoutOutcomeParamTypeType? type}) =>
+  $R call({FunctionShellCallOutputTimeoutOutcomeParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   FunctionShellCallOutputTimeoutOutcomeParam $make(CopyWithData data) =>

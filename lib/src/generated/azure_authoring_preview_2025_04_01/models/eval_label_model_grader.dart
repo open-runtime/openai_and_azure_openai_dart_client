@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item.dart';
-import 'eval_label_model_grader_type_type.dart';
+import 'eval_label_model_grader_type.dart';
 
 part 'eval_label_model_grader.mapper.dart';
 
@@ -27,7 +27,7 @@ class EvalLabelModelGrader with EvalLabelModelGraderMappable {
   final String name;
   @MappableField(key: 'passing_labels')
   final List<String> passingLabels;
-  final EvalLabelModelGraderTypeType type;
+  final EvalLabelModelGraderType type;
 
   static EvalLabelModelGrader fromJson(Map<String, dynamic> json) => EvalLabelModelGraderMapper.fromJson(json);
 

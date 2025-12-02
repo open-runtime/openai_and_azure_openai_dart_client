@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'locked_status_type_type.dart';
+import 'locked_status_type.dart';
 
 part 'locked_status.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'locked_status.mapper.dart';
 class LockedStatus with LockedStatusMappable {
   const LockedStatus({
     required this.reason,
-    this.type = LockedStatusTypeType.locked,
+    this.type = LockedStatusType.locked,
   });
 
   final String? reason;
-  final LockedStatusTypeType type;
+  final LockedStatusType type;
 
   static LockedStatus fromJson(Map<String, dynamic> json) => LockedStatusMapper.fromJson(json);
 

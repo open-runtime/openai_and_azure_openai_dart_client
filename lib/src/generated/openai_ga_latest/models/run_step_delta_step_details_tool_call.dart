@@ -6,17 +6,17 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_tool_call_code_interpreter.dart';
 import 'run_step_delta_step_details_tool_call_function.dart';
-import 'run_step_delta_step_details_tool_call_type_type.dart';
-import 'run_step_delta_step_details_tool_call_type_type2.dart';
-import 'run_step_delta_step_details_tool_call_type_type3.dart';
+import 'run_step_delta_step_details_tool_call_type.dart';
+import 'run_step_delta_step_details_tool_call_type2.dart';
+import 'run_step_delta_step_details_tool_call_type3.dart';
 import 'run_step_delta_step_details_tool_calls_code_object.dart';
 import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';
-import 'run_step_delta_step_details_tool_calls_code_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_code_object_type.dart';
 import 'run_step_delta_step_details_tool_calls_file_search_object.dart';
-import 'run_step_delta_step_details_tool_calls_file_search_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_file_search_object_type.dart';
 import 'run_step_delta_step_details_tool_calls_function_object.dart';
 import 'run_step_delta_step_details_tool_calls_function_object_function.dart';
-import 'run_step_delta_step_details_tool_calls_function_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_delta_step_details_tool_call.mapper.dart';
 
@@ -60,7 +60,7 @@ class RunStepDeltaStepDetailsToolCallCodeInterpreter extends RunStepDeltaStepDet
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallTypeType type;
+  final RunStepDeltaStepDetailsToolCallType type;
   @MappableField(key: 'code_interpreter')
   final RunStepDeltaStepDetailsToolCallCodeInterpreter? runStepDeltaStepDetailsToolCallCodeInterpreter;
 
@@ -77,7 +77,7 @@ class RunStepDeltaStepDetailsToolCallFileSearch extends RunStepDeltaStepDetailsT
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallTypeType2 type;
+  final RunStepDeltaStepDetailsToolCallType2 type;
   @MappableField(key: 'file_search')
   final dynamic fileSearch;
 
@@ -94,7 +94,7 @@ class RunStepDeltaStepDetailsToolCallFunction extends RunStepDeltaStepDetailsToo
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallTypeType3 type;
+  final RunStepDeltaStepDetailsToolCallType3 type;
   @MappableField(key: 'function')
   final RunStepDeltaStepDetailsToolCallFunction? runStepDeltaStepDetailsToolCallFunction;
 

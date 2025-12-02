@@ -15,7 +15,7 @@ class EvalItemContentContentMapper
   static EvalItemContentContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalItemContentContentMapper._());
-      ContentTypeTypeMapper.ensureInitialized();
+      ContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,8 +23,8 @@ class EvalItemContentContentMapper
   @override
   final String id = 'EvalItemContentContent';
 
-  static ContentTypeType _$type(EvalItemContentContent v) => v.type;
-  static const Field<EvalItemContentContent, ContentTypeType> _f$type = Field(
+  static ContentType _$type(EvalItemContentContent v) => v.type;
+  static const Field<EvalItemContentContent, ContentType> _f$type = Field(
     'type',
     _$type,
   );
@@ -121,7 +121,7 @@ abstract class EvalItemContentContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ContentTypeType? type, String? text});
+  $R call({ContentType? type, String? text});
   EvalItemContentContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -137,7 +137,7 @@ class _EvalItemContentContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalItemContentContent> $mapper =
       EvalItemContentContentMapper.ensureInitialized();
   @override
-  $R call({ContentTypeType? type, String? text}) => $apply(
+  $R call({ContentType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

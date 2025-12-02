@@ -17,7 +17,7 @@ class MessageContentDeltaImageFileMapper
       MapperContainer.globals.use(
         _instance = MessageContentDeltaImageFileMapper._(),
       );
-      MessageContentDeltaImageFileDetailDetailMapper.ensureInitialized();
+      MessageContentDeltaImageFileDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class MessageContentDeltaImageFileMapper
   @override
   final String id = 'MessageContentDeltaImageFile';
 
-  static MessageContentDeltaImageFileDetailDetail _$detail(
+  static MessageContentDeltaImageFileDetail _$detail(
     MessageContentDeltaImageFile v,
   ) => v.detail;
   static const Field<
     MessageContentDeltaImageFile,
-    MessageContentDeltaImageFileDetailDetail
+    MessageContentDeltaImageFileDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentDeltaImageFileDetailDetail.auto,
+    def: MessageContentDeltaImageFileDetail.auto,
   );
   static String? _$fileId(MessageContentDeltaImageFile v) => v.fileId;
   static const Field<MessageContentDeltaImageFile, String> _f$fileId = Field(
@@ -136,7 +136,7 @@ abstract class MessageContentDeltaImageFileCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({MessageContentDeltaImageFileDetailDetail? detail, String? fileId});
+  $R call({MessageContentDeltaImageFileDetail? detail, String? fileId});
   MessageContentDeltaImageFileCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -161,7 +161,7 @@ class _MessageContentDeltaImageFileCopyWithImpl<$R, $Out>
       MessageContentDeltaImageFileMapper.ensureInitialized();
   @override
   $R call({
-    MessageContentDeltaImageFileDetailDetail? detail,
+    MessageContentDeltaImageFileDetail? detail,
     Object? fileId = $none,
   }) => $apply(
     FieldCopyWithData({

@@ -93,7 +93,7 @@ class CreateChatCompletionRequestToolsUnionFunctionMapper
       );
       CreateChatCompletionRequestToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionToolTypeTypeMapper.ensureInitialized();
+      ChatCompletionToolTypeMapper.ensureInitialized();
       FunctionObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -102,12 +102,12 @@ class CreateChatCompletionRequestToolsUnionFunctionMapper
   @override
   final String id = 'CreateChatCompletionRequestToolsUnionFunction';
 
-  static ChatCompletionToolTypeType _$type(
+  static ChatCompletionToolType _$type(
     CreateChatCompletionRequestToolsUnionFunction v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestToolsUnionFunction,
-    ChatCompletionToolTypeType
+    ChatCompletionToolType
   >
   _f$type = Field('type', _$type);
   static FunctionObject _$functionField(
@@ -238,7 +238,7 @@ abstract class CreateChatCompletionRequestToolsUnionFunctionCopyWith<
     implements CreateChatCompletionRequestToolsUnionCopyWith<$R, $In, $Out> {
   FunctionObjectCopyWith<$R, FunctionObject, FunctionObject> get functionField;
   @override
-  $R call({ChatCompletionToolTypeType? type, FunctionObject? functionField});
+  $R call({ChatCompletionToolType? type, FunctionObject? functionField});
   CreateChatCompletionRequestToolsUnionFunctionCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -271,7 +271,7 @@ class _CreateChatCompletionRequestToolsUnionFunctionCopyWithImpl<$R, $Out>
   get functionField =>
       $value.functionField.copyWith.$chain((v) => call(functionField: v));
   @override
-  $R call({ChatCompletionToolTypeType? type, FunctionObject? functionField}) =>
+  $R call({ChatCompletionToolType? type, FunctionObject? functionField}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,
@@ -311,7 +311,7 @@ class CreateChatCompletionRequestToolsUnionCustomMapper
       );
       CreateChatCompletionRequestToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CustomToolChatCompletionsTypeTypeMapper.ensureInitialized();
+      CustomToolChatCompletionsTypeMapper.ensureInitialized();
       CustomToolChatCompletionsCustomMapper.ensureInitialized();
     }
     return _instance!;
@@ -320,12 +320,12 @@ class CreateChatCompletionRequestToolsUnionCustomMapper
   @override
   final String id = 'CreateChatCompletionRequestToolsUnionCustom';
 
-  static CustomToolChatCompletionsTypeType _$type(
+  static CustomToolChatCompletionsType _$type(
     CreateChatCompletionRequestToolsUnionCustom v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestToolsUnionCustom,
-    CustomToolChatCompletionsTypeType
+    CustomToolChatCompletionsType
   >
   _f$type = Field('type', _$type);
   static CustomToolChatCompletionsCustom _$customToolChatCompletionsCustom(
@@ -471,7 +471,7 @@ abstract class CreateChatCompletionRequestToolsUnionCustomCopyWith<
   get customToolChatCompletionsCustom;
   @override
   $R call({
-    CustomToolChatCompletionsTypeType? type,
+    CustomToolChatCompletionsType? type,
     CustomToolChatCompletionsCustom? customToolChatCompletionsCustom,
   });
   CreateChatCompletionRequestToolsUnionCustomCopyWith<$R2, $In, $Out2>
@@ -509,7 +509,7 @@ class _CreateChatCompletionRequestToolsUnionCustomCopyWithImpl<$R, $Out>
       .$chain((v) => call(customToolChatCompletionsCustom: v));
   @override
   $R call({
-    CustomToolChatCompletionsTypeType? type,
+    CustomToolChatCompletionsType? type,
     CustomToolChatCompletionsCustom? customToolChatCompletionsCustom,
   }) => $apply(
     FieldCopyWithData({

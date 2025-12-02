@@ -101,7 +101,7 @@ class ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMes
             ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper._(),
       );
       ChatCompletionRequestSystemMessageContentPartUnionMapper.ensureInitialized();
-      ChatCompletionRequestMessageContentPartTextTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -110,13 +110,13 @@ class ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMes
   final String id =
       'ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartText';
 
-  static ChatCompletionRequestMessageContentPartTextTypeType _$type(
+  static ChatCompletionRequestMessageContentPartTextType _$type(
     ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartText
     v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartText,
-    ChatCompletionRequestMessageContentPartTextTypeType
+    ChatCompletionRequestMessageContentPartTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -268,7 +268,7 @@ abstract class ChatCompletionRequestSystemMessageContentPartUnionChatCompletionR
         > {
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   });
   ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartTextCopyWith<
@@ -309,7 +309,7 @@ class _ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMe
       ChatCompletionRequestSystemMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({

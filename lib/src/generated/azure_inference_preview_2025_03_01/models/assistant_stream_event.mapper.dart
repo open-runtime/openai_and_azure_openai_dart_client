@@ -84,7 +84,7 @@ class AssistantStreamEventErrorMapper
         _instance = AssistantStreamEventErrorMapper._(),
       );
       AssistantStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantStreamEventEventEventMapper.ensureInitialized();
+      AssistantStreamEventEventMapper.ensureInitialized();
       ErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -93,9 +93,9 @@ class AssistantStreamEventErrorMapper
   @override
   final String id = 'AssistantStreamEventError';
 
-  static AssistantStreamEventEventEvent _$event(AssistantStreamEventError v) =>
+  static AssistantStreamEventEvent _$event(AssistantStreamEventError v) =>
       v.event;
-  static const Field<AssistantStreamEventError, AssistantStreamEventEventEvent>
+  static const Field<AssistantStreamEventError, AssistantStreamEventEvent>
   _f$event = Field('event', _$event);
   static Error _$data(AssistantStreamEventError v) => v.data;
   static const Field<AssistantStreamEventError, Error> _f$data = Field(
@@ -204,7 +204,7 @@ abstract class AssistantStreamEventErrorCopyWith<
     implements AssistantStreamEventCopyWith<$R, $In, $Out> {
   ErrorCopyWith<$R, Error, Error> get data;
   @override
-  $R call({AssistantStreamEventEventEvent? event, Error? data});
+  $R call({AssistantStreamEventEvent? event, Error? data});
   AssistantStreamEventErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -223,7 +223,7 @@ class _AssistantStreamEventErrorCopyWithImpl<$R, $Out>
   ErrorCopyWith<$R, Error, Error> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({AssistantStreamEventEventEvent? event, Error? data}) => $apply(
+  $R call({AssistantStreamEventEvent? event, Error? data}) => $apply(
     FieldCopyWithData({
       if (event != null) #event: event,
       if (data != null) #data: data,
@@ -253,8 +253,8 @@ class AssistantStreamEventDoneMapper
         _instance = AssistantStreamEventDoneMapper._(),
       );
       AssistantStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantStreamEventEventEvent2Mapper.ensureInitialized();
-      AssistantStreamEventDataDataMapper.ensureInitialized();
+      AssistantStreamEventEvent2Mapper.ensureInitialized();
+      AssistantStreamEventDataMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -262,13 +262,12 @@ class AssistantStreamEventDoneMapper
   @override
   final String id = 'AssistantStreamEventDone';
 
-  static AssistantStreamEventEventEvent2 _$event(AssistantStreamEventDone v) =>
+  static AssistantStreamEventEvent2 _$event(AssistantStreamEventDone v) =>
       v.event;
-  static const Field<AssistantStreamEventDone, AssistantStreamEventEventEvent2>
+  static const Field<AssistantStreamEventDone, AssistantStreamEventEvent2>
   _f$event = Field('event', _$event);
-  static AssistantStreamEventDataData _$data(AssistantStreamEventDone v) =>
-      v.data;
-  static const Field<AssistantStreamEventDone, AssistantStreamEventDataData>
+  static AssistantStreamEventData _$data(AssistantStreamEventDone v) => v.data;
+  static const Field<AssistantStreamEventDone, AssistantStreamEventData>
   _f$data = Field('data', _$data);
 
   @override
@@ -367,10 +366,7 @@ abstract class AssistantStreamEventDoneCopyWith<
 >
     implements AssistantStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    AssistantStreamEventEventEvent2? event,
-    AssistantStreamEventDataData? data,
-  });
+  $R call({AssistantStreamEventEvent2? event, AssistantStreamEventData? data});
   AssistantStreamEventDoneCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -387,8 +383,8 @@ class _AssistantStreamEventDoneCopyWithImpl<$R, $Out>
       AssistantStreamEventDoneMapper.ensureInitialized();
   @override
   $R call({
-    AssistantStreamEventEventEvent2? event,
-    AssistantStreamEventDataData? data,
+    AssistantStreamEventEvent2? event,
+    AssistantStreamEventData? data,
   }) => $apply(
     FieldCopyWithData({
       if (event != null) #event: event,

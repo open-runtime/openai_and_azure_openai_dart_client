@@ -83,7 +83,7 @@ class RealtimeTruncationUnionVariant1Mapper
         _instance = RealtimeTruncationUnionVariant1Mapper._(),
       );
       RealtimeTruncationUnionMapper.ensureInitialized();
-      RealtimeTruncationUnionVariant1TypeTypeMapper.ensureInitialized();
+      RealtimeTruncationUnionVariant1TypeMapper.ensureInitialized();
       RealtimeTruncationUnionVariant1TokenLimitsMapper.ensureInitialized();
     }
     return _instance!;
@@ -92,12 +92,12 @@ class RealtimeTruncationUnionVariant1Mapper
   @override
   final String id = 'RealtimeTruncationUnionVariant1';
 
-  static RealtimeTruncationUnionVariant1TypeType _$type(
+  static RealtimeTruncationUnionVariant1Type _$type(
     RealtimeTruncationUnionVariant1 v,
   ) => v.type;
   static const Field<
     RealtimeTruncationUnionVariant1,
-    RealtimeTruncationUnionVariant1TypeType
+    RealtimeTruncationUnionVariant1Type
   >
   _f$type = Field('type', _$type);
   static num _$retentionRatio(RealtimeTruncationUnionVariant1 v) =>
@@ -226,7 +226,7 @@ abstract class RealtimeTruncationUnionVariant1CopyWith<
   get realtimeTruncationUnionVariant1TokenLimits;
   @override
   $R call({
-    RealtimeTruncationUnionVariant1TypeType? type,
+    RealtimeTruncationUnionVariant1Type? type,
     num? retentionRatio,
     RealtimeTruncationUnionVariant1TokenLimits?
     realtimeTruncationUnionVariant1TokenLimits,
@@ -265,7 +265,7 @@ class _RealtimeTruncationUnionVariant1CopyWithImpl<$R, $Out>
       .$chain((v) => call(realtimeTruncationUnionVariant1TokenLimits: v));
   @override
   $R call({
-    RealtimeTruncationUnionVariant1TypeType? type,
+    RealtimeTruncationUnionVariant1Type? type,
     num? retentionRatio,
     Object? realtimeTruncationUnionVariant1TokenLimits = $none,
   }) => $apply(

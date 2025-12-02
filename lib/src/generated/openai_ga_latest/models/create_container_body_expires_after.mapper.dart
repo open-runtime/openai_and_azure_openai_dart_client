@@ -17,7 +17,7 @@ class CreateContainerBodyExpiresAfterMapper
       MapperContainer.globals.use(
         _instance = CreateContainerBodyExpiresAfterMapper._(),
       );
-      CreateContainerBodyExpiresAfterAnchorAnchorMapper.ensureInitialized();
+      CreateContainerBodyExpiresAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class CreateContainerBodyExpiresAfterMapper
   @override
   final String id = 'CreateContainerBodyExpiresAfter';
 
-  static CreateContainerBodyExpiresAfterAnchorAnchor _$anchor(
+  static CreateContainerBodyExpiresAfterAnchor _$anchor(
     CreateContainerBodyExpiresAfter v,
   ) => v.anchor;
   static const Field<
     CreateContainerBodyExpiresAfter,
-    CreateContainerBodyExpiresAfterAnchorAnchor
+    CreateContainerBodyExpiresAfterAnchor
   >
   _f$anchor = Field('anchor', _$anchor);
   static int _$minutes(CreateContainerBodyExpiresAfter v) => v.minutes;
@@ -134,7 +134,7 @@ abstract class CreateContainerBodyExpiresAfterCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({CreateContainerBodyExpiresAfterAnchorAnchor? anchor, int? minutes});
+  $R call({CreateContainerBodyExpiresAfterAnchor? anchor, int? minutes});
   CreateContainerBodyExpiresAfterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -158,15 +158,13 @@ class _CreateContainerBodyExpiresAfterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CreateContainerBodyExpiresAfter> $mapper =
       CreateContainerBodyExpiresAfterMapper.ensureInitialized();
   @override
-  $R call({
-    CreateContainerBodyExpiresAfterAnchorAnchor? anchor,
-    int? minutes,
-  }) => $apply(
-    FieldCopyWithData({
-      if (anchor != null) #anchor: anchor,
-      if (minutes != null) #minutes: minutes,
-    }),
-  );
+  $R call({CreateContainerBodyExpiresAfterAnchor? anchor, int? minutes}) =>
+      $apply(
+        FieldCopyWithData({
+          if (anchor != null) #anchor: anchor,
+          if (minutes != null) #minutes: minutes,
+        }),
+      );
   @override
   CreateContainerBodyExpiresAfter $make(CopyWithData data) =>
       CreateContainerBodyExpiresAfter(

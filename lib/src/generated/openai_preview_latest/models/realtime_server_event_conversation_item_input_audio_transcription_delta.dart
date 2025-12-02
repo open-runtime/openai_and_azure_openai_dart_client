@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'log_prob_properties.dart';
 import 'realtime_server_event.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_delta_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_delta_type.dart';
 
 part 'realtime_server_event_conversation_item_input_audio_transcription_delta.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDelta with Realt
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeType type;
+  final RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

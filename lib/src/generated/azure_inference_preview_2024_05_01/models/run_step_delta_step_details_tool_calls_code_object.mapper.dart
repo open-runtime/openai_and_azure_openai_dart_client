@@ -17,7 +17,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsCodeObjectMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsCodeObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper.ensureInitialized();
     }
     return _instance!;
@@ -30,12 +30,12 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
       v.indexField;
   static const Field<RunStepDeltaStepDetailsToolCallsCodeObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsCodeObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeObjectType _$type(
     RunStepDeltaStepDetailsToolCallsCodeObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeObject,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$id(RunStepDeltaStepDetailsToolCallsCodeObject v) => v.id;
@@ -180,7 +180,7 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeObjectCopyWith<
   get runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeObjectType? type,
     String? id,
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter?
     runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
@@ -224,7 +224,7 @@ class _RunStepDeltaStepDetailsToolCallsCodeObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeObjectType? type,
     Object? id = $none,
     Object? runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter = $none,
   }) => $apply(

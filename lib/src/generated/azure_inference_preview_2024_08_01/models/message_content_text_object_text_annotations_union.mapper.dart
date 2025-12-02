@@ -103,7 +103,7 @@ class MessageContentTextObjectTextAnnotationsUnionFileCitationMapper
       );
       MessageContentTextObjectTextAnnotationsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageContentTextAnnotationsFileCitationObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -112,12 +112,12 @@ class MessageContentTextObjectTextAnnotationsUnionFileCitationMapper
   @override
   final String id = 'MessageContentTextObjectTextAnnotationsUnionFileCitation';
 
-  static MessageContentTextAnnotationsFileCitationObjectTypeType _$type(
+  static MessageContentTextAnnotationsFileCitationObjectType _$type(
     MessageContentTextObjectTextAnnotationsUnionFileCitation v,
   ) => v.type;
   static const Field<
     MessageContentTextObjectTextAnnotationsUnionFileCitation,
-    MessageContentTextAnnotationsFileCitationObjectTypeType
+    MessageContentTextAnnotationsFileCitationObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -310,7 +310,7 @@ abstract class MessageContentTextObjectTextAnnotationsUnionFileCitationCopyWith<
   get messageContentTextAnnotationsFileCitationObjectFileCitation;
   @override
   $R call({
-    MessageContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageContentTextAnnotationsFileCitationObjectFileCitation?
     messageContentTextAnnotationsFileCitationObjectFileCitation,
@@ -369,7 +369,7 @@ class _MessageContentTextObjectTextAnnotationsUnionFileCitationCopyWithImpl<
       );
   @override
   $R call({
-    MessageContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageContentTextAnnotationsFileCitationObjectFileCitation?
     messageContentTextAnnotationsFileCitationObjectFileCitation,
@@ -430,7 +430,7 @@ class MessageContentTextObjectTextAnnotationsUnionFilePathMapper
       );
       MessageContentTextObjectTextAnnotationsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageContentTextAnnotationsFilePathObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -439,12 +439,12 @@ class MessageContentTextObjectTextAnnotationsUnionFilePathMapper
   @override
   final String id = 'MessageContentTextObjectTextAnnotationsUnionFilePath';
 
-  static MessageContentTextAnnotationsFilePathObjectTypeType _$type(
+  static MessageContentTextAnnotationsFilePathObjectType _$type(
     MessageContentTextObjectTextAnnotationsUnionFilePath v,
   ) => v.type;
   static const Field<
     MessageContentTextObjectTextAnnotationsUnionFilePath,
-    MessageContentTextAnnotationsFilePathObjectTypeType
+    MessageContentTextAnnotationsFilePathObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -628,7 +628,7 @@ abstract class MessageContentTextObjectTextAnnotationsUnionFilePathCopyWith<
   get messageContentTextAnnotationsFilePathObjectFilePath;
   @override
   $R call({
-    MessageContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageContentTextAnnotationsFilePathObjectFilePath?
     messageContentTextAnnotationsFilePathObjectFilePath,
@@ -681,7 +681,7 @@ class _MessageContentTextObjectTextAnnotationsUnionFilePathCopyWithImpl<
       );
   @override
   $R call({
-    MessageContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageContentTextAnnotationsFilePathObjectFilePath?
     messageContentTextAnnotationsFilePathObjectFilePath,

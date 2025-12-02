@@ -111,7 +111,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnio
             CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Mapper._(),
       );
       CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
-      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeTypeMapper.ensureInitialized();
+      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -120,14 +120,14 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnio
   final String id =
       'CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1';
 
-  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type
   _$type(
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1
     v,
   ) => v.type;
   static const Field<
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type
   >
   _f$type = Field('type', _$type);
 
@@ -269,7 +269,7 @@ abstract class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStr
         > {
   @override
   $R call({
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType?
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type?
     type,
   });
   CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1CopyWith<
@@ -310,7 +310,7 @@ class _CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUni
       CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Mapper.ensureInitialized();
   @override
   $R call({
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1TypeType?
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type?
     type,
   }) => $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
@@ -350,7 +350,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnio
             CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Mapper._(),
       );
       CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionMapper.ensureInitialized();
-      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeTypeMapper.ensureInitialized();
+      CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeMapper.ensureInitialized();
       CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMapper.ensureInitialized();
     }
     return _instance!;
@@ -360,14 +360,14 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnio
   final String id =
       'CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2';
 
-  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type
   _$type(
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2
     v,
   ) => v.type;
   static const Field<
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2,
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type
   >
   _f$type = Field('type', _$type);
   static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static
@@ -538,7 +538,7 @@ abstract class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStr
   get createThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static;
   @override
   $R call({
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType?
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type?
     type,
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static?
     createThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static,
@@ -596,7 +596,7 @@ class _CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUni
       );
   @override
   $R call({
-    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2TypeType?
+    CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Type?
     type,
     CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static?
     createThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static,

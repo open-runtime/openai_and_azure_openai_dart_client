@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'output_content.dart';
-import 'output_text_content_type_type.dart';
+import 'output_text_content_type.dart';
 
 part 'output_text_content.mapper.dart';
 
@@ -16,12 +16,12 @@ class OutputTextContent with OutputTextContentMappable {
   const OutputTextContent({
     required this.text,
     required this.annotations,
-    this.type = OutputTextContentTypeType.outputText,
+    this.type = OutputTextContentType.outputText,
   });
 
   final String text;
   final List<Annotation> annotations;
-  final OutputTextContentTypeType type;
+  final OutputTextContentType type;
 
   static OutputTextContent fromJson(Map<String, dynamic> json) => OutputTextContentMapper.fromJson(json);
 

@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_completions_run_data_source_input_messages_union_variant1_template_union.dart';
-import 'create_eval_completions_run_data_source_input_messages_union_variant1_type_type.dart';
-import 'create_eval_completions_run_data_source_input_messages_union_variant2_type_type.dart';
+import 'create_eval_completions_run_data_source_input_messages_union_variant1_type.dart';
+import 'create_eval_completions_run_data_source_input_messages_union_variant2_type.dart';
 
 part 'create_eval_completions_run_data_source_input_messages_union.mapper.dart';
 
@@ -35,7 +35,7 @@ extension CreateEvalCompletionsRunDataSourceInputMessagesUnionDeserializer on Cr
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1 extends CreateEvalCompletionsRunDataSourceInputMessagesUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Mappable {
-  final CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TypeType type;
+  final CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type type;
   final List<CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion> template;
 
   const CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1({
@@ -46,7 +46,7 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1 extends Creat
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant2 extends CreateEvalCompletionsRunDataSourceInputMessagesUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant2Mappable {
-  final CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant2TypeType type;
+  final CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant2Type type;
   @MappableField(key: 'item_reference')
   final String itemReference;
 

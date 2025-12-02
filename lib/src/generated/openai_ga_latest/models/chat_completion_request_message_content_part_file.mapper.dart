@@ -17,7 +17,7 @@ class ChatCompletionRequestMessageContentPartFileMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartFileMapper._(),
       );
-      ChatCompletionRequestMessageContentPartFileTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartFileTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartFileFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ChatCompletionRequestMessageContentPartFileMapper
   @override
   final String id = 'ChatCompletionRequestMessageContentPartFile';
 
-  static ChatCompletionRequestMessageContentPartFileTypeType _$type(
+  static ChatCompletionRequestMessageContentPartFileType _$type(
     ChatCompletionRequestMessageContentPartFile v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestMessageContentPartFile,
-    ChatCompletionRequestMessageContentPartFileTypeType
+    ChatCompletionRequestMessageContentPartFileType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionRequestMessageContentPartFileFile
@@ -170,7 +170,7 @@ abstract class ChatCompletionRequestMessageContentPartFileCopyWith<
   >
   get chatCompletionRequestMessageContentPartFileFile;
   $R call({
-    ChatCompletionRequestMessageContentPartFileTypeType? type,
+    ChatCompletionRequestMessageContentPartFileType? type,
     ChatCompletionRequestMessageContentPartFileFile?
     chatCompletionRequestMessageContentPartFileFile,
   });
@@ -209,7 +209,7 @@ class _ChatCompletionRequestMessageContentPartFileCopyWithImpl<$R, $Out>
       .$chain((v) => call(chatCompletionRequestMessageContentPartFileFile: v));
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartFileTypeType? type,
+    ChatCompletionRequestMessageContentPartFileType? type,
     ChatCompletionRequestMessageContentPartFileFile?
     chatCompletionRequestMessageContentPartFileFile,
   }) => $apply(

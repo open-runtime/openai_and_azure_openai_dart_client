@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'input_content.dart';
-import 'input_text_type_type.dart';
+import 'input_text_type.dart';
 
 part 'input_text.mapper.dart';
 
@@ -18,7 +18,7 @@ class InputText with InputTextMappable {
     required this.text,
   });
 
-  final InputTextTypeType type;
+  final InputTextType type;
   final String text;
 
   static InputText fromJson(Map<String, dynamic> json) => InputTextMapper.fromJson(json);

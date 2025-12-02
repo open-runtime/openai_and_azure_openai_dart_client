@@ -114,7 +114,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogsM
       );
       RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -131,12 +131,12 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogsM
     int
   >
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType _$type(
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogs v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogs,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$logs(
@@ -297,7 +297,7 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsU
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   });
   RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogsCopyWith<
@@ -339,7 +339,7 @@ class _RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionLogs
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? type,
     Object? logs = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -388,7 +388,7 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionImage
       );
       RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImageMapper.ensureInitialized();
     }
     return _instance!;
@@ -407,13 +407,13 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionImage
     int
   >
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType _$type(
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionImage
     v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionImage,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
@@ -593,7 +593,7 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsU
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type,
     RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
     runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage,
   });
@@ -649,7 +649,7 @@ class _RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnionImag
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type,
     Object? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage = $none,
   }) => $apply(
     FieldCopyWithData({

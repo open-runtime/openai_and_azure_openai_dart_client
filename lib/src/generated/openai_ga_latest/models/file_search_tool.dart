@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'file_search_tool_type_type.dart';
+import 'file_search_tool_type.dart';
 import 'filters.dart';
 import 'ranking_options.dart';
 import 'tool.dart';
@@ -19,7 +19,7 @@ class FileSearchTool with FileSearchToolMappable {
     this.maxNumResults,
     this.rankingOptions,
     this.filters,
-    this.type = FileSearchToolTypeType.fileSearch,
+    this.type = FileSearchToolType.fileSearch,
   });
 
   @MappableField(key: 'vector_store_ids')
@@ -29,7 +29,7 @@ class FileSearchTool with FileSearchToolMappable {
   @MappableField(key: 'ranking_options')
   final RankingOptions? rankingOptions;
   final Filters? filters;
-  final FileSearchToolTypeType type;
+  final FileSearchToolType type;
 
   static FileSearchTool fromJson(Map<String, dynamic> json) => FileSearchToolMapper.fromJson(json);
 

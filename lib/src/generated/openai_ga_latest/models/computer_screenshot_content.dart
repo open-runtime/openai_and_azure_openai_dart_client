@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'computer_screenshot_content_type_type.dart';
+import 'computer_screenshot_content_type.dart';
 
 part 'computer_screenshot_content.mapper.dart';
 
@@ -14,14 +14,14 @@ class ComputerScreenshotContent with ComputerScreenshotContentMappable {
   const ComputerScreenshotContent({
     required this.imageUrl,
     required this.fileId,
-    this.type = ComputerScreenshotContentTypeType.computerScreenshot,
+    this.type = ComputerScreenshotContentType.computerScreenshot,
   });
 
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
   final String? fileId;
-  final ComputerScreenshotContentTypeType type;
+  final ComputerScreenshotContentType type;
 
   static ComputerScreenshotContent fromJson(Map<String, dynamic> json) => ComputerScreenshotContentMapper.fromJson(json);
 

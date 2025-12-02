@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
 import 'response_stream_event.dart';
-import 'response_text_annotation_delta_event_type_type.dart';
+import 'response_text_annotation_delta_event_type.dart';
 
 part 'response_text_annotation_delta_event.mapper.dart';
 
@@ -22,7 +22,7 @@ class ResponseTextAnnotationDeltaEvent with ResponseTextAnnotationDeltaEventMapp
     required this.annotation,
   });
 
-  final ResponseTextAnnotationDeltaEventTypeType type;
+  final ResponseTextAnnotationDeltaEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

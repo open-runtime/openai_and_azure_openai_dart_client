@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'moderation_image_url_input_image_url.dart';
-import 'moderation_image_url_input_type_type.dart';
+import 'moderation_image_url_input_type.dart';
 
 part 'moderation_image_url_input.mapper.dart';
 
@@ -17,7 +17,7 @@ class ModerationImageUrlInput with ModerationImageUrlInputMappable {
     required this.moderationImageUrlInputImageUrl,
   });
 
-  final ModerationImageUrlInputTypeType type;
+  final ModerationImageUrlInputType type;
   @MappableField(key: 'image_url')
   final ModerationImageUrlInputImageUrl moderationImageUrlInputImageUrl;
 

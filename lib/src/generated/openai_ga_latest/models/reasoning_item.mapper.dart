@@ -14,10 +14,10 @@ class ReasoningItemMapper extends ClassMapperBase<ReasoningItem> {
   static ReasoningItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ReasoningItemMapper._());
-      ReasoningItemTypeTypeMapper.ensureInitialized();
+      ReasoningItemTypeMapper.ensureInitialized();
       SummaryMapper.ensureInitialized();
       ReasoningTextContentMapper.ensureInitialized();
-      ReasoningItemStatusStatusMapper.ensureInitialized();
+      ReasoningItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,8 +25,8 @@ class ReasoningItemMapper extends ClassMapperBase<ReasoningItem> {
   @override
   final String id = 'ReasoningItem';
 
-  static ReasoningItemTypeType _$type(ReasoningItem v) => v.type;
-  static const Field<ReasoningItem, ReasoningItemTypeType> _f$type = Field(
+  static ReasoningItemType _$type(ReasoningItem v) => v.type;
+  static const Field<ReasoningItem, ReasoningItemType> _f$type = Field(
     'type',
     _$type,
   );
@@ -47,9 +47,12 @@ class ReasoningItemMapper extends ClassMapperBase<ReasoningItem> {
   static List<ReasoningTextContent>? _$content(ReasoningItem v) => v.content;
   static const Field<ReasoningItem, List<ReasoningTextContent>> _f$content =
       Field('content', _$content, opt: true);
-  static ReasoningItemStatusStatus? _$status(ReasoningItem v) => v.status;
-  static const Field<ReasoningItem, ReasoningItemStatusStatus> _f$status =
-      Field('status', _$status, opt: true);
+  static ReasoningItemStatus? _$status(ReasoningItem v) => v.status;
+  static const Field<ReasoningItem, ReasoningItemStatus> _f$status = Field(
+    'status',
+    _$status,
+    opt: true,
+  );
 
   @override
   final MappableFields<ReasoningItem> fields = const {
@@ -146,12 +149,12 @@ abstract class ReasoningItemCopyWith<$R, $In extends ReasoningItem, $Out>
   >?
   get content;
   $R call({
-    ReasoningItemTypeType? type,
+    ReasoningItemType? type,
     String? id,
     List<Summary>? summary,
     String? encryptedContent,
     List<ReasoningTextContent>? content,
-    ReasoningItemStatusStatus? status,
+    ReasoningItemStatus? status,
   });
   ReasoningItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -186,7 +189,7 @@ class _ReasoningItemCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    ReasoningItemTypeType? type,
+    ReasoningItemType? type,
     String? id,
     List<Summary>? summary,
     Object? encryptedContent = $none,

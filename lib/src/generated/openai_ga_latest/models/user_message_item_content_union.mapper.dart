@@ -89,7 +89,7 @@ class UserMessageItemContentUnionInputTextMapper
       UserMessageItemContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      UserMessageInputTextTypeTypeMapper.ensureInitialized();
+      UserMessageInputTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -97,12 +97,12 @@ class UserMessageItemContentUnionInputTextMapper
   @override
   final String id = 'UserMessageItemContentUnionInputText';
 
-  static UserMessageInputTextTypeType _$type(
+  static UserMessageInputTextType _$type(
     UserMessageItemContentUnionInputText v,
   ) => v.type;
   static const Field<
     UserMessageItemContentUnionInputText,
-    UserMessageInputTextTypeType
+    UserMessageInputTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(UserMessageItemContentUnionInputText v) => v.text;
@@ -216,7 +216,7 @@ abstract class UserMessageItemContentUnionInputTextCopyWith<
 >
     implements UserMessageItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({UserMessageInputTextTypeType? type, String? text});
+  $R call({UserMessageInputTextType? type, String? text});
   UserMessageItemContentUnionInputTextCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -239,7 +239,7 @@ class _UserMessageItemContentUnionInputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserMessageItemContentUnionInputText> $mapper =
       UserMessageItemContentUnionInputTextMapper.ensureInitialized();
   @override
-  $R call({UserMessageInputTextTypeType? type, String? text}) => $apply(
+  $R call({UserMessageInputTextType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,
@@ -279,7 +279,7 @@ class UserMessageItemContentUnionQuotedTextMapper
       UserMessageItemContentUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      UserMessageQuotedTextTypeTypeMapper.ensureInitialized();
+      UserMessageQuotedTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -287,12 +287,12 @@ class UserMessageItemContentUnionQuotedTextMapper
   @override
   final String id = 'UserMessageItemContentUnionQuotedText';
 
-  static UserMessageQuotedTextTypeType _$type(
+  static UserMessageQuotedTextType _$type(
     UserMessageItemContentUnionQuotedText v,
   ) => v.type;
   static const Field<
     UserMessageItemContentUnionQuotedText,
-    UserMessageQuotedTextTypeType
+    UserMessageQuotedTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(UserMessageItemContentUnionQuotedText v) => v.text;
@@ -405,7 +405,7 @@ abstract class UserMessageItemContentUnionQuotedTextCopyWith<
 >
     implements UserMessageItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({UserMessageQuotedTextTypeType? type, String? text});
+  $R call({UserMessageQuotedTextType? type, String? text});
   UserMessageItemContentUnionQuotedTextCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -428,7 +428,7 @@ class _UserMessageItemContentUnionQuotedTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserMessageItemContentUnionQuotedText> $mapper =
       UserMessageItemContentUnionQuotedTextMapper.ensureInitialized();
   @override
-  $R call({UserMessageQuotedTextTypeType? type, String? text}) => $apply(
+  $R call({UserMessageQuotedTextType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

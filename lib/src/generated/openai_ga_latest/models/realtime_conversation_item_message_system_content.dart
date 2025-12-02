@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_conversation_item_message_system_content_type_type.dart';
+import 'realtime_conversation_item_message_system_content_type.dart';
 
 part 'realtime_conversation_item_message_system_content.mapper.dart';
 
@@ -15,7 +15,7 @@ class RealtimeConversationItemMessageSystemContent with RealtimeConversationItem
     this.text,
   });
 
-  final RealtimeConversationItemMessageSystemContentTypeType? type;
+  final RealtimeConversationItemMessageSystemContentType? type;
   final String? text;
 
   static RealtimeConversationItemMessageSystemContent fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageSystemContentMapper.fromJson(json);

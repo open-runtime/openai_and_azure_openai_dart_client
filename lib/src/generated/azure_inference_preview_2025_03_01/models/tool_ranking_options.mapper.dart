@@ -14,7 +14,7 @@ class ToolRankingOptionsMapper extends ClassMapperBase<ToolRankingOptions> {
   static ToolRankingOptionsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolRankingOptionsMapper._());
-      ToolRankingOptionsRankerRankerMapper.ensureInitialized();
+      ToolRankingOptionsRankerMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,15 +22,9 @@ class ToolRankingOptionsMapper extends ClassMapperBase<ToolRankingOptions> {
   @override
   final String id = 'ToolRankingOptions';
 
-  static ToolRankingOptionsRankerRanker _$ranker(ToolRankingOptions v) =>
-      v.ranker;
-  static const Field<ToolRankingOptions, ToolRankingOptionsRankerRanker>
-  _f$ranker = Field(
-    'ranker',
-    _$ranker,
-    opt: true,
-    def: ToolRankingOptionsRankerRanker.auto,
-  );
+  static ToolRankingOptionsRanker _$ranker(ToolRankingOptions v) => v.ranker;
+  static const Field<ToolRankingOptions, ToolRankingOptionsRanker> _f$ranker =
+      Field('ranker', _$ranker, opt: true, def: ToolRankingOptionsRanker.auto);
   static num _$scoreThreshold(ToolRankingOptions v) => v.scoreThreshold;
   static const Field<ToolRankingOptions, num> _f$scoreThreshold = Field(
     'scoreThreshold',
@@ -128,7 +122,7 @@ abstract class ToolRankingOptionsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ToolRankingOptionsRankerRanker? ranker, num? scoreThreshold});
+  $R call({ToolRankingOptionsRanker? ranker, num? scoreThreshold});
   ToolRankingOptionsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -143,13 +137,12 @@ class _ToolRankingOptionsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolRankingOptions> $mapper =
       ToolRankingOptionsMapper.ensureInitialized();
   @override
-  $R call({ToolRankingOptionsRankerRanker? ranker, num? scoreThreshold}) =>
-      $apply(
-        FieldCopyWithData({
-          if (ranker != null) #ranker: ranker,
-          if (scoreThreshold != null) #scoreThreshold: scoreThreshold,
-        }),
-      );
+  $R call({ToolRankingOptionsRanker? ranker, num? scoreThreshold}) => $apply(
+    FieldCopyWithData({
+      if (ranker != null) #ranker: ranker,
+      if (scoreThreshold != null) #scoreThreshold: scoreThreshold,
+    }),
+  );
   @override
   ToolRankingOptions $make(CopyWithData data) => ToolRankingOptions(
     ranker: data.get(#ranker, or: $value.ranker),

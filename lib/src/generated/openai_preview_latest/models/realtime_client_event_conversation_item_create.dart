@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_conversation_item_create_type_type.dart';
+import 'realtime_client_event_conversation_item_create_type.dart';
 import 'realtime_conversation_item.dart';
 
 part 'realtime_client_event_conversation_item_create.mapper.dart';
@@ -27,7 +27,7 @@ class RealtimeClientEventConversationItemCreate with RealtimeClientEventConversa
     this.previousItemId,
   });
 
-  final RealtimeClientEventConversationItemCreateTypeType type;
+  final RealtimeClientEventConversationItemCreateType type;
   final RealtimeConversationItem item;
   @MappableField(key: 'event_id')
   final String? eventId;

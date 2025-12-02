@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'vector_store_expiration_after_anchor_anchor.dart';
+import 'vector_store_expiration_after_anchor.dart';
 
 part 'vector_store_expiration_after.mapper.dart';
 
@@ -16,7 +16,7 @@ class VectorStoreExpirationAfter with VectorStoreExpirationAfterMappable {
     required this.days,
   });
 
-  final VectorStoreExpirationAfterAnchorAnchor anchor;
+  final VectorStoreExpirationAfterAnchor anchor;
   final int days;
 
   static VectorStoreExpirationAfter fromJson(Map<String, dynamic> json) => VectorStoreExpirationAfterMapper.fromJson(json);

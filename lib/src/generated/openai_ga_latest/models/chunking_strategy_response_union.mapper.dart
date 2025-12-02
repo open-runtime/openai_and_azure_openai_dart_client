@@ -89,7 +89,7 @@ class ChunkingStrategyResponseUnionStaticMapper
       ChunkingStrategyResponseUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      StaticChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
+      StaticChunkingStrategyResponseParamTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
     return _instance!;
@@ -98,12 +98,12 @@ class ChunkingStrategyResponseUnionStaticMapper
   @override
   final String id = 'ChunkingStrategyResponseUnionStatic';
 
-  static StaticChunkingStrategyResponseParamTypeType _$type(
+  static StaticChunkingStrategyResponseParamType _$type(
     ChunkingStrategyResponseUnionStatic v,
   ) => v.type;
   static const Field<
     ChunkingStrategyResponseUnionStatic,
-    StaticChunkingStrategyResponseParamTypeType
+    StaticChunkingStrategyResponseParamType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
@@ -229,7 +229,7 @@ abstract class ChunkingStrategyResponseUnionStaticCopyWith<
   get staticField;
   @override
   $R call({
-    StaticChunkingStrategyResponseParamTypeType? type,
+    StaticChunkingStrategyResponseParamType? type,
     StaticChunkingStrategy? staticField,
   });
   ChunkingStrategyResponseUnionStaticCopyWith<$R2, $In, $Out2>
@@ -263,7 +263,7 @@ class _ChunkingStrategyResponseUnionStaticCopyWithImpl<$R, $Out>
       $value.staticField.copyWith.$chain((v) => call(staticField: v));
   @override
   $R call({
-    StaticChunkingStrategyResponseParamTypeType? type,
+    StaticChunkingStrategyResponseParamType? type,
     StaticChunkingStrategy? staticField,
   }) => $apply(
     FieldCopyWithData({
@@ -305,7 +305,7 @@ class ChunkingStrategyResponseUnionOtherMapper
       ChunkingStrategyResponseUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      OtherChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
+      OtherChunkingStrategyResponseParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -313,12 +313,12 @@ class ChunkingStrategyResponseUnionOtherMapper
   @override
   final String id = 'ChunkingStrategyResponseUnionOther';
 
-  static OtherChunkingStrategyResponseParamTypeType _$type(
+  static OtherChunkingStrategyResponseParamType _$type(
     ChunkingStrategyResponseUnionOther v,
   ) => v.type;
   static const Field<
     ChunkingStrategyResponseUnionOther,
-    OtherChunkingStrategyResponseParamTypeType
+    OtherChunkingStrategyResponseParamType
   >
   _f$type = Field('type', _$type);
 
@@ -423,7 +423,7 @@ abstract class ChunkingStrategyResponseUnionOtherCopyWith<
 >
     implements ChunkingStrategyResponseUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({OtherChunkingStrategyResponseParamTypeType? type});
+  $R call({OtherChunkingStrategyResponseParamType? type});
   ChunkingStrategyResponseUnionOtherCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -446,7 +446,7 @@ class _ChunkingStrategyResponseUnionOtherCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ChunkingStrategyResponseUnionOther> $mapper =
       ChunkingStrategyResponseUnionOtherMapper.ensureInitialized();
   @override
-  $R call({OtherChunkingStrategyResponseParamTypeType? type}) =>
+  $R call({OtherChunkingStrategyResponseParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ChunkingStrategyResponseUnionOther $make(CopyWithData data) =>

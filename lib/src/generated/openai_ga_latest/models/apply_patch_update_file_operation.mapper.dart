@@ -17,7 +17,7 @@ class ApplyPatchUpdateFileOperationMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchUpdateFileOperationMapper._(),
       );
-      ApplyPatchUpdateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchUpdateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,18 +35,18 @@ class ApplyPatchUpdateFileOperationMapper
     'diff',
     _$diff,
   );
-  static ApplyPatchUpdateFileOperationTypeType _$type(
+  static ApplyPatchUpdateFileOperationType _$type(
     ApplyPatchUpdateFileOperation v,
   ) => v.type;
   static const Field<
     ApplyPatchUpdateFileOperation,
-    ApplyPatchUpdateFileOperationTypeType
+    ApplyPatchUpdateFileOperationType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchUpdateFileOperationTypeType.updateFile,
+    def: ApplyPatchUpdateFileOperationType.updateFile,
   );
 
   @override
@@ -145,7 +145,7 @@ abstract class ApplyPatchUpdateFileOperationCopyWith<
   $R call({
     String? path,
     String? diff,
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
   });
   ApplyPatchUpdateFileOperationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -173,7 +173,7 @@ class _ApplyPatchUpdateFileOperationCopyWithImpl<$R, $Out>
   $R call({
     String? path,
     String? diff,
-    ApplyPatchUpdateFileOperationTypeType? type,
+    ApplyPatchUpdateFileOperationType? type,
   }) => $apply(
     FieldCopyWithData({
       if (path != null) #path: path,

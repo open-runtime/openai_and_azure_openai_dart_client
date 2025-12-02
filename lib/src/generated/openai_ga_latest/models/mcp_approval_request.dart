@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'item_resource.dart';
-import 'mcp_approval_request_type_type.dart';
+import 'mcp_approval_request_type.dart';
 import 'output_item.dart';
 
 part 'mcp_approval_request.mapper.dart';
@@ -23,7 +23,7 @@ class McpApprovalRequest with McpApprovalRequestMappable {
     required this.arguments,
   });
 
-  final McpApprovalRequestTypeType type;
+  final McpApprovalRequestType type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

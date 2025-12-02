@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_completions_run_data_source_source_type_type.dart';
+import 'create_eval_completions_run_data_source_source_type.dart';
 
 part 'create_eval_completions_run_data_source_source.mapper.dart';
 
@@ -14,7 +14,7 @@ class CreateEvalCompletionsRunDataSourceSource with CreateEvalCompletionsRunData
     required this.type,
   });
 
-  final CreateEvalCompletionsRunDataSourceSourceTypeType type;
+  final CreateEvalCompletionsRunDataSourceSourceType type;
 
   static CreateEvalCompletionsRunDataSourceSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSourceMapper.fromJson(json);
 

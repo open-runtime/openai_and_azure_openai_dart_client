@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_file_file.dart';
-import 'chat_completion_request_message_content_part_file_type_type.dart';
+import 'chat_completion_request_message_content_part_file_type.dart';
 import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_file.mapper.dart';
@@ -19,7 +19,7 @@ class ChatCompletionRequestMessageContentPartFile with ChatCompletionRequestMess
     required this.chatCompletionRequestMessageContentPartFileFile,
   });
 
-  final ChatCompletionRequestMessageContentPartFileTypeType type;
+  final ChatCompletionRequestMessageContentPartFileType type;
   @MappableField(key: 'file')
   final ChatCompletionRequestMessageContentPartFileFile chatCompletionRequestMessageContentPartFileFile;
 

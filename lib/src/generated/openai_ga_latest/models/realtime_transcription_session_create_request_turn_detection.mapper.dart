@@ -23,7 +23,7 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper
         _instance =
             RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper._(),
       );
-      RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeTypeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -31,12 +31,12 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper
   @override
   final String id = 'RealtimeTranscriptionSessionCreateRequestTurnDetection';
 
-  static RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType? _$type(
+  static RealtimeTranscriptionSessionCreateRequestTurnDetectionType? _$type(
     RealtimeTranscriptionSessionCreateRequestTurnDetection v,
   ) => v.type;
   static const Field<
     RealtimeTranscriptionSessionCreateRequestTurnDetection,
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionType
   >
   _f$type = Field('type', _$type, opt: true);
   static num? _$threshold(
@@ -204,7 +204,7 @@ abstract class RealtimeTranscriptionSessionCreateRequestTurnDetectionCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType? type,
+    RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type,
     num? threshold,
     int? prefixPaddingMs,
     int? silenceDurationMs,

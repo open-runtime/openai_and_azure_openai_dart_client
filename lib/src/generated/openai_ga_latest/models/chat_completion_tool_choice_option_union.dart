@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_allowed_tools.dart';
-import 'chat_completion_allowed_tools_choice_type_type.dart';
+import 'chat_completion_allowed_tools_choice_type.dart';
 import 'chat_completion_named_tool_choice_custom_custom.dart';
-import 'chat_completion_named_tool_choice_custom_type_type.dart';
+import 'chat_completion_named_tool_choice_custom_type.dart';
 import 'chat_completion_named_tool_choice_function.dart';
-import 'chat_completion_named_tool_choice_type_type.dart';
+import 'chat_completion_named_tool_choice_type.dart';
 import 'chat_completion_allowed_tools_choice.dart';
 import 'chat_completion_named_tool_choice.dart';
 import 'chat_completion_named_tool_choice_custom.dart';
@@ -55,7 +55,7 @@ extension ChatCompletionToolChoiceOptionUnionDeserializer on ChatCompletionToolC
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoiceMappable {
-  final ChatCompletionAllowedToolsChoiceTypeType type;
+  final ChatCompletionAllowedToolsChoiceType type;
   @MappableField(key: 'allowed_tools')
   final ChatCompletionAllowedTools allowedTools;
 
@@ -67,7 +67,7 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionAllowedToolsChoice extend
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMappable {
-  final ChatCompletionNamedToolChoiceTypeType type;
+  final ChatCompletionNamedToolChoiceType type;
   @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction chatCompletionNamedToolChoiceFunction;
 
@@ -79,7 +79,7 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends C
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustom extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceCustomMappable {
-  final ChatCompletionNamedToolChoiceCustomTypeType type;
+  final ChatCompletionNamedToolChoiceCustomType type;
   @MappableField(key: 'custom')
   final ChatCompletionNamedToolChoiceCustomCustom chatCompletionNamedToolChoiceCustomCustom;
 

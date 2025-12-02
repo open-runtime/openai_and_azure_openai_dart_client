@@ -15,8 +15,8 @@ class OpenAiFileMapper extends ClassMapperBase<OpenAiFile> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OpenAiFileMapper._());
       OpenAiFileObjectObjectEnumMapper.ensureInitialized();
-      OpenAiFilePurposePurposeMapper.ensureInitialized();
-      OpenAiFileStatusStatusMapper.ensureInitialized();
+      OpenAiFilePurposeMapper.ensureInitialized();
+      OpenAiFileStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -42,13 +42,13 @@ class OpenAiFileMapper extends ClassMapperBase<OpenAiFile> {
   static OpenAiFileObjectObjectEnum _$objectEnum(OpenAiFile v) => v.objectEnum;
   static const Field<OpenAiFile, OpenAiFileObjectObjectEnum> _f$objectEnum =
       Field('objectEnum', _$objectEnum, key: r'object');
-  static OpenAiFilePurposePurpose _$purpose(OpenAiFile v) => v.purpose;
-  static const Field<OpenAiFile, OpenAiFilePurposePurpose> _f$purpose = Field(
+  static OpenAiFilePurpose _$purpose(OpenAiFile v) => v.purpose;
+  static const Field<OpenAiFile, OpenAiFilePurpose> _f$purpose = Field(
     'purpose',
     _$purpose,
   );
-  static OpenAiFileStatusStatus _$status(OpenAiFile v) => v.status;
-  static const Field<OpenAiFile, OpenAiFileStatusStatus> _f$status = Field(
+  static OpenAiFileStatus _$status(OpenAiFile v) => v.status;
+  static const Field<OpenAiFile, OpenAiFileStatus> _f$status = Field(
     'status',
     _$status,
   );
@@ -164,8 +164,8 @@ abstract class OpenAiFileCopyWith<$R, $In extends OpenAiFile, $Out>
     int? createdAt,
     String? filename,
     OpenAiFileObjectObjectEnum? objectEnum,
-    OpenAiFilePurposePurpose? purpose,
-    OpenAiFileStatusStatus? status,
+    OpenAiFilePurpose? purpose,
+    OpenAiFileStatus? status,
     int? expiresAt,
     String? statusDetails,
   });
@@ -187,8 +187,8 @@ class _OpenAiFileCopyWithImpl<$R, $Out>
     int? createdAt,
     String? filename,
     OpenAiFileObjectObjectEnum? objectEnum,
-    OpenAiFilePurposePurpose? purpose,
-    OpenAiFileStatusStatus? status,
+    OpenAiFilePurpose? purpose,
+    OpenAiFileStatus? status,
     Object? expiresAt = $none,
     Object? statusDetails = $none,
   }) => $apply(

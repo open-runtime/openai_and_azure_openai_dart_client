@@ -18,7 +18,7 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentTextAnnotationsFilePathObjectMapper._(),
       );
-      MessageDeltaContentTextAnnotationsFilePathObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -31,12 +31,12 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
       v.indexField;
   static const Field<MessageDeltaContentTextAnnotationsFilePathObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentTextAnnotationsFilePathObjectTypeType _$type(
+  static MessageDeltaContentTextAnnotationsFilePathObjectType _$type(
     MessageDeltaContentTextAnnotationsFilePathObject v,
   ) => v.type;
   static const Field<
     MessageDeltaContentTextAnnotationsFilePathObject,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType
+    MessageDeltaContentTextAnnotationsFilePathObjectType
   >
   _f$type = Field('type', _$type);
   static String? _$text(MessageDeltaContentTextAnnotationsFilePathObject v) =>
@@ -210,7 +210,7 @@ abstract class MessageDeltaContentTextAnnotationsFilePathObjectCopyWith<
   get messageDeltaContentTextAnnotationsFilePathObjectFilePath;
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFilePathObjectType? type,
     String? text,
     MessageDeltaContentTextAnnotationsFilePathObjectFilePath?
     messageDeltaContentTextAnnotationsFilePathObjectFilePath,
@@ -260,7 +260,7 @@ class _MessageDeltaContentTextAnnotationsFilePathObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextAnnotationsFilePathObjectTypeType? type,
+    MessageDeltaContentTextAnnotationsFilePathObjectType? type,
     Object? text = $none,
     Object? messageDeltaContentTextAnnotationsFilePathObjectFilePath = $none,
     Object? startIndex = $none,

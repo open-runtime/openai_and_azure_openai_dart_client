@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'message_content_delta_image_file_detail_detail.dart';
+import 'message_content_delta_image_file_detail.dart';
 
 part 'message_content_delta_image_file.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentDeltaImageFile with MessageContentDeltaImageFileMappable {
   const MessageContentDeltaImageFile({
-    this.detail = MessageContentDeltaImageFileDetailDetail.auto,
+    this.detail = MessageContentDeltaImageFileDetail.auto,
     this.fileId,
   });
 
-  final MessageContentDeltaImageFileDetailDetail detail;
+  final MessageContentDeltaImageFileDetail detail;
   @MappableField(key: 'file_id')
   final String? fileId;
 

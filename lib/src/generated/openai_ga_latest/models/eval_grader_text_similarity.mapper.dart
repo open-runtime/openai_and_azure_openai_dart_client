@@ -18,7 +18,7 @@ class EvalGraderTextSimilarityMapper
         _instance = EvalGraderTextSimilarityMapper._(),
       );
       GraderTextSimilarityEvaluationMetricEvaluationMetricMapper.ensureInitialized();
-      GraderTextSimilarityTypeTypeMapper.ensureInitialized();
+      GraderTextSimilarityTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -58,14 +58,13 @@ class EvalGraderTextSimilarityMapper
     _$passThreshold,
     key: r'pass_threshold',
   );
-  static GraderTextSimilarityTypeType _$type(EvalGraderTextSimilarity v) =>
-      v.type;
-  static const Field<EvalGraderTextSimilarity, GraderTextSimilarityTypeType>
+  static GraderTextSimilarityType _$type(EvalGraderTextSimilarity v) => v.type;
+  static const Field<EvalGraderTextSimilarity, GraderTextSimilarityType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: GraderTextSimilarityTypeType.textSimilarity,
+    def: GraderTextSimilarityType.textSimilarity,
   );
 
   @override
@@ -169,7 +168,7 @@ abstract class EvalGraderTextSimilarityCopyWith<
     String? reference,
     GraderTextSimilarityEvaluationMetricEvaluationMetric? evaluationMetric,
     num? passThreshold,
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
   });
   EvalGraderTextSimilarityCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -192,7 +191,7 @@ class _EvalGraderTextSimilarityCopyWithImpl<$R, $Out>
     String? reference,
     GraderTextSimilarityEvaluationMetricEvaluationMetric? evaluationMetric,
     num? passThreshold,
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,

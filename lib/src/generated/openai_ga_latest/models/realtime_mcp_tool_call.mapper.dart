@@ -14,7 +14,7 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
   static RealtimeMcpToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcpToolCallMapper._());
-      RealtimeMcpToolCallTypeTypeMapper.ensureInitialized();
+      RealtimeMcpToolCallTypeMapper.ensureInitialized();
       RealtimeMcpToolCallErrorUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
   @override
   final String id = 'RealtimeMcpToolCall';
 
-  static RealtimeMcpToolCallTypeType _$type(RealtimeMcpToolCall v) => v.type;
-  static const Field<RealtimeMcpToolCall, RealtimeMcpToolCallTypeType> _f$type =
+  static RealtimeMcpToolCallType _$type(RealtimeMcpToolCall v) => v.type;
+  static const Field<RealtimeMcpToolCall, RealtimeMcpToolCallType> _f$type =
       Field('type', _$type);
   static String _$id(RealtimeMcpToolCall v) => v.id;
   static const Field<RealtimeMcpToolCall, String> _f$id = Field('id', _$id);
@@ -169,7 +169,7 @@ abstract class RealtimeMcpToolCallCopyWith<
   >?
   get error;
   $R call({
-    RealtimeMcpToolCallTypeType? type,
+    RealtimeMcpToolCallType? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -200,7 +200,7 @@ class _RealtimeMcpToolCallCopyWithImpl<$R, $Out>
   get error => $value.error?.copyWith.$chain((v) => call(error: v));
   @override
   $R call({
-    RealtimeMcpToolCallTypeType? type,
+    RealtimeMcpToolCallType? type,
     String? id,
     String? serverLabel,
     String? name,

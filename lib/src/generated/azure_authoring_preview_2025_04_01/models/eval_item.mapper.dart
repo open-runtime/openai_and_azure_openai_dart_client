@@ -15,8 +15,8 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalItemMapper._());
       EvalItemContentContentMapper.ensureInitialized();
-      EvalItemRoleRoleMapper.ensureInitialized();
-      EvalItemTypeTypeMapper.ensureInitialized();
+      EvalItemRoleMapper.ensureInitialized();
+      EvalItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,13 +29,10 @@ class EvalItemMapper extends ClassMapperBase<EvalItem> {
     'content',
     _$content,
   );
-  static EvalItemRoleRole _$role(EvalItem v) => v.role;
-  static const Field<EvalItem, EvalItemRoleRole> _f$role = Field(
-    'role',
-    _$role,
-  );
-  static EvalItemTypeType? _$type(EvalItem v) => v.type;
-  static const Field<EvalItem, EvalItemTypeType> _f$type = Field(
+  static EvalItemRole _$role(EvalItem v) => v.role;
+  static const Field<EvalItem, EvalItemRole> _f$role = Field('role', _$role);
+  static EvalItemType? _$type(EvalItem v) => v.type;
+  static const Field<EvalItem, EvalItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
@@ -125,8 +122,8 @@ abstract class EvalItemCopyWith<$R, $In extends EvalItem, $Out>
   get content;
   $R call({
     EvalItemContentContent? content,
-    EvalItemRoleRole? role,
-    EvalItemTypeType? type,
+    EvalItemRole? role,
+    EvalItemType? type,
   });
   EvalItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -149,7 +146,7 @@ class _EvalItemCopyWithImpl<$R, $Out>
   @override
   $R call({
     EvalItemContentContent? content,
-    EvalItemRoleRole? role,
+    EvalItemRole? role,
     Object? type = $none,
   }) => $apply(
     FieldCopyWithData({

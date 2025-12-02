@@ -14,7 +14,7 @@ class UrlCitationBodyMapper extends ClassMapperBase<UrlCitationBody> {
   static UrlCitationBodyMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UrlCitationBodyMapper._());
-      UrlCitationBodyTypeTypeMapper.ensureInitialized();
+      UrlCitationBodyTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -41,12 +41,12 @@ class UrlCitationBodyMapper extends ClassMapperBase<UrlCitationBody> {
     'title',
     _$title,
   );
-  static UrlCitationBodyTypeType _$type(UrlCitationBody v) => v.type;
-  static const Field<UrlCitationBody, UrlCitationBodyTypeType> _f$type = Field(
+  static UrlCitationBodyType _$type(UrlCitationBody v) => v.type;
+  static const Field<UrlCitationBody, UrlCitationBodyType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: UrlCitationBodyTypeType.urlCitation,
+    def: UrlCitationBodyType.urlCitation,
   );
 
   @override
@@ -139,7 +139,7 @@ abstract class UrlCitationBodyCopyWith<$R, $In extends UrlCitationBody, $Out>
     int? startIndex,
     int? endIndex,
     String? title,
-    UrlCitationBodyTypeType? type,
+    UrlCitationBodyType? type,
   });
   UrlCitationBodyCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -160,7 +160,7 @@ class _UrlCitationBodyCopyWithImpl<$R, $Out>
     int? startIndex,
     int? endIndex,
     String? title,
-    UrlCitationBodyTypeType? type,
+    UrlCitationBodyType? type,
   }) => $apply(
     FieldCopyWithData({
       if (url != null) #url: url,

@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_transcription_session_create_request_turn_detection_type_type.dart';
-import 'realtime_transcription_session_create_request_turn_detection_eagerness_eagerness.dart';
+import 'realtime_transcription_session_create_request_turn_detection_type.dart';
+import 'realtime_transcription_session_create_request_turn_detection_eagerness.dart';
 
 part 'realtime_transcription_session_create_request_turn_detection.mapper.dart';
 
@@ -15,8 +15,8 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTransc
     this.threshold,
     this.prefixPaddingMs,
     this.silenceDurationMs,
-    this.type = RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType.serverVad,
-    this.eagerness = RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness.auto,
+    this.type = RealtimeTranscriptionSessionCreateRequestTurnDetectionType.serverVad,
+    this.eagerness = RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness.auto,
     this.createResponse = true,
     this.interruptResponse = true,
   });
@@ -26,8 +26,8 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTransc
   final int? prefixPaddingMs;
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
-  final RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeType type;
-  final RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessEagerness eagerness;
+  final RealtimeTranscriptionSessionCreateRequestTurnDetectionType type;
+  final RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness eagerness;
   @MappableField(key: 'create_response')
   final bool createResponse;
   @MappableField(key: 'interrupt_response')

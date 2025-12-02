@@ -14,7 +14,7 @@ class PredictionContentMapper extends ClassMapperBase<PredictionContent> {
   static PredictionContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = PredictionContentMapper._());
-      PredictionContentTypeTypeMapper.ensureInitialized();
+      PredictionContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class PredictionContentMapper extends ClassMapperBase<PredictionContent> {
   @override
   final String id = 'PredictionContent';
 
-  static PredictionContentTypeType _$type(PredictionContent v) => v.type;
-  static const Field<PredictionContent, PredictionContentTypeType> _f$type =
-      Field('type', _$type);
+  static PredictionContentType _$type(PredictionContent v) => v.type;
+  static const Field<PredictionContent, PredictionContentType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$content(PredictionContent v) => v.content;
   static const Field<PredictionContent, String> _f$content = Field(
     'content',
@@ -119,7 +121,7 @@ abstract class PredictionContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({PredictionContentTypeType? type, String? content});
+  $R call({PredictionContentType? type, String? content});
   PredictionContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -134,7 +136,7 @@ class _PredictionContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<PredictionContent> $mapper =
       PredictionContentMapper.ensureInitialized();
   @override
-  $R call({PredictionContentTypeType? type, String? content}) => $apply(
+  $R call({PredictionContentType? type, String? content}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (content != null) #content: content,

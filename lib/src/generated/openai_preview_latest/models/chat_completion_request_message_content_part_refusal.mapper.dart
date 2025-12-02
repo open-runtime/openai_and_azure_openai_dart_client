@@ -18,7 +18,7 @@ class ChatCompletionRequestMessageContentPartRefusalMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartRefusalMapper._(),
       );
-      ChatCompletionRequestMessageContentPartRefusalTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartRefusalTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class ChatCompletionRequestMessageContentPartRefusalMapper
   @override
   final String id = 'ChatCompletionRequestMessageContentPartRefusal';
 
-  static ChatCompletionRequestMessageContentPartRefusalTypeType _$type(
+  static ChatCompletionRequestMessageContentPartRefusalType _$type(
     ChatCompletionRequestMessageContentPartRefusal v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestMessageContentPartRefusal,
-    ChatCompletionRequestMessageContentPartRefusalTypeType
+    ChatCompletionRequestMessageContentPartRefusalType
   >
   _f$type = Field('type', _$type);
   static String _$refusal(ChatCompletionRequestMessageContentPartRefusal v) =>
@@ -154,7 +154,7 @@ abstract class ChatCompletionRequestMessageContentPartRefusalCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ChatCompletionRequestMessageContentPartRefusalTypeType? type,
+    ChatCompletionRequestMessageContentPartRefusalType? type,
     String? refusal,
   });
   ChatCompletionRequestMessageContentPartRefusalCopyWith<$R2, $In, $Out2>
@@ -186,7 +186,7 @@ class _ChatCompletionRequestMessageContentPartRefusalCopyWithImpl<$R, $Out>
       ChatCompletionRequestMessageContentPartRefusalMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartRefusalTypeType? type,
+    ChatCompletionRequestMessageContentPartRefusalType? type,
     String? refusal,
   }) => $apply(
     FieldCopyWithData({

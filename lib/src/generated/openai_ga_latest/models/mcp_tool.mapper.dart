@@ -14,7 +14,7 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
   static McpToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpToolMapper._());
-      McpToolTypeTypeMapper.ensureInitialized();
+      McpToolTypeMapper.ensureInitialized();
       McpToolRequireApprovalUnionMapper.ensureInitialized();
       McpToolConnectorIdConnectorIdMapper.ensureInitialized();
       McpToolAllowedToolsUnionMapper.ensureInitialized();
@@ -25,8 +25,8 @@ class McpToolMapper extends ClassMapperBase<McpTool> {
   @override
   final String id = 'McpTool';
 
-  static McpToolTypeType _$type(McpTool v) => v.type;
-  static const Field<McpTool, McpToolTypeType> _f$type = Field('type', _$type);
+  static McpToolType _$type(McpTool v) => v.type;
+  static const Field<McpTool, McpToolType> _f$type = Field('type', _$type);
   static String _$serverLabel(McpTool v) => v.serverLabel;
   static const Field<McpTool, String> _f$serverLabel = Field(
     'serverLabel',
@@ -184,7 +184,7 @@ abstract class McpToolCopyWith<$R, $In extends McpTool, $Out>
   >?
   get allowedTools;
   $R call({
-    McpToolTypeType? type,
+    McpToolType? type,
     String? serverLabel,
     McpToolRequireApprovalUnion? requireApproval,
     String? serverUrl,
@@ -232,7 +232,7 @@ class _McpToolCopyWithImpl<$R, $Out>
       $value.allowedTools?.copyWith.$chain((v) => call(allowedTools: v));
   @override
   $R call({
-    McpToolTypeType? type,
+    McpToolType? type,
     String? serverLabel,
     Object? requireApproval = $none,
     Object? serverUrl = $none,

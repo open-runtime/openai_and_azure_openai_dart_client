@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_response_cancel_type_type.dart';
+import 'realtime_client_event_response_cancel_type.dart';
 
 part 'realtime_client_event_response_cancel.mapper.dart';
 
@@ -21,7 +21,7 @@ class RealtimeClientEventResponseCancel with RealtimeClientEventResponseCancelMa
     this.responseId,
   });
 
-  final RealtimeClientEventResponseCancelTypeType type;
+  final RealtimeClientEventResponseCancelType type;
   @MappableField(key: 'event_id')
   final String? eventId;
   @MappableField(key: 'response_id')

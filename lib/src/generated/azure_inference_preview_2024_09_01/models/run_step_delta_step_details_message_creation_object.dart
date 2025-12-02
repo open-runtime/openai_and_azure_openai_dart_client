@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_message_creation_object_message_creation.dart';
-import 'run_step_delta_step_details_message_creation_object_type_type.dart';
+import 'run_step_delta_step_details_message_creation_object_type.dart';
 
 part 'run_step_delta_step_details_message_creation_object.mapper.dart';
 
@@ -17,7 +17,7 @@ class RunStepDeltaStepDetailsMessageCreationObject with RunStepDeltaStepDetailsM
     this.runStepDeltaStepDetailsMessageCreationObjectMessageCreation,
   });
 
-  final RunStepDeltaStepDetailsMessageCreationObjectTypeType type;
+  final RunStepDeltaStepDetailsMessageCreationObjectType type;
   @MappableField(key: 'message_creation')
   final RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? runStepDeltaStepDetailsMessageCreationObjectMessageCreation;
 

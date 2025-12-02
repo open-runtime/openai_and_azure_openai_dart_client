@@ -17,7 +17,7 @@ class EvalStoredCompletionsSourceMapper
       MapperContainer.globals.use(
         _instance = EvalStoredCompletionsSourceMapper._(),
       );
-      EvalStoredCompletionsSourceTypeTypeMapper.ensureInitialized();
+      EvalStoredCompletionsSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class EvalStoredCompletionsSourceMapper
   @override
   final String id = 'EvalStoredCompletionsSource';
 
-  static EvalStoredCompletionsSourceTypeType _$type(
+  static EvalStoredCompletionsSourceType _$type(
     EvalStoredCompletionsSource v,
   ) => v.type;
   static const Field<
     EvalStoredCompletionsSource,
-    EvalStoredCompletionsSourceTypeType
+    EvalStoredCompletionsSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalStoredCompletionsSourceTypeType.storedCompletions,
+    def: EvalStoredCompletionsSourceType.storedCompletions,
   );
   static int? _$createdAfter(EvalStoredCompletionsSource v) => v.createdAfter;
   static const Field<EvalStoredCompletionsSource, int> _f$createdAfter = Field(
@@ -171,7 +171,7 @@ abstract class EvalStoredCompletionsSourceCopyWith<
   MapCopyWith<$R, String, String, ObjectCopyWith<$R, String, String>>?
   get metadata;
   $R call({
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
     int? createdAfter,
     int? createdBefore,
     int? limit,
@@ -211,7 +211,7 @@ class _EvalStoredCompletionsSourceCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    EvalStoredCompletionsSourceTypeType? type,
+    EvalStoredCompletionsSourceType? type,
     Object? createdAfter = $none,
     Object? createdBefore = $none,
     Object? limit = $none,

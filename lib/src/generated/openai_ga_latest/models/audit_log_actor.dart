@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'audit_log_actor_api_key.dart';
 import 'audit_log_actor_session.dart';
-import 'audit_log_actor_type_type.dart';
+import 'audit_log_actor_type.dart';
 
 part 'audit_log_actor.mapper.dart';
 
@@ -19,7 +19,7 @@ class AuditLogActor with AuditLogActorMappable {
     this.apiKey,
   });
 
-  final AuditLogActorTypeType? type;
+  final AuditLogActorType? type;
   final AuditLogActorSession? session;
   @MappableField(key: 'api_key')
   final AuditLogActorApiKey? apiKey;

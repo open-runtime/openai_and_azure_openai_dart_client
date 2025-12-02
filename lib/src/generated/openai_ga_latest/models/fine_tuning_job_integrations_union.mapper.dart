@@ -88,7 +88,7 @@ class FineTuningJobIntegrationsUnionWandbMapper
       FineTuningJobIntegrationsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      FineTuningIntegrationTypeTypeMapper.ensureInitialized();
+      FineTuningIntegrationTypeMapper.ensureInitialized();
       FineTuningIntegrationWandbMapper.ensureInitialized();
     }
     return _instance!;
@@ -97,12 +97,12 @@ class FineTuningJobIntegrationsUnionWandbMapper
   @override
   final String id = 'FineTuningJobIntegrationsUnionWandb';
 
-  static FineTuningIntegrationTypeType _$type(
+  static FineTuningIntegrationType _$type(
     FineTuningJobIntegrationsUnionWandb v,
   ) => v.type;
   static const Field<
     FineTuningJobIntegrationsUnionWandb,
-    FineTuningIntegrationTypeType
+    FineTuningIntegrationType
   >
   _f$type = Field('type', _$type);
   static FineTuningIntegrationWandb _$fineTuningIntegrationWandb(
@@ -232,7 +232,7 @@ abstract class FineTuningJobIntegrationsUnionWandbCopyWith<
   get fineTuningIntegrationWandb;
   @override
   $R call({
-    FineTuningIntegrationTypeType? type,
+    FineTuningIntegrationType? type,
     FineTuningIntegrationWandb? fineTuningIntegrationWandb,
   });
   FineTuningJobIntegrationsUnionWandbCopyWith<$R2, $In, $Out2>
@@ -266,7 +266,7 @@ class _FineTuningJobIntegrationsUnionWandbCopyWithImpl<$R, $Out>
       .$chain((v) => call(fineTuningIntegrationWandb: v));
   @override
   $R call({
-    FineTuningIntegrationTypeType? type,
+    FineTuningIntegrationType? type,
     FineTuningIntegrationWandb? fineTuningIntegrationWandb,
   }) => $apply(
     FieldCopyWithData({

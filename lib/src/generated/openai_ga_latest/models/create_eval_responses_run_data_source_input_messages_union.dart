@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_responses_run_data_source_input_messages_union_variant1_template_union.dart';
-import 'create_eval_responses_run_data_source_input_messages_union_variant1_type_type.dart';
-import 'create_eval_responses_run_data_source_input_messages_union_variant2_type_type.dart';
+import 'create_eval_responses_run_data_source_input_messages_union_variant1_type.dart';
+import 'create_eval_responses_run_data_source_input_messages_union_variant2_type.dart';
 
 part 'create_eval_responses_run_data_source_input_messages_union.mapper.dart';
 
@@ -36,7 +36,7 @@ extension CreateEvalResponsesRunDataSourceInputMessagesUnionDeserializer on Crea
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1 extends CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mappable {
-  final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TypeType type;
+  final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type type;
   final List<CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnion> template;
 
   const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1({
@@ -47,7 +47,7 @@ class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1 extends CreateE
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2 extends CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mappable {
-  final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2TypeType type;
+  final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type type;
   @MappableField(key: 'item_reference')
   final String itemReference;
 

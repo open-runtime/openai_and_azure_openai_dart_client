@@ -83,7 +83,7 @@ class EvalItemContentUnionInputTextContentMapper
         _instance = EvalItemContentUnionInputTextContentMapper._(),
       );
       EvalItemContentUnionMapper.ensureInitialized();
-      InputTextContentTypeTypeMapper.ensureInitialized();
+      InputTextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -91,13 +91,9 @@ class EvalItemContentUnionInputTextContentMapper
   @override
   final String id = 'EvalItemContentUnionInputTextContent';
 
-  static InputTextContentTypeType _$type(
-    EvalItemContentUnionInputTextContent v,
-  ) => v.type;
-  static const Field<
-    EvalItemContentUnionInputTextContent,
-    InputTextContentTypeType
-  >
+  static InputTextContentType _$type(EvalItemContentUnionInputTextContent v) =>
+      v.type;
+  static const Field<EvalItemContentUnionInputTextContent, InputTextContentType>
   _f$type = Field('type', _$type);
   static String _$text(EvalItemContentUnionInputTextContent v) => v.text;
   static const Field<EvalItemContentUnionInputTextContent, String> _f$text =
@@ -202,7 +198,7 @@ abstract class EvalItemContentUnionInputTextContentCopyWith<
 >
     implements EvalItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({InputTextContentTypeType? type, String? text});
+  $R call({InputTextContentType? type, String? text});
   EvalItemContentUnionInputTextContentCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -225,7 +221,7 @@ class _EvalItemContentUnionInputTextContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalItemContentUnionInputTextContent> $mapper =
       EvalItemContentUnionInputTextContentMapper.ensureInitialized();
   @override
-  $R call({InputTextContentTypeType? type, String? text}) => $apply(
+  $R call({InputTextContentType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,
@@ -263,7 +259,7 @@ class EvalItemContentUnionVariant2Mapper
         _instance = EvalItemContentUnionVariant2Mapper._(),
       );
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemContentUnionVariant2TypeTypeMapper.ensureInitialized();
+      EvalItemContentUnionVariant2TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -271,12 +267,12 @@ class EvalItemContentUnionVariant2Mapper
   @override
   final String id = 'EvalItemContentUnionVariant2';
 
-  static EvalItemContentUnionVariant2TypeType _$type(
+  static EvalItemContentUnionVariant2Type _$type(
     EvalItemContentUnionVariant2 v,
   ) => v.type;
   static const Field<
     EvalItemContentUnionVariant2,
-    EvalItemContentUnionVariant2TypeType
+    EvalItemContentUnionVariant2Type
   >
   _f$type = Field('type', _$type);
   static String _$text(EvalItemContentUnionVariant2 v) => v.text;
@@ -376,7 +372,7 @@ abstract class EvalItemContentUnionVariant2CopyWith<
 >
     implements EvalItemContentUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({EvalItemContentUnionVariant2TypeType? type, String? text});
+  $R call({EvalItemContentUnionVariant2Type? type, String? text});
   EvalItemContentUnionVariant2CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -400,7 +396,7 @@ class _EvalItemContentUnionVariant2CopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalItemContentUnionVariant2> $mapper =
       EvalItemContentUnionVariant2Mapper.ensureInitialized();
   @override
-  $R call({EvalItemContentUnionVariant2TypeType? type, String? text}) => $apply(
+  $R call({EvalItemContentUnionVariant2Type? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,
@@ -430,7 +426,7 @@ class EvalItemContentUnionVariant3Mapper
         _instance = EvalItemContentUnionVariant3Mapper._(),
       );
       EvalItemContentUnionMapper.ensureInitialized();
-      EvalItemContentUnionVariant3TypeTypeMapper.ensureInitialized();
+      EvalItemContentUnionVariant3TypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -438,12 +434,12 @@ class EvalItemContentUnionVariant3Mapper
   @override
   final String id = 'EvalItemContentUnionVariant3';
 
-  static EvalItemContentUnionVariant3TypeType _$type(
+  static EvalItemContentUnionVariant3Type _$type(
     EvalItemContentUnionVariant3 v,
   ) => v.type;
   static const Field<
     EvalItemContentUnionVariant3,
-    EvalItemContentUnionVariant3TypeType
+    EvalItemContentUnionVariant3Type
   >
   _f$type = Field('type', _$type);
   static String _$imageUrl(EvalItemContentUnionVariant3 v) => v.imageUrl;
@@ -552,7 +548,7 @@ abstract class EvalItemContentUnionVariant3CopyWith<
     implements EvalItemContentUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    EvalItemContentUnionVariant3TypeType? type,
+    EvalItemContentUnionVariant3Type? type,
     String? imageUrl,
     String? detail,
   });
@@ -580,7 +576,7 @@ class _EvalItemContentUnionVariant3CopyWithImpl<$R, $Out>
       EvalItemContentUnionVariant3Mapper.ensureInitialized();
   @override
   $R call({
-    EvalItemContentUnionVariant3TypeType? type,
+    EvalItemContentUnionVariant3Type? type,
     String? imageUrl,
     Object? detail = $none,
   }) => $apply(
@@ -615,7 +611,7 @@ class EvalItemContentUnionInputAudioMapper
         _instance = EvalItemContentUnionInputAudioMapper._(),
       );
       EvalItemContentUnionMapper.ensureInitialized();
-      InputAudioTypeTypeMapper.ensureInitialized();
+      InputAudioTypeMapper.ensureInitialized();
       InputAudioInputAudioMapper.ensureInitialized();
     }
     return _instance!;
@@ -624,9 +620,9 @@ class EvalItemContentUnionInputAudioMapper
   @override
   final String id = 'EvalItemContentUnionInputAudio';
 
-  static InputAudioTypeType _$type(EvalItemContentUnionInputAudio v) => v.type;
-  static const Field<EvalItemContentUnionInputAudio, InputAudioTypeType>
-  _f$type = Field('type', _$type);
+  static InputAudioType _$type(EvalItemContentUnionInputAudio v) => v.type;
+  static const Field<EvalItemContentUnionInputAudio, InputAudioType> _f$type =
+      Field('type', _$type);
   static InputAudioInputAudio _$inputAudioInputAudio(
     EvalItemContentUnionInputAudio v,
   ) => v.inputAudioInputAudio;
@@ -735,10 +731,7 @@ abstract class EvalItemContentUnionInputAudioCopyWith<
   InputAudioInputAudioCopyWith<$R, InputAudioInputAudio, InputAudioInputAudio>
   get inputAudioInputAudio;
   @override
-  $R call({
-    InputAudioTypeType? type,
-    InputAudioInputAudio? inputAudioInputAudio,
-  });
+  $R call({InputAudioType? type, InputAudioInputAudio? inputAudioInputAudio});
   EvalItemContentUnionInputAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -767,16 +760,14 @@ class _EvalItemContentUnionInputAudioCopyWithImpl<$R, $Out>
     (v) => call(inputAudioInputAudio: v),
   );
   @override
-  $R call({
-    InputAudioTypeType? type,
-    InputAudioInputAudio? inputAudioInputAudio,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (inputAudioInputAudio != null)
-        #inputAudioInputAudio: inputAudioInputAudio,
-    }),
-  );
+  $R call({InputAudioType? type, InputAudioInputAudio? inputAudioInputAudio}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (inputAudioInputAudio != null)
+            #inputAudioInputAudio: inputAudioInputAudio,
+        }),
+      );
   @override
   EvalItemContentUnionInputAudio $make(CopyWithData data) =>
       EvalItemContentUnionInputAudio(

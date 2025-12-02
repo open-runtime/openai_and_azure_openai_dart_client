@@ -14,7 +14,7 @@ class RealtimeMcpListToolsMapper extends ClassMapperBase<RealtimeMcpListTools> {
   static RealtimeMcpListToolsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcpListToolsMapper._());
-      RealtimeMcpListToolsTypeTypeMapper.ensureInitialized();
+      RealtimeMcpListToolsTypeMapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,9 @@ class RealtimeMcpListToolsMapper extends ClassMapperBase<RealtimeMcpListTools> {
   @override
   final String id = 'RealtimeMcpListTools';
 
-  static RealtimeMcpListToolsTypeType _$type(RealtimeMcpListTools v) => v.type;
-  static const Field<RealtimeMcpListTools, RealtimeMcpListToolsTypeType>
-  _f$type = Field('type', _$type);
+  static RealtimeMcpListToolsType _$type(RealtimeMcpListTools v) => v.type;
+  static const Field<RealtimeMcpListTools, RealtimeMcpListToolsType> _f$type =
+      Field('type', _$type);
   static String _$serverLabel(RealtimeMcpListTools v) => v.serverLabel;
   static const Field<RealtimeMcpListTools, String> _f$serverLabel = Field(
     'serverLabel',
@@ -140,7 +140,7 @@ abstract class RealtimeMcpListToolsCopyWith<
   >
   get tools;
   $R call({
-    RealtimeMcpListToolsTypeType? type,
+    RealtimeMcpListToolsType? type,
     String? serverLabel,
     List<McpListToolsTool>? tools,
     String? id,
@@ -171,7 +171,7 @@ class _RealtimeMcpListToolsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RealtimeMcpListToolsTypeType? type,
+    RealtimeMcpListToolsType? type,
     String? serverLabel,
     List<McpListToolsTool>? tools,
     Object? id = $none,

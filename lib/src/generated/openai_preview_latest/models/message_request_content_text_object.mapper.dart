@@ -17,7 +17,7 @@ class MessageRequestContentTextObjectMapper
       MapperContainer.globals.use(
         _instance = MessageRequestContentTextObjectMapper._(),
       );
-      MessageRequestContentTextObjectTypeTypeMapper.ensureInitialized();
+      MessageRequestContentTextObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class MessageRequestContentTextObjectMapper
   @override
   final String id = 'MessageRequestContentTextObject';
 
-  static MessageRequestContentTextObjectTypeType _$type(
+  static MessageRequestContentTextObjectType _$type(
     MessageRequestContentTextObject v,
   ) => v.type;
   static const Field<
     MessageRequestContentTextObject,
-    MessageRequestContentTextObjectTypeType
+    MessageRequestContentTextObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(MessageRequestContentTextObject v) => v.text;
@@ -134,7 +134,7 @@ abstract class MessageRequestContentTextObjectCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({MessageRequestContentTextObjectTypeType? type, String? text});
+  $R call({MessageRequestContentTextObjectType? type, String? text});
   MessageRequestContentTextObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -158,13 +158,12 @@ class _MessageRequestContentTextObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageRequestContentTextObject> $mapper =
       MessageRequestContentTextObjectMapper.ensureInitialized();
   @override
-  $R call({MessageRequestContentTextObjectTypeType? type, String? text}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (text != null) #text: text,
-        }),
-      );
+  $R call({MessageRequestContentTextObjectType? type, String? text}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (text != null) #text: text,
+    }),
+  );
   @override
   MessageRequestContentTextObject $make(CopyWithData data) =>
       MessageRequestContentTextObject(

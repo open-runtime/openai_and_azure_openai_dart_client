@@ -14,8 +14,8 @@ class InputImageMapper extends ClassMapperBase<InputImage> {
   static InputImageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputImageMapper._());
-      InputImageTypeTypeMapper.ensureInitialized();
-      InputImageDetailDetailMapper.ensureInitialized();
+      InputImageTypeMapper.ensureInitialized();
+      InputImageDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,17 +23,17 @@ class InputImageMapper extends ClassMapperBase<InputImage> {
   @override
   final String id = 'InputImage';
 
-  static InputImageTypeType _$type(InputImage v) => v.type;
-  static const Field<InputImage, InputImageTypeType> _f$type = Field(
+  static InputImageType _$type(InputImage v) => v.type;
+  static const Field<InputImage, InputImageType> _f$type = Field(
     'type',
     _$type,
   );
-  static InputImageDetailDetail _$detail(InputImage v) => v.detail;
-  static const Field<InputImage, InputImageDetailDetail> _f$detail = Field(
+  static InputImageDetail _$detail(InputImage v) => v.detail;
+  static const Field<InputImage, InputImageDetail> _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: InputImageDetailDetail.auto,
+    def: InputImageDetail.auto,
   );
   static String? _$imageUrl(InputImage v) => v.imageUrl;
   static const Field<InputImage, String> _f$imageUrl = Field(
@@ -132,8 +132,8 @@ extension InputImageValueCopy<$R, $Out>
 abstract class InputImageCopyWith<$R, $In extends InputImage, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    InputImageTypeType? type,
-    InputImageDetailDetail? detail,
+    InputImageType? type,
+    InputImageDetail? detail,
     String? imageUrl,
     String? fileId,
   });
@@ -150,8 +150,8 @@ class _InputImageCopyWithImpl<$R, $Out>
       InputImageMapper.ensureInitialized();
   @override
   $R call({
-    InputImageTypeType? type,
-    InputImageDetailDetail? detail,
+    InputImageType? type,
+    InputImageDetail? detail,
     Object? imageUrl = $none,
     Object? fileId = $none,
   }) => $apply(

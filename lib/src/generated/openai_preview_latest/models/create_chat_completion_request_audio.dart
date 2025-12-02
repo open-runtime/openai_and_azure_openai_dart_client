@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'voice_ids_shared.dart';
-import 'create_chat_completion_request_audio_format_format.dart';
+import 'create_chat_completion_request_audio_format.dart';
 
 part 'create_chat_completion_request_audio.mapper.dart';
 
@@ -18,7 +18,7 @@ class CreateChatCompletionRequestAudio with CreateChatCompletionRequestAudioMapp
 
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
-  final CreateChatCompletionRequestAudioFormatFormat format;
+  final CreateChatCompletionRequestAudioFormat format;
 
   static CreateChatCompletionRequestAudio fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestAudioMapper.fromJson(json);
 

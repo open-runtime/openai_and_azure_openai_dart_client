@@ -15,7 +15,7 @@ class ResponseCompletedEventMapper
   static ResponseCompletedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseCompletedEventMapper._());
-      ResponseCompletedEventTypeTypeMapper.ensureInitialized();
+      ResponseCompletedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -24,9 +24,8 @@ class ResponseCompletedEventMapper
   @override
   final String id = 'ResponseCompletedEvent';
 
-  static ResponseCompletedEventTypeType _$type(ResponseCompletedEvent v) =>
-      v.type;
-  static const Field<ResponseCompletedEvent, ResponseCompletedEventTypeType>
+  static ResponseCompletedEventType _$type(ResponseCompletedEvent v) => v.type;
+  static const Field<ResponseCompletedEvent, ResponseCompletedEventType>
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseCompletedEvent v) => v.response;
   static const Field<ResponseCompletedEvent, ResponseModel> _f$response = Field(
@@ -131,7 +130,7 @@ abstract class ResponseCompletedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseCompletedEventTypeType? type,
+    ResponseCompletedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   });
@@ -154,7 +153,7 @@ class _ResponseCompletedEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseCompletedEventTypeType? type,
+    ResponseCompletedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   }) => $apply(

@@ -17,7 +17,7 @@ class ResponseMcpCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallCompletedEventMapper._(),
       );
-      ResponseMcpCallCompletedEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseMcpCallCompletedEventMapper
   @override
   final String id = 'ResponseMcpCallCompletedEvent';
 
-  static ResponseMcpCallCompletedEventTypeType _$type(
+  static ResponseMcpCallCompletedEventType _$type(
     ResponseMcpCallCompletedEvent v,
   ) => v.type;
   static const Field<
     ResponseMcpCallCompletedEvent,
-    ResponseMcpCallCompletedEventTypeType
+    ResponseMcpCallCompletedEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseMcpCallCompletedEvent v) => v.itemId;
@@ -146,7 +146,7 @@ abstract class ResponseMcpCallCompletedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpCallCompletedEventTypeType? type,
+    ResponseMcpCallCompletedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,
@@ -175,7 +175,7 @@ class _ResponseMcpCallCompletedEventCopyWithImpl<$R, $Out>
       ResponseMcpCallCompletedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpCallCompletedEventTypeType? type,
+    ResponseMcpCallCompletedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,

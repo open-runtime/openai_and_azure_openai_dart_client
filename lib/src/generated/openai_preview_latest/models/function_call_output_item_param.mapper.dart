@@ -17,8 +17,8 @@ class FunctionCallOutputItemParamMapper
       MapperContainer.globals.use(
         _instance = FunctionCallOutputItemParamMapper._(),
       );
-      FunctionCallOutputItemParamTypeTypeMapper.ensureInitialized();
-      FunctionCallOutputItemParamStatusStatusMapper.ensureInitialized();
+      FunctionCallOutputItemParamTypeMapper.ensureInitialized();
+      FunctionCallOutputItemParamStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,18 +37,18 @@ class FunctionCallOutputItemParamMapper
     'output',
     _$output,
   );
-  static FunctionCallOutputItemParamTypeType _$type(
+  static FunctionCallOutputItemParamType _$type(
     FunctionCallOutputItemParam v,
   ) => v.type;
   static const Field<
     FunctionCallOutputItemParam,
-    FunctionCallOutputItemParamTypeType
+    FunctionCallOutputItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionCallOutputItemParamTypeType.functionCallOutput,
+    def: FunctionCallOutputItemParamType.functionCallOutput,
   );
   static String? _$id(FunctionCallOutputItemParam v) => v.id;
   static const Field<FunctionCallOutputItemParam, String> _f$id = Field(
@@ -56,12 +56,12 @@ class FunctionCallOutputItemParamMapper
     _$id,
     opt: true,
   );
-  static FunctionCallOutputItemParamStatusStatus? _$status(
+  static FunctionCallOutputItemParamStatus? _$status(
     FunctionCallOutputItemParam v,
   ) => v.status;
   static const Field<
     FunctionCallOutputItemParam,
-    FunctionCallOutputItemParamStatusStatus
+    FunctionCallOutputItemParamStatus
   >
   _f$status = Field('status', _$status, opt: true);
 
@@ -165,9 +165,9 @@ abstract class FunctionCallOutputItemParamCopyWith<
   $R call({
     String? callId,
     String? output,
-    FunctionCallOutputItemParamTypeType? type,
+    FunctionCallOutputItemParamType? type,
     String? id,
-    FunctionCallOutputItemParamStatusStatus? status,
+    FunctionCallOutputItemParamStatus? status,
   });
   FunctionCallOutputItemParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -195,7 +195,7 @@ class _FunctionCallOutputItemParamCopyWithImpl<$R, $Out>
   $R call({
     String? callId,
     String? output,
-    FunctionCallOutputItemParamTypeType? type,
+    FunctionCallOutputItemParamType? type,
     Object? id = $none,
     Object? status = $none,
   }) => $apply(

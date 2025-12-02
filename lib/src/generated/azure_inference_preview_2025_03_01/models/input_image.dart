@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'input_content.dart';
-import 'input_image_detail_detail.dart';
-import 'input_image_type_type.dart';
+import 'input_image_detail.dart';
+import 'input_image_type.dart';
 
 part 'input_image.mapper.dart';
 
@@ -16,13 +16,13 @@ part 'input_image.mapper.dart';
 class InputImage with InputImageMappable {
   const InputImage({
     required this.type,
-    this.detail = InputImageDetailDetail.auto,
+    this.detail = InputImageDetail.auto,
     this.imageUrl,
     this.fileId,
   });
 
-  final InputImageTypeType type;
-  final InputImageDetailDetail detail;
+  final InputImageType type;
+  final InputImageDetail detail;
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')

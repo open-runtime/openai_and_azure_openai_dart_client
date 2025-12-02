@@ -15,12 +15,12 @@ import 'realtime_server_event_conversation_item_created.dart';
 import 'realtime_server_event_conversation_item_deleted.dart';
 import 'realtime_server_event_conversation_item_done.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_completed.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_completed_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_completed_type.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_completed_usage_union.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_delta.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_failed_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_failed_type.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_segment.dart';
 import 'realtime_server_event_conversation_item_retrieved.dart';
 import 'realtime_server_event_conversation_item_truncated.dart';
@@ -67,8 +67,8 @@ import 'realtime_server_event_session_created_session_union.dart';
 import 'realtime_server_event_session_union.dart';
 import 'realtime_server_event_session_updated.dart';
 import 'realtime_server_event_session_updated_session_union.dart';
-import 'realtime_server_event_type_type.dart';
-import 'realtime_server_event_type_type2.dart';
+import 'realtime_server_event_type.dart';
+import 'realtime_server_event_type2.dart';
 import 'realtime_server_event_usage_union.dart';
 
 part 'realtime_server_event.mapper.dart';
@@ -287,7 +287,7 @@ class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent wit
 class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType type;
+  final RealtimeServerEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')
@@ -333,7 +333,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends Re
 class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType2 type;
+  final RealtimeServerEventType2 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

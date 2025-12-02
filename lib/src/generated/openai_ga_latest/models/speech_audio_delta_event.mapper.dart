@@ -15,7 +15,7 @@ class SpeechAudioDeltaEventMapper
   static SpeechAudioDeltaEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = SpeechAudioDeltaEventMapper._());
-      SpeechAudioDeltaEventTypeTypeMapper.ensureInitialized();
+      SpeechAudioDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,10 +23,9 @@ class SpeechAudioDeltaEventMapper
   @override
   final String id = 'SpeechAudioDeltaEvent';
 
-  static SpeechAudioDeltaEventTypeType _$type(SpeechAudioDeltaEvent v) =>
-      v.type;
-  static const Field<SpeechAudioDeltaEvent, SpeechAudioDeltaEventTypeType>
-  _f$type = Field('type', _$type);
+  static SpeechAudioDeltaEventType _$type(SpeechAudioDeltaEvent v) => v.type;
+  static const Field<SpeechAudioDeltaEvent, SpeechAudioDeltaEventType> _f$type =
+      Field('type', _$type);
   static String _$audio(SpeechAudioDeltaEvent v) => v.audio;
   static const Field<SpeechAudioDeltaEvent, String> _f$audio = Field(
     'audio',
@@ -120,7 +119,7 @@ abstract class SpeechAudioDeltaEventCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({SpeechAudioDeltaEventTypeType? type, String? audio});
+  $R call({SpeechAudioDeltaEventType? type, String? audio});
   SpeechAudioDeltaEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -135,7 +134,7 @@ class _SpeechAudioDeltaEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<SpeechAudioDeltaEvent> $mapper =
       SpeechAudioDeltaEventMapper.ensureInitialized();
   @override
-  $R call({SpeechAudioDeltaEventTypeType? type, String? audio}) => $apply(
+  $R call({SpeechAudioDeltaEventType? type, String? audio}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (audio != null) #audio: audio,

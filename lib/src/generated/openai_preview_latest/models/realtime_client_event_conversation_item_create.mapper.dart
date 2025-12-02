@@ -17,7 +17,7 @@ class RealtimeClientEventConversationItemCreateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemCreateMapper._(),
       );
-      RealtimeClientEventConversationItemCreateTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventConversationItemCreateTypeMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class RealtimeClientEventConversationItemCreateMapper
   @override
   final String id = 'RealtimeClientEventConversationItemCreate';
 
-  static RealtimeClientEventConversationItemCreateTypeType _$type(
+  static RealtimeClientEventConversationItemCreateType _$type(
     RealtimeClientEventConversationItemCreate v,
   ) => v.type;
   static const Field<
     RealtimeClientEventConversationItemCreate,
-    RealtimeClientEventConversationItemCreateTypeType
+    RealtimeClientEventConversationItemCreateType
   >
   _f$type = Field('type', _$type);
   static RealtimeConversationItem _$item(
@@ -175,7 +175,7 @@ abstract class RealtimeClientEventConversationItemCreateCopyWith<
   >
   get item;
   $R call({
-    RealtimeClientEventConversationItemCreateTypeType? type,
+    RealtimeClientEventConversationItemCreateType? type,
     RealtimeConversationItem? item,
     String? eventId,
     String? previousItemId,
@@ -211,7 +211,7 @@ class _RealtimeClientEventConversationItemCreateCopyWithImpl<$R, $Out>
   get item => $value.item.copyWith.$chain((v) => call(item: v));
   @override
   $R call({
-    RealtimeClientEventConversationItemCreateTypeType? type,
+    RealtimeClientEventConversationItemCreateType? type,
     RealtimeConversationItem? item,
     Object? eventId = $none,
     Object? previousItemId = $none,

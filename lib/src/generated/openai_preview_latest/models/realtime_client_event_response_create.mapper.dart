@@ -17,7 +17,7 @@ class RealtimeClientEventResponseCreateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventResponseCreateMapper._(),
       );
-      RealtimeClientEventResponseCreateTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventResponseCreateTypeMapper.ensureInitialized();
       RealtimeResponseCreateParamsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class RealtimeClientEventResponseCreateMapper
   @override
   final String id = 'RealtimeClientEventResponseCreate';
 
-  static RealtimeClientEventResponseCreateTypeType _$type(
+  static RealtimeClientEventResponseCreateType _$type(
     RealtimeClientEventResponseCreate v,
   ) => v.type;
   static const Field<
     RealtimeClientEventResponseCreate,
-    RealtimeClientEventResponseCreateTypeType
+    RealtimeClientEventResponseCreateType
   >
   _f$type = Field('type', _$type);
   static String? _$eventId(RealtimeClientEventResponseCreate v) => v.eventId;
@@ -151,7 +151,7 @@ abstract class RealtimeClientEventResponseCreateCopyWith<
   >?
   get response;
   $R call({
-    RealtimeClientEventResponseCreateTypeType? type,
+    RealtimeClientEventResponseCreateType? type,
     String? eventId,
     RealtimeResponseCreateParams? response,
   });
@@ -186,7 +186,7 @@ class _RealtimeClientEventResponseCreateCopyWithImpl<$R, $Out>
   get response => $value.response?.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    RealtimeClientEventResponseCreateTypeType? type,
+    RealtimeClientEventResponseCreateType? type,
     Object? eventId = $none,
     Object? response = $none,
   }) => $apply(

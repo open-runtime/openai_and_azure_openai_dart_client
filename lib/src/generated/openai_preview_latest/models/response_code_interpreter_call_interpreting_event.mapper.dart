@@ -18,7 +18,7 @@ class ResponseCodeInterpreterCallInterpretingEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallInterpretingEventMapper._(),
       );
-      ResponseCodeInterpreterCallInterpretingEventTypeTypeMapper.ensureInitialized();
+      ResponseCodeInterpreterCallInterpretingEventTypeMapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class ResponseCodeInterpreterCallInterpretingEventMapper
   @override
   final String id = 'ResponseCodeInterpreterCallInterpretingEvent';
 
-  static ResponseCodeInterpreterCallInterpretingEventTypeType _$type(
+  static ResponseCodeInterpreterCallInterpretingEventType _$type(
     ResponseCodeInterpreterCallInterpretingEvent v,
   ) => v.type;
   static const Field<
     ResponseCodeInterpreterCallInterpretingEvent,
-    ResponseCodeInterpreterCallInterpretingEventTypeType
+    ResponseCodeInterpreterCallInterpretingEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseCodeInterpreterCallInterpretingEvent v) =>
@@ -173,7 +173,7 @@ abstract class ResponseCodeInterpreterCallInterpretingEventCopyWith<
   >
   get codeInterpreterCall;
   $R call({
-    ResponseCodeInterpreterCallInterpretingEventTypeType? type,
+    ResponseCodeInterpreterCallInterpretingEventType? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   });
@@ -215,7 +215,7 @@ class _ResponseCodeInterpreterCallInterpretingEventCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ResponseCodeInterpreterCallInterpretingEventTypeType? type,
+    ResponseCodeInterpreterCallInterpretingEventType? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   }) => $apply(

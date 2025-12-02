@@ -14,7 +14,7 @@ class OutputItemSummaryMapper extends ClassMapperBase<OutputItemSummary> {
   static OutputItemSummaryMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemSummaryMapper._());
-      OutputItemSummaryTypeTypeMapper.ensureInitialized();
+      OutputItemSummaryTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class OutputItemSummaryMapper extends ClassMapperBase<OutputItemSummary> {
   @override
   final String id = 'OutputItemSummary';
 
-  static OutputItemSummaryTypeType _$type(OutputItemSummary v) => v.type;
-  static const Field<OutputItemSummary, OutputItemSummaryTypeType> _f$type =
-      Field('type', _$type);
+  static OutputItemSummaryType _$type(OutputItemSummary v) => v.type;
+  static const Field<OutputItemSummary, OutputItemSummaryType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$text(OutputItemSummary v) => v.text;
   static const Field<OutputItemSummary, String> _f$text = Field('text', _$text);
 
@@ -113,7 +115,7 @@ abstract class OutputItemSummaryCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({OutputItemSummaryTypeType? type, String? text});
+  $R call({OutputItemSummaryType? type, String? text});
   OutputItemSummaryCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -128,7 +130,7 @@ class _OutputItemSummaryCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputItemSummary> $mapper =
       OutputItemSummaryMapper.ensureInitialized();
   @override
-  $R call({OutputItemSummaryTypeType? type, String? text}) => $apply(
+  $R call({OutputItemSummaryType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

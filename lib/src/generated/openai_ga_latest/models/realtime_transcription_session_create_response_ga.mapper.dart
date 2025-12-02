@@ -18,8 +18,8 @@ class RealtimeTranscriptionSessionCreateResponseGaMapper
       MapperContainer.globals.use(
         _instance = RealtimeTranscriptionSessionCreateResponseGaMapper._(),
       );
-      RealtimeTranscriptionSessionCreateResponseGaTypeTypeMapper.ensureInitialized();
-      RealtimeTranscriptionSessionCreateResponseGaIncludeIncludeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateResponseGaTypeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateResponseGaIncludeMapper.ensureInitialized();
       RealtimeTranscriptionSessionCreateResponseGaAudioMapper.ensureInitialized();
     }
     return _instance!;
@@ -28,12 +28,12 @@ class RealtimeTranscriptionSessionCreateResponseGaMapper
   @override
   final String id = 'RealtimeTranscriptionSessionCreateResponseGa';
 
-  static RealtimeTranscriptionSessionCreateResponseGaTypeType _$type(
+  static RealtimeTranscriptionSessionCreateResponseGaType _$type(
     RealtimeTranscriptionSessionCreateResponseGa v,
   ) => v.type;
   static const Field<
     RealtimeTranscriptionSessionCreateResponseGa,
-    RealtimeTranscriptionSessionCreateResponseGaTypeType
+    RealtimeTranscriptionSessionCreateResponseGaType
   >
   _f$type = Field('type', _$type);
   static String _$id(RealtimeTranscriptionSessionCreateResponseGa v) => v.id;
@@ -47,11 +47,12 @@ class RealtimeTranscriptionSessionCreateResponseGaMapper
       v.expiresAt;
   static const Field<RealtimeTranscriptionSessionCreateResponseGa, int>
   _f$expiresAt = Field('expiresAt', _$expiresAt, key: r'expires_at', opt: true);
-  static List<RealtimeTranscriptionSessionCreateResponseGaIncludeInclude>?
-  _$include(RealtimeTranscriptionSessionCreateResponseGa v) => v.include;
+  static List<RealtimeTranscriptionSessionCreateResponseGaInclude>? _$include(
+    RealtimeTranscriptionSessionCreateResponseGa v,
+  ) => v.include;
   static const Field<
     RealtimeTranscriptionSessionCreateResponseGa,
-    List<RealtimeTranscriptionSessionCreateResponseGaIncludeInclude>
+    List<RealtimeTranscriptionSessionCreateResponseGaInclude>
   >
   _f$include = Field('include', _$include, opt: true);
   static RealtimeTranscriptionSessionCreateResponseGaAudio?
@@ -194,11 +195,11 @@ abstract class RealtimeTranscriptionSessionCreateResponseGaCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateResponseGaIncludeInclude,
+    RealtimeTranscriptionSessionCreateResponseGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateResponseGaIncludeInclude,
-      RealtimeTranscriptionSessionCreateResponseGaIncludeInclude
+      RealtimeTranscriptionSessionCreateResponseGaInclude,
+      RealtimeTranscriptionSessionCreateResponseGaInclude
     >
   >?
   get include;
@@ -209,11 +210,11 @@ abstract class RealtimeTranscriptionSessionCreateResponseGaCopyWith<
   >?
   get realtimeTranscriptionSessionCreateResponseGaAudio;
   $R call({
-    RealtimeTranscriptionSessionCreateResponseGaTypeType? type,
+    RealtimeTranscriptionSessionCreateResponseGaType? type,
     String? id,
     String? objectField,
     int? expiresAt,
-    List<RealtimeTranscriptionSessionCreateResponseGaIncludeInclude>? include,
+    List<RealtimeTranscriptionSessionCreateResponseGaInclude>? include,
     RealtimeTranscriptionSessionCreateResponseGaAudio?
     realtimeTranscriptionSessionCreateResponseGaAudio,
   });
@@ -247,11 +248,11 @@ class _RealtimeTranscriptionSessionCreateResponseGaCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateResponseGaIncludeInclude,
+    RealtimeTranscriptionSessionCreateResponseGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateResponseGaIncludeInclude,
-      RealtimeTranscriptionSessionCreateResponseGaIncludeInclude
+      RealtimeTranscriptionSessionCreateResponseGaInclude,
+      RealtimeTranscriptionSessionCreateResponseGaInclude
     >
   >?
   get include => $value.include != null
@@ -273,7 +274,7 @@ class _RealtimeTranscriptionSessionCreateResponseGaCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    RealtimeTranscriptionSessionCreateResponseGaTypeType? type,
+    RealtimeTranscriptionSessionCreateResponseGaType? type,
     String? id,
     String? objectField,
     Object? expiresAt = $none,

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_tool_calls_code_output_image_object_image.dart';
-import 'run_step_delta_step_details_tool_calls_code_output_image_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_code_output_image_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_code_output_image_object.mapper.dart';
 
@@ -19,7 +19,7 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject with RunStepDeltaSte
 
   @MappableField(key: 'index')
   final int indexField;
-  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type;
   @MappableField(key: 'image')
   final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
 

@@ -84,10 +84,10 @@ class ImageEditStreamEventImageEditPartialImageMapper
         _instance = ImageEditStreamEventImageEditPartialImageMapper._(),
       );
       ImageEditStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ImageEditStreamEventTypeTypeMapper.ensureInitialized();
-      ImageEditStreamEventSizeSizeMapper.ensureInitialized();
-      ImageEditStreamEventQualityQualityMapper.ensureInitialized();
-      ImageEditStreamEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageEditStreamEventTypeMapper.ensureInitialized();
+      ImageEditStreamEventSizeMapper.ensureInitialized();
+      ImageEditStreamEventQualityMapper.ensureInitialized();
+      ImageEditStreamEventBackgroundMapper.ensureInitialized();
       ImageEditStreamEventOutputFormatOutputFormatMapper.ensureInitialized();
     }
     return _instance!;
@@ -96,12 +96,12 @@ class ImageEditStreamEventImageEditPartialImageMapper
   @override
   final String id = 'ImageEditStreamEventImageEditPartialImage';
 
-  static ImageEditStreamEventTypeType _$type(
+  static ImageEditStreamEventType _$type(
     ImageEditStreamEventImageEditPartialImage v,
   ) => v.type;
   static const Field<
     ImageEditStreamEventImageEditPartialImage,
-    ImageEditStreamEventTypeType
+    ImageEditStreamEventType
   >
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageEditStreamEventImageEditPartialImage v) =>
@@ -112,28 +112,28 @@ class ImageEditStreamEventImageEditPartialImageMapper
       v.createdAt;
   static const Field<ImageEditStreamEventImageEditPartialImage, int>
   _f$createdAt = Field('createdAt', _$createdAt, key: r'created_at');
-  static ImageEditStreamEventSizeSize _$size(
+  static ImageEditStreamEventSize _$size(
     ImageEditStreamEventImageEditPartialImage v,
   ) => v.size;
   static const Field<
     ImageEditStreamEventImageEditPartialImage,
-    ImageEditStreamEventSizeSize
+    ImageEditStreamEventSize
   >
   _f$size = Field('size', _$size);
-  static ImageEditStreamEventQualityQuality _$quality(
+  static ImageEditStreamEventQuality _$quality(
     ImageEditStreamEventImageEditPartialImage v,
   ) => v.quality;
   static const Field<
     ImageEditStreamEventImageEditPartialImage,
-    ImageEditStreamEventQualityQuality
+    ImageEditStreamEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageEditStreamEventBackgroundBackground _$background(
+  static ImageEditStreamEventBackground _$background(
     ImageEditStreamEventImageEditPartialImage v,
   ) => v.background;
   static const Field<
     ImageEditStreamEventImageEditPartialImage,
-    ImageEditStreamEventBackgroundBackground
+    ImageEditStreamEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageEditStreamEventOutputFormatOutputFormat _$outputFormat(
@@ -286,12 +286,12 @@ abstract class ImageEditStreamEventImageEditPartialImageCopyWith<
     implements ImageEditStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ImageEditStreamEventTypeType? type,
+    ImageEditStreamEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditStreamEventSizeSize? size,
-    ImageEditStreamEventQualityQuality? quality,
-    ImageEditStreamEventBackgroundBackground? background,
+    ImageEditStreamEventSize? size,
+    ImageEditStreamEventQuality? quality,
+    ImageEditStreamEventBackground? background,
     ImageEditStreamEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   });
@@ -319,12 +319,12 @@ class _ImageEditStreamEventImageEditPartialImageCopyWithImpl<$R, $Out>
   $mapper = ImageEditStreamEventImageEditPartialImageMapper.ensureInitialized();
   @override
   $R call({
-    ImageEditStreamEventTypeType? type,
+    ImageEditStreamEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageEditStreamEventSizeSize? size,
-    ImageEditStreamEventQualityQuality? quality,
-    ImageEditStreamEventBackgroundBackground? background,
+    ImageEditStreamEventSize? size,
+    ImageEditStreamEventQuality? quality,
+    ImageEditStreamEventBackground? background,
     ImageEditStreamEventOutputFormatOutputFormat? outputFormat,
     int? partialImageIndex,
   }) => $apply(
@@ -380,10 +380,10 @@ class ImageEditStreamEventImageEditCompletedMapper
         _instance = ImageEditStreamEventImageEditCompletedMapper._(),
       );
       ImageEditStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ImageEditStreamEventTypeType2Mapper.ensureInitialized();
-      ImageEditStreamEventSizeSizeMapper.ensureInitialized();
-      ImageEditStreamEventQualityQualityMapper.ensureInitialized();
-      ImageEditStreamEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageEditStreamEventType2Mapper.ensureInitialized();
+      ImageEditStreamEventSizeMapper.ensureInitialized();
+      ImageEditStreamEventQualityMapper.ensureInitialized();
+      ImageEditStreamEventBackgroundMapper.ensureInitialized();
       ImageEditStreamEventOutputFormatOutputFormatMapper.ensureInitialized();
       ImagesUsageMapper.ensureInitialized();
     }
@@ -393,12 +393,12 @@ class ImageEditStreamEventImageEditCompletedMapper
   @override
   final String id = 'ImageEditStreamEventImageEditCompleted';
 
-  static ImageEditStreamEventTypeType2 _$type(
+  static ImageEditStreamEventType2 _$type(
     ImageEditStreamEventImageEditCompleted v,
   ) => v.type;
   static const Field<
     ImageEditStreamEventImageEditCompleted,
-    ImageEditStreamEventTypeType2
+    ImageEditStreamEventType2
   >
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageEditStreamEventImageEditCompleted v) =>
@@ -409,28 +409,28 @@ class ImageEditStreamEventImageEditCompletedMapper
       v.createdAt;
   static const Field<ImageEditStreamEventImageEditCompleted, int> _f$createdAt =
       Field('createdAt', _$createdAt, key: r'created_at');
-  static ImageEditStreamEventSizeSize _$size(
+  static ImageEditStreamEventSize _$size(
     ImageEditStreamEventImageEditCompleted v,
   ) => v.size;
   static const Field<
     ImageEditStreamEventImageEditCompleted,
-    ImageEditStreamEventSizeSize
+    ImageEditStreamEventSize
   >
   _f$size = Field('size', _$size);
-  static ImageEditStreamEventQualityQuality _$quality(
+  static ImageEditStreamEventQuality _$quality(
     ImageEditStreamEventImageEditCompleted v,
   ) => v.quality;
   static const Field<
     ImageEditStreamEventImageEditCompleted,
-    ImageEditStreamEventQualityQuality
+    ImageEditStreamEventQuality
   >
   _f$quality = Field('quality', _$quality);
-  static ImageEditStreamEventBackgroundBackground _$background(
+  static ImageEditStreamEventBackground _$background(
     ImageEditStreamEventImageEditCompleted v,
   ) => v.background;
   static const Field<
     ImageEditStreamEventImageEditCompleted,
-    ImageEditStreamEventBackgroundBackground
+    ImageEditStreamEventBackground
   >
   _f$background = Field('background', _$background);
   static ImageEditStreamEventOutputFormatOutputFormat _$outputFormat(
@@ -571,12 +571,12 @@ abstract class ImageEditStreamEventImageEditCompletedCopyWith<
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
   @override
   $R call({
-    ImageEditStreamEventTypeType2? type,
+    ImageEditStreamEventType2? type,
     String? b64Json,
     int? createdAt,
-    ImageEditStreamEventSizeSize? size,
-    ImageEditStreamEventQualityQuality? quality,
-    ImageEditStreamEventBackgroundBackground? background,
+    ImageEditStreamEventSize? size,
+    ImageEditStreamEventQuality? quality,
+    ImageEditStreamEventBackground? background,
     ImageEditStreamEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   });
@@ -606,12 +606,12 @@ class _ImageEditStreamEventImageEditCompletedCopyWithImpl<$R, $Out>
       $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    ImageEditStreamEventTypeType2? type,
+    ImageEditStreamEventType2? type,
     String? b64Json,
     int? createdAt,
-    ImageEditStreamEventSizeSize? size,
-    ImageEditStreamEventQualityQuality? quality,
-    ImageEditStreamEventBackgroundBackground? background,
+    ImageEditStreamEventSize? size,
+    ImageEditStreamEventQuality? quality,
+    ImageEditStreamEventBackground? background,
     ImageEditStreamEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   }) => $apply(

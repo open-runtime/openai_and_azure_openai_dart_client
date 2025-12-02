@@ -6,12 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_step_details_tool_calls_code_object.dart';
 import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';
-import 'run_step_delta_step_details_tool_calls_code_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_code_object_type.dart';
 import 'run_step_delta_step_details_tool_calls_file_search_object.dart';
-import 'run_step_delta_step_details_tool_calls_file_search_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_file_search_object_type.dart';
 import 'run_step_delta_step_details_tool_calls_function_object.dart';
 import 'run_step_delta_step_details_tool_calls_function_object_function.dart';
-import 'run_step_delta_step_details_tool_calls_function_object_type_type.dart';
+import 'run_step_delta_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_object_tool_calls_union.mapper.dart';
 
@@ -56,7 +56,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extend
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallsCodeObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsCodeObjectType type;
   @MappableField(key: 'code_interpreter')
   final RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
 
@@ -73,7 +73,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch extends Run
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsFileSearchObjectType type;
   @MappableField(key: 'file_search')
   final dynamic fileSearch;
 
@@ -90,7 +90,7 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction extends RunSt
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
-  final RunStepDeltaStepDetailsToolCallsFunctionObjectTypeType type;
+  final RunStepDeltaStepDetailsToolCallsFunctionObjectType type;
   @MappableField(key: 'function')
   final RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? runStepDeltaStepDetailsToolCallsFunctionObjectFunction;
 

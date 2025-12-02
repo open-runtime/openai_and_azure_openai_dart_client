@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_container_auto_type_type.dart';
+import 'code_interpreter_container_auto_type.dart';
 import 'container_memory_limit.dart';
 
 part 'code_interpreter_container_auto.mapper.dart';
@@ -15,14 +15,14 @@ class CodeInterpreterContainerAuto with CodeInterpreterContainerAutoMappable {
   const CodeInterpreterContainerAuto({
     this.fileIds,
     this.memoryLimit,
-    this.type = CodeInterpreterContainerAutoTypeType.auto,
+    this.type = CodeInterpreterContainerAutoType.auto,
   });
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
   @MappableField(key: 'memory_limit')
   final ContainerMemoryLimit? memoryLimit;
-  final CodeInterpreterContainerAutoTypeType type;
+  final CodeInterpreterContainerAutoType type;
 
   static CodeInterpreterContainerAuto fromJson(Map<String, dynamic> json) => CodeInterpreterContainerAutoMapper.fromJson(json);
 

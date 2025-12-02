@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'item_resource.dart';
 import 'output_item.dart';
-import 'web_search_tool_call_status_status.dart';
-import 'web_search_tool_call_type_type.dart';
+import 'web_search_tool_call_status.dart';
+import 'web_search_tool_call_type.dart';
 
 part 'web_search_tool_call.mapper.dart';
 
@@ -23,8 +23,8 @@ class WebSearchToolCall with WebSearchToolCallMappable {
   });
 
   final String id;
-  final WebSearchToolCallTypeType type;
-  final WebSearchToolCallStatusStatus status;
+  final WebSearchToolCallType type;
+  final WebSearchToolCallStatus status;
 
   static WebSearchToolCall fromJson(Map<String, dynamic> json) => WebSearchToolCallMapper.fromJson(json);
 

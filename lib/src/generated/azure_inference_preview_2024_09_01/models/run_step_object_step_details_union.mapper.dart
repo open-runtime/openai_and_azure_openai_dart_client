@@ -90,7 +90,7 @@ class RunStepObjectStepDetailsUnionMessageCreationMapper
       RunStepObjectStepDetailsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RunStepDetailsMessageCreationObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsMessageCreationObjectTypeMapper.ensureInitialized();
       RunStepDetailsMessageCreationObjectMessageCreationMapper.ensureInitialized();
     }
     return _instance!;
@@ -99,12 +99,12 @@ class RunStepObjectStepDetailsUnionMessageCreationMapper
   @override
   final String id = 'RunStepObjectStepDetailsUnionMessageCreation';
 
-  static RunStepDetailsMessageCreationObjectTypeType _$type(
+  static RunStepDetailsMessageCreationObjectType _$type(
     RunStepObjectStepDetailsUnionMessageCreation v,
   ) => v.type;
   static const Field<
     RunStepObjectStepDetailsUnionMessageCreation,
-    RunStepDetailsMessageCreationObjectTypeType
+    RunStepDetailsMessageCreationObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsMessageCreationObjectMessageCreation
@@ -252,7 +252,7 @@ abstract class RunStepObjectStepDetailsUnionMessageCreationCopyWith<
   get runStepDetailsMessageCreationObjectMessageCreation;
   @override
   $R call({
-    RunStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDetailsMessageCreationObjectType? type,
     RunStepDetailsMessageCreationObjectMessageCreation?
     runStepDetailsMessageCreationObjectMessageCreation,
   });
@@ -295,7 +295,7 @@ class _RunStepObjectStepDetailsUnionMessageCreationCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    RunStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDetailsMessageCreationObjectType? type,
     RunStepDetailsMessageCreationObjectMessageCreation?
     runStepDetailsMessageCreationObjectMessageCreation,
   }) => $apply(
@@ -343,7 +343,7 @@ class RunStepObjectStepDetailsUnionToolCallsMapper
       RunStepObjectStepDetailsUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RunStepDetailsToolCallsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallsObjectToolCallsUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -352,12 +352,12 @@ class RunStepObjectStepDetailsUnionToolCallsMapper
   @override
   final String id = 'RunStepObjectStepDetailsUnionToolCalls';
 
-  static RunStepDetailsToolCallsObjectTypeType _$type(
+  static RunStepDetailsToolCallsObjectType _$type(
     RunStepObjectStepDetailsUnionToolCalls v,
   ) => v.type;
   static const Field<
     RunStepObjectStepDetailsUnionToolCalls,
-    RunStepDetailsToolCallsObjectTypeType
+    RunStepDetailsToolCallsObjectType
   >
   _f$type = Field('type', _$type);
   static List<RunStepDetailsToolCallsObjectToolCallsUnion> _$toolCalls(
@@ -487,7 +487,7 @@ abstract class RunStepObjectStepDetailsUnionToolCallsCopyWith<
   get toolCalls;
   @override
   $R call({
-    RunStepDetailsToolCallsObjectTypeType? type,
+    RunStepDetailsToolCallsObjectType? type,
     List<RunStepDetailsToolCallsObjectToolCallsUnion>? toolCalls,
   });
   RunStepObjectStepDetailsUnionToolCallsCopyWith<$R2, $In, $Out2>
@@ -528,7 +528,7 @@ class _RunStepObjectStepDetailsUnionToolCallsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RunStepDetailsToolCallsObjectTypeType? type,
+    RunStepDetailsToolCallsObjectType? type,
     List<RunStepDetailsToolCallsObjectToolCallsUnion>? toolCalls,
   }) => $apply(
     FieldCopyWithData({

@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_content_text_annotations_file_citation_object_type.dart';
 
 part 'message_content_text_annotations_file_citation_object.mapper.dart';
 
@@ -20,7 +20,7 @@ class MessageContentTextAnnotationsFileCitationObject with MessageContentTextAnn
     required this.endIndex,
   });
 
-  final MessageContentTextAnnotationsFileCitationObjectTypeType type;
+  final MessageContentTextAnnotationsFileCitationObjectType type;
   final String text;
   @MappableField(key: 'file_citation')
   final MessageContentTextAnnotationsFileCitationObjectFileCitation messageContentTextAnnotationsFileCitationObjectFileCitation;

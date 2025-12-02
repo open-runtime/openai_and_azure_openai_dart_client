@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_reasoning_summary_part_added_event_part.dart';
-import 'response_reasoning_summary_part_added_event_type_type.dart';
+import 'response_reasoning_summary_part_added_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_reasoning_summary_part_added_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseReasoningSummaryPartAddedEvent with ResponseReasoningSummaryPartAd
     required this.responseReasoningSummaryPartAddedEventPart,
   });
 
-  final ResponseReasoningSummaryPartAddedEventTypeType type;
+  final ResponseReasoningSummaryPartAddedEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

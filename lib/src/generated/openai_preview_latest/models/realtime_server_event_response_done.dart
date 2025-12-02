@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_response.dart';
 import 'realtime_server_event.dart';
-import 'realtime_server_event_response_done_type_type.dart';
+import 'realtime_server_event_response_done_type.dart';
 
 part 'realtime_server_event_response_done.mapper.dart';
 
@@ -24,7 +24,7 @@ class RealtimeServerEventResponseDone with RealtimeServerEventResponseDoneMappab
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventResponseDoneTypeType type;
+  final RealtimeServerEventResponseDoneType type;
   final RealtimeResponse response;
 
   static RealtimeServerEventResponseDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseDoneMapper.fromJson(json);

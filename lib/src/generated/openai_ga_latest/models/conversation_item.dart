@@ -9,95 +9,95 @@ import 'apply_patch_call_status.dart';
 import 'apply_patch_tool_call.dart';
 import 'apply_patch_tool_call_operation_union.dart';
 import 'apply_patch_tool_call_output.dart';
-import 'apply_patch_tool_call_output_type_type.dart';
-import 'apply_patch_tool_call_type_type.dart';
+import 'apply_patch_tool_call_output_type.dart';
+import 'apply_patch_tool_call_type.dart';
 import 'code_interpreter_tool_call.dart';
 import 'code_interpreter_tool_call_outputs_union.dart';
-import 'code_interpreter_tool_call_status_status.dart';
-import 'code_interpreter_tool_call_type_type.dart';
+import 'code_interpreter_tool_call_status.dart';
+import 'code_interpreter_tool_call_type.dart';
 import 'computer_action.dart';
 import 'computer_call_safety_check_param.dart';
 import 'computer_tool_call.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'conversation_item_action_union.dart';
 import 'conversation_item_content_union.dart';
 import 'conversation_item_operation_union.dart';
 import 'conversation_item_outputs_union.dart';
 import 'conversation_item_results.dart';
-import 'conversation_item_status_status.dart';
-import 'conversation_item_status_status2.dart';
-import 'conversation_item_status_status3.dart';
-import 'conversation_item_status_status4.dart';
-import 'conversation_item_status_status5.dart';
-import 'conversation_item_type_type.dart';
-import 'conversation_item_type_type10.dart';
-import 'conversation_item_type_type11.dart';
-import 'conversation_item_type_type12.dart';
-import 'conversation_item_type_type13.dart';
-import 'conversation_item_type_type14.dart';
-import 'conversation_item_type_type15.dart';
-import 'conversation_item_type_type16.dart';
-import 'conversation_item_type_type17.dart';
-import 'conversation_item_type_type18.dart';
-import 'conversation_item_type_type19.dart';
-import 'conversation_item_type_type2.dart';
-import 'conversation_item_type_type3.dart';
-import 'conversation_item_type_type4.dart';
-import 'conversation_item_type_type5.dart';
-import 'conversation_item_type_type6.dart';
-import 'conversation_item_type_type7.dart';
-import 'conversation_item_type_type8.dart';
-import 'conversation_item_type_type9.dart';
+import 'conversation_item_status.dart';
+import 'conversation_item_status2.dart';
+import 'conversation_item_status3.dart';
+import 'conversation_item_status4.dart';
+import 'conversation_item_status5.dart';
+import 'conversation_item_type.dart';
+import 'conversation_item_type10.dart';
+import 'conversation_item_type11.dart';
+import 'conversation_item_type12.dart';
+import 'conversation_item_type13.dart';
+import 'conversation_item_type14.dart';
+import 'conversation_item_type15.dart';
+import 'conversation_item_type16.dart';
+import 'conversation_item_type17.dart';
+import 'conversation_item_type18.dart';
+import 'conversation_item_type19.dart';
+import 'conversation_item_type2.dart';
+import 'conversation_item_type3.dart';
+import 'conversation_item_type4.dart';
+import 'conversation_item_type5.dart';
+import 'conversation_item_type6.dart';
+import 'conversation_item_type7.dart';
+import 'conversation_item_type8.dart';
+import 'conversation_item_type9.dart';
 import 'custom_tool_call.dart';
 import 'custom_tool_call_output.dart';
-import 'custom_tool_call_output_type_type.dart';
-import 'custom_tool_call_type_type.dart';
+import 'custom_tool_call_output_type.dart';
+import 'custom_tool_call_type.dart';
 import 'file_search_tool_call.dart';
 import 'file_search_tool_call_results.dart';
-import 'file_search_tool_call_status_status.dart';
-import 'file_search_tool_call_type_type.dart';
+import 'file_search_tool_call_status.dart';
+import 'file_search_tool_call_type.dart';
 import 'function_shell_action.dart';
 import 'function_shell_call.dart';
 import 'function_shell_call_output.dart';
 import 'function_shell_call_output_content.dart';
-import 'function_shell_call_output_type_type.dart';
-import 'function_shell_call_type_type.dart';
+import 'function_shell_call_output_type.dart';
+import 'function_shell_call_type.dart';
 import 'image_gen_tool_call.dart';
-import 'image_gen_tool_call_status_status.dart';
-import 'image_gen_tool_call_type_type.dart';
+import 'image_gen_tool_call_status.dart';
+import 'image_gen_tool_call_type.dart';
 import 'local_shell_call_status.dart';
 import 'local_shell_exec_action.dart';
 import 'local_shell_tool_call.dart';
 import 'local_shell_tool_call_output.dart';
-import 'local_shell_tool_call_output_status_status.dart';
-import 'local_shell_tool_call_output_type_type.dart';
-import 'local_shell_tool_call_status_status.dart';
-import 'local_shell_tool_call_type_type.dart';
+import 'local_shell_tool_call_output_status.dart';
+import 'local_shell_tool_call_output_type.dart';
+import 'local_shell_tool_call_status.dart';
+import 'local_shell_tool_call_type.dart';
 import 'mcp_approval_request.dart';
-import 'mcp_approval_request_type_type.dart';
+import 'mcp_approval_request_type.dart';
 import 'mcp_approval_response_resource.dart';
-import 'mcp_approval_response_resource_type_type.dart';
+import 'mcp_approval_response_resource_type.dart';
 import 'mcp_list_tools.dart';
 import 'mcp_list_tools_tool.dart';
-import 'mcp_list_tools_type_type.dart';
+import 'mcp_list_tools_type.dart';
 import 'mcp_tool_call.dart';
 import 'mcp_tool_call_status.dart';
-import 'mcp_tool_call_type_type.dart';
+import 'mcp_tool_call_type.dart';
 import 'message.dart';
 import 'message_content_union.dart';
 import 'message_role.dart';
 import 'message_status.dart';
-import 'message_type_type.dart';
+import 'message_type.dart';
 import 'reasoning_item.dart';
-import 'reasoning_item_status_status.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_status.dart';
+import 'reasoning_item_type.dart';
 import 'reasoning_text_content.dart';
 import 'summary.dart';
 import 'web_search_tool_call.dart';
 import 'web_search_tool_call_action_union.dart';
-import 'web_search_tool_call_status_status.dart';
-import 'web_search_tool_call_type_type.dart';
+import 'web_search_tool_call_status.dart';
+import 'web_search_tool_call_type.dart';
 
 part 'conversation_item.mapper.dart';
 
@@ -187,7 +187,7 @@ extension ConversationItemUnionDeserializer on ConversationItem {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
 class ConversationItemMessage extends ConversationItem with ConversationItemMessageMappable {
-  final ConversationItemTypeType type;
+  final ConversationItemType type;
   final String id;
   final MessageStatus status;
   final MessageRole role;
@@ -205,8 +205,8 @@ class ConversationItemMessage extends ConversationItem with ConversationItemMess
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class ConversationItemFileSearchCall extends ConversationItem with ConversationItemFileSearchCallMappable {
   final String id;
-  final ConversationItemTypeType2 type;
-  final ConversationItemStatusStatus status;
+  final ConversationItemType2 type;
+  final ConversationItemStatus status;
   final List<String> queries;
   final List<ConversationItemResults>? results;
 
@@ -222,8 +222,8 @@ class ConversationItemFileSearchCall extends ConversationItem with ConversationI
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
 class ConversationItemWebSearchCall extends ConversationItem with ConversationItemWebSearchCallMappable {
   final String id;
-  final ConversationItemTypeType3 type;
-  final ConversationItemStatusStatus2 status;
+  final ConversationItemType3 type;
+  final ConversationItemStatus2 status;
   final ConversationItemActionUnion action;
 
   const ConversationItemWebSearchCall({
@@ -236,9 +236,9 @@ class ConversationItemWebSearchCall extends ConversationItem with ConversationIt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')
 class ConversationItemImageGenerationCall extends ConversationItem with ConversationItemImageGenerationCallMappable {
-  final ConversationItemTypeType4 type;
+  final ConversationItemType4 type;
   final String id;
-  final ConversationItemStatusStatus3 status;
+  final ConversationItemStatus3 status;
   final String? result;
 
   const ConversationItemImageGenerationCall({
@@ -251,14 +251,14 @@ class ConversationItemImageGenerationCall extends ConversationItem with Conversa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class ConversationItemComputerCall extends ConversationItem with ConversationItemComputerCallMappable {
-  final ConversationItemTypeType5 type;
+  final ConversationItemType5 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
-  final ConversationItemStatusStatus4 status;
+  final ConversationItemStatus4 status;
 
   const ConversationItemComputerCall({
     required this.type,
@@ -272,13 +272,13 @@ class ConversationItemComputerCall extends ConversationItem with ConversationIte
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class ConversationItemReasoning extends ConversationItem with ConversationItemReasoningMappable {
-  final ConversationItemTypeType6 type;
+  final ConversationItemType6 type;
   final String id;
   @MappableField(key: 'encrypted_content')
   final String? encryptedContent;
   final List<Summary> summary;
   final List<ReasoningTextContent>? content;
-  final ConversationItemStatusStatus4? status;
+  final ConversationItemStatus4? status;
 
   const ConversationItemReasoning({
     required this.type,
@@ -292,9 +292,9 @@ class ConversationItemReasoning extends ConversationItem with ConversationItemRe
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter_call')
 class ConversationItemCodeInterpreterCall extends ConversationItem with ConversationItemCodeInterpreterCallMappable {
-  final ConversationItemTypeType7 type;
+  final ConversationItemType7 type;
   final String id;
-  final ConversationItemStatusStatus5 status;
+  final ConversationItemStatus5 status;
   @MappableField(key: 'container_id')
   final String containerId;
   final String? code;
@@ -312,12 +312,12 @@ class ConversationItemCodeInterpreterCall extends ConversationItem with Conversa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call')
 class ConversationItemLocalShellCall extends ConversationItem with ConversationItemLocalShellCallMappable {
-  final ConversationItemTypeType8 type;
+  final ConversationItemType8 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
   final LocalShellExecAction action;
-  final ConversationItemStatusStatus4 status;
+  final ConversationItemStatus4 status;
 
   const ConversationItemLocalShellCall({
     required this.type,
@@ -330,10 +330,10 @@ class ConversationItemLocalShellCall extends ConversationItem with ConversationI
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call_output')
 class ConversationItemLocalShellCallOutput extends ConversationItem with ConversationItemLocalShellCallOutputMappable {
-  final ConversationItemTypeType9 type;
+  final ConversationItemType9 type;
   final String id;
   final String output;
-  final ConversationItemStatusStatus4? status;
+  final ConversationItemStatus4? status;
 
   const ConversationItemLocalShellCallOutput({
     required this.type,
@@ -345,7 +345,7 @@ class ConversationItemLocalShellCallOutput extends ConversationItem with Convers
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
 class ConversationItemShellCall extends ConversationItem with ConversationItemShellCallMappable {
-  final ConversationItemTypeType10 type;
+  final ConversationItemType10 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -366,7 +366,7 @@ class ConversationItemShellCall extends ConversationItem with ConversationItemSh
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
 class ConversationItemShellCallOutput extends ConversationItem with ConversationItemShellCallOutputMappable {
-  final ConversationItemTypeType11 type;
+  final ConversationItemType11 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -388,7 +388,7 @@ class ConversationItemShellCallOutput extends ConversationItem with Conversation
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call')
 class ConversationItemApplyPatchCall extends ConversationItem with ConversationItemApplyPatchCallMappable {
-  final ConversationItemTypeType12 type;
+  final ConversationItemType12 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -409,7 +409,7 @@ class ConversationItemApplyPatchCall extends ConversationItem with ConversationI
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call_output')
 class ConversationItemApplyPatchCallOutput extends ConversationItem with ConversationItemApplyPatchCallOutputMappable {
-  final ConversationItemTypeType13 type;
+  final ConversationItemType13 type;
   final String id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -430,7 +430,7 @@ class ConversationItemApplyPatchCallOutput extends ConversationItem with Convers
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
 class ConversationItemMcpListTools extends ConversationItem with ConversationItemMcpListToolsMappable {
-  final ConversationItemTypeType14 type;
+  final ConversationItemType14 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -448,7 +448,7 @@ class ConversationItemMcpListTools extends ConversationItem with ConversationIte
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
 class ConversationItemMcpApprovalRequest extends ConversationItem with ConversationItemMcpApprovalRequestMappable {
-  final ConversationItemTypeType15 type;
+  final ConversationItemType15 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -466,7 +466,7 @@ class ConversationItemMcpApprovalRequest extends ConversationItem with Conversat
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
 class ConversationItemMcpApprovalResponse extends ConversationItem with ConversationItemMcpApprovalResponseMappable {
-  final ConversationItemTypeType16 type;
+  final ConversationItemType16 type;
   final String id;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;
@@ -484,7 +484,7 @@ class ConversationItemMcpApprovalResponse extends ConversationItem with Conversa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
 class ConversationItemMcpCall extends ConversationItem with ConversationItemMcpCallMappable {
-  final ConversationItemTypeType17 type;
+  final ConversationItemType17 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -511,7 +511,7 @@ class ConversationItemMcpCall extends ConversationItem with ConversationItemMcpC
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call')
 class ConversationItemCustomToolCall extends ConversationItem with ConversationItemCustomToolCallMappable {
-  final ConversationItemTypeType18 type;
+  final ConversationItemType18 type;
   final String? id;
   @MappableField(key: 'call_id')
   final String callId;
@@ -529,7 +529,7 @@ class ConversationItemCustomToolCall extends ConversationItem with ConversationI
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call_output')
 class ConversationItemCustomToolCallOutput extends ConversationItem with ConversationItemCustomToolCallOutputMappable {
-  final ConversationItemTypeType19 type;
+  final ConversationItemType19 type;
   final String? id;
   @MappableField(key: 'call_id')
   final String callId;

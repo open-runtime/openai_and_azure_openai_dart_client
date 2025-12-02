@@ -17,7 +17,7 @@ class CreateEvalCustomDataSourceConfigMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCustomDataSourceConfigMapper._(),
       );
-      CreateEvalCustomDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalCustomDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,18 +39,18 @@ class CreateEvalCustomDataSourceConfigMapper
     opt: true,
     def: false,
   );
-  static CreateEvalCustomDataSourceConfigTypeType _$type(
+  static CreateEvalCustomDataSourceConfigType _$type(
     CreateEvalCustomDataSourceConfig v,
   ) => v.type;
   static const Field<
     CreateEvalCustomDataSourceConfig,
-    CreateEvalCustomDataSourceConfigTypeType
+    CreateEvalCustomDataSourceConfigType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalCustomDataSourceConfigTypeType.custom,
+    def: CreateEvalCustomDataSourceConfigType.custom,
   );
 
   @override
@@ -153,7 +153,7 @@ abstract class CreateEvalCustomDataSourceConfigCopyWith<
   $R call({
     dynamic itemSchema,
     bool? includeSampleSchema,
-    CreateEvalCustomDataSourceConfigTypeType? type,
+    CreateEvalCustomDataSourceConfigType? type,
   });
   CreateEvalCustomDataSourceConfigCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -181,7 +181,7 @@ class _CreateEvalCustomDataSourceConfigCopyWithImpl<$R, $Out>
   $R call({
     Object? itemSchema = $none,
     bool? includeSampleSchema,
-    CreateEvalCustomDataSourceConfigTypeType? type,
+    CreateEvalCustomDataSourceConfigType? type,
   }) => $apply(
     FieldCopyWithData({
       if (itemSchema != $none) #itemSchema: itemSchema,

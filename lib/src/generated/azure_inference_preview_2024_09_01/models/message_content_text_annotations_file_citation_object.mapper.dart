@@ -18,7 +18,7 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextAnnotationsFileCitationObjectMapper._(),
       );
-      MessageContentTextAnnotationsFileCitationObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
   @override
   final String id = 'MessageContentTextAnnotationsFileCitationObject';
 
-  static MessageContentTextAnnotationsFileCitationObjectTypeType _$type(
+  static MessageContentTextAnnotationsFileCitationObjectType _$type(
     MessageContentTextAnnotationsFileCitationObject v,
   ) => v.type;
   static const Field<
     MessageContentTextAnnotationsFileCitationObject,
-    MessageContentTextAnnotationsFileCitationObjectTypeType
+    MessageContentTextAnnotationsFileCitationObjectType
   >
   _f$type = Field('type', _$type);
   static String _$text(MessageContentTextAnnotationsFileCitationObject v) =>
@@ -196,7 +196,7 @@ abstract class MessageContentTextAnnotationsFileCitationObjectCopyWith<
   >
   get messageContentTextAnnotationsFileCitationObjectFileCitation;
   $R call({
-    MessageContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageContentTextAnnotationsFileCitationObjectFileCitation?
     messageContentTextAnnotationsFileCitationObjectFileCitation,
@@ -246,7 +246,7 @@ class _MessageContentTextAnnotationsFileCitationObjectCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    MessageContentTextAnnotationsFileCitationObjectTypeType? type,
+    MessageContentTextAnnotationsFileCitationObjectType? type,
     String? text,
     MessageContentTextAnnotationsFileCitationObjectFileCitation?
     messageContentTextAnnotationsFileCitationObjectFileCitation,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_reasoning_summary_text_delta_event_type_type.dart';
+import 'response_reasoning_summary_text_delta_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_reasoning_summary_text_delta_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseReasoningSummaryTextDeltaEvent with ResponseReasoningSummaryTextDe
     required this.sequenceNumber,
   });
 
-  final ResponseReasoningSummaryTextDeltaEventTypeType type;
+  final ResponseReasoningSummaryTextDeltaEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

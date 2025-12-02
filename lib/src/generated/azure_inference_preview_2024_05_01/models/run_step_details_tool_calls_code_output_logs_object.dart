@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_step_details_tool_calls_code_output_logs_object_type_type.dart';
+import 'run_step_details_tool_calls_code_output_logs_object_type.dart';
 
 part 'run_step_details_tool_calls_code_output_logs_object.mapper.dart';
 
@@ -16,7 +16,7 @@ class RunStepDetailsToolCallsCodeOutputLogsObject with RunStepDetailsToolCallsCo
     required this.logs,
   });
 
-  final RunStepDetailsToolCallsCodeOutputLogsObjectTypeType type;
+  final RunStepDetailsToolCallsCodeOutputLogsObjectType type;
   final String logs;
 
   static RunStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);

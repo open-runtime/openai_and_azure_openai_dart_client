@@ -98,7 +98,7 @@ class FunctionShellCallOutputContentOutcomeUnionTimeoutMapper
       );
       FunctionShellCallOutputContentOutcomeUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      FunctionShellCallOutputTimeoutOutcomeTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputTimeoutOutcomeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -106,12 +106,12 @@ class FunctionShellCallOutputContentOutcomeUnionTimeoutMapper
   @override
   final String id = 'FunctionShellCallOutputContentOutcomeUnionTimeout';
 
-  static FunctionShellCallOutputTimeoutOutcomeTypeType _$type(
+  static FunctionShellCallOutputTimeoutOutcomeType _$type(
     FunctionShellCallOutputContentOutcomeUnionTimeout v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputContentOutcomeUnionTimeout,
-    FunctionShellCallOutputTimeoutOutcomeTypeType
+    FunctionShellCallOutputTimeoutOutcomeType
   >
   _f$type = Field('type', _$type);
 
@@ -239,7 +239,7 @@ abstract class FunctionShellCallOutputContentOutcomeUnionTimeoutCopyWith<
     implements
         FunctionShellCallOutputContentOutcomeUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({FunctionShellCallOutputTimeoutOutcomeTypeType? type});
+  $R call({FunctionShellCallOutputTimeoutOutcomeType? type});
   FunctionShellCallOutputContentOutcomeUnionTimeoutCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -268,7 +268,7 @@ class _FunctionShellCallOutputContentOutcomeUnionTimeoutCopyWithImpl<$R, $Out>
   $mapper =
       FunctionShellCallOutputContentOutcomeUnionTimeoutMapper.ensureInitialized();
   @override
-  $R call({FunctionShellCallOutputTimeoutOutcomeTypeType? type}) =>
+  $R call({FunctionShellCallOutputTimeoutOutcomeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   FunctionShellCallOutputContentOutcomeUnionTimeout $make(CopyWithData data) =>
@@ -302,7 +302,7 @@ class FunctionShellCallOutputContentOutcomeUnionExitMapper
       );
       FunctionShellCallOutputContentOutcomeUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      FunctionShellCallOutputExitOutcomeTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputExitOutcomeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -310,12 +310,12 @@ class FunctionShellCallOutputContentOutcomeUnionExitMapper
   @override
   final String id = 'FunctionShellCallOutputContentOutcomeUnionExit';
 
-  static FunctionShellCallOutputExitOutcomeTypeType _$type(
+  static FunctionShellCallOutputExitOutcomeType _$type(
     FunctionShellCallOutputContentOutcomeUnionExit v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputContentOutcomeUnionExit,
-    FunctionShellCallOutputExitOutcomeTypeType
+    FunctionShellCallOutputExitOutcomeType
   >
   _f$type = Field('type', _$type);
   static int _$exitCode(FunctionShellCallOutputContentOutcomeUnionExit v) =>
@@ -447,7 +447,7 @@ abstract class FunctionShellCallOutputContentOutcomeUnionExitCopyWith<
     implements
         FunctionShellCallOutputContentOutcomeUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({FunctionShellCallOutputExitOutcomeTypeType? type, int? exitCode});
+  $R call({FunctionShellCallOutputExitOutcomeType? type, int? exitCode});
   FunctionShellCallOutputContentOutcomeUnionExitCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -476,7 +476,7 @@ class _FunctionShellCallOutputContentOutcomeUnionExitCopyWithImpl<$R, $Out>
   $mapper =
       FunctionShellCallOutputContentOutcomeUnionExitMapper.ensureInitialized();
   @override
-  $R call({FunctionShellCallOutputExitOutcomeTypeType? type, int? exitCode}) =>
+  $R call({FunctionShellCallOutputExitOutcomeType? type, int? exitCode}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

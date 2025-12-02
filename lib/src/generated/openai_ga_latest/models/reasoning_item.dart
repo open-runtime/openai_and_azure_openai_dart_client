@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'output_item.dart';
-import 'reasoning_item_status_status.dart';
-import 'reasoning_item_type_type.dart';
+import 'reasoning_item_status.dart';
+import 'reasoning_item_type.dart';
 import 'reasoning_text_content.dart';
 import 'summary.dart';
 
@@ -29,13 +29,13 @@ class ReasoningItem with ReasoningItemMappable {
     this.status,
   });
 
-  final ReasoningItemTypeType type;
+  final ReasoningItemType type;
   final String id;
   final List<Summary> summary;
   @MappableField(key: 'encrypted_content')
   final String? encryptedContent;
   final List<ReasoningTextContent>? content;
-  final ReasoningItemStatusStatus? status;
+  final ReasoningItemStatus? status;
 
   static ReasoningItem fromJson(Map<String, dynamic> json) => ReasoningItemMapper.fromJson(json);
 

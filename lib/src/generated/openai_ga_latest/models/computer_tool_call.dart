@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
 import 'computer_call_safety_check_param.dart';
-import 'computer_tool_call_status_status.dart';
-import 'computer_tool_call_type_type.dart';
+import 'computer_tool_call_status.dart';
+import 'computer_tool_call_type.dart';
 import 'conversation_item.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
@@ -25,7 +25,7 @@ class ComputerToolCall with ComputerToolCallMappable {
     required this.action,
     required this.pendingSafetyChecks,
     required this.status,
-    this.type = ComputerToolCallTypeType.computerCall,
+    this.type = ComputerToolCallType.computerCall,
   });
 
   final String id;
@@ -34,8 +34,8 @@ class ComputerToolCall with ComputerToolCallMappable {
   final ComputerAction action;
   @MappableField(key: 'pending_safety_checks')
   final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
-  final ComputerToolCallStatusStatus status;
-  final ComputerToolCallTypeType type;
+  final ComputerToolCallStatus status;
+  final ComputerToolCallType type;
 
   static ComputerToolCall fromJson(Map<String, dynamic> json) => ComputerToolCallMapper.fromJson(json);
 

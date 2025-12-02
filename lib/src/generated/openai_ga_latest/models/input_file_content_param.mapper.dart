@@ -15,7 +15,7 @@ class InputFileContentParamMapper
   static InputFileContentParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputFileContentParamMapper._());
-      InputFileContentParamTypeTypeMapper.ensureInitialized();
+      InputFileContentParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -50,15 +50,14 @@ class InputFileContentParamMapper
     key: r'file_url',
     opt: true,
   );
-  static InputFileContentParamTypeType _$type(InputFileContentParam v) =>
-      v.type;
-  static const Field<InputFileContentParam, InputFileContentParamTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: InputFileContentParamTypeType.inputFile,
-  );
+  static InputFileContentParamType _$type(InputFileContentParam v) => v.type;
+  static const Field<InputFileContentParam, InputFileContentParamType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: InputFileContentParamType.inputFile,
+      );
 
   @override
   final MappableFields<InputFileContentParam> fields = const {
@@ -158,7 +157,7 @@ abstract class InputFileContentParamCopyWith<
     String? filename,
     String? fileData,
     String? fileUrl,
-    InputFileContentParamTypeType? type,
+    InputFileContentParamType? type,
   });
   InputFileContentParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -179,7 +178,7 @@ class _InputFileContentParamCopyWithImpl<$R, $Out>
     Object? filename = $none,
     Object? fileData = $none,
     Object? fileUrl = $none,
-    InputFileContentParamTypeType? type,
+    InputFileContentParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (fileId != $none) #fileId: fileId,

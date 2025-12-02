@@ -5,10 +5,10 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'other_chunking_strategy_response_param.dart';
-import 'other_chunking_strategy_response_param_type_type.dart';
+import 'other_chunking_strategy_response_param_type.dart';
 import 'static_chunking_strategy.dart';
 import 'static_chunking_strategy_response_param.dart';
-import 'static_chunking_strategy_response_param_type_type.dart';
+import 'static_chunking_strategy_response_param_type.dart';
 
 part 'vector_store_file_object_chunking_strategy_union.mapper.dart';
 
@@ -47,7 +47,7 @@ extension VectorStoreFileObjectChunkingStrategyUnionDeserializer on VectorStoreF
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
 class VectorStoreFileObjectChunkingStrategyUnionStatic extends VectorStoreFileObjectChunkingStrategyUnion with VectorStoreFileObjectChunkingStrategyUnionStaticMappable {
-  final StaticChunkingStrategyResponseParamTypeType type;
+  final StaticChunkingStrategyResponseParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
@@ -59,7 +59,7 @@ class VectorStoreFileObjectChunkingStrategyUnionStatic extends VectorStoreFileOb
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'other')
 class VectorStoreFileObjectChunkingStrategyUnionOther extends VectorStoreFileObjectChunkingStrategyUnion with VectorStoreFileObjectChunkingStrategyUnionOtherMappable {
-  final OtherChunkingStrategyResponseParamTypeType type;
+  final OtherChunkingStrategyResponseParamType type;
 
   const VectorStoreFileObjectChunkingStrategyUnionOther({
     required this.type,

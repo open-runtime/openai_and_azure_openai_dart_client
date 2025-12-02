@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'type_model_type_type.dart';
+import 'type_model_type.dart';
 
 part 'type_model.mapper.dart';
 
@@ -15,11 +15,11 @@ part 'type_model.mapper.dart';
 class TypeModel with TypeModelMappable {
   const TypeModel({
     required this.text,
-    this.type = TypeModelTypeType.type,
+    this.type = TypeModelType.type,
   });
 
   final String text;
-  final TypeModelTypeType type;
+  final TypeModelType type;
 
   static TypeModel fromJson(Map<String, dynamic> json) => TypeModelMapper.fromJson(json);
 

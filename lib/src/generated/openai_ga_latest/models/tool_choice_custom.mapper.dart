@@ -14,7 +14,7 @@ class ToolChoiceCustomMapper extends ClassMapperBase<ToolChoiceCustom> {
   static ToolChoiceCustomMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceCustomMapper._());
-      ToolChoiceCustomTypeTypeMapper.ensureInitialized();
+      ToolChoiceCustomTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,11 @@ class ToolChoiceCustomMapper extends ClassMapperBase<ToolChoiceCustom> {
   @override
   final String id = 'ToolChoiceCustom';
 
-  static ToolChoiceCustomTypeType _$type(ToolChoiceCustom v) => v.type;
-  static const Field<ToolChoiceCustom, ToolChoiceCustomTypeType> _f$type =
-      Field('type', _$type);
+  static ToolChoiceCustomType _$type(ToolChoiceCustom v) => v.type;
+  static const Field<ToolChoiceCustom, ToolChoiceCustomType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$name(ToolChoiceCustom v) => v.name;
   static const Field<ToolChoiceCustom, String> _f$name = Field('name', _$name);
 
@@ -104,7 +106,7 @@ extension ToolChoiceCustomValueCopy<$R, $Out>
 
 abstract class ToolChoiceCustomCopyWith<$R, $In extends ToolChoiceCustom, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ToolChoiceCustomTypeType? type, String? name});
+  $R call({ToolChoiceCustomType? type, String? name});
   ToolChoiceCustomCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -119,7 +121,7 @@ class _ToolChoiceCustomCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceCustom> $mapper =
       ToolChoiceCustomMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceCustomTypeType? type, String? name}) => $apply(
+  $R call({ToolChoiceCustomType? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,

@@ -4,10 +4,10 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_format_json_object_type_type.dart';
+import 'response_format_json_object_type.dart';
 import 'response_format_json_schema_json_schema.dart';
-import 'response_format_json_schema_type_type.dart';
-import 'response_format_text_type_type.dart';
+import 'response_format_json_schema_type.dart';
+import 'response_format_text_type.dart';
 import 'response_format_text.dart';
 import 'response_format_json_object.dart';
 import 'response_format_json_schema.dart';
@@ -53,7 +53,7 @@ extension AssistantsApiResponseFormatOptionUnionDeserializer on AssistantsApiRes
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormatOptionUnionResponseFormatText extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionResponseFormatTextMappable {
-  final ResponseFormatTextTypeType type;
+  final ResponseFormatTextType type;
 
   const AssistantsApiResponseFormatOptionUnionResponseFormatText({
     required this.type,
@@ -62,7 +62,7 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatText extends Assistant
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormatOptionUnionResponseFormatJsonObject extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionResponseFormatJsonObjectMappable {
-  final ResponseFormatJsonObjectTypeType type;
+  final ResponseFormatJsonObjectType type;
 
   const AssistantsApiResponseFormatOptionUnionResponseFormatJsonObject({
     required this.type,
@@ -71,7 +71,7 @@ class AssistantsApiResponseFormatOptionUnionResponseFormatJsonObject extends Ass
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsApiResponseFormatOptionUnionResponseFormatJsonSchema extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionResponseFormatJsonSchemaMappable {
-  final ResponseFormatJsonSchemaTypeType type;
+  final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 

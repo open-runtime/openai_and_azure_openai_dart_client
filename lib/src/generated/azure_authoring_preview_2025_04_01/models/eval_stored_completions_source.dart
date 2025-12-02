@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_stored_completions_source_type_type.dart';
+import 'eval_stored_completions_source_type.dart';
 import 'metadata.dart';
 
 part 'eval_stored_completions_source.mapper.dart';
@@ -13,7 +13,7 @@ part 'eval_stored_completions_source.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
   const EvalStoredCompletionsSource({
-    this.type = EvalStoredCompletionsSourceTypeType.storedCompletions,
+    this.type = EvalStoredCompletionsSourceType.storedCompletions,
     this.createdAfter,
     this.createdBefore,
     this.limit,
@@ -21,7 +21,7 @@ class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
     this.model,
   });
 
-  final EvalStoredCompletionsSourceTypeType type;
+  final EvalStoredCompletionsSourceType type;
   @MappableField(key: 'created_after')
   final int? createdAfter;
   @MappableField(key: 'created_before')

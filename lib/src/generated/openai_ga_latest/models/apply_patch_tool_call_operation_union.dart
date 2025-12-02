@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation.dart';
-import 'apply_patch_create_file_operation_type_type.dart';
+import 'apply_patch_create_file_operation_type.dart';
 import 'apply_patch_delete_file_operation.dart';
-import 'apply_patch_delete_file_operation_type_type.dart';
+import 'apply_patch_delete_file_operation_type.dart';
 import 'apply_patch_update_file_operation.dart';
-import 'apply_patch_update_file_operation_type_type.dart';
+import 'apply_patch_update_file_operation_type.dart';
 import 'conversation_item_operation_union.dart';
 import 'item_resource_operation_union.dart';
 import 'output_item_operation_union.dart';
@@ -54,7 +54,7 @@ extension ApplyPatchToolCallOperationUnionDeserializer on ApplyPatchToolCallOper
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
 class ApplyPatchToolCallOperationUnionCreateFile extends ApplyPatchToolCallOperationUnion with ApplyPatchToolCallOperationUnionCreateFileMappable {
-  final ApplyPatchCreateFileOperationTypeType type;
+  final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
@@ -67,7 +67,7 @@ class ApplyPatchToolCallOperationUnionCreateFile extends ApplyPatchToolCallOpera
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
 class ApplyPatchToolCallOperationUnionDeleteFile extends ApplyPatchToolCallOperationUnion with ApplyPatchToolCallOperationUnionDeleteFileMappable {
-  final ApplyPatchDeleteFileOperationTypeType type;
+  final ApplyPatchDeleteFileOperationType type;
   final String path;
 
   const ApplyPatchToolCallOperationUnionDeleteFile({
@@ -78,7 +78,7 @@ class ApplyPatchToolCallOperationUnionDeleteFile extends ApplyPatchToolCallOpera
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
 class ApplyPatchToolCallOperationUnionUpdateFile extends ApplyPatchToolCallOperationUnion with ApplyPatchToolCallOperationUnionUpdateFileMappable {
-  final ApplyPatchUpdateFileOperationTypeType type;
+  final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 

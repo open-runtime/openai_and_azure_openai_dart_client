@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_transcription_session_create_request_ga_audio.dart';
-import 'realtime_transcription_session_create_request_ga_include_include.dart';
-import 'realtime_transcription_session_create_request_ga_type_type.dart';
+import 'realtime_transcription_session_create_request_ga_include.dart';
+import 'realtime_transcription_session_create_request_ga_type.dart';
 
 part 'realtime_transcription_session_create_request_ga.mapper.dart';
 
@@ -19,10 +19,10 @@ class RealtimeTranscriptionSessionCreateRequestGa with RealtimeTranscriptionSess
     this.include,
   });
 
-  final RealtimeTranscriptionSessionCreateRequestGaTypeType type;
+  final RealtimeTranscriptionSessionCreateRequestGaType type;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
-  final List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>? include;
+  final List<RealtimeTranscriptionSessionCreateRequestGaInclude>? include;
 
   static RealtimeTranscriptionSessionCreateRequestGa fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestGaMapper.fromJson(json);
 

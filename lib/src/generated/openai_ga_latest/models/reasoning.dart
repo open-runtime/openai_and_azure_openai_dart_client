@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'reasoning_effort.dart';
 import 'reasoning_generate_summary_generate_summary.dart';
-import 'reasoning_summary_summary.dart';
+import 'reasoning_summary.dart';
 
 part 'reasoning.mapper.dart';
 
@@ -24,7 +24,7 @@ class Reasoning with ReasoningMappable {
   });
 
   final ReasoningEffort? effort;
-  final ReasoningSummarySummary? summary;
+  final ReasoningSummary? summary;
   @MappableField(key: 'generate_summary')
   final ReasoningGenerateSummaryGenerateSummary? generateSummary;
 

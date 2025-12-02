@@ -14,7 +14,7 @@ class OutputAudioMapper extends ClassMapperBase<OutputAudio> {
   static OutputAudioMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputAudioMapper._());
-      OutputAudioTypeTypeMapper.ensureInitialized();
+      OutputAudioTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class OutputAudioMapper extends ClassMapperBase<OutputAudio> {
   @override
   final String id = 'OutputAudio';
 
-  static OutputAudioTypeType _$type(OutputAudio v) => v.type;
-  static const Field<OutputAudio, OutputAudioTypeType> _f$type = Field(
+  static OutputAudioType _$type(OutputAudio v) => v.type;
+  static const Field<OutputAudio, OutputAudioType> _f$type = Field(
     'type',
     _$type,
   );
@@ -114,7 +114,7 @@ extension OutputAudioValueCopy<$R, $Out>
 
 abstract class OutputAudioCopyWith<$R, $In extends OutputAudio, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({OutputAudioTypeType? type, String? data, String? transcript});
+  $R call({OutputAudioType? type, String? data, String? transcript});
   OutputAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -127,14 +127,13 @@ class _OutputAudioCopyWithImpl<$R, $Out>
   late final ClassMapperBase<OutputAudio> $mapper =
       OutputAudioMapper.ensureInitialized();
   @override
-  $R call({OutputAudioTypeType? type, String? data, String? transcript}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (data != null) #data: data,
-          if (transcript != null) #transcript: transcript,
-        }),
-      );
+  $R call({OutputAudioType? type, String? data, String? transcript}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (data != null) #data: data,
+      if (transcript != null) #transcript: transcript,
+    }),
+  );
   @override
   OutputAudio $make(CopyWithData data) => OutputAudio(
     type: data.get(#type, or: $value.type),

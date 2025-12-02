@@ -18,7 +18,7 @@ class RealtimeConversationItemWithReferenceContentMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemWithReferenceContentMapper._(),
       );
-      RealtimeConversationItemWithReferenceContentTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemWithReferenceContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,12 +26,12 @@ class RealtimeConversationItemWithReferenceContentMapper
   @override
   final String id = 'RealtimeConversationItemWithReferenceContent';
 
-  static RealtimeConversationItemWithReferenceContentTypeType? _$type(
+  static RealtimeConversationItemWithReferenceContentType? _$type(
     RealtimeConversationItemWithReferenceContent v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemWithReferenceContent,
-    RealtimeConversationItemWithReferenceContentTypeType
+    RealtimeConversationItemWithReferenceContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeConversationItemWithReferenceContent v) =>
@@ -169,7 +169,7 @@ abstract class RealtimeConversationItemWithReferenceContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemWithReferenceContentTypeType? type,
+    RealtimeConversationItemWithReferenceContentType? type,
     String? text,
     String? id,
     String? audio,

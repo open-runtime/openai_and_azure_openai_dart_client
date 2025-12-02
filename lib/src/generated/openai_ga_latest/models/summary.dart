@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'summary_type_type.dart';
+import 'summary_type.dart';
 
 part 'summary.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'summary.mapper.dart';
 class Summary with SummaryMappable {
   const Summary({
     required this.text,
-    this.type = SummaryTypeType.summaryText,
+    this.type = SummaryType.summaryText,
   });
 
   final String text;
-  final SummaryTypeType type;
+  final SummaryType type;
 
   static Summary fromJson(Map<String, dynamic> json) => SummaryMapper.fromJson(json);
 

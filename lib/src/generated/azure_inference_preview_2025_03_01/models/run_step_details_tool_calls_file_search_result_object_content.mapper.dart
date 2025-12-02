@@ -20,7 +20,7 @@ class RunStepDetailsToolCallsFileSearchResultObjectContentMapper
         _instance =
             RunStepDetailsToolCallsFileSearchResultObjectContentMapper._(),
       );
-      RunStepDetailsToolCallsFileSearchResultObjectContentTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsFileSearchResultObjectContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,12 +28,12 @@ class RunStepDetailsToolCallsFileSearchResultObjectContentMapper
   @override
   final String id = 'RunStepDetailsToolCallsFileSearchResultObjectContent';
 
-  static RunStepDetailsToolCallsFileSearchResultObjectContentTypeType? _$type(
+  static RunStepDetailsToolCallsFileSearchResultObjectContentType? _$type(
     RunStepDetailsToolCallsFileSearchResultObjectContent v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallsFileSearchResultObjectContent,
-    RunStepDetailsToolCallsFileSearchResultObjectContentTypeType
+    RunStepDetailsToolCallsFileSearchResultObjectContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(
@@ -166,7 +166,7 @@ abstract class RunStepDetailsToolCallsFileSearchResultObjectContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RunStepDetailsToolCallsFileSearchResultObjectContentTypeType? type,
+    RunStepDetailsToolCallsFileSearchResultObjectContentType? type,
     String? text,
   });
   RunStepDetailsToolCallsFileSearchResultObjectContentCopyWith<$R2, $In, $Out2>

@@ -15,7 +15,7 @@ class WebhookBatchFailedMapper extends ClassMapperBase<WebhookBatchFailed> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookBatchFailedMapper._());
       WebhookBatchFailedDataMapper.ensureInitialized();
-      WebhookBatchFailedTypeTypeMapper.ensureInitialized();
+      WebhookBatchFailedTypeMapper.ensureInitialized();
       WebhookBatchFailedObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,8 +41,8 @@ class WebhookBatchFailedMapper extends ClassMapperBase<WebhookBatchFailed> {
     _$webhookBatchFailedData,
     key: r'data',
   );
-  static WebhookBatchFailedTypeType _$type(WebhookBatchFailed v) => v.type;
-  static const Field<WebhookBatchFailed, WebhookBatchFailedTypeType> _f$type =
+  static WebhookBatchFailedType _$type(WebhookBatchFailed v) => v.type;
+  static const Field<WebhookBatchFailed, WebhookBatchFailedType> _f$type =
       Field('type', _$type);
   static WebhookBatchFailedObjectObjectEnum? _$objectEnum(
     WebhookBatchFailed v,
@@ -154,7 +154,7 @@ abstract class WebhookBatchFailedCopyWith<
     int? createdAt,
     String? id,
     WebhookBatchFailedData? webhookBatchFailedData,
-    WebhookBatchFailedTypeType? type,
+    WebhookBatchFailedType? type,
     WebhookBatchFailedObjectObjectEnum? objectEnum,
   });
   WebhookBatchFailedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -184,7 +184,7 @@ class _WebhookBatchFailedCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookBatchFailedData? webhookBatchFailedData,
-    WebhookBatchFailedTypeType? type,
+    WebhookBatchFailedType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

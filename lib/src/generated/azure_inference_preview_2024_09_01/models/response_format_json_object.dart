@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_format_json_object_type_type.dart';
+import 'response_format_json_object_type.dart';
 
 part 'response_format_json_object.mapper.dart';
 
@@ -14,7 +14,7 @@ class ResponseFormatJsonObject with ResponseFormatJsonObjectMappable {
     required this.type,
   });
 
-  final ResponseFormatJsonObjectTypeType type;
+  final ResponseFormatJsonObjectType type;
 
   static ResponseFormatJsonObject fromJson(Map<String, dynamic> json) => ResponseFormatJsonObjectMapper.fromJson(json);
 

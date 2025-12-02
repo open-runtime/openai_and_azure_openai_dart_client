@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'code_interpreter_file_output_files.dart';
-import 'code_interpreter_file_output_type_type.dart';
+import 'code_interpreter_file_output_type.dart';
 
 part 'code_interpreter_file_output.mapper.dart';
 
@@ -18,7 +18,7 @@ class CodeInterpreterFileOutput with CodeInterpreterFileOutputMappable {
     required this.files,
   });
 
-  final CodeInterpreterFileOutputTypeType type;
+  final CodeInterpreterFileOutputType type;
   final List<CodeInterpreterFileOutputFiles> files;
 
   static CodeInterpreterFileOutput fromJson(Map<String, dynamic> json) => CodeInterpreterFileOutputMapper.fromJson(json);

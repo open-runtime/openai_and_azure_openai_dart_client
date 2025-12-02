@@ -93,7 +93,7 @@ class CreateSpeechResponseStreamEventSpeechAudioDeltaMapper
       CreateSpeechResponseStreamEventMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      CreateSpeechResponseStreamEventTypeTypeMapper.ensureInitialized();
+      CreateSpeechResponseStreamEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -101,12 +101,12 @@ class CreateSpeechResponseStreamEventSpeechAudioDeltaMapper
   @override
   final String id = 'CreateSpeechResponseStreamEventSpeechAudioDelta';
 
-  static CreateSpeechResponseStreamEventTypeType _$type(
+  static CreateSpeechResponseStreamEventType _$type(
     CreateSpeechResponseStreamEventSpeechAudioDelta v,
   ) => v.type;
   static const Field<
     CreateSpeechResponseStreamEventSpeechAudioDelta,
-    CreateSpeechResponseStreamEventTypeType
+    CreateSpeechResponseStreamEventType
   >
   _f$type = Field('type', _$type);
   static String _$audio(CreateSpeechResponseStreamEventSpeechAudioDelta v) =>
@@ -239,7 +239,7 @@ abstract class CreateSpeechResponseStreamEventSpeechAudioDeltaCopyWith<
 >
     implements CreateSpeechResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({CreateSpeechResponseStreamEventTypeType? type, String? audio});
+  $R call({CreateSpeechResponseStreamEventType? type, String? audio});
   CreateSpeechResponseStreamEventSpeechAudioDeltaCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -268,13 +268,12 @@ class _CreateSpeechResponseStreamEventSpeechAudioDeltaCopyWithImpl<$R, $Out>
   $mapper =
       CreateSpeechResponseStreamEventSpeechAudioDeltaMapper.ensureInitialized();
   @override
-  $R call({CreateSpeechResponseStreamEventTypeType? type, String? audio}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (audio != null) #audio: audio,
-        }),
-      );
+  $R call({CreateSpeechResponseStreamEventType? type, String? audio}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (audio != null) #audio: audio,
+    }),
+  );
   @override
   CreateSpeechResponseStreamEventSpeechAudioDelta $make(CopyWithData data) =>
       CreateSpeechResponseStreamEventSpeechAudioDelta(
@@ -310,7 +309,7 @@ class CreateSpeechResponseStreamEventSpeechAudioDoneMapper
       CreateSpeechResponseStreamEventMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      CreateSpeechResponseStreamEventTypeType2Mapper.ensureInitialized();
+      CreateSpeechResponseStreamEventType2Mapper.ensureInitialized();
       CreateSpeechResponseStreamEventUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -319,12 +318,12 @@ class CreateSpeechResponseStreamEventSpeechAudioDoneMapper
   @override
   final String id = 'CreateSpeechResponseStreamEventSpeechAudioDone';
 
-  static CreateSpeechResponseStreamEventTypeType2 _$type(
+  static CreateSpeechResponseStreamEventType2 _$type(
     CreateSpeechResponseStreamEventSpeechAudioDone v,
   ) => v.type;
   static const Field<
     CreateSpeechResponseStreamEventSpeechAudioDone,
-    CreateSpeechResponseStreamEventTypeType2
+    CreateSpeechResponseStreamEventType2
   >
   _f$type = Field('type', _$type);
   static CreateSpeechResponseStreamEventUsage
@@ -477,7 +476,7 @@ abstract class CreateSpeechResponseStreamEventSpeechAudioDoneCopyWith<
   get createSpeechResponseStreamEventUsage;
   @override
   $R call({
-    CreateSpeechResponseStreamEventTypeType2? type,
+    CreateSpeechResponseStreamEventType2? type,
     CreateSpeechResponseStreamEventUsage? createSpeechResponseStreamEventUsage,
   });
   CreateSpeechResponseStreamEventSpeechAudioDoneCopyWith<$R2, $In, $Out2>
@@ -519,7 +518,7 @@ class _CreateSpeechResponseStreamEventSpeechAudioDoneCopyWithImpl<$R, $Out>
       .$chain((v) => call(createSpeechResponseStreamEventUsage: v));
   @override
   $R call({
-    CreateSpeechResponseStreamEventTypeType2? type,
+    CreateSpeechResponseStreamEventType2? type,
     CreateSpeechResponseStreamEventUsage? createSpeechResponseStreamEventUsage,
   }) => $apply(
     FieldCopyWithData({

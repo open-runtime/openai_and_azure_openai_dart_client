@@ -90,7 +90,7 @@ class RealtimeMcpToolCallErrorUnionProtocolErrorMapper
       RealtimeMcpToolCallErrorUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeMcpProtocolErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcpProtocolErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,12 +98,12 @@ class RealtimeMcpToolCallErrorUnionProtocolErrorMapper
   @override
   final String id = 'RealtimeMcpToolCallErrorUnionProtocolError';
 
-  static RealtimeMcpProtocolErrorTypeType _$type(
+  static RealtimeMcpProtocolErrorType _$type(
     RealtimeMcpToolCallErrorUnionProtocolError v,
   ) => v.type;
   static const Field<
     RealtimeMcpToolCallErrorUnionProtocolError,
-    RealtimeMcpProtocolErrorTypeType
+    RealtimeMcpProtocolErrorType
   >
   _f$type = Field('type', _$type);
   static int _$code(RealtimeMcpToolCallErrorUnionProtocolError v) => v.code;
@@ -230,7 +230,7 @@ abstract class RealtimeMcpToolCallErrorUnionProtocolErrorCopyWith<
 >
     implements RealtimeMcpToolCallErrorUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({RealtimeMcpProtocolErrorTypeType? type, int? code, String? message});
+  $R call({RealtimeMcpProtocolErrorType? type, int? code, String? message});
   RealtimeMcpToolCallErrorUnionProtocolErrorCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -255,17 +255,14 @@ class _RealtimeMcpToolCallErrorUnionProtocolErrorCopyWithImpl<$R, $Out>
   $mapper =
       RealtimeMcpToolCallErrorUnionProtocolErrorMapper.ensureInitialized();
   @override
-  $R call({
-    RealtimeMcpProtocolErrorTypeType? type,
-    int? code,
-    String? message,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (code != null) #code: code,
-      if (message != null) #message: message,
-    }),
-  );
+  $R call({RealtimeMcpProtocolErrorType? type, int? code, String? message}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (code != null) #code: code,
+          if (message != null) #message: message,
+        }),
+      );
   @override
   RealtimeMcpToolCallErrorUnionProtocolError $make(CopyWithData data) =>
       RealtimeMcpToolCallErrorUnionProtocolError(
@@ -303,7 +300,7 @@ class RealtimeMcpToolCallErrorUnionToolExecutionErrorMapper
       RealtimeMcpToolCallErrorUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeMcpToolExecutionErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcpToolExecutionErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -311,12 +308,12 @@ class RealtimeMcpToolCallErrorUnionToolExecutionErrorMapper
   @override
   final String id = 'RealtimeMcpToolCallErrorUnionToolExecutionError';
 
-  static RealtimeMcpToolExecutionErrorTypeType _$type(
+  static RealtimeMcpToolExecutionErrorType _$type(
     RealtimeMcpToolCallErrorUnionToolExecutionError v,
   ) => v.type;
   static const Field<
     RealtimeMcpToolCallErrorUnionToolExecutionError,
-    RealtimeMcpToolExecutionErrorTypeType
+    RealtimeMcpToolExecutionErrorType
   >
   _f$type = Field('type', _$type);
   static String _$message(RealtimeMcpToolCallErrorUnionToolExecutionError v) =>
@@ -449,7 +446,7 @@ abstract class RealtimeMcpToolCallErrorUnionToolExecutionErrorCopyWith<
 >
     implements RealtimeMcpToolCallErrorUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({RealtimeMcpToolExecutionErrorTypeType? type, String? message});
+  $R call({RealtimeMcpToolExecutionErrorType? type, String? message});
   RealtimeMcpToolCallErrorUnionToolExecutionErrorCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -478,13 +475,12 @@ class _RealtimeMcpToolCallErrorUnionToolExecutionErrorCopyWithImpl<$R, $Out>
   $mapper =
       RealtimeMcpToolCallErrorUnionToolExecutionErrorMapper.ensureInitialized();
   @override
-  $R call({RealtimeMcpToolExecutionErrorTypeType? type, String? message}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (message != null) #message: message,
-        }),
-      );
+  $R call({RealtimeMcpToolExecutionErrorType? type, String? message}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (message != null) #message: message,
+    }),
+  );
   @override
   RealtimeMcpToolCallErrorUnionToolExecutionError $make(CopyWithData data) =>
       RealtimeMcpToolCallErrorUnionToolExecutionError(
@@ -519,7 +515,7 @@ class RealtimeMcpToolCallErrorUnionHttpErrorMapper
       RealtimeMcpToolCallErrorUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeMcphttpErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcphttpErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -527,12 +523,12 @@ class RealtimeMcpToolCallErrorUnionHttpErrorMapper
   @override
   final String id = 'RealtimeMcpToolCallErrorUnionHttpError';
 
-  static RealtimeMcphttpErrorTypeType _$type(
+  static RealtimeMcphttpErrorType _$type(
     RealtimeMcpToolCallErrorUnionHttpError v,
   ) => v.type;
   static const Field<
     RealtimeMcpToolCallErrorUnionHttpError,
-    RealtimeMcphttpErrorTypeType
+    RealtimeMcphttpErrorType
   >
   _f$type = Field('type', _$type);
   static int _$code(RealtimeMcpToolCallErrorUnionHttpError v) => v.code;
@@ -652,7 +648,7 @@ abstract class RealtimeMcpToolCallErrorUnionHttpErrorCopyWith<
 >
     implements RealtimeMcpToolCallErrorUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({RealtimeMcphttpErrorTypeType? type, int? code, String? message});
+  $R call({RealtimeMcphttpErrorType? type, int? code, String? message});
   RealtimeMcpToolCallErrorUnionHttpErrorCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -675,7 +671,7 @@ class _RealtimeMcpToolCallErrorUnionHttpErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeMcpToolCallErrorUnionHttpError> $mapper =
       RealtimeMcpToolCallErrorUnionHttpErrorMapper.ensureInitialized();
   @override
-  $R call({RealtimeMcphttpErrorTypeType? type, int? code, String? message}) =>
+  $R call({RealtimeMcphttpErrorType? type, int? code, String? message}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

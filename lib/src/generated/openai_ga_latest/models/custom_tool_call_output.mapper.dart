@@ -14,7 +14,7 @@ class CustomToolCallOutputMapper extends ClassMapperBase<CustomToolCallOutput> {
   static CustomToolCallOutputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomToolCallOutputMapper._());
-      CustomToolCallOutputTypeTypeMapper.ensureInitialized();
+      CustomToolCallOutputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class CustomToolCallOutputMapper extends ClassMapperBase<CustomToolCallOutput> {
   @override
   final String id = 'CustomToolCallOutput';
 
-  static CustomToolCallOutputTypeType _$type(CustomToolCallOutput v) => v.type;
-  static const Field<CustomToolCallOutput, CustomToolCallOutputTypeType>
-  _f$type = Field('type', _$type);
+  static CustomToolCallOutputType _$type(CustomToolCallOutput v) => v.type;
+  static const Field<CustomToolCallOutput, CustomToolCallOutputType> _f$type =
+      Field('type', _$type);
   static String _$callId(CustomToolCallOutput v) => v.callId;
   static const Field<CustomToolCallOutput, String> _f$callId = Field(
     'callId',
@@ -135,7 +135,7 @@ abstract class CustomToolCallOutputCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    CustomToolCallOutputTypeType? type,
+    CustomToolCallOutputType? type,
     String? callId,
     String? output,
     String? id,
@@ -155,7 +155,7 @@ class _CustomToolCallOutputCopyWithImpl<$R, $Out>
       CustomToolCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    CustomToolCallOutputTypeType? type,
+    CustomToolCallOutputType? type,
     String? callId,
     String? output,
     Object? id = $none,

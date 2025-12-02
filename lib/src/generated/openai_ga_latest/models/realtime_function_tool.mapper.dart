@@ -14,7 +14,7 @@ class RealtimeFunctionToolMapper extends ClassMapperBase<RealtimeFunctionTool> {
   static RealtimeFunctionToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeFunctionToolMapper._());
-      RealtimeFunctionToolTypeTypeMapper.ensureInitialized();
+      RealtimeFunctionToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,9 @@ class RealtimeFunctionToolMapper extends ClassMapperBase<RealtimeFunctionTool> {
   @override
   final String id = 'RealtimeFunctionTool';
 
-  static RealtimeFunctionToolTypeType? _$type(RealtimeFunctionTool v) => v.type;
-  static const Field<RealtimeFunctionTool, RealtimeFunctionToolTypeType>
-  _f$type = Field('type', _$type, opt: true);
+  static RealtimeFunctionToolType? _$type(RealtimeFunctionTool v) => v.type;
+  static const Field<RealtimeFunctionTool, RealtimeFunctionToolType> _f$type =
+      Field('type', _$type, opt: true);
   static String? _$name(RealtimeFunctionTool v) => v.name;
   static const Field<RealtimeFunctionTool, String> _f$name = Field(
     'name',
@@ -136,7 +136,7 @@ abstract class RealtimeFunctionToolCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeFunctionToolTypeType? type,
+    RealtimeFunctionToolType? type,
     String? name,
     String? description,
     dynamic parameters,

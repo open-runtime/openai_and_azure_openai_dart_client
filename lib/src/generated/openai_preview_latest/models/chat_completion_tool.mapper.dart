@@ -14,7 +14,7 @@ class ChatCompletionToolMapper extends ClassMapperBase<ChatCompletionTool> {
   static ChatCompletionToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ChatCompletionToolMapper._());
-      ChatCompletionToolTypeTypeMapper.ensureInitialized();
+      ChatCompletionToolTypeMapper.ensureInitialized();
       FunctionObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class ChatCompletionToolMapper extends ClassMapperBase<ChatCompletionTool> {
   @override
   final String id = 'ChatCompletionTool';
 
-  static ChatCompletionToolTypeType _$type(ChatCompletionTool v) => v.type;
-  static const Field<ChatCompletionTool, ChatCompletionToolTypeType> _f$type =
+  static ChatCompletionToolType _$type(ChatCompletionTool v) => v.type;
+  static const Field<ChatCompletionTool, ChatCompletionToolType> _f$type =
       Field('type', _$type);
   static FunctionObject _$functionField(ChatCompletionTool v) =>
       v.functionField;
@@ -120,7 +120,7 @@ abstract class ChatCompletionToolCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   FunctionObjectCopyWith<$R, FunctionObject, FunctionObject> get functionField;
-  $R call({ChatCompletionToolTypeType? type, FunctionObject? functionField});
+  $R call({ChatCompletionToolType? type, FunctionObject? functionField});
   ChatCompletionToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -139,7 +139,7 @@ class _ChatCompletionToolCopyWithImpl<$R, $Out>
   get functionField =>
       $value.functionField.copyWith.$chain((v) => call(functionField: v));
   @override
-  $R call({ChatCompletionToolTypeType? type, FunctionObject? functionField}) =>
+  $R call({ChatCompletionToolType? type, FunctionObject? functionField}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,

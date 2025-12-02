@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_stream_event.dart';
 import 'transcript_text_done_event_logprobs.dart';
-import 'transcript_text_done_event_type_type.dart';
+import 'transcript_text_done_event_type.dart';
 import 'transcript_text_usage_tokens.dart';
 
 part 'transcript_text_done_event.mapper.dart';
@@ -21,7 +21,7 @@ class TranscriptTextDoneEvent with TranscriptTextDoneEventMappable {
     this.usage,
   });
 
-  final TranscriptTextDoneEventTypeType type;
+  final TranscriptTextDoneEventType type;
   final String text;
   final List<TranscriptTextDoneEventLogprobs>? logprobs;
   final TranscriptTextUsageTokens? usage;

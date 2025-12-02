@@ -5,12 +5,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'web_search_action_find.dart';
-import 'web_search_action_find_type_type.dart';
+import 'web_search_action_find_type.dart';
 import 'web_search_action_open_page.dart';
-import 'web_search_action_open_page_type_type.dart';
+import 'web_search_action_open_page_type.dart';
 import 'web_search_action_search.dart';
 import 'web_search_action_search_sources.dart';
-import 'web_search_action_search_type_type.dart';
+import 'web_search_action_search_type.dart';
 
 part 'conversation_item_action_union.mapper.dart';
 
@@ -52,7 +52,7 @@ extension ConversationItemActionUnionDeserializer on ConversationItemActionUnion
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
 class ConversationItemActionUnionSearch extends ConversationItemActionUnion with ConversationItemActionUnionSearchMappable {
-  final WebSearchActionSearchTypeType type;
+  final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
@@ -65,7 +65,7 @@ class ConversationItemActionUnionSearch extends ConversationItemActionUnion with
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
 class ConversationItemActionUnionOpenPage extends ConversationItemActionUnion with ConversationItemActionUnionOpenPageMappable {
-  final WebSearchActionOpenPageTypeType type;
+  final WebSearchActionOpenPageType type;
   final String url;
 
   const ConversationItemActionUnionOpenPage({
@@ -76,7 +76,7 @@ class ConversationItemActionUnionOpenPage extends ConversationItemActionUnion wi
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
 class ConversationItemActionUnionFind extends ConversationItemActionUnion with ConversationItemActionUnionFindMappable {
-  final WebSearchActionFindTypeType type;
+  final WebSearchActionFindType type;
   final String url;
   final String pattern;
 

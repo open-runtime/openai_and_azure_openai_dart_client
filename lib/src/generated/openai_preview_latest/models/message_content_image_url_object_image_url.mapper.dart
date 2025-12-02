@@ -17,7 +17,7 @@ class MessageContentImageUrlObjectImageUrlMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageUrlObjectImageUrlMapper._(),
       );
-      MessageContentImageUrlObjectImageUrlDetailDetailMapper.ensureInitialized();
+      MessageContentImageUrlObjectImageUrlDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -28,18 +28,18 @@ class MessageContentImageUrlObjectImageUrlMapper
   static String _$url(MessageContentImageUrlObjectImageUrl v) => v.url;
   static const Field<MessageContentImageUrlObjectImageUrl, String> _f$url =
       Field('url', _$url);
-  static MessageContentImageUrlObjectImageUrlDetailDetail _$detail(
+  static MessageContentImageUrlObjectImageUrlDetail _$detail(
     MessageContentImageUrlObjectImageUrl v,
   ) => v.detail;
   static const Field<
     MessageContentImageUrlObjectImageUrl,
-    MessageContentImageUrlObjectImageUrlDetailDetail
+    MessageContentImageUrlObjectImageUrlDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentImageUrlObjectImageUrlDetailDetail.auto,
+    def: MessageContentImageUrlObjectImageUrlDetail.auto,
   );
 
   @override
@@ -140,10 +140,7 @@ abstract class MessageContentImageUrlObjectImageUrlCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    String? url,
-    MessageContentImageUrlObjectImageUrlDetailDetail? detail,
-  });
+  $R call({String? url, MessageContentImageUrlObjectImageUrlDetail? detail});
   MessageContentImageUrlObjectImageUrlCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -166,15 +163,13 @@ class _MessageContentImageUrlObjectImageUrlCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentImageUrlObjectImageUrl> $mapper =
       MessageContentImageUrlObjectImageUrlMapper.ensureInitialized();
   @override
-  $R call({
-    String? url,
-    MessageContentImageUrlObjectImageUrlDetailDetail? detail,
-  }) => $apply(
-    FieldCopyWithData({
-      if (url != null) #url: url,
-      if (detail != null) #detail: detail,
-    }),
-  );
+  $R call({String? url, MessageContentImageUrlObjectImageUrlDetail? detail}) =>
+      $apply(
+        FieldCopyWithData({
+          if (url != null) #url: url,
+          if (detail != null) #detail: detail,
+        }),
+      );
   @override
   MessageContentImageUrlObjectImageUrl $make(CopyWithData data) =>
       MessageContentImageUrlObjectImageUrl(

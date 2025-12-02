@@ -14,7 +14,7 @@ class ErrorEventMapper extends ClassMapperBase<ErrorEvent> {
   static ErrorEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ErrorEventMapper._());
-      ErrorEventEventEventMapper.ensureInitialized();
+      ErrorEventEventMapper.ensureInitialized();
       ErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class ErrorEventMapper extends ClassMapperBase<ErrorEvent> {
   @override
   final String id = 'ErrorEvent';
 
-  static ErrorEventEventEvent _$event(ErrorEvent v) => v.event;
-  static const Field<ErrorEvent, ErrorEventEventEvent> _f$event = Field(
+  static ErrorEventEvent _$event(ErrorEvent v) => v.event;
+  static const Field<ErrorEvent, ErrorEventEvent> _f$event = Field(
     'event',
     _$event,
   );
@@ -106,7 +106,7 @@ extension ErrorEventValueCopy<$R, $Out>
 abstract class ErrorEventCopyWith<$R, $In extends ErrorEvent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ErrorCopyWith<$R, Error, Error> get data;
-  $R call({ErrorEventEventEvent? event, Error? data});
+  $R call({ErrorEventEvent? event, Error? data});
   ErrorEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -122,7 +122,7 @@ class _ErrorEventCopyWithImpl<$R, $Out>
   ErrorCopyWith<$R, Error, Error> get data =>
       $value.data.copyWith.$chain((v) => call(data: v));
   @override
-  $R call({ErrorEventEventEvent? event, Error? data}) => $apply(
+  $R call({ErrorEventEvent? event, Error? data}) => $apply(
     FieldCopyWithData({
       if (event != null) #event: event,
       if (data != null) #data: data,

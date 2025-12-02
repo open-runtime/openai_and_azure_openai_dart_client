@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_chat_completion_request_audio_voice_voice.dart';
-import 'create_chat_completion_request_audio_format_format.dart';
+import 'create_chat_completion_request_audio_voice.dart';
+import 'create_chat_completion_request_audio_format.dart';
 
 part 'create_chat_completion_request_audio.mapper.dart';
 
@@ -16,8 +16,8 @@ class CreateChatCompletionRequestAudio with CreateChatCompletionRequestAudioMapp
     required this.format,
   });
 
-  final CreateChatCompletionRequestAudioVoiceVoice voice;
-  final CreateChatCompletionRequestAudioFormatFormat format;
+  final CreateChatCompletionRequestAudioVoice voice;
+  final CreateChatCompletionRequestAudioFormat format;
 
   static CreateChatCompletionRequestAudio fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestAudioMapper.fromJson(json);
 

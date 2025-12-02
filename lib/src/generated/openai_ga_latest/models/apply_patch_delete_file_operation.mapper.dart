@@ -17,7 +17,7 @@ class ApplyPatchDeleteFileOperationMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchDeleteFileOperationMapper._(),
       );
-      ApplyPatchDeleteFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchDeleteFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,18 +30,18 @@ class ApplyPatchDeleteFileOperationMapper
     'path',
     _$path,
   );
-  static ApplyPatchDeleteFileOperationTypeType _$type(
+  static ApplyPatchDeleteFileOperationType _$type(
     ApplyPatchDeleteFileOperation v,
   ) => v.type;
   static const Field<
     ApplyPatchDeleteFileOperation,
-    ApplyPatchDeleteFileOperationTypeType
+    ApplyPatchDeleteFileOperationType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchDeleteFileOperationTypeType.deleteFile,
+    def: ApplyPatchDeleteFileOperationType.deleteFile,
   );
 
   @override
@@ -135,7 +135,7 @@ abstract class ApplyPatchDeleteFileOperationCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? path, ApplyPatchDeleteFileOperationTypeType? type});
+  $R call({String? path, ApplyPatchDeleteFileOperationType? type});
   ApplyPatchDeleteFileOperationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -159,13 +159,12 @@ class _ApplyPatchDeleteFileOperationCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchDeleteFileOperation> $mapper =
       ApplyPatchDeleteFileOperationMapper.ensureInitialized();
   @override
-  $R call({String? path, ApplyPatchDeleteFileOperationTypeType? type}) =>
-      $apply(
-        FieldCopyWithData({
-          if (path != null) #path: path,
-          if (type != null) #type: type,
-        }),
-      );
+  $R call({String? path, ApplyPatchDeleteFileOperationType? type}) => $apply(
+    FieldCopyWithData({
+      if (path != null) #path: path,
+      if (type != null) #type: type,
+    }),
+  );
   @override
   ApplyPatchDeleteFileOperation $make(CopyWithData data) =>
       ApplyPatchDeleteFileOperation(

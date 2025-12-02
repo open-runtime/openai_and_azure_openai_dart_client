@@ -85,10 +85,10 @@ class OutputItemMessageMapper extends SubClassMapperBase<OutputItemMessage> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemMessageMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeTypeMapper.ensureInitialized();
-      OutputItemRoleRoleMapper.ensureInitialized();
+      OutputItemTypeMapper.ensureInitialized();
+      OutputItemRoleMapper.ensureInitialized();
       OutputMessageContentMapper.ensureInitialized();
-      OutputItemStatusStatusMapper.ensureInitialized();
+      OutputItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,22 +98,24 @@ class OutputItemMessageMapper extends SubClassMapperBase<OutputItemMessage> {
 
   static String _$id(OutputItemMessage v) => v.id;
   static const Field<OutputItemMessage, String> _f$id = Field('id', _$id);
-  static OutputItemTypeType _$type(OutputItemMessage v) => v.type;
-  static const Field<OutputItemMessage, OutputItemTypeType> _f$type = Field(
+  static OutputItemType _$type(OutputItemMessage v) => v.type;
+  static const Field<OutputItemMessage, OutputItemType> _f$type = Field(
     'type',
     _$type,
   );
-  static OutputItemRoleRole _$role(OutputItemMessage v) => v.role;
-  static const Field<OutputItemMessage, OutputItemRoleRole> _f$role = Field(
+  static OutputItemRole _$role(OutputItemMessage v) => v.role;
+  static const Field<OutputItemMessage, OutputItemRole> _f$role = Field(
     'role',
     _$role,
   );
   static List<OutputMessageContent> _$content(OutputItemMessage v) => v.content;
   static const Field<OutputItemMessage, List<OutputMessageContent>> _f$content =
       Field('content', _$content);
-  static OutputItemStatusStatus _$status(OutputItemMessage v) => v.status;
-  static const Field<OutputItemMessage, OutputItemStatusStatus> _f$status =
-      Field('status', _$status);
+  static OutputItemStatus _$status(OutputItemMessage v) => v.status;
+  static const Field<OutputItemMessage, OutputItemStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<OutputItemMessage> fields = const {
@@ -225,10 +227,10 @@ abstract class OutputItemMessageCopyWith<
   @override
   $R call({
     String? id,
-    OutputItemTypeType? type,
-    OutputItemRoleRole? role,
+    OutputItemType? type,
+    OutputItemRole? role,
     List<OutputMessageContent>? content,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   });
   OutputItemMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -257,10 +259,10 @@ class _OutputItemMessageCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    OutputItemTypeType? type,
-    OutputItemRoleRole? role,
+    OutputItemType? type,
+    OutputItemRole? role,
     List<OutputMessageContent>? content,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,
@@ -296,8 +298,8 @@ class OutputItemFileSearchCallMapper
         _instance = OutputItemFileSearchCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType2Mapper.ensureInitialized();
-      OutputItemStatusStatus2Mapper.ensureInitialized();
+      OutputItemType2Mapper.ensureInitialized();
+      OutputItemStatus2Mapper.ensureInitialized();
       OutputItemResultsMapper.ensureInitialized();
     }
     return _instance!;
@@ -311,13 +313,14 @@ class OutputItemFileSearchCallMapper
     'id',
     _$id,
   );
-  static OutputItemTypeType2 _$type(OutputItemFileSearchCall v) => v.type;
-  static const Field<OutputItemFileSearchCall, OutputItemTypeType2> _f$type =
-      Field('type', _$type);
-  static OutputItemStatusStatus2 _$status(OutputItemFileSearchCall v) =>
-      v.status;
-  static const Field<OutputItemFileSearchCall, OutputItemStatusStatus2>
-  _f$status = Field('status', _$status);
+  static OutputItemType2 _$type(OutputItemFileSearchCall v) => v.type;
+  static const Field<OutputItemFileSearchCall, OutputItemType2> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static OutputItemStatus2 _$status(OutputItemFileSearchCall v) => v.status;
+  static const Field<OutputItemFileSearchCall, OutputItemStatus2> _f$status =
+      Field('status', _$status);
   static List<String> _$queries(OutputItemFileSearchCall v) => v.queries;
   static const Field<OutputItemFileSearchCall, List<String>> _f$queries = Field(
     'queries',
@@ -438,8 +441,8 @@ abstract class OutputItemFileSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    OutputItemTypeType2? type,
-    OutputItemStatusStatus2? status,
+    OutputItemType2? type,
+    OutputItemStatus2? status,
     List<String>? queries,
     List<OutputItemResults>? results,
   });
@@ -480,8 +483,8 @@ class _OutputItemFileSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    OutputItemTypeType2? type,
-    OutputItemStatusStatus2? status,
+    OutputItemType2? type,
+    OutputItemStatus2? status,
     List<String>? queries,
     Object? results = $none,
   }) => $apply(
@@ -517,8 +520,8 @@ class OutputItemFunctionCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemFunctionCallMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType3Mapper.ensureInitialized();
-      OutputItemStatusStatusMapper.ensureInitialized();
+      OutputItemType3Mapper.ensureInitialized();
+      OutputItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -528,9 +531,11 @@ class OutputItemFunctionCallMapper
 
   static String? _$id(OutputItemFunctionCall v) => v.id;
   static const Field<OutputItemFunctionCall, String> _f$id = Field('id', _$id);
-  static OutputItemTypeType3 _$type(OutputItemFunctionCall v) => v.type;
-  static const Field<OutputItemFunctionCall, OutputItemTypeType3> _f$type =
-      Field('type', _$type);
+  static OutputItemType3 _$type(OutputItemFunctionCall v) => v.type;
+  static const Field<OutputItemFunctionCall, OutputItemType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$callId(OutputItemFunctionCall v) => v.callId;
   static const Field<OutputItemFunctionCall, String> _f$callId = Field(
     'callId',
@@ -547,8 +552,8 @@ class OutputItemFunctionCallMapper
     'arguments',
     _$arguments,
   );
-  static OutputItemStatusStatus? _$status(OutputItemFunctionCall v) => v.status;
-  static const Field<OutputItemFunctionCall, OutputItemStatusStatus> _f$status =
+  static OutputItemStatus? _$status(OutputItemFunctionCall v) => v.status;
+  static const Field<OutputItemFunctionCall, OutputItemStatus> _f$status =
       Field('status', _$status);
 
   @override
@@ -656,11 +661,11 @@ abstract class OutputItemFunctionCallCopyWith<
   @override
   $R call({
     String? id,
-    OutputItemTypeType3? type,
+    OutputItemType3? type,
     String? callId,
     String? name,
     String? arguments,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   });
   OutputItemFunctionCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -679,7 +684,7 @@ class _OutputItemFunctionCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     Object? id = $none,
-    OutputItemTypeType3? type,
+    OutputItemType3? type,
     String? callId,
     String? name,
     String? arguments,
@@ -721,8 +726,8 @@ class OutputItemWebSearchCallMapper
         _instance = OutputItemWebSearchCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType4Mapper.ensureInitialized();
-      OutputItemStatusStatus3Mapper.ensureInitialized();
+      OutputItemType4Mapper.ensureInitialized();
+      OutputItemStatus3Mapper.ensureInitialized();
       OutputItemActionUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -733,13 +738,14 @@ class OutputItemWebSearchCallMapper
 
   static String _$id(OutputItemWebSearchCall v) => v.id;
   static const Field<OutputItemWebSearchCall, String> _f$id = Field('id', _$id);
-  static OutputItemTypeType4 _$type(OutputItemWebSearchCall v) => v.type;
-  static const Field<OutputItemWebSearchCall, OutputItemTypeType4> _f$type =
-      Field('type', _$type);
-  static OutputItemStatusStatus3 _$status(OutputItemWebSearchCall v) =>
-      v.status;
-  static const Field<OutputItemWebSearchCall, OutputItemStatusStatus3>
-  _f$status = Field('status', _$status);
+  static OutputItemType4 _$type(OutputItemWebSearchCall v) => v.type;
+  static const Field<OutputItemWebSearchCall, OutputItemType4> _f$type = Field(
+    'type',
+    _$type,
+  );
+  static OutputItemStatus3 _$status(OutputItemWebSearchCall v) => v.status;
+  static const Field<OutputItemWebSearchCall, OutputItemStatus3> _f$status =
+      Field('status', _$status);
   static OutputItemActionUnion _$action(OutputItemWebSearchCall v) => v.action;
   static const Field<OutputItemWebSearchCall, OutputItemActionUnion> _f$action =
       Field('action', _$action);
@@ -851,8 +857,8 @@ abstract class OutputItemWebSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    OutputItemTypeType4? type,
-    OutputItemStatusStatus3? status,
+    OutputItemType4? type,
+    OutputItemStatus3? status,
     OutputItemActionUnion? action,
   });
   OutputItemWebSearchCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -879,8 +885,8 @@ class _OutputItemWebSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    OutputItemTypeType4? type,
-    OutputItemStatusStatus3? status,
+    OutputItemType4? type,
+    OutputItemStatus3? status,
     OutputItemActionUnion? action,
   }) => $apply(
     FieldCopyWithData({
@@ -913,10 +919,10 @@ class OutputItemComputerCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemComputerCallMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType5Mapper.ensureInitialized();
+      OutputItemType5Mapper.ensureInitialized();
       ComputerActionMapper.ensureInitialized();
       ComputerCallSafetyCheckParamMapper.ensureInitialized();
-      OutputItemStatusStatusMapper.ensureInitialized();
+      OutputItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -924,9 +930,11 @@ class OutputItemComputerCallMapper
   @override
   final String id = 'OutputItemComputerCall';
 
-  static OutputItemTypeType5 _$type(OutputItemComputerCall v) => v.type;
-  static const Field<OutputItemComputerCall, OutputItemTypeType5> _f$type =
-      Field('type', _$type);
+  static OutputItemType5 _$type(OutputItemComputerCall v) => v.type;
+  static const Field<OutputItemComputerCall, OutputItemType5> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$id(OutputItemComputerCall v) => v.id;
   static const Field<OutputItemComputerCall, String> _f$id = Field('id', _$id);
   static String _$callId(OutputItemComputerCall v) => v.callId;
@@ -949,8 +957,8 @@ class OutputItemComputerCallMapper
     _$pendingSafetyChecks,
     key: r'pending_safety_checks',
   );
-  static OutputItemStatusStatus _$status(OutputItemComputerCall v) => v.status;
-  static const Field<OutputItemComputerCall, OutputItemStatusStatus> _f$status =
+  static OutputItemStatus _$status(OutputItemComputerCall v) => v.status;
+  static const Field<OutputItemComputerCall, OutputItemStatus> _f$status =
       Field('status', _$status);
 
   @override
@@ -1068,12 +1076,12 @@ abstract class OutputItemComputerCallCopyWith<
   get pendingSafetyChecks;
   @override
   $R call({
-    OutputItemTypeType5? type,
+    OutputItemType5? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   });
   OutputItemComputerCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1109,12 +1117,12 @@ class _OutputItemComputerCallCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    OutputItemTypeType5? type,
+    OutputItemType5? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerCallSafetyCheckParam>? pendingSafetyChecks,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -1154,10 +1162,10 @@ class OutputItemReasoningMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemReasoningMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType6Mapper.ensureInitialized();
+      OutputItemType6Mapper.ensureInitialized();
       SummaryMapper.ensureInitialized();
       ReasoningTextContentMapper.ensureInitialized();
-      OutputItemStatusStatusMapper.ensureInitialized();
+      OutputItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1165,8 +1173,8 @@ class OutputItemReasoningMapper
   @override
   final String id = 'OutputItemReasoning';
 
-  static OutputItemTypeType6 _$type(OutputItemReasoning v) => v.type;
-  static const Field<OutputItemReasoning, OutputItemTypeType6> _f$type = Field(
+  static OutputItemType6 _$type(OutputItemReasoning v) => v.type;
+  static const Field<OutputItemReasoning, OutputItemType6> _f$type = Field(
     'type',
     _$type,
   );
@@ -1188,9 +1196,11 @@ class OutputItemReasoningMapper
       v.content;
   static const Field<OutputItemReasoning, List<ReasoningTextContent>>
   _f$content = Field('content', _$content);
-  static OutputItemStatusStatus? _$status(OutputItemReasoning v) => v.status;
-  static const Field<OutputItemReasoning, OutputItemStatusStatus> _f$status =
-      Field('status', _$status);
+  static OutputItemStatus? _$status(OutputItemReasoning v) => v.status;
+  static const Field<OutputItemReasoning, OutputItemStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<OutputItemReasoning> fields = const {
@@ -1303,12 +1313,12 @@ abstract class OutputItemReasoningCopyWith<
   get content;
   @override
   $R call({
-    OutputItemTypeType6? type,
+    OutputItemType6? type,
     String? id,
     String? encryptedContent,
     List<Summary>? summary,
     List<ReasoningTextContent>? content,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   });
   OutputItemReasoningCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -1345,7 +1355,7 @@ class _OutputItemReasoningCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    OutputItemTypeType6? type,
+    OutputItemType6? type,
     String? id,
     Object? encryptedContent = $none,
     List<Summary>? summary,
@@ -1388,8 +1398,8 @@ class OutputItemImageGenerationCallMapper
         _instance = OutputItemImageGenerationCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType7Mapper.ensureInitialized();
-      OutputItemStatusStatus4Mapper.ensureInitialized();
+      OutputItemType7Mapper.ensureInitialized();
+      OutputItemStatus4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1397,17 +1407,17 @@ class OutputItemImageGenerationCallMapper
   @override
   final String id = 'OutputItemImageGenerationCall';
 
-  static OutputItemTypeType7 _$type(OutputItemImageGenerationCall v) => v.type;
-  static const Field<OutputItemImageGenerationCall, OutputItemTypeType7>
-  _f$type = Field('type', _$type);
+  static OutputItemType7 _$type(OutputItemImageGenerationCall v) => v.type;
+  static const Field<OutputItemImageGenerationCall, OutputItemType7> _f$type =
+      Field('type', _$type);
   static String _$id(OutputItemImageGenerationCall v) => v.id;
   static const Field<OutputItemImageGenerationCall, String> _f$id = Field(
     'id',
     _$id,
   );
-  static OutputItemStatusStatus4 _$status(OutputItemImageGenerationCall v) =>
+  static OutputItemStatus4 _$status(OutputItemImageGenerationCall v) =>
       v.status;
-  static const Field<OutputItemImageGenerationCall, OutputItemStatusStatus4>
+  static const Field<OutputItemImageGenerationCall, OutputItemStatus4>
   _f$status = Field('status', _$status);
   static String? _$result(OutputItemImageGenerationCall v) => v.result;
   static const Field<OutputItemImageGenerationCall, String> _f$result = Field(
@@ -1519,9 +1529,9 @@ abstract class OutputItemImageGenerationCallCopyWith<
     implements OutputItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    OutputItemTypeType7? type,
+    OutputItemType7? type,
     String? id,
-    OutputItemStatusStatus4? status,
+    OutputItemStatus4? status,
     String? result,
   });
   OutputItemImageGenerationCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -1548,9 +1558,9 @@ class _OutputItemImageGenerationCallCopyWithImpl<$R, $Out>
       OutputItemImageGenerationCallMapper.ensureInitialized();
   @override
   $R call({
-    OutputItemTypeType7? type,
+    OutputItemType7? type,
     String? id,
-    OutputItemStatusStatus4? status,
+    OutputItemStatus4? status,
     Object? result = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -1590,8 +1600,8 @@ class OutputItemCodeInterpreterCallMapper
         _instance = OutputItemCodeInterpreterCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType8Mapper.ensureInitialized();
-      OutputItemStatusStatus5Mapper.ensureInitialized();
+      OutputItemType8Mapper.ensureInitialized();
+      OutputItemStatus5Mapper.ensureInitialized();
       OutputItemOutputsUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -1600,17 +1610,17 @@ class OutputItemCodeInterpreterCallMapper
   @override
   final String id = 'OutputItemCodeInterpreterCall';
 
-  static OutputItemTypeType8 _$type(OutputItemCodeInterpreterCall v) => v.type;
-  static const Field<OutputItemCodeInterpreterCall, OutputItemTypeType8>
-  _f$type = Field('type', _$type);
+  static OutputItemType8 _$type(OutputItemCodeInterpreterCall v) => v.type;
+  static const Field<OutputItemCodeInterpreterCall, OutputItemType8> _f$type =
+      Field('type', _$type);
   static String _$id(OutputItemCodeInterpreterCall v) => v.id;
   static const Field<OutputItemCodeInterpreterCall, String> _f$id = Field(
     'id',
     _$id,
   );
-  static OutputItemStatusStatus5 _$status(OutputItemCodeInterpreterCall v) =>
+  static OutputItemStatus5 _$status(OutputItemCodeInterpreterCall v) =>
       v.status;
-  static const Field<OutputItemCodeInterpreterCall, OutputItemStatusStatus5>
+  static const Field<OutputItemCodeInterpreterCall, OutputItemStatus5>
   _f$status = Field('status', _$status);
   static String _$containerId(OutputItemCodeInterpreterCall v) => v.containerId;
   static const Field<OutputItemCodeInterpreterCall, String> _f$containerId =
@@ -1747,9 +1757,9 @@ abstract class OutputItemCodeInterpreterCallCopyWith<
   get outputs;
   @override
   $R call({
-    OutputItemTypeType8? type,
+    OutputItemType8? type,
     String? id,
-    OutputItemStatusStatus5? status,
+    OutputItemStatus5? status,
     String? containerId,
     String? code,
     List<OutputItemOutputsUnion>? outputs,
@@ -1795,9 +1805,9 @@ class _OutputItemCodeInterpreterCallCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    OutputItemTypeType8? type,
+    OutputItemType8? type,
     String? id,
-    OutputItemStatusStatus5? status,
+    OutputItemStatus5? status,
     String? containerId,
     Object? code = $none,
     Object? outputs = $none,
@@ -1843,9 +1853,9 @@ class OutputItemLocalShellCallMapper
         _instance = OutputItemLocalShellCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType9Mapper.ensureInitialized();
+      OutputItemType9Mapper.ensureInitialized();
       LocalShellExecActionMapper.ensureInitialized();
-      OutputItemStatusStatusMapper.ensureInitialized();
+      OutputItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1853,9 +1863,11 @@ class OutputItemLocalShellCallMapper
   @override
   final String id = 'OutputItemLocalShellCall';
 
-  static OutputItemTypeType9 _$type(OutputItemLocalShellCall v) => v.type;
-  static const Field<OutputItemLocalShellCall, OutputItemTypeType9> _f$type =
-      Field('type', _$type);
+  static OutputItemType9 _$type(OutputItemLocalShellCall v) => v.type;
+  static const Field<OutputItemLocalShellCall, OutputItemType9> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$id(OutputItemLocalShellCall v) => v.id;
   static const Field<OutputItemLocalShellCall, String> _f$id = Field(
     'id',
@@ -1870,10 +1882,9 @@ class OutputItemLocalShellCallMapper
   static LocalShellExecAction _$action(OutputItemLocalShellCall v) => v.action;
   static const Field<OutputItemLocalShellCall, LocalShellExecAction> _f$action =
       Field('action', _$action);
-  static OutputItemStatusStatus _$status(OutputItemLocalShellCall v) =>
-      v.status;
-  static const Field<OutputItemLocalShellCall, OutputItemStatusStatus>
-  _f$status = Field('status', _$status);
+  static OutputItemStatus _$status(OutputItemLocalShellCall v) => v.status;
+  static const Field<OutputItemLocalShellCall, OutputItemStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<OutputItemLocalShellCall> fields = const {
@@ -1979,11 +1990,11 @@ abstract class OutputItemLocalShellCallCopyWith<
   get action;
   @override
   $R call({
-    OutputItemTypeType9? type,
+    OutputItemType9? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   });
   OutputItemLocalShellCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -2004,11 +2015,11 @@ class _OutputItemLocalShellCallCopyWithImpl<$R, $Out>
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
   $R call({
-    OutputItemTypeType9? type,
+    OutputItemType9? type,
     String? id,
     String? callId,
     LocalShellExecAction? action,
-    OutputItemStatusStatus? status,
+    OutputItemStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -2042,7 +2053,7 @@ class OutputItemShellCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemShellCallMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType10Mapper.ensureInitialized();
+      OutputItemType10Mapper.ensureInitialized();
       FunctionShellActionMapper.ensureInitialized();
       LocalShellCallStatusMapper.ensureInitialized();
     }
@@ -2052,8 +2063,8 @@ class OutputItemShellCallMapper
   @override
   final String id = 'OutputItemShellCall';
 
-  static OutputItemTypeType10 _$type(OutputItemShellCall v) => v.type;
-  static const Field<OutputItemShellCall, OutputItemTypeType10> _f$type = Field(
+  static OutputItemType10 _$type(OutputItemShellCall v) => v.type;
+  static const Field<OutputItemShellCall, OutputItemType10> _f$type = Field(
     'type',
     _$type,
   );
@@ -2184,7 +2195,7 @@ abstract class OutputItemShellCallCopyWith<
   get action;
   @override
   $R call({
-    OutputItemTypeType10? type,
+    OutputItemType10? type,
     String? id,
     String? callId,
     FunctionShellAction? action,
@@ -2209,7 +2220,7 @@ class _OutputItemShellCallCopyWithImpl<$R, $Out>
   get action => $value.action.copyWith.$chain((v) => call(action: v));
   @override
   $R call({
-    OutputItemTypeType10? type,
+    OutputItemType10? type,
     String? id,
     String? callId,
     FunctionShellAction? action,
@@ -2252,7 +2263,7 @@ class OutputItemShellCallOutputMapper
         _instance = OutputItemShellCallOutputMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType11Mapper.ensureInitialized();
+      OutputItemType11Mapper.ensureInitialized();
       FunctionShellCallOutputContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -2261,8 +2272,8 @@ class OutputItemShellCallOutputMapper
   @override
   final String id = 'OutputItemShellCallOutput';
 
-  static OutputItemTypeType11 _$type(OutputItemShellCallOutput v) => v.type;
-  static const Field<OutputItemShellCallOutput, OutputItemTypeType11> _f$type =
+  static OutputItemType11 _$type(OutputItemShellCallOutput v) => v.type;
+  static const Field<OutputItemShellCallOutput, OutputItemType11> _f$type =
       Field('type', _$type);
   static String _$id(OutputItemShellCallOutput v) => v.id;
   static const Field<OutputItemShellCallOutput, String> _f$id = Field(
@@ -2415,7 +2426,7 @@ abstract class OutputItemShellCallOutputCopyWith<
   get output;
   @override
   $R call({
-    OutputItemTypeType11? type,
+    OutputItemType11? type,
     String? id,
     String? callId,
     List<FunctionShellCallOutputContent>? output,
@@ -2453,7 +2464,7 @@ class _OutputItemShellCallOutputCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    OutputItemTypeType11? type,
+    OutputItemType11? type,
     String? id,
     String? callId,
     List<FunctionShellCallOutputContent>? output,
@@ -2497,7 +2508,7 @@ class OutputItemApplyPatchCallMapper
         _instance = OutputItemApplyPatchCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType12Mapper.ensureInitialized();
+      OutputItemType12Mapper.ensureInitialized();
       ApplyPatchCallStatusMapper.ensureInitialized();
       OutputItemOperationUnionMapper.ensureInitialized();
     }
@@ -2507,8 +2518,8 @@ class OutputItemApplyPatchCallMapper
   @override
   final String id = 'OutputItemApplyPatchCall';
 
-  static OutputItemTypeType12 _$type(OutputItemApplyPatchCall v) => v.type;
-  static const Field<OutputItemApplyPatchCall, OutputItemTypeType12> _f$type =
+  static OutputItemType12 _$type(OutputItemApplyPatchCall v) => v.type;
+  static const Field<OutputItemApplyPatchCall, OutputItemType12> _f$type =
       Field('type', _$type);
   static String _$id(OutputItemApplyPatchCall v) => v.id;
   static const Field<OutputItemApplyPatchCall, String> _f$id = Field(
@@ -2645,7 +2656,7 @@ abstract class OutputItemApplyPatchCallCopyWith<
   get operation;
   @override
   $R call({
-    OutputItemTypeType12? type,
+    OutputItemType12? type,
     String? id,
     String? callId,
     ApplyPatchCallStatus? status,
@@ -2675,7 +2686,7 @@ class _OutputItemApplyPatchCallCopyWithImpl<$R, $Out>
   get operation => $value.operation.copyWith.$chain((v) => call(operation: v));
   @override
   $R call({
-    OutputItemTypeType12? type,
+    OutputItemType12? type,
     String? id,
     String? callId,
     ApplyPatchCallStatus? status,
@@ -2718,7 +2729,7 @@ class OutputItemApplyPatchCallOutputMapper
         _instance = OutputItemApplyPatchCallOutputMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType13Mapper.ensureInitialized();
+      OutputItemType13Mapper.ensureInitialized();
       ApplyPatchCallOutputStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -2727,10 +2738,9 @@ class OutputItemApplyPatchCallOutputMapper
   @override
   final String id = 'OutputItemApplyPatchCallOutput';
 
-  static OutputItemTypeType13 _$type(OutputItemApplyPatchCallOutput v) =>
-      v.type;
-  static const Field<OutputItemApplyPatchCallOutput, OutputItemTypeType13>
-  _f$type = Field('type', _$type);
+  static OutputItemType13 _$type(OutputItemApplyPatchCallOutput v) => v.type;
+  static const Field<OutputItemApplyPatchCallOutput, OutputItemType13> _f$type =
+      Field('type', _$type);
   static String _$id(OutputItemApplyPatchCallOutput v) => v.id;
   static const Field<OutputItemApplyPatchCallOutput, String> _f$id = Field(
     'id',
@@ -2868,7 +2878,7 @@ abstract class OutputItemApplyPatchCallOutputCopyWith<
     implements OutputItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    OutputItemTypeType13? type,
+    OutputItemType13? type,
     String? id,
     String? callId,
     ApplyPatchCallOutputStatus? status,
@@ -2899,7 +2909,7 @@ class _OutputItemApplyPatchCallOutputCopyWithImpl<$R, $Out>
       OutputItemApplyPatchCallOutputMapper.ensureInitialized();
   @override
   $R call({
-    OutputItemTypeType13? type,
+    OutputItemType13? type,
     String? id,
     String? callId,
     ApplyPatchCallOutputStatus? status,
@@ -2944,7 +2954,7 @@ class OutputItemMcpCallMapper extends SubClassMapperBase<OutputItemMcpCall> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemMcpCallMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType14Mapper.ensureInitialized();
+      OutputItemType14Mapper.ensureInitialized();
       McpToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -2953,8 +2963,8 @@ class OutputItemMcpCallMapper extends SubClassMapperBase<OutputItemMcpCall> {
   @override
   final String id = 'OutputItemMcpCall';
 
-  static OutputItemTypeType14 _$type(OutputItemMcpCall v) => v.type;
-  static const Field<OutputItemMcpCall, OutputItemTypeType14> _f$type = Field(
+  static OutputItemType14 _$type(OutputItemMcpCall v) => v.type;
+  static const Field<OutputItemMcpCall, OutputItemType14> _f$type = Field(
     'type',
     _$type,
   );
@@ -3107,7 +3117,7 @@ abstract class OutputItemMcpCallCopyWith<
     implements OutputItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    OutputItemTypeType14? type,
+    OutputItemType14? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3132,7 +3142,7 @@ class _OutputItemMcpCallCopyWithImpl<$R, $Out>
       OutputItemMcpCallMapper.ensureInitialized();
   @override
   $R call({
-    OutputItemTypeType14? type,
+    OutputItemType14? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3185,7 +3195,7 @@ class OutputItemMcpListToolsMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputItemMcpListToolsMapper._());
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType15Mapper.ensureInitialized();
+      OutputItemType15Mapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -3194,9 +3204,11 @@ class OutputItemMcpListToolsMapper
   @override
   final String id = 'OutputItemMcpListTools';
 
-  static OutputItemTypeType15 _$type(OutputItemMcpListTools v) => v.type;
-  static const Field<OutputItemMcpListTools, OutputItemTypeType15> _f$type =
-      Field('type', _$type);
+  static OutputItemType15 _$type(OutputItemMcpListTools v) => v.type;
+  static const Field<OutputItemMcpListTools, OutputItemType15> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$id(OutputItemMcpListTools v) => v.id;
   static const Field<OutputItemMcpListTools, String> _f$id = Field('id', _$id);
   static String _$serverLabel(OutputItemMcpListTools v) => v.serverLabel;
@@ -3322,7 +3334,7 @@ abstract class OutputItemMcpListToolsCopyWith<
   get tools;
   @override
   $R call({
-    OutputItemTypeType15? type,
+    OutputItemType15? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -3355,7 +3367,7 @@ class _OutputItemMcpListToolsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    OutputItemTypeType15? type,
+    OutputItemType15? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -3395,7 +3407,7 @@ class OutputItemMcpApprovalRequestMapper
         _instance = OutputItemMcpApprovalRequestMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType16Mapper.ensureInitialized();
+      OutputItemType16Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3403,9 +3415,9 @@ class OutputItemMcpApprovalRequestMapper
   @override
   final String id = 'OutputItemMcpApprovalRequest';
 
-  static OutputItemTypeType16 _$type(OutputItemMcpApprovalRequest v) => v.type;
-  static const Field<OutputItemMcpApprovalRequest, OutputItemTypeType16>
-  _f$type = Field('type', _$type);
+  static OutputItemType16 _$type(OutputItemMcpApprovalRequest v) => v.type;
+  static const Field<OutputItemMcpApprovalRequest, OutputItemType16> _f$type =
+      Field('type', _$type);
   static String _$id(OutputItemMcpApprovalRequest v) => v.id;
   static const Field<OutputItemMcpApprovalRequest, String> _f$id = Field(
     'id',
@@ -3530,7 +3542,7 @@ abstract class OutputItemMcpApprovalRequestCopyWith<
     implements OutputItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    OutputItemTypeType16? type,
+    OutputItemType16? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3560,7 +3572,7 @@ class _OutputItemMcpApprovalRequestCopyWithImpl<$R, $Out>
       OutputItemMcpApprovalRequestMapper.ensureInitialized();
   @override
   $R call({
-    OutputItemTypeType16? type,
+    OutputItemType16? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -3601,7 +3613,7 @@ class OutputItemCustomToolCallMapper
         _instance = OutputItemCustomToolCallMapper._(),
       );
       OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
-      OutputItemTypeType17Mapper.ensureInitialized();
+      OutputItemType17Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3609,8 +3621,8 @@ class OutputItemCustomToolCallMapper
   @override
   final String id = 'OutputItemCustomToolCall';
 
-  static OutputItemTypeType17 _$type(OutputItemCustomToolCall v) => v.type;
-  static const Field<OutputItemCustomToolCall, OutputItemTypeType17> _f$type =
+  static OutputItemType17 _$type(OutputItemCustomToolCall v) => v.type;
+  static const Field<OutputItemCustomToolCall, OutputItemType17> _f$type =
       Field('type', _$type);
   static String? _$id(OutputItemCustomToolCall v) => v.id;
   static const Field<OutputItemCustomToolCall, String> _f$id = Field(
@@ -3736,7 +3748,7 @@ abstract class OutputItemCustomToolCallCopyWith<
     implements OutputItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    OutputItemTypeType17? type,
+    OutputItemType17? type,
     String? id,
     String? callId,
     String? name,
@@ -3758,7 +3770,7 @@ class _OutputItemCustomToolCallCopyWithImpl<$R, $Out>
       OutputItemCustomToolCallMapper.ensureInitialized();
   @override
   $R call({
-    OutputItemTypeType17? type,
+    OutputItemType17? type,
     Object? id = $none,
     String? callId,
     String? name,

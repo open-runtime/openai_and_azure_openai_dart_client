@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'conversation_item.dart';
 import 'item_resource.dart';
 import 'mcp_list_tools_tool.dart';
-import 'mcp_list_tools_type_type.dart';
+import 'mcp_list_tools_type.dart';
 import 'output_item.dart';
 
 part 'mcp_list_tools.mapper.dart';
@@ -24,7 +24,7 @@ class McpListTools with McpListToolsMappable {
     this.error,
   });
 
-  final McpListToolsTypeType type;
+  final McpListToolsType type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

@@ -109,10 +109,10 @@ export 'models/chat_completion_message_tool_call_function.dart';
 export 'models/create_chat_completion_response_choices_choices.dart';
 export 'models/chat_completion_named_tool_choice_function.dart';
 export 'models/chat_completion_tool_function.dart';
-export 'models/content_filter_severity_result_severity_severity.dart';
-export 'models/chat_completion_request_message_function_role_role.dart';
-export 'models/chat_completion_named_tool_choice_type_type.dart';
-export 'models/audio_verbose_response_task_task.dart';
+export 'models/content_filter_severity_result_severity.dart';
+export 'models/chat_completion_request_message_function_role.dart';
+export 'models/chat_completion_named_tool_choice_type.dart';
+export 'models/audio_verbose_response_task.dart';
 // Root client
 export 'azure_inference_y2024_m02_d01_ga_client.dart';
 

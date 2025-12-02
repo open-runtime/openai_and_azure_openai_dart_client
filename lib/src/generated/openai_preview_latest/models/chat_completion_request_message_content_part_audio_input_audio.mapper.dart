@@ -23,7 +23,7 @@ class ChatCompletionRequestMessageContentPartAudioInputAudioMapper
         _instance =
             ChatCompletionRequestMessageContentPartAudioInputAudioMapper._(),
       );
-      ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormatMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartAudioInputAudioFormatMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,12 +39,12 @@ class ChatCompletionRequestMessageContentPartAudioInputAudioMapper
     String
   >
   _f$data = Field('data', _$data);
-  static ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormat
-  _$format(ChatCompletionRequestMessageContentPartAudioInputAudio v) =>
-      v.format;
+  static ChatCompletionRequestMessageContentPartAudioInputAudioFormat _$format(
+    ChatCompletionRequestMessageContentPartAudioInputAudio v,
+  ) => v.format;
   static const Field<
     ChatCompletionRequestMessageContentPartAudioInputAudio,
-    ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormat
+    ChatCompletionRequestMessageContentPartAudioInputAudioFormat
   >
   _f$format = Field('format', _$format);
 
@@ -172,7 +172,7 @@ abstract class ChatCompletionRequestMessageContentPartAudioInputAudioCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? data,
-    ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormat? format,
+    ChatCompletionRequestMessageContentPartAudioInputAudioFormat? format,
   });
   ChatCompletionRequestMessageContentPartAudioInputAudioCopyWith<
     $R2,
@@ -213,7 +213,7 @@ class _ChatCompletionRequestMessageContentPartAudioInputAudioCopyWithImpl<
   @override
   $R call({
     String? data,
-    ChatCompletionRequestMessageContentPartAudioInputAudioFormatFormat? format,
+    ChatCompletionRequestMessageContentPartAudioInputAudioFormat? format,
   }) => $apply(
     FieldCopyWithData({
       if (data != null) #data: data,

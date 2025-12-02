@@ -16,7 +16,7 @@ class AssistantMessageItemMapper extends ClassMapperBase<AssistantMessageItem> {
       MapperContainer.globals.use(_instance = AssistantMessageItemMapper._());
       ResponseOutputTextMapper.ensureInitialized();
       AssistantMessageItemObjectObjectEnumMapper.ensureInitialized();
-      AssistantMessageItemTypeTypeMapper.ensureInitialized();
+      AssistantMessageItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -53,14 +53,14 @@ class AssistantMessageItemMapper extends ClassMapperBase<AssistantMessageItem> {
     opt: true,
     def: AssistantMessageItemObjectObjectEnum.undefined0,
   );
-  static AssistantMessageItemTypeType _$type(AssistantMessageItem v) => v.type;
-  static const Field<AssistantMessageItem, AssistantMessageItemTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: AssistantMessageItemTypeType.undefined0,
-  );
+  static AssistantMessageItemType _$type(AssistantMessageItem v) => v.type;
+  static const Field<AssistantMessageItem, AssistantMessageItemType> _f$type =
+      Field(
+        'type',
+        _$type,
+        opt: true,
+        def: AssistantMessageItemType.undefined0,
+      );
 
   @override
   final MappableFields<AssistantMessageItem> fields = const {
@@ -169,7 +169,7 @@ abstract class AssistantMessageItemCopyWith<
     String? threadId,
     List<ResponseOutputText>? content,
     AssistantMessageItemObjectObjectEnum? objectEnum,
-    AssistantMessageItemTypeType? type,
+    AssistantMessageItemType? type,
   });
   AssistantMessageItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -202,7 +202,7 @@ class _AssistantMessageItemCopyWithImpl<$R, $Out>
     String? threadId,
     List<ResponseOutputText>? content,
     AssistantMessageItemObjectObjectEnum? objectEnum,
-    AssistantMessageItemTypeType? type,
+    AssistantMessageItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

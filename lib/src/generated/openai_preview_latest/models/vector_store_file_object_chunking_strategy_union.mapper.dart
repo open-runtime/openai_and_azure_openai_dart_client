@@ -98,7 +98,7 @@ class VectorStoreFileObjectChunkingStrategyUnionStaticMapper
       );
       VectorStoreFileObjectChunkingStrategyUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      StaticChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
+      StaticChunkingStrategyResponseParamTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
     return _instance!;
@@ -107,12 +107,12 @@ class VectorStoreFileObjectChunkingStrategyUnionStaticMapper
   @override
   final String id = 'VectorStoreFileObjectChunkingStrategyUnionStatic';
 
-  static StaticChunkingStrategyResponseParamTypeType _$type(
+  static StaticChunkingStrategyResponseParamType _$type(
     VectorStoreFileObjectChunkingStrategyUnionStatic v,
   ) => v.type;
   static const Field<
     VectorStoreFileObjectChunkingStrategyUnionStatic,
-    StaticChunkingStrategyResponseParamTypeType
+    StaticChunkingStrategyResponseParamType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
@@ -257,7 +257,7 @@ abstract class VectorStoreFileObjectChunkingStrategyUnionStaticCopyWith<
   get staticField;
   @override
   $R call({
-    StaticChunkingStrategyResponseParamTypeType? type,
+    StaticChunkingStrategyResponseParamType? type,
     StaticChunkingStrategy? staticField,
   });
   VectorStoreFileObjectChunkingStrategyUnionStaticCopyWith<$R2, $In, $Out2>
@@ -297,7 +297,7 @@ class _VectorStoreFileObjectChunkingStrategyUnionStaticCopyWithImpl<$R, $Out>
       $value.staticField.copyWith.$chain((v) => call(staticField: v));
   @override
   $R call({
-    StaticChunkingStrategyResponseParamTypeType? type,
+    StaticChunkingStrategyResponseParamType? type,
     StaticChunkingStrategy? staticField,
   }) => $apply(
     FieldCopyWithData({
@@ -340,7 +340,7 @@ class VectorStoreFileObjectChunkingStrategyUnionOtherMapper
       );
       VectorStoreFileObjectChunkingStrategyUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      OtherChunkingStrategyResponseParamTypeTypeMapper.ensureInitialized();
+      OtherChunkingStrategyResponseParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -348,12 +348,12 @@ class VectorStoreFileObjectChunkingStrategyUnionOtherMapper
   @override
   final String id = 'VectorStoreFileObjectChunkingStrategyUnionOther';
 
-  static OtherChunkingStrategyResponseParamTypeType _$type(
+  static OtherChunkingStrategyResponseParamType _$type(
     VectorStoreFileObjectChunkingStrategyUnionOther v,
   ) => v.type;
   static const Field<
     VectorStoreFileObjectChunkingStrategyUnionOther,
-    OtherChunkingStrategyResponseParamTypeType
+    OtherChunkingStrategyResponseParamType
   >
   _f$type = Field('type', _$type);
 
@@ -482,7 +482,7 @@ abstract class VectorStoreFileObjectChunkingStrategyUnionOtherCopyWith<
     implements
         VectorStoreFileObjectChunkingStrategyUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({OtherChunkingStrategyResponseParamTypeType? type});
+  $R call({OtherChunkingStrategyResponseParamType? type});
   VectorStoreFileObjectChunkingStrategyUnionOtherCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -511,7 +511,7 @@ class _VectorStoreFileObjectChunkingStrategyUnionOtherCopyWithImpl<$R, $Out>
   $mapper =
       VectorStoreFileObjectChunkingStrategyUnionOtherMapper.ensureInitialized();
   @override
-  $R call({OtherChunkingStrategyResponseParamTypeType? type}) =>
+  $R call({OtherChunkingStrategyResponseParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   VectorStoreFileObjectChunkingStrategyUnionOther $make(CopyWithData data) =>

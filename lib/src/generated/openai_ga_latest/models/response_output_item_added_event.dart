@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'output_item.dart';
-import 'response_output_item_added_event_type_type.dart';
+import 'response_output_item_added_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_output_item_added_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseOutputItemAddedEvent with ResponseOutputItemAddedEventMappable {
     required this.item,
   });
 
-  final ResponseOutputItemAddedEventTypeType type;
+  final ResponseOutputItemAddedEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'sequence_number')

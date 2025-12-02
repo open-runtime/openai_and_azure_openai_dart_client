@@ -18,7 +18,7 @@ class ApplyPatchToolCallOutputMapper
         _instance = ApplyPatchToolCallOutputMapper._(),
       );
       ApplyPatchCallOutputStatusMapper.ensureInitialized();
-      ApplyPatchToolCallOutputTypeTypeMapper.ensureInitialized();
+      ApplyPatchToolCallOutputTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -54,14 +54,14 @@ class ApplyPatchToolCallOutputMapper
     key: r'created_by',
     opt: true,
   );
-  static ApplyPatchToolCallOutputTypeType _$type(ApplyPatchToolCallOutput v) =>
+  static ApplyPatchToolCallOutputType _$type(ApplyPatchToolCallOutput v) =>
       v.type;
-  static const Field<ApplyPatchToolCallOutput, ApplyPatchToolCallOutputTypeType>
+  static const Field<ApplyPatchToolCallOutput, ApplyPatchToolCallOutputType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchToolCallOutputTypeType.applyPatchCallOutput,
+    def: ApplyPatchToolCallOutputType.applyPatchCallOutput,
   );
 
   @override
@@ -165,7 +165,7 @@ abstract class ApplyPatchToolCallOutputCopyWith<
     ApplyPatchCallOutputStatus? status,
     String? output,
     String? createdBy,
-    ApplyPatchToolCallOutputTypeType? type,
+    ApplyPatchToolCallOutputType? type,
   });
   ApplyPatchToolCallOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -188,7 +188,7 @@ class _ApplyPatchToolCallOutputCopyWithImpl<$R, $Out>
     ApplyPatchCallOutputStatus? status,
     Object? output = $none,
     Object? createdBy = $none,
-    ApplyPatchToolCallOutputTypeType? type,
+    ApplyPatchToolCallOutputType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

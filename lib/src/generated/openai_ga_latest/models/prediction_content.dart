@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'prediction_content_type_type.dart';
+import 'prediction_content_type.dart';
 
 part 'prediction_content.mapper.dart';
 
@@ -18,7 +18,7 @@ class PredictionContent with PredictionContentMappable {
     required this.content,
   });
 
-  final PredictionContentTypeType type;
+  final PredictionContentType type;
   final String content;
 
   static PredictionContent fromJson(Map<String, dynamic> json) => PredictionContentMapper.fromJson(json);

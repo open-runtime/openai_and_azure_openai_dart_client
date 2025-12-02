@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_stream_event.dart';
-import 'response_web_search_call_searching_event_type_type.dart';
+import 'response_web_search_call_searching_event_type.dart';
 
 part 'response_web_search_call_searching_event.mapper.dart';
 
@@ -19,7 +19,7 @@ class ResponseWebSearchCallSearchingEvent with ResponseWebSearchCallSearchingEve
     required this.sequenceNumber,
   });
 
-  final ResponseWebSearchCallSearchingEventTypeType type;
+  final ResponseWebSearchCallSearchingEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

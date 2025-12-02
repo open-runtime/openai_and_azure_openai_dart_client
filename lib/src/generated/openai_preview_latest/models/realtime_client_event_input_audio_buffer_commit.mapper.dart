@@ -17,7 +17,7 @@ class RealtimeClientEventInputAudioBufferCommitMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventInputAudioBufferCommitMapper._(),
       );
-      RealtimeClientEventInputAudioBufferCommitTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventInputAudioBufferCommitTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventInputAudioBufferCommitMapper
   @override
   final String id = 'RealtimeClientEventInputAudioBufferCommit';
 
-  static RealtimeClientEventInputAudioBufferCommitTypeType _$type(
+  static RealtimeClientEventInputAudioBufferCommitType _$type(
     RealtimeClientEventInputAudioBufferCommit v,
   ) => v.type;
   static const Field<
     RealtimeClientEventInputAudioBufferCommit,
-    RealtimeClientEventInputAudioBufferCommitTypeType
+    RealtimeClientEventInputAudioBufferCommitType
   >
   _f$type = Field('type', _$type);
   static String? _$eventId(RealtimeClientEventInputAudioBufferCommit v) =>
@@ -143,7 +143,7 @@ abstract class RealtimeClientEventInputAudioBufferCommitCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventInputAudioBufferCommitTypeType? type,
+    RealtimeClientEventInputAudioBufferCommitType? type,
     String? eventId,
   });
   RealtimeClientEventInputAudioBufferCommitCopyWith<$R2, $In, $Out2>
@@ -170,7 +170,7 @@ class _RealtimeClientEventInputAudioBufferCommitCopyWithImpl<$R, $Out>
   $mapper = RealtimeClientEventInputAudioBufferCommitMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventInputAudioBufferCommitTypeType? type,
+    RealtimeClientEventInputAudioBufferCommitType? type,
     Object? eventId = $none,
   }) => $apply(
     FieldCopyWithData({

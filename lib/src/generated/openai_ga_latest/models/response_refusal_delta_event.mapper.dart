@@ -17,7 +17,7 @@ class ResponseRefusalDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseRefusalDeltaEventMapper._(),
       );
-      ResponseRefusalDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseRefusalDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class ResponseRefusalDeltaEventMapper
   @override
   final String id = 'ResponseRefusalDeltaEvent';
 
-  static ResponseRefusalDeltaEventTypeType _$type(
-    ResponseRefusalDeltaEvent v,
-  ) => v.type;
-  static const Field<
-    ResponseRefusalDeltaEvent,
-    ResponseRefusalDeltaEventTypeType
-  >
+  static ResponseRefusalDeltaEventType _$type(ResponseRefusalDeltaEvent v) =>
+      v.type;
+  static const Field<ResponseRefusalDeltaEvent, ResponseRefusalDeltaEventType>
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseRefusalDeltaEvent v) => v.itemId;
   static const Field<ResponseRefusalDeltaEvent, String> _f$itemId = Field(
@@ -163,7 +159,7 @@ abstract class ResponseRefusalDeltaEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseRefusalDeltaEventTypeType? type,
+    ResponseRefusalDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -186,7 +182,7 @@ class _ResponseRefusalDeltaEventCopyWithImpl<$R, $Out>
       ResponseRefusalDeltaEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseRefusalDeltaEventTypeType? type,
+    ResponseRefusalDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

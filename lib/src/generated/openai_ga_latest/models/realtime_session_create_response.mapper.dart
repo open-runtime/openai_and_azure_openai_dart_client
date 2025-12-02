@@ -17,7 +17,7 @@ class RealtimeSessionCreateResponseMapper
       MapperContainer.globals.use(
         _instance = RealtimeSessionCreateResponseMapper._(),
       );
-      RealtimeSessionCreateResponseIncludeIncludeMapper.ensureInitialized();
+      RealtimeSessionCreateResponseIncludeMapper.ensureInitialized();
       RealtimeSessionCreateResponseAudioMapper.ensureInitialized();
       RealtimeSessionCreateResponseTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseTurnDetectionMapper.ensureInitialized();
@@ -47,12 +47,12 @@ class RealtimeSessionCreateResponseMapper
     key: r'expires_at',
     opt: true,
   );
-  static List<RealtimeSessionCreateResponseIncludeInclude>? _$include(
+  static List<RealtimeSessionCreateResponseInclude>? _$include(
     RealtimeSessionCreateResponse v,
   ) => v.include;
   static const Field<
     RealtimeSessionCreateResponse,
-    List<RealtimeSessionCreateResponseIncludeInclude>
+    List<RealtimeSessionCreateResponseInclude>
   >
   _f$include = Field('include', _$include, opt: true);
   static String? _$model(RealtimeSessionCreateResponse v) => v.model;
@@ -251,11 +251,11 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseIncludeInclude,
+    RealtimeSessionCreateResponseInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateResponseIncludeInclude,
-      RealtimeSessionCreateResponseIncludeInclude
+      RealtimeSessionCreateResponseInclude,
+      RealtimeSessionCreateResponseInclude
     >
   >?
   get include;
@@ -293,7 +293,7 @@ abstract class RealtimeSessionCreateResponseCopyWith<
     String? id,
     String? objectField,
     int? expiresAt,
-    List<RealtimeSessionCreateResponseIncludeInclude>? include,
+    List<RealtimeSessionCreateResponseInclude>? include,
     String? model,
     dynamic outputModalities,
     String? instructions,
@@ -330,11 +330,11 @@ class _RealtimeSessionCreateResponseCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseIncludeInclude,
+    RealtimeSessionCreateResponseInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateResponseIncludeInclude,
-      RealtimeSessionCreateResponseIncludeInclude
+      RealtimeSessionCreateResponseInclude,
+      RealtimeSessionCreateResponseInclude
     >
   >?
   get include => $value.include != null

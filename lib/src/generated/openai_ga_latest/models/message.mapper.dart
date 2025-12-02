@@ -17,7 +17,7 @@ class MessageMapper extends ClassMapperBase<Message> {
       MessageStatusMapper.ensureInitialized();
       MessageRoleMapper.ensureInitialized();
       MessageContentUnionMapper.ensureInitialized();
-      MessageTypeTypeMapper.ensureInitialized();
+      MessageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,12 +39,12 @@ class MessageMapper extends ClassMapperBase<Message> {
     'content',
     _$content,
   );
-  static MessageTypeType _$type(Message v) => v.type;
-  static const Field<Message, MessageTypeType> _f$type = Field(
+  static MessageType _$type(Message v) => v.type;
+  static const Field<Message, MessageType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: MessageTypeType.message,
+    def: MessageType.message,
   );
 
   @override
@@ -138,7 +138,7 @@ abstract class MessageCopyWith<$R, $In extends Message, $Out>
     MessageStatus? status,
     MessageRole? role,
     List<MessageContentUnion>? content,
-    MessageTypeType? type,
+    MessageType? type,
   });
   MessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -168,7 +168,7 @@ class _MessageCopyWithImpl<$R, $Out>
     MessageStatus? status,
     MessageRole? role,
     List<MessageContentUnion>? content,
-    MessageTypeType? type,
+    MessageType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

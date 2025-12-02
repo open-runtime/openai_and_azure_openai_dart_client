@@ -14,7 +14,7 @@ class McpApprovalResponseMapper extends ClassMapperBase<McpApprovalResponse> {
   static McpApprovalResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpApprovalResponseMapper._());
-      McpApprovalResponseTypeTypeMapper.ensureInitialized();
+      McpApprovalResponseTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class McpApprovalResponseMapper extends ClassMapperBase<McpApprovalResponse> {
   @override
   final String id = 'McpApprovalResponse';
 
-  static McpApprovalResponseTypeType _$type(McpApprovalResponse v) => v.type;
-  static const Field<McpApprovalResponse, McpApprovalResponseTypeType> _f$type =
+  static McpApprovalResponseType _$type(McpApprovalResponse v) => v.type;
+  static const Field<McpApprovalResponse, McpApprovalResponseType> _f$type =
       Field('type', _$type);
   static String _$approvalRequestId(McpApprovalResponse v) =>
       v.approvalRequestId;
@@ -144,7 +144,7 @@ abstract class McpApprovalResponseCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    McpApprovalResponseTypeType? type,
+    McpApprovalResponseType? type,
     String? approvalRequestId,
     bool? approve,
     String? id,
@@ -165,7 +165,7 @@ class _McpApprovalResponseCopyWithImpl<$R, $Out>
       McpApprovalResponseMapper.ensureInitialized();
   @override
   $R call({
-    McpApprovalResponseTypeType? type,
+    McpApprovalResponseType? type,
     String? approvalRequestId,
     bool? approve,
     Object? id = $none,

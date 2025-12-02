@@ -17,7 +17,7 @@ class ResponseReasoningSummaryTextDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryTextDeltaEventMapper._(),
       );
-      ResponseReasoningSummaryTextDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseReasoningSummaryTextDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseReasoningSummaryTextDeltaEventMapper
   @override
   final String id = 'ResponseReasoningSummaryTextDeltaEvent';
 
-  static ResponseReasoningSummaryTextDeltaEventTypeType _$type(
+  static ResponseReasoningSummaryTextDeltaEventType _$type(
     ResponseReasoningSummaryTextDeltaEvent v,
   ) => v.type;
   static const Field<
     ResponseReasoningSummaryTextDeltaEvent,
-    ResponseReasoningSummaryTextDeltaEventTypeType
+    ResponseReasoningSummaryTextDeltaEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseReasoningSummaryTextDeltaEvent v) => v.itemId;
@@ -157,7 +157,7 @@ abstract class ResponseReasoningSummaryTextDeltaEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseReasoningSummaryTextDeltaEventTypeType? type,
+    ResponseReasoningSummaryTextDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -186,7 +186,7 @@ class _ResponseReasoningSummaryTextDeltaEventCopyWithImpl<$R, $Out>
       ResponseReasoningSummaryTextDeltaEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseReasoningSummaryTextDeltaEventTypeType? type,
+    ResponseReasoningSummaryTextDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,

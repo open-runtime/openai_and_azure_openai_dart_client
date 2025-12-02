@@ -8,15 +8,15 @@ import 'create_eval_completions_run_data_source.dart';
 import 'create_eval_completions_run_data_source_input_messages_union.dart';
 import 'create_eval_completions_run_data_source_sampling_params.dart';
 import 'create_eval_completions_run_data_source_source_union.dart';
-import 'create_eval_completions_run_data_source_type_type.dart';
+import 'create_eval_completions_run_data_source_type.dart';
 import 'create_eval_jsonl_run_data_source.dart';
 import 'create_eval_jsonl_run_data_source_source_union.dart';
-import 'create_eval_jsonl_run_data_source_type_type.dart';
+import 'create_eval_jsonl_run_data_source_type.dart';
 import 'create_eval_responses_run_data_source.dart';
 import 'create_eval_responses_run_data_source_input_messages_union.dart';
 import 'create_eval_responses_run_data_source_sampling_params.dart';
 import 'create_eval_responses_run_data_source_source_union.dart';
-import 'create_eval_responses_run_data_source_type_type.dart';
+import 'create_eval_responses_run_data_source_type.dart';
 
 part 'create_eval_run_request_data_source_union.mapper.dart';
 
@@ -58,7 +58,7 @@ extension CreateEvalRunRequestDataSourceUnionDeserializer on CreateEvalRunReques
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'jsonl')
 class CreateEvalRunRequestDataSourceUnionJsonl extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionJsonlMappable {
-  final CreateEvalJsonlRunDataSourceTypeType type;
+  final CreateEvalJsonlRunDataSourceType type;
   final CreateEvalJsonlRunDataSourceSourceUnion source;
 
   const CreateEvalRunRequestDataSourceUnionJsonl({
@@ -69,7 +69,7 @@ class CreateEvalRunRequestDataSourceUnionJsonl extends CreateEvalRunRequestDataS
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
 class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionCompletionsMappable {
-  final CreateEvalCompletionsRunDataSourceTypeType type;
+  final CreateEvalCompletionsRunDataSourceType type;
   @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages;
   @MappableField(key: 'sampling_params')
@@ -88,7 +88,7 @@ class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunReques
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
 class CreateEvalRunRequestDataSourceUnionResponses extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionResponsesMappable {
-  final CreateEvalResponsesRunDataSourceTypeType type;
+  final CreateEvalResponsesRunDataSourceType type;
   @MappableField(key: 'input_messages')
   final CreateEvalResponsesRunDataSourceInputMessagesUnion? inputMessages;
   @MappableField(key: 'sampling_params')

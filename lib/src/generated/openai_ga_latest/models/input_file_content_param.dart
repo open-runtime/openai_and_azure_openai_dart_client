@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'input_file_content_param_type_type.dart';
+import 'input_file_content_param_type.dart';
 
 part 'input_file_content_param.mapper.dart';
 
@@ -16,7 +16,7 @@ class InputFileContentParam with InputFileContentParamMappable {
     this.filename,
     this.fileData,
     this.fileUrl,
-    this.type = InputFileContentParamTypeType.inputFile,
+    this.type = InputFileContentParamType.inputFile,
   });
 
   @MappableField(key: 'file_id')
@@ -26,7 +26,7 @@ class InputFileContentParam with InputFileContentParamMappable {
   final String? fileData;
   @MappableField(key: 'file_url')
   final String? fileUrl;
-  final InputFileContentParamTypeType type;
+  final InputFileContentParamType type;
 
   static InputFileContentParam fromJson(Map<String, dynamic> json) => InputFileContentParamMapper.fromJson(json);
 

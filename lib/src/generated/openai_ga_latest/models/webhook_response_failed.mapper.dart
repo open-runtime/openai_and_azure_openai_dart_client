@@ -16,7 +16,7 @@ class WebhookResponseFailedMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookResponseFailedMapper._());
       WebhookResponseFailedDataMapper.ensureInitialized();
-      WebhookResponseFailedTypeTypeMapper.ensureInitialized();
+      WebhookResponseFailedTypeMapper.ensureInitialized();
       WebhookResponseFailedObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -42,10 +42,9 @@ class WebhookResponseFailedMapper
     _$webhookResponseFailedData,
     key: r'data',
   );
-  static WebhookResponseFailedTypeType _$type(WebhookResponseFailed v) =>
-      v.type;
-  static const Field<WebhookResponseFailed, WebhookResponseFailedTypeType>
-  _f$type = Field('type', _$type);
+  static WebhookResponseFailedType _$type(WebhookResponseFailed v) => v.type;
+  static const Field<WebhookResponseFailed, WebhookResponseFailedType> _f$type =
+      Field('type', _$type);
   static WebhookResponseFailedObjectObjectEnum? _$objectEnum(
     WebhookResponseFailed v,
   ) => v.objectEnum;
@@ -158,7 +157,7 @@ abstract class WebhookResponseFailedCopyWith<
     int? createdAt,
     String? id,
     WebhookResponseFailedData? webhookResponseFailedData,
-    WebhookResponseFailedTypeType? type,
+    WebhookResponseFailedType? type,
     WebhookResponseFailedObjectObjectEnum? objectEnum,
   });
   WebhookResponseFailedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -187,7 +186,7 @@ class _WebhookResponseFailedCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookResponseFailedData? webhookResponseFailedData,
-    WebhookResponseFailedTypeType? type,
+    WebhookResponseFailedType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

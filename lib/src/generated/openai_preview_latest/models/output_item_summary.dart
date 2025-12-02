@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'output_item_summary_type_type.dart';
+import 'output_item_summary_type.dart';
 
 part 'output_item_summary.mapper.dart';
 
@@ -15,7 +15,7 @@ class OutputItemSummary with OutputItemSummaryMappable {
     required this.text,
   });
 
-  final OutputItemSummaryTypeType type;
+  final OutputItemSummaryType type;
   final String text;
 
   static OutputItemSummary fromJson(Map<String, dynamic> json) => OutputItemSummaryMapper.fromJson(json);

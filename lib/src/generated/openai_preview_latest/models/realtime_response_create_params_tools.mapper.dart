@@ -17,7 +17,7 @@ class RealtimeResponseCreateParamsToolsMapper
       MapperContainer.globals.use(
         _instance = RealtimeResponseCreateParamsToolsMapper._(),
       );
-      RealtimeResponseCreateParamsToolsTypeTypeMapper.ensureInitialized();
+      RealtimeResponseCreateParamsToolsTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeResponseCreateParamsToolsMapper
   @override
   final String id = 'RealtimeResponseCreateParamsTools';
 
-  static RealtimeResponseCreateParamsToolsTypeType? _$type(
+  static RealtimeResponseCreateParamsToolsType? _$type(
     RealtimeResponseCreateParamsTools v,
   ) => v.type;
   static const Field<
     RealtimeResponseCreateParamsTools,
-    RealtimeResponseCreateParamsToolsTypeType
+    RealtimeResponseCreateParamsToolsType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$name(RealtimeResponseCreateParamsTools v) => v.name;
@@ -149,7 +149,7 @@ abstract class RealtimeResponseCreateParamsToolsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeResponseCreateParamsToolsTypeType? type,
+    RealtimeResponseCreateParamsToolsType? type,
     String? name,
     String? description,
     dynamic parameters,

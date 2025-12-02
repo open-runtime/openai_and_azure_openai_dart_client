@@ -17,10 +17,10 @@ class RealtimeConversationItemWithReferenceMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemWithReferenceMapper._(),
       );
-      RealtimeConversationItemWithReferenceTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemWithReferenceTypeMapper.ensureInitialized();
       RealtimeConversationItemWithReferenceObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemWithReferenceStatusStatusMapper.ensureInitialized();
-      RealtimeConversationItemWithReferenceRoleRoleMapper.ensureInitialized();
+      RealtimeConversationItemWithReferenceStatusMapper.ensureInitialized();
+      RealtimeConversationItemWithReferenceRoleMapper.ensureInitialized();
       RealtimeConversationItemWithReferenceContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -32,12 +32,12 @@ class RealtimeConversationItemWithReferenceMapper
   static String? _$id(RealtimeConversationItemWithReference v) => v.id;
   static const Field<RealtimeConversationItemWithReference, String> _f$id =
       Field('id', _$id, opt: true);
-  static RealtimeConversationItemWithReferenceTypeType? _$type(
+  static RealtimeConversationItemWithReferenceType? _$type(
     RealtimeConversationItemWithReference v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemWithReference,
-    RealtimeConversationItemWithReferenceTypeType
+    RealtimeConversationItemWithReferenceType
   >
   _f$type = Field('type', _$type, opt: true);
   static RealtimeConversationItemWithReferenceObjectObjectEnum? _$objectEnum(
@@ -48,20 +48,20 @@ class RealtimeConversationItemWithReferenceMapper
     RealtimeConversationItemWithReferenceObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object', opt: true);
-  static RealtimeConversationItemWithReferenceStatusStatus? _$status(
+  static RealtimeConversationItemWithReferenceStatus? _$status(
     RealtimeConversationItemWithReference v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemWithReference,
-    RealtimeConversationItemWithReferenceStatusStatus
+    RealtimeConversationItemWithReferenceStatus
   >
   _f$status = Field('status', _$status, opt: true);
-  static RealtimeConversationItemWithReferenceRoleRole? _$role(
+  static RealtimeConversationItemWithReferenceRole? _$role(
     RealtimeConversationItemWithReference v,
   ) => v.role;
   static const Field<
     RealtimeConversationItemWithReference,
-    RealtimeConversationItemWithReferenceRoleRole
+    RealtimeConversationItemWithReferenceRole
   >
   _f$role = Field('role', _$role, opt: true);
   static List<RealtimeConversationItemWithReferenceContent>? _$content(
@@ -211,10 +211,10 @@ abstract class RealtimeConversationItemWithReferenceCopyWith<
   get content;
   $R call({
     String? id,
-    RealtimeConversationItemWithReferenceTypeType? type,
+    RealtimeConversationItemWithReferenceType? type,
     RealtimeConversationItemWithReferenceObjectObjectEnum? objectEnum,
-    RealtimeConversationItemWithReferenceStatusStatus? status,
-    RealtimeConversationItemWithReferenceRoleRole? role,
+    RealtimeConversationItemWithReferenceStatus? status,
+    RealtimeConversationItemWithReferenceRole? role,
     List<RealtimeConversationItemWithReferenceContent>? content,
     String? callId,
     String? name,

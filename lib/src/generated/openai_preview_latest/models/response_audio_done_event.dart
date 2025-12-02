@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_audio_done_event_type_type.dart';
+import 'response_audio_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_audio_done_event.mapper.dart';
@@ -16,7 +16,7 @@ class ResponseAudioDoneEvent with ResponseAudioDoneEventMappable {
     required this.type,
   });
 
-  final ResponseAudioDoneEventTypeType type;
+  final ResponseAudioDoneEventType type;
 
   static ResponseAudioDoneEvent fromJson(Map<String, dynamic> json) => ResponseAudioDoneEventMapper.fromJson(json);
 

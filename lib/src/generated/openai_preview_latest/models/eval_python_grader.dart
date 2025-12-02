@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_python_grader_type_type.dart';
+import 'eval_python_grader_type.dart';
 
 part 'eval_python_grader.mapper.dart';
 
@@ -20,7 +20,7 @@ class EvalPythonGrader with EvalPythonGraderMappable {
     this.imageTag,
   });
 
-  final EvalPythonGraderTypeType type;
+  final EvalPythonGraderType type;
   final String name;
   final String source;
   @MappableField(key: 'pass_threshold')

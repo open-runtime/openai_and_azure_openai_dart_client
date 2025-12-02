@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_mcp_protocol_error_type_type.dart';
+import 'realtime_mcp_protocol_error_type.dart';
 
 part 'realtime_mcp_protocol_error.mapper.dart';
 
@@ -16,7 +16,7 @@ class RealtimeMcpProtocolError with RealtimeMcpProtocolErrorMappable {
     required this.message,
   });
 
-  final RealtimeMcpProtocolErrorTypeType type;
+  final RealtimeMcpProtocolErrorType type;
   final int code;
   final String message;
 

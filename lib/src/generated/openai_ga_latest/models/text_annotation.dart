@@ -6,14 +6,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_text_annotations_file_citation_object.dart';
 import 'message_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_content_text_annotations_file_citation_object_type.dart';
 import 'message_content_text_annotations_file_path_object.dart';
 import 'message_content_text_annotations_file_path_object_file_path.dart';
-import 'message_content_text_annotations_file_path_object_type_type.dart';
+import 'message_content_text_annotations_file_path_object_type.dart';
 import 'text_annotation_file_citation.dart';
 import 'text_annotation_file_path.dart';
-import 'text_annotation_type_type.dart';
-import 'text_annotation_type_type2.dart';
+import 'text_annotation_type.dart';
+import 'text_annotation_type2.dart';
 
 part 'text_annotation.mapper.dart';
 
@@ -51,7 +51,7 @@ extension TextAnnotationUnionDeserializer on TextAnnotation {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
 class TextAnnotationFileCitation extends TextAnnotation with TextAnnotationFileCitationMappable {
-  final TextAnnotationTypeType type;
+  final TextAnnotationType type;
   final String text;
   @MappableField(key: 'file_citation')
   final TextAnnotationFileCitation textAnnotationFileCitation;
@@ -71,7 +71,7 @@ class TextAnnotationFileCitation extends TextAnnotation with TextAnnotationFileC
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
 class TextAnnotationFilePath extends TextAnnotation with TextAnnotationFilePathMappable {
-  final TextAnnotationTypeType2 type;
+  final TextAnnotationType2 type;
   final String text;
   @MappableField(key: 'file_path')
   final TextAnnotationFilePath textAnnotationFilePath;

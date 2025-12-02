@@ -18,7 +18,7 @@ class CreateEvalCompletionsRunDataSourceInputMessagesMapper
       MapperContainer.globals.use(
         _instance = CreateEvalCompletionsRunDataSourceInputMessagesMapper._(),
       );
-      CreateEvalCompletionsRunDataSourceInputMessagesTypeTypeMapper.ensureInitialized();
+      CreateEvalCompletionsRunDataSourceInputMessagesTypeMapper.ensureInitialized();
       CreateEvalCompletionsRunDataSourceInputMessagesTemplateMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class CreateEvalCompletionsRunDataSourceInputMessagesMapper
   @override
   final String id = 'CreateEvalCompletionsRunDataSourceInputMessages';
 
-  static CreateEvalCompletionsRunDataSourceInputMessagesTypeType _$type(
+  static CreateEvalCompletionsRunDataSourceInputMessagesType _$type(
     CreateEvalCompletionsRunDataSourceInputMessages v,
   ) => v.type;
   static const Field<
     CreateEvalCompletionsRunDataSourceInputMessages,
-    CreateEvalCompletionsRunDataSourceInputMessagesTypeType
+    CreateEvalCompletionsRunDataSourceInputMessagesType
   >
   _f$type = Field('type', _$type);
   static List<CreateEvalCompletionsRunDataSourceInputMessagesTemplate>?
@@ -185,7 +185,7 @@ abstract class CreateEvalCompletionsRunDataSourceInputMessagesCopyWith<
   >?
   get template;
   $R call({
-    CreateEvalCompletionsRunDataSourceInputMessagesTypeType? type,
+    CreateEvalCompletionsRunDataSourceInputMessagesType? type,
     List<CreateEvalCompletionsRunDataSourceInputMessagesTemplate>? template,
     String? itemReference,
   });
@@ -235,7 +235,7 @@ class _CreateEvalCompletionsRunDataSourceInputMessagesCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    CreateEvalCompletionsRunDataSourceInputMessagesTypeType? type,
+    CreateEvalCompletionsRunDataSourceInputMessagesType? type,
     Object? template = $none,
     Object? itemReference = $none,
   }) => $apply(

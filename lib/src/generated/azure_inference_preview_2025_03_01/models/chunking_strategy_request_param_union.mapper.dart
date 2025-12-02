@@ -93,7 +93,7 @@ class ChunkingStrategyRequestParamUnionAutoMapper
       ChunkingStrategyRequestParamUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      AutoChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
+      AutoChunkingStrategyRequestParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -101,12 +101,12 @@ class ChunkingStrategyRequestParamUnionAutoMapper
   @override
   final String id = 'ChunkingStrategyRequestParamUnionAuto';
 
-  static AutoChunkingStrategyRequestParamTypeType _$type(
+  static AutoChunkingStrategyRequestParamType _$type(
     ChunkingStrategyRequestParamUnionAuto v,
   ) => v.type;
   static const Field<
     ChunkingStrategyRequestParamUnionAuto,
-    AutoChunkingStrategyRequestParamTypeType
+    AutoChunkingStrategyRequestParamType
   >
   _f$type = Field('type', _$type);
 
@@ -212,7 +212,7 @@ abstract class ChunkingStrategyRequestParamUnionAutoCopyWith<
 >
     implements ChunkingStrategyRequestParamUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AutoChunkingStrategyRequestParamTypeType? type});
+  $R call({AutoChunkingStrategyRequestParamType? type});
   ChunkingStrategyRequestParamUnionAutoCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -235,7 +235,7 @@ class _ChunkingStrategyRequestParamUnionAutoCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ChunkingStrategyRequestParamUnionAuto> $mapper =
       ChunkingStrategyRequestParamUnionAutoMapper.ensureInitialized();
   @override
-  $R call({AutoChunkingStrategyRequestParamTypeType? type}) =>
+  $R call({AutoChunkingStrategyRequestParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ChunkingStrategyRequestParamUnionAuto $make(CopyWithData data) =>
@@ -270,7 +270,7 @@ class ChunkingStrategyRequestParamUnionStaticMapper
       ChunkingStrategyRequestParamUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      StaticChunkingStrategyRequestParamTypeTypeMapper.ensureInitialized();
+      StaticChunkingStrategyRequestParamTypeMapper.ensureInitialized();
       StaticChunkingStrategyMapper.ensureInitialized();
     }
     return _instance!;
@@ -279,12 +279,12 @@ class ChunkingStrategyRequestParamUnionStaticMapper
   @override
   final String id = 'ChunkingStrategyRequestParamUnionStatic';
 
-  static StaticChunkingStrategyRequestParamTypeType _$type(
+  static StaticChunkingStrategyRequestParamType _$type(
     ChunkingStrategyRequestParamUnionStatic v,
   ) => v.type;
   static const Field<
     ChunkingStrategyRequestParamUnionStatic,
-    StaticChunkingStrategyRequestParamTypeType
+    StaticChunkingStrategyRequestParamType
   >
   _f$type = Field('type', _$type);
   static StaticChunkingStrategy _$staticField(
@@ -414,7 +414,7 @@ abstract class ChunkingStrategyRequestParamUnionStaticCopyWith<
   get staticField;
   @override
   $R call({
-    StaticChunkingStrategyRequestParamTypeType? type,
+    StaticChunkingStrategyRequestParamType? type,
     StaticChunkingStrategy? staticField,
   });
   ChunkingStrategyRequestParamUnionStaticCopyWith<$R2, $In, $Out2>
@@ -448,7 +448,7 @@ class _ChunkingStrategyRequestParamUnionStaticCopyWithImpl<$R, $Out>
       $value.staticField.copyWith.$chain((v) => call(staticField: v));
   @override
   $R call({
-    StaticChunkingStrategyRequestParamTypeType? type,
+    StaticChunkingStrategyRequestParamType? type,
     StaticChunkingStrategy? staticField,
   }) => $apply(
     FieldCopyWithData({

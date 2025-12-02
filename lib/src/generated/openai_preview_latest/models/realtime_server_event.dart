@@ -10,114 +10,114 @@ import 'realtime_response.dart';
 import 'realtime_server_event_conversation.dart';
 import 'realtime_server_event_conversation_created.dart';
 import 'realtime_server_event_conversation_created_conversation.dart';
-import 'realtime_server_event_conversation_created_type_type.dart';
+import 'realtime_server_event_conversation_created_type.dart';
 import 'realtime_server_event_conversation_item_created.dart';
-import 'realtime_server_event_conversation_item_created_type_type.dart';
+import 'realtime_server_event_conversation_item_created_type.dart';
 import 'realtime_server_event_conversation_item_deleted.dart';
-import 'realtime_server_event_conversation_item_deleted_type_type.dart';
+import 'realtime_server_event_conversation_item_deleted_type.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_completed.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_completed_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_completed_type.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_delta.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_delta_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_delta_type.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed.dart';
 import 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.dart';
-import 'realtime_server_event_conversation_item_input_audio_transcription_failed_type_type.dart';
+import 'realtime_server_event_conversation_item_input_audio_transcription_failed_type.dart';
 import 'realtime_server_event_conversation_item_retrieved.dart';
-import 'realtime_server_event_conversation_item_retrieved_type_type.dart';
+import 'realtime_server_event_conversation_item_retrieved_type.dart';
 import 'realtime_server_event_conversation_item_truncated.dart';
-import 'realtime_server_event_conversation_item_truncated_type_type.dart';
+import 'realtime_server_event_conversation_item_truncated_type.dart';
 import 'realtime_server_event_error.dart';
 import 'realtime_server_event_error_error.dart';
-import 'realtime_server_event_error_type_type.dart';
+import 'realtime_server_event_error_type.dart';
 import 'realtime_server_event_input_audio_buffer_cleared.dart';
-import 'realtime_server_event_input_audio_buffer_cleared_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_cleared_type.dart';
 import 'realtime_server_event_input_audio_buffer_committed.dart';
-import 'realtime_server_event_input_audio_buffer_committed_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_committed_type.dart';
 import 'realtime_server_event_input_audio_buffer_speech_started.dart';
-import 'realtime_server_event_input_audio_buffer_speech_started_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_speech_started_type.dart';
 import 'realtime_server_event_input_audio_buffer_speech_stopped.dart';
-import 'realtime_server_event_input_audio_buffer_speech_stopped_type_type.dart';
+import 'realtime_server_event_input_audio_buffer_speech_stopped_type.dart';
 import 'realtime_server_event_output_audio_buffer_cleared.dart';
-import 'realtime_server_event_output_audio_buffer_cleared_type_type.dart';
+import 'realtime_server_event_output_audio_buffer_cleared_type.dart';
 import 'realtime_server_event_output_audio_buffer_started.dart';
-import 'realtime_server_event_output_audio_buffer_started_type_type.dart';
+import 'realtime_server_event_output_audio_buffer_started_type.dart';
 import 'realtime_server_event_output_audio_buffer_stopped.dart';
-import 'realtime_server_event_output_audio_buffer_stopped_type_type.dart';
+import 'realtime_server_event_output_audio_buffer_stopped_type.dart';
 import 'realtime_server_event_part.dart';
 import 'realtime_server_event_rate_limits.dart';
 import 'realtime_server_event_rate_limits_updated.dart';
 import 'realtime_server_event_rate_limits_updated_rate_limits.dart';
-import 'realtime_server_event_rate_limits_updated_type_type.dart';
+import 'realtime_server_event_rate_limits_updated_type.dart';
 import 'realtime_server_event_response_audio_delta.dart';
-import 'realtime_server_event_response_audio_delta_type_type.dart';
+import 'realtime_server_event_response_audio_delta_type.dart';
 import 'realtime_server_event_response_audio_done.dart';
-import 'realtime_server_event_response_audio_done_type_type.dart';
+import 'realtime_server_event_response_audio_done_type.dart';
 import 'realtime_server_event_response_audio_transcript_delta.dart';
-import 'realtime_server_event_response_audio_transcript_delta_type_type.dart';
+import 'realtime_server_event_response_audio_transcript_delta_type.dart';
 import 'realtime_server_event_response_audio_transcript_done.dart';
-import 'realtime_server_event_response_audio_transcript_done_type_type.dart';
+import 'realtime_server_event_response_audio_transcript_done_type.dart';
 import 'realtime_server_event_response_content_part_added.dart';
 import 'realtime_server_event_response_content_part_added_part.dart';
-import 'realtime_server_event_response_content_part_added_type_type.dart';
+import 'realtime_server_event_response_content_part_added_type.dart';
 import 'realtime_server_event_response_content_part_done.dart';
 import 'realtime_server_event_response_content_part_done_part.dart';
-import 'realtime_server_event_response_content_part_done_type_type.dart';
+import 'realtime_server_event_response_content_part_done_type.dart';
 import 'realtime_server_event_response_created.dart';
-import 'realtime_server_event_response_created_type_type.dart';
+import 'realtime_server_event_response_created_type.dart';
 import 'realtime_server_event_response_done.dart';
-import 'realtime_server_event_response_done_type_type.dart';
+import 'realtime_server_event_response_done_type.dart';
 import 'realtime_server_event_response_function_call_arguments_delta.dart';
-import 'realtime_server_event_response_function_call_arguments_delta_type_type.dart';
+import 'realtime_server_event_response_function_call_arguments_delta_type.dart';
 import 'realtime_server_event_response_function_call_arguments_done.dart';
-import 'realtime_server_event_response_function_call_arguments_done_type_type.dart';
+import 'realtime_server_event_response_function_call_arguments_done_type.dart';
 import 'realtime_server_event_response_output_item_added.dart';
-import 'realtime_server_event_response_output_item_added_type_type.dart';
+import 'realtime_server_event_response_output_item_added_type.dart';
 import 'realtime_server_event_response_output_item_done.dart';
-import 'realtime_server_event_response_output_item_done_type_type.dart';
+import 'realtime_server_event_response_output_item_done_type.dart';
 import 'realtime_server_event_response_text_delta.dart';
-import 'realtime_server_event_response_text_delta_type_type.dart';
+import 'realtime_server_event_response_text_delta_type.dart';
 import 'realtime_server_event_response_text_done.dart';
-import 'realtime_server_event_response_text_done_type_type.dart';
+import 'realtime_server_event_response_text_done_type.dart';
 import 'realtime_server_event_session_created.dart';
-import 'realtime_server_event_session_created_type_type.dart';
+import 'realtime_server_event_session_created_type.dart';
 import 'realtime_server_event_session_updated.dart';
-import 'realtime_server_event_session_updated_type_type.dart';
+import 'realtime_server_event_session_updated_type.dart';
 import 'realtime_server_event_transcription_session_updated.dart';
-import 'realtime_server_event_transcription_session_updated_type_type.dart';
-import 'realtime_server_event_type_type.dart';
-import 'realtime_server_event_type_type10.dart';
-import 'realtime_server_event_type_type11.dart';
-import 'realtime_server_event_type_type12.dart';
-import 'realtime_server_event_type_type13.dart';
-import 'realtime_server_event_type_type14.dart';
-import 'realtime_server_event_type_type15.dart';
-import 'realtime_server_event_type_type16.dart';
-import 'realtime_server_event_type_type17.dart';
-import 'realtime_server_event_type_type18.dart';
-import 'realtime_server_event_type_type19.dart';
-import 'realtime_server_event_type_type2.dart';
-import 'realtime_server_event_type_type20.dart';
-import 'realtime_server_event_type_type21.dart';
-import 'realtime_server_event_type_type22.dart';
-import 'realtime_server_event_type_type23.dart';
-import 'realtime_server_event_type_type24.dart';
-import 'realtime_server_event_type_type25.dart';
-import 'realtime_server_event_type_type26.dart';
-import 'realtime_server_event_type_type27.dart';
-import 'realtime_server_event_type_type28.dart';
-import 'realtime_server_event_type_type29.dart';
-import 'realtime_server_event_type_type3.dart';
-import 'realtime_server_event_type_type30.dart';
-import 'realtime_server_event_type_type31.dart';
-import 'realtime_server_event_type_type32.dart';
-import 'realtime_server_event_type_type33.dart';
-import 'realtime_server_event_type_type34.dart';
-import 'realtime_server_event_type_type4.dart';
-import 'realtime_server_event_type_type5.dart';
-import 'realtime_server_event_type_type6.dart';
-import 'realtime_server_event_type_type7.dart';
-import 'realtime_server_event_type_type8.dart';
-import 'realtime_server_event_type_type9.dart';
+import 'realtime_server_event_transcription_session_updated_type.dart';
+import 'realtime_server_event_type.dart';
+import 'realtime_server_event_type10.dart';
+import 'realtime_server_event_type11.dart';
+import 'realtime_server_event_type12.dart';
+import 'realtime_server_event_type13.dart';
+import 'realtime_server_event_type14.dart';
+import 'realtime_server_event_type15.dart';
+import 'realtime_server_event_type16.dart';
+import 'realtime_server_event_type17.dart';
+import 'realtime_server_event_type18.dart';
+import 'realtime_server_event_type19.dart';
+import 'realtime_server_event_type2.dart';
+import 'realtime_server_event_type20.dart';
+import 'realtime_server_event_type21.dart';
+import 'realtime_server_event_type22.dart';
+import 'realtime_server_event_type23.dart';
+import 'realtime_server_event_type24.dart';
+import 'realtime_server_event_type25.dart';
+import 'realtime_server_event_type26.dart';
+import 'realtime_server_event_type27.dart';
+import 'realtime_server_event_type28.dart';
+import 'realtime_server_event_type29.dart';
+import 'realtime_server_event_type3.dart';
+import 'realtime_server_event_type30.dart';
+import 'realtime_server_event_type31.dart';
+import 'realtime_server_event_type32.dart';
+import 'realtime_server_event_type33.dart';
+import 'realtime_server_event_type34.dart';
+import 'realtime_server_event_type4.dart';
+import 'realtime_server_event_type5.dart';
+import 'realtime_server_event_type6.dart';
+import 'realtime_server_event_type7.dart';
+import 'realtime_server_event_type8.dart';
+import 'realtime_server_event_type9.dart';
 import 'realtime_session.dart';
 import 'realtime_transcription_session_create_response.dart';
 
@@ -257,7 +257,7 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
 class RealtimeServerEventConversationCreated extends RealtimeServerEvent with RealtimeServerEventConversationCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType type;
+  final RealtimeServerEventType type;
   @MappableField(key: 'conversation')
   final RealtimeServerEventConversation realtimeServerEventConversation;
 
@@ -272,7 +272,7 @@ class RealtimeServerEventConversationCreated extends RealtimeServerEvent with Re
 class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent with RealtimeServerEventConversationItemCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType2 type;
+  final RealtimeServerEventType2 type;
   @MappableField(key: 'previous_item_id')
   final String previousItemId;
   final RealtimeConversationItem item;
@@ -289,7 +289,7 @@ class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent wit
 class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent with RealtimeServerEventConversationItemDeletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType3 type;
+  final RealtimeServerEventType3 type;
   @MappableField(key: 'item_id')
   final String itemId;
 
@@ -304,7 +304,7 @@ class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent wit
 class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType4 type;
+  final RealtimeServerEventType4 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')
@@ -326,7 +326,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extend
 class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType5 type;
+  final RealtimeServerEventType5 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')
@@ -348,7 +348,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends Re
 class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType6 type;
+  final RealtimeServerEventType6 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')
@@ -369,7 +369,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends R
 class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent with RealtimeServerEventConversationItemRetrievedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType7 type;
+  final RealtimeServerEventType7 type;
   final RealtimeConversationItem item;
 
   const RealtimeServerEventConversationItemRetrieved({
@@ -383,7 +383,7 @@ class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent w
 class RealtimeServerEventConversationItemTruncated extends RealtimeServerEvent with RealtimeServerEventConversationItemTruncatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType8 type;
+  final RealtimeServerEventType8 type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')
@@ -404,7 +404,7 @@ class RealtimeServerEventConversationItemTruncated extends RealtimeServerEvent w
 class RealtimeServerEventError extends RealtimeServerEvent with RealtimeServerEventErrorMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType9 type;
+  final RealtimeServerEventType9 type;
   @MappableField(key: 'error')
   final RealtimeServerEventError realtimeServerEventError;
 
@@ -419,7 +419,7 @@ class RealtimeServerEventError extends RealtimeServerEvent with RealtimeServerEv
 class RealtimeServerEventInputAudioBufferCleared extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferClearedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType10 type;
+  final RealtimeServerEventType10 type;
 
   const RealtimeServerEventInputAudioBufferCleared({
     required this.eventId,
@@ -431,7 +431,7 @@ class RealtimeServerEventInputAudioBufferCleared extends RealtimeServerEvent wit
 class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferCommittedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType11 type;
+  final RealtimeServerEventType11 type;
   @MappableField(key: 'previous_item_id')
   final String previousItemId;
   @MappableField(key: 'item_id')
@@ -449,7 +449,7 @@ class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent w
 class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType12 type;
+  final RealtimeServerEventType12 type;
   @MappableField(key: 'audio_start_ms')
   final int audioStartMs;
   @MappableField(key: 'item_id')
@@ -467,7 +467,7 @@ class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEve
 class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType13 type;
+  final RealtimeServerEventType13 type;
   @MappableField(key: 'audio_end_ms')
   final int audioEndMs;
   @MappableField(key: 'item_id')
@@ -485,7 +485,7 @@ class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEve
 class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent with RealtimeServerEventRateLimitsUpdatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType14 type;
+  final RealtimeServerEventType14 type;
   @MappableField(key: 'rate_limits')
   final List<RealtimeServerEventRateLimits> rateLimits;
 
@@ -500,7 +500,7 @@ class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent with Real
 class RealtimeServerEventResponseAudioDelta extends RealtimeServerEvent with RealtimeServerEventResponseAudioDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType15 type;
+  final RealtimeServerEventType15 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -526,7 +526,7 @@ class RealtimeServerEventResponseAudioDelta extends RealtimeServerEvent with Rea
 class RealtimeServerEventResponseAudioDone extends RealtimeServerEvent with RealtimeServerEventResponseAudioDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType16 type;
+  final RealtimeServerEventType16 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -550,7 +550,7 @@ class RealtimeServerEventResponseAudioDone extends RealtimeServerEvent with Real
 class RealtimeServerEventResponseAudioTranscriptDelta extends RealtimeServerEvent with RealtimeServerEventResponseAudioTranscriptDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType17 type;
+  final RealtimeServerEventType17 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -576,7 +576,7 @@ class RealtimeServerEventResponseAudioTranscriptDelta extends RealtimeServerEven
 class RealtimeServerEventResponseAudioTranscriptDone extends RealtimeServerEvent with RealtimeServerEventResponseAudioTranscriptDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType18 type;
+  final RealtimeServerEventType18 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -602,7 +602,7 @@ class RealtimeServerEventResponseAudioTranscriptDone extends RealtimeServerEvent
 class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent with RealtimeServerEventResponseContentPartAddedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType19 type;
+  final RealtimeServerEventType19 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -629,7 +629,7 @@ class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent wi
 class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent with RealtimeServerEventResponseContentPartDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType20 type;
+  final RealtimeServerEventType20 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -656,7 +656,7 @@ class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent wit
 class RealtimeServerEventResponseCreated extends RealtimeServerEvent with RealtimeServerEventResponseCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType21 type;
+  final RealtimeServerEventType21 type;
   final RealtimeResponse response;
 
   const RealtimeServerEventResponseCreated({
@@ -670,7 +670,7 @@ class RealtimeServerEventResponseCreated extends RealtimeServerEvent with Realti
 class RealtimeServerEventResponseDone extends RealtimeServerEvent with RealtimeServerEventResponseDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType22 type;
+  final RealtimeServerEventType22 type;
   final RealtimeResponse response;
 
   const RealtimeServerEventResponseDone({
@@ -684,7 +684,7 @@ class RealtimeServerEventResponseDone extends RealtimeServerEvent with RealtimeS
 class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServerEvent with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType23 type;
+  final RealtimeServerEventType23 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -710,7 +710,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServ
 class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServerEvent with RealtimeServerEventResponseFunctionCallArgumentsDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType24 type;
+  final RealtimeServerEventType24 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -736,7 +736,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServe
 class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent with RealtimeServerEventResponseOutputItemAddedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType25 type;
+  final RealtimeServerEventType25 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'output_index')
@@ -756,7 +756,7 @@ class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent wit
 class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent with RealtimeServerEventResponseOutputItemDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType26 type;
+  final RealtimeServerEventType26 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'output_index')
@@ -776,7 +776,7 @@ class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent with
 class RealtimeServerEventResponseTextDelta extends RealtimeServerEvent with RealtimeServerEventResponseTextDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType27 type;
+  final RealtimeServerEventType27 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -802,7 +802,7 @@ class RealtimeServerEventResponseTextDelta extends RealtimeServerEvent with Real
 class RealtimeServerEventResponseTextDone extends RealtimeServerEvent with RealtimeServerEventResponseTextDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType28 type;
+  final RealtimeServerEventType28 type;
   @MappableField(key: 'response_id')
   final String responseId;
   @MappableField(key: 'item_id')
@@ -828,7 +828,7 @@ class RealtimeServerEventResponseTextDone extends RealtimeServerEvent with Realt
 class RealtimeServerEventSessionCreated extends RealtimeServerEvent with RealtimeServerEventSessionCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType29 type;
+  final RealtimeServerEventType29 type;
   final RealtimeSession session;
 
   const RealtimeServerEventSessionCreated({
@@ -842,7 +842,7 @@ class RealtimeServerEventSessionCreated extends RealtimeServerEvent with Realtim
 class RealtimeServerEventSessionUpdated extends RealtimeServerEvent with RealtimeServerEventSessionUpdatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType30 type;
+  final RealtimeServerEventType30 type;
   final RealtimeSession session;
 
   const RealtimeServerEventSessionUpdated({
@@ -856,7 +856,7 @@ class RealtimeServerEventSessionUpdated extends RealtimeServerEvent with Realtim
 class RealtimeServerEventTranscriptionSessionUpdated extends RealtimeServerEvent with RealtimeServerEventTranscriptionSessionUpdatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType31 type;
+  final RealtimeServerEventType31 type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
   const RealtimeServerEventTranscriptionSessionUpdated({
@@ -870,7 +870,7 @@ class RealtimeServerEventTranscriptionSessionUpdated extends RealtimeServerEvent
 class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferStartedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType32 type;
+  final RealtimeServerEventType32 type;
   @MappableField(key: 'response_id')
   final String responseId;
 
@@ -885,7 +885,7 @@ class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent wi
 class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferStoppedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType33 type;
+  final RealtimeServerEventType33 type;
   @MappableField(key: 'response_id')
   final String responseId;
 
@@ -900,7 +900,7 @@ class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent wi
 class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferClearedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTypeType34 type;
+  final RealtimeServerEventType34 type;
   @MappableField(key: 'response_id')
   final String responseId;
 

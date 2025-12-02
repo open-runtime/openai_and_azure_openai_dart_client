@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_shell_call_output_outcome_param.dart';
-import 'function_shell_call_output_timeout_outcome_param_type_type.dart';
+import 'function_shell_call_output_timeout_outcome_param_type.dart';
 
 part 'function_shell_call_output_timeout_outcome_param.mapper.dart';
 
@@ -13,10 +13,10 @@ part 'function_shell_call_output_timeout_outcome_param.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutputTimeoutOutcomeParam with FunctionShellCallOutputTimeoutOutcomeParamMappable {
   const FunctionShellCallOutputTimeoutOutcomeParam({
-    this.type = FunctionShellCallOutputTimeoutOutcomeParamTypeType.timeout,
+    this.type = FunctionShellCallOutputTimeoutOutcomeParamType.timeout,
   });
 
-  final FunctionShellCallOutputTimeoutOutcomeParamTypeType type;
+  final FunctionShellCallOutputTimeoutOutcomeParamType type;
 
   static FunctionShellCallOutputTimeoutOutcomeParam fromJson(Map<String, dynamic> json) => FunctionShellCallOutputTimeoutOutcomeParamMapper.fromJson(json);
 

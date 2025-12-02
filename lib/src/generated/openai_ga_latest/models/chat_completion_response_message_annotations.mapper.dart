@@ -17,7 +17,7 @@ class ChatCompletionResponseMessageAnnotationsMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionResponseMessageAnnotationsMapper._(),
       );
-      ChatCompletionResponseMessageAnnotationsTypeTypeMapper.ensureInitialized();
+      ChatCompletionResponseMessageAnnotationsTypeMapper.ensureInitialized();
       ChatCompletionResponseMessageAnnotationsUrlCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ChatCompletionResponseMessageAnnotationsMapper
   @override
   final String id = 'ChatCompletionResponseMessageAnnotations';
 
-  static ChatCompletionResponseMessageAnnotationsTypeType _$type(
+  static ChatCompletionResponseMessageAnnotationsType _$type(
     ChatCompletionResponseMessageAnnotations v,
   ) => v.type;
   static const Field<
     ChatCompletionResponseMessageAnnotations,
-    ChatCompletionResponseMessageAnnotationsTypeType
+    ChatCompletionResponseMessageAnnotationsType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionResponseMessageAnnotationsUrlCitation
@@ -161,7 +161,7 @@ abstract class ChatCompletionResponseMessageAnnotationsCopyWith<
   >
   get chatCompletionResponseMessageAnnotationsUrlCitation;
   $R call({
-    ChatCompletionResponseMessageAnnotationsTypeType? type,
+    ChatCompletionResponseMessageAnnotationsType? type,
     ChatCompletionResponseMessageAnnotationsUrlCitation?
     chatCompletionResponseMessageAnnotationsUrlCitation,
   });
@@ -201,7 +201,7 @@ class _ChatCompletionResponseMessageAnnotationsCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ChatCompletionResponseMessageAnnotationsTypeType? type,
+    ChatCompletionResponseMessageAnnotationsType? type,
     ChatCompletionResponseMessageAnnotationsUrlCitation?
     chatCompletionResponseMessageAnnotationsUrlCitation,
   }) => $apply(

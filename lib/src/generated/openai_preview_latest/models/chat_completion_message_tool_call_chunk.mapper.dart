@@ -17,7 +17,7 @@ class ChatCompletionMessageToolCallChunkMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionMessageToolCallChunkMapper._(),
       );
-      ChatCompletionMessageToolCallChunkTypeTypeMapper.ensureInitialized();
+      ChatCompletionMessageToolCallChunkTypeMapper.ensureInitialized();
       ChatCompletionMessageToolCallChunkFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -35,12 +35,12 @@ class ChatCompletionMessageToolCallChunkMapper
     _$id,
     opt: true,
   );
-  static ChatCompletionMessageToolCallChunkTypeType? _$type(
+  static ChatCompletionMessageToolCallChunkType? _$type(
     ChatCompletionMessageToolCallChunk v,
   ) => v.type;
   static const Field<
     ChatCompletionMessageToolCallChunk,
-    ChatCompletionMessageToolCallChunkTypeType
+    ChatCompletionMessageToolCallChunkType
   >
   _f$type = Field('type', _$type, opt: true);
   static ChatCompletionMessageToolCallChunkFunction?
@@ -170,7 +170,7 @@ abstract class ChatCompletionMessageToolCallChunkCopyWith<
   $R call({
     int? indexField,
     String? id,
-    ChatCompletionMessageToolCallChunkTypeType? type,
+    ChatCompletionMessageToolCallChunkType? type,
     ChatCompletionMessageToolCallChunkFunction?
     chatCompletionMessageToolCallChunkFunction,
   });

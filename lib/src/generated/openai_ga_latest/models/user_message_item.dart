@@ -9,7 +9,7 @@ import 'inference_options.dart';
 import 'thread_item.dart';
 import 'user_message_item_content_union.dart';
 import 'user_message_item_object_object_enum.dart';
-import 'user_message_item_type_type.dart';
+import 'user_message_item_type.dart';
 
 part 'user_message_item.mapper.dart';
 
@@ -24,7 +24,7 @@ class UserMessageItem with UserMessageItemMappable {
     required this.attachments,
     required this.inferenceOptions,
     this.objectEnum = UserMessageItemObjectObjectEnum.undefined0,
-    this.type = UserMessageItemTypeType.undefined0,
+    this.type = UserMessageItemType.undefined0,
   });
 
   final String id;
@@ -38,7 +38,7 @@ class UserMessageItem with UserMessageItemMappable {
   final InferenceOptions? inferenceOptions;
   @MappableField(key: 'object')
   final UserMessageItemObjectObjectEnum objectEnum;
-  final UserMessageItemTypeType type;
+  final UserMessageItemType type;
 
   static UserMessageItem fromJson(Map<String, dynamic> json) => UserMessageItemMapper.fromJson(json);
 

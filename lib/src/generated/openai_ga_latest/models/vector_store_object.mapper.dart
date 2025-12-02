@@ -16,7 +16,7 @@ class VectorStoreObjectMapper extends ClassMapperBase<VectorStoreObject> {
       MapperContainer.globals.use(_instance = VectorStoreObjectMapper._());
       VectorStoreObjectObjectObjectEnumMapper.ensureInitialized();
       VectorStoreObjectFileCountsMapper.ensureInitialized();
-      VectorStoreObjectStatusStatusMapper.ensureInitialized();
+      VectorStoreObjectStatusMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
       VectorStoreExpirationAfterMapper.ensureInitialized();
     }
@@ -55,10 +55,9 @@ class VectorStoreObjectMapper extends ClassMapperBase<VectorStoreObject> {
     _$vectorStoreObjectFileCounts,
     key: r'file_counts',
   );
-  static VectorStoreObjectStatusStatus _$status(VectorStoreObject v) =>
-      v.status;
-  static const Field<VectorStoreObject, VectorStoreObjectStatusStatus>
-  _f$status = Field('status', _$status);
+  static VectorStoreObjectStatus _$status(VectorStoreObject v) => v.status;
+  static const Field<VectorStoreObject, VectorStoreObjectStatus> _f$status =
+      Field('status', _$status);
   static int? _$lastActiveAt(VectorStoreObject v) => v.lastActiveAt;
   static const Field<VectorStoreObject, int> _f$lastActiveAt = Field(
     'lastActiveAt',
@@ -213,7 +212,7 @@ abstract class VectorStoreObjectCopyWith<
     String? name,
     int? usageBytes,
     VectorStoreObjectFileCounts? vectorStoreObjectFileCounts,
-    VectorStoreObjectStatusStatus? status,
+    VectorStoreObjectStatus? status,
     int? lastActiveAt,
     Metadata? metadata,
     VectorStoreExpirationAfter? expiresAfter,
@@ -259,7 +258,7 @@ class _VectorStoreObjectCopyWithImpl<$R, $Out>
     String? name,
     int? usageBytes,
     VectorStoreObjectFileCounts? vectorStoreObjectFileCounts,
-    VectorStoreObjectStatusStatus? status,
+    VectorStoreObjectStatus? status,
     Object? lastActiveAt = $none,
     Metadata? metadata,
     Object? expiresAfter = $none,

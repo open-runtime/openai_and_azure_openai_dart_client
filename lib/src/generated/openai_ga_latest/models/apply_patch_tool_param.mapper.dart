@@ -14,7 +14,7 @@ class ApplyPatchToolParamMapper extends ClassMapperBase<ApplyPatchToolParam> {
   static ApplyPatchToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ApplyPatchToolParamMapper._());
-      ApplyPatchToolParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,14 +22,9 @@ class ApplyPatchToolParamMapper extends ClassMapperBase<ApplyPatchToolParam> {
   @override
   final String id = 'ApplyPatchToolParam';
 
-  static ApplyPatchToolParamTypeType _$type(ApplyPatchToolParam v) => v.type;
-  static const Field<ApplyPatchToolParam, ApplyPatchToolParamTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: ApplyPatchToolParamTypeType.applyPatch,
-      );
+  static ApplyPatchToolParamType _$type(ApplyPatchToolParam v) => v.type;
+  static const Field<ApplyPatchToolParam, ApplyPatchToolParamType> _f$type =
+      Field('type', _$type, opt: true, def: ApplyPatchToolParamType.applyPatch);
 
   @override
   final MappableFields<ApplyPatchToolParam> fields = const {#type: _f$type};
@@ -112,7 +107,7 @@ abstract class ApplyPatchToolParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ApplyPatchToolParamTypeType? type});
+  $R call({ApplyPatchToolParamType? type});
   ApplyPatchToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -127,7 +122,7 @@ class _ApplyPatchToolParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ApplyPatchToolParam> $mapper =
       ApplyPatchToolParamMapper.ensureInitialized();
   @override
-  $R call({ApplyPatchToolParamTypeType? type}) =>
+  $R call({ApplyPatchToolParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ApplyPatchToolParam $make(CopyWithData data) =>

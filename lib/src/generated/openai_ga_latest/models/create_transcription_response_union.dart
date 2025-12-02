@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_diarized_json.dart';
-import 'create_transcription_response_diarized_json_task_task.dart';
+import 'create_transcription_response_diarized_json_task.dart';
 import 'create_transcription_response_diarized_json_usage_union.dart';
 import 'transcription_diarized_segment.dart';
 
@@ -43,7 +43,7 @@ extension CreateTranscriptionResponseUnionDeserializer on CreateTranscriptionRes
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcribe')
 class CreateTranscriptionResponseUnionTranscribe extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionTranscribeMappable {
-  final CreateTranscriptionResponseDiarizedJsonTaskTask task;
+  final CreateTranscriptionResponseDiarizedJsonTask task;
   final num duration;
   final String text;
   final List<TranscriptionDiarizedSegment> segments;

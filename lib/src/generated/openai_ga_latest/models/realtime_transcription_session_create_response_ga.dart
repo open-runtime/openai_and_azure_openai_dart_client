@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_transcription_session_create_response_ga_audio.dart';
-import 'realtime_transcription_session_create_response_ga_include_include.dart';
-import 'realtime_transcription_session_create_response_ga_type_type.dart';
+import 'realtime_transcription_session_create_response_ga_include.dart';
+import 'realtime_transcription_session_create_response_ga_type.dart';
 
 part 'realtime_transcription_session_create_response_ga.mapper.dart';
 
@@ -23,13 +23,13 @@ class RealtimeTranscriptionSessionCreateResponseGa with RealtimeTranscriptionSes
     this.realtimeTranscriptionSessionCreateResponseGaAudio,
   });
 
-  final RealtimeTranscriptionSessionCreateResponseGaTypeType type;
+  final RealtimeTranscriptionSessionCreateResponseGaType type;
   final String id;
   @MappableField(key: 'object')
   final String objectField;
   @MappableField(key: 'expires_at')
   final int? expiresAt;
-  final List<RealtimeTranscriptionSessionCreateResponseGaIncludeInclude>? include;
+  final List<RealtimeTranscriptionSessionCreateResponseGaInclude>? include;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateResponseGaAudio? realtimeTranscriptionSessionCreateResponseGaAudio;
 

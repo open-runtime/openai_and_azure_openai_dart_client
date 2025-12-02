@@ -17,7 +17,7 @@ class ComputerScreenshotImageMapper
       MapperContainer.globals.use(
         _instance = ComputerScreenshotImageMapper._(),
       );
-      ComputerScreenshotImageTypeTypeMapper.ensureInitialized();
+      ComputerScreenshotImageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,14 +39,14 @@ class ComputerScreenshotImageMapper
     key: r'file_id',
     opt: true,
   );
-  static ComputerScreenshotImageTypeType _$type(ComputerScreenshotImage v) =>
+  static ComputerScreenshotImageType _$type(ComputerScreenshotImage v) =>
       v.type;
-  static const Field<ComputerScreenshotImage, ComputerScreenshotImageTypeType>
+  static const Field<ComputerScreenshotImage, ComputerScreenshotImageType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ComputerScreenshotImageTypeType.computerScreenshot,
+    def: ComputerScreenshotImageType.computerScreenshot,
   );
 
   @override
@@ -141,7 +141,7 @@ abstract class ComputerScreenshotImageCopyWith<
   $R call({
     String? imageUrl,
     String? fileId,
-    ComputerScreenshotImageTypeType? type,
+    ComputerScreenshotImageType? type,
   });
   ComputerScreenshotImageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -161,7 +161,7 @@ class _ComputerScreenshotImageCopyWithImpl<$R, $Out>
   $R call({
     Object? imageUrl = $none,
     Object? fileId = $none,
-    ComputerScreenshotImageTypeType? type,
+    ComputerScreenshotImageType? type,
   }) => $apply(
     FieldCopyWithData({
       if (imageUrl != $none) #imageUrl: imageUrl,

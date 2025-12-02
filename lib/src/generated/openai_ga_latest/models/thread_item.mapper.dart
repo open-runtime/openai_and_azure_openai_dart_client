@@ -78,7 +78,7 @@ class ThreadItemChatkitUserMessageMapper
       );
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeTypeMapper.ensureInitialized();
+      ThreadItemTypeMapper.ensureInitialized();
       ThreadItemContentUnionMapper.ensureInitialized();
       AttachmentMapper.ensureInitialized();
       InferenceOptionsMapper.ensureInitialized();
@@ -111,8 +111,8 @@ class ThreadItemChatkitUserMessageMapper
     _$threadId,
     key: r'thread_id',
   );
-  static ThreadItemTypeType _$type(ThreadItemChatkitUserMessage v) => v.type;
-  static const Field<ThreadItemChatkitUserMessage, ThreadItemTypeType> _f$type =
+  static ThreadItemType _$type(ThreadItemChatkitUserMessage v) => v.type;
+  static const Field<ThreadItemChatkitUserMessage, ThreadItemType> _f$type =
       Field('type', _$type);
   static List<ThreadItemContentUnion> _$content(
     ThreadItemChatkitUserMessage v,
@@ -261,7 +261,7 @@ abstract class ThreadItemChatkitUserMessageCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType? type,
+    ThreadItemType? type,
     List<ThreadItemContentUnion>? content,
     List<Attachment>? attachments,
     InferenceOptions? inferenceOptions,
@@ -321,7 +321,7 @@ class _ThreadItemChatkitUserMessageCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType? type,
+    ThreadItemType? type,
     List<ThreadItemContentUnion>? content,
     List<Attachment>? attachments,
     Object? inferenceOptions = $none,
@@ -371,7 +371,7 @@ class ThreadItemChatkitAssistantMessageMapper
       );
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeType2Mapper.ensureInitialized();
+      ThreadItemType2Mapper.ensureInitialized();
       ResponseOutputTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -399,9 +399,8 @@ class ThreadItemChatkitAssistantMessageMapper
   static String _$threadId(ThreadItemChatkitAssistantMessage v) => v.threadId;
   static const Field<ThreadItemChatkitAssistantMessage, String> _f$threadId =
       Field('threadId', _$threadId, key: r'thread_id');
-  static ThreadItemTypeType2 _$type(ThreadItemChatkitAssistantMessage v) =>
-      v.type;
-  static const Field<ThreadItemChatkitAssistantMessage, ThreadItemTypeType2>
+  static ThreadItemType2 _$type(ThreadItemChatkitAssistantMessage v) => v.type;
+  static const Field<ThreadItemChatkitAssistantMessage, ThreadItemType2>
   _f$type = Field('type', _$type);
   static List<ResponseOutputText> _$content(
     ThreadItemChatkitAssistantMessage v,
@@ -535,7 +534,7 @@ abstract class ThreadItemChatkitAssistantMessageCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType2? type,
+    ThreadItemType2? type,
     List<ResponseOutputText>? content,
   });
   ThreadItemChatkitAssistantMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -577,7 +576,7 @@ class _ThreadItemChatkitAssistantMessageCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType2? type,
+    ThreadItemType2? type,
     List<ResponseOutputText>? content,
   }) => $apply(
     FieldCopyWithData({
@@ -626,7 +625,7 @@ class ThreadItemChatkitWidgetMapper
       );
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeType3Mapper.ensureInitialized();
+      ThreadItemType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -652,9 +651,11 @@ class ThreadItemChatkitWidgetMapper
     _$threadId,
     key: r'thread_id',
   );
-  static ThreadItemTypeType3 _$type(ThreadItemChatkitWidget v) => v.type;
-  static const Field<ThreadItemChatkitWidget, ThreadItemTypeType3> _f$type =
-      Field('type', _$type);
+  static ThreadItemType3 _$type(ThreadItemChatkitWidget v) => v.type;
+  static const Field<ThreadItemChatkitWidget, ThreadItemType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$widget(ThreadItemChatkitWidget v) => v.widget;
   static const Field<ThreadItemChatkitWidget, String> _f$widget = Field(
     'widget',
@@ -769,7 +770,7 @@ abstract class ThreadItemChatkitWidgetCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType3? type,
+    ThreadItemType3? type,
     String? widget,
   });
   ThreadItemChatkitWidgetCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -792,7 +793,7 @@ class _ThreadItemChatkitWidgetCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType3? type,
+    ThreadItemType3? type,
     String? widget,
   }) => $apply(
     FieldCopyWithData({
@@ -832,7 +833,7 @@ class ThreadItemChatkitClientToolCallMapper
       );
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeType4Mapper.ensureInitialized();
+      ThreadItemType4Mapper.ensureInitialized();
       ClientToolCallStatusMapper.ensureInitialized();
     }
     return _instance!;
@@ -863,10 +864,9 @@ class ThreadItemChatkitClientToolCallMapper
   static String _$threadId(ThreadItemChatkitClientToolCall v) => v.threadId;
   static const Field<ThreadItemChatkitClientToolCall, String> _f$threadId =
       Field('threadId', _$threadId, key: r'thread_id');
-  static ThreadItemTypeType4 _$type(ThreadItemChatkitClientToolCall v) =>
-      v.type;
-  static const Field<ThreadItemChatkitClientToolCall, ThreadItemTypeType4>
-  _f$type = Field('type', _$type);
+  static ThreadItemType4 _$type(ThreadItemChatkitClientToolCall v) => v.type;
+  static const Field<ThreadItemChatkitClientToolCall, ThreadItemType4> _f$type =
+      Field('type', _$type);
   static ClientToolCallStatus _$status(ThreadItemChatkitClientToolCall v) =>
       v.status;
   static const Field<ThreadItemChatkitClientToolCall, ClientToolCallStatus>
@@ -1015,7 +1015,7 @@ abstract class ThreadItemChatkitClientToolCallCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType4? type,
+    ThreadItemType4? type,
     ClientToolCallStatus? status,
     String? callId,
     String? name,
@@ -1050,7 +1050,7 @@ class _ThreadItemChatkitClientToolCallCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType4? type,
+    ThreadItemType4? type,
     ClientToolCallStatus? status,
     String? callId,
     String? name,
@@ -1109,7 +1109,7 @@ class ThreadItemChatkitTaskMapper
       MapperContainer.globals.use(_instance = ThreadItemChatkitTaskMapper._());
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeType5Mapper.ensureInitialized();
+      ThreadItemType5Mapper.ensureInitialized();
       TaskTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -1136,9 +1136,11 @@ class ThreadItemChatkitTaskMapper
     _$threadId,
     key: r'thread_id',
   );
-  static ThreadItemTypeType5 _$type(ThreadItemChatkitTask v) => v.type;
-  static const Field<ThreadItemChatkitTask, ThreadItemTypeType5> _f$type =
-      Field('type', _$type);
+  static ThreadItemType5 _$type(ThreadItemChatkitTask v) => v.type;
+  static const Field<ThreadItemChatkitTask, ThreadItemType5> _f$type = Field(
+    'type',
+    _$type,
+  );
   static TaskType _$taskType(ThreadItemChatkitTask v) => v.taskType;
   static const Field<ThreadItemChatkitTask, TaskType> _f$taskType = Field(
     'taskType',
@@ -1268,7 +1270,7 @@ abstract class ThreadItemChatkitTaskCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType5? type,
+    ThreadItemType5? type,
     TaskType? taskType,
     String? heading,
     String? summary,
@@ -1292,7 +1294,7 @@ class _ThreadItemChatkitTaskCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType5? type,
+    ThreadItemType5? type,
     TaskType? taskType,
     Object? heading = $none,
     Object? summary = $none,
@@ -1338,7 +1340,7 @@ class ThreadItemChatkitTaskGroupMapper
       );
       ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ThreadItemObjectObjectEnumMapper.ensureInitialized();
-      ThreadItemTypeType6Mapper.ensureInitialized();
+      ThreadItemType6Mapper.ensureInitialized();
       TaskGroupTaskMapper.ensureInitialized();
     }
     return _instance!;
@@ -1369,8 +1371,8 @@ class ThreadItemChatkitTaskGroupMapper
     _$threadId,
     key: r'thread_id',
   );
-  static ThreadItemTypeType6 _$type(ThreadItemChatkitTaskGroup v) => v.type;
-  static const Field<ThreadItemChatkitTaskGroup, ThreadItemTypeType6> _f$type =
+  static ThreadItemType6 _$type(ThreadItemChatkitTaskGroup v) => v.type;
+  static const Field<ThreadItemChatkitTaskGroup, ThreadItemType6> _f$type =
       Field('type', _$type);
   static List<TaskGroupTask> _$tasks(ThreadItemChatkitTaskGroup v) => v.tasks;
   static const Field<ThreadItemChatkitTaskGroup, List<TaskGroupTask>> _f$tasks =
@@ -1494,7 +1496,7 @@ abstract class ThreadItemChatkitTaskGroupCopyWith<
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType6? type,
+    ThreadItemType6? type,
     List<TaskGroupTask>? tasks,
   });
   ThreadItemChatkitTaskGroupCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -1532,7 +1534,7 @@ class _ThreadItemChatkitTaskGroupCopyWithImpl<$R, $Out>
     ThreadItemObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    ThreadItemTypeType6? type,
+    ThreadItemType6? type,
     List<TaskGroupTask>? tasks,
   }) => $apply(
     FieldCopyWithData({

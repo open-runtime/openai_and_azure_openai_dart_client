@@ -17,7 +17,7 @@ class McpApprovalResponseResourceMapper
       MapperContainer.globals.use(
         _instance = McpApprovalResponseResourceMapper._(),
       );
-      McpApprovalResponseResourceTypeTypeMapper.ensureInitialized();
+      McpApprovalResponseResourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class McpApprovalResponseResourceMapper
   @override
   final String id = 'McpApprovalResponseResource';
 
-  static McpApprovalResponseResourceTypeType _$type(
+  static McpApprovalResponseResourceType _$type(
     McpApprovalResponseResource v,
   ) => v.type;
   static const Field<
     McpApprovalResponseResource,
-    McpApprovalResponseResourceTypeType
+    McpApprovalResponseResourceType
   >
   _f$type = Field('type', _$type);
   static String _$id(McpApprovalResponseResource v) => v.id;
@@ -156,7 +156,7 @@ abstract class McpApprovalResponseResourceCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    McpApprovalResponseResourceTypeType? type,
+    McpApprovalResponseResourceType? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -186,7 +186,7 @@ class _McpApprovalResponseResourceCopyWithImpl<$R, $Out>
       McpApprovalResponseResourceMapper.ensureInitialized();
   @override
   $R call({
-    McpApprovalResponseResourceTypeType? type,
+    McpApprovalResponseResourceType? type,
     String? id,
     String? approvalRequestId,
     bool? approve,

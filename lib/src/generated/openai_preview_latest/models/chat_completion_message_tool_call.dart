@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_message_tool_call_function.dart';
-import 'chat_completion_message_tool_call_type_type.dart';
+import 'chat_completion_message_tool_call_type.dart';
 
 part 'chat_completion_message_tool_call.mapper.dart';
 
@@ -18,7 +18,7 @@ class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
   });
 
   final String id;
-  final ChatCompletionMessageToolCallTypeType type;
+  final ChatCompletionMessageToolCallType type;
   @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 

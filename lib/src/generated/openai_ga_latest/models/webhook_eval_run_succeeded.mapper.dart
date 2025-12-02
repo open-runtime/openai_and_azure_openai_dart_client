@@ -18,7 +18,7 @@ class WebhookEvalRunSucceededMapper
         _instance = WebhookEvalRunSucceededMapper._(),
       );
       WebhookEvalRunSucceededDataMapper.ensureInitialized();
-      WebhookEvalRunSucceededTypeTypeMapper.ensureInitialized();
+      WebhookEvalRunSucceededTypeMapper.ensureInitialized();
       WebhookEvalRunSucceededObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -44,9 +44,9 @@ class WebhookEvalRunSucceededMapper
     _$webhookEvalRunSucceededData,
     key: r'data',
   );
-  static WebhookEvalRunSucceededTypeType _$type(WebhookEvalRunSucceeded v) =>
+  static WebhookEvalRunSucceededType _$type(WebhookEvalRunSucceeded v) =>
       v.type;
-  static const Field<WebhookEvalRunSucceeded, WebhookEvalRunSucceededTypeType>
+  static const Field<WebhookEvalRunSucceeded, WebhookEvalRunSucceededType>
   _f$type = Field('type', _$type);
   static WebhookEvalRunSucceededObjectObjectEnum? _$objectEnum(
     WebhookEvalRunSucceeded v,
@@ -160,7 +160,7 @@ abstract class WebhookEvalRunSucceededCopyWith<
     int? createdAt,
     String? id,
     WebhookEvalRunSucceededData? webhookEvalRunSucceededData,
-    WebhookEvalRunSucceededTypeType? type,
+    WebhookEvalRunSucceededType? type,
     WebhookEvalRunSucceededObjectObjectEnum? objectEnum,
   });
   WebhookEvalRunSucceededCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -190,7 +190,7 @@ class _WebhookEvalRunSucceededCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookEvalRunSucceededData? webhookEvalRunSucceededData,
-    WebhookEvalRunSucceededTypeType? type,
+    WebhookEvalRunSucceededType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

@@ -14,7 +14,7 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
   static CodeInterpreterToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CodeInterpreterToolMapper._());
-      CodeInterpreterToolTypeTypeMapper.ensureInitialized();
+      CodeInterpreterToolTypeMapper.ensureInitialized();
       CodeInterpreterToolContainerUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
   @override
   final String id = 'CodeInterpreterTool';
 
-  static CodeInterpreterToolTypeType _$type(CodeInterpreterTool v) => v.type;
-  static const Field<CodeInterpreterTool, CodeInterpreterToolTypeType> _f$type =
+  static CodeInterpreterToolType _$type(CodeInterpreterTool v) => v.type;
+  static const Field<CodeInterpreterTool, CodeInterpreterToolType> _f$type =
       Field('type', _$type);
   static CodeInterpreterToolContainerUnion _$container(CodeInterpreterTool v) =>
       v.container;
@@ -125,7 +125,7 @@ abstract class CodeInterpreterToolCopyWith<
   >
   get container;
   $R call({
-    CodeInterpreterToolTypeType? type,
+    CodeInterpreterToolType? type,
     CodeInterpreterToolContainerUnion? container,
   });
   CodeInterpreterToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -150,7 +150,7 @@ class _CodeInterpreterToolCopyWithImpl<$R, $Out>
   get container => $value.container.copyWith.$chain((v) => call(container: v));
   @override
   $R call({
-    CodeInterpreterToolTypeType? type,
+    CodeInterpreterToolType? type,
     CodeInterpreterToolContainerUnion? container,
   }) => $apply(
     FieldCopyWithData({

@@ -7,8 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'chat_completion_message_tool_calls.dart';
 import 'chat_completion_request_assistant_message_audio.dart';
 import 'chat_completion_request_assistant_message_function_call.dart';
-import 'chat_completion_request_assistant_message_role_role.dart';
-import 'fine_tune_chat_completion_request_assistant_message_weight_weight.dart';
+import 'chat_completion_request_assistant_message_role.dart';
+import 'fine_tune_chat_completion_request_assistant_message_weight.dart';
 
 part 'fine_tune_chat_completion_request_assistant_message.mapper.dart';
 
@@ -25,7 +25,7 @@ class FineTuneChatCompletionRequestAssistantMessage with FineTuneChatCompletionR
     this.weight,
   });
 
-  final ChatCompletionRequestAssistantMessageRoleRole role;
+  final ChatCompletionRequestAssistantMessageRole role;
   final String? content;
   final String? refusal;
   final String? name;
@@ -35,7 +35,7 @@ class FineTuneChatCompletionRequestAssistantMessage with FineTuneChatCompletionR
   final ChatCompletionMessageToolCalls? toolCalls;
   @MappableField(key: 'function_call')
   final ChatCompletionRequestAssistantMessageFunctionCall? chatCompletionRequestAssistantMessageFunctionCall;
-  final FineTuneChatCompletionRequestAssistantMessageWeightWeight? weight;
+  final FineTuneChatCompletionRequestAssistantMessageWeight? weight;
 
   static FineTuneChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) => FineTuneChatCompletionRequestAssistantMessageMapper.fromJson(json);
 

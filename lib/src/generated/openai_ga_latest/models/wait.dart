@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
-import 'wait_type_type.dart';
+import 'wait_type.dart';
 
 part 'wait.mapper.dart';
 
@@ -14,10 +14,10 @@ part 'wait.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Wait with WaitMappable {
   const Wait({
-    this.type = WaitTypeType.wait,
+    this.type = WaitType.wait,
   });
 
-  final WaitTypeType type;
+  final WaitType type;
 
   static Wait fromJson(Map<String, dynamic> json) => WaitMapper.fromJson(json);
 

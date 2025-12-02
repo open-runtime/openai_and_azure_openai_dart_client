@@ -17,7 +17,7 @@ class RealtimeServerEventResponseOutputItemAddedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseOutputItemAddedMapper._(),
       );
-      RealtimeServerEventResponseOutputItemAddedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseOutputItemAddedTypeMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -30,12 +30,12 @@ class RealtimeServerEventResponseOutputItemAddedMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseOutputItemAdded, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseOutputItemAddedTypeType _$type(
+  static RealtimeServerEventResponseOutputItemAddedType _$type(
     RealtimeServerEventResponseOutputItemAdded v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseOutputItemAdded,
-    RealtimeServerEventResponseOutputItemAddedTypeType
+    RealtimeServerEventResponseOutputItemAddedType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseOutputItemAdded v) =>
@@ -178,7 +178,7 @@ abstract class RealtimeServerEventResponseOutputItemAddedCopyWith<
   get item;
   $R call({
     String? eventId,
-    RealtimeServerEventResponseOutputItemAddedTypeType? type,
+    RealtimeServerEventResponseOutputItemAddedType? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,
@@ -216,7 +216,7 @@ class _RealtimeServerEventResponseOutputItemAddedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseOutputItemAddedTypeType? type,
+    RealtimeServerEventResponseOutputItemAddedType? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,

@@ -103,7 +103,7 @@ class ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequest
             ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper._(),
       );
       ChatCompletionRequestDeveloperMessageContentPartUnionMapper.ensureInitialized();
-      ChatCompletionRequestMessageContentPartTextTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -112,13 +112,13 @@ class ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequest
   final String id =
       'ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartText';
 
-  static ChatCompletionRequestMessageContentPartTextTypeType _$type(
+  static ChatCompletionRequestMessageContentPartTextType _$type(
     ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartText
     v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartText,
-    ChatCompletionRequestMessageContentPartTextTypeType
+    ChatCompletionRequestMessageContentPartTextType
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -270,7 +270,7 @@ abstract class ChatCompletionRequestDeveloperMessageContentPartUnionChatCompleti
         > {
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   });
   ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartTextCopyWith<
@@ -311,7 +311,7 @@ class _ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionReques
       ChatCompletionRequestDeveloperMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartTextTypeType? type,
+    ChatCompletionRequestMessageContentPartTextType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({

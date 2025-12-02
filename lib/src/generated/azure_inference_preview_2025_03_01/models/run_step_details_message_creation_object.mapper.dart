@@ -17,7 +17,7 @@ class RunStepDetailsMessageCreationObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsMessageCreationObjectMapper._(),
       );
-      RunStepDetailsMessageCreationObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsMessageCreationObjectTypeMapper.ensureInitialized();
       RunStepDetailsMessageCreationObjectMessageCreationMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class RunStepDetailsMessageCreationObjectMapper
   @override
   final String id = 'RunStepDetailsMessageCreationObject';
 
-  static RunStepDetailsMessageCreationObjectTypeType _$type(
+  static RunStepDetailsMessageCreationObjectType _$type(
     RunStepDetailsMessageCreationObject v,
   ) => v.type;
   static const Field<
     RunStepDetailsMessageCreationObject,
-    RunStepDetailsMessageCreationObjectTypeType
+    RunStepDetailsMessageCreationObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsMessageCreationObjectMessageCreation
@@ -156,7 +156,7 @@ abstract class RunStepDetailsMessageCreationObjectCopyWith<
   >
   get runStepDetailsMessageCreationObjectMessageCreation;
   $R call({
-    RunStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDetailsMessageCreationObjectType? type,
     RunStepDetailsMessageCreationObjectMessageCreation?
     runStepDetailsMessageCreationObjectMessageCreation,
   });
@@ -193,7 +193,7 @@ class _RunStepDetailsMessageCreationObjectCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    RunStepDetailsMessageCreationObjectTypeType? type,
+    RunStepDetailsMessageCreationObjectType? type,
     RunStepDetailsMessageCreationObjectMessageCreation?
     runStepDetailsMessageCreationObjectMessageCreation,
   }) => $apply(

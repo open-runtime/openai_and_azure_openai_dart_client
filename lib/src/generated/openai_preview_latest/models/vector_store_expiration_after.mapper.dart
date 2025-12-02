@@ -17,7 +17,7 @@ class VectorStoreExpirationAfterMapper
       MapperContainer.globals.use(
         _instance = VectorStoreExpirationAfterMapper._(),
       );
-      VectorStoreExpirationAfterAnchorAnchorMapper.ensureInitialized();
+      VectorStoreExpirationAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class VectorStoreExpirationAfterMapper
   @override
   final String id = 'VectorStoreExpirationAfter';
 
-  static VectorStoreExpirationAfterAnchorAnchor _$anchor(
+  static VectorStoreExpirationAfterAnchor _$anchor(
     VectorStoreExpirationAfter v,
   ) => v.anchor;
   static const Field<
     VectorStoreExpirationAfter,
-    VectorStoreExpirationAfterAnchorAnchor
+    VectorStoreExpirationAfterAnchor
   >
   _f$anchor = Field('anchor', _$anchor);
   static int _$days(VectorStoreExpirationAfter v) => v.days;
@@ -130,7 +130,7 @@ abstract class VectorStoreExpirationAfterCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({VectorStoreExpirationAfterAnchorAnchor? anchor, int? days});
+  $R call({VectorStoreExpirationAfterAnchor? anchor, int? days});
   VectorStoreExpirationAfterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -150,13 +150,12 @@ class _VectorStoreExpirationAfterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<VectorStoreExpirationAfter> $mapper =
       VectorStoreExpirationAfterMapper.ensureInitialized();
   @override
-  $R call({VectorStoreExpirationAfterAnchorAnchor? anchor, int? days}) =>
-      $apply(
-        FieldCopyWithData({
-          if (anchor != null) #anchor: anchor,
-          if (days != null) #days: days,
-        }),
-      );
+  $R call({VectorStoreExpirationAfterAnchor? anchor, int? days}) => $apply(
+    FieldCopyWithData({
+      if (anchor != null) #anchor: anchor,
+      if (days != null) #days: days,
+    }),
+  );
   @override
   VectorStoreExpirationAfter $make(CopyWithData data) =>
       VectorStoreExpirationAfter(

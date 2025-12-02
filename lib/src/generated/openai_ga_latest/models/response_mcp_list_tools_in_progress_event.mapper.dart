@@ -17,7 +17,7 @@ class ResponseMcpListToolsInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpListToolsInProgressEventMapper._(),
       );
-      ResponseMcpListToolsInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpListToolsInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseMcpListToolsInProgressEventMapper
   @override
   final String id = 'ResponseMcpListToolsInProgressEvent';
 
-  static ResponseMcpListToolsInProgressEventTypeType _$type(
+  static ResponseMcpListToolsInProgressEventType _$type(
     ResponseMcpListToolsInProgressEvent v,
   ) => v.type;
   static const Field<
     ResponseMcpListToolsInProgressEvent,
-    ResponseMcpListToolsInProgressEventTypeType
+    ResponseMcpListToolsInProgressEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseMcpListToolsInProgressEvent v) => v.itemId;
@@ -152,7 +152,7 @@ abstract class ResponseMcpListToolsInProgressEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpListToolsInProgressEventTypeType? type,
+    ResponseMcpListToolsInProgressEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,
@@ -180,7 +180,7 @@ class _ResponseMcpListToolsInProgressEventCopyWithImpl<$R, $Out>
       ResponseMcpListToolsInProgressEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpListToolsInProgressEventTypeType? type,
+    ResponseMcpListToolsInProgressEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,

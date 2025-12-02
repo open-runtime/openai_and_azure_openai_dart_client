@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'input_content.dart';
-import 'input_file_type_type.dart';
+import 'input_file_type.dart';
 
 part 'input_file.mapper.dart';
 
@@ -20,7 +20,7 @@ class InputFile with InputFileMappable {
     this.fileData,
   });
 
-  final InputFileTypeType type;
+  final InputFileType type;
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? filename;

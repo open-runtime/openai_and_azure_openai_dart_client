@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'vector_store_file_object_last_error_code_code.dart';
+import 'vector_store_file_object_last_error_code.dart';
 
 part 'vector_store_file_object_last_error.mapper.dart';
 
@@ -15,7 +15,7 @@ class VectorStoreFileObjectLastError with VectorStoreFileObjectLastErrorMappable
     required this.message,
   });
 
-  final VectorStoreFileObjectLastErrorCodeCode code;
+  final VectorStoreFileObjectLastErrorCode code;
   final String message;
 
   static VectorStoreFileObjectLastError fromJson(Map<String, dynamic> json) => VectorStoreFileObjectLastErrorMapper.fromJson(json);

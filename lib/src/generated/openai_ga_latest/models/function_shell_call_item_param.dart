@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'function_shell_action_param.dart';
-import 'function_shell_call_item_param_type_type.dart';
+import 'function_shell_call_item_param_type.dart';
 import 'function_shell_call_item_status.dart';
 
 part 'function_shell_call_item_param.mapper.dart';
@@ -16,7 +16,7 @@ class FunctionShellCallItemParam with FunctionShellCallItemParamMappable {
   const FunctionShellCallItemParam({
     required this.callId,
     required this.action,
-    this.type = FunctionShellCallItemParamTypeType.shellCall,
+    this.type = FunctionShellCallItemParamType.shellCall,
     this.id,
     this.status,
   });
@@ -24,7 +24,7 @@ class FunctionShellCallItemParam with FunctionShellCallItemParamMappable {
   @MappableField(key: 'call_id')
   final String callId;
   final FunctionShellActionParam action;
-  final FunctionShellCallItemParamTypeType type;
+  final FunctionShellCallItemParamType type;
   final String? id;
   final FunctionShellCallItemStatus? status;
 

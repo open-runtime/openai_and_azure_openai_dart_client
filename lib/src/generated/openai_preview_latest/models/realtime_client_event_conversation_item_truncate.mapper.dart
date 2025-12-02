@@ -17,7 +17,7 @@ class RealtimeClientEventConversationItemTruncateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemTruncateMapper._(),
       );
-      RealtimeClientEventConversationItemTruncateTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventConversationItemTruncateTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventConversationItemTruncateMapper
   @override
   final String id = 'RealtimeClientEventConversationItemTruncate';
 
-  static RealtimeClientEventConversationItemTruncateTypeType _$type(
+  static RealtimeClientEventConversationItemTruncateType _$type(
     RealtimeClientEventConversationItemTruncate v,
   ) => v.type;
   static const Field<
     RealtimeClientEventConversationItemTruncate,
-    RealtimeClientEventConversationItemTruncateTypeType
+    RealtimeClientEventConversationItemTruncateType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeClientEventConversationItemTruncate v) =>
@@ -173,7 +173,7 @@ abstract class RealtimeClientEventConversationItemTruncateCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventConversationItemTruncateTypeType? type,
+    RealtimeClientEventConversationItemTruncateType? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,
@@ -204,7 +204,7 @@ class _RealtimeClientEventConversationItemTruncateCopyWithImpl<$R, $Out>
       RealtimeClientEventConversationItemTruncateMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventConversationItemTruncateTypeType? type,
+    RealtimeClientEventConversationItemTruncateType? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,

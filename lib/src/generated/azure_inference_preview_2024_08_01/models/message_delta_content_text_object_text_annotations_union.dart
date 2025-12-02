@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_text_annotations_file_citation_object.dart';
 import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';
-import 'message_delta_content_text_annotations_file_citation_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_citation_object_type.dart';
 import 'message_delta_content_text_annotations_file_path_object.dart';
 import 'message_delta_content_text_annotations_file_path_object_file_path.dart';
-import 'message_delta_content_text_annotations_file_path_object_type_type.dart';
+import 'message_delta_content_text_annotations_file_path_object_type.dart';
 
 part 'message_delta_content_text_object_text_annotations_union.mapper.dart';
 
@@ -50,7 +50,7 @@ extension MessageDeltaContentTextObjectTextAnnotationsUnionDeserializer on Messa
 class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation extends MessageDeltaContentTextObjectTextAnnotationsUnion with MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextAnnotationsFileCitationObjectTypeType type;
+  final MessageDeltaContentTextAnnotationsFileCitationObjectType type;
   final String? text;
   @MappableField(key: 'file_citation')
   final MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;
@@ -73,7 +73,7 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation extends Mess
 class MessageDeltaContentTextObjectTextAnnotationsUnionFilePath extends MessageDeltaContentTextObjectTextAnnotationsUnion with MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMappable {
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextAnnotationsFilePathObjectTypeType type;
+  final MessageDeltaContentTextAnnotationsFilePathObjectType type;
   final String? text;
   @MappableField(key: 'file_path')
   final MessageDeltaContentTextAnnotationsFilePathObjectFilePath? messageDeltaContentTextAnnotationsFilePathObjectFilePath;

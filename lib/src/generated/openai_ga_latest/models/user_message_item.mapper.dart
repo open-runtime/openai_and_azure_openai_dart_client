@@ -18,7 +18,7 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
       AttachmentMapper.ensureInitialized();
       InferenceOptionsMapper.ensureInitialized();
       UserMessageItemObjectObjectEnumMapper.ensureInitialized();
-      UserMessageItemTypeTypeMapper.ensureInitialized();
+      UserMessageItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -63,12 +63,12 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
     opt: true,
     def: UserMessageItemObjectObjectEnum.undefined0,
   );
-  static UserMessageItemTypeType _$type(UserMessageItem v) => v.type;
-  static const Field<UserMessageItem, UserMessageItemTypeType> _f$type = Field(
+  static UserMessageItemType _$type(UserMessageItem v) => v.type;
+  static const Field<UserMessageItem, UserMessageItemType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: UserMessageItemTypeType.undefined0,
+    def: UserMessageItemType.undefined0,
   );
 
   @override
@@ -184,7 +184,7 @@ abstract class UserMessageItemCopyWith<$R, $In extends UserMessageItem, $Out>
     List<Attachment>? attachments,
     InferenceOptions? inferenceOptions,
     UserMessageItemObjectObjectEnum? objectEnum,
-    UserMessageItemTypeType? type,
+    UserMessageItemType? type,
   });
   UserMessageItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -235,7 +235,7 @@ class _UserMessageItemCopyWithImpl<$R, $Out>
     List<Attachment>? attachments,
     Object? inferenceOptions = $none,
     UserMessageItemObjectObjectEnum? objectEnum,
-    UserMessageItemTypeType? type,
+    UserMessageItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

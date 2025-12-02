@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'input_text_content_param_type_type.dart';
+import 'input_text_content_param_type.dart';
 
 part 'input_text_content_param.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'input_text_content_param.mapper.dart';
 class InputTextContentParam with InputTextContentParamMappable {
   const InputTextContentParam({
     required this.text,
-    this.type = InputTextContentParamTypeType.inputText,
+    this.type = InputTextContentParamType.inputText,
   });
 
   final String text;
-  final InputTextContentParamTypeType type;
+  final InputTextContentParamType type;
 
   static InputTextContentParam fromJson(Map<String, dynamic> json) => InputTextContentParamMapper.fromJson(json);
 

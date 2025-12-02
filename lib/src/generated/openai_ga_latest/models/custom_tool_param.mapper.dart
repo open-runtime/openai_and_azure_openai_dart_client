@@ -15,7 +15,7 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomToolParamMapper._());
       CustomToolParamFormatUnionMapper.ensureInitialized();
-      CustomToolParamTypeTypeMapper.ensureInitialized();
+      CustomToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,12 +34,12 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
   static CustomToolParamFormatUnion? _$format(CustomToolParam v) => v.format;
   static const Field<CustomToolParam, CustomToolParamFormatUnion> _f$format =
       Field('format', _$format, opt: true);
-  static CustomToolParamTypeType _$type(CustomToolParam v) => v.type;
-  static const Field<CustomToolParam, CustomToolParamTypeType> _f$type = Field(
+  static CustomToolParamType _$type(CustomToolParam v) => v.type;
+  static const Field<CustomToolParam, CustomToolParamType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CustomToolParamTypeType.custom,
+    def: CustomToolParamType.custom,
   );
 
   @override
@@ -135,7 +135,7 @@ abstract class CustomToolParamCopyWith<$R, $In extends CustomToolParam, $Out>
     String? name,
     String? description,
     CustomToolParamFormatUnion? format,
-    CustomToolParamTypeType? type,
+    CustomToolParamType? type,
   });
   CustomToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -162,7 +162,7 @@ class _CustomToolParamCopyWithImpl<$R, $Out>
     String? name,
     Object? description = $none,
     Object? format = $none,
-    CustomToolParamTypeType? type,
+    CustomToolParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,

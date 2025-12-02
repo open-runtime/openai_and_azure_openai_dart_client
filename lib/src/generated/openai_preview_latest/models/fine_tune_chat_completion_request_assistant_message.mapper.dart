@@ -18,11 +18,11 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
       MapperContainer.globals.use(
         _instance = FineTuneChatCompletionRequestAssistantMessageMapper._(),
       );
-      ChatCompletionRequestAssistantMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestAssistantMessageRoleMapper.ensureInitialized();
       ChatCompletionRequestAssistantMessageAudioMapper.ensureInitialized();
       ChatCompletionMessageToolCallMapper.ensureInitialized();
       ChatCompletionRequestAssistantMessageFunctionCallMapper.ensureInitialized();
-      FineTuneChatCompletionRequestAssistantMessageWeightWeightMapper.ensureInitialized();
+      FineTuneChatCompletionRequestAssistantMessageWeightMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
   @override
   final String id = 'FineTuneChatCompletionRequestAssistantMessage';
 
-  static ChatCompletionRequestAssistantMessageRoleRole _$role(
+  static ChatCompletionRequestAssistantMessageRole _$role(
     FineTuneChatCompletionRequestAssistantMessage v,
   ) => v.role;
   static const Field<
     FineTuneChatCompletionRequestAssistantMessage,
-    ChatCompletionRequestAssistantMessageRoleRole
+    ChatCompletionRequestAssistantMessageRole
   >
   _f$role = Field('role', _$role);
   static String? _$content(FineTuneChatCompletionRequestAssistantMessage v) =>
@@ -86,12 +86,12 @@ class FineTuneChatCompletionRequestAssistantMessageMapper
     key: r'function_call',
     opt: true,
   );
-  static FineTuneChatCompletionRequestAssistantMessageWeightWeight? _$weight(
+  static FineTuneChatCompletionRequestAssistantMessageWeight? _$weight(
     FineTuneChatCompletionRequestAssistantMessage v,
   ) => v.weight;
   static const Field<
     FineTuneChatCompletionRequestAssistantMessage,
-    FineTuneChatCompletionRequestAssistantMessageWeightWeight
+    FineTuneChatCompletionRequestAssistantMessageWeight
   >
   _f$weight = Field('weight', _$weight, opt: true);
 
@@ -248,7 +248,7 @@ abstract class FineTuneChatCompletionRequestAssistantMessageCopyWith<
   >?
   get chatCompletionRequestAssistantMessageFunctionCall;
   $R call({
-    ChatCompletionRequestAssistantMessageRoleRole? role,
+    ChatCompletionRequestAssistantMessageRole? role,
     String? content,
     String? refusal,
     String? name,
@@ -257,7 +257,7 @@ abstract class FineTuneChatCompletionRequestAssistantMessageCopyWith<
     List<ChatCompletionMessageToolCall>? toolCalls,
     ChatCompletionRequestAssistantMessageFunctionCall?
     chatCompletionRequestAssistantMessageFunctionCall,
-    FineTuneChatCompletionRequestAssistantMessageWeightWeight? weight,
+    FineTuneChatCompletionRequestAssistantMessageWeight? weight,
   });
   FineTuneChatCompletionRequestAssistantMessageCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -325,7 +325,7 @@ class _FineTuneChatCompletionRequestAssistantMessageCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ChatCompletionRequestAssistantMessageRoleRole? role,
+    ChatCompletionRequestAssistantMessageRole? role,
     Object? content = $none,
     Object? refusal = $none,
     Object? name = $none,

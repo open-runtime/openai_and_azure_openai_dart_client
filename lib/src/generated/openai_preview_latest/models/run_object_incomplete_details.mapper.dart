@@ -17,7 +17,7 @@ class RunObjectIncompleteDetailsMapper
       MapperContainer.globals.use(
         _instance = RunObjectIncompleteDetailsMapper._(),
       );
-      RunObjectIncompleteDetailsReasonReasonMapper.ensureInitialized();
+      RunObjectIncompleteDetailsReasonMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RunObjectIncompleteDetailsMapper
   @override
   final String id = 'RunObjectIncompleteDetails';
 
-  static RunObjectIncompleteDetailsReasonReason? _$reason(
+  static RunObjectIncompleteDetailsReason? _$reason(
     RunObjectIncompleteDetails v,
   ) => v.reason;
   static const Field<
     RunObjectIncompleteDetails,
-    RunObjectIncompleteDetailsReasonReason
+    RunObjectIncompleteDetailsReason
   >
   _f$reason = Field('reason', _$reason, opt: true);
 
@@ -121,7 +121,7 @@ abstract class RunObjectIncompleteDetailsCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RunObjectIncompleteDetailsReasonReason? reason});
+  $R call({RunObjectIncompleteDetailsReason? reason});
   RunObjectIncompleteDetailsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

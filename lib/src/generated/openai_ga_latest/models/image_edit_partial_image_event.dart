@@ -4,11 +4,11 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'image_edit_partial_image_event_background_background.dart';
+import 'image_edit_partial_image_event_background.dart';
 import 'image_edit_partial_image_event_output_format_output_format.dart';
-import 'image_edit_partial_image_event_quality_quality.dart';
-import 'image_edit_partial_image_event_size_size.dart';
-import 'image_edit_partial_image_event_type_type.dart';
+import 'image_edit_partial_image_event_quality.dart';
+import 'image_edit_partial_image_event_size.dart';
+import 'image_edit_partial_image_event_type.dart';
 import 'image_edit_stream_event.dart';
 
 part 'image_edit_partial_image_event.mapper.dart';
@@ -28,14 +28,14 @@ class ImageEditPartialImageEvent with ImageEditPartialImageEventMappable {
     required this.partialImageIndex,
   });
 
-  final ImageEditPartialImageEventTypeType type;
+  final ImageEditPartialImageEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
   @MappableField(key: 'created_at')
   final int createdAt;
-  final ImageEditPartialImageEventSizeSize size;
-  final ImageEditPartialImageEventQualityQuality quality;
-  final ImageEditPartialImageEventBackgroundBackground background;
+  final ImageEditPartialImageEventSize size;
+  final ImageEditPartialImageEventQuality quality;
+  final ImageEditPartialImageEventBackground background;
   @MappableField(key: 'output_format')
   final ImageEditPartialImageEventOutputFormatOutputFormat outputFormat;
   @MappableField(key: 'partial_image_index')

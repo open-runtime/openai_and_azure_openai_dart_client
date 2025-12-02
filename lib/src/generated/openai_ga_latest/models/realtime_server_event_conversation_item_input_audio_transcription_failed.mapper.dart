@@ -23,7 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper._(),
       );
-      RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeMapper.ensureInitialized();
       RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,12 +41,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeType
+  static RealtimeServerEventConversationItemInputAudioTranscriptionFailedType
   _$type(RealtimeServerEventConversationItemInputAudioTranscriptionFailed v) =>
       v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
-    RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeType
+    RealtimeServerEventConversationItemInputAudioTranscriptionFailedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -237,8 +237,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionFailedC
   get realtimeServerEventConversationItemInputAudioTranscriptionFailedError;
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeType?
-    type,
+    RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedError?
@@ -299,8 +298,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionFailedCopyWithI
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeType?
-    type,
+    RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedError?

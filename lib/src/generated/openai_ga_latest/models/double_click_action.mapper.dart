@@ -14,7 +14,7 @@ class DoubleClickActionMapper extends ClassMapperBase<DoubleClickAction> {
   static DoubleClickActionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DoubleClickActionMapper._());
-      DoubleClickActionTypeTypeMapper.ensureInitialized();
+      DoubleClickActionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,14 +26,13 @@ class DoubleClickActionMapper extends ClassMapperBase<DoubleClickAction> {
   static const Field<DoubleClickAction, int> _f$x = Field('x', _$x);
   static int _$y(DoubleClickAction v) => v.y;
   static const Field<DoubleClickAction, int> _f$y = Field('y', _$y);
-  static DoubleClickActionTypeType _$type(DoubleClickAction v) => v.type;
-  static const Field<DoubleClickAction, DoubleClickActionTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: DoubleClickActionTypeType.doubleClick,
-      );
+  static DoubleClickActionType _$type(DoubleClickAction v) => v.type;
+  static const Field<DoubleClickAction, DoubleClickActionType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: DoubleClickActionType.doubleClick,
+  );
 
   @override
   final MappableFields<DoubleClickAction> fields = const {
@@ -125,7 +124,7 @@ abstract class DoubleClickActionCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? x, int? y, DoubleClickActionTypeType? type});
+  $R call({int? x, int? y, DoubleClickActionType? type});
   DoubleClickActionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -140,7 +139,7 @@ class _DoubleClickActionCopyWithImpl<$R, $Out>
   late final ClassMapperBase<DoubleClickAction> $mapper =
       DoubleClickActionMapper.ensureInitialized();
   @override
-  $R call({int? x, int? y, DoubleClickActionTypeType? type}) => $apply(
+  $R call({int? x, int? y, DoubleClickActionType? type}) => $apply(
     FieldCopyWithData({
       if (x != null) #x: x,
       if (y != null) #y: y,

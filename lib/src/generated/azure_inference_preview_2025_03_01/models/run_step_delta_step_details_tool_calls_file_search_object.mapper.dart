@@ -18,7 +18,7 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper._(),
       );
-      RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeTypeMapper.ensureInitialized();
+      RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
       v.indexField;
   static const Field<RunStepDeltaStepDetailsToolCallsFileSearchObject, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType _$type(
+  static RunStepDeltaStepDetailsToolCallsFileSearchObjectType _$type(
     RunStepDeltaStepDetailsToolCallsFileSearchObject v,
   ) => v.type;
   static const Field<
     RunStepDeltaStepDetailsToolCallsFileSearchObject,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType
   >
   _f$type = Field('type', _$type);
   static dynamic _$fileSearch(
@@ -173,7 +173,7 @@ abstract class RunStepDeltaStepDetailsToolCallsFileSearchObjectCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type,
     dynamic fileSearch,
     String? id,
   });
@@ -207,7 +207,7 @@ class _RunStepDeltaStepDetailsToolCallsFileSearchObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeType? type,
+    RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type,
     Object? fileSearch = $none,
     Object? id = $none,
   }) => $apply(

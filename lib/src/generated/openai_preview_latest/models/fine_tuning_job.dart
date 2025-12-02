@@ -9,7 +9,7 @@ import 'fine_tuning_integration.dart';
 import 'fine_tuning_job_error.dart';
 import 'fine_tuning_job_hyperparameters.dart';
 import 'fine_tuning_job_object_object_enum.dart';
-import 'fine_tuning_job_status_status.dart';
+import 'fine_tuning_job_status.dart';
 import 'metadata.dart';
 
 part 'fine_tuning_job.mapper.dart';
@@ -58,7 +58,7 @@ class FineTuningJob with FineTuningJobMappable {
   final String organizationId;
   @MappableField(key: 'result_files')
   final List<String> resultFiles;
-  final FineTuningJobStatusStatus status;
+  final FineTuningJobStatus status;
   @MappableField(key: 'trained_tokens')
   final int? trainedTokens;
   @MappableField(key: 'training_file')

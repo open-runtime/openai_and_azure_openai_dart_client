@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_response_create_params_tools_type_type.dart';
+import 'realtime_response_create_params_tools_type.dart';
 
 part 'realtime_response_create_params_tools.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeResponseCreateParamsTools with RealtimeResponseCreateParamsToolsMa
     this.parameters,
   });
 
-  final RealtimeResponseCreateParamsToolsTypeType? type;
+  final RealtimeResponseCreateParamsToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;

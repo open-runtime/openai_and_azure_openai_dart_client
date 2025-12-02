@@ -17,7 +17,7 @@ class ContainerFileCitationBodyMapper
       MapperContainer.globals.use(
         _instance = ContainerFileCitationBodyMapper._(),
       );
-      ContainerFileCitationBodyTypeTypeMapper.ensureInitialized();
+      ContainerFileCitationBodyTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -54,18 +54,14 @@ class ContainerFileCitationBodyMapper
     'filename',
     _$filename,
   );
-  static ContainerFileCitationBodyTypeType _$type(
-    ContainerFileCitationBody v,
-  ) => v.type;
-  static const Field<
-    ContainerFileCitationBody,
-    ContainerFileCitationBodyTypeType
-  >
+  static ContainerFileCitationBodyType _$type(ContainerFileCitationBody v) =>
+      v.type;
+  static const Field<ContainerFileCitationBody, ContainerFileCitationBodyType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ContainerFileCitationBodyTypeType.containerFileCitation,
+    def: ContainerFileCitationBodyType.containerFileCitation,
   );
 
   @override
@@ -173,7 +169,7 @@ abstract class ContainerFileCitationBodyCopyWith<
     int? startIndex,
     int? endIndex,
     String? filename,
-    ContainerFileCitationBodyTypeType? type,
+    ContainerFileCitationBodyType? type,
   });
   ContainerFileCitationBodyCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -196,7 +192,7 @@ class _ContainerFileCitationBodyCopyWithImpl<$R, $Out>
     int? startIndex,
     int? endIndex,
     String? filename,
-    ContainerFileCitationBodyTypeType? type,
+    ContainerFileCitationBodyType? type,
   }) => $apply(
     FieldCopyWithData({
       if (containerId != null) #containerId: containerId,

@@ -15,7 +15,7 @@ class UserMapper extends ClassMapperBase<User> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserMapper._());
       UserObjectObjectEnumMapper.ensureInitialized();
-      UserRoleRoleMapper.ensureInitialized();
+      UserRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,8 +35,8 @@ class UserMapper extends ClassMapperBase<User> {
   static const Field<User, String> _f$name = Field('name', _$name);
   static String _$email(User v) => v.email;
   static const Field<User, String> _f$email = Field('email', _$email);
-  static UserRoleRole _$role(User v) => v.role;
-  static const Field<User, UserRoleRole> _f$role = Field('role', _$role);
+  static UserRole _$role(User v) => v.role;
+  static const Field<User, UserRole> _f$role = Field('role', _$role);
   static int _$addedAt(User v) => v.addedAt;
   static const Field<User, int> _f$addedAt = Field(
     'addedAt',
@@ -120,7 +120,7 @@ abstract class UserCopyWith<$R, $In extends User, $Out>
     String? id,
     String? name,
     String? email,
-    UserRoleRole? role,
+    UserRole? role,
     int? addedAt,
   });
   UserCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -138,7 +138,7 @@ class _UserCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, User, $Out>
     String? id,
     String? name,
     String? email,
-    UserRoleRole? role,
+    UserRole? role,
     int? addedAt,
   }) => $apply(
     FieldCopyWithData({

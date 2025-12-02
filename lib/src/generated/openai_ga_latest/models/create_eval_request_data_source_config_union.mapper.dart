@@ -96,7 +96,7 @@ class CreateEvalRequestDataSourceConfigUnionCustomMapper
       );
       CreateEvalRequestDataSourceConfigUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalCustomDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalCustomDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -104,12 +104,12 @@ class CreateEvalRequestDataSourceConfigUnionCustomMapper
   @override
   final String id = 'CreateEvalRequestDataSourceConfigUnionCustom';
 
-  static CreateEvalCustomDataSourceConfigTypeType _$type(
+  static CreateEvalCustomDataSourceConfigType _$type(
     CreateEvalRequestDataSourceConfigUnionCustom v,
   ) => v.type;
   static const Field<
     CreateEvalRequestDataSourceConfigUnionCustom,
-    CreateEvalCustomDataSourceConfigTypeType
+    CreateEvalCustomDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static dynamic _$itemSchema(CreateEvalRequestDataSourceConfigUnionCustom v) =>
@@ -250,7 +250,7 @@ abstract class CreateEvalRequestDataSourceConfigUnionCustomCopyWith<
     implements CreateEvalRequestDataSourceConfigUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    CreateEvalCustomDataSourceConfigTypeType? type,
+    CreateEvalCustomDataSourceConfigType? type,
     dynamic itemSchema,
     bool? includeSampleSchema,
   });
@@ -283,7 +283,7 @@ class _CreateEvalRequestDataSourceConfigUnionCustomCopyWithImpl<$R, $Out>
       CreateEvalRequestDataSourceConfigUnionCustomMapper.ensureInitialized();
   @override
   $R call({
-    CreateEvalCustomDataSourceConfigTypeType? type,
+    CreateEvalCustomDataSourceConfigType? type,
     Object? itemSchema = $none,
     bool? includeSampleSchema,
   }) => $apply(
@@ -331,7 +331,7 @@ class CreateEvalRequestDataSourceConfigUnionLogsMapper
       );
       CreateEvalRequestDataSourceConfigUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalLogsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalLogsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -339,12 +339,12 @@ class CreateEvalRequestDataSourceConfigUnionLogsMapper
   @override
   final String id = 'CreateEvalRequestDataSourceConfigUnionLogs';
 
-  static CreateEvalLogsDataSourceConfigTypeType _$type(
+  static CreateEvalLogsDataSourceConfigType _$type(
     CreateEvalRequestDataSourceConfigUnionLogs v,
   ) => v.type;
   static const Field<
     CreateEvalRequestDataSourceConfigUnionLogs,
-    CreateEvalLogsDataSourceConfigTypeType
+    CreateEvalLogsDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static dynamic _$metadata(CreateEvalRequestDataSourceConfigUnionLogs v) =>
@@ -467,7 +467,7 @@ abstract class CreateEvalRequestDataSourceConfigUnionLogsCopyWith<
 >
     implements CreateEvalRequestDataSourceConfigUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({CreateEvalLogsDataSourceConfigTypeType? type, dynamic metadata});
+  $R call({CreateEvalLogsDataSourceConfigType? type, dynamic metadata});
   CreateEvalRequestDataSourceConfigUnionLogsCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -493,7 +493,7 @@ class _CreateEvalRequestDataSourceConfigUnionLogsCopyWithImpl<$R, $Out>
       CreateEvalRequestDataSourceConfigUnionLogsMapper.ensureInitialized();
   @override
   $R call({
-    CreateEvalLogsDataSourceConfigTypeType? type,
+    CreateEvalLogsDataSourceConfigType? type,
     Object? metadata = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -540,7 +540,7 @@ class CreateEvalRequestDataSourceConfigUnionStoredCompletionsMapper
       );
       CreateEvalRequestDataSourceConfigUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalStoredCompletionsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      CreateEvalStoredCompletionsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -548,12 +548,12 @@ class CreateEvalRequestDataSourceConfigUnionStoredCompletionsMapper
   @override
   final String id = 'CreateEvalRequestDataSourceConfigUnionStoredCompletions';
 
-  static CreateEvalStoredCompletionsDataSourceConfigTypeType _$type(
+  static CreateEvalStoredCompletionsDataSourceConfigType _$type(
     CreateEvalRequestDataSourceConfigUnionStoredCompletions v,
   ) => v.type;
   static const Field<
     CreateEvalRequestDataSourceConfigUnionStoredCompletions,
-    CreateEvalStoredCompletionsDataSourceConfigTypeType
+    CreateEvalStoredCompletionsDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static dynamic _$metadata(
@@ -699,7 +699,7 @@ abstract class CreateEvalRequestDataSourceConfigUnionStoredCompletionsCopyWith<
     implements CreateEvalRequestDataSourceConfigUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    CreateEvalStoredCompletionsDataSourceConfigTypeType? type,
+    CreateEvalStoredCompletionsDataSourceConfigType? type,
     dynamic metadata,
   });
   CreateEvalRequestDataSourceConfigUnionStoredCompletionsCopyWith<
@@ -740,7 +740,7 @@ class _CreateEvalRequestDataSourceConfigUnionStoredCompletionsCopyWithImpl<
       CreateEvalRequestDataSourceConfigUnionStoredCompletionsMapper.ensureInitialized();
   @override
   $R call({
-    CreateEvalStoredCompletionsDataSourceConfigTypeType? type,
+    CreateEvalStoredCompletionsDataSourceConfigType? type,
     Object? metadata = $none,
   }) => $apply(
     FieldCopyWithData({

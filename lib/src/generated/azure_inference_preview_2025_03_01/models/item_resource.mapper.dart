@@ -73,10 +73,10 @@ class ItemResourceMessageMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemResourceMessageMapper._());
       ItemResourceMapper.ensureInitialized().addSubMapper(_instance!);
-      ItemResourceTypeTypeMapper.ensureInitialized();
-      ItemResourceRoleRoleMapper.ensureInitialized();
+      ItemResourceTypeMapper.ensureInitialized();
+      ItemResourceRoleMapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
-      ItemResourceStatusStatusMapper.ensureInitialized();
+      ItemResourceStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -86,22 +86,24 @@ class ItemResourceMessageMapper
 
   static String _$id(ItemResourceMessage v) => v.id;
   static const Field<ItemResourceMessage, String> _f$id = Field('id', _$id);
-  static ItemResourceTypeType _$type(ItemResourceMessage v) => v.type;
-  static const Field<ItemResourceMessage, ItemResourceTypeType> _f$type = Field(
+  static ItemResourceType _$type(ItemResourceMessage v) => v.type;
+  static const Field<ItemResourceMessage, ItemResourceType> _f$type = Field(
     'type',
     _$type,
   );
-  static ItemResourceRoleRole _$role(ItemResourceMessage v) => v.role;
-  static const Field<ItemResourceMessage, ItemResourceRoleRole> _f$role = Field(
+  static ItemResourceRole _$role(ItemResourceMessage v) => v.role;
+  static const Field<ItemResourceMessage, ItemResourceRole> _f$role = Field(
     'role',
     _$role,
   );
   static List<OutputContent> _$content(ItemResourceMessage v) => v.content;
   static const Field<ItemResourceMessage, List<OutputContent>> _f$content =
       Field('content', _$content);
-  static ItemResourceStatusStatus _$status(ItemResourceMessage v) => v.status;
-  static const Field<ItemResourceMessage, ItemResourceStatusStatus> _f$status =
-      Field('status', _$status);
+  static ItemResourceStatus _$status(ItemResourceMessage v) => v.status;
+  static const Field<ItemResourceMessage, ItemResourceStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<ItemResourceMessage> fields = const {
@@ -213,10 +215,10 @@ abstract class ItemResourceMessageCopyWith<
   @override
   $R call({
     String? id,
-    ItemResourceTypeType? type,
-    ItemResourceRoleRole? role,
+    ItemResourceType? type,
+    ItemResourceRole? role,
     List<OutputContent>? content,
-    ItemResourceStatusStatus? status,
+    ItemResourceStatus? status,
   });
   ItemResourceMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -245,10 +247,10 @@ class _ItemResourceMessageCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ItemResourceTypeType? type,
-    ItemResourceRoleRole? role,
+    ItemResourceType? type,
+    ItemResourceRole? role,
     List<OutputContent>? content,
-    ItemResourceStatusStatus? status,
+    ItemResourceStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,
@@ -284,8 +286,8 @@ class ItemResourceFileSearchCallMapper
         _instance = ItemResourceFileSearchCallMapper._(),
       );
       ItemResourceMapper.ensureInitialized().addSubMapper(_instance!);
-      ItemResourceTypeType2Mapper.ensureInitialized();
-      ItemResourceStatusStatus2Mapper.ensureInitialized();
+      ItemResourceType2Mapper.ensureInitialized();
+      ItemResourceStatus2Mapper.ensureInitialized();
       ItemResourceResultsMapper.ensureInitialized();
     }
     return _instance!;
@@ -299,12 +301,11 @@ class ItemResourceFileSearchCallMapper
     'id',
     _$id,
   );
-  static ItemResourceTypeType2 _$type(ItemResourceFileSearchCall v) => v.type;
-  static const Field<ItemResourceFileSearchCall, ItemResourceTypeType2>
-  _f$type = Field('type', _$type);
-  static ItemResourceStatusStatus2 _$status(ItemResourceFileSearchCall v) =>
-      v.status;
-  static const Field<ItemResourceFileSearchCall, ItemResourceStatusStatus2>
+  static ItemResourceType2 _$type(ItemResourceFileSearchCall v) => v.type;
+  static const Field<ItemResourceFileSearchCall, ItemResourceType2> _f$type =
+      Field('type', _$type);
+  static ItemResourceStatus2 _$status(ItemResourceFileSearchCall v) => v.status;
+  static const Field<ItemResourceFileSearchCall, ItemResourceStatus2>
   _f$status = Field('status', _$status);
   static List<String> _$queries(ItemResourceFileSearchCall v) => v.queries;
   static const Field<ItemResourceFileSearchCall, List<String>> _f$queries =
@@ -429,8 +430,8 @@ abstract class ItemResourceFileSearchCallCopyWith<
   @override
   $R call({
     String? id,
-    ItemResourceTypeType2? type,
-    ItemResourceStatusStatus2? status,
+    ItemResourceType2? type,
+    ItemResourceStatus2? status,
     List<String>? queries,
     List<ItemResourceResults>? results,
   });
@@ -475,8 +476,8 @@ class _ItemResourceFileSearchCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ItemResourceTypeType2? type,
-    ItemResourceStatusStatus2? status,
+    ItemResourceType2? type,
+    ItemResourceStatus2? status,
     List<String>? queries,
     Object? results = $none,
   }) => $apply(
@@ -515,10 +516,10 @@ class ItemResourceComputerCallMapper
         _instance = ItemResourceComputerCallMapper._(),
       );
       ItemResourceMapper.ensureInitialized().addSubMapper(_instance!);
-      ItemResourceTypeType3Mapper.ensureInitialized();
+      ItemResourceType3Mapper.ensureInitialized();
       ComputerActionMapper.ensureInitialized();
       ComputerToolCallSafetyCheckMapper.ensureInitialized();
-      ItemResourceStatusStatusMapper.ensureInitialized();
+      ItemResourceStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -526,8 +527,8 @@ class ItemResourceComputerCallMapper
   @override
   final String id = 'ItemResourceComputerCall';
 
-  static ItemResourceTypeType3 _$type(ItemResourceComputerCall v) => v.type;
-  static const Field<ItemResourceComputerCall, ItemResourceTypeType3> _f$type =
+  static ItemResourceType3 _$type(ItemResourceComputerCall v) => v.type;
+  static const Field<ItemResourceComputerCall, ItemResourceType3> _f$type =
       Field('type', _$type);
   static String _$id(ItemResourceComputerCall v) => v.id;
   static const Field<ItemResourceComputerCall, String> _f$id = Field(
@@ -555,10 +556,9 @@ class ItemResourceComputerCallMapper
     _$pendingSafetyChecks,
     key: r'pending_safety_checks',
   );
-  static ItemResourceStatusStatus _$status(ItemResourceComputerCall v) =>
-      v.status;
-  static const Field<ItemResourceComputerCall, ItemResourceStatusStatus>
-  _f$status = Field('status', _$status);
+  static ItemResourceStatus _$status(ItemResourceComputerCall v) => v.status;
+  static const Field<ItemResourceComputerCall, ItemResourceStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<ItemResourceComputerCall> fields = const {
@@ -676,12 +676,12 @@ abstract class ItemResourceComputerCallCopyWith<
   get pendingSafetyChecks;
   @override
   $R call({
-    ItemResourceTypeType3? type,
+    ItemResourceType3? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
-    ItemResourceStatusStatus? status,
+    ItemResourceStatus? status,
   });
   ItemResourceComputerCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -717,12 +717,12 @@ class _ItemResourceComputerCallCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ItemResourceTypeType3? type,
+    ItemResourceType3? type,
     String? id,
     String? callId,
     ComputerAction? action,
     List<ComputerToolCallSafetyCheck>? pendingSafetyChecks,
-    ItemResourceStatusStatus? status,
+    ItemResourceStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -764,8 +764,8 @@ class ItemResourceFunctionCallMapper
         _instance = ItemResourceFunctionCallMapper._(),
       );
       ItemResourceMapper.ensureInitialized().addSubMapper(_instance!);
-      ItemResourceTypeType4Mapper.ensureInitialized();
-      ItemResourceStatusStatusMapper.ensureInitialized();
+      ItemResourceType4Mapper.ensureInitialized();
+      ItemResourceStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -778,8 +778,8 @@ class ItemResourceFunctionCallMapper
     'id',
     _$id,
   );
-  static ItemResourceTypeType4 _$type(ItemResourceFunctionCall v) => v.type;
-  static const Field<ItemResourceFunctionCall, ItemResourceTypeType4> _f$type =
+  static ItemResourceType4 _$type(ItemResourceFunctionCall v) => v.type;
+  static const Field<ItemResourceFunctionCall, ItemResourceType4> _f$type =
       Field('type', _$type);
   static String _$callId(ItemResourceFunctionCall v) => v.callId;
   static const Field<ItemResourceFunctionCall, String> _f$callId = Field(
@@ -797,10 +797,9 @@ class ItemResourceFunctionCallMapper
     'arguments',
     _$arguments,
   );
-  static ItemResourceStatusStatus? _$status(ItemResourceFunctionCall v) =>
-      v.status;
-  static const Field<ItemResourceFunctionCall, ItemResourceStatusStatus>
-  _f$status = Field('status', _$status);
+  static ItemResourceStatus? _$status(ItemResourceFunctionCall v) => v.status;
+  static const Field<ItemResourceFunctionCall, ItemResourceStatus> _f$status =
+      Field('status', _$status);
 
   @override
   final MappableFields<ItemResourceFunctionCall> fields = const {
@@ -908,11 +907,11 @@ abstract class ItemResourceFunctionCallCopyWith<
   @override
   $R call({
     String? id,
-    ItemResourceTypeType4? type,
+    ItemResourceType4? type,
     String? callId,
     String? name,
     String? arguments,
-    ItemResourceStatusStatus? status,
+    ItemResourceStatus? status,
   });
   ItemResourceFunctionCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -931,7 +930,7 @@ class _ItemResourceFunctionCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    ItemResourceTypeType4? type,
+    ItemResourceType4? type,
     String? callId,
     String? name,
     String? arguments,

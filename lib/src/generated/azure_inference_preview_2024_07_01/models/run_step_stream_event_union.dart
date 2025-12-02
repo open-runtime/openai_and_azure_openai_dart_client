@@ -6,13 +6,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_delta_object.dart';
 import 'run_step_object.dart';
-import 'run_step_stream_event_union_variant1_event_event.dart';
-import 'run_step_stream_event_union_variant2_event_event.dart';
-import 'run_step_stream_event_union_variant3_event_event.dart';
-import 'run_step_stream_event_union_variant4_event_event.dart';
-import 'run_step_stream_event_union_variant5_event_event.dart';
-import 'run_step_stream_event_union_variant6_event_event.dart';
-import 'run_step_stream_event_union_variant7_event_event.dart';
+import 'run_step_stream_event_union_variant1_event.dart';
+import 'run_step_stream_event_union_variant2_event.dart';
+import 'run_step_stream_event_union_variant3_event.dart';
+import 'run_step_stream_event_union_variant4_event.dart';
+import 'run_step_stream_event_union_variant5_event.dart';
+import 'run_step_stream_event_union_variant6_event.dart';
+import 'run_step_stream_event_union_variant7_event.dart';
 
 part 'run_step_stream_event_union.mapper.dart';
 
@@ -56,7 +56,7 @@ extension RunStepStreamEventUnionDeserializer on RunStepStreamEventUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant1 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant1Mappable {
-  final RunStepStreamEventUnionVariant1EventEvent event;
+  final RunStepStreamEventUnionVariant1Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant1({
@@ -67,7 +67,7 @@ class RunStepStreamEventUnionVariant1 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant2 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant2Mappable {
-  final RunStepStreamEventUnionVariant2EventEvent event;
+  final RunStepStreamEventUnionVariant2Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant2({
@@ -78,7 +78,7 @@ class RunStepStreamEventUnionVariant2 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant3 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant3Mappable {
-  final RunStepStreamEventUnionVariant3EventEvent event;
+  final RunStepStreamEventUnionVariant3Event event;
   final RunStepDeltaObject data;
 
   const RunStepStreamEventUnionVariant3({
@@ -89,7 +89,7 @@ class RunStepStreamEventUnionVariant3 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant4 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant4Mappable {
-  final RunStepStreamEventUnionVariant4EventEvent event;
+  final RunStepStreamEventUnionVariant4Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant4({
@@ -100,7 +100,7 @@ class RunStepStreamEventUnionVariant4 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant5 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant5Mappable {
-  final RunStepStreamEventUnionVariant5EventEvent event;
+  final RunStepStreamEventUnionVariant5Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant5({
@@ -111,7 +111,7 @@ class RunStepStreamEventUnionVariant5 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant6 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant6Mappable {
-  final RunStepStreamEventUnionVariant6EventEvent event;
+  final RunStepStreamEventUnionVariant6Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant6({
@@ -122,7 +122,7 @@ class RunStepStreamEventUnionVariant6 extends RunStepStreamEventUnion with RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepStreamEventUnionVariant7 extends RunStepStreamEventUnion with RunStepStreamEventUnionVariant7Mappable {
-  final RunStepStreamEventUnionVariant7EventEvent event;
+  final RunStepStreamEventUnionVariant7Event event;
   final RunStepObject data;
 
   const RunStepStreamEventUnionVariant7({

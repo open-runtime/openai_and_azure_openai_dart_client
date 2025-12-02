@@ -15,7 +15,7 @@ class EvalLabelModelGraderMapper extends ClassMapperBase<EvalLabelModelGrader> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EvalLabelModelGraderMapper._());
       EvalItemMapper.ensureInitialized();
-      EvalLabelModelGraderTypeTypeMapper.ensureInitialized();
+      EvalLabelModelGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -47,9 +47,9 @@ class EvalLabelModelGraderMapper extends ClassMapperBase<EvalLabelModelGrader> {
       v.passingLabels;
   static const Field<EvalLabelModelGrader, List<String>> _f$passingLabels =
       Field('passingLabels', _$passingLabels, key: r'passing_labels');
-  static EvalLabelModelGraderTypeType _$type(EvalLabelModelGrader v) => v.type;
-  static const Field<EvalLabelModelGrader, EvalLabelModelGraderTypeType>
-  _f$type = Field('type', _$type);
+  static EvalLabelModelGraderType _$type(EvalLabelModelGrader v) => v.type;
+  static const Field<EvalLabelModelGrader, EvalLabelModelGraderType> _f$type =
+      Field('type', _$type);
 
   @override
   final MappableFields<EvalLabelModelGrader> fields = const {
@@ -157,7 +157,7 @@ abstract class EvalLabelModelGraderCopyWith<
     String? model,
     String? name,
     List<String>? passingLabels,
-    EvalLabelModelGraderTypeType? type,
+    EvalLabelModelGraderType? type,
   });
   EvalLabelModelGraderCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -200,7 +200,7 @@ class _EvalLabelModelGraderCopyWithImpl<$R, $Out>
     String? model,
     String? name,
     List<String>? passingLabels,
-    EvalLabelModelGraderTypeType? type,
+    EvalLabelModelGraderType? type,
   }) => $apply(
     FieldCopyWithData({
       if (input != null) #input: input,

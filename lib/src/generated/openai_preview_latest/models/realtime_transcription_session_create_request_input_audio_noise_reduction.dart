@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_transcription_session_create_request_input_audio_noise_reduction_type_type.dart';
+import 'realtime_transcription_session_create_request_input_audio_noise_reduction_type.dart';
 
 part 'realtime_transcription_session_create_request_input_audio_noise_reduction.mapper.dart';
 
@@ -14,7 +14,7 @@ class RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction with Rea
     this.type,
   });
 
-  final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionTypeType? type;
+  final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType? type;
 
   static RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionMapper.fromJson(json);
 

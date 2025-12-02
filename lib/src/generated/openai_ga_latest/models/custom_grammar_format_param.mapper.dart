@@ -18,7 +18,7 @@ class CustomGrammarFormatParamMapper
         _instance = CustomGrammarFormatParamMapper._(),
       );
       GrammarSyntax1Mapper.ensureInitialized();
-      CustomGrammarFormatParamTypeTypeMapper.ensureInitialized();
+      CustomGrammarFormatParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,14 +34,14 @@ class CustomGrammarFormatParamMapper
     'definition',
     _$definition,
   );
-  static CustomGrammarFormatParamTypeType _$type(CustomGrammarFormatParam v) =>
+  static CustomGrammarFormatParamType _$type(CustomGrammarFormatParam v) =>
       v.type;
-  static const Field<CustomGrammarFormatParam, CustomGrammarFormatParamTypeType>
+  static const Field<CustomGrammarFormatParam, CustomGrammarFormatParamType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CustomGrammarFormatParamTypeType.grammar,
+    def: CustomGrammarFormatParamType.grammar,
   );
 
   @override
@@ -136,7 +136,7 @@ abstract class CustomGrammarFormatParamCopyWith<
   $R call({
     GrammarSyntax1? syntax,
     String? definition,
-    CustomGrammarFormatParamTypeType? type,
+    CustomGrammarFormatParamType? type,
   });
   CustomGrammarFormatParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -156,7 +156,7 @@ class _CustomGrammarFormatParamCopyWithImpl<$R, $Out>
   $R call({
     GrammarSyntax1? syntax,
     String? definition,
-    CustomGrammarFormatParamTypeType? type,
+    CustomGrammarFormatParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (syntax != null) #syntax: syntax,

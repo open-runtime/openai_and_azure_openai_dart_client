@@ -14,8 +14,8 @@ class GraderStringCheckMapper extends ClassMapperBase<GraderStringCheck> {
   static GraderStringCheckMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderStringCheckMapper._());
-      GraderStringCheckTypeTypeMapper.ensureInitialized();
-      GraderStringCheckOperationOperationMapper.ensureInitialized();
+      GraderStringCheckTypeMapper.ensureInitialized();
+      GraderStringCheckOperationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,9 +23,11 @@ class GraderStringCheckMapper extends ClassMapperBase<GraderStringCheck> {
   @override
   final String id = 'GraderStringCheck';
 
-  static GraderStringCheckTypeType _$type(GraderStringCheck v) => v.type;
-  static const Field<GraderStringCheck, GraderStringCheckTypeType> _f$type =
-      Field('type', _$type);
+  static GraderStringCheckType _$type(GraderStringCheck v) => v.type;
+  static const Field<GraderStringCheck, GraderStringCheckType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$name(GraderStringCheck v) => v.name;
   static const Field<GraderStringCheck, String> _f$name = Field('name', _$name);
   static String _$input(GraderStringCheck v) => v.input;
@@ -38,9 +40,9 @@ class GraderStringCheckMapper extends ClassMapperBase<GraderStringCheck> {
     'reference',
     _$reference,
   );
-  static GraderStringCheckOperationOperation _$operation(GraderStringCheck v) =>
+  static GraderStringCheckOperation _$operation(GraderStringCheck v) =>
       v.operation;
-  static const Field<GraderStringCheck, GraderStringCheckOperationOperation>
+  static const Field<GraderStringCheck, GraderStringCheckOperation>
   _f$operation = Field('operation', _$operation);
 
   @override
@@ -138,11 +140,11 @@ abstract class GraderStringCheckCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   });
   GraderStringCheckCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -159,11 +161,11 @@ class _GraderStringCheckCopyWithImpl<$R, $Out>
       GraderStringCheckMapper.ensureInitialized();
   @override
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

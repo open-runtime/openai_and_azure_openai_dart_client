@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_conversation_item_truncated_type_type.dart';
+import 'realtime_server_event_conversation_item_truncated_type.dart';
 
 part 'realtime_server_event_conversation_item_truncated.mapper.dart';
 
@@ -28,7 +28,7 @@ class RealtimeServerEventConversationItemTruncated with RealtimeServerEventConve
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventConversationItemTruncatedTypeType type;
+  final RealtimeServerEventConversationItemTruncatedType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

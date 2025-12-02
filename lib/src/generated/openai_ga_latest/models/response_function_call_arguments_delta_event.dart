@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_function_call_arguments_delta_event_type_type.dart';
+import 'response_function_call_arguments_delta_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_function_call_arguments_delta_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseFunctionCallArgumentsDeltaEvent with ResponseFunctionCallArguments
     required this.delta,
   });
 
-  final ResponseFunctionCallArgumentsDeltaEventTypeType type;
+  final ResponseFunctionCallArgumentsDeltaEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

@@ -7,18 +7,18 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'eval_item.dart';
 import 'fine_tune_reinforcement_method_grader_union.dart';
 import 'grader_label_model.dart';
-import 'grader_label_model_type_type.dart';
+import 'grader_label_model_type.dart';
 import 'grader_python.dart';
-import 'grader_python_type_type.dart';
+import 'grader_python_type.dart';
 import 'grader_score_model.dart';
 import 'grader_score_model_sampling_params.dart';
-import 'grader_score_model_type_type.dart';
+import 'grader_score_model_type.dart';
 import 'grader_string_check.dart';
-import 'grader_string_check_operation_operation.dart';
-import 'grader_string_check_type_type.dart';
+import 'grader_string_check_operation.dart';
+import 'grader_string_check_type.dart';
 import 'grader_text_similarity.dart';
 import 'grader_text_similarity_evaluation_metric_evaluation_metric.dart';
-import 'grader_text_similarity_type_type.dart';
+import 'grader_text_similarity_type.dart';
 
 part 'grader_multi_graders_union.mapper.dart';
 
@@ -66,11 +66,11 @@ extension GraderMultiGradersUnionDeserializer on GraderMultiGradersUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
 class GraderMultiGradersUnionStringCheck extends GraderMultiGradersUnion with GraderMultiGradersUnionStringCheckMappable {
-  final GraderStringCheckTypeType type;
+  final GraderStringCheckType type;
   final String name;
   final String input;
   final String reference;
-  final GraderStringCheckOperationOperation operation;
+  final GraderStringCheckOperation operation;
 
   const GraderMultiGradersUnionStringCheck({
     required this.type,
@@ -83,7 +83,7 @@ class GraderMultiGradersUnionStringCheck extends GraderMultiGradersUnion with Gr
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
 class GraderMultiGradersUnionTextSimilarity extends GraderMultiGradersUnion with GraderMultiGradersUnionTextSimilarityMappable {
-  final GraderTextSimilarityTypeType type;
+  final GraderTextSimilarityType type;
   final String name;
   final String input;
   final String reference;
@@ -101,7 +101,7 @@ class GraderMultiGradersUnionTextSimilarity extends GraderMultiGradersUnion with
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
 class GraderMultiGradersUnionPython extends GraderMultiGradersUnion with GraderMultiGradersUnionPythonMappable {
-  final GraderPythonTypeType type;
+  final GraderPythonType type;
   final String name;
   final String source;
   @MappableField(key: 'image_tag')
@@ -117,7 +117,7 @@ class GraderMultiGradersUnionPython extends GraderMultiGradersUnion with GraderM
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
 class GraderMultiGradersUnionScoreModel extends GraderMultiGradersUnion with GraderMultiGradersUnionScoreModelMappable {
-  final GraderScoreModelTypeType type;
+  final GraderScoreModelType type;
   final String name;
   final String model;
   @MappableField(key: 'sampling_params')
@@ -137,7 +137,7 @@ class GraderMultiGradersUnionScoreModel extends GraderMultiGradersUnion with Gra
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
 class GraderMultiGradersUnionLabelModel extends GraderMultiGradersUnion with GraderMultiGradersUnionLabelModelMappable {
-  final GraderLabelModelTypeType type;
+  final GraderLabelModelType type;
   final String name;
   final String model;
   final List<EvalItem> input;

@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'file_annotation.dart';
 import 'file_annotation_source.dart';
-import 'file_annotation_type_type.dart';
+import 'file_annotation_type.dart';
 import 'url_annotation.dart';
 import 'url_annotation_source.dart';
-import 'url_annotation_type_type.dart';
+import 'url_annotation_type.dart';
 
 part 'response_output_text_annotations_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension ResponseOutputTextAnnotationsUnionDeserializer on ResponseOutputTextAn
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file')
 class ResponseOutputTextAnnotationsUnionFile extends ResponseOutputTextAnnotationsUnion with ResponseOutputTextAnnotationsUnionFileMappable {
-  final FileAnnotationTypeType type;
+  final FileAnnotationType type;
   final FileAnnotationSource source;
 
   const ResponseOutputTextAnnotationsUnionFile({
@@ -59,7 +59,7 @@ class ResponseOutputTextAnnotationsUnionFile extends ResponseOutputTextAnnotatio
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url')
 class ResponseOutputTextAnnotationsUnionUrl extends ResponseOutputTextAnnotationsUnion with ResponseOutputTextAnnotationsUnionUrlMappable {
-  final UrlAnnotationTypeType type;
+  final UrlAnnotationType type;
   final UrlAnnotationSource source;
 
   const ResponseOutputTextAnnotationsUnionUrl({

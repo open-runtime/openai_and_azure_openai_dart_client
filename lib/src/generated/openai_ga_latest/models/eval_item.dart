@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item_content_union.dart';
-import 'eval_item_role_role.dart';
-import 'eval_item_type_type.dart';
+import 'eval_item_role.dart';
+import 'eval_item_type.dart';
 
 part 'eval_item.mapper.dart';
 
@@ -24,9 +24,9 @@ class EvalItem with EvalItemMappable {
     this.type,
   });
 
-  final EvalItemRoleRole role;
+  final EvalItemRole role;
   final EvalItemContentUnion content;
-  final EvalItemTypeType? type;
+  final EvalItemType? type;
 
   static EvalItem fromJson(Map<String, dynamic> json) => EvalItemMapper.fromJson(json);
 

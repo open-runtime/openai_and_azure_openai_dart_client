@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'chat_completion_request_message_function_role_role.dart';
+import 'chat_completion_request_message_function_role.dart';
 import 'chat_completion_request_message_role.dart';
 
 part 'chat_completion_request_message_function.mapper.dart';
@@ -17,7 +17,7 @@ class ChatCompletionRequestMessageFunction with ChatCompletionRequestMessageFunc
     this.content,
   });
 
-  final ChatCompletionRequestMessageFunctionRoleRole? role;
+  final ChatCompletionRequestMessageFunctionRole? role;
   final String? name;
   final String? content;
 

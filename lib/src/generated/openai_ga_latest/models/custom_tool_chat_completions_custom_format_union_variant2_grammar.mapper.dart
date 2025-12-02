@@ -23,7 +23,7 @@ class CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper
         _instance =
             CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper._(),
       );
-      CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntaxMapper.ensureInitialized();
+      CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,12 +39,12 @@ class CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper
     String
   >
   _f$definition = Field('definition', _$definition);
-  static CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntax
+  static CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax
   _$syntax(CustomToolChatCompletionsCustomFormatUnionVariant2Grammar v) =>
       v.syntax;
   static const Field<
     CustomToolChatCompletionsCustomFormatUnionVariant2Grammar,
-    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntax
+    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax
   >
   _f$syntax = Field('syntax', _$syntax);
 
@@ -175,8 +175,7 @@ abstract class CustomToolChatCompletionsCustomFormatUnionVariant2GrammarCopyWith
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? definition,
-    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntax?
-    syntax,
+    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax? syntax,
   });
   CustomToolChatCompletionsCustomFormatUnionVariant2GrammarCopyWith<
     $R2,
@@ -217,8 +216,7 @@ class _CustomToolChatCompletionsCustomFormatUnionVariant2GrammarCopyWithImpl<
   @override
   $R call({
     String? definition,
-    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntaxSyntax?
-    syntax,
+    CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax? syntax,
   }) => $apply(
     FieldCopyWithData({
       if (definition != null) #definition: definition,

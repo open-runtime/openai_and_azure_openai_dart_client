@@ -23,7 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper._(),
       );
-      RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,12 +41,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeType
+  static RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType
   _$type(RealtimeServerEventConversationItemInputAudioTranscriptionDelta v) =>
       v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionDelta,
-    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeType
+    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -237,8 +237,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaCo
   get logprobs;
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeType?
-    type,
+    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? type,
     String? itemId,
     int? contentIndex,
     String? delta,
@@ -296,8 +295,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionDeltaCopyWithIm
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeType?
-    type,
+    RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? type,
     String? itemId,
     Object? contentIndex = $none,
     Object? delta = $none,

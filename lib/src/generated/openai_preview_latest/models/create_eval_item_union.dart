@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_item_content_union.dart';
-import 'eval_item_role_role.dart';
-import 'eval_item_type_type.dart';
+import 'eval_item_role.dart';
+import 'eval_item_type.dart';
 import 'eval_item.dart';
 
 part 'create_eval_item_union.mapper.dart';
@@ -48,9 +48,9 @@ class CreateEvalItemUnionVariant1 extends CreateEvalItemUnion with CreateEvalIte
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalItemUnionEvalItem extends CreateEvalItemUnion with CreateEvalItemUnionEvalItemMappable {
-  final EvalItemRoleRole role;
+  final EvalItemRole role;
   final EvalItemContentUnion content;
-  final EvalItemTypeType? type;
+  final EvalItemType? type;
 
   const CreateEvalItemUnionEvalItem({
     required this.role,

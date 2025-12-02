@@ -17,7 +17,7 @@ class SpecificApplyPatchParamMapper
       MapperContainer.globals.use(
         _instance = SpecificApplyPatchParamMapper._(),
       );
-      SpecificApplyPatchParamTypeTypeMapper.ensureInitialized();
+      SpecificApplyPatchParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,14 +25,14 @@ class SpecificApplyPatchParamMapper
   @override
   final String id = 'SpecificApplyPatchParam';
 
-  static SpecificApplyPatchParamTypeType _$type(SpecificApplyPatchParam v) =>
+  static SpecificApplyPatchParamType _$type(SpecificApplyPatchParam v) =>
       v.type;
-  static const Field<SpecificApplyPatchParam, SpecificApplyPatchParamTypeType>
+  static const Field<SpecificApplyPatchParam, SpecificApplyPatchParamType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: SpecificApplyPatchParamTypeType.applyPatch,
+    def: SpecificApplyPatchParamType.applyPatch,
   );
 
   @override
@@ -116,7 +116,7 @@ abstract class SpecificApplyPatchParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({SpecificApplyPatchParamTypeType? type});
+  $R call({SpecificApplyPatchParamType? type});
   SpecificApplyPatchParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -132,7 +132,7 @@ class _SpecificApplyPatchParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<SpecificApplyPatchParam> $mapper =
       SpecificApplyPatchParamMapper.ensureInitialized();
   @override
-  $R call({SpecificApplyPatchParamTypeType? type}) =>
+  $R call({SpecificApplyPatchParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   SpecificApplyPatchParam $make(CopyWithData data) =>

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
 import 'realtime_mcp_tool_call_error_union.dart';
-import 'realtime_mcp_tool_call_type_type.dart';
+import 'realtime_mcp_tool_call_type.dart';
 
 part 'realtime_mcp_tool_call.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeMcpToolCall with RealtimeMcpToolCallMappable {
     this.error,
   });
 
-  final RealtimeMcpToolCallTypeType type;
+  final RealtimeMcpToolCallType type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

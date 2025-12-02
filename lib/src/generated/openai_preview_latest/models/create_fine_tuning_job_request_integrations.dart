@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_fine_tuning_job_request_integrations_type_type.dart';
+import 'create_fine_tuning_job_request_integrations_type.dart';
 import 'create_fine_tuning_job_request_integrations_wandb.dart';
 
 part 'create_fine_tuning_job_request_integrations.mapper.dart';
@@ -16,7 +16,7 @@ class CreateFineTuningJobRequestIntegrations with CreateFineTuningJobRequestInte
     required this.createFineTuningJobRequestIntegrationsWandb,
   });
 
-  final CreateFineTuningJobRequestIntegrationsTypeType type;
+  final CreateFineTuningJobRequestIntegrationsType type;
   @MappableField(key: 'wandb')
   final CreateFineTuningJobRequestIntegrationsWandb createFineTuningJobRequestIntegrationsWandb;
 

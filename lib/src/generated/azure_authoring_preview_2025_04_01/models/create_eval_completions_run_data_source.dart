@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'create_eval_completions_run_data_source_input_messages.dart';
 import 'create_eval_completions_run_data_source_sampling_params.dart';
 import 'create_eval_completions_run_data_source_source.dart';
-import 'create_eval_completions_run_data_source_type_type.dart';
+import 'create_eval_completions_run_data_source_type.dart';
 
 part 'create_eval_completions_run_data_source.mapper.dart';
 
@@ -16,7 +16,7 @@ part 'create_eval_completions_run_data_source.mapper.dart';
 class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSourceMappable {
   const CreateEvalCompletionsRunDataSource({
     required this.createEvalCompletionsRunDataSourceSource,
-    this.type = CreateEvalCompletionsRunDataSourceTypeType.completions,
+    this.type = CreateEvalCompletionsRunDataSourceType.completions,
     this.createEvalCompletionsRunDataSourceInputMessages,
     this.model,
     this.createEvalCompletionsRunDataSourceSamplingParams,
@@ -24,7 +24,7 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
 
   @MappableField(key: 'source')
   final CreateEvalCompletionsRunDataSourceSource createEvalCompletionsRunDataSourceSource;
-  final CreateEvalCompletionsRunDataSourceTypeType type;
+  final CreateEvalCompletionsRunDataSourceType type;
   @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessages? createEvalCompletionsRunDataSourceInputMessages;
   final String? model;

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_mcp_call_arguments_delta_event_type_type.dart';
+import 'response_mcp_call_arguments_delta_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_mcp_call_arguments_delta_event.mapper.dart';
@@ -21,7 +21,7 @@ class ResponseMcpCallArgumentsDeltaEvent with ResponseMcpCallArgumentsDeltaEvent
     required this.sequenceNumber,
   });
 
-  final ResponseMcpCallArgumentsDeltaEventTypeType type;
+  final ResponseMcpCallArgumentsDeltaEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'item_id')

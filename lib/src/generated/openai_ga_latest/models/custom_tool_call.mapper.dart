@@ -14,7 +14,7 @@ class CustomToolCallMapper extends ClassMapperBase<CustomToolCall> {
   static CustomToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomToolCallMapper._());
-      CustomToolCallTypeTypeMapper.ensureInitialized();
+      CustomToolCallTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class CustomToolCallMapper extends ClassMapperBase<CustomToolCall> {
   @override
   final String id = 'CustomToolCall';
 
-  static CustomToolCallTypeType _$type(CustomToolCall v) => v.type;
-  static const Field<CustomToolCall, CustomToolCallTypeType> _f$type = Field(
+  static CustomToolCallType _$type(CustomToolCall v) => v.type;
+  static const Field<CustomToolCall, CustomToolCallType> _f$type = Field(
     'type',
     _$type,
   );
@@ -130,7 +130,7 @@ extension CustomToolCallValueCopy<$R, $Out>
 abstract class CustomToolCallCopyWith<$R, $In extends CustomToolCall, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    CustomToolCallTypeType? type,
+    CustomToolCallType? type,
     String? callId,
     String? name,
     String? input,
@@ -151,7 +151,7 @@ class _CustomToolCallCopyWithImpl<$R, $Out>
       CustomToolCallMapper.ensureInitialized();
   @override
   $R call({
-    CustomToolCallTypeType? type,
+    CustomToolCallType? type,
     String? callId,
     String? name,
     String? input,

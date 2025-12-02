@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'invite_request_projects_role_role.dart';
+import 'invite_request_projects_role.dart';
 
 part 'invite_request_projects.mapper.dart';
 
@@ -16,7 +16,7 @@ class InviteRequestProjects with InviteRequestProjectsMappable {
   });
 
   final String id;
-  final InviteRequestProjectsRoleRole role;
+  final InviteRequestProjectsRole role;
 
   static InviteRequestProjects fromJson(Map<String, dynamic> json) => InviteRequestProjectsMapper.fromJson(json);
 

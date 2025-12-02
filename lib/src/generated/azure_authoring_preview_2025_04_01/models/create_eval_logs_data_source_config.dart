@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_logs_data_source_config_type_type.dart';
+import 'create_eval_logs_data_source_config_type.dart';
 
 part 'create_eval_logs_data_source_config.mapper.dart';
 
@@ -12,11 +12,11 @@ part 'create_eval_logs_data_source_config.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalLogsDataSourceConfig with CreateEvalLogsDataSourceConfigMappable {
   const CreateEvalLogsDataSourceConfig({
-    this.type = CreateEvalLogsDataSourceConfigTypeType.logs,
+    this.type = CreateEvalLogsDataSourceConfigType.logs,
     this.metadata,
   });
 
-  final CreateEvalLogsDataSourceConfigTypeType type;
+  final CreateEvalLogsDataSourceConfigType type;
   final dynamic? metadata;
 
   static CreateEvalLogsDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalLogsDataSourceConfigMapper.fromJson(json);

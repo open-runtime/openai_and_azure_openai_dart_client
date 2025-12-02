@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'audio_transcription.dart';
-import 'realtime_transcription_session_create_request_include_include.dart';
+import 'realtime_transcription_session_create_request_include.dart';
 import 'realtime_transcription_session_create_request_input_audio_format_input_audio_format.dart';
 import 'realtime_transcription_session_create_request_input_audio_noise_reduction.dart';
 import 'realtime_transcription_session_create_request_turn_detection.dart';
@@ -31,7 +31,7 @@ class RealtimeTranscriptionSessionCreateRequest with RealtimeTranscriptionSessio
   final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_transcription')
   final AudioTranscription? inputAudioTranscription;
-  final List<RealtimeTranscriptionSessionCreateRequestIncludeInclude>? include;
+  final List<RealtimeTranscriptionSessionCreateRequestInclude>? include;
 
   static RealtimeTranscriptionSessionCreateRequest fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestMapper.fromJson(json);
 

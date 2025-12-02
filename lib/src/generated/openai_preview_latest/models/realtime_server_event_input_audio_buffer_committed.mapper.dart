@@ -18,7 +18,7 @@ class RealtimeServerEventInputAudioBufferCommittedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventInputAudioBufferCommittedMapper._(),
       );
-      RealtimeServerEventInputAudioBufferCommittedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventInputAudioBufferCommittedTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeServerEventInputAudioBufferCommittedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferCommitted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventInputAudioBufferCommittedTypeType _$type(
+  static RealtimeServerEventInputAudioBufferCommittedType _$type(
     RealtimeServerEventInputAudioBufferCommitted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferCommitted,
-    RealtimeServerEventInputAudioBufferCommittedTypeType
+    RealtimeServerEventInputAudioBufferCommittedType
   >
   _f$type = Field('type', _$type);
   static String _$previousItemId(
@@ -170,7 +170,7 @@ abstract class RealtimeServerEventInputAudioBufferCommittedCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventInputAudioBufferCommittedTypeType? type,
+    RealtimeServerEventInputAudioBufferCommittedType? type,
     String? previousItemId,
     String? itemId,
   });
@@ -204,7 +204,7 @@ class _RealtimeServerEventInputAudioBufferCommittedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventInputAudioBufferCommittedTypeType? type,
+    RealtimeServerEventInputAudioBufferCommittedType? type,
     String? previousItemId,
     String? itemId,
   }) => $apply(

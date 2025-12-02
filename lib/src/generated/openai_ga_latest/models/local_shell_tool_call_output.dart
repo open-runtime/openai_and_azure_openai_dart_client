@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'conversation_item.dart';
 import 'item_resource.dart';
-import 'local_shell_tool_call_output_status_status.dart';
-import 'local_shell_tool_call_output_type_type.dart';
+import 'local_shell_tool_call_output_status.dart';
+import 'local_shell_tool_call_output_type.dart';
 
 part 'local_shell_tool_call_output.mapper.dart';
 
@@ -22,10 +22,10 @@ class LocalShellToolCallOutput with LocalShellToolCallOutputMappable {
     this.status,
   });
 
-  final LocalShellToolCallOutputTypeType type;
+  final LocalShellToolCallOutputType type;
   final String id;
   final String output;
-  final LocalShellToolCallOutputStatusStatus? status;
+  final LocalShellToolCallOutputStatus? status;
 
   static LocalShellToolCallOutput fromJson(Map<String, dynamic> json) => LocalShellToolCallOutputMapper.fromJson(json);
 

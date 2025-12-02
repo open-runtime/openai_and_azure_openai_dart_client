@@ -20,7 +20,7 @@ class RealtimeSessionCreateRequestMapper
       RealtimeSessionCreateRequestInputAudioNoiseReductionMapper.ensureInitialized();
       RealtimeSessionCreateRequestInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionCreateRequestOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
-      RealtimeSessionCreateRequestModelModelMapper.ensureInitialized();
+      RealtimeSessionCreateRequestModelMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionCreateRequestInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionCreateRequestTurnDetectionMapper.ensureInitialized();
@@ -91,12 +91,12 @@ class RealtimeSessionCreateRequestMapper
   static dynamic _$modalities(RealtimeSessionCreateRequest v) => v.modalities;
   static const Field<RealtimeSessionCreateRequest, dynamic> _f$modalities =
       Field('modalities', _$modalities, opt: true);
-  static RealtimeSessionCreateRequestModelModel? _$model(
+  static RealtimeSessionCreateRequestModel? _$model(
     RealtimeSessionCreateRequest v,
   ) => v.model;
   static const Field<
     RealtimeSessionCreateRequest,
-    RealtimeSessionCreateRequestModelModel
+    RealtimeSessionCreateRequestModel
   >
   _f$model = Field('model', _$model, opt: true);
   static String? _$instructions(RealtimeSessionCreateRequest v) =>
@@ -322,7 +322,7 @@ abstract class RealtimeSessionCreateRequestCopyWith<
     String? toolChoice,
     num? temperature,
     dynamic modalities,
-    RealtimeSessionCreateRequestModelModel? model,
+    RealtimeSessionCreateRequestModel? model,
     String? instructions,
     VoiceIdsShared? voice,
     RealtimeSessionCreateRequestInputAudioTranscription?

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_stored_completions_source_type_type.dart';
+import 'eval_stored_completions_source_type.dart';
 import 'metadata.dart';
 
 part 'eval_stored_completions_source.mapper.dart';
@@ -19,7 +19,7 @@ class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
     this.createdAfter,
     this.createdBefore,
     this.limit,
-    this.type = EvalStoredCompletionsSourceTypeType.storedCompletions,
+    this.type = EvalStoredCompletionsSourceType.storedCompletions,
   });
 
   final Metadata? metadata;
@@ -29,7 +29,7 @@ class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
   @MappableField(key: 'created_before')
   final int? createdBefore;
   final int? limit;
-  final EvalStoredCompletionsSourceTypeType type;
+  final EvalStoredCompletionsSourceType type;
 
   static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) => EvalStoredCompletionsSourceMapper.fromJson(json);
 

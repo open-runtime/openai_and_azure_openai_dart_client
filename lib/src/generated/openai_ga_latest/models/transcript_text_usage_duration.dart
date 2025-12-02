@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'transcript_text_usage_duration_type_type.dart';
+import 'transcript_text_usage_duration_type.dart';
 
 part 'transcript_text_usage_duration.mapper.dart';
 
@@ -16,7 +16,7 @@ class TranscriptTextUsageDuration with TranscriptTextUsageDurationMappable {
     required this.seconds,
   });
 
-  final TranscriptTextUsageDurationTypeType type;
+  final TranscriptTextUsageDurationType type;
   final num seconds;
 
   static TranscriptTextUsageDuration fromJson(Map<String, dynamic> json) => TranscriptTextUsageDurationMapper.fromJson(json);

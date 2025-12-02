@@ -14,7 +14,7 @@ class UrlCitationMapper extends ClassMapperBase<UrlCitation> {
   static UrlCitationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UrlCitationMapper._());
-      UrlCitationTypeTypeMapper.ensureInitialized();
+      UrlCitationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,8 +26,8 @@ class UrlCitationMapper extends ClassMapperBase<UrlCitation> {
   static const Field<UrlCitation, String> _f$url = Field('url', _$url);
   static String _$title(UrlCitation v) => v.title;
   static const Field<UrlCitation, String> _f$title = Field('title', _$title);
-  static UrlCitationTypeType _$type(UrlCitation v) => v.type;
-  static const Field<UrlCitation, UrlCitationTypeType> _f$type = Field(
+  static UrlCitationType _$type(UrlCitation v) => v.type;
+  static const Field<UrlCitation, UrlCitationType> _f$type = Field(
     'type',
     _$type,
   );
@@ -130,7 +130,7 @@ abstract class UrlCitationCopyWith<$R, $In extends UrlCitation, $Out>
   $R call({
     String? url,
     String? title,
-    UrlCitationTypeType? type,
+    UrlCitationType? type,
     int? startIndex,
     int? endIndex,
   });
@@ -149,7 +149,7 @@ class _UrlCitationCopyWithImpl<$R, $Out>
   $R call({
     String? url,
     String? title,
-    UrlCitationTypeType? type,
+    UrlCitationType? type,
     int? startIndex,
     int? endIndex,
   }) => $apply(

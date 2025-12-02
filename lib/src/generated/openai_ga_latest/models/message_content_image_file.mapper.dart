@@ -17,7 +17,7 @@ class MessageContentImageFileMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageFileMapper._(),
       );
-      MessageContentImageFileDetailDetailMapper.ensureInitialized();
+      MessageContentImageFileDetailMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -31,18 +31,14 @@ class MessageContentImageFileMapper
     _$fileId,
     key: r'file_id',
   );
-  static MessageContentImageFileDetailDetail _$detail(
-    MessageContentImageFile v,
-  ) => v.detail;
-  static const Field<
-    MessageContentImageFile,
-    MessageContentImageFileDetailDetail
-  >
+  static MessageContentImageFileDetail _$detail(MessageContentImageFile v) =>
+      v.detail;
+  static const Field<MessageContentImageFile, MessageContentImageFileDetail>
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: MessageContentImageFileDetailDetail.auto,
+    def: MessageContentImageFileDetail.auto,
   );
 
   @override
@@ -132,7 +128,7 @@ abstract class MessageContentImageFileCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? fileId, MessageContentImageFileDetailDetail? detail});
+  $R call({String? fileId, MessageContentImageFileDetail? detail});
   MessageContentImageFileCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -148,13 +144,12 @@ class _MessageContentImageFileCopyWithImpl<$R, $Out>
   late final ClassMapperBase<MessageContentImageFile> $mapper =
       MessageContentImageFileMapper.ensureInitialized();
   @override
-  $R call({String? fileId, MessageContentImageFileDetailDetail? detail}) =>
-      $apply(
-        FieldCopyWithData({
-          if (fileId != null) #fileId: fileId,
-          if (detail != null) #detail: detail,
-        }),
-      );
+  $R call({String? fileId, MessageContentImageFileDetail? detail}) => $apply(
+    FieldCopyWithData({
+      if (fileId != null) #fileId: fileId,
+      if (detail != null) #detail: detail,
+    }),
+  );
   @override
   MessageContentImageFile $make(CopyWithData data) => MessageContentImageFile(
     fileId: data.get(#fileId, or: $value.fileId),

@@ -116,7 +116,7 @@ class RealtimeServerEventConversationCreatedMapper
         _instance = RealtimeServerEventConversationCreatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventTypeMapper.ensureInitialized();
       RealtimeServerEventConversationMapper.ensureInitialized();
     }
     return _instance!;
@@ -129,12 +129,12 @@ class RealtimeServerEventConversationCreatedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationCreated, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType _$type(
+  static RealtimeServerEventType _$type(
     RealtimeServerEventConversationCreated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationCreated,
-    RealtimeServerEventTypeType
+    RealtimeServerEventType
   >
   _f$type = Field('type', _$type);
   static RealtimeServerEventConversation _$realtimeServerEventConversation(
@@ -269,7 +269,7 @@ abstract class RealtimeServerEventConversationCreatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType? type,
+    RealtimeServerEventType? type,
     RealtimeServerEventConversation? realtimeServerEventConversation,
   });
   RealtimeServerEventConversationCreatedCopyWith<$R2, $In, $Out2>
@@ -306,7 +306,7 @@ class _RealtimeServerEventConversationCreatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType? type,
+    RealtimeServerEventType? type,
     RealtimeServerEventConversation? realtimeServerEventConversation,
   }) => $apply(
     FieldCopyWithData({
@@ -352,7 +352,7 @@ class RealtimeServerEventConversationItemCreatedMapper
         _instance = RealtimeServerEventConversationItemCreatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType2Mapper.ensureInitialized();
+      RealtimeServerEventType2Mapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -365,12 +365,12 @@ class RealtimeServerEventConversationItemCreatedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemCreated, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType2 _$type(
+  static RealtimeServerEventType2 _$type(
     RealtimeServerEventConversationItemCreated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemCreated,
-    RealtimeServerEventTypeType2
+    RealtimeServerEventType2
   >
   _f$type = Field('type', _$type);
   static String _$previousItemId(
@@ -521,7 +521,7 @@ abstract class RealtimeServerEventConversationItemCreatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType2? type,
+    RealtimeServerEventType2? type,
     String? previousItemId,
     RealtimeConversationItem? item,
   });
@@ -558,7 +558,7 @@ class _RealtimeServerEventConversationItemCreatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType2? type,
+    RealtimeServerEventType2? type,
     String? previousItemId,
     RealtimeConversationItem? item,
   }) => $apply(
@@ -603,7 +603,7 @@ class RealtimeServerEventConversationItemDeletedMapper
         _instance = RealtimeServerEventConversationItemDeletedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType3Mapper.ensureInitialized();
+      RealtimeServerEventType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -615,12 +615,12 @@ class RealtimeServerEventConversationItemDeletedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemDeleted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType3 _$type(
+  static RealtimeServerEventType3 _$type(
     RealtimeServerEventConversationItemDeleted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemDeleted,
-    RealtimeServerEventTypeType3
+    RealtimeServerEventType3
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeServerEventConversationItemDeleted v) =>
@@ -744,11 +744,7 @@ abstract class RealtimeServerEventConversationItemDeletedCopyWith<
 >
     implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    String? eventId,
-    RealtimeServerEventTypeType3? type,
-    String? itemId,
-  });
+  $R call({String? eventId, RealtimeServerEventType3? type, String? itemId});
   RealtimeServerEventConversationItemDeletedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -773,17 +769,14 @@ class _RealtimeServerEventConversationItemDeletedCopyWithImpl<$R, $Out>
   $mapper =
       RealtimeServerEventConversationItemDeletedMapper.ensureInitialized();
   @override
-  $R call({
-    String? eventId,
-    RealtimeServerEventTypeType3? type,
-    String? itemId,
-  }) => $apply(
-    FieldCopyWithData({
-      if (eventId != null) #eventId: eventId,
-      if (type != null) #type: type,
-      if (itemId != null) #itemId: itemId,
-    }),
-  );
+  $R call({String? eventId, RealtimeServerEventType3? type, String? itemId}) =>
+      $apply(
+        FieldCopyWithData({
+          if (eventId != null) #eventId: eventId,
+          if (type != null) #type: type,
+          if (itemId != null) #itemId: itemId,
+        }),
+      );
   @override
   RealtimeServerEventConversationItemDeleted $make(CopyWithData data) =>
       RealtimeServerEventConversationItemDeleted(
@@ -823,7 +816,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
             RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType4Mapper.ensureInitialized();
+      RealtimeServerEventType4Mapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
     return _instance!;
@@ -841,12 +834,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType4 _$type(
+  static RealtimeServerEventType4 _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
-    RealtimeServerEventTypeType4
+    RealtimeServerEventType4
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -1047,7 +1040,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType4? type,
+    RealtimeServerEventType4? type,
     String? itemId,
     int? contentIndex,
     String? transcript,
@@ -1105,7 +1098,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionCompletedCopyWi
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType4? type,
+    RealtimeServerEventType4? type,
     String? itemId,
     int? contentIndex,
     String? transcript,
@@ -1162,7 +1155,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
             RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType5Mapper.ensureInitialized();
+      RealtimeServerEventType5Mapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
     return _instance!;
@@ -1180,12 +1173,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType5 _$type(
+  static RealtimeServerEventType5 _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionDelta,
-    RealtimeServerEventTypeType5
+    RealtimeServerEventType5
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -1385,7 +1378,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaCo
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType5? type,
+    RealtimeServerEventType5? type,
     String? itemId,
     int? contentIndex,
     String? delta,
@@ -1443,7 +1436,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionDeltaCopyWithIm
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType5? type,
+    RealtimeServerEventType5? type,
     String? itemId,
     Object? contentIndex = $none,
     Object? delta = $none,
@@ -1500,7 +1493,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
             RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType6Mapper.ensureInitialized();
+      RealtimeServerEventType6Mapper.ensureInitialized();
       RealtimeServerEventErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -1518,12 +1511,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType6 _$type(
+  static RealtimeServerEventType6 _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
-    RealtimeServerEventTypeType6
+    RealtimeServerEventType6
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -1718,7 +1711,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionFailedC
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType6? type,
+    RealtimeServerEventType6? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventError? realtimeServerEventError,
@@ -1770,7 +1763,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionFailedCopyWithI
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType6? type,
+    RealtimeServerEventType6? type,
     String? itemId,
     int? contentIndex,
     RealtimeServerEventError? realtimeServerEventError,
@@ -1822,7 +1815,7 @@ class RealtimeServerEventErrorMapper
         _instance = RealtimeServerEventErrorMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType9Mapper.ensureInitialized();
+      RealtimeServerEventType9Mapper.ensureInitialized();
       RealtimeServerEventErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -1837,9 +1830,8 @@ class RealtimeServerEventErrorMapper
     _$eventId,
     key: r'event_id',
   );
-  static RealtimeServerEventTypeType9 _$type(RealtimeServerEventError v) =>
-      v.type;
-  static const Field<RealtimeServerEventError, RealtimeServerEventTypeType9>
+  static RealtimeServerEventType9 _$type(RealtimeServerEventError v) => v.type;
+  static const Field<RealtimeServerEventError, RealtimeServerEventType9>
   _f$type = Field('type', _$type);
   static RealtimeServerEventError _$realtimeServerEventError(
     RealtimeServerEventError v,
@@ -1957,7 +1949,7 @@ abstract class RealtimeServerEventErrorCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType9? type,
+    RealtimeServerEventType9? type,
     RealtimeServerEventError? realtimeServerEventError,
   });
   RealtimeServerEventErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -1985,7 +1977,7 @@ class _RealtimeServerEventErrorCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType9? type,
+    RealtimeServerEventType9? type,
     RealtimeServerEventError? realtimeServerEventError,
   }) => $apply(
     FieldCopyWithData({
@@ -2023,7 +2015,7 @@ class RealtimeServerEventConversationItemRetrievedMapper
         _instance = RealtimeServerEventConversationItemRetrievedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType7Mapper.ensureInitialized();
+      RealtimeServerEventType7Mapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -2036,12 +2028,12 @@ class RealtimeServerEventConversationItemRetrievedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemRetrieved, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType7 _$type(
+  static RealtimeServerEventType7 _$type(
     RealtimeServerEventConversationItemRetrieved v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemRetrieved,
-    RealtimeServerEventTypeType7
+    RealtimeServerEventType7
   >
   _f$type = Field('type', _$type);
   static RealtimeConversationItem _$item(
@@ -2180,7 +2172,7 @@ abstract class RealtimeServerEventConversationItemRetrievedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType7? type,
+    RealtimeServerEventType7? type,
     RealtimeConversationItem? item,
   });
   RealtimeServerEventConversationItemRetrievedCopyWith<$R2, $In, $Out2>
@@ -2220,7 +2212,7 @@ class _RealtimeServerEventConversationItemRetrievedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType7? type,
+    RealtimeServerEventType7? type,
     RealtimeConversationItem? item,
   }) => $apply(
     FieldCopyWithData({
@@ -2263,7 +2255,7 @@ class RealtimeServerEventConversationItemTruncatedMapper
         _instance = RealtimeServerEventConversationItemTruncatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType8Mapper.ensureInitialized();
+      RealtimeServerEventType8Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -2275,12 +2267,12 @@ class RealtimeServerEventConversationItemTruncatedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemTruncated, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType8 _$type(
+  static RealtimeServerEventType8 _$type(
     RealtimeServerEventConversationItemTruncated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemTruncated,
-    RealtimeServerEventTypeType8
+    RealtimeServerEventType8
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeServerEventConversationItemTruncated v) =>
@@ -2429,7 +2421,7 @@ abstract class RealtimeServerEventConversationItemTruncatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType8? type,
+    RealtimeServerEventType8? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,
@@ -2464,7 +2456,7 @@ class _RealtimeServerEventConversationItemTruncatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType8? type,
+    RealtimeServerEventType8? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,
@@ -2512,7 +2504,7 @@ class RealtimeServerEventInputAudioBufferClearedMapper
         _instance = RealtimeServerEventInputAudioBufferClearedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType10Mapper.ensureInitialized();
+      RealtimeServerEventType10Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -2524,12 +2516,12 @@ class RealtimeServerEventInputAudioBufferClearedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferCleared, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType10 _$type(
+  static RealtimeServerEventType10 _$type(
     RealtimeServerEventInputAudioBufferCleared v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferCleared,
-    RealtimeServerEventTypeType10
+    RealtimeServerEventType10
   >
   _f$type = Field('type', _$type);
 
@@ -2648,7 +2640,7 @@ abstract class RealtimeServerEventInputAudioBufferClearedCopyWith<
 >
     implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({String? eventId, RealtimeServerEventTypeType10? type});
+  $R call({String? eventId, RealtimeServerEventType10? type});
   RealtimeServerEventInputAudioBufferClearedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -2673,7 +2665,7 @@ class _RealtimeServerEventInputAudioBufferClearedCopyWithImpl<$R, $Out>
   $mapper =
       RealtimeServerEventInputAudioBufferClearedMapper.ensureInitialized();
   @override
-  $R call({String? eventId, RealtimeServerEventTypeType10? type}) => $apply(
+  $R call({String? eventId, RealtimeServerEventType10? type}) => $apply(
     FieldCopyWithData({
       if (eventId != null) #eventId: eventId,
       if (type != null) #type: type,
@@ -2712,7 +2704,7 @@ class RealtimeServerEventInputAudioBufferCommittedMapper
         _instance = RealtimeServerEventInputAudioBufferCommittedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType11Mapper.ensureInitialized();
+      RealtimeServerEventType11Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -2724,12 +2716,12 @@ class RealtimeServerEventInputAudioBufferCommittedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferCommitted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType11 _$type(
+  static RealtimeServerEventType11 _$type(
     RealtimeServerEventInputAudioBufferCommitted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferCommitted,
-    RealtimeServerEventTypeType11
+    RealtimeServerEventType11
   >
   _f$type = Field('type', _$type);
   static String _$previousItemId(
@@ -2873,7 +2865,7 @@ abstract class RealtimeServerEventInputAudioBufferCommittedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType11? type,
+    RealtimeServerEventType11? type,
     String? previousItemId,
     String? itemId,
   });
@@ -2907,7 +2899,7 @@ class _RealtimeServerEventInputAudioBufferCommittedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType11? type,
+    RealtimeServerEventType11? type,
     String? previousItemId,
     String? itemId,
   }) => $apply(
@@ -2954,7 +2946,7 @@ class RealtimeServerEventInputAudioBufferSpeechStartedMapper
         _instance = RealtimeServerEventInputAudioBufferSpeechStartedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType12Mapper.ensureInitialized();
+      RealtimeServerEventType12Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -2966,12 +2958,12 @@ class RealtimeServerEventInputAudioBufferSpeechStartedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferSpeechStarted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType12 _$type(
+  static RealtimeServerEventType12 _$type(
     RealtimeServerEventInputAudioBufferSpeechStarted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferSpeechStarted,
-    RealtimeServerEventTypeType12
+    RealtimeServerEventType12
   >
   _f$type = Field('type', _$type);
   static int _$audioStartMs(
@@ -3122,7 +3114,7 @@ abstract class RealtimeServerEventInputAudioBufferSpeechStartedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType12? type,
+    RealtimeServerEventType12? type,
     int? audioStartMs,
     String? itemId,
   });
@@ -3156,7 +3148,7 @@ class _RealtimeServerEventInputAudioBufferSpeechStartedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType12? type,
+    RealtimeServerEventType12? type,
     int? audioStartMs,
     String? itemId,
   }) => $apply(
@@ -3203,7 +3195,7 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
         _instance = RealtimeServerEventInputAudioBufferSpeechStoppedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType13Mapper.ensureInitialized();
+      RealtimeServerEventType13Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3215,12 +3207,12 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
       v.eventId;
   static const Field<RealtimeServerEventInputAudioBufferSpeechStopped, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType13 _$type(
+  static RealtimeServerEventType13 _$type(
     RealtimeServerEventInputAudioBufferSpeechStopped v,
   ) => v.type;
   static const Field<
     RealtimeServerEventInputAudioBufferSpeechStopped,
-    RealtimeServerEventTypeType13
+    RealtimeServerEventType13
   >
   _f$type = Field('type', _$type);
   static int _$audioEndMs(RealtimeServerEventInputAudioBufferSpeechStopped v) =>
@@ -3366,7 +3358,7 @@ abstract class RealtimeServerEventInputAudioBufferSpeechStoppedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType13? type,
+    RealtimeServerEventType13? type,
     int? audioEndMs,
     String? itemId,
   });
@@ -3400,7 +3392,7 @@ class _RealtimeServerEventInputAudioBufferSpeechStoppedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType13? type,
+    RealtimeServerEventType13? type,
     int? audioEndMs,
     String? itemId,
   }) => $apply(
@@ -3445,7 +3437,7 @@ class RealtimeServerEventRateLimitsUpdatedMapper
         _instance = RealtimeServerEventRateLimitsUpdatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType14Mapper.ensureInitialized();
+      RealtimeServerEventType14Mapper.ensureInitialized();
       RealtimeServerEventRateLimitsMapper.ensureInitialized();
     }
     return _instance!;
@@ -3457,12 +3449,12 @@ class RealtimeServerEventRateLimitsUpdatedMapper
   static String _$eventId(RealtimeServerEventRateLimitsUpdated v) => v.eventId;
   static const Field<RealtimeServerEventRateLimitsUpdated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType14 _$type(
+  static RealtimeServerEventType14 _$type(
     RealtimeServerEventRateLimitsUpdated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventRateLimitsUpdated,
-    RealtimeServerEventTypeType14
+    RealtimeServerEventType14
   >
   _f$type = Field('type', _$type);
   static List<RealtimeServerEventRateLimits> _$rateLimits(
@@ -3595,7 +3587,7 @@ abstract class RealtimeServerEventRateLimitsUpdatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType14? type,
+    RealtimeServerEventType14? type,
     List<RealtimeServerEventRateLimits>? rateLimits,
   });
   RealtimeServerEventRateLimitsUpdatedCopyWith<$R2, $In, $Out2>
@@ -3637,7 +3629,7 @@ class _RealtimeServerEventRateLimitsUpdatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType14? type,
+    RealtimeServerEventType14? type,
     List<RealtimeServerEventRateLimits>? rateLimits,
   }) => $apply(
     FieldCopyWithData({
@@ -3679,7 +3671,7 @@ class RealtimeServerEventResponseAudioDeltaMapper
         _instance = RealtimeServerEventResponseAudioDeltaMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType15Mapper.ensureInitialized();
+      RealtimeServerEventType15Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3690,12 +3682,12 @@ class RealtimeServerEventResponseAudioDeltaMapper
   static String _$eventId(RealtimeServerEventResponseAudioDelta v) => v.eventId;
   static const Field<RealtimeServerEventResponseAudioDelta, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType15 _$type(
+  static RealtimeServerEventType15 _$type(
     RealtimeServerEventResponseAudioDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioDelta,
-    RealtimeServerEventTypeType15
+    RealtimeServerEventType15
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseAudioDelta v) =>
@@ -3839,7 +3831,7 @@ abstract class RealtimeServerEventResponseAudioDeltaCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType15? type,
+    RealtimeServerEventType15? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -3870,7 +3862,7 @@ class _RealtimeServerEventResponseAudioDeltaCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType15? type,
+    RealtimeServerEventType15? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -3924,7 +3916,7 @@ class RealtimeServerEventResponseAudioDoneMapper
         _instance = RealtimeServerEventResponseAudioDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType16Mapper.ensureInitialized();
+      RealtimeServerEventType16Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3935,12 +3927,12 @@ class RealtimeServerEventResponseAudioDoneMapper
   static String _$eventId(RealtimeServerEventResponseAudioDone v) => v.eventId;
   static const Field<RealtimeServerEventResponseAudioDone, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType16 _$type(
+  static RealtimeServerEventType16 _$type(
     RealtimeServerEventResponseAudioDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioDone,
-    RealtimeServerEventTypeType16
+    RealtimeServerEventType16
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseAudioDone v) =>
@@ -4080,7 +4072,7 @@ abstract class RealtimeServerEventResponseAudioDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType16? type,
+    RealtimeServerEventType16? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4110,7 +4102,7 @@ class _RealtimeServerEventResponseAudioDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType16? type,
+    RealtimeServerEventType16? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4163,7 +4155,7 @@ class RealtimeServerEventResponseAudioTranscriptDeltaMapper
         _instance = RealtimeServerEventResponseAudioTranscriptDeltaMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType17Mapper.ensureInitialized();
+      RealtimeServerEventType17Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4175,12 +4167,12 @@ class RealtimeServerEventResponseAudioTranscriptDeltaMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseAudioTranscriptDelta, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType17 _$type(
+  static RealtimeServerEventType17 _$type(
     RealtimeServerEventResponseAudioTranscriptDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioTranscriptDelta,
-    RealtimeServerEventTypeType17
+    RealtimeServerEventType17
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -4350,7 +4342,7 @@ abstract class RealtimeServerEventResponseAudioTranscriptDeltaCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType17? type,
+    RealtimeServerEventType17? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4387,7 +4379,7 @@ class _RealtimeServerEventResponseAudioTranscriptDeltaCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType17? type,
+    RealtimeServerEventType17? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4442,7 +4434,7 @@ class RealtimeServerEventResponseAudioTranscriptDoneMapper
         _instance = RealtimeServerEventResponseAudioTranscriptDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType18Mapper.ensureInitialized();
+      RealtimeServerEventType18Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4454,12 +4446,12 @@ class RealtimeServerEventResponseAudioTranscriptDoneMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseAudioTranscriptDone, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType18 _$type(
+  static RealtimeServerEventType18 _$type(
     RealtimeServerEventResponseAudioTranscriptDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioTranscriptDone,
-    RealtimeServerEventTypeType18
+    RealtimeServerEventType18
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -4627,7 +4619,7 @@ abstract class RealtimeServerEventResponseAudioTranscriptDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType18? type,
+    RealtimeServerEventType18? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4664,7 +4656,7 @@ class _RealtimeServerEventResponseAudioTranscriptDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType18? type,
+    RealtimeServerEventType18? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4718,7 +4710,7 @@ class RealtimeServerEventResponseContentPartAddedMapper
         _instance = RealtimeServerEventResponseContentPartAddedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType19Mapper.ensureInitialized();
+      RealtimeServerEventType19Mapper.ensureInitialized();
       RealtimeServerEventPartMapper.ensureInitialized();
     }
     return _instance!;
@@ -4731,12 +4723,12 @@ class RealtimeServerEventResponseContentPartAddedMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseContentPartAdded, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType19 _$type(
+  static RealtimeServerEventType19 _$type(
     RealtimeServerEventResponseContentPartAdded v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseContentPartAdded,
-    RealtimeServerEventTypeType19
+    RealtimeServerEventType19
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseContentPartAdded v) =>
@@ -4911,7 +4903,7 @@ abstract class RealtimeServerEventResponseContentPartAddedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType19? type,
+    RealtimeServerEventType19? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -4953,7 +4945,7 @@ class _RealtimeServerEventResponseContentPartAddedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType19? type,
+    RealtimeServerEventType19? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -5011,7 +5003,7 @@ class RealtimeServerEventResponseContentPartDoneMapper
         _instance = RealtimeServerEventResponseContentPartDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType20Mapper.ensureInitialized();
+      RealtimeServerEventType20Mapper.ensureInitialized();
       RealtimeServerEventPartMapper.ensureInitialized();
     }
     return _instance!;
@@ -5024,12 +5016,12 @@ class RealtimeServerEventResponseContentPartDoneMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseContentPartDone, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType20 _$type(
+  static RealtimeServerEventType20 _$type(
     RealtimeServerEventResponseContentPartDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseContentPartDone,
-    RealtimeServerEventTypeType20
+    RealtimeServerEventType20
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseContentPartDone v) =>
@@ -5201,7 +5193,7 @@ abstract class RealtimeServerEventResponseContentPartDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType20? type,
+    RealtimeServerEventType20? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -5243,7 +5235,7 @@ class _RealtimeServerEventResponseContentPartDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType20? type,
+    RealtimeServerEventType20? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -5301,7 +5293,7 @@ class RealtimeServerEventResponseCreatedMapper
         _instance = RealtimeServerEventResponseCreatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType21Mapper.ensureInitialized();
+      RealtimeServerEventType21Mapper.ensureInitialized();
       RealtimeResponseMapper.ensureInitialized();
     }
     return _instance!;
@@ -5313,12 +5305,12 @@ class RealtimeServerEventResponseCreatedMapper
   static String _$eventId(RealtimeServerEventResponseCreated v) => v.eventId;
   static const Field<RealtimeServerEventResponseCreated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType21 _$type(
+  static RealtimeServerEventType21 _$type(
     RealtimeServerEventResponseCreated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseCreated,
-    RealtimeServerEventTypeType21
+    RealtimeServerEventType21
   >
   _f$type = Field('type', _$type);
   static RealtimeResponse _$response(RealtimeServerEventResponseCreated v) =>
@@ -5436,7 +5428,7 @@ abstract class RealtimeServerEventResponseCreatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType21? type,
+    RealtimeServerEventType21? type,
     RealtimeResponse? response,
   });
   RealtimeServerEventResponseCreatedCopyWith<$R2, $In, $Out2>
@@ -5466,7 +5458,7 @@ class _RealtimeServerEventResponseCreatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType21? type,
+    RealtimeServerEventType21? type,
     RealtimeResponse? response,
   }) => $apply(
     FieldCopyWithData({
@@ -5508,7 +5500,7 @@ class RealtimeServerEventResponseDoneMapper
         _instance = RealtimeServerEventResponseDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType22Mapper.ensureInitialized();
+      RealtimeServerEventType22Mapper.ensureInitialized();
       RealtimeResponseMapper.ensureInitialized();
     }
     return _instance!;
@@ -5520,13 +5512,9 @@ class RealtimeServerEventResponseDoneMapper
   static String _$eventId(RealtimeServerEventResponseDone v) => v.eventId;
   static const Field<RealtimeServerEventResponseDone, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType22 _$type(
-    RealtimeServerEventResponseDone v,
-  ) => v.type;
-  static const Field<
-    RealtimeServerEventResponseDone,
-    RealtimeServerEventTypeType22
-  >
+  static RealtimeServerEventType22 _$type(RealtimeServerEventResponseDone v) =>
+      v.type;
+  static const Field<RealtimeServerEventResponseDone, RealtimeServerEventType22>
   _f$type = Field('type', _$type);
   static RealtimeResponse _$response(RealtimeServerEventResponseDone v) =>
       v.response;
@@ -5642,7 +5630,7 @@ abstract class RealtimeServerEventResponseDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType22? type,
+    RealtimeServerEventType22? type,
     RealtimeResponse? response,
   });
   RealtimeServerEventResponseDoneCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -5673,7 +5661,7 @@ class _RealtimeServerEventResponseDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType22? type,
+    RealtimeServerEventType22? type,
     RealtimeResponse? response,
   }) => $apply(
     FieldCopyWithData({
@@ -5720,7 +5708,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
             RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType23Mapper.ensureInitialized();
+      RealtimeServerEventType23Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -5736,12 +5724,12 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType23 _$type(
+  static RealtimeServerEventType23 _$type(
     RealtimeServerEventResponseFunctionCallArgumentsDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseFunctionCallArgumentsDelta,
-    RealtimeServerEventTypeType23
+    RealtimeServerEventType23
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -5928,7 +5916,7 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDeltaCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType23? type,
+    RealtimeServerEventType23? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -5970,7 +5958,7 @@ class _RealtimeServerEventResponseFunctionCallArgumentsDeltaCopyWithImpl<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType23? type,
+    RealtimeServerEventType23? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -6029,7 +6017,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
             RealtimeServerEventResponseFunctionCallArgumentsDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType24Mapper.ensureInitialized();
+      RealtimeServerEventType24Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -6045,12 +6033,12 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType24 _$type(
+  static RealtimeServerEventType24 _$type(
     RealtimeServerEventResponseFunctionCallArgumentsDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseFunctionCallArgumentsDone,
-    RealtimeServerEventTypeType24
+    RealtimeServerEventType24
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -6235,7 +6223,7 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType24? type,
+    RealtimeServerEventType24? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -6277,7 +6265,7 @@ class _RealtimeServerEventResponseFunctionCallArgumentsDoneCopyWithImpl<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType24? type,
+    RealtimeServerEventType24? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -6331,7 +6319,7 @@ class RealtimeServerEventResponseOutputItemAddedMapper
         _instance = RealtimeServerEventResponseOutputItemAddedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType25Mapper.ensureInitialized();
+      RealtimeServerEventType25Mapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -6344,12 +6332,12 @@ class RealtimeServerEventResponseOutputItemAddedMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseOutputItemAdded, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType25 _$type(
+  static RealtimeServerEventType25 _$type(
     RealtimeServerEventResponseOutputItemAdded v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseOutputItemAdded,
-    RealtimeServerEventTypeType25
+    RealtimeServerEventType25
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseOutputItemAdded v) =>
@@ -6501,7 +6489,7 @@ abstract class RealtimeServerEventResponseOutputItemAddedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType25? type,
+    RealtimeServerEventType25? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,
@@ -6539,7 +6527,7 @@ class _RealtimeServerEventResponseOutputItemAddedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType25? type,
+    RealtimeServerEventType25? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,
@@ -6587,7 +6575,7 @@ class RealtimeServerEventResponseOutputItemDoneMapper
         _instance = RealtimeServerEventResponseOutputItemDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType26Mapper.ensureInitialized();
+      RealtimeServerEventType26Mapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -6600,12 +6588,12 @@ class RealtimeServerEventResponseOutputItemDoneMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseOutputItemDone, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType26 _$type(
+  static RealtimeServerEventType26 _$type(
     RealtimeServerEventResponseOutputItemDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseOutputItemDone,
-    RealtimeServerEventTypeType26
+    RealtimeServerEventType26
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseOutputItemDone v) =>
@@ -6755,7 +6743,7 @@ abstract class RealtimeServerEventResponseOutputItemDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType26? type,
+    RealtimeServerEventType26? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,
@@ -6792,7 +6780,7 @@ class _RealtimeServerEventResponseOutputItemDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType26? type,
+    RealtimeServerEventType26? type,
     String? responseId,
     int? outputIndex,
     RealtimeConversationItem? item,
@@ -6840,7 +6828,7 @@ class RealtimeServerEventResponseTextDeltaMapper
         _instance = RealtimeServerEventResponseTextDeltaMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType27Mapper.ensureInitialized();
+      RealtimeServerEventType27Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -6851,12 +6839,12 @@ class RealtimeServerEventResponseTextDeltaMapper
   static String _$eventId(RealtimeServerEventResponseTextDelta v) => v.eventId;
   static const Field<RealtimeServerEventResponseTextDelta, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType27 _$type(
+  static RealtimeServerEventType27 _$type(
     RealtimeServerEventResponseTextDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseTextDelta,
-    RealtimeServerEventTypeType27
+    RealtimeServerEventType27
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseTextDelta v) =>
@@ -7001,7 +6989,7 @@ abstract class RealtimeServerEventResponseTextDeltaCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType27? type,
+    RealtimeServerEventType27? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -7032,7 +7020,7 @@ class _RealtimeServerEventResponseTextDeltaCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType27? type,
+    RealtimeServerEventType27? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -7086,7 +7074,7 @@ class RealtimeServerEventResponseTextDoneMapper
         _instance = RealtimeServerEventResponseTextDoneMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType28Mapper.ensureInitialized();
+      RealtimeServerEventType28Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -7097,12 +7085,12 @@ class RealtimeServerEventResponseTextDoneMapper
   static String _$eventId(RealtimeServerEventResponseTextDone v) => v.eventId;
   static const Field<RealtimeServerEventResponseTextDone, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType28 _$type(
+  static RealtimeServerEventType28 _$type(
     RealtimeServerEventResponseTextDone v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseTextDone,
-    RealtimeServerEventTypeType28
+    RealtimeServerEventType28
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventResponseTextDone v) =>
@@ -7243,7 +7231,7 @@ abstract class RealtimeServerEventResponseTextDoneCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType28? type,
+    RealtimeServerEventType28? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -7274,7 +7262,7 @@ class _RealtimeServerEventResponseTextDoneCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType28? type,
+    RealtimeServerEventType28? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -7328,7 +7316,7 @@ class RealtimeServerEventSessionCreatedMapper
         _instance = RealtimeServerEventSessionCreatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType29Mapper.ensureInitialized();
+      RealtimeServerEventType29Mapper.ensureInitialized();
       RealtimeSessionMapper.ensureInitialized();
     }
     return _instance!;
@@ -7340,12 +7328,12 @@ class RealtimeServerEventSessionCreatedMapper
   static String _$eventId(RealtimeServerEventSessionCreated v) => v.eventId;
   static const Field<RealtimeServerEventSessionCreated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType29 _$type(
+  static RealtimeServerEventType29 _$type(
     RealtimeServerEventSessionCreated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventSessionCreated,
-    RealtimeServerEventTypeType29
+    RealtimeServerEventType29
   >
   _f$type = Field('type', _$type);
   static RealtimeSession _$session(RealtimeServerEventSessionCreated v) =>
@@ -7463,7 +7451,7 @@ abstract class RealtimeServerEventSessionCreatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType29? type,
+    RealtimeServerEventType29? type,
     RealtimeSession? session,
   });
   RealtimeServerEventSessionCreatedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -7494,7 +7482,7 @@ class _RealtimeServerEventSessionCreatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType29? type,
+    RealtimeServerEventType29? type,
     RealtimeSession? session,
   }) => $apply(
     FieldCopyWithData({
@@ -7536,7 +7524,7 @@ class RealtimeServerEventSessionUpdatedMapper
         _instance = RealtimeServerEventSessionUpdatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType30Mapper.ensureInitialized();
+      RealtimeServerEventType30Mapper.ensureInitialized();
       RealtimeSessionMapper.ensureInitialized();
     }
     return _instance!;
@@ -7548,12 +7536,12 @@ class RealtimeServerEventSessionUpdatedMapper
   static String _$eventId(RealtimeServerEventSessionUpdated v) => v.eventId;
   static const Field<RealtimeServerEventSessionUpdated, String> _f$eventId =
       Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType30 _$type(
+  static RealtimeServerEventType30 _$type(
     RealtimeServerEventSessionUpdated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventSessionUpdated,
-    RealtimeServerEventTypeType30
+    RealtimeServerEventType30
   >
   _f$type = Field('type', _$type);
   static RealtimeSession _$session(RealtimeServerEventSessionUpdated v) =>
@@ -7671,7 +7659,7 @@ abstract class RealtimeServerEventSessionUpdatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType30? type,
+    RealtimeServerEventType30? type,
     RealtimeSession? session,
   });
   RealtimeServerEventSessionUpdatedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -7702,7 +7690,7 @@ class _RealtimeServerEventSessionUpdatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType30? type,
+    RealtimeServerEventType30? type,
     RealtimeSession? session,
   }) => $apply(
     FieldCopyWithData({
@@ -7745,7 +7733,7 @@ class RealtimeServerEventTranscriptionSessionUpdatedMapper
         _instance = RealtimeServerEventTranscriptionSessionUpdatedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType31Mapper.ensureInitialized();
+      RealtimeServerEventType31Mapper.ensureInitialized();
       RealtimeTranscriptionSessionCreateResponseMapper.ensureInitialized();
     }
     return _instance!;
@@ -7758,12 +7746,12 @@ class RealtimeServerEventTranscriptionSessionUpdatedMapper
       v.eventId;
   static const Field<RealtimeServerEventTranscriptionSessionUpdated, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType31 _$type(
+  static RealtimeServerEventType31 _$type(
     RealtimeServerEventTranscriptionSessionUpdated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventTranscriptionSessionUpdated,
-    RealtimeServerEventTypeType31
+    RealtimeServerEventType31
   >
   _f$type = Field('type', _$type);
   static RealtimeTranscriptionSessionCreateResponse _$session(
@@ -7907,7 +7895,7 @@ abstract class RealtimeServerEventTranscriptionSessionUpdatedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType31? type,
+    RealtimeServerEventType31? type,
     RealtimeTranscriptionSessionCreateResponse? session,
   });
   RealtimeServerEventTranscriptionSessionUpdatedCopyWith<$R2, $In, $Out2>
@@ -7947,7 +7935,7 @@ class _RealtimeServerEventTranscriptionSessionUpdatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType31? type,
+    RealtimeServerEventType31? type,
     RealtimeTranscriptionSessionCreateResponse? session,
   }) => $apply(
     FieldCopyWithData({
@@ -7989,7 +7977,7 @@ class RealtimeServerEventOutputAudioBufferStartedMapper
         _instance = RealtimeServerEventOutputAudioBufferStartedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType32Mapper.ensureInitialized();
+      RealtimeServerEventType32Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8001,12 +7989,12 @@ class RealtimeServerEventOutputAudioBufferStartedMapper
       v.eventId;
   static const Field<RealtimeServerEventOutputAudioBufferStarted, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType32 _$type(
+  static RealtimeServerEventType32 _$type(
     RealtimeServerEventOutputAudioBufferStarted v,
   ) => v.type;
   static const Field<
     RealtimeServerEventOutputAudioBufferStarted,
-    RealtimeServerEventTypeType32
+    RealtimeServerEventType32
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventOutputAudioBufferStarted v) =>
@@ -8135,7 +8123,7 @@ abstract class RealtimeServerEventOutputAudioBufferStartedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType32? type,
+    RealtimeServerEventType32? type,
     String? responseId,
   });
   RealtimeServerEventOutputAudioBufferStartedCopyWith<$R2, $In, $Out2>
@@ -8164,7 +8152,7 @@ class _RealtimeServerEventOutputAudioBufferStartedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType32? type,
+    RealtimeServerEventType32? type,
     String? responseId,
   }) => $apply(
     FieldCopyWithData({
@@ -8206,7 +8194,7 @@ class RealtimeServerEventOutputAudioBufferStoppedMapper
         _instance = RealtimeServerEventOutputAudioBufferStoppedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType33Mapper.ensureInitialized();
+      RealtimeServerEventType33Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8218,12 +8206,12 @@ class RealtimeServerEventOutputAudioBufferStoppedMapper
       v.eventId;
   static const Field<RealtimeServerEventOutputAudioBufferStopped, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType33 _$type(
+  static RealtimeServerEventType33 _$type(
     RealtimeServerEventOutputAudioBufferStopped v,
   ) => v.type;
   static const Field<
     RealtimeServerEventOutputAudioBufferStopped,
-    RealtimeServerEventTypeType33
+    RealtimeServerEventType33
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventOutputAudioBufferStopped v) =>
@@ -8352,7 +8340,7 @@ abstract class RealtimeServerEventOutputAudioBufferStoppedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType33? type,
+    RealtimeServerEventType33? type,
     String? responseId,
   });
   RealtimeServerEventOutputAudioBufferStoppedCopyWith<$R2, $In, $Out2>
@@ -8381,7 +8369,7 @@ class _RealtimeServerEventOutputAudioBufferStoppedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType33? type,
+    RealtimeServerEventType33? type,
     String? responseId,
   }) => $apply(
     FieldCopyWithData({
@@ -8423,7 +8411,7 @@ class RealtimeServerEventOutputAudioBufferClearedMapper
         _instance = RealtimeServerEventOutputAudioBufferClearedMapper._(),
       );
       RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
-      RealtimeServerEventTypeType34Mapper.ensureInitialized();
+      RealtimeServerEventType34Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8435,12 +8423,12 @@ class RealtimeServerEventOutputAudioBufferClearedMapper
       v.eventId;
   static const Field<RealtimeServerEventOutputAudioBufferCleared, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventTypeType34 _$type(
+  static RealtimeServerEventType34 _$type(
     RealtimeServerEventOutputAudioBufferCleared v,
   ) => v.type;
   static const Field<
     RealtimeServerEventOutputAudioBufferCleared,
-    RealtimeServerEventTypeType34
+    RealtimeServerEventType34
   >
   _f$type = Field('type', _$type);
   static String _$responseId(RealtimeServerEventOutputAudioBufferCleared v) =>
@@ -8569,7 +8557,7 @@ abstract class RealtimeServerEventOutputAudioBufferClearedCopyWith<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType34? type,
+    RealtimeServerEventType34? type,
     String? responseId,
   });
   RealtimeServerEventOutputAudioBufferClearedCopyWith<$R2, $In, $Out2>
@@ -8598,7 +8586,7 @@ class _RealtimeServerEventOutputAudioBufferClearedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventTypeType34? type,
+    RealtimeServerEventType34? type,
     String? responseId,
   }) => $apply(
     FieldCopyWithData({

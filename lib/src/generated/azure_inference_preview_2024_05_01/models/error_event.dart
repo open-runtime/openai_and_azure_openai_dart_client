@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_stream_event.dart';
 import 'error.dart';
-import 'error_event_event_event.dart';
+import 'error_event_event.dart';
 
 part 'error_event.mapper.dart';
 
@@ -18,7 +18,7 @@ class ErrorEvent with ErrorEventMappable {
     required this.data,
   });
 
-  final ErrorEventEventEvent event;
+  final ErrorEventEvent event;
   final Error data;
 
   static ErrorEvent fromJson(Map<String, dynamic> json) => ErrorEventMapper.fromJson(json);

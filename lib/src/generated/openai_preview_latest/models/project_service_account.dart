@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'project_service_account_object_object_enum.dart';
-import 'project_service_account_role_role.dart';
+import 'project_service_account_role.dart';
 
 part 'project_service_account.mapper.dart';
 
@@ -24,7 +24,7 @@ class ProjectServiceAccount with ProjectServiceAccountMappable {
   final ProjectServiceAccountObjectObjectEnum objectEnum;
   final String id;
   final String name;
-  final ProjectServiceAccountRoleRole role;
+  final ProjectServiceAccountRole role;
   @MappableField(key: 'created_at')
   final int createdAt;
 

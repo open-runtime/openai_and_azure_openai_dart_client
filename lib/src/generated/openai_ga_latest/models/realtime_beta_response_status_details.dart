@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_beta_response_status_details_type_type.dart';
-import 'realtime_beta_response_status_details_reason_reason.dart';
+import 'realtime_beta_response_status_details_type.dart';
+import 'realtime_beta_response_status_details_reason.dart';
 import 'realtime_beta_response_status_details_error.dart';
 
 part 'realtime_beta_response_status_details.mapper.dart';
@@ -18,8 +18,8 @@ class RealtimeBetaResponseStatusDetails with RealtimeBetaResponseStatusDetailsMa
     this.realtimeBetaResponseStatusDetailsError,
   });
 
-  final RealtimeBetaResponseStatusDetailsTypeType? type;
-  final RealtimeBetaResponseStatusDetailsReasonReason? reason;
+  final RealtimeBetaResponseStatusDetailsType? type;
+  final RealtimeBetaResponseStatusDetailsReason? reason;
   @MappableField(key: 'error')
   final RealtimeBetaResponseStatusDetailsError? realtimeBetaResponseStatusDetailsError;
 

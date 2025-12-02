@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_action.dart';
 import 'drag_point.dart';
-import 'drag_type_type.dart';
+import 'drag_type.dart';
 
 part 'drag.mapper.dart';
 
@@ -16,11 +16,11 @@ part 'drag.mapper.dart';
 class Drag with DragMappable {
   const Drag({
     required this.path,
-    this.type = DragTypeType.drag,
+    this.type = DragType.drag,
   });
 
   final List<DragPoint> path;
-  final DragTypeType type;
+  final DragType type;
 
   static Drag fromJson(Map<String, dynamic> json) => DragMapper.fromJson(json);
 

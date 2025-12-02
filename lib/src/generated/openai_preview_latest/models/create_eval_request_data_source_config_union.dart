@@ -5,9 +5,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_custom_data_source_config.dart';
-import 'create_eval_custom_data_source_config_type_type.dart';
+import 'create_eval_custom_data_source_config_type.dart';
 import 'create_eval_logs_data_source_config.dart';
-import 'create_eval_logs_data_source_config_type_type.dart';
+import 'create_eval_logs_data_source_config_type.dart';
 
 part 'create_eval_request_data_source_config_union.mapper.dart';
 
@@ -46,7 +46,7 @@ extension CreateEvalRequestDataSourceConfigUnionDeserializer on CreateEvalReques
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class CreateEvalRequestDataSourceConfigUnionCustom extends CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionCustomMappable {
-  final CreateEvalCustomDataSourceConfigTypeType type;
+  final CreateEvalCustomDataSourceConfigType type;
   @MappableField(key: 'item_schema')
   final dynamic itemSchema;
   @MappableField(key: 'include_sample_schema')
@@ -61,7 +61,7 @@ class CreateEvalRequestDataSourceConfigUnionCustom extends CreateEvalRequestData
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class CreateEvalRequestDataSourceConfigUnionLogs extends CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionLogsMappable {
-  final CreateEvalLogsDataSourceConfigTypeType type;
+  final CreateEvalLogsDataSourceConfigType type;
   final dynamic metadata;
 
   const CreateEvalRequestDataSourceConfigUnionLogs({

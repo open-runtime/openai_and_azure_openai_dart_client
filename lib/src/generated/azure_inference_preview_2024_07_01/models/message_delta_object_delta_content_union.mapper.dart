@@ -94,7 +94,7 @@ class MessageDeltaObjectDeltaContentUnionImageFileMapper
       );
       MessageDeltaObjectDeltaContentUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageDeltaContentImageFileObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentImageFileObjectTypeMapper.ensureInitialized();
       MessageDeltaContentImageFileObjectImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -107,12 +107,12 @@ class MessageDeltaObjectDeltaContentUnionImageFileMapper
       v.indexField;
   static const Field<MessageDeltaObjectDeltaContentUnionImageFile, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentImageFileObjectTypeType _$type(
+  static MessageDeltaContentImageFileObjectType _$type(
     MessageDeltaObjectDeltaContentUnionImageFile v,
   ) => v.type;
   static const Field<
     MessageDeltaObjectDeltaContentUnionImageFile,
-    MessageDeltaContentImageFileObjectTypeType
+    MessageDeltaContentImageFileObjectType
   >
   _f$type = Field('type', _$type);
   static MessageDeltaContentImageFileObjectImageFile?
@@ -263,7 +263,7 @@ abstract class MessageDeltaObjectDeltaContentUnionImageFileCopyWith<
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentImageFileObjectTypeType? type,
+    MessageDeltaContentImageFileObjectType? type,
     MessageDeltaContentImageFileObjectImageFile?
     messageDeltaContentImageFileObjectImageFile,
   });
@@ -307,7 +307,7 @@ class _MessageDeltaObjectDeltaContentUnionImageFileCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentImageFileObjectTypeType? type,
+    MessageDeltaContentImageFileObjectType? type,
     Object? messageDeltaContentImageFileObjectImageFile = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -355,7 +355,7 @@ class MessageDeltaObjectDeltaContentUnionTextMapper
       );
       MessageDeltaObjectDeltaContentUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      MessageDeltaContentTextObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextObjectTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -368,12 +368,12 @@ class MessageDeltaObjectDeltaContentUnionTextMapper
       v.indexField;
   static const Field<MessageDeltaObjectDeltaContentUnionText, int>
   _f$indexField = Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentTextObjectTypeType _$type(
+  static MessageDeltaContentTextObjectType _$type(
     MessageDeltaObjectDeltaContentUnionText v,
   ) => v.type;
   static const Field<
     MessageDeltaObjectDeltaContentUnionText,
-    MessageDeltaContentTextObjectTypeType
+    MessageDeltaContentTextObjectType
   >
   _f$type = Field('type', _$type);
   static MessageDeltaContentTextObjectText? _$messageDeltaContentTextObjectText(
@@ -512,7 +512,7 @@ abstract class MessageDeltaObjectDeltaContentUnionTextCopyWith<
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextObjectTypeType? type,
+    MessageDeltaContentTextObjectType? type,
     MessageDeltaContentTextObjectText? messageDeltaContentTextObjectText,
   });
   MessageDeltaObjectDeltaContentUnionTextCopyWith<$R2, $In, $Out2>
@@ -549,7 +549,7 @@ class _MessageDeltaObjectDeltaContentUnionTextCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextObjectTypeType? type,
+    MessageDeltaContentTextObjectType? type,
     Object? messageDeltaContentTextObjectText = $none,
   }) => $apply(
     FieldCopyWithData({

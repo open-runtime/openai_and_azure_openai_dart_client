@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_format_json_schema_json_schema.dart';
-import 'response_format_json_schema_type_type.dart';
+import 'response_format_json_schema_type.dart';
 
 part 'response_format_json_schema.mapper.dart';
 
@@ -19,7 +19,7 @@ class ResponseFormatJsonSchema with ResponseFormatJsonSchemaMappable {
     required this.responseFormatJsonSchemaJsonSchema,
   });
 
-  final ResponseFormatJsonSchemaTypeType type;
+  final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 

@@ -17,7 +17,7 @@ class FunctionShellCallOutputExitOutcomeParamMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputExitOutcomeParamMapper._(),
       );
-      FunctionShellCallOutputExitOutcomeParamTypeTypeMapper.ensureInitialized();
+      FunctionShellCallOutputExitOutcomeParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,18 +29,18 @@ class FunctionShellCallOutputExitOutcomeParamMapper
       v.exitCode;
   static const Field<FunctionShellCallOutputExitOutcomeParam, int> _f$exitCode =
       Field('exitCode', _$exitCode, key: r'exit_code');
-  static FunctionShellCallOutputExitOutcomeParamTypeType _$type(
+  static FunctionShellCallOutputExitOutcomeParamType _$type(
     FunctionShellCallOutputExitOutcomeParam v,
   ) => v.type;
   static const Field<
     FunctionShellCallOutputExitOutcomeParam,
-    FunctionShellCallOutputExitOutcomeParamTypeType
+    FunctionShellCallOutputExitOutcomeParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellCallOutputExitOutcomeParamTypeType.exit,
+    def: FunctionShellCallOutputExitOutcomeParamType.exit,
   );
 
   @override
@@ -145,10 +145,7 @@ abstract class FunctionShellCallOutputExitOutcomeParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    int? exitCode,
-    FunctionShellCallOutputExitOutcomeParamTypeType? type,
-  });
+  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeParamType? type});
   FunctionShellCallOutputExitOutcomeParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -171,15 +168,13 @@ class _FunctionShellCallOutputExitOutcomeParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellCallOutputExitOutcomeParam> $mapper =
       FunctionShellCallOutputExitOutcomeParamMapper.ensureInitialized();
   @override
-  $R call({
-    int? exitCode,
-    FunctionShellCallOutputExitOutcomeParamTypeType? type,
-  }) => $apply(
-    FieldCopyWithData({
-      if (exitCode != null) #exitCode: exitCode,
-      if (type != null) #type: type,
-    }),
-  );
+  $R call({int? exitCode, FunctionShellCallOutputExitOutcomeParamType? type}) =>
+      $apply(
+        FieldCopyWithData({
+          if (exitCode != null) #exitCode: exitCode,
+          if (type != null) #type: type,
+        }),
+      );
   @override
   FunctionShellCallOutputExitOutcomeParam $make(CopyWithData data) =>
       FunctionShellCallOutputExitOutcomeParam(

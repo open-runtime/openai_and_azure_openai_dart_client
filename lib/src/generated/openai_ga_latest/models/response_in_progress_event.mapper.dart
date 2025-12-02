@@ -17,7 +17,7 @@ class ResponseInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseInProgressEventMapper._(),
       );
-      ResponseInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseInProgressEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class ResponseInProgressEventMapper
   @override
   final String id = 'ResponseInProgressEvent';
 
-  static ResponseInProgressEventTypeType _$type(ResponseInProgressEvent v) =>
+  static ResponseInProgressEventType _$type(ResponseInProgressEvent v) =>
       v.type;
-  static const Field<ResponseInProgressEvent, ResponseInProgressEventTypeType>
+  static const Field<ResponseInProgressEvent, ResponseInProgressEventType>
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseInProgressEvent v) => v.response;
   static const Field<ResponseInProgressEvent, ResponseModel> _f$response =
@@ -131,7 +131,7 @@ abstract class ResponseInProgressEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseInProgressEventTypeType? type,
+    ResponseInProgressEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   });
@@ -154,7 +154,7 @@ class _ResponseInProgressEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseInProgressEventTypeType? type,
+    ResponseInProgressEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   }) => $apply(

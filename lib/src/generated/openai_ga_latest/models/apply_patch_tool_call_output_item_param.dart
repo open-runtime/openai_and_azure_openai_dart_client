@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_call_output_status_param.dart';
-import 'apply_patch_tool_call_output_item_param_type_type.dart';
+import 'apply_patch_tool_call_output_item_param_type.dart';
 
 part 'apply_patch_tool_call_output_item_param.mapper.dart';
 
@@ -17,7 +17,7 @@ class ApplyPatchToolCallOutputItemParam with ApplyPatchToolCallOutputItemParamMa
     required this.status,
     this.id,
     this.output,
-    this.type = ApplyPatchToolCallOutputItemParamTypeType.applyPatchCallOutput,
+    this.type = ApplyPatchToolCallOutputItemParamType.applyPatchCallOutput,
   });
 
   @MappableField(key: 'call_id')
@@ -25,7 +25,7 @@ class ApplyPatchToolCallOutputItemParam with ApplyPatchToolCallOutputItemParamMa
   final ApplyPatchCallOutputStatusParam status;
   final String? id;
   final String? output;
-  final ApplyPatchToolCallOutputItemParamTypeType type;
+  final ApplyPatchToolCallOutputItemParamType type;
 
   static ApplyPatchToolCallOutputItemParam fromJson(Map<String, dynamic> json) => ApplyPatchToolCallOutputItemParamMapper.fromJson(json);
 

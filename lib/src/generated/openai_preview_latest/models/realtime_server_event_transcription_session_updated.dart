@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_server_event.dart';
-import 'realtime_server_event_transcription_session_updated_type_type.dart';
+import 'realtime_server_event_transcription_session_updated_type.dart';
 import 'realtime_transcription_session_create_response.dart';
 
 part 'realtime_server_event_transcription_session_updated.mapper.dart';
@@ -23,7 +23,7 @@ class RealtimeServerEventTranscriptionSessionUpdated with RealtimeServerEventTra
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventTranscriptionSessionUpdatedTypeType type;
+  final RealtimeServerEventTranscriptionSessionUpdatedType type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
   static RealtimeServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) => RealtimeServerEventTranscriptionSessionUpdatedMapper.fromJson(json);

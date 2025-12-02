@@ -14,7 +14,7 @@ class BatchRequestInputMapper extends ClassMapperBase<BatchRequestInput> {
   static BatchRequestInputMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = BatchRequestInputMapper._());
-      BatchRequestInputMethodMethodMapper.ensureInitialized();
+      BatchRequestInputMethodMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,10 +29,9 @@ class BatchRequestInputMapper extends ClassMapperBase<BatchRequestInput> {
     key: r'custom_id',
     opt: true,
   );
-  static BatchRequestInputMethodMethod? _$method(BatchRequestInput v) =>
-      v.method;
-  static const Field<BatchRequestInput, BatchRequestInputMethodMethod>
-  _f$method = Field('method', _$method, opt: true);
+  static BatchRequestInputMethod? _$method(BatchRequestInput v) => v.method;
+  static const Field<BatchRequestInput, BatchRequestInputMethod> _f$method =
+      Field('method', _$method, opt: true);
   static String? _$url(BatchRequestInput v) => v.url;
   static const Field<BatchRequestInput, String> _f$url = Field(
     'url',
@@ -130,11 +129,7 @@ abstract class BatchRequestInputCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    String? customId,
-    BatchRequestInputMethodMethod? method,
-    String? url,
-  });
+  $R call({String? customId, BatchRequestInputMethod? method, String? url});
   BatchRequestInputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

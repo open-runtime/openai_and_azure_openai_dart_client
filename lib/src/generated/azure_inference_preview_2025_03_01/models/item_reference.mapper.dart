@@ -14,7 +14,7 @@ class ItemReferenceMapper extends ClassMapperBase<ItemReference> {
   static ItemReferenceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemReferenceMapper._());
-      ItemReferenceTypeTypeMapper.ensureInitialized();
+      ItemReferenceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -24,8 +24,8 @@ class ItemReferenceMapper extends ClassMapperBase<ItemReference> {
 
   static String _$id(ItemReference v) => v.id;
   static const Field<ItemReference, String> _f$id = Field('id', _$id);
-  static ItemReferenceTypeType _$type(ItemReference v) => v.type;
-  static const Field<ItemReference, ItemReferenceTypeType> _f$type = Field(
+  static ItemReferenceType _$type(ItemReference v) => v.type;
+  static const Field<ItemReference, ItemReferenceType> _f$type = Field(
     'type',
     _$type,
   );
@@ -106,7 +106,7 @@ extension ItemReferenceValueCopy<$R, $Out>
 
 abstract class ItemReferenceCopyWith<$R, $In extends ItemReference, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? id, ItemReferenceTypeType? type});
+  $R call({String? id, ItemReferenceType? type});
   ItemReferenceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -119,7 +119,7 @@ class _ItemReferenceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ItemReference> $mapper =
       ItemReferenceMapper.ensureInitialized();
   @override
-  $R call({String? id, ItemReferenceTypeType? type}) => $apply(
+  $R call({String? id, ItemReferenceType? type}) => $apply(
     FieldCopyWithData({if (id != null) #id: id, if (type != null) #type: type}),
   );
   @override

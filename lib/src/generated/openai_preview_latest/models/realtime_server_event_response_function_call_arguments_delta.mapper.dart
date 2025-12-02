@@ -20,7 +20,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
         _instance =
             RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper._(),
       );
-      RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -36,12 +36,12 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
     String
   >
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeType _$type(
+  static RealtimeServerEventResponseFunctionCallArgumentsDeltaType _$type(
     RealtimeServerEventResponseFunctionCallArgumentsDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseFunctionCallArgumentsDelta,
-    RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeType
+    RealtimeServerEventResponseFunctionCallArgumentsDeltaType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -219,7 +219,7 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDeltaCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeType? type,
+    RealtimeServerEventResponseFunctionCallArgumentsDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -261,7 +261,7 @@ class _RealtimeServerEventResponseFunctionCallArgumentsDeltaCopyWithImpl<
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeType? type,
+    RealtimeServerEventResponseFunctionCallArgumentsDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

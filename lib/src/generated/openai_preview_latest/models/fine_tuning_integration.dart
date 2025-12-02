@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'fine_tuning_integration_type_type.dart';
+import 'fine_tuning_integration_type.dart';
 import 'fine_tuning_integration_wandb.dart';
 
 part 'fine_tuning_integration.mapper.dart';
@@ -16,7 +16,7 @@ class FineTuningIntegration with FineTuningIntegrationMappable {
     required this.fineTuningIntegrationWandb,
   });
 
-  final FineTuningIntegrationTypeType type;
+  final FineTuningIntegrationType type;
   @MappableField(key: 'wandb')
   final FineTuningIntegrationWandb fineTuningIntegrationWandb;
 

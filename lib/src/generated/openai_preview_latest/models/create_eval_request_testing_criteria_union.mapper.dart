@@ -97,7 +97,7 @@ class CreateEvalRequestTestingCriteriaUnionLabelModelMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      CreateEvalLabelModelGraderTypeTypeMapper.ensureInitialized();
+      CreateEvalLabelModelGraderTypeMapper.ensureInitialized();
       CreateEvalItemUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -106,12 +106,12 @@ class CreateEvalRequestTestingCriteriaUnionLabelModelMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionLabelModel';
 
-  static CreateEvalLabelModelGraderTypeType _$type(
+  static CreateEvalLabelModelGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionLabelModel v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionLabelModel,
-    CreateEvalLabelModelGraderTypeType
+    CreateEvalLabelModelGraderType
   >
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalRequestTestingCriteriaUnionLabelModel v) =>
@@ -297,7 +297,7 @@ abstract class CreateEvalRequestTestingCriteriaUnionLabelModelCopyWith<
   get passingLabels;
   @override
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,
@@ -358,7 +358,7 @@ class _CreateEvalRequestTestingCriteriaUnionLabelModelCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    CreateEvalLabelModelGraderTypeType? type,
+    CreateEvalLabelModelGraderType? type,
     String? name,
     String? model,
     List<CreateEvalItemUnion>? input,
@@ -413,8 +413,8 @@ class CreateEvalRequestTestingCriteriaUnionStringCheckMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalStringCheckGraderTypeTypeMapper.ensureInitialized();
-      EvalStringCheckGraderOperationOperationMapper.ensureInitialized();
+      EvalStringCheckGraderTypeMapper.ensureInitialized();
+      EvalStringCheckGraderOperationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -422,12 +422,12 @@ class CreateEvalRequestTestingCriteriaUnionStringCheckMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionStringCheck';
 
-  static EvalStringCheckGraderTypeType _$type(
+  static EvalStringCheckGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionStringCheck v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionStringCheck,
-    EvalStringCheckGraderTypeType
+    EvalStringCheckGraderType
   >
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalRequestTestingCriteriaUnionStringCheck v) =>
@@ -443,12 +443,12 @@ class CreateEvalRequestTestingCriteriaUnionStringCheckMapper
   ) => v.reference;
   static const Field<CreateEvalRequestTestingCriteriaUnionStringCheck, String>
   _f$reference = Field('reference', _$reference);
-  static EvalStringCheckGraderOperationOperation _$operation(
+  static EvalStringCheckGraderOperation _$operation(
     CreateEvalRequestTestingCriteriaUnionStringCheck v,
   ) => v.operation;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionStringCheck,
-    EvalStringCheckGraderOperationOperation
+    EvalStringCheckGraderOperation
   >
   _f$operation = Field('operation', _$operation);
 
@@ -587,11 +587,11 @@ abstract class CreateEvalRequestTestingCriteriaUnionStringCheckCopyWith<
     implements CreateEvalRequestTestingCriteriaUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    EvalStringCheckGraderTypeType? type,
+    EvalStringCheckGraderType? type,
     String? name,
     String? input,
     String? reference,
-    EvalStringCheckGraderOperationOperation? operation,
+    EvalStringCheckGraderOperation? operation,
   });
   CreateEvalRequestTestingCriteriaUnionStringCheckCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -622,11 +622,11 @@ class _CreateEvalRequestTestingCriteriaUnionStringCheckCopyWithImpl<$R, $Out>
       CreateEvalRequestTestingCriteriaUnionStringCheckMapper.ensureInitialized();
   @override
   $R call({
-    EvalStringCheckGraderTypeType? type,
+    EvalStringCheckGraderType? type,
     String? name,
     String? input,
     String? reference,
-    EvalStringCheckGraderOperationOperation? operation,
+    EvalStringCheckGraderOperation? operation,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -677,7 +677,7 @@ class CreateEvalRequestTestingCriteriaUnionTextSimilarityMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalTextSimilarityGraderTypeTypeMapper.ensureInitialized();
+      EvalTextSimilarityGraderTypeMapper.ensureInitialized();
       EvalTextSimilarityGraderEvaluationMetricEvaluationMetricMapper.ensureInitialized();
     }
     return _instance!;
@@ -686,12 +686,12 @@ class CreateEvalRequestTestingCriteriaUnionTextSimilarityMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionTextSimilarity';
 
-  static EvalTextSimilarityGraderTypeType _$type(
+  static EvalTextSimilarityGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionTextSimilarity v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionTextSimilarity,
-    EvalTextSimilarityGraderTypeType
+    EvalTextSimilarityGraderType
   >
   _f$type = Field('type', _$type);
   static String? _$name(
@@ -876,7 +876,7 @@ abstract class CreateEvalRequestTestingCriteriaUnionTextSimilarityCopyWith<
     implements CreateEvalRequestTestingCriteriaUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    EvalTextSimilarityGraderTypeType? type,
+    EvalTextSimilarityGraderType? type,
     String? name,
     String? input,
     String? reference,
@@ -914,7 +914,7 @@ class _CreateEvalRequestTestingCriteriaUnionTextSimilarityCopyWithImpl<$R, $Out>
       CreateEvalRequestTestingCriteriaUnionTextSimilarityMapper.ensureInitialized();
   @override
   $R call({
-    EvalTextSimilarityGraderTypeType? type,
+    EvalTextSimilarityGraderType? type,
     Object? name = $none,
     String? input,
     String? reference,
@@ -967,7 +967,7 @@ class CreateEvalRequestTestingCriteriaUnionPythonMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalPythonGraderTypeTypeMapper.ensureInitialized();
+      EvalPythonGraderTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -975,12 +975,12 @@ class CreateEvalRequestTestingCriteriaUnionPythonMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionPython';
 
-  static EvalPythonGraderTypeType _$type(
+  static EvalPythonGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionPython v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionPython,
-    EvalPythonGraderTypeType
+    EvalPythonGraderType
   >
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalRequestTestingCriteriaUnionPython v) => v.name;
@@ -1131,7 +1131,7 @@ abstract class CreateEvalRequestTestingCriteriaUnionPythonCopyWith<
     implements CreateEvalRequestTestingCriteriaUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    EvalPythonGraderTypeType? type,
+    EvalPythonGraderType? type,
     String? name,
     String? source,
     num? passThreshold,
@@ -1162,7 +1162,7 @@ class _CreateEvalRequestTestingCriteriaUnionPythonCopyWithImpl<$R, $Out>
       CreateEvalRequestTestingCriteriaUnionPythonMapper.ensureInitialized();
   @override
   $R call({
-    EvalPythonGraderTypeType? type,
+    EvalPythonGraderType? type,
     String? name,
     String? source,
     Object? passThreshold = $none,
@@ -1214,7 +1214,7 @@ class CreateEvalRequestTestingCriteriaUnionScoreModelMapper
       );
       CreateEvalRequestTestingCriteriaUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalScoreModelGraderTypeTypeMapper.ensureInitialized();
+      EvalScoreModelGraderTypeMapper.ensureInitialized();
       EvalItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -1223,12 +1223,12 @@ class CreateEvalRequestTestingCriteriaUnionScoreModelMapper
   @override
   final String id = 'CreateEvalRequestTestingCriteriaUnionScoreModel';
 
-  static EvalScoreModelGraderTypeType _$type(
+  static EvalScoreModelGraderType _$type(
     CreateEvalRequestTestingCriteriaUnionScoreModel v,
   ) => v.type;
   static const Field<
     CreateEvalRequestTestingCriteriaUnionScoreModel,
-    EvalScoreModelGraderTypeType
+    EvalScoreModelGraderType
   >
   _f$type = Field('type', _$type);
   static String _$name(CreateEvalRequestTestingCriteriaUnionScoreModel v) =>
@@ -1413,7 +1413,7 @@ abstract class CreateEvalRequestTestingCriteriaUnionScoreModelCopyWith<
   ListCopyWith<$R, num, ObjectCopyWith<$R, num, num>>? get range;
   @override
   $R call({
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     String? name,
     String? model,
     dynamic samplingParams,
@@ -1466,7 +1466,7 @@ class _CreateEvalRequestTestingCriteriaUnionScoreModelCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    EvalScoreModelGraderTypeType? type,
+    EvalScoreModelGraderType? type,
     String? name,
     String? model,
     Object? samplingParams = $none,

@@ -14,7 +14,7 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
   static FileSearchToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileSearchToolMapper._());
-      FileSearchToolTypeTypeMapper.ensureInitialized();
+      FileSearchToolTypeMapper.ensureInitialized();
       FileSearchToolFiltersUnionMapper.ensureInitialized();
       FileSearchToolRankingOptionsMapper.ensureInitialized();
     }
@@ -24,8 +24,8 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
   @override
   final String id = 'FileSearchTool';
 
-  static FileSearchToolTypeType _$type(FileSearchTool v) => v.type;
-  static const Field<FileSearchTool, FileSearchToolTypeType> _f$type = Field(
+  static FileSearchToolType _$type(FileSearchTool v) => v.type;
+  static const Field<FileSearchTool, FileSearchToolType> _f$type = Field(
     'type',
     _$type,
   );
@@ -156,7 +156,7 @@ abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
   >?
   get fileSearchToolRankingOptions;
   $R call({
-    FileSearchToolTypeType? type,
+    FileSearchToolType? type,
     List<String>? vectorStoreIds,
     int? maxNumResults,
     FileSearchToolFiltersUnion? filters,
@@ -201,7 +201,7 @@ class _FileSearchToolCopyWithImpl<$R, $Out>
       .$chain((v) => call(fileSearchToolRankingOptions: v));
   @override
   $R call({
-    FileSearchToolTypeType? type,
+    FileSearchToolType? type,
     List<String>? vectorStoreIds,
     Object? maxNumResults = $none,
     Object? filters = $none,

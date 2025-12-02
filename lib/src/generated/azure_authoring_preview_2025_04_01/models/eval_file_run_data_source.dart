@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'eval_file_run_data_source_type_type.dart';
+import 'eval_file_run_data_source_type.dart';
 
 part 'eval_file_run_data_source.mapper.dart';
 
@@ -13,12 +13,12 @@ part 'eval_file_run_data_source.mapper.dart';
 class EvalFileRunDataSource with EvalFileRunDataSourceMappable {
   const EvalFileRunDataSource({
     required this.fileId,
-    this.type = EvalFileRunDataSourceTypeType.file,
+    this.type = EvalFileRunDataSourceType.file,
   });
 
   @MappableField(key: 'file_id')
   final String fileId;
-  final EvalFileRunDataSourceTypeType type;
+  final EvalFileRunDataSourceType type;
 
   static EvalFileRunDataSource fromJson(Map<String, dynamic> json) => EvalFileRunDataSourceMapper.fromJson(json);
 

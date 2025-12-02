@@ -16,7 +16,7 @@ class ClientToolCallItemMapper extends ClassMapperBase<ClientToolCallItem> {
       MapperContainer.globals.use(_instance = ClientToolCallItemMapper._());
       ClientToolCallStatusMapper.ensureInitialized();
       ClientToolCallItemObjectObjectEnumMapper.ensureInitialized();
-      ClientToolCallItemTypeTypeMapper.ensureInitialized();
+      ClientToolCallItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -73,14 +73,9 @@ class ClientToolCallItemMapper extends ClassMapperBase<ClientToolCallItem> {
     opt: true,
     def: ClientToolCallItemObjectObjectEnum.undefined0,
   );
-  static ClientToolCallItemTypeType _$type(ClientToolCallItem v) => v.type;
-  static const Field<ClientToolCallItem, ClientToolCallItemTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: ClientToolCallItemTypeType.undefined0,
-      );
+  static ClientToolCallItemType _$type(ClientToolCallItem v) => v.type;
+  static const Field<ClientToolCallItem, ClientToolCallItemType> _f$type =
+      Field('type', _$type, opt: true, def: ClientToolCallItemType.undefined0);
 
   @override
   final MappableFields<ClientToolCallItem> fields = const {
@@ -196,7 +191,7 @@ abstract class ClientToolCallItemCopyWith<
     String? arguments,
     String? output,
     ClientToolCallItemObjectObjectEnum? objectEnum,
-    ClientToolCallItemTypeType? type,
+    ClientToolCallItemType? type,
   });
   ClientToolCallItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -222,7 +217,7 @@ class _ClientToolCallItemCopyWithImpl<$R, $Out>
     String? arguments,
     Object? output = $none,
     ClientToolCallItemObjectObjectEnum? objectEnum,
-    ClientToolCallItemTypeType? type,
+    ClientToolCallItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

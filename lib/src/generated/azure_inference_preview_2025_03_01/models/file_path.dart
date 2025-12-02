@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'annotation.dart';
-import 'file_path_type_type.dart';
+import 'file_path_type.dart';
 
 part 'file_path.mapper.dart';
 
@@ -19,7 +19,7 @@ class FilePath with FilePathMappable {
     required this.indexField,
   });
 
-  final FilePathTypeType type;
+  final FilePathType type;
   @MappableField(key: 'file_id')
   final String fileId;
   @MappableField(key: 'index')

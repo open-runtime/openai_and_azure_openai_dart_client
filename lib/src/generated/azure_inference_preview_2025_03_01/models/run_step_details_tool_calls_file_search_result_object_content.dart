@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_step_details_tool_calls_file_search_result_object_content_type_type.dart';
+import 'run_step_details_tool_calls_file_search_result_object_content_type.dart';
 
 part 'run_step_details_tool_calls_file_search_result_object_content.mapper.dart';
 
@@ -15,7 +15,7 @@ class RunStepDetailsToolCallsFileSearchResultObjectContent with RunStepDetailsTo
     this.text,
   });
 
-  final RunStepDetailsToolCallsFileSearchResultObjectContentTypeType? type;
+  final RunStepDetailsToolCallsFileSearchResultObjectContentType? type;
   final String? text;
 
   static RunStepDetailsToolCallsFileSearchResultObjectContent fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFileSearchResultObjectContentMapper.fromJson(json);

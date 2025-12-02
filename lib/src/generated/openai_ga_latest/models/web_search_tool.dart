@@ -7,7 +7,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'web_search_approximate_location.dart';
 import 'web_search_tool_filters.dart';
 import 'web_search_tool_search_context_size_search_context_size.dart';
-import 'web_search_tool_type_type.dart';
+import 'web_search_tool_type.dart';
 
 part 'web_search_tool.mapper.dart';
 
@@ -19,14 +19,14 @@ class WebSearchTool with WebSearchToolMappable {
   const WebSearchTool({
     this.filters,
     this.userLocation,
-    this.type = WebSearchToolTypeType.webSearch,
+    this.type = WebSearchToolType.webSearch,
     this.searchContextSize = WebSearchToolSearchContextSizeSearchContextSize.medium,
   });
 
   final WebSearchToolFilters? filters;
   @MappableField(key: 'user_location')
   final WebSearchApproximateLocation? userLocation;
-  final WebSearchToolTypeType type;
+  final WebSearchToolType type;
   @MappableField(key: 'search_context_size')
   final WebSearchToolSearchContextSizeSearchContextSize searchContextSize;
 

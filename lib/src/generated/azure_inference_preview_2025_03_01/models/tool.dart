@@ -5,20 +5,20 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'computer_tool.dart';
-import 'computer_tool_environment_environment.dart';
-import 'computer_tool_type_type.dart';
+import 'computer_tool_environment.dart';
+import 'computer_tool_type.dart';
 import 'file_search_tool.dart';
 import 'file_search_tool_filters_union.dart';
 import 'file_search_tool_ranking_options.dart';
-import 'file_search_tool_type_type.dart';
+import 'file_search_tool_type.dart';
 import 'function_tool.dart';
-import 'function_tool_type_type.dart';
-import 'tool_environment_environment.dart';
+import 'function_tool_type.dart';
+import 'tool_environment.dart';
 import 'tool_filters_union.dart';
 import 'tool_ranking_options.dart';
-import 'tool_type_type.dart';
-import 'tool_type_type2.dart';
-import 'tool_type_type3.dart';
+import 'tool_type.dart';
+import 'tool_type2.dart';
+import 'tool_type3.dart';
 
 part 'tool.mapper.dart';
 
@@ -59,7 +59,7 @@ extension ToolUnionDeserializer on Tool {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class ToolFileSearch extends Tool with ToolFileSearchMappable {
-  final ToolTypeType type;
+  final ToolType type;
   @MappableField(key: 'vector_store_ids')
   final List<String> vectorStoreIds;
   @MappableField(key: 'max_num_results')
@@ -79,7 +79,7 @@ class ToolFileSearch extends Tool with ToolFileSearchMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class ToolFunction extends Tool with ToolFunctionMappable {
-  final ToolTypeType2 type;
+  final ToolType2 type;
   final String name;
   final String? description;
   final dynamic parameters;
@@ -96,12 +96,12 @@ class ToolFunction extends Tool with ToolFunctionMappable {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer-preview')
 class ToolComputerPreview extends Tool with ToolComputerPreviewMappable {
-  final ToolTypeType3 type;
+  final ToolType3 type;
   @MappableField(key: 'display_width')
   final num displayWidth;
   @MappableField(key: 'display_height')
   final num displayHeight;
-  final ToolEnvironmentEnvironment environment;
+  final ToolEnvironment environment;
 
   const ToolComputerPreview({
     required this.type,

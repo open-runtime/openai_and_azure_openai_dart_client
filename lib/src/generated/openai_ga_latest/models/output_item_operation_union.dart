@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_create_file_operation.dart';
-import 'apply_patch_create_file_operation_type_type.dart';
+import 'apply_patch_create_file_operation_type.dart';
 import 'apply_patch_delete_file_operation.dart';
-import 'apply_patch_delete_file_operation_type_type.dart';
+import 'apply_patch_delete_file_operation_type.dart';
 import 'apply_patch_update_file_operation.dart';
-import 'apply_patch_update_file_operation_type_type.dart';
+import 'apply_patch_update_file_operation_type.dart';
 import 'conversation_item_operation_union.dart';
 import 'item_resource_operation_union.dart';
 
@@ -53,7 +53,7 @@ extension OutputItemOperationUnionDeserializer on OutputItemOperationUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
 class OutputItemOperationUnionCreateFile extends OutputItemOperationUnion with OutputItemOperationUnionCreateFileMappable {
-  final ApplyPatchCreateFileOperationTypeType type;
+  final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
@@ -66,7 +66,7 @@ class OutputItemOperationUnionCreateFile extends OutputItemOperationUnion with O
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
 class OutputItemOperationUnionDeleteFile extends OutputItemOperationUnion with OutputItemOperationUnionDeleteFileMappable {
-  final ApplyPatchDeleteFileOperationTypeType type;
+  final ApplyPatchDeleteFileOperationType type;
   final String path;
 
   const OutputItemOperationUnionDeleteFile({
@@ -77,7 +77,7 @@ class OutputItemOperationUnionDeleteFile extends OutputItemOperationUnion with O
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
 class OutputItemOperationUnionUpdateFile extends OutputItemOperationUnion with OutputItemOperationUnionUpdateFileMappable {
-  final ApplyPatchUpdateFileOperationTypeType type;
+  final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 

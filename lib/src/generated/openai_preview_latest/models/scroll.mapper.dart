@@ -14,7 +14,7 @@ class ScrollMapper extends ClassMapperBase<Scroll> {
   static ScrollMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ScrollMapper._());
-      ScrollTypeTypeMapper.ensureInitialized();
+      ScrollTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -38,12 +38,12 @@ class ScrollMapper extends ClassMapperBase<Scroll> {
     _$scrollY,
     key: r'scroll_y',
   );
-  static ScrollTypeType _$type(Scroll v) => v.type;
-  static const Field<Scroll, ScrollTypeType> _f$type = Field(
+  static ScrollType _$type(Scroll v) => v.type;
+  static const Field<Scroll, ScrollType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ScrollTypeType.scroll,
+    def: ScrollType.scroll,
   );
 
   @override
@@ -115,7 +115,7 @@ extension ScrollValueCopy<$R, $Out> on ObjectCopyWith<$R, Scroll, $Out> {
 
 abstract class ScrollCopyWith<$R, $In extends Scroll, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({int? x, int? y, int? scrollX, int? scrollY, ScrollTypeType? type});
+  $R call({int? x, int? y, int? scrollX, int? scrollY, ScrollType? type});
   ScrollCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -126,7 +126,7 @@ class _ScrollCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Scroll, $Out>
   @override
   late final ClassMapperBase<Scroll> $mapper = ScrollMapper.ensureInitialized();
   @override
-  $R call({int? x, int? y, int? scrollX, int? scrollY, ScrollTypeType? type}) =>
+  $R call({int? x, int? y, int? scrollX, int? scrollY, ScrollType? type}) =>
       $apply(
         FieldCopyWithData({
           if (x != null) #x: x,

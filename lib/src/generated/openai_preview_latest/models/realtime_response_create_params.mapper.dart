@@ -17,7 +17,7 @@ class RealtimeResponseCreateParamsMapper
       MapperContainer.globals.use(
         _instance = RealtimeResponseCreateParamsMapper._(),
       );
-      RealtimeResponseCreateParamsModalitiesModalitiesMapper.ensureInitialized();
+      RealtimeResponseCreateParamsModalitiesMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
       RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
       RealtimeResponseCreateParamsToolsMapper.ensureInitialized();
@@ -31,12 +31,12 @@ class RealtimeResponseCreateParamsMapper
   @override
   final String id = 'RealtimeResponseCreateParams';
 
-  static List<RealtimeResponseCreateParamsModalitiesModalities>? _$modalities(
+  static List<RealtimeResponseCreateParamsModalities>? _$modalities(
     RealtimeResponseCreateParams v,
   ) => v.modalities;
   static const Field<
     RealtimeResponseCreateParams,
-    List<RealtimeResponseCreateParamsModalitiesModalities>
+    List<RealtimeResponseCreateParamsModalities>
   >
   _f$modalities = Field('modalities', _$modalities, opt: true);
   static String? _$instructions(RealtimeResponseCreateParams v) =>
@@ -225,11 +225,11 @@ abstract class RealtimeResponseCreateParamsCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
-    RealtimeResponseCreateParamsModalitiesModalities,
+    RealtimeResponseCreateParamsModalities,
     ObjectCopyWith<
       $R,
-      RealtimeResponseCreateParamsModalitiesModalities,
-      RealtimeResponseCreateParamsModalitiesModalities
+      RealtimeResponseCreateParamsModalities,
+      RealtimeResponseCreateParamsModalities
     >
   >?
   get modalities;
@@ -269,7 +269,7 @@ abstract class RealtimeResponseCreateParamsCopyWith<
   >?
   get input;
   $R call({
-    List<RealtimeResponseCreateParamsModalitiesModalities>? modalities,
+    List<RealtimeResponseCreateParamsModalities>? modalities,
     String? instructions,
     VoiceIdsShared? voice,
     RealtimeResponseCreateParamsOutputAudioFormatOutputAudioFormat?
@@ -308,11 +308,11 @@ class _RealtimeResponseCreateParamsCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeResponseCreateParamsModalitiesModalities,
+    RealtimeResponseCreateParamsModalities,
     ObjectCopyWith<
       $R,
-      RealtimeResponseCreateParamsModalitiesModalities,
-      RealtimeResponseCreateParamsModalitiesModalities
+      RealtimeResponseCreateParamsModalities,
+      RealtimeResponseCreateParamsModalities
     >
   >?
   get modalities => $value.modalities != null

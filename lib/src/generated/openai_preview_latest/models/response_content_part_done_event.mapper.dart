@@ -17,7 +17,7 @@ class ResponseContentPartDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseContentPartDoneEventMapper._(),
       );
-      ResponseContentPartDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseContentPartDoneEventTypeMapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ResponseContentPartDoneEventMapper
   @override
   final String id = 'ResponseContentPartDoneEvent';
 
-  static ResponseContentPartDoneEventTypeType _$type(
+  static ResponseContentPartDoneEventType _$type(
     ResponseContentPartDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseContentPartDoneEvent,
-    ResponseContentPartDoneEventTypeType
+    ResponseContentPartDoneEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseContentPartDoneEvent v) => v.itemId;
@@ -155,7 +155,7 @@ abstract class ResponseContentPartDoneEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   OutputContentCopyWith<$R, OutputContent, OutputContent> get partField;
   $R call({
-    ResponseContentPartDoneEventTypeType? type,
+    ResponseContentPartDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -188,7 +188,7 @@ class _ResponseContentPartDoneEventCopyWithImpl<$R, $Out>
       $value.partField.copyWith.$chain((v) => call(partField: v));
   @override
   $R call({
-    ResponseContentPartDoneEventTypeType? type,
+    ResponseContentPartDoneEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

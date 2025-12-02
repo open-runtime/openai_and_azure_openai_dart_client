@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'task_group_item_object_object_enum.dart';
-import 'task_group_item_type_type.dart';
+import 'task_group_item_type.dart';
 import 'task_group_task.dart';
 import 'thread_item.dart';
 
@@ -20,7 +20,7 @@ class TaskGroupItem with TaskGroupItemMappable {
     required this.threadId,
     required this.tasks,
     this.objectEnum = TaskGroupItemObjectObjectEnum.undefined0,
-    this.type = TaskGroupItemTypeType.undefined0,
+    this.type = TaskGroupItemType.undefined0,
   });
 
   final String id;
@@ -31,7 +31,7 @@ class TaskGroupItem with TaskGroupItemMappable {
   final List<TaskGroupTask> tasks;
   @MappableField(key: 'object')
   final TaskGroupItemObjectObjectEnum objectEnum;
-  final TaskGroupItemTypeType type;
+  final TaskGroupItemType type;
 
   static TaskGroupItem fromJson(Map<String, dynamic> json) => TaskGroupItemMapper.fromJson(json);
 

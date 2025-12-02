@@ -95,9 +95,9 @@ class RealtimeConversationItemMessageMapper
         _instance!,
       );
       RealtimeConversationItemObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemTypeTypeMapper.ensureInitialized();
-      RealtimeConversationItemStatusStatusMapper.ensureInitialized();
-      RealtimeConversationItemRoleRoleMapper.ensureInitialized();
+      RealtimeConversationItemTypeMapper.ensureInitialized();
+      RealtimeConversationItemStatusMapper.ensureInitialized();
+      RealtimeConversationItemRoleMapper.ensureInitialized();
       RealtimeConversationItemContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -119,28 +119,28 @@ class RealtimeConversationItemMessageMapper
     RealtimeConversationItemObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
-  static RealtimeConversationItemTypeType _$type(
+  static RealtimeConversationItemType _$type(
     RealtimeConversationItemMessage v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessage,
-    RealtimeConversationItemTypeType
+    RealtimeConversationItemType
   >
   _f$type = Field('type', _$type);
-  static RealtimeConversationItemStatusStatus? _$status(
+  static RealtimeConversationItemStatus? _$status(
     RealtimeConversationItemMessage v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemMessage,
-    RealtimeConversationItemStatusStatus
+    RealtimeConversationItemStatus
   >
   _f$status = Field('status', _$status);
-  static RealtimeConversationItemRoleRole _$role(
+  static RealtimeConversationItemRole _$role(
     RealtimeConversationItemMessage v,
   ) => v.role;
   static const Field<
     RealtimeConversationItemMessage,
-    RealtimeConversationItemRoleRole
+    RealtimeConversationItemRole
   >
   _f$role = Field('role', _$role);
   static List<RealtimeConversationItemContent> _$content(
@@ -277,9 +277,9 @@ abstract class RealtimeConversationItemMessageCopyWith<
   $R call({
     String? id,
     RealtimeConversationItemObjectObjectEnum? objectEnum,
-    RealtimeConversationItemTypeType? type,
-    RealtimeConversationItemStatusStatus? status,
-    RealtimeConversationItemRoleRole? role,
+    RealtimeConversationItemType? type,
+    RealtimeConversationItemStatus? status,
+    RealtimeConversationItemRole? role,
     List<RealtimeConversationItemContent>? content,
   });
   RealtimeConversationItemMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -323,9 +323,9 @@ class _RealtimeConversationItemMessageCopyWithImpl<$R, $Out>
   $R call({
     Object? id = $none,
     Object? objectEnum = $none,
-    RealtimeConversationItemTypeType? type,
+    RealtimeConversationItemType? type,
     Object? status = $none,
-    RealtimeConversationItemRoleRole? role,
+    RealtimeConversationItemRole? role,
     List<RealtimeConversationItemContent>? content,
   }) => $apply(
     FieldCopyWithData({
@@ -376,8 +376,8 @@ class RealtimeConversationItemFunctionCallMapper
         _instance!,
       );
       RealtimeConversationItemObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemTypeType2Mapper.ensureInitialized();
-      RealtimeConversationItemStatusStatusMapper.ensureInitialized();
+      RealtimeConversationItemType2Mapper.ensureInitialized();
+      RealtimeConversationItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -396,20 +396,20 @@ class RealtimeConversationItemFunctionCallMapper
     RealtimeConversationItemObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
-  static RealtimeConversationItemTypeType2 _$type(
+  static RealtimeConversationItemType2 _$type(
     RealtimeConversationItemFunctionCall v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemFunctionCall,
-    RealtimeConversationItemTypeType2
+    RealtimeConversationItemType2
   >
   _f$type = Field('type', _$type);
-  static RealtimeConversationItemStatusStatus? _$status(
+  static RealtimeConversationItemStatus? _$status(
     RealtimeConversationItemFunctionCall v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemFunctionCall,
-    RealtimeConversationItemStatusStatus
+    RealtimeConversationItemStatus
   >
   _f$status = Field('status', _$status);
   static String? _$callId(RealtimeConversationItemFunctionCall v) => v.callId;
@@ -543,8 +543,8 @@ abstract class RealtimeConversationItemFunctionCallCopyWith<
   $R call({
     String? id,
     RealtimeConversationItemObjectObjectEnum? objectEnum,
-    RealtimeConversationItemTypeType2? type,
-    RealtimeConversationItemStatusStatus? status,
+    RealtimeConversationItemType2? type,
+    RealtimeConversationItemStatus? status,
     String? callId,
     String? name,
     String? arguments,
@@ -574,7 +574,7 @@ class _RealtimeConversationItemFunctionCallCopyWithImpl<$R, $Out>
   $R call({
     Object? id = $none,
     Object? objectEnum = $none,
-    RealtimeConversationItemTypeType2? type,
+    RealtimeConversationItemType2? type,
     Object? status = $none,
     Object? callId = $none,
     String? name,
@@ -630,8 +630,8 @@ class RealtimeConversationItemFunctionCallOutputMapper
         _instance!,
       );
       RealtimeConversationItemObjectObjectEnumMapper.ensureInitialized();
-      RealtimeConversationItemTypeType3Mapper.ensureInitialized();
-      RealtimeConversationItemStatusStatusMapper.ensureInitialized();
+      RealtimeConversationItemType3Mapper.ensureInitialized();
+      RealtimeConversationItemStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -650,20 +650,20 @@ class RealtimeConversationItemFunctionCallOutputMapper
     RealtimeConversationItemObjectObjectEnum
   >
   _f$objectEnum = Field('objectEnum', _$objectEnum, key: r'object');
-  static RealtimeConversationItemTypeType3 _$type(
+  static RealtimeConversationItemType3 _$type(
     RealtimeConversationItemFunctionCallOutput v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemFunctionCallOutput,
-    RealtimeConversationItemTypeType3
+    RealtimeConversationItemType3
   >
   _f$type = Field('type', _$type);
-  static RealtimeConversationItemStatusStatus? _$status(
+  static RealtimeConversationItemStatus? _$status(
     RealtimeConversationItemFunctionCallOutput v,
   ) => v.status;
   static const Field<
     RealtimeConversationItemFunctionCallOutput,
-    RealtimeConversationItemStatusStatus
+    RealtimeConversationItemStatus
   >
   _f$status = Field('status', _$status);
   static String _$callId(RealtimeConversationItemFunctionCallOutput v) =>
@@ -804,8 +804,8 @@ abstract class RealtimeConversationItemFunctionCallOutputCopyWith<
   $R call({
     String? id,
     RealtimeConversationItemObjectObjectEnum? objectEnum,
-    RealtimeConversationItemTypeType3? type,
-    RealtimeConversationItemStatusStatus? status,
+    RealtimeConversationItemType3? type,
+    RealtimeConversationItemStatus? status,
     String? callId,
     String? output,
   });
@@ -836,7 +836,7 @@ class _RealtimeConversationItemFunctionCallOutputCopyWithImpl<$R, $Out>
   $R call({
     Object? id = $none,
     Object? objectEnum = $none,
-    RealtimeConversationItemTypeType3? type,
+    RealtimeConversationItemType3? type,
     Object? status = $none,
     String? callId,
     String? output,
@@ -888,7 +888,7 @@ class RealtimeConversationItemMcpApprovalResponseMapper
       RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeConversationItemTypeType4Mapper.ensureInitialized();
+      RealtimeConversationItemType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -896,12 +896,12 @@ class RealtimeConversationItemMcpApprovalResponseMapper
   @override
   final String id = 'RealtimeConversationItemMcpApprovalResponse';
 
-  static RealtimeConversationItemTypeType4 _$type(
+  static RealtimeConversationItemType4 _$type(
     RealtimeConversationItemMcpApprovalResponse v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMcpApprovalResponse,
-    RealtimeConversationItemTypeType4
+    RealtimeConversationItemType4
   >
   _f$type = Field('type', _$type);
   static String _$id(RealtimeConversationItemMcpApprovalResponse v) => v.id;
@@ -1053,7 +1053,7 @@ abstract class RealtimeConversationItemMcpApprovalResponseCopyWith<
     implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    RealtimeConversationItemTypeType4? type,
+    RealtimeConversationItemType4? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -1084,7 +1084,7 @@ class _RealtimeConversationItemMcpApprovalResponseCopyWithImpl<$R, $Out>
       RealtimeConversationItemMcpApprovalResponseMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeConversationItemTypeType4? type,
+    RealtimeConversationItemType4? type,
     String? id,
     String? approvalRequestId,
     bool? approve,
@@ -1138,7 +1138,7 @@ class RealtimeConversationItemMcpListToolsMapper
       RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeConversationItemTypeType5Mapper.ensureInitialized();
+      RealtimeConversationItemType5Mapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
     return _instance!;
@@ -1147,12 +1147,12 @@ class RealtimeConversationItemMcpListToolsMapper
   @override
   final String id = 'RealtimeConversationItemMcpListTools';
 
-  static RealtimeConversationItemTypeType5 _$type(
+  static RealtimeConversationItemType5 _$type(
     RealtimeConversationItemMcpListTools v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMcpListTools,
-    RealtimeConversationItemTypeType5
+    RealtimeConversationItemType5
   >
   _f$type = Field('type', _$type);
   static String? _$id(RealtimeConversationItemMcpListTools v) => v.id;
@@ -1289,7 +1289,7 @@ abstract class RealtimeConversationItemMcpListToolsCopyWith<
   get tools;
   @override
   $R call({
-    RealtimeConversationItemTypeType5? type,
+    RealtimeConversationItemType5? type,
     String? id,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -1328,7 +1328,7 @@ class _RealtimeConversationItemMcpListToolsCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RealtimeConversationItemTypeType5? type,
+    RealtimeConversationItemType5? type,
     Object? id = $none,
     String? serverLabel,
     List<McpListToolsTool>? tools,
@@ -1376,7 +1376,7 @@ class RealtimeConversationItemMcpCallMapper
       RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeConversationItemTypeType6Mapper.ensureInitialized();
+      RealtimeConversationItemType6Mapper.ensureInitialized();
       RealtimeConversationItemErrorUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -1385,12 +1385,12 @@ class RealtimeConversationItemMcpCallMapper
   @override
   final String id = 'RealtimeConversationItemMcpCall';
 
-  static RealtimeConversationItemTypeType6 _$type(
+  static RealtimeConversationItemType6 _$type(
     RealtimeConversationItemMcpCall v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMcpCall,
-    RealtimeConversationItemTypeType6
+    RealtimeConversationItemType6
   >
   _f$type = Field('type', _$type);
   static String _$id(RealtimeConversationItemMcpCall v) => v.id;
@@ -1555,7 +1555,7 @@ abstract class RealtimeConversationItemMcpCallCopyWith<
   get error;
   @override
   $R call({
-    RealtimeConversationItemTypeType6? type,
+    RealtimeConversationItemType6? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -1595,7 +1595,7 @@ class _RealtimeConversationItemMcpCallCopyWithImpl<$R, $Out>
   get error => $value.error?.copyWith.$chain((v) => call(error: v));
   @override
   $R call({
-    RealtimeConversationItemTypeType6? type,
+    RealtimeConversationItemType6? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -1658,7 +1658,7 @@ class RealtimeConversationItemMcpApprovalRequestMapper
       RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      RealtimeConversationItemTypeType7Mapper.ensureInitialized();
+      RealtimeConversationItemType7Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1666,12 +1666,12 @@ class RealtimeConversationItemMcpApprovalRequestMapper
   @override
   final String id = 'RealtimeConversationItemMcpApprovalRequest';
 
-  static RealtimeConversationItemTypeType7 _$type(
+  static RealtimeConversationItemType7 _$type(
     RealtimeConversationItemMcpApprovalRequest v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMcpApprovalRequest,
-    RealtimeConversationItemTypeType7
+    RealtimeConversationItemType7
   >
   _f$type = Field('type', _$type);
   static String _$id(RealtimeConversationItemMcpApprovalRequest v) => v.id;
@@ -1814,7 +1814,7 @@ abstract class RealtimeConversationItemMcpApprovalRequestCopyWith<
     implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    RealtimeConversationItemTypeType7? type,
+    RealtimeConversationItemType7? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -1845,7 +1845,7 @@ class _RealtimeConversationItemMcpApprovalRequestCopyWithImpl<$R, $Out>
       RealtimeConversationItemMcpApprovalRequestMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeConversationItemTypeType7? type,
+    RealtimeConversationItemType7? type,
     String? id,
     String? serverLabel,
     String? name,

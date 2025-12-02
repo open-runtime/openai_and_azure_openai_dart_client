@@ -16,7 +16,7 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
       MapperContainer.globals.use(_instance = FileSearchToolMapper._());
       RankingOptionsMapper.ensureInitialized();
       FiltersUnionMapper.ensureInitialized();
-      FileSearchToolTypeTypeMapper.ensureInitialized();
+      FileSearchToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -50,12 +50,12 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
     _$filters,
     opt: true,
   );
-  static FileSearchToolTypeType _$type(FileSearchTool v) => v.type;
-  static const Field<FileSearchTool, FileSearchToolTypeType> _f$type = Field(
+  static FileSearchToolType _$type(FileSearchTool v) => v.type;
+  static const Field<FileSearchTool, FileSearchToolType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FileSearchToolTypeType.fileSearch,
+    def: FileSearchToolType.fileSearch,
   );
 
   @override
@@ -153,7 +153,7 @@ abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
     int? maxNumResults,
     RankingOptions? rankingOptions,
     FiltersUnion? filters,
-    FileSearchToolTypeType? type,
+    FileSearchToolType? type,
   });
   FileSearchToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -188,7 +188,7 @@ class _FileSearchToolCopyWithImpl<$R, $Out>
     Object? maxNumResults = $none,
     Object? rankingOptions = $none,
     Object? filters = $none,
-    FileSearchToolTypeType? type,
+    FileSearchToolType? type,
   }) => $apply(
     FieldCopyWithData({
       if (vectorStoreIds != null) #vectorStoreIds: vectorStoreIds,

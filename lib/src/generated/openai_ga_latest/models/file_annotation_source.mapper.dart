@@ -14,7 +14,7 @@ class FileAnnotationSourceMapper extends ClassMapperBase<FileAnnotationSource> {
   static FileAnnotationSourceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileAnnotationSourceMapper._());
-      FileAnnotationSourceTypeTypeMapper.ensureInitialized();
+      FileAnnotationSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,14 +27,9 @@ class FileAnnotationSourceMapper extends ClassMapperBase<FileAnnotationSource> {
     'filename',
     _$filename,
   );
-  static FileAnnotationSourceTypeType _$type(FileAnnotationSource v) => v.type;
-  static const Field<FileAnnotationSource, FileAnnotationSourceTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: FileAnnotationSourceTypeType.file,
-  );
+  static FileAnnotationSourceType _$type(FileAnnotationSource v) => v.type;
+  static const Field<FileAnnotationSource, FileAnnotationSourceType> _f$type =
+      Field('type', _$type, opt: true, def: FileAnnotationSourceType.file);
 
   @override
   final MappableFields<FileAnnotationSource> fields = const {
@@ -123,7 +118,7 @@ abstract class FileAnnotationSourceCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? filename, FileAnnotationSourceTypeType? type});
+  $R call({String? filename, FileAnnotationSourceType? type});
   FileAnnotationSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,7 +133,7 @@ class _FileAnnotationSourceCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FileAnnotationSource> $mapper =
       FileAnnotationSourceMapper.ensureInitialized();
   @override
-  $R call({String? filename, FileAnnotationSourceTypeType? type}) => $apply(
+  $R call({String? filename, FileAnnotationSourceType? type}) => $apply(
     FieldCopyWithData({
       if (filename != null) #filename: filename,
       if (type != null) #type: type,

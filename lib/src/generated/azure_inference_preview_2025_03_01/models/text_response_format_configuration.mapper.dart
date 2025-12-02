@@ -92,7 +92,7 @@ class TextResponseFormatConfigurationTextMapper
       TextResponseFormatConfigurationMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      TextResponseFormatConfigurationTypeTypeMapper.ensureInitialized();
+      TextResponseFormatConfigurationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -100,12 +100,12 @@ class TextResponseFormatConfigurationTextMapper
   @override
   final String id = 'TextResponseFormatConfigurationText';
 
-  static TextResponseFormatConfigurationTypeType _$type(
+  static TextResponseFormatConfigurationType _$type(
     TextResponseFormatConfigurationText v,
   ) => v.type;
   static const Field<
     TextResponseFormatConfigurationText,
-    TextResponseFormatConfigurationTypeType
+    TextResponseFormatConfigurationType
   >
   _f$type = Field('type', _$type);
 
@@ -212,7 +212,7 @@ abstract class TextResponseFormatConfigurationTextCopyWith<
 >
     implements TextResponseFormatConfigurationCopyWith<$R, $In, $Out> {
   @override
-  $R call({TextResponseFormatConfigurationTypeType? type});
+  $R call({TextResponseFormatConfigurationType? type});
   TextResponseFormatConfigurationTextCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -235,7 +235,7 @@ class _TextResponseFormatConfigurationTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TextResponseFormatConfigurationText> $mapper =
       TextResponseFormatConfigurationTextMapper.ensureInitialized();
   @override
-  $R call({TextResponseFormatConfigurationTypeType? type}) =>
+  $R call({TextResponseFormatConfigurationType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   TextResponseFormatConfigurationText $make(CopyWithData data) =>
@@ -270,7 +270,7 @@ class TextResponseFormatConfigurationJsonSchemaMapper
       TextResponseFormatConfigurationMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      TextResponseFormatConfigurationTypeType2Mapper.ensureInitialized();
+      TextResponseFormatConfigurationType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -278,12 +278,12 @@ class TextResponseFormatConfigurationJsonSchemaMapper
   @override
   final String id = 'TextResponseFormatConfigurationJsonSchema';
 
-  static TextResponseFormatConfigurationTypeType2 _$type(
+  static TextResponseFormatConfigurationType2 _$type(
     TextResponseFormatConfigurationJsonSchema v,
   ) => v.type;
   static const Field<
     TextResponseFormatConfigurationJsonSchema,
-    TextResponseFormatConfigurationTypeType2
+    TextResponseFormatConfigurationType2
   >
   _f$type = Field('type', _$type);
   static String? _$description(TextResponseFormatConfigurationJsonSchema v) =>
@@ -425,7 +425,7 @@ abstract class TextResponseFormatConfigurationJsonSchemaCopyWith<
     implements TextResponseFormatConfigurationCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    TextResponseFormatConfigurationTypeType2? type,
+    TextResponseFormatConfigurationType2? type,
     String? description,
     String? name,
     dynamic schema,
@@ -455,7 +455,7 @@ class _TextResponseFormatConfigurationJsonSchemaCopyWithImpl<$R, $Out>
   $mapper = TextResponseFormatConfigurationJsonSchemaMapper.ensureInitialized();
   @override
   $R call({
-    TextResponseFormatConfigurationTypeType2? type,
+    TextResponseFormatConfigurationType2? type,
     Object? description = $none,
     Object? name = $none,
     Object? schema = $none,
@@ -506,7 +506,7 @@ class TextResponseFormatConfigurationJsonObjectMapper
       TextResponseFormatConfigurationMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      TextResponseFormatConfigurationTypeType3Mapper.ensureInitialized();
+      TextResponseFormatConfigurationType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -514,12 +514,12 @@ class TextResponseFormatConfigurationJsonObjectMapper
   @override
   final String id = 'TextResponseFormatConfigurationJsonObject';
 
-  static TextResponseFormatConfigurationTypeType3 _$type(
+  static TextResponseFormatConfigurationType3 _$type(
     TextResponseFormatConfigurationJsonObject v,
   ) => v.type;
   static const Field<
     TextResponseFormatConfigurationJsonObject,
-    TextResponseFormatConfigurationTypeType3
+    TextResponseFormatConfigurationType3
   >
   _f$type = Field('type', _$type);
 
@@ -633,7 +633,7 @@ abstract class TextResponseFormatConfigurationJsonObjectCopyWith<
 >
     implements TextResponseFormatConfigurationCopyWith<$R, $In, $Out> {
   @override
-  $R call({TextResponseFormatConfigurationTypeType3? type});
+  $R call({TextResponseFormatConfigurationType3? type});
   TextResponseFormatConfigurationJsonObjectCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -657,7 +657,7 @@ class _TextResponseFormatConfigurationJsonObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<TextResponseFormatConfigurationJsonObject>
   $mapper = TextResponseFormatConfigurationJsonObjectMapper.ensureInitialized();
   @override
-  $R call({TextResponseFormatConfigurationTypeType3? type}) =>
+  $R call({TextResponseFormatConfigurationType3? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   TextResponseFormatConfigurationJsonObject $make(CopyWithData data) =>

@@ -13,7 +13,7 @@ import 'run_object_incomplete_details.dart';
 import 'run_object_last_error.dart';
 import 'run_object_object_object_enum.dart';
 import 'run_object_required_action.dart';
-import 'run_object_status_status.dart';
+import 'run_object_status.dart';
 import 'run_object_tools_union.dart';
 import 'truncation_object.dart';
 
@@ -61,7 +61,7 @@ class RunObject with RunObjectMappable {
   final String threadId;
   @MappableField(key: 'assistant_id')
   final String assistantId;
-  final RunObjectStatusStatus status;
+  final RunObjectStatus status;
   @MappableField(key: 'required_action')
   final RunObjectRequiredAction? runObjectRequiredAction;
   @MappableField(key: 'last_error')

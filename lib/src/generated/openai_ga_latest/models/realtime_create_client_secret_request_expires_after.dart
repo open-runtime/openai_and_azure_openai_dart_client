@@ -4,18 +4,18 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_create_client_secret_request_expires_after_anchor_anchor.dart';
+import 'realtime_create_client_secret_request_expires_after_anchor.dart';
 
 part 'realtime_create_client_secret_request_expires_after.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCreateClientSecretRequestExpiresAfter with RealtimeCreateClientSecretRequestExpiresAfterMappable {
   const RealtimeCreateClientSecretRequestExpiresAfter({
-    this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor.createdAt,
+    this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt,
     this.seconds = 600,
   });
 
-  final RealtimeCreateClientSecretRequestExpiresAfterAnchorAnchor anchor;
+  final RealtimeCreateClientSecretRequestExpiresAfterAnchor anchor;
   final int seconds;
 
   static RealtimeCreateClientSecretRequestExpiresAfter fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretRequestExpiresAfterMapper.fromJson(json);

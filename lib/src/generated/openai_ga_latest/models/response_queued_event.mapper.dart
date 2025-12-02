@@ -14,7 +14,7 @@ class ResponseQueuedEventMapper extends ClassMapperBase<ResponseQueuedEvent> {
   static ResponseQueuedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseQueuedEventMapper._());
-      ResponseQueuedEventTypeTypeMapper.ensureInitialized();
+      ResponseQueuedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,8 +23,8 @@ class ResponseQueuedEventMapper extends ClassMapperBase<ResponseQueuedEvent> {
   @override
   final String id = 'ResponseQueuedEvent';
 
-  static ResponseQueuedEventTypeType _$type(ResponseQueuedEvent v) => v.type;
-  static const Field<ResponseQueuedEvent, ResponseQueuedEventTypeType> _f$type =
+  static ResponseQueuedEventType _$type(ResponseQueuedEvent v) => v.type;
+  static const Field<ResponseQueuedEvent, ResponseQueuedEventType> _f$type =
       Field('type', _$type);
   static ResponseModel _$response(ResponseQueuedEvent v) => v.response;
   static const Field<ResponseQueuedEvent, ResponseModel> _f$response = Field(
@@ -129,7 +129,7 @@ abstract class ResponseQueuedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   $R call({
-    ResponseQueuedEventTypeType? type,
+    ResponseQueuedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   });
@@ -151,7 +151,7 @@ class _ResponseQueuedEventCopyWithImpl<$R, $Out>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
   $R call({
-    ResponseQueuedEventTypeType? type,
+    ResponseQueuedEventType? type,
     ResponseModel? response,
     int? sequenceNumber,
   }) => $apply(

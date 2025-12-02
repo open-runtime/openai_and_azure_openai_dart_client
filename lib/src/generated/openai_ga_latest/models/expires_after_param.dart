@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'expires_after_param_anchor_anchor.dart';
+import 'expires_after_param_anchor.dart';
 
 part 'expires_after_param.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'expires_after_param.mapper.dart';
 class ExpiresAfterParam with ExpiresAfterParamMappable {
   const ExpiresAfterParam({
     required this.seconds,
-    this.anchor = ExpiresAfterParamAnchorAnchor.createdAt,
+    this.anchor = ExpiresAfterParamAnchor.createdAt,
   });
 
   final int seconds;
-  final ExpiresAfterParamAnchorAnchor anchor;
+  final ExpiresAfterParamAnchor anchor;
 
   static ExpiresAfterParam fromJson(Map<String, dynamic> json) => ExpiresAfterParamMapper.fromJson(json);
 

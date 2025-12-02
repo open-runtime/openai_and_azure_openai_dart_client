@@ -7,9 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'item_resource.dart';
 import 'output_content.dart';
 import 'output_item.dart';
-import 'output_message_role_role.dart';
-import 'output_message_status_status.dart';
-import 'output_message_type_type.dart';
+import 'output_message_role.dart';
+import 'output_message_status.dart';
+import 'output_message_type.dart';
 
 part 'output_message.mapper.dart';
 
@@ -26,10 +26,10 @@ class OutputMessage with OutputMessageMappable {
   });
 
   final String id;
-  final OutputMessageTypeType type;
-  final OutputMessageRoleRole role;
+  final OutputMessageType type;
+  final OutputMessageRole role;
   final List<OutputContent> content;
-  final OutputMessageStatusStatus status;
+  final OutputMessageStatus status;
 
   static OutputMessage fromJson(Map<String, dynamic> json) => OutputMessageMapper.fromJson(json);
 

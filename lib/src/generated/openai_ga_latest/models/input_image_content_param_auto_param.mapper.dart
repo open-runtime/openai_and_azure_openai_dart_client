@@ -18,7 +18,7 @@ class InputImageContentParamAutoParamMapper
         _instance = InputImageContentParamAutoParamMapper._(),
       );
       DetailEnumMapper.ensureInitialized();
-      InputImageContentParamAutoParamTypeTypeMapper.ensureInitialized();
+      InputImageContentParamAutoParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,18 +39,18 @@ class InputImageContentParamAutoParamMapper
   static DetailEnum? _$detail(InputImageContentParamAutoParam v) => v.detail;
   static const Field<InputImageContentParamAutoParam, DetailEnum> _f$detail =
       Field('detail', _$detail, opt: true);
-  static InputImageContentParamAutoParamTypeType _$type(
+  static InputImageContentParamAutoParamType _$type(
     InputImageContentParamAutoParam v,
   ) => v.type;
   static const Field<
     InputImageContentParamAutoParam,
-    InputImageContentParamAutoParamTypeType
+    InputImageContentParamAutoParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: InputImageContentParamAutoParamTypeType.inputImage,
+    def: InputImageContentParamAutoParamType.inputImage,
   );
 
   @override
@@ -156,7 +156,7 @@ abstract class InputImageContentParamAutoParamCopyWith<
     String? imageUrl,
     String? fileId,
     DetailEnum? detail,
-    InputImageContentParamAutoParamTypeType? type,
+    InputImageContentParamAutoParamType? type,
   });
   InputImageContentParamAutoParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -185,7 +185,7 @@ class _InputImageContentParamAutoParamCopyWithImpl<$R, $Out>
     Object? imageUrl = $none,
     Object? fileId = $none,
     Object? detail = $none,
-    InputImageContentParamAutoParamTypeType? type,
+    InputImageContentParamAutoParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (imageUrl != $none) #imageUrl: imageUrl,

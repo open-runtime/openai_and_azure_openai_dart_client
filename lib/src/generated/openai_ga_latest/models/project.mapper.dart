@@ -15,7 +15,7 @@ class ProjectMapper extends ClassMapperBase<Project> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ProjectMapper._());
       ProjectObjectObjectEnumMapper.ensureInitialized();
-      ProjectStatusStatusMapper.ensureInitialized();
+      ProjectStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -39,8 +39,8 @@ class ProjectMapper extends ClassMapperBase<Project> {
     _$createdAt,
     key: r'created_at',
   );
-  static ProjectStatusStatus _$status(Project v) => v.status;
-  static const Field<Project, ProjectStatusStatus> _f$status = Field(
+  static ProjectStatus _$status(Project v) => v.status;
+  static const Field<Project, ProjectStatus> _f$status = Field(
     'status',
     _$status,
   );
@@ -139,7 +139,7 @@ abstract class ProjectCopyWith<$R, $In extends Project, $Out>
     ProjectObjectObjectEnum? objectEnum,
     String? name,
     int? createdAt,
-    ProjectStatusStatus? status,
+    ProjectStatus? status,
     int? archivedAt,
   });
   ProjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -159,7 +159,7 @@ class _ProjectCopyWithImpl<$R, $Out>
     ProjectObjectObjectEnum? objectEnum,
     String? name,
     int? createdAt,
-    ProjectStatusStatus? status,
+    ProjectStatus? status,
     Object? archivedAt = $none,
   }) => $apply(
     FieldCopyWithData({

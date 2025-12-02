@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'file_search_tool_filters_union.dart';
 import 'file_search_tool_ranking_options.dart';
-import 'file_search_tool_type_type.dart';
+import 'file_search_tool_type.dart';
 import 'tool.dart';
 
 part 'file_search_tool.mapper.dart';
@@ -24,7 +24,7 @@ class FileSearchTool with FileSearchToolMappable {
     this.fileSearchToolRankingOptions,
   });
 
-  final FileSearchToolTypeType type;
+  final FileSearchToolType type;
   @MappableField(key: 'vector_store_ids')
   final List<String> vectorStoreIds;
   @MappableField(key: 'max_num_results')

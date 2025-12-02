@@ -17,7 +17,7 @@ class AssistantsApiResponseFormatMapper
       MapperContainer.globals.use(
         _instance = AssistantsApiResponseFormatMapper._(),
       );
-      AssistantsApiResponseFormatTypeTypeMapper.ensureInitialized();
+      AssistantsApiResponseFormatTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,18 @@ class AssistantsApiResponseFormatMapper
   @override
   final String id = 'AssistantsApiResponseFormat';
 
-  static AssistantsApiResponseFormatTypeType _$type(
+  static AssistantsApiResponseFormatType _$type(
     AssistantsApiResponseFormat v,
   ) => v.type;
   static const Field<
     AssistantsApiResponseFormat,
-    AssistantsApiResponseFormatTypeType
+    AssistantsApiResponseFormatType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: AssistantsApiResponseFormatTypeType.text,
+    def: AssistantsApiResponseFormatType.text,
   );
 
   @override
@@ -126,7 +126,7 @@ abstract class AssistantsApiResponseFormatCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({AssistantsApiResponseFormatTypeType? type});
+  $R call({AssistantsApiResponseFormatType? type});
   AssistantsApiResponseFormatCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -150,7 +150,7 @@ class _AssistantsApiResponseFormatCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AssistantsApiResponseFormat> $mapper =
       AssistantsApiResponseFormatMapper.ensureInitialized();
   @override
-  $R call({AssistantsApiResponseFormatTypeType? type}) =>
+  $R call({AssistantsApiResponseFormatType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AssistantsApiResponseFormat $make(CopyWithData data) =>

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'closed_status_type_type.dart';
+import 'closed_status_type.dart';
 
 part 'closed_status.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'closed_status.mapper.dart';
 class ClosedStatus with ClosedStatusMappable {
   const ClosedStatus({
     required this.reason,
-    this.type = ClosedStatusTypeType.closed,
+    this.type = ClosedStatusType.closed,
   });
 
   final String? reason;
-  final ClosedStatusTypeType type;
+  final ClosedStatusType type;
 
   static ClosedStatus fromJson(Map<String, dynamic> json) => ClosedStatusMapper.fromJson(json);
 

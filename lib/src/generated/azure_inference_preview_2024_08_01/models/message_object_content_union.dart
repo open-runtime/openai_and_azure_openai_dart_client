@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_content_image_file_object.dart';
 import 'message_content_image_file_object_image_file.dart';
-import 'message_content_image_file_object_type_type.dart';
+import 'message_content_image_file_object_type.dart';
 import 'message_content_text_object.dart';
 import 'message_content_text_object_text.dart';
-import 'message_content_text_object_type_type.dart';
+import 'message_content_text_object_type.dart';
 
 part 'message_object_content_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension MessageObjectContentUnionDeserializer on MessageObjectContentUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_file')
 class MessageObjectContentUnionImageFile extends MessageObjectContentUnion with MessageObjectContentUnionImageFileMappable {
-  final MessageContentImageFileObjectTypeType type;
+  final MessageContentImageFileObjectType type;
   @MappableField(key: 'image_file')
   final MessageContentImageFileObjectImageFile messageContentImageFileObjectImageFile;
 
@@ -60,7 +60,7 @@ class MessageObjectContentUnionImageFile extends MessageObjectContentUnion with 
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class MessageObjectContentUnionText extends MessageObjectContentUnion with MessageObjectContentUnionTextMappable {
-  final MessageContentTextObjectTypeType type;
+  final MessageContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageContentTextObjectText messageContentTextObjectText;
 

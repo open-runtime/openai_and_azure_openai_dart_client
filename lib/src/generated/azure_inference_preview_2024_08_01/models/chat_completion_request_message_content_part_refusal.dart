@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_assistant_message_content_part.dart';
-import 'chat_completion_request_message_content_part_refusal_type_type.dart';
+import 'chat_completion_request_message_content_part_refusal_type.dart';
 
 part 'chat_completion_request_message_content_part_refusal.mapper.dart';
 
@@ -16,7 +16,7 @@ class ChatCompletionRequestMessageContentPartRefusal with ChatCompletionRequestM
     required this.refusal,
   });
 
-  final ChatCompletionRequestMessageContentPartRefusalTypeType type;
+  final ChatCompletionRequestMessageContentPartRefusalType type;
   final String refusal;
 
   static ChatCompletionRequestMessageContentPartRefusal fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartRefusalMapper.fromJson(json);

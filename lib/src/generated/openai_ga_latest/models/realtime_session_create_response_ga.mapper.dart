@@ -18,10 +18,10 @@ class RealtimeSessionCreateResponseGaMapper
         _instance = RealtimeSessionCreateResponseGaMapper._(),
       );
       RealtimeSessionCreateResponseGaClientSecretMapper.ensureInitialized();
-      RealtimeSessionCreateResponseGaTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaTypeMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaModelUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaAudioMapper.ensureInitialized();
-      RealtimeSessionCreateResponseGaIncludeIncludeMapper.ensureInitialized();
+      RealtimeSessionCreateResponseGaIncludeMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaToolsUnionMapper.ensureInitialized();
       RealtimeSessionCreateResponseGaMaxOutputTokensUnionMapper.ensureInitialized();
@@ -49,12 +49,12 @@ class RealtimeSessionCreateResponseGaMapper
     _$realtimeSessionCreateResponseGaClientSecret,
     key: r'client_secret',
   );
-  static RealtimeSessionCreateResponseGaTypeType _$type(
+  static RealtimeSessionCreateResponseGaType _$type(
     RealtimeSessionCreateResponseGa v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateResponseGa,
-    RealtimeSessionCreateResponseGaTypeType
+    RealtimeSessionCreateResponseGaType
   >
   _f$type = Field('type', _$type);
   static RealtimeSessionCreateResponseGaModelUnion? _$model(
@@ -87,12 +87,12 @@ class RealtimeSessionCreateResponseGaMapper
     key: r'audio',
     opt: true,
   );
-  static List<RealtimeSessionCreateResponseGaIncludeInclude>? _$include(
+  static List<RealtimeSessionCreateResponseGaInclude>? _$include(
     RealtimeSessionCreateResponseGa v,
   ) => v.include;
   static const Field<
     RealtimeSessionCreateResponseGa,
-    List<RealtimeSessionCreateResponseGaIncludeInclude>
+    List<RealtimeSessionCreateResponseGaInclude>
   >
   _f$include = Field('include', _$include, opt: true);
   static RealtimeSessionCreateResponseGaTracingUnion? _$tracing(
@@ -308,11 +308,11 @@ abstract class RealtimeSessionCreateResponseGaCopyWith<
   get realtimeSessionCreateResponseGaAudio;
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaIncludeInclude,
+    RealtimeSessionCreateResponseGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateResponseGaIncludeInclude,
-      RealtimeSessionCreateResponseGaIncludeInclude
+      RealtimeSessionCreateResponseGaInclude,
+      RealtimeSessionCreateResponseGaInclude
     >
   >?
   get include;
@@ -364,11 +364,11 @@ abstract class RealtimeSessionCreateResponseGaCopyWith<
   $R call({
     RealtimeSessionCreateResponseGaClientSecret?
     realtimeSessionCreateResponseGaClientSecret,
-    RealtimeSessionCreateResponseGaTypeType? type,
+    RealtimeSessionCreateResponseGaType? type,
     RealtimeSessionCreateResponseGaModelUnion? model,
     String? instructions,
     RealtimeSessionCreateResponseGaAudio? realtimeSessionCreateResponseGaAudio,
-    List<RealtimeSessionCreateResponseGaIncludeInclude>? include,
+    List<RealtimeSessionCreateResponseGaInclude>? include,
     RealtimeSessionCreateResponseGaTracingUnion? tracing,
     List<RealtimeSessionCreateResponseGaToolsUnion>? tools,
     RealtimeSessionCreateResponseGaMaxOutputTokensUnion? maxOutputTokens,
@@ -430,11 +430,11 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateResponseGaIncludeInclude,
+    RealtimeSessionCreateResponseGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateResponseGaIncludeInclude,
-      RealtimeSessionCreateResponseGaIncludeInclude
+      RealtimeSessionCreateResponseGaInclude,
+      RealtimeSessionCreateResponseGaInclude
     >
   >?
   get include => $value.include != null
@@ -514,7 +514,7 @@ class _RealtimeSessionCreateResponseGaCopyWithImpl<$R, $Out>
   $R call({
     RealtimeSessionCreateResponseGaClientSecret?
     realtimeSessionCreateResponseGaClientSecret,
-    RealtimeSessionCreateResponseGaTypeType? type,
+    RealtimeSessionCreateResponseGaType? type,
     Object? model = $none,
     Object? instructions = $none,
     Object? realtimeSessionCreateResponseGaAudio = $none,

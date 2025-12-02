@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_function_type_type.dart';
+import 'tool_choice_function_type.dart';
 
 part 'tool_choice_function.mapper.dart';
 
@@ -17,7 +17,7 @@ class ToolChoiceFunction with ToolChoiceFunctionMappable {
     required this.name,
   });
 
-  final ToolChoiceFunctionTypeType type;
+  final ToolChoiceFunctionType type;
   final String name;
 
   static ToolChoiceFunction fromJson(Map<String, dynamic> json) => ToolChoiceFunctionMapper.fromJson(json);

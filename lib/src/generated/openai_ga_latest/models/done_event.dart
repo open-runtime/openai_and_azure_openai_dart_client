@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'done_event_data_data.dart';
-import 'done_event_event_event.dart';
+import 'done_event_data.dart';
+import 'done_event_event.dart';
 
 part 'done_event.mapper.dart';
 
@@ -17,8 +17,8 @@ class DoneEvent with DoneEventMappable {
     required this.data,
   });
 
-  final DoneEventEventEvent event;
-  final DoneEventDataData data;
+  final DoneEventEvent event;
+  final DoneEventData data;
 
   static DoneEvent fromJson(Map<String, dynamic> json) => DoneEventMapper.fromJson(json);
 

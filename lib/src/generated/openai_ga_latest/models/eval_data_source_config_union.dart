@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_custom_data_source_config.dart';
-import 'eval_custom_data_source_config_type_type.dart';
+import 'eval_custom_data_source_config_type.dart';
 import 'eval_logs_data_source_config.dart';
-import 'eval_logs_data_source_config_type_type.dart';
+import 'eval_logs_data_source_config_type.dart';
 import 'eval_stored_completions_data_source_config.dart';
-import 'eval_stored_completions_data_source_config_type_type.dart';
+import 'eval_stored_completions_data_source_config_type.dart';
 import 'metadata.dart';
 
 part 'eval_data_source_config_union.mapper.dart';
@@ -52,7 +52,7 @@ extension EvalDataSourceConfigUnionDeserializer on EvalDataSourceConfigUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class EvalDataSourceConfigUnionCustom extends EvalDataSourceConfigUnion with EvalDataSourceConfigUnionCustomMappable {
-  final EvalCustomDataSourceConfigTypeType type;
+  final EvalCustomDataSourceConfigType type;
   final dynamic schema;
 
   const EvalDataSourceConfigUnionCustom({
@@ -63,7 +63,7 @@ class EvalDataSourceConfigUnionCustom extends EvalDataSourceConfigUnion with Eva
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class EvalDataSourceConfigUnionLogs extends EvalDataSourceConfigUnion with EvalDataSourceConfigUnionLogsMappable {
-  final EvalLogsDataSourceConfigTypeType type;
+  final EvalLogsDataSourceConfigType type;
   final Metadata? metadata;
   final dynamic schema;
 
@@ -76,7 +76,7 @@ class EvalDataSourceConfigUnionLogs extends EvalDataSourceConfigUnion with EvalD
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
 class EvalDataSourceConfigUnionStoredCompletions extends EvalDataSourceConfigUnion with EvalDataSourceConfigUnionStoredCompletionsMappable {
-  final EvalStoredCompletionsDataSourceConfigTypeType type;
+  final EvalStoredCompletionsDataSourceConfigType type;
   final Metadata? metadata;
   final dynamic schema;
 

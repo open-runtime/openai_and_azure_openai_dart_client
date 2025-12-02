@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'apply_patch_call_status_param.dart';
 import 'apply_patch_operation_param.dart';
-import 'apply_patch_tool_call_item_param_type_type.dart';
+import 'apply_patch_tool_call_item_param_type.dart';
 
 part 'apply_patch_tool_call_item_param.mapper.dart';
 
@@ -18,7 +18,7 @@ class ApplyPatchToolCallItemParam with ApplyPatchToolCallItemParamMappable {
     required this.status,
     required this.operation,
     this.id,
-    this.type = ApplyPatchToolCallItemParamTypeType.applyPatchCall,
+    this.type = ApplyPatchToolCallItemParamType.applyPatchCall,
   });
 
   @MappableField(key: 'call_id')
@@ -26,7 +26,7 @@ class ApplyPatchToolCallItemParam with ApplyPatchToolCallItemParamMappable {
   final ApplyPatchCallStatusParam status;
   final ApplyPatchOperationParam operation;
   final String? id;
-  final ApplyPatchToolCallItemParamTypeType type;
+  final ApplyPatchToolCallItemParamType type;
 
   static ApplyPatchToolCallItemParam fromJson(Map<String, dynamic> json) => ApplyPatchToolCallItemParamMapper.fromJson(json);
 

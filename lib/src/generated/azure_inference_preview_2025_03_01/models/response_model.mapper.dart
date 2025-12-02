@@ -18,12 +18,12 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
       ResponseErrorMapper.ensureInitialized();
       ResponseModelIncompleteDetailsMapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
-      ResponsePropertiesTruncationTruncationMapper.ensureInitialized();
+      ResponsePropertiesTruncationMapper.ensureInitialized();
       ReasoningMapper.ensureInitialized();
       ResponsePropertiesTextMapper.ensureInitialized();
       ToolMapper.ensureInitialized();
       ResponsePropertiesToolChoiceUnionMapper.ensureInitialized();
-      ResponseModelStatusStatusMapper.ensureInitialized();
+      ResponseModelStatusMapper.ensureInitialized();
       ResponseUsageMapper.ensureInitialized();
     }
     return _instance!;
@@ -78,15 +78,14 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     opt: true,
     def: 1,
   );
-  static ResponsePropertiesTruncationTruncation? _$truncation(
-    ResponseModel v,
-  ) => v.truncation;
-  static const Field<ResponseModel, ResponsePropertiesTruncationTruncation>
+  static ResponsePropertiesTruncation? _$truncation(ResponseModel v) =>
+      v.truncation;
+  static const Field<ResponseModel, ResponsePropertiesTruncation>
   _f$truncation = Field(
     'truncation',
     _$truncation,
     opt: true,
-    def: ResponsePropertiesTruncationTruncation.disabled,
+    def: ResponsePropertiesTruncation.disabled,
   );
   static bool _$parallelToolCalls(ResponseModel v) => v.parallelToolCalls;
   static const Field<ResponseModel, bool> _f$parallelToolCalls = Field(
@@ -164,9 +163,12 @@ class ResponseModelMapper extends ClassMapperBase<ResponseModel> {
     key: r'tool_choice',
     opt: true,
   );
-  static ResponseModelStatusStatus? _$status(ResponseModel v) => v.status;
-  static const Field<ResponseModel, ResponseModelStatusStatus> _f$status =
-      Field('status', _$status, opt: true);
+  static ResponseModelStatus? _$status(ResponseModel v) => v.status;
+  static const Field<ResponseModel, ResponseModelStatus> _f$status = Field(
+    'status',
+    _$status,
+    opt: true,
+  );
   static String? _$outputText(ResponseModel v) => v.outputText;
   static const Field<ResponseModel, String> _f$outputText = Field(
     'outputText',
@@ -339,7 +341,7 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     List<OutputItem>? output,
     num? temperature,
     num? topP,
-    ResponsePropertiesTruncationTruncation? truncation,
+    ResponsePropertiesTruncation? truncation,
     bool? parallelToolCalls,
     String? model,
     Map<String, String>? metadata,
@@ -351,7 +353,7 @@ abstract class ResponseModelCopyWith<$R, $In extends ResponseModel, $Out>
     ResponsePropertiesText? responsePropertiesText,
     List<Tool>? tools,
     ResponsePropertiesToolChoiceUnion? toolChoice,
-    ResponseModelStatusStatus? status,
+    ResponseModelStatus? status,
     String? outputText,
     ResponseUsage? usage,
   });

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_fine_tuning_job_cancelled_data.dart';
 import 'webhook_fine_tuning_job_cancelled_object_object_enum.dart';
-import 'webhook_fine_tuning_job_cancelled_type_type.dart';
+import 'webhook_fine_tuning_job_cancelled_type.dart';
 
 part 'webhook_fine_tuning_job_cancelled.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookFineTuningJobCancelled with WebhookFineTuningJobCancelledMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookFineTuningJobCancelledData webhookFineTuningJobCancelledData;
-  final WebhookFineTuningJobCancelledTypeType type;
+  final WebhookFineTuningJobCancelledType type;
   @MappableField(key: 'object')
   final WebhookFineTuningJobCancelledObjectObjectEnum? objectEnum;
 

@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'webhook_batch_expired_data.dart';
 import 'webhook_batch_expired_object_object_enum.dart';
-import 'webhook_batch_expired_type_type.dart';
+import 'webhook_batch_expired_type.dart';
 
 part 'webhook_batch_expired.mapper.dart';
 
@@ -27,7 +27,7 @@ class WebhookBatchExpired with WebhookBatchExpiredMappable {
   final String id;
   @MappableField(key: 'data')
   final WebhookBatchExpiredData webhookBatchExpiredData;
-  final WebhookBatchExpiredTypeType type;
+  final WebhookBatchExpiredType type;
   @MappableField(key: 'object')
   final WebhookBatchExpiredObjectObjectEnum? objectEnum;
 

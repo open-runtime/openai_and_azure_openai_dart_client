@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_audio_transcript_done_event_type_type.dart';
+import 'response_audio_transcript_done_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_audio_transcript_done_event.mapper.dart';
@@ -17,7 +17,7 @@ class ResponseAudioTranscriptDoneEvent with ResponseAudioTranscriptDoneEventMapp
     required this.sequenceNumber,
   });
 
-  final ResponseAudioTranscriptDoneEventTypeType type;
+  final ResponseAudioTranscriptDoneEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 

@@ -17,7 +17,7 @@ class ResponseFormatTextGrammarMapper
       MapperContainer.globals.use(
         _instance = ResponseFormatTextGrammarMapper._(),
       );
-      ResponseFormatTextGrammarTypeTypeMapper.ensureInitialized();
+      ResponseFormatTextGrammarTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class ResponseFormatTextGrammarMapper
   @override
   final String id = 'ResponseFormatTextGrammar';
 
-  static ResponseFormatTextGrammarTypeType _$type(
-    ResponseFormatTextGrammar v,
-  ) => v.type;
-  static const Field<
-    ResponseFormatTextGrammar,
-    ResponseFormatTextGrammarTypeType
-  >
+  static ResponseFormatTextGrammarType _$type(ResponseFormatTextGrammar v) =>
+      v.type;
+  static const Field<ResponseFormatTextGrammar, ResponseFormatTextGrammarType>
   _f$type = Field('type', _$type);
   static String _$grammar(ResponseFormatTextGrammar v) => v.grammar;
   static const Field<ResponseFormatTextGrammar, String> _f$grammar = Field(
@@ -130,7 +126,7 @@ abstract class ResponseFormatTextGrammarCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseFormatTextGrammarTypeType? type, String? grammar});
+  $R call({ResponseFormatTextGrammarType? type, String? grammar});
   ResponseFormatTextGrammarCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -146,7 +142,7 @@ class _ResponseFormatTextGrammarCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseFormatTextGrammar> $mapper =
       ResponseFormatTextGrammarMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatTextGrammarTypeType? type, String? grammar}) => $apply(
+  $R call({ResponseFormatTextGrammarType? type, String? grammar}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (grammar != null) #grammar: grammar,

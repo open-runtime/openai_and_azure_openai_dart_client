@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_tool_call_object_function.dart';
-import 'run_tool_call_object_type_type.dart';
+import 'run_tool_call_object_type.dart';
 
 part 'run_tool_call_object.mapper.dart';
 
@@ -19,7 +19,7 @@ class RunToolCallObject with RunToolCallObjectMappable {
   });
 
   final String id;
-  final RunToolCallObjectTypeType type;
+  final RunToolCallObjectType type;
   @MappableField(key: 'function')
   final RunToolCallObjectFunction runToolCallObjectFunction;
 

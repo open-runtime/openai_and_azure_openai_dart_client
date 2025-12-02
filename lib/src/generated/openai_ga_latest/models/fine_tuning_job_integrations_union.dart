@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'fine_tuning_integration.dart';
-import 'fine_tuning_integration_type_type.dart';
+import 'fine_tuning_integration_type.dart';
 import 'fine_tuning_integration_wandb.dart';
 
 part 'fine_tuning_job_integrations_union.mapper.dart';
@@ -42,7 +42,7 @@ extension FineTuningJobIntegrationsUnionDeserializer on FineTuningJobIntegration
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'wandb')
 class FineTuningJobIntegrationsUnionWandb extends FineTuningJobIntegrationsUnion with FineTuningJobIntegrationsUnionWandbMappable {
-  final FineTuningIntegrationTypeType type;
+  final FineTuningIntegrationType type;
   @MappableField(key: 'wandb')
   final FineTuningIntegrationWandb fineTuningIntegrationWandb;
 

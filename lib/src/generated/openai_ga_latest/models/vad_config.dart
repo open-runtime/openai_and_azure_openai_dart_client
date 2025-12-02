@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'vad_config_type_type.dart';
+import 'vad_config_type.dart';
 
 part 'vad_config.mapper.dart';
 
@@ -17,7 +17,7 @@ class VadConfig with VadConfigMappable {
     this.threshold = 0.5,
   });
 
-  final VadConfigTypeType type;
+  final VadConfigType type;
   @MappableField(key: 'prefix_padding_ms')
   final int prefixPaddingMs;
   @MappableField(key: 'silence_duration_ms')

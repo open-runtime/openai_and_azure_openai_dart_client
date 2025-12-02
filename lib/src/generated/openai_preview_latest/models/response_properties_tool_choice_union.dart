@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_function_type_type.dart';
-import 'tool_choice_types_type_type.dart';
+import 'tool_choice_function_type.dart';
+import 'tool_choice_types_type.dart';
 import 'tool_choice_types.dart';
 import 'tool_choice_function.dart';
 
@@ -43,7 +43,7 @@ extension ResponsePropertiesToolChoiceUnionDeserializer on ResponsePropertiesToo
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponsePropertiesToolChoiceUnionToolChoiceTypes extends ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionToolChoiceTypesMappable {
-  final ToolChoiceTypesTypeType type;
+  final ToolChoiceTypesType type;
 
   const ResponsePropertiesToolChoiceUnionToolChoiceTypes({
     required this.type,
@@ -52,7 +52,7 @@ class ResponsePropertiesToolChoiceUnionToolChoiceTypes extends ResponsePropertie
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponsePropertiesToolChoiceUnionToolChoiceFunction extends ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionToolChoiceFunctionMappable {
-  final ToolChoiceFunctionTypeType type;
+  final ToolChoiceFunctionType type;
   final String name;
 
   const ResponsePropertiesToolChoiceUnionToolChoiceFunction({

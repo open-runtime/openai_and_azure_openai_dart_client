@@ -17,7 +17,7 @@ class ResponseStreamEventPartMapper
       MapperContainer.globals.use(
         _instance = ResponseStreamEventPartMapper._(),
       );
-      ResponseStreamEventPartTypeTypeMapper.ensureInitialized();
+      ResponseStreamEventPartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseStreamEventPartMapper
   @override
   final String id = 'ResponseStreamEventPart';
 
-  static ResponseStreamEventPartTypeType _$type(ResponseStreamEventPart v) =>
+  static ResponseStreamEventPartType _$type(ResponseStreamEventPart v) =>
       v.type;
-  static const Field<ResponseStreamEventPart, ResponseStreamEventPartTypeType>
+  static const Field<ResponseStreamEventPart, ResponseStreamEventPartType>
   _f$type = Field('type', _$type);
   static String _$text(ResponseStreamEventPart v) => v.text;
   static const Field<ResponseStreamEventPart, String> _f$text = Field(
@@ -122,7 +122,7 @@ abstract class ResponseStreamEventPartCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseStreamEventPartTypeType? type, String? text});
+  $R call({ResponseStreamEventPartType? type, String? text});
   ResponseStreamEventPartCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,7 +138,7 @@ class _ResponseStreamEventPartCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseStreamEventPart> $mapper =
       ResponseStreamEventPartMapper.ensureInitialized();
   @override
-  $R call({ResponseStreamEventPartTypeType? type, String? text}) => $apply(
+  $R call({ResponseStreamEventPartType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,

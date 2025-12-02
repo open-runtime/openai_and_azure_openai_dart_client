@@ -1,0 +1,25 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, unused_import, invalid_annotation_target, unnecessary_import
+
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'realtime_transcription_session_create_response_ga_include.mapper.dart';
+
+@MappableEnum(defaultValue: 'unknown')
+enum RealtimeTranscriptionSessionCreateResponseGaInclude {
+  /// Incorrect name has been replaced. Original name: `item.input_audio_transcription.logprobs`.
+  @MappableValue('item.input_audio_transcription.logprobs') 
+  undefined0,
+
+  @MappableValue('unknown') 
+  unknown;
+
+  String toJson() => toValue().toString();
+
+  @override
+  String toString() => toValue().toString();
+
+  /// Returns all defined enum values excluding the unknown value.
+  static List<RealtimeTranscriptionSessionCreateResponseGaInclude> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateResponseGaInclude.unknown).toList();
+}

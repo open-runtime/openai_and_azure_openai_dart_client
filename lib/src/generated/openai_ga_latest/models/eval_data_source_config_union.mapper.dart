@@ -90,7 +90,7 @@ class EvalDataSourceConfigUnionCustomMapper
       EvalDataSourceConfigUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      EvalCustomDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalCustomDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -98,12 +98,12 @@ class EvalDataSourceConfigUnionCustomMapper
   @override
   final String id = 'EvalDataSourceConfigUnionCustom';
 
-  static EvalCustomDataSourceConfigTypeType _$type(
+  static EvalCustomDataSourceConfigType _$type(
     EvalDataSourceConfigUnionCustom v,
   ) => v.type;
   static const Field<
     EvalDataSourceConfigUnionCustom,
-    EvalCustomDataSourceConfigTypeType
+    EvalCustomDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static dynamic _$schema(EvalDataSourceConfigUnionCustom v) => v.schema;
@@ -214,7 +214,7 @@ abstract class EvalDataSourceConfigUnionCustomCopyWith<
 >
     implements EvalDataSourceConfigUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({EvalCustomDataSourceConfigTypeType? type, dynamic schema});
+  $R call({EvalCustomDataSourceConfigType? type, dynamic schema});
   EvalDataSourceConfigUnionCustomCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -238,7 +238,7 @@ class _EvalDataSourceConfigUnionCustomCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EvalDataSourceConfigUnionCustom> $mapper =
       EvalDataSourceConfigUnionCustomMapper.ensureInitialized();
   @override
-  $R call({EvalCustomDataSourceConfigTypeType? type, Object? schema = $none}) =>
+  $R call({EvalCustomDataSourceConfigType? type, Object? schema = $none}) =>
       $apply(
         FieldCopyWithData({
           if (type != null) #type: type,
@@ -279,7 +279,7 @@ class EvalDataSourceConfigUnionLogsMapper
       EvalDataSourceConfigUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      EvalLogsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalLogsDataSourceConfigTypeMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
     }
     return _instance!;
@@ -288,12 +288,11 @@ class EvalDataSourceConfigUnionLogsMapper
   @override
   final String id = 'EvalDataSourceConfigUnionLogs';
 
-  static EvalLogsDataSourceConfigTypeType _$type(
-    EvalDataSourceConfigUnionLogs v,
-  ) => v.type;
+  static EvalLogsDataSourceConfigType _$type(EvalDataSourceConfigUnionLogs v) =>
+      v.type;
   static const Field<
     EvalDataSourceConfigUnionLogs,
-    EvalLogsDataSourceConfigTypeType
+    EvalLogsDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static Metadata? _$metadata(EvalDataSourceConfigUnionLogs v) => v.metadata;
@@ -409,7 +408,7 @@ abstract class EvalDataSourceConfigUnionLogsCopyWith<
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   @override
   $R call({
-    EvalLogsDataSourceConfigTypeType? type,
+    EvalLogsDataSourceConfigType? type,
     Metadata? metadata,
     dynamic schema,
   });
@@ -440,7 +439,7 @@ class _EvalDataSourceConfigUnionLogsCopyWithImpl<$R, $Out>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
   $R call({
-    EvalLogsDataSourceConfigTypeType? type,
+    EvalLogsDataSourceConfigType? type,
     Object? metadata = $none,
     Object? schema = $none,
   }) => $apply(
@@ -481,7 +480,7 @@ class EvalDataSourceConfigUnionStoredCompletionsMapper
       EvalDataSourceConfigUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      EvalStoredCompletionsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalStoredCompletionsDataSourceConfigTypeMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
     }
     return _instance!;
@@ -490,12 +489,12 @@ class EvalDataSourceConfigUnionStoredCompletionsMapper
   @override
   final String id = 'EvalDataSourceConfigUnionStoredCompletions';
 
-  static EvalStoredCompletionsDataSourceConfigTypeType _$type(
+  static EvalStoredCompletionsDataSourceConfigType _$type(
     EvalDataSourceConfigUnionStoredCompletions v,
   ) => v.type;
   static const Field<
     EvalDataSourceConfigUnionStoredCompletions,
-    EvalStoredCompletionsDataSourceConfigTypeType
+    EvalStoredCompletionsDataSourceConfigType
   >
   _f$type = Field('type', _$type);
   static Metadata? _$metadata(EvalDataSourceConfigUnionStoredCompletions v) =>
@@ -625,7 +624,7 @@ abstract class EvalDataSourceConfigUnionStoredCompletionsCopyWith<
   MetadataCopyWith<$R, Metadata, Metadata>? get metadata;
   @override
   $R call({
-    EvalStoredCompletionsDataSourceConfigTypeType? type,
+    EvalStoredCompletionsDataSourceConfigType? type,
     Metadata? metadata,
     dynamic schema,
   });
@@ -657,7 +656,7 @@ class _EvalDataSourceConfigUnionStoredCompletionsCopyWithImpl<$R, $Out>
       $value.metadata?.copyWith.$chain((v) => call(metadata: v));
   @override
   $R call({
-    EvalStoredCompletionsDataSourceConfigTypeType? type,
+    EvalStoredCompletionsDataSourceConfigType? type,
     Object? metadata = $none,
     Object? schema = $none,
   }) => $apply(

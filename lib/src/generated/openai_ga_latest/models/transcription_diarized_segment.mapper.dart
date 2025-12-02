@@ -17,7 +17,7 @@ class TranscriptionDiarizedSegmentMapper
       MapperContainer.globals.use(
         _instance = TranscriptionDiarizedSegmentMapper._(),
       );
-      TranscriptionDiarizedSegmentTypeTypeMapper.ensureInitialized();
+      TranscriptionDiarizedSegmentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class TranscriptionDiarizedSegmentMapper
   @override
   final String id = 'TranscriptionDiarizedSegment';
 
-  static TranscriptionDiarizedSegmentTypeType _$type(
+  static TranscriptionDiarizedSegmentType _$type(
     TranscriptionDiarizedSegment v,
   ) => v.type;
   static const Field<
     TranscriptionDiarizedSegment,
-    TranscriptionDiarizedSegmentTypeType
+    TranscriptionDiarizedSegmentType
   >
   _f$type = Field('type', _$type);
   static String _$id(TranscriptionDiarizedSegment v) => v.id;
@@ -158,7 +158,7 @@ abstract class TranscriptionDiarizedSegmentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    TranscriptionDiarizedSegmentTypeType? type,
+    TranscriptionDiarizedSegmentType? type,
     String? id,
     double? start,
     double? end,
@@ -189,7 +189,7 @@ class _TranscriptionDiarizedSegmentCopyWithImpl<$R, $Out>
       TranscriptionDiarizedSegmentMapper.ensureInitialized();
   @override
   $R call({
-    TranscriptionDiarizedSegmentTypeType? type,
+    TranscriptionDiarizedSegmentType? type,
     String? id,
     double? start,
     double? end,

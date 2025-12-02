@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_error_event_type_type.dart';
+import 'response_error_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_error_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseErrorEvent with ResponseErrorEventMappable {
     required this.sequenceNumber,
   });
 
-  final ResponseErrorEventTypeType type;
+  final ResponseErrorEventType type;
   final String? code;
   final String message;
   final String? param;

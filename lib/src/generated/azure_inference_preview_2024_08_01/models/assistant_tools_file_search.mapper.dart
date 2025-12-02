@@ -17,7 +17,7 @@ class AssistantToolsFileSearchMapper
       MapperContainer.globals.use(
         _instance = AssistantToolsFileSearchMapper._(),
       );
-      AssistantToolsFileSearchTypeTypeMapper.ensureInitialized();
+      AssistantToolsFileSearchTypeMapper.ensureInitialized();
       AssistantToolsFileSearchFileSearchMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class AssistantToolsFileSearchMapper
   @override
   final String id = 'AssistantToolsFileSearch';
 
-  static AssistantToolsFileSearchTypeType _$type(AssistantToolsFileSearch v) =>
+  static AssistantToolsFileSearchType _$type(AssistantToolsFileSearch v) =>
       v.type;
-  static const Field<AssistantToolsFileSearch, AssistantToolsFileSearchTypeType>
+  static const Field<AssistantToolsFileSearch, AssistantToolsFileSearchType>
   _f$type = Field('type', _$type);
   static AssistantToolsFileSearchFileSearch?
   _$assistantToolsFileSearchFileSearch(AssistantToolsFileSearch v) =>
@@ -140,7 +140,7 @@ abstract class AssistantToolsFileSearchCopyWith<
   >?
   get assistantToolsFileSearchFileSearch;
   $R call({
-    AssistantToolsFileSearchTypeType? type,
+    AssistantToolsFileSearchType? type,
     AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch,
   });
   AssistantToolsFileSearchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -169,7 +169,7 @@ class _AssistantToolsFileSearchCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolsFileSearchFileSearch: v));
   @override
   $R call({
-    AssistantToolsFileSearchTypeType? type,
+    AssistantToolsFileSearchType? type,
     Object? assistantToolsFileSearchFileSearch = $none,
   }) => $apply(
     FieldCopyWithData({

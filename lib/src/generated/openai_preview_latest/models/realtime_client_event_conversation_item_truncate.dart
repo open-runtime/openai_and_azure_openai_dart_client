@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_conversation_item_truncate_type_type.dart';
+import 'realtime_client_event_conversation_item_truncate_type.dart';
 
 part 'realtime_client_event_conversation_item_truncate.mapper.dart';
 
@@ -31,7 +31,7 @@ class RealtimeClientEventConversationItemTruncate with RealtimeClientEventConver
     this.eventId,
   });
 
-  final RealtimeClientEventConversationItemTruncateTypeType type;
+  final RealtimeClientEventConversationItemTruncateType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

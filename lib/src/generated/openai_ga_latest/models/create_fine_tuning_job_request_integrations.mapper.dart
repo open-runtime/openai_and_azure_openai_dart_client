@@ -17,7 +17,7 @@ class CreateFineTuningJobRequestIntegrationsMapper
       MapperContainer.globals.use(
         _instance = CreateFineTuningJobRequestIntegrationsMapper._(),
       );
-      CreateFineTuningJobRequestIntegrationsTypeTypeMapper.ensureInitialized();
+      CreateFineTuningJobRequestIntegrationsTypeMapper.ensureInitialized();
       CreateFineTuningJobRequestIntegrationsWandbMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class CreateFineTuningJobRequestIntegrationsMapper
   @override
   final String id = 'CreateFineTuningJobRequestIntegrations';
 
-  static CreateFineTuningJobRequestIntegrationsTypeType _$type(
+  static CreateFineTuningJobRequestIntegrationsType _$type(
     CreateFineTuningJobRequestIntegrations v,
   ) => v.type;
   static const Field<
     CreateFineTuningJobRequestIntegrations,
-    CreateFineTuningJobRequestIntegrationsTypeType
+    CreateFineTuningJobRequestIntegrationsType
   >
   _f$type = Field('type', _$type);
   static CreateFineTuningJobRequestIntegrationsWandb
@@ -156,7 +156,7 @@ abstract class CreateFineTuningJobRequestIntegrationsCopyWith<
   >
   get createFineTuningJobRequestIntegrationsWandb;
   $R call({
-    CreateFineTuningJobRequestIntegrationsTypeType? type,
+    CreateFineTuningJobRequestIntegrationsType? type,
     CreateFineTuningJobRequestIntegrationsWandb?
     createFineTuningJobRequestIntegrationsWandb,
   });
@@ -193,7 +193,7 @@ class _CreateFineTuningJobRequestIntegrationsCopyWithImpl<$R, $Out>
       .$chain((v) => call(createFineTuningJobRequestIntegrationsWandb: v));
   @override
   $R call({
-    CreateFineTuningJobRequestIntegrationsTypeType? type,
+    CreateFineTuningJobRequestIntegrationsType? type,
     CreateFineTuningJobRequestIntegrationsWandb?
     createFineTuningJobRequestIntegrationsWandb,
   }) => $apply(

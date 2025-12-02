@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_conversation_item_delete_type_type.dart';
+import 'realtime_client_event_conversation_item_delete_type.dart';
 
 part 'realtime_client_event_conversation_item_delete.mapper.dart';
 
@@ -22,7 +22,7 @@ class RealtimeClientEventConversationItemDelete with RealtimeClientEventConversa
     this.eventId,
   });
 
-  final RealtimeClientEventConversationItemDeleteTypeType type;
+  final RealtimeClientEventConversationItemDeleteType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'event_id')

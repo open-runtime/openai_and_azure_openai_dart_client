@@ -17,7 +17,7 @@ class RealtimeConversationItemContentMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemContentMapper._(),
       );
-      RealtimeConversationItemContentTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeConversationItemContentMapper
   @override
   final String id = 'RealtimeConversationItemContent';
 
-  static RealtimeConversationItemContentTypeType? _$type(
+  static RealtimeConversationItemContentType? _$type(
     RealtimeConversationItemContent v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemContent,
-    RealtimeConversationItemContentTypeType
+    RealtimeConversationItemContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeConversationItemContent v) => v.text;
@@ -158,7 +158,7 @@ abstract class RealtimeConversationItemContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemContentTypeType? type,
+    RealtimeConversationItemContentType? type,
     String? text,
     String? id,
     String? audio,

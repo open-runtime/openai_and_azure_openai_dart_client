@@ -80,7 +80,7 @@ class ThreadStreamEventUnionVariant1Mapper
         _instance = ThreadStreamEventUnionVariant1Mapper._(),
       );
       ThreadStreamEventUnionMapper.ensureInitialized();
-      ThreadStreamEventUnionVariant1EventEventMapper.ensureInitialized();
+      ThreadStreamEventUnionVariant1EventMapper.ensureInitialized();
       ThreadObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -94,12 +94,12 @@ class ThreadStreamEventUnionVariant1Mapper
     'enabled',
     _$enabled,
   );
-  static ThreadStreamEventUnionVariant1EventEvent _$event(
+  static ThreadStreamEventUnionVariant1Event _$event(
     ThreadStreamEventUnionVariant1 v,
   ) => v.event;
   static const Field<
     ThreadStreamEventUnionVariant1,
-    ThreadStreamEventUnionVariant1EventEvent
+    ThreadStreamEventUnionVariant1Event
   >
   _f$event = Field('event', _$event);
   static ThreadObject _$data(ThreadStreamEventUnionVariant1 v) => v.data;
@@ -207,7 +207,7 @@ abstract class ThreadStreamEventUnionVariant1CopyWith<
   @override
   $R call({
     bool? enabled,
-    ThreadStreamEventUnionVariant1EventEvent? event,
+    ThreadStreamEventUnionVariant1Event? event,
     ThreadObject? data,
   });
   ThreadStreamEventUnionVariant1CopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -238,7 +238,7 @@ class _ThreadStreamEventUnionVariant1CopyWithImpl<$R, $Out>
   @override
   $R call({
     Object? enabled = $none,
-    ThreadStreamEventUnionVariant1EventEvent? event,
+    ThreadStreamEventUnionVariant1Event? event,
     ThreadObject? data,
   }) => $apply(
     FieldCopyWithData({

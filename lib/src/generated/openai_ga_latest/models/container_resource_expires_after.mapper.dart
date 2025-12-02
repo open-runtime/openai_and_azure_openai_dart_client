@@ -17,7 +17,7 @@ class ContainerResourceExpiresAfterMapper
       MapperContainer.globals.use(
         _instance = ContainerResourceExpiresAfterMapper._(),
       );
-      ContainerResourceExpiresAfterAnchorAnchorMapper.ensureInitialized();
+      ContainerResourceExpiresAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ContainerResourceExpiresAfterMapper
   @override
   final String id = 'ContainerResourceExpiresAfter';
 
-  static ContainerResourceExpiresAfterAnchorAnchor? _$anchor(
+  static ContainerResourceExpiresAfterAnchor? _$anchor(
     ContainerResourceExpiresAfter v,
   ) => v.anchor;
   static const Field<
     ContainerResourceExpiresAfter,
-    ContainerResourceExpiresAfterAnchorAnchor
+    ContainerResourceExpiresAfterAnchor
   >
   _f$anchor = Field('anchor', _$anchor, opt: true);
   static int? _$minutes(ContainerResourceExpiresAfter v) => v.minutes;
@@ -131,7 +131,7 @@ abstract class ContainerResourceExpiresAfterCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ContainerResourceExpiresAfterAnchorAnchor? anchor, int? minutes});
+  $R call({ContainerResourceExpiresAfterAnchor? anchor, int? minutes});
   ContainerResourceExpiresAfterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

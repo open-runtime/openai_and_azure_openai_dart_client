@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_client_event.dart';
-import 'realtime_client_event_transcription_session_update_type_type.dart';
+import 'realtime_client_event_transcription_session_update_type.dart';
 import 'realtime_transcription_session_create_request.dart';
 
 part 'realtime_client_event_transcription_session_update.mapper.dart';
@@ -20,7 +20,7 @@ class RealtimeClientEventTranscriptionSessionUpdate with RealtimeClientEventTran
     this.eventId,
   });
 
-  final RealtimeClientEventTranscriptionSessionUpdateTypeType type;
+  final RealtimeClientEventTranscriptionSessionUpdateType type;
   final RealtimeTranscriptionSessionCreateRequest session;
   @MappableField(key: 'event_id')
   final String? eventId;

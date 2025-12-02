@@ -17,7 +17,7 @@ class RealtimeSessionCreateResponseToolsMapper
       MapperContainer.globals.use(
         _instance = RealtimeSessionCreateResponseToolsMapper._(),
       );
-      RealtimeSessionCreateResponseToolsTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateResponseToolsTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeSessionCreateResponseToolsMapper
   @override
   final String id = 'RealtimeSessionCreateResponseTools';
 
-  static RealtimeSessionCreateResponseToolsTypeType? _$type(
+  static RealtimeSessionCreateResponseToolsType? _$type(
     RealtimeSessionCreateResponseTools v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateResponseTools,
-    RealtimeSessionCreateResponseToolsTypeType
+    RealtimeSessionCreateResponseToolsType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$name(RealtimeSessionCreateResponseTools v) => v.name;
@@ -146,7 +146,7 @@ abstract class RealtimeSessionCreateResponseToolsCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeSessionCreateResponseToolsTypeType? type,
+    RealtimeSessionCreateResponseToolsType? type,
     String? name,
     String? description,
     dynamic parameters,

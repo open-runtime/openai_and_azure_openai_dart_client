@@ -16,7 +16,7 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
       MapperContainer.globals.use(_instance = OutputTextContentMapper._());
       AnnotationMapper.ensureInitialized();
       LogProbMapper.ensureInitialized();
-      OutputTextContentTypeTypeMapper.ensureInitialized();
+      OutputTextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,14 +35,13 @@ class OutputTextContentMapper extends ClassMapperBase<OutputTextContent> {
     _$logprobs,
     opt: true,
   );
-  static OutputTextContentTypeType _$type(OutputTextContent v) => v.type;
-  static const Field<OutputTextContent, OutputTextContentTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: OutputTextContentTypeType.outputText,
-      );
+  static OutputTextContentType _$type(OutputTextContent v) => v.type;
+  static const Field<OutputTextContent, OutputTextContentType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: OutputTextContentType.outputText,
+  );
 
   @override
   final MappableFields<OutputTextContent> fields = const {
@@ -144,7 +143,7 @@ abstract class OutputTextContentCopyWith<
     String? text,
     List<Annotation>? annotations,
     List<LogProb>? logprobs,
-    OutputTextContentTypeType? type,
+    OutputTextContentType? type,
   });
   OutputTextContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -180,7 +179,7 @@ class _OutputTextContentCopyWithImpl<$R, $Out>
     String? text,
     List<Annotation>? annotations,
     Object? logprobs = $none,
-    OutputTextContentTypeType? type,
+    OutputTextContentType? type,
   }) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,

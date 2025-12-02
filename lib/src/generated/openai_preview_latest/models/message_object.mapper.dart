@@ -15,9 +15,9 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageObjectMapper._());
       MessageObjectObjectObjectEnumMapper.ensureInitialized();
-      MessageObjectStatusStatusMapper.ensureInitialized();
+      MessageObjectStatusMapper.ensureInitialized();
       MessageObjectIncompleteDetailsMapper.ensureInitialized();
-      MessageObjectRoleRoleMapper.ensureInitialized();
+      MessageObjectRoleMapper.ensureInitialized();
       MessageObjectContentUnionMapper.ensureInitialized();
       MessageObjectAttachmentsMapper.ensureInitialized();
     }
@@ -45,9 +45,11 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     _$threadId,
     key: r'thread_id',
   );
-  static MessageObjectStatusStatus _$status(MessageObject v) => v.status;
-  static const Field<MessageObject, MessageObjectStatusStatus> _f$status =
-      Field('status', _$status);
+  static MessageObjectStatus _$status(MessageObject v) => v.status;
+  static const Field<MessageObject, MessageObjectStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
   static MessageObjectIncompleteDetails? _$messageObjectIncompleteDetails(
     MessageObject v,
   ) => v.messageObjectIncompleteDetails;
@@ -69,8 +71,8 @@ class MessageObjectMapper extends ClassMapperBase<MessageObject> {
     _$incompleteAt,
     key: r'incomplete_at',
   );
-  static MessageObjectRoleRole _$role(MessageObject v) => v.role;
-  static const Field<MessageObject, MessageObjectRoleRole> _f$role = Field(
+  static MessageObjectRole _$role(MessageObject v) => v.role;
+  static const Field<MessageObject, MessageObjectRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -238,11 +240,11 @@ abstract class MessageObjectCopyWith<$R, $In extends MessageObject, $Out>
     MessageObjectObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    MessageObjectStatusStatus? status,
+    MessageObjectStatus? status,
     MessageObjectIncompleteDetails? messageObjectIncompleteDetails,
     int? completedAt,
     int? incompleteAt,
-    MessageObjectRoleRole? role,
+    MessageObjectRole? role,
     List<MessageObjectContentUnion>? content,
     String? assistantId,
     String? runId,
@@ -317,11 +319,11 @@ class _MessageObjectCopyWithImpl<$R, $Out>
     MessageObjectObjectObjectEnum? objectEnum,
     int? createdAt,
     String? threadId,
-    MessageObjectStatusStatus? status,
+    MessageObjectStatus? status,
     Object? messageObjectIncompleteDetails = $none,
     Object? completedAt = $none,
     Object? incompleteAt = $none,
-    MessageObjectRoleRole? role,
+    MessageObjectRole? role,
     List<MessageObjectContentUnion>? content,
     Object? assistantId = $none,
     Object? runId = $none,

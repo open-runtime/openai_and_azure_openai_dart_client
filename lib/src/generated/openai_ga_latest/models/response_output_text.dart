@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'response_output_text_annotations_union.dart';
-import 'response_output_text_type_type.dart';
+import 'response_output_text_type.dart';
 
 part 'response_output_text.mapper.dart';
 
@@ -15,12 +15,12 @@ class ResponseOutputText with ResponseOutputTextMappable {
   const ResponseOutputText({
     required this.text,
     required this.annotations,
-    this.type = ResponseOutputTextTypeType.outputText,
+    this.type = ResponseOutputTextType.outputText,
   });
 
   final String text;
   final List<ResponseOutputTextAnnotationsUnion> annotations;
-  final ResponseOutputTextTypeType type;
+  final ResponseOutputTextType type;
 
   static ResponseOutputText fromJson(Map<String, dynamic> json) => ResponseOutputTextMapper.fromJson(json);
 

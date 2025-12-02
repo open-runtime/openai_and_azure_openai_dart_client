@@ -15,7 +15,7 @@ class GraderMultiMapper extends ClassMapperBase<GraderMulti> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = GraderMultiMapper._());
       GraderMultiGradersUnionMapper.ensureInitialized();
-      GraderMultiTypeTypeMapper.ensureInitialized();
+      GraderMultiTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -36,12 +36,12 @@ class GraderMultiMapper extends ClassMapperBase<GraderMulti> {
     _$calculateOutput,
     key: r'calculate_output',
   );
-  static GraderMultiTypeType _$type(GraderMulti v) => v.type;
-  static const Field<GraderMulti, GraderMultiTypeType> _f$type = Field(
+  static GraderMultiType _$type(GraderMulti v) => v.type;
+  static const Field<GraderMulti, GraderMultiType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: GraderMultiTypeType.multi,
+    def: GraderMultiType.multi,
   );
 
   @override
@@ -135,7 +135,7 @@ abstract class GraderMultiCopyWith<$R, $In extends GraderMulti, $Out>
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
   });
   GraderMultiCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -160,7 +160,7 @@ class _GraderMultiCopyWithImpl<$R, $Out>
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,

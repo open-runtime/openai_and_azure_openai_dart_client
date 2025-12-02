@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_allowed_tools.dart';
-import 'chat_completion_allowed_tools_choice_type_type.dart';
+import 'chat_completion_allowed_tools_choice_type.dart';
 
 part 'chat_completion_allowed_tools_choice.mapper.dart';
 
@@ -18,7 +18,7 @@ class ChatCompletionAllowedToolsChoice with ChatCompletionAllowedToolsChoiceMapp
     required this.allowedTools,
   });
 
-  final ChatCompletionAllowedToolsChoiceTypeType type;
+  final ChatCompletionAllowedToolsChoiceType type;
   @MappableField(key: 'allowed_tools')
   final ChatCompletionAllowedTools allowedTools;
 

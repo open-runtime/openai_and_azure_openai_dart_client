@@ -15,8 +15,8 @@ class InviteMapper extends ClassMapperBase<Invite> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InviteMapper._());
       InviteObjectObjectEnumMapper.ensureInitialized();
-      InviteRoleRoleMapper.ensureInitialized();
-      InviteStatusStatusMapper.ensureInitialized();
+      InviteRoleMapper.ensureInitialized();
+      InviteStatusMapper.ensureInitialized();
       InviteProjectsMapper.ensureInitialized();
     }
     return _instance!;
@@ -35,10 +35,10 @@ class InviteMapper extends ClassMapperBase<Invite> {
   static const Field<Invite, String> _f$id = Field('id', _$id);
   static String _$email(Invite v) => v.email;
   static const Field<Invite, String> _f$email = Field('email', _$email);
-  static InviteRoleRole _$role(Invite v) => v.role;
-  static const Field<Invite, InviteRoleRole> _f$role = Field('role', _$role);
-  static InviteStatusStatus _$status(Invite v) => v.status;
-  static const Field<Invite, InviteStatusStatus> _f$status = Field(
+  static InviteRole _$role(Invite v) => v.role;
+  static const Field<Invite, InviteRole> _f$role = Field('role', _$role);
+  static InviteStatus _$status(Invite v) => v.status;
+  static const Field<Invite, InviteStatus> _f$status = Field(
     'status',
     _$status,
   );
@@ -155,8 +155,8 @@ abstract class InviteCopyWith<$R, $In extends Invite, $Out>
     InviteObjectObjectEnum? objectEnum,
     String? id,
     String? email,
-    InviteRoleRole? role,
-    InviteStatusStatus? status,
+    InviteRole? role,
+    InviteStatus? status,
     int? invitedAt,
     int? expiresAt,
     int? acceptedAt,
@@ -189,8 +189,8 @@ class _InviteCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Invite, $Out>
     InviteObjectObjectEnum? objectEnum,
     String? id,
     String? email,
-    InviteRoleRole? role,
-    InviteStatusStatus? status,
+    InviteRole? role,
+    InviteStatus? status,
     int? invitedAt,
     int? expiresAt,
     Object? acceptedAt = $none,

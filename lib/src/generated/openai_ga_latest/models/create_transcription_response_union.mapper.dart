@@ -90,7 +90,7 @@ class CreateTranscriptionResponseUnionTranscribeMapper
       CreateTranscriptionResponseUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      CreateTranscriptionResponseDiarizedJsonTaskTaskMapper.ensureInitialized();
+      CreateTranscriptionResponseDiarizedJsonTaskMapper.ensureInitialized();
       TranscriptionDiarizedSegmentMapper.ensureInitialized();
       CreateTranscriptionResponseDiarizedJsonUsageUnionMapper.ensureInitialized();
     }
@@ -100,12 +100,12 @@ class CreateTranscriptionResponseUnionTranscribeMapper
   @override
   final String id = 'CreateTranscriptionResponseUnionTranscribe';
 
-  static CreateTranscriptionResponseDiarizedJsonTaskTask _$task(
+  static CreateTranscriptionResponseDiarizedJsonTask _$task(
     CreateTranscriptionResponseUnionTranscribe v,
   ) => v.task;
   static const Field<
     CreateTranscriptionResponseUnionTranscribe,
-    CreateTranscriptionResponseDiarizedJsonTaskTask
+    CreateTranscriptionResponseDiarizedJsonTask
   >
   _f$task = Field('task', _$task);
   static num _$duration(CreateTranscriptionResponseUnionTranscribe v) =>
@@ -273,7 +273,7 @@ abstract class CreateTranscriptionResponseUnionTranscribeCopyWith<
   get usage;
   @override
   $R call({
-    CreateTranscriptionResponseDiarizedJsonTaskTask? task,
+    CreateTranscriptionResponseDiarizedJsonTask? task,
     num? duration,
     String? text,
     List<TranscriptionDiarizedSegment>? segments,
@@ -326,7 +326,7 @@ class _CreateTranscriptionResponseUnionTranscribeCopyWithImpl<$R, $Out>
   get usage => $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    CreateTranscriptionResponseDiarizedJsonTaskTask? task,
+    CreateTranscriptionResponseDiarizedJsonTask? task,
     num? duration,
     String? text,
     List<TranscriptionDiarizedSegment>? segments,

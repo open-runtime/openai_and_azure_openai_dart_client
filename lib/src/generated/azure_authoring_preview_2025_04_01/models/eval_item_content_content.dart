@@ -4,9 +4,9 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'content_type_type.dart';
+import 'content_type.dart';
 import 'input_text_content.dart';
-import 'input_text_content_type_type.dart';
+import 'input_text_content_type.dart';
 
 part 'eval_item_content_content.mapper.dart';
 
@@ -18,7 +18,7 @@ class EvalItemContentContent with EvalItemContentContentMappable {
     required this.text,
   });
 
-  final ContentTypeType type;
+  final ContentType type;
   final String text;
 
   static EvalItemContentContent fromJson(Map<String, dynamic> json) => EvalItemContentContentMapper.fromJson(json);

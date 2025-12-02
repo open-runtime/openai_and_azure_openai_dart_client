@@ -14,7 +14,7 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
   static RealtimeResponseMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeResponseMapper._());
-      RealtimeResponseStatusStatusMapper.ensureInitialized();
+      RealtimeResponseStatusMapper.ensureInitialized();
       RealtimeResponseStatusDetailsMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
       MetadataMapper.ensureInitialized();
@@ -42,8 +42,8 @@ class RealtimeResponseMapper extends ClassMapperBase<RealtimeResponse> {
     key: r'object',
     opt: true,
   );
-  static RealtimeResponseStatusStatus? _$status(RealtimeResponse v) => v.status;
-  static const Field<RealtimeResponse, RealtimeResponseStatusStatus> _f$status =
+  static RealtimeResponseStatus? _$status(RealtimeResponse v) => v.status;
+  static const Field<RealtimeResponse, RealtimeResponseStatus> _f$status =
       Field('status', _$status, opt: true);
   static RealtimeResponseStatusDetails? _$realtimeResponseStatusDetails(
     RealtimeResponse v,
@@ -259,7 +259,7 @@ abstract class RealtimeResponseCopyWith<$R, $In extends RealtimeResponse, $Out>
   $R call({
     String? id,
     dynamic objectField,
-    RealtimeResponseStatusStatus? status,
+    RealtimeResponseStatus? status,
     RealtimeResponseStatusDetails? realtimeResponseStatusDetails,
     List<RealtimeConversationItem>? output,
     Metadata? metadata,

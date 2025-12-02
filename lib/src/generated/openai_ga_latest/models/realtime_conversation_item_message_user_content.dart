@@ -4,15 +4,15 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_conversation_item_message_user_content_type_type.dart';
-import 'realtime_conversation_item_message_user_content_detail_detail.dart';
+import 'realtime_conversation_item_message_user_content_type.dart';
+import 'realtime_conversation_item_message_user_content_detail.dart';
 
 part 'realtime_conversation_item_message_user_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageUserContent with RealtimeConversationItemMessageUserContentMappable {
   const RealtimeConversationItemMessageUserContent({
-    this.detail = RealtimeConversationItemMessageUserContentDetailDetail.auto,
+    this.detail = RealtimeConversationItemMessageUserContentDetail.auto,
     this.type,
     this.text,
     this.audio,
@@ -20,8 +20,8 @@ class RealtimeConversationItemMessageUserContent with RealtimeConversationItemMe
     this.transcript,
   });
 
-  final RealtimeConversationItemMessageUserContentDetailDetail detail;
-  final RealtimeConversationItemMessageUserContentTypeType? type;
+  final RealtimeConversationItemMessageUserContentDetail detail;
+  final RealtimeConversationItemMessageUserContentType? type;
   final String? text;
   final String? audio;
   @MappableField(key: 'image_url')

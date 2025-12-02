@@ -17,7 +17,7 @@ class RealtimeMcpProtocolErrorMapper
       MapperContainer.globals.use(
         _instance = RealtimeMcpProtocolErrorMapper._(),
       );
-      RealtimeMcpProtocolErrorTypeTypeMapper.ensureInitialized();
+      RealtimeMcpProtocolErrorTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class RealtimeMcpProtocolErrorMapper
   @override
   final String id = 'RealtimeMcpProtocolError';
 
-  static RealtimeMcpProtocolErrorTypeType _$type(RealtimeMcpProtocolError v) =>
+  static RealtimeMcpProtocolErrorType _$type(RealtimeMcpProtocolError v) =>
       v.type;
-  static const Field<RealtimeMcpProtocolError, RealtimeMcpProtocolErrorTypeType>
+  static const Field<RealtimeMcpProtocolError, RealtimeMcpProtocolErrorType>
   _f$type = Field('type', _$type);
   static int _$code(RealtimeMcpProtocolError v) => v.code;
   static const Field<RealtimeMcpProtocolError, int> _f$code = Field(
@@ -129,7 +129,7 @@ abstract class RealtimeMcpProtocolErrorCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RealtimeMcpProtocolErrorTypeType? type, int? code, String? message});
+  $R call({RealtimeMcpProtocolErrorType? type, int? code, String? message});
   RealtimeMcpProtocolErrorCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -145,17 +145,14 @@ class _RealtimeMcpProtocolErrorCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RealtimeMcpProtocolError> $mapper =
       RealtimeMcpProtocolErrorMapper.ensureInitialized();
   @override
-  $R call({
-    RealtimeMcpProtocolErrorTypeType? type,
-    int? code,
-    String? message,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (code != null) #code: code,
-      if (message != null) #message: message,
-    }),
-  );
+  $R call({RealtimeMcpProtocolErrorType? type, int? code, String? message}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (code != null) #code: code,
+          if (message != null) #message: message,
+        }),
+      );
   @override
   RealtimeMcpProtocolError $make(CopyWithData data) => RealtimeMcpProtocolError(
     type: data.get(#type, or: $value.type),

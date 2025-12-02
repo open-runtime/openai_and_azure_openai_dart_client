@@ -17,7 +17,7 @@ class ResponseFileSearchCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFileSearchCallInProgressEventMapper._(),
       );
-      ResponseFileSearchCallInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseFileSearchCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseFileSearchCallInProgressEventMapper
   @override
   final String id = 'ResponseFileSearchCallInProgressEvent';
 
-  static ResponseFileSearchCallInProgressEventTypeType _$type(
+  static ResponseFileSearchCallInProgressEventType _$type(
     ResponseFileSearchCallInProgressEvent v,
   ) => v.type;
   static const Field<
     ResponseFileSearchCallInProgressEvent,
-    ResponseFileSearchCallInProgressEventTypeType
+    ResponseFileSearchCallInProgressEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseFileSearchCallInProgressEvent v) =>
@@ -151,7 +151,7 @@ abstract class ResponseFileSearchCallInProgressEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseFileSearchCallInProgressEventTypeType? type,
+    ResponseFileSearchCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,
@@ -179,7 +179,7 @@ class _ResponseFileSearchCallInProgressEventCopyWithImpl<$R, $Out>
       ResponseFileSearchCallInProgressEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseFileSearchCallInProgressEventTypeType? type,
+    ResponseFileSearchCallInProgressEventType? type,
     int? outputIndex,
     String? itemId,
     int? sequenceNumber,

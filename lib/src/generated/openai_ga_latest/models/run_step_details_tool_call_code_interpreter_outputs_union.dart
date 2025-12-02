@@ -7,9 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'run_step_details_tool_calls_code_object_code_interpreter_outputs_union.dart';
 import 'run_step_details_tool_calls_code_output_image_object.dart';
 import 'run_step_details_tool_calls_code_output_image_object_image.dart';
-import 'run_step_details_tool_calls_code_output_image_object_type_type.dart';
+import 'run_step_details_tool_calls_code_output_image_object_type.dart';
 import 'run_step_details_tool_calls_code_output_logs_object.dart';
-import 'run_step_details_tool_calls_code_output_logs_object_type_type.dart';
+import 'run_step_details_tool_calls_code_output_logs_object_type.dart';
 
 part 'run_step_details_tool_call_code_interpreter_outputs_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension RunStepDetailsToolCallCodeInterpreterOutputsUnionDeserializer on RunSt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
 class RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs extends RunStepDetailsToolCallCodeInterpreterOutputsUnion with RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsMappable {
-  final RunStepDetailsToolCallsCodeOutputLogsObjectTypeType type;
+  final RunStepDetailsToolCallsCodeOutputLogsObjectType type;
   final String logs;
 
   const RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs({
@@ -59,7 +59,7 @@ class RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs extends RunStepDetai
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
 class RunStepDetailsToolCallCodeInterpreterOutputsUnionImage extends RunStepDetailsToolCallCodeInterpreterOutputsUnion with RunStepDetailsToolCallCodeInterpreterOutputsUnionImageMappable {
-  final RunStepDetailsToolCallsCodeOutputImageObjectTypeType type;
+  final RunStepDetailsToolCallsCodeOutputImageObjectType type;
   @MappableField(key: 'image')
   final RunStepDetailsToolCallsCodeOutputImageObjectImage runStepDetailsToolCallsCodeOutputImageObjectImage;
 

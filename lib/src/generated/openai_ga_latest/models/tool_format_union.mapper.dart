@@ -74,7 +74,7 @@ class ToolFormatUnionTextMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolFormatUnionTextMapper._());
       ToolFormatUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      CustomTextFormatParamTypeTypeMapper.ensureInitialized();
+      CustomTextFormatParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -82,9 +82,9 @@ class ToolFormatUnionTextMapper
   @override
   final String id = 'ToolFormatUnionText';
 
-  static CustomTextFormatParamTypeType _$type(ToolFormatUnionText v) => v.type;
-  static const Field<ToolFormatUnionText, CustomTextFormatParamTypeType>
-  _f$type = Field('type', _$type);
+  static CustomTextFormatParamType _$type(ToolFormatUnionText v) => v.type;
+  static const Field<ToolFormatUnionText, CustomTextFormatParamType> _f$type =
+      Field('type', _$type);
 
   @override
   final MappableFields<ToolFormatUnionText> fields = const {#type: _f$type};
@@ -176,7 +176,7 @@ abstract class ToolFormatUnionTextCopyWith<
 >
     implements ToolFormatUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({CustomTextFormatParamTypeType? type});
+  $R call({CustomTextFormatParamType? type});
   ToolFormatUnionTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -191,7 +191,7 @@ class _ToolFormatUnionTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolFormatUnionText> $mapper =
       ToolFormatUnionTextMapper.ensureInitialized();
   @override
-  $R call({CustomTextFormatParamTypeType? type}) =>
+  $R call({CustomTextFormatParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ToolFormatUnionText $make(CopyWithData data) =>
@@ -212,7 +212,7 @@ class ToolFormatUnionGrammarMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolFormatUnionGrammarMapper._());
       ToolFormatUnionMapper.ensureInitialized().addSubMapper(_instance!);
-      CustomGrammarFormatParamTypeTypeMapper.ensureInitialized();
+      CustomGrammarFormatParamTypeMapper.ensureInitialized();
       GrammarSyntax1Mapper.ensureInitialized();
     }
     return _instance!;
@@ -221,9 +221,9 @@ class ToolFormatUnionGrammarMapper
   @override
   final String id = 'ToolFormatUnionGrammar';
 
-  static CustomGrammarFormatParamTypeType _$type(ToolFormatUnionGrammar v) =>
+  static CustomGrammarFormatParamType _$type(ToolFormatUnionGrammar v) =>
       v.type;
-  static const Field<ToolFormatUnionGrammar, CustomGrammarFormatParamTypeType>
+  static const Field<ToolFormatUnionGrammar, CustomGrammarFormatParamType>
   _f$type = Field('type', _$type);
   static GrammarSyntax1 _$syntax(ToolFormatUnionGrammar v) => v.syntax;
   static const Field<ToolFormatUnionGrammar, GrammarSyntax1> _f$syntax = Field(
@@ -335,7 +335,7 @@ abstract class ToolFormatUnionGrammarCopyWith<
     implements ToolFormatUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    CustomGrammarFormatParamTypeType? type,
+    CustomGrammarFormatParamType? type,
     GrammarSyntax1? syntax,
     String? definition,
   });
@@ -355,7 +355,7 @@ class _ToolFormatUnionGrammarCopyWithImpl<$R, $Out>
       ToolFormatUnionGrammarMapper.ensureInitialized();
   @override
   $R call({
-    CustomGrammarFormatParamTypeType? type,
+    CustomGrammarFormatParamType? type,
     GrammarSyntax1? syntax,
     String? definition,
   }) => $apply(

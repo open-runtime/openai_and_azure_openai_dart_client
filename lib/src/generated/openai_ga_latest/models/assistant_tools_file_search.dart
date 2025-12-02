@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_tool.dart';
 import 'assistant_tools_file_search_file_search.dart';
-import 'assistant_tools_file_search_type_type.dart';
+import 'assistant_tools_file_search_type.dart';
 
 part 'assistant_tools_file_search.mapper.dart';
 
@@ -17,7 +17,7 @@ class AssistantToolsFileSearch with AssistantToolsFileSearchMappable {
     this.assistantToolsFileSearchFileSearch,
   });
 
-  final AssistantToolsFileSearchTypeType type;
+  final AssistantToolsFileSearchType type;
   @MappableField(key: 'file_search')
   final AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch;
 

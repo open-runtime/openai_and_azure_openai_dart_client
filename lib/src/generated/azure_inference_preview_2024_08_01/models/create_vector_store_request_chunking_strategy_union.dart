@@ -5,10 +5,10 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'auto_chunking_strategy_request_param.dart';
-import 'auto_chunking_strategy_request_param_type_type.dart';
+import 'auto_chunking_strategy_request_param_type.dart';
 import 'static_chunking_strategy.dart';
 import 'static_chunking_strategy_request_param.dart';
-import 'static_chunking_strategy_request_param_type_type.dart';
+import 'static_chunking_strategy_request_param_type.dart';
 
 part 'create_vector_store_request_chunking_strategy_union.mapper.dart';
 
@@ -47,7 +47,7 @@ extension CreateVectorStoreRequestChunkingStrategyUnionDeserializer on CreateVec
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'auto')
 class CreateVectorStoreRequestChunkingStrategyUnionAuto extends CreateVectorStoreRequestChunkingStrategyUnion with CreateVectorStoreRequestChunkingStrategyUnionAutoMappable {
-  final AutoChunkingStrategyRequestParamTypeType type;
+  final AutoChunkingStrategyRequestParamType type;
 
   const CreateVectorStoreRequestChunkingStrategyUnionAuto({
     required this.type,
@@ -56,7 +56,7 @@ class CreateVectorStoreRequestChunkingStrategyUnionAuto extends CreateVectorStor
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
 class CreateVectorStoreRequestChunkingStrategyUnionStatic extends CreateVectorStoreRequestChunkingStrategyUnion with CreateVectorStoreRequestChunkingStrategyUnionStaticMappable {
-  final StaticChunkingStrategyRequestParamTypeType type;
+  final StaticChunkingStrategyRequestParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 

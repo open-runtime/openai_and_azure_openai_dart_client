@@ -18,7 +18,7 @@ class EvalLogsDataSourceConfigMapper
         _instance = EvalLogsDataSourceConfigMapper._(),
       );
       MetadataMapper.ensureInitialized();
-      EvalLogsDataSourceConfigTypeTypeMapper.ensureInitialized();
+      EvalLogsDataSourceConfigTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -37,14 +37,14 @@ class EvalLogsDataSourceConfigMapper
     _$metadata,
     opt: true,
   );
-  static EvalLogsDataSourceConfigTypeType _$type(EvalLogsDataSourceConfig v) =>
+  static EvalLogsDataSourceConfigType _$type(EvalLogsDataSourceConfig v) =>
       v.type;
-  static const Field<EvalLogsDataSourceConfig, EvalLogsDataSourceConfigTypeType>
+  static const Field<EvalLogsDataSourceConfig, EvalLogsDataSourceConfigType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: EvalLogsDataSourceConfigTypeType.logs,
+    def: EvalLogsDataSourceConfigType.logs,
   );
 
   @override
@@ -140,7 +140,7 @@ abstract class EvalLogsDataSourceConfigCopyWith<
   $R call({
     dynamic schema,
     Metadata? metadata,
-    EvalLogsDataSourceConfigTypeType? type,
+    EvalLogsDataSourceConfigType? type,
   });
   EvalLogsDataSourceConfigCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -163,7 +163,7 @@ class _EvalLogsDataSourceConfigCopyWithImpl<$R, $Out>
   $R call({
     Object? schema = $none,
     Object? metadata = $none,
-    EvalLogsDataSourceConfigTypeType? type,
+    EvalLogsDataSourceConfigType? type,
   }) => $apply(
     FieldCopyWithData({
       if (schema != $none) #schema: schema,

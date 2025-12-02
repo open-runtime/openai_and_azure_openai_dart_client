@@ -15,7 +15,7 @@ class ClickParamMapper extends ClassMapperBase<ClickParam> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClickParamMapper._());
       ClickButtonTypeMapper.ensureInitialized();
-      ClickParamTypeTypeMapper.ensureInitialized();
+      ClickParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -32,12 +32,12 @@ class ClickParamMapper extends ClassMapperBase<ClickParam> {
   static const Field<ClickParam, int> _f$x = Field('x', _$x);
   static int _$y(ClickParam v) => v.y;
   static const Field<ClickParam, int> _f$y = Field('y', _$y);
-  static ClickParamTypeType _$type(ClickParam v) => v.type;
-  static const Field<ClickParam, ClickParamTypeType> _f$type = Field(
+  static ClickParamType _$type(ClickParam v) => v.type;
+  static const Field<ClickParam, ClickParamType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ClickParamTypeType.click,
+    def: ClickParamType.click,
   );
 
   @override
@@ -121,7 +121,7 @@ extension ClickParamValueCopy<$R, $Out>
 
 abstract class ClickParamCopyWith<$R, $In extends ClickParam, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ClickButtonType? button, int? x, int? y, ClickParamTypeType? type});
+  $R call({ClickButtonType? button, int? x, int? y, ClickParamType? type});
   ClickParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -134,19 +134,15 @@ class _ClickParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ClickParam> $mapper =
       ClickParamMapper.ensureInitialized();
   @override
-  $R call({
-    ClickButtonType? button,
-    int? x,
-    int? y,
-    ClickParamTypeType? type,
-  }) => $apply(
-    FieldCopyWithData({
-      if (button != null) #button: button,
-      if (x != null) #x: x,
-      if (y != null) #y: y,
-      if (type != null) #type: type,
-    }),
-  );
+  $R call({ClickButtonType? button, int? x, int? y, ClickParamType? type}) =>
+      $apply(
+        FieldCopyWithData({
+          if (button != null) #button: button,
+          if (x != null) #x: x,
+          if (y != null) #y: y,
+          if (type != null) #type: type,
+        }),
+      );
   @override
   ClickParam $make(CopyWithData data) => ClickParam(
     button: data.get(#button, or: $value.button),

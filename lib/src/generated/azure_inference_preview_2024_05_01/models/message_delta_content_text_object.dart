@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_text_object_text.dart';
-import 'message_delta_content_text_object_type_type.dart';
+import 'message_delta_content_text_object_type.dart';
 
 part 'message_delta_content_text_object.mapper.dart';
 
@@ -20,7 +20,7 @@ class MessageDeltaContentTextObject with MessageDeltaContentTextObjectMappable {
 
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentTextObjectTypeType type;
+  final MessageDeltaContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageDeltaContentTextObjectText? messageDeltaContentTextObjectText;
 

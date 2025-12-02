@@ -102,7 +102,7 @@ class ChatCompletionRequestAssistantMessageContentPartTextMapper
       );
       ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestAssistantMessageContentPartTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestAssistantMessageContentPartTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -110,12 +110,12 @@ class ChatCompletionRequestAssistantMessageContentPartTextMapper
   @override
   final String id = 'ChatCompletionRequestAssistantMessageContentPartText';
 
-  static ChatCompletionRequestAssistantMessageContentPartTypeType _$type(
+  static ChatCompletionRequestAssistantMessageContentPartType _$type(
     ChatCompletionRequestAssistantMessageContentPartText v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestAssistantMessageContentPartText,
-    ChatCompletionRequestAssistantMessageContentPartTypeType
+    ChatCompletionRequestAssistantMessageContentPartType
   >
   _f$type = Field('type', _$type);
   static String _$text(
@@ -262,7 +262,7 @@ abstract class ChatCompletionRequestAssistantMessageContentPartTextCopyWith<
         > {
   @override
   $R call({
-    ChatCompletionRequestAssistantMessageContentPartTypeType? type,
+    ChatCompletionRequestAssistantMessageContentPartType? type,
     String? text,
   });
   ChatCompletionRequestAssistantMessageContentPartTextCopyWith<$R2, $In, $Out2>
@@ -299,7 +299,7 @@ class _ChatCompletionRequestAssistantMessageContentPartTextCopyWithImpl<
       ChatCompletionRequestAssistantMessageContentPartTextMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestAssistantMessageContentPartTypeType? type,
+    ChatCompletionRequestAssistantMessageContentPartType? type,
     String? text,
   }) => $apply(
     FieldCopyWithData({
@@ -346,7 +346,7 @@ class ChatCompletionRequestAssistantMessageContentPartRefusalMapper
       );
       ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ChatCompletionRequestAssistantMessageContentPartTypeType2Mapper.ensureInitialized();
+      ChatCompletionRequestAssistantMessageContentPartType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -354,12 +354,12 @@ class ChatCompletionRequestAssistantMessageContentPartRefusalMapper
   @override
   final String id = 'ChatCompletionRequestAssistantMessageContentPartRefusal';
 
-  static ChatCompletionRequestAssistantMessageContentPartTypeType2 _$type(
+  static ChatCompletionRequestAssistantMessageContentPartType2 _$type(
     ChatCompletionRequestAssistantMessageContentPartRefusal v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestAssistantMessageContentPartRefusal,
-    ChatCompletionRequestAssistantMessageContentPartTypeType2
+    ChatCompletionRequestAssistantMessageContentPartType2
   >
   _f$type = Field('type', _$type);
   static String _$refusal(
@@ -510,7 +510,7 @@ abstract class ChatCompletionRequestAssistantMessageContentPartRefusalCopyWith<
         > {
   @override
   $R call({
-    ChatCompletionRequestAssistantMessageContentPartTypeType2? type,
+    ChatCompletionRequestAssistantMessageContentPartType2? type,
     String? refusal,
   });
   ChatCompletionRequestAssistantMessageContentPartRefusalCopyWith<
@@ -551,7 +551,7 @@ class _ChatCompletionRequestAssistantMessageContentPartRefusalCopyWithImpl<
       ChatCompletionRequestAssistantMessageContentPartRefusalMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestAssistantMessageContentPartTypeType2? type,
+    ChatCompletionRequestAssistantMessageContentPartType2? type,
     String? refusal,
   }) => $apply(
     FieldCopyWithData({

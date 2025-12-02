@@ -14,7 +14,7 @@ class ActiveStatusMapper extends ClassMapperBase<ActiveStatus> {
   static ActiveStatusMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ActiveStatusMapper._());
-      ActiveStatusTypeTypeMapper.ensureInitialized();
+      ActiveStatusTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,12 +22,12 @@ class ActiveStatusMapper extends ClassMapperBase<ActiveStatus> {
   @override
   final String id = 'ActiveStatus';
 
-  static ActiveStatusTypeType _$type(ActiveStatus v) => v.type;
-  static const Field<ActiveStatus, ActiveStatusTypeType> _f$type = Field(
+  static ActiveStatusType _$type(ActiveStatus v) => v.type;
+  static const Field<ActiveStatus, ActiveStatusType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ActiveStatusTypeType.active,
+    def: ActiveStatusType.active,
   );
 
   @override
@@ -103,7 +103,7 @@ extension ActiveStatusValueCopy<$R, $Out>
 
 abstract class ActiveStatusCopyWith<$R, $In extends ActiveStatus, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ActiveStatusTypeType? type});
+  $R call({ActiveStatusType? type});
   ActiveStatusCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -116,7 +116,7 @@ class _ActiveStatusCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ActiveStatus> $mapper =
       ActiveStatusMapper.ensureInitialized();
   @override
-  $R call({ActiveStatusTypeType? type}) =>
+  $R call({ActiveStatusType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ActiveStatus $make(CopyWithData data) =>

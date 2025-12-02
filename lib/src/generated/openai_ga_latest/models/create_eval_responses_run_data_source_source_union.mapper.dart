@@ -103,7 +103,7 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileContentMapper
       );
       CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalJsonlFileContentSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileContentSourceTypeMapper.ensureInitialized();
       EvalJsonlFileContentSourceContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -112,12 +112,12 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileContentMapper
   @override
   final String id = 'CreateEvalResponsesRunDataSourceSourceUnionFileContent';
 
-  static EvalJsonlFileContentSourceTypeType _$type(
+  static EvalJsonlFileContentSourceType _$type(
     CreateEvalResponsesRunDataSourceSourceUnionFileContent v,
   ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceSourceUnionFileContent,
-    EvalJsonlFileContentSourceTypeType
+    EvalJsonlFileContentSourceType
   >
   _f$type = Field('type', _$type);
   static List<EvalJsonlFileContentSourceContent> _$content(
@@ -272,7 +272,7 @@ abstract class CreateEvalResponsesRunDataSourceSourceUnionFileContentCopyWith<
   get content;
   @override
   $R call({
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
     List<EvalJsonlFileContentSourceContent>? content,
   });
   CreateEvalResponsesRunDataSourceSourceUnionFileContentCopyWith<
@@ -328,7 +328,7 @@ class _CreateEvalResponsesRunDataSourceSourceUnionFileContentCopyWithImpl<
   );
   @override
   $R call({
-    EvalJsonlFileContentSourceTypeType? type,
+    EvalJsonlFileContentSourceType? type,
     List<EvalJsonlFileContentSourceContent>? content,
   }) => $apply(
     FieldCopyWithData({
@@ -371,7 +371,7 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileIdMapper
       );
       CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalJsonlFileIdSourceTypeTypeMapper.ensureInitialized();
+      EvalJsonlFileIdSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -379,12 +379,12 @@ class CreateEvalResponsesRunDataSourceSourceUnionFileIdMapper
   @override
   final String id = 'CreateEvalResponsesRunDataSourceSourceUnionFileId';
 
-  static EvalJsonlFileIdSourceTypeType _$type(
+  static EvalJsonlFileIdSourceType _$type(
     CreateEvalResponsesRunDataSourceSourceUnionFileId v,
   ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceSourceUnionFileId,
-    EvalJsonlFileIdSourceTypeType
+    EvalJsonlFileIdSourceType
   >
   _f$type = Field('type', _$type);
   static String _$id(CreateEvalResponsesRunDataSourceSourceUnionFileId v) =>
@@ -517,7 +517,7 @@ abstract class CreateEvalResponsesRunDataSourceSourceUnionFileIdCopyWith<
     implements
         CreateEvalResponsesRunDataSourceSourceUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({EvalJsonlFileIdSourceTypeType? type, String? id});
+  $R call({EvalJsonlFileIdSourceType? type, String? id});
   CreateEvalResponsesRunDataSourceSourceUnionFileIdCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -546,7 +546,7 @@ class _CreateEvalResponsesRunDataSourceSourceUnionFileIdCopyWithImpl<$R, $Out>
   $mapper =
       CreateEvalResponsesRunDataSourceSourceUnionFileIdMapper.ensureInitialized();
   @override
-  $R call({EvalJsonlFileIdSourceTypeType? type, String? id}) => $apply(
+  $R call({EvalJsonlFileIdSourceType? type, String? id}) => $apply(
     FieldCopyWithData({if (type != null) #type: type, if (id != null) #id: id}),
   );
   @override
@@ -586,7 +586,7 @@ class CreateEvalResponsesRunDataSourceSourceUnionResponsesMapper
       );
       CreateEvalResponsesRunDataSourceSourceUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      EvalResponsesSourceTypeTypeMapper.ensureInitialized();
+      EvalResponsesSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -594,12 +594,12 @@ class CreateEvalResponsesRunDataSourceSourceUnionResponsesMapper
   @override
   final String id = 'CreateEvalResponsesRunDataSourceSourceUnionResponses';
 
-  static EvalResponsesSourceTypeType _$type(
+  static EvalResponsesSourceType _$type(
     CreateEvalResponsesRunDataSourceSourceUnionResponses v,
   ) => v.type;
   static const Field<
     CreateEvalResponsesRunDataSourceSourceUnionResponses,
-    EvalResponsesSourceTypeType
+    EvalResponsesSourceType
   >
   _f$type = Field('type', _$type);
   static dynamic _$metadata(
@@ -840,7 +840,7 @@ abstract class CreateEvalResponsesRunDataSourceSourceUnionResponsesCopyWith<
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get tools;
   @override
   $R call({
-    EvalResponsesSourceTypeType? type,
+    EvalResponsesSourceType? type,
     dynamic metadata,
     String? model,
     String? instructionsSearch,
@@ -904,7 +904,7 @@ class _CreateEvalResponsesRunDataSourceSourceUnionResponsesCopyWithImpl<
       : null;
   @override
   $R call({
-    EvalResponsesSourceTypeType? type,
+    EvalResponsesSourceType? type,
     Object? metadata = $none,
     Object? model = $none,
     Object? instructionsSearch = $none,

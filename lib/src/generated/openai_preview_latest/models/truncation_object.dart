@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'truncation_object_type_type.dart';
+import 'truncation_object_type.dart';
 
 part 'truncation_object.mapper.dart';
 
@@ -16,7 +16,7 @@ class TruncationObject with TruncationObjectMappable {
     this.lastMessages,
   });
 
-  final TruncationObjectTypeType type;
+  final TruncationObjectType type;
   @MappableField(key: 'last_messages')
   final int? lastMessages;
 

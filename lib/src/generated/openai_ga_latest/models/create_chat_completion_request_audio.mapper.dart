@@ -18,7 +18,7 @@ class CreateChatCompletionRequestAudioMapper
         _instance = CreateChatCompletionRequestAudioMapper._(),
       );
       VoiceIdsSharedMapper.ensureInitialized();
-      CreateChatCompletionRequestAudioFormatFormatMapper.ensureInitialized();
+      CreateChatCompletionRequestAudioFormatMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,12 +29,12 @@ class CreateChatCompletionRequestAudioMapper
   static VoiceIdsShared _$voice(CreateChatCompletionRequestAudio v) => v.voice;
   static const Field<CreateChatCompletionRequestAudio, VoiceIdsShared>
   _f$voice = Field('voice', _$voice, hook: const VoiceIdsSharedHook());
-  static CreateChatCompletionRequestAudioFormatFormat _$format(
+  static CreateChatCompletionRequestAudioFormat _$format(
     CreateChatCompletionRequestAudio v,
   ) => v.format;
   static const Field<
     CreateChatCompletionRequestAudio,
-    CreateChatCompletionRequestAudioFormatFormat
+    CreateChatCompletionRequestAudioFormat
   >
   _f$format = Field('format', _$format);
 
@@ -136,7 +136,7 @@ abstract class CreateChatCompletionRequestAudioCopyWith<
   VoiceIdsSharedCopyWith<$R, VoiceIdsShared, VoiceIdsShared> get voice;
   $R call({
     VoiceIdsShared? voice,
-    CreateChatCompletionRequestAudioFormatFormat? format,
+    CreateChatCompletionRequestAudioFormat? format,
   });
   CreateChatCompletionRequestAudioCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -166,7 +166,7 @@ class _CreateChatCompletionRequestAudioCopyWithImpl<$R, $Out>
   @override
   $R call({
     VoiceIdsShared? voice,
-    CreateChatCompletionRequestAudioFormatFormat? format,
+    CreateChatCompletionRequestAudioFormat? format,
   }) => $apply(
     FieldCopyWithData({
       if (voice != null) #voice: voice,

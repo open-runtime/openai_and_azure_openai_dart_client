@@ -17,7 +17,7 @@ class RealtimeClientEventConversationItemRetrieveMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemRetrieveMapper._(),
       );
-      RealtimeClientEventConversationItemRetrieveTypeTypeMapper.ensureInitialized();
+      RealtimeClientEventConversationItemRetrieveTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RealtimeClientEventConversationItemRetrieveMapper
   @override
   final String id = 'RealtimeClientEventConversationItemRetrieve';
 
-  static RealtimeClientEventConversationItemRetrieveTypeType _$type(
+  static RealtimeClientEventConversationItemRetrieveType _$type(
     RealtimeClientEventConversationItemRetrieve v,
   ) => v.type;
   static const Field<
     RealtimeClientEventConversationItemRetrieve,
-    RealtimeClientEventConversationItemRetrieveTypeType
+    RealtimeClientEventConversationItemRetrieveType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeClientEventConversationItemRetrieve v) =>
@@ -153,7 +153,7 @@ abstract class RealtimeClientEventConversationItemRetrieveCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeClientEventConversationItemRetrieveTypeType? type,
+    RealtimeClientEventConversationItemRetrieveType? type,
     String? itemId,
     String? eventId,
   });
@@ -182,7 +182,7 @@ class _RealtimeClientEventConversationItemRetrieveCopyWithImpl<$R, $Out>
       RealtimeClientEventConversationItemRetrieveMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeClientEventConversationItemRetrieveTypeType? type,
+    RealtimeClientEventConversationItemRetrieveType? type,
     String? itemId,
     Object? eventId = $none,
   }) => $apply(

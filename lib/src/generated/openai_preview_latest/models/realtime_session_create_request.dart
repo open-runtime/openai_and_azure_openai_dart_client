@@ -8,7 +8,7 @@ import 'realtime_session_create_request_input_audio_format_input_audio_format.da
 import 'realtime_session_create_request_input_audio_noise_reduction.dart';
 import 'realtime_session_create_request_input_audio_transcription.dart';
 import 'realtime_session_create_request_max_response_output_tokens_union.dart';
-import 'realtime_session_create_request_model_model.dart';
+import 'realtime_session_create_request_model.dart';
 import 'realtime_session_create_request_output_audio_format_output_audio_format.dart';
 import 'realtime_session_create_request_tools.dart';
 import 'realtime_session_create_request_turn_detection.dart';
@@ -45,7 +45,7 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   final String toolChoice;
   final num temperature;
   final dynamic? modalities;
-  final RealtimeSessionCreateRequestModelModel? model;
+  final RealtimeSessionCreateRequestModel? model;
   final String? instructions;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;

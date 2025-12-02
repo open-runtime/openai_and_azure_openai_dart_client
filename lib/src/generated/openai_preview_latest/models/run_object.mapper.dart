@@ -15,7 +15,7 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RunObjectMapper._());
       RunObjectObjectObjectEnumMapper.ensureInitialized();
-      RunObjectStatusStatusMapper.ensureInitialized();
+      RunObjectStatusMapper.ensureInitialized();
       RunObjectRequiredActionMapper.ensureInitialized();
       RunObjectLastErrorMapper.ensureInitialized();
       RunObjectIncompleteDetailsMapper.ensureInitialized();
@@ -54,8 +54,8 @@ class RunObjectMapper extends ClassMapperBase<RunObject> {
     _$assistantId,
     key: r'assistant_id',
   );
-  static RunObjectStatusStatus _$status(RunObject v) => v.status;
-  static const Field<RunObject, RunObjectStatusStatus> _f$status = Field(
+  static RunObjectStatus _$status(RunObject v) => v.status;
+  static const Field<RunObject, RunObjectStatus> _f$status = Field(
     'status',
     _$status,
   );
@@ -356,7 +356,7 @@ abstract class RunObjectCopyWith<$R, $In extends RunObject, $Out>
     int? createdAt,
     String? threadId,
     String? assistantId,
-    RunObjectStatusStatus? status,
+    RunObjectStatus? status,
     RunObjectRequiredAction? runObjectRequiredAction,
     RunObjectLastError? runObjectLastError,
     int? expiresAt,
@@ -462,7 +462,7 @@ class _RunObjectCopyWithImpl<$R, $Out>
     int? createdAt,
     String? threadId,
     String? assistantId,
-    RunObjectStatusStatus? status,
+    RunObjectStatus? status,
     Object? runObjectRequiredAction = $none,
     Object? runObjectLastError = $none,
     Object? expiresAt = $none,

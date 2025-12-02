@@ -14,7 +14,7 @@ class CreateMessageRequestMapper extends ClassMapperBase<CreateMessageRequest> {
   static CreateMessageRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CreateMessageRequestMapper._());
-      CreateMessageRequestRoleRoleMapper.ensureInitialized();
+      CreateMessageRequestRoleMapper.ensureInitialized();
       CreateMessageRequestAttachmentsMapper.ensureInitialized();
     }
     return _instance!;
@@ -23,9 +23,9 @@ class CreateMessageRequestMapper extends ClassMapperBase<CreateMessageRequest> {
   @override
   final String id = 'CreateMessageRequest';
 
-  static CreateMessageRequestRoleRole _$role(CreateMessageRequest v) => v.role;
-  static const Field<CreateMessageRequest, CreateMessageRequestRoleRole>
-  _f$role = Field('role', _$role);
+  static CreateMessageRequestRole _$role(CreateMessageRequest v) => v.role;
+  static const Field<CreateMessageRequest, CreateMessageRequestRole> _f$role =
+      Field('role', _$role);
   static String _$content(CreateMessageRequest v) => v.content;
   static const Field<CreateMessageRequest, String> _f$content = Field(
     'content',
@@ -148,7 +148,7 @@ abstract class CreateMessageRequestCopyWith<
   >?
   get attachments;
   $R call({
-    CreateMessageRequestRoleRole? role,
+    CreateMessageRequestRole? role,
     String? content,
     List<CreateMessageRequestAttachments>? attachments,
     dynamic metadata,
@@ -185,7 +185,7 @@ class _CreateMessageRequestCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    CreateMessageRequestRoleRole? role,
+    CreateMessageRequestRole? role,
     String? content,
     Object? attachments = $none,
     Object? metadata = $none,

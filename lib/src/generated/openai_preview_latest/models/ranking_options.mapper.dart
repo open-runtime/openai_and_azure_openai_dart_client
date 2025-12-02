@@ -14,7 +14,7 @@ class RankingOptionsMapper extends ClassMapperBase<RankingOptions> {
   static RankingOptionsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RankingOptionsMapper._());
-      RankingOptionsRankerRankerMapper.ensureInitialized();
+      RankingOptionsRankerMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,9 +22,12 @@ class RankingOptionsMapper extends ClassMapperBase<RankingOptions> {
   @override
   final String id = 'RankingOptions';
 
-  static RankingOptionsRankerRanker? _$ranker(RankingOptions v) => v.ranker;
-  static const Field<RankingOptions, RankingOptionsRankerRanker> _f$ranker =
-      Field('ranker', _$ranker, opt: true);
+  static RankingOptionsRanker? _$ranker(RankingOptions v) => v.ranker;
+  static const Field<RankingOptions, RankingOptionsRanker> _f$ranker = Field(
+    'ranker',
+    _$ranker,
+    opt: true,
+  );
   static num? _$scoreThreshold(RankingOptions v) => v.scoreThreshold;
   static const Field<RankingOptions, num> _f$scoreThreshold = Field(
     'scoreThreshold',
@@ -112,7 +115,7 @@ extension RankingOptionsValueCopy<$R, $Out>
 
 abstract class RankingOptionsCopyWith<$R, $In extends RankingOptions, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({RankingOptionsRankerRanker? ranker, num? scoreThreshold});
+  $R call({RankingOptionsRanker? ranker, num? scoreThreshold});
   RankingOptionsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

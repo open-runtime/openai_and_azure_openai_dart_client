@@ -17,7 +17,7 @@ class BatchFileExpirationAfterMapper
       MapperContainer.globals.use(
         _instance = BatchFileExpirationAfterMapper._(),
       );
-      BatchFileExpirationAfterAnchorAnchorMapper.ensureInitialized();
+      BatchFileExpirationAfterAnchorMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class BatchFileExpirationAfterMapper
   @override
   final String id = 'BatchFileExpirationAfter';
 
-  static BatchFileExpirationAfterAnchorAnchor _$anchor(
-    BatchFileExpirationAfter v,
-  ) => v.anchor;
-  static const Field<
-    BatchFileExpirationAfter,
-    BatchFileExpirationAfterAnchorAnchor
-  >
+  static BatchFileExpirationAfterAnchor _$anchor(BatchFileExpirationAfter v) =>
+      v.anchor;
+  static const Field<BatchFileExpirationAfter, BatchFileExpirationAfterAnchor>
   _f$anchor = Field('anchor', _$anchor);
   static int _$seconds(BatchFileExpirationAfter v) => v.seconds;
   static const Field<BatchFileExpirationAfter, int> _f$seconds = Field(
@@ -126,7 +122,7 @@ abstract class BatchFileExpirationAfterCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({BatchFileExpirationAfterAnchorAnchor? anchor, int? seconds});
+  $R call({BatchFileExpirationAfterAnchor? anchor, int? seconds});
   BatchFileExpirationAfterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -142,13 +138,12 @@ class _BatchFileExpirationAfterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<BatchFileExpirationAfter> $mapper =
       BatchFileExpirationAfterMapper.ensureInitialized();
   @override
-  $R call({BatchFileExpirationAfterAnchorAnchor? anchor, int? seconds}) =>
-      $apply(
-        FieldCopyWithData({
-          if (anchor != null) #anchor: anchor,
-          if (seconds != null) #seconds: seconds,
-        }),
-      );
+  $R call({BatchFileExpirationAfterAnchor? anchor, int? seconds}) => $apply(
+    FieldCopyWithData({
+      if (anchor != null) #anchor: anchor,
+      if (seconds != null) #seconds: seconds,
+    }),
+  );
   @override
   BatchFileExpirationAfter $make(CopyWithData data) => BatchFileExpirationAfter(
     anchor: data.get(#anchor, or: $value.anchor),

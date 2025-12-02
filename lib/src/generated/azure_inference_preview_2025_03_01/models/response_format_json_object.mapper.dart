@@ -17,7 +17,7 @@ class ResponseFormatJsonObjectMapper
       MapperContainer.globals.use(
         _instance = ResponseFormatJsonObjectMapper._(),
       );
-      ResponseFormatJsonObjectTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,9 +25,9 @@ class ResponseFormatJsonObjectMapper
   @override
   final String id = 'ResponseFormatJsonObject';
 
-  static ResponseFormatJsonObjectTypeType _$type(ResponseFormatJsonObject v) =>
+  static ResponseFormatJsonObjectType _$type(ResponseFormatJsonObject v) =>
       v.type;
-  static const Field<ResponseFormatJsonObject, ResponseFormatJsonObjectTypeType>
+  static const Field<ResponseFormatJsonObject, ResponseFormatJsonObjectType>
   _f$type = Field('type', _$type);
 
   @override
@@ -113,7 +113,7 @@ abstract class ResponseFormatJsonObjectCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ResponseFormatJsonObjectTypeType? type});
+  $R call({ResponseFormatJsonObjectType? type});
   ResponseFormatJsonObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +129,7 @@ class _ResponseFormatJsonObjectCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseFormatJsonObject> $mapper =
       ResponseFormatJsonObjectMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatJsonObjectTypeType? type}) =>
+  $R call({ResponseFormatJsonObjectType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseFormatJsonObject $make(CopyWithData data) =>

@@ -18,7 +18,7 @@ class CreateEvalJsonlRunDataSourceMapper
         _instance = CreateEvalJsonlRunDataSourceMapper._(),
       );
       CreateEvalJsonlRunDataSourceSourceSourceMapper.ensureInitialized();
-      CreateEvalJsonlRunDataSourceTypeTypeMapper.ensureInitialized();
+      CreateEvalJsonlRunDataSourceTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -34,18 +34,18 @@ class CreateEvalJsonlRunDataSourceMapper
     CreateEvalJsonlRunDataSourceSourceSource
   >
   _f$source = Field('source', _$source);
-  static CreateEvalJsonlRunDataSourceTypeType _$type(
+  static CreateEvalJsonlRunDataSourceType _$type(
     CreateEvalJsonlRunDataSource v,
   ) => v.type;
   static const Field<
     CreateEvalJsonlRunDataSource,
-    CreateEvalJsonlRunDataSourceTypeType
+    CreateEvalJsonlRunDataSourceType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CreateEvalJsonlRunDataSourceTypeType.jsonl,
+    def: CreateEvalJsonlRunDataSourceType.jsonl,
   );
 
   @override
@@ -146,7 +146,7 @@ abstract class CreateEvalJsonlRunDataSourceCopyWith<
   get source;
   $R call({
     CreateEvalJsonlRunDataSourceSourceSource? source,
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
   });
   CreateEvalJsonlRunDataSourceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -180,7 +180,7 @@ class _CreateEvalJsonlRunDataSourceCopyWithImpl<$R, $Out>
   @override
   $R call({
     CreateEvalJsonlRunDataSourceSourceSource? source,
-    CreateEvalJsonlRunDataSourceTypeType? type,
+    CreateEvalJsonlRunDataSourceType? type,
   }) => $apply(
     FieldCopyWithData({
       if (source != null) #source: source,

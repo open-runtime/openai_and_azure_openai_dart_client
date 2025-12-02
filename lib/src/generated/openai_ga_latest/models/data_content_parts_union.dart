@@ -7,9 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'chat_completion_request_assistant_message_content_part.dart';
 import 'chat_completion_request_message_content_part_image.dart';
 import 'chat_completion_request_message_content_part_image_image_url.dart';
-import 'chat_completion_request_message_content_part_image_type_type.dart';
+import 'chat_completion_request_message_content_part_image_type.dart';
 import 'chat_completion_request_message_content_part_text.dart';
-import 'chat_completion_request_message_content_part_text_type_type.dart';
+import 'chat_completion_request_message_content_part_text_type.dart';
 import 'chat_completion_request_user_message_content_part.dart';
 
 part 'data_content_parts_union.mapper.dart';
@@ -49,7 +49,7 @@ extension DataContentPartsUnionDeserializer on DataContentPartsUnion {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class DataContentPartsUnionText extends DataContentPartsUnion with DataContentPartsUnionTextMappable {
-  final ChatCompletionRequestMessageContentPartTextTypeType type;
+  final ChatCompletionRequestMessageContentPartTextType type;
   final String text;
 
   const DataContentPartsUnionText({
@@ -60,7 +60,7 @@ class DataContentPartsUnionText extends DataContentPartsUnion with DataContentPa
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
 class DataContentPartsUnionImageUrl extends DataContentPartsUnion with DataContentPartsUnionImageUrlMappable {
-  final ChatCompletionRequestMessageContentPartImageTypeType type;
+  final ChatCompletionRequestMessageContentPartImageType type;
   @MappableField(key: 'image_url')
   final ChatCompletionRequestMessageContentPartImageImageUrl chatCompletionRequestMessageContentPartImageImageUrl;
 

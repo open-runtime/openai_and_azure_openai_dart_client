@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_message_tool_call_chunk.dart';
 import 'chat_completion_stream_response_delta_function_call.dart';
-import 'chat_completion_stream_response_delta_role_role.dart';
+import 'chat_completion_stream_response_delta_role.dart';
 
 part 'chat_completion_stream_response_delta.mapper.dart';
 
@@ -26,7 +26,7 @@ class ChatCompletionStreamResponseDelta with ChatCompletionStreamResponseDeltaMa
   final ChatCompletionStreamResponseDeltaFunctionCall? chatCompletionStreamResponseDeltaFunctionCall;
   @MappableField(key: 'tool_calls')
   final List<ChatCompletionMessageToolCallChunk>? toolCalls;
-  final ChatCompletionStreamResponseDeltaRoleRole? role;
+  final ChatCompletionStreamResponseDeltaRole? role;
   final String? refusal;
 
   static ChatCompletionStreamResponseDelta fromJson(Map<String, dynamic> json) => ChatCompletionStreamResponseDeltaMapper.fromJson(json);

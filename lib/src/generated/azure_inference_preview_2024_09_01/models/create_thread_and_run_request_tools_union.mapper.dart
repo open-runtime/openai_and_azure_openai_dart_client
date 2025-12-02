@@ -97,7 +97,7 @@ class CreateThreadAndRunRequestToolsUnionCodeInterpreterMapper
       );
       CreateThreadAndRunRequestToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      AssistantToolsCodeTypeTypeMapper.ensureInitialized();
+      AssistantToolsCodeTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -105,12 +105,12 @@ class CreateThreadAndRunRequestToolsUnionCodeInterpreterMapper
   @override
   final String id = 'CreateThreadAndRunRequestToolsUnionCodeInterpreter';
 
-  static AssistantToolsCodeTypeType _$type(
+  static AssistantToolsCodeType _$type(
     CreateThreadAndRunRequestToolsUnionCodeInterpreter v,
   ) => v.type;
   static const Field<
     CreateThreadAndRunRequestToolsUnionCodeInterpreter,
-    AssistantToolsCodeTypeType
+    AssistantToolsCodeType
   >
   _f$type = Field('type', _$type);
 
@@ -237,7 +237,7 @@ abstract class CreateThreadAndRunRequestToolsUnionCodeInterpreterCopyWith<
 >
     implements CreateThreadAndRunRequestToolsUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolsCodeTypeType? type});
+  $R call({AssistantToolsCodeType? type});
   CreateThreadAndRunRequestToolsUnionCodeInterpreterCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -266,7 +266,7 @@ class _CreateThreadAndRunRequestToolsUnionCodeInterpreterCopyWithImpl<$R, $Out>
   $mapper =
       CreateThreadAndRunRequestToolsUnionCodeInterpreterMapper.ensureInitialized();
   @override
-  $R call({AssistantToolsCodeTypeType? type}) =>
+  $R call({AssistantToolsCodeType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateThreadAndRunRequestToolsUnionCodeInterpreter $make(CopyWithData data) =>
@@ -300,7 +300,7 @@ class CreateThreadAndRunRequestToolsUnionFileSearchMapper
       );
       CreateThreadAndRunRequestToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      AssistantToolsFileSearchTypeTypeMapper.ensureInitialized();
+      AssistantToolsFileSearchTypeMapper.ensureInitialized();
       AssistantToolsFileSearchFileSearchMapper.ensureInitialized();
     }
     return _instance!;
@@ -309,12 +309,12 @@ class CreateThreadAndRunRequestToolsUnionFileSearchMapper
   @override
   final String id = 'CreateThreadAndRunRequestToolsUnionFileSearch';
 
-  static AssistantToolsFileSearchTypeType _$type(
+  static AssistantToolsFileSearchType _$type(
     CreateThreadAndRunRequestToolsUnionFileSearch v,
   ) => v.type;
   static const Field<
     CreateThreadAndRunRequestToolsUnionFileSearch,
-    AssistantToolsFileSearchTypeType
+    AssistantToolsFileSearchType
   >
   _f$type = Field('type', _$type);
   static AssistantToolsFileSearchFileSearch?
@@ -462,7 +462,7 @@ abstract class CreateThreadAndRunRequestToolsUnionFileSearchCopyWith<
   get assistantToolsFileSearchFileSearch;
   @override
   $R call({
-    AssistantToolsFileSearchTypeType? type,
+    AssistantToolsFileSearchType? type,
     AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch,
   });
   CreateThreadAndRunRequestToolsUnionFileSearchCopyWith<$R2, $In, $Out2>
@@ -504,7 +504,7 @@ class _CreateThreadAndRunRequestToolsUnionFileSearchCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolsFileSearchFileSearch: v));
   @override
   $R call({
-    AssistantToolsFileSearchTypeType? type,
+    AssistantToolsFileSearchType? type,
     Object? assistantToolsFileSearchFileSearch = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -549,7 +549,7 @@ class CreateThreadAndRunRequestToolsUnionFunctionMapper
       );
       CreateThreadAndRunRequestToolsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      AssistantToolsFunctionTypeTypeMapper.ensureInitialized();
+      AssistantToolsFunctionTypeMapper.ensureInitialized();
       AssistantToolsFunctionFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -558,12 +558,12 @@ class CreateThreadAndRunRequestToolsUnionFunctionMapper
   @override
   final String id = 'CreateThreadAndRunRequestToolsUnionFunction';
 
-  static AssistantToolsFunctionTypeType _$type(
+  static AssistantToolsFunctionType _$type(
     CreateThreadAndRunRequestToolsUnionFunction v,
   ) => v.type;
   static const Field<
     CreateThreadAndRunRequestToolsUnionFunction,
-    AssistantToolsFunctionTypeType
+    AssistantToolsFunctionType
   >
   _f$type = Field('type', _$type);
   static AssistantToolsFunctionFunction _$assistantToolsFunctionFunction(
@@ -709,7 +709,7 @@ abstract class CreateThreadAndRunRequestToolsUnionFunctionCopyWith<
   get assistantToolsFunctionFunction;
   @override
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   });
   CreateThreadAndRunRequestToolsUnionFunctionCopyWith<$R2, $In, $Out2>
@@ -747,7 +747,7 @@ class _CreateThreadAndRunRequestToolsUnionFunctionCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolsFunctionFunction: v));
   @override
   $R call({
-    AssistantToolsFunctionTypeType? type,
+    AssistantToolsFunctionType? type,
     AssistantToolsFunctionFunction? assistantToolsFunctionFunction,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class ResponseTextAnnotationDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseTextAnnotationDeltaEventMapper._(),
       );
-      ResponseTextAnnotationDeltaEventTypeTypeMapper.ensureInitialized();
+      ResponseTextAnnotationDeltaEventTypeMapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ResponseTextAnnotationDeltaEventMapper
   @override
   final String id = 'ResponseTextAnnotationDeltaEvent';
 
-  static ResponseTextAnnotationDeltaEventTypeType _$type(
+  static ResponseTextAnnotationDeltaEventType _$type(
     ResponseTextAnnotationDeltaEvent v,
   ) => v.type;
   static const Field<
     ResponseTextAnnotationDeltaEvent,
-    ResponseTextAnnotationDeltaEventTypeType
+    ResponseTextAnnotationDeltaEventType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseTextAnnotationDeltaEvent v) => v.itemId;
@@ -158,7 +158,7 @@ abstract class ResponseTextAnnotationDeltaEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   AnnotationCopyWith<$R, Annotation, Annotation> get annotation;
   $R call({
-    ResponseTextAnnotationDeltaEventTypeType? type,
+    ResponseTextAnnotationDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -192,7 +192,7 @@ class _ResponseTextAnnotationDeltaEventCopyWithImpl<$R, $Out>
       $value.annotation.copyWith.$chain((v) => call(annotation: v));
   @override
   $R call({
-    ResponseTextAnnotationDeltaEventTypeType? type,
+    ResponseTextAnnotationDeltaEventType? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,

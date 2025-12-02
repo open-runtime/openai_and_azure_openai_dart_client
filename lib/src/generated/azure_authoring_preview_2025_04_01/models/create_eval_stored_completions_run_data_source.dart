@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_stored_completions_run_data_source_type_type.dart';
+import 'create_eval_stored_completions_run_data_source_type.dart';
 import 'metadata.dart';
 
 part 'create_eval_stored_completions_run_data_source.mapper.dart';
@@ -13,7 +13,7 @@ part 'create_eval_stored_completions_run_data_source.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalStoredCompletionsRunDataSource with CreateEvalStoredCompletionsRunDataSourceMappable {
   const CreateEvalStoredCompletionsRunDataSource({
-    this.type = CreateEvalStoredCompletionsRunDataSourceTypeType.storedCompletions,
+    this.type = CreateEvalStoredCompletionsRunDataSourceType.storedCompletions,
     this.createdAfter,
     this.createdBefore,
     this.limit,
@@ -21,7 +21,7 @@ class CreateEvalStoredCompletionsRunDataSource with CreateEvalStoredCompletionsR
     this.model,
   });
 
-  final CreateEvalStoredCompletionsRunDataSourceTypeType type;
+  final CreateEvalStoredCompletionsRunDataSourceType type;
   @MappableField(key: 'created_after')
   final int? createdAfter;
   @MappableField(key: 'created_before')

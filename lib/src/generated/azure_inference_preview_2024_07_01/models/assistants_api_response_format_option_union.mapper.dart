@@ -97,7 +97,7 @@ class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMapper
             AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMapper._(),
       );
       AssistantsApiResponseFormatOptionUnionMapper.ensureInitialized();
-      AssistantsApiResponseFormatTypeTypeMapper.ensureInitialized();
+      AssistantsApiResponseFormatTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -106,12 +106,12 @@ class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMapper
   final String id =
       'AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat';
 
-  static AssistantsApiResponseFormatTypeType _$type(
+  static AssistantsApiResponseFormatType _$type(
     AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat v,
   ) => v.type;
   static const Field<
     AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat,
-    AssistantsApiResponseFormatTypeType
+    AssistantsApiResponseFormatType
   >
   _f$type = Field('type', _$type);
 
@@ -247,7 +247,7 @@ abstract class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat
 >
     implements AssistantsApiResponseFormatOptionUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantsApiResponseFormatTypeType? type});
+  $R call({AssistantsApiResponseFormatType? type});
   AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatCopyWith<
     $R2,
     $In,
@@ -285,7 +285,7 @@ class _AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatCopyWith
   $mapper =
       AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMapper.ensureInitialized();
   @override
-  $R call({AssistantsApiResponseFormatTypeType? type}) =>
+  $R call({AssistantsApiResponseFormatType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat $make(

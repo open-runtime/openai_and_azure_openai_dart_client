@@ -17,7 +17,7 @@ class ChatCompletionRequestToolMessageMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestToolMessageMapper._(),
       );
-      ChatCompletionRequestToolMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionRequestToolMessageRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ChatCompletionRequestToolMessageMapper
   @override
   final String id = 'ChatCompletionRequestToolMessage';
 
-  static ChatCompletionRequestToolMessageRoleRole _$role(
+  static ChatCompletionRequestToolMessageRole _$role(
     ChatCompletionRequestToolMessage v,
   ) => v.role;
   static const Field<
     ChatCompletionRequestToolMessage,
-    ChatCompletionRequestToolMessageRoleRole
+    ChatCompletionRequestToolMessageRole
   >
   _f$role = Field('role', _$role);
   static String _$content(ChatCompletionRequestToolMessage v) => v.content;
@@ -139,7 +139,7 @@ abstract class ChatCompletionRequestToolMessageCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ChatCompletionRequestToolMessageRoleRole? role,
+    ChatCompletionRequestToolMessageRole? role,
     String? content,
     String? toolCallId,
   });
@@ -167,7 +167,7 @@ class _ChatCompletionRequestToolMessageCopyWithImpl<$R, $Out>
       ChatCompletionRequestToolMessageMapper.ensureInitialized();
   @override
   $R call({
-    ChatCompletionRequestToolMessageRoleRole? role,
+    ChatCompletionRequestToolMessageRole? role,
     String? content,
     String? toolCallId,
   }) => $apply(

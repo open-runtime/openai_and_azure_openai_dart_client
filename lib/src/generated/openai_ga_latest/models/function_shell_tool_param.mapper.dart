@@ -15,7 +15,7 @@ class FunctionShellToolParamMapper
   static FunctionShellToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FunctionShellToolParamMapper._());
-      FunctionShellToolParamTypeTypeMapper.ensureInitialized();
+      FunctionShellToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,14 +23,13 @@ class FunctionShellToolParamMapper
   @override
   final String id = 'FunctionShellToolParam';
 
-  static FunctionShellToolParamTypeType _$type(FunctionShellToolParam v) =>
-      v.type;
-  static const Field<FunctionShellToolParam, FunctionShellToolParamTypeType>
+  static FunctionShellToolParamType _$type(FunctionShellToolParam v) => v.type;
+  static const Field<FunctionShellToolParam, FunctionShellToolParamType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: FunctionShellToolParamTypeType.shell,
+    def: FunctionShellToolParamType.shell,
   );
 
   @override
@@ -114,7 +113,7 @@ abstract class FunctionShellToolParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({FunctionShellToolParamTypeType? type});
+  $R call({FunctionShellToolParamType? type});
   FunctionShellToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -130,7 +129,7 @@ class _FunctionShellToolParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<FunctionShellToolParam> $mapper =
       FunctionShellToolParamMapper.ensureInitialized();
   @override
-  $R call({FunctionShellToolParamTypeType? type}) =>
+  $R call({FunctionShellToolParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   FunctionShellToolParam $make(CopyWithData data) =>

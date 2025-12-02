@@ -11,35 +11,35 @@ import 'realtime_conversation_item_function_call.dart';
 import 'realtime_conversation_item_function_call_object_object_enum.dart';
 import 'realtime_conversation_item_function_call_output.dart';
 import 'realtime_conversation_item_function_call_output_object_object_enum.dart';
-import 'realtime_conversation_item_function_call_output_status_status.dart';
-import 'realtime_conversation_item_function_call_output_type_type.dart';
-import 'realtime_conversation_item_function_call_status_status.dart';
-import 'realtime_conversation_item_function_call_type_type.dart';
+import 'realtime_conversation_item_function_call_output_status.dart';
+import 'realtime_conversation_item_function_call_output_type.dart';
+import 'realtime_conversation_item_function_call_status.dart';
+import 'realtime_conversation_item_function_call_type.dart';
 import 'realtime_conversation_item_message_assistant.dart';
 import 'realtime_conversation_item_message_assistant_content.dart';
 import 'realtime_conversation_item_message_assistant_object_object_enum.dart';
-import 'realtime_conversation_item_message_assistant_role_role.dart';
-import 'realtime_conversation_item_message_assistant_status_status.dart';
-import 'realtime_conversation_item_message_assistant_type_type.dart';
+import 'realtime_conversation_item_message_assistant_role.dart';
+import 'realtime_conversation_item_message_assistant_status.dart';
+import 'realtime_conversation_item_message_assistant_type.dart';
 import 'realtime_conversation_item_object_object_enum.dart';
-import 'realtime_conversation_item_role_role.dart';
-import 'realtime_conversation_item_status_status.dart';
-import 'realtime_conversation_item_type_type.dart';
-import 'realtime_conversation_item_type_type2.dart';
-import 'realtime_conversation_item_type_type3.dart';
-import 'realtime_conversation_item_type_type4.dart';
-import 'realtime_conversation_item_type_type5.dart';
-import 'realtime_conversation_item_type_type6.dart';
-import 'realtime_conversation_item_type_type7.dart';
+import 'realtime_conversation_item_role.dart';
+import 'realtime_conversation_item_status.dart';
+import 'realtime_conversation_item_type.dart';
+import 'realtime_conversation_item_type2.dart';
+import 'realtime_conversation_item_type3.dart';
+import 'realtime_conversation_item_type4.dart';
+import 'realtime_conversation_item_type5.dart';
+import 'realtime_conversation_item_type6.dart';
+import 'realtime_conversation_item_type7.dart';
 import 'realtime_mcp_approval_request.dart';
-import 'realtime_mcp_approval_request_type_type.dart';
+import 'realtime_mcp_approval_request_type.dart';
 import 'realtime_mcp_approval_response.dart';
-import 'realtime_mcp_approval_response_type_type.dart';
+import 'realtime_mcp_approval_response_type.dart';
 import 'realtime_mcp_list_tools.dart';
-import 'realtime_mcp_list_tools_type_type.dart';
+import 'realtime_mcp_list_tools_type.dart';
 import 'realtime_mcp_tool_call.dart';
 import 'realtime_mcp_tool_call_error_union.dart';
-import 'realtime_mcp_tool_call_type_type.dart';
+import 'realtime_mcp_tool_call_type.dart';
 
 part 'realtime_conversation_item.mapper.dart';
 
@@ -96,9 +96,9 @@ class RealtimeConversationItemMessage extends RealtimeConversationItem with Real
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemTypeType type;
-  final RealtimeConversationItemStatusStatus? status;
-  final RealtimeConversationItemRoleRole role;
+  final RealtimeConversationItemType type;
+  final RealtimeConversationItemStatus? status;
+  final RealtimeConversationItemRole role;
   final List<RealtimeConversationItemContent> content;
 
   const RealtimeConversationItemMessage({
@@ -116,8 +116,8 @@ class RealtimeConversationItemFunctionCall extends RealtimeConversationItem with
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemTypeType2 type;
-  final RealtimeConversationItemStatusStatus? status;
+  final RealtimeConversationItemType2 type;
+  final RealtimeConversationItemStatus? status;
   @MappableField(key: 'call_id')
   final String? callId;
   final String name;
@@ -139,8 +139,8 @@ class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationIte
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemTypeType3 type;
-  final RealtimeConversationItemStatusStatus? status;
+  final RealtimeConversationItemType3 type;
+  final RealtimeConversationItemStatus? status;
   @MappableField(key: 'call_id')
   final String callId;
   final String output;
@@ -157,7 +157,7 @@ class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationIte
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
 class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem with RealtimeConversationItemMcpApprovalResponseMappable {
-  final RealtimeConversationItemTypeType4 type;
+  final RealtimeConversationItemType4 type;
   final String id;
   @MappableField(key: 'approval_request_id')
   final String approvalRequestId;
@@ -175,7 +175,7 @@ class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationIt
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
 class RealtimeConversationItemMcpListTools extends RealtimeConversationItem with RealtimeConversationItemMcpListToolsMappable {
-  final RealtimeConversationItemTypeType5 type;
+  final RealtimeConversationItemType5 type;
   final String? id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -191,7 +191,7 @@ class RealtimeConversationItemMcpListTools extends RealtimeConversationItem with
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
 class RealtimeConversationItemMcpCall extends RealtimeConversationItem with RealtimeConversationItemMcpCallMappable {
-  final RealtimeConversationItemTypeType6 type;
+  final RealtimeConversationItemType6 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -216,7 +216,7 @@ class RealtimeConversationItemMcpCall extends RealtimeConversationItem with Real
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
 class RealtimeConversationItemMcpApprovalRequest extends RealtimeConversationItem with RealtimeConversationItemMcpApprovalRequestMappable {
-  final RealtimeConversationItemTypeType7 type;
+  final RealtimeConversationItemType7 type;
   final String id;
   @MappableField(key: 'server_label')
   final String serverLabel;

@@ -17,7 +17,7 @@ class SpecificFunctionShellParamMapper
       MapperContainer.globals.use(
         _instance = SpecificFunctionShellParamMapper._(),
       );
-      SpecificFunctionShellParamTypeTypeMapper.ensureInitialized();
+      SpecificFunctionShellParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,18 +25,14 @@ class SpecificFunctionShellParamMapper
   @override
   final String id = 'SpecificFunctionShellParam';
 
-  static SpecificFunctionShellParamTypeType _$type(
-    SpecificFunctionShellParam v,
-  ) => v.type;
-  static const Field<
-    SpecificFunctionShellParam,
-    SpecificFunctionShellParamTypeType
-  >
+  static SpecificFunctionShellParamType _$type(SpecificFunctionShellParam v) =>
+      v.type;
+  static const Field<SpecificFunctionShellParam, SpecificFunctionShellParamType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: SpecificFunctionShellParamTypeType.shell,
+    def: SpecificFunctionShellParamType.shell,
   );
 
   @override
@@ -126,7 +122,7 @@ abstract class SpecificFunctionShellParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({SpecificFunctionShellParamTypeType? type});
+  $R call({SpecificFunctionShellParamType? type});
   SpecificFunctionShellParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -146,7 +142,7 @@ class _SpecificFunctionShellParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<SpecificFunctionShellParam> $mapper =
       SpecificFunctionShellParamMapper.ensureInitialized();
   @override
-  $R call({SpecificFunctionShellParamTypeType? type}) =>
+  $R call({SpecificFunctionShellParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   SpecificFunctionShellParam $make(CopyWithData data) =>

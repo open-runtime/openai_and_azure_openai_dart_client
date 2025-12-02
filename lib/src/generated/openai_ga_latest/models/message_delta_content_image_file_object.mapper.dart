@@ -17,7 +17,7 @@ class MessageDeltaContentImageFileObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentImageFileObjectMapper._(),
       );
-      MessageDeltaContentImageFileObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentImageFileObjectTypeMapper.ensureInitialized();
       MessageDeltaContentImageFileObjectImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -29,12 +29,12 @@ class MessageDeltaContentImageFileObjectMapper
   static int _$indexField(MessageDeltaContentImageFileObject v) => v.indexField;
   static const Field<MessageDeltaContentImageFileObject, int> _f$indexField =
       Field('indexField', _$indexField, key: r'index');
-  static MessageDeltaContentImageFileObjectTypeType _$type(
+  static MessageDeltaContentImageFileObjectType _$type(
     MessageDeltaContentImageFileObject v,
   ) => v.type;
   static const Field<
     MessageDeltaContentImageFileObject,
-    MessageDeltaContentImageFileObjectTypeType
+    MessageDeltaContentImageFileObjectType
   >
   _f$type = Field('type', _$type);
   static MessageDeltaContentImageFileObjectImageFile?
@@ -161,7 +161,7 @@ abstract class MessageDeltaContentImageFileObjectCopyWith<
   get messageDeltaContentImageFileObjectImageFile;
   $R call({
     int? indexField,
-    MessageDeltaContentImageFileObjectTypeType? type,
+    MessageDeltaContentImageFileObjectType? type,
     MessageDeltaContentImageFileObjectImageFile?
     messageDeltaContentImageFileObjectImageFile,
   });
@@ -199,7 +199,7 @@ class _MessageDeltaContentImageFileObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentImageFileObjectTypeType? type,
+    MessageDeltaContentImageFileObjectType? type,
     Object? messageDeltaContentImageFileObjectImageFile = $none,
   }) => $apply(
     FieldCopyWithData({

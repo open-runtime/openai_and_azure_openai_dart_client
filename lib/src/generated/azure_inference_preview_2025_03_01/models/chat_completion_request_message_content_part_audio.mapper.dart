@@ -18,7 +18,7 @@ class ChatCompletionRequestMessageContentPartAudioMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartAudioMapper._(),
       );
-      ChatCompletionRequestMessageContentPartAudioTypeTypeMapper.ensureInitialized();
+      ChatCompletionRequestMessageContentPartAudioTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartAudioInputAudioMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,12 +27,12 @@ class ChatCompletionRequestMessageContentPartAudioMapper
   @override
   final String id = 'ChatCompletionRequestMessageContentPartAudio';
 
-  static ChatCompletionRequestMessageContentPartAudioTypeType _$type(
+  static ChatCompletionRequestMessageContentPartAudioType _$type(
     ChatCompletionRequestMessageContentPartAudio v,
   ) => v.type;
   static const Field<
     ChatCompletionRequestMessageContentPartAudio,
-    ChatCompletionRequestMessageContentPartAudioTypeType
+    ChatCompletionRequestMessageContentPartAudioType
   >
   _f$type = Field('type', _$type);
   static ChatCompletionRequestMessageContentPartAudioInputAudio
@@ -171,7 +171,7 @@ abstract class ChatCompletionRequestMessageContentPartAudioCopyWith<
   >
   get chatCompletionRequestMessageContentPartAudioInputAudio;
   $R call({
-    ChatCompletionRequestMessageContentPartAudioTypeType? type,
+    ChatCompletionRequestMessageContentPartAudioType? type,
     ChatCompletionRequestMessageContentPartAudioInputAudio?
     chatCompletionRequestMessageContentPartAudioInputAudio,
   });
@@ -216,7 +216,7 @@ class _ChatCompletionRequestMessageContentPartAudioCopyWithImpl<$R, $Out>
       );
   @override
   $R call({
-    ChatCompletionRequestMessageContentPartAudioTypeType? type,
+    ChatCompletionRequestMessageContentPartAudioType? type,
     ChatCompletionRequestMessageContentPartAudioInputAudio?
     chatCompletionRequestMessageContentPartAudioInputAudio,
   }) => $apply(

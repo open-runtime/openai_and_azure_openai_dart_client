@@ -114,7 +114,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
       );
       RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      TranscriptTextUsageTokensTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageTokensTypeMapper.ensureInitialized();
       TranscriptTextUsageTokensInputTokenDetailsMapper.ensureInitialized();
     }
     return _instance!;
@@ -124,13 +124,13 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
   final String id =
       'RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens';
 
-  static TranscriptTextUsageTokensTypeType _$type(
+  static TranscriptTextUsageTokensType _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens
     v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens,
-    TranscriptTextUsageTokensTypeType
+    TranscriptTextUsageTokensType
   >
   _f$type = Field('type', _$type);
   static int _$inputTokens(
@@ -344,7 +344,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
   get transcriptTextUsageTokensInputTokenDetails;
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     TranscriptTextUsageTokensInputTokenDetails?
     transcriptTextUsageTokensInputTokenDetails,
@@ -399,7 +399,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageU
       .$chain((v) => call(transcriptTextUsageTokensInputTokenDetails: v));
   @override
   $R call({
-    TranscriptTextUsageTokensTypeType? type,
+    TranscriptTextUsageTokensType? type,
     int? inputTokens,
     Object? transcriptTextUsageTokensInputTokenDetails = $none,
     int? outputTokens,
@@ -460,7 +460,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
       );
       RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      TranscriptTextUsageDurationTypeTypeMapper.ensureInitialized();
+      TranscriptTextUsageDurationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -469,13 +469,13 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
   final String id =
       'RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration';
 
-  static TranscriptTextUsageDurationTypeType _$type(
+  static TranscriptTextUsageDurationType _$type(
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration
     v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration,
-    TranscriptTextUsageDurationTypeType
+    TranscriptTextUsageDurationType
   >
   _f$type = Field('type', _$type);
   static num _$seconds(
@@ -634,7 +634,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
           $Out
         > {
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds});
+  $R call({TranscriptTextUsageDurationType? type, num? seconds});
   RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDurationCopyWith<
     $R2,
     $In,
@@ -672,7 +672,7 @@ class _RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageU
   $mapper =
       RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDurationMapper.ensureInitialized();
   @override
-  $R call({TranscriptTextUsageDurationTypeType? type, num? seconds}) => $apply(
+  $R call({TranscriptTextUsageDurationType? type, num? seconds}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (seconds != null) #seconds: seconds,

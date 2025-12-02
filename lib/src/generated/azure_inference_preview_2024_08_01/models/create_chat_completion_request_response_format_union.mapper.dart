@@ -101,7 +101,7 @@ class CreateChatCompletionRequestResponseFormatUnionTextMapper
       );
       CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatTextTypeTypeMapper.ensureInitialized();
+      ResponseFormatTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -109,12 +109,12 @@ class CreateChatCompletionRequestResponseFormatUnionTextMapper
   @override
   final String id = 'CreateChatCompletionRequestResponseFormatUnionText';
 
-  static ResponseFormatTextTypeType _$type(
+  static ResponseFormatTextType _$type(
     CreateChatCompletionRequestResponseFormatUnionText v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestResponseFormatUnionText,
-    ResponseFormatTextTypeType
+    ResponseFormatTextType
   >
   _f$type = Field('type', _$type);
 
@@ -242,7 +242,7 @@ abstract class CreateChatCompletionRequestResponseFormatUnionTextCopyWith<
     implements
         CreateChatCompletionRequestResponseFormatUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseFormatTextTypeType? type});
+  $R call({ResponseFormatTextType? type});
   CreateChatCompletionRequestResponseFormatUnionTextCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -271,7 +271,7 @@ class _CreateChatCompletionRequestResponseFormatUnionTextCopyWithImpl<$R, $Out>
   $mapper =
       CreateChatCompletionRequestResponseFormatUnionTextMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatTextTypeType? type}) =>
+  $R call({ResponseFormatTextType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateChatCompletionRequestResponseFormatUnionText $make(CopyWithData data) =>
@@ -310,7 +310,7 @@ class CreateChatCompletionRequestResponseFormatUnionJsonObjectMapper
       );
       CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatJsonObjectTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -318,12 +318,12 @@ class CreateChatCompletionRequestResponseFormatUnionJsonObjectMapper
   @override
   final String id = 'CreateChatCompletionRequestResponseFormatUnionJsonObject';
 
-  static ResponseFormatJsonObjectTypeType _$type(
+  static ResponseFormatJsonObjectType _$type(
     CreateChatCompletionRequestResponseFormatUnionJsonObject v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestResponseFormatUnionJsonObject,
-    ResponseFormatJsonObjectTypeType
+    ResponseFormatJsonObjectType
   >
   _f$type = Field('type', _$type);
 
@@ -459,7 +459,7 @@ abstract class CreateChatCompletionRequestResponseFormatUnionJsonObjectCopyWith<
     implements
         CreateChatCompletionRequestResponseFormatUnionCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseFormatJsonObjectTypeType? type});
+  $R call({ResponseFormatJsonObjectType? type});
   CreateChatCompletionRequestResponseFormatUnionJsonObjectCopyWith<
     $R2,
     $In,
@@ -497,7 +497,7 @@ class _CreateChatCompletionRequestResponseFormatUnionJsonObjectCopyWithImpl<
   $mapper =
       CreateChatCompletionRequestResponseFormatUnionJsonObjectMapper.ensureInitialized();
   @override
-  $R call({ResponseFormatJsonObjectTypeType? type}) =>
+  $R call({ResponseFormatJsonObjectType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   CreateChatCompletionRequestResponseFormatUnionJsonObject $make(
@@ -537,7 +537,7 @@ class CreateChatCompletionRequestResponseFormatUnionJsonSchemaMapper
       );
       CreateChatCompletionRequestResponseFormatUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      ResponseFormatJsonSchemaTypeTypeMapper.ensureInitialized();
+      ResponseFormatJsonSchemaTypeMapper.ensureInitialized();
       ResponseFormatJsonSchemaJsonSchemaMapper.ensureInitialized();
     }
     return _instance!;
@@ -546,12 +546,12 @@ class CreateChatCompletionRequestResponseFormatUnionJsonSchemaMapper
   @override
   final String id = 'CreateChatCompletionRequestResponseFormatUnionJsonSchema';
 
-  static ResponseFormatJsonSchemaTypeType _$type(
+  static ResponseFormatJsonSchemaType _$type(
     CreateChatCompletionRequestResponseFormatUnionJsonSchema v,
   ) => v.type;
   static const Field<
     CreateChatCompletionRequestResponseFormatUnionJsonSchema,
-    ResponseFormatJsonSchemaTypeType
+    ResponseFormatJsonSchemaType
   >
   _f$type = Field('type', _$type);
   static ResponseFormatJsonSchemaJsonSchema
@@ -713,7 +713,7 @@ abstract class CreateChatCompletionRequestResponseFormatUnionJsonSchemaCopyWith<
   get responseFormatJsonSchemaJsonSchema;
   @override
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   });
   CreateChatCompletionRequestResponseFormatUnionJsonSchemaCopyWith<
@@ -764,7 +764,7 @@ class _CreateChatCompletionRequestResponseFormatUnionJsonSchemaCopyWithImpl<
       .$chain((v) => call(responseFormatJsonSchemaJsonSchema: v));
   @override
   $R call({
-    ResponseFormatJsonSchemaTypeType? type,
+    ResponseFormatJsonSchemaType? type,
     ResponseFormatJsonSchemaJsonSchema? responseFormatJsonSchemaJsonSchema,
   }) => $apply(
     FieldCopyWithData({

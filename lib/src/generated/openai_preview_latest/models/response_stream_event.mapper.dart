@@ -118,7 +118,7 @@ class ResponseStreamEventResponseAudioDeltaMapper
         _instance = ResponseStreamEventResponseAudioDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeTypeMapper.ensureInitialized();
+      ResponseStreamEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -126,12 +126,12 @@ class ResponseStreamEventResponseAudioDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseAudioDelta';
 
-  static ResponseStreamEventTypeType _$type(
+  static ResponseStreamEventType _$type(
     ResponseStreamEventResponseAudioDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseAudioDelta,
-    ResponseStreamEventTypeType
+    ResponseStreamEventType
   >
   _f$type = Field('type', _$type);
   static String _$delta(ResponseStreamEventResponseAudioDelta v) => v.delta;
@@ -244,7 +244,7 @@ abstract class ResponseStreamEventResponseAudioDeltaCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseStreamEventTypeType? type, String? delta});
+  $R call({ResponseStreamEventType? type, String? delta});
   ResponseStreamEventResponseAudioDeltaCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -267,7 +267,7 @@ class _ResponseStreamEventResponseAudioDeltaCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseStreamEventResponseAudioDelta> $mapper =
       ResponseStreamEventResponseAudioDeltaMapper.ensureInitialized();
   @override
-  $R call({ResponseStreamEventTypeType? type, String? delta}) => $apply(
+  $R call({ResponseStreamEventType? type, String? delta}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (delta != null) #delta: delta,
@@ -305,7 +305,7 @@ class ResponseStreamEventResponseAudioDoneMapper
         _instance = ResponseStreamEventResponseAudioDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType2Mapper.ensureInitialized();
+      ResponseStreamEventType2Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -313,12 +313,12 @@ class ResponseStreamEventResponseAudioDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseAudioDone';
 
-  static ResponseStreamEventTypeType2 _$type(
+  static ResponseStreamEventType2 _$type(
     ResponseStreamEventResponseAudioDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseAudioDone,
-    ResponseStreamEventTypeType2
+    ResponseStreamEventType2
   >
   _f$type = Field('type', _$type);
 
@@ -425,7 +425,7 @@ abstract class ResponseStreamEventResponseAudioDoneCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseStreamEventTypeType2? type});
+  $R call({ResponseStreamEventType2? type});
   ResponseStreamEventResponseAudioDoneCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -448,7 +448,7 @@ class _ResponseStreamEventResponseAudioDoneCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ResponseStreamEventResponseAudioDone> $mapper =
       ResponseStreamEventResponseAudioDoneMapper.ensureInitialized();
   @override
-  $R call({ResponseStreamEventTypeType2? type}) =>
+  $R call({ResponseStreamEventType2? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseStreamEventResponseAudioDone $make(CopyWithData data) =>
@@ -483,7 +483,7 @@ class ResponseStreamEventResponseAudioTranscriptDeltaMapper
         _instance = ResponseStreamEventResponseAudioTranscriptDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType3Mapper.ensureInitialized();
+      ResponseStreamEventType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -491,12 +491,12 @@ class ResponseStreamEventResponseAudioTranscriptDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseAudioTranscriptDelta';
 
-  static ResponseStreamEventTypeType3 _$type(
+  static ResponseStreamEventType3 _$type(
     ResponseStreamEventResponseAudioTranscriptDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseAudioTranscriptDelta,
-    ResponseStreamEventTypeType3
+    ResponseStreamEventType3
   >
   _f$type = Field('type', _$type);
   static String _$delta(ResponseStreamEventResponseAudioTranscriptDelta v) =>
@@ -629,7 +629,7 @@ abstract class ResponseStreamEventResponseAudioTranscriptDeltaCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseStreamEventTypeType3? type, String? delta});
+  $R call({ResponseStreamEventType3? type, String? delta});
   ResponseStreamEventResponseAudioTranscriptDeltaCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -658,7 +658,7 @@ class _ResponseStreamEventResponseAudioTranscriptDeltaCopyWithImpl<$R, $Out>
   $mapper =
       ResponseStreamEventResponseAudioTranscriptDeltaMapper.ensureInitialized();
   @override
-  $R call({ResponseStreamEventTypeType3? type, String? delta}) => $apply(
+  $R call({ResponseStreamEventType3? type, String? delta}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (delta != null) #delta: delta,
@@ -697,7 +697,7 @@ class ResponseStreamEventResponseAudioTranscriptDoneMapper
         _instance = ResponseStreamEventResponseAudioTranscriptDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType4Mapper.ensureInitialized();
+      ResponseStreamEventType4Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -705,12 +705,12 @@ class ResponseStreamEventResponseAudioTranscriptDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseAudioTranscriptDone';
 
-  static ResponseStreamEventTypeType4 _$type(
+  static ResponseStreamEventType4 _$type(
     ResponseStreamEventResponseAudioTranscriptDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseAudioTranscriptDone,
-    ResponseStreamEventTypeType4
+    ResponseStreamEventType4
   >
   _f$type = Field('type', _$type);
 
@@ -836,7 +836,7 @@ abstract class ResponseStreamEventResponseAudioTranscriptDoneCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseStreamEventTypeType4? type});
+  $R call({ResponseStreamEventType4? type});
   ResponseStreamEventResponseAudioTranscriptDoneCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -865,7 +865,7 @@ class _ResponseStreamEventResponseAudioTranscriptDoneCopyWithImpl<$R, $Out>
   $mapper =
       ResponseStreamEventResponseAudioTranscriptDoneMapper.ensureInitialized();
   @override
-  $R call({ResponseStreamEventTypeType4? type}) =>
+  $R call({ResponseStreamEventType4? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   ResponseStreamEventResponseAudioTranscriptDone $make(CopyWithData data) =>
@@ -904,7 +904,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMapper
             ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType5Mapper.ensureInitialized();
+      ResponseStreamEventType5Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -912,12 +912,12 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseCodeInterpreterCallCodeDelta';
 
-  static ResponseStreamEventTypeType5 _$type(
+  static ResponseStreamEventType5 _$type(
     ResponseStreamEventResponseCodeInterpreterCallCodeDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCodeInterpreterCallCodeDelta,
-    ResponseStreamEventTypeType5
+    ResponseStreamEventType5
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -1076,11 +1076,7 @@ abstract class ResponseStreamEventResponseCodeInterpreterCallCodeDeltaCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType5? type,
-    int? outputIndex,
-    String? delta,
-  });
+  $R call({ResponseStreamEventType5? type, int? outputIndex, String? delta});
   ResponseStreamEventResponseCodeInterpreterCallCodeDeltaCopyWith<
     $R2,
     $In,
@@ -1118,17 +1114,14 @@ class _ResponseStreamEventResponseCodeInterpreterCallCodeDeltaCopyWithImpl<
   $mapper =
       ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMapper.ensureInitialized();
   @override
-  $R call({
-    ResponseStreamEventTypeType5? type,
-    int? outputIndex,
-    String? delta,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (outputIndex != null) #outputIndex: outputIndex,
-      if (delta != null) #delta: delta,
-    }),
-  );
+  $R call({ResponseStreamEventType5? type, int? outputIndex, String? delta}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (outputIndex != null) #outputIndex: outputIndex,
+          if (delta != null) #delta: delta,
+        }),
+      );
   @override
   ResponseStreamEventResponseCodeInterpreterCallCodeDelta $make(
     CopyWithData data,
@@ -1168,7 +1161,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDoneMapper
             ResponseStreamEventResponseCodeInterpreterCallCodeDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType6Mapper.ensureInitialized();
+      ResponseStreamEventType6Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1176,12 +1169,12 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseCodeInterpreterCallCodeDone';
 
-  static ResponseStreamEventTypeType6 _$type(
+  static ResponseStreamEventType6 _$type(
     ResponseStreamEventResponseCodeInterpreterCallCodeDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCodeInterpreterCallCodeDone,
-    ResponseStreamEventTypeType6
+    ResponseStreamEventType6
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -1333,7 +1326,7 @@ abstract class ResponseStreamEventResponseCodeInterpreterCallCodeDoneCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({ResponseStreamEventTypeType6? type, int? outputIndex, String? code});
+  $R call({ResponseStreamEventType6? type, int? outputIndex, String? code});
   ResponseStreamEventResponseCodeInterpreterCallCodeDoneCopyWith<
     $R2,
     $In,
@@ -1371,17 +1364,14 @@ class _ResponseStreamEventResponseCodeInterpreterCallCodeDoneCopyWithImpl<
   $mapper =
       ResponseStreamEventResponseCodeInterpreterCallCodeDoneMapper.ensureInitialized();
   @override
-  $R call({
-    ResponseStreamEventTypeType6? type,
-    int? outputIndex,
-    String? code,
-  }) => $apply(
-    FieldCopyWithData({
-      if (type != null) #type: type,
-      if (outputIndex != null) #outputIndex: outputIndex,
-      if (code != null) #code: code,
-    }),
-  );
+  $R call({ResponseStreamEventType6? type, int? outputIndex, String? code}) =>
+      $apply(
+        FieldCopyWithData({
+          if (type != null) #type: type,
+          if (outputIndex != null) #outputIndex: outputIndex,
+          if (code != null) #code: code,
+        }),
+      );
   @override
   ResponseStreamEventResponseCodeInterpreterCallCodeDone $make(
     CopyWithData data,
@@ -1421,7 +1411,7 @@ class ResponseStreamEventResponseCodeInterpreterCallCompletedMapper
             ResponseStreamEventResponseCodeInterpreterCallCompletedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType7Mapper.ensureInitialized();
+      ResponseStreamEventType7Mapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
     return _instance!;
@@ -1430,12 +1420,12 @@ class ResponseStreamEventResponseCodeInterpreterCallCompletedMapper
   @override
   final String id = 'ResponseStreamEventResponseCodeInterpreterCallCompleted';
 
-  static ResponseStreamEventTypeType7 _$type(
+  static ResponseStreamEventType7 _$type(
     ResponseStreamEventResponseCodeInterpreterCallCompleted v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCodeInterpreterCallCompleted,
-    ResponseStreamEventTypeType7
+    ResponseStreamEventType7
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -1604,7 +1594,7 @@ abstract class ResponseStreamEventResponseCodeInterpreterCallCompletedCopyWith<
   get codeInterpreterCall;
   @override
   $R call({
-    ResponseStreamEventTypeType7? type,
+    ResponseStreamEventType7? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   });
@@ -1655,7 +1645,7 @@ class _ResponseStreamEventResponseCodeInterpreterCallCompletedCopyWithImpl<
   );
   @override
   $R call({
-    ResponseStreamEventTypeType7? type,
+    ResponseStreamEventType7? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   }) => $apply(
@@ -1708,7 +1698,7 @@ class ResponseStreamEventResponseCodeInterpreterCallInProgressMapper
             ResponseStreamEventResponseCodeInterpreterCallInProgressMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType8Mapper.ensureInitialized();
+      ResponseStreamEventType8Mapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
     return _instance!;
@@ -1717,12 +1707,12 @@ class ResponseStreamEventResponseCodeInterpreterCallInProgressMapper
   @override
   final String id = 'ResponseStreamEventResponseCodeInterpreterCallInProgress';
 
-  static ResponseStreamEventTypeType8 _$type(
+  static ResponseStreamEventType8 _$type(
     ResponseStreamEventResponseCodeInterpreterCallInProgress v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCodeInterpreterCallInProgress,
-    ResponseStreamEventTypeType8
+    ResponseStreamEventType8
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -1891,7 +1881,7 @@ abstract class ResponseStreamEventResponseCodeInterpreterCallInProgressCopyWith<
   get codeInterpreterCall;
   @override
   $R call({
-    ResponseStreamEventTypeType8? type,
+    ResponseStreamEventType8? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   });
@@ -1942,7 +1932,7 @@ class _ResponseStreamEventResponseCodeInterpreterCallInProgressCopyWithImpl<
   );
   @override
   $R call({
-    ResponseStreamEventTypeType8? type,
+    ResponseStreamEventType8? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   }) => $apply(
@@ -1995,7 +1985,7 @@ class ResponseStreamEventResponseCodeInterpreterCallInterpretingMapper
             ResponseStreamEventResponseCodeInterpreterCallInterpretingMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType9Mapper.ensureInitialized();
+      ResponseStreamEventType9Mapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
     return _instance!;
@@ -2005,12 +1995,12 @@ class ResponseStreamEventResponseCodeInterpreterCallInterpretingMapper
   final String id =
       'ResponseStreamEventResponseCodeInterpreterCallInterpreting';
 
-  static ResponseStreamEventTypeType9 _$type(
+  static ResponseStreamEventType9 _$type(
     ResponseStreamEventResponseCodeInterpreterCallInterpreting v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCodeInterpreterCallInterpreting,
-    ResponseStreamEventTypeType9
+    ResponseStreamEventType9
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -2180,7 +2170,7 @@ abstract class ResponseStreamEventResponseCodeInterpreterCallInterpretingCopyWit
   get codeInterpreterCall;
   @override
   $R call({
-    ResponseStreamEventTypeType9? type,
+    ResponseStreamEventType9? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   });
@@ -2231,7 +2221,7 @@ class _ResponseStreamEventResponseCodeInterpreterCallInterpretingCopyWithImpl<
   );
   @override
   $R call({
-    ResponseStreamEventTypeType9? type,
+    ResponseStreamEventType9? type,
     int? outputIndex,
     CodeInterpreterToolCall? codeInterpreterCall,
   }) => $apply(
@@ -2278,7 +2268,7 @@ class ResponseStreamEventResponseCompletedMapper
         _instance = ResponseStreamEventResponseCompletedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType10Mapper.ensureInitialized();
+      ResponseStreamEventType10Mapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -2287,12 +2277,12 @@ class ResponseStreamEventResponseCompletedMapper
   @override
   final String id = 'ResponseStreamEventResponseCompleted';
 
-  static ResponseStreamEventTypeType10 _$type(
+  static ResponseStreamEventType10 _$type(
     ResponseStreamEventResponseCompleted v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCompleted,
-    ResponseStreamEventTypeType10
+    ResponseStreamEventType10
   >
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseStreamEventResponseCompleted v) =>
@@ -2408,7 +2398,7 @@ abstract class ResponseStreamEventResponseCompletedCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   @override
-  $R call({ResponseStreamEventTypeType10? type, ResponseModel? response});
+  $R call({ResponseStreamEventType10? type, ResponseModel? response});
   ResponseStreamEventResponseCompletedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -2434,13 +2424,12 @@ class _ResponseStreamEventResponseCompletedCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseStreamEventTypeType10? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseStreamEventType10? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseStreamEventResponseCompleted $make(CopyWithData data) =>
       ResponseStreamEventResponseCompleted(
@@ -2473,7 +2462,7 @@ class ResponseStreamEventResponseContentPartAddedMapper
         _instance = ResponseStreamEventResponseContentPartAddedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType11Mapper.ensureInitialized();
+      ResponseStreamEventType11Mapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -2482,12 +2471,12 @@ class ResponseStreamEventResponseContentPartAddedMapper
   @override
   final String id = 'ResponseStreamEventResponseContentPartAdded';
 
-  static ResponseStreamEventTypeType11 _$type(
+  static ResponseStreamEventType11 _$type(
     ResponseStreamEventResponseContentPartAdded v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseContentPartAdded,
-    ResponseStreamEventTypeType11
+    ResponseStreamEventType11
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseContentPartAdded v) =>
@@ -2641,7 +2630,7 @@ abstract class ResponseStreamEventResponseContentPartAddedCopyWith<
   OutputContentCopyWith<$R, OutputContent, OutputContent> get partField;
   @override
   $R call({
-    ResponseStreamEventTypeType11? type,
+    ResponseStreamEventType11? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -2675,7 +2664,7 @@ class _ResponseStreamEventResponseContentPartAddedCopyWithImpl<$R, $Out>
       $value.partField.copyWith.$chain((v) => call(partField: v));
   @override
   $R call({
-    ResponseStreamEventTypeType11? type,
+    ResponseStreamEventType11? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -2724,7 +2713,7 @@ class ResponseStreamEventResponseContentPartDoneMapper
         _instance = ResponseStreamEventResponseContentPartDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType12Mapper.ensureInitialized();
+      ResponseStreamEventType12Mapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
     }
     return _instance!;
@@ -2733,12 +2722,12 @@ class ResponseStreamEventResponseContentPartDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseContentPartDone';
 
-  static ResponseStreamEventTypeType12 _$type(
+  static ResponseStreamEventType12 _$type(
     ResponseStreamEventResponseContentPartDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseContentPartDone,
-    ResponseStreamEventTypeType12
+    ResponseStreamEventType12
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseContentPartDone v) =>
@@ -2889,7 +2878,7 @@ abstract class ResponseStreamEventResponseContentPartDoneCopyWith<
   OutputContentCopyWith<$R, OutputContent, OutputContent> get partField;
   @override
   $R call({
-    ResponseStreamEventTypeType12? type,
+    ResponseStreamEventType12? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -2923,7 +2912,7 @@ class _ResponseStreamEventResponseContentPartDoneCopyWithImpl<$R, $Out>
       $value.partField.copyWith.$chain((v) => call(partField: v));
   @override
   $R call({
-    ResponseStreamEventTypeType12? type,
+    ResponseStreamEventType12? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -2972,7 +2961,7 @@ class ResponseStreamEventResponseCreatedMapper
         _instance = ResponseStreamEventResponseCreatedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType13Mapper.ensureInitialized();
+      ResponseStreamEventType13Mapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -2981,12 +2970,12 @@ class ResponseStreamEventResponseCreatedMapper
   @override
   final String id = 'ResponseStreamEventResponseCreated';
 
-  static ResponseStreamEventTypeType13 _$type(
+  static ResponseStreamEventType13 _$type(
     ResponseStreamEventResponseCreated v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseCreated,
-    ResponseStreamEventTypeType13
+    ResponseStreamEventType13
   >
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseStreamEventResponseCreated v) =>
@@ -3100,7 +3089,7 @@ abstract class ResponseStreamEventResponseCreatedCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   @override
-  $R call({ResponseStreamEventTypeType13? type, ResponseModel? response});
+  $R call({ResponseStreamEventType13? type, ResponseModel? response});
   ResponseStreamEventResponseCreatedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -3126,13 +3115,12 @@ class _ResponseStreamEventResponseCreatedCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseStreamEventTypeType13? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseStreamEventType13? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseStreamEventResponseCreated $make(CopyWithData data) =>
       ResponseStreamEventResponseCreated(
@@ -3165,7 +3153,7 @@ class ResponseStreamEventErrorMapper
         _instance = ResponseStreamEventErrorMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType14Mapper.ensureInitialized();
+      ResponseStreamEventType14Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3173,9 +3161,8 @@ class ResponseStreamEventErrorMapper
   @override
   final String id = 'ResponseStreamEventError';
 
-  static ResponseStreamEventTypeType14 _$type(ResponseStreamEventError v) =>
-      v.type;
-  static const Field<ResponseStreamEventError, ResponseStreamEventTypeType14>
+  static ResponseStreamEventType14 _$type(ResponseStreamEventError v) => v.type;
+  static const Field<ResponseStreamEventError, ResponseStreamEventType14>
   _f$type = Field('type', _$type);
   static String? _$code(ResponseStreamEventError v) => v.code;
   static const Field<ResponseStreamEventError, String> _f$code = Field(
@@ -3294,7 +3281,7 @@ abstract class ResponseStreamEventErrorCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType14? type,
+    ResponseStreamEventType14? type,
     String? code,
     String? message,
     String? param,
@@ -3315,7 +3302,7 @@ class _ResponseStreamEventErrorCopyWithImpl<$R, $Out>
       ResponseStreamEventErrorMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType14? type,
+    ResponseStreamEventType14? type,
     Object? code = $none,
     String? message,
     Object? param = $none,
@@ -3355,7 +3342,7 @@ class ResponseStreamEventResponseFileSearchCallCompletedMapper
             ResponseStreamEventResponseFileSearchCallCompletedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType15Mapper.ensureInitialized();
+      ResponseStreamEventType15Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3363,12 +3350,12 @@ class ResponseStreamEventResponseFileSearchCallCompletedMapper
   @override
   final String id = 'ResponseStreamEventResponseFileSearchCallCompleted';
 
-  static ResponseStreamEventTypeType15 _$type(
+  static ResponseStreamEventType15 _$type(
     ResponseStreamEventResponseFileSearchCallCompleted v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFileSearchCallCompleted,
-    ResponseStreamEventTypeType15
+    ResponseStreamEventType15
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -3511,11 +3498,7 @@ abstract class ResponseStreamEventResponseFileSearchCallCompletedCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType15? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType15? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseFileSearchCallCompletedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -3545,7 +3528,7 @@ class _ResponseStreamEventResponseFileSearchCallCompletedCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseFileSearchCallCompletedMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType15? type,
+    ResponseStreamEventType15? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(
@@ -3592,7 +3575,7 @@ class ResponseStreamEventResponseFileSearchCallInProgressMapper
             ResponseStreamEventResponseFileSearchCallInProgressMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType16Mapper.ensureInitialized();
+      ResponseStreamEventType16Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3600,12 +3583,12 @@ class ResponseStreamEventResponseFileSearchCallInProgressMapper
   @override
   final String id = 'ResponseStreamEventResponseFileSearchCallInProgress';
 
-  static ResponseStreamEventTypeType16 _$type(
+  static ResponseStreamEventType16 _$type(
     ResponseStreamEventResponseFileSearchCallInProgress v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFileSearchCallInProgress,
-    ResponseStreamEventTypeType16
+    ResponseStreamEventType16
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -3751,11 +3734,7 @@ abstract class ResponseStreamEventResponseFileSearchCallInProgressCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType16? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType16? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseFileSearchCallInProgressCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -3787,7 +3766,7 @@ class _ResponseStreamEventResponseFileSearchCallInProgressCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseFileSearchCallInProgressMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType16? type,
+    ResponseStreamEventType16? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(
@@ -3833,7 +3812,7 @@ class ResponseStreamEventResponseFileSearchCallSearchingMapper
             ResponseStreamEventResponseFileSearchCallSearchingMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType17Mapper.ensureInitialized();
+      ResponseStreamEventType17Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -3841,12 +3820,12 @@ class ResponseStreamEventResponseFileSearchCallSearchingMapper
   @override
   final String id = 'ResponseStreamEventResponseFileSearchCallSearching';
 
-  static ResponseStreamEventTypeType17 _$type(
+  static ResponseStreamEventType17 _$type(
     ResponseStreamEventResponseFileSearchCallSearching v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFileSearchCallSearching,
-    ResponseStreamEventTypeType17
+    ResponseStreamEventType17
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -3989,11 +3968,7 @@ abstract class ResponseStreamEventResponseFileSearchCallSearchingCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType17? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType17? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseFileSearchCallSearchingCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -4023,7 +3998,7 @@ class _ResponseStreamEventResponseFileSearchCallSearchingCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseFileSearchCallSearchingMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType17? type,
+    ResponseStreamEventType17? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(
@@ -4070,7 +4045,7 @@ class ResponseStreamEventResponseFunctionCallArgumentsDeltaMapper
             ResponseStreamEventResponseFunctionCallArgumentsDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType18Mapper.ensureInitialized();
+      ResponseStreamEventType18Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4078,12 +4053,12 @@ class ResponseStreamEventResponseFunctionCallArgumentsDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseFunctionCallArgumentsDelta';
 
-  static ResponseStreamEventTypeType18 _$type(
+  static ResponseStreamEventType18 _$type(
     ResponseStreamEventResponseFunctionCallArgumentsDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFunctionCallArgumentsDelta,
-    ResponseStreamEventTypeType18
+    ResponseStreamEventType18
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -4247,7 +4222,7 @@ abstract class ResponseStreamEventResponseFunctionCallArgumentsDeltaCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType18? type,
+    ResponseStreamEventType18? type,
     String? itemId,
     int? outputIndex,
     String? delta,
@@ -4286,7 +4261,7 @@ class _ResponseStreamEventResponseFunctionCallArgumentsDeltaCopyWithImpl<
       ResponseStreamEventResponseFunctionCallArgumentsDeltaMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType18? type,
+    ResponseStreamEventType18? type,
     String? itemId,
     int? outputIndex,
     String? delta,
@@ -4337,7 +4312,7 @@ class ResponseStreamEventResponseFunctionCallArgumentsDoneMapper
             ResponseStreamEventResponseFunctionCallArgumentsDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType19Mapper.ensureInitialized();
+      ResponseStreamEventType19Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -4345,12 +4320,12 @@ class ResponseStreamEventResponseFunctionCallArgumentsDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseFunctionCallArgumentsDone';
 
-  static ResponseStreamEventTypeType19 _$type(
+  static ResponseStreamEventType19 _$type(
     ResponseStreamEventResponseFunctionCallArgumentsDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFunctionCallArgumentsDone,
-    ResponseStreamEventTypeType19
+    ResponseStreamEventType19
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -4512,7 +4487,7 @@ abstract class ResponseStreamEventResponseFunctionCallArgumentsDoneCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType19? type,
+    ResponseStreamEventType19? type,
     String? itemId,
     int? outputIndex,
     String? arguments,
@@ -4551,7 +4526,7 @@ class _ResponseStreamEventResponseFunctionCallArgumentsDoneCopyWithImpl<
       ResponseStreamEventResponseFunctionCallArgumentsDoneMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType19? type,
+    ResponseStreamEventType19? type,
     String? itemId,
     int? outputIndex,
     String? arguments,
@@ -4597,7 +4572,7 @@ class ResponseStreamEventResponseInProgressMapper
         _instance = ResponseStreamEventResponseInProgressMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType20Mapper.ensureInitialized();
+      ResponseStreamEventType20Mapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -4606,12 +4581,12 @@ class ResponseStreamEventResponseInProgressMapper
   @override
   final String id = 'ResponseStreamEventResponseInProgress';
 
-  static ResponseStreamEventTypeType20 _$type(
+  static ResponseStreamEventType20 _$type(
     ResponseStreamEventResponseInProgress v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseInProgress,
-    ResponseStreamEventTypeType20
+    ResponseStreamEventType20
   >
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseStreamEventResponseInProgress v) =>
@@ -4726,7 +4701,7 @@ abstract class ResponseStreamEventResponseInProgressCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   @override
-  $R call({ResponseStreamEventTypeType20? type, ResponseModel? response});
+  $R call({ResponseStreamEventType20? type, ResponseModel? response});
   ResponseStreamEventResponseInProgressCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -4752,13 +4727,12 @@ class _ResponseStreamEventResponseInProgressCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseStreamEventTypeType20? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseStreamEventType20? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseStreamEventResponseInProgress $make(CopyWithData data) =>
       ResponseStreamEventResponseInProgress(
@@ -4791,7 +4765,7 @@ class ResponseStreamEventResponseFailedMapper
         _instance = ResponseStreamEventResponseFailedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType21Mapper.ensureInitialized();
+      ResponseStreamEventType21Mapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -4800,12 +4774,12 @@ class ResponseStreamEventResponseFailedMapper
   @override
   final String id = 'ResponseStreamEventResponseFailed';
 
-  static ResponseStreamEventTypeType21 _$type(
+  static ResponseStreamEventType21 _$type(
     ResponseStreamEventResponseFailed v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseFailed,
-    ResponseStreamEventTypeType21
+    ResponseStreamEventType21
   >
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseStreamEventResponseFailed v) =>
@@ -4919,7 +4893,7 @@ abstract class ResponseStreamEventResponseFailedCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   @override
-  $R call({ResponseStreamEventTypeType21? type, ResponseModel? response});
+  $R call({ResponseStreamEventType21? type, ResponseModel? response});
   ResponseStreamEventResponseFailedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -4946,13 +4920,12 @@ class _ResponseStreamEventResponseFailedCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseStreamEventTypeType21? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseStreamEventType21? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseStreamEventResponseFailed $make(CopyWithData data) =>
       ResponseStreamEventResponseFailed(
@@ -4985,7 +4958,7 @@ class ResponseStreamEventResponseIncompleteMapper
         _instance = ResponseStreamEventResponseIncompleteMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType22Mapper.ensureInitialized();
+      ResponseStreamEventType22Mapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
     return _instance!;
@@ -4994,12 +4967,12 @@ class ResponseStreamEventResponseIncompleteMapper
   @override
   final String id = 'ResponseStreamEventResponseIncomplete';
 
-  static ResponseStreamEventTypeType22 _$type(
+  static ResponseStreamEventType22 _$type(
     ResponseStreamEventResponseIncomplete v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseIncomplete,
-    ResponseStreamEventTypeType22
+    ResponseStreamEventType22
   >
   _f$type = Field('type', _$type);
   static ResponseModel _$response(ResponseStreamEventResponseIncomplete v) =>
@@ -5114,7 +5087,7 @@ abstract class ResponseStreamEventResponseIncompleteCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
   @override
-  $R call({ResponseStreamEventTypeType22? type, ResponseModel? response});
+  $R call({ResponseStreamEventType22? type, ResponseModel? response});
   ResponseStreamEventResponseIncompleteCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -5140,13 +5113,12 @@ class _ResponseStreamEventResponseIncompleteCopyWithImpl<$R, $Out>
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response =>
       $value.response.copyWith.$chain((v) => call(response: v));
   @override
-  $R call({ResponseStreamEventTypeType22? type, ResponseModel? response}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (response != null) #response: response,
-        }),
-      );
+  $R call({ResponseStreamEventType22? type, ResponseModel? response}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (response != null) #response: response,
+    }),
+  );
   @override
   ResponseStreamEventResponseIncomplete $make(CopyWithData data) =>
       ResponseStreamEventResponseIncomplete(
@@ -5179,7 +5151,7 @@ class ResponseStreamEventResponseOutputItemAddedMapper
         _instance = ResponseStreamEventResponseOutputItemAddedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType23Mapper.ensureInitialized();
+      ResponseStreamEventType23Mapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -5188,12 +5160,12 @@ class ResponseStreamEventResponseOutputItemAddedMapper
   @override
   final String id = 'ResponseStreamEventResponseOutputItemAdded';
 
-  static ResponseStreamEventTypeType23 _$type(
+  static ResponseStreamEventType23 _$type(
     ResponseStreamEventResponseOutputItemAdded v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseOutputItemAdded,
-    ResponseStreamEventTypeType23
+    ResponseStreamEventType23
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseStreamEventResponseOutputItemAdded v) =>
@@ -5323,7 +5295,7 @@ abstract class ResponseStreamEventResponseOutputItemAddedCopyWith<
   OutputItemCopyWith<$R, OutputItem, OutputItem> get item;
   @override
   $R call({
-    ResponseStreamEventTypeType23? type,
+    ResponseStreamEventType23? type,
     int? outputIndex,
     OutputItem? item,
   });
@@ -5355,7 +5327,7 @@ class _ResponseStreamEventResponseOutputItemAddedCopyWithImpl<$R, $Out>
       $value.item.copyWith.$chain((v) => call(item: v));
   @override
   $R call({
-    ResponseStreamEventTypeType23? type,
+    ResponseStreamEventType23? type,
     int? outputIndex,
     OutputItem? item,
   }) => $apply(
@@ -5398,7 +5370,7 @@ class ResponseStreamEventResponseOutputItemDoneMapper
         _instance = ResponseStreamEventResponseOutputItemDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType24Mapper.ensureInitialized();
+      ResponseStreamEventType24Mapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
     }
     return _instance!;
@@ -5407,12 +5379,12 @@ class ResponseStreamEventResponseOutputItemDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseOutputItemDone';
 
-  static ResponseStreamEventTypeType24 _$type(
+  static ResponseStreamEventType24 _$type(
     ResponseStreamEventResponseOutputItemDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseOutputItemDone,
-    ResponseStreamEventTypeType24
+    ResponseStreamEventType24
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseStreamEventResponseOutputItemDone v) =>
@@ -5540,7 +5512,7 @@ abstract class ResponseStreamEventResponseOutputItemDoneCopyWith<
   OutputItemCopyWith<$R, OutputItem, OutputItem> get item;
   @override
   $R call({
-    ResponseStreamEventTypeType24? type,
+    ResponseStreamEventType24? type,
     int? outputIndex,
     OutputItem? item,
   });
@@ -5571,7 +5543,7 @@ class _ResponseStreamEventResponseOutputItemDoneCopyWithImpl<$R, $Out>
       $value.item.copyWith.$chain((v) => call(item: v));
   @override
   $R call({
-    ResponseStreamEventTypeType24? type,
+    ResponseStreamEventType24? type,
     int? outputIndex,
     OutputItem? item,
   }) => $apply(
@@ -5619,7 +5591,7 @@ class ResponseStreamEventResponseReasoningSummaryPartAddedMapper
             ResponseStreamEventResponseReasoningSummaryPartAddedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType25Mapper.ensureInitialized();
+      ResponseStreamEventType25Mapper.ensureInitialized();
       ResponseStreamEventPartMapper.ensureInitialized();
     }
     return _instance!;
@@ -5628,12 +5600,12 @@ class ResponseStreamEventResponseReasoningSummaryPartAddedMapper
   @override
   final String id = 'ResponseStreamEventResponseReasoningSummaryPartAdded';
 
-  static ResponseStreamEventTypeType25 _$type(
+  static ResponseStreamEventType25 _$type(
     ResponseStreamEventResponseReasoningSummaryPartAdded v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseReasoningSummaryPartAdded,
-    ResponseStreamEventTypeType25
+    ResponseStreamEventType25
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -5816,7 +5788,7 @@ abstract class ResponseStreamEventResponseReasoningSummaryPartAddedCopyWith<
   get responseStreamEventPart;
   @override
   $R call({
-    ResponseStreamEventTypeType25? type,
+    ResponseStreamEventType25? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -5865,7 +5837,7 @@ class _ResponseStreamEventResponseReasoningSummaryPartAddedCopyWithImpl<
   );
   @override
   $R call({
-    ResponseStreamEventTypeType25? type,
+    ResponseStreamEventType25? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -5923,7 +5895,7 @@ class ResponseStreamEventResponseReasoningSummaryPartDoneMapper
             ResponseStreamEventResponseReasoningSummaryPartDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType26Mapper.ensureInitialized();
+      ResponseStreamEventType26Mapper.ensureInitialized();
       ResponseStreamEventPartMapper.ensureInitialized();
     }
     return _instance!;
@@ -5932,12 +5904,12 @@ class ResponseStreamEventResponseReasoningSummaryPartDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseReasoningSummaryPartDone';
 
-  static ResponseStreamEventTypeType26 _$type(
+  static ResponseStreamEventType26 _$type(
     ResponseStreamEventResponseReasoningSummaryPartDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseReasoningSummaryPartDone,
-    ResponseStreamEventTypeType26
+    ResponseStreamEventType26
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -6115,7 +6087,7 @@ abstract class ResponseStreamEventResponseReasoningSummaryPartDoneCopyWith<
   get responseStreamEventPart;
   @override
   $R call({
-    ResponseStreamEventTypeType26? type,
+    ResponseStreamEventType26? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6161,7 +6133,7 @@ class _ResponseStreamEventResponseReasoningSummaryPartDoneCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    ResponseStreamEventTypeType26? type,
+    ResponseStreamEventType26? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6219,7 +6191,7 @@ class ResponseStreamEventResponseReasoningSummaryTextDeltaMapper
             ResponseStreamEventResponseReasoningSummaryTextDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType27Mapper.ensureInitialized();
+      ResponseStreamEventType27Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -6227,12 +6199,12 @@ class ResponseStreamEventResponseReasoningSummaryTextDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseReasoningSummaryTextDelta';
 
-  static ResponseStreamEventTypeType27 _$type(
+  static ResponseStreamEventType27 _$type(
     ResponseStreamEventResponseReasoningSummaryTextDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseReasoningSummaryTextDelta,
-    ResponseStreamEventTypeType27
+    ResponseStreamEventType27
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -6405,7 +6377,7 @@ abstract class ResponseStreamEventResponseReasoningSummaryTextDeltaCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType27? type,
+    ResponseStreamEventType27? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6445,7 +6417,7 @@ class _ResponseStreamEventResponseReasoningSummaryTextDeltaCopyWithImpl<
       ResponseStreamEventResponseReasoningSummaryTextDeltaMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType27? type,
+    ResponseStreamEventType27? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6499,7 +6471,7 @@ class ResponseStreamEventResponseReasoningSummaryTextDoneMapper
             ResponseStreamEventResponseReasoningSummaryTextDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType28Mapper.ensureInitialized();
+      ResponseStreamEventType28Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -6507,12 +6479,12 @@ class ResponseStreamEventResponseReasoningSummaryTextDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseReasoningSummaryTextDone';
 
-  static ResponseStreamEventTypeType28 _$type(
+  static ResponseStreamEventType28 _$type(
     ResponseStreamEventResponseReasoningSummaryTextDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseReasoningSummaryTextDone,
-    ResponseStreamEventTypeType28
+    ResponseStreamEventType28
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -6679,7 +6651,7 @@ abstract class ResponseStreamEventResponseReasoningSummaryTextDoneCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType28? type,
+    ResponseStreamEventType28? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6716,7 +6688,7 @@ class _ResponseStreamEventResponseReasoningSummaryTextDoneCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseReasoningSummaryTextDoneMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType28? type,
+    ResponseStreamEventType28? type,
     String? itemId,
     int? outputIndex,
     int? summaryIndex,
@@ -6765,7 +6737,7 @@ class ResponseStreamEventResponseRefusalDeltaMapper
         _instance = ResponseStreamEventResponseRefusalDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType29Mapper.ensureInitialized();
+      ResponseStreamEventType29Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -6773,12 +6745,12 @@ class ResponseStreamEventResponseRefusalDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseRefusalDelta';
 
-  static ResponseStreamEventTypeType29 _$type(
+  static ResponseStreamEventType29 _$type(
     ResponseStreamEventResponseRefusalDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseRefusalDelta,
-    ResponseStreamEventTypeType29
+    ResponseStreamEventType29
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseRefusalDelta v) => v.itemId;
@@ -6918,7 +6890,7 @@ abstract class ResponseStreamEventResponseRefusalDeltaCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType29? type,
+    ResponseStreamEventType29? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -6947,7 +6919,7 @@ class _ResponseStreamEventResponseRefusalDeltaCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseRefusalDeltaMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType29? type,
+    ResponseStreamEventType29? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -6996,7 +6968,7 @@ class ResponseStreamEventResponseRefusalDoneMapper
         _instance = ResponseStreamEventResponseRefusalDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType30Mapper.ensureInitialized();
+      ResponseStreamEventType30Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -7004,12 +6976,12 @@ class ResponseStreamEventResponseRefusalDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseRefusalDone';
 
-  static ResponseStreamEventTypeType30 _$type(
+  static ResponseStreamEventType30 _$type(
     ResponseStreamEventResponseRefusalDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseRefusalDone,
-    ResponseStreamEventTypeType30
+    ResponseStreamEventType30
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseRefusalDone v) => v.itemId;
@@ -7146,7 +7118,7 @@ abstract class ResponseStreamEventResponseRefusalDoneCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType30? type,
+    ResponseStreamEventType30? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7175,7 +7147,7 @@ class _ResponseStreamEventResponseRefusalDoneCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseRefusalDoneMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType30? type,
+    ResponseStreamEventType30? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7229,7 +7201,7 @@ class ResponseStreamEventResponseOutputTextAnnotationAddedMapper
             ResponseStreamEventResponseOutputTextAnnotationAddedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType31Mapper.ensureInitialized();
+      ResponseStreamEventType31Mapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
     }
     return _instance!;
@@ -7238,12 +7210,12 @@ class ResponseStreamEventResponseOutputTextAnnotationAddedMapper
   @override
   final String id = 'ResponseStreamEventResponseOutputTextAnnotationAdded';
 
-  static ResponseStreamEventTypeType31 _$type(
+  static ResponseStreamEventType31 _$type(
     ResponseStreamEventResponseOutputTextAnnotationAdded v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseOutputTextAnnotationAdded,
-    ResponseStreamEventTypeType31
+    ResponseStreamEventType31
   >
   _f$type = Field('type', _$type);
   static String _$itemId(
@@ -7428,7 +7400,7 @@ abstract class ResponseStreamEventResponseOutputTextAnnotationAddedCopyWith<
   AnnotationCopyWith<$R, Annotation, Annotation> get annotation;
   @override
   $R call({
-    ResponseStreamEventTypeType31? type,
+    ResponseStreamEventType31? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7472,7 +7444,7 @@ class _ResponseStreamEventResponseOutputTextAnnotationAddedCopyWithImpl<
       $value.annotation.copyWith.$chain((v) => call(annotation: v));
   @override
   $R call({
-    ResponseStreamEventTypeType31? type,
+    ResponseStreamEventType31? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7524,7 +7496,7 @@ class ResponseStreamEventResponseOutputTextDeltaMapper
         _instance = ResponseStreamEventResponseOutputTextDeltaMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType32Mapper.ensureInitialized();
+      ResponseStreamEventType32Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -7532,12 +7504,12 @@ class ResponseStreamEventResponseOutputTextDeltaMapper
   @override
   final String id = 'ResponseStreamEventResponseOutputTextDelta';
 
-  static ResponseStreamEventTypeType32 _$type(
+  static ResponseStreamEventType32 _$type(
     ResponseStreamEventResponseOutputTextDelta v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseOutputTextDelta,
-    ResponseStreamEventTypeType32
+    ResponseStreamEventType32
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseOutputTextDelta v) =>
@@ -7686,7 +7658,7 @@ abstract class ResponseStreamEventResponseOutputTextDeltaCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType32? type,
+    ResponseStreamEventType32? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7717,7 +7689,7 @@ class _ResponseStreamEventResponseOutputTextDeltaCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseOutputTextDeltaMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType32? type,
+    ResponseStreamEventType32? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7766,7 +7738,7 @@ class ResponseStreamEventResponseOutputTextDoneMapper
         _instance = ResponseStreamEventResponseOutputTextDoneMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType33Mapper.ensureInitialized();
+      ResponseStreamEventType33Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -7774,12 +7746,12 @@ class ResponseStreamEventResponseOutputTextDoneMapper
   @override
   final String id = 'ResponseStreamEventResponseOutputTextDone';
 
-  static ResponseStreamEventTypeType33 _$type(
+  static ResponseStreamEventType33 _$type(
     ResponseStreamEventResponseOutputTextDone v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseOutputTextDone,
-    ResponseStreamEventTypeType33
+    ResponseStreamEventType33
   >
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseStreamEventResponseOutputTextDone v) =>
@@ -7925,7 +7897,7 @@ abstract class ResponseStreamEventResponseOutputTextDoneCopyWith<
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    ResponseStreamEventTypeType33? type,
+    ResponseStreamEventType33? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -7955,7 +7927,7 @@ class _ResponseStreamEventResponseOutputTextDoneCopyWithImpl<$R, $Out>
   $mapper = ResponseStreamEventResponseOutputTextDoneMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType33? type,
+    ResponseStreamEventType33? type,
     String? itemId,
     int? outputIndex,
     int? contentIndex,
@@ -8006,7 +7978,7 @@ class ResponseStreamEventResponseWebSearchCallCompletedMapper
         _instance = ResponseStreamEventResponseWebSearchCallCompletedMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType34Mapper.ensureInitialized();
+      ResponseStreamEventType34Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8014,12 +7986,12 @@ class ResponseStreamEventResponseWebSearchCallCompletedMapper
   @override
   final String id = 'ResponseStreamEventResponseWebSearchCallCompleted';
 
-  static ResponseStreamEventTypeType34 _$type(
+  static ResponseStreamEventType34 _$type(
     ResponseStreamEventResponseWebSearchCallCompleted v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseWebSearchCallCompleted,
-    ResponseStreamEventTypeType34
+    ResponseStreamEventType34
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -8161,11 +8133,7 @@ abstract class ResponseStreamEventResponseWebSearchCallCompletedCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType34? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType34? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseWebSearchCallCompletedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -8195,7 +8163,7 @@ class _ResponseStreamEventResponseWebSearchCallCompletedCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseWebSearchCallCompletedMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType34? type,
+    ResponseStreamEventType34? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(
@@ -8240,7 +8208,7 @@ class ResponseStreamEventResponseWebSearchCallInProgressMapper
             ResponseStreamEventResponseWebSearchCallInProgressMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType35Mapper.ensureInitialized();
+      ResponseStreamEventType35Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8248,12 +8216,12 @@ class ResponseStreamEventResponseWebSearchCallInProgressMapper
   @override
   final String id = 'ResponseStreamEventResponseWebSearchCallInProgress';
 
-  static ResponseStreamEventTypeType35 _$type(
+  static ResponseStreamEventType35 _$type(
     ResponseStreamEventResponseWebSearchCallInProgress v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseWebSearchCallInProgress,
-    ResponseStreamEventTypeType35
+    ResponseStreamEventType35
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -8396,11 +8364,7 @@ abstract class ResponseStreamEventResponseWebSearchCallInProgressCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType35? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType35? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseWebSearchCallInProgressCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -8430,7 +8394,7 @@ class _ResponseStreamEventResponseWebSearchCallInProgressCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseWebSearchCallInProgressMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType35? type,
+    ResponseStreamEventType35? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(
@@ -8474,7 +8438,7 @@ class ResponseStreamEventResponseWebSearchCallSearchingMapper
         _instance = ResponseStreamEventResponseWebSearchCallSearchingMapper._(),
       );
       ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
-      ResponseStreamEventTypeType36Mapper.ensureInitialized();
+      ResponseStreamEventType36Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -8482,12 +8446,12 @@ class ResponseStreamEventResponseWebSearchCallSearchingMapper
   @override
   final String id = 'ResponseStreamEventResponseWebSearchCallSearching';
 
-  static ResponseStreamEventTypeType36 _$type(
+  static ResponseStreamEventType36 _$type(
     ResponseStreamEventResponseWebSearchCallSearching v,
   ) => v.type;
   static const Field<
     ResponseStreamEventResponseWebSearchCallSearching,
-    ResponseStreamEventTypeType36
+    ResponseStreamEventType36
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(
@@ -8629,11 +8593,7 @@ abstract class ResponseStreamEventResponseWebSearchCallSearchingCopyWith<
 >
     implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    ResponseStreamEventTypeType36? type,
-    int? outputIndex,
-    String? itemId,
-  });
+  $R call({ResponseStreamEventType36? type, int? outputIndex, String? itemId});
   ResponseStreamEventResponseWebSearchCallSearchingCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -8663,7 +8623,7 @@ class _ResponseStreamEventResponseWebSearchCallSearchingCopyWithImpl<$R, $Out>
       ResponseStreamEventResponseWebSearchCallSearchingMapper.ensureInitialized();
   @override
   $R call({
-    ResponseStreamEventTypeType36? type,
+    ResponseStreamEventType36? type,
     int? outputIndex,
     String? itemId,
   }) => $apply(

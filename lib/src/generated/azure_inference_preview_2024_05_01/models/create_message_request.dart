@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_message_request_attachments.dart';
-import 'create_message_request_role_role.dart';
+import 'create_message_request_role.dart';
 
 part 'create_message_request.mapper.dart';
 
@@ -18,7 +18,7 @@ class CreateMessageRequest with CreateMessageRequestMappable {
     this.metadata,
   });
 
-  final CreateMessageRequestRoleRole role;
+  final CreateMessageRequestRole role;
   final String content;
   final List<CreateMessageRequestAttachments>? attachments;
   final dynamic? metadata;

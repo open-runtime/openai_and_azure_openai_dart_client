@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_image_gen_call_completed_event_type_type.dart';
+import 'response_image_gen_call_completed_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_image_gen_call_completed_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseImageGenCallCompletedEvent with ResponseImageGenCallCompletedEvent
     required this.itemId,
   });
 
-  final ResponseImageGenCallCompletedEventTypeType type;
+  final ResponseImageGenCallCompletedEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   @MappableField(key: 'sequence_number')

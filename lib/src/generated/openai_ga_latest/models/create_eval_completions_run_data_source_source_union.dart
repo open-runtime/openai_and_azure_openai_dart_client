@@ -6,11 +6,11 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'eval_jsonl_file_content_source.dart';
 import 'eval_jsonl_file_content_source_content.dart';
-import 'eval_jsonl_file_content_source_type_type.dart';
+import 'eval_jsonl_file_content_source_type.dart';
 import 'eval_jsonl_file_id_source.dart';
-import 'eval_jsonl_file_id_source_type_type.dart';
+import 'eval_jsonl_file_id_source_type.dart';
 import 'eval_stored_completions_source.dart';
-import 'eval_stored_completions_source_type_type.dart';
+import 'eval_stored_completions_source_type.dart';
 import 'metadata.dart';
 
 part 'create_eval_completions_run_data_source_source_union.mapper.dart';
@@ -53,7 +53,7 @@ extension CreateEvalCompletionsRunDataSourceSourceUnionDeserializer on CreateEva
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
 class CreateEvalCompletionsRunDataSourceSourceUnionFileContent extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionFileContentMappable {
-  final EvalJsonlFileContentSourceTypeType type;
+  final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
   const CreateEvalCompletionsRunDataSourceSourceUnionFileContent({
@@ -64,7 +64,7 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileContent extends CreateEva
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
 class CreateEvalCompletionsRunDataSourceSourceUnionFileId extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionFileIdMappable {
-  final EvalJsonlFileIdSourceTypeType type;
+  final EvalJsonlFileIdSourceType type;
   final String id;
 
   const CreateEvalCompletionsRunDataSourceSourceUnionFileId({
@@ -75,7 +75,7 @@ class CreateEvalCompletionsRunDataSourceSourceUnionFileId extends CreateEvalComp
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
 class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMappable {
-  final EvalStoredCompletionsSourceTypeType type;
+  final EvalStoredCompletionsSourceType type;
   final Metadata? metadata;
   final String? model;
   @MappableField(key: 'created_after')

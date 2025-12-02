@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';
-import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_type_type.dart';
+import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_type.dart';
 
 part 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed.mapper.dart';
 
@@ -25,7 +25,7 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed with 
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeType type;
+  final RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'content_index')

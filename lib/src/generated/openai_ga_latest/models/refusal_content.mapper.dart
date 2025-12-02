@@ -14,7 +14,7 @@ class RefusalContentMapper extends ClassMapperBase<RefusalContent> {
   static RefusalContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RefusalContentMapper._());
-      RefusalContentTypeTypeMapper.ensureInitialized();
+      RefusalContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,12 +27,12 @@ class RefusalContentMapper extends ClassMapperBase<RefusalContent> {
     'refusal',
     _$refusal,
   );
-  static RefusalContentTypeType _$type(RefusalContent v) => v.type;
-  static const Field<RefusalContent, RefusalContentTypeType> _f$type = Field(
+  static RefusalContentType _$type(RefusalContent v) => v.type;
+  static const Field<RefusalContent, RefusalContentType> _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: RefusalContentTypeType.refusal,
+    def: RefusalContentType.refusal,
   );
 
   @override
@@ -114,7 +114,7 @@ extension RefusalContentValueCopy<$R, $Out>
 
 abstract class RefusalContentCopyWith<$R, $In extends RefusalContent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? refusal, RefusalContentTypeType? type});
+  $R call({String? refusal, RefusalContentType? type});
   RefusalContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -129,7 +129,7 @@ class _RefusalContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<RefusalContent> $mapper =
       RefusalContentMapper.ensureInitialized();
   @override
-  $R call({String? refusal, RefusalContentTypeType? type}) => $apply(
+  $R call({String? refusal, RefusalContentType? type}) => $apply(
     FieldCopyWithData({
       if (refusal != null) #refusal: refusal,
       if (type != null) #type: type,

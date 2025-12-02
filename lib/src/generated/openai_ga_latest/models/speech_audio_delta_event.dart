@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_speech_response_stream_event.dart';
-import 'speech_audio_delta_event_type_type.dart';
+import 'speech_audio_delta_event_type.dart';
 
 part 'speech_audio_delta_event.mapper.dart';
 
@@ -17,7 +17,7 @@ class SpeechAudioDeltaEvent with SpeechAudioDeltaEventMappable {
     required this.audio,
   });
 
-  final SpeechAudioDeltaEventTypeType type;
+  final SpeechAudioDeltaEventType type;
   final String audio;
 
   static SpeechAudioDeltaEvent fromJson(Map<String, dynamic> json) => SpeechAudioDeltaEventMapper.fromJson(json);

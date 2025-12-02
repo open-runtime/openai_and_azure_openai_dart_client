@@ -7,18 +7,18 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'run_step_details_tool_call_code_interpreter.dart';
 import 'run_step_details_tool_call_file_search.dart';
 import 'run_step_details_tool_call_function.dart';
-import 'run_step_details_tool_call_type_type.dart';
-import 'run_step_details_tool_call_type_type2.dart';
-import 'run_step_details_tool_call_type_type3.dart';
+import 'run_step_details_tool_call_type.dart';
+import 'run_step_details_tool_call_type2.dart';
+import 'run_step_details_tool_call_type3.dart';
 import 'run_step_details_tool_calls_code_object.dart';
 import 'run_step_details_tool_calls_code_object_code_interpreter.dart';
-import 'run_step_details_tool_calls_code_object_type_type.dart';
+import 'run_step_details_tool_calls_code_object_type.dart';
 import 'run_step_details_tool_calls_file_search_object.dart';
 import 'run_step_details_tool_calls_file_search_object_file_search.dart';
-import 'run_step_details_tool_calls_file_search_object_type_type.dart';
+import 'run_step_details_tool_calls_file_search_object_type.dart';
 import 'run_step_details_tool_calls_function_object.dart';
 import 'run_step_details_tool_calls_function_object_function.dart';
-import 'run_step_details_tool_calls_function_object_type_type.dart';
+import 'run_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_details_tool_call.mapper.dart';
 
@@ -60,7 +60,7 @@ extension RunStepDetailsToolCallUnionDeserializer on RunStepDetailsToolCall {
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class RunStepDetailsToolCallCodeInterpreter extends RunStepDetailsToolCall with RunStepDetailsToolCallCodeInterpreterMappable {
   final String id;
-  final RunStepDetailsToolCallTypeType type;
+  final RunStepDetailsToolCallType type;
   @MappableField(key: 'code_interpreter')
   final RunStepDetailsToolCallCodeInterpreter runStepDetailsToolCallCodeInterpreter;
 
@@ -74,7 +74,7 @@ class RunStepDetailsToolCallCodeInterpreter extends RunStepDetailsToolCall with 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class RunStepDetailsToolCallFileSearch extends RunStepDetailsToolCall with RunStepDetailsToolCallFileSearchMappable {
   final String id;
-  final RunStepDetailsToolCallTypeType2 type;
+  final RunStepDetailsToolCallType2 type;
   @MappableField(key: 'file_search')
   final RunStepDetailsToolCallFileSearch runStepDetailsToolCallFileSearch;
 
@@ -88,7 +88,7 @@ class RunStepDetailsToolCallFileSearch extends RunStepDetailsToolCall with RunSt
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class RunStepDetailsToolCallFunction extends RunStepDetailsToolCall with RunStepDetailsToolCallFunctionMappable {
   final String id;
-  final RunStepDetailsToolCallTypeType3 type;
+  final RunStepDetailsToolCallType3 type;
   @MappableField(key: 'function')
   final RunStepDetailsToolCallFunction runStepDetailsToolCallFunction;
 

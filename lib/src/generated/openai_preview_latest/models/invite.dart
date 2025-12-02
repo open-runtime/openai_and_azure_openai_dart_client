@@ -6,8 +6,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'invite_object_object_enum.dart';
 import 'invite_projects.dart';
-import 'invite_role_role.dart';
-import 'invite_status_status.dart';
+import 'invite_role.dart';
+import 'invite_status.dart';
 
 part 'invite.mapper.dart';
 
@@ -30,8 +30,8 @@ class Invite with InviteMappable {
   final InviteObjectObjectEnum objectEnum;
   final String id;
   final String email;
-  final InviteRoleRole role;
-  final InviteStatusStatus status;
+  final InviteRole role;
+  final InviteStatus status;
   @MappableField(key: 'invited_at')
   final int invitedAt;
   @MappableField(key: 'expires_at')

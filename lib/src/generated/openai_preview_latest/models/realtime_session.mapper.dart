@@ -17,7 +17,7 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
       RealtimeSessionInputAudioNoiseReductionMapper.ensureInitialized();
       RealtimeSessionInputAudioFormatInputAudioFormatMapper.ensureInitialized();
       RealtimeSessionOutputAudioFormatOutputAudioFormatMapper.ensureInitialized();
-      RealtimeSessionModelModelMapper.ensureInitialized();
+      RealtimeSessionModelMapper.ensureInitialized();
       VoiceIdsSharedMapper.ensureInitialized();
       RealtimeSessionInputAudioTranscriptionMapper.ensureInitialized();
       RealtimeSessionTurnDetectionMapper.ensureInitialized();
@@ -94,9 +94,12 @@ class RealtimeSessionMapper extends ClassMapperBase<RealtimeSession> {
     _$modalities,
     opt: true,
   );
-  static RealtimeSessionModelModel? _$model(RealtimeSession v) => v.model;
-  static const Field<RealtimeSession, RealtimeSessionModelModel> _f$model =
-      Field('model', _$model, opt: true);
+  static RealtimeSessionModel? _$model(RealtimeSession v) => v.model;
+  static const Field<RealtimeSession, RealtimeSessionModel> _f$model = Field(
+    'model',
+    _$model,
+    opt: true,
+  );
   static String? _$instructions(RealtimeSession v) => v.instructions;
   static const Field<RealtimeSession, String> _f$instructions = Field(
     'instructions',
@@ -297,7 +300,7 @@ abstract class RealtimeSessionCopyWith<$R, $In extends RealtimeSession, $Out>
     num? temperature,
     String? id,
     dynamic modalities,
-    RealtimeSessionModelModel? model,
+    RealtimeSessionModel? model,
     String? instructions,
     VoiceIdsShared? voice,
     RealtimeSessionInputAudioTranscription?

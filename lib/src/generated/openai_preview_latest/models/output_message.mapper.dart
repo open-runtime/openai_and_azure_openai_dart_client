@@ -14,10 +14,10 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
   static OutputMessageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputMessageMapper._());
-      OutputMessageTypeTypeMapper.ensureInitialized();
-      OutputMessageRoleRoleMapper.ensureInitialized();
+      OutputMessageTypeMapper.ensureInitialized();
+      OutputMessageRoleMapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
-      OutputMessageStatusStatusMapper.ensureInitialized();
+      OutputMessageStatusMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,13 +27,13 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
 
   static String _$id(OutputMessage v) => v.id;
   static const Field<OutputMessage, String> _f$id = Field('id', _$id);
-  static OutputMessageTypeType _$type(OutputMessage v) => v.type;
-  static const Field<OutputMessage, OutputMessageTypeType> _f$type = Field(
+  static OutputMessageType _$type(OutputMessage v) => v.type;
+  static const Field<OutputMessage, OutputMessageType> _f$type = Field(
     'type',
     _$type,
   );
-  static OutputMessageRoleRole _$role(OutputMessage v) => v.role;
-  static const Field<OutputMessage, OutputMessageRoleRole> _f$role = Field(
+  static OutputMessageRole _$role(OutputMessage v) => v.role;
+  static const Field<OutputMessage, OutputMessageRole> _f$role = Field(
     'role',
     _$role,
   );
@@ -42,9 +42,11 @@ class OutputMessageMapper extends ClassMapperBase<OutputMessage> {
     'content',
     _$content,
   );
-  static OutputMessageStatusStatus _$status(OutputMessage v) => v.status;
-  static const Field<OutputMessage, OutputMessageStatusStatus> _f$status =
-      Field('status', _$status);
+  static OutputMessageStatus _$status(OutputMessage v) => v.status;
+  static const Field<OutputMessage, OutputMessageStatus> _f$status = Field(
+    'status',
+    _$status,
+  );
 
   @override
   final MappableFields<OutputMessage> fields = const {
@@ -139,10 +141,10 @@ abstract class OutputMessageCopyWith<$R, $In extends OutputMessage, $Out>
   get content;
   $R call({
     String? id,
-    OutputMessageTypeType? type,
-    OutputMessageRoleRole? role,
+    OutputMessageType? type,
+    OutputMessageRole? role,
     List<OutputContent>? content,
-    OutputMessageStatusStatus? status,
+    OutputMessageStatus? status,
   });
   OutputMessageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -169,10 +171,10 @@ class _OutputMessageCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    OutputMessageTypeType? type,
-    OutputMessageRoleRole? role,
+    OutputMessageType? type,
+    OutputMessageRole? role,
     List<OutputContent>? content,
-    OutputMessageStatusStatus? status,
+    OutputMessageStatus? status,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

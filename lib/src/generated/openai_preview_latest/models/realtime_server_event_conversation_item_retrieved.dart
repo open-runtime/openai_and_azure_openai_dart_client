@@ -6,7 +6,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'realtime_conversation_item.dart';
 import 'realtime_server_event.dart';
-import 'realtime_server_event_conversation_item_retrieved_type_type.dart';
+import 'realtime_server_event_conversation_item_retrieved_type.dart';
 
 part 'realtime_server_event_conversation_item_retrieved.mapper.dart';
 
@@ -22,7 +22,7 @@ class RealtimeServerEventConversationItemRetrieved with RealtimeServerEventConve
 
   @MappableField(key: 'event_id')
   final String eventId;
-  final RealtimeServerEventConversationItemRetrievedTypeType type;
+  final RealtimeServerEventConversationItemRetrievedType type;
   final RealtimeConversationItem item;
 
   static RealtimeServerEventConversationItemRetrieved fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemRetrievedMapper.fromJson(json);

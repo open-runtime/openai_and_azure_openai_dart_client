@@ -17,9 +17,9 @@ class CodeInterpreterToolCallMapper
       MapperContainer.globals.use(
         _instance = CodeInterpreterToolCallMapper._(),
       );
-      CodeInterpreterToolCallStatusStatusMapper.ensureInitialized();
+      CodeInterpreterToolCallStatusMapper.ensureInitialized();
       CodeInterpreterToolCallOutputsUnionMapper.ensureInitialized();
-      CodeInterpreterToolCallTypeTypeMapper.ensureInitialized();
+      CodeInterpreterToolCallTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -29,13 +29,9 @@ class CodeInterpreterToolCallMapper
 
   static String _$id(CodeInterpreterToolCall v) => v.id;
   static const Field<CodeInterpreterToolCall, String> _f$id = Field('id', _$id);
-  static CodeInterpreterToolCallStatusStatus _$status(
-    CodeInterpreterToolCall v,
-  ) => v.status;
-  static const Field<
-    CodeInterpreterToolCall,
-    CodeInterpreterToolCallStatusStatus
-  >
+  static CodeInterpreterToolCallStatus _$status(CodeInterpreterToolCall v) =>
+      v.status;
+  static const Field<CodeInterpreterToolCall, CodeInterpreterToolCallStatus>
   _f$status = Field('status', _$status);
   static String _$containerId(CodeInterpreterToolCall v) => v.containerId;
   static const Field<CodeInterpreterToolCall, String> _f$containerId = Field(
@@ -56,14 +52,14 @@ class CodeInterpreterToolCallMapper
     List<CodeInterpreterToolCallOutputsUnion>
   >
   _f$outputs = Field('outputs', _$outputs);
-  static CodeInterpreterToolCallTypeType _$type(CodeInterpreterToolCall v) =>
+  static CodeInterpreterToolCallType _$type(CodeInterpreterToolCall v) =>
       v.type;
-  static const Field<CodeInterpreterToolCall, CodeInterpreterToolCallTypeType>
+  static const Field<CodeInterpreterToolCall, CodeInterpreterToolCallType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CodeInterpreterToolCallTypeType.codeInterpreterCall,
+    def: CodeInterpreterToolCallType.codeInterpreterCall,
   );
 
   @override
@@ -173,11 +169,11 @@ abstract class CodeInterpreterToolCallCopyWith<
   get outputs;
   $R call({
     String? id,
-    CodeInterpreterToolCallStatusStatus? status,
+    CodeInterpreterToolCallStatus? status,
     String? containerId,
     String? code,
     List<CodeInterpreterToolCallOutputsUnion>? outputs,
-    CodeInterpreterToolCallTypeType? type,
+    CodeInterpreterToolCallType? type,
   });
   CodeInterpreterToolCallCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -213,11 +209,11 @@ class _CodeInterpreterToolCallCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? id,
-    CodeInterpreterToolCallStatusStatus? status,
+    CodeInterpreterToolCallStatus? status,
     String? containerId,
     Object? code = $none,
     Object? outputs = $none,
-    CodeInterpreterToolCallTypeType? type,
+    CodeInterpreterToolCallType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

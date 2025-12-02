@@ -17,7 +17,7 @@ class ModerationImageUrlInputMapper
       MapperContainer.globals.use(
         _instance = ModerationImageUrlInputMapper._(),
       );
-      ModerationImageUrlInputTypeTypeMapper.ensureInitialized();
+      ModerationImageUrlInputTypeMapper.ensureInitialized();
       ModerationImageUrlInputImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class ModerationImageUrlInputMapper
   @override
   final String id = 'ModerationImageUrlInput';
 
-  static ModerationImageUrlInputTypeType _$type(ModerationImageUrlInput v) =>
+  static ModerationImageUrlInputType _$type(ModerationImageUrlInput v) =>
       v.type;
-  static const Field<ModerationImageUrlInput, ModerationImageUrlInputTypeType>
+  static const Field<ModerationImageUrlInput, ModerationImageUrlInputType>
   _f$type = Field('type', _$type);
   static ModerationImageUrlInputImageUrl _$moderationImageUrlInputImageUrl(
     ModerationImageUrlInput v,
@@ -136,7 +136,7 @@ abstract class ModerationImageUrlInputCopyWith<
   >
   get moderationImageUrlInputImageUrl;
   $R call({
-    ModerationImageUrlInputTypeType? type,
+    ModerationImageUrlInputType? type,
     ModerationImageUrlInputImageUrl? moderationImageUrlInputImageUrl,
   });
   ModerationImageUrlInputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -165,7 +165,7 @@ class _ModerationImageUrlInputCopyWithImpl<$R, $Out>
       .$chain((v) => call(moderationImageUrlInputImageUrl: v));
   @override
   $R call({
-    ModerationImageUrlInputTypeType? type,
+    ModerationImageUrlInputType? type,
     ModerationImageUrlInputImageUrl? moderationImageUrlInputImageUrl,
   }) => $apply(
     FieldCopyWithData({

@@ -6,12 +6,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_object_tools_union.dart';
 import 'assistant_tools_code.dart';
-import 'assistant_tools_code_type_type.dart';
+import 'assistant_tools_code_type.dart';
 import 'assistant_tools_file_search.dart';
 import 'assistant_tools_file_search_file_search.dart';
-import 'assistant_tools_file_search_type_type.dart';
+import 'assistant_tools_file_search_type.dart';
 import 'assistant_tools_function.dart';
-import 'assistant_tools_function_type_type.dart';
+import 'assistant_tools_function_type.dart';
 import 'function_object.dart';
 
 part 'create_assistant_request_tools_union.mapper.dart';
@@ -54,7 +54,7 @@ extension CreateAssistantRequestToolsUnionDeserializer on CreateAssistantRequest
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
 class CreateAssistantRequestToolsUnionCodeInterpreter extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionCodeInterpreterMappable {
-  final AssistantToolsCodeTypeType type;
+  final AssistantToolsCodeType type;
 
   const CreateAssistantRequestToolsUnionCodeInterpreter({
     required this.type,
@@ -63,7 +63,7 @@ class CreateAssistantRequestToolsUnionCodeInterpreter extends CreateAssistantReq
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class CreateAssistantRequestToolsUnionFileSearch extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionFileSearchMappable {
-  final AssistantToolsFileSearchTypeType type;
+  final AssistantToolsFileSearchType type;
   @MappableField(key: 'file_search')
   final AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch;
 
@@ -75,7 +75,7 @@ class CreateAssistantRequestToolsUnionFileSearch extends CreateAssistantRequestT
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class CreateAssistantRequestToolsUnionFunction extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionFunctionMappable {
-  final AssistantToolsFunctionTypeType type;
+  final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 

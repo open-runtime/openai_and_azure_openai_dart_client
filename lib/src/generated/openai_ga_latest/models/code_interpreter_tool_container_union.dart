@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'code_interpreter_container_auto_type_type.dart';
+import 'code_interpreter_container_auto_type.dart';
 import 'container_memory_limit.dart';
 import 'code_interpreter_container_auto.dart';
 
@@ -38,7 +38,7 @@ extension CodeInterpreterToolContainerUnionDeserializer on CodeInterpreterToolCo
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto extends CodeInterpreterToolContainerUnion with CodeInterpreterToolContainerUnionCodeInterpreterContainerAutoMappable {
-  final CodeInterpreterContainerAutoTypeType type;
+  final CodeInterpreterContainerAutoType type;
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
   @MappableField(key: 'memory_limit')

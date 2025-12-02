@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'specific_function_shell_param_type_type.dart';
+import 'specific_function_shell_param_type.dart';
 import 'tool_choice_param.dart';
 
 part 'specific_function_shell_param.mapper.dart';
@@ -13,10 +13,10 @@ part 'specific_function_shell_param.mapper.dart';
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SpecificFunctionShellParam with SpecificFunctionShellParamMappable {
   const SpecificFunctionShellParam({
-    this.type = SpecificFunctionShellParamTypeType.shell,
+    this.type = SpecificFunctionShellParamType.shell,
   });
 
-  final SpecificFunctionShellParamTypeType type;
+  final SpecificFunctionShellParamType type;
 
   static SpecificFunctionShellParam fromJson(Map<String, dynamic> json) => SpecificFunctionShellParamMapper.fromJson(json);
 

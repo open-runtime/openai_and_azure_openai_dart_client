@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_tool_call_status_status.dart';
-import 'function_tool_call_type_type.dart';
+import 'function_tool_call_status.dart';
+import 'function_tool_call_type.dart';
 import 'item_resource.dart';
 import 'output_item.dart';
 
@@ -26,12 +26,12 @@ class FunctionToolCall with FunctionToolCallMappable {
   });
 
   final String id;
-  final FunctionToolCallTypeType type;
+  final FunctionToolCallType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String name;
   final String arguments;
-  final FunctionToolCallStatusStatus? status;
+  final FunctionToolCallStatus? status;
 
   static FunctionToolCall fromJson(Map<String, dynamic> json) => FunctionToolCallMapper.fromJson(json);
 

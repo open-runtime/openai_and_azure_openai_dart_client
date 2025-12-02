@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_message_custom_tool_call_custom.dart';
-import 'chat_completion_message_custom_tool_call_type_type.dart';
+import 'chat_completion_message_custom_tool_call_type.dart';
 
 part 'chat_completion_message_custom_tool_call.mapper.dart';
 
@@ -20,7 +20,7 @@ class ChatCompletionMessageCustomToolCall with ChatCompletionMessageCustomToolCa
   });
 
   final String id;
-  final ChatCompletionMessageCustomToolCallTypeType type;
+  final ChatCompletionMessageCustomToolCallType type;
   @MappableField(key: 'custom')
   final ChatCompletionMessageCustomToolCallCustom chatCompletionMessageCustomToolCallCustom;
 

@@ -5,14 +5,14 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_function_message.dart';
-import 'chat_completion_request_function_message_role_role.dart';
+import 'chat_completion_request_function_message_role.dart';
 import 'chat_completion_request_message.dart';
 import 'chat_completion_request_system_message.dart';
-import 'chat_completion_request_system_message_role_role.dart';
+import 'chat_completion_request_system_message_role.dart';
 import 'chat_completion_request_tool_message.dart';
-import 'chat_completion_request_tool_message_role_role.dart';
+import 'chat_completion_request_tool_message_role.dart';
 import 'chat_completion_request_user_message.dart';
-import 'chat_completion_request_user_message_role_role.dart';
+import 'chat_completion_request_user_message_role.dart';
 import 'fine_tune_chat_request_input_messages_union.dart';
 
 part 'fine_tune_preference_request_input_input_messages_union.mapper.dart';
@@ -59,7 +59,7 @@ extension FineTunePreferenceRequestInputInputMessagesUnionDeserializer on FineTu
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
 class FineTunePreferenceRequestInputInputMessagesUnionSystem extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionSystemMappable {
   final String content;
-  final ChatCompletionRequestSystemMessageRoleRole role;
+  final ChatCompletionRequestSystemMessageRole role;
   final String? name;
 
   const FineTunePreferenceRequestInputInputMessagesUnionSystem({
@@ -72,7 +72,7 @@ class FineTunePreferenceRequestInputInputMessagesUnionSystem extends FineTunePre
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
 class FineTunePreferenceRequestInputInputMessagesUnionUser extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionUserMappable {
   final String content;
-  final ChatCompletionRequestUserMessageRoleRole role;
+  final ChatCompletionRequestUserMessageRole role;
   final String? name;
 
   const FineTunePreferenceRequestInputInputMessagesUnionUser({
@@ -84,7 +84,7 @@ class FineTunePreferenceRequestInputInputMessagesUnionUser extends FineTunePrefe
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
 class FineTunePreferenceRequestInputInputMessagesUnionTool extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionToolMappable {
-  final ChatCompletionRequestToolMessageRoleRole role;
+  final ChatCompletionRequestToolMessageRole role;
   final String content;
   @MappableField(key: 'tool_call_id')
   final String toolCallId;
@@ -98,7 +98,7 @@ class FineTunePreferenceRequestInputInputMessagesUnionTool extends FineTunePrefe
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class FineTunePreferenceRequestInputInputMessagesUnionFunction extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionFunctionMappable {
-  final ChatCompletionRequestFunctionMessageRoleRole role;
+  final ChatCompletionRequestFunctionMessageRole role;
   final String? content;
   final String name;
 

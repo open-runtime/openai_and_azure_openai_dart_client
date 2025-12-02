@@ -14,7 +14,7 @@ class ToolChoiceFunctionMapper extends ClassMapperBase<ToolChoiceFunction> {
   static ToolChoiceFunctionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceFunctionMapper._());
-      ToolChoiceFunctionTypeTypeMapper.ensureInitialized();
+      ToolChoiceFunctionTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class ToolChoiceFunctionMapper extends ClassMapperBase<ToolChoiceFunction> {
   @override
   final String id = 'ToolChoiceFunction';
 
-  static ToolChoiceFunctionTypeType _$type(ToolChoiceFunction v) => v.type;
-  static const Field<ToolChoiceFunction, ToolChoiceFunctionTypeType> _f$type =
+  static ToolChoiceFunctionType _$type(ToolChoiceFunction v) => v.type;
+  static const Field<ToolChoiceFunction, ToolChoiceFunctionType> _f$type =
       Field('type', _$type);
   static String _$name(ToolChoiceFunction v) => v.name;
   static const Field<ToolChoiceFunction, String> _f$name = Field(
@@ -116,7 +116,7 @@ abstract class ToolChoiceFunctionCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({ToolChoiceFunctionTypeType? type, String? name});
+  $R call({ToolChoiceFunctionType? type, String? name});
   ToolChoiceFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -131,7 +131,7 @@ class _ToolChoiceFunctionCopyWithImpl<$R, $Out>
   late final ClassMapperBase<ToolChoiceFunction> $mapper =
       ToolChoiceFunctionMapper.ensureInitialized();
   @override
-  $R call({ToolChoiceFunctionTypeType? type, String? name}) => $apply(
+  $R call({ToolChoiceFunctionType? type, String? name}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (name != null) #name: name,

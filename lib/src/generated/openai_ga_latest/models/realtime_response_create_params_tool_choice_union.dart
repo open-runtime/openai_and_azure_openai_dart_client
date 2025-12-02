@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'tool_choice_function_type_type.dart';
-import 'tool_choice_mcp_type_type.dart';
+import 'tool_choice_function_type.dart';
+import 'tool_choice_mcp_type.dart';
 import 'tool_choice_function.dart';
 import 'tool_choice_mcp.dart';
 
@@ -42,7 +42,7 @@ extension RealtimeResponseCreateParamsToolChoiceUnionDeserializer on RealtimeRes
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction extends RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMappable {
-  final ToolChoiceFunctionTypeType type;
+  final ToolChoiceFunctionType type;
   final String name;
 
   const RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction({
@@ -53,7 +53,7 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction extends Real
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp extends RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMappable {
-  final ToolChoiceMcpTypeType type;
+  final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   final String? name;

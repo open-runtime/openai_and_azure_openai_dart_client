@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'item_reference_param_type_type.dart';
+import 'item_reference_param_type.dart';
 
 part 'item_reference_param.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'item_reference_param.mapper.dart';
 class ItemReferenceParam with ItemReferenceParamMappable {
   const ItemReferenceParam({
     required this.id,
-    this.type = ItemReferenceParamTypeType.itemReference,
+    this.type = ItemReferenceParamType.itemReference,
   });
 
   final String id;
-  final ItemReferenceParamTypeType? type;
+  final ItemReferenceParamType? type;
 
   static ItemReferenceParam fromJson(Map<String, dynamic> json) => ItemReferenceParamMapper.fromJson(json);
 

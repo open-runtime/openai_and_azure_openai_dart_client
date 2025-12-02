@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'run_object_required_action_type_type.dart';
+import 'run_object_required_action_type.dart';
 import 'run_object_required_action_submit_tool_outputs.dart';
 
 part 'run_object_required_action.mapper.dart';
@@ -16,7 +16,7 @@ class RunObjectRequiredAction with RunObjectRequiredActionMappable {
     required this.runObjectRequiredActionSubmitToolOutputs,
   });
 
-  final RunObjectRequiredActionTypeType type;
+  final RunObjectRequiredActionType type;
   @MappableField(key: 'submit_tool_outputs')
   final RunObjectRequiredActionSubmitToolOutputs runObjectRequiredActionSubmitToolOutputs;
 

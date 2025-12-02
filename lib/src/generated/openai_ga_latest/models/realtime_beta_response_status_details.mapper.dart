@@ -17,8 +17,8 @@ class RealtimeBetaResponseStatusDetailsMapper
       MapperContainer.globals.use(
         _instance = RealtimeBetaResponseStatusDetailsMapper._(),
       );
-      RealtimeBetaResponseStatusDetailsTypeTypeMapper.ensureInitialized();
-      RealtimeBetaResponseStatusDetailsReasonReasonMapper.ensureInitialized();
+      RealtimeBetaResponseStatusDetailsTypeMapper.ensureInitialized();
+      RealtimeBetaResponseStatusDetailsReasonMapper.ensureInitialized();
       RealtimeBetaResponseStatusDetailsErrorMapper.ensureInitialized();
     }
     return _instance!;
@@ -27,20 +27,20 @@ class RealtimeBetaResponseStatusDetailsMapper
   @override
   final String id = 'RealtimeBetaResponseStatusDetails';
 
-  static RealtimeBetaResponseStatusDetailsTypeType? _$type(
+  static RealtimeBetaResponseStatusDetailsType? _$type(
     RealtimeBetaResponseStatusDetails v,
   ) => v.type;
   static const Field<
     RealtimeBetaResponseStatusDetails,
-    RealtimeBetaResponseStatusDetailsTypeType
+    RealtimeBetaResponseStatusDetailsType
   >
   _f$type = Field('type', _$type, opt: true);
-  static RealtimeBetaResponseStatusDetailsReasonReason? _$reason(
+  static RealtimeBetaResponseStatusDetailsReason? _$reason(
     RealtimeBetaResponseStatusDetails v,
   ) => v.reason;
   static const Field<
     RealtimeBetaResponseStatusDetails,
-    RealtimeBetaResponseStatusDetailsReasonReason
+    RealtimeBetaResponseStatusDetailsReason
   >
   _f$reason = Field('reason', _$reason, opt: true);
   static RealtimeBetaResponseStatusDetailsError?
@@ -166,8 +166,8 @@ abstract class RealtimeBetaResponseStatusDetailsCopyWith<
   >?
   get realtimeBetaResponseStatusDetailsError;
   $R call({
-    RealtimeBetaResponseStatusDetailsTypeType? type,
-    RealtimeBetaResponseStatusDetailsReasonReason? reason,
+    RealtimeBetaResponseStatusDetailsType? type,
+    RealtimeBetaResponseStatusDetailsReason? reason,
     RealtimeBetaResponseStatusDetailsError?
     realtimeBetaResponseStatusDetailsError,
   });

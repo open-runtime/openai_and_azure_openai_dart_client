@@ -17,7 +17,7 @@ class CodeInterpreterOutputImageMapper
       MapperContainer.globals.use(
         _instance = CodeInterpreterOutputImageMapper._(),
       );
-      CodeInterpreterOutputImageTypeTypeMapper.ensureInitialized();
+      CodeInterpreterOutputImageTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,18 +30,14 @@ class CodeInterpreterOutputImageMapper
     'url',
     _$url,
   );
-  static CodeInterpreterOutputImageTypeType _$type(
-    CodeInterpreterOutputImage v,
-  ) => v.type;
-  static const Field<
-    CodeInterpreterOutputImage,
-    CodeInterpreterOutputImageTypeType
-  >
+  static CodeInterpreterOutputImageType _$type(CodeInterpreterOutputImage v) =>
+      v.type;
+  static const Field<CodeInterpreterOutputImage, CodeInterpreterOutputImageType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: CodeInterpreterOutputImageTypeType.image,
+    def: CodeInterpreterOutputImageType.image,
   );
 
   @override
@@ -135,7 +131,7 @@ abstract class CodeInterpreterOutputImageCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? url, CodeInterpreterOutputImageTypeType? type});
+  $R call({String? url, CodeInterpreterOutputImageType? type});
   CodeInterpreterOutputImageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -155,7 +151,7 @@ class _CodeInterpreterOutputImageCopyWithImpl<$R, $Out>
   late final ClassMapperBase<CodeInterpreterOutputImage> $mapper =
       CodeInterpreterOutputImageMapper.ensureInitialized();
   @override
-  $R call({String? url, CodeInterpreterOutputImageTypeType? type}) => $apply(
+  $R call({String? url, CodeInterpreterOutputImageType? type}) => $apply(
     FieldCopyWithData({
       if (url != null) #url: url,
       if (type != null) #type: type,

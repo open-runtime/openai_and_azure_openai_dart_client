@@ -75,7 +75,7 @@ class AssistantToolCodeInterpreterMapper
         _instance = AssistantToolCodeInterpreterMapper._(),
       );
       AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolTypeTypeMapper.ensureInitialized();
+      AssistantToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -83,9 +83,9 @@ class AssistantToolCodeInterpreterMapper
   @override
   final String id = 'AssistantToolCodeInterpreter';
 
-  static AssistantToolTypeType _$type(AssistantToolCodeInterpreter v) => v.type;
-  static const Field<AssistantToolCodeInterpreter, AssistantToolTypeType>
-  _f$type = Field('type', _$type);
+  static AssistantToolType _$type(AssistantToolCodeInterpreter v) => v.type;
+  static const Field<AssistantToolCodeInterpreter, AssistantToolType> _f$type =
+      Field('type', _$type);
 
   @override
   final MappableFields<AssistantToolCodeInterpreter> fields = const {
@@ -182,7 +182,7 @@ abstract class AssistantToolCodeInterpreterCopyWith<
 >
     implements AssistantToolCopyWith<$R, $In, $Out> {
   @override
-  $R call({AssistantToolTypeType? type});
+  $R call({AssistantToolType? type});
   AssistantToolCodeInterpreterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -206,7 +206,7 @@ class _AssistantToolCodeInterpreterCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AssistantToolCodeInterpreter> $mapper =
       AssistantToolCodeInterpreterMapper.ensureInitialized();
   @override
-  $R call({AssistantToolTypeType? type}) =>
+  $R call({AssistantToolType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   AssistantToolCodeInterpreter $make(CopyWithData data) =>
@@ -229,7 +229,7 @@ class AssistantToolFileSearchMapper
         _instance = AssistantToolFileSearchMapper._(),
       );
       AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolTypeType2Mapper.ensureInitialized();
+      AssistantToolType2Mapper.ensureInitialized();
       AssistantToolFileSearchMapper.ensureInitialized();
     }
     return _instance!;
@@ -238,8 +238,8 @@ class AssistantToolFileSearchMapper
   @override
   final String id = 'AssistantToolFileSearch';
 
-  static AssistantToolTypeType2 _$type(AssistantToolFileSearch v) => v.type;
-  static const Field<AssistantToolFileSearch, AssistantToolTypeType2> _f$type =
+  static AssistantToolType2 _$type(AssistantToolFileSearch v) => v.type;
+  static const Field<AssistantToolFileSearch, AssistantToolType2> _f$type =
       Field('type', _$type);
   static AssistantToolFileSearch? _$assistantToolFileSearch(
     AssistantToolFileSearch v,
@@ -354,7 +354,7 @@ abstract class AssistantToolFileSearchCopyWith<
   get assistantToolFileSearch;
   @override
   $R call({
-    AssistantToolTypeType2? type,
+    AssistantToolType2? type,
     AssistantToolFileSearch? assistantToolFileSearch,
   });
   AssistantToolFileSearchCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -381,7 +381,7 @@ class _AssistantToolFileSearchCopyWithImpl<$R, $Out>
       .$chain((v) => call(assistantToolFileSearch: v));
   @override
   $R call({
-    AssistantToolTypeType2? type,
+    AssistantToolType2? type,
     Object? assistantToolFileSearch = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -414,7 +414,7 @@ class AssistantToolFunctionMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantToolFunctionMapper._());
       AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
-      AssistantToolTypeType3Mapper.ensureInitialized();
+      AssistantToolType3Mapper.ensureInitialized();
       FunctionObjectMapper.ensureInitialized();
     }
     return _instance!;
@@ -423,9 +423,11 @@ class AssistantToolFunctionMapper
   @override
   final String id = 'AssistantToolFunction';
 
-  static AssistantToolTypeType3 _$type(AssistantToolFunction v) => v.type;
-  static const Field<AssistantToolFunction, AssistantToolTypeType3> _f$type =
-      Field('type', _$type);
+  static AssistantToolType3 _$type(AssistantToolFunction v) => v.type;
+  static const Field<AssistantToolFunction, AssistantToolType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static FunctionObject _$functionField(AssistantToolFunction v) =>
       v.functionField;
   static const Field<AssistantToolFunction, FunctionObject> _f$functionField =
@@ -528,7 +530,7 @@ abstract class AssistantToolFunctionCopyWith<
     implements AssistantToolCopyWith<$R, $In, $Out> {
   FunctionObjectCopyWith<$R, FunctionObject, FunctionObject> get functionField;
   @override
-  $R call({AssistantToolTypeType3? type, FunctionObject? functionField});
+  $R call({AssistantToolType3? type, FunctionObject? functionField});
   AssistantToolFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -547,13 +549,12 @@ class _AssistantToolFunctionCopyWithImpl<$R, $Out>
   get functionField =>
       $value.functionField.copyWith.$chain((v) => call(functionField: v));
   @override
-  $R call({AssistantToolTypeType3? type, FunctionObject? functionField}) =>
-      $apply(
-        FieldCopyWithData({
-          if (type != null) #type: type,
-          if (functionField != null) #functionField: functionField,
-        }),
-      );
+  $R call({AssistantToolType3? type, FunctionObject? functionField}) => $apply(
+    FieldCopyWithData({
+      if (type != null) #type: type,
+      if (functionField != null) #functionField: functionField,
+    }),
+  );
   @override
   AssistantToolFunction $make(CopyWithData data) => AssistantToolFunction(
     type: data.get(#type, or: $value.type),

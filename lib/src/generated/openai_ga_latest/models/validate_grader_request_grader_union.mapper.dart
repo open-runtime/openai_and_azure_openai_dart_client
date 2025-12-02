@@ -94,8 +94,8 @@ class ValidateGraderRequestGraderUnionStringCheckMapper
       ValidateGraderRequestGraderUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      GraderStringCheckTypeTypeMapper.ensureInitialized();
-      GraderStringCheckOperationOperationMapper.ensureInitialized();
+      GraderStringCheckTypeMapper.ensureInitialized();
+      GraderStringCheckOperationMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -103,12 +103,12 @@ class ValidateGraderRequestGraderUnionStringCheckMapper
   @override
   final String id = 'ValidateGraderRequestGraderUnionStringCheck';
 
-  static GraderStringCheckTypeType _$type(
+  static GraderStringCheckType _$type(
     ValidateGraderRequestGraderUnionStringCheck v,
   ) => v.type;
   static const Field<
     ValidateGraderRequestGraderUnionStringCheck,
-    GraderStringCheckTypeType
+    GraderStringCheckType
   >
   _f$type = Field('type', _$type);
   static String _$name(ValidateGraderRequestGraderUnionStringCheck v) => v.name;
@@ -122,12 +122,12 @@ class ValidateGraderRequestGraderUnionStringCheckMapper
       v.reference;
   static const Field<ValidateGraderRequestGraderUnionStringCheck, String>
   _f$reference = Field('reference', _$reference);
-  static GraderStringCheckOperationOperation _$operation(
+  static GraderStringCheckOperation _$operation(
     ValidateGraderRequestGraderUnionStringCheck v,
   ) => v.operation;
   static const Field<
     ValidateGraderRequestGraderUnionStringCheck,
-    GraderStringCheckOperationOperation
+    GraderStringCheckOperation
   >
   _f$operation = Field('operation', _$operation);
 
@@ -259,11 +259,11 @@ abstract class ValidateGraderRequestGraderUnionStringCheckCopyWith<
     implements ValidateGraderRequestGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   });
   ValidateGraderRequestGraderUnionStringCheckCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -290,11 +290,11 @@ class _ValidateGraderRequestGraderUnionStringCheckCopyWithImpl<$R, $Out>
       ValidateGraderRequestGraderUnionStringCheckMapper.ensureInitialized();
   @override
   $R call({
-    GraderStringCheckTypeType? type,
+    GraderStringCheckType? type,
     String? name,
     String? input,
     String? reference,
-    GraderStringCheckOperationOperation? operation,
+    GraderStringCheckOperation? operation,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
@@ -342,7 +342,7 @@ class ValidateGraderRequestGraderUnionTextSimilarityMapper
       ValidateGraderRequestGraderUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      GraderTextSimilarityTypeTypeMapper.ensureInitialized();
+      GraderTextSimilarityTypeMapper.ensureInitialized();
       GraderTextSimilarityEvaluationMetricEvaluationMetricMapper.ensureInitialized();
     }
     return _instance!;
@@ -351,12 +351,12 @@ class ValidateGraderRequestGraderUnionTextSimilarityMapper
   @override
   final String id = 'ValidateGraderRequestGraderUnionTextSimilarity';
 
-  static GraderTextSimilarityTypeType _$type(
+  static GraderTextSimilarityType _$type(
     ValidateGraderRequestGraderUnionTextSimilarity v,
   ) => v.type;
   static const Field<
     ValidateGraderRequestGraderUnionTextSimilarity,
-    GraderTextSimilarityTypeType
+    GraderTextSimilarityType
   >
   _f$type = Field('type', _$type);
   static String _$name(ValidateGraderRequestGraderUnionTextSimilarity v) =>
@@ -517,7 +517,7 @@ abstract class ValidateGraderRequestGraderUnionTextSimilarityCopyWith<
     implements ValidateGraderRequestGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
     String? name,
     String? input,
     String? reference,
@@ -552,7 +552,7 @@ class _ValidateGraderRequestGraderUnionTextSimilarityCopyWithImpl<$R, $Out>
       ValidateGraderRequestGraderUnionTextSimilarityMapper.ensureInitialized();
   @override
   $R call({
-    GraderTextSimilarityTypeType? type,
+    GraderTextSimilarityType? type,
     String? name,
     String? input,
     String? reference,
@@ -606,7 +606,7 @@ class ValidateGraderRequestGraderUnionPythonMapper
       ValidateGraderRequestGraderUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      GraderPythonTypeTypeMapper.ensureInitialized();
+      GraderPythonTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -614,13 +614,9 @@ class ValidateGraderRequestGraderUnionPythonMapper
   @override
   final String id = 'ValidateGraderRequestGraderUnionPython';
 
-  static GraderPythonTypeType _$type(
-    ValidateGraderRequestGraderUnionPython v,
-  ) => v.type;
-  static const Field<
-    ValidateGraderRequestGraderUnionPython,
-    GraderPythonTypeType
-  >
+  static GraderPythonType _$type(ValidateGraderRequestGraderUnionPython v) =>
+      v.type;
+  static const Field<ValidateGraderRequestGraderUnionPython, GraderPythonType>
   _f$type = Field('type', _$type);
   static String _$name(ValidateGraderRequestGraderUnionPython v) => v.name;
   static const Field<ValidateGraderRequestGraderUnionPython, String> _f$name =
@@ -745,7 +741,7 @@ abstract class ValidateGraderRequestGraderUnionPythonCopyWith<
     implements ValidateGraderRequestGraderUnionCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     String? imageTag,
@@ -773,7 +769,7 @@ class _ValidateGraderRequestGraderUnionPythonCopyWithImpl<$R, $Out>
       ValidateGraderRequestGraderUnionPythonMapper.ensureInitialized();
   @override
   $R call({
-    GraderPythonTypeType? type,
+    GraderPythonType? type,
     String? name,
     String? source,
     Object? imageTag = $none,
@@ -821,7 +817,7 @@ class ValidateGraderRequestGraderUnionScoreModelMapper
       ValidateGraderRequestGraderUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      GraderScoreModelTypeTypeMapper.ensureInitialized();
+      GraderScoreModelTypeMapper.ensureInitialized();
       GraderScoreModelSamplingParamsMapper.ensureInitialized();
       EvalItemMapper.ensureInitialized();
     }
@@ -831,12 +827,12 @@ class ValidateGraderRequestGraderUnionScoreModelMapper
   @override
   final String id = 'ValidateGraderRequestGraderUnionScoreModel';
 
-  static GraderScoreModelTypeType _$type(
+  static GraderScoreModelType _$type(
     ValidateGraderRequestGraderUnionScoreModel v,
   ) => v.type;
   static const Field<
     ValidateGraderRequestGraderUnionScoreModel,
-    GraderScoreModelTypeType
+    GraderScoreModelType
   >
   _f$type = Field('type', _$type);
   static String _$name(ValidateGraderRequestGraderUnionScoreModel v) => v.name;
@@ -1005,7 +1001,7 @@ abstract class ValidateGraderRequestGraderUnionScoreModelCopyWith<
   ListCopyWith<$R, num, ObjectCopyWith<$R, num, num>>? get range;
   @override
   $R call({
-    GraderScoreModelTypeType? type,
+    GraderScoreModelType? type,
     String? name,
     String? model,
     GraderScoreModelSamplingParams? graderScoreModelSamplingParams,
@@ -1063,7 +1059,7 @@ class _ValidateGraderRequestGraderUnionScoreModelCopyWithImpl<$R, $Out>
       : null;
   @override
   $R call({
-    GraderScoreModelTypeType? type,
+    GraderScoreModelType? type,
     String? name,
     String? model,
     Object? graderScoreModelSamplingParams = $none,
@@ -1121,7 +1117,7 @@ class ValidateGraderRequestGraderUnionMultiMapper
       ValidateGraderRequestGraderUnionMapper.ensureInitialized().addSubMapper(
         _instance!,
       );
-      GraderMultiTypeTypeMapper.ensureInitialized();
+      GraderMultiTypeMapper.ensureInitialized();
       GraderMultiGradersUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -1130,9 +1126,9 @@ class ValidateGraderRequestGraderUnionMultiMapper
   @override
   final String id = 'ValidateGraderRequestGraderUnionMulti';
 
-  static GraderMultiTypeType _$type(ValidateGraderRequestGraderUnionMulti v) =>
+  static GraderMultiType _$type(ValidateGraderRequestGraderUnionMulti v) =>
       v.type;
-  static const Field<ValidateGraderRequestGraderUnionMulti, GraderMultiTypeType>
+  static const Field<ValidateGraderRequestGraderUnionMulti, GraderMultiType>
   _f$type = Field('type', _$type);
   static String _$name(ValidateGraderRequestGraderUnionMulti v) => v.name;
   static const Field<ValidateGraderRequestGraderUnionMulti, String> _f$name =
@@ -1271,7 +1267,7 @@ abstract class ValidateGraderRequestGraderUnionMultiCopyWith<
   get graders;
   @override
   $R call({
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,
@@ -1306,7 +1302,7 @@ class _ValidateGraderRequestGraderUnionMultiCopyWithImpl<$R, $Out>
   get graders => $value.graders.copyWith.$chain((v) => call(graders: v));
   @override
   $R call({
-    GraderMultiTypeType? type,
+    GraderMultiType? type,
     String? name,
     GraderMultiGradersUnion? graders,
     String? calculateOutput,

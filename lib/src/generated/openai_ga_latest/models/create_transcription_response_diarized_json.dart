@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_transcription_response_diarized_json_task_task.dart';
+import 'create_transcription_response_diarized_json_task.dart';
 import 'create_transcription_response_diarized_json_usage_union.dart';
 import 'transcription_diarized_segment.dart';
 
@@ -22,7 +22,7 @@ class CreateTranscriptionResponseDiarizedJson with CreateTranscriptionResponseDi
     this.usage,
   });
 
-  final CreateTranscriptionResponseDiarizedJsonTaskTask task;
+  final CreateTranscriptionResponseDiarizedJsonTask task;
   final num duration;
   final String text;
   final List<TranscriptionDiarizedSegment> segments;

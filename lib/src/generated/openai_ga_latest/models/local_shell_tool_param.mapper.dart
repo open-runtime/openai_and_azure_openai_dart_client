@@ -14,7 +14,7 @@ class LocalShellToolParamMapper extends ClassMapperBase<LocalShellToolParam> {
   static LocalShellToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LocalShellToolParamMapper._());
-      LocalShellToolParamTypeTypeMapper.ensureInitialized();
+      LocalShellToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,14 +22,9 @@ class LocalShellToolParamMapper extends ClassMapperBase<LocalShellToolParam> {
   @override
   final String id = 'LocalShellToolParam';
 
-  static LocalShellToolParamTypeType _$type(LocalShellToolParam v) => v.type;
-  static const Field<LocalShellToolParam, LocalShellToolParamTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: LocalShellToolParamTypeType.localShell,
-      );
+  static LocalShellToolParamType _$type(LocalShellToolParam v) => v.type;
+  static const Field<LocalShellToolParam, LocalShellToolParamType> _f$type =
+      Field('type', _$type, opt: true, def: LocalShellToolParamType.localShell);
 
   @override
   final MappableFields<LocalShellToolParam> fields = const {#type: _f$type};
@@ -112,7 +107,7 @@ abstract class LocalShellToolParamCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({LocalShellToolParamTypeType? type});
+  $R call({LocalShellToolParamType? type});
   LocalShellToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -127,7 +122,7 @@ class _LocalShellToolParamCopyWithImpl<$R, $Out>
   late final ClassMapperBase<LocalShellToolParam> $mapper =
       LocalShellToolParamMapper.ensureInitialized();
   @override
-  $R call({LocalShellToolParamTypeType? type}) =>
+  $R call({LocalShellToolParamType? type}) =>
       $apply(FieldCopyWithData({if (type != null) #type: type}));
   @override
   LocalShellToolParam $make(CopyWithData data) =>

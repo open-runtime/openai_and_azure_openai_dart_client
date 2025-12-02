@@ -72,7 +72,7 @@ class InputContentInputTextMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputContentInputTextMapper._());
       InputContentMapper.ensureInitialized().addSubMapper(_instance!);
-      InputContentTypeTypeMapper.ensureInitialized();
+      InputContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -80,9 +80,11 @@ class InputContentInputTextMapper
   @override
   final String id = 'InputContentInputText';
 
-  static InputContentTypeType _$type(InputContentInputText v) => v.type;
-  static const Field<InputContentInputText, InputContentTypeType> _f$type =
-      Field('type', _$type);
+  static InputContentType _$type(InputContentInputText v) => v.type;
+  static const Field<InputContentInputText, InputContentType> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String _$text(InputContentInputText v) => v.text;
   static const Field<InputContentInputText, String> _f$text = Field(
     'text',
@@ -185,7 +187,7 @@ abstract class InputContentInputTextCopyWith<
 >
     implements InputContentCopyWith<$R, $In, $Out> {
   @override
-  $R call({InputContentTypeType? type, String? text});
+  $R call({InputContentType? type, String? text});
   InputContentInputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -200,7 +202,7 @@ class _InputContentInputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<InputContentInputText> $mapper =
       InputContentInputTextMapper.ensureInitialized();
   @override
-  $R call({InputContentTypeType? type, String? text}) => $apply(
+  $R call({InputContentType? type, String? text}) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,
       if (text != null) #text: text,
@@ -227,7 +229,7 @@ class InputContentInputImageMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputContentInputImageMapper._());
       InputContentMapper.ensureInitialized().addSubMapper(_instance!);
-      InputContentTypeType2Mapper.ensureInitialized();
+      InputContentType2Mapper.ensureInitialized();
       ImageDetailMapper.ensureInitialized();
     }
     return _instance!;
@@ -236,9 +238,11 @@ class InputContentInputImageMapper
   @override
   final String id = 'InputContentInputImage';
 
-  static InputContentTypeType2 _$type(InputContentInputImage v) => v.type;
-  static const Field<InputContentInputImage, InputContentTypeType2> _f$type =
-      Field('type', _$type);
+  static InputContentType2 _$type(InputContentInputImage v) => v.type;
+  static const Field<InputContentInputImage, InputContentType2> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String? _$imageUrl(InputContentInputImage v) => v.imageUrl;
   static const Field<InputContentInputImage, String> _f$imageUrl = Field(
     'imageUrl',
@@ -358,7 +362,7 @@ abstract class InputContentInputImageCopyWith<
     implements InputContentCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    InputContentTypeType2? type,
+    InputContentType2? type,
     String? imageUrl,
     String? fileId,
     ImageDetail? detail,
@@ -379,7 +383,7 @@ class _InputContentInputImageCopyWithImpl<$R, $Out>
       InputContentInputImageMapper.ensureInitialized();
   @override
   $R call({
-    InputContentTypeType2? type,
+    InputContentType2? type,
     Object? imageUrl = $none,
     Object? fileId = $none,
     ImageDetail? detail,
@@ -414,7 +418,7 @@ class InputContentInputFileMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputContentInputFileMapper._());
       InputContentMapper.ensureInitialized().addSubMapper(_instance!);
-      InputContentTypeType3Mapper.ensureInitialized();
+      InputContentType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -422,9 +426,11 @@ class InputContentInputFileMapper
   @override
   final String id = 'InputContentInputFile';
 
-  static InputContentTypeType3 _$type(InputContentInputFile v) => v.type;
-  static const Field<InputContentInputFile, InputContentTypeType3> _f$type =
-      Field('type', _$type);
+  static InputContentType3 _$type(InputContentInputFile v) => v.type;
+  static const Field<InputContentInputFile, InputContentType3> _f$type = Field(
+    'type',
+    _$type,
+  );
   static String? _$fileId(InputContentInputFile v) => v.fileId;
   static const Field<InputContentInputFile, String> _f$fileId = Field(
     'fileId',
@@ -552,7 +558,7 @@ abstract class InputContentInputFileCopyWith<
     implements InputContentCopyWith<$R, $In, $Out> {
   @override
   $R call({
-    InputContentTypeType3? type,
+    InputContentType3? type,
     String? fileId,
     String? filename,
     String? fileUrl,
@@ -573,7 +579,7 @@ class _InputContentInputFileCopyWithImpl<$R, $Out>
       InputContentInputFileMapper.ensureInitialized();
   @override
   $R call({
-    InputContentTypeType3? type,
+    InputContentType3? type,
     Object? fileId = $none,
     Object? filename = $none,
     Object? fileUrl = $none,

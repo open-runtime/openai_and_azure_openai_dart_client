@@ -7,9 +7,9 @@ import 'package:dart_mappable/dart_mappable.dart';
 import 'realtime_conversation_item.dart';
 import 'realtime_conversation_item_message_assistant_content.dart';
 import 'realtime_conversation_item_message_assistant_object_object_enum.dart';
-import 'realtime_conversation_item_message_assistant_role_role.dart';
-import 'realtime_conversation_item_message_assistant_status_status.dart';
-import 'realtime_conversation_item_message_assistant_type_type.dart';
+import 'realtime_conversation_item_message_assistant_role.dart';
+import 'realtime_conversation_item_message_assistant_status.dart';
+import 'realtime_conversation_item_message_assistant_type.dart';
 
 part 'realtime_conversation_item_message_assistant.mapper.dart';
 
@@ -25,13 +25,13 @@ class RealtimeConversationItemMessageAssistant with RealtimeConversationItemMess
     this.status,
   });
 
-  final RealtimeConversationItemMessageAssistantTypeType type;
-  final RealtimeConversationItemMessageAssistantRoleRole role;
+  final RealtimeConversationItemMessageAssistantType type;
+  final RealtimeConversationItemMessageAssistantRole role;
   final List<RealtimeConversationItemMessageAssistantContent> content;
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemMessageAssistantObjectObjectEnum? objectEnum;
-  final RealtimeConversationItemMessageAssistantStatusStatus? status;
+  final RealtimeConversationItemMessageAssistantStatus? status;
 
   static RealtimeConversationItemMessageAssistant fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageAssistantMapper.fromJson(json);
 

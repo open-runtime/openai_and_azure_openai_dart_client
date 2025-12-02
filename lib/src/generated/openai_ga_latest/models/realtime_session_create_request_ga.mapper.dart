@@ -17,10 +17,10 @@ class RealtimeSessionCreateRequestGaMapper
       MapperContainer.globals.use(
         _instance = RealtimeSessionCreateRequestGaMapper._(),
       );
-      RealtimeSessionCreateRequestGaTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaTypeMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaModelUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaAudioMapper.ensureInitialized();
-      RealtimeSessionCreateRequestGaIncludeIncludeMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaIncludeMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolsUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaMaxOutputTokensUnionMapper.ensureInitialized();
@@ -35,12 +35,12 @@ class RealtimeSessionCreateRequestGaMapper
   @override
   final String id = 'RealtimeSessionCreateRequestGa';
 
-  static RealtimeSessionCreateRequestGaTypeType _$type(
+  static RealtimeSessionCreateRequestGaType _$type(
     RealtimeSessionCreateRequestGa v,
   ) => v.type;
   static const Field<
     RealtimeSessionCreateRequestGa,
-    RealtimeSessionCreateRequestGaTypeType
+    RealtimeSessionCreateRequestGaType
   >
   _f$type = Field('type', _$type);
   static RealtimeSessionCreateRequestGaModelUnion? _$model(
@@ -73,12 +73,12 @@ class RealtimeSessionCreateRequestGaMapper
     key: r'audio',
     opt: true,
   );
-  static List<RealtimeSessionCreateRequestGaIncludeInclude>? _$include(
+  static List<RealtimeSessionCreateRequestGaInclude>? _$include(
     RealtimeSessionCreateRequestGa v,
   ) => v.include;
   static const Field<
     RealtimeSessionCreateRequestGa,
-    List<RealtimeSessionCreateRequestGaIncludeInclude>
+    List<RealtimeSessionCreateRequestGaInclude>
   >
   _f$include = Field('include', _$include, opt: true);
   static RealtimeSessionCreateRequestGaTracingUnion? _$tracing(
@@ -283,11 +283,11 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
   get realtimeSessionCreateRequestGaAudio;
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaIncludeInclude,
+    RealtimeSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaIncludeInclude,
-      RealtimeSessionCreateRequestGaIncludeInclude
+      RealtimeSessionCreateRequestGaInclude,
+      RealtimeSessionCreateRequestGaInclude
     >
   >?
   get include;
@@ -337,11 +337,11 @@ abstract class RealtimeSessionCreateRequestGaCopyWith<
   >
   get toolChoice;
   $R call({
-    RealtimeSessionCreateRequestGaTypeType? type,
+    RealtimeSessionCreateRequestGaType? type,
     RealtimeSessionCreateRequestGaModelUnion? model,
     String? instructions,
     RealtimeSessionCreateRequestGaAudio? realtimeSessionCreateRequestGaAudio,
-    List<RealtimeSessionCreateRequestGaIncludeInclude>? include,
+    List<RealtimeSessionCreateRequestGaInclude>? include,
     RealtimeSessionCreateRequestGaTracingUnion? tracing,
     List<RealtimeSessionCreateRequestGaToolsUnion>? tools,
     RealtimeSessionCreateRequestGaMaxOutputTokensUnion? maxOutputTokens,
@@ -393,11 +393,11 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaIncludeInclude,
+    RealtimeSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaIncludeInclude,
-      RealtimeSessionCreateRequestGaIncludeInclude
+      RealtimeSessionCreateRequestGaInclude,
+      RealtimeSessionCreateRequestGaInclude
     >
   >?
   get include => $value.include != null
@@ -475,7 +475,7 @@ class _RealtimeSessionCreateRequestGaCopyWithImpl<$R, $Out>
       $value.toolChoice.copyWith.$chain((v) => call(toolChoice: v));
   @override
   $R call({
-    RealtimeSessionCreateRequestGaTypeType? type,
+    RealtimeSessionCreateRequestGaType? type,
     Object? model = $none,
     Object? instructions = $none,
     Object? realtimeSessionCreateRequestGaAudio = $none,

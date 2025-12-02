@@ -6,37 +6,37 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'assistant_message_item.dart';
 import 'assistant_message_item_object_object_enum.dart';
-import 'assistant_message_item_type_type.dart';
+import 'assistant_message_item_type.dart';
 import 'attachment.dart';
 import 'client_tool_call_item.dart';
 import 'client_tool_call_item_object_object_enum.dart';
-import 'client_tool_call_item_type_type.dart';
+import 'client_tool_call_item_type.dart';
 import 'client_tool_call_status.dart';
 import 'inference_options.dart';
 import 'response_output_text.dart';
 import 'task_group_item.dart';
 import 'task_group_item_object_object_enum.dart';
-import 'task_group_item_type_type.dart';
+import 'task_group_item_type.dart';
 import 'task_group_task.dart';
 import 'task_item.dart';
 import 'task_item_object_object_enum.dart';
-import 'task_item_type_type.dart';
+import 'task_item_type.dart';
 import 'task_type.dart';
 import 'thread_item_content_union.dart';
 import 'thread_item_object_object_enum.dart';
-import 'thread_item_type_type.dart';
-import 'thread_item_type_type2.dart';
-import 'thread_item_type_type3.dart';
-import 'thread_item_type_type4.dart';
-import 'thread_item_type_type5.dart';
-import 'thread_item_type_type6.dart';
+import 'thread_item_type.dart';
+import 'thread_item_type2.dart';
+import 'thread_item_type3.dart';
+import 'thread_item_type4.dart';
+import 'thread_item_type5.dart';
+import 'thread_item_type6.dart';
 import 'user_message_item.dart';
 import 'user_message_item_content_union.dart';
 import 'user_message_item_object_object_enum.dart';
-import 'user_message_item_type_type.dart';
+import 'user_message_item_type.dart';
 import 'widget_message_item.dart';
 import 'widget_message_item_object_object_enum.dart';
-import 'widget_message_item_type_type.dart';
+import 'widget_message_item_type.dart';
 
 part 'thread_item.mapper.dart';
 
@@ -93,7 +93,7 @@ class ThreadItemChatkitUserMessage extends ThreadItem with ThreadItemChatkitUser
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType type;
+  final ThreadItemType type;
   final List<ThreadItemContentUnion> content;
   final List<Attachment> attachments;
   @MappableField(key: 'inference_options')
@@ -120,7 +120,7 @@ class ThreadItemChatkitAssistantMessage extends ThreadItem with ThreadItemChatki
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType2 type;
+  final ThreadItemType2 type;
   final List<ResponseOutputText> content;
 
   const ThreadItemChatkitAssistantMessage({
@@ -142,7 +142,7 @@ class ThreadItemChatkitWidget extends ThreadItem with ThreadItemChatkitWidgetMap
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType3 type;
+  final ThreadItemType3 type;
   final String widget;
 
   const ThreadItemChatkitWidget({
@@ -164,7 +164,7 @@ class ThreadItemChatkitClientToolCall extends ThreadItem with ThreadItemChatkitC
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType4 type;
+  final ThreadItemType4 type;
   final ClientToolCallStatus status;
   @MappableField(key: 'call_id')
   final String callId;
@@ -195,7 +195,7 @@ class ThreadItemChatkitTask extends ThreadItem with ThreadItemChatkitTaskMappabl
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType5 type;
+  final ThreadItemType5 type;
   @MappableField(key: 'task_type')
   final TaskType taskType;
   final String? heading;
@@ -222,7 +222,7 @@ class ThreadItemChatkitTaskGroup extends ThreadItem with ThreadItemChatkitTaskGr
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final ThreadItemTypeType6 type;
+  final ThreadItemType6 type;
   final List<TaskGroupTask> tasks;
 
   const ThreadItemChatkitTaskGroup({

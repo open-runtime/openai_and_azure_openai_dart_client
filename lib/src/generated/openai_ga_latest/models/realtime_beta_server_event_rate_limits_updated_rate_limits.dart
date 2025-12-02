@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'realtime_beta_server_event_rate_limits_updated_rate_limits_name_name.dart';
+import 'realtime_beta_server_event_rate_limits_updated_rate_limits_name.dart';
 
 part 'realtime_beta_server_event_rate_limits_updated_rate_limits.mapper.dart';
 
@@ -17,7 +17,7 @@ class RealtimeBetaServerEventRateLimitsUpdatedRateLimits with RealtimeBetaServer
     this.resetSeconds,
   });
 
-  final RealtimeBetaServerEventRateLimitsUpdatedRateLimitsNameName? name;
+  final RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName? name;
   final int? limit;
   final int? remaining;
   @MappableField(key: 'reset_seconds')

@@ -5,8 +5,8 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'open_ai_file_object_object_enum.dart';
-import 'open_ai_file_purpose_purpose.dart';
-import 'open_ai_file_status_status.dart';
+import 'open_ai_file_purpose.dart';
+import 'open_ai_file_status.dart';
 
 part 'open_ai_file.mapper.dart';
 
@@ -32,8 +32,8 @@ class OpenAiFile with OpenAiFileMappable {
   final String filename;
   @MappableField(key: 'object')
   final OpenAiFileObjectObjectEnum objectEnum;
-  final OpenAiFilePurposePurpose purpose;
-  final OpenAiFileStatusStatus status;
+  final OpenAiFilePurpose purpose;
+  final OpenAiFileStatus status;
   @MappableField(key: 'expires_at')
   final int? expiresAt;
   @MappableField(key: 'status_details')

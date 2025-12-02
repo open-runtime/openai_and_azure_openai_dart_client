@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'custom_tool_param_format_union.dart';
-import 'custom_tool_param_type_type.dart';
+import 'custom_tool_param_type.dart';
 import 'tool.dart';
 
 part 'custom_tool_param.mapper.dart';
@@ -17,13 +17,13 @@ class CustomToolParam with CustomToolParamMappable {
     required this.name,
     this.description,
     this.format,
-    this.type = CustomToolParamTypeType.custom,
+    this.type = CustomToolParamType.custom,
   });
 
   final String name;
   final String? description;
   final CustomToolParamFormatUnion? format;
-  final CustomToolParamTypeType type;
+  final CustomToolParamType type;
 
   static CustomToolParam fromJson(Map<String, dynamic> json) => CustomToolParamMapper.fromJson(json);
 

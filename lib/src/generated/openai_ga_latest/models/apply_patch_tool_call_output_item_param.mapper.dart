@@ -18,7 +18,7 @@ class ApplyPatchToolCallOutputItemParamMapper
         _instance = ApplyPatchToolCallOutputItemParamMapper._(),
       );
       ApplyPatchCallOutputStatusParamMapper.ensureInitialized();
-      ApplyPatchToolCallOutputItemParamTypeTypeMapper.ensureInitialized();
+      ApplyPatchToolCallOutputItemParamTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -46,18 +46,18 @@ class ApplyPatchToolCallOutputItemParamMapper
   static String? _$output(ApplyPatchToolCallOutputItemParam v) => v.output;
   static const Field<ApplyPatchToolCallOutputItemParam, String> _f$output =
       Field('output', _$output, opt: true);
-  static ApplyPatchToolCallOutputItemParamTypeType _$type(
+  static ApplyPatchToolCallOutputItemParamType _$type(
     ApplyPatchToolCallOutputItemParam v,
   ) => v.type;
   static const Field<
     ApplyPatchToolCallOutputItemParam,
-    ApplyPatchToolCallOutputItemParamTypeType
+    ApplyPatchToolCallOutputItemParamType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchToolCallOutputItemParamTypeType.applyPatchCallOutput,
+    def: ApplyPatchToolCallOutputItemParamType.applyPatchCallOutput,
   );
 
   @override
@@ -167,7 +167,7 @@ abstract class ApplyPatchToolCallOutputItemParamCopyWith<
     ApplyPatchCallOutputStatusParam? status,
     String? id,
     String? output,
-    ApplyPatchToolCallOutputItemParamTypeType? type,
+    ApplyPatchToolCallOutputItemParamType? type,
   });
   ApplyPatchToolCallOutputItemParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -197,7 +197,7 @@ class _ApplyPatchToolCallOutputItemParamCopyWithImpl<$R, $Out>
     ApplyPatchCallOutputStatusParam? status,
     Object? id = $none,
     Object? output = $none,
-    ApplyPatchToolCallOutputItemParamTypeType? type,
+    ApplyPatchToolCallOutputItemParamType? type,
   }) => $apply(
     FieldCopyWithData({
       if (callId != null) #callId: callId,

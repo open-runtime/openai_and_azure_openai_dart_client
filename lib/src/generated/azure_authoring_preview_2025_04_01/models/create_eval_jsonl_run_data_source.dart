@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_eval_jsonl_run_data_source_source_source.dart';
-import 'create_eval_jsonl_run_data_source_type_type.dart';
+import 'create_eval_jsonl_run_data_source_type.dart';
 
 part 'create_eval_jsonl_run_data_source.mapper.dart';
 
@@ -14,11 +14,11 @@ part 'create_eval_jsonl_run_data_source.mapper.dart';
 class CreateEvalJsonlRunDataSource with CreateEvalJsonlRunDataSourceMappable {
   const CreateEvalJsonlRunDataSource({
     required this.source,
-    this.type = CreateEvalJsonlRunDataSourceTypeType.jsonl,
+    this.type = CreateEvalJsonlRunDataSourceType.jsonl,
   });
 
   final CreateEvalJsonlRunDataSourceSourceSource source;
-  final CreateEvalJsonlRunDataSourceTypeType type;
+  final CreateEvalJsonlRunDataSourceType type;
 
   static CreateEvalJsonlRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalJsonlRunDataSourceMapper.fromJson(json);
 

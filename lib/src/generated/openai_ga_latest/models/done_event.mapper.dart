@@ -14,8 +14,8 @@ class DoneEventMapper extends ClassMapperBase<DoneEvent> {
   static DoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DoneEventMapper._());
-      DoneEventEventEventMapper.ensureInitialized();
-      DoneEventDataDataMapper.ensureInitialized();
+      DoneEventEventMapper.ensureInitialized();
+      DoneEventDataMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,16 +23,13 @@ class DoneEventMapper extends ClassMapperBase<DoneEvent> {
   @override
   final String id = 'DoneEvent';
 
-  static DoneEventEventEvent _$event(DoneEvent v) => v.event;
-  static const Field<DoneEvent, DoneEventEventEvent> _f$event = Field(
+  static DoneEventEvent _$event(DoneEvent v) => v.event;
+  static const Field<DoneEvent, DoneEventEvent> _f$event = Field(
     'event',
     _$event,
   );
-  static DoneEventDataData _$data(DoneEvent v) => v.data;
-  static const Field<DoneEvent, DoneEventDataData> _f$data = Field(
-    'data',
-    _$data,
-  );
+  static DoneEventData _$data(DoneEvent v) => v.data;
+  static const Field<DoneEvent, DoneEventData> _f$data = Field('data', _$data);
 
   @override
   final MappableFields<DoneEvent> fields = const {
@@ -107,7 +104,7 @@ extension DoneEventValueCopy<$R, $Out> on ObjectCopyWith<$R, DoneEvent, $Out> {
 
 abstract class DoneEventCopyWith<$R, $In extends DoneEvent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({DoneEventEventEvent? event, DoneEventDataData? data});
+  $R call({DoneEventEvent? event, DoneEventData? data});
   DoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -120,7 +117,7 @@ class _DoneEventCopyWithImpl<$R, $Out>
   late final ClassMapperBase<DoneEvent> $mapper =
       DoneEventMapper.ensureInitialized();
   @override
-  $R call({DoneEventEventEvent? event, DoneEventDataData? data}) => $apply(
+  $R call({DoneEventEvent? event, DoneEventData? data}) => $apply(
     FieldCopyWithData({
       if (event != null) #event: event,
       if (data != null) #data: data,

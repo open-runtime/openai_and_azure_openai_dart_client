@@ -17,7 +17,7 @@ class RunStepDetailsToolCallsObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsObjectMapper._(),
       );
-      RunStepDetailsToolCallsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class RunStepDetailsToolCallsObjectMapper
   @override
   final String id = 'RunStepDetailsToolCallsObject';
 
-  static RunStepDetailsToolCallsObjectTypeType _$type(
+  static RunStepDetailsToolCallsObjectType _$type(
     RunStepDetailsToolCallsObject v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallsObject,
-    RunStepDetailsToolCallsObjectTypeType
+    RunStepDetailsToolCallsObjectType
   >
   _f$type = Field('type', _$type);
   static List<RunStepDetailsToolCall> _$toolCalls(
@@ -145,7 +145,7 @@ abstract class RunStepDetailsToolCallsObjectCopyWith<
   >
   get toolCalls;
   $R call({
-    RunStepDetailsToolCallsObjectTypeType? type,
+    RunStepDetailsToolCallsObjectType? type,
     List<RunStepDetailsToolCall>? toolCalls,
   });
   RunStepDetailsToolCallsObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -187,7 +187,7 @@ class _RunStepDetailsToolCallsObjectCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    RunStepDetailsToolCallsObjectTypeType? type,
+    RunStepDetailsToolCallsObjectType? type,
     List<RunStepDetailsToolCall>? toolCalls,
   }) => $apply(
     FieldCopyWithData({

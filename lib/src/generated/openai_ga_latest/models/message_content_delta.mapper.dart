@@ -86,7 +86,7 @@ class MessageContentDeltaImageFileMapper
         _instance = MessageContentDeltaImageFileMapper._(),
       );
       MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentDeltaTypeTypeMapper.ensureInitialized();
+      MessageContentDeltaTypeMapper.ensureInitialized();
       MessageContentDeltaImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -101,9 +101,9 @@ class MessageContentDeltaImageFileMapper
     _$indexField,
     key: r'index',
   );
-  static MessageContentDeltaTypeType _$type(MessageContentDeltaImageFile v) =>
+  static MessageContentDeltaType _$type(MessageContentDeltaImageFile v) =>
       v.type;
-  static const Field<MessageContentDeltaImageFile, MessageContentDeltaTypeType>
+  static const Field<MessageContentDeltaImageFile, MessageContentDeltaType>
   _f$type = Field('type', _$type);
   static MessageContentDeltaImageFile? _$messageContentDeltaImageFile(
     MessageContentDeltaImageFile v,
@@ -224,7 +224,7 @@ abstract class MessageContentDeltaImageFileCopyWith<
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType? type,
+    MessageContentDeltaType? type,
     MessageContentDeltaImageFile? messageContentDeltaImageFile,
   });
   MessageContentDeltaImageFileCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -262,7 +262,7 @@ class _MessageContentDeltaImageFileCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType? type,
+    MessageContentDeltaType? type,
     Object? messageContentDeltaImageFile = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -300,7 +300,7 @@ class MessageContentDeltaTextMapper
         _instance = MessageContentDeltaTextMapper._(),
       );
       MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentDeltaTypeType2Mapper.ensureInitialized();
+      MessageContentDeltaType2Mapper.ensureInitialized();
       MessageContentDeltaTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -315,9 +315,8 @@ class MessageContentDeltaTextMapper
     _$indexField,
     key: r'index',
   );
-  static MessageContentDeltaTypeType2 _$type(MessageContentDeltaText v) =>
-      v.type;
-  static const Field<MessageContentDeltaText, MessageContentDeltaTypeType2>
+  static MessageContentDeltaType2 _$type(MessageContentDeltaText v) => v.type;
+  static const Field<MessageContentDeltaText, MessageContentDeltaType2>
   _f$type = Field('type', _$type);
   static MessageContentDeltaText? _$messageContentDeltaText(
     MessageContentDeltaText v,
@@ -435,7 +434,7 @@ abstract class MessageContentDeltaTextCopyWith<
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType2? type,
+    MessageContentDeltaType2? type,
     MessageContentDeltaText? messageContentDeltaText,
   });
   MessageContentDeltaTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -463,7 +462,7 @@ class _MessageContentDeltaTextCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType2? type,
+    MessageContentDeltaType2? type,
     Object? messageContentDeltaText = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -500,7 +499,7 @@ class MessageContentDeltaRefusalMapper
         _instance = MessageContentDeltaRefusalMapper._(),
       );
       MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentDeltaTypeType3Mapper.ensureInitialized();
+      MessageContentDeltaType3Mapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -514,9 +513,9 @@ class MessageContentDeltaRefusalMapper
     _$indexField,
     key: r'index',
   );
-  static MessageContentDeltaTypeType3 _$type(MessageContentDeltaRefusal v) =>
+  static MessageContentDeltaType3 _$type(MessageContentDeltaRefusal v) =>
       v.type;
-  static const Field<MessageContentDeltaRefusal, MessageContentDeltaTypeType3>
+  static const Field<MessageContentDeltaRefusal, MessageContentDeltaType3>
   _f$type = Field('type', _$type);
   static String? _$refusal(MessageContentDeltaRefusal v) => v.refusal;
   static const Field<MessageContentDeltaRefusal, String> _f$refusal = Field(
@@ -626,11 +625,7 @@ abstract class MessageContentDeltaRefusalCopyWith<
 >
     implements MessageContentDeltaCopyWith<$R, $In, $Out> {
   @override
-  $R call({
-    int? indexField,
-    MessageContentDeltaTypeType3? type,
-    String? refusal,
-  });
+  $R call({int? indexField, MessageContentDeltaType3? type, String? refusal});
   MessageContentDeltaRefusalCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -652,7 +647,7 @@ class _MessageContentDeltaRefusalCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType3? type,
+    MessageContentDeltaType3? type,
     Object? refusal = $none,
   }) => $apply(
     FieldCopyWithData({
@@ -686,7 +681,7 @@ class MessageContentDeltaImageUrlMapper
         _instance = MessageContentDeltaImageUrlMapper._(),
       );
       MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
-      MessageContentDeltaTypeType4Mapper.ensureInitialized();
+      MessageContentDeltaType4Mapper.ensureInitialized();
       MessageContentDeltaImageUrlMapper.ensureInitialized();
     }
     return _instance!;
@@ -701,9 +696,9 @@ class MessageContentDeltaImageUrlMapper
     _$indexField,
     key: r'index',
   );
-  static MessageContentDeltaTypeType4 _$type(MessageContentDeltaImageUrl v) =>
+  static MessageContentDeltaType4 _$type(MessageContentDeltaImageUrl v) =>
       v.type;
-  static const Field<MessageContentDeltaImageUrl, MessageContentDeltaTypeType4>
+  static const Field<MessageContentDeltaImageUrl, MessageContentDeltaType4>
   _f$type = Field('type', _$type);
   static MessageContentDeltaImageUrl? _$messageContentDeltaImageUrl(
     MessageContentDeltaImageUrl v,
@@ -825,7 +820,7 @@ abstract class MessageContentDeltaImageUrlCopyWith<
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType4? type,
+    MessageContentDeltaType4? type,
     MessageContentDeltaImageUrl? messageContentDeltaImageUrl,
   });
   MessageContentDeltaImageUrlCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -863,7 +858,7 @@ class _MessageContentDeltaImageUrlCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageContentDeltaTypeType4? type,
+    MessageContentDeltaType4? type,
     Object? messageContentDeltaImageUrl = $none,
   }) => $apply(
     FieldCopyWithData({

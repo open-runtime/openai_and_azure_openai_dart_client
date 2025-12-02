@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_stream_event.dart';
-import 'transcript_text_segment_event_type_type.dart';
+import 'transcript_text_segment_event_type.dart';
 
 part 'transcript_text_segment_event.mapper.dart';
 
@@ -22,7 +22,7 @@ class TranscriptTextSegmentEvent with TranscriptTextSegmentEventMappable {
     required this.speaker,
   });
 
-  final TranscriptTextSegmentEventTypeType type;
+  final TranscriptTextSegmentEventType type;
   final String id;
   final double start;
   final double end;

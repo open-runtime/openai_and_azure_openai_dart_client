@@ -17,7 +17,7 @@ class RealtimeMcpApprovalRequestMapper
       MapperContainer.globals.use(
         _instance = RealtimeMcpApprovalRequestMapper._(),
       );
-      RealtimeMcpApprovalRequestTypeTypeMapper.ensureInitialized();
+      RealtimeMcpApprovalRequestTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class RealtimeMcpApprovalRequestMapper
   @override
   final String id = 'RealtimeMcpApprovalRequest';
 
-  static RealtimeMcpApprovalRequestTypeType _$type(
-    RealtimeMcpApprovalRequest v,
-  ) => v.type;
-  static const Field<
-    RealtimeMcpApprovalRequest,
-    RealtimeMcpApprovalRequestTypeType
-  >
+  static RealtimeMcpApprovalRequestType _$type(RealtimeMcpApprovalRequest v) =>
+      v.type;
+  static const Field<RealtimeMcpApprovalRequest, RealtimeMcpApprovalRequestType>
   _f$type = Field('type', _$type);
   static String _$id(RealtimeMcpApprovalRequest v) => v.id;
   static const Field<RealtimeMcpApprovalRequest, String> _f$id = Field(
@@ -153,7 +149,7 @@ abstract class RealtimeMcpApprovalRequestCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeMcpApprovalRequestTypeType? type,
+    RealtimeMcpApprovalRequestType? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -179,7 +175,7 @@ class _RealtimeMcpApprovalRequestCopyWithImpl<$R, $Out>
       RealtimeMcpApprovalRequestMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeMcpApprovalRequestTypeType? type,
+    RealtimeMcpApprovalRequestType? type,
     String? id,
     String? serverLabel,
     String? name,

@@ -17,7 +17,7 @@ class RunObjectRequiredActionMapper
       MapperContainer.globals.use(
         _instance = RunObjectRequiredActionMapper._(),
       );
-      RunObjectRequiredActionTypeTypeMapper.ensureInitialized();
+      RunObjectRequiredActionTypeMapper.ensureInitialized();
       RunObjectRequiredActionSubmitToolOutputsMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class RunObjectRequiredActionMapper
   @override
   final String id = 'RunObjectRequiredAction';
 
-  static RunObjectRequiredActionTypeType _$type(RunObjectRequiredAction v) =>
+  static RunObjectRequiredActionType _$type(RunObjectRequiredAction v) =>
       v.type;
-  static const Field<RunObjectRequiredAction, RunObjectRequiredActionTypeType>
+  static const Field<RunObjectRequiredAction, RunObjectRequiredActionType>
   _f$type = Field('type', _$type);
   static RunObjectRequiredActionSubmitToolOutputs
   _$runObjectRequiredActionSubmitToolOutputs(RunObjectRequiredAction v) =>
@@ -140,7 +140,7 @@ abstract class RunObjectRequiredActionCopyWith<
   >
   get runObjectRequiredActionSubmitToolOutputs;
   $R call({
-    RunObjectRequiredActionTypeType? type,
+    RunObjectRequiredActionType? type,
     RunObjectRequiredActionSubmitToolOutputs?
     runObjectRequiredActionSubmitToolOutputs,
   });
@@ -170,7 +170,7 @@ class _RunObjectRequiredActionCopyWithImpl<$R, $Out>
       .$chain((v) => call(runObjectRequiredActionSubmitToolOutputs: v));
   @override
   $R call({
-    RunObjectRequiredActionTypeType? type,
+    RunObjectRequiredActionType? type,
     RunObjectRequiredActionSubmitToolOutputs?
     runObjectRequiredActionSubmitToolOutputs,
   }) => $apply(

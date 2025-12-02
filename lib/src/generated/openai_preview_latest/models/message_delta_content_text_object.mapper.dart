@@ -17,7 +17,7 @@ class MessageDeltaContentTextObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentTextObjectMapper._(),
       );
-      MessageDeltaContentTextObjectTypeTypeMapper.ensureInitialized();
+      MessageDeltaContentTextObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextObjectTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -32,12 +32,12 @@ class MessageDeltaContentTextObjectMapper
     _$indexField,
     key: r'index',
   );
-  static MessageDeltaContentTextObjectTypeType _$type(
+  static MessageDeltaContentTextObjectType _$type(
     MessageDeltaContentTextObject v,
   ) => v.type;
   static const Field<
     MessageDeltaContentTextObject,
-    MessageDeltaContentTextObjectTypeType
+    MessageDeltaContentTextObjectType
   >
   _f$type = Field('type', _$type);
   static MessageDeltaContentTextObjectText? _$messageDeltaContentTextObjectText(
@@ -157,7 +157,7 @@ abstract class MessageDeltaContentTextObjectCopyWith<
   get messageDeltaContentTextObjectText;
   $R call({
     int? indexField,
-    MessageDeltaContentTextObjectTypeType? type,
+    MessageDeltaContentTextObjectType? type,
     MessageDeltaContentTextObjectText? messageDeltaContentTextObjectText,
   });
   MessageDeltaContentTextObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -195,7 +195,7 @@ class _MessageDeltaContentTextObjectCopyWithImpl<$R, $Out>
   @override
   $R call({
     int? indexField,
-    MessageDeltaContentTextObjectTypeType? type,
+    MessageDeltaContentTextObjectType? type,
     Object? messageDeltaContentTextObjectText = $none,
   }) => $apply(
     FieldCopyWithData({

@@ -17,7 +17,7 @@ class ResponseMcpCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallInProgressEventMapper._(),
       );
-      ResponseMcpCallInProgressEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseMcpCallInProgressEventMapper
   @override
   final String id = 'ResponseMcpCallInProgressEvent';
 
-  static ResponseMcpCallInProgressEventTypeType _$type(
+  static ResponseMcpCallInProgressEventType _$type(
     ResponseMcpCallInProgressEvent v,
   ) => v.type;
   static const Field<
     ResponseMcpCallInProgressEvent,
-    ResponseMcpCallInProgressEventTypeType
+    ResponseMcpCallInProgressEventType
   >
   _f$type = Field('type', _$type);
   static int _$sequenceNumber(ResponseMcpCallInProgressEvent v) =>
@@ -147,7 +147,7 @@ abstract class ResponseMcpCallInProgressEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpCallInProgressEventTypeType? type,
+    ResponseMcpCallInProgressEventType? type,
     int? sequenceNumber,
     int? outputIndex,
     String? itemId,
@@ -176,7 +176,7 @@ class _ResponseMcpCallInProgressEventCopyWithImpl<$R, $Out>
       ResponseMcpCallInProgressEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpCallInProgressEventTypeType? type,
+    ResponseMcpCallInProgressEventType? type,
     int? sequenceNumber,
     int? outputIndex,
     String? itemId,

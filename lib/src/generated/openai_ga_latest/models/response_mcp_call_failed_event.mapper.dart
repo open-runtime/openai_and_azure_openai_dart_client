@@ -17,7 +17,7 @@ class ResponseMcpCallFailedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallFailedEventMapper._(),
       );
-      ResponseMcpCallFailedEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpCallFailedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,13 +25,9 @@ class ResponseMcpCallFailedEventMapper
   @override
   final String id = 'ResponseMcpCallFailedEvent';
 
-  static ResponseMcpCallFailedEventTypeType _$type(
-    ResponseMcpCallFailedEvent v,
-  ) => v.type;
-  static const Field<
-    ResponseMcpCallFailedEvent,
-    ResponseMcpCallFailedEventTypeType
-  >
+  static ResponseMcpCallFailedEventType _$type(ResponseMcpCallFailedEvent v) =>
+      v.type;
+  static const Field<ResponseMcpCallFailedEvent, ResponseMcpCallFailedEventType>
   _f$type = Field('type', _$type);
   static String _$itemId(ResponseMcpCallFailedEvent v) => v.itemId;
   static const Field<ResponseMcpCallFailedEvent, String> _f$itemId = Field(
@@ -148,7 +144,7 @@ abstract class ResponseMcpCallFailedEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpCallFailedEventTypeType? type,
+    ResponseMcpCallFailedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,
@@ -173,7 +169,7 @@ class _ResponseMcpCallFailedEventCopyWithImpl<$R, $Out>
       ResponseMcpCallFailedEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpCallFailedEventTypeType? type,
+    ResponseMcpCallFailedEventType? type,
     String? itemId,
     int? outputIndex,
     int? sequenceNumber,

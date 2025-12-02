@@ -76,7 +76,7 @@ class TextAnnotationFileCitationMapper
         _instance = TextAnnotationFileCitationMapper._(),
       );
       TextAnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      TextAnnotationTypeTypeMapper.ensureInitialized();
+      TextAnnotationTypeMapper.ensureInitialized();
       TextAnnotationFileCitationMapper.ensureInitialized();
     }
     return _instance!;
@@ -85,9 +85,9 @@ class TextAnnotationFileCitationMapper
   @override
   final String id = 'TextAnnotationFileCitation';
 
-  static TextAnnotationTypeType _$type(TextAnnotationFileCitation v) => v.type;
-  static const Field<TextAnnotationFileCitation, TextAnnotationTypeType>
-  _f$type = Field('type', _$type);
+  static TextAnnotationType _$type(TextAnnotationFileCitation v) => v.type;
+  static const Field<TextAnnotationFileCitation, TextAnnotationType> _f$type =
+      Field('type', _$type);
   static String _$text(TextAnnotationFileCitation v) => v.text;
   static const Field<TextAnnotationFileCitation, String> _f$text = Field(
     'text',
@@ -228,7 +228,7 @@ abstract class TextAnnotationFileCitationCopyWith<
   get textAnnotationFileCitation;
   @override
   $R call({
-    TextAnnotationTypeType? type,
+    TextAnnotationType? type,
     String? text,
     TextAnnotationFileCitation? textAnnotationFileCitation,
     int? startIndex,
@@ -262,7 +262,7 @@ class _TextAnnotationFileCitationCopyWithImpl<$R, $Out>
       .$chain((v) => call(textAnnotationFileCitation: v));
   @override
   $R call({
-    TextAnnotationTypeType? type,
+    TextAnnotationType? type,
     String? text,
     TextAnnotationFileCitation? textAnnotationFileCitation,
     int? startIndex,
@@ -305,7 +305,7 @@ class TextAnnotationFilePathMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TextAnnotationFilePathMapper._());
       TextAnnotationMapper.ensureInitialized().addSubMapper(_instance!);
-      TextAnnotationTypeType2Mapper.ensureInitialized();
+      TextAnnotationType2Mapper.ensureInitialized();
       TextAnnotationFilePathMapper.ensureInitialized();
     }
     return _instance!;
@@ -314,8 +314,8 @@ class TextAnnotationFilePathMapper
   @override
   final String id = 'TextAnnotationFilePath';
 
-  static TextAnnotationTypeType2 _$type(TextAnnotationFilePath v) => v.type;
-  static const Field<TextAnnotationFilePath, TextAnnotationTypeType2> _f$type =
+  static TextAnnotationType2 _$type(TextAnnotationFilePath v) => v.type;
+  static const Field<TextAnnotationFilePath, TextAnnotationType2> _f$type =
       Field('type', _$type);
   static String _$text(TextAnnotationFilePath v) => v.text;
   static const Field<TextAnnotationFilePath, String> _f$text = Field(
@@ -453,7 +453,7 @@ abstract class TextAnnotationFilePathCopyWith<
   get textAnnotationFilePath;
   @override
   $R call({
-    TextAnnotationTypeType2? type,
+    TextAnnotationType2? type,
     String? text,
     TextAnnotationFilePath? textAnnotationFilePath,
     int? startIndex,
@@ -484,7 +484,7 @@ class _TextAnnotationFilePathCopyWithImpl<$R, $Out>
   );
   @override
   $R call({
-    TextAnnotationTypeType2? type,
+    TextAnnotationType2? type,
     String? text,
     TextAnnotationFilePath? textAnnotationFilePath,
     int? startIndex,

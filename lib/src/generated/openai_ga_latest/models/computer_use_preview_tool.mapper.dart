@@ -16,7 +16,7 @@ class ComputerUsePreviewToolMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerUsePreviewToolMapper._());
       ComputerEnvironmentMapper.ensureInitialized();
-      ComputerUsePreviewToolTypeTypeMapper.ensureInitialized();
+      ComputerUsePreviewToolTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -40,14 +40,13 @@ class ComputerUsePreviewToolMapper
     _$displayHeight,
     key: r'display_height',
   );
-  static ComputerUsePreviewToolTypeType _$type(ComputerUsePreviewTool v) =>
-      v.type;
-  static const Field<ComputerUsePreviewTool, ComputerUsePreviewToolTypeType>
+  static ComputerUsePreviewToolType _$type(ComputerUsePreviewTool v) => v.type;
+  static const Field<ComputerUsePreviewTool, ComputerUsePreviewToolType>
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ComputerUsePreviewToolTypeType.computerUsePreview,
+    def: ComputerUsePreviewToolType.computerUsePreview,
   );
 
   @override
@@ -145,7 +144,7 @@ abstract class ComputerUsePreviewToolCopyWith<
     ComputerEnvironment? environment,
     int? displayWidth,
     int? displayHeight,
-    ComputerUsePreviewToolTypeType? type,
+    ComputerUsePreviewToolType? type,
   });
   ComputerUsePreviewToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -166,7 +165,7 @@ class _ComputerUsePreviewToolCopyWithImpl<$R, $Out>
     ComputerEnvironment? environment,
     int? displayWidth,
     int? displayHeight,
-    ComputerUsePreviewToolTypeType? type,
+    ComputerUsePreviewToolType? type,
   }) => $apply(
     FieldCopyWithData({
       if (environment != null) #environment: environment,

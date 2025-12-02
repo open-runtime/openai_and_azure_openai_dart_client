@@ -8,8 +8,8 @@ import 'message_content.dart';
 import 'message_object_attachments.dart';
 import 'message_object_incomplete_details.dart';
 import 'message_object_object_object_enum.dart';
-import 'message_object_role_role.dart';
-import 'message_object_status_status.dart';
+import 'message_object_role.dart';
+import 'message_object_status.dart';
 import 'metadata.dart';
 
 part 'message_object.mapper.dart';
@@ -41,14 +41,14 @@ class MessageObject with MessageObjectMappable {
   final int createdAt;
   @MappableField(key: 'thread_id')
   final String threadId;
-  final MessageObjectStatusStatus status;
+  final MessageObjectStatus status;
   @MappableField(key: 'incomplete_details')
   final MessageObjectIncompleteDetails? incompleteDetails;
   @MappableField(key: 'completed_at')
   final int? completedAt;
   @MappableField(key: 'incomplete_at')
   final int? incompleteAt;
-  final MessageObjectRoleRole role;
+  final MessageObjectRole role;
   final List<MessageContent> content;
   @MappableField(key: 'assistant_id')
   final String? assistantId;

@@ -8,7 +8,7 @@ import 'conversation_item.dart';
 import 'message_content_union.dart';
 import 'message_role.dart';
 import 'message_status.dart';
-import 'message_type_type.dart';
+import 'message_type.dart';
 
 part 'message.mapper.dart';
 
@@ -20,14 +20,14 @@ class Message with MessageMappable {
     required this.status,
     required this.role,
     required this.content,
-    this.type = MessageTypeType.message,
+    this.type = MessageType.message,
   });
 
   final String id;
   final MessageStatus status;
   final MessageRole role;
   final List<MessageContentUnion> content;
-  final MessageTypeType type;
+  final MessageType type;
 
   static Message fromJson(Map<String, dynamic> json) => MessageMapper.fromJson(json);
 

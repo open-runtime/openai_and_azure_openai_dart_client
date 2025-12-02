@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_audio_input_audio.dart';
-import 'chat_completion_request_message_content_part_audio_type_type.dart';
+import 'chat_completion_request_message_content_part_audio_type.dart';
 import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_audio.mapper.dart';
@@ -19,7 +19,7 @@ class ChatCompletionRequestMessageContentPartAudio with ChatCompletionRequestMes
     required this.chatCompletionRequestMessageContentPartAudioInputAudio,
   });
 
-  final ChatCompletionRequestMessageContentPartAudioTypeType type;
+  final ChatCompletionRequestMessageContentPartAudioType type;
   @MappableField(key: 'input_audio')
   final ChatCompletionRequestMessageContentPartAudioInputAudio chatCompletionRequestMessageContentPartAudioInputAudio;
 

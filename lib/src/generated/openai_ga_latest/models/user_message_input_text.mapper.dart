@@ -14,7 +14,7 @@ class UserMessageInputTextMapper extends ClassMapperBase<UserMessageInputText> {
   static UserMessageInputTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserMessageInputTextMapper._());
-      UserMessageInputTextTypeTypeMapper.ensureInitialized();
+      UserMessageInputTextTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,14 +27,9 @@ class UserMessageInputTextMapper extends ClassMapperBase<UserMessageInputText> {
     'text',
     _$text,
   );
-  static UserMessageInputTextTypeType _$type(UserMessageInputText v) => v.type;
-  static const Field<UserMessageInputText, UserMessageInputTextTypeType>
-  _f$type = Field(
-    'type',
-    _$type,
-    opt: true,
-    def: UserMessageInputTextTypeType.inputText,
-  );
+  static UserMessageInputTextType _$type(UserMessageInputText v) => v.type;
+  static const Field<UserMessageInputText, UserMessageInputTextType> _f$type =
+      Field('type', _$type, opt: true, def: UserMessageInputTextType.inputText);
 
   @override
   final MappableFields<UserMessageInputText> fields = const {
@@ -123,7 +118,7 @@ abstract class UserMessageInputTextCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, UserMessageInputTextTypeType? type});
+  $R call({String? text, UserMessageInputTextType? type});
   UserMessageInputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -138,7 +133,7 @@ class _UserMessageInputTextCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserMessageInputText> $mapper =
       UserMessageInputTextMapper.ensureInitialized();
   @override
-  $R call({String? text, UserMessageInputTextTypeType? type}) => $apply(
+  $R call({String? text, UserMessageInputTextType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

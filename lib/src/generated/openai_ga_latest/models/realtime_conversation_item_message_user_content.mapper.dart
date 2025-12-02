@@ -17,8 +17,8 @@ class RealtimeConversationItemMessageUserContentMapper
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageUserContentMapper._(),
       );
-      RealtimeConversationItemMessageUserContentDetailDetailMapper.ensureInitialized();
-      RealtimeConversationItemMessageUserContentTypeTypeMapper.ensureInitialized();
+      RealtimeConversationItemMessageUserContentDetailMapper.ensureInitialized();
+      RealtimeConversationItemMessageUserContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -26,25 +26,25 @@ class RealtimeConversationItemMessageUserContentMapper
   @override
   final String id = 'RealtimeConversationItemMessageUserContent';
 
-  static RealtimeConversationItemMessageUserContentDetailDetail _$detail(
+  static RealtimeConversationItemMessageUserContentDetail _$detail(
     RealtimeConversationItemMessageUserContent v,
   ) => v.detail;
   static const Field<
     RealtimeConversationItemMessageUserContent,
-    RealtimeConversationItemMessageUserContentDetailDetail
+    RealtimeConversationItemMessageUserContentDetail
   >
   _f$detail = Field(
     'detail',
     _$detail,
     opt: true,
-    def: RealtimeConversationItemMessageUserContentDetailDetail.auto,
+    def: RealtimeConversationItemMessageUserContentDetail.auto,
   );
-  static RealtimeConversationItemMessageUserContentTypeType? _$type(
+  static RealtimeConversationItemMessageUserContentType? _$type(
     RealtimeConversationItemMessageUserContent v,
   ) => v.type;
   static const Field<
     RealtimeConversationItemMessageUserContent,
-    RealtimeConversationItemMessageUserContentTypeType
+    RealtimeConversationItemMessageUserContentType
   >
   _f$type = Field('type', _$type, opt: true);
   static String? _$text(RealtimeConversationItemMessageUserContent v) => v.text;
@@ -181,8 +181,8 @@ abstract class RealtimeConversationItemMessageUserContentCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RealtimeConversationItemMessageUserContentDetailDetail? detail,
-    RealtimeConversationItemMessageUserContentTypeType? type,
+    RealtimeConversationItemMessageUserContentDetail? detail,
+    RealtimeConversationItemMessageUserContentType? type,
     String? text,
     String? audio,
     String? imageUrl,
@@ -213,7 +213,7 @@ class _RealtimeConversationItemMessageUserContentCopyWithImpl<$R, $Out>
       RealtimeConversationItemMessageUserContentMapper.ensureInitialized();
   @override
   $R call({
-    RealtimeConversationItemMessageUserContentDetailDetail? detail,
+    RealtimeConversationItemMessageUserContentDetail? detail,
     Object? type = $none,
     Object? text = $none,
     Object? audio = $none,

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'summary_text_content_type_type.dart';
+import 'summary_text_content_type.dart';
 
 part 'summary_text_content.mapper.dart';
 
@@ -13,11 +13,11 @@ part 'summary_text_content.mapper.dart';
 class SummaryTextContent with SummaryTextContentMappable {
   const SummaryTextContent({
     required this.text,
-    this.type = SummaryTextContentTypeType.summaryText,
+    this.type = SummaryTextContentType.summaryText,
   });
 
   final String text;
-  final SummaryTextContentTypeType type;
+  final SummaryTextContentType type;
 
   static SummaryTextContent fromJson(Map<String, dynamic> json) => SummaryTextContentMapper.fromJson(json);
 

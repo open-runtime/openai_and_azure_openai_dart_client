@@ -18,7 +18,7 @@ class RealtimeServerEventConversationItemTruncatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventConversationItemTruncatedMapper._(),
       );
-      RealtimeServerEventConversationItemTruncatedTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventConversationItemTruncatedTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeServerEventConversationItemTruncatedMapper
       v.eventId;
   static const Field<RealtimeServerEventConversationItemTruncated, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventConversationItemTruncatedTypeType _$type(
+  static RealtimeServerEventConversationItemTruncatedType _$type(
     RealtimeServerEventConversationItemTruncated v,
   ) => v.type;
   static const Field<
     RealtimeServerEventConversationItemTruncated,
-    RealtimeServerEventConversationItemTruncatedTypeType
+    RealtimeServerEventConversationItemTruncatedType
   >
   _f$type = Field('type', _$type);
   static String _$itemId(RealtimeServerEventConversationItemTruncated v) =>
@@ -175,7 +175,7 @@ abstract class RealtimeServerEventConversationItemTruncatedCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemTruncatedTypeType? type,
+    RealtimeServerEventConversationItemTruncatedType? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,
@@ -210,7 +210,7 @@ class _RealtimeServerEventConversationItemTruncatedCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventConversationItemTruncatedTypeType? type,
+    RealtimeServerEventConversationItemTruncatedType? type,
     String? itemId,
     int? contentIndex,
     int? audioEndMs,

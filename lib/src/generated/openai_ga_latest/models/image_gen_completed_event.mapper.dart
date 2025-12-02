@@ -15,10 +15,10 @@ class ImageGenCompletedEventMapper
   static ImageGenCompletedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImageGenCompletedEventMapper._());
-      ImageGenCompletedEventTypeTypeMapper.ensureInitialized();
-      ImageGenCompletedEventSizeSizeMapper.ensureInitialized();
-      ImageGenCompletedEventQualityQualityMapper.ensureInitialized();
-      ImageGenCompletedEventBackgroundBackgroundMapper.ensureInitialized();
+      ImageGenCompletedEventTypeMapper.ensureInitialized();
+      ImageGenCompletedEventSizeMapper.ensureInitialized();
+      ImageGenCompletedEventQualityMapper.ensureInitialized();
+      ImageGenCompletedEventBackgroundMapper.ensureInitialized();
       ImageGenCompletedEventOutputFormatOutputFormatMapper.ensureInitialized();
       ImagesUsageMapper.ensureInitialized();
     }
@@ -28,9 +28,8 @@ class ImageGenCompletedEventMapper
   @override
   final String id = 'ImageGenCompletedEvent';
 
-  static ImageGenCompletedEventTypeType _$type(ImageGenCompletedEvent v) =>
-      v.type;
-  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventTypeType>
+  static ImageGenCompletedEventType _$type(ImageGenCompletedEvent v) => v.type;
+  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventType>
   _f$type = Field('type', _$type);
   static String _$b64Json(ImageGenCompletedEvent v) => v.b64Json;
   static const Field<ImageGenCompletedEvent, String> _f$b64Json = Field(
@@ -44,25 +43,17 @@ class ImageGenCompletedEventMapper
     _$createdAt,
     key: r'created_at',
   );
-  static ImageGenCompletedEventSizeSize _$size(ImageGenCompletedEvent v) =>
-      v.size;
-  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventSizeSize>
+  static ImageGenCompletedEventSize _$size(ImageGenCompletedEvent v) => v.size;
+  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventSize>
   _f$size = Field('size', _$size);
-  static ImageGenCompletedEventQualityQuality _$quality(
-    ImageGenCompletedEvent v,
-  ) => v.quality;
-  static const Field<
-    ImageGenCompletedEvent,
-    ImageGenCompletedEventQualityQuality
-  >
+  static ImageGenCompletedEventQuality _$quality(ImageGenCompletedEvent v) =>
+      v.quality;
+  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventQuality>
   _f$quality = Field('quality', _$quality);
-  static ImageGenCompletedEventBackgroundBackground _$background(
+  static ImageGenCompletedEventBackground _$background(
     ImageGenCompletedEvent v,
   ) => v.background;
-  static const Field<
-    ImageGenCompletedEvent,
-    ImageGenCompletedEventBackgroundBackground
-  >
+  static const Field<ImageGenCompletedEvent, ImageGenCompletedEventBackground>
   _f$background = Field('background', _$background);
   static ImageGenCompletedEventOutputFormatOutputFormat _$outputFormat(
     ImageGenCompletedEvent v,
@@ -183,12 +174,12 @@ abstract class ImageGenCompletedEventCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
   $R call({
-    ImageGenCompletedEventTypeType? type,
+    ImageGenCompletedEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenCompletedEventSizeSize? size,
-    ImageGenCompletedEventQualityQuality? quality,
-    ImageGenCompletedEventBackgroundBackground? background,
+    ImageGenCompletedEventSize? size,
+    ImageGenCompletedEventQuality? quality,
+    ImageGenCompletedEventBackground? background,
     ImageGenCompletedEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   });
@@ -211,12 +202,12 @@ class _ImageGenCompletedEventCopyWithImpl<$R, $Out>
       $value.usage.copyWith.$chain((v) => call(usage: v));
   @override
   $R call({
-    ImageGenCompletedEventTypeType? type,
+    ImageGenCompletedEventType? type,
     String? b64Json,
     int? createdAt,
-    ImageGenCompletedEventSizeSize? size,
-    ImageGenCompletedEventQualityQuality? quality,
-    ImageGenCompletedEventBackgroundBackground? background,
+    ImageGenCompletedEventSize? size,
+    ImageGenCompletedEventQuality? quality,
+    ImageGenCompletedEventBackground? background,
     ImageGenCompletedEventOutputFormatOutputFormat? outputFormat,
     ImagesUsage? usage,
   }) => $apply(

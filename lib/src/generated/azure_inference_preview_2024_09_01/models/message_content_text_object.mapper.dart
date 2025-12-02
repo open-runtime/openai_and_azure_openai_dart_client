@@ -17,7 +17,7 @@ class MessageContentTextObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextObjectMapper._(),
       );
-      MessageContentTextObjectTypeTypeMapper.ensureInitialized();
+      MessageContentTextObjectTypeMapper.ensureInitialized();
       MessageContentTextObjectTextMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,9 +26,9 @@ class MessageContentTextObjectMapper
   @override
   final String id = 'MessageContentTextObject';
 
-  static MessageContentTextObjectTypeType _$type(MessageContentTextObject v) =>
+  static MessageContentTextObjectType _$type(MessageContentTextObject v) =>
       v.type;
-  static const Field<MessageContentTextObject, MessageContentTextObjectTypeType>
+  static const Field<MessageContentTextObject, MessageContentTextObjectType>
   _f$type = Field('type', _$type);
   static MessageContentTextObjectText _$messageContentTextObjectText(
     MessageContentTextObject v,
@@ -134,7 +134,7 @@ abstract class MessageContentTextObjectCopyWith<
   >
   get messageContentTextObjectText;
   $R call({
-    MessageContentTextObjectTypeType? type,
+    MessageContentTextObjectType? type,
     MessageContentTextObjectText? messageContentTextObjectText,
   });
   MessageContentTextObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -163,7 +163,7 @@ class _MessageContentTextObjectCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentTextObjectText: v));
   @override
   $R call({
-    MessageContentTextObjectTypeType? type,
+    MessageContentTextObjectType? type,
     MessageContentTextObjectText? messageContentTextObjectText,
   }) => $apply(
     FieldCopyWithData({

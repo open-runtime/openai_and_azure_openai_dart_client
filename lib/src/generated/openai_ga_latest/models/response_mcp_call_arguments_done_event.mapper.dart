@@ -17,7 +17,7 @@ class ResponseMcpCallArgumentsDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallArgumentsDoneEventMapper._(),
       );
-      ResponseMcpCallArgumentsDoneEventTypeTypeMapper.ensureInitialized();
+      ResponseMcpCallArgumentsDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class ResponseMcpCallArgumentsDoneEventMapper
   @override
   final String id = 'ResponseMcpCallArgumentsDoneEvent';
 
-  static ResponseMcpCallArgumentsDoneEventTypeType _$type(
+  static ResponseMcpCallArgumentsDoneEventType _$type(
     ResponseMcpCallArgumentsDoneEvent v,
   ) => v.type;
   static const Field<
     ResponseMcpCallArgumentsDoneEvent,
-    ResponseMcpCallArgumentsDoneEventTypeType
+    ResponseMcpCallArgumentsDoneEventType
   >
   _f$type = Field('type', _$type);
   static int _$outputIndex(ResponseMcpCallArgumentsDoneEvent v) =>
@@ -151,7 +151,7 @@ abstract class ResponseMcpCallArgumentsDoneEventCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ResponseMcpCallArgumentsDoneEventTypeType? type,
+    ResponseMcpCallArgumentsDoneEventType? type,
     int? outputIndex,
     String? itemId,
     String? arguments,
@@ -181,7 +181,7 @@ class _ResponseMcpCallArgumentsDoneEventCopyWithImpl<$R, $Out>
       ResponseMcpCallArgumentsDoneEventMapper.ensureInitialized();
   @override
   $R call({
-    ResponseMcpCallArgumentsDoneEventTypeType? type,
+    ResponseMcpCallArgumentsDoneEventType? type,
     int? outputIndex,
     String? itemId,
     String? arguments,

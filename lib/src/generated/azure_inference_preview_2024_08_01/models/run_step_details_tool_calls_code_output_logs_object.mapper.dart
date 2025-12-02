@@ -17,7 +17,7 @@ class RunStepDetailsToolCallsCodeOutputLogsObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsCodeOutputLogsObjectMapper._(),
       );
-      RunStepDetailsToolCallsCodeOutputLogsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsCodeOutputLogsObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -25,12 +25,12 @@ class RunStepDetailsToolCallsCodeOutputLogsObjectMapper
   @override
   final String id = 'RunStepDetailsToolCallsCodeOutputLogsObject';
 
-  static RunStepDetailsToolCallsCodeOutputLogsObjectTypeType _$type(
+  static RunStepDetailsToolCallsCodeOutputLogsObjectType _$type(
     RunStepDetailsToolCallsCodeOutputLogsObject v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallsCodeOutputLogsObject,
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType
+    RunStepDetailsToolCallsCodeOutputLogsObjectType
   >
   _f$type = Field('type', _$type);
   static String _$logs(RunStepDetailsToolCallsCodeOutputLogsObject v) => v.logs;
@@ -147,7 +147,7 @@ abstract class RunStepDetailsToolCallsCodeOutputLogsObjectCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   });
   RunStepDetailsToolCallsCodeOutputLogsObjectCopyWith<$R2, $In, $Out2>
@@ -175,7 +175,7 @@ class _RunStepDetailsToolCallsCodeOutputLogsObjectCopyWithImpl<$R, $Out>
       RunStepDetailsToolCallsCodeOutputLogsObjectMapper.ensureInitialized();
   @override
   $R call({
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   }) => $apply(
     FieldCopyWithData({

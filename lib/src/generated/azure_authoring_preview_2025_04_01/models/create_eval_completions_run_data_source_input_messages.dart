@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'create_eval_completions_run_data_source_input_messages_type_type.dart';
+import 'create_eval_completions_run_data_source_input_messages_type.dart';
 import 'create_eval_completions_run_data_source_input_messages_template.dart';
 
 part 'create_eval_completions_run_data_source_input_messages.mapper.dart';
@@ -17,7 +17,7 @@ class CreateEvalCompletionsRunDataSourceInputMessages with CreateEvalCompletions
     this.itemReference,
   });
 
-  final CreateEvalCompletionsRunDataSourceInputMessagesTypeType type;
+  final CreateEvalCompletionsRunDataSourceInputMessagesType type;
   final List<CreateEvalCompletionsRunDataSourceInputMessagesTemplate>? template;
   @MappableField(key: 'item_reference')
   final String? itemReference;

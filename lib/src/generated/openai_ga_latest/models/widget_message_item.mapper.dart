@@ -15,7 +15,7 @@ class WidgetMessageItemMapper extends ClassMapperBase<WidgetMessageItem> {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WidgetMessageItemMapper._());
       WidgetMessageItemObjectObjectEnumMapper.ensureInitialized();
-      WidgetMessageItemTypeTypeMapper.ensureInitialized();
+      WidgetMessageItemTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -52,14 +52,13 @@ class WidgetMessageItemMapper extends ClassMapperBase<WidgetMessageItem> {
     opt: true,
     def: WidgetMessageItemObjectObjectEnum.undefined0,
   );
-  static WidgetMessageItemTypeType _$type(WidgetMessageItem v) => v.type;
-  static const Field<WidgetMessageItem, WidgetMessageItemTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: WidgetMessageItemTypeType.undefined0,
-      );
+  static WidgetMessageItemType _$type(WidgetMessageItem v) => v.type;
+  static const Field<WidgetMessageItem, WidgetMessageItemType> _f$type = Field(
+    'type',
+    _$type,
+    opt: true,
+    def: WidgetMessageItemType.undefined0,
+  );
 
   @override
   final MappableFields<WidgetMessageItem> fields = const {
@@ -163,7 +162,7 @@ abstract class WidgetMessageItemCopyWith<
     String? threadId,
     String? widget,
     WidgetMessageItemObjectObjectEnum? objectEnum,
-    WidgetMessageItemTypeType? type,
+    WidgetMessageItemType? type,
   });
   WidgetMessageItemCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -185,7 +184,7 @@ class _WidgetMessageItemCopyWithImpl<$R, $Out>
     String? threadId,
     String? widget,
     WidgetMessageItemObjectObjectEnum? objectEnum,
-    WidgetMessageItemTypeType? type,
+    WidgetMessageItemType? type,
   }) => $apply(
     FieldCopyWithData({
       if (id != null) #id: id,

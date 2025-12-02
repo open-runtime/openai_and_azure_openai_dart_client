@@ -5,10 +5,10 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_tool.dart';
-import 'chat_completion_tool_type_type.dart';
+import 'chat_completion_tool_type.dart';
 import 'custom_tool_chat_completions.dart';
 import 'custom_tool_chat_completions_custom.dart';
-import 'custom_tool_chat_completions_type_type.dart';
+import 'custom_tool_chat_completions_type.dart';
 import 'function_object.dart';
 
 part 'create_chat_completion_request_tools_union.mapper.dart';
@@ -48,7 +48,7 @@ extension CreateChatCompletionRequestToolsUnionDeserializer on CreateChatComplet
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class CreateChatCompletionRequestToolsUnionFunction extends CreateChatCompletionRequestToolsUnion with CreateChatCompletionRequestToolsUnionFunctionMappable {
-  final ChatCompletionToolTypeType type;
+  final ChatCompletionToolType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 
@@ -60,7 +60,7 @@ class CreateChatCompletionRequestToolsUnionFunction extends CreateChatCompletion
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class CreateChatCompletionRequestToolsUnionCustom extends CreateChatCompletionRequestToolsUnion with CreateChatCompletionRequestToolsUnionCustomMappable {
-  final CustomToolChatCompletionsTypeType type;
+  final CustomToolChatCompletionsType type;
   @MappableField(key: 'custom')
   final CustomToolChatCompletionsCustom customToolChatCompletionsCustom;
 

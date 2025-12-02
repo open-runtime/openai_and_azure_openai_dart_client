@@ -5,17 +5,17 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'create_transcription_response_stream_event_logprobs.dart';
-import 'create_transcription_response_stream_event_type_type.dart';
-import 'create_transcription_response_stream_event_type_type2.dart';
-import 'create_transcription_response_stream_event_type_type3.dart';
+import 'create_transcription_response_stream_event_type.dart';
+import 'create_transcription_response_stream_event_type2.dart';
+import 'create_transcription_response_stream_event_type3.dart';
 import 'transcript_text_delta_event.dart';
 import 'transcript_text_delta_event_logprobs.dart';
-import 'transcript_text_delta_event_type_type.dart';
+import 'transcript_text_delta_event_type.dart';
 import 'transcript_text_done_event.dart';
 import 'transcript_text_done_event_logprobs.dart';
-import 'transcript_text_done_event_type_type.dart';
+import 'transcript_text_done_event_type.dart';
 import 'transcript_text_segment_event.dart';
-import 'transcript_text_segment_event_type_type.dart';
+import 'transcript_text_segment_event_type.dart';
 import 'transcript_text_usage_tokens.dart';
 
 part 'create_transcription_response_stream_event.mapper.dart';
@@ -57,7 +57,7 @@ extension CreateTranscriptionResponseStreamEventUnionDeserializer on CreateTrans
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.segment')
 class CreateTranscriptionResponseStreamEventTranscriptTextSegment extends CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventTranscriptTextSegmentMappable {
-  final CreateTranscriptionResponseStreamEventTypeType type;
+  final CreateTranscriptionResponseStreamEventType type;
   final String id;
   final double start;
   final double end;
@@ -76,7 +76,7 @@ class CreateTranscriptionResponseStreamEventTranscriptTextSegment extends Create
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.delta')
 class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventTranscriptTextDeltaMappable {
-  final CreateTranscriptionResponseStreamEventTypeType2 type;
+  final CreateTranscriptionResponseStreamEventType2 type;
   final String delta;
   final List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs;
   @MappableField(key: 'segment_id')
@@ -92,7 +92,7 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTr
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.done')
 class CreateTranscriptionResponseStreamEventTranscriptTextDone extends CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventTranscriptTextDoneMappable {
-  final CreateTranscriptionResponseStreamEventTypeType3 type;
+  final CreateTranscriptionResponseStreamEventType3 type;
   final String text;
   final List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs;
   final TranscriptTextUsageTokens? usage;

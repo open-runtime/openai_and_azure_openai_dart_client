@@ -17,7 +17,7 @@ class MessageContentImageFileObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageFileObjectMapper._(),
       );
-      MessageContentImageFileObjectTypeTypeMapper.ensureInitialized();
+      MessageContentImageFileObjectTypeMapper.ensureInitialized();
       MessageContentImageFileObjectImageFileMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class MessageContentImageFileObjectMapper
   @override
   final String id = 'MessageContentImageFileObject';
 
-  static MessageContentImageFileObjectTypeType _$type(
+  static MessageContentImageFileObjectType _$type(
     MessageContentImageFileObject v,
   ) => v.type;
   static const Field<
     MessageContentImageFileObject,
-    MessageContentImageFileObjectTypeType
+    MessageContentImageFileObjectType
   >
   _f$type = Field('type', _$type);
   static MessageContentImageFileObjectImageFile
@@ -148,7 +148,7 @@ abstract class MessageContentImageFileObjectCopyWith<
   >
   get messageContentImageFileObjectImageFile;
   $R call({
-    MessageContentImageFileObjectTypeType? type,
+    MessageContentImageFileObjectType? type,
     MessageContentImageFileObjectImageFile?
     messageContentImageFileObjectImageFile,
   });
@@ -186,7 +186,7 @@ class _MessageContentImageFileObjectCopyWithImpl<$R, $Out>
       .$chain((v) => call(messageContentImageFileObjectImageFile: v));
   @override
   $R call({
-    MessageContentImageFileObjectTypeType? type,
+    MessageContentImageFileObjectType? type,
     MessageContentImageFileObjectImageFile?
     messageContentImageFileObjectImageFile,
   }) => $apply(

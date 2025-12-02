@@ -8,9 +8,9 @@ import 'mcp_tool.dart';
 import 'mcp_tool_allowed_tools_union.dart';
 import 'mcp_tool_connector_id_connector_id.dart';
 import 'mcp_tool_require_approval_union.dart';
-import 'mcp_tool_type_type.dart';
+import 'mcp_tool_type.dart';
 import 'realtime_function_tool.dart';
-import 'realtime_function_tool_type_type.dart';
+import 'realtime_function_tool_type.dart';
 import 'tool.dart';
 
 part 'realtime_response_create_params_tools_union.mapper.dart';
@@ -50,7 +50,7 @@ extension RealtimeResponseCreateParamsToolsUnionDeserializer on RealtimeResponse
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class RealtimeResponseCreateParamsToolsUnionFunction extends RealtimeResponseCreateParamsToolsUnion with RealtimeResponseCreateParamsToolsUnionFunctionMappable {
-  final RealtimeFunctionToolTypeType? type;
+  final RealtimeFunctionToolType? type;
   final String? name;
   final String? description;
   final dynamic parameters;
@@ -65,7 +65,7 @@ class RealtimeResponseCreateParamsToolsUnionFunction extends RealtimeResponseCre
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
 class RealtimeResponseCreateParamsToolsUnionMcp extends RealtimeResponseCreateParamsToolsUnion with RealtimeResponseCreateParamsToolsUnionMcpMappable {
-  final McpToolTypeType type;
+  final McpToolType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   @MappableField(key: 'server_url')

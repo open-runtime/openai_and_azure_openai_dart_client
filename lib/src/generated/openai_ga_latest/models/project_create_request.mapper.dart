@@ -14,7 +14,7 @@ class ProjectCreateRequestMapper extends ClassMapperBase<ProjectCreateRequest> {
   static ProjectCreateRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ProjectCreateRequestMapper._());
-      ProjectCreateRequestGeographyGeographyMapper.ensureInitialized();
+      ProjectCreateRequestGeographyMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,13 +27,9 @@ class ProjectCreateRequestMapper extends ClassMapperBase<ProjectCreateRequest> {
     'name',
     _$name,
   );
-  static ProjectCreateRequestGeographyGeography? _$geography(
-    ProjectCreateRequest v,
-  ) => v.geography;
-  static const Field<
-    ProjectCreateRequest,
-    ProjectCreateRequestGeographyGeography
-  >
+  static ProjectCreateRequestGeography? _$geography(ProjectCreateRequest v) =>
+      v.geography;
+  static const Field<ProjectCreateRequest, ProjectCreateRequestGeography>
   _f$geography = Field('geography', _$geography, opt: true);
 
   @override
@@ -123,7 +119,7 @@ abstract class ProjectCreateRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? name, ProjectCreateRequestGeographyGeography? geography});
+  $R call({String? name, ProjectCreateRequestGeography? geography});
   ProjectCreateRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );

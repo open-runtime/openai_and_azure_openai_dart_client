@@ -17,7 +17,7 @@ class ChatCompletionMessageListDataDataMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionMessageListDataDataMapper._(),
       );
-      ChatCompletionResponseMessageRoleRoleMapper.ensureInitialized();
+      ChatCompletionResponseMessageRoleMapper.ensureInitialized();
       ChatCompletionMessageToolCallMapper.ensureInitialized();
       ChatCompletionResponseMessageAnnotationsMapper.ensureInitialized();
       ChatCompletionResponseMessageFunctionCallMapper.ensureInitialized();
@@ -35,12 +35,12 @@ class ChatCompletionMessageListDataDataMapper
   static String? _$refusal(ChatCompletionMessageListDataData v) => v.refusal;
   static const Field<ChatCompletionMessageListDataData, String> _f$refusal =
       Field('refusal', _$refusal);
-  static ChatCompletionResponseMessageRoleRole _$role(
+  static ChatCompletionResponseMessageRole _$role(
     ChatCompletionMessageListDataData v,
   ) => v.role;
   static const Field<
     ChatCompletionMessageListDataData,
-    ChatCompletionResponseMessageRoleRole
+    ChatCompletionResponseMessageRole
   >
   _f$role = Field('role', _$role);
   static String _$id(ChatCompletionMessageListDataData v) => v.id;
@@ -240,7 +240,7 @@ abstract class ChatCompletionMessageListDataDataCopyWith<
   $R call({
     String? content,
     String? refusal,
-    ChatCompletionResponseMessageRoleRole? role,
+    ChatCompletionResponseMessageRole? role,
     String? id,
     List<ChatCompletionMessageToolCall>? toolCalls,
     List<ChatCompletionResponseMessageAnnotations>? annotations,
@@ -328,7 +328,7 @@ class _ChatCompletionMessageListDataDataCopyWithImpl<$R, $Out>
   $R call({
     Object? content = $none,
     Object? refusal = $none,
-    ChatCompletionResponseMessageRoleRole? role,
+    ChatCompletionResponseMessageRole? role,
     String? id,
     Object? toolCalls = $none,
     Object? annotations = $none,

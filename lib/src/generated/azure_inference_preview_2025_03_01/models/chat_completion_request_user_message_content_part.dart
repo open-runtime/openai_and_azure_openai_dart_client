@@ -6,17 +6,17 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message_content_part_audio.dart';
 import 'chat_completion_request_message_content_part_audio_input_audio.dart';
-import 'chat_completion_request_message_content_part_audio_type_type.dart';
+import 'chat_completion_request_message_content_part_audio_type.dart';
 import 'chat_completion_request_message_content_part_image.dart';
 import 'chat_completion_request_message_content_part_image_image_url.dart';
-import 'chat_completion_request_message_content_part_image_type_type.dart';
+import 'chat_completion_request_message_content_part_image_type.dart';
 import 'chat_completion_request_message_content_part_text.dart';
-import 'chat_completion_request_message_content_part_text_type_type.dart';
+import 'chat_completion_request_message_content_part_text_type.dart';
 import 'chat_completion_request_user_message_content_part_image_url.dart';
 import 'chat_completion_request_user_message_content_part_input_audio.dart';
-import 'chat_completion_request_user_message_content_part_type_type.dart';
-import 'chat_completion_request_user_message_content_part_type_type2.dart';
-import 'chat_completion_request_user_message_content_part_type_type3.dart';
+import 'chat_completion_request_user_message_content_part_type.dart';
+import 'chat_completion_request_user_message_content_part_type2.dart';
+import 'chat_completion_request_user_message_content_part_type3.dart';
 
 part 'chat_completion_request_user_message_content_part.mapper.dart';
 
@@ -57,7 +57,7 @@ extension ChatCompletionRequestUserMessageContentPartUnionDeserializer on ChatCo
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class ChatCompletionRequestUserMessageContentPartText extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartTextMappable {
-  final ChatCompletionRequestUserMessageContentPartTypeType type;
+  final ChatCompletionRequestUserMessageContentPartType type;
   final String text;
 
   const ChatCompletionRequestUserMessageContentPartText({
@@ -68,7 +68,7 @@ class ChatCompletionRequestUserMessageContentPartText extends ChatCompletionRequ
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
 class ChatCompletionRequestUserMessageContentPartImageUrl extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartImageUrlMappable {
-  final ChatCompletionRequestUserMessageContentPartTypeType2 type;
+  final ChatCompletionRequestUserMessageContentPartType2 type;
   @MappableField(key: 'image_url')
   final ChatCompletionRequestUserMessageContentPartImageUrl chatCompletionRequestUserMessageContentPartImageUrl;
 
@@ -80,7 +80,7 @@ class ChatCompletionRequestUserMessageContentPartImageUrl extends ChatCompletion
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio')
 class ChatCompletionRequestUserMessageContentPartInputAudio extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartInputAudioMappable {
-  final ChatCompletionRequestUserMessageContentPartTypeType3 type;
+  final ChatCompletionRequestUserMessageContentPartType3 type;
   @MappableField(key: 'input_audio')
   final ChatCompletionRequestUserMessageContentPartInputAudio chatCompletionRequestUserMessageContentPartInputAudio;
 

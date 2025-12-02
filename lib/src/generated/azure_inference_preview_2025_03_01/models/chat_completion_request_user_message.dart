@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'chat_completion_request_message.dart';
-import 'chat_completion_request_user_message_role_role.dart';
+import 'chat_completion_request_user_message_role.dart';
 
 part 'chat_completion_request_user_message.mapper.dart';
 
@@ -18,7 +18,7 @@ class ChatCompletionRequestUserMessage with ChatCompletionRequestUserMessageMapp
   });
 
   final String content;
-  final ChatCompletionRequestUserMessageRoleRole role;
+  final ChatCompletionRequestUserMessageRole role;
   final String? name;
 
   static ChatCompletionRequestUserMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestUserMessageMapper.fromJson(json);

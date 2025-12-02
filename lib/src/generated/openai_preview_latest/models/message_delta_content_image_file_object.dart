@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'message_delta_content_image_file_object_image_file.dart';
-import 'message_delta_content_image_file_object_type_type.dart';
+import 'message_delta_content_image_file_object_type.dart';
 
 part 'message_delta_content_image_file_object.mapper.dart';
 
@@ -20,7 +20,7 @@ class MessageDeltaContentImageFileObject with MessageDeltaContentImageFileObject
 
   @MappableField(key: 'index')
   final int indexField;
-  final MessageDeltaContentImageFileObjectTypeType type;
+  final MessageDeltaContentImageFileObjectType type;
   @MappableField(key: 'image_file')
   final MessageDeltaContentImageFileObjectImageFile? messageDeltaContentImageFileObjectImageFile;
 

@@ -82,7 +82,7 @@ class CompoundFilterFiltersUnionComparisonFilterMapper
         _instance = CompoundFilterFiltersUnionComparisonFilterMapper._(),
       );
       CompoundFilterFiltersUnionMapper.ensureInitialized();
-      ComparisonFilterTypeTypeMapper.ensureInitialized();
+      ComparisonFilterTypeMapper.ensureInitialized();
       ComparisonFilterValueUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -91,12 +91,12 @@ class CompoundFilterFiltersUnionComparisonFilterMapper
   @override
   final String id = 'CompoundFilterFiltersUnionComparisonFilter';
 
-  static ComparisonFilterTypeType _$type(
+  static ComparisonFilterType _$type(
     CompoundFilterFiltersUnionComparisonFilter v,
   ) => v.type;
   static const Field<
     CompoundFilterFiltersUnionComparisonFilter,
-    ComparisonFilterTypeType
+    ComparisonFilterType
   >
   _f$type = Field('type', _$type);
   static String _$key(CompoundFilterFiltersUnionComparisonFilter v) => v.key;
@@ -226,7 +226,7 @@ abstract class CompoundFilterFiltersUnionComparisonFilterCopyWith<
   get value;
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   });
@@ -262,7 +262,7 @@ class _CompoundFilterFiltersUnionComparisonFilterCopyWithImpl<$R, $Out>
   get value => $value.value.copyWith.$chain((v) => call(value: v));
   @override
   $R call({
-    ComparisonFilterTypeType? type,
+    ComparisonFilterType? type,
     String? key,
     ComparisonFilterValueUnion? value,
   }) => $apply(

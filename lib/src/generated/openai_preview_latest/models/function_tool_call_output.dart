@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'function_tool_call_output_status_status.dart';
-import 'function_tool_call_output_type_type.dart';
+import 'function_tool_call_output_status.dart';
+import 'function_tool_call_output_type.dart';
 
 part 'function_tool_call_output.mapper.dart';
 
@@ -21,12 +21,12 @@ class FunctionToolCallOutput with FunctionToolCallOutputMappable {
     this.status,
   });
 
-  final FunctionToolCallOutputTypeType type;
+  final FunctionToolCallOutputType type;
   @MappableField(key: 'call_id')
   final String callId;
   final String output;
   final String? id;
-  final FunctionToolCallOutputStatusStatus? status;
+  final FunctionToolCallOutputStatus? status;
 
   static FunctionToolCallOutput fromJson(Map<String, dynamic> json) => FunctionToolCallOutputMapper.fromJson(json);
 

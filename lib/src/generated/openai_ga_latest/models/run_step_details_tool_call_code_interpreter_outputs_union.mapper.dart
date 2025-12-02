@@ -102,7 +102,7 @@ class RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsMapper
       );
       RunStepDetailsToolCallCodeInterpreterOutputsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDetailsToolCallsCodeOutputLogsObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsCodeOutputLogsObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -110,12 +110,12 @@ class RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsMapper
   @override
   final String id = 'RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs';
 
-  static RunStepDetailsToolCallsCodeOutputLogsObjectTypeType _$type(
+  static RunStepDetailsToolCallsCodeOutputLogsObjectType _$type(
     RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallCodeInterpreterOutputsUnionLogs,
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType
+    RunStepDetailsToolCallsCodeOutputLogsObjectType
   >
   _f$type = Field('type', _$type);
   static String _$logs(
@@ -264,7 +264,7 @@ abstract class RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsCopyWith<
         > {
   @override
   $R call({
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   });
   RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsCopyWith<$R2, $In, $Out2>
@@ -301,7 +301,7 @@ class _RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsCopyWithImpl<
       RunStepDetailsToolCallCodeInterpreterOutputsUnionLogsMapper.ensureInitialized();
   @override
   $R call({
-    RunStepDetailsToolCallsCodeOutputLogsObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputLogsObjectType? type,
     String? logs,
   }) => $apply(
     FieldCopyWithData({
@@ -348,7 +348,7 @@ class RunStepDetailsToolCallCodeInterpreterOutputsUnionImageMapper
       );
       RunStepDetailsToolCallCodeInterpreterOutputsUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RunStepDetailsToolCallsCodeOutputImageObjectTypeTypeMapper.ensureInitialized();
+      RunStepDetailsToolCallsCodeOutputImageObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallsCodeOutputImageObjectImageMapper.ensureInitialized();
     }
     return _instance!;
@@ -357,12 +357,12 @@ class RunStepDetailsToolCallCodeInterpreterOutputsUnionImageMapper
   @override
   final String id = 'RunStepDetailsToolCallCodeInterpreterOutputsUnionImage';
 
-  static RunStepDetailsToolCallsCodeOutputImageObjectTypeType _$type(
+  static RunStepDetailsToolCallsCodeOutputImageObjectType _$type(
     RunStepDetailsToolCallCodeInterpreterOutputsUnionImage v,
   ) => v.type;
   static const Field<
     RunStepDetailsToolCallCodeInterpreterOutputsUnionImage,
-    RunStepDetailsToolCallsCodeOutputImageObjectTypeType
+    RunStepDetailsToolCallsCodeOutputImageObjectType
   >
   _f$type = Field('type', _$type);
   static RunStepDetailsToolCallsCodeOutputImageObjectImage
@@ -528,7 +528,7 @@ abstract class RunStepDetailsToolCallCodeInterpreterOutputsUnionImageCopyWith<
   get runStepDetailsToolCallsCodeOutputImageObjectImage;
   @override
   $R call({
-    RunStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputImageObjectType? type,
     RunStepDetailsToolCallsCodeOutputImageObjectImage?
     runStepDetailsToolCallsCodeOutputImageObjectImage,
   });
@@ -580,7 +580,7 @@ class _RunStepDetailsToolCallCodeInterpreterOutputsUnionImageCopyWithImpl<
       );
   @override
   $R call({
-    RunStepDetailsToolCallsCodeOutputImageObjectTypeType? type,
+    RunStepDetailsToolCallsCodeOutputImageObjectType? type,
     RunStepDetailsToolCallsCodeOutputImageObjectImage?
     runStepDetailsToolCallsCodeOutputImageObjectImage,
   }) => $apply(

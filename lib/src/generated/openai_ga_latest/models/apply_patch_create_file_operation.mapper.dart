@@ -17,7 +17,7 @@ class ApplyPatchCreateFileOperationMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchCreateFileOperationMapper._(),
       );
-      ApplyPatchCreateFileOperationTypeTypeMapper.ensureInitialized();
+      ApplyPatchCreateFileOperationTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -35,18 +35,18 @@ class ApplyPatchCreateFileOperationMapper
     'diff',
     _$diff,
   );
-  static ApplyPatchCreateFileOperationTypeType _$type(
+  static ApplyPatchCreateFileOperationType _$type(
     ApplyPatchCreateFileOperation v,
   ) => v.type;
   static const Field<
     ApplyPatchCreateFileOperation,
-    ApplyPatchCreateFileOperationTypeType
+    ApplyPatchCreateFileOperationType
   >
   _f$type = Field(
     'type',
     _$type,
     opt: true,
-    def: ApplyPatchCreateFileOperationTypeType.createFile,
+    def: ApplyPatchCreateFileOperationType.createFile,
   );
 
   @override
@@ -145,7 +145,7 @@ abstract class ApplyPatchCreateFileOperationCopyWith<
   $R call({
     String? path,
     String? diff,
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
   });
   ApplyPatchCreateFileOperationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -173,7 +173,7 @@ class _ApplyPatchCreateFileOperationCopyWithImpl<$R, $Out>
   $R call({
     String? path,
     String? diff,
-    ApplyPatchCreateFileOperationTypeType? type,
+    ApplyPatchCreateFileOperationType? type,
   }) => $apply(
     FieldCopyWithData({
       if (path != null) #path: path,

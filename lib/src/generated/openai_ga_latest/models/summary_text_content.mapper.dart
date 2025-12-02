@@ -14,7 +14,7 @@ class SummaryTextContentMapper extends ClassMapperBase<SummaryTextContent> {
   static SummaryTextContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = SummaryTextContentMapper._());
-      SummaryTextContentTypeTypeMapper.ensureInitialized();
+      SummaryTextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -27,14 +27,9 @@ class SummaryTextContentMapper extends ClassMapperBase<SummaryTextContent> {
     'text',
     _$text,
   );
-  static SummaryTextContentTypeType _$type(SummaryTextContent v) => v.type;
-  static const Field<SummaryTextContent, SummaryTextContentTypeType> _f$type =
-      Field(
-        'type',
-        _$type,
-        opt: true,
-        def: SummaryTextContentTypeType.summaryText,
-      );
+  static SummaryTextContentType _$type(SummaryTextContent v) => v.type;
+  static const Field<SummaryTextContent, SummaryTextContentType> _f$type =
+      Field('type', _$type, opt: true, def: SummaryTextContentType.summaryText);
 
   @override
   final MappableFields<SummaryTextContent> fields = const {
@@ -121,7 +116,7 @@ abstract class SummaryTextContentCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, SummaryTextContentTypeType? type});
+  $R call({String? text, SummaryTextContentType? type});
   SummaryTextContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -136,7 +131,7 @@ class _SummaryTextContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<SummaryTextContent> $mapper =
       SummaryTextContentMapper.ensureInitialized();
   @override
-  $R call({String? text, SummaryTextContentTypeType? type}) => $apply(
+  $R call({String? text, SummaryTextContentType? type}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
       if (type != null) #type: type,

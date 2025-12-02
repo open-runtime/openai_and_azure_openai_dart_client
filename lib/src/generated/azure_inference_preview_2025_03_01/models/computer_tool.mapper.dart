@@ -14,8 +14,8 @@ class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
   static ComputerToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerToolMapper._());
-      ComputerToolTypeTypeMapper.ensureInitialized();
-      ComputerToolEnvironmentEnvironmentMapper.ensureInitialized();
+      ComputerToolTypeMapper.ensureInitialized();
+      ComputerToolEnvironmentMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,8 +23,8 @@ class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
   @override
   final String id = 'ComputerTool';
 
-  static ComputerToolTypeType _$type(ComputerTool v) => v.type;
-  static const Field<ComputerTool, ComputerToolTypeType> _f$type = Field(
+  static ComputerToolType _$type(ComputerTool v) => v.type;
+  static const Field<ComputerTool, ComputerToolType> _f$type = Field(
     'type',
     _$type,
   );
@@ -40,10 +40,9 @@ class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
     _$displayHeight,
     key: r'display_height',
   );
-  static ComputerToolEnvironmentEnvironment _$environment(ComputerTool v) =>
-      v.environment;
-  static const Field<ComputerTool, ComputerToolEnvironmentEnvironment>
-  _f$environment = Field('environment', _$environment);
+  static ComputerToolEnvironment _$environment(ComputerTool v) => v.environment;
+  static const Field<ComputerTool, ComputerToolEnvironment> _f$environment =
+      Field('environment', _$environment);
 
   @override
   final MappableFields<ComputerTool> fields = const {
@@ -129,10 +128,10 @@ extension ComputerToolValueCopy<$R, $Out>
 abstract class ComputerToolCopyWith<$R, $In extends ComputerTool, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    ComputerToolTypeType? type,
+    ComputerToolType? type,
     num? displayWidth,
     num? displayHeight,
-    ComputerToolEnvironmentEnvironment? environment,
+    ComputerToolEnvironment? environment,
   });
   ComputerToolCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -147,10 +146,10 @@ class _ComputerToolCopyWithImpl<$R, $Out>
       ComputerToolMapper.ensureInitialized();
   @override
   $R call({
-    ComputerToolTypeType? type,
+    ComputerToolType? type,
     num? displayWidth,
     num? displayHeight,
-    ComputerToolEnvironmentEnvironment? environment,
+    ComputerToolEnvironment? environment,
   }) => $apply(
     FieldCopyWithData({
       if (type != null) #type: type,

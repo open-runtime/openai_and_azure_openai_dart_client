@@ -102,11 +102,11 @@ class RealtimeClientEventSessionUpdateSessionUnionRealtimeMapper
       );
       RealtimeClientEventSessionUpdateSessionUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RealtimeSessionCreateRequestGaTypeTypeMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaTypeMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaOutputModalitiesOutputModalitiesMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaModelUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaAudioMapper.ensureInitialized();
-      RealtimeSessionCreateRequestGaIncludeIncludeMapper.ensureInitialized();
+      RealtimeSessionCreateRequestGaIncludeMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaTracingUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolsUnionMapper.ensureInitialized();
       RealtimeSessionCreateRequestGaToolChoiceUnionMapper.ensureInitialized();
@@ -120,12 +120,12 @@ class RealtimeClientEventSessionUpdateSessionUnionRealtimeMapper
   @override
   final String id = 'RealtimeClientEventSessionUpdateSessionUnionRealtime';
 
-  static RealtimeSessionCreateRequestGaTypeType _$type(
+  static RealtimeSessionCreateRequestGaType _$type(
     RealtimeClientEventSessionUpdateSessionUnionRealtime v,
   ) => v.type;
   static const Field<
     RealtimeClientEventSessionUpdateSessionUnionRealtime,
-    RealtimeSessionCreateRequestGaTypeType
+    RealtimeSessionCreateRequestGaType
   >
   _f$type = Field('type', _$type);
   static List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>
@@ -169,12 +169,12 @@ class RealtimeClientEventSessionUpdateSessionUnionRealtimeMapper
     _$realtimeSessionCreateRequestGaAudio,
     key: r'audio',
   );
-  static List<RealtimeSessionCreateRequestGaIncludeInclude>? _$include(
+  static List<RealtimeSessionCreateRequestGaInclude>? _$include(
     RealtimeClientEventSessionUpdateSessionUnionRealtime v,
   ) => v.include;
   static const Field<
     RealtimeClientEventSessionUpdateSessionUnionRealtime,
-    List<RealtimeSessionCreateRequestGaIncludeInclude>
+    List<RealtimeSessionCreateRequestGaInclude>
   >
   _f$include = Field('include', _$include);
   static RealtimeSessionCreateRequestGaTracingUnion? _$tracing(
@@ -409,11 +409,11 @@ abstract class RealtimeClientEventSessionUpdateSessionUnionRealtimeCopyWith<
   get realtimeSessionCreateRequestGaAudio;
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaIncludeInclude,
+    RealtimeSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaIncludeInclude,
-      RealtimeSessionCreateRequestGaIncludeInclude
+      RealtimeSessionCreateRequestGaInclude,
+      RealtimeSessionCreateRequestGaInclude
     >
   >?
   get include;
@@ -454,13 +454,13 @@ abstract class RealtimeClientEventSessionUpdateSessionUnionRealtimeCopyWith<
   PromptUnionCopyWith<$R, PromptUnion, PromptUnion>? get prompt;
   @override
   $R call({
-    RealtimeSessionCreateRequestGaTypeType? type,
+    RealtimeSessionCreateRequestGaType? type,
     List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>?
     outputModalities,
     RealtimeSessionCreateRequestGaModelUnion? model,
     String? instructions,
     RealtimeSessionCreateRequestGaAudio? realtimeSessionCreateRequestGaAudio,
-    List<RealtimeSessionCreateRequestGaIncludeInclude>? include,
+    List<RealtimeSessionCreateRequestGaInclude>? include,
     RealtimeSessionCreateRequestGaTracingUnion? tracing,
     List<RealtimeSessionCreateRequestGaToolsUnion>? tools,
     RealtimeSessionCreateRequestGaToolChoiceUnion? toolChoice,
@@ -535,11 +535,11 @@ class _RealtimeClientEventSessionUpdateSessionUnionRealtimeCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    RealtimeSessionCreateRequestGaIncludeInclude,
+    RealtimeSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeSessionCreateRequestGaIncludeInclude,
-      RealtimeSessionCreateRequestGaIncludeInclude
+      RealtimeSessionCreateRequestGaInclude,
+      RealtimeSessionCreateRequestGaInclude
     >
   >?
   get include => $value.include != null
@@ -602,7 +602,7 @@ class _RealtimeClientEventSessionUpdateSessionUnionRealtimeCopyWithImpl<
       $value.prompt?.copyWith.$chain((v) => call(prompt: v));
   @override
   $R call({
-    RealtimeSessionCreateRequestGaTypeType? type,
+    RealtimeSessionCreateRequestGaType? type,
     List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities>?
     outputModalities,
     Object? model = $none,
@@ -685,9 +685,9 @@ class RealtimeClientEventSessionUpdateSessionUnionTranscriptionMapper
       );
       RealtimeClientEventSessionUpdateSessionUnionMapper.ensureInitialized()
           .addSubMapper(_instance!);
-      RealtimeTranscriptionSessionCreateRequestGaTypeTypeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestGaTypeMapper.ensureInitialized();
       RealtimeTranscriptionSessionCreateRequestGaAudioMapper.ensureInitialized();
-      RealtimeTranscriptionSessionCreateRequestGaIncludeIncludeMapper.ensureInitialized();
+      RealtimeTranscriptionSessionCreateRequestGaIncludeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -695,12 +695,12 @@ class RealtimeClientEventSessionUpdateSessionUnionTranscriptionMapper
   @override
   final String id = 'RealtimeClientEventSessionUpdateSessionUnionTranscription';
 
-  static RealtimeTranscriptionSessionCreateRequestGaTypeType _$type(
+  static RealtimeTranscriptionSessionCreateRequestGaType _$type(
     RealtimeClientEventSessionUpdateSessionUnionTranscription v,
   ) => v.type;
   static const Field<
     RealtimeClientEventSessionUpdateSessionUnionTranscription,
-    RealtimeTranscriptionSessionCreateRequestGaTypeType
+    RealtimeTranscriptionSessionCreateRequestGaType
   >
   _f$type = Field('type', _$type);
   static RealtimeTranscriptionSessionCreateRequestGaAudio?
@@ -716,12 +716,12 @@ class RealtimeClientEventSessionUpdateSessionUnionTranscriptionMapper
     _$realtimeTranscriptionSessionCreateRequestGaAudio,
     key: r'audio',
   );
-  static List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>?
-  _$include(RealtimeClientEventSessionUpdateSessionUnionTranscription v) =>
-      v.include;
+  static List<RealtimeTranscriptionSessionCreateRequestGaInclude>? _$include(
+    RealtimeClientEventSessionUpdateSessionUnionTranscription v,
+  ) => v.include;
   static const Field<
     RealtimeClientEventSessionUpdateSessionUnionTranscription,
-    List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>
+    List<RealtimeTranscriptionSessionCreateRequestGaInclude>
   >
   _f$include = Field('include', _$include);
 
@@ -875,20 +875,20 @@ abstract class RealtimeClientEventSessionUpdateSessionUnionTranscriptionCopyWith
   get realtimeTranscriptionSessionCreateRequestGaAudio;
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateRequestGaIncludeInclude,
+    RealtimeTranscriptionSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateRequestGaIncludeInclude,
-      RealtimeTranscriptionSessionCreateRequestGaIncludeInclude
+      RealtimeTranscriptionSessionCreateRequestGaInclude,
+      RealtimeTranscriptionSessionCreateRequestGaInclude
     >
   >?
   get include;
   @override
   $R call({
-    RealtimeTranscriptionSessionCreateRequestGaTypeType? type,
+    RealtimeTranscriptionSessionCreateRequestGaType? type,
     RealtimeTranscriptionSessionCreateRequestGaAudio?
     realtimeTranscriptionSessionCreateRequestGaAudio,
-    List<RealtimeTranscriptionSessionCreateRequestGaIncludeInclude>? include,
+    List<RealtimeTranscriptionSessionCreateRequestGaInclude>? include,
   });
   RealtimeClientEventSessionUpdateSessionUnionTranscriptionCopyWith<
     $R2,
@@ -939,11 +939,11 @@ class _RealtimeClientEventSessionUpdateSessionUnionTranscriptionCopyWithImpl<
   @override
   ListCopyWith<
     $R,
-    RealtimeTranscriptionSessionCreateRequestGaIncludeInclude,
+    RealtimeTranscriptionSessionCreateRequestGaInclude,
     ObjectCopyWith<
       $R,
-      RealtimeTranscriptionSessionCreateRequestGaIncludeInclude,
-      RealtimeTranscriptionSessionCreateRequestGaIncludeInclude
+      RealtimeTranscriptionSessionCreateRequestGaInclude,
+      RealtimeTranscriptionSessionCreateRequestGaInclude
     >
   >?
   get include => $value.include != null
@@ -955,7 +955,7 @@ class _RealtimeClientEventSessionUpdateSessionUnionTranscriptionCopyWithImpl<
       : null;
   @override
   $R call({
-    RealtimeTranscriptionSessionCreateRequestGaTypeType? type,
+    RealtimeTranscriptionSessionCreateRequestGaType? type,
     Object? realtimeTranscriptionSessionCreateRequestGaAudio = $none,
     Object? include = $none,
   }) => $apply(

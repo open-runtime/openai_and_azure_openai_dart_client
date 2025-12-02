@@ -18,7 +18,7 @@ class RealtimeServerEventResponseAudioTranscriptDeltaMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseAudioTranscriptDeltaMapper._(),
       );
-      RealtimeServerEventResponseAudioTranscriptDeltaTypeTypeMapper.ensureInitialized();
+      RealtimeServerEventResponseAudioTranscriptDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -30,12 +30,12 @@ class RealtimeServerEventResponseAudioTranscriptDeltaMapper
       v.eventId;
   static const Field<RealtimeServerEventResponseAudioTranscriptDelta, String>
   _f$eventId = Field('eventId', _$eventId, key: r'event_id');
-  static RealtimeServerEventResponseAudioTranscriptDeltaTypeType _$type(
+  static RealtimeServerEventResponseAudioTranscriptDeltaType _$type(
     RealtimeServerEventResponseAudioTranscriptDelta v,
   ) => v.type;
   static const Field<
     RealtimeServerEventResponseAudioTranscriptDelta,
-    RealtimeServerEventResponseAudioTranscriptDeltaTypeType
+    RealtimeServerEventResponseAudioTranscriptDeltaType
   >
   _f$type = Field('type', _$type);
   static String _$responseId(
@@ -196,7 +196,7 @@ abstract class RealtimeServerEventResponseAudioTranscriptDeltaCopyWith<
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? eventId,
-    RealtimeServerEventResponseAudioTranscriptDeltaTypeType? type,
+    RealtimeServerEventResponseAudioTranscriptDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,
@@ -233,7 +233,7 @@ class _RealtimeServerEventResponseAudioTranscriptDeltaCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? eventId,
-    RealtimeServerEventResponseAudioTranscriptDeltaTypeType? type,
+    RealtimeServerEventResponseAudioTranscriptDeltaType? type,
     String? responseId,
     String? itemId,
     int? outputIndex,

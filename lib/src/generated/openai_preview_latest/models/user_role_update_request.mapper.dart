@@ -15,7 +15,7 @@ class UserRoleUpdateRequestMapper
   static UserRoleUpdateRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserRoleUpdateRequestMapper._());
-      UserRoleUpdateRequestRoleRoleMapper.ensureInitialized();
+      UserRoleUpdateRequestRoleMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -23,10 +23,9 @@ class UserRoleUpdateRequestMapper
   @override
   final String id = 'UserRoleUpdateRequest';
 
-  static UserRoleUpdateRequestRoleRole _$role(UserRoleUpdateRequest v) =>
-      v.role;
-  static const Field<UserRoleUpdateRequest, UserRoleUpdateRequestRoleRole>
-  _f$role = Field('role', _$role);
+  static UserRoleUpdateRequestRole _$role(UserRoleUpdateRequest v) => v.role;
+  static const Field<UserRoleUpdateRequest, UserRoleUpdateRequestRole> _f$role =
+      Field('role', _$role);
 
   @override
   final MappableFields<UserRoleUpdateRequest> fields = const {#role: _f$role};
@@ -109,7 +108,7 @@ abstract class UserRoleUpdateRequestCopyWith<
   $Out
 >
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({UserRoleUpdateRequestRoleRole? role});
+  $R call({UserRoleUpdateRequestRole? role});
   UserRoleUpdateRequestCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   );
@@ -124,7 +123,7 @@ class _UserRoleUpdateRequestCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserRoleUpdateRequest> $mapper =
       UserRoleUpdateRequestMapper.ensureInitialized();
   @override
-  $R call({UserRoleUpdateRequestRoleRole? role}) =>
+  $R call({UserRoleUpdateRequestRole? role}) =>
       $apply(FieldCopyWithData({if (role != null) #role: role}));
   @override
   UserRoleUpdateRequest $make(CopyWithData data) =>

@@ -16,7 +16,7 @@ class WebhookBatchCancelledMapper
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WebhookBatchCancelledMapper._());
       WebhookBatchCancelledDataMapper.ensureInitialized();
-      WebhookBatchCancelledTypeTypeMapper.ensureInitialized();
+      WebhookBatchCancelledTypeMapper.ensureInitialized();
       WebhookBatchCancelledObjectObjectEnumMapper.ensureInitialized();
     }
     return _instance!;
@@ -42,10 +42,9 @@ class WebhookBatchCancelledMapper
     _$webhookBatchCancelledData,
     key: r'data',
   );
-  static WebhookBatchCancelledTypeType _$type(WebhookBatchCancelled v) =>
-      v.type;
-  static const Field<WebhookBatchCancelled, WebhookBatchCancelledTypeType>
-  _f$type = Field('type', _$type);
+  static WebhookBatchCancelledType _$type(WebhookBatchCancelled v) => v.type;
+  static const Field<WebhookBatchCancelled, WebhookBatchCancelledType> _f$type =
+      Field('type', _$type);
   static WebhookBatchCancelledObjectObjectEnum? _$objectEnum(
     WebhookBatchCancelled v,
   ) => v.objectEnum;
@@ -158,7 +157,7 @@ abstract class WebhookBatchCancelledCopyWith<
     int? createdAt,
     String? id,
     WebhookBatchCancelledData? webhookBatchCancelledData,
-    WebhookBatchCancelledTypeType? type,
+    WebhookBatchCancelledType? type,
     WebhookBatchCancelledObjectObjectEnum? objectEnum,
   });
   WebhookBatchCancelledCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
@@ -187,7 +186,7 @@ class _WebhookBatchCancelledCopyWithImpl<$R, $Out>
     int? createdAt,
     String? id,
     WebhookBatchCancelledData? webhookBatchCancelledData,
-    WebhookBatchCancelledTypeType? type,
+    WebhookBatchCancelledType? type,
     Object? objectEnum = $none,
   }) => $apply(
     FieldCopyWithData({

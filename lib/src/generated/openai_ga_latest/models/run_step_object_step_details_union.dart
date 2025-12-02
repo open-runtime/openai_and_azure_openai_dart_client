@@ -6,10 +6,10 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 import 'run_step_details_message_creation_object.dart';
 import 'run_step_details_message_creation_object_message_creation.dart';
-import 'run_step_details_message_creation_object_type_type.dart';
+import 'run_step_details_message_creation_object_type.dart';
 import 'run_step_details_tool_call.dart';
 import 'run_step_details_tool_calls_object.dart';
-import 'run_step_details_tool_calls_object_type_type.dart';
+import 'run_step_details_tool_calls_object_type.dart';
 
 part 'run_step_object_step_details_union.mapper.dart';
 
@@ -48,7 +48,7 @@ extension RunStepObjectStepDetailsUnionDeserializer on RunStepObjectStepDetailsU
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message_creation')
 class RunStepObjectStepDetailsUnionMessageCreation extends RunStepObjectStepDetailsUnion with RunStepObjectStepDetailsUnionMessageCreationMappable {
-  final RunStepDetailsMessageCreationObjectTypeType type;
+  final RunStepDetailsMessageCreationObjectType type;
   @MappableField(key: 'message_creation')
   final RunStepDetailsMessageCreationObjectMessageCreation runStepDetailsMessageCreationObjectMessageCreation;
 
@@ -60,7 +60,7 @@ class RunStepObjectStepDetailsUnionMessageCreation extends RunStepObjectStepDeta
 }
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_calls')
 class RunStepObjectStepDetailsUnionToolCalls extends RunStepObjectStepDetailsUnion with RunStepObjectStepDetailsUnionToolCallsMappable {
-  final RunStepDetailsToolCallsObjectTypeType type;
+  final RunStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDetailsToolCall> toolCalls;
 

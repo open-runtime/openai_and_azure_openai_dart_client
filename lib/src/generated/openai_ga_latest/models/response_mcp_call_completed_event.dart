@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'response_mcp_call_completed_event_type_type.dart';
+import 'response_mcp_call_completed_event_type.dart';
 import 'response_stream_event.dart';
 
 part 'response_mcp_call_completed_event.mapper.dart';
@@ -20,7 +20,7 @@ class ResponseMcpCallCompletedEvent with ResponseMcpCallCompletedEventMappable {
     required this.sequenceNumber,
   });
 
-  final ResponseMcpCallCompletedEventTypeType type;
+  final ResponseMcpCallCompletedEventType type;
   @MappableField(key: 'item_id')
   final String itemId;
   @MappableField(key: 'output_index')

@@ -5,11 +5,11 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'easy_input_message_content_union.dart';
-import 'easy_input_message_role_role.dart';
-import 'easy_input_message_type_type.dart';
+import 'easy_input_message_role.dart';
+import 'easy_input_message_type.dart';
 import 'eval_item_content_union.dart';
-import 'eval_item_role_role.dart';
-import 'eval_item_type_type.dart';
+import 'eval_item_role.dart';
+import 'eval_item_type.dart';
 import 'easy_input_message.dart';
 import 'eval_item.dart';
 
@@ -40,9 +40,9 @@ extension CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUn
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMappable {
-  final EasyInputMessageRoleRole role;
+  final EasyInputMessageRole role;
   final EasyInputMessageContentUnion content;
-  final EasyInputMessageTypeType? type;
+  final EasyInputMessageType? type;
 
   const CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage({
     required this.role,
@@ -53,9 +53,9 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMappable {
-  final EvalItemRoleRole role;
+  final EvalItemRole role;
   final EvalItemContentUnion content;
-  final EvalItemTypeType? type;
+  final EvalItemType? type;
 
   const CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem({
     required this.role,

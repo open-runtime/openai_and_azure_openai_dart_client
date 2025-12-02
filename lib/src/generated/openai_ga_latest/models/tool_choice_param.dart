@@ -5,25 +5,25 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'specific_apply_patch_param.dart';
-import 'specific_apply_patch_param_type_type.dart';
+import 'specific_apply_patch_param_type.dart';
 import 'specific_function_shell_param.dart';
-import 'specific_function_shell_param_type_type.dart';
+import 'specific_function_shell_param_type.dart';
 import 'tool_choice_allowed.dart';
-import 'tool_choice_allowed_mode_mode.dart';
-import 'tool_choice_allowed_type_type.dart';
+import 'tool_choice_allowed_mode.dart';
+import 'tool_choice_allowed_type.dart';
 import 'tool_choice_custom.dart';
-import 'tool_choice_custom_type_type.dart';
+import 'tool_choice_custom_type.dart';
 import 'tool_choice_function.dart';
-import 'tool_choice_function_type_type.dart';
+import 'tool_choice_function_type.dart';
 import 'tool_choice_mcp.dart';
-import 'tool_choice_mcp_type_type.dart';
-import 'tool_choice_param_mode_mode.dart';
-import 'tool_choice_param_type_type.dart';
-import 'tool_choice_param_type_type2.dart';
-import 'tool_choice_param_type_type3.dart';
-import 'tool_choice_param_type_type4.dart';
-import 'tool_choice_param_type_type5.dart';
-import 'tool_choice_param_type_type6.dart';
+import 'tool_choice_mcp_type.dart';
+import 'tool_choice_param_mode.dart';
+import 'tool_choice_param_type.dart';
+import 'tool_choice_param_type2.dart';
+import 'tool_choice_param_type3.dart';
+import 'tool_choice_param_type4.dart';
+import 'tool_choice_param_type5.dart';
+import 'tool_choice_param_type6.dart';
 
 part 'tool_choice_param.mapper.dart';
 
@@ -77,8 +77,8 @@ extension ToolChoiceParamUnionDeserializer on ToolChoiceParam {
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'allowed_tools')
 class ToolChoiceParamAllowedTools extends ToolChoiceParam with ToolChoiceParamAllowedToolsMappable {
-  final ToolChoiceParamTypeType type;
-  final ToolChoiceParamModeMode mode;
+  final ToolChoiceParamType type;
+  final ToolChoiceParamMode mode;
   final List<dynamic> tools;
 
   const ToolChoiceParamAllowedTools({
@@ -90,7 +90,7 @@ class ToolChoiceParamAllowedTools extends ToolChoiceParam with ToolChoiceParamAl
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class ToolChoiceParamFunction extends ToolChoiceParam with ToolChoiceParamFunctionMappable {
-  final ToolChoiceParamTypeType2 type;
+  final ToolChoiceParamType2 type;
   final String name;
 
   const ToolChoiceParamFunction({
@@ -101,7 +101,7 @@ class ToolChoiceParamFunction extends ToolChoiceParam with ToolChoiceParamFuncti
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
 class ToolChoiceParamMcp extends ToolChoiceParam with ToolChoiceParamMcpMappable {
-  final ToolChoiceParamTypeType3 type;
+  final ToolChoiceParamType3 type;
   @MappableField(key: 'server_label')
   final String serverLabel;
   final String? name;
@@ -115,7 +115,7 @@ class ToolChoiceParamMcp extends ToolChoiceParam with ToolChoiceParamMcpMappable
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
 class ToolChoiceParamCustom extends ToolChoiceParam with ToolChoiceParamCustomMappable {
-  final ToolChoiceParamTypeType4 type;
+  final ToolChoiceParamType4 type;
   final String name;
 
   const ToolChoiceParamCustom({
@@ -126,7 +126,7 @@ class ToolChoiceParamCustom extends ToolChoiceParam with ToolChoiceParamCustomMa
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch')
 class ToolChoiceParamApplyPatch extends ToolChoiceParam with ToolChoiceParamApplyPatchMappable {
-  final ToolChoiceParamTypeType5 type;
+  final ToolChoiceParamType5 type;
 
   const ToolChoiceParamApplyPatch({
     required this.type,
@@ -135,7 +135,7 @@ class ToolChoiceParamApplyPatch extends ToolChoiceParam with ToolChoiceParamAppl
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell')
 class ToolChoiceParamShell extends ToolChoiceParam with ToolChoiceParamShellMappable {
-  final ToolChoiceParamTypeType6 type;
+  final ToolChoiceParamType6 type;
 
   const ToolChoiceParamShell({
     required this.type,

@@ -14,7 +14,7 @@ class McpApprovalRequestMapper extends ClassMapperBase<McpApprovalRequest> {
   static McpApprovalRequestMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = McpApprovalRequestMapper._());
-      McpApprovalRequestTypeTypeMapper.ensureInitialized();
+      McpApprovalRequestTypeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,8 +22,8 @@ class McpApprovalRequestMapper extends ClassMapperBase<McpApprovalRequest> {
   @override
   final String id = 'McpApprovalRequest';
 
-  static McpApprovalRequestTypeType _$type(McpApprovalRequest v) => v.type;
-  static const Field<McpApprovalRequest, McpApprovalRequestTypeType> _f$type =
+  static McpApprovalRequestType _$type(McpApprovalRequest v) => v.type;
+  static const Field<McpApprovalRequest, McpApprovalRequestType> _f$type =
       Field('type', _$type);
   static String _$id(McpApprovalRequest v) => v.id;
   static const Field<McpApprovalRequest, String> _f$id = Field('id', _$id);
@@ -139,7 +139,7 @@ abstract class McpApprovalRequestCopyWith<
 >
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
-    McpApprovalRequestTypeType? type,
+    McpApprovalRequestType? type,
     String? id,
     String? serverLabel,
     String? name,
@@ -160,7 +160,7 @@ class _McpApprovalRequestCopyWithImpl<$R, $Out>
       McpApprovalRequestMapper.ensureInitialized();
   @override
   $R call({
-    McpApprovalRequestTypeType? type,
+    McpApprovalRequestType? type,
     String? id,
     String? serverLabel,
     String? name,

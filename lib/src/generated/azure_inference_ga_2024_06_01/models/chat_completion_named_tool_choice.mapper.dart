@@ -17,7 +17,7 @@ class ChatCompletionNamedToolChoiceMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionNamedToolChoiceMapper._(),
       );
-      ChatCompletionNamedToolChoiceTypeTypeMapper.ensureInitialized();
+      ChatCompletionNamedToolChoiceTypeMapper.ensureInitialized();
       ChatCompletionNamedToolChoiceFunctionMapper.ensureInitialized();
     }
     return _instance!;
@@ -26,12 +26,12 @@ class ChatCompletionNamedToolChoiceMapper
   @override
   final String id = 'ChatCompletionNamedToolChoice';
 
-  static ChatCompletionNamedToolChoiceTypeType? _$type(
+  static ChatCompletionNamedToolChoiceType? _$type(
     ChatCompletionNamedToolChoice v,
   ) => v.type;
   static const Field<
     ChatCompletionNamedToolChoice,
-    ChatCompletionNamedToolChoiceTypeType
+    ChatCompletionNamedToolChoiceType
   >
   _f$type = Field('type', _$type, opt: true);
   static ChatCompletionNamedToolChoiceFunction?
@@ -149,7 +149,7 @@ abstract class ChatCompletionNamedToolChoiceCopyWith<
   >?
   get chatCompletionNamedToolChoiceFunction;
   $R call({
-    ChatCompletionNamedToolChoiceTypeType? type,
+    ChatCompletionNamedToolChoiceType? type,
     ChatCompletionNamedToolChoiceFunction?
     chatCompletionNamedToolChoiceFunction,
   });

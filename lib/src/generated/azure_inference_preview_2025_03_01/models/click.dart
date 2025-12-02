@@ -4,8 +4,8 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'click_button_button.dart';
-import 'click_type_type.dart';
+import 'click_button.dart';
+import 'click_type.dart';
 import 'computer_action.dart';
 
 part 'click.mapper.dart';
@@ -18,13 +18,13 @@ class Click with ClickMappable {
     required this.button,
     required this.x,
     required this.y,
-    this.type = ClickTypeType.click,
+    this.type = ClickType.click,
   });
 
-  final ClickButtonButton button;
+  final ClickButton button;
   final int x;
   final int y;
-  final ClickTypeType type;
+  final ClickType type;
 
   static Click fromJson(Map<String, dynamic> json) => ClickMapper.fromJson(json);
 

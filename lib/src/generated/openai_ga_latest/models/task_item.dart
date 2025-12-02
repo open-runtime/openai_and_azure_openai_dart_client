@@ -5,7 +5,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
 import 'task_item_object_object_enum.dart';
-import 'task_item_type_type.dart';
+import 'task_item_type.dart';
 import 'task_type.dart';
 import 'thread_item.dart';
 
@@ -22,7 +22,7 @@ class TaskItem with TaskItemMappable {
     required this.heading,
     required this.summary,
     this.objectEnum = TaskItemObjectObjectEnum.undefined0,
-    this.type = TaskItemTypeType.undefined0,
+    this.type = TaskItemType.undefined0,
   });
 
   final String id;
@@ -36,7 +36,7 @@ class TaskItem with TaskItemMappable {
   final String? summary;
   @MappableField(key: 'object')
   final TaskItemObjectObjectEnum objectEnum;
-  final TaskItemTypeType type;
+  final TaskItemType type;
 
   static TaskItem fromJson(Map<String, dynamic> json) => TaskItemMapper.fromJson(json);
 

@@ -4,7 +4,7 @@
 
 import 'package:dart_mappable/dart_mappable.dart';
 
-import 'project_user_create_request_role_role.dart';
+import 'project_user_create_request_role.dart';
 
 part 'project_user_create_request.mapper.dart';
 
@@ -17,7 +17,7 @@ class ProjectUserCreateRequest with ProjectUserCreateRequestMappable {
 
   @MappableField(key: 'user_id')
   final String userId;
-  final ProjectUserCreateRequestRoleRole role;
+  final ProjectUserCreateRequestRole role;
 
   static ProjectUserCreateRequest fromJson(Map<String, dynamic> json) => ProjectUserCreateRequestMapper.fromJson(json);
 
