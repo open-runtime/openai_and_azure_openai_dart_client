@@ -1,6 +1,6 @@
 name: runtime_openai_and_azure_openai_dart_client
 description: Type-safe Dart client for OpenAI and Azure OpenAI APIs with unified interface, smart retry, fallback keys, and streaming support.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/open-runtime/openai_and_azure_openai_dart_client
 homepage: https://github.com/open-runtime/openai_and_azure_openai_dart_client
 issue_tracker: https://github.com/open-runtime/openai_and_azure_openai_dart_client/issues
