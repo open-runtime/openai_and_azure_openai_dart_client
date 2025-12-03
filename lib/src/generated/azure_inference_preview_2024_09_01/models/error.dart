@@ -10,13 +10,7 @@ part 'error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Error with ErrorMappable {
-  const Error({
-    this.code,
-    this.message,
-    this.param,
-    this.type,
-    this.innerError,
-  });
+  const Error({this.code, this.message, this.param, this.type, this.innerError});
 
   final String? code;
   final String? message;
@@ -26,6 +20,4 @@ class Error with ErrorMappable {
   final InnerError? innerError;
 
   static Error fromJson(Map<String, dynamic> json) => ErrorMapper.fromJson(json);
-
 }
-

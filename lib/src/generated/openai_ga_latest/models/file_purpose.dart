@@ -10,25 +10,25 @@ part 'file_purpose.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum FilePurpose {
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('vision') 
+  @MappableValue('vision')
   vision,
 
-  @MappableValue('user_data') 
+  @MappableValue('user_data')
   userData,
 
-  @MappableValue('evals') 
+  @MappableValue('evals')
   evals,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

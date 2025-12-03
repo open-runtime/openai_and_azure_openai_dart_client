@@ -35,6 +35,4 @@ class DalleFilterResults with DalleFilterResultsMappable {
   final ContentFilterDetailedResults? customBlocklists;
 
   static DalleFilterResults fromJson(Map<String, dynamic> json) => DalleFilterResultsMapper.fromJson(json);
-
 }
-

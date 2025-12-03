@@ -12,12 +12,7 @@ part 'upload_part.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadPart with UploadPartMappable {
-  const UploadPart({
-    required this.id,
-    required this.createdAt,
-    required this.uploadId,
-    required this.objectEnum,
-  });
+  const UploadPart({required this.id, required this.createdAt, required this.uploadId, required this.objectEnum});
 
   final String id;
   @MappableField(key: 'created_at')
@@ -28,6 +23,4 @@ class UploadPart with UploadPartMappable {
   final UploadPartObjectObjectEnum objectEnum;
 
   static UploadPart fromJson(Map<String, dynamic> json) => UploadPartMapper.fromJson(json);
-
 }
-

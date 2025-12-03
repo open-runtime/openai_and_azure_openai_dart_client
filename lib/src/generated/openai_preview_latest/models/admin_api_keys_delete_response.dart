@@ -8,18 +8,13 @@ part 'admin_api_keys_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKeysDeleteResponse with AdminApiKeysDeleteResponseMappable {
-  const AdminApiKeysDeleteResponse({
-    this.id,
-    this.objectField,
-    this.deleted,
-  });
+  const AdminApiKeysDeleteResponse({this.id, this.objectField, this.deleted});
 
   final String? id;
   @MappableField(key: 'object')
   final String? objectField;
   final bool? deleted;
 
-  static AdminApiKeysDeleteResponse fromJson(Map<String, dynamic> json) => AdminApiKeysDeleteResponseMapper.fromJson(json);
-
+  static AdminApiKeysDeleteResponse fromJson(Map<String, dynamic> json) =>
+      AdminApiKeysDeleteResponseMapper.fromJson(json);
 }
-

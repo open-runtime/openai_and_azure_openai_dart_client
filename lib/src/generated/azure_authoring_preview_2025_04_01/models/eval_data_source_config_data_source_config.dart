@@ -25,7 +25,6 @@ class EvalDataSourceConfigDataSourceConfig with EvalDataSourceConfigDataSourceCo
   final Metadata? metadata;
   final EvalStoredCompletionsDataSourceConfigType type;
 
-  static EvalDataSourceConfigDataSourceConfig fromJson(Map<String, dynamic> json) => EvalDataSourceConfigDataSourceConfigMapper.fromJson(json);
-
+  static EvalDataSourceConfigDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      EvalDataSourceConfigDataSourceConfigMapper.fromJson(json);
 }
-

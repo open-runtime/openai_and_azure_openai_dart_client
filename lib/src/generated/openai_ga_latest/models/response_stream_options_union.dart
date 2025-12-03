@@ -21,17 +21,15 @@ extension ResponseStreamOptionsUnionDeserializer on ResponseStreamOptionsUnion {
       return ResponseStreamOptionsUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ResponseStreamOptionsUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseStreamOptionsUnionVariant1 extends ResponseStreamOptionsUnion with ResponseStreamOptionsUnionVariant1Mappable {
+class ResponseStreamOptionsUnionVariant1 extends ResponseStreamOptionsUnion
+    with ResponseStreamOptionsUnionVariant1Mappable {
   @MappableField(key: 'include_obfuscation')
   final bool? includeObfuscation;
 
-  const ResponseStreamOptionsUnionVariant1({
-    required this.includeObfuscation,
-  });
+  const ResponseStreamOptionsUnionVariant1({required this.includeObfuscation});
 }

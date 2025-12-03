@@ -11,16 +11,16 @@ part 'web_search_context_size.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchContextSize {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum WebSearchContextSize {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchContextSize> get $valuesDefined => values.where((value) => value != WebSearchContextSize.unknown).toList();
+  static List<WebSearchContextSize> get $valuesDefined =>
+      values.where((value) => value != WebSearchContextSize.unknown).toList();
 }

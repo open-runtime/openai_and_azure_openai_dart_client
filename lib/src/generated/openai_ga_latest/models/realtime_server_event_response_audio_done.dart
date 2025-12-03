@@ -11,8 +11,9 @@ part 'realtime_server_event_response_audio_done.mapper.dart';
 /// Returned when the model-generated audio is done. Also emitted when a Response.
 /// is interrupted, incomplete, or cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseAudioDone with RealtimeServerEventResponseAudioDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio.done')
+class RealtimeServerEventResponseAudioDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseAudioDoneMappable {
   const RealtimeServerEventResponseAudioDone({
     required this.eventId,
     required this.type,
@@ -34,7 +35,6 @@ class RealtimeServerEventResponseAudioDone with RealtimeServerEventResponseAudio
   @MappableField(key: 'content_index')
   final int contentIndex;
 
-  static RealtimeServerEventResponseAudioDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseAudioDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseAudioDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseAudioDoneMapper.fromJson(json);
 }
-

@@ -92,24 +92,29 @@ part 'item_resource.mapper.dart';
 
 /// Content item used to generate a response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ItemResourceMessage,
-  ItemResourceFileSearchCall,
-  ItemResourceComputerCall,
-  ItemResourceWebSearchCall,
-  ItemResourceImageGenerationCall,
-  ItemResourceCodeInterpreterCall,
-  ItemResourceLocalShellCall,
-  ItemResourceLocalShellCallOutput,
-  ItemResourceShellCall,
-  ItemResourceShellCallOutput,
-  ItemResourceApplyPatchCall,
-  ItemResourceApplyPatchCallOutput,
-  ItemResourceMcpListTools,
-  ItemResourceMcpApprovalRequest,
-  ItemResourceMcpApprovalResponse,
-  ItemResourceMcpCall
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ItemResourceMessage,
+    ItemResourceFileSearchCall,
+    ItemResourceComputerCall,
+    ItemResourceWebSearchCall,
+    ItemResourceImageGenerationCall,
+    ItemResourceCodeInterpreterCall,
+    ItemResourceLocalShellCall,
+    ItemResourceLocalShellCallOutput,
+    ItemResourceShellCall,
+    ItemResourceShellCallOutput,
+    ItemResourceApplyPatchCall,
+    ItemResourceApplyPatchCallOutput,
+    ItemResourceMcpListTools,
+    ItemResourceMcpApprovalRequest,
+    ItemResourceMcpApprovalResponse,
+    ItemResourceMcpCall,
+  ],
+)
 sealed class ItemResource with ItemResourceMappable {
   const ItemResource();
 
@@ -119,48 +124,44 @@ sealed class ItemResource with ItemResourceMappable {
 }
 
 extension ItemResourceUnionDeserializer on ItemResource {
-  static ItemResource tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ItemResource tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ItemResourceMessage: 'message',
-      ItemResourceFileSearchCall: 'file_search_call',
-      ItemResourceComputerCall: 'computer_call',
-      ItemResourceWebSearchCall: 'web_search_call',
-      ItemResourceImageGenerationCall: 'image_generation_call',
-      ItemResourceCodeInterpreterCall: 'code_interpreter_call',
-      ItemResourceLocalShellCall: 'local_shell_call',
-      ItemResourceLocalShellCallOutput: 'local_shell_call_output',
-      ItemResourceShellCall: 'shell_call',
-      ItemResourceShellCallOutput: 'shell_call_output',
-      ItemResourceApplyPatchCall: 'apply_patch_call',
-      ItemResourceApplyPatchCallOutput: 'apply_patch_call_output',
-      ItemResourceMcpListTools: 'mcp_list_tools',
-      ItemResourceMcpApprovalRequest: 'mcp_approval_request',
-      ItemResourceMcpApprovalResponse: 'mcp_approval_response',
-      ItemResourceMcpCall: 'mcp_call',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      ComputerToolCall: 'computer_call',
+      WebSearchToolCall: 'web_search_call',
+      ImageGenToolCall: 'image_generation_call',
+      CodeInterpreterToolCall: 'code_interpreter_call',
+      LocalShellToolCall: 'local_shell_call',
+      LocalShellToolCallOutput: 'local_shell_call_output',
+      FunctionShellCall: 'shell_call',
+      FunctionShellCallOutput: 'shell_call_output',
+      ApplyPatchToolCall: 'apply_patch_call',
+      ApplyPatchToolCallOutput: 'apply_patch_call_output',
+      McpListTools: 'mcp_list_tools',
+      McpApprovalRequest: 'mcp_approval_request',
+      McpApprovalResponseResource: 'mcp_approval_response',
+      McpToolCall: 'mcp_call',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ItemResourceMessage] => ItemResourceMessageMapper.fromJson(json),
-      _ when value == effective[ItemResourceFileSearchCall] => ItemResourceFileSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceComputerCall] => ItemResourceComputerCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceWebSearchCall] => ItemResourceWebSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceImageGenerationCall] => ItemResourceImageGenerationCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceCodeInterpreterCall] => ItemResourceCodeInterpreterCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceLocalShellCall] => ItemResourceLocalShellCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceLocalShellCallOutput] => ItemResourceLocalShellCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemResourceShellCall] => ItemResourceShellCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceShellCallOutput] => ItemResourceShellCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemResourceApplyPatchCall] => ItemResourceApplyPatchCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceApplyPatchCallOutput] => ItemResourceApplyPatchCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemResourceMcpListTools] => ItemResourceMcpListToolsMapper.fromJson(json),
-      _ when value == effective[ItemResourceMcpApprovalRequest] => ItemResourceMcpApprovalRequestMapper.fromJson(json),
-      _ when value == effective[ItemResourceMcpApprovalResponse] => ItemResourceMcpApprovalResponseMapper.fromJson(json),
-      _ when value == effective[ItemResourceMcpCall] => ItemResourceMcpCallMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[WebSearchToolCall] => WebSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ImageGenToolCall] => ImageGenToolCallMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterToolCall] => CodeInterpreterToolCallMapper.fromJson(json),
+      _ when value == effective[LocalShellToolCall] => LocalShellToolCallMapper.fromJson(json),
+      _ when value == effective[LocalShellToolCallOutput] => LocalShellToolCallOutputMapper.fromJson(json),
+      _ when value == effective[FunctionShellCall] => FunctionShellCallMapper.fromJson(json),
+      _ when value == effective[FunctionShellCallOutput] => FunctionShellCallOutputMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolCall] => ApplyPatchToolCallMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolCallOutput] => ApplyPatchToolCallOutputMapper.fromJson(json),
+      _ when value == effective[McpListTools] => McpListToolsMapper.fromJson(json),
+      _ when value == effective[McpApprovalRequest] => McpApprovalRequestMapper.fromJson(json),
+      _ when value == effective[McpApprovalResponseResource] => McpApprovalResponseResourceMapper.fromJson(json),
+      _ when value == effective[McpToolCall] => McpToolCallMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ItemResource'),
     };
   }
@@ -228,12 +229,7 @@ class ItemResourceWebSearchCall extends ItemResource with ItemResourceWebSearchC
   final ItemResourceStatus3 status;
   final ItemResourceActionUnion action;
 
-  const ItemResourceWebSearchCall({
-    required this.id,
-    required this.type,
-    required this.status,
-    required this.action,
-  });
+  const ItemResourceWebSearchCall({required this.id, required this.type, required this.status, required this.action});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')

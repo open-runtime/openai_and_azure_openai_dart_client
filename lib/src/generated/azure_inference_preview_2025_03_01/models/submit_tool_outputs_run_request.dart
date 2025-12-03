@@ -10,16 +10,12 @@ part 'submit_tool_outputs_run_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SubmitToolOutputsRunRequest with SubmitToolOutputsRunRequestMappable {
-  const SubmitToolOutputsRunRequest({
-    required this.toolOutputs,
-    this.stream,
-  });
+  const SubmitToolOutputsRunRequest({required this.toolOutputs, this.stream});
 
   @MappableField(key: 'tool_outputs')
   final List<SubmitToolOutputsRunRequestToolOutputs> toolOutputs;
   final bool? stream;
 
-  static SubmitToolOutputsRunRequest fromJson(Map<String, dynamic> json) => SubmitToolOutputsRunRequestMapper.fromJson(json);
-
+  static SubmitToolOutputsRunRequest fromJson(Map<String, dynamic> json) =>
+      SubmitToolOutputsRunRequestMapper.fromJson(json);
 }
-

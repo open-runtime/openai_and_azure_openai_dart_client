@@ -46,6 +46,4 @@ class ChatSessionResource with ChatSessionResourceMappable {
   final ChatSessionResourceObjectObjectEnum objectEnum;
 
   static ChatSessionResource fromJson(Map<String, dynamic> json) => ChatSessionResourceMapper.fromJson(json);
-
 }
-

@@ -17,18 +17,22 @@ import 'reasoning_effort.dart';
 
 part 'create_eval_responses_run_data_source_source_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalResponsesRunDataSourceSourceUnionFileContent,
-  CreateEvalResponsesRunDataSourceSourceUnionFileId,
-  CreateEvalResponsesRunDataSourceSourceUnionResponses
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalResponsesRunDataSourceSourceUnionFileContent,
+    CreateEvalResponsesRunDataSourceSourceUnionFileId,
+    CreateEvalResponsesRunDataSourceSourceUnionResponses,
+  ],
+)
 sealed class CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionMappable {
   const CreateEvalResponsesRunDataSourceSourceUnion();
 
   static CreateEvalResponsesRunDataSourceSourceUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalResponsesRunDataSourceSourceUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalResponsesRunDataSourceSourceUnionDeserializer on CreateEvalResponsesRunDataSourceSourceUnion {
@@ -38,45 +42,44 @@ extension CreateEvalResponsesRunDataSourceSourceUnionDeserializer on CreateEvalR
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalResponsesRunDataSourceSourceUnionFileContent: 'file_content',
-      CreateEvalResponsesRunDataSourceSourceUnionFileId: 'file_id',
-      CreateEvalResponsesRunDataSourceSourceUnionResponses: 'responses',
+      EvalJsonlFileContentSource: 'file_content',
+      EvalJsonlFileIdSource: 'file_id',
+      EvalResponsesSource: 'responses',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalResponsesRunDataSourceSourceUnionFileContent] => CreateEvalResponsesRunDataSourceSourceUnionFileContentMapper.fromJson(json),
-      _ when value == effective[CreateEvalResponsesRunDataSourceSourceUnionFileId] => CreateEvalResponsesRunDataSourceSourceUnionFileIdMapper.fromJson(json),
-      _ when value == effective[CreateEvalResponsesRunDataSourceSourceUnionResponses] => CreateEvalResponsesRunDataSourceSourceUnionResponsesMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalResponsesRunDataSourceSourceUnion'),
+      _ when value == effective[EvalJsonlFileContentSource] => EvalJsonlFileContentSourceMapper.fromJson(json),
+      _ when value == effective[EvalJsonlFileIdSource] => EvalJsonlFileIdSourceMapper.fromJson(json),
+      _ when value == effective[EvalResponsesSource] => EvalResponsesSourceMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalResponsesRunDataSourceSourceUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
-class CreateEvalResponsesRunDataSourceSourceUnionFileContent extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionFileContentMappable {
+class CreateEvalResponsesRunDataSourceSourceUnionFileContent extends CreateEvalResponsesRunDataSourceSourceUnion
+    with CreateEvalResponsesRunDataSourceSourceUnionFileContentMappable {
   final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
-  const CreateEvalResponsesRunDataSourceSourceUnionFileContent({
-    required this.type,
-    required this.content,
-  });
-
+  const CreateEvalResponsesRunDataSourceSourceUnionFileContent({required this.type, required this.content});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
-class CreateEvalResponsesRunDataSourceSourceUnionFileId extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionFileIdMappable {
+class CreateEvalResponsesRunDataSourceSourceUnionFileId extends CreateEvalResponsesRunDataSourceSourceUnion
+    with CreateEvalResponsesRunDataSourceSourceUnionFileIdMappable {
   final EvalJsonlFileIdSourceType type;
   final String id;
 
-  const CreateEvalResponsesRunDataSourceSourceUnionFileId({
-    required this.type,
-    required this.id,
-  });
-
+  const CreateEvalResponsesRunDataSourceSourceUnionFileId({required this.type, required this.id});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
-class CreateEvalResponsesRunDataSourceSourceUnionResponses extends CreateEvalResponsesRunDataSourceSourceUnion with CreateEvalResponsesRunDataSourceSourceUnionResponsesMappable {
+class CreateEvalResponsesRunDataSourceSourceUnionResponses extends CreateEvalResponsesRunDataSourceSourceUnion
+    with CreateEvalResponsesRunDataSourceSourceUnionResponsesMappable {
   final EvalResponsesSourceType type;
   final dynamic metadata;
   final String? model;
@@ -107,5 +110,4 @@ class CreateEvalResponsesRunDataSourceSourceUnionResponses extends CreateEvalRes
     required this.users,
     required this.tools,
   });
-
 }

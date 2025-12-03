@@ -10,10 +10,10 @@ part 'thread_object_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ThreadObjectObjectObjectEnum {
-  @MappableValue('thread') 
+  @MappableValue('thread')
   thread,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ThreadObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ThreadObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != ThreadObjectObjectObjectEnum.unknown).toList();
+  static List<ThreadObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ThreadObjectObjectObjectEnum.unknown).toList();
 }

@@ -7,13 +7,14 @@
 
 part of 'screenshot.dart';
 
-class ScreenshotMapper extends ClassMapperBase<Screenshot> {
+class ScreenshotMapper extends SubClassMapperBase<Screenshot> {
   ScreenshotMapper._();
 
   static ScreenshotMapper? _instance;
   static ScreenshotMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ScreenshotMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       ScreenshotTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -36,6 +37,14 @@ class ScreenshotMapper extends ClassMapperBase<Screenshot> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'screenshot';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Screenshot _instantiate(DecodingData data) {
     return Screenshot(type: data.dec(_f$type));
@@ -100,7 +109,8 @@ extension ScreenshotValueCopy<$R, $Out>
 }
 
 abstract class ScreenshotCopyWith<$R, $In extends Screenshot, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({ScreenshotType? type});
   ScreenshotCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

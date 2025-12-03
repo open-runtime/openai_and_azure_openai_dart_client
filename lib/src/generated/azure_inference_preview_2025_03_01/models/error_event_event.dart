@@ -8,10 +8,10 @@ part 'error_event_event.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ErrorEventEvent {
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

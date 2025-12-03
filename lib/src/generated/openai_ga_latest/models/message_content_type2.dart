@@ -9,10 +9,10 @@ part 'message_content_type2.mapper.dart';
 /// The type of the content part.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentType2 {
-  @MappableValue('image_url') 
+  @MappableValue('image_url')
   imageUrl,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentType2> get $valuesDefined => values.where((value) => value != MessageContentType2.unknown).toList();
+  static List<MessageContentType2> get $valuesDefined =>
+      values.where((value) => value != MessageContentType2.unknown).toList();
 }

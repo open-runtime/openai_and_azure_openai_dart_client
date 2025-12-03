@@ -7,13 +7,14 @@
 
 part of 'tool_choice_function.dart';
 
-class ToolChoiceFunctionMapper extends ClassMapperBase<ToolChoiceFunction> {
+class ToolChoiceFunctionMapper extends SubClassMapperBase<ToolChoiceFunction> {
   ToolChoiceFunctionMapper._();
 
   static ToolChoiceFunctionMapper? _instance;
   static ToolChoiceFunctionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceFunctionMapper._());
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       ToolChoiceFunctionTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -40,6 +41,14 @@ class ToolChoiceFunctionMapper extends ClassMapperBase<ToolChoiceFunction> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static ToolChoiceFunction _instantiate(DecodingData data) {
     return ToolChoiceFunction(type: data.dec(_f$type), name: data.dec(_f$name));
@@ -115,7 +124,8 @@ abstract class ToolChoiceFunctionCopyWith<
   $In extends ToolChoiceFunction,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({ToolChoiceFunctionType? type, String? name});
   ToolChoiceFunctionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

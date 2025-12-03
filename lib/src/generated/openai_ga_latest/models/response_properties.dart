@@ -47,6 +47,4 @@ class ResponseProperties with ResponsePropertiesMappable {
   final Prompt? prompt;
 
   static ResponseProperties fromJson(Map<String, dynamic> json) => ResponsePropertiesMapper.fromJson(json);
-
 }
-

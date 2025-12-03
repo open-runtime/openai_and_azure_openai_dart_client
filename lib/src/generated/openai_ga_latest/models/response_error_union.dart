@@ -23,7 +23,6 @@ extension ResponseErrorUnionDeserializer on ResponseErrorUnion {
       return ResponseErrorUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ResponseErrorUnion from: $json');
   }
 }
@@ -33,8 +32,5 @@ class ResponseErrorUnionVariant1 extends ResponseErrorUnion with ResponseErrorUn
   final ResponseErrorCode code;
   final String message;
 
-  const ResponseErrorUnionVariant1({
-    required this.code,
-    required this.message,
-  });
+  const ResponseErrorUnionVariant1({required this.code, required this.message});
 }

@@ -11,15 +11,10 @@ part 'url_annotation_source.mapper.dart';
 /// URL backing an annotation entry.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UrlAnnotationSource with UrlAnnotationSourceMappable {
-  const UrlAnnotationSource({
-    required this.url,
-    this.type = UrlAnnotationSourceType.url,
-  });
+  const UrlAnnotationSource({required this.url, this.type = UrlAnnotationSourceType.url});
 
   final String url;
   final UrlAnnotationSourceType type;
 
   static UrlAnnotationSource fromJson(Map<String, dynamic> json) => UrlAnnotationSourceMapper.fromJson(json);
-
 }
-

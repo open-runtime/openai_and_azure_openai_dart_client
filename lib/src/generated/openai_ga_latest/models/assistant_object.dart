@@ -51,6 +51,4 @@ class AssistantObject with AssistantObjectMappable {
   final List<AssistantTool> tools;
 
   static AssistantObject fromJson(Map<String, dynamic> json) => AssistantObjectMapper.fromJson(json);
-
 }
-

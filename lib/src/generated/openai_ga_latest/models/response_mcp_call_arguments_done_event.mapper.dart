@@ -8,7 +8,7 @@
 part of 'response_mcp_call_arguments_done_event.dart';
 
 class ResponseMcpCallArgumentsDoneEventMapper
-    extends ClassMapperBase<ResponseMcpCallArgumentsDoneEvent> {
+    extends SubClassMapperBase<ResponseMcpCallArgumentsDoneEvent> {
   ResponseMcpCallArgumentsDoneEventMapper._();
 
   static ResponseMcpCallArgumentsDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpCallArgumentsDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallArgumentsDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpCallArgumentsDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,6 +61,14 @@ class ResponseMcpCallArgumentsDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call_arguments.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpCallArgumentsDoneEvent _instantiate(DecodingData data) {
     return ResponseMcpCallArgumentsDoneEvent(
@@ -149,7 +158,8 @@ abstract class ResponseMcpCallArgumentsDoneEventCopyWith<
   $In extends ResponseMcpCallArgumentsDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpCallArgumentsDoneEventType? type,
     int? outputIndex,

@@ -8,8 +8,16 @@ part 'fine_tune_supervised_hyperparameters_learning_rate_multiplier_union.mapper
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString, FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum])
-sealed class FineTuneSupervisedHyperparametersLearningRateMultiplierUnion with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString,
+    FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum,
+  ],
+)
+sealed class FineTuneSupervisedHyperparametersLearningRateMultiplierUnion
+    with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionMappable {
   const FineTuneSupervisedHyperparametersLearningRateMultiplierUnion();
 
   static FineTuneSupervisedHyperparametersLearningRateMultiplierUnion fromJson(dynamic json) {
@@ -17,7 +25,8 @@ sealed class FineTuneSupervisedHyperparametersLearningRateMultiplierUnion with F
   }
 }
 
-extension FineTuneSupervisedHyperparametersLearningRateMultiplierUnionDeserializer on FineTuneSupervisedHyperparametersLearningRateMultiplierUnion {
+extension FineTuneSupervisedHyperparametersLearningRateMultiplierUnionDeserializer
+    on FineTuneSupervisedHyperparametersLearningRateMultiplierUnion {
   static FineTuneSupervisedHyperparametersLearningRateMultiplierUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -33,31 +42,34 @@ extension FineTuneSupervisedHyperparametersLearningRateMultiplierUnionDeserializ
       return FineTuneSupervisedHyperparametersLearningRateMultiplierUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneSupervisedHyperparametersLearningRateMultiplierUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneSupervisedHyperparametersLearningRateMultiplierUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString extends FineTuneSupervisedHyperparametersLearningRateMultiplierUnion with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantStringMappable {
+class FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString
+    extends FineTuneSupervisedHyperparametersLearningRateMultiplierUnion
+    with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantStringMappable {
   final String value;
 
-  const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString({
-    required this.value,
-  });
+  const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum extends FineTuneSupervisedHyperparametersLearningRateMultiplierUnion with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNumMappable {
+class FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum
+    extends FineTuneSupervisedHyperparametersLearningRateMultiplierUnion
+    with FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNumMappable {
   final num value;
 
-  const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum({
-    required this.value,
-  });
+  const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension FineTuneSupervisedHyperparametersLearningRateMultiplierUnionJsonValue on FineTuneSupervisedHyperparametersLearningRateMultiplierUnion {
+extension FineTuneSupervisedHyperparametersLearningRateMultiplierUnionJsonValue
+    on FineTuneSupervisedHyperparametersLearningRateMultiplierUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -87,7 +99,9 @@ class FineTuneSupervisedHyperparametersLearningRateMultiplierUnionHook extends M
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! FineTuneSupervisedHyperparametersLearningRateMultiplierUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! FineTuneSupervisedHyperparametersLearningRateMultiplierUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return FineTuneSupervisedHyperparametersLearningRateMultiplierUnion.fromJson(value);
     }

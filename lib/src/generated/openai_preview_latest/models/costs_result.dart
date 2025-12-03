@@ -10,14 +10,9 @@ import 'costs_result_object_object_enum.dart';
 part 'costs_result.mapper.dart';
 
 /// The aggregated costs details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CostsResult with CostsResultMappable {
-  const CostsResult({
-    required this.objectEnum,
-    this.costsResultAmount,
-    this.lineItem,
-    this.projectId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.costs.result')
+class CostsResult extends UsageTimeBucketResultUnion with CostsResultMappable {
+  const CostsResult({required this.objectEnum, this.costsResultAmount, this.lineItem, this.projectId});
 
   @MappableField(key: 'object')
   final CostsResultObjectObjectEnum objectEnum;
@@ -29,6 +24,4 @@ class CostsResult with CostsResultMappable {
   final String? projectId;
 
   static CostsResult fromJson(Map<String, dynamic> json) => CostsResultMapper.fromJson(json);
-
 }
-

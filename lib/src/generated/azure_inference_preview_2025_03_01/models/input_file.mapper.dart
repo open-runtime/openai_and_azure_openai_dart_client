@@ -7,13 +7,14 @@
 
 part of 'input_file.dart';
 
-class InputFileMapper extends ClassMapperBase<InputFile> {
+class InputFileMapper extends SubClassMapperBase<InputFile> {
   InputFileMapper._();
 
   static InputFileMapper? _instance;
   static InputFileMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputFileMapper._());
+      InputContentMapper.ensureInitialized().addSubMapper(_instance!);
       InputFileTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -56,6 +57,14 @@ class InputFileMapper extends ClassMapperBase<InputFile> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_file';
+  @override
+  late final ClassMapperBase superMapper =
+      InputContentMapper.ensureInitialized();
 
   static InputFile _instantiate(DecodingData data) {
     return InputFile(
@@ -124,7 +133,8 @@ extension InputFileValueCopy<$R, $Out> on ObjectCopyWith<$R, InputFile, $Out> {
 }
 
 abstract class InputFileCopyWith<$R, $In extends InputFile, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements InputContentCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     InputFileType? type,
     String? fileId,

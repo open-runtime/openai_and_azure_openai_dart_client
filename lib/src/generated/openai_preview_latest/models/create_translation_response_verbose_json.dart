@@ -22,7 +22,6 @@ class CreateTranslationResponseVerboseJson with CreateTranslationResponseVerbose
   final String text;
   final List<TranscriptionSegment>? segments;
 
-  static CreateTranslationResponseVerboseJson fromJson(Map<String, dynamic> json) => CreateTranslationResponseVerboseJsonMapper.fromJson(json);
-
+  static CreateTranslationResponseVerboseJson fromJson(Map<String, dynamic> json) =>
+      CreateTranslationResponseVerboseJsonMapper.fromJson(json);
 }
-

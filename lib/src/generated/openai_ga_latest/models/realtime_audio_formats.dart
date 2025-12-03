@@ -10,8 +10,5 @@ part 'realtime_audio_formats.mapper.dart';
 class RealtimeAudioFormats with RealtimeAudioFormatsMappable {
   const RealtimeAudioFormats();
 
-
   static RealtimeAudioFormats fromJson(Map<String, dynamic> json) => RealtimeAudioFormatsMapper.fromJson(json);
-
 }
-

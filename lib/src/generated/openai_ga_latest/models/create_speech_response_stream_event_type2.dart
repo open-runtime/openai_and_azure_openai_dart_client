@@ -11,10 +11,10 @@ part 'create_speech_response_stream_event_type2.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum CreateSpeechResponseStreamEventType2 {
   /// Incorrect name has been replaced. Original name: `speech.audio.done`.
-  @MappableValue('speech.audio.done') 
+  @MappableValue('speech.audio.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum CreateSpeechResponseStreamEventType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateSpeechResponseStreamEventType2> get $valuesDefined => values.where((value) => value != CreateSpeechResponseStreamEventType2.unknown).toList();
+  static List<CreateSpeechResponseStreamEventType2> get $valuesDefined =>
+      values.where((value) => value != CreateSpeechResponseStreamEventType2.unknown).toList();
 }

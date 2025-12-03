@@ -8,15 +8,10 @@ part 'logprob.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Logprob with LogprobMappable {
-  const Logprob({
-    this.token,
-    this.logprob,
-  });
+  const Logprob({this.token, this.logprob});
 
   final String? token;
   final double? logprob;
 
   static Logprob fromJson(Map<String, dynamic> json) => LogprobMapper.fromJson(json);
-
 }
-

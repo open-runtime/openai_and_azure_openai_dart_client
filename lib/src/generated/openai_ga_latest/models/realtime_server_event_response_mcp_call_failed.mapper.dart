@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_mcp_call_failed.dart';
 
 class RealtimeServerEventResponseMcpCallFailedMapper
-    extends ClassMapperBase<RealtimeServerEventResponseMcpCallFailed> {
+    extends SubClassMapperBase<RealtimeServerEventResponseMcpCallFailed> {
   RealtimeServerEventResponseMcpCallFailedMapper._();
 
   static RealtimeServerEventResponseMcpCallFailedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseMcpCallFailedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseMcpCallFailedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -52,6 +53,14 @@ class RealtimeServerEventResponseMcpCallFailedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call.failed';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseMcpCallFailed _instantiate(
     DecodingData data,
@@ -146,7 +155,8 @@ abstract class RealtimeServerEventResponseMcpCallFailedCopyWith<
   $In extends RealtimeServerEventResponseMcpCallFailed,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? eventId, dynamic type, int? outputIndex, String? itemId});
   RealtimeServerEventResponseMcpCallFailedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

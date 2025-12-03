@@ -10,10 +10,10 @@ part 'project_user_delete_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectUserDeleteResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.project.user.deleted`.
-  @MappableValue('organization.project.user.deleted') 
+  @MappableValue('organization.project.user.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ProjectUserDeleteResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectUserDeleteResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectUserDeleteResponseObjectObjectEnum.unknown).toList();
+  static List<ProjectUserDeleteResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectUserDeleteResponseObjectObjectEnum.unknown).toList();
 }

@@ -11,13 +11,9 @@ part 'dpo_method_config_request.mapper.dart';
 /// Configuration for dpo finetuning method. Includes DPO specific hyperparameters
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DpoMethodConfigRequest with DpoMethodConfigRequestMappable {
-  const DpoMethodConfigRequest({
-    this.hyperparameters,
-  });
+  const DpoMethodConfigRequest({this.hyperparameters});
 
   final DpoHyperparamsRequest? hyperparameters;
 
   static DpoMethodConfigRequest fromJson(Map<String, dynamic> json) => DpoMethodConfigRequestMapper.fromJson(json);
-
 }
-

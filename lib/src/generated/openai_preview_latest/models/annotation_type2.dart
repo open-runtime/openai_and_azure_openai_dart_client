@@ -9,10 +9,10 @@ part 'annotation_type2.mapper.dart';
 /// The type of the URL citation. Always `url_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum AnnotationType2 {
-  @MappableValue('url_citation') 
+  @MappableValue('url_citation')
   urlCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

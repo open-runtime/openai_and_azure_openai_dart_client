@@ -9,8 +9,10 @@ import 'run_step_delta_step_details_tool_calls_code_output_image_object_type.dar
 
 part 'run_step_delta_step_details_tool_calls_code_output_image_object.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject with RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
+class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject
+    extends RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion
+    with RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMappable {
   const RunStepDeltaStepDetailsToolCallsCodeOutputImageObject({
     required this.indexField,
     required this.type,
@@ -21,9 +23,9 @@ class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject with RunStepDeltaSte
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type;
   @MappableField(key: 'image')
-  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
+  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
+  runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
 
-  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallsCodeOutputImageObject fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json);
 }
-

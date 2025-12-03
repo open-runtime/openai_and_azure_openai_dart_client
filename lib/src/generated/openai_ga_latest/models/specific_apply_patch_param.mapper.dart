@@ -8,7 +8,7 @@
 part of 'specific_apply_patch_param.dart';
 
 class SpecificApplyPatchParamMapper
-    extends ClassMapperBase<SpecificApplyPatchParam> {
+    extends SubClassMapperBase<SpecificApplyPatchParam> {
   SpecificApplyPatchParamMapper._();
 
   static SpecificApplyPatchParamMapper? _instance;
@@ -17,6 +17,7 @@ class SpecificApplyPatchParamMapper
       MapperContainer.globals.use(
         _instance = SpecificApplyPatchParamMapper._(),
       );
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       SpecificApplyPatchParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,6 +42,14 @@ class SpecificApplyPatchParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'apply_patch';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static SpecificApplyPatchParam _instantiate(DecodingData data) {
     return SpecificApplyPatchParam(type: data.dec(_f$type));
@@ -115,7 +124,8 @@ abstract class SpecificApplyPatchParamCopyWith<
   $In extends SpecificApplyPatchParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({SpecificApplyPatchParamType? type});
   SpecificApplyPatchParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

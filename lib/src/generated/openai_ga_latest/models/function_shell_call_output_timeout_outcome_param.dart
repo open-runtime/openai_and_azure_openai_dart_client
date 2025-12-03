@@ -10,15 +10,15 @@ import 'function_shell_call_output_timeout_outcome_param_type.dart';
 part 'function_shell_call_output_timeout_outcome_param.mapper.dart';
 
 /// Indicates that the function shell call exceeded its configured time limit.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCallOutputTimeoutOutcomeParam with FunctionShellCallOutputTimeoutOutcomeParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'timeout')
+class FunctionShellCallOutputTimeoutOutcomeParam extends FunctionShellCallOutputOutcomeParam
+    with FunctionShellCallOutputTimeoutOutcomeParamMappable {
   const FunctionShellCallOutputTimeoutOutcomeParam({
     this.type = FunctionShellCallOutputTimeoutOutcomeParamType.timeout,
   });
 
   final FunctionShellCallOutputTimeoutOutcomeParamType type;
 
-  static FunctionShellCallOutputTimeoutOutcomeParam fromJson(Map<String, dynamic> json) => FunctionShellCallOutputTimeoutOutcomeParamMapper.fromJson(json);
-
+  static FunctionShellCallOutputTimeoutOutcomeParam fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallOutputTimeoutOutcomeParamMapper.fromJson(json);
 }
-

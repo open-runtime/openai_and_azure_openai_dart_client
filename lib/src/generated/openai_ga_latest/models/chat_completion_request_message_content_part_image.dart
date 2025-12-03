@@ -12,8 +12,9 @@ part 'chat_completion_request_message_content_part_image.mapper.dart';
 
 /// Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMessageContentPartImageMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
+class ChatCompletionRequestMessageContentPartImage extends DataContentPartsUnion
+    with ChatCompletionRequestMessageContentPartImageMappable {
   const ChatCompletionRequestMessageContentPartImage({
     required this.type,
     required this.chatCompletionRequestMessageContentPartImageImageUrl,
@@ -23,7 +24,6 @@ class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMes
   @MappableField(key: 'image_url')
   final ChatCompletionRequestMessageContentPartImageImageUrl chatCompletionRequestMessageContentPartImageImageUrl;
 
-  static ChatCompletionRequestMessageContentPartImage fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartImageMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartImage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartImageMapper.fromJson(json);
 }
-

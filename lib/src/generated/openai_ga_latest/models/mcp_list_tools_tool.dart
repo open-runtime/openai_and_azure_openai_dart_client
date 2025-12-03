@@ -10,12 +10,7 @@ part 'mcp_list_tools_tool.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class McpListToolsTool with McpListToolsToolMappable {
-  const McpListToolsTool({
-    required this.name,
-    required this.inputSchema,
-    this.description,
-    this.annotations,
-  });
+  const McpListToolsTool({required this.name, required this.inputSchema, this.description, this.annotations});
 
   final String name;
   @MappableField(key: 'input_schema')
@@ -24,6 +19,4 @@ class McpListToolsTool with McpListToolsToolMappable {
   final dynamic? annotations;
 
   static McpListToolsTool fromJson(Map<String, dynamic> json) => McpListToolsToolMapper.fromJson(json);
-
 }
-

@@ -11,16 +11,12 @@ part 'realtime_response_audio_output.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseAudioOutput with RealtimeResponseAudioOutputMappable {
-  const RealtimeResponseAudioOutput({
-    this.voice = const VoiceIdsSharedVariantString(value: 'alloy'),
-    this.format,
-  });
+  const RealtimeResponseAudioOutput({this.voice = const VoiceIdsSharedVariantString(value: 'alloy'), this.format});
 
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared voice;
   final RealtimeAudioFormats? format;
 
-  static RealtimeResponseAudioOutput fromJson(Map<String, dynamic> json) => RealtimeResponseAudioOutputMapper.fromJson(json);
-
+  static RealtimeResponseAudioOutput fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseAudioOutputMapper.fromJson(json);
 }
-

@@ -9,10 +9,10 @@ part 'transcript_text_usage_tokens_type.mapper.dart';
 /// The type of the usage object. Always `tokens` for this variant.
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptTextUsageTokensType {
-  @MappableValue('tokens') 
+  @MappableValue('tokens')
   tokens,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum TranscriptTextUsageTokensType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptTextUsageTokensType> get $valuesDefined => values.where((value) => value != TranscriptTextUsageTokensType.unknown).toList();
+  static List<TranscriptTextUsageTokensType> get $valuesDefined =>
+      values.where((value) => value != TranscriptTextUsageTokensType.unknown).toList();
 }

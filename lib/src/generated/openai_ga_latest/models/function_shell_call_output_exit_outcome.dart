@@ -9,8 +9,9 @@ import 'function_shell_call_output_exit_outcome_type.dart';
 part 'function_shell_call_output_exit_outcome.mapper.dart';
 
 /// Indicates that the shell commands finished and returned an exit code.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCallOutputExitOutcome with FunctionShellCallOutputExitOutcomeMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'exit')
+class FunctionShellCallOutputExitOutcome extends FunctionShellCallOutputContentOutcomeUnion
+    with FunctionShellCallOutputExitOutcomeMappable {
   const FunctionShellCallOutputExitOutcome({
     required this.exitCode,
     this.type = FunctionShellCallOutputExitOutcomeType.exit,
@@ -20,7 +21,6 @@ class FunctionShellCallOutputExitOutcome with FunctionShellCallOutputExitOutcome
   final int exitCode;
   final FunctionShellCallOutputExitOutcomeType type;
 
-  static FunctionShellCallOutputExitOutcome fromJson(Map<String, dynamic> json) => FunctionShellCallOutputExitOutcomeMapper.fromJson(json);
-
+  static FunctionShellCallOutputExitOutcome fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallOutputExitOutcomeMapper.fromJson(json);
 }
-

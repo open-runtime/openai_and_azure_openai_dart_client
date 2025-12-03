@@ -11,11 +11,7 @@ part 'create_thread_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequest with CreateThreadRequestMappable {
-  const CreateThreadRequest({
-    this.messages,
-    this.createThreadRequestToolResources,
-    this.metadata,
-  });
+  const CreateThreadRequest({this.messages, this.createThreadRequestToolResources, this.metadata});
 
   final List<CreateMessageRequest>? messages;
   @MappableField(key: 'tool_resources')
@@ -23,6 +19,4 @@ class CreateThreadRequest with CreateThreadRequestMappable {
   final dynamic? metadata;
 
   static CreateThreadRequest fromJson(Map<String, dynamic> json) => CreateThreadRequestMapper.fromJson(json);
-
 }
-

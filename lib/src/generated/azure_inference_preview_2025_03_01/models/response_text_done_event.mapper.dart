@@ -8,13 +8,14 @@
 part of 'response_text_done_event.dart';
 
 class ResponseTextDoneEventMapper
-    extends ClassMapperBase<ResponseTextDoneEvent> {
+    extends SubClassMapperBase<ResponseTextDoneEvent> {
   ResponseTextDoneEventMapper._();
 
   static ResponseTextDoneEventMapper? _instance;
   static ResponseTextDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseTextDoneEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseTextDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -62,6 +63,14 @@ class ResponseTextDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_text.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseTextDoneEvent _instantiate(DecodingData data) {
     return ResponseTextDoneEvent(
@@ -142,7 +151,8 @@ abstract class ResponseTextDoneEventCopyWith<
   $In extends ResponseTextDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseTextDoneEventType? type,
     String? itemId,

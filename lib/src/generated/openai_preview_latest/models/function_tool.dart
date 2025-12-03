@@ -10,8 +10,8 @@ import 'tool.dart';
 part 'function_tool.mapper.dart';
 
 /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionTool with FunctionToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class FunctionTool extends Tool with FunctionToolMappable {
   const FunctionTool({
     required this.name,
     required this.parameters,
@@ -27,6 +27,4 @@ class FunctionTool with FunctionToolMappable {
   final FunctionToolType type;
 
   static FunctionTool fromJson(Map<String, dynamic> json) => FunctionToolMapper.fromJson(json);
-
 }
-

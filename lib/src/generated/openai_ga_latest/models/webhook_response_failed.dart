@@ -32,6 +32,4 @@ class WebhookResponseFailed with WebhookResponseFailedMappable {
   final WebhookResponseFailedObjectObjectEnum? objectEnum;
 
   static WebhookResponseFailed fromJson(Map<String, dynamic> json) => WebhookResponseFailedMapper.fromJson(json);
-
 }
-

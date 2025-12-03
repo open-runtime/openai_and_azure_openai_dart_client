@@ -9,14 +9,10 @@ part 'rate_limits_param.mapper.dart';
 /// Controls request rate limits for the session.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RateLimitsParam with RateLimitsParamMappable {
-  const RateLimitsParam({
-    this.maxRequestsPer1Minute,
-  });
+  const RateLimitsParam({this.maxRequestsPer1Minute});
 
   @MappableField(key: 'max_requests_per_1_minute')
   final int? maxRequestsPer1Minute;
 
   static RateLimitsParam fromJson(Map<String, dynamic> json) => RateLimitsParamMapper.fromJson(json);
-
 }
-

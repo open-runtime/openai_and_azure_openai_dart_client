@@ -110,6 +110,4 @@ class ResponseModel with ResponseModelMappable {
   final Conversation2? conversation;
 
   static ResponseModel fromJson(Map<String, dynamic> json) => ResponseModelMapper.fromJson(json);
-
 }
-

@@ -40,7 +40,6 @@ class CreateFineTuningJobRequest with CreateFineTuningJobRequestMappable {
   final FineTuneMethod? method;
   final Metadata? metadata;
 
-  static CreateFineTuningJobRequest fromJson(Map<String, dynamic> json) => CreateFineTuningJobRequestMapper.fromJson(json);
-
+  static CreateFineTuningJobRequest fromJson(Map<String, dynamic> json) =>
+      CreateFineTuningJobRequestMapper.fromJson(json);
 }
-

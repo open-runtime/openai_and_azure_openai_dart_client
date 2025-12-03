@@ -17,11 +17,11 @@ class CreateChatCompletionRequestWebSearchOptions with CreateChatCompletionReque
   });
 
   @MappableField(key: 'user_location')
-  final CreateChatCompletionRequestWebSearchOptionsUserLocation? createChatCompletionRequestWebSearchOptionsUserLocation;
+  final CreateChatCompletionRequestWebSearchOptionsUserLocation?
+  createChatCompletionRequestWebSearchOptionsUserLocation;
   @MappableField(key: 'search_context_size')
   final WebSearchContextSize? searchContextSize;
 
-  static CreateChatCompletionRequestWebSearchOptions fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestWebSearchOptionsMapper.fromJson(json);
-
+  static CreateChatCompletionRequestWebSearchOptions fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestWebSearchOptionsMapper.fromJson(json);
 }
-

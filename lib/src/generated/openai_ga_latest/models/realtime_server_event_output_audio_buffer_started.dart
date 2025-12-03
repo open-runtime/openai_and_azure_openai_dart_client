@@ -13,8 +13,9 @@ part 'realtime_server_event_output_audio_buffer_started.mapper.dart';
 /// to the response.
 /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventOutputAudioBufferStarted with RealtimeServerEventOutputAudioBufferStartedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.started')
+class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferStartedMappable {
   const RealtimeServerEventOutputAudioBufferStarted({
     required this.eventId,
     required this.type,
@@ -27,7 +28,6 @@ class RealtimeServerEventOutputAudioBufferStarted with RealtimeServerEventOutput
   @MappableField(key: 'response_id')
   final String responseId;
 
-  static RealtimeServerEventOutputAudioBufferStarted fromJson(Map<String, dynamic> json) => RealtimeServerEventOutputAudioBufferStartedMapper.fromJson(json);
-
+  static RealtimeServerEventOutputAudioBufferStarted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventOutputAudioBufferStartedMapper.fromJson(json);
 }
-

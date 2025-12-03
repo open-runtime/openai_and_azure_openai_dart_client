@@ -78,6 +78,4 @@ class RealtimeSession with RealtimeSessionMappable {
   final List<RealtimeSessionInclude>? include;
 
   static RealtimeSession fromJson(Map<String, dynamic> json) => RealtimeSessionMapper.fromJson(json);
-
 }
-

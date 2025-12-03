@@ -11,19 +11,13 @@ part 'move.mapper.dart';
 
 /// A mouse move action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Move with MoveMappable {
-  const Move({
-    required this.x,
-    required this.y,
-    this.type = MoveType.move,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'move')
+class Move extends ComputerAction with MoveMappable {
+  const Move({required this.x, required this.y, this.type = MoveType.move});
 
   final int x;
   final int y;
   final MoveType type;
 
   static Move fromJson(Map<String, dynamic> json) => MoveMapper.fromJson(json);
-
 }
-

@@ -9,16 +9,12 @@ part 'deleted_role_assignment_resource.mapper.dart';
 /// Confirmation payload returned after unassigning a role.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeletedRoleAssignmentResource with DeletedRoleAssignmentResourceMappable {
-  const DeletedRoleAssignmentResource({
-    required this.objectField,
-    required this.deleted,
-  });
+  const DeletedRoleAssignmentResource({required this.objectField, required this.deleted});
 
   @MappableField(key: 'object')
   final String objectField;
   final bool deleted;
 
-  static DeletedRoleAssignmentResource fromJson(Map<String, dynamic> json) => DeletedRoleAssignmentResourceMapper.fromJson(json);
-
+  static DeletedRoleAssignmentResource fromJson(Map<String, dynamic> json) =>
+      DeletedRoleAssignmentResourceMapper.fromJson(json);
 }
-

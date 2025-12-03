@@ -10,10 +10,10 @@ part 'realtime_server_event_output_audio_buffer_started_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventOutputAudioBufferStartedType {
   /// Incorrect name has been replaced. Original name: `output_audio_buffer.started`.
-  @MappableValue('output_audio_buffer.started') 
+  @MappableValue('output_audio_buffer.started')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventOutputAudioBufferStartedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventOutputAudioBufferStartedType> get $valuesDefined => values.where((value) => value != RealtimeServerEventOutputAudioBufferStartedType.unknown).toList();
+  static List<RealtimeServerEventOutputAudioBufferStartedType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventOutputAudioBufferStartedType.unknown).toList();
 }

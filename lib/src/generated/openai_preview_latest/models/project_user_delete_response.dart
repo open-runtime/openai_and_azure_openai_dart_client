@@ -10,18 +10,13 @@ part 'project_user_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUserDeleteResponse with ProjectUserDeleteResponseMappable {
-  const ProjectUserDeleteResponse({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const ProjectUserDeleteResponse({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final ProjectUserDeleteResponseObjectObjectEnum objectEnum;
   final String id;
   final bool deleted;
 
-  static ProjectUserDeleteResponse fromJson(Map<String, dynamic> json) => ProjectUserDeleteResponseMapper.fromJson(json);
-
+  static ProjectUserDeleteResponse fromJson(Map<String, dynamic> json) =>
+      ProjectUserDeleteResponseMapper.fromJson(json);
 }
-

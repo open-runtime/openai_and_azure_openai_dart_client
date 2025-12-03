@@ -12,8 +12,8 @@ part 'function_tool.mapper.dart';
 /// Defines a function in your own code the model can choose to call. Learn more.
 /// about [function calling](/docs/guides/function-calling).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionTool with FunctionToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class FunctionTool extends Tool with FunctionToolMappable {
   const FunctionTool({
     required this.type,
     required this.name,
@@ -29,6 +29,4 @@ class FunctionTool with FunctionToolMappable {
   final String? description;
 
   static FunctionTool fromJson(Map<String, dynamic> json) => FunctionToolMapper.fromJson(json);
-
 }
-

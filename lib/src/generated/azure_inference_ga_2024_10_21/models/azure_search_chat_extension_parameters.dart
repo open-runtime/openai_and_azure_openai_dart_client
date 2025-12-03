@@ -50,7 +50,6 @@ class AzureSearchChatExtensionParameters with AzureSearchChatExtensionParameters
   @MappableField(key: 'embedding_dependency')
   final AzureSearchChatExtensionParametersEmbeddingDependencyUnion? embeddingDependency;
 
-  static AzureSearchChatExtensionParameters fromJson(Map<String, dynamic> json) => AzureSearchChatExtensionParametersMapper.fromJson(json);
-
+  static AzureSearchChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      AzureSearchChatExtensionParametersMapper.fromJson(json);
 }
-

@@ -14,11 +14,7 @@ part 'response_log_prob.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseLogProb with ResponseLogProbMappable {
-  const ResponseLogProb({
-    required this.token,
-    required this.logprob,
-    this.topLogprobs,
-  });
+  const ResponseLogProb({required this.token, required this.logprob, this.topLogprobs});
 
   final String token;
   final num logprob;
@@ -26,6 +22,4 @@ class ResponseLogProb with ResponseLogProbMappable {
   final List<ResponseLogProbTopLogprobs>? topLogprobs;
 
   static ResponseLogProb fromJson(Map<String, dynamic> json) => ResponseLogProbMapper.fromJson(json);
-
 }
-

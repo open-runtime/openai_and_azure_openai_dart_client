@@ -20,18 +20,15 @@ part 'realtime_client_event_input_audio_buffer_commit.mapper.dart';
 /// from the model. The server will respond with an `input_audio_buffer.committed` .
 /// event.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventInputAudioBufferCommit with RealtimeClientEventInputAudioBufferCommitMappable {
-  const RealtimeClientEventInputAudioBufferCommit({
-    required this.type,
-    this.eventId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.commit')
+class RealtimeClientEventInputAudioBufferCommit extends RealtimeClientEvent
+    with RealtimeClientEventInputAudioBufferCommitMappable {
+  const RealtimeClientEventInputAudioBufferCommit({required this.type, this.eventId});
 
   final RealtimeClientEventInputAudioBufferCommitType type;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventInputAudioBufferCommit fromJson(Map<String, dynamic> json) => RealtimeClientEventInputAudioBufferCommitMapper.fromJson(json);
-
+  static RealtimeClientEventInputAudioBufferCommit fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventInputAudioBufferCommitMapper.fromJson(json);
 }
-

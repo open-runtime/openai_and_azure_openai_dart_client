@@ -11,15 +11,10 @@ part 'input_text_content_param.mapper.dart';
 /// A text input to the model.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InputTextContentParam with InputTextContentParamMappable {
-  const InputTextContentParam({
-    required this.text,
-    this.type = InputTextContentParamType.inputText,
-  });
+  const InputTextContentParam({required this.text, this.type = InputTextContentParamType.inputText});
 
   final String text;
   final InputTextContentParamType type;
 
   static InputTextContentParam fromJson(Map<String, dynamic> json) => InputTextContentParamMapper.fromJson(json);
-
 }
-

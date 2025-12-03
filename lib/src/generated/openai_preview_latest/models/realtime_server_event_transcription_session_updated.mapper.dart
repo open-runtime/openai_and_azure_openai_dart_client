@@ -8,7 +8,7 @@
 part of 'realtime_server_event_transcription_session_updated.dart';
 
 class RealtimeServerEventTranscriptionSessionUpdatedMapper
-    extends ClassMapperBase<RealtimeServerEventTranscriptionSessionUpdated> {
+    extends SubClassMapperBase<RealtimeServerEventTranscriptionSessionUpdated> {
   RealtimeServerEventTranscriptionSessionUpdatedMapper._();
 
   static RealtimeServerEventTranscriptionSessionUpdatedMapper? _instance;
@@ -18,6 +18,7 @@ class RealtimeServerEventTranscriptionSessionUpdatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventTranscriptionSessionUpdatedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventTranscriptionSessionUpdatedTypeMapper.ensureInitialized();
       RealtimeTranscriptionSessionCreateResponseMapper.ensureInitialized();
     }
@@ -55,6 +56,14 @@ class RealtimeServerEventTranscriptionSessionUpdatedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'transcription_session.updated';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventTranscriptionSessionUpdated _instantiate(
     DecodingData data,
@@ -162,13 +171,14 @@ abstract class RealtimeServerEventTranscriptionSessionUpdatedCopyWith<
   $In extends RealtimeServerEventTranscriptionSessionUpdated,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeTranscriptionSessionCreateResponseCopyWith<
     $R,
     RealtimeTranscriptionSessionCreateResponse,
     RealtimeTranscriptionSessionCreateResponse
   >
   get session;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventTranscriptionSessionUpdatedType? type,

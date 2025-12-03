@@ -12,15 +12,11 @@ part 'chat_completion_allowed_tools.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionAllowedTools with ChatCompletionAllowedToolsMappable {
-  const ChatCompletionAllowedTools({
-    required this.mode,
-    required this.tools,
-  });
+  const ChatCompletionAllowedTools({required this.mode, required this.tools});
 
   final ChatCompletionAllowedToolsMode mode;
   final List<dynamic> tools;
 
-  static ChatCompletionAllowedTools fromJson(Map<String, dynamic> json) => ChatCompletionAllowedToolsMapper.fromJson(json);
-
+  static ChatCompletionAllowedTools fromJson(Map<String, dynamic> json) =>
+      ChatCompletionAllowedToolsMapper.fromJson(json);
 }
-

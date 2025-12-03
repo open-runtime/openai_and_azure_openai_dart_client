@@ -10,11 +10,7 @@ part 'delete_file_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteFileResponse with DeleteFileResponseMappable {
-  const DeleteFileResponse({
-    required this.id,
-    required this.objectEnum,
-    required this.deleted,
-  });
+  const DeleteFileResponse({required this.id, required this.objectEnum, required this.deleted});
 
   final String id;
   @MappableField(key: 'object')
@@ -22,6 +18,4 @@ class DeleteFileResponse with DeleteFileResponseMappable {
   final bool deleted;
 
   static DeleteFileResponse fromJson(Map<String, dynamic> json) => DeleteFileResponseMapper.fromJson(json);
-
 }
-

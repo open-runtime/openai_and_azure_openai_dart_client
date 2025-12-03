@@ -9,16 +9,16 @@ part 'create_image_request_output_format_output_format.mapper.dart';
 /// The format in which the generated images are returned. This parameter is only supported for `gpt-image-1`. Must be one of `png`, `jpeg`, or `webp`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateImageRequestOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum CreateImageRequestOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateImageRequestOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != CreateImageRequestOutputFormatOutputFormat.unknown).toList();
+  static List<CreateImageRequestOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != CreateImageRequestOutputFormatOutputFormat.unknown).toList();
 }

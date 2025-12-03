@@ -10,15 +10,10 @@ part 'generate_images_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GenerateImagesResponse with GenerateImagesResponseMappable {
-  const GenerateImagesResponse({
-    required this.created,
-    required this.data,
-  });
+  const GenerateImagesResponse({required this.created, required this.data});
 
   final int created;
   final List<ImageResult> data;
 
   static GenerateImagesResponse fromJson(Map<String, dynamic> json) => GenerateImagesResponseMapper.fromJson(json);
-
 }
-

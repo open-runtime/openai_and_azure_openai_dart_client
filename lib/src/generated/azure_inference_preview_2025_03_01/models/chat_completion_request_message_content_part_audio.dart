@@ -12,8 +12,9 @@ part 'chat_completion_request_message_content_part_audio.mapper.dart';
 
 /// Learn about [audio inputs](/docs/guides/audio).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartAudio with ChatCompletionRequestMessageContentPartAudioMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio')
+class ChatCompletionRequestMessageContentPartAudio extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestMessageContentPartAudioMappable {
   const ChatCompletionRequestMessageContentPartAudio({
     required this.type,
     required this.chatCompletionRequestMessageContentPartAudioInputAudio,
@@ -23,7 +24,6 @@ class ChatCompletionRequestMessageContentPartAudio with ChatCompletionRequestMes
   @MappableField(key: 'input_audio')
   final ChatCompletionRequestMessageContentPartAudioInputAudio chatCompletionRequestMessageContentPartAudioInputAudio;
 
-  static ChatCompletionRequestMessageContentPartAudio fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartAudioMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartAudio fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartAudioMapper.fromJson(json);
 }
-

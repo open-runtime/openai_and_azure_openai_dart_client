@@ -26,7 +26,6 @@ class AuditLogRoleAssignmentDeleted with AuditLogRoleAssignmentDeletedMappable {
   @MappableField(key: 'resource_type')
   final String? resourceType;
 
-  static AuditLogRoleAssignmentDeleted fromJson(Map<String, dynamic> json) => AuditLogRoleAssignmentDeletedMapper.fromJson(json);
-
+  static AuditLogRoleAssignmentDeleted fromJson(Map<String, dynamic> json) =>
+      AuditLogRoleAssignmentDeletedMapper.fromJson(json);
 }
-

@@ -7,13 +7,14 @@
 
 part of 'custom_tool_param.dart';
 
-class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
+class CustomToolParamMapper extends SubClassMapperBase<CustomToolParam> {
   CustomToolParamMapper._();
 
   static CustomToolParamMapper? _instance;
   static CustomToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CustomToolParamMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       CustomToolParamFormatUnionMapper.ensureInitialized();
       CustomToolParamTypeMapper.ensureInitialized();
     }
@@ -53,6 +54,13 @@ class CustomToolParamMapper extends ClassMapperBase<CustomToolParam> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'custom';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static CustomToolParam _instantiate(DecodingData data) {
     return CustomToolParam(
@@ -124,13 +132,14 @@ extension CustomToolParamValueCopy<$R, $Out>
 }
 
 abstract class CustomToolParamCopyWith<$R, $In extends CustomToolParam, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
   CustomToolParamFormatUnionCopyWith<
     $R,
     CustomToolParamFormatUnion,
     CustomToolParamFormatUnion
   >?
   get format;
+  @override
   $R call({
     String? name,
     String? description,

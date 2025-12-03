@@ -15,11 +15,7 @@ part 'realtime_beta_server_event_rate_limits_updated.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventRateLimitsUpdated with RealtimeBetaServerEventRateLimitsUpdatedMappable {
-  const RealtimeBetaServerEventRateLimitsUpdated({
-    required this.eventId,
-    required this.type,
-    required this.rateLimits,
-  });
+  const RealtimeBetaServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits});
 
   @MappableField(key: 'event_id')
   final String eventId;
@@ -27,7 +23,6 @@ class RealtimeBetaServerEventRateLimitsUpdated with RealtimeBetaServerEventRateL
   @MappableField(key: 'rate_limits')
   final List<RealtimeBetaServerEventRateLimitsUpdatedRateLimits> rateLimits;
 
-  static RealtimeBetaServerEventRateLimitsUpdated fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventRateLimitsUpdatedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventRateLimitsUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventRateLimitsUpdatedMapper.fromJson(json);
 }
-

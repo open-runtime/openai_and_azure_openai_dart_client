@@ -25,9 +25,9 @@ class CreateModerationResponseResults with CreateModerationResponseResultsMappab
   @MappableField(key: 'category_scores')
   final CreateModerationResponseResultsCategoryScores createModerationResponseResultsCategoryScores;
   @MappableField(key: 'category_applied_input_types')
-  final CreateModerationResponseResultsCategoryAppliedInputTypes createModerationResponseResultsCategoryAppliedInputTypes;
+  final CreateModerationResponseResultsCategoryAppliedInputTypes
+  createModerationResponseResultsCategoryAppliedInputTypes;
 
-  static CreateModerationResponseResults fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsMapper.fromJson(json);
-
+  static CreateModerationResponseResults fromJson(Map<String, dynamic> json) =>
+      CreateModerationResponseResultsMapper.fromJson(json);
 }
-

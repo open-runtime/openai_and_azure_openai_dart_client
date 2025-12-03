@@ -8,16 +8,16 @@ part 'detail_enum.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum DetailEnum {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

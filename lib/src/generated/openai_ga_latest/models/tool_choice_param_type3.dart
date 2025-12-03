@@ -9,10 +9,10 @@ part 'tool_choice_param_type3.mapper.dart';
 /// For MCP tools, the type is always `mcp`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolChoiceParamType3 {
-  @MappableValue('mcp') 
+  @MappableValue('mcp')
   mcp,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ToolChoiceParamType3 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ToolChoiceParamType3> get $valuesDefined => values.where((value) => value != ToolChoiceParamType3.unknown).toList();
+  static List<ToolChoiceParamType3> get $valuesDefined =>
+      values.where((value) => value != ToolChoiceParamType3.unknown).toList();
 }

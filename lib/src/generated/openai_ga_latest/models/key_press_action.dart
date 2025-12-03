@@ -10,17 +10,12 @@ import 'key_press_action_type.dart';
 part 'key_press_action.mapper.dart';
 
 /// A collection of keypresses the model would like to perform.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class KeyPressAction with KeyPressActionMappable {
-  const KeyPressAction({
-    required this.keys,
-    this.type = KeyPressActionType.keypress,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'keypress')
+class KeyPressAction extends ComputerAction with KeyPressActionMappable {
+  const KeyPressAction({required this.keys, this.type = KeyPressActionType.keypress});
 
   final List<String> keys;
   final KeyPressActionType type;
 
   static KeyPressAction fromJson(Map<String, dynamic> json) => KeyPressActionMapper.fromJson(json);
-
 }
-

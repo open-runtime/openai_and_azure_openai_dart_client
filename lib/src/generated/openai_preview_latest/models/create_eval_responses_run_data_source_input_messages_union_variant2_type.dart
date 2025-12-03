@@ -9,10 +9,10 @@ part 'create_eval_responses_run_data_source_input_messages_union_variant2_type.m
 /// The type of input messages. Always `item_reference`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type {
-  @MappableValue('item_reference') 
+  @MappableValue('item_reference')
   itemReference,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type> get $valuesDefined => values.where((value) => value != CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type.unknown).toList();
+  static List<CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type> get $valuesDefined =>
+      values.where((value) => value != CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type.unknown).toList();
 }

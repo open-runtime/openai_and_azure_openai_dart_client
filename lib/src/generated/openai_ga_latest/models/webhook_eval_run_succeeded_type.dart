@@ -11,10 +11,10 @@ part 'webhook_eval_run_succeeded_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookEvalRunSucceededType {
   /// Incorrect name has been replaced. Original name: `eval.run.succeeded`.
-  @MappableValue('eval.run.succeeded') 
+  @MappableValue('eval.run.succeeded')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookEvalRunSucceededType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookEvalRunSucceededType> get $valuesDefined => values.where((value) => value != WebhookEvalRunSucceededType.unknown).toList();
+  static List<WebhookEvalRunSucceededType> get $valuesDefined =>
+      values.where((value) => value != WebhookEvalRunSucceededType.unknown).toList();
 }

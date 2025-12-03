@@ -10,19 +10,13 @@ part 'realtime_session_create_request_tools.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestTools with RealtimeSessionCreateRequestToolsMappable {
-  const RealtimeSessionCreateRequestTools({
-    this.type,
-    this.name,
-    this.description,
-    this.parameters,
-  });
+  const RealtimeSessionCreateRequestTools({this.type, this.name, this.description, this.parameters});
 
   final RealtimeSessionCreateRequestToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;
 
-  static RealtimeSessionCreateRequestTools fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestToolsMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestTools fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestToolsMapper.fromJson(json);
 }
-

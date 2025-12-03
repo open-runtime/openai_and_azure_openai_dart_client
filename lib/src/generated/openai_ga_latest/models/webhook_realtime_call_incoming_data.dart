@@ -10,17 +10,13 @@ part 'webhook_realtime_call_incoming_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookRealtimeCallIncomingData with WebhookRealtimeCallIncomingDataMappable {
-  const WebhookRealtimeCallIncomingData({
-    required this.callId,
-    required this.sipHeaders,
-  });
+  const WebhookRealtimeCallIncomingData({required this.callId, required this.sipHeaders});
 
   @MappableField(key: 'call_id')
   final String callId;
   @MappableField(key: 'sip_headers')
   final List<WebhookRealtimeCallIncomingDataSipHeaders> sipHeaders;
 
-  static WebhookRealtimeCallIncomingData fromJson(Map<String, dynamic> json) => WebhookRealtimeCallIncomingDataMapper.fromJson(json);
-
+  static WebhookRealtimeCallIncomingData fromJson(Map<String, dynamic> json) =>
+      WebhookRealtimeCallIncomingDataMapper.fromJson(json);
 }
-

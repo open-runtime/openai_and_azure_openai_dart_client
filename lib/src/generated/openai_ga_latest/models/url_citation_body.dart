@@ -10,8 +10,8 @@ import 'url_citation_body_type.dart';
 part 'url_citation_body.mapper.dart';
 
 /// A citation for a web resource used to generate a model response.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UrlCitationBody with UrlCitationBodyMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url_citation')
+class UrlCitationBody extends Annotation with UrlCitationBodyMappable {
   const UrlCitationBody({
     required this.url,
     required this.startIndex,
@@ -29,6 +29,4 @@ class UrlCitationBody with UrlCitationBodyMappable {
   final UrlCitationBodyType type;
 
   static UrlCitationBody fromJson(Map<String, dynamic> json) => UrlCitationBodyMapper.fromJson(json);
-
 }
-

@@ -11,10 +11,10 @@ part 'webhook_batch_completed_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookBatchCompletedType {
   /// Incorrect name has been replaced. Original name: `batch.completed`.
-  @MappableValue('batch.completed') 
+  @MappableValue('batch.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookBatchCompletedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookBatchCompletedType> get $valuesDefined => values.where((value) => value != WebhookBatchCompletedType.unknown).toList();
+  static List<WebhookBatchCompletedType> get $valuesDefined =>
+      values.where((value) => value != WebhookBatchCompletedType.unknown).toList();
 }

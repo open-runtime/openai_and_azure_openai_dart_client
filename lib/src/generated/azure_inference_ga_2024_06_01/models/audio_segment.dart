@@ -37,6 +37,4 @@ class AudioSegment with AudioSegmentMappable {
   final num? noSpeechProb;
 
   static AudioSegment fromJson(Map<String, dynamic> json) => AudioSegmentMapper.fromJson(json);
-
 }
-

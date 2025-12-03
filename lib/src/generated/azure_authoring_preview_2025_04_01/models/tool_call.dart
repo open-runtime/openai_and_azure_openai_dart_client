@@ -10,11 +10,7 @@ part 'tool_call.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolCall with ToolCallMappable {
-  const ToolCall({
-    this.type,
-    this.functionField,
-    this.id,
-  });
+  const ToolCall({this.type, this.functionField, this.id});
 
   final String? type;
   @MappableField(key: 'function')
@@ -22,6 +18,4 @@ class ToolCall with ToolCallMappable {
   final String? id;
 
   static ToolCall fromJson(Map<String, dynamic> json) => ToolCallMapper.fromJson(json);
-
 }
-

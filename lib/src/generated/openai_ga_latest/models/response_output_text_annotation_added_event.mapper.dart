@@ -8,7 +8,7 @@
 part of 'response_output_text_annotation_added_event.dart';
 
 class ResponseOutputTextAnnotationAddedEventMapper
-    extends ClassMapperBase<ResponseOutputTextAnnotationAddedEvent> {
+    extends SubClassMapperBase<ResponseOutputTextAnnotationAddedEvent> {
   ResponseOutputTextAnnotationAddedEventMapper._();
 
   static ResponseOutputTextAnnotationAddedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseOutputTextAnnotationAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseOutputTextAnnotationAddedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseOutputTextAnnotationAddedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -83,6 +84,14 @@ class ResponseOutputTextAnnotationAddedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_text.annotation.added';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseOutputTextAnnotationAddedEvent _instantiate(
     DecodingData data,
@@ -176,7 +185,8 @@ abstract class ResponseOutputTextAnnotationAddedEventCopyWith<
   $In extends ResponseOutputTextAnnotationAddedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseOutputTextAnnotationAddedEventType? type,
     String? itemId,

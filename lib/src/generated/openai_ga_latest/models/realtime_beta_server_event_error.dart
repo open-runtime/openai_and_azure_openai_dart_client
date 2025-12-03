@@ -26,7 +26,6 @@ class RealtimeBetaServerEventError with RealtimeBetaServerEventErrorMappable {
   @MappableField(key: 'error')
   final RealtimeBetaServerEventErrorError realtimeBetaServerEventErrorError;
 
-  static RealtimeBetaServerEventError fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventErrorMapper.fromJson(json);
-
+  static RealtimeBetaServerEventError fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventErrorMapper.fromJson(json);
 }
-

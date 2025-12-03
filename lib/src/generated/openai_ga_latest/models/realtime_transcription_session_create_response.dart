@@ -34,9 +34,9 @@ class RealtimeTranscriptionSessionCreateResponse with RealtimeTranscriptionSessi
   @MappableField(key: 'input_audio_transcription')
   final AudioTranscription? inputAudioTranscription;
   @MappableField(key: 'turn_detection')
-  final RealtimeTranscriptionSessionCreateResponseTurnDetection? realtimeTranscriptionSessionCreateResponseTurnDetection;
+  final RealtimeTranscriptionSessionCreateResponseTurnDetection?
+  realtimeTranscriptionSessionCreateResponseTurnDetection;
 
-  static RealtimeTranscriptionSessionCreateResponse fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateResponse fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateResponseMapper.fromJson(json);
 }
-

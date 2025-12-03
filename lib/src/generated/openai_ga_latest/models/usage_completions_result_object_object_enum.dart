@@ -10,10 +10,10 @@ part 'usage_completions_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageCompletionsResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.completions.result`.
-  @MappableValue('organization.usage.completions.result') 
+  @MappableValue('organization.usage.completions.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageCompletionsResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageCompletionsResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageCompletionsResultObjectObjectEnum.unknown).toList();
+  static List<UsageCompletionsResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageCompletionsResultObjectObjectEnum.unknown).toList();
 }

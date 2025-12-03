@@ -11,10 +11,10 @@ part 'response_incomplete_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseIncompleteEventType {
   /// Incorrect name has been replaced. Original name: `response.incomplete`.
-  @MappableValue('response.incomplete') 
+  @MappableValue('response.incomplete')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseIncompleteEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseIncompleteEventType> get $valuesDefined => values.where((value) => value != ResponseIncompleteEventType.unknown).toList();
+  static List<ResponseIncompleteEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseIncompleteEventType.unknown).toList();
 }

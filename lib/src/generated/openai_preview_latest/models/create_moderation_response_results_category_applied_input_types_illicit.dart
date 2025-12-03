@@ -8,10 +8,10 @@ part 'create_moderation_response_results_category_applied_input_types_illicit.ma
 
 @MappableEnum(defaultValue: 'unknown')
 enum CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,7 @@ enum CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit> get $valuesDefined => values.where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.unknown).toList();
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit> get $valuesDefined => values
+      .where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.unknown)
+      .toList();
 }

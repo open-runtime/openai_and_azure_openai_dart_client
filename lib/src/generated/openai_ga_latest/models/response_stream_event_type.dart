@@ -11,10 +11,10 @@ part 'response_stream_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventType {
   /// Incorrect name has been replaced. Original name: `response.audio.delta`.
-  @MappableValue('response.audio.delta') 
+  @MappableValue('response.audio.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseStreamEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventType> get $valuesDefined => values.where((value) => value != ResponseStreamEventType.unknown).toList();
+  static List<ResponseStreamEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventType.unknown).toList();
 }

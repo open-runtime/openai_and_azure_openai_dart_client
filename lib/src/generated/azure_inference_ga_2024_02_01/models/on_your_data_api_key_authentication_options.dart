@@ -11,15 +11,11 @@ part 'on_your_data_api_key_authentication_options.mapper.dart';
 /// The authentication options for Azure OpenAI On Your Data when using an API key.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataApiKeyAuthenticationOptions with OnYourDataApiKeyAuthenticationOptionsMappable {
-  const OnYourDataApiKeyAuthenticationOptions({
-    required this.type,
-    this.key,
-  });
+  const OnYourDataApiKeyAuthenticationOptions({required this.type, this.key});
 
   final OnYourDataAuthenticationType type;
   final String? key;
 
-  static OnYourDataApiKeyAuthenticationOptions fromJson(Map<String, dynamic> json) => OnYourDataApiKeyAuthenticationOptionsMapper.fromJson(json);
-
+  static OnYourDataApiKeyAuthenticationOptions fromJson(Map<String, dynamic> json) =>
+      OnYourDataApiKeyAuthenticationOptionsMapper.fromJson(json);
 }
-

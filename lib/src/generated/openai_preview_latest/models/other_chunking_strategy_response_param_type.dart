@@ -9,10 +9,10 @@ part 'other_chunking_strategy_response_param_type.mapper.dart';
 /// Always `other`.
 @MappableEnum(defaultValue: 'unknown')
 enum OtherChunkingStrategyResponseParamType {
-  @MappableValue('other') 
+  @MappableValue('other')
   other,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum OtherChunkingStrategyResponseParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OtherChunkingStrategyResponseParamType> get $valuesDefined => values.where((value) => value != OtherChunkingStrategyResponseParamType.unknown).toList();
+  static List<OtherChunkingStrategyResponseParamType> get $valuesDefined =>
+      values.where((value) => value != OtherChunkingStrategyResponseParamType.unknown).toList();
 }

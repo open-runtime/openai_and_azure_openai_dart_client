@@ -9,17 +9,12 @@ part 'computer_call_safety_check_param.mapper.dart';
 /// A pending safety check for the computer call.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerCallSafetyCheckParam with ComputerCallSafetyCheckParamMappable {
-  const ComputerCallSafetyCheckParam({
-    required this.id,
-    this.code,
-    this.message,
-  });
+  const ComputerCallSafetyCheckParam({required this.id, this.code, this.message});
 
   final String id;
   final String? code;
   final String? message;
 
-  static ComputerCallSafetyCheckParam fromJson(Map<String, dynamic> json) => ComputerCallSafetyCheckParamMapper.fromJson(json);
-
+  static ComputerCallSafetyCheckParam fromJson(Map<String, dynamic> json) =>
+      ComputerCallSafetyCheckParamMapper.fromJson(json);
 }
-

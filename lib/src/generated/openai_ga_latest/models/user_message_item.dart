@@ -14,8 +14,8 @@ import 'user_message_item_type.dart';
 part 'user_message_item.mapper.dart';
 
 /// User-authored messages within a thread.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UserMessageItem with UserMessageItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.user_message')
+class UserMessageItem extends ThreadItem with UserMessageItemMappable {
   const UserMessageItem({
     required this.id,
     required this.createdAt,
@@ -41,6 +41,4 @@ class UserMessageItem with UserMessageItemMappable {
   final UserMessageItemType type;
 
   static UserMessageItem fromJson(Map<String, dynamic> json) => UserMessageItemMapper.fromJson(json);
-
 }
-

@@ -9,22 +9,22 @@ part 'message_object_incomplete_details_reason.mapper.dart';
 /// The reason the message is incomplete.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageObjectIncompleteDetailsReason {
-  @MappableValue('content_filter') 
+  @MappableValue('content_filter')
   contentFilter,
 
-  @MappableValue('max_tokens') 
+  @MappableValue('max_tokens')
   maxTokens,
 
-  @MappableValue('run_cancelled') 
+  @MappableValue('run_cancelled')
   runCancelled,
 
-  @MappableValue('run_expired') 
+  @MappableValue('run_expired')
   runExpired,
 
-  @MappableValue('run_failed') 
+  @MappableValue('run_failed')
   runFailed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum MessageObjectIncompleteDetailsReason {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageObjectIncompleteDetailsReason> get $valuesDefined => values.where((value) => value != MessageObjectIncompleteDetailsReason.unknown).toList();
+  static List<MessageObjectIncompleteDetailsReason> get $valuesDefined =>
+      values.where((value) => value != MessageObjectIncompleteDetailsReason.unknown).toList();
 }

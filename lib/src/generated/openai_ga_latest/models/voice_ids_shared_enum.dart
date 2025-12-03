@@ -9,37 +9,37 @@ part 'voice_ids_shared_enum.mapper.dart';
 /// Enum values: alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, cedar
 @MappableEnum(defaultValue: 'unknown')
 enum VoiceIdsSharedEnum {
-  @MappableValue('alloy') 
+  @MappableValue('alloy')
   alloy,
 
-  @MappableValue('ash') 
+  @MappableValue('ash')
   ash,
 
-  @MappableValue('ballad') 
+  @MappableValue('ballad')
   ballad,
 
-  @MappableValue('coral') 
+  @MappableValue('coral')
   coral,
 
-  @MappableValue('echo') 
+  @MappableValue('echo')
   echo,
 
-  @MappableValue('sage') 
+  @MappableValue('sage')
   sage,
 
-  @MappableValue('shimmer') 
+  @MappableValue('shimmer')
   shimmer,
 
-  @MappableValue('verse') 
+  @MappableValue('verse')
   verse,
 
-  @MappableValue('marin') 
+  @MappableValue('marin')
   marin,
 
-  @MappableValue('cedar') 
+  @MappableValue('cedar')
   cedar,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -48,5 +48,6 @@ enum VoiceIdsSharedEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VoiceIdsSharedEnum> get $valuesDefined => values.where((value) => value != VoiceIdsSharedEnum.unknown).toList();
+  static List<VoiceIdsSharedEnum> get $valuesDefined =>
+      values.where((value) => value != VoiceIdsSharedEnum.unknown).toList();
 }

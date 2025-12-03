@@ -29,6 +29,4 @@ class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
   final List<CodeInterpreterToolOutput> results;
 
   static CodeInterpreterToolCall fromJson(Map<String, dynamic> json) => CodeInterpreterToolCallMapper.fromJson(json);
-
 }
-

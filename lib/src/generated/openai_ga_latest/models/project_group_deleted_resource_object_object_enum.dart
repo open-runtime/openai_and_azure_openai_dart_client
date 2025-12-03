@@ -11,10 +11,10 @@ part 'project_group_deleted_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectGroupDeletedResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `project.group.deleted`.
-  @MappableValue('project.group.deleted') 
+  @MappableValue('project.group.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ProjectGroupDeletedResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectGroupDeletedResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectGroupDeletedResourceObjectObjectEnum.unknown).toList();
+  static List<ProjectGroupDeletedResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectGroupDeletedResourceObjectObjectEnum.unknown).toList();
 }

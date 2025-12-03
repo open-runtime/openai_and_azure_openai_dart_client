@@ -14,8 +14,9 @@ part 'realtime_server_event_input_audio_buffer_committed.mapper.dart';
 /// message item that will be created, thus a `conversation.item.created` event .
 /// will also be sent to the client.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventInputAudioBufferCommitted with RealtimeServerEventInputAudioBufferCommittedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.committed')
+class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferCommittedMappable {
   const RealtimeServerEventInputAudioBufferCommitted({
     required this.eventId,
     required this.type,
@@ -31,7 +32,6 @@ class RealtimeServerEventInputAudioBufferCommitted with RealtimeServerEventInput
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventInputAudioBufferCommitted fromJson(Map<String, dynamic> json) => RealtimeServerEventInputAudioBufferCommittedMapper.fromJson(json);
-
+  static RealtimeServerEventInputAudioBufferCommitted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventInputAudioBufferCommittedMapper.fromJson(json);
 }
-

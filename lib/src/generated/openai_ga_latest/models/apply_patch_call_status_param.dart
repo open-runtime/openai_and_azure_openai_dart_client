@@ -9,13 +9,13 @@ part 'apply_patch_call_status_param.mapper.dart';
 /// Status values reported for apply_patch tool calls.
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchCallStatusParam {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ApplyPatchCallStatusParam {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchCallStatusParam> get $valuesDefined => values.where((value) => value != ApplyPatchCallStatusParam.unknown).toList();
+  static List<ApplyPatchCallStatusParam> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchCallStatusParam.unknown).toList();
 }

@@ -10,10 +10,10 @@ part 'local_shell_tool_call_output_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum LocalShellToolCallOutputType {
-  @MappableValue('local_shell_call_output') 
+  @MappableValue('local_shell_call_output')
   localShellCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum LocalShellToolCallOutputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<LocalShellToolCallOutputType> get $valuesDefined => values.where((value) => value != LocalShellToolCallOutputType.unknown).toList();
+  static List<LocalShellToolCallOutputType> get $valuesDefined =>
+      values.where((value) => value != LocalShellToolCallOutputType.unknown).toList();
 }

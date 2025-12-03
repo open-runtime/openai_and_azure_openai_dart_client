@@ -10,15 +10,11 @@ import 'tool.dart';
 part 'apply_patch_tool_param.mapper.dart';
 
 /// Allows the assistant to create, delete, or update files using unified diffs.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchToolParam with ApplyPatchToolParamMappable {
-  const ApplyPatchToolParam({
-    this.type = ApplyPatchToolParamType.applyPatch,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch')
+class ApplyPatchToolParam extends Tool with ApplyPatchToolParamMappable {
+  const ApplyPatchToolParam({this.type = ApplyPatchToolParamType.applyPatch});
 
   final ApplyPatchToolParamType type;
 
   static ApplyPatchToolParam fromJson(Map<String, dynamic> json) => ApplyPatchToolParamMapper.fromJson(json);
-
 }
-

@@ -8,7 +8,7 @@
 part of 'response_code_interpreter_call_code_delta_event.dart';
 
 class ResponseCodeInterpreterCallCodeDeltaEventMapper
-    extends ClassMapperBase<ResponseCodeInterpreterCallCodeDeltaEvent> {
+    extends SubClassMapperBase<ResponseCodeInterpreterCallCodeDeltaEvent> {
   ResponseCodeInterpreterCallCodeDeltaEventMapper._();
 
   static ResponseCodeInterpreterCallCodeDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCodeInterpreterCallCodeDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallCodeDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCodeInterpreterCallCodeDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -48,6 +49,15 @@ class ResponseCodeInterpreterCallCodeDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'response.code_interpreter_call.code.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCodeInterpreterCallCodeDeltaEvent _instantiate(
     DecodingData data,
@@ -145,7 +155,8 @@ abstract class ResponseCodeInterpreterCallCodeDeltaEventCopyWith<
   $In extends ResponseCodeInterpreterCallCodeDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseCodeInterpreterCallCodeDeltaEventType? type,
     int? outputIndex,

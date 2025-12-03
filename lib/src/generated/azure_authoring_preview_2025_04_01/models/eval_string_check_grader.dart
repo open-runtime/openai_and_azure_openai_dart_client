@@ -27,6 +27,4 @@ class EvalStringCheckGrader with EvalStringCheckGraderMappable {
   final EvalStringCheckGraderType type;
 
   static EvalStringCheckGrader fromJson(Map<String, dynamic> json) => EvalStringCheckGraderMapper.fromJson(json);
-
 }
-

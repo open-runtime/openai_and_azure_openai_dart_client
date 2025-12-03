@@ -11,10 +11,10 @@ part 'response_file_search_call_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFileSearchCallInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.file_search_call.in_progress`.
-  @MappableValue('response.file_search_call.in_progress') 
+  @MappableValue('response.file_search_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseFileSearchCallInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFileSearchCallInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseFileSearchCallInProgressEventType.unknown).toList();
+  static List<ResponseFileSearchCallInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseFileSearchCallInProgressEventType.unknown).toList();
 }

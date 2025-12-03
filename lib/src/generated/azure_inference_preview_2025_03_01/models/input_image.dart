@@ -12,14 +12,9 @@ part 'input_image.mapper.dart';
 
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class InputImage with InputImageMappable {
-  const InputImage({
-    required this.type,
-    this.detail = InputImageDetail.auto,
-    this.imageUrl,
-    this.fileId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
+class InputImage extends InputContent with InputImageMappable {
+  const InputImage({required this.type, this.detail = InputImageDetail.auto, this.imageUrl, this.fileId});
 
   final InputImageType type;
   final InputImageDetail detail;
@@ -29,6 +24,4 @@ class InputImage with InputImageMappable {
   final String? fileId;
 
   static InputImage fromJson(Map<String, dynamic> json) => InputImageMapper.fromJson(json);
-
 }
-

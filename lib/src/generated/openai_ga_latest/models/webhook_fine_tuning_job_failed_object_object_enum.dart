@@ -11,10 +11,10 @@ part 'webhook_fine_tuning_job_failed_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookFineTuningJobFailedObjectObjectEnum {
-  @MappableValue('event') 
+  @MappableValue('event')
   event,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookFineTuningJobFailedObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookFineTuningJobFailedObjectObjectEnum> get $valuesDefined => values.where((value) => value != WebhookFineTuningJobFailedObjectObjectEnum.unknown).toList();
+  static List<WebhookFineTuningJobFailedObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WebhookFineTuningJobFailedObjectObjectEnum.unknown).toList();
 }

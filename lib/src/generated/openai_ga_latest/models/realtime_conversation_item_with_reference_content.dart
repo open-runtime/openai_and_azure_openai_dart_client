@@ -10,13 +10,7 @@ part 'realtime_conversation_item_with_reference_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemWithReferenceContent with RealtimeConversationItemWithReferenceContentMappable {
-  const RealtimeConversationItemWithReferenceContent({
-    this.type,
-    this.text,
-    this.id,
-    this.audio,
-    this.transcript,
-  });
+  const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript});
 
   final RealtimeConversationItemWithReferenceContentType? type;
   final String? text;
@@ -24,7 +18,6 @@ class RealtimeConversationItemWithReferenceContent with RealtimeConversationItem
   final String? audio;
   final String? transcript;
 
-  static RealtimeConversationItemWithReferenceContent fromJson(Map<String, dynamic> json) => RealtimeConversationItemWithReferenceContentMapper.fromJson(json);
-
+  static RealtimeConversationItemWithReferenceContent fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemWithReferenceContentMapper.fromJson(json);
 }
-

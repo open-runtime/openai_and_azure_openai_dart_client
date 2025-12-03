@@ -34,7 +34,6 @@ class RealtimeBetaServerEventResponseTextDone with RealtimeBetaServerEventRespon
   final int contentIndex;
   final String text;
 
-  static RealtimeBetaServerEventResponseTextDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseTextDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseTextDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseTextDoneMapper.fromJson(json);
 }
-

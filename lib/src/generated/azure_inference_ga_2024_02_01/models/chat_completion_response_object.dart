@@ -10,10 +10,10 @@ part 'chat_completion_response_object.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionResponseObject {
   /// Incorrect name has been replaced. Original name: `chat.completion`.
-  @MappableValue('chat.completion') 
+  @MappableValue('chat.completion')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ChatCompletionResponseObject {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionResponseObject> get $valuesDefined => values.where((value) => value != ChatCompletionResponseObject.unknown).toList();
+  static List<ChatCompletionResponseObject> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionResponseObject.unknown).toList();
 }

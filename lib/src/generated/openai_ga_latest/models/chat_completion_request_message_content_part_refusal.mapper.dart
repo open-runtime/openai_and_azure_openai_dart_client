@@ -8,7 +8,7 @@
 part of 'chat_completion_request_message_content_part_refusal.dart';
 
 class ChatCompletionRequestMessageContentPartRefusalMapper
-    extends ClassMapperBase<ChatCompletionRequestMessageContentPartRefusal> {
+    extends SubClassMapperBase<ChatCompletionRequestMessageContentPartRefusal> {
   ChatCompletionRequestMessageContentPartRefusalMapper._();
 
   static ChatCompletionRequestMessageContentPartRefusalMapper? _instance;
@@ -18,6 +18,8 @@ class ChatCompletionRequestMessageContentPartRefusalMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartRefusalMapper._(),
       );
+      ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionRequestMessageContentPartRefusalTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -46,6 +48,14 @@ class ChatCompletionRequestMessageContentPartRefusalMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'refusal';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized();
 
   static ChatCompletionRequestMessageContentPartRefusal _instantiate(
     DecodingData data,
@@ -152,7 +162,13 @@ abstract class ChatCompletionRequestMessageContentPartRefusalCopyWith<
   $In extends ChatCompletionRequestMessageContentPartRefusal,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements
+        ChatCompletionRequestAssistantMessageContentPartCopyWith<
+          $R,
+          $In,
+          $Out
+        > {
+  @override
   $R call({
     ChatCompletionRequestMessageContentPartRefusalType? type,
     String? refusal,

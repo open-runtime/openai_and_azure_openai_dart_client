@@ -8,7 +8,8 @@ part 'realtime_beta_server_event_response_mcp_call_arguments_done.mapper.dart';
 
 /// Returned when MCP tool call arguments are finalized during response generation.
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventResponseMcpCallArgumentsDone with RealtimeBetaServerEventResponseMcpCallArgumentsDoneMappable {
+class RealtimeBetaServerEventResponseMcpCallArgumentsDone
+    with RealtimeBetaServerEventResponseMcpCallArgumentsDoneMappable {
   const RealtimeBetaServerEventResponseMcpCallArgumentsDone({
     required this.eventId,
     required this.type,
@@ -29,7 +30,6 @@ class RealtimeBetaServerEventResponseMcpCallArgumentsDone with RealtimeBetaServe
   final int outputIndex;
   final String arguments;
 
-  static RealtimeBetaServerEventResponseMcpCallArgumentsDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseMcpCallArgumentsDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json);
 }
-

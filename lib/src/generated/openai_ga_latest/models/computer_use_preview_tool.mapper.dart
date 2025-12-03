@@ -8,13 +8,14 @@
 part of 'computer_use_preview_tool.dart';
 
 class ComputerUsePreviewToolMapper
-    extends ClassMapperBase<ComputerUsePreviewTool> {
+    extends SubClassMapperBase<ComputerUsePreviewTool> {
   ComputerUsePreviewToolMapper._();
 
   static ComputerUsePreviewToolMapper? _instance;
   static ComputerUsePreviewToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerUsePreviewToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       ComputerEnvironmentMapper.ensureInitialized();
       ComputerUsePreviewToolTypeMapper.ensureInitialized();
     }
@@ -60,6 +61,13 @@ class ComputerUsePreviewToolMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'computer_use_preview';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static ComputerUsePreviewTool _instantiate(DecodingData data) {
     return ComputerUsePreviewTool(
@@ -139,7 +147,8 @@ abstract class ComputerUsePreviewToolCopyWith<
   $In extends ComputerUsePreviewTool,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ComputerEnvironment? environment,
     int? displayWidth,

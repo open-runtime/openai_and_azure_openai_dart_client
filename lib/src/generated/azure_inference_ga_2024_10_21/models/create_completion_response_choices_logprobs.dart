@@ -8,12 +8,7 @@ part 'create_completion_response_choices_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateCompletionResponseChoicesLogprobs with CreateCompletionResponseChoicesLogprobsMappable {
-  const CreateCompletionResponseChoicesLogprobs({
-    this.textOffset,
-    this.tokenLogprobs,
-    this.tokens,
-    this.topLogprobs,
-  });
+  const CreateCompletionResponseChoicesLogprobs({this.textOffset, this.tokenLogprobs, this.tokens, this.topLogprobs});
 
   @MappableField(key: 'text_offset')
   final List<int>? textOffset;
@@ -23,7 +18,6 @@ class CreateCompletionResponseChoicesLogprobs with CreateCompletionResponseChoic
   @MappableField(key: 'top_logprobs')
   final List<Map<String, num>>? topLogprobs;
 
-  static CreateCompletionResponseChoicesLogprobs fromJson(Map<String, dynamic> json) => CreateCompletionResponseChoicesLogprobsMapper.fromJson(json);
-
+  static CreateCompletionResponseChoicesLogprobs fromJson(Map<String, dynamic> json) =>
+      CreateCompletionResponseChoicesLogprobsMapper.fromJson(json);
 }
-

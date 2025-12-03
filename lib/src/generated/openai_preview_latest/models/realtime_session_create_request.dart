@@ -54,10 +54,12 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateRequestTurnDetection? realtimeSessionCreateRequestTurnDetection;
   final List<RealtimeSessionCreateRequestTools>? tools;
-  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook())
+  @MappableField(
+    key: 'max_response_output_tokens',
+    hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook(),
+  )
   final RealtimeSessionCreateRequestMaxResponseOutputTokensUnion? maxResponseOutputTokens;
 
-  static RealtimeSessionCreateRequest fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequest fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestMapper.fromJson(json);
 }
-

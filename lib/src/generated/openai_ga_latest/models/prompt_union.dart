@@ -23,7 +23,6 @@ extension PromptUnionDeserializer on PromptUnion {
       return PromptUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for PromptUnion from: $json');
   }
 }
@@ -34,9 +33,5 @@ class PromptUnionVariant1 extends PromptUnion with PromptUnionVariant1Mappable {
   final String? version;
   final ResponsePromptVariables? variables;
 
-  const PromptUnionVariant1({
-    required this.id,
-    required this.version,
-    required this.variables,
-  });
+  const PromptUnionVariant1({required this.id, required this.version, required this.variables});
 }

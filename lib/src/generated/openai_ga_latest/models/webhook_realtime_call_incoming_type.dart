@@ -11,10 +11,10 @@ part 'webhook_realtime_call_incoming_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookRealtimeCallIncomingType {
   /// Incorrect name has been replaced. Original name: `realtime.call.incoming`.
-  @MappableValue('realtime.call.incoming') 
+  @MappableValue('realtime.call.incoming')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookRealtimeCallIncomingType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookRealtimeCallIncomingType> get $valuesDefined => values.where((value) => value != WebhookRealtimeCallIncomingType.unknown).toList();
+  static List<WebhookRealtimeCallIncomingType> get $valuesDefined =>
+      values.where((value) => value != WebhookRealtimeCallIncomingType.unknown).toList();
 }

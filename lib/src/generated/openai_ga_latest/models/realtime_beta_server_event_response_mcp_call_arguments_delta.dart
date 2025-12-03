@@ -8,7 +8,8 @@ part 'realtime_beta_server_event_response_mcp_call_arguments_delta.mapper.dart';
 
 /// Returned when MCP tool call arguments are updated during response generation.
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventResponseMcpCallArgumentsDelta with RealtimeBetaServerEventResponseMcpCallArgumentsDeltaMappable {
+class RealtimeBetaServerEventResponseMcpCallArgumentsDelta
+    with RealtimeBetaServerEventResponseMcpCallArgumentsDeltaMappable {
   const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({
     required this.eventId,
     required this.type,
@@ -31,7 +32,6 @@ class RealtimeBetaServerEventResponseMcpCallArgumentsDelta with RealtimeBetaServ
   final String delta;
   final String? obfuscation;
 
-  static RealtimeBetaServerEventResponseMcpCallArgumentsDelta fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseMcpCallArgumentsDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json);
 }
-

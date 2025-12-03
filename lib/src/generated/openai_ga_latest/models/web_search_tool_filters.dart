@@ -8,14 +8,10 @@ part 'web_search_tool_filters.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchToolFilters with WebSearchToolFiltersMappable {
-  const WebSearchToolFilters({
-    this.allowedDomains = const [],
-  });
+  const WebSearchToolFilters({this.allowedDomains = const []});
 
   @MappableField(key: 'allowed_domains')
   final List<String>? allowedDomains;
 
   static WebSearchToolFilters fromJson(Map<String, dynamic> json) => WebSearchToolFiltersMapper.fromJson(json);
-
 }
-

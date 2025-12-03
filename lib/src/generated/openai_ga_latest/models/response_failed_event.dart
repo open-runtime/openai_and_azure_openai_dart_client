@@ -12,13 +12,9 @@ part 'response_failed_event.mapper.dart';
 
 /// An event that is emitted when a response fails.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFailedEvent with ResponseFailedEventMappable {
-  const ResponseFailedEvent({
-    required this.type,
-    required this.sequenceNumber,
-    required this.response,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.failed')
+class ResponseFailedEvent extends ResponseStreamEvent with ResponseFailedEventMappable {
+  const ResponseFailedEvent({required this.type, required this.sequenceNumber, required this.response});
 
   final ResponseFailedEventType type;
   @MappableField(key: 'sequence_number')
@@ -26,6 +22,4 @@ class ResponseFailedEvent with ResponseFailedEventMappable {
   final ResponseModel response;
 
   static ResponseFailedEvent fromJson(Map<String, dynamic> json) => ResponseFailedEventMapper.fromJson(json);
-
 }
-

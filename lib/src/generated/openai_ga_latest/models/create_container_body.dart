@@ -10,11 +10,7 @@ part 'create_container_body.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateContainerBody with CreateContainerBodyMappable {
-  const CreateContainerBody({
-    required this.name,
-    this.fileIds,
-    this.createContainerBodyExpiresAfter,
-  });
+  const CreateContainerBody({required this.name, this.fileIds, this.createContainerBodyExpiresAfter});
 
   final String name;
   @MappableField(key: 'file_ids')
@@ -23,6 +19,4 @@ class CreateContainerBody with CreateContainerBodyMappable {
   final CreateContainerBodyExpiresAfter? createContainerBodyExpiresAfter;
 
   static CreateContainerBody fromJson(Map<String, dynamic> json) => CreateContainerBodyMapper.fromJson(json);
-
 }
-

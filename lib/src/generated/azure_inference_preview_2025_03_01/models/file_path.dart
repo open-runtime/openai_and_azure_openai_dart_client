@@ -11,13 +11,9 @@ part 'file_path.mapper.dart';
 
 /// A path to a file.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FilePath with FilePathMappable {
-  const FilePath({
-    required this.type,
-    required this.fileId,
-    required this.indexField,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
+class FilePath extends Annotation with FilePathMappable {
+  const FilePath({required this.type, required this.fileId, required this.indexField});
 
   final FilePathType type;
   @MappableField(key: 'file_id')
@@ -26,6 +22,4 @@ class FilePath with FilePathMappable {
   final int indexField;
 
   static FilePath fromJson(Map<String, dynamic> json) => FilePathMapper.fromJson(json);
-
 }
-

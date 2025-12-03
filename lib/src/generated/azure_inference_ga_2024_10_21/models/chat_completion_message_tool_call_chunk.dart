@@ -25,7 +25,6 @@ class ChatCompletionMessageToolCallChunk with ChatCompletionMessageToolCallChunk
   @MappableField(key: 'function')
   final ChatCompletionMessageToolCallChunkFunction? chatCompletionMessageToolCallChunkFunction;
 
-  static ChatCompletionMessageToolCallChunk fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallChunkMapper.fromJson(json);
-
+  static ChatCompletionMessageToolCallChunk fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageToolCallChunkMapper.fromJson(json);
 }
-

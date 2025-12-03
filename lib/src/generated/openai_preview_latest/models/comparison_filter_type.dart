@@ -16,25 +16,25 @@ part 'comparison_filter_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComparisonFilterType {
-  @MappableValue('eq') 
+  @MappableValue('eq')
   eq,
 
-  @MappableValue('ne') 
+  @MappableValue('ne')
   ne,
 
-  @MappableValue('gt') 
+  @MappableValue('gt')
   gt,
 
-  @MappableValue('gte') 
+  @MappableValue('gte')
   gte,
 
-  @MappableValue('lt') 
+  @MappableValue('lt')
   lt,
 
-  @MappableValue('lte') 
+  @MappableValue('lte')
   lte,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -43,5 +43,6 @@ enum ComparisonFilterType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComparisonFilterType> get $valuesDefined => values.where((value) => value != ComparisonFilterType.unknown).toList();
+  static List<ComparisonFilterType> get $valuesDefined =>
+      values.where((value) => value != ComparisonFilterType.unknown).toList();
 }

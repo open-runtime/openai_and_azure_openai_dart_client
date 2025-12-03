@@ -11,11 +11,7 @@ part 'role_deleted_resource.mapper.dart';
 /// Confirmation payload returned after deleting a role.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RoleDeletedResource with RoleDeletedResourceMappable {
-  const RoleDeletedResource({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const RoleDeletedResource({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final RoleDeletedResourceObjectObjectEnum objectEnum;
@@ -23,6 +19,4 @@ class RoleDeletedResource with RoleDeletedResourceMappable {
   final bool deleted;
 
   static RoleDeletedResource fromJson(Map<String, dynamic> json) => RoleDeletedResourceMapper.fromJson(json);
-
 }
-

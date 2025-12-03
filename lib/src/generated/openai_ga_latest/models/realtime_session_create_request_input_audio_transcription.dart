@@ -7,14 +7,12 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_session_create_request_input_audio_transcription.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestInputAudioTranscription with RealtimeSessionCreateRequestInputAudioTranscriptionMappable {
-  const RealtimeSessionCreateRequestInputAudioTranscription({
-    this.model,
-  });
+class RealtimeSessionCreateRequestInputAudioTranscription
+    with RealtimeSessionCreateRequestInputAudioTranscriptionMappable {
+  const RealtimeSessionCreateRequestInputAudioTranscription({this.model});
 
   final String? model;
 
-  static RealtimeSessionCreateRequestInputAudioTranscription fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestInputAudioTranscriptionMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestInputAudioTranscription fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestInputAudioTranscriptionMapper.fromJson(json);
 }
-

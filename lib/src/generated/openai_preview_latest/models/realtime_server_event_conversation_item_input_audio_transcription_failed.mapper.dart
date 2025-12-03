@@ -9,7 +9,7 @@ part of 'realtime_server_event_conversation_item_input_audio_transcription_faile
 
 class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
     extends
-        ClassMapperBase<
+        SubClassMapperBase<
           RealtimeServerEventConversationItemInputAudioTranscriptionFailed
         > {
   RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper._();
@@ -23,6 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeMapper.ensureInitialized();
       RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMapper.ensureInitialized();
     }
@@ -100,6 +101,15 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'conversation.item.input_audio_transcription.failed';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionFailed
   _instantiate(DecodingData data) {
@@ -228,13 +238,14 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionFailedC
   $In extends RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorCopyWith<
     $R,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedError,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
   >
   get realtimeServerEventConversationItemInputAudioTranscriptionFailedError;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? type,

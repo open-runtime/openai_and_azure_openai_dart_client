@@ -9,16 +9,16 @@ part 'message_content_delta_image_file_detail.mapper.dart';
 /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentDeltaImageFileDetail {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum MessageContentDeltaImageFileDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentDeltaImageFileDetail> get $valuesDefined => values.where((value) => value != MessageContentDeltaImageFileDetail.unknown).toList();
+  static List<MessageContentDeltaImageFileDetail> get $valuesDefined =>
+      values.where((value) => value != MessageContentDeltaImageFileDetail.unknown).toList();
 }

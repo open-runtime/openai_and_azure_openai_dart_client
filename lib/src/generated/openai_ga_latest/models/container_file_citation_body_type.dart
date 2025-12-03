@@ -9,10 +9,10 @@ part 'container_file_citation_body_type.mapper.dart';
 /// The type of the container file citation. Always `container_file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum ContainerFileCitationBodyType {
-  @MappableValue('container_file_citation') 
+  @MappableValue('container_file_citation')
   containerFileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ContainerFileCitationBodyType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ContainerFileCitationBodyType> get $valuesDefined => values.where((value) => value != ContainerFileCitationBodyType.unknown).toList();
+  static List<ContainerFileCitationBodyType> get $valuesDefined =>
+      values.where((value) => value != ContainerFileCitationBodyType.unknown).toList();
 }

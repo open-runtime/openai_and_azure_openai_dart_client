@@ -12,8 +12,9 @@ import 'realtime_conversation_item_function_call_output_type.dart';
 part 'realtime_conversation_item_function_call_output.mapper.dart';
 
 /// A function call output item in a Realtime conversation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeConversationItemFunctionCallOutput with RealtimeConversationItemFunctionCallOutputMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call_output')
+class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationItem
+    with RealtimeConversationItemFunctionCallOutputMappable {
   const RealtimeConversationItemFunctionCallOutput({
     required this.type,
     required this.callId,
@@ -32,7 +33,6 @@ class RealtimeConversationItemFunctionCallOutput with RealtimeConversationItemFu
   final RealtimeConversationItemFunctionCallOutputObjectObjectEnum? objectEnum;
   final RealtimeConversationItemFunctionCallOutputStatus? status;
 
-  static RealtimeConversationItemFunctionCallOutput fromJson(Map<String, dynamic> json) => RealtimeConversationItemFunctionCallOutputMapper.fromJson(json);
-
+  static RealtimeConversationItemFunctionCallOutput fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemFunctionCallOutputMapper.fromJson(json);
 }
-

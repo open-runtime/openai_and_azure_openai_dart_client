@@ -26,24 +26,28 @@ import 'usage_vector_stores_result_object_object_enum.dart';
 
 part 'usage_time_bucket_result_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'object', includeSubClasses: [
-  UsageTimeBucketResultUnionOrganizationUsageCompletionsResult,
-  UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult,
-  UsageTimeBucketResultUnionOrganizationUsageModerationsResult,
-  UsageTimeBucketResultUnionOrganizationUsageImagesResult,
-  UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult,
-  UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult,
-  UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult,
-  UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult,
-  UsageTimeBucketResultUnionOrganizationCostsResult
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'object',
+  includeSubClasses: [
+    UsageTimeBucketResultUnionOrganizationUsageCompletionsResult,
+    UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult,
+    UsageTimeBucketResultUnionOrganizationUsageModerationsResult,
+    UsageTimeBucketResultUnionOrganizationUsageImagesResult,
+    UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult,
+    UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult,
+    UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult,
+    UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult,
+    UsageTimeBucketResultUnionOrganizationCostsResult,
+  ],
+)
 sealed class UsageTimeBucketResultUnion with UsageTimeBucketResultUnionMappable {
   const UsageTimeBucketResultUnion();
 
   static UsageTimeBucketResultUnion fromJson(Map<String, dynamic> json) {
     return UsageTimeBucketResultUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension UsageTimeBucketResultUnionDeserializer on UsageTimeBucketResultUnion {
@@ -53,35 +57,37 @@ extension UsageTimeBucketResultUnionDeserializer on UsageTimeBucketResultUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      UsageTimeBucketResultUnionOrganizationUsageCompletionsResult: 'organization.usage.completions.result',
-      UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult: 'organization.usage.embeddings.result',
-      UsageTimeBucketResultUnionOrganizationUsageModerationsResult: 'organization.usage.moderations.result',
-      UsageTimeBucketResultUnionOrganizationUsageImagesResult: 'organization.usage.images.result',
-      UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult: 'organization.usage.audio_speeches.result',
-      UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult: 'organization.usage.audio_transcriptions.result',
-      UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult: 'organization.usage.vector_stores.result',
-      UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult: 'organization.usage.code_interpreter_sessions.result',
-      UsageTimeBucketResultUnionOrganizationCostsResult: 'organization.costs.result',
+      UsageCompletionsResult: 'organization.usage.completions.result',
+      UsageEmbeddingsResult: 'organization.usage.embeddings.result',
+      UsageModerationsResult: 'organization.usage.moderations.result',
+      UsageImagesResult: 'organization.usage.images.result',
+      UsageAudioSpeechesResult: 'organization.usage.audio_speeches.result',
+      UsageAudioTranscriptionsResult: 'organization.usage.audio_transcriptions.result',
+      UsageVectorStoresResult: 'organization.usage.vector_stores.result',
+      UsageCodeInterpreterSessionsResult: 'organization.usage.code_interpreter_sessions.result',
+      CostsResult: 'organization.costs.result',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageCompletionsResult] => UsageTimeBucketResultUnionOrganizationUsageCompletionsResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult] => UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageModerationsResult] => UsageTimeBucketResultUnionOrganizationUsageModerationsResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageImagesResult] => UsageTimeBucketResultUnionOrganizationUsageImagesResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult] => UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult] => UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult] => UsageTimeBucketResultUnionOrganizationUsageVectorStoresResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult] => UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResultMapper.fromJson(json),
-      _ when value == effective[UsageTimeBucketResultUnionOrganizationCostsResult] => UsageTimeBucketResultUnionOrganizationCostsResultMapper.fromJson(json),
+      _ when value == effective[UsageCompletionsResult] => UsageCompletionsResultMapper.fromJson(json),
+      _ when value == effective[UsageEmbeddingsResult] => UsageEmbeddingsResultMapper.fromJson(json),
+      _ when value == effective[UsageModerationsResult] => UsageModerationsResultMapper.fromJson(json),
+      _ when value == effective[UsageImagesResult] => UsageImagesResultMapper.fromJson(json),
+      _ when value == effective[UsageAudioSpeechesResult] => UsageAudioSpeechesResultMapper.fromJson(json),
+      _ when value == effective[UsageAudioTranscriptionsResult] => UsageAudioTranscriptionsResultMapper.fromJson(json),
+      _ when value == effective[UsageVectorStoresResult] => UsageVectorStoresResultMapper.fromJson(json),
+      _ when value == effective[UsageCodeInterpreterSessionsResult] =>
+        UsageCodeInterpreterSessionsResultMapper.fromJson(json),
+      _ when value == effective[CostsResult] => CostsResultMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for UsageTimeBucketResultUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.completions.result')
-class UsageTimeBucketResultUnionOrganizationUsageCompletionsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageCompletionsResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageCompletionsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageCompletionsResultMappable {
   @MappableField(key: 'object')
   final UsageCompletionsResultObjectObjectEnum objectEnum;
   @MappableField(key: 'input_tokens')
@@ -119,10 +125,11 @@ class UsageTimeBucketResultUnionOrganizationUsageCompletionsResult extends Usage
     required this.model,
     required this.batch,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.embeddings.result')
-class UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResultMappable {
   @MappableField(key: 'object')
   final UsageEmbeddingsResultObjectObjectEnum objectEnum;
   @MappableField(key: 'input_tokens')
@@ -146,10 +153,11 @@ class UsageTimeBucketResultUnionOrganizationUsageEmbeddingsResult extends UsageT
     required this.apiKeyId,
     required this.model,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.moderations.result')
-class UsageTimeBucketResultUnionOrganizationUsageModerationsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageModerationsResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageModerationsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageModerationsResultMappable {
   @MappableField(key: 'object')
   final UsageModerationsResultObjectObjectEnum objectEnum;
   @MappableField(key: 'input_tokens')
@@ -173,10 +181,11 @@ class UsageTimeBucketResultUnionOrganizationUsageModerationsResult extends Usage
     required this.apiKeyId,
     required this.model,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.images.result')
-class UsageTimeBucketResultUnionOrganizationUsageImagesResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageImagesResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageImagesResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageImagesResultMappable {
   @MappableField(key: 'object')
   final UsageImagesResultObjectObjectEnum objectEnum;
   final int images;
@@ -203,10 +212,11 @@ class UsageTimeBucketResultUnionOrganizationUsageImagesResult extends UsageTimeB
     required this.apiKeyId,
     required this.model,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.audio_speeches.result')
-class UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResultMappable {
   @MappableField(key: 'object')
   final UsageAudioSpeechesResultObjectObjectEnum objectEnum;
   final int characters;
@@ -229,10 +239,15 @@ class UsageTimeBucketResultUnionOrganizationUsageAudioSpeechesResult extends Usa
     required this.apiKeyId,
     required this.model,
   });
-
 }
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.audio_transcriptions.result')
-class UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResultMappable {
+
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'organization.usage.audio_transcriptions.result',
+)
+class UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResultMappable {
   @MappableField(key: 'object')
   final UsageAudioTranscriptionsResultObjectObjectEnum objectEnum;
   final int seconds;
@@ -255,10 +270,11 @@ class UsageTimeBucketResultUnionOrganizationUsageAudioTranscriptionsResult exten
     required this.apiKeyId,
     required this.model,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.vector_stores.result')
-class UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageVectorStoresResultMappable {
+class UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageVectorStoresResultMappable {
   @MappableField(key: 'object')
   final UsageVectorStoresResultObjectObjectEnum objectEnum;
   @MappableField(key: 'usage_bytes')
@@ -271,10 +287,15 @@ class UsageTimeBucketResultUnionOrganizationUsageVectorStoresResult extends Usag
     required this.usageBytes,
     required this.projectId,
   });
-
 }
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.code_interpreter_sessions.result')
-class UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResultMappable {
+
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'organization.usage.code_interpreter_sessions.result',
+)
+class UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResultMappable {
   @MappableField(key: 'object')
   final UsageCodeInterpreterSessionsResultObjectObjectEnum objectEnum;
   @MappableField(key: 'num_sessions')
@@ -287,10 +308,11 @@ class UsageTimeBucketResultUnionOrganizationUsageCodeInterpreterSessionsResult e
     required this.numSessions,
     required this.projectId,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.costs.result')
-class UsageTimeBucketResultUnionOrganizationCostsResult extends UsageTimeBucketResultUnion with UsageTimeBucketResultUnionOrganizationCostsResultMappable {
+class UsageTimeBucketResultUnionOrganizationCostsResult extends UsageTimeBucketResultUnion
+    with UsageTimeBucketResultUnionOrganizationCostsResultMappable {
   @MappableField(key: 'object')
   final CostsResultObjectObjectEnum objectEnum;
   @MappableField(key: 'amount')
@@ -306,5 +328,4 @@ class UsageTimeBucketResultUnionOrganizationCostsResult extends UsageTimeBucketR
     required this.lineItem,
     required this.projectId,
   });
-
 }

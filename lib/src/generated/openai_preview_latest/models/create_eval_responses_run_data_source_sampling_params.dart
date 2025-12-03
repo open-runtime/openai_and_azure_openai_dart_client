@@ -22,7 +22,6 @@ class CreateEvalResponsesRunDataSourceSamplingParams with CreateEvalResponsesRun
   final num topP;
   final int seed;
 
-  static CreateEvalResponsesRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceSamplingParamsMapper.fromJson(json);
-
+  static CreateEvalResponsesRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) =>
+      CreateEvalResponsesRunDataSourceSamplingParamsMapper.fromJson(json);
 }
-

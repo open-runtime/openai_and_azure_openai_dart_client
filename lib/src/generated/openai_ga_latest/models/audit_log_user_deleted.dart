@@ -8,13 +8,9 @@ part 'audit_log_user_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogUserDeleted with AuditLogUserDeletedMappable {
-  const AuditLogUserDeleted({
-    this.id,
-  });
+  const AuditLogUserDeleted({this.id});
 
   final String? id;
 
   static AuditLogUserDeleted fromJson(Map<String, dynamic> json) => AuditLogUserDeletedMapper.fromJson(json);
-
 }
-

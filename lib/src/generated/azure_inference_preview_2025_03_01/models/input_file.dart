@@ -11,14 +11,9 @@ part 'input_file.mapper.dart';
 
 /// A file input to the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class InputFile with InputFileMappable {
-  const InputFile({
-    required this.type,
-    this.fileId,
-    this.filename,
-    this.fileData,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
+class InputFile extends InputContent with InputFileMappable {
+  const InputFile({required this.type, this.fileId, this.filename, this.fileData});
 
   final InputFileType type;
   @MappableField(key: 'file_id')
@@ -28,6 +23,4 @@ class InputFile with InputFileMappable {
   final String? fileData;
 
   static InputFile fromJson(Map<String, dynamic> json) => InputFileMapper.fromJson(json);
-
 }
-

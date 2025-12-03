@@ -8,7 +8,7 @@
 part of 'response_reasoning_summary_part_added_event.dart';
 
 class ResponseReasoningSummaryPartAddedEventMapper
-    extends ClassMapperBase<ResponseReasoningSummaryPartAddedEvent> {
+    extends SubClassMapperBase<ResponseReasoningSummaryPartAddedEvent> {
   ResponseReasoningSummaryPartAddedEventMapper._();
 
   static ResponseReasoningSummaryPartAddedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseReasoningSummaryPartAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryPartAddedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseReasoningSummaryPartAddedEventTypeMapper.ensureInitialized();
       ResponseReasoningSummaryPartAddedEventPartMapper.ensureInitialized();
     }
@@ -85,6 +86,14 @@ class ResponseReasoningSummaryPartAddedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.reasoning_summary_part.added';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseReasoningSummaryPartAddedEvent _instantiate(
     DecodingData data,
@@ -179,13 +188,14 @@ abstract class ResponseReasoningSummaryPartAddedEventCopyWith<
   $In extends ResponseReasoningSummaryPartAddedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseReasoningSummaryPartAddedEventPartCopyWith<
     $R,
     ResponseReasoningSummaryPartAddedEventPart,
     ResponseReasoningSummaryPartAddedEventPart
   >
   get responseReasoningSummaryPartAddedEventPart;
+  @override
   $R call({
     ResponseReasoningSummaryPartAddedEventType? type,
     String? itemId,

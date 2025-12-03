@@ -17,38 +17,38 @@ part 'include_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum IncludeEnum {
   /// Incorrect name has been replaced. Original name: `file_search_call.results`.
-  @MappableValue('file_search_call.results') 
+  @MappableValue('file_search_call.results')
   undefined0,
 
   /// Incorrect name has been replaced. Original name: `web_search_call.results`.
-  @MappableValue('web_search_call.results') 
+  @MappableValue('web_search_call.results')
   undefined1,
 
   /// Incorrect name has been replaced. Original name: `web_search_call.action.sources`.
-  @MappableValue('web_search_call.action.sources') 
+  @MappableValue('web_search_call.action.sources')
   undefined2,
 
   /// Incorrect name has been replaced. Original name: `message.input_image.image_url`.
-  @MappableValue('message.input_image.image_url') 
+  @MappableValue('message.input_image.image_url')
   undefined3,
 
   /// Incorrect name has been replaced. Original name: `computer_call_output.output.image_url`.
-  @MappableValue('computer_call_output.output.image_url') 
+  @MappableValue('computer_call_output.output.image_url')
   undefined4,
 
   /// Incorrect name has been replaced. Original name: `code_interpreter_call.outputs`.
-  @MappableValue('code_interpreter_call.outputs') 
+  @MappableValue('code_interpreter_call.outputs')
   undefined5,
 
   /// Incorrect name has been replaced. Original name: `reasoning.encrypted_content`.
-  @MappableValue('reasoning.encrypted_content') 
+  @MappableValue('reasoning.encrypted_content')
   undefined6,
 
   /// Incorrect name has been replaced. Original name: `message.output_text.logprobs`.
-  @MappableValue('message.output_text.logprobs') 
+  @MappableValue('message.output_text.logprobs')
   undefined7,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

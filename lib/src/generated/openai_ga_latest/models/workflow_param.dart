@@ -12,12 +12,7 @@ part 'workflow_param.mapper.dart';
 /// Workflow reference and overrides applied to the chat session.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkflowParam with WorkflowParamMappable {
-  const WorkflowParam({
-    required this.id,
-    this.version,
-    this.stateVariables,
-    this.tracing,
-  });
+  const WorkflowParam({required this.id, this.version, this.stateVariables, this.tracing});
 
   final String id;
   final String? version;
@@ -26,6 +21,4 @@ class WorkflowParam with WorkflowParamMappable {
   final WorkflowTracingParam? tracing;
 
   static WorkflowParam fromJson(Map<String, dynamic> json) => WorkflowParamMapper.fromJson(json);
-
 }
-

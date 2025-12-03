@@ -66,6 +66,4 @@ class RunStepObject with RunStepObjectMappable {
   final RunStepCompletionUsage? usage;
 
   static RunStepObject fromJson(Map<String, dynamic> json) => RunStepObjectMapper.fromJson(json);
-
 }
-

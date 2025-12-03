@@ -22,8 +22,9 @@ part 'realtime_server_event_input_audio_buffer_timeout_triggered.mapper.dart';
 /// that didn't trigger VAD but is still detected by the model, so the model may respond with.
 /// something relevant to the conversation or a prompt to continue speaking.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventInputAudioBufferTimeoutTriggered with RealtimeServerEventInputAudioBufferTimeoutTriggeredMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.timeout_triggered')
+class RealtimeServerEventInputAudioBufferTimeoutTriggered extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferTimeoutTriggeredMappable {
   const RealtimeServerEventInputAudioBufferTimeoutTriggered({
     required this.eventId,
     required this.type,
@@ -42,7 +43,6 @@ class RealtimeServerEventInputAudioBufferTimeoutTriggered with RealtimeServerEve
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventInputAudioBufferTimeoutTriggered fromJson(Map<String, dynamic> json) => RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper.fromJson(json);
-
+  static RealtimeServerEventInputAudioBufferTimeoutTriggered fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper.fromJson(json);
 }
-

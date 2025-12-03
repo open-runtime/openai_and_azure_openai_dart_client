@@ -10,16 +10,13 @@ import 'web_search_location.dart';
 part 'create_chat_completion_request_web_search_options_user_location.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateChatCompletionRequestWebSearchOptionsUserLocation with CreateChatCompletionRequestWebSearchOptionsUserLocationMappable {
-  const CreateChatCompletionRequestWebSearchOptionsUserLocation({
-    required this.type,
-    required this.approximate,
-  });
+class CreateChatCompletionRequestWebSearchOptionsUserLocation
+    with CreateChatCompletionRequestWebSearchOptionsUserLocationMappable {
+  const CreateChatCompletionRequestWebSearchOptionsUserLocation({required this.type, required this.approximate});
 
   final CreateChatCompletionRequestWebSearchOptionsUserLocationType type;
   final WebSearchLocation approximate;
 
-  static CreateChatCompletionRequestWebSearchOptionsUserLocation fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestWebSearchOptionsUserLocationMapper.fromJson(json);
-
+  static CreateChatCompletionRequestWebSearchOptionsUserLocation fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestWebSearchOptionsUserLocationMapper.fromJson(json);
 }
-

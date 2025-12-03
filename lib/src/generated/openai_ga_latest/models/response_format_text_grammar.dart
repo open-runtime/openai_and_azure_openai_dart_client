@@ -13,15 +13,11 @@ part 'response_format_text_grammar.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatTextGrammar with ResponseFormatTextGrammarMappable {
-  const ResponseFormatTextGrammar({
-    required this.type,
-    required this.grammar,
-  });
+  const ResponseFormatTextGrammar({required this.type, required this.grammar});
 
   final ResponseFormatTextGrammarType type;
   final String grammar;
 
-  static ResponseFormatTextGrammar fromJson(Map<String, dynamic> json) => ResponseFormatTextGrammarMapper.fromJson(json);
-
+  static ResponseFormatTextGrammar fromJson(Map<String, dynamic> json) =>
+      ResponseFormatTextGrammarMapper.fromJson(json);
 }
-

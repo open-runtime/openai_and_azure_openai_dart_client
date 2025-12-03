@@ -13,8 +13,8 @@ part 'create_eval_responses_run_data_source.mapper.dart';
 
 /// A ResponsesRunDataSource object describing a model sampling configuration.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
+class CreateEvalResponsesRunDataSource extends EvalRunDataSourceUnion with CreateEvalResponsesRunDataSourceMappable {
   const CreateEvalResponsesRunDataSource({
     required this.source,
     this.inputMessages,
@@ -31,7 +31,6 @@ class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMapp
   final String? model;
   final CreateEvalResponsesRunDataSourceType type;
 
-  static CreateEvalResponsesRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalResponsesRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalResponsesRunDataSourceMapper.fromJson(json);
 }
-

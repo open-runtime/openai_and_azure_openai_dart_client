@@ -10,10 +10,10 @@ part 'input_file_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputFileType {
-  @MappableValue('input_file') 
+  @MappableValue('input_file')
   inputFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

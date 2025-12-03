@@ -29,7 +29,6 @@ class ListFineTuningJobCheckpointsResponse with ListFineTuningJobCheckpointsResp
   @MappableField(key: 'last_id')
   final String? lastId;
 
-  static ListFineTuningJobCheckpointsResponse fromJson(Map<String, dynamic> json) => ListFineTuningJobCheckpointsResponseMapper.fromJson(json);
-
+  static ListFineTuningJobCheckpointsResponse fromJson(Map<String, dynamic> json) =>
+      ListFineTuningJobCheckpointsResponseMapper.fromJson(json);
 }
-

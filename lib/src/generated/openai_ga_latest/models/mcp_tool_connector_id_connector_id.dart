@@ -23,31 +23,31 @@ part 'mcp_tool_connector_id_connector_id.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum McpToolConnectorIdConnectorId {
-  @MappableValue('connector_dropbox') 
+  @MappableValue('connector_dropbox')
   connectorDropbox,
 
-  @MappableValue('connector_gmail') 
+  @MappableValue('connector_gmail')
   connectorGmail,
 
-  @MappableValue('connector_googlecalendar') 
+  @MappableValue('connector_googlecalendar')
   connectorGooglecalendar,
 
-  @MappableValue('connector_googledrive') 
+  @MappableValue('connector_googledrive')
   connectorGoogledrive,
 
-  @MappableValue('connector_microsoftteams') 
+  @MappableValue('connector_microsoftteams')
   connectorMicrosoftteams,
 
-  @MappableValue('connector_outlookcalendar') 
+  @MappableValue('connector_outlookcalendar')
   connectorOutlookcalendar,
 
-  @MappableValue('connector_outlookemail') 
+  @MappableValue('connector_outlookemail')
   connectorOutlookemail,
 
-  @MappableValue('connector_sharepoint') 
+  @MappableValue('connector_sharepoint')
   connectorSharepoint,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -56,5 +56,6 @@ enum McpToolConnectorIdConnectorId {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<McpToolConnectorIdConnectorId> get $valuesDefined => values.where((value) => value != McpToolConnectorIdConnectorId.unknown).toList();
+  static List<McpToolConnectorIdConnectorId> get $valuesDefined =>
+      values.where((value) => value != McpToolConnectorIdConnectorId.unknown).toList();
 }

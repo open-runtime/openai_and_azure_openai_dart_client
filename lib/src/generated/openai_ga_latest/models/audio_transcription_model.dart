@@ -10,19 +10,19 @@ part 'audio_transcription_model.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum AudioTranscriptionModel {
-  @MappableValue('whisper-1') 
+  @MappableValue('whisper-1')
   whisper1,
 
-  @MappableValue('gpt-4o-mini-transcribe') 
+  @MappableValue('gpt-4o-mini-transcribe')
   gpt4oMiniTranscribe,
 
-  @MappableValue('gpt-4o-transcribe') 
+  @MappableValue('gpt-4o-transcribe')
   gpt4oTranscribe,
 
-  @MappableValue('gpt-4o-transcribe-diarize') 
+  @MappableValue('gpt-4o-transcribe-diarize')
   gpt4oTranscribeDiarize,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum AudioTranscriptionModel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AudioTranscriptionModel> get $valuesDefined => values.where((value) => value != AudioTranscriptionModel.unknown).toList();
+  static List<AudioTranscriptionModel> get $valuesDefined =>
+      values.where((value) => value != AudioTranscriptionModel.unknown).toList();
 }

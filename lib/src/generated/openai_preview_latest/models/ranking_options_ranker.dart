@@ -9,13 +9,13 @@ part 'ranking_options_ranker.mapper.dart';
 /// The ranker to use for the file search.
 @MappableEnum(defaultValue: 'unknown')
 enum RankingOptionsRanker {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('default-2024-11-15') 
+  @MappableValue('default-2024-11-15')
   default20241115,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RankingOptionsRanker {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RankingOptionsRanker> get $valuesDefined => values.where((value) => value != RankingOptionsRanker.unknown).toList();
+  static List<RankingOptionsRanker> get $valuesDefined =>
+      values.where((value) => value != RankingOptionsRanker.unknown).toList();
 }

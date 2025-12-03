@@ -44,14 +44,19 @@ import 'web_search_tool_call_type.dart';
 
 part 'output_item.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputItemMessage,
-  OutputItemFileSearchCall,
-  OutputItemFunctionCall,
-  OutputItemWebSearchCall,
-  OutputItemComputerCall,
-  OutputItemReasoning
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    OutputItemMessage,
+    OutputItemFileSearchCall,
+    OutputItemFunctionCall,
+    OutputItemWebSearchCall,
+    OutputItemComputerCall,
+    OutputItemReasoning,
+  ],
+)
 sealed class OutputItem with OutputItemMappable {
   const OutputItem();
 
@@ -61,28 +66,24 @@ sealed class OutputItem with OutputItemMappable {
 }
 
 extension OutputItemUnionDeserializer on OutputItem {
-  static OutputItem tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static OutputItem tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      OutputItemMessage: 'message',
-      OutputItemFileSearchCall: 'file_search_call',
-      OutputItemFunctionCall: 'function_call',
-      OutputItemWebSearchCall: 'web_search_call',
-      OutputItemComputerCall: 'computer_call',
-      OutputItemReasoning: 'reasoning',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      FunctionToolCall: 'function_call',
+      WebSearchToolCall: 'web_search_call',
+      ComputerToolCall: 'computer_call',
+      ReasoningItem: 'reasoning',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputItemMessage] => OutputItemMessageMapper.fromJson(json),
-      _ when value == effective[OutputItemFileSearchCall] => OutputItemFileSearchCallMapper.fromJson(json),
-      _ when value == effective[OutputItemFunctionCall] => OutputItemFunctionCallMapper.fromJson(json),
-      _ when value == effective[OutputItemWebSearchCall] => OutputItemWebSearchCallMapper.fromJson(json),
-      _ when value == effective[OutputItemComputerCall] => OutputItemComputerCallMapper.fromJson(json),
-      _ when value == effective[OutputItemReasoning] => OutputItemReasoningMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionToolCall] => FunctionToolCallMapper.fromJson(json),
+      _ when value == effective[WebSearchToolCall] => WebSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[ReasoningItem] => ReasoningItemMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputItem'),
     };
   }
@@ -148,11 +149,7 @@ class OutputItemWebSearchCall extends OutputItem with OutputItemWebSearchCallMap
   final OutputItemType4 type;
   final OutputItemStatus3 status;
 
-  const OutputItemWebSearchCall({
-    required this.id,
-    required this.type,
-    required this.status,
-  });
+  const OutputItemWebSearchCall({required this.id, required this.type, required this.status});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
@@ -183,10 +180,5 @@ class OutputItemReasoning extends OutputItem with OutputItemReasoningMappable {
   final List<OutputItemSummary> summary;
   final OutputItemStatus? status;
 
-  const OutputItemReasoning({
-    required this.type,
-    required this.id,
-    required this.summary,
-    required this.status,
-  });
+  const OutputItemReasoning({required this.type, required this.id, required this.summary, required this.status});
 }

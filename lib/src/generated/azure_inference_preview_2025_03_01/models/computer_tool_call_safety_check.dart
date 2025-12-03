@@ -10,17 +10,12 @@ part 'computer_tool_call_safety_check.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ComputerToolCallSafetyCheck with ComputerToolCallSafetyCheckMappable {
-  const ComputerToolCallSafetyCheck({
-    required this.id,
-    required this.code,
-    required this.message,
-  });
+  const ComputerToolCallSafetyCheck({required this.id, required this.code, required this.message});
 
   final String id;
   final String code;
   final String message;
 
-  static ComputerToolCallSafetyCheck fromJson(Map<String, dynamic> json) => ComputerToolCallSafetyCheckMapper.fromJson(json);
-
+  static ComputerToolCallSafetyCheck fromJson(Map<String, dynamic> json) =>
+      ComputerToolCallSafetyCheckMapper.fromJson(json);
 }
-

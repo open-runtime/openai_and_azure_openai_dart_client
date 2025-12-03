@@ -9,10 +9,10 @@ part 'url_annotation_source_type.mapper.dart';
 /// Type discriminator that is always `url`.
 @MappableEnum(defaultValue: 'unknown')
 enum UrlAnnotationSourceType {
-  @MappableValue('url') 
+  @MappableValue('url')
   url,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum UrlAnnotationSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UrlAnnotationSourceType> get $valuesDefined => values.where((value) => value != UrlAnnotationSourceType.unknown).toList();
+  static List<UrlAnnotationSourceType> get $valuesDefined =>
+      values.where((value) => value != UrlAnnotationSourceType.unknown).toList();
 }

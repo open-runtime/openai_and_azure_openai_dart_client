@@ -19,7 +19,6 @@ class MessageContentImageFileObjectImageFile with MessageContentImageFileObjectI
   final String fileId;
   final MessageContentImageFileObjectImageFileDetail detail;
 
-  static MessageContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) => MessageContentImageFileObjectImageFileMapper.fromJson(json);
-
+  static MessageContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) =>
+      MessageContentImageFileObjectImageFileMapper.fromJson(json);
 }
-

@@ -24,6 +24,4 @@ class UploadFileStartBody with UploadFileStartBodyMappable {
   final String mimeType;
 
   static UploadFileStartBody fromJson(Map<String, dynamic> json) => UploadFileStartBodyMapper.fromJson(json);
-
 }
-

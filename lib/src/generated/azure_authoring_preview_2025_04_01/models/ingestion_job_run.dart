@@ -13,14 +13,7 @@ part 'ingestion_job_run.mapper.dart';
 /// The details of a job run
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobRun with IngestionJobRunMappable {
-  const IngestionJobRun({
-    this.jobId,
-    this.runId,
-    this.status,
-    this.error,
-    this.warnings,
-    this.progress,
-  });
+  const IngestionJobRun({this.jobId, this.runId, this.status, this.error, this.warnings, this.progress});
 
   final String? jobId;
   final String? runId;
@@ -30,6 +23,4 @@ class IngestionJobRun with IngestionJobRunMappable {
   final IngestionJobProgress? progress;
 
   static IngestionJobRun fromJson(Map<String, dynamic> json) => IngestionJobRunMapper.fromJson(json);
-
 }
-

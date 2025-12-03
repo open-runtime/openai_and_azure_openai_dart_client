@@ -26,6 +26,4 @@ class RunGraderResponse with RunGraderResponseMappable {
   final Map<String, dynamic> modelGraderTokenUsagePerModel;
 
   static RunGraderResponse fromJson(Map<String, dynamic> json) => RunGraderResponseMapper.fromJson(json);
-
 }
-

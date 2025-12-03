@@ -9,10 +9,10 @@ part 'tool_type8.mapper.dart';
 /// The type of the shell tool. Always `shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType8 {
-  @MappableValue('shell') 
+  @MappableValue('shell')
   shell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

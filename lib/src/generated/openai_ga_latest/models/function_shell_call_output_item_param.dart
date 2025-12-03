@@ -10,8 +10,8 @@ import 'function_shell_call_output_item_param_type.dart';
 part 'function_shell_call_output_item_param.mapper.dart';
 
 /// The streamed output items emitted by a function shell tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCallOutputItemParam with FunctionShellCallOutputItemParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
+class FunctionShellCallOutputItemParam extends ItemUnion with FunctionShellCallOutputItemParamMappable {
   const FunctionShellCallOutputItemParam({
     required this.callId,
     required this.output,
@@ -28,7 +28,6 @@ class FunctionShellCallOutputItemParam with FunctionShellCallOutputItemParamMapp
   @MappableField(key: 'max_output_length')
   final int? maxOutputLength;
 
-  static FunctionShellCallOutputItemParam fromJson(Map<String, dynamic> json) => FunctionShellCallOutputItemParamMapper.fromJson(json);
-
+  static FunctionShellCallOutputItemParam fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallOutputItemParamMapper.fromJson(json);
 }
-

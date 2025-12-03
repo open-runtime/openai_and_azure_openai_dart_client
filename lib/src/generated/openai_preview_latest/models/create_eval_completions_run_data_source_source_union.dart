@@ -15,18 +15,22 @@ import 'metadata.dart';
 
 part 'create_eval_completions_run_data_source_source_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalCompletionsRunDataSourceSourceUnionFileContent,
-  CreateEvalCompletionsRunDataSourceSourceUnionFileId,
-  CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalCompletionsRunDataSourceSourceUnionFileContent,
+    CreateEvalCompletionsRunDataSourceSourceUnionFileId,
+    CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions,
+  ],
+)
 sealed class CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionMappable {
   const CreateEvalCompletionsRunDataSourceSourceUnion();
 
   static CreateEvalCompletionsRunDataSourceSourceUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalCompletionsRunDataSourceSourceUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalCompletionsRunDataSourceSourceUnionDeserializer on CreateEvalCompletionsRunDataSourceSourceUnion {
@@ -36,45 +40,45 @@ extension CreateEvalCompletionsRunDataSourceSourceUnionDeserializer on CreateEva
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalCompletionsRunDataSourceSourceUnionFileContent: 'file_content',
-      CreateEvalCompletionsRunDataSourceSourceUnionFileId: 'file_id',
-      CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions: 'stored_completions',
+      EvalJsonlFileContentSource: 'file_content',
+      EvalJsonlFileIdSource: 'file_id',
+      EvalStoredCompletionsSource: 'stored_completions',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSourceUnionFileContent] => CreateEvalCompletionsRunDataSourceSourceUnionFileContentMapper.fromJson(json),
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSourceUnionFileId] => CreateEvalCompletionsRunDataSourceSourceUnionFileIdMapper.fromJson(json),
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions] => CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalCompletionsRunDataSourceSourceUnion'),
+      _ when value == effective[EvalJsonlFileContentSource] => EvalJsonlFileContentSourceMapper.fromJson(json),
+      _ when value == effective[EvalJsonlFileIdSource] => EvalJsonlFileIdSourceMapper.fromJson(json),
+      _ when value == effective[EvalStoredCompletionsSource] => EvalStoredCompletionsSourceMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalCompletionsRunDataSourceSourceUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
-class CreateEvalCompletionsRunDataSourceSourceUnionFileContent extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionFileContentMappable {
+class CreateEvalCompletionsRunDataSourceSourceUnionFileContent extends CreateEvalCompletionsRunDataSourceSourceUnion
+    with CreateEvalCompletionsRunDataSourceSourceUnionFileContentMappable {
   final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
-  const CreateEvalCompletionsRunDataSourceSourceUnionFileContent({
-    required this.type,
-    required this.content,
-  });
-
+  const CreateEvalCompletionsRunDataSourceSourceUnionFileContent({required this.type, required this.content});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
-class CreateEvalCompletionsRunDataSourceSourceUnionFileId extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionFileIdMappable {
+class CreateEvalCompletionsRunDataSourceSourceUnionFileId extends CreateEvalCompletionsRunDataSourceSourceUnion
+    with CreateEvalCompletionsRunDataSourceSourceUnionFileIdMappable {
   final EvalJsonlFileIdSourceType type;
   final String id;
 
-  const CreateEvalCompletionsRunDataSourceSourceUnionFileId({
-    required this.type,
-    required this.id,
-  });
-
+  const CreateEvalCompletionsRunDataSourceSourceUnionFileId({required this.type, required this.id});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
-class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions extends CreateEvalCompletionsRunDataSourceSourceUnion with CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMappable {
+class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions
+    extends CreateEvalCompletionsRunDataSourceSourceUnion
+    with CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletionsMappable {
   final EvalStoredCompletionsSourceType type;
   final Metadata? metadata;
   final String? model;
@@ -92,5 +96,4 @@ class CreateEvalCompletionsRunDataSourceSourceUnionStoredCompletions extends Cre
     required this.createdBefore,
     required this.limit,
   });
-
 }

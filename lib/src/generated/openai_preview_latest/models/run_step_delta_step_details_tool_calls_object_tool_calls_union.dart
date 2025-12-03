@@ -15,50 +15,64 @@ import 'run_step_delta_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_object_tool_calls_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter,
-  RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch,
-  RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction
-])
-sealed class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter,
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch,
+    RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction,
+  ],
+)
+sealed class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionMappable {
   const RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion();
 
   static RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion fromJson(Map<String, dynamic> json) {
     return RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
-extension RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionDeserializer on RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion {
+extension RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionDeserializer
+    on RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion {
   static RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter: 'code_interpreter',
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch: 'file_search',
-      RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction: 'function',
+      RunStepDeltaStepDetailsToolCallsCodeObject: 'code_interpreter',
+      RunStepDeltaStepDetailsToolCallsFileSearchObject: 'file_search',
+      RunStepDeltaStepDetailsToolCallsFunctionObject: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter] => RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch] => RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction] => RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion'),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsCodeObject] =>
+        RunStepDeltaStepDetailsToolCallsCodeObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsFileSearchObject] =>
+        RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsFunctionObject] =>
+        RunStepDeltaStepDetailsToolCallsFunctionObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMappable {
+class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter
+    extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
   final RunStepDeltaStepDetailsToolCallsCodeObjectType type;
   @MappableField(key: 'code_interpreter')
-  final RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
+  final RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter?
+  runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
 
   const RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter({
     required this.indexField,
@@ -66,10 +80,12 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extend
     required this.type,
     required this.runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchMappable {
+class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch
+    extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearchMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
@@ -83,10 +99,12 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFileSearch extends Run
     required this.type,
     required this.fileSearch,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionMappable {
+class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction
+    extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunctionMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
@@ -100,5 +118,4 @@ class RunStepDeltaStepDetailsToolCallsObjectToolCallsUnionFunction extends RunSt
     required this.type,
     required this.runStepDeltaStepDetailsToolCallsFunctionObjectFunction,
   });
-
 }

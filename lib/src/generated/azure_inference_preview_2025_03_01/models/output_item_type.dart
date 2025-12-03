@@ -10,10 +10,10 @@ part 'output_item_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

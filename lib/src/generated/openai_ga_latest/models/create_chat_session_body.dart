@@ -32,6 +32,4 @@ class CreateChatSessionBody with CreateChatSessionBodyMappable {
   final ChatkitConfigurationParam? chatkitConfiguration;
 
   static CreateChatSessionBody fromJson(Map<String, dynamic> json) => CreateChatSessionBodyMapper.fromJson(json);
-
 }
-

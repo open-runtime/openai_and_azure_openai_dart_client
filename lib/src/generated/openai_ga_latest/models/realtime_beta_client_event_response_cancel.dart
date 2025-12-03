@@ -12,11 +12,7 @@ part 'realtime_beta_client_event_response_cancel.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventResponseCancel with RealtimeBetaClientEventResponseCancelMappable {
-  const RealtimeBetaClientEventResponseCancel({
-    required this.type,
-    this.eventId,
-    this.responseId,
-  });
+  const RealtimeBetaClientEventResponseCancel({required this.type, this.eventId, this.responseId});
 
   final dynamic type;
   @MappableField(key: 'event_id')
@@ -24,7 +20,6 @@ class RealtimeBetaClientEventResponseCancel with RealtimeBetaClientEventResponse
   @MappableField(key: 'response_id')
   final String? responseId;
 
-  static RealtimeBetaClientEventResponseCancel fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventResponseCancelMapper.fromJson(json);
-
+  static RealtimeBetaClientEventResponseCancel fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventResponseCancelMapper.fromJson(json);
 }
-

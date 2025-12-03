@@ -10,10 +10,10 @@ part 'realtime_client_event_input_audio_buffer_append_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventInputAudioBufferAppendType {
   /// Incorrect name has been replaced. Original name: `input_audio_buffer.append`.
-  @MappableValue('input_audio_buffer.append') 
+  @MappableValue('input_audio_buffer.append')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventInputAudioBufferAppendType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventInputAudioBufferAppendType> get $valuesDefined => values.where((value) => value != RealtimeClientEventInputAudioBufferAppendType.unknown).toList();
+  static List<RealtimeClientEventInputAudioBufferAppendType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventInputAudioBufferAppendType.unknown).toList();
 }

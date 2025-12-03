@@ -9,17 +9,12 @@ import 'summary_text_content_type.dart';
 part 'summary_text_content.mapper.dart';
 
 /// A summary text from the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class SummaryTextContent with SummaryTextContentMappable {
-  const SummaryTextContent({
-    required this.text,
-    this.type = SummaryTextContentType.summaryText,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'summary_text')
+class SummaryTextContent extends MessageContentUnion with SummaryTextContentMappable {
+  const SummaryTextContent({required this.text, this.type = SummaryTextContentType.summaryText});
 
   final String text;
   final SummaryTextContentType type;
 
   static SummaryTextContent fromJson(Map<String, dynamic> json) => SummaryTextContentMapper.fromJson(json);
-
 }
-

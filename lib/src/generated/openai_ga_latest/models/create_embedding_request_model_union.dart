@@ -10,7 +10,11 @@ part 'create_embedding_request_model_union.mapper.dart';
 
 /// ID of the model to use. You can use the [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](https://platform.openai.com/docs/models) for descriptions of them.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateEmbeddingRequestModelUnionVariantEnum, CreateEmbeddingRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateEmbeddingRequestModelUnionVariantEnum, CreateEmbeddingRequestModelUnionVariantString],
+)
 sealed class CreateEmbeddingRequestModelUnion with CreateEmbeddingRequestModelUnionMappable {
   const CreateEmbeddingRequestModelUnion();
 
@@ -47,21 +51,19 @@ extension CreateEmbeddingRequestModelUnionDeserializer on CreateEmbeddingRequest
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEmbeddingRequestModelUnionVariantEnum extends CreateEmbeddingRequestModelUnion with CreateEmbeddingRequestModelUnionVariantEnumMappable {
+class CreateEmbeddingRequestModelUnionVariantEnum extends CreateEmbeddingRequestModelUnion
+    with CreateEmbeddingRequestModelUnionVariantEnumMappable {
   final CreateEmbeddingRequestModelUnionEnum value;
 
-  const CreateEmbeddingRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateEmbeddingRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEmbeddingRequestModelUnionVariantString extends CreateEmbeddingRequestModelUnion with CreateEmbeddingRequestModelUnionVariantStringMappable {
+class CreateEmbeddingRequestModelUnionVariantString extends CreateEmbeddingRequestModelUnion
+    with CreateEmbeddingRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateEmbeddingRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateEmbeddingRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

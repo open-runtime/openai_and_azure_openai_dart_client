@@ -11,7 +11,8 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_del
 /// Returned when the text value of an input audio transcription content part is updated.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta with RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMappable {
+class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta
+    with RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({
     required this.eventId,
     required this.type,
@@ -31,7 +32,6 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta with R
   final String? delta;
   final List<LogProbProperties>? logprobs;
 
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json);
 }
-

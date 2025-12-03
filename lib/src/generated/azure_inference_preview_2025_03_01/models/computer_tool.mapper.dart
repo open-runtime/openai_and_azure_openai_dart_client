@@ -7,13 +7,14 @@
 
 part of 'computer_tool.dart';
 
-class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
+class ComputerToolMapper extends SubClassMapperBase<ComputerTool> {
   ComputerToolMapper._();
 
   static ComputerToolMapper? _instance;
   static ComputerToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ComputerToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       ComputerToolTypeMapper.ensureInitialized();
       ComputerToolEnvironmentMapper.ensureInitialized();
     }
@@ -55,6 +56,13 @@ class ComputerToolMapper extends ClassMapperBase<ComputerTool> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'computer-preview';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static ComputerTool _instantiate(DecodingData data) {
     return ComputerTool(
@@ -126,7 +134,8 @@ extension ComputerToolValueCopy<$R, $Out>
 }
 
 abstract class ComputerToolCopyWith<$R, $In extends ComputerTool, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ComputerToolType? type,
     num? displayWidth,

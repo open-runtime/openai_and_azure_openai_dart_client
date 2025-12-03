@@ -173,61 +173,66 @@ import 'response_web_search_call_searching_event_type.dart';
 
 part 'response_stream_event.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ResponseStreamEventResponseAudioDelta,
-  ResponseStreamEventResponseAudioDone,
-  ResponseStreamEventResponseAudioTranscriptDelta,
-  ResponseStreamEventResponseAudioTranscriptDone,
-  ResponseStreamEventResponseCodeInterpreterCallCodeDelta,
-  ResponseStreamEventResponseCodeInterpreterCallCodeDone,
-  ResponseStreamEventResponseCodeInterpreterCallCompleted,
-  ResponseStreamEventResponseCodeInterpreterCallInProgress,
-  ResponseStreamEventResponseCodeInterpreterCallInterpreting,
-  ResponseStreamEventResponseCompleted,
-  ResponseStreamEventResponseContentPartAdded,
-  ResponseStreamEventResponseContentPartDone,
-  ResponseStreamEventResponseCreated,
-  ResponseStreamEventError,
-  ResponseStreamEventResponseFileSearchCallCompleted,
-  ResponseStreamEventResponseFileSearchCallInProgress,
-  ResponseStreamEventResponseFileSearchCallSearching,
-  ResponseStreamEventResponseFunctionCallArgumentsDelta,
-  ResponseStreamEventResponseFunctionCallArgumentsDone,
-  ResponseStreamEventResponseInProgress,
-  ResponseStreamEventResponseFailed,
-  ResponseStreamEventResponseIncomplete,
-  ResponseStreamEventResponseOutputItemAdded,
-  ResponseStreamEventResponseOutputItemDone,
-  ResponseStreamEventResponseReasoningSummaryPartAdded,
-  ResponseStreamEventResponseReasoningSummaryPartDone,
-  ResponseStreamEventResponseReasoningSummaryTextDelta,
-  ResponseStreamEventResponseReasoningSummaryTextDone,
-  ResponseStreamEventResponseReasoningTextDelta,
-  ResponseStreamEventResponseReasoningTextDone,
-  ResponseStreamEventResponseRefusalDelta,
-  ResponseStreamEventResponseRefusalDone,
-  ResponseStreamEventResponseOutputTextDelta,
-  ResponseStreamEventResponseOutputTextDone,
-  ResponseStreamEventResponseWebSearchCallCompleted,
-  ResponseStreamEventResponseWebSearchCallInProgress,
-  ResponseStreamEventResponseWebSearchCallSearching,
-  ResponseStreamEventResponseImageGenerationCallCompleted,
-  ResponseStreamEventResponseImageGenerationCallGenerating,
-  ResponseStreamEventResponseImageGenerationCallInProgress,
-  ResponseStreamEventResponseImageGenerationCallPartialImage,
-  ResponseStreamEventResponseMcpCallArgumentsDelta,
-  ResponseStreamEventResponseMcpCallArgumentsDone,
-  ResponseStreamEventResponseMcpCallCompleted,
-  ResponseStreamEventResponseMcpCallFailed,
-  ResponseStreamEventResponseMcpCallInProgress,
-  ResponseStreamEventResponseMcpListToolsCompleted,
-  ResponseStreamEventResponseMcpListToolsFailed,
-  ResponseStreamEventResponseMcpListToolsInProgress,
-  ResponseStreamEventResponseOutputTextAnnotationAdded,
-  ResponseStreamEventResponseQueued,
-  ResponseStreamEventResponseCustomToolCallInputDelta,
-  ResponseStreamEventResponseCustomToolCallInputDone
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ResponseStreamEventResponseAudioDelta,
+    ResponseStreamEventResponseAudioDone,
+    ResponseStreamEventResponseAudioTranscriptDelta,
+    ResponseStreamEventResponseAudioTranscriptDone,
+    ResponseStreamEventResponseCodeInterpreterCallCodeDelta,
+    ResponseStreamEventResponseCodeInterpreterCallCodeDone,
+    ResponseStreamEventResponseCodeInterpreterCallCompleted,
+    ResponseStreamEventResponseCodeInterpreterCallInProgress,
+    ResponseStreamEventResponseCodeInterpreterCallInterpreting,
+    ResponseStreamEventResponseCompleted,
+    ResponseStreamEventResponseContentPartAdded,
+    ResponseStreamEventResponseContentPartDone,
+    ResponseStreamEventResponseCreated,
+    ResponseStreamEventError,
+    ResponseStreamEventResponseFileSearchCallCompleted,
+    ResponseStreamEventResponseFileSearchCallInProgress,
+    ResponseStreamEventResponseFileSearchCallSearching,
+    ResponseStreamEventResponseFunctionCallArgumentsDelta,
+    ResponseStreamEventResponseFunctionCallArgumentsDone,
+    ResponseStreamEventResponseInProgress,
+    ResponseStreamEventResponseFailed,
+    ResponseStreamEventResponseIncomplete,
+    ResponseStreamEventResponseOutputItemAdded,
+    ResponseStreamEventResponseOutputItemDone,
+    ResponseStreamEventResponseReasoningSummaryPartAdded,
+    ResponseStreamEventResponseReasoningSummaryPartDone,
+    ResponseStreamEventResponseReasoningSummaryTextDelta,
+    ResponseStreamEventResponseReasoningSummaryTextDone,
+    ResponseStreamEventResponseReasoningTextDelta,
+    ResponseStreamEventResponseReasoningTextDone,
+    ResponseStreamEventResponseRefusalDelta,
+    ResponseStreamEventResponseRefusalDone,
+    ResponseStreamEventResponseOutputTextDelta,
+    ResponseStreamEventResponseOutputTextDone,
+    ResponseStreamEventResponseWebSearchCallCompleted,
+    ResponseStreamEventResponseWebSearchCallInProgress,
+    ResponseStreamEventResponseWebSearchCallSearching,
+    ResponseStreamEventResponseImageGenerationCallCompleted,
+    ResponseStreamEventResponseImageGenerationCallGenerating,
+    ResponseStreamEventResponseImageGenerationCallInProgress,
+    ResponseStreamEventResponseImageGenerationCallPartialImage,
+    ResponseStreamEventResponseMcpCallArgumentsDelta,
+    ResponseStreamEventResponseMcpCallArgumentsDone,
+    ResponseStreamEventResponseMcpCallCompleted,
+    ResponseStreamEventResponseMcpCallFailed,
+    ResponseStreamEventResponseMcpCallInProgress,
+    ResponseStreamEventResponseMcpListToolsCompleted,
+    ResponseStreamEventResponseMcpListToolsFailed,
+    ResponseStreamEventResponseMcpListToolsInProgress,
+    ResponseStreamEventResponseOutputTextAnnotationAdded,
+    ResponseStreamEventResponseQueued,
+    ResponseStreamEventResponseCustomToolCallInputDelta,
+    ResponseStreamEventResponseCustomToolCallInputDone,
+  ],
+)
 sealed class ResponseStreamEvent with ResponseStreamEventMappable {
   const ResponseStreamEvent();
 
@@ -243,149 +248,182 @@ extension ResponseStreamEventUnionDeserializer on ResponseStreamEvent {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ResponseStreamEventResponseAudioDelta: 'response.audio.delta',
-      ResponseStreamEventResponseAudioDone: 'response.audio.done',
-      ResponseStreamEventResponseAudioTranscriptDelta: 'response.audio.transcript.delta',
-      ResponseStreamEventResponseAudioTranscriptDone: 'response.audio.transcript.done',
-      ResponseStreamEventResponseCodeInterpreterCallCodeDelta: 'response.code_interpreter_call_code.delta',
-      ResponseStreamEventResponseCodeInterpreterCallCodeDone: 'response.code_interpreter_call_code.done',
-      ResponseStreamEventResponseCodeInterpreterCallCompleted: 'response.code_interpreter_call.completed',
-      ResponseStreamEventResponseCodeInterpreterCallInProgress: 'response.code_interpreter_call.in_progress',
-      ResponseStreamEventResponseCodeInterpreterCallInterpreting: 'response.code_interpreter_call.interpreting',
-      ResponseStreamEventResponseCompleted: 'response.completed',
-      ResponseStreamEventResponseContentPartAdded: 'response.content_part.added',
-      ResponseStreamEventResponseContentPartDone: 'response.content_part.done',
-      ResponseStreamEventResponseCreated: 'response.created',
-      ResponseStreamEventError: 'error',
-      ResponseStreamEventResponseFileSearchCallCompleted: 'response.file_search_call.completed',
-      ResponseStreamEventResponseFileSearchCallInProgress: 'response.file_search_call.in_progress',
-      ResponseStreamEventResponseFileSearchCallSearching: 'response.file_search_call.searching',
-      ResponseStreamEventResponseFunctionCallArgumentsDelta: 'response.function_call_arguments.delta',
-      ResponseStreamEventResponseFunctionCallArgumentsDone: 'response.function_call_arguments.done',
-      ResponseStreamEventResponseInProgress: 'response.in_progress',
-      ResponseStreamEventResponseFailed: 'response.failed',
-      ResponseStreamEventResponseIncomplete: 'response.incomplete',
-      ResponseStreamEventResponseOutputItemAdded: 'response.output_item.added',
-      ResponseStreamEventResponseOutputItemDone: 'response.output_item.done',
-      ResponseStreamEventResponseReasoningSummaryPartAdded: 'response.reasoning_summary_part.added',
-      ResponseStreamEventResponseReasoningSummaryPartDone: 'response.reasoning_summary_part.done',
-      ResponseStreamEventResponseReasoningSummaryTextDelta: 'response.reasoning_summary_text.delta',
-      ResponseStreamEventResponseReasoningSummaryTextDone: 'response.reasoning_summary_text.done',
-      ResponseStreamEventResponseReasoningTextDelta: 'response.reasoning_text.delta',
-      ResponseStreamEventResponseReasoningTextDone: 'response.reasoning_text.done',
-      ResponseStreamEventResponseRefusalDelta: 'response.refusal.delta',
-      ResponseStreamEventResponseRefusalDone: 'response.refusal.done',
-      ResponseStreamEventResponseOutputTextDelta: 'response.output_text.delta',
-      ResponseStreamEventResponseOutputTextDone: 'response.output_text.done',
-      ResponseStreamEventResponseWebSearchCallCompleted: 'response.web_search_call.completed',
-      ResponseStreamEventResponseWebSearchCallInProgress: 'response.web_search_call.in_progress',
-      ResponseStreamEventResponseWebSearchCallSearching: 'response.web_search_call.searching',
-      ResponseStreamEventResponseImageGenerationCallCompleted: 'response.image_generation_call.completed',
-      ResponseStreamEventResponseImageGenerationCallGenerating: 'response.image_generation_call.generating',
-      ResponseStreamEventResponseImageGenerationCallInProgress: 'response.image_generation_call.in_progress',
-      ResponseStreamEventResponseImageGenerationCallPartialImage: 'response.image_generation_call.partial_image',
-      ResponseStreamEventResponseMcpCallArgumentsDelta: 'response.mcp_call_arguments.delta',
-      ResponseStreamEventResponseMcpCallArgumentsDone: 'response.mcp_call_arguments.done',
-      ResponseStreamEventResponseMcpCallCompleted: 'response.mcp_call.completed',
-      ResponseStreamEventResponseMcpCallFailed: 'response.mcp_call.failed',
-      ResponseStreamEventResponseMcpCallInProgress: 'response.mcp_call.in_progress',
-      ResponseStreamEventResponseMcpListToolsCompleted: 'response.mcp_list_tools.completed',
-      ResponseStreamEventResponseMcpListToolsFailed: 'response.mcp_list_tools.failed',
-      ResponseStreamEventResponseMcpListToolsInProgress: 'response.mcp_list_tools.in_progress',
-      ResponseStreamEventResponseOutputTextAnnotationAdded: 'response.output_text.annotation.added',
-      ResponseStreamEventResponseQueued: 'response.queued',
-      ResponseStreamEventResponseCustomToolCallInputDelta: 'response.custom_tool_call_input.delta',
-      ResponseStreamEventResponseCustomToolCallInputDone: 'response.custom_tool_call_input.done',
+      ResponseAudioDeltaEvent: 'response.audio.delta',
+      ResponseAudioDoneEvent: 'response.audio.done',
+      ResponseAudioTranscriptDeltaEvent: 'response.audio.transcript.delta',
+      ResponseAudioTranscriptDoneEvent: 'response.audio.transcript.done',
+      ResponseCodeInterpreterCallCodeDeltaEvent: 'response.code_interpreter_call_code.delta',
+      ResponseCodeInterpreterCallCodeDoneEvent: 'response.code_interpreter_call_code.done',
+      ResponseCodeInterpreterCallCompletedEvent: 'response.code_interpreter_call.completed',
+      ResponseCodeInterpreterCallInProgressEvent: 'response.code_interpreter_call.in_progress',
+      ResponseCodeInterpreterCallInterpretingEvent: 'response.code_interpreter_call.interpreting',
+      ResponseCompletedEvent: 'response.completed',
+      ResponseContentPartAddedEvent: 'response.content_part.added',
+      ResponseContentPartDoneEvent: 'response.content_part.done',
+      ResponseCreatedEvent: 'response.created',
+      ResponseErrorEvent: 'error',
+      ResponseFileSearchCallCompletedEvent: 'response.file_search_call.completed',
+      ResponseFileSearchCallInProgressEvent: 'response.file_search_call.in_progress',
+      ResponseFileSearchCallSearchingEvent: 'response.file_search_call.searching',
+      ResponseFunctionCallArgumentsDeltaEvent: 'response.function_call_arguments.delta',
+      ResponseFunctionCallArgumentsDoneEvent: 'response.function_call_arguments.done',
+      ResponseInProgressEvent: 'response.in_progress',
+      ResponseFailedEvent: 'response.failed',
+      ResponseIncompleteEvent: 'response.incomplete',
+      ResponseOutputItemAddedEvent: 'response.output_item.added',
+      ResponseOutputItemDoneEvent: 'response.output_item.done',
+      ResponseReasoningSummaryPartAddedEvent: 'response.reasoning_summary_part.added',
+      ResponseReasoningSummaryPartDoneEvent: 'response.reasoning_summary_part.done',
+      ResponseReasoningSummaryTextDeltaEvent: 'response.reasoning_summary_text.delta',
+      ResponseReasoningSummaryTextDoneEvent: 'response.reasoning_summary_text.done',
+      ResponseReasoningTextDeltaEvent: 'response.reasoning_text.delta',
+      ResponseReasoningTextDoneEvent: 'response.reasoning_text.done',
+      ResponseRefusalDeltaEvent: 'response.refusal.delta',
+      ResponseRefusalDoneEvent: 'response.refusal.done',
+      ResponseTextDeltaEvent: 'response.output_text.delta',
+      ResponseTextDoneEvent: 'response.output_text.done',
+      ResponseWebSearchCallCompletedEvent: 'response.web_search_call.completed',
+      ResponseWebSearchCallInProgressEvent: 'response.web_search_call.in_progress',
+      ResponseWebSearchCallSearchingEvent: 'response.web_search_call.searching',
+      ResponseImageGenCallCompletedEvent: 'response.image_generation_call.completed',
+      ResponseImageGenCallGeneratingEvent: 'response.image_generation_call.generating',
+      ResponseImageGenCallInProgressEvent: 'response.image_generation_call.in_progress',
+      ResponseImageGenCallPartialImageEvent: 'response.image_generation_call.partial_image',
+      ResponseMcpCallArgumentsDeltaEvent: 'response.mcp_call_arguments.delta',
+      ResponseMcpCallArgumentsDoneEvent: 'response.mcp_call_arguments.done',
+      ResponseMcpCallCompletedEvent: 'response.mcp_call.completed',
+      ResponseMcpCallFailedEvent: 'response.mcp_call.failed',
+      ResponseMcpCallInProgressEvent: 'response.mcp_call.in_progress',
+      ResponseMcpListToolsCompletedEvent: 'response.mcp_list_tools.completed',
+      ResponseMcpListToolsFailedEvent: 'response.mcp_list_tools.failed',
+      ResponseMcpListToolsInProgressEvent: 'response.mcp_list_tools.in_progress',
+      ResponseOutputTextAnnotationAddedEvent: 'response.output_text.annotation.added',
+      ResponseQueuedEvent: 'response.queued',
+      ResponseCustomToolCallInputDeltaEvent: 'response.custom_tool_call_input.delta',
+      ResponseCustomToolCallInputDoneEvent: 'response.custom_tool_call_input.done',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ResponseStreamEventResponseAudioDelta] => ResponseStreamEventResponseAudioDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseAudioDone] => ResponseStreamEventResponseAudioDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseAudioTranscriptDelta] => ResponseStreamEventResponseAudioTranscriptDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseAudioTranscriptDone] => ResponseStreamEventResponseAudioTranscriptDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCodeInterpreterCallCodeDelta] => ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCodeInterpreterCallCodeDone] => ResponseStreamEventResponseCodeInterpreterCallCodeDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCodeInterpreterCallCompleted] => ResponseStreamEventResponseCodeInterpreterCallCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCodeInterpreterCallInProgress] => ResponseStreamEventResponseCodeInterpreterCallInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCodeInterpreterCallInterpreting] => ResponseStreamEventResponseCodeInterpreterCallInterpretingMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCompleted] => ResponseStreamEventResponseCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseContentPartAdded] => ResponseStreamEventResponseContentPartAddedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseContentPartDone] => ResponseStreamEventResponseContentPartDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCreated] => ResponseStreamEventResponseCreatedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventError] => ResponseStreamEventErrorMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFileSearchCallCompleted] => ResponseStreamEventResponseFileSearchCallCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFileSearchCallInProgress] => ResponseStreamEventResponseFileSearchCallInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFileSearchCallSearching] => ResponseStreamEventResponseFileSearchCallSearchingMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFunctionCallArgumentsDelta] => ResponseStreamEventResponseFunctionCallArgumentsDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFunctionCallArgumentsDone] => ResponseStreamEventResponseFunctionCallArgumentsDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseInProgress] => ResponseStreamEventResponseInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseFailed] => ResponseStreamEventResponseFailedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseIncomplete] => ResponseStreamEventResponseIncompleteMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseOutputItemAdded] => ResponseStreamEventResponseOutputItemAddedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseOutputItemDone] => ResponseStreamEventResponseOutputItemDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningSummaryPartAdded] => ResponseStreamEventResponseReasoningSummaryPartAddedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningSummaryPartDone] => ResponseStreamEventResponseReasoningSummaryPartDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningSummaryTextDelta] => ResponseStreamEventResponseReasoningSummaryTextDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningSummaryTextDone] => ResponseStreamEventResponseReasoningSummaryTextDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningTextDelta] => ResponseStreamEventResponseReasoningTextDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseReasoningTextDone] => ResponseStreamEventResponseReasoningTextDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseRefusalDelta] => ResponseStreamEventResponseRefusalDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseRefusalDone] => ResponseStreamEventResponseRefusalDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseOutputTextDelta] => ResponseStreamEventResponseOutputTextDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseOutputTextDone] => ResponseStreamEventResponseOutputTextDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseWebSearchCallCompleted] => ResponseStreamEventResponseWebSearchCallCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseWebSearchCallInProgress] => ResponseStreamEventResponseWebSearchCallInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseWebSearchCallSearching] => ResponseStreamEventResponseWebSearchCallSearchingMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseImageGenerationCallCompleted] => ResponseStreamEventResponseImageGenerationCallCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseImageGenerationCallGenerating] => ResponseStreamEventResponseImageGenerationCallGeneratingMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseImageGenerationCallInProgress] => ResponseStreamEventResponseImageGenerationCallInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseImageGenerationCallPartialImage] => ResponseStreamEventResponseImageGenerationCallPartialImageMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpCallArgumentsDelta] => ResponseStreamEventResponseMcpCallArgumentsDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpCallArgumentsDone] => ResponseStreamEventResponseMcpCallArgumentsDoneMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpCallCompleted] => ResponseStreamEventResponseMcpCallCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpCallFailed] => ResponseStreamEventResponseMcpCallFailedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpCallInProgress] => ResponseStreamEventResponseMcpCallInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpListToolsCompleted] => ResponseStreamEventResponseMcpListToolsCompletedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpListToolsFailed] => ResponseStreamEventResponseMcpListToolsFailedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseMcpListToolsInProgress] => ResponseStreamEventResponseMcpListToolsInProgressMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseOutputTextAnnotationAdded] => ResponseStreamEventResponseOutputTextAnnotationAddedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseQueued] => ResponseStreamEventResponseQueuedMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCustomToolCallInputDelta] => ResponseStreamEventResponseCustomToolCallInputDeltaMapper.fromJson(json),
-      _ when value == effective[ResponseStreamEventResponseCustomToolCallInputDone] => ResponseStreamEventResponseCustomToolCallInputDoneMapper.fromJson(json),
+      _ when value == effective[ResponseAudioDeltaEvent] => ResponseAudioDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseAudioDoneEvent] => ResponseAudioDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseAudioTranscriptDeltaEvent] => ResponseAudioTranscriptDeltaEventMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ResponseAudioTranscriptDoneEvent] => ResponseAudioTranscriptDoneEventMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ResponseCodeInterpreterCallCodeDeltaEvent] =>
+        ResponseCodeInterpreterCallCodeDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseCodeInterpreterCallCodeDoneEvent] =>
+        ResponseCodeInterpreterCallCodeDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseCodeInterpreterCallCompletedEvent] =>
+        ResponseCodeInterpreterCallCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseCodeInterpreterCallInProgressEvent] =>
+        ResponseCodeInterpreterCallInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseCodeInterpreterCallInterpretingEvent] =>
+        ResponseCodeInterpreterCallInterpretingEventMapper.fromJson(json),
+      _ when value == effective[ResponseCompletedEvent] => ResponseCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseContentPartAddedEvent] => ResponseContentPartAddedEventMapper.fromJson(json),
+      _ when value == effective[ResponseContentPartDoneEvent] => ResponseContentPartDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseCreatedEvent] => ResponseCreatedEventMapper.fromJson(json),
+      _ when value == effective[ResponseErrorEvent] => ResponseErrorEventMapper.fromJson(json),
+      _ when value == effective[ResponseFileSearchCallCompletedEvent] =>
+        ResponseFileSearchCallCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseFileSearchCallInProgressEvent] =>
+        ResponseFileSearchCallInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseFileSearchCallSearchingEvent] =>
+        ResponseFileSearchCallSearchingEventMapper.fromJson(json),
+      _ when value == effective[ResponseFunctionCallArgumentsDeltaEvent] =>
+        ResponseFunctionCallArgumentsDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseFunctionCallArgumentsDoneEvent] =>
+        ResponseFunctionCallArgumentsDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseInProgressEvent] => ResponseInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseFailedEvent] => ResponseFailedEventMapper.fromJson(json),
+      _ when value == effective[ResponseIncompleteEvent] => ResponseIncompleteEventMapper.fromJson(json),
+      _ when value == effective[ResponseOutputItemAddedEvent] => ResponseOutputItemAddedEventMapper.fromJson(json),
+      _ when value == effective[ResponseOutputItemDoneEvent] => ResponseOutputItemDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseReasoningSummaryPartAddedEvent] =>
+        ResponseReasoningSummaryPartAddedEventMapper.fromJson(json),
+      _ when value == effective[ResponseReasoningSummaryPartDoneEvent] =>
+        ResponseReasoningSummaryPartDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseReasoningSummaryTextDeltaEvent] =>
+        ResponseReasoningSummaryTextDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseReasoningSummaryTextDoneEvent] =>
+        ResponseReasoningSummaryTextDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseReasoningTextDeltaEvent] => ResponseReasoningTextDeltaEventMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ResponseReasoningTextDoneEvent] => ResponseReasoningTextDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseRefusalDeltaEvent] => ResponseRefusalDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseRefusalDoneEvent] => ResponseRefusalDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseTextDeltaEvent] => ResponseTextDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseTextDoneEvent] => ResponseTextDoneEventMapper.fromJson(json),
+      _ when value == effective[ResponseWebSearchCallCompletedEvent] =>
+        ResponseWebSearchCallCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseWebSearchCallInProgressEvent] =>
+        ResponseWebSearchCallInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseWebSearchCallSearchingEvent] =>
+        ResponseWebSearchCallSearchingEventMapper.fromJson(json),
+      _ when value == effective[ResponseImageGenCallCompletedEvent] =>
+        ResponseImageGenCallCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseImageGenCallGeneratingEvent] =>
+        ResponseImageGenCallGeneratingEventMapper.fromJson(json),
+      _ when value == effective[ResponseImageGenCallInProgressEvent] =>
+        ResponseImageGenCallInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseImageGenCallPartialImageEvent] =>
+        ResponseImageGenCallPartialImageEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpCallArgumentsDeltaEvent] =>
+        ResponseMcpCallArgumentsDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpCallArgumentsDoneEvent] => ResponseMcpCallArgumentsDoneEventMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ResponseMcpCallCompletedEvent] => ResponseMcpCallCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpCallFailedEvent] => ResponseMcpCallFailedEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpCallInProgressEvent] => ResponseMcpCallInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpListToolsCompletedEvent] =>
+        ResponseMcpListToolsCompletedEventMapper.fromJson(json),
+      _ when value == effective[ResponseMcpListToolsFailedEvent] => ResponseMcpListToolsFailedEventMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ResponseMcpListToolsInProgressEvent] =>
+        ResponseMcpListToolsInProgressEventMapper.fromJson(json),
+      _ when value == effective[ResponseOutputTextAnnotationAddedEvent] =>
+        ResponseOutputTextAnnotationAddedEventMapper.fromJson(json),
+      _ when value == effective[ResponseQueuedEvent] => ResponseQueuedEventMapper.fromJson(json),
+      _ when value == effective[ResponseCustomToolCallInputDeltaEvent] =>
+        ResponseCustomToolCallInputDeltaEventMapper.fromJson(json),
+      _ when value == effective[ResponseCustomToolCallInputDoneEvent] =>
+        ResponseCustomToolCallInputDoneEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ResponseStreamEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.delta')
-class ResponseStreamEventResponseAudioDelta extends ResponseStreamEvent with ResponseStreamEventResponseAudioDeltaMappable {
+class ResponseStreamEventResponseAudioDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseAudioDeltaMappable {
   final ResponseStreamEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
   final String delta;
 
-  const ResponseStreamEventResponseAudioDelta({
-    required this.type,
-    required this.sequenceNumber,
-    required this.delta,
-  });
+  const ResponseStreamEventResponseAudioDelta({required this.type, required this.sequenceNumber, required this.delta});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.done')
-class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent with ResponseStreamEventResponseAudioDoneMappable {
+class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseAudioDoneMappable {
   final ResponseStreamEventType2 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  const ResponseStreamEventResponseAudioDone({
-    required this.type,
-    required this.sequenceNumber,
-  });
+  const ResponseStreamEventResponseAudioDone({required this.type, required this.sequenceNumber});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.delta')
-class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEvent with ResponseStreamEventResponseAudioTranscriptDeltaMappable {
+class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseAudioTranscriptDeltaMappable {
   final ResponseStreamEventType3 type;
   final String delta;
   @MappableField(key: 'sequence_number')
@@ -399,19 +437,18 @@ class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEven
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.done')
-class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent with ResponseStreamEventResponseAudioTranscriptDoneMappable {
+class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseAudioTranscriptDoneMappable {
   final ResponseStreamEventType4 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  const ResponseStreamEventResponseAudioTranscriptDone({
-    required this.type,
-    required this.sequenceNumber,
-  });
+  const ResponseStreamEventResponseAudioTranscriptDone({required this.type, required this.sequenceNumber});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call_code.delta')
-class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMappable {
+class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseCodeInterpreterCallCodeDeltaMappable {
   final ResponseStreamEventType5 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -431,7 +468,8 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseSt
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call_code.done')
-class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCodeDoneMappable {
+class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseCodeInterpreterCallCodeDoneMappable {
   final ResponseStreamEventType6 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -451,7 +489,8 @@ class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStr
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.completed')
-class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallCompletedMappable {
+class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseCodeInterpreterCallCompletedMappable {
   final ResponseStreamEventType7 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -469,7 +508,8 @@ class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseSt
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.in_progress')
-class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallInProgressMappable {
+class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseCodeInterpreterCallInProgressMappable {
   final ResponseStreamEventType8 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -486,8 +526,13 @@ class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseS
   });
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.interpreting')
-class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends ResponseStreamEvent with ResponseStreamEventResponseCodeInterpreterCallInterpretingMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'response.code_interpreter_call.interpreting',
+)
+class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends ResponseStreamEvent
+    with ResponseStreamEventResponseCodeInterpreterCallInterpretingMappable {
   final ResponseStreamEventType9 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -505,7 +550,8 @@ class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends Respons
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.completed')
-class ResponseStreamEventResponseCompleted extends ResponseStreamEvent with ResponseStreamEventResponseCompletedMappable {
+class ResponseStreamEventResponseCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseCompletedMappable {
   final ResponseStreamEventType10 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
@@ -519,7 +565,8 @@ class ResponseStreamEventResponseCompleted extends ResponseStreamEvent with Resp
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.added')
-class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent with ResponseStreamEventResponseContentPartAddedMappable {
+class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent
+    with ResponseStreamEventResponseContentPartAddedMappable {
   final ResponseStreamEventType11 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -543,7 +590,8 @@ class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.done')
-class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent with ResponseStreamEventResponseContentPartDoneMappable {
+class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseContentPartDoneMappable {
   final ResponseStreamEventType12 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -573,11 +621,7 @@ class ResponseStreamEventResponseCreated extends ResponseStreamEvent with Respon
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  const ResponseStreamEventResponseCreated({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+  const ResponseStreamEventResponseCreated({required this.type, required this.response, required this.sequenceNumber});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
@@ -599,7 +643,8 @@ class ResponseStreamEventError extends ResponseStreamEvent with ResponseStreamEv
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.completed')
-class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallCompletedMappable {
+class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseFileSearchCallCompletedMappable {
   final ResponseStreamEventType15 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -617,7 +662,8 @@ class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamE
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.in_progress')
-class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallInProgressMappable {
+class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseFileSearchCallInProgressMappable {
   final ResponseStreamEventType16 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -635,7 +681,8 @@ class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStream
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.searching')
-class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamEvent with ResponseStreamEventResponseFileSearchCallSearchingMappable {
+class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamEvent
+    with ResponseStreamEventResponseFileSearchCallSearchingMappable {
   final ResponseStreamEventType17 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -653,7 +700,8 @@ class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamE
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.delta')
-class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStreamEvent with ResponseStreamEventResponseFunctionCallArgumentsDeltaMappable {
+class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseFunctionCallArgumentsDeltaMappable {
   final ResponseStreamEventType18 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -673,7 +721,8 @@ class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStre
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.done')
-class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStreamEvent with ResponseStreamEventResponseFunctionCallArgumentsDoneMappable {
+class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseFunctionCallArgumentsDoneMappable {
   final ResponseStreamEventType19 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -695,7 +744,8 @@ class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStrea
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.in_progress')
-class ResponseStreamEventResponseInProgress extends ResponseStreamEvent with ResponseStreamEventResponseInProgressMappable {
+class ResponseStreamEventResponseInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseInProgressMappable {
   final ResponseStreamEventType20 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
@@ -715,15 +765,12 @@ class ResponseStreamEventResponseFailed extends ResponseStreamEvent with Respons
   final int sequenceNumber;
   final ResponseModel response;
 
-  const ResponseStreamEventResponseFailed({
-    required this.type,
-    required this.sequenceNumber,
-    required this.response,
-  });
+  const ResponseStreamEventResponseFailed({required this.type, required this.sequenceNumber, required this.response});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.incomplete')
-class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent with ResponseStreamEventResponseIncompleteMappable {
+class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent
+    with ResponseStreamEventResponseIncompleteMappable {
   final ResponseStreamEventType22 type;
   final ResponseModel response;
   @MappableField(key: 'sequence_number')
@@ -737,7 +784,8 @@ class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent with Res
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.added')
-class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent with ResponseStreamEventResponseOutputItemAddedMappable {
+class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent
+    with ResponseStreamEventResponseOutputItemAddedMappable {
   final ResponseStreamEventType23 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -754,7 +802,8 @@ class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.done')
-class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent with ResponseStreamEventResponseOutputItemDoneMappable {
+class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseOutputItemDoneMappable {
   final ResponseStreamEventType24 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -771,7 +820,8 @@ class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent with
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_part.added')
-class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryPartAddedMappable {
+class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningSummaryPartAddedMappable {
   final ResponseStreamEventType25 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -795,7 +845,8 @@ class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStrea
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_part.done')
-class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryPartDoneMappable {
+class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningSummaryPartDoneMappable {
   final ResponseStreamEventType26 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -819,7 +870,8 @@ class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStream
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_text.delta')
-class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryTextDeltaMappable {
+class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningSummaryTextDeltaMappable {
   final ResponseStreamEventType27 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -842,7 +894,8 @@ class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStrea
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_text.done')
-class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningSummaryTextDoneMappable {
+class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningSummaryTextDoneMappable {
   final ResponseStreamEventType28 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -865,7 +918,8 @@ class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStream
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_text.delta')
-class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseReasoningTextDeltaMappable {
+class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningTextDeltaMappable {
   final ResponseStreamEventType29 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -888,7 +942,8 @@ class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent 
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_text.done')
-class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent with ResponseStreamEventResponseReasoningTextDoneMappable {
+class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseReasoningTextDoneMappable {
   final ResponseStreamEventType30 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -911,7 +966,8 @@ class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent w
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.delta')
-class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent with ResponseStreamEventResponseRefusalDeltaMappable {
+class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseRefusalDeltaMappable {
   final ResponseStreamEventType31 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -934,7 +990,8 @@ class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent with R
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.done')
-class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent with ResponseStreamEventResponseRefusalDoneMappable {
+class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseRefusalDoneMappable {
   final ResponseStreamEventType32 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -957,7 +1014,8 @@ class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent with Re
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.delta')
-class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextDeltaMappable {
+class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseOutputTextDeltaMappable {
   final ResponseStreamEventType33 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -982,7 +1040,8 @@ class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.done')
-class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextDoneMappable {
+class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseOutputTextDoneMappable {
   final ResponseStreamEventType34 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1007,7 +1066,8 @@ class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent with
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.completed')
-class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallCompletedMappable {
+class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseWebSearchCallCompletedMappable {
   final ResponseStreamEventType35 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1025,7 +1085,8 @@ class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEv
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.in_progress')
-class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallInProgressMappable {
+class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseWebSearchCallInProgressMappable {
   final ResponseStreamEventType36 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1043,7 +1104,8 @@ class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamE
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.searching')
-class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEvent with ResponseStreamEventResponseWebSearchCallSearchingMappable {
+class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEvent
+    with ResponseStreamEventResponseWebSearchCallSearchingMappable {
   final ResponseStreamEventType37 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1061,7 +1123,8 @@ class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEv
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.completed')
-class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallCompletedMappable {
+class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseImageGenerationCallCompletedMappable {
   final ResponseStreamEventType38 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1079,7 +1142,8 @@ class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseSt
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.generating')
-class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallGeneratingMappable {
+class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseStreamEvent
+    with ResponseStreamEventResponseImageGenerationCallGeneratingMappable {
   final ResponseStreamEventType39 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1097,7 +1161,8 @@ class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseS
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.in_progress')
-class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallInProgressMappable {
+class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseImageGenerationCallInProgressMappable {
   final ResponseStreamEventType40 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1114,8 +1179,13 @@ class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseS
   });
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.partial_image')
-class ResponseStreamEventResponseImageGenerationCallPartialImage extends ResponseStreamEvent with ResponseStreamEventResponseImageGenerationCallPartialImageMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'response.image_generation_call.partial_image',
+)
+class ResponseStreamEventResponseImageGenerationCallPartialImage extends ResponseStreamEvent
+    with ResponseStreamEventResponseImageGenerationCallPartialImageMappable {
   final ResponseStreamEventType41 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1139,7 +1209,8 @@ class ResponseStreamEventResponseImageGenerationCallPartialImage extends Respons
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.delta')
-class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallArgumentsDeltaMappable {
+class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpCallArgumentsDeltaMappable {
   final ResponseStreamEventType42 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1159,7 +1230,8 @@ class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEve
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.done')
-class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallArgumentsDoneMappable {
+class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpCallArgumentsDoneMappable {
   final ResponseStreamEventType43 type;
   @MappableField(key: 'output_index')
   final int outputIndex;
@@ -1179,7 +1251,8 @@ class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEven
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.completed')
-class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallCompletedMappable {
+class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpCallCompletedMappable {
   final ResponseStreamEventType44 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1197,7 +1270,8 @@ class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.failed')
-class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallFailedMappable {
+class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpCallFailedMappable {
   final ResponseStreamEventType45 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1215,7 +1289,8 @@ class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent with 
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.in_progress')
-class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent with ResponseStreamEventResponseMcpCallInProgressMappable {
+class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpCallInProgressMappable {
   final ResponseStreamEventType46 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -1233,7 +1308,8 @@ class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent w
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.completed')
-class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsCompletedMappable {
+class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpListToolsCompletedMappable {
   final ResponseStreamEventType47 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1251,7 +1327,8 @@ class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEve
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.failed')
-class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsFailedMappable {
+class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpListToolsFailedMappable {
   final ResponseStreamEventType48 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1269,7 +1346,8 @@ class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent 
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.in_progress')
-class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEvent with ResponseStreamEventResponseMcpListToolsInProgressMappable {
+class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEvent
+    with ResponseStreamEventResponseMcpListToolsInProgressMappable {
   final ResponseStreamEventType49 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1287,7 +1365,8 @@ class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEv
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.annotation.added')
-class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStreamEvent with ResponseStreamEventResponseOutputTextAnnotationAddedMappable {
+class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStreamEvent
+    with ResponseStreamEventResponseOutputTextAnnotationAddedMappable {
   final ResponseStreamEventType50 type;
   @MappableField(key: 'item_id')
   final String itemId;
@@ -1319,15 +1398,12 @@ class ResponseStreamEventResponseQueued extends ResponseStreamEvent with Respons
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  const ResponseStreamEventResponseQueued({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+  const ResponseStreamEventResponseQueued({required this.type, required this.response, required this.sequenceNumber});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.delta')
-class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStreamEvent with ResponseStreamEventResponseCustomToolCallInputDeltaMappable {
+class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStreamEvent
+    with ResponseStreamEventResponseCustomToolCallInputDeltaMappable {
   final ResponseStreamEventType52 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
@@ -1347,7 +1423,8 @@ class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStream
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.done')
-class ResponseStreamEventResponseCustomToolCallInputDone extends ResponseStreamEvent with ResponseStreamEventResponseCustomToolCallInputDoneMappable {
+class ResponseStreamEventResponseCustomToolCallInputDone extends ResponseStreamEvent
+    with ResponseStreamEventResponseCustomToolCallInputDoneMappable {
   final ResponseStreamEventType53 type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;

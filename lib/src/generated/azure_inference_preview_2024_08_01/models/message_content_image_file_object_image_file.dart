@@ -8,14 +8,11 @@ part 'message_content_image_file_object_image_file.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentImageFileObjectImageFile with MessageContentImageFileObjectImageFileMappable {
-  const MessageContentImageFileObjectImageFile({
-    required this.fileId,
-  });
+  const MessageContentImageFileObjectImageFile({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static MessageContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) => MessageContentImageFileObjectImageFileMapper.fromJson(json);
-
+  static MessageContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) =>
+      MessageContentImageFileObjectImageFileMapper.fromJson(json);
 }
-

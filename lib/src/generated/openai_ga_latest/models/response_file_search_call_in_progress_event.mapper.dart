@@ -8,7 +8,7 @@
 part of 'response_file_search_call_in_progress_event.dart';
 
 class ResponseFileSearchCallInProgressEventMapper
-    extends ClassMapperBase<ResponseFileSearchCallInProgressEvent> {
+    extends SubClassMapperBase<ResponseFileSearchCallInProgressEvent> {
   ResponseFileSearchCallInProgressEventMapper._();
 
   static ResponseFileSearchCallInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseFileSearchCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFileSearchCallInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseFileSearchCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,6 +61,14 @@ class ResponseFileSearchCallInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.file_search_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseFileSearchCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseFileSearchCallInProgressEvent(
@@ -149,7 +158,8 @@ abstract class ResponseFileSearchCallInProgressEventCopyWith<
   $In extends ResponseFileSearchCallInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseFileSearchCallInProgressEventType? type,
     int? outputIndex,

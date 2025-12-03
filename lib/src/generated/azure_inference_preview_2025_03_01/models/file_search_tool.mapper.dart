@@ -7,13 +7,14 @@
 
 part of 'file_search_tool.dart';
 
-class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
+class FileSearchToolMapper extends SubClassMapperBase<FileSearchTool> {
   FileSearchToolMapper._();
 
   static FileSearchToolMapper? _instance;
   static FileSearchToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileSearchToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       FileSearchToolTypeMapper.ensureInitialized();
       FileSearchToolFiltersUnionMapper.ensureInitialized();
       FileSearchToolRankingOptionsMapper.ensureInitialized();
@@ -68,6 +69,13 @@ class FileSearchToolMapper extends ClassMapperBase<FileSearchTool> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static FileSearchTool _instantiate(DecodingData data) {
     return FileSearchTool(
@@ -140,7 +148,7 @@ extension FileSearchToolValueCopy<$R, $Out>
 }
 
 abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>
   get vectorStoreIds;
   FileSearchToolFiltersUnionCopyWith<
@@ -155,6 +163,7 @@ abstract class FileSearchToolCopyWith<$R, $In extends FileSearchTool, $Out>
     FileSearchToolRankingOptions
   >?
   get fileSearchToolRankingOptions;
+  @override
   $R call({
     FileSearchToolType? type,
     List<String>? vectorStoreIds,

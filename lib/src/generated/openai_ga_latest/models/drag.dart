@@ -12,17 +12,12 @@ part 'drag.mapper.dart';
 
 /// A drag action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Drag with DragMappable {
-  const Drag({
-    required this.path,
-    this.type = DragType.drag,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'drag')
+class Drag extends ComputerAction with DragMappable {
+  const Drag({required this.path, this.type = DragType.drag});
 
   final List<DragPoint> path;
   final DragType type;
 
   static Drag fromJson(Map<String, dynamic> json) => DragMapper.fromJson(json);
-
 }
-

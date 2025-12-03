@@ -11,8 +11,8 @@ import 'message_delta_content_image_file_object_type.dart';
 part 'message_delta_content_image_file_object.mapper.dart';
 
 /// References an image [File](https://platform.openai.com/docs/api-reference/files) in the content of a message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageDeltaContentImageFileObject with MessageDeltaContentImageFileObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_file')
+class MessageDeltaContentImageFileObject extends MessageContentDelta with MessageDeltaContentImageFileObjectMappable {
   const MessageDeltaContentImageFileObject({
     required this.indexField,
     required this.type,
@@ -25,7 +25,6 @@ class MessageDeltaContentImageFileObject with MessageDeltaContentImageFileObject
   @MappableField(key: 'image_file')
   final MessageDeltaContentImageFileObjectImageFile? messageDeltaContentImageFileObjectImageFile;
 
-  static MessageDeltaContentImageFileObject fromJson(Map<String, dynamic> json) => MessageDeltaContentImageFileObjectMapper.fromJson(json);
-
+  static MessageDeltaContentImageFileObject fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentImageFileObjectMapper.fromJson(json);
 }
-

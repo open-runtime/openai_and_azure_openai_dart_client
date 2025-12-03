@@ -40,6 +40,4 @@ class OpenAiFile with OpenAiFileMappable {
   final String? statusDetails;
 
   static OpenAiFile fromJson(Map<String, dynamic> json) => OpenAiFileMapper.fromJson(json);
-
 }
-

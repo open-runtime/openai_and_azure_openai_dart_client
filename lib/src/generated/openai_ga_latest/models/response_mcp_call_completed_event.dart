@@ -11,8 +11,8 @@ part 'response_mcp_call_completed_event.mapper.dart';
 
 /// Emitted when an MCP  tool call has completed successfully.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpCallCompletedEvent with ResponseMcpCallCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.completed')
+class ResponseMcpCallCompletedEvent extends ResponseStreamEvent with ResponseMcpCallCompletedEventMappable {
   const ResponseMcpCallCompletedEvent({
     required this.type,
     required this.itemId,
@@ -28,7 +28,6 @@ class ResponseMcpCallCompletedEvent with ResponseMcpCallCompletedEventMappable {
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpCallCompletedEvent fromJson(Map<String, dynamic> json) => ResponseMcpCallCompletedEventMapper.fromJson(json);
-
+  static ResponseMcpCallCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpCallCompletedEventMapper.fromJson(json);
 }
-

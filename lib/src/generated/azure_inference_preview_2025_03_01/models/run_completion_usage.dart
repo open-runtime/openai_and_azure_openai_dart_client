@@ -9,11 +9,7 @@ part 'run_completion_usage.mapper.dart';
 /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunCompletionUsage with RunCompletionUsageMappable {
-  const RunCompletionUsage({
-    required this.completionTokens,
-    required this.promptTokens,
-    required this.totalTokens,
-  });
+  const RunCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens});
 
   @MappableField(key: 'completion_tokens')
   final int completionTokens;
@@ -23,6 +19,4 @@ class RunCompletionUsage with RunCompletionUsageMappable {
   final int totalTokens;
 
   static RunCompletionUsage fromJson(Map<String, dynamic> json) => RunCompletionUsageMapper.fromJson(json);
-
 }
-

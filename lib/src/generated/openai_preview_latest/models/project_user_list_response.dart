@@ -29,6 +29,4 @@ class ProjectUserListResponse with ProjectUserListResponseMappable {
   final bool hasMore;
 
   static ProjectUserListResponse fromJson(Map<String, dynamic> json) => ProjectUserListResponseMapper.fromJson(json);
-
 }
-

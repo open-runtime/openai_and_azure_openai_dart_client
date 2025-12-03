@@ -21,7 +21,6 @@ class CreateSpeechResponseStreamEventUsage with CreateSpeechResponseStreamEventU
   @MappableField(key: 'total_tokens')
   final int totalTokens;
 
-  static CreateSpeechResponseStreamEventUsage fromJson(Map<String, dynamic> json) => CreateSpeechResponseStreamEventUsageMapper.fromJson(json);
-
+  static CreateSpeechResponseStreamEventUsage fromJson(Map<String, dynamic> json) =>
+      CreateSpeechResponseStreamEventUsageMapper.fromJson(json);
 }
-

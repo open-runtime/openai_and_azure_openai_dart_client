@@ -8,7 +8,7 @@
 part of 'container_file_citation_body.dart';
 
 class ContainerFileCitationBodyMapper
-    extends ClassMapperBase<ContainerFileCitationBody> {
+    extends SubClassMapperBase<ContainerFileCitationBody> {
   ContainerFileCitationBodyMapper._();
 
   static ContainerFileCitationBodyMapper? _instance;
@@ -17,6 +17,7 @@ class ContainerFileCitationBodyMapper
       MapperContainer.globals.use(
         _instance = ContainerFileCitationBodyMapper._(),
       );
+      AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       ContainerFileCitationBodyTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -77,6 +78,13 @@ class ContainerFileCitationBodyMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'container_file_citation';
+  @override
+  late final ClassMapperBase superMapper = AnnotationMapper.ensureInitialized();
 
   static ContainerFileCitationBody _instantiate(DecodingData data) {
     return ContainerFileCitationBody(
@@ -162,7 +170,8 @@ abstract class ContainerFileCitationBodyCopyWith<
   $In extends ContainerFileCitationBody,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AnnotationCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? containerId,
     String? fileId,

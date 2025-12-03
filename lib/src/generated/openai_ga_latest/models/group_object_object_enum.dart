@@ -10,10 +10,10 @@ part 'group_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum GroupObjectObjectEnum {
-  @MappableValue('group') 
+  @MappableValue('group')
   group,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum GroupObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GroupObjectObjectEnum> get $valuesDefined => values.where((value) => value != GroupObjectObjectEnum.unknown).toList();
+  static List<GroupObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != GroupObjectObjectEnum.unknown).toList();
 }

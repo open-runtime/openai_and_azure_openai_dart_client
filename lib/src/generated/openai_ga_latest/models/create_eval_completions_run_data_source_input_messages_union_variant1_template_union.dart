@@ -15,8 +15,16 @@ import 'eval_item.dart';
 
 part 'create_eval_completions_run_data_source_input_messages_union_variant1_template_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage, CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem])
-sealed class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage,
+    CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem,
+  ],
+)
+sealed class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion
+    with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionMappable {
   const CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion();
 
   static CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion fromJson(Map<String, dynamic> json) {
@@ -24,22 +32,30 @@ sealed class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Templat
   }
 }
 
-extension CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionDeserializer on CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion {
-  static CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion tryDeserialize(Map<String, dynamic> json) {
+extension CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionDeserializer
+    on CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion {
+  static CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion tryDeserialize(
+    Map<String, dynamic> json,
+  ) {
     try {
-      return CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMapper.fromJson(json);
+      return CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
       return CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMappable {
+class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessage
+    extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion
+    with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEasyInputMessageMappable {
   final EasyInputMessageRole role;
   final EasyInputMessageContentUnion content;
   final EasyInputMessageType? type;
@@ -52,7 +68,9 @@ class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionE
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMappable {
+class CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItem
+    extends CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnion
+    with CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1TemplateUnionEvalItemMappable {
   final EvalItemRole role;
   final EvalItemContentUnion content;
   final EvalItemType? type;

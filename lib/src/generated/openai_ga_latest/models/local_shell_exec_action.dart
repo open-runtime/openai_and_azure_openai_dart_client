@@ -30,6 +30,4 @@ class LocalShellExecAction with LocalShellExecActionMappable {
   final LocalShellExecActionType type;
 
   static LocalShellExecAction fromJson(Map<String, dynamic> json) => LocalShellExecActionMapper.fromJson(json);
-
 }
-

@@ -9,13 +9,13 @@ part 'run_object_incomplete_details_reason.mapper.dart';
 /// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
 @MappableEnum(defaultValue: 'unknown')
 enum RunObjectIncompleteDetailsReason {
-  @MappableValue('max_completion_tokens') 
+  @MappableValue('max_completion_tokens')
   maxCompletionTokens,
 
-  @MappableValue('max_prompt_tokens') 
+  @MappableValue('max_prompt_tokens')
   maxPromptTokens,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RunObjectIncompleteDetailsReason {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunObjectIncompleteDetailsReason> get $valuesDefined => values.where((value) => value != RunObjectIncompleteDetailsReason.unknown).toList();
+  static List<RunObjectIncompleteDetailsReason> get $valuesDefined =>
+      values.where((value) => value != RunObjectIncompleteDetailsReason.unknown).toList();
 }

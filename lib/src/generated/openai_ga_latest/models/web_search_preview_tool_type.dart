@@ -9,13 +9,13 @@ part 'web_search_preview_tool_type.mapper.dart';
 /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchPreviewToolType {
-  @MappableValue('web_search_preview') 
+  @MappableValue('web_search_preview')
   webSearchPreview,
 
-  @MappableValue('web_search_preview_2025_03_11') 
+  @MappableValue('web_search_preview_2025_03_11')
   webSearchPreview20250311,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum WebSearchPreviewToolType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchPreviewToolType> get $valuesDefined => values.where((value) => value != WebSearchPreviewToolType.unknown).toList();
+  static List<WebSearchPreviewToolType> get $valuesDefined =>
+      values.where((value) => value != WebSearchPreviewToolType.unknown).toList();
 }

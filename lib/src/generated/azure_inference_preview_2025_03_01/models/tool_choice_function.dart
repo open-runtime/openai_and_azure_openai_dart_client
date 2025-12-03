@@ -12,15 +12,10 @@ part 'tool_choice_function.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolChoiceFunction with ToolChoiceFunctionMappable {
-  const ToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+  const ToolChoiceFunction({required this.type, required this.name});
 
   final ToolChoiceFunctionType type;
   final String name;
 
   static ToolChoiceFunction fromJson(Map<String, dynamic> json) => ToolChoiceFunctionMapper.fromJson(json);
-
 }
-

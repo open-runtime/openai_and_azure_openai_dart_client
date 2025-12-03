@@ -11,10 +11,10 @@ part 'transcript_text_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptTextDeltaEventType {
   /// Incorrect name has been replaced. Original name: `transcript.text.delta`.
-  @MappableValue('transcript.text.delta') 
+  @MappableValue('transcript.text.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum TranscriptTextDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptTextDeltaEventType> get $valuesDefined => values.where((value) => value != TranscriptTextDeltaEventType.unknown).toList();
+  static List<TranscriptTextDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != TranscriptTextDeltaEventType.unknown).toList();
 }

@@ -8,13 +8,13 @@ part 'order2.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Order2 {
-  @MappableValue('ascending') 
+  @MappableValue('ascending')
   ascending,
 
-  @MappableValue('descending') 
+  @MappableValue('descending')
   descending,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

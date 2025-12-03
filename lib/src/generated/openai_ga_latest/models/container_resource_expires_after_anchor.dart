@@ -9,10 +9,10 @@ part 'container_resource_expires_after_anchor.mapper.dart';
 /// The reference point for the expiration.
 @MappableEnum(defaultValue: 'unknown')
 enum ContainerResourceExpiresAfterAnchor {
-  @MappableValue('last_active_at') 
+  @MappableValue('last_active_at')
   lastActiveAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ContainerResourceExpiresAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ContainerResourceExpiresAfterAnchor> get $valuesDefined => values.where((value) => value != ContainerResourceExpiresAfterAnchor.unknown).toList();
+  static List<ContainerResourceExpiresAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != ContainerResourceExpiresAfterAnchor.unknown).toList();
 }

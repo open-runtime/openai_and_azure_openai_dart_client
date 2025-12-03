@@ -11,12 +11,7 @@ part 'span.mapper.dart';
 /// A span object that represents a detected object and its bounding box information.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Span with SpanMappable {
-  const Span({
-    required this.text,
-    required this.offset,
-    required this.length,
-    required this.polygon,
-  });
+  const Span({required this.text, required this.offset, required this.length, required this.polygon});
 
   final String text;
   final int offset;
@@ -24,6 +19,4 @@ class Span with SpanMappable {
   final List<SpanPolygon> polygon;
 
   static Span fromJson(Map<String, dynamic> json) => SpanMapper.fromJson(json);
-
 }
-

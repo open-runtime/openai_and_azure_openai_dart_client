@@ -44,15 +44,20 @@ import 'realtime_mcp_tool_call_type.dart';
 part 'realtime_conversation_item.mapper.dart';
 
 /// A single item within a Realtime conversation.
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeConversationItemMessage,
-  RealtimeConversationItemFunctionCall,
-  RealtimeConversationItemFunctionCallOutput,
-  RealtimeConversationItemMcpApprovalResponse,
-  RealtimeConversationItemMcpListTools,
-  RealtimeConversationItemMcpCall,
-  RealtimeConversationItemMcpApprovalRequest
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeConversationItemMessage,
+    RealtimeConversationItemFunctionCall,
+    RealtimeConversationItemFunctionCallOutput,
+    RealtimeConversationItemMcpApprovalResponse,
+    RealtimeConversationItemMcpListTools,
+    RealtimeConversationItemMcpCall,
+    RealtimeConversationItemMcpApprovalRequest,
+  ],
+)
 sealed class RealtimeConversationItem with RealtimeConversationItemMappable {
   const RealtimeConversationItem();
 
@@ -68,24 +73,27 @@ extension RealtimeConversationItemUnionDeserializer on RealtimeConversationItem 
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeConversationItemMessage: 'message',
+      RealtimeConversationItemMessageAssistant: 'message',
       RealtimeConversationItemFunctionCall: 'function_call',
       RealtimeConversationItemFunctionCallOutput: 'function_call_output',
-      RealtimeConversationItemMcpApprovalResponse: 'mcp_approval_response',
-      RealtimeConversationItemMcpListTools: 'mcp_list_tools',
-      RealtimeConversationItemMcpCall: 'mcp_call',
-      RealtimeConversationItemMcpApprovalRequest: 'mcp_approval_request',
+      RealtimeMcpApprovalResponse: 'mcp_approval_response',
+      RealtimeMcpListTools: 'mcp_list_tools',
+      RealtimeMcpToolCall: 'mcp_call',
+      RealtimeMcpApprovalRequest: 'mcp_approval_request',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeConversationItemMessage] => RealtimeConversationItemMessageMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemFunctionCall] => RealtimeConversationItemFunctionCallMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemFunctionCallOutput] => RealtimeConversationItemFunctionCallOutputMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemMcpApprovalResponse] => RealtimeConversationItemMcpApprovalResponseMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemMcpListTools] => RealtimeConversationItemMcpListToolsMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemMcpCall] => RealtimeConversationItemMcpCallMapper.fromJson(json),
-      _ when value == effective[RealtimeConversationItemMcpApprovalRequest] => RealtimeConversationItemMcpApprovalRequestMapper.fromJson(json),
+      _ when value == effective[RealtimeConversationItemMessageAssistant] =>
+        RealtimeConversationItemMessageAssistantMapper.fromJson(json),
+      _ when value == effective[RealtimeConversationItemFunctionCall] =>
+        RealtimeConversationItemFunctionCallMapper.fromJson(json),
+      _ when value == effective[RealtimeConversationItemFunctionCallOutput] =>
+        RealtimeConversationItemFunctionCallOutputMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpApprovalResponse] => RealtimeMcpApprovalResponseMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpListTools] => RealtimeMcpListToolsMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpToolCall] => RealtimeMcpToolCallMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpApprovalRequest] => RealtimeMcpApprovalRequestMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeConversationItem'),
     };
   }
@@ -112,7 +120,8 @@ class RealtimeConversationItemMessage extends RealtimeConversationItem with Real
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
-class RealtimeConversationItemFunctionCall extends RealtimeConversationItem with RealtimeConversationItemFunctionCallMappable {
+class RealtimeConversationItemFunctionCall extends RealtimeConversationItem
+    with RealtimeConversationItemFunctionCallMappable {
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemObjectObjectEnum? objectEnum;
@@ -135,7 +144,8 @@ class RealtimeConversationItemFunctionCall extends RealtimeConversationItem with
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call_output')
-class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationItem with RealtimeConversationItemFunctionCallOutputMappable {
+class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationItem
+    with RealtimeConversationItemFunctionCallOutputMappable {
   final String? id;
   @MappableField(key: 'object')
   final RealtimeConversationItemObjectObjectEnum? objectEnum;
@@ -156,7 +166,8 @@ class RealtimeConversationItemFunctionCallOutput extends RealtimeConversationIte
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
-class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem with RealtimeConversationItemMcpApprovalResponseMappable {
+class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem
+    with RealtimeConversationItemMcpApprovalResponseMappable {
   final RealtimeConversationItemType4 type;
   final String id;
   @MappableField(key: 'approval_request_id')
@@ -174,7 +185,8 @@ class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationIt
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
-class RealtimeConversationItemMcpListTools extends RealtimeConversationItem with RealtimeConversationItemMcpListToolsMappable {
+class RealtimeConversationItemMcpListTools extends RealtimeConversationItem
+    with RealtimeConversationItemMcpListToolsMappable {
   final RealtimeConversationItemType5 type;
   final String? id;
   @MappableField(key: 'server_label')
@@ -215,7 +227,8 @@ class RealtimeConversationItemMcpCall extends RealtimeConversationItem with Real
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
-class RealtimeConversationItemMcpApprovalRequest extends RealtimeConversationItem with RealtimeConversationItemMcpApprovalRequestMappable {
+class RealtimeConversationItemMcpApprovalRequest extends RealtimeConversationItem
+    with RealtimeConversationItemMcpApprovalRequestMappable {
   final RealtimeConversationItemType7 type;
   final String id;
   @MappableField(key: 'server_label')

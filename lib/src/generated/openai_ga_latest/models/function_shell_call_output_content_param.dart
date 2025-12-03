@@ -11,17 +11,12 @@ part 'function_shell_call_output_content_param.mapper.dart';
 /// Captured stdout and stderr for a portion of a function shell tool call output.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellCallOutputContentParam with FunctionShellCallOutputContentParamMappable {
-  const FunctionShellCallOutputContentParam({
-    required this.stdout,
-    required this.stderr,
-    required this.outcome,
-  });
+  const FunctionShellCallOutputContentParam({required this.stdout, required this.stderr, required this.outcome});
 
   final String stdout;
   final String stderr;
   final FunctionShellCallOutputOutcomeParam outcome;
 
-  static FunctionShellCallOutputContentParam fromJson(Map<String, dynamic> json) => FunctionShellCallOutputContentParamMapper.fromJson(json);
-
+  static FunctionShellCallOutputContentParam fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallOutputContentParamMapper.fromJson(json);
 }
-

@@ -14,18 +14,22 @@ part 'fine_tuning_job_hyperparameters.mapper.dart';
 class FineTuningJobHyperparameters with FineTuningJobHyperparametersMappable {
   const FineTuningJobHyperparameters({
     this.batchSize = const FineTuningJobHyperparametersBatchSizeUnionVariantString(value: 'auto'),
-    this.learningRateMultiplier = const FineTuningJobHyperparametersLearningRateMultiplierUnionVariantString(value: 'auto'),
+    this.learningRateMultiplier = const FineTuningJobHyperparametersLearningRateMultiplierUnionVariantString(
+      value: 'auto',
+    ),
     this.nEpochs = const FineTuningJobHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
   @MappableField(key: 'batch_size', hook: const FineTuningJobHyperparametersBatchSizeUnionHook())
   final FineTuningJobHyperparametersBatchSizeUnion batchSize;
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuningJobHyperparametersLearningRateMultiplierUnion learningRateMultiplier;
   @MappableField(key: 'n_epochs', hook: const FineTuningJobHyperparametersNEpochsUnionHook())
   final FineTuningJobHyperparametersNEpochsUnion nEpochs;
 
-  static FineTuningJobHyperparameters fromJson(Map<String, dynamic> json) => FineTuningJobHyperparametersMapper.fromJson(json);
-
+  static FineTuningJobHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuningJobHyperparametersMapper.fromJson(json);
 }
-

@@ -9,10 +9,10 @@ part 'create_eval_completions_run_data_source_type.mapper.dart';
 /// The type of run data source. Always `completions`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalCompletionsRunDataSourceType {
-  @MappableValue('completions') 
+  @MappableValue('completions')
   completions,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CreateEvalCompletionsRunDataSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalCompletionsRunDataSourceType> get $valuesDefined => values.where((value) => value != CreateEvalCompletionsRunDataSourceType.unknown).toList();
+  static List<CreateEvalCompletionsRunDataSourceType> get $valuesDefined =>
+      values.where((value) => value != CreateEvalCompletionsRunDataSourceType.unknown).toList();
 }

@@ -8,12 +8,7 @@ part 'batch_errors_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchErrorsData with BatchErrorsDataMappable {
-  const BatchErrorsData({
-    this.code,
-    this.message,
-    this.param,
-    this.line,
-  });
+  const BatchErrorsData({this.code, this.message, this.param, this.line});
 
   final String? code;
   final String? message;
@@ -21,6 +16,4 @@ class BatchErrorsData with BatchErrorsDataMappable {
   final int? line;
 
   static BatchErrorsData fromJson(Map<String, dynamic> json) => BatchErrorsDataMapper.fromJson(json);
-
 }
-

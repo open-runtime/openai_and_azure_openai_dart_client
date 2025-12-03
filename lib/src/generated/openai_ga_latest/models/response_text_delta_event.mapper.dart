@@ -8,13 +8,14 @@
 part of 'response_text_delta_event.dart';
 
 class ResponseTextDeltaEventMapper
-    extends ClassMapperBase<ResponseTextDeltaEvent> {
+    extends SubClassMapperBase<ResponseTextDeltaEvent> {
   ResponseTextDeltaEventMapper._();
 
   static ResponseTextDeltaEventMapper? _instance;
   static ResponseTextDeltaEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseTextDeltaEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseTextDeltaEventTypeMapper.ensureInitialized();
       ResponseLogProbMapper.ensureInitialized();
     }
@@ -75,6 +76,14 @@ class ResponseTextDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_text.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseTextDeltaEvent _instantiate(DecodingData data) {
     return ResponseTextDeltaEvent(
@@ -157,13 +166,14 @@ abstract class ResponseTextDeltaEventCopyWith<
   $In extends ResponseTextDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     ResponseLogProb,
     ResponseLogProbCopyWith<$R, ResponseLogProb, ResponseLogProb>
   >
   get logprobs;
+  @override
   $R call({
     ResponseTextDeltaEventType? type,
     String? itemId,

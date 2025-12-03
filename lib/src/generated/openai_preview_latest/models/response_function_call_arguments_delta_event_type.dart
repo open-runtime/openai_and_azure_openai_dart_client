@@ -11,10 +11,10 @@ part 'response_function_call_arguments_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFunctionCallArgumentsDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.function_call_arguments.delta`.
-  @MappableValue('response.function_call_arguments.delta') 
+  @MappableValue('response.function_call_arguments.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseFunctionCallArgumentsDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFunctionCallArgumentsDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseFunctionCallArgumentsDeltaEventType.unknown).toList();
+  static List<ResponseFunctionCallArgumentsDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseFunctionCallArgumentsDeltaEventType.unknown).toList();
 }

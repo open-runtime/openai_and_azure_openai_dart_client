@@ -9,13 +9,13 @@ part 'audit_log_actor_api_key_type.mapper.dart';
 /// The type of API key. Can be either `user` or `service_account`.
 @MappableEnum(defaultValue: 'unknown')
 enum AuditLogActorApiKeyType {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('service_account') 
+  @MappableValue('service_account')
   serviceAccount,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum AuditLogActorApiKeyType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AuditLogActorApiKeyType> get $valuesDefined => values.where((value) => value != AuditLogActorApiKeyType.unknown).toList();
+  static List<AuditLogActorApiKeyType> get $valuesDefined =>
+      values.where((value) => value != AuditLogActorApiKeyType.unknown).toList();
 }

@@ -11,10 +11,10 @@ part 'user_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UserObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.user`.
-  @MappableValue('organization.user') 
+  @MappableValue('organization.user')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum UserObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UserObjectObjectEnum> get $valuesDefined => values.where((value) => value != UserObjectObjectEnum.unknown).toList();
+  static List<UserObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UserObjectObjectEnum.unknown).toList();
 }

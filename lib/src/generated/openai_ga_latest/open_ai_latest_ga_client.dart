@@ -42,11 +42,7 @@ import 'videos/videos_api.dart';
 ///
 /// The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
 class OpenAiLatestGaClient {
-  OpenAiLatestGaClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  OpenAiLatestGaClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;
@@ -123,7 +119,8 @@ class OpenAiLatestGaClient {
 
   GroupsApi get groups => _groups ??= GroupsApi(_dio, baseUrl: _baseUrl);
 
-  GroupOrganizationRoleAssignmentsApi get groupOrganizationRoleAssignments => _groupOrganizationRoleAssignments ??= GroupOrganizationRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
+  GroupOrganizationRoleAssignmentsApi get groupOrganizationRoleAssignments =>
+      _groupOrganizationRoleAssignments ??= GroupOrganizationRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
 
   GroupUsersApi get groupUsers => _groupUsers ??= GroupUsersApi(_dio, baseUrl: _baseUrl);
 
@@ -137,11 +134,14 @@ class OpenAiLatestGaClient {
 
   UsersApi get users => _users ??= UsersApi(_dio, baseUrl: _baseUrl);
 
-  UserOrganizationRoleAssignmentsApi get userOrganizationRoleAssignments => _userOrganizationRoleAssignments ??= UserOrganizationRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
+  UserOrganizationRoleAssignmentsApi get userOrganizationRoleAssignments =>
+      _userOrganizationRoleAssignments ??= UserOrganizationRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
 
-  ProjectGroupRoleAssignmentsApi get projectGroupRoleAssignments => _projectGroupRoleAssignments ??= ProjectGroupRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
+  ProjectGroupRoleAssignmentsApi get projectGroupRoleAssignments =>
+      _projectGroupRoleAssignments ??= ProjectGroupRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
 
-  ProjectUserRoleAssignmentsApi get projectUserRoleAssignments => _projectUserRoleAssignments ??= ProjectUserRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
+  ProjectUserRoleAssignmentsApi get projectUserRoleAssignments =>
+      _projectUserRoleAssignments ??= ProjectUserRoleAssignmentsApi(_dio, baseUrl: _baseUrl);
 
   RealtimeApi get realtime => _realtime ??= RealtimeApi(_dio, baseUrl: _baseUrl);
 

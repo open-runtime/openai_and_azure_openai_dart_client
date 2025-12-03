@@ -9,19 +9,19 @@ part 'vector_store_file_object_status.mapper.dart';
 /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreFileObjectStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum VectorStoreFileObjectStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreFileObjectStatus> get $valuesDefined => values.where((value) => value != VectorStoreFileObjectStatus.unknown).toList();
+  static List<VectorStoreFileObjectStatus> get $valuesDefined =>
+      values.where((value) => value != VectorStoreFileObjectStatus.unknown).toList();
 }

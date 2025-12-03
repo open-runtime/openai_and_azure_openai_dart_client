@@ -37,7 +37,6 @@ class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
   final String? systemFingerprint;
   final CompletionUsage? usage;
 
-  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseMapper.fromJson(json);
-
+  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseMapper.fromJson(json);
 }
-

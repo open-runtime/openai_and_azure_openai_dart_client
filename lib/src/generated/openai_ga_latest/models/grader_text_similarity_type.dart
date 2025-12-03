@@ -9,10 +9,10 @@ part 'grader_text_similarity_type.mapper.dart';
 /// The type of grader.
 @MappableEnum(defaultValue: 'unknown')
 enum GraderTextSimilarityType {
-  @MappableValue('text_similarity') 
+  @MappableValue('text_similarity')
   textSimilarity,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum GraderTextSimilarityType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GraderTextSimilarityType> get $valuesDefined => values.where((value) => value != GraderTextSimilarityType.unknown).toList();
+  static List<GraderTextSimilarityType> get $valuesDefined =>
+      values.where((value) => value != GraderTextSimilarityType.unknown).toList();
 }

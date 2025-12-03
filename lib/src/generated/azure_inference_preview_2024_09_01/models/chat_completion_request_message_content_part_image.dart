@@ -10,8 +10,9 @@ import 'chat_completion_request_user_message_content_part.dart';
 
 part 'chat_completion_request_message_content_part_image.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMessageContentPartImageMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
+class ChatCompletionRequestMessageContentPartImage extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestMessageContentPartImageMappable {
   const ChatCompletionRequestMessageContentPartImage({
     required this.type,
     required this.chatCompletionRequestMessageContentPartImageImageUrl,
@@ -21,7 +22,6 @@ class ChatCompletionRequestMessageContentPartImage with ChatCompletionRequestMes
   @MappableField(key: 'image_url')
   final ChatCompletionRequestMessageContentPartImageImageUrl chatCompletionRequestMessageContentPartImageImageUrl;
 
-  static ChatCompletionRequestMessageContentPartImage fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartImageMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartImage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartImageMapper.fromJson(json);
 }
-

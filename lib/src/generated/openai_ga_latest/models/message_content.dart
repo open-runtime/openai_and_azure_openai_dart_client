@@ -25,12 +25,12 @@ import 'message_content_type4.dart';
 
 part 'message_content.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageContentImageFile,
-  MessageContentImageUrl,
-  MessageContentText,
-  MessageContentRefusal
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [MessageContentImageFile, MessageContentImageUrl, MessageContentText, MessageContentRefusal],
+)
 sealed class MessageContent with MessageContentMappable {
   const MessageContent();
 
@@ -40,24 +40,20 @@ sealed class MessageContent with MessageContentMappable {
 }
 
 extension MessageContentUnionDeserializer on MessageContent {
-  static MessageContent tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static MessageContent tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      MessageContentImageFile: 'image_file',
-      MessageContentImageUrl: 'image_url',
-      MessageContentText: 'text',
-      MessageContentRefusal: 'refusal',
+      MessageContentImageFileObject: 'image_file',
+      MessageContentImageUrlObject: 'image_url',
+      MessageContentTextObject: 'text',
+      MessageContentRefusalObject: 'refusal',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageContentImageFile] => MessageContentImageFileMapper.fromJson(json),
-      _ when value == effective[MessageContentImageUrl] => MessageContentImageUrlMapper.fromJson(json),
-      _ when value == effective[MessageContentText] => MessageContentTextMapper.fromJson(json),
-      _ when value == effective[MessageContentRefusal] => MessageContentRefusalMapper.fromJson(json),
+      _ when value == effective[MessageContentImageFileObject] => MessageContentImageFileObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentImageUrlObject] => MessageContentImageUrlObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentTextObject] => MessageContentTextObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentRefusalObject] => MessageContentRefusalObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageContent'),
     };
   }
@@ -69,10 +65,7 @@ class MessageContentImageFile extends MessageContent with MessageContentImageFil
   @MappableField(key: 'image_file')
   final MessageContentImageFile messageContentImageFile;
 
-  const MessageContentImageFile({
-    required this.type,
-    required this.messageContentImageFile,
-  });
+  const MessageContentImageFile({required this.type, required this.messageContentImageFile});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
@@ -81,10 +74,7 @@ class MessageContentImageUrl extends MessageContent with MessageContentImageUrlM
   @MappableField(key: 'image_url')
   final MessageContentImageUrl messageContentImageUrl;
 
-  const MessageContentImageUrl({
-    required this.type,
-    required this.messageContentImageUrl,
-  });
+  const MessageContentImageUrl({required this.type, required this.messageContentImageUrl});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
@@ -93,10 +83,7 @@ class MessageContentText extends MessageContent with MessageContentTextMappable 
   @MappableField(key: 'text')
   final MessageContentText messageContentText;
 
-  const MessageContentText({
-    required this.type,
-    required this.messageContentText,
-  });
+  const MessageContentText({required this.type, required this.messageContentText});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
@@ -104,8 +91,5 @@ class MessageContentRefusal extends MessageContent with MessageContentRefusalMap
   final MessageContentType4 type;
   final String refusal;
 
-  const MessageContentRefusal({
-    required this.type,
-    required this.refusal,
-  });
+  const MessageContentRefusal({required this.type, required this.refusal});
 }

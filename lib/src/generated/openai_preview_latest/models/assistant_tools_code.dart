@@ -8,15 +8,11 @@ import 'assistant_tools_code_type.dart';
 
 part 'assistant_tools_code.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantToolsCode with AssistantToolsCodeMappable {
-  const AssistantToolsCode({
-    required this.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
+class AssistantToolsCode extends RunObjectToolsUnion with AssistantToolsCodeMappable {
+  const AssistantToolsCode({required this.type});
 
   final AssistantToolsCodeType type;
 
   static AssistantToolsCode fromJson(Map<String, dynamic> json) => AssistantToolsCodeMapper.fromJson(json);
-
 }
-

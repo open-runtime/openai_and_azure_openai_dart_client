@@ -8,7 +8,7 @@
 part of 'function_shell_call_output.dart';
 
 class FunctionShellCallOutputMapper
-    extends ClassMapperBase<FunctionShellCallOutput> {
+    extends SubClassMapperBase<FunctionShellCallOutput> {
   FunctionShellCallOutputMapper._();
 
   static FunctionShellCallOutputMapper? _instance;
@@ -17,6 +17,7 @@ class FunctionShellCallOutputMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputMapper._(),
       );
+      OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
       FunctionShellCallOutputContentMapper.ensureInitialized();
       FunctionShellCallOutputTypeMapper.ensureInitialized();
     }
@@ -78,6 +79,13 @@ class FunctionShellCallOutputMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'shell_call_output';
+  @override
+  late final ClassMapperBase superMapper = OutputItemMapper.ensureInitialized();
 
   static FunctionShellCallOutput _instantiate(DecodingData data) {
     return FunctionShellCallOutput(
@@ -159,7 +167,7 @@ abstract class FunctionShellCallOutputCopyWith<
   $In extends FunctionShellCallOutput,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements OutputItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     FunctionShellCallOutputContent,
@@ -170,6 +178,7 @@ abstract class FunctionShellCallOutputCopyWith<
     >
   >
   get output;
+  @override
   $R call({
     String? id,
     String? callId,

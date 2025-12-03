@@ -8,7 +8,7 @@
 part of 'message_content_text_annotations_file_path_object.dart';
 
 class MessageContentTextAnnotationsFilePathObjectMapper
-    extends ClassMapperBase<MessageContentTextAnnotationsFilePathObject> {
+    extends SubClassMapperBase<MessageContentTextAnnotationsFilePathObject> {
   MessageContentTextAnnotationsFilePathObjectMapper._();
 
   static MessageContentTextAnnotationsFilePathObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageContentTextAnnotationsFilePathObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextAnnotationsFilePathObjectMapper._(),
       );
+      TextAnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
@@ -73,6 +74,14 @@ class MessageContentTextAnnotationsFilePathObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_path';
+  @override
+  late final ClassMapperBase superMapper =
+      TextAnnotationMapper.ensureInitialized();
 
   static MessageContentTextAnnotationsFilePathObject _instantiate(
     DecodingData data,
@@ -179,13 +188,14 @@ abstract class MessageContentTextAnnotationsFilePathObjectCopyWith<
   $In extends MessageContentTextAnnotationsFilePathObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements TextAnnotationCopyWith<$R, $In, $Out> {
   MessageContentTextAnnotationsFilePathObjectFilePathCopyWith<
     $R,
     MessageContentTextAnnotationsFilePathObjectFilePath,
     MessageContentTextAnnotationsFilePathObjectFilePath
   >
   get messageContentTextAnnotationsFilePathObjectFilePath;
+  @override
   $R call({
     MessageContentTextAnnotationsFilePathObjectType? type,
     String? text,

@@ -25,6 +25,4 @@ class ConversationResource with ConversationResourceMappable {
   final ConversationResourceObjectObjectEnum objectEnum;
 
   static ConversationResource fromJson(Map<String, dynamic> json) => ConversationResourceMapper.fromJson(json);
-
 }
-

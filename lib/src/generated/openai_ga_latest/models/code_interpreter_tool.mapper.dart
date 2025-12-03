@@ -7,13 +7,15 @@
 
 part of 'code_interpreter_tool.dart';
 
-class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
+class CodeInterpreterToolMapper
+    extends SubClassMapperBase<CodeInterpreterTool> {
   CodeInterpreterToolMapper._();
 
   static CodeInterpreterToolMapper? _instance;
   static CodeInterpreterToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = CodeInterpreterToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       CodeInterpreterToolTypeMapper.ensureInitialized();
       CodeInterpreterToolContainerUnionMapper.ensureInitialized();
     }
@@ -40,6 +42,13 @@ class CodeInterpreterToolMapper extends ClassMapperBase<CodeInterpreterTool> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'code_interpreter';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static CodeInterpreterTool _instantiate(DecodingData data) {
     return CodeInterpreterTool(
@@ -117,13 +126,14 @@ abstract class CodeInterpreterToolCopyWith<
   $In extends CodeInterpreterTool,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
   CodeInterpreterToolContainerUnionCopyWith<
     $R,
     CodeInterpreterToolContainerUnion,
     CodeInterpreterToolContainerUnion
   >
   get container;
+  @override
   $R call({
     CodeInterpreterToolType? type,
     CodeInterpreterToolContainerUnion? container,

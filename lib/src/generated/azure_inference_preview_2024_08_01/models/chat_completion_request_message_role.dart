@@ -9,10 +9,10 @@ part 'chat_completion_request_message_role.mapper.dart';
 /// The role of the messages author, in this case `system`.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestMessageRole {
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionRequestMessageRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestMessageRole> get $valuesDefined => values.where((value) => value != ChatCompletionRequestMessageRole.unknown).toList();
+  static List<ChatCompletionRequestMessageRole> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestMessageRole.unknown).toList();
 }

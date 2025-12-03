@@ -9,10 +9,10 @@ part 'message_stream_event_union_variant2_event.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum MessageStreamEventUnionVariant2Event {
   /// Incorrect name has been replaced. Original name: `thread.message.in_progress`.
-  @MappableValue('thread.message.in_progress') 
+  @MappableValue('thread.message.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageStreamEventUnionVariant2Event {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageStreamEventUnionVariant2Event> get $valuesDefined => values.where((value) => value != MessageStreamEventUnionVariant2Event.unknown).toList();
+  static List<MessageStreamEventUnionVariant2Event> get $valuesDefined =>
+      values.where((value) => value != MessageStreamEventUnionVariant2Event.unknown).toList();
 }

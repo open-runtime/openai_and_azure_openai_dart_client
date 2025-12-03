@@ -8,14 +8,11 @@ part 'response_usage_input_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseUsageInputTokensDetails with ResponseUsageInputTokensDetailsMappable {
-  const ResponseUsageInputTokensDetails({
-    required this.cachedTokens,
-  });
+  const ResponseUsageInputTokensDetails({required this.cachedTokens});
 
   @MappableField(key: 'cached_tokens')
   final int cachedTokens;
 
-  static ResponseUsageInputTokensDetails fromJson(Map<String, dynamic> json) => ResponseUsageInputTokensDetailsMapper.fromJson(json);
-
+  static ResponseUsageInputTokensDetails fromJson(Map<String, dynamic> json) =>
+      ResponseUsageInputTokensDetailsMapper.fromJson(json);
 }
-

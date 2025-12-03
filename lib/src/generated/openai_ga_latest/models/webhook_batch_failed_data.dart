@@ -8,13 +8,9 @@ part 'webhook_batch_failed_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchFailedData with WebhookBatchFailedDataMappable {
-  const WebhookBatchFailedData({
-    required this.id,
-  });
+  const WebhookBatchFailedData({required this.id});
 
   final String id;
 
   static WebhookBatchFailedData fromJson(Map<String, dynamic> json) => WebhookBatchFailedDataMapper.fromJson(json);
-
 }
-

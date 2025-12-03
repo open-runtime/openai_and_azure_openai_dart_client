@@ -9,10 +9,10 @@ part 'local_shell_exec_action_type.mapper.dart';
 /// The type of the local shell action. Always `exec`.
 @MappableEnum(defaultValue: 'unknown')
 enum LocalShellExecActionType {
-  @MappableValue('exec') 
+  @MappableValue('exec')
   exec,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum LocalShellExecActionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<LocalShellExecActionType> get $valuesDefined => values.where((value) => value != LocalShellExecActionType.unknown).toList();
+  static List<LocalShellExecActionType> get $valuesDefined =>
+      values.where((value) => value != LocalShellExecActionType.unknown).toList();
 }

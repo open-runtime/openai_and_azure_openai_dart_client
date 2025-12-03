@@ -9,16 +9,16 @@ part 'realtime_conversation_item_status.mapper.dart';
 /// The status of the item. Has no effect on the conversation.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemStatus {
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum RealtimeConversationItemStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemStatus> get $valuesDefined => values.where((value) => value != RealtimeConversationItemStatus.unknown).toList();
+  static List<RealtimeConversationItemStatus> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemStatus.unknown).toList();
 }

@@ -8,7 +8,7 @@
 part of 'run_step_details_tool_calls_file_search_object.dart';
 
 class RunStepDetailsToolCallsFileSearchObjectMapper
-    extends ClassMapperBase<RunStepDetailsToolCallsFileSearchObject> {
+    extends SubClassMapperBase<RunStepDetailsToolCallsFileSearchObject> {
   RunStepDetailsToolCallsFileSearchObjectMapper._();
 
   static RunStepDetailsToolCallsFileSearchObjectMapper? _instance;
@@ -17,6 +17,7 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsFileSearchObjectMapper._(),
       );
+      RunStepDetailsToolCallMapper.ensureInitialized().addSubMapper(_instance!);
       RunStepDetailsToolCallsFileSearchObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallsFileSearchObjectFileSearchMapper.ensureInitialized();
     }
@@ -62,6 +63,14 @@ class RunStepDetailsToolCallsFileSearchObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search';
+  @override
+  late final ClassMapperBase superMapper =
+      RunStepDetailsToolCallMapper.ensureInitialized();
 
   static RunStepDetailsToolCallsFileSearchObject _instantiate(
     DecodingData data,
@@ -157,13 +166,14 @@ abstract class RunStepDetailsToolCallsFileSearchObjectCopyWith<
   $In extends RunStepDetailsToolCallsFileSearchObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RunStepDetailsToolCallCopyWith<$R, $In, $Out> {
   RunStepDetailsToolCallsFileSearchObjectFileSearchCopyWith<
     $R,
     RunStepDetailsToolCallsFileSearchObjectFileSearch,
     RunStepDetailsToolCallsFileSearchObjectFileSearch
   >
   get runStepDetailsToolCallsFileSearchObjectFileSearch;
+  @override
   $R call({
     String? id,
     RunStepDetailsToolCallsFileSearchObjectType? type,

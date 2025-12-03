@@ -11,10 +11,10 @@ part 'message_object_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum MessageObjectObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `thread.message`.
-  @MappableValue('thread.message') 
+  @MappableValue('thread.message')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum MessageObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != MessageObjectObjectObjectEnum.unknown).toList();
+  static List<MessageObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != MessageObjectObjectObjectEnum.unknown).toList();
 }

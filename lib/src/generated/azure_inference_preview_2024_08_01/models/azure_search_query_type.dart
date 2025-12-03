@@ -9,22 +9,22 @@ part 'azure_search_query_type.mapper.dart';
 /// The type of Azure Search retrieval query that should be executed when using it as an Azure OpenAI chat extension.
 @MappableEnum(defaultValue: 'unknown')
 enum AzureSearchQueryType {
-  @MappableValue('simple') 
+  @MappableValue('simple')
   simple,
 
-  @MappableValue('semantic') 
+  @MappableValue('semantic')
   semantic,
 
-  @MappableValue('vector') 
+  @MappableValue('vector')
   vector,
 
-  @MappableValue('vector_simple_hybrid') 
+  @MappableValue('vector_simple_hybrid')
   vectorSimpleHybrid,
 
-  @MappableValue('vector_semantic_hybrid') 
+  @MappableValue('vector_semantic_hybrid')
   vectorSemanticHybrid,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum AzureSearchQueryType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AzureSearchQueryType> get $valuesDefined => values.where((value) => value != AzureSearchQueryType.unknown).toList();
+  static List<AzureSearchQueryType> get $valuesDefined =>
+      values.where((value) => value != AzureSearchQueryType.unknown).toList();
 }

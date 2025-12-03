@@ -13,17 +13,21 @@ import 'eval_jsonl_file_id_source_type.dart';
 
 part 'create_eval_jsonl_run_data_source_source_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalJsonlRunDataSourceSourceUnionFileContent,
-  CreateEvalJsonlRunDataSourceSourceUnionFileId
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalJsonlRunDataSourceSourceUnionFileContent,
+    CreateEvalJsonlRunDataSourceSourceUnionFileId,
+  ],
+)
 sealed class CreateEvalJsonlRunDataSourceSourceUnion with CreateEvalJsonlRunDataSourceSourceUnionMappable {
   const CreateEvalJsonlRunDataSourceSourceUnion();
 
   static CreateEvalJsonlRunDataSourceSourceUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalJsonlRunDataSourceSourceUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalJsonlRunDataSourceSourceUnionDeserializer on CreateEvalJsonlRunDataSourceSourceUnion {
@@ -33,38 +37,35 @@ extension CreateEvalJsonlRunDataSourceSourceUnionDeserializer on CreateEvalJsonl
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalJsonlRunDataSourceSourceUnionFileContent: 'file_content',
-      CreateEvalJsonlRunDataSourceSourceUnionFileId: 'file_id',
+      EvalJsonlFileContentSource: 'file_content',
+      EvalJsonlFileIdSource: 'file_id',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalJsonlRunDataSourceSourceUnionFileContent] => CreateEvalJsonlRunDataSourceSourceUnionFileContentMapper.fromJson(json),
-      _ when value == effective[CreateEvalJsonlRunDataSourceSourceUnionFileId] => CreateEvalJsonlRunDataSourceSourceUnionFileIdMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalJsonlRunDataSourceSourceUnion'),
+      _ when value == effective[EvalJsonlFileContentSource] => EvalJsonlFileContentSourceMapper.fromJson(json),
+      _ when value == effective[EvalJsonlFileIdSource] => EvalJsonlFileIdSourceMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalJsonlRunDataSourceSourceUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
-class CreateEvalJsonlRunDataSourceSourceUnionFileContent extends CreateEvalJsonlRunDataSourceSourceUnion with CreateEvalJsonlRunDataSourceSourceUnionFileContentMappable {
+class CreateEvalJsonlRunDataSourceSourceUnionFileContent extends CreateEvalJsonlRunDataSourceSourceUnion
+    with CreateEvalJsonlRunDataSourceSourceUnionFileContentMappable {
   final EvalJsonlFileContentSourceType type;
   final List<EvalJsonlFileContentSourceContent> content;
 
-  const CreateEvalJsonlRunDataSourceSourceUnionFileContent({
-    required this.type,
-    required this.content,
-  });
-
+  const CreateEvalJsonlRunDataSourceSourceUnionFileContent({required this.type, required this.content});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
-class CreateEvalJsonlRunDataSourceSourceUnionFileId extends CreateEvalJsonlRunDataSourceSourceUnion with CreateEvalJsonlRunDataSourceSourceUnionFileIdMappable {
+class CreateEvalJsonlRunDataSourceSourceUnionFileId extends CreateEvalJsonlRunDataSourceSourceUnion
+    with CreateEvalJsonlRunDataSourceSourceUnionFileIdMappable {
   final EvalJsonlFileIdSourceType type;
   final String id;
 
-  const CreateEvalJsonlRunDataSourceSourceUnionFileId({
-    required this.type,
-    required this.id,
-  });
-
+  const CreateEvalJsonlRunDataSourceSourceUnionFileId({required this.type, required this.id});
 }

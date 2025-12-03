@@ -8,7 +8,7 @@
 part of 'response_code_interpreter_call_code_done_event.dart';
 
 class ResponseCodeInterpreterCallCodeDoneEventMapper
-    extends ClassMapperBase<ResponseCodeInterpreterCallCodeDoneEvent> {
+    extends SubClassMapperBase<ResponseCodeInterpreterCallCodeDoneEvent> {
   ResponseCodeInterpreterCallCodeDoneEventMapper._();
 
   static ResponseCodeInterpreterCallCodeDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallCodeDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCodeInterpreterCallCodeDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -66,6 +67,14 @@ class ResponseCodeInterpreterCallCodeDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.code_interpreter_call_code.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCodeInterpreterCallCodeDoneEvent _instantiate(
     DecodingData data,
@@ -161,7 +170,8 @@ abstract class ResponseCodeInterpreterCallCodeDoneEventCopyWith<
   $In extends ResponseCodeInterpreterCallCodeDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseCodeInterpreterCallCodeDoneEventType? type,
     int? outputIndex,

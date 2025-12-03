@@ -10,18 +10,13 @@ part 'delete_vector_store_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteVectorStoreResponse with DeleteVectorStoreResponseMappable {
-  const DeleteVectorStoreResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectEnum,
-  });
+  const DeleteVectorStoreResponse({required this.id, required this.deleted, required this.objectEnum});
 
   final String id;
   final bool deleted;
   @MappableField(key: 'object')
   final DeleteVectorStoreResponseObjectObjectEnum objectEnum;
 
-  static DeleteVectorStoreResponse fromJson(Map<String, dynamic> json) => DeleteVectorStoreResponseMapper.fromJson(json);
-
+  static DeleteVectorStoreResponse fromJson(Map<String, dynamic> json) =>
+      DeleteVectorStoreResponseMapper.fromJson(json);
 }
-

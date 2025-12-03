@@ -9,10 +9,10 @@ part 'tool_type.mapper.dart';
 /// The type of the file search tool. Always `file_search`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

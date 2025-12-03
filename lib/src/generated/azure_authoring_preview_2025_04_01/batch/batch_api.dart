@@ -38,8 +38,10 @@ abstract class BatchApi {
     @DioOptions() RequestOptions? options,
   });
 
-  /// Creates and executes a batch from an uploaded file of requests.  ///
-  /// Response includes details of the enqueued job including job status.  ///
+  /// Creates and executes a batch from an uploaded file of requests.
+  ///
+  /// Response includes details of the enqueued job including job status.
+  ///
   /// The ID of the result file is added to the response once complete.
   ///
   /// [apiVersion] - The requested API version.

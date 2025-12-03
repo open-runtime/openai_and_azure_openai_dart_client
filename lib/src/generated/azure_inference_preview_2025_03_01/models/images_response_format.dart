@@ -9,13 +9,13 @@ part 'images_response_format.mapper.dart';
 /// The format in which the generated images are returned.
 @MappableEnum(defaultValue: 'unknown')
 enum ImagesResponseFormat {
-  @MappableValue('url') 
+  @MappableValue('url')
   url,
 
-  @MappableValue('b64_json') 
+  @MappableValue('b64_json')
   b64Json,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ImagesResponseFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImagesResponseFormat> get $valuesDefined => values.where((value) => value != ImagesResponseFormat.unknown).toList();
+  static List<ImagesResponseFormat> get $valuesDefined =>
+      values.where((value) => value != ImagesResponseFormat.unknown).toList();
 }

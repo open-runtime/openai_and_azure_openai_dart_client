@@ -8,13 +8,10 @@ part 'update_stored_completion_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateStoredCompletionRequest with UpdateStoredCompletionRequestMappable {
-  const UpdateStoredCompletionRequest({
-    this.metadata,
-  });
+  const UpdateStoredCompletionRequest({this.metadata});
 
   final Map<String, String>? metadata;
 
-  static UpdateStoredCompletionRequest fromJson(Map<String, dynamic> json) => UpdateStoredCompletionRequestMapper.fromJson(json);
-
+  static UpdateStoredCompletionRequest fromJson(Map<String, dynamic> json) =>
+      UpdateStoredCompletionRequestMapper.fromJson(json);
 }
-

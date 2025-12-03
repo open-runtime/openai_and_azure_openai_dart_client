@@ -8,16 +8,12 @@ part 'realtime_server_event_conversation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventConversation with RealtimeServerEventConversationMappable {
-  const RealtimeServerEventConversation({
-    this.id,
-    this.objectField,
-  });
+  const RealtimeServerEventConversation({this.id, this.objectField});
 
   final String? id;
   @MappableField(key: 'object')
   final String? objectField;
 
-  static RealtimeServerEventConversation fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationMapper.fromJson(json);
-
+  static RealtimeServerEventConversation fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationMapper.fromJson(json);
 }
-

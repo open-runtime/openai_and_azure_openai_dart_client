@@ -10,10 +10,10 @@ part 'response_custom_tool_call_input_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseCustomToolCallInputDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.custom_tool_call_input.delta`.
-  @MappableValue('response.custom_tool_call_input.delta') 
+  @MappableValue('response.custom_tool_call_input.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseCustomToolCallInputDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseCustomToolCallInputDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseCustomToolCallInputDeltaEventType.unknown).toList();
+  static List<ResponseCustomToolCallInputDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseCustomToolCallInputDeltaEventType.unknown).toList();
 }

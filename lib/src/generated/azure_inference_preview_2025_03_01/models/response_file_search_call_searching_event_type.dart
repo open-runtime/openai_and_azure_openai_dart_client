@@ -11,10 +11,10 @@ part 'response_file_search_call_searching_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFileSearchCallSearchingEventType {
   /// Incorrect name has been replaced. Original name: `response.file_search_call.searching`.
-  @MappableValue('response.file_search_call.searching') 
+  @MappableValue('response.file_search_call.searching')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseFileSearchCallSearchingEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFileSearchCallSearchingEventType> get $valuesDefined => values.where((value) => value != ResponseFileSearchCallSearchingEventType.unknown).toList();
+  static List<ResponseFileSearchCallSearchingEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseFileSearchCallSearchingEventType.unknown).toList();
 }

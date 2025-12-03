@@ -32,6 +32,4 @@ class WebhookBatchExpired with WebhookBatchExpiredMappable {
   final WebhookBatchExpiredObjectObjectEnum? objectEnum;
 
   static WebhookBatchExpired fromJson(Map<String, dynamic> json) => WebhookBatchExpiredMapper.fromJson(json);
-
 }
-

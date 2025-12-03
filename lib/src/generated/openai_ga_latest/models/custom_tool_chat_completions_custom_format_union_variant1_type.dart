@@ -9,10 +9,10 @@ part 'custom_tool_chat_completions_custom_format_union_variant1_type.mapper.dart
 /// Unconstrained text format. Always `text`.
 @MappableEnum(defaultValue: 'unknown')
 enum CustomToolChatCompletionsCustomFormatUnionVariant1Type {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CustomToolChatCompletionsCustomFormatUnionVariant1Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomToolChatCompletionsCustomFormatUnionVariant1Type> get $valuesDefined => values.where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant1Type.unknown).toList();
+  static List<CustomToolChatCompletionsCustomFormatUnionVariant1Type> get $valuesDefined =>
+      values.where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant1Type.unknown).toList();
 }

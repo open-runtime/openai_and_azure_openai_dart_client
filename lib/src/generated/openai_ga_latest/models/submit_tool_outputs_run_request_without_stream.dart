@@ -10,14 +10,11 @@ part 'submit_tool_outputs_run_request_without_stream.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SubmitToolOutputsRunRequestWithoutStream with SubmitToolOutputsRunRequestWithoutStreamMappable {
-  const SubmitToolOutputsRunRequestWithoutStream({
-    required this.toolOutputs,
-  });
+  const SubmitToolOutputsRunRequestWithoutStream({required this.toolOutputs});
 
   @MappableField(key: 'tool_outputs')
   final List<SubmitToolOutputsRunRequestWithoutStreamToolOutputs> toolOutputs;
 
-  static SubmitToolOutputsRunRequestWithoutStream fromJson(Map<String, dynamic> json) => SubmitToolOutputsRunRequestWithoutStreamMapper.fromJson(json);
-
+  static SubmitToolOutputsRunRequestWithoutStream fromJson(Map<String, dynamic> json) =>
+      SubmitToolOutputsRunRequestWithoutStreamMapper.fromJson(json);
 }
-

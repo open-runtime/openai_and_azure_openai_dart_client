@@ -10,8 +10,5 @@ part 'run_stream_event.mapper.dart';
 class RunStreamEvent with RunStreamEventMappable {
   const RunStreamEvent();
 
-
   static RunStreamEvent fromJson(Map<String, dynamic> json) => RunStreamEventMapper.fromJson(json);
-
 }
-

@@ -11,8 +11,8 @@ import 'message_delta_content_image_url_object_type.dart';
 part 'message_delta_content_image_url_object.mapper.dart';
 
 /// References an image URL in the content of a message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageDeltaContentImageUrlObject with MessageDeltaContentImageUrlObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
+class MessageDeltaContentImageUrlObject extends MessageContentDelta with MessageDeltaContentImageUrlObjectMappable {
   const MessageDeltaContentImageUrlObject({
     required this.indexField,
     required this.type,
@@ -25,7 +25,6 @@ class MessageDeltaContentImageUrlObject with MessageDeltaContentImageUrlObjectMa
   @MappableField(key: 'image_url')
   final MessageDeltaContentImageUrlObjectImageUrl? messageDeltaContentImageUrlObjectImageUrl;
 
-  static MessageDeltaContentImageUrlObject fromJson(Map<String, dynamic> json) => MessageDeltaContentImageUrlObjectMapper.fromJson(json);
-
+  static MessageDeltaContentImageUrlObject fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentImageUrlObjectMapper.fromJson(json);
 }
-

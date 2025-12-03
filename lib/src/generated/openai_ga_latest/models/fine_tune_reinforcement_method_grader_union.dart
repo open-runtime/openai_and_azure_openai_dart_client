@@ -22,20 +22,24 @@ import 'grader_text_similarity_type.dart';
 
 part 'fine_tune_reinforcement_method_grader_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  FineTuneReinforcementMethodGraderUnionStringCheck,
-  FineTuneReinforcementMethodGraderUnionTextSimilarity,
-  FineTuneReinforcementMethodGraderUnionPython,
-  FineTuneReinforcementMethodGraderUnionScoreModel,
-  FineTuneReinforcementMethodGraderUnionMulti
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    FineTuneReinforcementMethodGraderUnionStringCheck,
+    FineTuneReinforcementMethodGraderUnionTextSimilarity,
+    FineTuneReinforcementMethodGraderUnionPython,
+    FineTuneReinforcementMethodGraderUnionScoreModel,
+    FineTuneReinforcementMethodGraderUnionMulti,
+  ],
+)
 sealed class FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionMappable {
   const FineTuneReinforcementMethodGraderUnion();
 
   static FineTuneReinforcementMethodGraderUnion fromJson(Map<String, dynamic> json) {
     return FineTuneReinforcementMethodGraderUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension FineTuneReinforcementMethodGraderUnionDeserializer on FineTuneReinforcementMethodGraderUnion {
@@ -45,27 +49,30 @@ extension FineTuneReinforcementMethodGraderUnionDeserializer on FineTuneReinforc
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      FineTuneReinforcementMethodGraderUnionStringCheck: 'string_check',
-      FineTuneReinforcementMethodGraderUnionTextSimilarity: 'text_similarity',
-      FineTuneReinforcementMethodGraderUnionPython: 'python',
-      FineTuneReinforcementMethodGraderUnionScoreModel: 'score_model',
-      FineTuneReinforcementMethodGraderUnionMulti: 'multi',
+      GraderStringCheck: 'string_check',
+      GraderTextSimilarity: 'text_similarity',
+      GraderPython: 'python',
+      GraderScoreModel: 'score_model',
+      GraderMulti: 'multi',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[FineTuneReinforcementMethodGraderUnionStringCheck] => FineTuneReinforcementMethodGraderUnionStringCheckMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementMethodGraderUnionTextSimilarity] => FineTuneReinforcementMethodGraderUnionTextSimilarityMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementMethodGraderUnionPython] => FineTuneReinforcementMethodGraderUnionPythonMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementMethodGraderUnionScoreModel] => FineTuneReinforcementMethodGraderUnionScoreModelMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementMethodGraderUnionMulti] => FineTuneReinforcementMethodGraderUnionMultiMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for FineTuneReinforcementMethodGraderUnion'),
+      _ when value == effective[GraderStringCheck] => GraderStringCheckMapper.fromJson(json),
+      _ when value == effective[GraderTextSimilarity] => GraderTextSimilarityMapper.fromJson(json),
+      _ when value == effective[GraderPython] => GraderPythonMapper.fromJson(json),
+      _ when value == effective[GraderScoreModel] => GraderScoreModelMapper.fromJson(json),
+      _ when value == effective[GraderMulti] => GraderMultiMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for FineTuneReinforcementMethodGraderUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
-class FineTuneReinforcementMethodGraderUnionStringCheck extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionStringCheckMappable {
+class FineTuneReinforcementMethodGraderUnionStringCheck extends FineTuneReinforcementMethodGraderUnion
+    with FineTuneReinforcementMethodGraderUnionStringCheckMappable {
   final GraderStringCheckType type;
   final String name;
   final String input;
@@ -79,10 +86,11 @@ class FineTuneReinforcementMethodGraderUnionStringCheck extends FineTuneReinforc
     required this.reference,
     required this.operation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
-class FineTuneReinforcementMethodGraderUnionTextSimilarity extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionTextSimilarityMappable {
+class FineTuneReinforcementMethodGraderUnionTextSimilarity extends FineTuneReinforcementMethodGraderUnion
+    with FineTuneReinforcementMethodGraderUnionTextSimilarityMappable {
   final GraderTextSimilarityType type;
   final String name;
   final String input;
@@ -97,10 +105,11 @@ class FineTuneReinforcementMethodGraderUnionTextSimilarity extends FineTuneReinf
     required this.reference,
     required this.evaluationMetric,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
-class FineTuneReinforcementMethodGraderUnionPython extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionPythonMappable {
+class FineTuneReinforcementMethodGraderUnionPython extends FineTuneReinforcementMethodGraderUnion
+    with FineTuneReinforcementMethodGraderUnionPythonMappable {
   final GraderPythonType type;
   final String name;
   final String source;
@@ -113,10 +122,11 @@ class FineTuneReinforcementMethodGraderUnionPython extends FineTuneReinforcement
     required this.source,
     required this.imageTag,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
-class FineTuneReinforcementMethodGraderUnionScoreModel extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionScoreModelMappable {
+class FineTuneReinforcementMethodGraderUnionScoreModel extends FineTuneReinforcementMethodGraderUnion
+    with FineTuneReinforcementMethodGraderUnionScoreModelMappable {
   final GraderScoreModelType type;
   final String name;
   final String model;
@@ -133,10 +143,11 @@ class FineTuneReinforcementMethodGraderUnionScoreModel extends FineTuneReinforce
     required this.input,
     required this.range,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'multi')
-class FineTuneReinforcementMethodGraderUnionMulti extends FineTuneReinforcementMethodGraderUnion with FineTuneReinforcementMethodGraderUnionMultiMappable {
+class FineTuneReinforcementMethodGraderUnionMulti extends FineTuneReinforcementMethodGraderUnion
+    with FineTuneReinforcementMethodGraderUnionMultiMappable {
   final GraderMultiType type;
   final String name;
   final GraderMultiGradersUnion graders;
@@ -149,5 +160,4 @@ class FineTuneReinforcementMethodGraderUnionMulti extends FineTuneReinforcementM
     required this.graders,
     required this.calculateOutput,
   });
-
 }

@@ -8,7 +8,7 @@
 part of 'realtime_client_event_conversation_item_delete.dart';
 
 class RealtimeClientEventConversationItemDeleteMapper
-    extends ClassMapperBase<RealtimeClientEventConversationItemDelete> {
+    extends SubClassMapperBase<RealtimeClientEventConversationItemDelete> {
   RealtimeClientEventConversationItemDeleteMapper._();
 
   static RealtimeClientEventConversationItemDeleteMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventConversationItemDeleteMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemDeleteMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -43,6 +44,14 @@ class RealtimeClientEventConversationItemDeleteMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.delete';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventConversationItemDelete _instantiate(
     DecodingData data,
@@ -140,7 +149,8 @@ abstract class RealtimeClientEventConversationItemDeleteCopyWith<
   $In extends RealtimeClientEventConversationItemDelete,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({dynamic type, String? itemId, String? eventId});
   RealtimeClientEventConversationItemDeleteCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

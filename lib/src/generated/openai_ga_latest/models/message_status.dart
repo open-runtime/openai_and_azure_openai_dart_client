@@ -8,16 +8,16 @@ part 'message_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum MessageStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

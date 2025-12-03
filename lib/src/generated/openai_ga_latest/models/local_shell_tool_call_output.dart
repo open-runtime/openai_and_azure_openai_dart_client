@@ -13,14 +13,9 @@ part 'local_shell_tool_call_output.mapper.dart';
 
 /// The output of a local shell tool call.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class LocalShellToolCallOutput with LocalShellToolCallOutputMappable {
-  const LocalShellToolCallOutput({
-    required this.type,
-    required this.id,
-    required this.output,
-    this.status,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call_output')
+class LocalShellToolCallOutput extends ItemUnion with LocalShellToolCallOutputMappable {
+  const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status});
 
   final LocalShellToolCallOutputType type;
   final String id;
@@ -28,6 +23,4 @@ class LocalShellToolCallOutput with LocalShellToolCallOutputMappable {
   final LocalShellToolCallOutputStatus? status;
 
   static LocalShellToolCallOutput fromJson(Map<String, dynamic> json) => LocalShellToolCallOutputMapper.fromJson(json);
-
 }
-

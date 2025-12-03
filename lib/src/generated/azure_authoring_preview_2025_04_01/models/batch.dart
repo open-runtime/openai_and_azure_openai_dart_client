@@ -83,6 +83,4 @@ class Batch with BatchMappable {
   final Map<String, String>? metadata;
 
   static Batch fromJson(Map<String, dynamic> json) => BatchMapper.fromJson(json);
-
 }
-

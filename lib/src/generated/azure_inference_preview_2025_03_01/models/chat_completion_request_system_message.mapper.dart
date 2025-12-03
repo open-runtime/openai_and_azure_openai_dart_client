@@ -8,7 +8,7 @@
 part of 'chat_completion_request_system_message.dart';
 
 class ChatCompletionRequestSystemMessageMapper
-    extends ClassMapperBase<ChatCompletionRequestSystemMessage> {
+    extends SubClassMapperBase<ChatCompletionRequestSystemMessage> {
   ChatCompletionRequestSystemMessageMapper._();
 
   static ChatCompletionRequestSystemMessageMapper? _instance;
@@ -16,6 +16,9 @@ class ChatCompletionRequestSystemMessageMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestSystemMessageMapper._(),
+      );
+      ChatCompletionRequestMessageMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ChatCompletionRequestSystemMessageRoleMapper.ensureInitialized();
     }
@@ -50,6 +53,14 @@ class ChatCompletionRequestSystemMessageMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'role';
+  @override
+  final dynamic discriminatorValue = 'system';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestMessageMapper.ensureInitialized();
 
   static ChatCompletionRequestSystemMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestSystemMessage(
@@ -137,7 +148,8 @@ abstract class ChatCompletionRequestSystemMessageCopyWith<
   $In extends ChatCompletionRequestSystemMessage,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ChatCompletionRequestMessageCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? content,
     ChatCompletionRequestSystemMessageRole? role,

@@ -8,7 +8,7 @@
 part of 'response_content_part_added_event.dart';
 
 class ResponseContentPartAddedEventMapper
-    extends ClassMapperBase<ResponseContentPartAddedEvent> {
+    extends SubClassMapperBase<ResponseContentPartAddedEvent> {
   ResponseContentPartAddedEventMapper._();
 
   static ResponseContentPartAddedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseContentPartAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseContentPartAddedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseContentPartAddedEventTypeMapper.ensureInitialized();
       OutputContentMapper.ensureInitialized();
     }
@@ -66,6 +67,14 @@ class ResponseContentPartAddedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.content_part.added';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseContentPartAddedEvent _instantiate(DecodingData data) {
     return ResponseContentPartAddedEvent(
@@ -150,8 +159,9 @@ abstract class ResponseContentPartAddedEventCopyWith<
   $In extends ResponseContentPartAddedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   OutputContentCopyWith<$R, OutputContent, OutputContent> get partField;
+  @override
   $R call({
     ResponseContentPartAddedEventType? type,
     String? itemId,

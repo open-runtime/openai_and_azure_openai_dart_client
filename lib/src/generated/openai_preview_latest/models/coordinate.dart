@@ -10,15 +10,10 @@ part 'coordinate.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Coordinate with CoordinateMappable {
-  const Coordinate({
-    required this.x,
-    required this.y,
-  });
+  const Coordinate({required this.x, required this.y});
 
   final int x;
   final int y;
 
   static Coordinate fromJson(Map<String, dynamic> json) => CoordinateMapper.fromJson(json);
-
 }
-

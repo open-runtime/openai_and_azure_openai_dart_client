@@ -11,12 +11,7 @@ part 'model.mapper.dart';
 /// Describes an OpenAI model offering that can be used with the API.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Model with ModelMappable {
-  const Model({
-    required this.id,
-    required this.created,
-    required this.objectEnum,
-    required this.ownedBy,
-  });
+  const Model({required this.id, required this.created, required this.objectEnum, required this.ownedBy});
 
   final String id;
   final int created;
@@ -26,6 +21,4 @@ class Model with ModelMappable {
   final String ownedBy;
 
   static Model fromJson(Map<String, dynamic> json) => ModelMapper.fromJson(json);
-
 }
-

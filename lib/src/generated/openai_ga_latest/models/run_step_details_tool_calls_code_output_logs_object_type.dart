@@ -9,10 +9,10 @@ part 'run_step_details_tool_calls_code_output_logs_object_type.mapper.dart';
 /// Always `logs`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallsCodeOutputLogsObjectType {
-  @MappableValue('logs') 
+  @MappableValue('logs')
   logs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDetailsToolCallsCodeOutputLogsObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallsCodeOutputLogsObjectType> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallsCodeOutputLogsObjectType.unknown).toList();
+  static List<RunStepDetailsToolCallsCodeOutputLogsObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallsCodeOutputLogsObjectType.unknown).toList();
 }

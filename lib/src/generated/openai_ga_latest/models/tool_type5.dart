@@ -10,10 +10,10 @@ part 'tool_type5.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType5 {
-  @MappableValue('code_interpreter') 
+  @MappableValue('code_interpreter')
   codeInterpreter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

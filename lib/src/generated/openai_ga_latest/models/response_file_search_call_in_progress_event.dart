@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_file_search_call_in_progress_event.mapper.dart';
 
 /// Emitted when a file search call is initiated.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFileSearchCallInProgressEvent with ResponseFileSearchCallInProgressEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.in_progress')
+class ResponseFileSearchCallInProgressEvent extends ResponseStreamEvent
+    with ResponseFileSearchCallInProgressEventMappable {
   const ResponseFileSearchCallInProgressEvent({
     required this.type,
     required this.outputIndex,
@@ -27,7 +28,6 @@ class ResponseFileSearchCallInProgressEvent with ResponseFileSearchCallInProgres
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseFileSearchCallInProgressEvent fromJson(Map<String, dynamic> json) => ResponseFileSearchCallInProgressEventMapper.fromJson(json);
-
+  static ResponseFileSearchCallInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFileSearchCallInProgressEventMapper.fromJson(json);
 }
-

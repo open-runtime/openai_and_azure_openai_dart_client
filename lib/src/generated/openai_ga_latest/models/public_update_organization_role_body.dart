@@ -9,18 +9,13 @@ part 'public_update_organization_role_body.mapper.dart';
 /// Request payload for updating an existing role.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PublicUpdateOrganizationRoleBody with PublicUpdateOrganizationRoleBodyMappable {
-  const PublicUpdateOrganizationRoleBody({
-    this.permissions,
-    this.description,
-    this.roleName,
-  });
+  const PublicUpdateOrganizationRoleBody({this.permissions, this.description, this.roleName});
 
   final List<String>? permissions;
   final String? description;
   @MappableField(key: 'role_name')
   final String? roleName;
 
-  static PublicUpdateOrganizationRoleBody fromJson(Map<String, dynamic> json) => PublicUpdateOrganizationRoleBodyMapper.fromJson(json);
-
+  static PublicUpdateOrganizationRoleBody fromJson(Map<String, dynamic> json) =>
+      PublicUpdateOrganizationRoleBodyMapper.fromJson(json);
 }
-

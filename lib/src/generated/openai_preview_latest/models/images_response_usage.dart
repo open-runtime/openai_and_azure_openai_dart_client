@@ -27,6 +27,4 @@ class ImagesResponseUsage with ImagesResponseUsageMappable {
   final ImagesResponseUsageInputTokensDetails imagesResponseUsageInputTokensDetails;
 
   static ImagesResponseUsage fromJson(Map<String, dynamic> json) => ImagesResponseUsageMapper.fromJson(json);
-
 }
-

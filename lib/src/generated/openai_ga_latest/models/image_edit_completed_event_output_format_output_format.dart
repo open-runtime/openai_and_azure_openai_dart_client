@@ -10,16 +10,16 @@ part 'image_edit_completed_event_output_format_output_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditCompletedEventOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageEditCompletedEventOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditCompletedEventOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImageEditCompletedEventOutputFormatOutputFormat.unknown).toList();
+  static List<ImageEditCompletedEventOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImageEditCompletedEventOutputFormatOutputFormat.unknown).toList();
 }

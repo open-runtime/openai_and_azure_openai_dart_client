@@ -8,7 +8,7 @@
 part of 'realtime_server_event_mcp_list_tools_completed.dart';
 
 class RealtimeServerEventMcpListToolsCompletedMapper
-    extends ClassMapperBase<RealtimeServerEventMcpListToolsCompleted> {
+    extends SubClassMapperBase<RealtimeServerEventMcpListToolsCompleted> {
   RealtimeServerEventMcpListToolsCompletedMapper._();
 
   static RealtimeServerEventMcpListToolsCompletedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventMcpListToolsCompletedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventMcpListToolsCompletedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -43,6 +44,14 @@ class RealtimeServerEventMcpListToolsCompletedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp_list_tools.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventMcpListToolsCompleted _instantiate(
     DecodingData data,
@@ -136,7 +145,8 @@ abstract class RealtimeServerEventMcpListToolsCompletedCopyWith<
   $In extends RealtimeServerEventMcpListToolsCompleted,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? eventId, dynamic type, String? itemId});
   RealtimeServerEventMcpListToolsCompletedCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

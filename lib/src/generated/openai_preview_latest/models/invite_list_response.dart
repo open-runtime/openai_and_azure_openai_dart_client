@@ -11,13 +11,7 @@ part 'invite_list_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteListResponse with InviteListResponseMappable {
-  const InviteListResponse({
-    required this.objectEnum,
-    required this.data,
-    this.firstId,
-    this.lastId,
-    this.hasMore,
-  });
+  const InviteListResponse({required this.objectEnum, required this.data, this.firstId, this.lastId, this.hasMore});
 
   @MappableField(key: 'object')
   final InviteListResponseObjectObjectEnum objectEnum;
@@ -30,6 +24,4 @@ class InviteListResponse with InviteListResponseMappable {
   final bool? hasMore;
 
   static InviteListResponse fromJson(Map<String, dynamic> json) => InviteListResponseMapper.fromJson(json);
-
 }
-

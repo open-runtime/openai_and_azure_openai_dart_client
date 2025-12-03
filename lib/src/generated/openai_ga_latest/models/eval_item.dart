@@ -18,17 +18,11 @@ part 'eval_item.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItem with EvalItemMappable {
-  const EvalItem({
-    required this.role,
-    required this.content,
-    this.type,
-  });
+  const EvalItem({required this.role, required this.content, this.type});
 
   final EvalItemRole role;
   final EvalItemContentUnion content;
   final EvalItemType? type;
 
   static EvalItem fromJson(Map<String, dynamic> json) => EvalItemMapper.fromJson(json);
-
 }
-

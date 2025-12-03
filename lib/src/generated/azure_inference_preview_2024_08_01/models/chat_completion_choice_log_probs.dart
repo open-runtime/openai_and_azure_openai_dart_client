@@ -11,15 +11,11 @@ part 'chat_completion_choice_log_probs.mapper.dart';
 /// Log probability information for the choice.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionChoiceLogProbs with ChatCompletionChoiceLogProbsMappable {
-  const ChatCompletionChoiceLogProbs({
-    required this.content,
-    this.refusal,
-  });
+  const ChatCompletionChoiceLogProbs({required this.content, this.refusal});
 
   final List<ChatCompletionTokenLogprob>? content;
   final List<ChatCompletionTokenLogprob>? refusal;
 
-  static ChatCompletionChoiceLogProbs fromJson(Map<String, dynamic> json) => ChatCompletionChoiceLogProbsMapper.fromJson(json);
-
+  static ChatCompletionChoiceLogProbs fromJson(Map<String, dynamic> json) =>
+      ChatCompletionChoiceLogProbsMapper.fromJson(json);
 }
-

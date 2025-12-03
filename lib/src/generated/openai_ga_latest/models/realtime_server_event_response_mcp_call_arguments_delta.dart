@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_mcp_call_arguments_delta.mapper.dart';
 
 /// Returned when MCP tool call arguments are updated during response generation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseMcpCallArgumentsDelta with RealtimeServerEventResponseMcpCallArgumentsDeltaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.delta')
+class RealtimeServerEventResponseMcpCallArgumentsDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallArgumentsDeltaMappable {
   const RealtimeServerEventResponseMcpCallArgumentsDelta({
     required this.eventId,
     required this.type,
@@ -33,7 +34,6 @@ class RealtimeServerEventResponseMcpCallArgumentsDelta with RealtimeServerEventR
   final String delta;
   final String? obfuscation;
 
-  static RealtimeServerEventResponseMcpCallArgumentsDelta fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json);
-
+  static RealtimeServerEventResponseMcpCallArgumentsDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json);
 }
-

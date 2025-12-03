@@ -10,10 +10,10 @@ part 'mcp_tool_call_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum McpToolCallType {
-  @MappableValue('mcp_call') 
+  @MappableValue('mcp_call')
   mcpCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

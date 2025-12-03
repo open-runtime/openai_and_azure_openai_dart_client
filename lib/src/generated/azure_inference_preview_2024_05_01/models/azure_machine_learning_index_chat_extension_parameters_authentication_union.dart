@@ -10,8 +10,17 @@ import 'on_your_data_user_assigned_managed_identity_authentication_options.dart'
 
 part 'azure_machine_learning_index_chat_extension_parameters_authentication_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions, AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions, AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions])
-sealed class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion with AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions,
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions,
+    AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions,
+  ],
+)
+sealed class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
+    with AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionMappable {
   const AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion();
 
   static AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion fromJson(Map<String, dynamic> json) {
@@ -19,40 +28,51 @@ sealed class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
   }
 }
 
-extension AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionDeserializer on AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion {
+extension AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionDeserializer
+    on AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion {
   static AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(json);
+      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+      return AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion with AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
-
-
+class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions
+    extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
+    with
+        AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
   const AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion with AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
-
-
+class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions
+    extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
+    with
+        AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
   const AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion with AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
-
-
+class AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions
+    extends AzureMachineLearningIndexChatExtensionParametersAuthenticationUnion
+    with
+        AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
   const AzureMachineLearningIndexChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions();
 }

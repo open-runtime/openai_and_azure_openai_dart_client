@@ -8,7 +8,7 @@
 part of 'image_gen_partial_image_event.dart';
 
 class ImageGenPartialImageEventMapper
-    extends ClassMapperBase<ImageGenPartialImageEvent> {
+    extends SubClassMapperBase<ImageGenPartialImageEvent> {
   ImageGenPartialImageEventMapper._();
 
   static ImageGenPartialImageEventMapper? _instance;
@@ -17,6 +17,7 @@ class ImageGenPartialImageEventMapper
       MapperContainer.globals.use(
         _instance = ImageGenPartialImageEventMapper._(),
       );
+      ImageGenStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ImageGenPartialImageEventTypeMapper.ensureInitialized();
       ImageGenPartialImageEventSizeMapper.ensureInitialized();
       ImageGenPartialImageEventQualityMapper.ensureInitialized();
@@ -101,6 +102,14 @@ class ImageGenPartialImageEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_generation.partial_image';
+  @override
+  late final ClassMapperBase superMapper =
+      ImageGenStreamEventMapper.ensureInitialized();
 
   static ImageGenPartialImageEvent _instantiate(DecodingData data) {
     return ImageGenPartialImageEvent(
@@ -188,7 +197,8 @@ abstract class ImageGenPartialImageEventCopyWith<
   $In extends ImageGenPartialImageEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ImageGenStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ImageGenPartialImageEventType? type,
     String? b64Json,

@@ -18,19 +18,23 @@ import 'message_content_text_object_type.dart';
 
 part 'message_object_content_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageObjectContentUnionImageFile,
-  MessageObjectContentUnionImageUrl,
-  MessageObjectContentUnionText,
-  MessageObjectContentUnionRefusal
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    MessageObjectContentUnionImageFile,
+    MessageObjectContentUnionImageUrl,
+    MessageObjectContentUnionText,
+    MessageObjectContentUnionRefusal,
+  ],
+)
 sealed class MessageObjectContentUnion with MessageObjectContentUnionMappable {
   const MessageObjectContentUnion();
 
   static MessageObjectContentUnion fromJson(Map<String, dynamic> json) {
     return MessageObjectContentUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension MessageObjectContentUnionDeserializer on MessageObjectContentUnion {
@@ -40,67 +44,56 @@ extension MessageObjectContentUnionDeserializer on MessageObjectContentUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageObjectContentUnionImageFile: 'image_file',
-      MessageObjectContentUnionImageUrl: 'image_url',
-      MessageObjectContentUnionText: 'text',
-      MessageObjectContentUnionRefusal: 'refusal',
+      MessageContentImageFileObject: 'image_file',
+      MessageContentImageUrlObject: 'image_url',
+      MessageContentTextObject: 'text',
+      MessageContentRefusalObject: 'refusal',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageObjectContentUnionImageFile] => MessageObjectContentUnionImageFileMapper.fromJson(json),
-      _ when value == effective[MessageObjectContentUnionImageUrl] => MessageObjectContentUnionImageUrlMapper.fromJson(json),
-      _ when value == effective[MessageObjectContentUnionText] => MessageObjectContentUnionTextMapper.fromJson(json),
-      _ when value == effective[MessageObjectContentUnionRefusal] => MessageObjectContentUnionRefusalMapper.fromJson(json),
+      _ when value == effective[MessageContentImageFileObject] => MessageContentImageFileObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentImageUrlObject] => MessageContentImageUrlObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentTextObject] => MessageContentTextObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentRefusalObject] => MessageContentRefusalObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageObjectContentUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_file')
-class MessageObjectContentUnionImageFile extends MessageObjectContentUnion with MessageObjectContentUnionImageFileMappable {
+class MessageObjectContentUnionImageFile extends MessageObjectContentUnion
+    with MessageObjectContentUnionImageFileMappable {
   final MessageContentImageFileObjectType type;
   @MappableField(key: 'image_file')
   final MessageContentImageFileObjectImageFile messageContentImageFileObjectImageFile;
 
-  const MessageObjectContentUnionImageFile({
-    required this.type,
-    required this.messageContentImageFileObjectImageFile,
-  });
-
+  const MessageObjectContentUnionImageFile({required this.type, required this.messageContentImageFileObjectImageFile});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
-class MessageObjectContentUnionImageUrl extends MessageObjectContentUnion with MessageObjectContentUnionImageUrlMappable {
+class MessageObjectContentUnionImageUrl extends MessageObjectContentUnion
+    with MessageObjectContentUnionImageUrlMappable {
   final MessageContentImageUrlObjectType type;
   @MappableField(key: 'image_url')
   final MessageContentImageUrlObjectImageUrl messageContentImageUrlObjectImageUrl;
 
-  const MessageObjectContentUnionImageUrl({
-    required this.type,
-    required this.messageContentImageUrlObjectImageUrl,
-  });
-
+  const MessageObjectContentUnionImageUrl({required this.type, required this.messageContentImageUrlObjectImageUrl});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
 class MessageObjectContentUnionText extends MessageObjectContentUnion with MessageObjectContentUnionTextMappable {
   final MessageContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageContentTextObjectText messageContentTextObjectText;
 
-  const MessageObjectContentUnionText({
-    required this.type,
-    required this.messageContentTextObjectText,
-  });
-
+  const MessageObjectContentUnionText({required this.type, required this.messageContentTextObjectText});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
 class MessageObjectContentUnionRefusal extends MessageObjectContentUnion with MessageObjectContentUnionRefusalMappable {
   final MessageContentRefusalObjectType type;
   final String refusal;
 
-  const MessageObjectContentUnionRefusal({
-    required this.type,
-    required this.refusal,
-  });
-
+  const MessageObjectContentUnionRefusal({required this.type, required this.refusal});
 }

@@ -7,13 +7,14 @@
 
 part of 'function_tool.dart';
 
-class FunctionToolMapper extends ClassMapperBase<FunctionTool> {
+class FunctionToolMapper extends SubClassMapperBase<FunctionTool> {
   FunctionToolMapper._();
 
   static FunctionToolMapper? _instance;
   static FunctionToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FunctionToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       FunctionToolTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -57,6 +58,13 @@ class FunctionToolMapper extends ClassMapperBase<FunctionTool> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static FunctionTool _instantiate(DecodingData data) {
     return FunctionTool(
@@ -129,9 +137,10 @@ extension FunctionToolValueCopy<$R, $Out>
 }
 
 abstract class FunctionToolCopyWith<$R, $In extends FunctionTool, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
   MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
   get parameters;
+  @override
   $R call({
     String? name,
     Map<String, dynamic>? parameters,

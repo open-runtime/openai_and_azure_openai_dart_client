@@ -8,14 +8,11 @@ part 'assistant_tools_file_search_file_search.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFileSearchFileSearch with AssistantToolsFileSearchFileSearchMappable {
-  const AssistantToolsFileSearchFileSearch({
-    this.maxNumResults,
-  });
+  const AssistantToolsFileSearchFileSearch({this.maxNumResults});
 
   @MappableField(key: 'max_num_results')
   final int? maxNumResults;
 
-  static AssistantToolsFileSearchFileSearch fromJson(Map<String, dynamic> json) => AssistantToolsFileSearchFileSearchMapper.fromJson(json);
-
+  static AssistantToolsFileSearchFileSearch fromJson(Map<String, dynamic> json) =>
+      AssistantToolsFileSearchFileSearchMapper.fromJson(json);
 }
-

@@ -9,25 +9,25 @@ part 'purpose.mapper.dart';
 /// Only return files with the given purpose.
 @MappableEnum(defaultValue: 'unknown')
 enum Purpose {
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('fine-tune-results') 
+  @MappableValue('fine-tune-results')
   fineTuneResults,
 
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('assistants_output') 
+  @MappableValue('assistants_output')
   assistantsOutput,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('batch_output') 
+  @MappableValue('batch_output')
   batchOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

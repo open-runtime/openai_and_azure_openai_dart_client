@@ -32,7 +32,6 @@ class RealtimeConversationItemMessageUser with RealtimeConversationItemMessageUs
   final RealtimeConversationItemMessageUserObjectObjectEnum? objectEnum;
   final RealtimeConversationItemMessageUserStatus? status;
 
-  static RealtimeConversationItemMessageUser fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageUserMapper.fromJson(json);
-
+  static RealtimeConversationItemMessageUser fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemMessageUserMapper.fromJson(json);
 }
-

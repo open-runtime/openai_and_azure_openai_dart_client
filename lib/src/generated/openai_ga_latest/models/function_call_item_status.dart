@@ -8,16 +8,16 @@ part 'function_call_item_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionCallItemStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -26,5 +26,6 @@ enum FunctionCallItemStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionCallItemStatus> get $valuesDefined => values.where((value) => value != FunctionCallItemStatus.unknown).toList();
+  static List<FunctionCallItemStatus> get $valuesDefined =>
+      values.where((value) => value != FunctionCallItemStatus.unknown).toList();
 }

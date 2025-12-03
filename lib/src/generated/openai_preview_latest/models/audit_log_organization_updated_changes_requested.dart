@@ -23,7 +23,6 @@ class AuditLogOrganizationUpdatedChangesRequested with AuditLogOrganizationUpdat
   @MappableField(key: 'settings')
   final AuditLogOrganizationUpdatedChangesRequestedSettings? auditLogOrganizationUpdatedChangesRequestedSettings;
 
-  static AuditLogOrganizationUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogOrganizationUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogOrganizationUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogOrganizationUpdatedChangesRequestedMapper.fromJson(json);
 }
-

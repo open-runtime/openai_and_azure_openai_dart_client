@@ -11,10 +11,10 @@ part 'widget_message_item_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WidgetMessageItemObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chatkit.thread_item`.
-  @MappableValue('chatkit.thread_item') 
+  @MappableValue('chatkit.thread_item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WidgetMessageItemObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WidgetMessageItemObjectObjectEnum> get $valuesDefined => values.where((value) => value != WidgetMessageItemObjectObjectEnum.unknown).toList();
+  static List<WidgetMessageItemObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WidgetMessageItemObjectObjectEnum.unknown).toList();
 }

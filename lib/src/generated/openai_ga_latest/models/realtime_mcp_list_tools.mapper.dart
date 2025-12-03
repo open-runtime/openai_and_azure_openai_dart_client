@@ -7,13 +7,17 @@
 
 part of 'realtime_mcp_list_tools.dart';
 
-class RealtimeMcpListToolsMapper extends ClassMapperBase<RealtimeMcpListTools> {
+class RealtimeMcpListToolsMapper
+    extends SubClassMapperBase<RealtimeMcpListTools> {
   RealtimeMcpListToolsMapper._();
 
   static RealtimeMcpListToolsMapper? _instance;
   static RealtimeMcpListToolsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcpListToolsMapper._());
+      RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       RealtimeMcpListToolsTypeMapper.ensureInitialized();
       McpListToolsToolMapper.ensureInitialized();
     }
@@ -53,6 +57,14 @@ class RealtimeMcpListToolsMapper extends ClassMapperBase<RealtimeMcpListTools> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp_list_tools';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeConversationItemMapper.ensureInitialized();
 
   static RealtimeMcpListTools _instantiate(DecodingData data) {
     return RealtimeMcpListTools(
@@ -132,13 +144,14 @@ abstract class RealtimeMcpListToolsCopyWith<
   $In extends RealtimeMcpListTools,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     McpListToolsTool,
     McpListToolsToolCopyWith<$R, McpListToolsTool, McpListToolsTool>
   >
   get tools;
+  @override
   $R call({
     RealtimeMcpListToolsType? type,
     String? serverLabel,

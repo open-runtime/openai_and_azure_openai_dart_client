@@ -48,6 +48,4 @@ class VectorStoreObject with VectorStoreObjectMappable {
   final int? expiresAt;
 
   static VectorStoreObject fromJson(Map<String, dynamic> json) => VectorStoreObjectMapper.fromJson(json);
-
 }
-

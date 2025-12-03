@@ -27,7 +27,6 @@ class CreateModelResponseProperties with CreateModelResponsePropertiesMappable {
   @MappableField(key: 'top_p')
   final num? topP;
 
-  static CreateModelResponseProperties fromJson(Map<String, dynamic> json) => CreateModelResponsePropertiesMapper.fromJson(json);
-
+  static CreateModelResponseProperties fromJson(Map<String, dynamic> json) =>
+      CreateModelResponsePropertiesMapper.fromJson(json);
 }
-

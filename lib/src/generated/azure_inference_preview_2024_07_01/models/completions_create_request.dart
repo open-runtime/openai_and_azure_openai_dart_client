@@ -52,6 +52,4 @@ class CompletionsCreateRequest with CompletionsCreateRequestMappable {
   final int? bestOf;
 
   static CompletionsCreateRequest fromJson(Map<String, dynamic> json) => CompletionsCreateRequestMapper.fromJson(json);
-
 }
-

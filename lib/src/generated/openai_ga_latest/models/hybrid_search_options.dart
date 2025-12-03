@@ -8,10 +8,7 @@ part 'hybrid_search_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class HybridSearchOptions with HybridSearchOptionsMappable {
-  const HybridSearchOptions({
-    required this.embeddingWeight,
-    required this.textWeight,
-  });
+  const HybridSearchOptions({required this.embeddingWeight, required this.textWeight});
 
   @MappableField(key: 'embedding_weight')
   final num embeddingWeight;
@@ -19,6 +16,4 @@ class HybridSearchOptions with HybridSearchOptionsMappable {
   final num textWeight;
 
   static HybridSearchOptions fromJson(Map<String, dynamic> json) => HybridSearchOptionsMapper.fromJson(json);
-
 }
-

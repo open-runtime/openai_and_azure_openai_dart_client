@@ -9,13 +9,10 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_mcp_list_tools_completed.mapper.dart';
 
 /// Returned when listing MCP tools has completed for an item.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventMcpListToolsCompleted with RealtimeServerEventMcpListToolsCompletedMappable {
-  const RealtimeServerEventMcpListToolsCompleted({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools.completed')
+class RealtimeServerEventMcpListToolsCompleted extends RealtimeServerEvent
+    with RealtimeServerEventMcpListToolsCompletedMappable {
+  const RealtimeServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId});
 
   @MappableField(key: 'event_id')
   final String eventId;
@@ -23,7 +20,6 @@ class RealtimeServerEventMcpListToolsCompleted with RealtimeServerEventMcpListTo
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventMcpListToolsCompleted fromJson(Map<String, dynamic> json) => RealtimeServerEventMcpListToolsCompletedMapper.fromJson(json);
-
+  static RealtimeServerEventMcpListToolsCompleted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventMcpListToolsCompletedMapper.fromJson(json);
 }
-

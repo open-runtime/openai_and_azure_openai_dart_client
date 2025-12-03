@@ -9,10 +9,10 @@ part 'thread_stream_event_union_variant1_event.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ThreadStreamEventUnionVariant1Event {
   /// Incorrect name has been replaced. Original name: `thread.created`.
-  @MappableValue('thread.created') 
+  @MappableValue('thread.created')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ThreadStreamEventUnionVariant1Event {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ThreadStreamEventUnionVariant1Event> get $valuesDefined => values.where((value) => value != ThreadStreamEventUnionVariant1Event.unknown).toList();
+  static List<ThreadStreamEventUnionVariant1Event> get $valuesDefined =>
+      values.where((value) => value != ThreadStreamEventUnionVariant1Event.unknown).toList();
 }

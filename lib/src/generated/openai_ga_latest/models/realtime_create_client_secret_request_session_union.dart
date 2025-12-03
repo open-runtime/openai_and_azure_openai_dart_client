@@ -25,17 +25,21 @@ import 'realtime_truncation.dart';
 
 part 'realtime_create_client_secret_request_session_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeCreateClientSecretRequestSessionUnionRealtime,
-  RealtimeCreateClientSecretRequestSessionUnionTranscription
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeCreateClientSecretRequestSessionUnionRealtime,
+    RealtimeCreateClientSecretRequestSessionUnionTranscription,
+  ],
+)
 sealed class RealtimeCreateClientSecretRequestSessionUnion with RealtimeCreateClientSecretRequestSessionUnionMappable {
   const RealtimeCreateClientSecretRequestSessionUnion();
 
   static RealtimeCreateClientSecretRequestSessionUnion fromJson(Map<String, dynamic> json) {
     return RealtimeCreateClientSecretRequestSessionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeCreateClientSecretRequestSessionUnionDeserializer on RealtimeCreateClientSecretRequestSessionUnion {
@@ -45,21 +49,25 @@ extension RealtimeCreateClientSecretRequestSessionUnionDeserializer on RealtimeC
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeCreateClientSecretRequestSessionUnionRealtime: 'realtime',
-      RealtimeCreateClientSecretRequestSessionUnionTranscription: 'transcription',
+      RealtimeSessionCreateRequestGa: 'realtime',
+      RealtimeTranscriptionSessionCreateRequestGa: 'transcription',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeCreateClientSecretRequestSessionUnionRealtime] => RealtimeCreateClientSecretRequestSessionUnionRealtimeMapper.fromJson(json),
-      _ when value == effective[RealtimeCreateClientSecretRequestSessionUnionTranscription] => RealtimeCreateClientSecretRequestSessionUnionTranscriptionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeCreateClientSecretRequestSessionUnion'),
+      _ when value == effective[RealtimeSessionCreateRequestGa] => RealtimeSessionCreateRequestGaMapper.fromJson(json),
+      _ when value == effective[RealtimeTranscriptionSessionCreateRequestGa] =>
+        RealtimeTranscriptionSessionCreateRequestGaMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeCreateClientSecretRequestSessionUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
-class RealtimeCreateClientSecretRequestSessionUnionRealtime extends RealtimeCreateClientSecretRequestSessionUnion with RealtimeCreateClientSecretRequestSessionUnionRealtimeMappable {
+class RealtimeCreateClientSecretRequestSessionUnionRealtime extends RealtimeCreateClientSecretRequestSessionUnion
+    with RealtimeCreateClientSecretRequestSessionUnionRealtimeMappable {
   final RealtimeSessionCreateRequestGaType type;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities> outputModalities;
@@ -91,10 +99,11 @@ class RealtimeCreateClientSecretRequestSessionUnionRealtime extends RealtimeCrea
     required this.truncation,
     required this.prompt,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
-class RealtimeCreateClientSecretRequestSessionUnionTranscription extends RealtimeCreateClientSecretRequestSessionUnion with RealtimeCreateClientSecretRequestSessionUnionTranscriptionMappable {
+class RealtimeCreateClientSecretRequestSessionUnionTranscription extends RealtimeCreateClientSecretRequestSessionUnion
+    with RealtimeCreateClientSecretRequestSessionUnionTranscriptionMappable {
   final RealtimeTranscriptionSessionCreateRequestGaType type;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
@@ -105,5 +114,4 @@ class RealtimeCreateClientSecretRequestSessionUnionTranscription extends Realtim
     required this.realtimeTranscriptionSessionCreateRequestGaAudio,
     required this.include,
   });
-
 }

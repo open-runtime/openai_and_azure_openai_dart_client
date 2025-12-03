@@ -10,13 +10,13 @@ part 'image_gen_tool_model.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolModel {
-  @MappableValue('gpt-image-1') 
+  @MappableValue('gpt-image-1')
   gptImage1,
 
-  @MappableValue('gpt-image-1-mini') 
+  @MappableValue('gpt-image-1-mini')
   gptImage1Mini,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum ImageGenToolModel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolModel> get $valuesDefined => values.where((value) => value != ImageGenToolModel.unknown).toList();
+  static List<ImageGenToolModel> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolModel.unknown).toList();
 }

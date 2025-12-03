@@ -10,22 +10,22 @@ part 'item_resource_status5.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceStatus5 {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('interpreting') 
+  @MappableValue('interpreting')
   interpreting,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum ItemResourceStatus5 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceStatus5> get $valuesDefined => values.where((value) => value != ItemResourceStatus5.unknown).toList();
+  static List<ItemResourceStatus5> get $valuesDefined =>
+      values.where((value) => value != ItemResourceStatus5.unknown).toList();
 }

@@ -10,10 +10,7 @@ part 'mcp_tool_filter.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class McpToolFilter with McpToolFilterMappable {
-  const McpToolFilter({
-    this.toolNames,
-    this.readOnly,
-  });
+  const McpToolFilter({this.toolNames, this.readOnly});
 
   @MappableField(key: 'tool_names')
   final List<String>? toolNames;
@@ -21,6 +18,4 @@ class McpToolFilter with McpToolFilterMappable {
   final bool? readOnly;
 
   static McpToolFilter fromJson(Map<String, dynamic> json) => McpToolFilterMapper.fromJson(json);
-
 }
-

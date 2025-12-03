@@ -11,8 +11,8 @@ part 'scroll.mapper.dart';
 
 /// A scroll action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Scroll with ScrollMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'scroll')
+class Scroll extends ComputerAction with ScrollMappable {
   const Scroll({
     required this.x,
     required this.y,
@@ -30,6 +30,4 @@ class Scroll with ScrollMappable {
   final ScrollType type;
 
   static Scroll fromJson(Map<String, dynamic> json) => ScrollMapper.fromJson(json);
-
 }
-

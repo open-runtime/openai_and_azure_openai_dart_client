@@ -12,15 +12,9 @@ part 'custom_tool_call.mapper.dart';
 
 /// A call to a custom tool created by the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolCall with CustomToolCallMappable {
-  const CustomToolCall({
-    required this.type,
-    required this.callId,
-    required this.name,
-    required this.input,
-    this.id,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call')
+class CustomToolCall extends ItemUnion with CustomToolCallMappable {
+  const CustomToolCall({required this.type, required this.callId, required this.name, required this.input, this.id});
 
   final CustomToolCallType type;
   @MappableField(key: 'call_id')
@@ -30,6 +24,4 @@ class CustomToolCall with CustomToolCallMappable {
   final String? id;
 
   static CustomToolCall fromJson(Map<String, dynamic> json) => CustomToolCallMapper.fromJson(json);
-
 }
-

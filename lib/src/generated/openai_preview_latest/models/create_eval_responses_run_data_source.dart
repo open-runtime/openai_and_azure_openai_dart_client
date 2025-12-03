@@ -31,7 +31,6 @@ class CreateEvalResponsesRunDataSource with CreateEvalResponsesRunDataSourceMapp
   final String? model;
   final CreateEvalResponsesRunDataSourceType type;
 
-  static CreateEvalResponsesRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalResponsesRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalResponsesRunDataSourceMapper.fromJson(json);
 }
-

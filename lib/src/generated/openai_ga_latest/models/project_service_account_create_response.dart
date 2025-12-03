@@ -31,7 +31,6 @@ class ProjectServiceAccountCreateResponse with ProjectServiceAccountCreateRespon
   @MappableField(key: 'api_key')
   final ProjectServiceAccountApiKey apiKey;
 
-  static ProjectServiceAccountCreateResponse fromJson(Map<String, dynamic> json) => ProjectServiceAccountCreateResponseMapper.fromJson(json);
-
+  static ProjectServiceAccountCreateResponse fromJson(Map<String, dynamic> json) =>
+      ProjectServiceAccountCreateResponseMapper.fromJson(json);
 }
-

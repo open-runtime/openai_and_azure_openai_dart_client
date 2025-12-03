@@ -8,15 +8,11 @@ part 'chat_completion_request_message_function_call.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageFunctionCall with ChatCompletionRequestMessageFunctionCallMappable {
-  const ChatCompletionRequestMessageFunctionCall({
-    required this.arguments,
-    required this.name,
-  });
+  const ChatCompletionRequestMessageFunctionCall({required this.arguments, required this.name});
 
   final String arguments;
   final String name;
 
-  static ChatCompletionRequestMessageFunctionCall fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageFunctionCallMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageFunctionCall fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageFunctionCallMapper.fromJson(json);
 }
-

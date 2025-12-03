@@ -6,7 +6,16 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'state_variables_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [StateVariablesUnionVariantString, StateVariablesUnionVariantInt, StateVariablesUnionVariantBool, StateVariablesUnionVariantNum])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    StateVariablesUnionVariantString,
+    StateVariablesUnionVariantInt,
+    StateVariablesUnionVariantBool,
+    StateVariablesUnionVariantNum,
+  ],
+)
 sealed class StateVariablesUnion with StateVariablesUnionMappable {
   const StateVariablesUnion();
 
@@ -47,36 +56,28 @@ extension StateVariablesUnionDeserializer on StateVariablesUnion {
 class StateVariablesUnionVariantString extends StateVariablesUnion with StateVariablesUnionVariantStringMappable {
   final String value;
 
-  const StateVariablesUnionVariantString({
-    required this.value,
-  });
+  const StateVariablesUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StateVariablesUnionVariantInt extends StateVariablesUnion with StateVariablesUnionVariantIntMappable {
   final int value;
 
-  const StateVariablesUnionVariantInt({
-    required this.value,
-  });
+  const StateVariablesUnionVariantInt({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StateVariablesUnionVariantBool extends StateVariablesUnion with StateVariablesUnionVariantBoolMappable {
   final bool value;
 
-  const StateVariablesUnionVariantBool({
-    required this.value,
-  });
+  const StateVariablesUnionVariantBool({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StateVariablesUnionVariantNum extends StateVariablesUnion with StateVariablesUnionVariantNumMappable {
   final num value;
 
-  const StateVariablesUnionVariantNum({
-    required this.value,
-  });
+  const StateVariablesUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

@@ -11,15 +11,11 @@ part 'screenshot.mapper.dart';
 
 /// A screenshot action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Screenshot with ScreenshotMappable {
-  const Screenshot({
-    this.type = ScreenshotType.screenshot,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'screenshot')
+class Screenshot extends ComputerAction with ScreenshotMappable {
+  const Screenshot({this.type = ScreenshotType.screenshot});
 
   final ScreenshotType type;
 
   static Screenshot fromJson(Map<String, dynamic> json) => ScreenshotMapper.fromJson(json);
-
 }
-

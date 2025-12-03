@@ -9,13 +9,13 @@ part 'system_compute_datasource_type.mapper.dart';
 /// The datasource type.
 @MappableEnum(defaultValue: 'unknown')
 enum SystemComputeDatasourceType {
-  @MappableValue('Storage') 
+  @MappableValue('Storage')
   storage,
 
-  @MappableValue('Urls') 
+  @MappableValue('Urls')
   urls,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum SystemComputeDatasourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SystemComputeDatasourceType> get $valuesDefined => values.where((value) => value != SystemComputeDatasourceType.unknown).toList();
+  static List<SystemComputeDatasourceType> get $valuesDefined =>
+      values.where((value) => value != SystemComputeDatasourceType.unknown).toList();
 }

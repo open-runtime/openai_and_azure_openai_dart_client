@@ -8,16 +8,12 @@ part 'realtime_session_create_request_client_secret.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateRequestClientSecret with RealtimeSessionCreateRequestClientSecretMappable {
-  const RealtimeSessionCreateRequestClientSecret({
-    required this.value,
-    required this.expiresAt,
-  });
+  const RealtimeSessionCreateRequestClientSecret({required this.value, required this.expiresAt});
 
   final String value;
   @MappableField(key: 'expires_at')
   final int expiresAt;
 
-  static RealtimeSessionCreateRequestClientSecret fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestClientSecretMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestClientSecret fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestClientSecretMapper.fromJson(json);
 }
-

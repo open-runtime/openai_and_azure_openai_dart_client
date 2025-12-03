@@ -8,7 +8,7 @@
 part of 'run_step_delta_step_details_tool_calls_code_object.dart';
 
 class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
-    extends ClassMapperBase<RunStepDeltaStepDetailsToolCallsCodeObject> {
+    extends SubClassMapperBase<RunStepDeltaStepDetailsToolCallsCodeObject> {
   RunStepDeltaStepDetailsToolCallsCodeObjectMapper._();
 
   static RunStepDeltaStepDetailsToolCallsCodeObjectMapper? _instance;
@@ -16,6 +16,9 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsCodeObjectMapper._(),
+      );
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RunStepDeltaStepDetailsToolCallsCodeObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper.ensureInitialized();
@@ -69,6 +72,14 @@ class RunStepDeltaStepDetailsToolCallsCodeObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'code_interpreter';
+  @override
+  late final ClassMapperBase superMapper =
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized();
 
   static RunStepDeltaStepDetailsToolCallsCodeObject _instantiate(
     DecodingData data,
@@ -171,13 +182,14 @@ abstract class RunStepDeltaStepDetailsToolCallsCodeObjectCopyWith<
   $In extends RunStepDeltaStepDetailsToolCallsCodeObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RunStepDeltaStepDetailsToolCallCopyWith<$R, $In, $Out> {
   RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith<
     $R,
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter,
     RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter
   >?
   get runStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter;
+  @override
   $R call({
     int? indexField,
     RunStepDeltaStepDetailsToolCallsCodeObjectType? type,

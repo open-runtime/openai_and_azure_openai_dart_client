@@ -10,19 +10,19 @@ part 'web_search_tool_call_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchToolCallStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('searching') 
+  @MappableValue('searching')
   searching,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum WebSearchToolCallStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchToolCallStatus> get $valuesDefined => values.where((value) => value != WebSearchToolCallStatus.unknown).toList();
+  static List<WebSearchToolCallStatus> get $valuesDefined =>
+      values.where((value) => value != WebSearchToolCallStatus.unknown).toList();
 }

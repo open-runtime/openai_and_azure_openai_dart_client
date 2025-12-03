@@ -9,10 +9,10 @@ part 'chat_completion_request_user_message_content_part_type2.mapper.dart';
 /// The type of the content part.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestUserMessageContentPartType2 {
-  @MappableValue('image_url') 
+  @MappableValue('image_url')
   imageUrl,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionRequestUserMessageContentPartType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestUserMessageContentPartType2> get $valuesDefined => values.where((value) => value != ChatCompletionRequestUserMessageContentPartType2.unknown).toList();
+  static List<ChatCompletionRequestUserMessageContentPartType2> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestUserMessageContentPartType2.unknown).toList();
 }

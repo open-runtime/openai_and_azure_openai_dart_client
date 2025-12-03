@@ -11,17 +11,12 @@ part 'refusal.mapper.dart';
 
 /// A refusal from the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Refusal with RefusalMappable {
-  const Refusal({
-    required this.type,
-    required this.refusal,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
+class Refusal extends OutputContent with RefusalMappable {
+  const Refusal({required this.type, required this.refusal});
 
   final RefusalType type;
   final String refusal;
 
   static Refusal fromJson(Map<String, dynamic> json) => RefusalMapper.fromJson(json);
-
 }
-

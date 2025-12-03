@@ -21,7 +21,6 @@ class ThreadObjectToolResources with ThreadObjectToolResourcesMappable {
   @MappableField(key: 'file_search')
   final ThreadObjectToolResourcesFileSearch? threadObjectToolResourcesFileSearch;
 
-  static ThreadObjectToolResources fromJson(Map<String, dynamic> json) => ThreadObjectToolResourcesMapper.fromJson(json);
-
+  static ThreadObjectToolResources fromJson(Map<String, dynamic> json) =>
+      ThreadObjectToolResourcesMapper.fromJson(json);
 }
-

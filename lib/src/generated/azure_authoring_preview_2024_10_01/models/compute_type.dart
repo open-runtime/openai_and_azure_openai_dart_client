@@ -9,13 +9,13 @@ part 'compute_type.mapper.dart';
 /// The compute type.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputeType {
-  @MappableValue('ServerlessCompute') 
+  @MappableValue('ServerlessCompute')
   serverlessCompute,
 
-  @MappableValue('CustomCompute') 
+  @MappableValue('CustomCompute')
   customCompute,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

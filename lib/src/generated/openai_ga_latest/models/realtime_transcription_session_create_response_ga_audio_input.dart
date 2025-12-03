@@ -12,7 +12,8 @@ import 'realtime_transcription_session_create_response_ga_audio_input_turn_detec
 part 'realtime_transcription_session_create_response_ga_audio_input.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeTranscriptionSessionCreateResponseGaAudioInput with RealtimeTranscriptionSessionCreateResponseGaAudioInputMappable {
+class RealtimeTranscriptionSessionCreateResponseGaAudioInput
+    with RealtimeTranscriptionSessionCreateResponseGaAudioInputMappable {
   const RealtimeTranscriptionSessionCreateResponseGaAudioInput({
     this.format,
     this.transcription,
@@ -23,11 +24,12 @@ class RealtimeTranscriptionSessionCreateResponseGaAudioInput with RealtimeTransc
   final RealtimeAudioFormats? format;
   final AudioTranscription? transcription;
   @MappableField(key: 'noise_reduction')
-  final RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction? realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction;
+  final RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction?
+  realtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction;
   @MappableField(key: 'turn_detection')
-  final RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection? realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection;
+  final RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection?
+  realtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection;
 
-  static RealtimeTranscriptionSessionCreateResponseGaAudioInput fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseGaAudioInputMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateResponseGaAudioInput fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateResponseGaAudioInputMapper.fromJson(json);
 }
-

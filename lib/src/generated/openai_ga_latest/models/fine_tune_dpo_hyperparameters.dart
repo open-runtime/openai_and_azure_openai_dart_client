@@ -27,10 +27,12 @@ class FineTuneDpoHyperparameters with FineTuneDpoHyperparametersMappable {
   final FineTuneDpoHyperparametersNEpochsUnion nEpochs;
   @MappableField(hook: const FineTuneDpoHyperparametersBetaUnionHook())
   final FineTuneDpoHyperparametersBetaUnion? beta;
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuneDpoHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuneDpoHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuneDpoHyperparametersLearningRateMultiplierUnion? learningRateMultiplier;
 
-  static FineTuneDpoHyperparameters fromJson(Map<String, dynamic> json) => FineTuneDpoHyperparametersMapper.fromJson(json);
-
+  static FineTuneDpoHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuneDpoHyperparametersMapper.fromJson(json);
 }
-

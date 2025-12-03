@@ -9,10 +9,10 @@ part 'create_eval_completions_run_data_source_input_messages_union_variant1_type
 /// The type of input messages. Always `template`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type {
-  @MappableValue('template') 
+  @MappableValue('template')
   template,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,7 @@ enum CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type> get $valuesDefined => values.where((value) => value != CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type.unknown).toList();
+  static List<CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type> get $valuesDefined => values
+      .where((value) => value != CreateEvalCompletionsRunDataSourceInputMessagesUnionVariant1Type.unknown)
+      .toList();
 }

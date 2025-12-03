@@ -10,10 +10,10 @@ part 'realtime_server_event_response_output_item_added_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseOutputItemAddedType {
   /// Incorrect name has been replaced. Original name: `response.output_item.added`.
-  @MappableValue('response.output_item.added') 
+  @MappableValue('response.output_item.added')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventResponseOutputItemAddedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseOutputItemAddedType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseOutputItemAddedType.unknown).toList();
+  static List<RealtimeServerEventResponseOutputItemAddedType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseOutputItemAddedType.unknown).toList();
 }

@@ -11,19 +11,19 @@ part 'input_item_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputItemRole {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('developer') 
+  @MappableValue('developer')
   developer,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -8,31 +8,31 @@ part 'purpose.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Purpose {
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('fine-tune-results') 
+  @MappableValue('fine-tune-results')
   fineTuneResults,
 
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('assistants_output') 
+  @MappableValue('assistants_output')
   assistantsOutput,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('batch_output') 
+  @MappableValue('batch_output')
   batchOutput,
 
-  @MappableValue('evals') 
+  @MappableValue('evals')
   evals,
 
-  @MappableValue('evals_output') 
+  @MappableValue('evals_output')
   evalsOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

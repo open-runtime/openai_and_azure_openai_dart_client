@@ -10,10 +10,10 @@ part 'web_search_tool_call_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchToolCallType {
-  @MappableValue('web_search_call') 
+  @MappableValue('web_search_call')
   webSearchCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum WebSearchToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchToolCallType> get $valuesDefined => values.where((value) => value != WebSearchToolCallType.unknown).toList();
+  static List<WebSearchToolCallType> get $valuesDefined =>
+      values.where((value) => value != WebSearchToolCallType.unknown).toList();
 }

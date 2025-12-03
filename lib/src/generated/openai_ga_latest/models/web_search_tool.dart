@@ -31,6 +31,4 @@ class WebSearchTool with WebSearchToolMappable {
   final WebSearchToolSearchContextSizeSearchContextSize searchContextSize;
 
   static WebSearchTool fromJson(Map<String, dynamic> json) => WebSearchToolMapper.fromJson(json);
-
 }
-

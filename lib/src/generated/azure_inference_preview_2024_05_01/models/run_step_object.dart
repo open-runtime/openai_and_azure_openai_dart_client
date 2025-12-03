@@ -62,6 +62,4 @@ class RunStepObject with RunStepObjectMappable {
   final dynamic metadata;
 
   static RunStepObject fromJson(Map<String, dynamic> json) => RunStepObjectMapper.fromJson(json);
-
 }
-

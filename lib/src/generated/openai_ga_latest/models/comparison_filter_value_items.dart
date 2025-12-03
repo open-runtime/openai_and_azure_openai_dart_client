@@ -10,8 +10,6 @@ part 'comparison_filter_value_items.mapper.dart';
 class ComparisonFilterValueItems with ComparisonFilterValueItemsMappable {
   const ComparisonFilterValueItems();
 
-
-  static ComparisonFilterValueItems fromJson(Map<String, dynamic> json) => ComparisonFilterValueItemsMapper.fromJson(json);
-
+  static ComparisonFilterValueItems fromJson(Map<String, dynamic> json) =>
+      ComparisonFilterValueItemsMapper.fromJson(json);
 }
-

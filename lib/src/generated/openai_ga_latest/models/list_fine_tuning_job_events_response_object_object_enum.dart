@@ -9,10 +9,10 @@ part 'list_fine_tuning_job_events_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ListFineTuningJobEventsResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ListFineTuningJobEventsResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ListFineTuningJobEventsResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ListFineTuningJobEventsResponseObjectObjectEnum.unknown).toList();
+  static List<ListFineTuningJobEventsResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ListFineTuningJobEventsResponseObjectObjectEnum.unknown).toList();
 }

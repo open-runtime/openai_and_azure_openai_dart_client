@@ -9,10 +9,10 @@ part 'vad_config_type.mapper.dart';
 /// Must be set to `server_vad` to enable manual chunking using server side VAD.
 @MappableEnum(defaultValue: 'unknown')
 enum VadConfigType {
-  @MappableValue('server_vad') 
+  @MappableValue('server_vad')
   serverVad,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

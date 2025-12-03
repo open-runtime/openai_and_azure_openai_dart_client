@@ -11,11 +11,7 @@ part 'group_user_assignment.mapper.dart';
 /// Confirmation payload returned after adding a user to a group.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupUserAssignment with GroupUserAssignmentMappable {
-  const GroupUserAssignment({
-    required this.objectEnum,
-    required this.userId,
-    required this.groupId,
-  });
+  const GroupUserAssignment({required this.objectEnum, required this.userId, required this.groupId});
 
   @MappableField(key: 'object')
   final GroupUserAssignmentObjectObjectEnum objectEnum;
@@ -25,6 +21,4 @@ class GroupUserAssignment with GroupUserAssignmentMappable {
   final String groupId;
 
   static GroupUserAssignment fromJson(Map<String, dynamic> json) => GroupUserAssignmentMapper.fromJson(json);
-
 }
-

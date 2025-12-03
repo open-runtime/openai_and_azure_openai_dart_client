@@ -67,18 +67,23 @@ part 'tool.mapper.dart';
 
 /// A tool that can be used to generate a response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ToolFunction,
-  ToolFileSearch,
-  ToolComputerUsePreview,
-  ToolMcp,
-  ToolCodeInterpreter,
-  ToolImageGeneration,
-  ToolLocalShell,
-  ToolShell,
-  ToolCustom,
-  ToolApplyPatch
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ToolFunction,
+    ToolFileSearch,
+    ToolComputerUsePreview,
+    ToolMcp,
+    ToolCodeInterpreter,
+    ToolImageGeneration,
+    ToolLocalShell,
+    ToolShell,
+    ToolCustom,
+    ToolApplyPatch,
+  ],
+)
 sealed class Tool with ToolMappable {
   const Tool();
 
@@ -88,36 +93,32 @@ sealed class Tool with ToolMappable {
 }
 
 extension ToolUnionDeserializer on Tool {
-  static Tool tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static Tool tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ToolFunction: 'function',
-      ToolFileSearch: 'file_search',
-      ToolComputerUsePreview: 'computer_use_preview',
-      ToolMcp: 'mcp',
-      ToolCodeInterpreter: 'code_interpreter',
-      ToolImageGeneration: 'image_generation',
-      ToolLocalShell: 'local_shell',
-      ToolShell: 'shell',
-      ToolCustom: 'custom',
-      ToolApplyPatch: 'apply_patch',
+      FunctionTool: 'function',
+      FileSearchTool: 'file_search',
+      ComputerUsePreviewTool: 'computer_use_preview',
+      McpTool: 'mcp',
+      CodeInterpreterTool: 'code_interpreter',
+      ImageGenTool: 'image_generation',
+      LocalShellToolParam: 'local_shell',
+      FunctionShellToolParam: 'shell',
+      CustomToolParam: 'custom',
+      ApplyPatchToolParam: 'apply_patch',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ToolFunction] => ToolFunctionMapper.fromJson(json),
-      _ when value == effective[ToolFileSearch] => ToolFileSearchMapper.fromJson(json),
-      _ when value == effective[ToolComputerUsePreview] => ToolComputerUsePreviewMapper.fromJson(json),
-      _ when value == effective[ToolMcp] => ToolMcpMapper.fromJson(json),
-      _ when value == effective[ToolCodeInterpreter] => ToolCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[ToolImageGeneration] => ToolImageGenerationMapper.fromJson(json),
-      _ when value == effective[ToolLocalShell] => ToolLocalShellMapper.fromJson(json),
-      _ when value == effective[ToolShell] => ToolShellMapper.fromJson(json),
-      _ when value == effective[ToolCustom] => ToolCustomMapper.fromJson(json),
-      _ when value == effective[ToolApplyPatch] => ToolApplyPatchMapper.fromJson(json),
+      _ when value == effective[FunctionTool] => FunctionToolMapper.fromJson(json),
+      _ when value == effective[FileSearchTool] => FileSearchToolMapper.fromJson(json),
+      _ when value == effective[ComputerUsePreviewTool] => ComputerUsePreviewToolMapper.fromJson(json),
+      _ when value == effective[McpTool] => McpToolMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterTool] => CodeInterpreterToolMapper.fromJson(json),
+      _ when value == effective[ImageGenTool] => ImageGenToolMapper.fromJson(json),
+      _ when value == effective[LocalShellToolParam] => LocalShellToolParamMapper.fromJson(json),
+      _ when value == effective[FunctionShellToolParam] => FunctionShellToolParamMapper.fromJson(json),
+      _ when value == effective[CustomToolParam] => CustomToolParamMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolParam] => ApplyPatchToolParamMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for Tool'),
     };
   }
@@ -213,10 +214,7 @@ class ToolCodeInterpreter extends Tool with ToolCodeInterpreterMappable {
   final ToolType5 type;
   final ToolContainerUnion container;
 
-  const ToolCodeInterpreter({
-    required this.type,
-    required this.container,
-  });
+  const ToolCodeInterpreter({required this.type, required this.container});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation')
@@ -257,18 +255,14 @@ class ToolImageGeneration extends Tool with ToolImageGenerationMappable {
 class ToolLocalShell extends Tool with ToolLocalShellMappable {
   final ToolType7 type;
 
-  const ToolLocalShell({
-    required this.type,
-  });
+  const ToolLocalShell({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell')
 class ToolShell extends Tool with ToolShellMappable {
   final ToolType8 type;
 
-  const ToolShell({
-    required this.type,
-  });
+  const ToolShell({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
@@ -278,19 +272,12 @@ class ToolCustom extends Tool with ToolCustomMappable {
   final String? description;
   final ToolFormatUnion format;
 
-  const ToolCustom({
-    required this.type,
-    required this.name,
-    required this.description,
-    required this.format,
-  });
+  const ToolCustom({required this.type, required this.name, required this.description, required this.format});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch')
 class ToolApplyPatch extends Tool with ToolApplyPatchMappable {
   final ToolType10 type;
 
-  const ToolApplyPatch({
-    required this.type,
-  });
+  const ToolApplyPatch({required this.type});
 }

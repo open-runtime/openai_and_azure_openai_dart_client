@@ -10,10 +10,10 @@ part 'input_message_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputMessageType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum InputMessageType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputMessageType> get $valuesDefined => values.where((value) => value != InputMessageType.unknown).toList();
+  static List<InputMessageType> get $valuesDefined =>
+      values.where((value) => value != InputMessageType.unknown).toList();
 }

@@ -10,11 +10,7 @@ part 'invite_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteDeleteResponse with InviteDeleteResponseMappable {
-  const InviteDeleteResponse({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const InviteDeleteResponse({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final InviteDeleteResponseObjectObjectEnum objectEnum;
@@ -22,6 +18,4 @@ class InviteDeleteResponse with InviteDeleteResponseMappable {
   final bool deleted;
 
   static InviteDeleteResponse fromJson(Map<String, dynamic> json) => InviteDeleteResponseMapper.fromJson(json);
-
 }
-

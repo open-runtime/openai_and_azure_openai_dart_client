@@ -9,16 +9,16 @@ part 'model_union_enum3.mapper.dart';
 /// Enum values: dall-e-2, gpt-image-1, gpt-image-1-mini
 @MappableEnum(defaultValue: 'unknown')
 enum ModelUnionEnum3 {
-  @MappableValue('dall-e-2') 
+  @MappableValue('dall-e-2')
   dallE2,
 
-  @MappableValue('gpt-image-1') 
+  @MappableValue('gpt-image-1')
   gptImage1,
 
-  @MappableValue('gpt-image-1-mini') 
+  @MappableValue('gpt-image-1-mini')
   gptImage1Mini,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -10,16 +10,11 @@ part 'ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RankingOptions with RankingOptionsMappable {
-  const RankingOptions({
-    this.ranker,
-    this.scoreThreshold,
-  });
+  const RankingOptions({this.ranker, this.scoreThreshold});
 
   final RankingOptionsRanker? ranker;
   @MappableField(key: 'score_threshold')
   final num? scoreThreshold;
 
   static RankingOptions fromJson(Map<String, dynamic> json) => RankingOptionsMapper.fromJson(json);
-
 }
-

@@ -11,11 +11,7 @@ part 'create_eval_run_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRunRequest with CreateEvalRunRequestMappable {
-  const CreateEvalRunRequest({
-    required this.dataSource,
-    this.metadata,
-    this.name,
-  });
+  const CreateEvalRunRequest({required this.dataSource, this.metadata, this.name});
 
   @MappableField(key: 'data_source')
   final CreateEvalRunRequestDataSourceDataSource dataSource;
@@ -23,6 +19,4 @@ class CreateEvalRunRequest with CreateEvalRunRequestMappable {
   final String? name;
 
   static CreateEvalRunRequest fromJson(Map<String, dynamic> json) => CreateEvalRunRequestMapper.fromJson(json);
-
 }
-

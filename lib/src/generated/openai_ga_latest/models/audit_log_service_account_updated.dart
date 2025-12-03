@@ -10,16 +10,12 @@ part 'audit_log_service_account_updated.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogServiceAccountUpdated with AuditLogServiceAccountUpdatedMappable {
-  const AuditLogServiceAccountUpdated({
-    this.id,
-    this.auditLogServiceAccountUpdatedChangesRequested,
-  });
+  const AuditLogServiceAccountUpdated({this.id, this.auditLogServiceAccountUpdatedChangesRequested});
 
   final String? id;
   @MappableField(key: 'changes_requested')
   final AuditLogServiceAccountUpdatedChangesRequested? auditLogServiceAccountUpdatedChangesRequested;
 
-  static AuditLogServiceAccountUpdated fromJson(Map<String, dynamic> json) => AuditLogServiceAccountUpdatedMapper.fromJson(json);
-
+  static AuditLogServiceAccountUpdated fromJson(Map<String, dynamic> json) =>
+      AuditLogServiceAccountUpdatedMapper.fromJson(json);
 }
-

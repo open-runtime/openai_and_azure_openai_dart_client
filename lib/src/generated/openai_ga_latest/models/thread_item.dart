@@ -40,14 +40,19 @@ import 'widget_message_item_type.dart';
 
 part 'thread_item.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ThreadItemChatkitUserMessage,
-  ThreadItemChatkitAssistantMessage,
-  ThreadItemChatkitWidget,
-  ThreadItemChatkitClientToolCall,
-  ThreadItemChatkitTask,
-  ThreadItemChatkitTaskGroup
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ThreadItemChatkitUserMessage,
+    ThreadItemChatkitAssistantMessage,
+    ThreadItemChatkitWidget,
+    ThreadItemChatkitClientToolCall,
+    ThreadItemChatkitTask,
+    ThreadItemChatkitTaskGroup,
+  ],
+)
 sealed class ThreadItem with ThreadItemMappable {
   const ThreadItem();
 
@@ -57,28 +62,24 @@ sealed class ThreadItem with ThreadItemMappable {
 }
 
 extension ThreadItemUnionDeserializer on ThreadItem {
-  static ThreadItem tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ThreadItem tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ThreadItemChatkitUserMessage: 'chatkit.user_message',
-      ThreadItemChatkitAssistantMessage: 'chatkit.assistant_message',
-      ThreadItemChatkitWidget: 'chatkit.widget',
-      ThreadItemChatkitClientToolCall: 'chatkit.client_tool_call',
-      ThreadItemChatkitTask: 'chatkit.task',
-      ThreadItemChatkitTaskGroup: 'chatkit.task_group',
+      UserMessageItem: 'chatkit.user_message',
+      AssistantMessageItem: 'chatkit.assistant_message',
+      WidgetMessageItem: 'chatkit.widget',
+      ClientToolCallItem: 'chatkit.client_tool_call',
+      TaskItem: 'chatkit.task',
+      TaskGroupItem: 'chatkit.task_group',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ThreadItemChatkitUserMessage] => ThreadItemChatkitUserMessageMapper.fromJson(json),
-      _ when value == effective[ThreadItemChatkitAssistantMessage] => ThreadItemChatkitAssistantMessageMapper.fromJson(json),
-      _ when value == effective[ThreadItemChatkitWidget] => ThreadItemChatkitWidgetMapper.fromJson(json),
-      _ when value == effective[ThreadItemChatkitClientToolCall] => ThreadItemChatkitClientToolCallMapper.fromJson(json),
-      _ when value == effective[ThreadItemChatkitTask] => ThreadItemChatkitTaskMapper.fromJson(json),
-      _ when value == effective[ThreadItemChatkitTaskGroup] => ThreadItemChatkitTaskGroupMapper.fromJson(json),
+      _ when value == effective[UserMessageItem] => UserMessageItemMapper.fromJson(json),
+      _ when value == effective[AssistantMessageItem] => AssistantMessageItemMapper.fromJson(json),
+      _ when value == effective[WidgetMessageItem] => WidgetMessageItemMapper.fromJson(json),
+      _ when value == effective[ClientToolCallItem] => ClientToolCallItemMapper.fromJson(json),
+      _ when value == effective[TaskItem] => TaskItemMapper.fromJson(json),
+      _ when value == effective[TaskGroupItem] => TaskGroupItemMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ThreadItem'),
     };
   }

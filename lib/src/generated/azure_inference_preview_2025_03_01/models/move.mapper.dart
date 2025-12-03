@@ -7,13 +7,14 @@
 
 part of 'move.dart';
 
-class MoveMapper extends ClassMapperBase<Move> {
+class MoveMapper extends SubClassMapperBase<Move> {
   MoveMapper._();
 
   static MoveMapper? _instance;
   static MoveMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MoveMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       MoveTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -44,6 +45,14 @@ class MoveMapper extends ClassMapperBase<Move> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'move';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Move _instantiate(DecodingData data) {
     return Move(x: data.dec(_f$x), y: data.dec(_f$y), type: data.dec(_f$type));
@@ -94,7 +103,8 @@ extension MoveValueCopy<$R, $Out> on ObjectCopyWith<$R, Move, $Out> {
 }
 
 abstract class MoveCopyWith<$R, $In extends Move, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({int? x, int? y, MoveType? type});
   MoveCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

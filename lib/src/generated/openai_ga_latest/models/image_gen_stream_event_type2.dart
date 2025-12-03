@@ -11,10 +11,10 @@ part 'image_gen_stream_event_type2.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenStreamEventType2 {
   /// Incorrect name has been replaced. Original name: `image_generation.completed`.
-  @MappableValue('image_generation.completed') 
+  @MappableValue('image_generation.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ImageGenStreamEventType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenStreamEventType2> get $valuesDefined => values.where((value) => value != ImageGenStreamEventType2.unknown).toList();
+  static List<ImageGenStreamEventType2> get $valuesDefined =>
+      values.where((value) => value != ImageGenStreamEventType2.unknown).toList();
 }

@@ -10,10 +10,10 @@ part 'vector_store_object_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreObjectObjectObjectEnum {
-  @MappableValue('vector_store') 
+  @MappableValue('vector_store')
   vectorStore,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum VectorStoreObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != VectorStoreObjectObjectObjectEnum.unknown).toList();
+  static List<VectorStoreObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != VectorStoreObjectObjectObjectEnum.unknown).toList();
 }

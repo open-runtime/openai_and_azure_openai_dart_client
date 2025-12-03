@@ -62,7 +62,6 @@ class CreateThreadAndRunRequestWithoutStream with CreateThreadAndRunRequestWitho
   @MappableField(key: 'response_format')
   final AssistantsApiResponseFormatOption? responseFormat;
 
-  static CreateThreadAndRunRequestWithoutStream fromJson(Map<String, dynamic> json) => CreateThreadAndRunRequestWithoutStreamMapper.fromJson(json);
-
+  static CreateThreadAndRunRequestWithoutStream fromJson(Map<String, dynamic> json) =>
+      CreateThreadAndRunRequestWithoutStreamMapper.fromJson(json);
 }
-

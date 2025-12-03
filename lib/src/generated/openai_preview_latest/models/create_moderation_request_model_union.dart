@@ -12,7 +12,11 @@ part 'create_moderation_request_model_union.mapper.dart';
 /// [the moderation guide](/docs/guides/moderation), and learn about.
 /// available models [here](/docs/models#moderation).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateModerationRequestModelUnionVariantEnum, CreateModerationRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateModerationRequestModelUnionVariantEnum, CreateModerationRequestModelUnionVariantString],
+)
 sealed class CreateModerationRequestModelUnion with CreateModerationRequestModelUnionMappable {
   const CreateModerationRequestModelUnion();
 
@@ -49,21 +53,19 @@ extension CreateModerationRequestModelUnionDeserializer on CreateModerationReque
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateModerationRequestModelUnionVariantEnum extends CreateModerationRequestModelUnion with CreateModerationRequestModelUnionVariantEnumMappable {
+class CreateModerationRequestModelUnionVariantEnum extends CreateModerationRequestModelUnion
+    with CreateModerationRequestModelUnionVariantEnumMappable {
   final CreateModerationRequestModelUnionEnum value;
 
-  const CreateModerationRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateModerationRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateModerationRequestModelUnionVariantString extends CreateModerationRequestModelUnion with CreateModerationRequestModelUnionVariantStringMappable {
+class CreateModerationRequestModelUnionVariantString extends CreateModerationRequestModelUnion
+    with CreateModerationRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateModerationRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateModerationRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

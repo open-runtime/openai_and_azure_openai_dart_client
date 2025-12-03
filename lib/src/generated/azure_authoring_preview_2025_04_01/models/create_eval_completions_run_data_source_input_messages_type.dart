@@ -9,13 +9,13 @@ part 'create_eval_completions_run_data_source_input_messages_type.mapper.dart';
 /// The type of input messages. Either `template` or `item_reference`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalCompletionsRunDataSourceInputMessagesType {
-  @MappableValue('template') 
+  @MappableValue('template')
   template,
 
-  @MappableValue('item_reference') 
+  @MappableValue('item_reference')
   itemReference,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum CreateEvalCompletionsRunDataSourceInputMessagesType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalCompletionsRunDataSourceInputMessagesType> get $valuesDefined => values.where((value) => value != CreateEvalCompletionsRunDataSourceInputMessagesType.unknown).toList();
+  static List<CreateEvalCompletionsRunDataSourceInputMessagesType> get $valuesDefined =>
+      values.where((value) => value != CreateEvalCompletionsRunDataSourceInputMessagesType.unknown).toList();
 }

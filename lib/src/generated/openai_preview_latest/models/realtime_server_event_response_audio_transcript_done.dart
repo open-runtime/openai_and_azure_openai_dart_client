@@ -13,8 +13,9 @@ part 'realtime_server_event_response_audio_transcript_done.mapper.dart';
 /// streaming. Also emitted when a Response is interrupted, incomplete, or.
 /// cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseAudioTranscriptDone with RealtimeServerEventResponseAudioTranscriptDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio_transcript.done')
+class RealtimeServerEventResponseAudioTranscriptDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseAudioTranscriptDoneMappable {
   const RealtimeServerEventResponseAudioTranscriptDone({
     required this.eventId,
     required this.type,
@@ -38,7 +39,6 @@ class RealtimeServerEventResponseAudioTranscriptDone with RealtimeServerEventRes
   final int contentIndex;
   final String transcript;
 
-  static RealtimeServerEventResponseAudioTranscriptDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseAudioTranscriptDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseAudioTranscriptDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseAudioTranscriptDoneMapper.fromJson(json);
 }
-

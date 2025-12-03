@@ -10,10 +10,10 @@ part 'item_resource_type5.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceType5 {
-  @MappableValue('image_generation_call') 
+  @MappableValue('image_generation_call')
   imageGenerationCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ItemResourceType5 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceType5> get $valuesDefined => values.where((value) => value != ItemResourceType5.unknown).toList();
+  static List<ItemResourceType5> get $valuesDefined =>
+      values.where((value) => value != ItemResourceType5.unknown).toList();
 }

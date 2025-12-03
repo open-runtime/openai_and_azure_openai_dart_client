@@ -16,17 +16,18 @@ import 'create_eval_run_request_data_source_union.dart';
 
 part 'eval_run_data_source_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  EvalRunDataSourceUnionJsonl,
-  EvalRunDataSourceUnionCompletions
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [EvalRunDataSourceUnionJsonl, EvalRunDataSourceUnionCompletions],
+)
 sealed class EvalRunDataSourceUnion with EvalRunDataSourceUnionMappable {
   const EvalRunDataSourceUnion();
 
   static EvalRunDataSourceUnion fromJson(Map<String, dynamic> json) {
     return EvalRunDataSourceUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension EvalRunDataSourceUnionDeserializer on EvalRunDataSourceUnion {
@@ -36,14 +37,15 @@ extension EvalRunDataSourceUnionDeserializer on EvalRunDataSourceUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      EvalRunDataSourceUnionJsonl: 'jsonl',
-      EvalRunDataSourceUnionCompletions: 'completions',
+      CreateEvalJsonlRunDataSource: 'jsonl',
+      CreateEvalCompletionsRunDataSource: 'completions',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[EvalRunDataSourceUnionJsonl] => EvalRunDataSourceUnionJsonlMapper.fromJson(json),
-      _ when value == effective[EvalRunDataSourceUnionCompletions] => EvalRunDataSourceUnionCompletionsMapper.fromJson(json),
+      _ when value == effective[CreateEvalJsonlRunDataSource] => CreateEvalJsonlRunDataSourceMapper.fromJson(json),
+      _ when value == effective[CreateEvalCompletionsRunDataSource] =>
+        CreateEvalCompletionsRunDataSourceMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for EvalRunDataSourceUnion'),
     };
   }
@@ -54,12 +56,9 @@ class EvalRunDataSourceUnionJsonl extends EvalRunDataSourceUnion with EvalRunDat
   final CreateEvalJsonlRunDataSourceType type;
   final CreateEvalJsonlRunDataSourceSourceUnion source;
 
-  const EvalRunDataSourceUnionJsonl({
-    required this.type,
-    required this.source,
-  });
-
+  const EvalRunDataSourceUnionJsonl({required this.type, required this.source});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
 class EvalRunDataSourceUnionCompletions extends EvalRunDataSourceUnion with EvalRunDataSourceUnionCompletionsMappable {
   final CreateEvalCompletionsRunDataSourceType type;
@@ -77,5 +76,4 @@ class EvalRunDataSourceUnionCompletions extends EvalRunDataSourceUnion with Eval
     required this.model,
     required this.source,
   });
-
 }

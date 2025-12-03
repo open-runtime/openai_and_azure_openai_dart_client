@@ -60,12 +60,14 @@ class RealtimeSessionCreateRequest with RealtimeSessionCreateRequestMappable {
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
   final num? temperature;
-  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook())
+  @MappableField(
+    key: 'max_response_output_tokens',
+    hook: const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook(),
+  )
   final RealtimeSessionCreateRequestMaxResponseOutputTokensUnion? maxResponseOutputTokens;
   final RealtimeTruncation? truncation;
   final Prompt? prompt;
 
-  static RealtimeSessionCreateRequest fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequest fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestMapper.fromJson(json);
 }
-

@@ -8,7 +8,7 @@
 part of 'run_step_delta_step_details_tool_calls_function_object.dart';
 
 class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
-    extends ClassMapperBase<RunStepDeltaStepDetailsToolCallsFunctionObject> {
+    extends SubClassMapperBase<RunStepDeltaStepDetailsToolCallsFunctionObject> {
   RunStepDeltaStepDetailsToolCallsFunctionObjectMapper._();
 
   static RunStepDeltaStepDetailsToolCallsFunctionObjectMapper? _instance;
@@ -17,6 +17,9 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsFunctionObjectMapper._(),
+      );
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RunStepDeltaStepDetailsToolCallsFunctionObjectTypeMapper.ensureInitialized();
       RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionMapper.ensureInitialized();
@@ -70,6 +73,14 @@ class RunStepDeltaStepDetailsToolCallsFunctionObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function';
+  @override
+  late final ClassMapperBase superMapper =
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized();
 
   static RunStepDeltaStepDetailsToolCallsFunctionObject _instantiate(
     DecodingData data,
@@ -180,13 +191,14 @@ abstract class RunStepDeltaStepDetailsToolCallsFunctionObjectCopyWith<
   $In extends RunStepDeltaStepDetailsToolCallsFunctionObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RunStepDeltaStepDetailsToolCallCopyWith<$R, $In, $Out> {
   RunStepDeltaStepDetailsToolCallsFunctionObjectFunctionCopyWith<
     $R,
     RunStepDeltaStepDetailsToolCallsFunctionObjectFunction,
     RunStepDeltaStepDetailsToolCallsFunctionObjectFunction
   >?
   get runStepDeltaStepDetailsToolCallsFunctionObjectFunction;
+  @override
   $R call({
     int? indexField,
     RunStepDeltaStepDetailsToolCallsFunctionObjectType? type,

@@ -11,15 +11,10 @@ part 'custom_compute.mapper.dart';
 /// Custom compute.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomCompute with CustomComputeMappable {
-  const CustomCompute({
-    required this.kind,
-    this.computeId,
-  });
+  const CustomCompute({required this.kind, this.computeId});
 
   final ComputeType kind;
   final String? computeId;
 
   static CustomCompute fromJson(Map<String, dynamic> json) => CustomComputeMapper.fromJson(json);
-
 }
-

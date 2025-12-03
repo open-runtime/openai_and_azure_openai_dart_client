@@ -8,7 +8,7 @@
 part of 'message_content_image_file_object.dart';
 
 class MessageContentImageFileObjectMapper
-    extends ClassMapperBase<MessageContentImageFileObject> {
+    extends SubClassMapperBase<MessageContentImageFileObject> {
   MessageContentImageFileObjectMapper._();
 
   static MessageContentImageFileObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageContentImageFileObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageFileObjectMapper._(),
       );
+      MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentImageFileObjectTypeMapper.ensureInitialized();
       MessageContentImageFileObjectImageFileMapper.ensureInitialized();
     }
@@ -57,6 +58,14 @@ class MessageContentImageFileObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_file';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentMapper.ensureInitialized();
 
   static MessageContentImageFileObject _instantiate(DecodingData data) {
     return MessageContentImageFileObject(
@@ -140,13 +149,14 @@ abstract class MessageContentImageFileObjectCopyWith<
   $In extends MessageContentImageFileObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentCopyWith<$R, $In, $Out> {
   MessageContentImageFileObjectImageFileCopyWith<
     $R,
     MessageContentImageFileObjectImageFile,
     MessageContentImageFileObjectImageFile
   >
   get messageContentImageFileObjectImageFile;
+  @override
   $R call({
     MessageContentImageFileObjectType? type,
     MessageContentImageFileObjectImageFile?

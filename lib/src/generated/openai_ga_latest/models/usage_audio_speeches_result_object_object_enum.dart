@@ -10,10 +10,10 @@ part 'usage_audio_speeches_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageAudioSpeechesResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.audio_speeches.result`.
-  @MappableValue('organization.usage.audio_speeches.result') 
+  @MappableValue('organization.usage.audio_speeches.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageAudioSpeechesResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageAudioSpeechesResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageAudioSpeechesResultObjectObjectEnum.unknown).toList();
+  static List<UsageAudioSpeechesResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageAudioSpeechesResultObjectObjectEnum.unknown).toList();
 }

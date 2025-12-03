@@ -8,10 +8,10 @@ part 'realtime_mcphttp_error_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeMcphttpErrorType {
-  @MappableValue('http_error') 
+  @MappableValue('http_error')
   httpError,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum RealtimeMcphttpErrorType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeMcphttpErrorType> get $valuesDefined => values.where((value) => value != RealtimeMcphttpErrorType.unknown).toList();
+  static List<RealtimeMcphttpErrorType> get $valuesDefined =>
+      values.where((value) => value != RealtimeMcphttpErrorType.unknown).toList();
 }

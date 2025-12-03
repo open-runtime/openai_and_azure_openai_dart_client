@@ -26,7 +26,6 @@ class VectorStoreSearchResultItem with VectorStoreSearchResultItemMappable {
   final VectorStoreFileAttributes attributes;
   final List<VectorStoreSearchResultContentObject> content;
 
-  static VectorStoreSearchResultItem fromJson(Map<String, dynamic> json) => VectorStoreSearchResultItemMapper.fromJson(json);
-
+  static VectorStoreSearchResultItem fromJson(Map<String, dynamic> json) =>
+      VectorStoreSearchResultItemMapper.fromJson(json);
 }
-

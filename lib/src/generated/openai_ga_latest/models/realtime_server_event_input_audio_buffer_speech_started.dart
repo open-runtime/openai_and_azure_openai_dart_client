@@ -19,8 +19,9 @@ part 'realtime_server_event_input_audio_buffer_speech_started.mapper.dart';
 /// `input_audio_buffer.speech_stopped` event (unless the client manually commits .
 /// the audio buffer during VAD activation).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventInputAudioBufferSpeechStarted with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.speech_started')
+class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
   const RealtimeServerEventInputAudioBufferSpeechStarted({
     required this.eventId,
     required this.type,
@@ -36,7 +37,6 @@ class RealtimeServerEventInputAudioBufferSpeechStarted with RealtimeServerEventI
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventInputAudioBufferSpeechStarted fromJson(Map<String, dynamic> json) => RealtimeServerEventInputAudioBufferSpeechStartedMapper.fromJson(json);
-
+  static RealtimeServerEventInputAudioBufferSpeechStarted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventInputAudioBufferSpeechStartedMapper.fromJson(json);
 }
-

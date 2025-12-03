@@ -9,8 +9,8 @@ import 'usage_images_result_object_object_enum.dart';
 part 'usage_images_result.mapper.dart';
 
 /// The aggregated images usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageImagesResult with UsageImagesResultMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.images.result')
+class UsageImagesResult extends UsageTimeBucketResultUnion with UsageImagesResultMappable {
   const UsageImagesResult({
     required this.objectEnum,
     required this.images,
@@ -39,6 +39,4 @@ class UsageImagesResult with UsageImagesResultMappable {
   final String? model;
 
   static UsageImagesResult fromJson(Map<String, dynamic> json) => UsageImagesResultMapper.fromJson(json);
-
 }
-

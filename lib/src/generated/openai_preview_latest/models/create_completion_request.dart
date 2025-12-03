@@ -61,6 +61,4 @@ class CreateCompletionRequest with CreateCompletionRequestMappable {
   final num? topP;
 
   static CreateCompletionRequest fromJson(Map<String, dynamic> json) => CreateCompletionRequestMapper.fromJson(json);
-
 }
-

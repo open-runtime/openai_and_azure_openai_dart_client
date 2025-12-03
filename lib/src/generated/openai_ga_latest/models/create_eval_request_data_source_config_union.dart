@@ -13,18 +13,22 @@ import 'create_eval_stored_completions_data_source_config_type.dart';
 
 part 'create_eval_request_data_source_config_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalRequestDataSourceConfigUnionCustom,
-  CreateEvalRequestDataSourceConfigUnionLogs,
-  CreateEvalRequestDataSourceConfigUnionStoredCompletions
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalRequestDataSourceConfigUnionCustom,
+    CreateEvalRequestDataSourceConfigUnionLogs,
+    CreateEvalRequestDataSourceConfigUnionStoredCompletions,
+  ],
+)
 sealed class CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionMappable {
   const CreateEvalRequestDataSourceConfigUnion();
 
   static CreateEvalRequestDataSourceConfigUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalRequestDataSourceConfigUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalRequestDataSourceConfigUnionDeserializer on CreateEvalRequestDataSourceConfigUnion {
@@ -34,23 +38,29 @@ extension CreateEvalRequestDataSourceConfigUnionDeserializer on CreateEvalReques
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalRequestDataSourceConfigUnionCustom: 'custom',
-      CreateEvalRequestDataSourceConfigUnionLogs: 'logs',
-      CreateEvalRequestDataSourceConfigUnionStoredCompletions: 'stored_completions',
+      CreateEvalCustomDataSourceConfig: 'custom',
+      CreateEvalLogsDataSourceConfig: 'logs',
+      CreateEvalStoredCompletionsDataSourceConfig: 'stored_completions',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalRequestDataSourceConfigUnionCustom] => CreateEvalRequestDataSourceConfigUnionCustomMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestDataSourceConfigUnionLogs] => CreateEvalRequestDataSourceConfigUnionLogsMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestDataSourceConfigUnionStoredCompletions] => CreateEvalRequestDataSourceConfigUnionStoredCompletionsMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalRequestDataSourceConfigUnion'),
+      _ when value == effective[CreateEvalCustomDataSourceConfig] => CreateEvalCustomDataSourceConfigMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[CreateEvalLogsDataSourceConfig] => CreateEvalLogsDataSourceConfigMapper.fromJson(json),
+      _ when value == effective[CreateEvalStoredCompletionsDataSourceConfig] =>
+        CreateEvalStoredCompletionsDataSourceConfigMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalRequestDataSourceConfigUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
-class CreateEvalRequestDataSourceConfigUnionCustom extends CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionCustomMappable {
+class CreateEvalRequestDataSourceConfigUnionCustom extends CreateEvalRequestDataSourceConfigUnion
+    with CreateEvalRequestDataSourceConfigUnionCustomMappable {
   final CreateEvalCustomDataSourceConfigType type;
   @MappableField(key: 'item_schema')
   final dynamic itemSchema;
@@ -62,27 +72,22 @@ class CreateEvalRequestDataSourceConfigUnionCustom extends CreateEvalRequestData
     required this.itemSchema,
     required this.includeSampleSchema,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
-class CreateEvalRequestDataSourceConfigUnionLogs extends CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionLogsMappable {
+class CreateEvalRequestDataSourceConfigUnionLogs extends CreateEvalRequestDataSourceConfigUnion
+    with CreateEvalRequestDataSourceConfigUnionLogsMappable {
   final CreateEvalLogsDataSourceConfigType type;
   final dynamic metadata;
 
-  const CreateEvalRequestDataSourceConfigUnionLogs({
-    required this.type,
-    required this.metadata,
-  });
-
+  const CreateEvalRequestDataSourceConfigUnionLogs({required this.type, required this.metadata});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
-class CreateEvalRequestDataSourceConfigUnionStoredCompletions extends CreateEvalRequestDataSourceConfigUnion with CreateEvalRequestDataSourceConfigUnionStoredCompletionsMappable {
+class CreateEvalRequestDataSourceConfigUnionStoredCompletions extends CreateEvalRequestDataSourceConfigUnion
+    with CreateEvalRequestDataSourceConfigUnionStoredCompletionsMappable {
   final CreateEvalStoredCompletionsDataSourceConfigType type;
   final dynamic metadata;
 
-  const CreateEvalRequestDataSourceConfigUnionStoredCompletions({
-    required this.type,
-    required this.metadata,
-  });
-
+  const CreateEvalRequestDataSourceConfigUnionStoredCompletions({required this.type, required this.metadata});
 }

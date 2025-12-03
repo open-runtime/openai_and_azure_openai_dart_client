@@ -23,7 +23,6 @@ class VectorStoreObjectFileCounts with VectorStoreObjectFileCountsMappable {
   final int cancelled;
   final int total;
 
-  static VectorStoreObjectFileCounts fromJson(Map<String, dynamic> json) => VectorStoreObjectFileCountsMapper.fromJson(json);
-
+  static VectorStoreObjectFileCounts fromJson(Map<String, dynamic> json) =>
+      VectorStoreObjectFileCountsMapper.fromJson(json);
 }
-

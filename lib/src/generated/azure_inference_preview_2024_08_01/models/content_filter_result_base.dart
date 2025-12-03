@@ -8,13 +8,9 @@ part 'content_filter_result_base.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterResultBase with ContentFilterResultBaseMappable {
-  const ContentFilterResultBase({
-    required this.filtered,
-  });
+  const ContentFilterResultBase({required this.filtered});
 
   final bool filtered;
 
   static ContentFilterResultBase fromJson(Map<String, dynamic> json) => ContentFilterResultBaseMapper.fromJson(json);
-
 }
-

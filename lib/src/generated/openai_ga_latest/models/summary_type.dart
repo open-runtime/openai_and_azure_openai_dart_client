@@ -9,10 +9,10 @@ part 'summary_type.mapper.dart';
 /// The type of the object. Always `summary_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum SummaryType {
-  @MappableValue('summary_text') 
+  @MappableValue('summary_text')
   summaryText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

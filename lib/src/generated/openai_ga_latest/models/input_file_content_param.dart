@@ -29,6 +29,4 @@ class InputFileContentParam with InputFileContentParamMappable {
   final InputFileContentParamType type;
 
   static InputFileContentParam fromJson(Map<String, dynamic> json) => InputFileContentParamMapper.fromJson(json);
-
 }
-

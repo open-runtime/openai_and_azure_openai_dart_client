@@ -11,8 +11,18 @@ import 'on_your_data_access_token_authentication_options.dart';
 
 part 'azure_search_chat_extension_parameters_authentication_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptions, AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions, AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions, AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions])
-sealed class AzureSearchChatExtensionParametersAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptions,
+    AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions,
+    AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions,
+    AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions,
+  ],
+)
+sealed class AzureSearchChatExtensionParametersAuthenticationUnion
+    with AzureSearchChatExtensionParametersAuthenticationUnionMappable {
   const AzureSearchChatExtensionParametersAuthenticationUnion();
 
   static AzureSearchChatExtensionParametersAuthenticationUnion fromJson(Map<String, dynamic> json) {
@@ -20,50 +30,62 @@ sealed class AzureSearchChatExtensionParametersAuthenticationUnion with AzureSea
   }
 }
 
-extension AzureSearchChatExtensionParametersAuthenticationUnionDeserializer on AzureSearchChatExtensionParametersAuthenticationUnion {
+extension AzureSearchChatExtensionParametersAuthenticationUnionDeserializer
+    on AzureSearchChatExtensionParametersAuthenticationUnion {
   static AzureSearchChatExtensionParametersAuthenticationUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMapper.fromJson(json);
+      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
+      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(json);
+      return AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for AzureSearchChatExtensionParametersAuthenticationUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for AzureSearchChatExtensionParametersAuthenticationUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMappable {
-
-
+class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptions
+    extends AzureSearchChatExtensionParametersAuthenticationUnion
+    with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMappable {
   const AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataApiKeyAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
-
-
+class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions
+    extends AzureSearchChatExtensionParametersAuthenticationUnion
+    with
+        AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptionsMappable {
   const AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataSystemAssignedManagedIdentityAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
-
-
+class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions
+    extends AzureSearchChatExtensionParametersAuthenticationUnion
+    with
+        AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
   const AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataUserAssignedManagedIdentityAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions extends AzureSearchChatExtensionParametersAuthenticationUnion with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
-
-
+class AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions
+    extends AzureSearchChatExtensionParametersAuthenticationUnion
+    with AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
   const AzureSearchChatExtensionParametersAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions();
 }

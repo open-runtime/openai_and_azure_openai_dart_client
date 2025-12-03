@@ -9,7 +9,14 @@ part 'realtime_beta_response_max_output_tokens_union.mapper.dart';
 /// Maximum number of output tokens for a single assistant response,.
 /// inclusive of tool calls, that was used in this response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeBetaResponseMaxOutputTokensUnionVariantString, RealtimeBetaResponseMaxOutputTokensUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeBetaResponseMaxOutputTokensUnionVariantString,
+    RealtimeBetaResponseMaxOutputTokensUnionVariantInt,
+  ],
+)
 sealed class RealtimeBetaResponseMaxOutputTokensUnion with RealtimeBetaResponseMaxOutputTokensUnionMappable {
   const RealtimeBetaResponseMaxOutputTokensUnion();
 
@@ -34,26 +41,26 @@ extension RealtimeBetaResponseMaxOutputTokensUnionDeserializer on RealtimeBetaRe
       return RealtimeBetaResponseMaxOutputTokensUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeBetaResponseMaxOutputTokensUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeBetaResponseMaxOutputTokensUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseMaxOutputTokensUnionVariantString extends RealtimeBetaResponseMaxOutputTokensUnion with RealtimeBetaResponseMaxOutputTokensUnionVariantStringMappable {
+class RealtimeBetaResponseMaxOutputTokensUnionVariantString extends RealtimeBetaResponseMaxOutputTokensUnion
+    with RealtimeBetaResponseMaxOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeBetaResponseMaxOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeBetaResponseMaxOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseMaxOutputTokensUnionVariantInt extends RealtimeBetaResponseMaxOutputTokensUnion with RealtimeBetaResponseMaxOutputTokensUnionVariantIntMappable {
+class RealtimeBetaResponseMaxOutputTokensUnionVariantInt extends RealtimeBetaResponseMaxOutputTokensUnion
+    with RealtimeBetaResponseMaxOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeBetaResponseMaxOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeBetaResponseMaxOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

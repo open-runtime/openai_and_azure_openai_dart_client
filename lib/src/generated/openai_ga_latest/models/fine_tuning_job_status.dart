@@ -9,25 +9,25 @@ part 'fine_tuning_job_status.mapper.dart';
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningJobStatus {
-  @MappableValue('validating_files') 
+  @MappableValue('validating_files')
   validatingFiles,
 
-  @MappableValue('queued') 
+  @MappableValue('queued')
   queued,
 
-  @MappableValue('running') 
+  @MappableValue('running')
   running,
 
-  @MappableValue('succeeded') 
+  @MappableValue('succeeded')
   succeeded,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -36,5 +36,6 @@ enum FineTuningJobStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningJobStatus> get $valuesDefined => values.where((value) => value != FineTuningJobStatus.unknown).toList();
+  static List<FineTuningJobStatus> get $valuesDefined =>
+      values.where((value) => value != FineTuningJobStatus.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'realtime_conversation_item_function_call_type.mapper.dart';
 /// The type of the item. Always `function_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemFunctionCallType {
-  @MappableValue('function_call') 
+  @MappableValue('function_call')
   functionCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeConversationItemFunctionCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemFunctionCallType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemFunctionCallType.unknown).toList();
+  static List<RealtimeConversationItemFunctionCallType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemFunctionCallType.unknown).toList();
 }

@@ -10,17 +10,12 @@ import 'file_annotation_type.dart';
 part 'file_annotation.mapper.dart';
 
 /// Annotation that references an uploaded file.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileAnnotation with FileAnnotationMappable {
-  const FileAnnotation({
-    required this.source,
-    this.type = FileAnnotationType.file,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file')
+class FileAnnotation extends ResponseOutputTextAnnotationsUnion with FileAnnotationMappable {
+  const FileAnnotation({required this.source, this.type = FileAnnotationType.file});
 
   final FileAnnotationSource source;
   final FileAnnotationType type;
 
   static FileAnnotation fromJson(Map<String, dynamic> json) => FileAnnotationMapper.fromJson(json);
-
 }
-

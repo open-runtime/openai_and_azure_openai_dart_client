@@ -11,10 +11,10 @@ part 'webhook_fine_tuning_job_succeeded_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookFineTuningJobSucceededType {
   /// Incorrect name has been replaced. Original name: `fine_tuning.job.succeeded`.
-  @MappableValue('fine_tuning.job.succeeded') 
+  @MappableValue('fine_tuning.job.succeeded')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookFineTuningJobSucceededType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookFineTuningJobSucceededType> get $valuesDefined => values.where((value) => value != WebhookFineTuningJobSucceededType.unknown).toList();
+  static List<WebhookFineTuningJobSucceededType> get $valuesDefined =>
+      values.where((value) => value != WebhookFineTuningJobSucceededType.unknown).toList();
 }

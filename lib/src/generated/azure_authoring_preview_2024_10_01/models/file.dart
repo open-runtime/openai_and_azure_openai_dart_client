@@ -12,14 +12,7 @@ part 'file.mapper.dart';
 /// A file is a document usable for training and validation. It can also be a service generated document with result details.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class File with FileMappable {
-  const File({
-    required this.purpose,
-    required this.filename,
-    this.objectField,
-    this.createdAt,
-    this.id,
-    this.bytes,
-  });
+  const File({required this.purpose, required this.filename, this.objectField, this.createdAt, this.id, this.bytes});
 
   final Purpose purpose;
   final String filename;
@@ -31,6 +24,4 @@ class File with FileMappable {
   final int? bytes;
 
   static File fromJson(Map<String, dynamic> json) => FileMapper.fromJson(json);
-
 }
-

@@ -10,13 +10,13 @@ part 'realtime_transcription_session_create_request_turn_detection_type.mapper.d
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestTurnDetectionType {
-  @MappableValue('server_vad') 
+  @MappableValue('server_vad')
   serverVad,
 
-  @MappableValue('semantic_vad') 
+  @MappableValue('semantic_vad')
   semanticVad,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum RealtimeTranscriptionSessionCreateRequestTurnDetectionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestTurnDetectionType> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestTurnDetectionType.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestTurnDetectionType> get $valuesDefined =>
+      values.where((value) => value != RealtimeTranscriptionSessionCreateRequestTurnDetectionType.unknown).toList();
 }

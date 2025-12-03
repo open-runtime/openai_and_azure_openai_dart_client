@@ -11,10 +11,10 @@ part 'webhook_eval_run_canceled_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookEvalRunCanceledType {
   /// Incorrect name has been replaced. Original name: `eval.run.canceled`.
-  @MappableValue('eval.run.canceled') 
+  @MappableValue('eval.run.canceled')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookEvalRunCanceledType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookEvalRunCanceledType> get $valuesDefined => values.where((value) => value != WebhookEvalRunCanceledType.unknown).toList();
+  static List<WebhookEvalRunCanceledType> get $valuesDefined =>
+      values.where((value) => value != WebhookEvalRunCanceledType.unknown).toList();
 }

@@ -11,15 +11,11 @@ part 'content_filter_severity_result.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterSeverityResult with ContentFilterSeverityResultMappable {
-  const ContentFilterSeverityResult({
-    required this.filtered,
-    this.severity,
-  });
+  const ContentFilterSeverityResult({required this.filtered, this.severity});
 
   final bool filtered;
   final ContentFilterSeverityResultSeverity? severity;
 
-  static ContentFilterSeverityResult fromJson(Map<String, dynamic> json) => ContentFilterSeverityResultMapper.fromJson(json);
-
+  static ContentFilterSeverityResult fromJson(Map<String, dynamic> json) =>
+      ContentFilterSeverityResultMapper.fromJson(json);
 }
-

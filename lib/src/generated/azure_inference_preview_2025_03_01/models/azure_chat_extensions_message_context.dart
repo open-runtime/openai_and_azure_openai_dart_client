@@ -14,18 +14,13 @@ part 'azure_chat_extensions_message_context.mapper.dart';
 ///   using an Azure OpenAI request configured to use a matching extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureChatExtensionsMessageContext with AzureChatExtensionsMessageContextMappable {
-  const AzureChatExtensionsMessageContext({
-    this.citations,
-    this.intent,
-    this.allRetrievedDocuments,
-  });
+  const AzureChatExtensionsMessageContext({this.citations, this.intent, this.allRetrievedDocuments});
 
   final List<Citation>? citations;
   final String? intent;
   @MappableField(key: 'all_retrieved_documents')
   final List<RetrievedDocument>? allRetrievedDocuments;
 
-  static AzureChatExtensionsMessageContext fromJson(Map<String, dynamic> json) => AzureChatExtensionsMessageContextMapper.fromJson(json);
-
+  static AzureChatExtensionsMessageContext fromJson(Map<String, dynamic> json) =>
+      AzureChatExtensionsMessageContextMapper.fromJson(json);
 }
-

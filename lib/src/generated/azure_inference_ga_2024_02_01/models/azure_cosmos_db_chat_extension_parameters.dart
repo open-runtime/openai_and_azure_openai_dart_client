@@ -46,7 +46,6 @@ class AzureCosmosDbChatExtensionParameters with AzureCosmosDbChatExtensionParame
   @MappableField(key: 'role_information')
   final String? roleInformation;
 
-  static AzureCosmosDbChatExtensionParameters fromJson(Map<String, dynamic> json) => AzureCosmosDbChatExtensionParametersMapper.fromJson(json);
-
+  static AzureCosmosDbChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      AzureCosmosDbChatExtensionParametersMapper.fromJson(json);
 }
-

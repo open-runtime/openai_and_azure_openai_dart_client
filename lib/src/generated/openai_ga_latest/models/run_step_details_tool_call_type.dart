@@ -9,10 +9,10 @@ part 'run_step_details_tool_call_type.mapper.dart';
 /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallType {
-  @MappableValue('code_interpreter') 
+  @MappableValue('code_interpreter')
   codeInterpreter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDetailsToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallType> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallType.unknown).toList();
+  static List<RunStepDetailsToolCallType> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallType.unknown).toList();
 }

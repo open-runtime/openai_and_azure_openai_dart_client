@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_mcp_call_failed.mapper.dart';
 
 /// Returned when an MCP tool call has failed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseMcpCallFailed with RealtimeServerEventResponseMcpCallFailedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.failed')
+class RealtimeServerEventResponseMcpCallFailed extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallFailedMappable {
   const RealtimeServerEventResponseMcpCallFailed({
     required this.eventId,
     required this.type,
@@ -26,7 +27,6 @@ class RealtimeServerEventResponseMcpCallFailed with RealtimeServerEventResponseM
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventResponseMcpCallFailed fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseMcpCallFailedMapper.fromJson(json);
-
+  static RealtimeServerEventResponseMcpCallFailed fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseMcpCallFailedMapper.fromJson(json);
 }
-

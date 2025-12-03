@@ -12,7 +12,8 @@ part 'realtime_beta_server_event_transcription_session_updated.mapper.dart';
 /// there is an error.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventTranscriptionSessionUpdated with RealtimeBetaServerEventTranscriptionSessionUpdatedMappable {
+class RealtimeBetaServerEventTranscriptionSessionUpdated
+    with RealtimeBetaServerEventTranscriptionSessionUpdatedMappable {
   const RealtimeBetaServerEventTranscriptionSessionUpdated({
     required this.eventId,
     required this.type,
@@ -24,7 +25,6 @@ class RealtimeBetaServerEventTranscriptionSessionUpdated with RealtimeBetaServer
   final dynamic type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
-  static RealtimeBetaServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
 }
-

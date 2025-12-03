@@ -58,6 +58,4 @@ class CreateRunRequest with CreateRunRequestMappable {
   final AssistantsApiResponseFormatOption? responseFormat;
 
   static CreateRunRequest fromJson(Map<String, dynamic> json) => CreateRunRequestMapper.fromJson(json);
-
 }
-

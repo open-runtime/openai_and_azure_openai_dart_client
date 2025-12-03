@@ -11,15 +11,10 @@ part 'summary.mapper.dart';
 /// A summary text from the model.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Summary with SummaryMappable {
-  const Summary({
-    required this.text,
-    this.type = SummaryType.summaryText,
-  });
+  const Summary({required this.text, this.type = SummaryType.summaryText});
 
   final String text;
   final SummaryType type;
 
   static Summary fromJson(Map<String, dynamic> json) => SummaryMapper.fromJson(json);
-
 }
-

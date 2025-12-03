@@ -10,13 +10,10 @@ part 'update_vector_store_file_attributes_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateVectorStoreFileAttributesRequest with UpdateVectorStoreFileAttributesRequestMappable {
-  const UpdateVectorStoreFileAttributesRequest({
-    required this.attributes,
-  });
+  const UpdateVectorStoreFileAttributesRequest({required this.attributes});
 
   final VectorStoreFileAttributes attributes;
 
-  static UpdateVectorStoreFileAttributesRequest fromJson(Map<String, dynamic> json) => UpdateVectorStoreFileAttributesRequestMapper.fromJson(json);
-
+  static UpdateVectorStoreFileAttributesRequest fromJson(Map<String, dynamic> json) =>
+      UpdateVectorStoreFileAttributesRequestMapper.fromJson(json);
 }
-

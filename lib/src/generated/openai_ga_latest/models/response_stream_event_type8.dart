@@ -10,10 +10,10 @@ part 'response_stream_event_type8.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventType8 {
   /// Incorrect name has been replaced. Original name: `response.code_interpreter_call.in_progress`.
-  @MappableValue('response.code_interpreter_call.in_progress') 
+  @MappableValue('response.code_interpreter_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseStreamEventType8 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventType8> get $valuesDefined => values.where((value) => value != ResponseStreamEventType8.unknown).toList();
+  static List<ResponseStreamEventType8> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventType8.unknown).toList();
 }

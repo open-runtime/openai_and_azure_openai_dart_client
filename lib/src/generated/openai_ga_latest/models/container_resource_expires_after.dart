@@ -10,15 +10,11 @@ part 'container_resource_expires_after.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContainerResourceExpiresAfter with ContainerResourceExpiresAfterMappable {
-  const ContainerResourceExpiresAfter({
-    this.anchor,
-    this.minutes,
-  });
+  const ContainerResourceExpiresAfter({this.anchor, this.minutes});
 
   final ContainerResourceExpiresAfterAnchor? anchor;
   final int? minutes;
 
-  static ContainerResourceExpiresAfter fromJson(Map<String, dynamic> json) => ContainerResourceExpiresAfterMapper.fromJson(json);
-
+  static ContainerResourceExpiresAfter fromJson(Map<String, dynamic> json) =>
+      ContainerResourceExpiresAfterMapper.fromJson(json);
 }
-

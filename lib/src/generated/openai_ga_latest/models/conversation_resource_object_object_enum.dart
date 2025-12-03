@@ -10,10 +10,10 @@ part 'conversation_resource_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ConversationResourceObjectObjectEnum {
-  @MappableValue('conversation') 
+  @MappableValue('conversation')
   conversation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ConversationResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ConversationResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != ConversationResourceObjectObjectEnum.unknown).toList();
+  static List<ConversationResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ConversationResourceObjectObjectEnum.unknown).toList();
 }

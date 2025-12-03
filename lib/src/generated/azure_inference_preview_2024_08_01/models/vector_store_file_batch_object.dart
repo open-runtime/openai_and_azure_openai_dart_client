@@ -33,7 +33,6 @@ class VectorStoreFileBatchObject with VectorStoreFileBatchObjectMappable {
   @MappableField(key: 'file_counts')
   final VectorStoreFileBatchObjectFileCounts vectorStoreFileBatchObjectFileCounts;
 
-  static VectorStoreFileBatchObject fromJson(Map<String, dynamic> json) => VectorStoreFileBatchObjectMapper.fromJson(json);
-
+  static VectorStoreFileBatchObject fromJson(Map<String, dynamic> json) =>
+      VectorStoreFileBatchObjectMapper.fromJson(json);
 }
-

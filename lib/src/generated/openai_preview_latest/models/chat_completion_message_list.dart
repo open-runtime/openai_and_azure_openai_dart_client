@@ -31,7 +31,6 @@ class ChatCompletionMessageList with ChatCompletionMessageListMappable {
   @MappableField(key: 'object')
   final ChatCompletionMessageListObjectObjectEnum objectEnum;
 
-  static ChatCompletionMessageList fromJson(Map<String, dynamic> json) => ChatCompletionMessageListMapper.fromJson(json);
-
+  static ChatCompletionMessageList fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageListMapper.fromJson(json);
 }
-

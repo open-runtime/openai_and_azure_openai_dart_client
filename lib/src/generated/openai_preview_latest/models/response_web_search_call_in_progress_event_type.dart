@@ -11,10 +11,10 @@ part 'response_web_search_call_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseWebSearchCallInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.web_search_call.in_progress`.
-  @MappableValue('response.web_search_call.in_progress') 
+  @MappableValue('response.web_search_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseWebSearchCallInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseWebSearchCallInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseWebSearchCallInProgressEventType.unknown).toList();
+  static List<ResponseWebSearchCallInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseWebSearchCallInProgressEventType.unknown).toList();
 }

@@ -9,15 +9,11 @@ import 'custom_text_format_param_type.dart';
 part 'custom_text_format_param.mapper.dart';
 
 /// Unconstrained free-form text.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomTextFormatParam with CustomTextFormatParamMappable {
-  const CustomTextFormatParam({
-    this.type = CustomTextFormatParamType.text,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class CustomTextFormatParam extends CustomToolParamFormatUnion with CustomTextFormatParamMappable {
+  const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
 
   final CustomTextFormatParamType type;
 
   static CustomTextFormatParam fromJson(Map<String, dynamic> json) => CustomTextFormatParamMapper.fromJson(json);
-
 }
-

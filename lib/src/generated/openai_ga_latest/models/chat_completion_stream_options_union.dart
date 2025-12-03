@@ -21,20 +21,17 @@ extension ChatCompletionStreamOptionsUnionDeserializer on ChatCompletionStreamOp
       return ChatCompletionStreamOptionsUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ChatCompletionStreamOptionsUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionStreamOptionsUnionVariant1 extends ChatCompletionStreamOptionsUnion with ChatCompletionStreamOptionsUnionVariant1Mappable {
+class ChatCompletionStreamOptionsUnionVariant1 extends ChatCompletionStreamOptionsUnion
+    with ChatCompletionStreamOptionsUnionVariant1Mappable {
   @MappableField(key: 'include_usage')
   final bool? includeUsage;
   @MappableField(key: 'include_obfuscation')
   final bool? includeObfuscation;
 
-  const ChatCompletionStreamOptionsUnionVariant1({
-    required this.includeUsage,
-    required this.includeObfuscation,
-  });
+  const ChatCompletionStreamOptionsUnionVariant1({required this.includeUsage, required this.includeObfuscation});
 }

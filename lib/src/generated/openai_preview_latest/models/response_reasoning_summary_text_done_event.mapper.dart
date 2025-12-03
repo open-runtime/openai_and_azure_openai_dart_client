@@ -8,7 +8,7 @@
 part of 'response_reasoning_summary_text_done_event.dart';
 
 class ResponseReasoningSummaryTextDoneEventMapper
-    extends ClassMapperBase<ResponseReasoningSummaryTextDoneEvent> {
+    extends SubClassMapperBase<ResponseReasoningSummaryTextDoneEvent> {
   ResponseReasoningSummaryTextDoneEventMapper._();
 
   static ResponseReasoningSummaryTextDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseReasoningSummaryTextDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningSummaryTextDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseReasoningSummaryTextDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -64,6 +65,14 @@ class ResponseReasoningSummaryTextDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.reasoning_summary_text.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseReasoningSummaryTextDoneEvent _instantiate(DecodingData data) {
     return ResponseReasoningSummaryTextDoneEvent(
@@ -154,7 +163,8 @@ abstract class ResponseReasoningSummaryTextDoneEventCopyWith<
   $In extends ResponseReasoningSummaryTextDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseReasoningSummaryTextDoneEventType? type,
     String? itemId,

@@ -9,10 +9,10 @@ part 'run_step_delta_step_details_tool_calls_object_type.mapper.dart';
 /// Always `tool_calls`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsToolCallsObjectType {
-  @MappableValue('tool_calls') 
+  @MappableValue('tool_calls')
   toolCalls,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDeltaStepDetailsToolCallsObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsToolCallsObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsToolCallsObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsToolCallsObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsToolCallsObjectType.unknown).toList();
 }

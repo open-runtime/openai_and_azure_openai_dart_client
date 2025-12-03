@@ -7,13 +7,14 @@
 
 part of 'apply_patch_tool_call.dart';
 
-class ApplyPatchToolCallMapper extends ClassMapperBase<ApplyPatchToolCall> {
+class ApplyPatchToolCallMapper extends SubClassMapperBase<ApplyPatchToolCall> {
   ApplyPatchToolCallMapper._();
 
   static ApplyPatchToolCallMapper? _instance;
   static ApplyPatchToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ApplyPatchToolCallMapper._());
+      OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
       ApplyPatchCallStatusMapper.ensureInitialized();
       ApplyPatchToolCallOperationUnionMapper.ensureInitialized();
       ApplyPatchToolCallTypeMapper.ensureInitialized();
@@ -68,6 +69,13 @@ class ApplyPatchToolCallMapper extends ClassMapperBase<ApplyPatchToolCall> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'apply_patch_call';
+  @override
+  late final ClassMapperBase superMapper = OutputItemMapper.ensureInitialized();
 
   static ApplyPatchToolCall _instantiate(DecodingData data) {
     return ApplyPatchToolCall(
@@ -150,13 +158,14 @@ abstract class ApplyPatchToolCallCopyWith<
   $In extends ApplyPatchToolCall,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements OutputItemCopyWith<$R, $In, $Out> {
   ApplyPatchToolCallOperationUnionCopyWith<
     $R,
     ApplyPatchToolCallOperationUnion,
     ApplyPatchToolCallOperationUnion
   >
   get operation;
+  @override
   $R call({
     String? id,
     String? callId,

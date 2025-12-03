@@ -10,16 +10,11 @@ part 'audit_log_user_added.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogUserAdded with AuditLogUserAddedMappable {
-  const AuditLogUserAdded({
-    this.id,
-    this.auditLogUserAddedData,
-  });
+  const AuditLogUserAdded({this.id, this.auditLogUserAddedData});
 
   final String? id;
   @MappableField(key: 'data')
   final AuditLogUserAddedData? auditLogUserAddedData;
 
   static AuditLogUserAdded fromJson(Map<String, dynamic> json) => AuditLogUserAddedMapper.fromJson(json);
-
 }
-

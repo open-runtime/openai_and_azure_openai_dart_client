@@ -11,13 +11,9 @@ part 'supervised_method.mapper.dart';
 /// Method used for supervised finetuning
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SupervisedMethod with SupervisedMethodMappable {
-  const SupervisedMethod({
-    required this.type,
-  });
+  const SupervisedMethod({required this.type});
 
   final FineTuningMethodType type;
 
   static SupervisedMethod fromJson(Map<String, dynamic> json) => SupervisedMethodMapper.fromJson(json);
-
 }
-

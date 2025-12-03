@@ -8,7 +8,7 @@
 part of 'code_interpreter_file_output.dart';
 
 class CodeInterpreterFileOutputMapper
-    extends ClassMapperBase<CodeInterpreterFileOutput> {
+    extends SubClassMapperBase<CodeInterpreterFileOutput> {
   CodeInterpreterFileOutputMapper._();
 
   static CodeInterpreterFileOutputMapper? _instance;
@@ -16,6 +16,9 @@ class CodeInterpreterFileOutputMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = CodeInterpreterFileOutputMapper._(),
+      );
+      CodeInterpreterToolOutputMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       CodeInterpreterFileOutputTypeMapper.ensureInitialized();
       CodeInterpreterFileOutputFilesMapper.ensureInitialized();
@@ -48,6 +51,14 @@ class CodeInterpreterFileOutputMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'files';
+  @override
+  late final ClassMapperBase superMapper =
+      CodeInterpreterToolOutputMapper.ensureInitialized();
 
   static CodeInterpreterFileOutput _instantiate(DecodingData data) {
     return CodeInterpreterFileOutput(
@@ -129,7 +140,7 @@ abstract class CodeInterpreterFileOutputCopyWith<
   $In extends CodeInterpreterFileOutput,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CodeInterpreterToolOutputCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     CodeInterpreterFileOutputFiles,
@@ -140,6 +151,7 @@ abstract class CodeInterpreterFileOutputCopyWith<
     >
   >
   get files;
+  @override
   $R call({
     CodeInterpreterFileOutputType? type,
     List<CodeInterpreterFileOutputFiles>? files,

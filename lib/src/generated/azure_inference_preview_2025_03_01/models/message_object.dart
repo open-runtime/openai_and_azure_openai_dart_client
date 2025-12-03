@@ -57,6 +57,4 @@ class MessageObject with MessageObjectMappable {
   final dynamic metadata;
 
   static MessageObject fromJson(Map<String, dynamic> json) => MessageObjectMapper.fromJson(json);
-
 }
-

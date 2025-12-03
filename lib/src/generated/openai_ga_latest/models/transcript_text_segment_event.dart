@@ -11,8 +11,9 @@ part 'transcript_text_segment_event.mapper.dart';
 
 /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TranscriptTextSegmentEvent with TranscriptTextSegmentEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.segment')
+class TranscriptTextSegmentEvent extends CreateTranscriptionResponseStreamEvent
+    with TranscriptTextSegmentEventMappable {
   const TranscriptTextSegmentEvent({
     required this.type,
     required this.id,
@@ -29,7 +30,6 @@ class TranscriptTextSegmentEvent with TranscriptTextSegmentEventMappable {
   final String text;
   final String speaker;
 
-  static TranscriptTextSegmentEvent fromJson(Map<String, dynamic> json) => TranscriptTextSegmentEventMapper.fromJson(json);
-
+  static TranscriptTextSegmentEvent fromJson(Map<String, dynamic> json) =>
+      TranscriptTextSegmentEventMapper.fromJson(json);
 }
-

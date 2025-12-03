@@ -26,7 +26,6 @@ class AuditLogRoleAssignmentCreated with AuditLogRoleAssignmentCreatedMappable {
   @MappableField(key: 'resource_type')
   final String? resourceType;
 
-  static AuditLogRoleAssignmentCreated fromJson(Map<String, dynamic> json) => AuditLogRoleAssignmentCreatedMapper.fromJson(json);
-
+  static AuditLogRoleAssignmentCreated fromJson(Map<String, dynamic> json) =>
+      AuditLogRoleAssignmentCreatedMapper.fromJson(json);
 }
-

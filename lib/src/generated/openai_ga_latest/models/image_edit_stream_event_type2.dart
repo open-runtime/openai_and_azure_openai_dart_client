@@ -11,10 +11,10 @@ part 'image_edit_stream_event_type2.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditStreamEventType2 {
   /// Incorrect name has been replaced. Original name: `image_edit.completed`.
-  @MappableValue('image_edit.completed') 
+  @MappableValue('image_edit.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ImageEditStreamEventType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditStreamEventType2> get $valuesDefined => values.where((value) => value != ImageEditStreamEventType2.unknown).toList();
+  static List<ImageEditStreamEventType2> get $valuesDefined =>
+      values.where((value) => value != ImageEditStreamEventType2.unknown).toList();
 }

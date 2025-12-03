@@ -10,10 +10,10 @@ part 'embedding_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum EmbeddingObjectObjectEnum {
-  @MappableValue('embedding') 
+  @MappableValue('embedding')
   embedding,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum EmbeddingObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EmbeddingObjectObjectEnum> get $valuesDefined => values.where((value) => value != EmbeddingObjectObjectEnum.unknown).toList();
+  static List<EmbeddingObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != EmbeddingObjectObjectEnum.unknown).toList();
 }

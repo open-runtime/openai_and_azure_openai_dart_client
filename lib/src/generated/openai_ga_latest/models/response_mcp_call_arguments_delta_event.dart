@@ -11,8 +11,8 @@ part 'response_mcp_call_arguments_delta_event.mapper.dart';
 
 /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpCallArgumentsDeltaEvent with ResponseMcpCallArgumentsDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.delta')
+class ResponseMcpCallArgumentsDeltaEvent extends ResponseStreamEvent with ResponseMcpCallArgumentsDeltaEventMappable {
   const ResponseMcpCallArgumentsDeltaEvent({
     required this.type,
     required this.outputIndex,
@@ -30,7 +30,6 @@ class ResponseMcpCallArgumentsDeltaEvent with ResponseMcpCallArgumentsDeltaEvent
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpCallArgumentsDeltaEvent fromJson(Map<String, dynamic> json) => ResponseMcpCallArgumentsDeltaEventMapper.fromJson(json);
-
+  static ResponseMcpCallArgumentsDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpCallArgumentsDeltaEventMapper.fromJson(json);
 }
-

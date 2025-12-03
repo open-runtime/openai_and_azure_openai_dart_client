@@ -21,8 +21,9 @@ part 'realtime_client_event_conversation_item_truncate.mapper.dart';
 /// If successful, the server will respond with a `conversation.item.truncated` .
 /// event. .
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventConversationItemTruncate with RealtimeClientEventConversationItemTruncateMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.truncate')
+class RealtimeClientEventConversationItemTruncate extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemTruncateMappable {
   const RealtimeClientEventConversationItemTruncate({
     required this.type,
     required this.itemId,
@@ -41,7 +42,6 @@ class RealtimeClientEventConversationItemTruncate with RealtimeClientEventConver
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventConversationItemTruncate fromJson(Map<String, dynamic> json) => RealtimeClientEventConversationItemTruncateMapper.fromJson(json);
-
+  static RealtimeClientEventConversationItemTruncate fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventConversationItemTruncateMapper.fromJson(json);
 }
-

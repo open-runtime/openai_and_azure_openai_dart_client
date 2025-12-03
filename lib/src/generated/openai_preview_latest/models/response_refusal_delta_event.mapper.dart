@@ -8,7 +8,7 @@
 part of 'response_refusal_delta_event.dart';
 
 class ResponseRefusalDeltaEventMapper
-    extends ClassMapperBase<ResponseRefusalDeltaEvent> {
+    extends SubClassMapperBase<ResponseRefusalDeltaEvent> {
   ResponseRefusalDeltaEventMapper._();
 
   static ResponseRefusalDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseRefusalDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseRefusalDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseRefusalDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -65,6 +66,14 @@ class ResponseRefusalDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.refusal.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseRefusalDeltaEvent _instantiate(DecodingData data) {
     return ResponseRefusalDeltaEvent(
@@ -149,7 +158,8 @@ abstract class ResponseRefusalDeltaEventCopyWith<
   $In extends ResponseRefusalDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseRefusalDeltaEventType? type,
     String? itemId,

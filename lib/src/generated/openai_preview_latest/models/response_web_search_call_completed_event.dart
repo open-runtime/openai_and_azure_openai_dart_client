@@ -10,13 +10,9 @@ import 'response_web_search_call_completed_event_type.dart';
 part 'response_web_search_call_completed_event.mapper.dart';
 
 /// Emitted when a web search call is completed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseWebSearchCallCompletedEvent with ResponseWebSearchCallCompletedEventMappable {
-  const ResponseWebSearchCallCompletedEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.completed')
+class ResponseWebSearchCallCompletedEvent extends ResponseStreamEvent with ResponseWebSearchCallCompletedEventMappable {
+  const ResponseWebSearchCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId});
 
   final ResponseWebSearchCallCompletedEventType type;
   @MappableField(key: 'output_index')
@@ -24,7 +20,6 @@ class ResponseWebSearchCallCompletedEvent with ResponseWebSearchCallCompletedEve
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseWebSearchCallCompletedEvent fromJson(Map<String, dynamic> json) => ResponseWebSearchCallCompletedEventMapper.fromJson(json);
-
+  static ResponseWebSearchCallCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseWebSearchCallCompletedEventMapper.fromJson(json);
 }
-

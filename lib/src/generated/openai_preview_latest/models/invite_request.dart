@@ -11,17 +11,11 @@ part 'invite_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteRequest with InviteRequestMappable {
-  const InviteRequest({
-    required this.email,
-    required this.role,
-    this.projects,
-  });
+  const InviteRequest({required this.email, required this.role, this.projects});
 
   final String email;
   final InviteRequestRole role;
   final List<InviteRequestProjects>? projects;
 
   static InviteRequest fromJson(Map<String, dynamic> json) => InviteRequestMapper.fromJson(json);
-
 }
-

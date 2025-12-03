@@ -40,7 +40,6 @@ class ContentFilterPromptResults with ContentFilterPromptResultsMappable {
   @MappableField(key: 'indirect_attack')
   final ContentFilterDetectedResult? indirectAttack;
 
-  static ContentFilterPromptResults fromJson(Map<String, dynamic> json) => ContentFilterPromptResultsMapper.fromJson(json);
-
+  static ContentFilterPromptResults fromJson(Map<String, dynamic> json) =>
+      ContentFilterPromptResultsMapper.fromJson(json);
 }
-

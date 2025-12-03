@@ -7,13 +7,14 @@
 
 part of 'done_event.dart';
 
-class DoneEventMapper extends ClassMapperBase<DoneEvent> {
+class DoneEventMapper extends SubClassMapperBase<DoneEvent> {
   DoneEventMapper._();
 
   static DoneEventMapper? _instance;
   static DoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DoneEventMapper._());
+      AssistantStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       DoneEventEventMapper.ensureInitialized();
       DoneEventDataMapper.ensureInitialized();
     }
@@ -40,6 +41,14 @@ class DoneEventMapper extends ClassMapperBase<DoneEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'event';
+  @override
+  final dynamic discriminatorValue = 'done';
+  @override
+  late final ClassMapperBase superMapper =
+      AssistantStreamEventMapper.ensureInitialized();
 
   static DoneEvent _instantiate(DecodingData data) {
     return DoneEvent(event: data.dec(_f$event), data: data.dec(_f$data));
@@ -103,7 +112,8 @@ extension DoneEventValueCopy<$R, $Out> on ObjectCopyWith<$R, DoneEvent, $Out> {
 }
 
 abstract class DoneEventCopyWith<$R, $In extends DoneEvent, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AssistantStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({DoneEventEvent? event, DoneEventData? data});
   DoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

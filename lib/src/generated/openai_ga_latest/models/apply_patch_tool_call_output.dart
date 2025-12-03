@@ -13,8 +13,8 @@ import 'output_item.dart';
 part 'apply_patch_tool_call_output.mapper.dart';
 
 /// The output emitted by an apply patch tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchToolCallOutput with ApplyPatchToolCallOutputMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call_output')
+class ApplyPatchToolCallOutput extends OutputItem with ApplyPatchToolCallOutputMappable {
   const ApplyPatchToolCallOutput({
     required this.id,
     required this.callId,
@@ -34,6 +34,4 @@ class ApplyPatchToolCallOutput with ApplyPatchToolCallOutputMappable {
   final ApplyPatchToolCallOutputType type;
 
   static ApplyPatchToolCallOutput fromJson(Map<String, dynamic> json) => ApplyPatchToolCallOutputMapper.fromJson(json);
-
 }
-

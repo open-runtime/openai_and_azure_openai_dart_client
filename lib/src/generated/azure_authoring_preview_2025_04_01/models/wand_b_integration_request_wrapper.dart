@@ -11,15 +11,11 @@ part 'wand_b_integration_request_wrapper.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WandBIntegrationRequestWrapper with WandBIntegrationRequestWrapperMappable {
-  const WandBIntegrationRequestWrapper({
-    required this.type,
-    required this.wandb,
-  });
+  const WandBIntegrationRequestWrapper({required this.type, required this.wandb});
 
   final IntegrationTypes type;
   final WandBIntegrationRequest wandb;
 
-  static WandBIntegrationRequestWrapper fromJson(Map<String, dynamic> json) => WandBIntegrationRequestWrapperMapper.fromJson(json);
-
+  static WandBIntegrationRequestWrapper fromJson(Map<String, dynamic> json) =>
+      WandBIntegrationRequestWrapperMapper.fromJson(json);
 }
-

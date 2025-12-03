@@ -9,10 +9,10 @@ part 'text_annotation_type.mapper.dart';
 /// Always `file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum TextAnnotationType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum TextAnnotationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TextAnnotationType> get $valuesDefined => values.where((value) => value != TextAnnotationType.unknown).toList();
+  static List<TextAnnotationType> get $valuesDefined =>
+      values.where((value) => value != TextAnnotationType.unknown).toList();
 }

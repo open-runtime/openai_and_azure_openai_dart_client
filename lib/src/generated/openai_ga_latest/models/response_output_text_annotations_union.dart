@@ -13,17 +13,18 @@ import 'url_annotation_type.dart';
 
 part 'response_output_text_annotations_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ResponseOutputTextAnnotationsUnionFile,
-  ResponseOutputTextAnnotationsUnionUrl
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ResponseOutputTextAnnotationsUnionFile, ResponseOutputTextAnnotationsUnionUrl],
+)
 sealed class ResponseOutputTextAnnotationsUnion with ResponseOutputTextAnnotationsUnionMappable {
   const ResponseOutputTextAnnotationsUnion();
 
   static ResponseOutputTextAnnotationsUnion fromJson(Map<String, dynamic> json) {
     return ResponseOutputTextAnnotationsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ResponseOutputTextAnnotationsUnionDeserializer on ResponseOutputTextAnnotationsUnion {
@@ -32,39 +33,31 @@ extension ResponseOutputTextAnnotationsUnionDeserializer on ResponseOutputTextAn
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      ResponseOutputTextAnnotationsUnionFile: 'file',
-      ResponseOutputTextAnnotationsUnionUrl: 'url',
-    };
+    final mappingFallback = const <Type, Object?>{FileAnnotation: 'file', UrlAnnotation: 'url'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ResponseOutputTextAnnotationsUnionFile] => ResponseOutputTextAnnotationsUnionFileMapper.fromJson(json),
-      _ when value == effective[ResponseOutputTextAnnotationsUnionUrl] => ResponseOutputTextAnnotationsUnionUrlMapper.fromJson(json),
+      _ when value == effective[FileAnnotation] => FileAnnotationMapper.fromJson(json),
+      _ when value == effective[UrlAnnotation] => UrlAnnotationMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ResponseOutputTextAnnotationsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file')
-class ResponseOutputTextAnnotationsUnionFile extends ResponseOutputTextAnnotationsUnion with ResponseOutputTextAnnotationsUnionFileMappable {
+class ResponseOutputTextAnnotationsUnionFile extends ResponseOutputTextAnnotationsUnion
+    with ResponseOutputTextAnnotationsUnionFileMappable {
   final FileAnnotationType type;
   final FileAnnotationSource source;
 
-  const ResponseOutputTextAnnotationsUnionFile({
-    required this.type,
-    required this.source,
-  });
-
+  const ResponseOutputTextAnnotationsUnionFile({required this.type, required this.source});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url')
-class ResponseOutputTextAnnotationsUnionUrl extends ResponseOutputTextAnnotationsUnion with ResponseOutputTextAnnotationsUnionUrlMappable {
+class ResponseOutputTextAnnotationsUnionUrl extends ResponseOutputTextAnnotationsUnion
+    with ResponseOutputTextAnnotationsUnionUrlMappable {
   final UrlAnnotationType type;
   final UrlAnnotationSource source;
 
-  const ResponseOutputTextAnnotationsUnionUrl({
-    required this.type,
-    required this.source,
-  });
-
+  const ResponseOutputTextAnnotationsUnionUrl({required this.type, required this.source});
 }

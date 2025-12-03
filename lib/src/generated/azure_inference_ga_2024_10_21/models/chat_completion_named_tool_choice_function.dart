@@ -8,13 +8,10 @@ part 'chat_completion_named_tool_choice_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionNamedToolChoiceFunction with ChatCompletionNamedToolChoiceFunctionMappable {
-  const ChatCompletionNamedToolChoiceFunction({
-    required this.name,
-  });
+  const ChatCompletionNamedToolChoiceFunction({required this.name});
 
   final String name;
 
-  static ChatCompletionNamedToolChoiceFunction fromJson(Map<String, dynamic> json) => ChatCompletionNamedToolChoiceFunctionMapper.fromJson(json);
-
+  static ChatCompletionNamedToolChoiceFunction fromJson(Map<String, dynamic> json) =>
+      ChatCompletionNamedToolChoiceFunctionMapper.fromJson(json);
 }
-

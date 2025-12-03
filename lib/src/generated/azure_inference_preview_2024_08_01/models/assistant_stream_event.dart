@@ -36,10 +36,12 @@ part 'assistant_stream_event.mapper.dart';
 /// in your code. See the [Assistants API quick start](/docs/assistants/overview) to learn how to.
 /// integrate the Assistants API with streaming.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'event', includeSubClasses: [
-  AssistantStreamEventError,
-  AssistantStreamEventDone
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'event',
+  includeSubClasses: [AssistantStreamEventError, AssistantStreamEventDone],
+)
 sealed class AssistantStreamEvent with AssistantStreamEventMappable {
   const AssistantStreamEvent();
 
@@ -54,15 +56,12 @@ extension AssistantStreamEventUnionDeserializer on AssistantStreamEvent {
     String key = 'event',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      AssistantStreamEventError: 'error',
-      AssistantStreamEventDone: 'done',
-    };
+    final mappingFallback = const <Type, Object?>{ErrorEvent: 'error', DoneEvent: 'done'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[AssistantStreamEventError] => AssistantStreamEventErrorMapper.fromJson(json),
-      _ when value == effective[AssistantStreamEventDone] => AssistantStreamEventDoneMapper.fromJson(json),
+      _ when value == effective[ErrorEvent] => ErrorEventMapper.fromJson(json),
+      _ when value == effective[DoneEvent] => DoneEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for AssistantStreamEvent'),
     };
   }
@@ -73,10 +72,7 @@ class AssistantStreamEventError extends AssistantStreamEvent with AssistantStrea
   final AssistantStreamEventEvent event;
   final Error data;
 
-  const AssistantStreamEventError({
-    required this.event,
-    required this.data,
-  });
+  const AssistantStreamEventError({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'done')
@@ -84,8 +80,5 @@ class AssistantStreamEventDone extends AssistantStreamEvent with AssistantStream
   final AssistantStreamEventEvent2 event;
   final AssistantStreamEventData data;
 
-  const AssistantStreamEventDone({
-    required this.event,
-    required this.data,
-  });
+  const AssistantStreamEventDone({required this.event, required this.data});
 }

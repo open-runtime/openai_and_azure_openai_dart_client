@@ -64,7 +64,6 @@ class CreateRunRequestWithoutStream with CreateRunRequestWithoutStreamMappable {
   @MappableField(key: 'response_format')
   final AssistantsApiResponseFormatOption? responseFormat;
 
-  static CreateRunRequestWithoutStream fromJson(Map<String, dynamic> json) => CreateRunRequestWithoutStreamMapper.fromJson(json);
-
+  static CreateRunRequestWithoutStream fromJson(Map<String, dynamic> json) =>
+      CreateRunRequestWithoutStreamMapper.fromJson(json);
 }
-

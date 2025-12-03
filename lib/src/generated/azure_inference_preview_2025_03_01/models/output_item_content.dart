@@ -10,15 +10,10 @@ part 'output_item_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputItemContent with OutputItemContentMappable {
-  const OutputItemContent({
-    required this.type,
-    required this.text,
-  });
+  const OutputItemContent({required this.type, required this.text});
 
   final OutputItemContentType type;
   final String text;
 
   static OutputItemContent fromJson(Map<String, dynamic> json) => OutputItemContentMapper.fromJson(json);
-
 }
-

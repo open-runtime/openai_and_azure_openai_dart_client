@@ -7,7 +7,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'comparison_filter_value_union.mapper.dart';
 
 /// The value to compare against the attribute key; supports string, number, or boolean types.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ComparisonFilterValueUnionVariantString, ComparisonFilterValueUnionVariantNum, ComparisonFilterValueUnionVariantBool])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    ComparisonFilterValueUnionVariantString,
+    ComparisonFilterValueUnionVariantNum,
+    ComparisonFilterValueUnionVariantBool,
+  ],
+)
 sealed class ComparisonFilterValueUnion with ComparisonFilterValueUnionMappable {
   const ComparisonFilterValueUnion();
 
@@ -41,30 +49,27 @@ extension ComparisonFilterValueUnionDeserializer on ComparisonFilterValueUnion {
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ComparisonFilterValueUnionVariantString extends ComparisonFilterValueUnion with ComparisonFilterValueUnionVariantStringMappable {
+class ComparisonFilterValueUnionVariantString extends ComparisonFilterValueUnion
+    with ComparisonFilterValueUnionVariantStringMappable {
   final String value;
 
-  const ComparisonFilterValueUnionVariantString({
-    required this.value,
-  });
+  const ComparisonFilterValueUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ComparisonFilterValueUnionVariantNum extends ComparisonFilterValueUnion with ComparisonFilterValueUnionVariantNumMappable {
+class ComparisonFilterValueUnionVariantNum extends ComparisonFilterValueUnion
+    with ComparisonFilterValueUnionVariantNumMappable {
   final num value;
 
-  const ComparisonFilterValueUnionVariantNum({
-    required this.value,
-  });
+  const ComparisonFilterValueUnionVariantNum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ComparisonFilterValueUnionVariantBool extends ComparisonFilterValueUnion with ComparisonFilterValueUnionVariantBoolMappable {
+class ComparisonFilterValueUnionVariantBool extends ComparisonFilterValueUnion
+    with ComparisonFilterValueUnionVariantBoolMappable {
   final bool value;
 
-  const ComparisonFilterValueUnionVariantBool({
-    required this.value,
-  });
+  const ComparisonFilterValueUnionVariantBool({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

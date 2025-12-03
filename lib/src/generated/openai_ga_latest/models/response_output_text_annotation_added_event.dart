@@ -11,8 +11,9 @@ part 'response_output_text_annotation_added_event.mapper.dart';
 
 /// Emitted when an annotation is added to output text content.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseOutputTextAnnotationAddedEvent with ResponseOutputTextAnnotationAddedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.annotation.added')
+class ResponseOutputTextAnnotationAddedEvent extends ResponseStreamEvent
+    with ResponseOutputTextAnnotationAddedEventMappable {
   const ResponseOutputTextAnnotationAddedEvent({
     required this.type,
     required this.itemId,
@@ -36,7 +37,6 @@ class ResponseOutputTextAnnotationAddedEvent with ResponseOutputTextAnnotationAd
   final int sequenceNumber;
   final dynamic annotation;
 
-  static ResponseOutputTextAnnotationAddedEvent fromJson(Map<String, dynamic> json) => ResponseOutputTextAnnotationAddedEventMapper.fromJson(json);
-
+  static ResponseOutputTextAnnotationAddedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseOutputTextAnnotationAddedEventMapper.fromJson(json);
 }
-

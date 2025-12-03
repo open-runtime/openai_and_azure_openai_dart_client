@@ -9,8 +9,9 @@ import 'run_step_details_tool_calls_code_output_image_object_type.dart';
 
 part 'run_step_details_tool_calls_code_output_image_object.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDetailsToolCallsCodeOutputImageObject with RunStepDetailsToolCallsCodeOutputImageObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
+class RunStepDetailsToolCallsCodeOutputImageObject extends RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
+    with RunStepDetailsToolCallsCodeOutputImageObjectMappable {
   const RunStepDetailsToolCallsCodeOutputImageObject({
     required this.type,
     required this.runStepDetailsToolCallsCodeOutputImageObjectImage,
@@ -20,7 +21,6 @@ class RunStepDetailsToolCallsCodeOutputImageObject with RunStepDetailsToolCallsC
   @MappableField(key: 'image')
   final RunStepDetailsToolCallsCodeOutputImageObjectImage runStepDetailsToolCallsCodeOutputImageObjectImage;
 
-  static RunStepDetailsToolCallsCodeOutputImageObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsCodeOutputImageObject fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json);
 }
-

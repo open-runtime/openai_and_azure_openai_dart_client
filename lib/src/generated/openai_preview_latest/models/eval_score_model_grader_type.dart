@@ -9,10 +9,10 @@ part 'eval_score_model_grader_type.mapper.dart';
 /// The object type, which is always `score_model`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalScoreModelGraderType {
-  @MappableValue('score_model') 
+  @MappableValue('score_model')
   scoreModel,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalScoreModelGraderType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalScoreModelGraderType> get $valuesDefined => values.where((value) => value != EvalScoreModelGraderType.unknown).toList();
+  static List<EvalScoreModelGraderType> get $valuesDefined =>
+      values.where((value) => value != EvalScoreModelGraderType.unknown).toList();
 }

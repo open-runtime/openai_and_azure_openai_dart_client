@@ -12,8 +12,9 @@ part 'realtime_server_event_response_content_part_done.mapper.dart';
 /// Returned when a content part is done streaming in an assistant message item.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseContentPartDone with RealtimeServerEventResponseContentPartDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.done')
+class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseContentPartDoneMappable {
   const RealtimeServerEventResponseContentPartDone({
     required this.eventId,
     required this.type,
@@ -38,7 +39,6 @@ class RealtimeServerEventResponseContentPartDone with RealtimeServerEventRespons
   @MappableField(key: 'part')
   final RealtimeServerEventResponseContentPartDonePart realtimeServerEventResponseContentPartDonePart;
 
-  static RealtimeServerEventResponseContentPartDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseContentPartDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseContentPartDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseContentPartDoneMapper.fromJson(json);
 }
-

@@ -10,16 +10,16 @@ part 'realtime_conversation_item_with_reference_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemWithReferenceType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('function_call') 
+  @MappableValue('function_call')
   functionCall,
 
-  @MappableValue('function_call_output') 
+  @MappableValue('function_call_output')
   functionCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum RealtimeConversationItemWithReferenceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemWithReferenceType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemWithReferenceType.unknown).toList();
+  static List<RealtimeConversationItemWithReferenceType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemWithReferenceType.unknown).toList();
 }

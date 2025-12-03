@@ -14,8 +14,8 @@ import 'output_item.dart';
 part 'apply_patch_tool_call.mapper.dart';
 
 /// A tool call that applies file diffs by creating, deleting, or updating files.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchToolCall with ApplyPatchToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call')
+class ApplyPatchToolCall extends OutputItem with ApplyPatchToolCallMappable {
   const ApplyPatchToolCall({
     required this.id,
     required this.callId,
@@ -35,6 +35,4 @@ class ApplyPatchToolCall with ApplyPatchToolCallMappable {
   final ApplyPatchToolCallType type;
 
   static ApplyPatchToolCall fromJson(Map<String, dynamic> json) => ApplyPatchToolCallMapper.fromJson(json);
-
 }
-

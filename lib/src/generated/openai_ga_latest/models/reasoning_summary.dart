@@ -14,16 +14,16 @@ part 'reasoning_summary.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningSummary {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('concise') 
+  @MappableValue('concise')
   concise,
 
-  @MappableValue('detailed') 
+  @MappableValue('detailed')
   detailed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum ReasoningSummary {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ReasoningSummary> get $valuesDefined => values.where((value) => value != ReasoningSummary.unknown).toList();
+  static List<ReasoningSummary> get $valuesDefined =>
+      values.where((value) => value != ReasoningSummary.unknown).toList();
 }

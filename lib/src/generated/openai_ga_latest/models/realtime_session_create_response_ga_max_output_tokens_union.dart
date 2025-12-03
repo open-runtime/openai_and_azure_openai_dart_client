@@ -11,8 +11,16 @@ part 'realtime_session_create_response_ga_max_output_tokens_union.mapper.dart';
 /// limit output tokens, or `inf` for the maximum available tokens for a.
 /// given model. Defaults to `inf`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString, RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt])
-sealed class RealtimeSessionCreateResponseGaMaxOutputTokensUnion with RealtimeSessionCreateResponseGaMaxOutputTokensUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString,
+    RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt,
+  ],
+)
+sealed class RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+    with RealtimeSessionCreateResponseGaMaxOutputTokensUnionMappable {
   const RealtimeSessionCreateResponseGaMaxOutputTokensUnion();
 
   static RealtimeSessionCreateResponseGaMaxOutputTokensUnion fromJson(dynamic json) {
@@ -20,7 +28,8 @@ sealed class RealtimeSessionCreateResponseGaMaxOutputTokensUnion with RealtimeSe
   }
 }
 
-extension RealtimeSessionCreateResponseGaMaxOutputTokensUnionDeserializer on RealtimeSessionCreateResponseGaMaxOutputTokensUnion {
+extension RealtimeSessionCreateResponseGaMaxOutputTokensUnionDeserializer
+    on RealtimeSessionCreateResponseGaMaxOutputTokensUnion {
   static RealtimeSessionCreateResponseGaMaxOutputTokensUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -36,31 +45,34 @@ extension RealtimeSessionCreateResponseGaMaxOutputTokensUnionDeserializer on Rea
       return RealtimeSessionCreateResponseGaMaxOutputTokensUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeSessionCreateResponseGaMaxOutputTokensUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionCreateResponseGaMaxOutputTokensUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString extends RealtimeSessionCreateResponseGaMaxOutputTokensUnion with RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantStringMappable {
+class RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString
+    extends RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+    with RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt extends RealtimeSessionCreateResponseGaMaxOutputTokensUnion with RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantIntMappable {
+class RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt
+    extends RealtimeSessionCreateResponseGaMaxOutputTokensUnion
+    with RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeSessionCreateResponseGaMaxOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension RealtimeSessionCreateResponseGaMaxOutputTokensUnionJsonValue on RealtimeSessionCreateResponseGaMaxOutputTokensUnion {
+extension RealtimeSessionCreateResponseGaMaxOutputTokensUnionJsonValue
+    on RealtimeSessionCreateResponseGaMaxOutputTokensUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -90,7 +102,9 @@ class RealtimeSessionCreateResponseGaMaxOutputTokensUnionHook extends MappingHoo
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! RealtimeSessionCreateResponseGaMaxOutputTokensUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! RealtimeSessionCreateResponseGaMaxOutputTokensUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return RealtimeSessionCreateResponseGaMaxOutputTokensUnion.fromJson(value);
     }

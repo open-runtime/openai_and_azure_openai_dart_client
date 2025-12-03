@@ -9,10 +9,10 @@ part 'specific_apply_patch_param_type.mapper.dart';
 /// The tool to call. Always `apply_patch`.
 @MappableEnum(defaultValue: 'unknown')
 enum SpecificApplyPatchParamType {
-  @MappableValue('apply_patch') 
+  @MappableValue('apply_patch')
   applyPatch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum SpecificApplyPatchParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SpecificApplyPatchParamType> get $valuesDefined => values.where((value) => value != SpecificApplyPatchParamType.unknown).toList();
+  static List<SpecificApplyPatchParamType> get $valuesDefined =>
+      values.where((value) => value != SpecificApplyPatchParamType.unknown).toList();
 }

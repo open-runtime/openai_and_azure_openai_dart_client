@@ -10,17 +10,12 @@ import 'input_text_content_type.dart';
 part 'input_text_content.mapper.dart';
 
 /// A text input to the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class InputTextContent with InputTextContentMappable {
-  const InputTextContent({
-    required this.text,
-    this.type = InputTextContentType.inputText,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
+class InputTextContent extends InputContent with InputTextContentMappable {
+  const InputTextContent({required this.text, this.type = InputTextContentType.inputText});
 
   final String text;
   final InputTextContentType type;
 
   static InputTextContent fromJson(Map<String, dynamic> json) => InputTextContentMapper.fromJson(json);
-
 }
-

@@ -10,13 +10,13 @@ part 'realtime_session_input_audio_noise_reduction_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionInputAudioNoiseReductionType {
-  @MappableValue('near_field') 
+  @MappableValue('near_field')
   nearField,
 
-  @MappableValue('far_field') 
+  @MappableValue('far_field')
   farField,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum RealtimeSessionInputAudioNoiseReductionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionInputAudioNoiseReductionType> get $valuesDefined => values.where((value) => value != RealtimeSessionInputAudioNoiseReductionType.unknown).toList();
+  static List<RealtimeSessionInputAudioNoiseReductionType> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionInputAudioNoiseReductionType.unknown).toList();
 }

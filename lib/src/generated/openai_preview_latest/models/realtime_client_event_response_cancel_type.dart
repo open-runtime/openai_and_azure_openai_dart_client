@@ -10,10 +10,10 @@ part 'realtime_client_event_response_cancel_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventResponseCancelType {
   /// Incorrect name has been replaced. Original name: `response.cancel`.
-  @MappableValue('response.cancel') 
+  @MappableValue('response.cancel')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventResponseCancelType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventResponseCancelType> get $valuesDefined => values.where((value) => value != RealtimeClientEventResponseCancelType.unknown).toList();
+  static List<RealtimeClientEventResponseCancelType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventResponseCancelType.unknown).toList();
 }

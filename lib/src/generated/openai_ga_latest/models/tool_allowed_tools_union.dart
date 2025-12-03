@@ -25,7 +25,6 @@ extension ToolAllowedToolsUnionDeserializer on ToolAllowedToolsUnion {
       return ToolAllowedToolsUnionMcpToolFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ToolAllowedToolsUnion from: $json');
   }
 }
@@ -37,8 +36,5 @@ class ToolAllowedToolsUnionMcpToolFilter extends ToolAllowedToolsUnion with Tool
   @MappableField(key: 'read_only')
   final bool? readOnly;
 
-  const ToolAllowedToolsUnionMcpToolFilter({
-    required this.toolNames,
-    required this.readOnly,
-  });
+  const ToolAllowedToolsUnionMcpToolFilter({required this.toolNames, required this.readOnly});
 }

@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_text_delta.mapper.dart';
 
 /// Returned when the text value of an "output_text" content part is updated.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseTextDelta with RealtimeServerEventResponseTextDeltaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.delta')
+class RealtimeServerEventResponseTextDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseTextDeltaMappable {
   const RealtimeServerEventResponseTextDelta({
     required this.eventId,
     required this.type,
@@ -34,7 +35,6 @@ class RealtimeServerEventResponseTextDelta with RealtimeServerEventResponseTextD
   final int contentIndex;
   final String delta;
 
-  static RealtimeServerEventResponseTextDelta fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseTextDeltaMapper.fromJson(json);
-
+  static RealtimeServerEventResponseTextDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseTextDeltaMapper.fromJson(json);
 }
-

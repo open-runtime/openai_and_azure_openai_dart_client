@@ -13,17 +13,18 @@ import 'static_chunking_strategy_request_param_type.dart';
 
 part 'vector_store_file_object_chunking_strategy_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  VectorStoreFileObjectChunkingStrategyUnionAuto,
-  VectorStoreFileObjectChunkingStrategyUnionStatic
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [VectorStoreFileObjectChunkingStrategyUnionAuto, VectorStoreFileObjectChunkingStrategyUnionStatic],
+)
 sealed class VectorStoreFileObjectChunkingStrategyUnion with VectorStoreFileObjectChunkingStrategyUnionMappable {
   const VectorStoreFileObjectChunkingStrategyUnion();
 
   static VectorStoreFileObjectChunkingStrategyUnion fromJson(Map<String, dynamic> json) {
     return VectorStoreFileObjectChunkingStrategyUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension VectorStoreFileObjectChunkingStrategyUnionDeserializer on VectorStoreFileObjectChunkingStrategyUnion {
@@ -33,37 +34,38 @@ extension VectorStoreFileObjectChunkingStrategyUnionDeserializer on VectorStoreF
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      VectorStoreFileObjectChunkingStrategyUnionAuto: 'auto',
-      VectorStoreFileObjectChunkingStrategyUnionStatic: 'static',
+      AutoChunkingStrategyRequestParam: 'auto',
+      StaticChunkingStrategyRequestParam: 'static',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[VectorStoreFileObjectChunkingStrategyUnionAuto] => VectorStoreFileObjectChunkingStrategyUnionAutoMapper.fromJson(json),
-      _ when value == effective[VectorStoreFileObjectChunkingStrategyUnionStatic] => VectorStoreFileObjectChunkingStrategyUnionStaticMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for VectorStoreFileObjectChunkingStrategyUnion'),
+      _ when value == effective[AutoChunkingStrategyRequestParam] => AutoChunkingStrategyRequestParamMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[StaticChunkingStrategyRequestParam] =>
+        StaticChunkingStrategyRequestParamMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for VectorStoreFileObjectChunkingStrategyUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'auto')
-class VectorStoreFileObjectChunkingStrategyUnionAuto extends VectorStoreFileObjectChunkingStrategyUnion with VectorStoreFileObjectChunkingStrategyUnionAutoMappable {
+class VectorStoreFileObjectChunkingStrategyUnionAuto extends VectorStoreFileObjectChunkingStrategyUnion
+    with VectorStoreFileObjectChunkingStrategyUnionAutoMappable {
   final AutoChunkingStrategyRequestParamType type;
 
-  const VectorStoreFileObjectChunkingStrategyUnionAuto({
-    required this.type,
-  });
-
+  const VectorStoreFileObjectChunkingStrategyUnionAuto({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
-class VectorStoreFileObjectChunkingStrategyUnionStatic extends VectorStoreFileObjectChunkingStrategyUnion with VectorStoreFileObjectChunkingStrategyUnionStaticMappable {
+class VectorStoreFileObjectChunkingStrategyUnionStatic extends VectorStoreFileObjectChunkingStrategyUnion
+    with VectorStoreFileObjectChunkingStrategyUnionStaticMappable {
   final StaticChunkingStrategyRequestParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
-  const VectorStoreFileObjectChunkingStrategyUnionStatic({
-    required this.type,
-    required this.staticField,
-  });
-
+  const VectorStoreFileObjectChunkingStrategyUnionStatic({required this.type, required this.staticField});
 }

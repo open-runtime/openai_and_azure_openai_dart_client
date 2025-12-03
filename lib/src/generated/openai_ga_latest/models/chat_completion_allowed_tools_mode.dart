@@ -15,14 +15,14 @@ part 'chat_completion_allowed_tools_mode.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionAllowedToolsMode {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
   /// The name has been replaced because it contains a keyword. Original name: `required`.
-  @MappableValue('required') 
+  @MappableValue('required')
   valueRequired,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ChatCompletionAllowedToolsMode {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionAllowedToolsMode> get $valuesDefined => values.where((value) => value != ChatCompletionAllowedToolsMode.unknown).toList();
+  static List<ChatCompletionAllowedToolsMode> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionAllowedToolsMode.unknown).toList();
 }

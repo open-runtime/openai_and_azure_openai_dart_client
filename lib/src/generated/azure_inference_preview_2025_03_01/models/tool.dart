@@ -22,11 +22,12 @@ import 'tool_type3.dart';
 
 part 'tool.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ToolFileSearch,
-  ToolFunction,
-  ToolComputerPreview
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ToolFileSearch, ToolFunction, ToolComputerPreview],
+)
 sealed class Tool with ToolMappable {
   const Tool();
 
@@ -36,22 +37,18 @@ sealed class Tool with ToolMappable {
 }
 
 extension ToolUnionDeserializer on Tool {
-  static Tool tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static Tool tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ToolFileSearch: 'file_search',
-      ToolFunction: 'function',
-      ToolComputerPreview: 'computer-preview',
+      FileSearchTool: 'file_search',
+      FunctionTool: 'function',
+      ComputerTool: 'computer-preview',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ToolFileSearch] => ToolFileSearchMapper.fromJson(json),
-      _ when value == effective[ToolFunction] => ToolFunctionMapper.fromJson(json),
-      _ when value == effective[ToolComputerPreview] => ToolComputerPreviewMapper.fromJson(json),
+      _ when value == effective[FileSearchTool] => FileSearchToolMapper.fromJson(json),
+      _ when value == effective[FunctionTool] => FunctionToolMapper.fromJson(json),
+      _ when value == effective[ComputerTool] => ComputerToolMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for Tool'),
     };
   }

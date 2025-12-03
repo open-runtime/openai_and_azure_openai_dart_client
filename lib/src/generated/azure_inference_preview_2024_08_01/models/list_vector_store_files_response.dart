@@ -28,7 +28,6 @@ class ListVectorStoreFilesResponse with ListVectorStoreFilesResponseMappable {
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ListVectorStoreFilesResponse fromJson(Map<String, dynamic> json) => ListVectorStoreFilesResponseMapper.fromJson(json);
-
+  static ListVectorStoreFilesResponse fromJson(Map<String, dynamic> json) =>
+      ListVectorStoreFilesResponseMapper.fromJson(json);
 }
-

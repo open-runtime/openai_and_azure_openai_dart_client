@@ -8,10 +8,7 @@ part 'tool_input_image_mask.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolInputImageMask with ToolInputImageMaskMappable {
-  const ToolInputImageMask({
-    this.imageUrl,
-    this.fileId,
-  });
+  const ToolInputImageMask({this.imageUrl, this.fileId});
 
   @MappableField(key: 'image_url')
   final String? imageUrl;
@@ -19,6 +16,4 @@ class ToolInputImageMask with ToolInputImageMaskMappable {
   final String? fileId;
 
   static ToolInputImageMask fromJson(Map<String, dynamic> json) => ToolInputImageMaskMapper.fromJson(json);
-
 }
-

@@ -8,7 +8,7 @@
 part of 'function_shell_call_output_exit_outcome_param.dart';
 
 class FunctionShellCallOutputExitOutcomeParamMapper
-    extends ClassMapperBase<FunctionShellCallOutputExitOutcomeParam> {
+    extends SubClassMapperBase<FunctionShellCallOutputExitOutcomeParam> {
   FunctionShellCallOutputExitOutcomeParamMapper._();
 
   static FunctionShellCallOutputExitOutcomeParamMapper? _instance;
@@ -17,6 +17,8 @@ class FunctionShellCallOutputExitOutcomeParamMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputExitOutcomeParamMapper._(),
       );
+      FunctionShellCallOutputOutcomeParamMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       FunctionShellCallOutputExitOutcomeParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -52,6 +54,14 @@ class FunctionShellCallOutputExitOutcomeParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'exit';
+  @override
+  late final ClassMapperBase superMapper =
+      FunctionShellCallOutputOutcomeParamMapper.ensureInitialized();
 
   static FunctionShellCallOutputExitOutcomeParam _instantiate(
     DecodingData data,
@@ -144,7 +154,8 @@ abstract class FunctionShellCallOutputExitOutcomeParamCopyWith<
   $In extends FunctionShellCallOutputExitOutcomeParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements FunctionShellCallOutputOutcomeParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({int? exitCode, FunctionShellCallOutputExitOutcomeParamType? type});
   FunctionShellCallOutputExitOutcomeParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

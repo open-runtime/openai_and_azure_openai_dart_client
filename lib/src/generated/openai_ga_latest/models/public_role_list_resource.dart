@@ -27,6 +27,4 @@ class PublicRoleListResource with PublicRoleListResourceMappable {
   final String? next;
 
   static PublicRoleListResource fromJson(Map<String, dynamic> json) => PublicRoleListResourceMapper.fromJson(json);
-
 }
-

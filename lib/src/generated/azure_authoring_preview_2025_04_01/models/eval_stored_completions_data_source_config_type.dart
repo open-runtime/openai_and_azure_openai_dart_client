@@ -9,10 +9,10 @@ part 'eval_stored_completions_data_source_config_type.mapper.dart';
 /// The type of data source. Always `stored_completions`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalStoredCompletionsDataSourceConfigType {
-  @MappableValue('stored_completions') 
+  @MappableValue('stored_completions')
   storedCompletions,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalStoredCompletionsDataSourceConfigType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalStoredCompletionsDataSourceConfigType> get $valuesDefined => values.where((value) => value != EvalStoredCompletionsDataSourceConfigType.unknown).toList();
+  static List<EvalStoredCompletionsDataSourceConfigType> get $valuesDefined =>
+      values.where((value) => value != EvalStoredCompletionsDataSourceConfigType.unknown).toList();
 }

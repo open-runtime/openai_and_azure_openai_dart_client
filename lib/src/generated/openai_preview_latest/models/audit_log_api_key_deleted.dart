@@ -8,13 +8,9 @@ part 'audit_log_api_key_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyDeleted with AuditLogApiKeyDeletedMappable {
-  const AuditLogApiKeyDeleted({
-    this.id,
-  });
+  const AuditLogApiKeyDeleted({this.id});
 
   final String? id;
 
   static AuditLogApiKeyDeleted fromJson(Map<String, dynamic> json) => AuditLogApiKeyDeletedMapper.fromJson(json);
-
 }
-

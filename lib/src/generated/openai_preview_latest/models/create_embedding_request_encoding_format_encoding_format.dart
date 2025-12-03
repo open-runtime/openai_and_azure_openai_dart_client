@@ -9,13 +9,13 @@ part 'create_embedding_request_encoding_format_encoding_format.mapper.dart';
 /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEmbeddingRequestEncodingFormatEncodingFormat {
-  @MappableValue('float') 
+  @MappableValue('float')
   float,
 
-  @MappableValue('base64') 
+  @MappableValue('base64')
   base64,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum CreateEmbeddingRequestEncodingFormatEncodingFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEmbeddingRequestEncodingFormatEncodingFormat> get $valuesDefined => values.where((value) => value != CreateEmbeddingRequestEncodingFormatEncodingFormat.unknown).toList();
+  static List<CreateEmbeddingRequestEncodingFormatEncodingFormat> get $valuesDefined =>
+      values.where((value) => value != CreateEmbeddingRequestEncodingFormatEncodingFormat.unknown).toList();
 }

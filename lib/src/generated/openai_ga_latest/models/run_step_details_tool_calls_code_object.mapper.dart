@@ -8,7 +8,7 @@
 part of 'run_step_details_tool_calls_code_object.dart';
 
 class RunStepDetailsToolCallsCodeObjectMapper
-    extends ClassMapperBase<RunStepDetailsToolCallsCodeObject> {
+    extends SubClassMapperBase<RunStepDetailsToolCallsCodeObject> {
   RunStepDetailsToolCallsCodeObjectMapper._();
 
   static RunStepDetailsToolCallsCodeObjectMapper? _instance;
@@ -17,6 +17,7 @@ class RunStepDetailsToolCallsCodeObjectMapper
       MapperContainer.globals.use(
         _instance = RunStepDetailsToolCallsCodeObjectMapper._(),
       );
+      RunStepDetailsToolCallMapper.ensureInitialized().addSubMapper(_instance!);
       RunStepDetailsToolCallsCodeObjectTypeMapper.ensureInitialized();
       RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper.ensureInitialized();
     }
@@ -64,6 +65,14 @@ class RunStepDetailsToolCallsCodeObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'code_interpreter';
+  @override
+  late final ClassMapperBase superMapper =
+      RunStepDetailsToolCallMapper.ensureInitialized();
 
   static RunStepDetailsToolCallsCodeObject _instantiate(DecodingData data) {
     return RunStepDetailsToolCallsCodeObject(
@@ -153,13 +162,14 @@ abstract class RunStepDetailsToolCallsCodeObjectCopyWith<
   $In extends RunStepDetailsToolCallsCodeObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RunStepDetailsToolCallCopyWith<$R, $In, $Out> {
   RunStepDetailsToolCallsCodeObjectCodeInterpreterCopyWith<
     $R,
     RunStepDetailsToolCallsCodeObjectCodeInterpreter,
     RunStepDetailsToolCallsCodeObjectCodeInterpreter
   >
   get runStepDetailsToolCallsCodeObjectCodeInterpreter;
+  @override
   $R call({
     String? id,
     RunStepDetailsToolCallsCodeObjectType? type,

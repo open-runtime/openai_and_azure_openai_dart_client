@@ -10,16 +10,16 @@ part 'input_message_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputMessageRole {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('developer') 
+  @MappableValue('developer')
   developer,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum InputMessageRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputMessageRole> get $valuesDefined => values.where((value) => value != InputMessageRole.unknown).toList();
+  static List<InputMessageRole> get $valuesDefined =>
+      values.where((value) => value != InputMessageRole.unknown).toList();
 }

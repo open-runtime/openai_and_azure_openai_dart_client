@@ -8,13 +8,9 @@ part 'modify_certificate_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyCertificateRequest with ModifyCertificateRequestMappable {
-  const ModifyCertificateRequest({
-    required this.name,
-  });
+  const ModifyCertificateRequest({required this.name});
 
   final String name;
 
   static ModifyCertificateRequest fromJson(Map<String, dynamic> json) => ModifyCertificateRequestMapper.fromJson(json);
-
 }
-

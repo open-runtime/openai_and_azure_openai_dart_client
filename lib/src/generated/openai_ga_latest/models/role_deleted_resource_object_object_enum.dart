@@ -11,10 +11,10 @@ part 'role_deleted_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RoleDeletedResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `role.deleted`.
-  @MappableValue('role.deleted') 
+  @MappableValue('role.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RoleDeletedResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RoleDeletedResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != RoleDeletedResourceObjectObjectEnum.unknown).toList();
+  static List<RoleDeletedResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RoleDeletedResourceObjectObjectEnum.unknown).toList();
 }

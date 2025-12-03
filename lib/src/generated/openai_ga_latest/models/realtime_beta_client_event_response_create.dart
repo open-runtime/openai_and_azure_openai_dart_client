@@ -35,18 +35,13 @@ part 'realtime_beta_client_event_response_create.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventResponseCreate with RealtimeBetaClientEventResponseCreateMappable {
-  const RealtimeBetaClientEventResponseCreate({
-    required this.type,
-    this.eventId,
-    this.response,
-  });
+  const RealtimeBetaClientEventResponseCreate({required this.type, this.eventId, this.response});
 
   final dynamic type;
   @MappableField(key: 'event_id')
   final String? eventId;
   final RealtimeBetaResponseCreateParams? response;
 
-  static RealtimeBetaClientEventResponseCreate fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventResponseCreateMapper.fromJson(json);
-
+  static RealtimeBetaClientEventResponseCreate fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventResponseCreateMapper.fromJson(json);
 }
-

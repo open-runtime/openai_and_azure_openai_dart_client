@@ -10,10 +10,10 @@ part 'response_queued_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseQueuedEventType {
   /// Incorrect name has been replaced. Original name: `response.queued`.
-  @MappableValue('response.queued') 
+  @MappableValue('response.queued')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseQueuedEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseQueuedEventType> get $valuesDefined => values.where((value) => value != ResponseQueuedEventType.unknown).toList();
+  static List<ResponseQueuedEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseQueuedEventType.unknown).toList();
 }

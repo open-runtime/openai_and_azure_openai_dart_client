@@ -11,15 +11,10 @@ part 'item_reference_param.mapper.dart';
 /// An internal identifier for an item to reference.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ItemReferenceParam with ItemReferenceParamMappable {
-  const ItemReferenceParam({
-    required this.id,
-    this.type = ItemReferenceParamType.itemReference,
-  });
+  const ItemReferenceParam({required this.id, this.type = ItemReferenceParamType.itemReference});
 
   final String id;
   final ItemReferenceParamType? type;
 
   static ItemReferenceParam fromJson(Map<String, dynamic> json) => ItemReferenceParamMapper.fromJson(json);
-
 }
-

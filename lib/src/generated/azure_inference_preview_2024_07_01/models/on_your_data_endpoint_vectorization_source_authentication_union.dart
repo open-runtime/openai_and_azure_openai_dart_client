@@ -9,8 +9,16 @@ import 'on_your_data_access_token_authentication_options.dart';
 
 part 'on_your_data_endpoint_vectorization_source_authentication_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptions, OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions])
-sealed class OnYourDataEndpointVectorizationSourceAuthenticationUnion with OnYourDataEndpointVectorizationSourceAuthenticationUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptions,
+    OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions,
+  ],
+)
+sealed class OnYourDataEndpointVectorizationSourceAuthenticationUnion
+    with OnYourDataEndpointVectorizationSourceAuthenticationUnionMappable {
   const OnYourDataEndpointVectorizationSourceAuthenticationUnion();
 
   static OnYourDataEndpointVectorizationSourceAuthenticationUnion fromJson(Map<String, dynamic> json) {
@@ -18,30 +26,36 @@ sealed class OnYourDataEndpointVectorizationSourceAuthenticationUnion with OnYou
   }
 }
 
-extension OnYourDataEndpointVectorizationSourceAuthenticationUnionDeserializer on OnYourDataEndpointVectorizationSourceAuthenticationUnion {
+extension OnYourDataEndpointVectorizationSourceAuthenticationUnionDeserializer
+    on OnYourDataEndpointVectorizationSourceAuthenticationUnion {
   static OnYourDataEndpointVectorizationSourceAuthenticationUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMapper.fromJson(json);
+      return OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(json);
+      return OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMapper.fromJson(
+        json,
+      );
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for OnYourDataEndpointVectorizationSourceAuthenticationUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for OnYourDataEndpointVectorizationSourceAuthenticationUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptions extends OnYourDataEndpointVectorizationSourceAuthenticationUnion with OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMappable {
-
-
+class OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptions
+    extends OnYourDataEndpointVectorizationSourceAuthenticationUnion
+    with OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptionsMappable {
   const OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataApiKeyAuthenticationOptions();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions extends OnYourDataEndpointVectorizationSourceAuthenticationUnion with OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
-
-
+class OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions
+    extends OnYourDataEndpointVectorizationSourceAuthenticationUnion
+    with OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptionsMappable {
   const OnYourDataEndpointVectorizationSourceAuthenticationUnionOnYourDataAccessTokenAuthenticationOptions();
 }

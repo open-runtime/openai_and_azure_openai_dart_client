@@ -21,7 +21,6 @@ class CreateThreadRequestToolResources with CreateThreadRequestToolResourcesMapp
   @MappableField(key: 'file_search')
   final CreateThreadRequestToolResourcesFileSearch? createThreadRequestToolResourcesFileSearch;
 
-  static CreateThreadRequestToolResources fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesMapper.fromJson(json);
-
+  static CreateThreadRequestToolResources fromJson(Map<String, dynamic> json) =>
+      CreateThreadRequestToolResourcesMapper.fromJson(json);
 }
-

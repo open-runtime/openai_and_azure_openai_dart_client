@@ -11,10 +11,10 @@ part 'group_user_assignment_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum GroupUserAssignmentObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `group.user`.
-  @MappableValue('group.user') 
+  @MappableValue('group.user')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum GroupUserAssignmentObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GroupUserAssignmentObjectObjectEnum> get $valuesDefined => values.where((value) => value != GroupUserAssignmentObjectObjectEnum.unknown).toList();
+  static List<GroupUserAssignmentObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != GroupUserAssignmentObjectObjectEnum.unknown).toList();
 }

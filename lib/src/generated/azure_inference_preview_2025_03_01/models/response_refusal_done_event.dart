@@ -10,8 +10,8 @@ import 'response_stream_event.dart';
 part 'response_refusal_done_event.mapper.dart';
 
 /// Emitted when refusal text is finalized.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseRefusalDoneEvent with ResponseRefusalDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.done')
+class ResponseRefusalDoneEvent extends ResponseStreamEvent with ResponseRefusalDoneEventMappable {
   const ResponseRefusalDoneEvent({
     required this.type,
     required this.itemId,
@@ -30,6 +30,4 @@ class ResponseRefusalDoneEvent with ResponseRefusalDoneEventMappable {
   final String refusal;
 
   static ResponseRefusalDoneEvent fromJson(Map<String, dynamic> json) => ResponseRefusalDoneEventMapper.fromJson(json);
-
 }
-

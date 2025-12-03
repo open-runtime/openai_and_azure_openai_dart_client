@@ -16,14 +16,9 @@ part 'web_search_tool_call.mapper.dart';
 /// The results of a web search tool call. See the.
 /// [web search guide](https://platform.openai.com/docs/guides/tools-web-search) for more information.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class WebSearchToolCall with WebSearchToolCallMappable {
-  const WebSearchToolCall({
-    required this.id,
-    required this.type,
-    required this.status,
-    required this.action,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
+class WebSearchToolCall extends ItemUnion with WebSearchToolCallMappable {
+  const WebSearchToolCall({required this.id, required this.type, required this.status, required this.action});
 
   final String id;
   final WebSearchToolCallType type;
@@ -31,6 +26,4 @@ class WebSearchToolCall with WebSearchToolCallMappable {
   final WebSearchToolCallActionUnion action;
 
   static WebSearchToolCall fromJson(Map<String, dynamic> json) => WebSearchToolCallMapper.fromJson(json);
-
 }
-

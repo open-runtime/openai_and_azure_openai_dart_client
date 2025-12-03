@@ -24,17 +24,18 @@ class RealtimeTranscriptionSessionCreateRequest with RealtimeTranscriptionSessio
   });
 
   @MappableField(key: 'input_audio_noise_reduction')
-  final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction;
+  final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction
+  realtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction;
   @MappableField(key: 'input_audio_format')
   final RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat inputAudioFormat;
   final dynamic? modalities;
   @MappableField(key: 'input_audio_transcription')
-  final RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? realtimeTranscriptionSessionCreateRequestInputAudioTranscription;
+  final RealtimeTranscriptionSessionCreateRequestInputAudioTranscription?
+  realtimeTranscriptionSessionCreateRequestInputAudioTranscription;
   @MappableField(key: 'turn_detection')
   final RealtimeTranscriptionSessionCreateRequestTurnDetection? realtimeTranscriptionSessionCreateRequestTurnDetection;
   final List<String>? include;
 
-  static RealtimeTranscriptionSessionCreateRequest fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateRequest fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateRequestMapper.fromJson(json);
 }
-

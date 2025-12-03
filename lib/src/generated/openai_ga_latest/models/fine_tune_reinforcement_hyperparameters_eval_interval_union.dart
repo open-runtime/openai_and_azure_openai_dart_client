@@ -8,8 +8,16 @@ part 'fine_tune_reinforcement_hyperparameters_eval_interval_union.mapper.dart';
 
 /// The number of training steps between evaluation runs.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString, FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt])
-sealed class FineTuneReinforcementHyperparametersEvalIntervalUnion with FineTuneReinforcementHyperparametersEvalIntervalUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString,
+    FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt,
+  ],
+)
+sealed class FineTuneReinforcementHyperparametersEvalIntervalUnion
+    with FineTuneReinforcementHyperparametersEvalIntervalUnionMappable {
   const FineTuneReinforcementHyperparametersEvalIntervalUnion();
 
   static FineTuneReinforcementHyperparametersEvalIntervalUnion fromJson(dynamic json) {
@@ -17,7 +25,8 @@ sealed class FineTuneReinforcementHyperparametersEvalIntervalUnion with FineTune
   }
 }
 
-extension FineTuneReinforcementHyperparametersEvalIntervalUnionDeserializer on FineTuneReinforcementHyperparametersEvalIntervalUnion {
+extension FineTuneReinforcementHyperparametersEvalIntervalUnionDeserializer
+    on FineTuneReinforcementHyperparametersEvalIntervalUnion {
   static FineTuneReinforcementHyperparametersEvalIntervalUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -33,31 +42,34 @@ extension FineTuneReinforcementHyperparametersEvalIntervalUnionDeserializer on F
       return FineTuneReinforcementHyperparametersEvalIntervalUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneReinforcementHyperparametersEvalIntervalUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneReinforcementHyperparametersEvalIntervalUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString extends FineTuneReinforcementHyperparametersEvalIntervalUnion with FineTuneReinforcementHyperparametersEvalIntervalUnionVariantStringMappable {
+class FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString
+    extends FineTuneReinforcementHyperparametersEvalIntervalUnion
+    with FineTuneReinforcementHyperparametersEvalIntervalUnionVariantStringMappable {
   final String value;
 
-  const FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersEvalIntervalUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt extends FineTuneReinforcementHyperparametersEvalIntervalUnion with FineTuneReinforcementHyperparametersEvalIntervalUnionVariantIntMappable {
+class FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt
+    extends FineTuneReinforcementHyperparametersEvalIntervalUnion
+    with FineTuneReinforcementHyperparametersEvalIntervalUnionVariantIntMappable {
   final int value;
 
-  const FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersEvalIntervalUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension FineTuneReinforcementHyperparametersEvalIntervalUnionJsonValue on FineTuneReinforcementHyperparametersEvalIntervalUnion {
+extension FineTuneReinforcementHyperparametersEvalIntervalUnionJsonValue
+    on FineTuneReinforcementHyperparametersEvalIntervalUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -87,7 +99,9 @@ class FineTuneReinforcementHyperparametersEvalIntervalUnionHook extends MappingH
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! FineTuneReinforcementHyperparametersEvalIntervalUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! FineTuneReinforcementHyperparametersEvalIntervalUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return FineTuneReinforcementHyperparametersEvalIntervalUnion.fromJson(value);
     }

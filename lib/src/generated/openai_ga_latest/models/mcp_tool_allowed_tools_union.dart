@@ -25,20 +25,17 @@ extension McpToolAllowedToolsUnionDeserializer on McpToolAllowedToolsUnion {
       return McpToolAllowedToolsUnionMcpToolFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for McpToolAllowedToolsUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class McpToolAllowedToolsUnionMcpToolFilter extends McpToolAllowedToolsUnion with McpToolAllowedToolsUnionMcpToolFilterMappable {
+class McpToolAllowedToolsUnionMcpToolFilter extends McpToolAllowedToolsUnion
+    with McpToolAllowedToolsUnionMcpToolFilterMappable {
   @MappableField(key: 'tool_names')
   final List<String>? toolNames;
   @MappableField(key: 'read_only')
   final bool? readOnly;
 
-  const McpToolAllowedToolsUnionMcpToolFilter({
-    required this.toolNames,
-    required this.readOnly,
-  });
+  const McpToolAllowedToolsUnionMcpToolFilter({required this.toolNames, required this.readOnly});
 }

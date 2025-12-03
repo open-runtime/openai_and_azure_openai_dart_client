@@ -8,13 +8,13 @@ part 'response_modalities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseModalities> get $valuesDefined => values.where((value) => value != ResponseModalities.unknown).toList();
+  static List<ResponseModalities> get $valuesDefined =>
+      values.where((value) => value != ResponseModalities.unknown).toList();
 }

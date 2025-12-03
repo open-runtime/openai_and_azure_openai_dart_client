@@ -9,14 +9,11 @@ part 'public_assign_organization_group_role_body.mapper.dart';
 /// Request payload for assigning a role to a group or user.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PublicAssignOrganizationGroupRoleBody with PublicAssignOrganizationGroupRoleBodyMappable {
-  const PublicAssignOrganizationGroupRoleBody({
-    required this.roleId,
-  });
+  const PublicAssignOrganizationGroupRoleBody({required this.roleId});
 
   @MappableField(key: 'role_id')
   final String roleId;
 
-  static PublicAssignOrganizationGroupRoleBody fromJson(Map<String, dynamic> json) => PublicAssignOrganizationGroupRoleBodyMapper.fromJson(json);
-
+  static PublicAssignOrganizationGroupRoleBody fromJson(Map<String, dynamic> json) =>
+      PublicAssignOrganizationGroupRoleBodyMapper.fromJson(json);
 }
-

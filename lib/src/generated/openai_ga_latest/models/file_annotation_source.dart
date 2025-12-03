@@ -11,15 +11,10 @@ part 'file_annotation_source.mapper.dart';
 /// Attachment source referenced by an annotation.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileAnnotationSource with FileAnnotationSourceMappable {
-  const FileAnnotationSource({
-    required this.filename,
-    this.type = FileAnnotationSourceType.file,
-  });
+  const FileAnnotationSource({required this.filename, this.type = FileAnnotationSourceType.file});
 
   final String filename;
   final FileAnnotationSourceType type;
 
   static FileAnnotationSource fromJson(Map<String, dynamic> json) => FileAnnotationSourceMapper.fromJson(json);
-
 }
-

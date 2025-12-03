@@ -11,19 +11,13 @@ import 'transcript_text_delta_event_type.dart';
 part 'transcript_text_delta_event.mapper.dart';
 
 /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TranscriptTextDeltaEvent with TranscriptTextDeltaEventMappable {
-  const TranscriptTextDeltaEvent({
-    required this.type,
-    required this.delta,
-    this.logprobs,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.delta')
+class TranscriptTextDeltaEvent extends CreateTranscriptionResponseStreamEvent with TranscriptTextDeltaEventMappable {
+  const TranscriptTextDeltaEvent({required this.type, required this.delta, this.logprobs});
 
   final TranscriptTextDeltaEventType type;
   final String delta;
   final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 
   static TranscriptTextDeltaEvent fromJson(Map<String, dynamic> json) => TranscriptTextDeltaEventMapper.fromJson(json);
-
 }
-

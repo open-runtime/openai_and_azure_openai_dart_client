@@ -9,13 +9,13 @@ part 'response_format2.mapper.dart';
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2`, as `gpt-image-1` will always return base64-encoded images.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormat2 {
-  @MappableValue('url') 
+  @MappableValue('url')
   url,
 
-  @MappableValue('b64_json') 
+  @MappableValue('b64_json')
   b64Json,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

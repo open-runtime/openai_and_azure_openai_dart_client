@@ -11,14 +11,10 @@ part 'run_step_delta_object_delta.mapper.dart';
 /// The delta containing the fields that have changed on the run step.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaObjectDelta with RunStepDeltaObjectDeltaMappable {
-  const RunStepDeltaObjectDelta({
-    this.stepDetails,
-  });
+  const RunStepDeltaObjectDelta({this.stepDetails});
 
   @MappableField(key: 'step_details')
   final RunStepDeltaObjectDeltaStepDetailsUnion? stepDetails;
 
   static RunStepDeltaObjectDelta fromJson(Map<String, dynamic> json) => RunStepDeltaObjectDeltaMapper.fromJson(json);
-
 }
-

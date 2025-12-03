@@ -10,10 +10,10 @@ part 'realtime_beta_response_create_params_tools_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaResponseCreateParamsToolsType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeBetaResponseCreateParamsToolsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaResponseCreateParamsToolsType> get $valuesDefined => values.where((value) => value != RealtimeBetaResponseCreateParamsToolsType.unknown).toList();
+  static List<RealtimeBetaResponseCreateParamsToolsType> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaResponseCreateParamsToolsType.unknown).toList();
 }

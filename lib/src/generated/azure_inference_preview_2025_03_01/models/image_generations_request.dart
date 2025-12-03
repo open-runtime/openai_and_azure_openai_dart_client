@@ -33,6 +33,4 @@ class ImageGenerationsRequest with ImageGenerationsRequestMappable {
   final int n;
 
   static ImageGenerationsRequest fromJson(Map<String, dynamic> json) => ImageGenerationsRequestMapper.fromJson(json);
-
 }
-

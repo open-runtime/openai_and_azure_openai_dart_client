@@ -10,15 +10,11 @@ part 'chat_completion_request_message_system.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageSystem with ChatCompletionRequestMessageSystemMappable {
-  const ChatCompletionRequestMessageSystem({
-    required this.role,
-    this.content,
-  });
+  const ChatCompletionRequestMessageSystem({required this.role, this.content});
 
   final ChatCompletionRequestMessageRole role;
   final String? content;
 
-  static ChatCompletionRequestMessageSystem fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageSystemMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageSystem fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageSystemMapper.fromJson(json);
 }
-

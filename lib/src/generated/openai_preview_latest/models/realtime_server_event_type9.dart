@@ -9,10 +9,10 @@ part 'realtime_server_event_type9.mapper.dart';
 /// The event type, must be `error`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventType9 {
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeServerEventType9 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventType9> get $valuesDefined => values.where((value) => value != RealtimeServerEventType9.unknown).toList();
+  static List<RealtimeServerEventType9> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventType9.unknown).toList();
 }

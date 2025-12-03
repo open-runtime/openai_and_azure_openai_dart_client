@@ -11,15 +11,11 @@ part 'message_request_content_text_object.mapper.dart';
 /// The text content that is part of a message.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageRequestContentTextObject with MessageRequestContentTextObjectMappable {
-  const MessageRequestContentTextObject({
-    required this.type,
-    required this.text,
-  });
+  const MessageRequestContentTextObject({required this.type, required this.text});
 
   final MessageRequestContentTextObjectType type;
   final String text;
 
-  static MessageRequestContentTextObject fromJson(Map<String, dynamic> json) => MessageRequestContentTextObjectMapper.fromJson(json);
-
+  static MessageRequestContentTextObject fromJson(Map<String, dynamic> json) =>
+      MessageRequestContentTextObjectMapper.fromJson(json);
 }
-

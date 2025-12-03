@@ -15,8 +15,9 @@ part 'realtime_server_event_output_audio_buffer_cleared.mapper.dart';
 /// cut off the current audio response.
 /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventOutputAudioBufferCleared with RealtimeServerEventOutputAudioBufferClearedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.cleared')
+class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferClearedMappable {
   const RealtimeServerEventOutputAudioBufferCleared({
     required this.eventId,
     required this.type,
@@ -29,7 +30,6 @@ class RealtimeServerEventOutputAudioBufferCleared with RealtimeServerEventOutput
   @MappableField(key: 'response_id')
   final String responseId;
 
-  static RealtimeServerEventOutputAudioBufferCleared fromJson(Map<String, dynamic> json) => RealtimeServerEventOutputAudioBufferClearedMapper.fromJson(json);
-
+  static RealtimeServerEventOutputAudioBufferCleared fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventOutputAudioBufferClearedMapper.fromJson(json);
 }
-

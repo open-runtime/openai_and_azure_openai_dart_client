@@ -8,13 +8,13 @@ part 'client_tool_call_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ClientToolCallStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ClientToolCallStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ClientToolCallStatus> get $valuesDefined => values.where((value) => value != ClientToolCallStatus.unknown).toList();
+  static List<ClientToolCallStatus> get $valuesDefined =>
+      values.where((value) => value != ClientToolCallStatus.unknown).toList();
 }

@@ -37,7 +37,6 @@ class RealtimeBetaServerEventResponseContentPartDone with RealtimeBetaServerEven
   @MappableField(key: 'part')
   final RealtimeBetaServerEventResponseContentPartDonePart realtimeBetaServerEventResponseContentPartDonePart;
 
-  static RealtimeBetaServerEventResponseContentPartDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseContentPartDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseContentPartDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseContentPartDoneMapper.fromJson(json);
 }
-

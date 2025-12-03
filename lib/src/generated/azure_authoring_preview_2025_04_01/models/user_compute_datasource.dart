@@ -10,13 +10,9 @@ part 'user_compute_datasource.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeDatasource with UserComputeDatasourceMappable {
-  const UserComputeDatasource({
-    required this.kind,
-  });
+  const UserComputeDatasource({required this.kind});
 
   final UserComputeDatasourceType kind;
 
   static UserComputeDatasource fromJson(Map<String, dynamic> json) => UserComputeDatasourceMapper.fromJson(json);
-
 }
-

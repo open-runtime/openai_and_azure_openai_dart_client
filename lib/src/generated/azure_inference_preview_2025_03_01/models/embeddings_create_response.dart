@@ -26,6 +26,4 @@ class EmbeddingsCreateResponse with EmbeddingsCreateResponseMappable {
   final EmbeddingsCreateResponseUsage embeddingsCreateResponseUsage;
 
   static EmbeddingsCreateResponse fromJson(Map<String, dynamic> json) => EmbeddingsCreateResponseMapper.fromJson(json);
-
 }
-

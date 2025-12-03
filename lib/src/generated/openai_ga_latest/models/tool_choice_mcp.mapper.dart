@@ -7,13 +7,14 @@
 
 part of 'tool_choice_mcp.dart';
 
-class ToolChoiceMcpMapper extends ClassMapperBase<ToolChoiceMcp> {
+class ToolChoiceMcpMapper extends SubClassMapperBase<ToolChoiceMcp> {
   ToolChoiceMcpMapper._();
 
   static ToolChoiceMcpMapper? _instance;
   static ToolChoiceMcpMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceMcpMapper._());
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       ToolChoiceMcpTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,6 +51,14 @@ class ToolChoiceMcpMapper extends ClassMapperBase<ToolChoiceMcp> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static ToolChoiceMcp _instantiate(DecodingData data) {
     return ToolChoiceMcp(
@@ -120,7 +129,8 @@ extension ToolChoiceMcpValueCopy<$R, $Out>
 }
 
 abstract class ToolChoiceMcpCopyWith<$R, $In extends ToolChoiceMcp, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({ToolChoiceMcpType? type, String? serverLabel, String? name});
   ToolChoiceMcpCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

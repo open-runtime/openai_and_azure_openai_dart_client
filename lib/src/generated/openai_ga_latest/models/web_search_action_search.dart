@@ -11,19 +11,13 @@ part 'web_search_action_search.mapper.dart';
 
 /// Action type "search" - Performs a web search query.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class WebSearchActionSearch with WebSearchActionSearchMappable {
-  const WebSearchActionSearch({
-    required this.type,
-    required this.query,
-    this.sources,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
+class WebSearchActionSearch extends WebSearchToolCallActionUnion with WebSearchActionSearchMappable {
+  const WebSearchActionSearch({required this.type, required this.query, this.sources});
 
   final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
   static WebSearchActionSearch fromJson(Map<String, dynamic> json) => WebSearchActionSearchMapper.fromJson(json);
-
 }
-

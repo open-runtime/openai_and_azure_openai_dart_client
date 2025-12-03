@@ -9,10 +9,10 @@ part 'function_shell_call_output_exit_outcome_type.mapper.dart';
 /// The outcome type. Always `exit`.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionShellCallOutputExitOutcomeType {
-  @MappableValue('exit') 
+  @MappableValue('exit')
   exit,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FunctionShellCallOutputExitOutcomeType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionShellCallOutputExitOutcomeType> get $valuesDefined => values.where((value) => value != FunctionShellCallOutputExitOutcomeType.unknown).toList();
+  static List<FunctionShellCallOutputExitOutcomeType> get $valuesDefined =>
+      values.where((value) => value != FunctionShellCallOutputExitOutcomeType.unknown).toList();
 }

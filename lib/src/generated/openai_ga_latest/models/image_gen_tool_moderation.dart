@@ -10,13 +10,13 @@ part 'image_gen_tool_moderation.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolModeration {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum ImageGenToolModeration {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolModeration> get $valuesDefined => values.where((value) => value != ImageGenToolModeration.unknown).toList();
+  static List<ImageGenToolModeration> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolModeration.unknown).toList();
 }

@@ -14,8 +14,13 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_failed.m
 /// request for a user message failed. These events are separate from other .
 /// `error` events so that the client can identify the related Item.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemInputAudioTranscriptionFailed with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.failed',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionFailed({
     required this.eventId,
     required this.type,
@@ -32,9 +37,9 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailed with Real
   @MappableField(key: 'content_index')
   final int contentIndex;
   @MappableField(key: 'error')
-  final RealtimeServerEventConversationItemInputAudioTranscriptionFailedError realtimeServerEventConversationItemInputAudioTranscriptionFailedError;
+  final RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
+  realtimeServerEventConversationItemInputAudioTranscriptionFailedError;
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionFailed fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemInputAudioTranscriptionFailed fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json);
 }
-

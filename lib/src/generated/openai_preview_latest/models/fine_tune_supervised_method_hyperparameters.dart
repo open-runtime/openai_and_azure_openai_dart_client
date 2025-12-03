@@ -14,18 +14,22 @@ part 'fine_tune_supervised_method_hyperparameters.mapper.dart';
 class FineTuneSupervisedMethodHyperparameters with FineTuneSupervisedMethodHyperparametersMappable {
   const FineTuneSupervisedMethodHyperparameters({
     this.batchSize = const FineTuneSupervisedMethodHyperparametersBatchSizeUnionVariantString(value: 'auto'),
-    this.learningRateMultiplier = const FineTuneSupervisedMethodHyperparametersLearningRateMultiplierUnionVariantString(value: 'auto'),
+    this.learningRateMultiplier = const FineTuneSupervisedMethodHyperparametersLearningRateMultiplierUnionVariantString(
+      value: 'auto',
+    ),
     this.nEpochs = const FineTuneSupervisedMethodHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
   @MappableField(key: 'batch_size', hook: const FineTuneSupervisedMethodHyperparametersBatchSizeUnionHook())
   final FineTuneSupervisedMethodHyperparametersBatchSizeUnion batchSize;
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuneSupervisedMethodHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuneSupervisedMethodHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuneSupervisedMethodHyperparametersLearningRateMultiplierUnion learningRateMultiplier;
   @MappableField(key: 'n_epochs', hook: const FineTuneSupervisedMethodHyperparametersNEpochsUnionHook())
   final FineTuneSupervisedMethodHyperparametersNEpochsUnion nEpochs;
 
-  static FineTuneSupervisedMethodHyperparameters fromJson(Map<String, dynamic> json) => FineTuneSupervisedMethodHyperparametersMapper.fromJson(json);
-
+  static FineTuneSupervisedMethodHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuneSupervisedMethodHyperparametersMapper.fromJson(json);
 }
-

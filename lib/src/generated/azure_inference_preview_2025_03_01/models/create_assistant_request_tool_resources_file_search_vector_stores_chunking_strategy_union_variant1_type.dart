@@ -9,10 +9,10 @@ part 'create_assistant_request_tool_resources_file_search_vector_stores_chunking
 /// Always `auto`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,11 @@ enum CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUn
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type> get $valuesDefined => values.where((value) => value != CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type.unknown).toList();
+  static List<CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type>
+  get $valuesDefined => values
+      .where(
+        (value) =>
+            value != CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant1Type.unknown,
+      )
+      .toList();
 }

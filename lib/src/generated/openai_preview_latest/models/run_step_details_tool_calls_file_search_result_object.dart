@@ -25,7 +25,6 @@ class RunStepDetailsToolCallsFileSearchResultObject with RunStepDetailsToolCalls
   final num score;
   final List<RunStepDetailsToolCallsFileSearchResultObjectContent>? content;
 
-  static RunStepDetailsToolCallsFileSearchResultObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFileSearchResultObjectMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsFileSearchResultObject fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsFileSearchResultObjectMapper.fromJson(json);
 }
-

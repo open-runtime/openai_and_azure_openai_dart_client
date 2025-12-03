@@ -6,53 +6,54 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'error_code.mapper.dart';
 
-/// Error codes as defined in the Microsoft REST guidelines.///
+/// Error codes as defined in the Microsoft REST guidelines.
+///
 /// (https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#7102-error-condition-responses).
 @MappableEnum(defaultValue: 'unknown')
 enum ErrorCode {
-  @MappableValue('conflict') 
+  @MappableValue('conflict')
   conflict,
 
-  @MappableValue('invalidPayload') 
+  @MappableValue('invalidPayload')
   invalidPayload,
 
-  @MappableValue('forbidden') 
+  @MappableValue('forbidden')
   forbidden,
 
-  @MappableValue('notFound') 
+  @MappableValue('notFound')
   notFound,
 
-  @MappableValue('unexpectedEntityState') 
+  @MappableValue('unexpectedEntityState')
   unexpectedEntityState,
 
-  @MappableValue('itemDoesAlreadyExist') 
+  @MappableValue('itemDoesAlreadyExist')
   itemDoesAlreadyExist,
 
-  @MappableValue('serviceUnavailable') 
+  @MappableValue('serviceUnavailable')
   serviceUnavailable,
 
-  @MappableValue('internalFailure') 
+  @MappableValue('internalFailure')
   internalFailure,
 
-  @MappableValue('quotaExceeded') 
+  @MappableValue('quotaExceeded')
   quotaExceeded,
 
-  @MappableValue('jsonlValidationFailed') 
+  @MappableValue('jsonlValidationFailed')
   jsonlValidationFailed,
 
-  @MappableValue('fileImportFailed') 
+  @MappableValue('fileImportFailed')
   fileImportFailed,
 
-  @MappableValue('tooManyRequests') 
+  @MappableValue('tooManyRequests')
   tooManyRequests,
 
-  @MappableValue('unauthorized') 
+  @MappableValue('unauthorized')
   unauthorized,
 
-  @MappableValue('contentFilter') 
+  @MappableValue('contentFilter')
   contentFilter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -31,11 +31,16 @@ part 'text_response_format_configuration.mapper.dart';
 /// ensures the message the model generates is valid JSON. Using `json_schema`.
 /// is preferred for models that support it.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  TextResponseFormatConfigurationText,
-  TextResponseFormatConfigurationJsonSchema,
-  TextResponseFormatConfigurationJsonObject
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    TextResponseFormatConfigurationText,
+    TextResponseFormatConfigurationJsonSchema,
+    TextResponseFormatConfigurationJsonObject,
+  ],
+)
 sealed class TextResponseFormatConfiguration with TextResponseFormatConfigurationMappable {
   const TextResponseFormatConfiguration();
 
@@ -51,32 +56,32 @@ extension TextResponseFormatConfigurationUnionDeserializer on TextResponseFormat
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      TextResponseFormatConfigurationText: 'text',
-      TextResponseFormatConfigurationJsonSchema: 'json_schema',
-      TextResponseFormatConfigurationJsonObject: 'json_object',
+      ResponseFormatText: 'text',
+      TextResponseFormatJsonSchema: 'json_schema',
+      ResponseFormatJsonObject: 'json_object',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[TextResponseFormatConfigurationText] => TextResponseFormatConfigurationTextMapper.fromJson(json),
-      _ when value == effective[TextResponseFormatConfigurationJsonSchema] => TextResponseFormatConfigurationJsonSchemaMapper.fromJson(json),
-      _ when value == effective[TextResponseFormatConfigurationJsonObject] => TextResponseFormatConfigurationJsonObjectMapper.fromJson(json),
+      _ when value == effective[ResponseFormatText] => ResponseFormatTextMapper.fromJson(json),
+      _ when value == effective[TextResponseFormatJsonSchema] => TextResponseFormatJsonSchemaMapper.fromJson(json),
+      _ when value == effective[ResponseFormatJsonObject] => ResponseFormatJsonObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for TextResponseFormatConfiguration'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class TextResponseFormatConfigurationText extends TextResponseFormatConfiguration with TextResponseFormatConfigurationTextMappable {
+class TextResponseFormatConfigurationText extends TextResponseFormatConfiguration
+    with TextResponseFormatConfigurationTextMappable {
   final TextResponseFormatConfigurationType type;
 
-  const TextResponseFormatConfigurationText({
-    required this.type,
-  });
+  const TextResponseFormatConfigurationText({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
-class TextResponseFormatConfigurationJsonSchema extends TextResponseFormatConfiguration with TextResponseFormatConfigurationJsonSchemaMappable {
+class TextResponseFormatConfigurationJsonSchema extends TextResponseFormatConfiguration
+    with TextResponseFormatConfigurationJsonSchemaMappable {
   final TextResponseFormatConfigurationType2 type;
   final String? description;
   final String name;
@@ -93,10 +98,9 @@ class TextResponseFormatConfigurationJsonSchema extends TextResponseFormatConfig
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
-class TextResponseFormatConfigurationJsonObject extends TextResponseFormatConfiguration with TextResponseFormatConfigurationJsonObjectMappable {
+class TextResponseFormatConfigurationJsonObject extends TextResponseFormatConfiguration
+    with TextResponseFormatConfigurationJsonObjectMappable {
   final TextResponseFormatConfigurationType3 type;
 
-  const TextResponseFormatConfigurationJsonObject({
-    required this.type,
-  });
+  const TextResponseFormatConfigurationJsonObject({required this.type});
 }

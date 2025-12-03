@@ -20,20 +20,16 @@ part 'realtime_client_event_input_audio_buffer_append.mapper.dart';
 /// VAD to be more responsive. Unlike made other client events, the server will .
 /// not send a confirmation response to this event.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventInputAudioBufferAppend with RealtimeClientEventInputAudioBufferAppendMappable {
-  const RealtimeClientEventInputAudioBufferAppend({
-    required this.type,
-    required this.audio,
-    this.eventId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.append')
+class RealtimeClientEventInputAudioBufferAppend extends RealtimeClientEvent
+    with RealtimeClientEventInputAudioBufferAppendMappable {
+  const RealtimeClientEventInputAudioBufferAppend({required this.type, required this.audio, this.eventId});
 
   final RealtimeClientEventInputAudioBufferAppendType type;
   final String audio;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventInputAudioBufferAppend fromJson(Map<String, dynamic> json) => RealtimeClientEventInputAudioBufferAppendMapper.fromJson(json);
-
+  static RealtimeClientEventInputAudioBufferAppend fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventInputAudioBufferAppendMapper.fromJson(json);
 }
-

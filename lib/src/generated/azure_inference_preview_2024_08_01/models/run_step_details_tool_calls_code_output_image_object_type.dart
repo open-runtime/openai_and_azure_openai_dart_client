@@ -9,10 +9,10 @@ part 'run_step_details_tool_calls_code_output_image_object_type.mapper.dart';
 /// Always `image`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallsCodeOutputImageObjectType {
-  @MappableValue('image') 
+  @MappableValue('image')
   image,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDetailsToolCallsCodeOutputImageObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallsCodeOutputImageObjectType> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallsCodeOutputImageObjectType.unknown).toList();
+  static List<RunStepDetailsToolCallsCodeOutputImageObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallsCodeOutputImageObjectType.unknown).toList();
 }

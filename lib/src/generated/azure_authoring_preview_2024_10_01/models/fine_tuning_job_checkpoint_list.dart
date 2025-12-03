@@ -12,11 +12,7 @@ part 'fine_tuning_job_checkpoint_list.mapper.dart';
 /// Represents a list of checkpoints.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobCheckpointList with FineTuningJobCheckpointListMappable {
-  const FineTuningJobCheckpointList({
-    this.objectField,
-    this.data,
-    this.hasMore,
-  });
+  const FineTuningJobCheckpointList({this.objectField, this.data, this.hasMore});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
@@ -24,7 +20,6 @@ class FineTuningJobCheckpointList with FineTuningJobCheckpointListMappable {
   @MappableField(key: 'has_more')
   final bool? hasMore;
 
-  static FineTuningJobCheckpointList fromJson(Map<String, dynamic> json) => FineTuningJobCheckpointListMapper.fromJson(json);
-
+  static FineTuningJobCheckpointList fromJson(Map<String, dynamic> json) =>
+      FineTuningJobCheckpointListMapper.fromJson(json);
 }
-

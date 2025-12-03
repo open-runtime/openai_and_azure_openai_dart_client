@@ -7,13 +7,14 @@
 
 part of 'error_event.dart';
 
-class ErrorEventMapper extends ClassMapperBase<ErrorEvent> {
+class ErrorEventMapper extends SubClassMapperBase<ErrorEvent> {
   ErrorEventMapper._();
 
   static ErrorEventMapper? _instance;
   static ErrorEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ErrorEventMapper._());
+      AssistantStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ErrorEventEventMapper.ensureInitialized();
       ErrorMapper.ensureInitialized();
     }
@@ -40,6 +41,14 @@ class ErrorEventMapper extends ClassMapperBase<ErrorEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'event';
+  @override
+  final dynamic discriminatorValue = 'error';
+  @override
+  late final ClassMapperBase superMapper =
+      AssistantStreamEventMapper.ensureInitialized();
 
   static ErrorEvent _instantiate(DecodingData data) {
     return ErrorEvent(event: data.dec(_f$event), data: data.dec(_f$data));
@@ -104,8 +113,9 @@ extension ErrorEventValueCopy<$R, $Out>
 }
 
 abstract class ErrorEventCopyWith<$R, $In extends ErrorEvent, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AssistantStreamEventCopyWith<$R, $In, $Out> {
   ErrorCopyWith<$R, Error, Error> get data;
+  @override
   $R call({ErrorEventEvent? event, Error? data});
   ErrorEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

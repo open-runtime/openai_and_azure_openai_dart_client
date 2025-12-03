@@ -14,13 +14,10 @@ part 'realtime_client_event_conversation_item_delete.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventConversationItemDelete with RealtimeClientEventConversationItemDeleteMappable {
-  const RealtimeClientEventConversationItemDelete({
-    required this.type,
-    required this.itemId,
-    this.eventId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.delete')
+class RealtimeClientEventConversationItemDelete extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemDeleteMappable {
+  const RealtimeClientEventConversationItemDelete({required this.type, required this.itemId, this.eventId});
 
   final RealtimeClientEventConversationItemDeleteType type;
   @MappableField(key: 'item_id')
@@ -28,7 +25,6 @@ class RealtimeClientEventConversationItemDelete with RealtimeClientEventConversa
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventConversationItemDelete fromJson(Map<String, dynamic> json) => RealtimeClientEventConversationItemDeleteMapper.fromJson(json);
-
+  static RealtimeClientEventConversationItemDelete fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventConversationItemDeleteMapper.fromJson(json);
 }
-

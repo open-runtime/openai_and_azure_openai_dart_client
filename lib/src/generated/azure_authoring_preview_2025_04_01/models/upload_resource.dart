@@ -39,6 +39,4 @@ class UploadResource with UploadResourceMappable {
   final File? file;
 
   static UploadResource fromJson(Map<String, dynamic> json) => UploadResourceMapper.fromJson(json);
-
 }
-

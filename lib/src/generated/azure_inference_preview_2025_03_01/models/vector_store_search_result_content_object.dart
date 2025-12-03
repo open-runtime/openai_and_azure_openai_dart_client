@@ -10,15 +10,11 @@ part 'vector_store_search_result_content_object.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreSearchResultContentObject with VectorStoreSearchResultContentObjectMappable {
-  const VectorStoreSearchResultContentObject({
-    required this.type,
-    required this.text,
-  });
+  const VectorStoreSearchResultContentObject({required this.type, required this.text});
 
   final VectorStoreSearchResultContentObjectType type;
   final String text;
 
-  static VectorStoreSearchResultContentObject fromJson(Map<String, dynamic> json) => VectorStoreSearchResultContentObjectMapper.fromJson(json);
-
+  static VectorStoreSearchResultContentObject fromJson(Map<String, dynamic> json) =>
+      VectorStoreSearchResultContentObjectMapper.fromJson(json);
 }
-

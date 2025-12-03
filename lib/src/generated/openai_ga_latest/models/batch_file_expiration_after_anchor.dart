@@ -9,10 +9,10 @@ part 'batch_file_expiration_after_anchor.mapper.dart';
 /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.
 @MappableEnum(defaultValue: 'unknown')
 enum BatchFileExpirationAfterAnchor {
-  @MappableValue('created_at') 
+  @MappableValue('created_at')
   createdAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum BatchFileExpirationAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<BatchFileExpirationAfterAnchor> get $valuesDefined => values.where((value) => value != BatchFileExpirationAfterAnchor.unknown).toList();
+  static List<BatchFileExpirationAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != BatchFileExpirationAfterAnchor.unknown).toList();
 }

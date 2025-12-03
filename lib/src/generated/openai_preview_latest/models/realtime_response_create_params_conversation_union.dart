@@ -14,7 +14,14 @@ part 'realtime_response_create_params_conversation_union.mapper.dart';
 /// conversation. Set this to `none` to create an out-of-band response which .
 /// will not add items to default conversation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeResponseCreateParamsConversationUnionVariantEnum, RealtimeResponseCreateParamsConversationUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeResponseCreateParamsConversationUnionVariantEnum,
+    RealtimeResponseCreateParamsConversationUnionVariantString,
+  ],
+)
 sealed class RealtimeResponseCreateParamsConversationUnion with RealtimeResponseCreateParamsConversationUnionMappable {
   const RealtimeResponseCreateParamsConversationUnion();
 
@@ -46,26 +53,26 @@ extension RealtimeResponseCreateParamsConversationUnionDeserializer on RealtimeR
       return RealtimeResponseCreateParamsConversationUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeResponseCreateParamsConversationUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeResponseCreateParamsConversationUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsConversationUnionVariantEnum extends RealtimeResponseCreateParamsConversationUnion with RealtimeResponseCreateParamsConversationUnionVariantEnumMappable {
+class RealtimeResponseCreateParamsConversationUnionVariantEnum extends RealtimeResponseCreateParamsConversationUnion
+    with RealtimeResponseCreateParamsConversationUnionVariantEnumMappable {
   final RealtimeResponseCreateParamsConversationUnionEnum value;
 
-  const RealtimeResponseCreateParamsConversationUnionVariantEnum({
-    required this.value,
-  });
+  const RealtimeResponseCreateParamsConversationUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsConversationUnionVariantString extends RealtimeResponseCreateParamsConversationUnion with RealtimeResponseCreateParamsConversationUnionVariantStringMappable {
+class RealtimeResponseCreateParamsConversationUnionVariantString extends RealtimeResponseCreateParamsConversationUnion
+    with RealtimeResponseCreateParamsConversationUnionVariantStringMappable {
   final String value;
 
-  const RealtimeResponseCreateParamsConversationUnionVariantString({
-    required this.value,
-  });
+  const RealtimeResponseCreateParamsConversationUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

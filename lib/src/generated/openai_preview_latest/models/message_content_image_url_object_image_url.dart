@@ -18,7 +18,6 @@ class MessageContentImageUrlObjectImageUrl with MessageContentImageUrlObjectImag
   final String url;
   final MessageContentImageUrlObjectImageUrlDetail detail;
 
-  static MessageContentImageUrlObjectImageUrl fromJson(Map<String, dynamic> json) => MessageContentImageUrlObjectImageUrlMapper.fromJson(json);
-
+  static MessageContentImageUrlObjectImageUrl fromJson(Map<String, dynamic> json) =>
+      MessageContentImageUrlObjectImageUrlMapper.fromJson(json);
 }
-

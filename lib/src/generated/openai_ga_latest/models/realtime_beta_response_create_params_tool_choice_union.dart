@@ -14,8 +14,17 @@ part 'realtime_beta_response_create_params_tool_choice_union.mapper.dart';
 /// How the model chooses tools. Provide one of the string modes or force a specific.
 /// function/MCP tool.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction, RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcp, RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString])
-sealed class RealtimeBetaResponseCreateParamsToolChoiceUnion with RealtimeBetaResponseCreateParamsToolChoiceUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction,
+    RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcp,
+    RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString,
+  ],
+)
+sealed class RealtimeBetaResponseCreateParamsToolChoiceUnion
+    with RealtimeBetaResponseCreateParamsToolChoiceUnionMappable {
   const RealtimeBetaResponseCreateParamsToolChoiceUnion();
 
   static RealtimeBetaResponseCreateParamsToolChoiceUnion fromJson(Map<String, dynamic> json) {
@@ -23,7 +32,8 @@ sealed class RealtimeBetaResponseCreateParamsToolChoiceUnion with RealtimeBetaRe
   }
 }
 
-extension RealtimeBetaResponseCreateParamsToolChoiceUnionDeserializer on RealtimeBetaResponseCreateParamsToolChoiceUnion {
+extension RealtimeBetaResponseCreateParamsToolChoiceUnionDeserializer
+    on RealtimeBetaResponseCreateParamsToolChoiceUnion {
   static RealtimeBetaResponseCreateParamsToolChoiceUnion tryDeserialize(Map<String, dynamic> json) {
     try {
       return RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunctionMapper.fromJson(json);
@@ -35,24 +45,26 @@ extension RealtimeBetaResponseCreateParamsToolChoiceUnionDeserializer on Realtim
       return RealtimeBetaResponseCreateParamsToolChoiceUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for RealtimeBetaResponseCreateParamsToolChoiceUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeBetaResponseCreateParamsToolChoiceUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction extends RealtimeBetaResponseCreateParamsToolChoiceUnion with RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunctionMappable {
+class RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction
+    extends RealtimeBetaResponseCreateParamsToolChoiceUnion
+    with RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunctionMappable {
   final ToolChoiceFunctionType type;
   final String name;
 
-  const RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+  const RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceFunction({required this.type, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcp extends RealtimeBetaResponseCreateParamsToolChoiceUnion with RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcpMappable {
+class RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcp
+    extends RealtimeBetaResponseCreateParamsToolChoiceUnion
+    with RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcpMappable {
   final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -66,10 +78,10 @@ class RealtimeBetaResponseCreateParamsToolChoiceUnionToolChoiceMcp extends Realt
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString extends RealtimeBetaResponseCreateParamsToolChoiceUnion with RealtimeBetaResponseCreateParamsToolChoiceUnionVariantStringMappable {
+class RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString
+    extends RealtimeBetaResponseCreateParamsToolChoiceUnion
+    with RealtimeBetaResponseCreateParamsToolChoiceUnionVariantStringMappable {
   final String value;
 
-  const RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString({
-    required this.value,
-  });
+  const RealtimeBetaResponseCreateParamsToolChoiceUnionVariantString({required this.value});
 }

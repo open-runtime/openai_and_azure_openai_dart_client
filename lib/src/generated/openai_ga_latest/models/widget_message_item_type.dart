@@ -10,10 +10,10 @@ part 'widget_message_item_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WidgetMessageItemType {
   /// Incorrect name has been replaced. Original name: `chatkit.widget`.
-  @MappableValue('chatkit.widget') 
+  @MappableValue('chatkit.widget')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum WidgetMessageItemType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WidgetMessageItemType> get $valuesDefined => values.where((value) => value != WidgetMessageItemType.unknown).toList();
+  static List<WidgetMessageItemType> get $valuesDefined =>
+      values.where((value) => value != WidgetMessageItemType.unknown).toList();
 }

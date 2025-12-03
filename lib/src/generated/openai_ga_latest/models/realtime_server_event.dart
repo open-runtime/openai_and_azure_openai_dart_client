@@ -75,53 +75,58 @@ part 'realtime_server_event.mapper.dart';
 
 /// A realtime server event.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeServerEventConversationCreated,
-  RealtimeServerEventConversationItemCreated,
-  RealtimeServerEventConversationItemDeleted,
-  RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
-  RealtimeServerEventConversationItemInputAudioTranscriptionDelta,
-  RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
-  RealtimeServerEventConversationItemRetrieved,
-  RealtimeServerEventConversationItemTruncated,
-  RealtimeServerEventError,
-  RealtimeServerEventInputAudioBufferCleared,
-  RealtimeServerEventInputAudioBufferCommitted,
-  RealtimeServerEventInputAudioBufferSpeechStarted,
-  RealtimeServerEventInputAudioBufferSpeechStopped,
-  RealtimeServerEventRateLimitsUpdated,
-  RealtimeServerEventResponseOutputAudioDelta,
-  RealtimeServerEventResponseOutputAudioDone,
-  RealtimeServerEventResponseOutputAudioTranscriptDelta,
-  RealtimeServerEventResponseOutputAudioTranscriptDone,
-  RealtimeServerEventResponseContentPartAdded,
-  RealtimeServerEventResponseContentPartDone,
-  RealtimeServerEventResponseCreated,
-  RealtimeServerEventResponseDone,
-  RealtimeServerEventResponseFunctionCallArgumentsDelta,
-  RealtimeServerEventResponseFunctionCallArgumentsDone,
-  RealtimeServerEventResponseOutputItemAdded,
-  RealtimeServerEventResponseOutputItemDone,
-  RealtimeServerEventResponseOutputTextDelta,
-  RealtimeServerEventResponseOutputTextDone,
-  RealtimeServerEventSessionCreated,
-  RealtimeServerEventSessionUpdated,
-  RealtimeServerEventOutputAudioBufferStarted,
-  RealtimeServerEventOutputAudioBufferStopped,
-  RealtimeServerEventOutputAudioBufferCleared,
-  RealtimeServerEventConversationItemAdded,
-  RealtimeServerEventConversationItemDone,
-  RealtimeServerEventInputAudioBufferTimeoutTriggered,
-  RealtimeServerEventConversationItemInputAudioTranscriptionSegment,
-  RealtimeServerEventMcpListToolsInProgress,
-  RealtimeServerEventMcpListToolsCompleted,
-  RealtimeServerEventMcpListToolsFailed,
-  RealtimeServerEventResponseMcpCallArgumentsDelta,
-  RealtimeServerEventResponseMcpCallArgumentsDone,
-  RealtimeServerEventResponseMcpCallInProgress,
-  RealtimeServerEventResponseMcpCallCompleted,
-  RealtimeServerEventResponseMcpCallFailed
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeServerEventConversationCreated,
+    RealtimeServerEventConversationItemCreated,
+    RealtimeServerEventConversationItemDeleted,
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
+    RealtimeServerEventConversationItemInputAudioTranscriptionDelta,
+    RealtimeServerEventConversationItemInputAudioTranscriptionFailed,
+    RealtimeServerEventConversationItemRetrieved,
+    RealtimeServerEventConversationItemTruncated,
+    RealtimeServerEventError,
+    RealtimeServerEventInputAudioBufferCleared,
+    RealtimeServerEventInputAudioBufferCommitted,
+    RealtimeServerEventInputAudioBufferSpeechStarted,
+    RealtimeServerEventInputAudioBufferSpeechStopped,
+    RealtimeServerEventRateLimitsUpdated,
+    RealtimeServerEventResponseOutputAudioDelta,
+    RealtimeServerEventResponseOutputAudioDone,
+    RealtimeServerEventResponseOutputAudioTranscriptDelta,
+    RealtimeServerEventResponseOutputAudioTranscriptDone,
+    RealtimeServerEventResponseContentPartAdded,
+    RealtimeServerEventResponseContentPartDone,
+    RealtimeServerEventResponseCreated,
+    RealtimeServerEventResponseDone,
+    RealtimeServerEventResponseFunctionCallArgumentsDelta,
+    RealtimeServerEventResponseFunctionCallArgumentsDone,
+    RealtimeServerEventResponseOutputItemAdded,
+    RealtimeServerEventResponseOutputItemDone,
+    RealtimeServerEventResponseOutputTextDelta,
+    RealtimeServerEventResponseOutputTextDone,
+    RealtimeServerEventSessionCreated,
+    RealtimeServerEventSessionUpdated,
+    RealtimeServerEventOutputAudioBufferStarted,
+    RealtimeServerEventOutputAudioBufferStopped,
+    RealtimeServerEventOutputAudioBufferCleared,
+    RealtimeServerEventConversationItemAdded,
+    RealtimeServerEventConversationItemDone,
+    RealtimeServerEventInputAudioBufferTimeoutTriggered,
+    RealtimeServerEventConversationItemInputAudioTranscriptionSegment,
+    RealtimeServerEventMcpListToolsInProgress,
+    RealtimeServerEventMcpListToolsCompleted,
+    RealtimeServerEventMcpListToolsFailed,
+    RealtimeServerEventResponseMcpCallArgumentsDelta,
+    RealtimeServerEventResponseMcpCallArgumentsDone,
+    RealtimeServerEventResponseMcpCallInProgress,
+    RealtimeServerEventResponseMcpCallCompleted,
+    RealtimeServerEventResponseMcpCallFailed,
+  ],
+)
 sealed class RealtimeServerEvent with RealtimeServerEventMappable {
   const RealtimeServerEvent();
 
@@ -140,9 +145,12 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
       RealtimeServerEventConversationCreated: 'conversation.created',
       RealtimeServerEventConversationItemCreated: 'conversation.item.created',
       RealtimeServerEventConversationItemDeleted: 'conversation.item.deleted',
-      RealtimeServerEventConversationItemInputAudioTranscriptionCompleted: 'conversation.item.input_audio_transcription.completed',
-      RealtimeServerEventConversationItemInputAudioTranscriptionDelta: 'conversation.item.input_audio_transcription.delta',
-      RealtimeServerEventConversationItemInputAudioTranscriptionFailed: 'conversation.item.input_audio_transcription.failed',
+      RealtimeServerEventConversationItemInputAudioTranscriptionCompleted:
+          'conversation.item.input_audio_transcription.completed',
+      RealtimeServerEventConversationItemInputAudioTranscriptionDelta:
+          'conversation.item.input_audio_transcription.delta',
+      RealtimeServerEventConversationItemInputAudioTranscriptionFailed:
+          'conversation.item.input_audio_transcription.failed',
       RealtimeServerEventConversationItemRetrieved: 'conversation.item.retrieved',
       RealtimeServerEventConversationItemTruncated: 'conversation.item.truncated',
       RealtimeServerEventError: 'error',
@@ -151,10 +159,10 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
       RealtimeServerEventInputAudioBufferSpeechStarted: 'input_audio_buffer.speech_started',
       RealtimeServerEventInputAudioBufferSpeechStopped: 'input_audio_buffer.speech_stopped',
       RealtimeServerEventRateLimitsUpdated: 'rate_limits.updated',
-      RealtimeServerEventResponseOutputAudioDelta: 'response.output_audio.delta',
-      RealtimeServerEventResponseOutputAudioDone: 'response.output_audio.done',
-      RealtimeServerEventResponseOutputAudioTranscriptDelta: 'response.output_audio_transcript.delta',
-      RealtimeServerEventResponseOutputAudioTranscriptDone: 'response.output_audio_transcript.done',
+      RealtimeServerEventResponseAudioDelta: 'response.output_audio.delta',
+      RealtimeServerEventResponseAudioDone: 'response.output_audio.done',
+      RealtimeServerEventResponseAudioTranscriptDelta: 'response.output_audio_transcript.delta',
+      RealtimeServerEventResponseAudioTranscriptDone: 'response.output_audio_transcript.done',
       RealtimeServerEventResponseContentPartAdded: 'response.content_part.added',
       RealtimeServerEventResponseContentPartDone: 'response.content_part.done',
       RealtimeServerEventResponseCreated: 'response.created',
@@ -163,8 +171,8 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
       RealtimeServerEventResponseFunctionCallArgumentsDone: 'response.function_call_arguments.done',
       RealtimeServerEventResponseOutputItemAdded: 'response.output_item.added',
       RealtimeServerEventResponseOutputItemDone: 'response.output_item.done',
-      RealtimeServerEventResponseOutputTextDelta: 'response.output_text.delta',
-      RealtimeServerEventResponseOutputTextDone: 'response.output_text.done',
+      RealtimeServerEventResponseTextDelta: 'response.output_text.delta',
+      RealtimeServerEventResponseTextDone: 'response.output_text.done',
       RealtimeServerEventSessionCreated: 'session.created',
       RealtimeServerEventSessionUpdated: 'session.updated',
       RealtimeServerEventOutputAudioBufferStarted: 'output_audio_buffer.started',
@@ -173,7 +181,8 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
       RealtimeServerEventConversationItemAdded: 'conversation.item.added',
       RealtimeServerEventConversationItemDone: 'conversation.item.done',
       RealtimeServerEventInputAudioBufferTimeoutTriggered: 'input_audio_buffer.timeout_triggered',
-      RealtimeServerEventConversationItemInputAudioTranscriptionSegment: 'conversation.item.input_audio_transcription.segment',
+      RealtimeServerEventConversationItemInputAudioTranscriptionSegment:
+          'conversation.item.input_audio_transcription.segment',
       RealtimeServerEventMcpListToolsInProgress: 'mcp_list_tools.in_progress',
       RealtimeServerEventMcpListToolsCompleted: 'mcp_list_tools.completed',
       RealtimeServerEventMcpListToolsFailed: 'mcp_list_tools.failed',
@@ -186,58 +195,106 @@ extension RealtimeServerEventUnionDeserializer on RealtimeServerEvent {
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeServerEventConversationCreated] => RealtimeServerEventConversationCreatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemCreated] => RealtimeServerEventConversationItemCreatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemDeleted] => RealtimeServerEventConversationItemDeletedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionCompleted] => RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionDelta] => RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionFailed] => RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemRetrieved] => RealtimeServerEventConversationItemRetrievedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemTruncated] => RealtimeServerEventConversationItemTruncatedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationCreated] =>
+        RealtimeServerEventConversationCreatedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemCreated] =>
+        RealtimeServerEventConversationItemCreatedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemDeleted] =>
+        RealtimeServerEventConversationItemDeletedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionCompleted] =>
+        RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionDelta] =>
+        RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionFailed] =>
+        RealtimeServerEventConversationItemInputAudioTranscriptionFailedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemRetrieved] =>
+        RealtimeServerEventConversationItemRetrievedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemTruncated] =>
+        RealtimeServerEventConversationItemTruncatedMapper.fromJson(json),
       _ when value == effective[RealtimeServerEventError] => RealtimeServerEventErrorMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventInputAudioBufferCleared] => RealtimeServerEventInputAudioBufferClearedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventInputAudioBufferCommitted] => RealtimeServerEventInputAudioBufferCommittedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventInputAudioBufferSpeechStarted] => RealtimeServerEventInputAudioBufferSpeechStartedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventInputAudioBufferSpeechStopped] => RealtimeServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventRateLimitsUpdated] => RealtimeServerEventRateLimitsUpdatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputAudioDelta] => RealtimeServerEventResponseOutputAudioDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputAudioDone] => RealtimeServerEventResponseOutputAudioDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputAudioTranscriptDelta] => RealtimeServerEventResponseOutputAudioTranscriptDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputAudioTranscriptDone] => RealtimeServerEventResponseOutputAudioTranscriptDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseContentPartAdded] => RealtimeServerEventResponseContentPartAddedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseContentPartDone] => RealtimeServerEventResponseContentPartDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseCreated] => RealtimeServerEventResponseCreatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseDone] => RealtimeServerEventResponseDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseFunctionCallArgumentsDelta] => RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseFunctionCallArgumentsDone] => RealtimeServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputItemAdded] => RealtimeServerEventResponseOutputItemAddedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputItemDone] => RealtimeServerEventResponseOutputItemDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputTextDelta] => RealtimeServerEventResponseOutputTextDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseOutputTextDone] => RealtimeServerEventResponseOutputTextDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventSessionCreated] => RealtimeServerEventSessionCreatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventSessionUpdated] => RealtimeServerEventSessionUpdatedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventOutputAudioBufferStarted] => RealtimeServerEventOutputAudioBufferStartedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventOutputAudioBufferStopped] => RealtimeServerEventOutputAudioBufferStoppedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventOutputAudioBufferCleared] => RealtimeServerEventOutputAudioBufferClearedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemAdded] => RealtimeServerEventConversationItemAddedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemDone] => RealtimeServerEventConversationItemDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventInputAudioBufferTimeoutTriggered] => RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionSegment] => RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventMcpListToolsInProgress] => RealtimeServerEventMcpListToolsInProgressMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventMcpListToolsCompleted] => RealtimeServerEventMcpListToolsCompletedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventMcpListToolsFailed] => RealtimeServerEventMcpListToolsFailedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseMcpCallArgumentsDelta] => RealtimeServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseMcpCallArgumentsDone] => RealtimeServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseMcpCallInProgress] => RealtimeServerEventResponseMcpCallInProgressMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseMcpCallCompleted] => RealtimeServerEventResponseMcpCallCompletedMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventResponseMcpCallFailed] => RealtimeServerEventResponseMcpCallFailedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventInputAudioBufferCleared] =>
+        RealtimeServerEventInputAudioBufferClearedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventInputAudioBufferCommitted] =>
+        RealtimeServerEventInputAudioBufferCommittedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventInputAudioBufferSpeechStarted] =>
+        RealtimeServerEventInputAudioBufferSpeechStartedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventInputAudioBufferSpeechStopped] =>
+        RealtimeServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventRateLimitsUpdated] =>
+        RealtimeServerEventRateLimitsUpdatedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseAudioDelta] =>
+        RealtimeServerEventResponseAudioDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseAudioDone] =>
+        RealtimeServerEventResponseAudioDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseAudioTranscriptDelta] =>
+        RealtimeServerEventResponseAudioTranscriptDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseAudioTranscriptDone] =>
+        RealtimeServerEventResponseAudioTranscriptDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseContentPartAdded] =>
+        RealtimeServerEventResponseContentPartAddedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseContentPartDone] =>
+        RealtimeServerEventResponseContentPartDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseCreated] =>
+        RealtimeServerEventResponseCreatedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseDone] => RealtimeServerEventResponseDoneMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeServerEventResponseFunctionCallArgumentsDelta] =>
+        RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseFunctionCallArgumentsDone] =>
+        RealtimeServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseOutputItemAdded] =>
+        RealtimeServerEventResponseOutputItemAddedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseOutputItemDone] =>
+        RealtimeServerEventResponseOutputItemDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseTextDelta] =>
+        RealtimeServerEventResponseTextDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseTextDone] =>
+        RealtimeServerEventResponseTextDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventSessionCreated] => RealtimeServerEventSessionCreatedMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeServerEventSessionUpdated] => RealtimeServerEventSessionUpdatedMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeServerEventOutputAudioBufferStarted] =>
+        RealtimeServerEventOutputAudioBufferStartedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventOutputAudioBufferStopped] =>
+        RealtimeServerEventOutputAudioBufferStoppedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventOutputAudioBufferCleared] =>
+        RealtimeServerEventOutputAudioBufferClearedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemAdded] =>
+        RealtimeServerEventConversationItemAddedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemDone] =>
+        RealtimeServerEventConversationItemDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventInputAudioBufferTimeoutTriggered] =>
+        RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionSegment] =>
+        RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventMcpListToolsInProgress] =>
+        RealtimeServerEventMcpListToolsInProgressMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventMcpListToolsCompleted] =>
+        RealtimeServerEventMcpListToolsCompletedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventMcpListToolsFailed] =>
+        RealtimeServerEventMcpListToolsFailedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseMcpCallArgumentsDelta] =>
+        RealtimeServerEventResponseMcpCallArgumentsDeltaMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseMcpCallArgumentsDone] =>
+        RealtimeServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseMcpCallInProgress] =>
+        RealtimeServerEventResponseMcpCallInProgressMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseMcpCallCompleted] =>
+        RealtimeServerEventResponseMcpCallCompletedMapper.fromJson(json),
+      _ when value == effective[RealtimeServerEventResponseMcpCallFailed] =>
+        RealtimeServerEventResponseMcpCallFailedMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeServerEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.created')
-class RealtimeServerEventConversationCreated extends RealtimeServerEvent with RealtimeServerEventConversationCreatedMappable {
+class RealtimeServerEventConversationCreated extends RealtimeServerEvent
+    with RealtimeServerEventConversationCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -252,7 +309,8 @@ class RealtimeServerEventConversationCreated extends RealtimeServerEvent with Re
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.created')
-class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent with RealtimeServerEventConversationItemCreatedMappable {
+class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemCreatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -269,22 +327,24 @@ class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.deleted')
-class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent with RealtimeServerEventConversationItemDeletedMappable {
+class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemDeletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeServerEventConversationItemDeleted({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeServerEventConversationItemDeleted({required this.eventId, required this.type, required this.itemId});
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.input_audio_transcription.completed')
-class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.completed',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventType type;
@@ -307,8 +367,13 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extend
   });
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.input_audio_transcription.delta')
-class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.delta',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -329,8 +394,13 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends Re
   });
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.input_audio_transcription.failed')
-class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.failed',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionFailedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventType2 type;
@@ -351,21 +421,19 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailed extends R
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.retrieved')
-class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent with RealtimeServerEventConversationItemRetrievedMappable {
+class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemRetrievedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   final RealtimeConversationItem item;
 
-  const RealtimeServerEventConversationItemRetrieved({
-    required this.eventId,
-    required this.type,
-    required this.item,
-  });
+  const RealtimeServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.truncated')
-class RealtimeServerEventConversationItemTruncated extends RealtimeServerEvent with RealtimeServerEventConversationItemTruncatedMappable {
+class RealtimeServerEventConversationItemTruncated extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemTruncatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -393,27 +461,22 @@ class RealtimeServerEventError extends RealtimeServerEvent with RealtimeServerEv
   @MappableField(key: 'error')
   final RealtimeServerEventError realtimeServerEventError;
 
-  const RealtimeServerEventError({
-    required this.eventId,
-    required this.type,
-    required this.realtimeServerEventError,
-  });
+  const RealtimeServerEventError({required this.eventId, required this.type, required this.realtimeServerEventError});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.cleared')
-class RealtimeServerEventInputAudioBufferCleared extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferClearedMappable {
+class RealtimeServerEventInputAudioBufferCleared extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferClearedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
 
-  const RealtimeServerEventInputAudioBufferCleared({
-    required this.eventId,
-    required this.type,
-  });
+  const RealtimeServerEventInputAudioBufferCleared({required this.eventId, required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.committed')
-class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferCommittedMappable {
+class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferCommittedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -431,7 +494,8 @@ class RealtimeServerEventInputAudioBufferCommitted extends RealtimeServerEvent w
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.speech_started')
-class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
+class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferSpeechStartedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -449,7 +513,8 @@ class RealtimeServerEventInputAudioBufferSpeechStarted extends RealtimeServerEve
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.speech_stopped')
-class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
+class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -467,22 +532,20 @@ class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEve
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'rate_limits.updated')
-class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent with RealtimeServerEventRateLimitsUpdatedMappable {
+class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent
+    with RealtimeServerEventRateLimitsUpdatedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   @MappableField(key: 'rate_limits')
   final List<RealtimeServerEventRateLimits> rateLimits;
 
-  const RealtimeServerEventRateLimitsUpdated({
-    required this.eventId,
-    required this.type,
-    required this.rateLimits,
-  });
+  const RealtimeServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio.delta')
-class RealtimeServerEventResponseOutputAudioDelta extends RealtimeServerEvent with RealtimeServerEventResponseOutputAudioDeltaMappable {
+class RealtimeServerEventResponseOutputAudioDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputAudioDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -508,7 +571,8 @@ class RealtimeServerEventResponseOutputAudioDelta extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio.done')
-class RealtimeServerEventResponseOutputAudioDone extends RealtimeServerEvent with RealtimeServerEventResponseOutputAudioDoneMappable {
+class RealtimeServerEventResponseOutputAudioDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputAudioDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -532,7 +596,8 @@ class RealtimeServerEventResponseOutputAudioDone extends RealtimeServerEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio_transcript.delta')
-class RealtimeServerEventResponseOutputAudioTranscriptDelta extends RealtimeServerEvent with RealtimeServerEventResponseOutputAudioTranscriptDeltaMappable {
+class RealtimeServerEventResponseOutputAudioTranscriptDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputAudioTranscriptDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -558,7 +623,8 @@ class RealtimeServerEventResponseOutputAudioTranscriptDelta extends RealtimeServ
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio_transcript.done')
-class RealtimeServerEventResponseOutputAudioTranscriptDone extends RealtimeServerEvent with RealtimeServerEventResponseOutputAudioTranscriptDoneMappable {
+class RealtimeServerEventResponseOutputAudioTranscriptDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputAudioTranscriptDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -584,7 +650,8 @@ class RealtimeServerEventResponseOutputAudioTranscriptDone extends RealtimeServe
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.added')
-class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent with RealtimeServerEventResponseContentPartAddedMappable {
+class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent
+    with RealtimeServerEventResponseContentPartAddedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -611,7 +678,8 @@ class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.done')
-class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent with RealtimeServerEventResponseContentPartDoneMappable {
+class RealtimeServerEventResponseContentPartDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseContentPartDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -644,11 +712,7 @@ class RealtimeServerEventResponseCreated extends RealtimeServerEvent with Realti
   final dynamic type;
   final RealtimeResponse response;
 
-  const RealtimeServerEventResponseCreated({
-    required this.eventId,
-    required this.type,
-    required this.response,
-  });
+  const RealtimeServerEventResponseCreated({required this.eventId, required this.type, required this.response});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.done')
@@ -658,15 +722,12 @@ class RealtimeServerEventResponseDone extends RealtimeServerEvent with RealtimeS
   final dynamic type;
   final RealtimeResponse response;
 
-  const RealtimeServerEventResponseDone({
-    required this.eventId,
-    required this.type,
-    required this.response,
-  });
+  const RealtimeServerEventResponseDone({required this.eventId, required this.type, required this.response});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.delta')
-class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServerEvent with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
+class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -692,7 +753,8 @@ class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServ
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.done')
-class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServerEvent with RealtimeServerEventResponseFunctionCallArgumentsDoneMappable {
+class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseFunctionCallArgumentsDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -718,7 +780,8 @@ class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServe
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.added')
-class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent with RealtimeServerEventResponseOutputItemAddedMappable {
+class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputItemAddedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -738,7 +801,8 @@ class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.done')
-class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent with RealtimeServerEventResponseOutputItemDoneMappable {
+class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputItemDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -758,7 +822,8 @@ class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent with
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.delta')
-class RealtimeServerEventResponseOutputTextDelta extends RealtimeServerEvent with RealtimeServerEventResponseOutputTextDeltaMappable {
+class RealtimeServerEventResponseOutputTextDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputTextDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -784,7 +849,8 @@ class RealtimeServerEventResponseOutputTextDelta extends RealtimeServerEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.done')
-class RealtimeServerEventResponseOutputTextDone extends RealtimeServerEvent with RealtimeServerEventResponseOutputTextDoneMappable {
+class RealtimeServerEventResponseOutputTextDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputTextDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -816,11 +882,7 @@ class RealtimeServerEventSessionCreated extends RealtimeServerEvent with Realtim
   final dynamic type;
   final RealtimeServerEventSessionUnion session;
 
-  const RealtimeServerEventSessionCreated({
-    required this.eventId,
-    required this.type,
-    required this.session,
-  });
+  const RealtimeServerEventSessionCreated({required this.eventId, required this.type, required this.session});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'session.updated')
@@ -830,15 +892,12 @@ class RealtimeServerEventSessionUpdated extends RealtimeServerEvent with Realtim
   final dynamic type;
   final RealtimeServerEventSessionUnion session;
 
-  const RealtimeServerEventSessionUpdated({
-    required this.eventId,
-    required this.type,
-    required this.session,
-  });
+  const RealtimeServerEventSessionUpdated({required this.eventId, required this.type, required this.session});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.started')
-class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferStartedMappable {
+class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferStartedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -853,7 +912,8 @@ class RealtimeServerEventOutputAudioBufferStarted extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.stopped')
-class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferStoppedMappable {
+class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferStoppedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -868,7 +928,8 @@ class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.cleared')
-class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent with RealtimeServerEventOutputAudioBufferClearedMappable {
+class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferClearedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -883,7 +944,8 @@ class RealtimeServerEventOutputAudioBufferCleared extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.added')
-class RealtimeServerEventConversationItemAdded extends RealtimeServerEvent with RealtimeServerEventConversationItemAddedMappable {
+class RealtimeServerEventConversationItemAdded extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemAddedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -900,7 +962,8 @@ class RealtimeServerEventConversationItemAdded extends RealtimeServerEvent with 
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.done')
-class RealtimeServerEventConversationItemDone extends RealtimeServerEvent with RealtimeServerEventConversationItemDoneMappable {
+class RealtimeServerEventConversationItemDone extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -917,7 +980,8 @@ class RealtimeServerEventConversationItemDone extends RealtimeServerEvent with R
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.timeout_triggered')
-class RealtimeServerEventInputAudioBufferTimeoutTriggered extends RealtimeServerEvent with RealtimeServerEventInputAudioBufferTimeoutTriggeredMappable {
+class RealtimeServerEventInputAudioBufferTimeoutTriggered extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferTimeoutTriggeredMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -937,8 +1001,13 @@ class RealtimeServerEventInputAudioBufferTimeoutTriggered extends RealtimeServer
   });
 }
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.input_audio_transcription.segment')
-class RealtimeServerEventConversationItemInputAudioTranscriptionSegment extends RealtimeServerEvent with RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.segment',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionSegment extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -966,52 +1035,44 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionSegment extends 
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools.in_progress')
-class RealtimeServerEventMcpListToolsInProgress extends RealtimeServerEvent with RealtimeServerEventMcpListToolsInProgressMappable {
+class RealtimeServerEventMcpListToolsInProgress extends RealtimeServerEvent
+    with RealtimeServerEventMcpListToolsInProgressMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeServerEventMcpListToolsInProgress({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeServerEventMcpListToolsInProgress({required this.eventId, required this.type, required this.itemId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools.completed')
-class RealtimeServerEventMcpListToolsCompleted extends RealtimeServerEvent with RealtimeServerEventMcpListToolsCompletedMappable {
+class RealtimeServerEventMcpListToolsCompleted extends RealtimeServerEvent
+    with RealtimeServerEventMcpListToolsCompletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeServerEventMcpListToolsCompleted({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools.failed')
-class RealtimeServerEventMcpListToolsFailed extends RealtimeServerEvent with RealtimeServerEventMcpListToolsFailedMappable {
+class RealtimeServerEventMcpListToolsFailed extends RealtimeServerEvent
+    with RealtimeServerEventMcpListToolsFailedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeServerEventMcpListToolsFailed({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.delta')
-class RealtimeServerEventResponseMcpCallArgumentsDelta extends RealtimeServerEvent with RealtimeServerEventResponseMcpCallArgumentsDeltaMappable {
+class RealtimeServerEventResponseMcpCallArgumentsDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallArgumentsDeltaMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -1036,7 +1097,8 @@ class RealtimeServerEventResponseMcpCallArgumentsDelta extends RealtimeServerEve
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.done')
-class RealtimeServerEventResponseMcpCallArgumentsDone extends RealtimeServerEvent with RealtimeServerEventResponseMcpCallArgumentsDoneMappable {
+class RealtimeServerEventResponseMcpCallArgumentsDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallArgumentsDoneMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -1059,7 +1121,8 @@ class RealtimeServerEventResponseMcpCallArgumentsDone extends RealtimeServerEven
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.in_progress')
-class RealtimeServerEventResponseMcpCallInProgress extends RealtimeServerEvent with RealtimeServerEventResponseMcpCallInProgressMappable {
+class RealtimeServerEventResponseMcpCallInProgress extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallInProgressMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -1077,7 +1140,8 @@ class RealtimeServerEventResponseMcpCallInProgress extends RealtimeServerEvent w
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.completed')
-class RealtimeServerEventResponseMcpCallCompleted extends RealtimeServerEvent with RealtimeServerEventResponseMcpCallCompletedMappable {
+class RealtimeServerEventResponseMcpCallCompleted extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallCompletedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
@@ -1095,7 +1159,8 @@ class RealtimeServerEventResponseMcpCallCompleted extends RealtimeServerEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.failed')
-class RealtimeServerEventResponseMcpCallFailed extends RealtimeServerEvent with RealtimeServerEventResponseMcpCallFailedMappable {
+class RealtimeServerEventResponseMcpCallFailed extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallFailedMappable {
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;

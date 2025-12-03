@@ -17,18 +17,22 @@ import 'web_search_action_search_type.dart';
 
 part 'web_search_tool_call_action_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  WebSearchToolCallActionUnionSearch,
-  WebSearchToolCallActionUnionOpenPage,
-  WebSearchToolCallActionUnionFind
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    WebSearchToolCallActionUnionSearch,
+    WebSearchToolCallActionUnionOpenPage,
+    WebSearchToolCallActionUnionFind,
+  ],
+)
 sealed class WebSearchToolCallActionUnion with WebSearchToolCallActionUnionMappable {
   const WebSearchToolCallActionUnion();
 
   static WebSearchToolCallActionUnion fromJson(Map<String, dynamic> json) {
     return WebSearchToolCallActionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension WebSearchToolCallActionUnionDeserializer on WebSearchToolCallActionUnion {
@@ -38,55 +42,46 @@ extension WebSearchToolCallActionUnionDeserializer on WebSearchToolCallActionUni
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      WebSearchToolCallActionUnionSearch: 'search',
-      WebSearchToolCallActionUnionOpenPage: 'open_page',
-      WebSearchToolCallActionUnionFind: 'find',
+      WebSearchActionSearch: 'search',
+      WebSearchActionOpenPage: 'open_page',
+      WebSearchActionFind: 'find',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[WebSearchToolCallActionUnionSearch] => WebSearchToolCallActionUnionSearchMapper.fromJson(json),
-      _ when value == effective[WebSearchToolCallActionUnionOpenPage] => WebSearchToolCallActionUnionOpenPageMapper.fromJson(json),
-      _ when value == effective[WebSearchToolCallActionUnionFind] => WebSearchToolCallActionUnionFindMapper.fromJson(json),
+      _ when value == effective[WebSearchActionSearch] => WebSearchActionSearchMapper.fromJson(json),
+      _ when value == effective[WebSearchActionOpenPage] => WebSearchActionOpenPageMapper.fromJson(json),
+      _ when value == effective[WebSearchActionFind] => WebSearchActionFindMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for WebSearchToolCallActionUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
-class WebSearchToolCallActionUnionSearch extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionSearchMappable {
+class WebSearchToolCallActionUnionSearch extends WebSearchToolCallActionUnion
+    with WebSearchToolCallActionUnionSearchMappable {
   final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
-  const WebSearchToolCallActionUnionSearch({
-    required this.type,
-    required this.query,
-    required this.sources,
-  });
-
+  const WebSearchToolCallActionUnionSearch({required this.type, required this.query, required this.sources});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
-class WebSearchToolCallActionUnionOpenPage extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionOpenPageMappable {
+class WebSearchToolCallActionUnionOpenPage extends WebSearchToolCallActionUnion
+    with WebSearchToolCallActionUnionOpenPageMappable {
   final WebSearchActionOpenPageType type;
   final String url;
 
-  const WebSearchToolCallActionUnionOpenPage({
-    required this.type,
-    required this.url,
-  });
-
+  const WebSearchToolCallActionUnionOpenPage({required this.type, required this.url});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
-class WebSearchToolCallActionUnionFind extends WebSearchToolCallActionUnion with WebSearchToolCallActionUnionFindMappable {
+class WebSearchToolCallActionUnionFind extends WebSearchToolCallActionUnion
+    with WebSearchToolCallActionUnionFindMappable {
   final WebSearchActionFindType type;
   final String url;
   final String pattern;
 
-  const WebSearchToolCallActionUnionFind({
-    required this.type,
-    required this.url,
-    required this.pattern,
-  });
-
+  const WebSearchToolCallActionUnionFind({required this.type, required this.url, required this.pattern});
 }

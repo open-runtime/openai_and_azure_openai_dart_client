@@ -14,13 +14,7 @@ part 'system_compute_storage.mapper.dart';
 /// Storage account
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SystemComputeStorage with SystemComputeStorageMappable {
-  const SystemComputeStorage({
-    required this.kind,
-    this.connection,
-    this.containerName,
-    this.chunking,
-    this.embeddings,
-  });
+  const SystemComputeStorage({required this.kind, this.connection, this.containerName, this.chunking, this.embeddings});
 
   final SystemComputeDatasourceType kind;
   final BaseConnection? connection;
@@ -29,6 +23,4 @@ class SystemComputeStorage with SystemComputeStorageMappable {
   final List<GenericEmbeddingSettings>? embeddings;
 
   static SystemComputeStorage fromJson(Map<String, dynamic> json) => SystemComputeStorageMapper.fromJson(json);
-
 }
-

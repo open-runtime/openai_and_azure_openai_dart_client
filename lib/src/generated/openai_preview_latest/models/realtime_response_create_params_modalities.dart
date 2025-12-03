@@ -8,13 +8,13 @@ part 'realtime_response_create_params_modalities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseCreateParamsModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeResponseCreateParamsModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseCreateParamsModalities> get $valuesDefined => values.where((value) => value != RealtimeResponseCreateParamsModalities.unknown).toList();
+  static List<RealtimeResponseCreateParamsModalities> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseCreateParamsModalities.unknown).toList();
 }

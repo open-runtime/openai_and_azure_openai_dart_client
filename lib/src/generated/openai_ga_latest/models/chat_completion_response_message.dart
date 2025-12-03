@@ -35,7 +35,6 @@ class ChatCompletionResponseMessage with ChatCompletionResponseMessageMappable {
   final ChatCompletionResponseMessageFunctionCall? chatCompletionResponseMessageFunctionCall;
   final ChatCompletionResponseMessageAudio? audio;
 
-  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageMapper.fromJson(json);
-
+  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageMapper.fromJson(json);
 }
-

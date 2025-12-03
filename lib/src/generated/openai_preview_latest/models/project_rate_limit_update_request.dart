@@ -30,7 +30,6 @@ class ProjectRateLimitUpdateRequest with ProjectRateLimitUpdateRequestMappable {
   @MappableField(key: 'batch_1_day_max_input_tokens')
   final int? batch1DayMaxInputTokens;
 
-  static ProjectRateLimitUpdateRequest fromJson(Map<String, dynamic> json) => ProjectRateLimitUpdateRequestMapper.fromJson(json);
-
+  static ProjectRateLimitUpdateRequest fromJson(Map<String, dynamic> json) =>
+      ProjectRateLimitUpdateRequestMapper.fromJson(json);
 }
-

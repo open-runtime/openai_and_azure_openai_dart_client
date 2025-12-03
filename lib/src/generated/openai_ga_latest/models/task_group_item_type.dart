@@ -10,10 +10,10 @@ part 'task_group_item_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TaskGroupItemType {
   /// Incorrect name has been replaced. Original name: `chatkit.task_group`.
-  @MappableValue('chatkit.task_group') 
+  @MappableValue('chatkit.task_group')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum TaskGroupItemType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TaskGroupItemType> get $valuesDefined => values.where((value) => value != TaskGroupItemType.unknown).toList();
+  static List<TaskGroupItemType> get $valuesDefined =>
+      values.where((value) => value != TaskGroupItemType.unknown).toList();
 }

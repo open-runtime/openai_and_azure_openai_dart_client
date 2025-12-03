@@ -30,6 +30,4 @@ class ThreadItemListResource with ThreadItemListResourceMappable {
   final dynamic objectField;
 
   static ThreadItemListResource fromJson(Map<String, dynamic> json) => ThreadItemListResourceMapper.fromJson(json);
-
 }
-

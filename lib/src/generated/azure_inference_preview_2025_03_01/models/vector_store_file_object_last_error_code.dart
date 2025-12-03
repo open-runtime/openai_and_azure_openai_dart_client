@@ -9,16 +9,16 @@ part 'vector_store_file_object_last_error_code.mapper.dart';
 /// One of `server_error` or `invalid_file` or `unsupported_file`.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreFileObjectLastErrorCode {
-  @MappableValue('server_error') 
+  @MappableValue('server_error')
   serverError,
 
-  @MappableValue('unsupported_file') 
+  @MappableValue('unsupported_file')
   unsupportedFile,
 
-  @MappableValue('invalid_file') 
+  @MappableValue('invalid_file')
   invalidFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum VectorStoreFileObjectLastErrorCode {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreFileObjectLastErrorCode> get $valuesDefined => values.where((value) => value != VectorStoreFileObjectLastErrorCode.unknown).toList();
+  static List<VectorStoreFileObjectLastErrorCode> get $valuesDefined =>
+      values.where((value) => value != VectorStoreFileObjectLastErrorCode.unknown).toList();
 }

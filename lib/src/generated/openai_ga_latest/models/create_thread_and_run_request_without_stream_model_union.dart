@@ -9,8 +9,16 @@ import 'create_thread_and_run_request_without_stream_model_union_enum.dart';
 part 'create_thread_and_run_request_without_stream_model_union.mapper.dart';
 
 /// The ID of the [Model](https://platform.openai.com/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum, CreateThreadAndRunRequestWithoutStreamModelUnionVariantString])
-sealed class CreateThreadAndRunRequestWithoutStreamModelUnion with CreateThreadAndRunRequestWithoutStreamModelUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum,
+    CreateThreadAndRunRequestWithoutStreamModelUnionVariantString,
+  ],
+)
+sealed class CreateThreadAndRunRequestWithoutStreamModelUnion
+    with CreateThreadAndRunRequestWithoutStreamModelUnionMappable {
   const CreateThreadAndRunRequestWithoutStreamModelUnion();
 
   static CreateThreadAndRunRequestWithoutStreamModelUnion fromJson(dynamic json) {
@@ -18,7 +26,8 @@ sealed class CreateThreadAndRunRequestWithoutStreamModelUnion with CreateThreadA
   }
 }
 
-extension CreateThreadAndRunRequestWithoutStreamModelUnionDeserializer on CreateThreadAndRunRequestWithoutStreamModelUnion {
+extension CreateThreadAndRunRequestWithoutStreamModelUnionDeserializer
+    on CreateThreadAndRunRequestWithoutStreamModelUnion {
   static CreateThreadAndRunRequestWithoutStreamModelUnion tryDeserialize(dynamic json) {
     // Try enum variant
     if (json is String) {
@@ -41,31 +50,34 @@ extension CreateThreadAndRunRequestWithoutStreamModelUnionDeserializer on Create
       return CreateThreadAndRunRequestWithoutStreamModelUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for CreateThreadAndRunRequestWithoutStreamModelUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateThreadAndRunRequestWithoutStreamModelUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum extends CreateThreadAndRunRequestWithoutStreamModelUnion with CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnumMappable {
+class CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum
+    extends CreateThreadAndRunRequestWithoutStreamModelUnion
+    with CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnumMappable {
   final CreateThreadAndRunRequestWithoutStreamModelUnionEnum value;
 
-  const CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateThreadAndRunRequestWithoutStreamModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadAndRunRequestWithoutStreamModelUnionVariantString extends CreateThreadAndRunRequestWithoutStreamModelUnion with CreateThreadAndRunRequestWithoutStreamModelUnionVariantStringMappable {
+class CreateThreadAndRunRequestWithoutStreamModelUnionVariantString
+    extends CreateThreadAndRunRequestWithoutStreamModelUnion
+    with CreateThreadAndRunRequestWithoutStreamModelUnionVariantStringMappable {
   final String value;
 
-  const CreateThreadAndRunRequestWithoutStreamModelUnionVariantString({
-    required this.value,
-  });
+  const CreateThreadAndRunRequestWithoutStreamModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension CreateThreadAndRunRequestWithoutStreamModelUnionJsonValue on CreateThreadAndRunRequestWithoutStreamModelUnion {
+extension CreateThreadAndRunRequestWithoutStreamModelUnionJsonValue
+    on CreateThreadAndRunRequestWithoutStreamModelUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {

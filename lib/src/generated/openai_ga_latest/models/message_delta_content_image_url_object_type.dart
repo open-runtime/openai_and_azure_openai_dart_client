@@ -9,10 +9,10 @@ part 'message_delta_content_image_url_object_type.mapper.dart';
 /// Always `image_url`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentImageUrlObjectType {
-  @MappableValue('image_url') 
+  @MappableValue('image_url')
   imageUrl,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageDeltaContentImageUrlObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentImageUrlObjectType> get $valuesDefined => values.where((value) => value != MessageDeltaContentImageUrlObjectType.unknown).toList();
+  static List<MessageDeltaContentImageUrlObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentImageUrlObjectType.unknown).toList();
 }

@@ -10,17 +10,12 @@ part 'custom_tool_chat_completions_custom.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CustomToolChatCompletionsCustom with CustomToolChatCompletionsCustomMappable {
-  const CustomToolChatCompletionsCustom({
-    required this.name,
-    this.description,
-    this.format,
-  });
+  const CustomToolChatCompletionsCustom({required this.name, this.description, this.format});
 
   final String name;
   final String? description;
   final CustomToolChatCompletionsCustomFormatUnion? format;
 
-  static CustomToolChatCompletionsCustom fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsCustomMapper.fromJson(json);
-
+  static CustomToolChatCompletionsCustom fromJson(Map<String, dynamic> json) =>
+      CustomToolChatCompletionsCustomMapper.fromJson(json);
 }
-

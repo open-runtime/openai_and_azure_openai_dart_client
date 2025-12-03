@@ -30,7 +30,6 @@ class RealtimeBetaResponseUsage with RealtimeBetaResponseUsageMappable {
   @MappableField(key: 'output_token_details')
   final RealtimeBetaResponseUsageOutputTokenDetails? realtimeBetaResponseUsageOutputTokenDetails;
 
-  static RealtimeBetaResponseUsage fromJson(Map<String, dynamic> json) => RealtimeBetaResponseUsageMapper.fromJson(json);
-
+  static RealtimeBetaResponseUsage fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaResponseUsageMapper.fromJson(json);
 }
-

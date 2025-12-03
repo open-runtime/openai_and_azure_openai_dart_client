@@ -10,8 +10,9 @@ import 'message_delta_content_text_object_type.dart';
 part 'message_delta_content_text_object.mapper.dart';
 
 /// The text content that is part of a message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageDeltaContentTextObject with MessageDeltaContentTextObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class MessageDeltaContentTextObject extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaContentTextObjectMappable {
   const MessageDeltaContentTextObject({
     required this.indexField,
     required this.type,
@@ -24,7 +25,6 @@ class MessageDeltaContentTextObject with MessageDeltaContentTextObjectMappable {
   @MappableField(key: 'text')
   final MessageDeltaContentTextObjectText? messageDeltaContentTextObjectText;
 
-  static MessageDeltaContentTextObject fromJson(Map<String, dynamic> json) => MessageDeltaContentTextObjectMapper.fromJson(json);
-
+  static MessageDeltaContentTextObject fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentTextObjectMapper.fromJson(json);
 }
-

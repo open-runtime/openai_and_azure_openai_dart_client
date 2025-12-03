@@ -10,10 +10,10 @@ part 'realtime_server_event_type13.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventType13 {
   /// Incorrect name has been replaced. Original name: `input_audio_buffer.speech_stopped`.
-  @MappableValue('input_audio_buffer.speech_stopped') 
+  @MappableValue('input_audio_buffer.speech_stopped')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventType13 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventType13> get $valuesDefined => values.where((value) => value != RealtimeServerEventType13.unknown).toList();
+  static List<RealtimeServerEventType13> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventType13.unknown).toList();
 }

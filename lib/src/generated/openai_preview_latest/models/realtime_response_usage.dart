@@ -31,6 +31,4 @@ class RealtimeResponseUsage with RealtimeResponseUsageMappable {
   final RealtimeResponseUsageOutputTokenDetails? realtimeResponseUsageOutputTokenDetails;
 
   static RealtimeResponseUsage fromJson(Map<String, dynamic> json) => RealtimeResponseUsageMapper.fromJson(json);
-
 }
-

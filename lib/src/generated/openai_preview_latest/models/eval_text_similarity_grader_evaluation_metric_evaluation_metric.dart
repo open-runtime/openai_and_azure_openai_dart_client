@@ -9,37 +9,37 @@ part 'eval_text_similarity_grader_evaluation_metric_evaluation_metric.mapper.dar
 /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalTextSimilarityGraderEvaluationMetricEvaluationMetric {
-  @MappableValue('fuzzy_match') 
+  @MappableValue('fuzzy_match')
   fuzzyMatch,
 
-  @MappableValue('bleu') 
+  @MappableValue('bleu')
   bleu,
 
-  @MappableValue('gleu') 
+  @MappableValue('gleu')
   gleu,
 
-  @MappableValue('meteor') 
+  @MappableValue('meteor')
   meteor,
 
-  @MappableValue('rouge_1') 
+  @MappableValue('rouge_1')
   rouge1,
 
-  @MappableValue('rouge_2') 
+  @MappableValue('rouge_2')
   rouge2,
 
-  @MappableValue('rouge_3') 
+  @MappableValue('rouge_3')
   rouge3,
 
-  @MappableValue('rouge_4') 
+  @MappableValue('rouge_4')
   rouge4,
 
-  @MappableValue('rouge_5') 
+  @MappableValue('rouge_5')
   rouge5,
 
-  @MappableValue('rouge_l') 
+  @MappableValue('rouge_l')
   rougeL,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -48,5 +48,6 @@ enum EvalTextSimilarityGraderEvaluationMetricEvaluationMetric {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalTextSimilarityGraderEvaluationMetricEvaluationMetric> get $valuesDefined => values.where((value) => value != EvalTextSimilarityGraderEvaluationMetricEvaluationMetric.unknown).toList();
+  static List<EvalTextSimilarityGraderEvaluationMetricEvaluationMetric> get $valuesDefined =>
+      values.where((value) => value != EvalTextSimilarityGraderEvaluationMetricEvaluationMetric.unknown).toList();
 }

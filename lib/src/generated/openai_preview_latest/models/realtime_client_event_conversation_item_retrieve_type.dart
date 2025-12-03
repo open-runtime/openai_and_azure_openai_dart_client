@@ -10,10 +10,10 @@ part 'realtime_client_event_conversation_item_retrieve_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventConversationItemRetrieveType {
   /// Incorrect name has been replaced. Original name: `conversation.item.retrieve`.
-  @MappableValue('conversation.item.retrieve') 
+  @MappableValue('conversation.item.retrieve')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventConversationItemRetrieveType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventConversationItemRetrieveType> get $valuesDefined => values.where((value) => value != RealtimeClientEventConversationItemRetrieveType.unknown).toList();
+  static List<RealtimeClientEventConversationItemRetrieveType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventConversationItemRetrieveType.unknown).toList();
 }

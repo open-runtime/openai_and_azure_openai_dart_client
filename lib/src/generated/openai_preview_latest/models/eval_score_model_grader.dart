@@ -11,8 +11,8 @@ part 'eval_score_model_grader.mapper.dart';
 
 /// A ScoreModelGrader object that uses a model to assign a score to the input.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalScoreModelGrader with EvalScoreModelGraderMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
+class EvalScoreModelGrader extends EvalTestingCriteriaUnion with EvalScoreModelGraderMappable {
   const EvalScoreModelGrader({
     required this.type,
     required this.name,
@@ -34,6 +34,4 @@ class EvalScoreModelGrader with EvalScoreModelGraderMappable {
   final List<num>? range;
 
   static EvalScoreModelGrader fromJson(Map<String, dynamic> json) => EvalScoreModelGraderMapper.fromJson(json);
-
 }
-

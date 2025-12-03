@@ -34,6 +34,4 @@ class EvalGraderScoreModel with EvalGraderScoreModelMappable {
   final num? passThreshold;
 
   static EvalGraderScoreModel fromJson(Map<String, dynamic> json) => EvalGraderScoreModelMapper.fromJson(json);
-
 }
-

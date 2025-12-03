@@ -8,14 +8,11 @@ part 'batch_usage_input_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchUsageInputTokensDetails with BatchUsageInputTokensDetailsMappable {
-  const BatchUsageInputTokensDetails({
-    required this.cachedTokens,
-  });
+  const BatchUsageInputTokensDetails({required this.cachedTokens});
 
   @MappableField(key: 'cached_tokens')
   final int cachedTokens;
 
-  static BatchUsageInputTokensDetails fromJson(Map<String, dynamic> json) => BatchUsageInputTokensDetailsMapper.fromJson(json);
-
+  static BatchUsageInputTokensDetails fromJson(Map<String, dynamic> json) =>
+      BatchUsageInputTokensDetailsMapper.fromJson(json);
 }
-

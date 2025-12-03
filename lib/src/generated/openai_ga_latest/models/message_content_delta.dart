@@ -25,12 +25,17 @@ import 'message_delta_content_text_object_type.dart';
 
 part 'message_content_delta.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageContentDeltaImageFile,
-  MessageContentDeltaText,
-  MessageContentDeltaRefusal,
-  MessageContentDeltaImageUrl
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    MessageContentDeltaImageFile,
+    MessageContentDeltaText,
+    MessageContentDeltaRefusal,
+    MessageContentDeltaImageUrl,
+  ],
+)
 sealed class MessageContentDelta with MessageContentDeltaMappable {
   const MessageContentDelta();
 
@@ -46,18 +51,23 @@ extension MessageContentDeltaUnionDeserializer on MessageContentDelta {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageContentDeltaImageFile: 'image_file',
-      MessageContentDeltaText: 'text',
-      MessageContentDeltaRefusal: 'refusal',
-      MessageContentDeltaImageUrl: 'image_url',
+      MessageDeltaContentImageFileObject: 'image_file',
+      MessageDeltaContentTextObject: 'text',
+      MessageDeltaContentRefusalObject: 'refusal',
+      MessageDeltaContentImageUrlObject: 'image_url',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageContentDeltaImageFile] => MessageContentDeltaImageFileMapper.fromJson(json),
-      _ when value == effective[MessageContentDeltaText] => MessageContentDeltaTextMapper.fromJson(json),
-      _ when value == effective[MessageContentDeltaRefusal] => MessageContentDeltaRefusalMapper.fromJson(json),
-      _ when value == effective[MessageContentDeltaImageUrl] => MessageContentDeltaImageUrlMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentImageFileObject] =>
+        MessageDeltaContentImageFileObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentTextObject] => MessageDeltaContentTextObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentRefusalObject] => MessageDeltaContentRefusalObjectMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[MessageDeltaContentImageUrlObject] => MessageDeltaContentImageUrlObjectMapper.fromJson(
+        json,
+      ),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageContentDelta'),
     };
   }
@@ -86,11 +96,7 @@ class MessageContentDeltaText extends MessageContentDelta with MessageContentDel
   @MappableField(key: 'text')
   final MessageContentDeltaText? messageContentDeltaText;
 
-  const MessageContentDeltaText({
-    required this.indexField,
-    required this.type,
-    required this.messageContentDeltaText,
-  });
+  const MessageContentDeltaText({required this.indexField, required this.type, required this.messageContentDeltaText});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
@@ -100,11 +106,7 @@ class MessageContentDeltaRefusal extends MessageContentDelta with MessageContent
   final MessageContentDeltaType3 type;
   final String? refusal;
 
-  const MessageContentDeltaRefusal({
-    required this.indexField,
-    required this.type,
-    required this.refusal,
-  });
+  const MessageContentDeltaRefusal({required this.indexField, required this.type, required this.refusal});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')

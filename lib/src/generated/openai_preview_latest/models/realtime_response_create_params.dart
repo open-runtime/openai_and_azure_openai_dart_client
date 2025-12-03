@@ -42,14 +42,16 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
   final num? temperature;
-  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionHook())
+  @MappableField(
+    key: 'max_response_output_tokens',
+    hook: const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionHook(),
+  )
   final RealtimeResponseCreateParamsMaxResponseOutputTokensUnion? maxResponseOutputTokens;
   @MappableField(hook: const RealtimeResponseCreateParamsConversationUnionHook())
   final RealtimeResponseCreateParamsConversationUnion? conversation;
   final Metadata? metadata;
   final List<RealtimeConversationItemWithReference>? input;
 
-  static RealtimeResponseCreateParams fromJson(Map<String, dynamic> json) => RealtimeResponseCreateParamsMapper.fromJson(json);
-
+  static RealtimeResponseCreateParams fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseCreateParamsMapper.fromJson(json);
 }
-

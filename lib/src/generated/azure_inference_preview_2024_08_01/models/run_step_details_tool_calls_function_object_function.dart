@@ -18,7 +18,6 @@ class RunStepDetailsToolCallsFunctionObjectFunction with RunStepDetailsToolCalls
   final String arguments;
   final String? output;
 
-  static RunStepDetailsToolCallsFunctionObjectFunction fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFunctionObjectFunctionMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsFunctionObjectFunction fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsFunctionObjectFunctionMapper.fromJson(json);
 }
-

@@ -11,10 +11,10 @@ part 'speech_audio_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum SpeechAudioDeltaEventType {
   /// Incorrect name has been replaced. Original name: `speech.audio.delta`.
-  @MappableValue('speech.audio.delta') 
+  @MappableValue('speech.audio.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum SpeechAudioDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SpeechAudioDeltaEventType> get $valuesDefined => values.where((value) => value != SpeechAudioDeltaEventType.unknown).toList();
+  static List<SpeechAudioDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != SpeechAudioDeltaEventType.unknown).toList();
 }

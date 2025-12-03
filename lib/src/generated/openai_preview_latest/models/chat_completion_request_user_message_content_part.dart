@@ -26,12 +26,17 @@ import 'chat_completion_request_user_message_content_part_type4.dart';
 
 part 'chat_completion_request_user_message_content_part.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ChatCompletionRequestUserMessageContentPartText,
-  ChatCompletionRequestUserMessageContentPartImageUrl,
-  ChatCompletionRequestUserMessageContentPartInputAudio,
-  ChatCompletionRequestUserMessageContentPartFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ChatCompletionRequestUserMessageContentPartText,
+    ChatCompletionRequestUserMessageContentPartImageUrl,
+    ChatCompletionRequestUserMessageContentPartInputAudio,
+    ChatCompletionRequestUserMessageContentPartFile,
+  ],
+)
 sealed class ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartMappable {
   const ChatCompletionRequestUserMessageContentPart();
 
@@ -47,36 +52,41 @@ extension ChatCompletionRequestUserMessageContentPartUnionDeserializer on ChatCo
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ChatCompletionRequestUserMessageContentPartText: 'text',
-      ChatCompletionRequestUserMessageContentPartImageUrl: 'image_url',
-      ChatCompletionRequestUserMessageContentPartInputAudio: 'input_audio',
-      ChatCompletionRequestUserMessageContentPartFile: 'file',
+      ChatCompletionRequestMessageContentPartText: 'text',
+      ChatCompletionRequestMessageContentPartImage: 'image_url',
+      ChatCompletionRequestMessageContentPartAudio: 'input_audio',
+      ChatCompletionRequestMessageContentPartFile: 'file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ChatCompletionRequestUserMessageContentPartText] => ChatCompletionRequestUserMessageContentPartTextMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestUserMessageContentPartImageUrl] => ChatCompletionRequestUserMessageContentPartImageUrlMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestUserMessageContentPartInputAudio] => ChatCompletionRequestUserMessageContentPartInputAudioMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestUserMessageContentPartFile] => ChatCompletionRequestUserMessageContentPartFileMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChatCompletionRequestUserMessageContentPart'),
+      _ when value == effective[ChatCompletionRequestMessageContentPartText] =>
+        ChatCompletionRequestMessageContentPartTextMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartImage] =>
+        ChatCompletionRequestMessageContentPartImageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartAudio] =>
+        ChatCompletionRequestMessageContentPartAudioMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartFile] =>
+        ChatCompletionRequestMessageContentPartFileMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for ChatCompletionRequestUserMessageContentPart',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class ChatCompletionRequestUserMessageContentPartText extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartTextMappable {
+class ChatCompletionRequestUserMessageContentPartText extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestUserMessageContentPartTextMappable {
   final ChatCompletionRequestUserMessageContentPartType type;
   final String text;
 
-  const ChatCompletionRequestUserMessageContentPartText({
-    required this.type,
-    required this.text,
-  });
+  const ChatCompletionRequestUserMessageContentPartText({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
-class ChatCompletionRequestUserMessageContentPartImageUrl extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartImageUrlMappable {
+class ChatCompletionRequestUserMessageContentPartImageUrl extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestUserMessageContentPartImageUrlMappable {
   final ChatCompletionRequestUserMessageContentPartType2 type;
   @MappableField(key: 'image_url')
   final ChatCompletionRequestUserMessageContentPartImageUrl chatCompletionRequestUserMessageContentPartImageUrl;
@@ -88,7 +98,8 @@ class ChatCompletionRequestUserMessageContentPartImageUrl extends ChatCompletion
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio')
-class ChatCompletionRequestUserMessageContentPartInputAudio extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartInputAudioMappable {
+class ChatCompletionRequestUserMessageContentPartInputAudio extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestUserMessageContentPartInputAudioMappable {
   final ChatCompletionRequestUserMessageContentPartType3 type;
   @MappableField(key: 'input_audio')
   final ChatCompletionRequestUserMessageContentPartInputAudio chatCompletionRequestUserMessageContentPartInputAudio;
@@ -100,7 +111,8 @@ class ChatCompletionRequestUserMessageContentPartInputAudio extends ChatCompleti
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file')
-class ChatCompletionRequestUserMessageContentPartFile extends ChatCompletionRequestUserMessageContentPart with ChatCompletionRequestUserMessageContentPartFileMappable {
+class ChatCompletionRequestUserMessageContentPartFile extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestUserMessageContentPartFileMappable {
   final ChatCompletionRequestUserMessageContentPartType4 type;
   @MappableField(key: 'file')
   final ChatCompletionRequestUserMessageContentPartFile chatCompletionRequestUserMessageContentPartFile;

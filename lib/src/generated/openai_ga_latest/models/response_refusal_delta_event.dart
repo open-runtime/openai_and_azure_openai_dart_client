@@ -10,8 +10,8 @@ import 'response_stream_event.dart';
 part 'response_refusal_delta_event.mapper.dart';
 
 /// Emitted when there is a partial refusal text.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseRefusalDeltaEvent with ResponseRefusalDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.refusal.delta')
+class ResponseRefusalDeltaEvent extends ResponseStreamEvent with ResponseRefusalDeltaEventMappable {
   const ResponseRefusalDeltaEvent({
     required this.type,
     required this.itemId,
@@ -32,7 +32,6 @@ class ResponseRefusalDeltaEvent with ResponseRefusalDeltaEventMappable {
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseRefusalDeltaEvent fromJson(Map<String, dynamic> json) => ResponseRefusalDeltaEventMapper.fromJson(json);
-
+  static ResponseRefusalDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseRefusalDeltaEventMapper.fromJson(json);
 }
-

@@ -10,13 +10,10 @@ import 'response_stream_event.dart';
 part 'response_file_search_call_searching_event.mapper.dart';
 
 /// Emitted when a file search is currently searching.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingEventMappable {
-  const ResponseFileSearchCallSearchingEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.searching')
+class ResponseFileSearchCallSearchingEvent extends ResponseStreamEvent
+    with ResponseFileSearchCallSearchingEventMappable {
+  const ResponseFileSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId});
 
   final ResponseFileSearchCallSearchingEventType type;
   @MappableField(key: 'output_index')
@@ -24,7 +21,6 @@ class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingE
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseFileSearchCallSearchingEvent fromJson(Map<String, dynamic> json) => ResponseFileSearchCallSearchingEventMapper.fromJson(json);
-
+  static ResponseFileSearchCallSearchingEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFileSearchCallSearchingEventMapper.fromJson(json);
 }
-

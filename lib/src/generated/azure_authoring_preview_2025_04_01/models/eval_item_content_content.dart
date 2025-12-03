@@ -13,15 +13,10 @@ part 'eval_item_content_content.mapper.dart';
 /// Text inputs to the model - can contain template strings.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentContent with EvalItemContentContentMappable {
-  const EvalItemContentContent({
-    required this.type,
-    required this.text,
-  });
+  const EvalItemContentContent({required this.type, required this.text});
 
   final ContentType type;
   final String text;
 
   static EvalItemContentContent fromJson(Map<String, dynamic> json) => EvalItemContentContentMapper.fromJson(json);
-
 }
-

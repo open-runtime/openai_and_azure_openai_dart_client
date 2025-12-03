@@ -11,15 +11,11 @@ part 'connection_string_connection.mapper.dart';
 /// Connection string connection.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ConnectionStringConnection with ConnectionStringConnectionMappable {
-  const ConnectionStringConnection({
-    required this.kind,
-    this.connectionString,
-  });
+  const ConnectionStringConnection({required this.kind, this.connectionString});
 
   final ConnectionType kind;
   final String? connectionString;
 
-  static ConnectionStringConnection fromJson(Map<String, dynamic> json) => ConnectionStringConnectionMapper.fromJson(json);
-
+  static ConnectionStringConnection fromJson(Map<String, dynamic> json) =>
+      ConnectionStringConnectionMapper.fromJson(json);
 }
-

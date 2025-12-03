@@ -8,17 +8,12 @@ part 'transcript_text_delta_event_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextDeltaEventLogprobs with TranscriptTextDeltaEventLogprobsMappable {
-  const TranscriptTextDeltaEventLogprobs({
-    this.token,
-    this.logprob,
-    this.bytes,
-  });
+  const TranscriptTextDeltaEventLogprobs({this.token, this.logprob, this.bytes});
 
   final String? token;
   final num? logprob;
   final List<int>? bytes;
 
-  static TranscriptTextDeltaEventLogprobs fromJson(Map<String, dynamic> json) => TranscriptTextDeltaEventLogprobsMapper.fromJson(json);
-
+  static TranscriptTextDeltaEventLogprobs fromJson(Map<String, dynamic> json) =>
+      TranscriptTextDeltaEventLogprobsMapper.fromJson(json);
 }
-

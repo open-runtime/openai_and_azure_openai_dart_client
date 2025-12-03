@@ -11,8 +11,9 @@ part 'realtime_server_event_conversation_created.mapper.dart';
 
 /// Returned when a conversation is created. Emitted right after session creation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationCreated with RealtimeServerEventConversationCreatedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.created')
+class RealtimeServerEventConversationCreated extends RealtimeServerEvent
+    with RealtimeServerEventConversationCreatedMappable {
   const RealtimeServerEventConversationCreated({
     required this.eventId,
     required this.type,
@@ -25,7 +26,6 @@ class RealtimeServerEventConversationCreated with RealtimeServerEventConversatio
   @MappableField(key: 'conversation')
   final RealtimeServerEventConversationCreatedConversation realtimeServerEventConversationCreatedConversation;
 
-  static RealtimeServerEventConversationCreated fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationCreatedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationCreated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationCreatedMapper.fromJson(json);
 }
-

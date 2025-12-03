@@ -16,15 +16,11 @@ part 'fine_tune_reinforcement_request_input.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneReinforcementRequestInput with FineTuneReinforcementRequestInputMappable {
-  const FineTuneReinforcementRequestInput({
-    required this.messages,
-    this.tools,
-  });
+  const FineTuneReinforcementRequestInput({required this.messages, this.tools});
 
   final List<FineTuneReinforcementRequestInputMessagesUnion> messages;
   final List<ChatCompletionTool>? tools;
 
-  static FineTuneReinforcementRequestInput fromJson(Map<String, dynamic> json) => FineTuneReinforcementRequestInputMapper.fromJson(json);
-
+  static FineTuneReinforcementRequestInput fromJson(Map<String, dynamic> json) =>
+      FineTuneReinforcementRequestInputMapper.fromJson(json);
 }
-

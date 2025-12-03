@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_mcp_call_completed.mapper.dart';
 
 /// Returned when an MCP tool call has completed successfully.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseMcpCallCompleted with RealtimeServerEventResponseMcpCallCompletedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.completed')
+class RealtimeServerEventResponseMcpCallCompleted extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallCompletedMappable {
   const RealtimeServerEventResponseMcpCallCompleted({
     required this.eventId,
     required this.type,
@@ -26,7 +27,6 @@ class RealtimeServerEventResponseMcpCallCompleted with RealtimeServerEventRespon
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventResponseMcpCallCompleted fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseMcpCallCompletedMapper.fromJson(json);
-
+  static RealtimeServerEventResponseMcpCallCompleted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseMcpCallCompletedMapper.fromJson(json);
 }
-

@@ -10,18 +10,13 @@ part 'delete_vector_store_file_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteVectorStoreFileResponse with DeleteVectorStoreFileResponseMappable {
-  const DeleteVectorStoreFileResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectEnum,
-  });
+  const DeleteVectorStoreFileResponse({required this.id, required this.deleted, required this.objectEnum});
 
   final String id;
   final bool deleted;
   @MappableField(key: 'object')
   final DeleteVectorStoreFileResponseObjectObjectEnum objectEnum;
 
-  static DeleteVectorStoreFileResponse fromJson(Map<String, dynamic> json) => DeleteVectorStoreFileResponseMapper.fromJson(json);
-
+  static DeleteVectorStoreFileResponse fromJson(Map<String, dynamic> json) =>
+      DeleteVectorStoreFileResponseMapper.fromJson(json);
 }
-

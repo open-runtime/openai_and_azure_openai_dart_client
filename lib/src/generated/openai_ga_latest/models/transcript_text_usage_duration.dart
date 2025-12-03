@@ -9,17 +9,14 @@ import 'transcript_text_usage_duration_type.dart';
 part 'transcript_text_usage_duration.mapper.dart';
 
 /// Usage statistics for models billed by audio input duration.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TranscriptTextUsageDuration with TranscriptTextUsageDurationMappable {
-  const TranscriptTextUsageDuration({
-    required this.type,
-    required this.seconds,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'duration')
+class TranscriptTextUsageDuration extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
+    with TranscriptTextUsageDurationMappable {
+  const TranscriptTextUsageDuration({required this.type, required this.seconds});
 
   final TranscriptTextUsageDurationType type;
   final num seconds;
 
-  static TranscriptTextUsageDuration fromJson(Map<String, dynamic> json) => TranscriptTextUsageDurationMapper.fromJson(json);
-
+  static TranscriptTextUsageDuration fromJson(Map<String, dynamic> json) =>
+      TranscriptTextUsageDurationMapper.fromJson(json);
 }
-

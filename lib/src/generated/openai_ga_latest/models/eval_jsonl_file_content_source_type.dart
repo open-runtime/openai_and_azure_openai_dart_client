@@ -9,10 +9,10 @@ part 'eval_jsonl_file_content_source_type.mapper.dart';
 /// The type of jsonl source. Always `file_content`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalJsonlFileContentSourceType {
-  @MappableValue('file_content') 
+  @MappableValue('file_content')
   fileContent,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalJsonlFileContentSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalJsonlFileContentSourceType> get $valuesDefined => values.where((value) => value != EvalJsonlFileContentSourceType.unknown).toList();
+  static List<EvalJsonlFileContentSourceType> get $valuesDefined =>
+      values.where((value) => value != EvalJsonlFileContentSourceType.unknown).toList();
 }

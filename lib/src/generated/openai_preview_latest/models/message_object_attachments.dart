@@ -10,16 +10,11 @@ part 'message_object_attachments.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageObjectAttachments with MessageObjectAttachmentsMappable {
-  const MessageObjectAttachments({
-    this.fileId,
-    this.tools,
-  });
+  const MessageObjectAttachments({this.fileId, this.tools});
 
   @MappableField(key: 'file_id')
   final String? fileId;
   final List<MessageObjectAttachmentsToolsUnion>? tools;
 
   static MessageObjectAttachments fromJson(Map<String, dynamic> json) => MessageObjectAttachmentsMapper.fromJson(json);
-
 }
-

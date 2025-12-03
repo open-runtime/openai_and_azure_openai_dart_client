@@ -9,38 +9,38 @@ part 'type_discriminator.mapper.dart';
 /// Defines the type of an object.
 @MappableEnum(defaultValue: 'unknown')
 enum TypeDiscriminator {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
   /// Incorrect name has been replaced. Original name: `fine_tuning.job`.
-  @MappableValue('fine_tuning.job') 
+  @MappableValue('fine_tuning.job')
   undefined0,
 
-  @MappableValue('file') 
+  @MappableValue('file')
   file,
 
   /// Incorrect name has been replaced. Original name: `fine_tuning.job.event`.
-  @MappableValue('fine_tuning.job.event') 
+  @MappableValue('fine_tuning.job.event')
   undefined1,
 
   /// Incorrect name has been replaced. Original name: `fine_tuning.job.checkpoint`.
-  @MappableValue('fine_tuning.job.checkpoint') 
+  @MappableValue('fine_tuning.job.checkpoint')
   undefined2,
 
-  @MappableValue('model') 
+  @MappableValue('model')
   model,
 
-  @MappableValue('upload') 
+  @MappableValue('upload')
   upload,
 
   /// Incorrect name has been replaced. Original name: `upload.part`.
-  @MappableValue('upload.part') 
+  @MappableValue('upload.part')
   undefined3,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -49,5 +49,6 @@ enum TypeDiscriminator {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TypeDiscriminator> get $valuesDefined => values.where((value) => value != TypeDiscriminator.unknown).toList();
+  static List<TypeDiscriminator> get $valuesDefined =>
+      values.where((value) => value != TypeDiscriminator.unknown).toList();
 }

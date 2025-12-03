@@ -19,8 +19,9 @@ import 'realtime_truncation.dart';
 part 'realtime_session_create_request_ga.mapper.dart';
 
 /// Realtime session object configuration.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestGa with RealtimeSessionCreateRequestGaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
+class RealtimeSessionCreateRequestGa extends RealtimeServerEventSessionUpdatedSessionUnion
+    with RealtimeSessionCreateRequestGaMappable {
   const RealtimeSessionCreateRequestGa({
     required this.type,
     this.model,
@@ -54,7 +55,6 @@ class RealtimeSessionCreateRequestGa with RealtimeSessionCreateRequestGaMappable
   @MappableField(key: 'tool_choice')
   final RealtimeSessionCreateRequestGaToolChoiceUnion toolChoice;
 
-  static RealtimeSessionCreateRequestGa fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestGaMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestGa fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestGaMapper.fromJson(json);
 }
-

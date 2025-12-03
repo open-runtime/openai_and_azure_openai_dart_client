@@ -11,15 +11,10 @@ part 'batch_file_expiration_after.mapper.dart';
 /// The expiration policy for the output and/or error file that are generated for a batch.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchFileExpirationAfter with BatchFileExpirationAfterMappable {
-  const BatchFileExpirationAfter({
-    required this.anchor,
-    required this.seconds,
-  });
+  const BatchFileExpirationAfter({required this.anchor, required this.seconds});
 
   final BatchFileExpirationAfterAnchor anchor;
   final int seconds;
 
   static BatchFileExpirationAfter fromJson(Map<String, dynamic> json) => BatchFileExpirationAfterMapper.fromJson(json);
-
 }
-

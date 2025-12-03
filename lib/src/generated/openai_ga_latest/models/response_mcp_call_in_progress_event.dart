@@ -11,8 +11,8 @@ part 'response_mcp_call_in_progress_event.mapper.dart';
 
 /// Emitted when an MCP  tool call is in progress.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpCallInProgressEvent with ResponseMcpCallInProgressEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.in_progress')
+class ResponseMcpCallInProgressEvent extends ResponseStreamEvent with ResponseMcpCallInProgressEventMappable {
   const ResponseMcpCallInProgressEvent({
     required this.type,
     required this.sequenceNumber,
@@ -28,7 +28,6 @@ class ResponseMcpCallInProgressEvent with ResponseMcpCallInProgressEventMappable
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseMcpCallInProgressEvent fromJson(Map<String, dynamic> json) => ResponseMcpCallInProgressEventMapper.fromJson(json);
-
+  static ResponseMcpCallInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpCallInProgressEventMapper.fromJson(json);
 }
-

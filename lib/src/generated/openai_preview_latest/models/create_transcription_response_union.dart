@@ -12,7 +12,14 @@ import 'create_transcription_response_verbose_json.dart';
 
 part 'create_transcription_response_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateTranscriptionResponseUnionCreateTranscriptionResponseJson, CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateTranscriptionResponseUnionCreateTranscriptionResponseJson,
+    CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson,
+  ],
+)
 sealed class CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionMappable {
   const CreateTranscriptionResponseUnion();
 
@@ -30,24 +37,22 @@ extension CreateTranscriptionResponseUnionDeserializer on CreateTranscriptionRes
       return CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJsonMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for CreateTranscriptionResponseUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateTranscriptionResponseUnionCreateTranscriptionResponseJson extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionCreateTranscriptionResponseJsonMappable {
+class CreateTranscriptionResponseUnionCreateTranscriptionResponseJson extends CreateTranscriptionResponseUnion
+    with CreateTranscriptionResponseUnionCreateTranscriptionResponseJsonMappable {
   final String text;
   final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
 
-  const CreateTranscriptionResponseUnionCreateTranscriptionResponseJson({
-    required this.text,
-    required this.logprobs,
-  });
+  const CreateTranscriptionResponseUnionCreateTranscriptionResponseJson({required this.text, required this.logprobs});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJsonMappable {
+class CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJson extends CreateTranscriptionResponseUnion
+    with CreateTranscriptionResponseUnionCreateTranscriptionResponseVerboseJsonMappable {
   final String language;
   final num duration;
   final String text;

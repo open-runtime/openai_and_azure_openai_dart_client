@@ -13,14 +13,7 @@ part 'content_filter_results_base.mapper.dart';
 /// Information about the content filtering results.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterResultsBase with ContentFilterResultsBaseMappable {
-  const ContentFilterResultsBase({
-    this.sexual,
-    this.violence,
-    this.hate,
-    this.selfHarm,
-    this.profanity,
-    this.error,
-  });
+  const ContentFilterResultsBase({this.sexual, this.violence, this.hate, this.selfHarm, this.profanity, this.error});
 
   final ContentFilterSeverityResult? sexual;
   final ContentFilterSeverityResult? violence;
@@ -31,6 +24,4 @@ class ContentFilterResultsBase with ContentFilterResultsBaseMappable {
   final ErrorBase? error;
 
   static ContentFilterResultsBase fromJson(Map<String, dynamic> json) => ContentFilterResultsBaseMapper.fromJson(json);
-
 }
-

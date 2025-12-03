@@ -11,13 +11,7 @@ part 'model_response_properties.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelResponseProperties with ModelResponsePropertiesMappable {
-  const ModelResponseProperties({
-    this.temperature = 1,
-    this.topP = 1,
-    this.metadata,
-    this.user,
-    this.serviceTier,
-  });
+  const ModelResponseProperties({this.temperature = 1, this.topP = 1, this.metadata, this.user, this.serviceTier});
 
   final num? temperature;
   @MappableField(key: 'top_p')
@@ -28,6 +22,4 @@ class ModelResponseProperties with ModelResponsePropertiesMappable {
   final ServiceTier? serviceTier;
 
   static ModelResponseProperties fromJson(Map<String, dynamic> json) => ModelResponsePropertiesMapper.fromJson(json);
-
 }
-

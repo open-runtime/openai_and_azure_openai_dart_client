@@ -7,13 +7,14 @@
 
 part of 'double_click_action.dart';
 
-class DoubleClickActionMapper extends ClassMapperBase<DoubleClickAction> {
+class DoubleClickActionMapper extends SubClassMapperBase<DoubleClickAction> {
   DoubleClickActionMapper._();
 
   static DoubleClickActionMapper? _instance;
   static DoubleClickActionMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DoubleClickActionMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       DoubleClickActionTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -44,6 +45,14 @@ class DoubleClickActionMapper extends ClassMapperBase<DoubleClickAction> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'double_click';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static DoubleClickAction _instantiate(DecodingData data) {
     return DoubleClickAction(
@@ -123,7 +132,8 @@ abstract class DoubleClickActionCopyWith<
   $In extends DoubleClickAction,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({int? x, int? y, DoubleClickActionType? type});
   DoubleClickActionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

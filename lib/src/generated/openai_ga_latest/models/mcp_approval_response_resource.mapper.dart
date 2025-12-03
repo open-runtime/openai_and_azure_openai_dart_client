@@ -8,7 +8,7 @@
 part of 'mcp_approval_response_resource.dart';
 
 class McpApprovalResponseResourceMapper
-    extends ClassMapperBase<McpApprovalResponseResource> {
+    extends SubClassMapperBase<McpApprovalResponseResource> {
   McpApprovalResponseResourceMapper._();
 
   static McpApprovalResponseResourceMapper? _instance;
@@ -17,6 +17,7 @@ class McpApprovalResponseResourceMapper
       MapperContainer.globals.use(
         _instance = McpApprovalResponseResourceMapper._(),
       );
+      ItemResourceMapper.ensureInitialized().addSubMapper(_instance!);
       McpApprovalResponseResourceTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -70,6 +71,14 @@ class McpApprovalResponseResourceMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp_approval_response';
+  @override
+  late final ClassMapperBase superMapper =
+      ItemResourceMapper.ensureInitialized();
 
   static McpApprovalResponseResource _instantiate(DecodingData data) {
     return McpApprovalResponseResource(
@@ -154,7 +163,8 @@ abstract class McpApprovalResponseResourceCopyWith<
   $In extends McpApprovalResponseResource,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ItemResourceCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     McpApprovalResponseResourceType? type,
     String? id,

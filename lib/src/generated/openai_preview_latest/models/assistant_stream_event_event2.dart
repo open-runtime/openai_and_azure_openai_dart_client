@@ -8,10 +8,10 @@ part 'assistant_stream_event_event2.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantStreamEventEvent2 {
-  @MappableValue('done') 
+  @MappableValue('done')
   done,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum AssistantStreamEventEvent2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantStreamEventEvent2> get $valuesDefined => values.where((value) => value != AssistantStreamEventEvent2.unknown).toList();
+  static List<AssistantStreamEventEvent2> get $valuesDefined =>
+      values.where((value) => value != AssistantStreamEventEvent2.unknown).toList();
 }

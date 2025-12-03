@@ -10,16 +10,16 @@ part 'image_edit_stream_event_output_format_output_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditStreamEventOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageEditStreamEventOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditStreamEventOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImageEditStreamEventOutputFormatOutputFormat.unknown).toList();
+  static List<ImageEditStreamEventOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImageEditStreamEventOutputFormatOutputFormat.unknown).toList();
 }

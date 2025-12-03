@@ -10,10 +10,10 @@ part 'create_embedding_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEmbeddingResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CreateEmbeddingResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEmbeddingResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != CreateEmbeddingResponseObjectObjectEnum.unknown).toList();
+  static List<CreateEmbeddingResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != CreateEmbeddingResponseObjectObjectEnum.unknown).toList();
 }

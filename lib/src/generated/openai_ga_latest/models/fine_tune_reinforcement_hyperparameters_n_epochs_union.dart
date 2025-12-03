@@ -8,8 +8,16 @@ part 'fine_tune_reinforcement_hyperparameters_n_epochs_union.mapper.dart';
 
 /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneReinforcementHyperparametersNEpochsUnionVariantString, FineTuneReinforcementHyperparametersNEpochsUnionVariantInt])
-sealed class FineTuneReinforcementHyperparametersNEpochsUnion with FineTuneReinforcementHyperparametersNEpochsUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneReinforcementHyperparametersNEpochsUnionVariantString,
+    FineTuneReinforcementHyperparametersNEpochsUnionVariantInt,
+  ],
+)
+sealed class FineTuneReinforcementHyperparametersNEpochsUnion
+    with FineTuneReinforcementHyperparametersNEpochsUnionMappable {
   const FineTuneReinforcementHyperparametersNEpochsUnion();
 
   static FineTuneReinforcementHyperparametersNEpochsUnion fromJson(dynamic json) {
@@ -17,7 +25,8 @@ sealed class FineTuneReinforcementHyperparametersNEpochsUnion with FineTuneReinf
   }
 }
 
-extension FineTuneReinforcementHyperparametersNEpochsUnionDeserializer on FineTuneReinforcementHyperparametersNEpochsUnion {
+extension FineTuneReinforcementHyperparametersNEpochsUnionDeserializer
+    on FineTuneReinforcementHyperparametersNEpochsUnion {
   static FineTuneReinforcementHyperparametersNEpochsUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -33,31 +42,34 @@ extension FineTuneReinforcementHyperparametersNEpochsUnionDeserializer on FineTu
       return FineTuneReinforcementHyperparametersNEpochsUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneReinforcementHyperparametersNEpochsUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneReinforcementHyperparametersNEpochsUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersNEpochsUnionVariantString extends FineTuneReinforcementHyperparametersNEpochsUnion with FineTuneReinforcementHyperparametersNEpochsUnionVariantStringMappable {
+class FineTuneReinforcementHyperparametersNEpochsUnionVariantString
+    extends FineTuneReinforcementHyperparametersNEpochsUnion
+    with FineTuneReinforcementHyperparametersNEpochsUnionVariantStringMappable {
   final String value;
 
-  const FineTuneReinforcementHyperparametersNEpochsUnionVariantString({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersNEpochsUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersNEpochsUnionVariantInt extends FineTuneReinforcementHyperparametersNEpochsUnion with FineTuneReinforcementHyperparametersNEpochsUnionVariantIntMappable {
+class FineTuneReinforcementHyperparametersNEpochsUnionVariantInt
+    extends FineTuneReinforcementHyperparametersNEpochsUnion
+    with FineTuneReinforcementHyperparametersNEpochsUnionVariantIntMappable {
   final int value;
 
-  const FineTuneReinforcementHyperparametersNEpochsUnionVariantInt({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersNEpochsUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension FineTuneReinforcementHyperparametersNEpochsUnionJsonValue on FineTuneReinforcementHyperparametersNEpochsUnion {
+extension FineTuneReinforcementHyperparametersNEpochsUnionJsonValue
+    on FineTuneReinforcementHyperparametersNEpochsUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {

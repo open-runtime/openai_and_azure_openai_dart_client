@@ -10,15 +10,11 @@ part 'response_reasoning_summary_part_done_event_part.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseReasoningSummaryPartDoneEventPart with ResponseReasoningSummaryPartDoneEventPartMappable {
-  const ResponseReasoningSummaryPartDoneEventPart({
-    required this.type,
-    required this.text,
-  });
+  const ResponseReasoningSummaryPartDoneEventPart({required this.type, required this.text});
 
   final ResponseReasoningSummaryPartDoneEventPartType type;
   final String text;
 
-  static ResponseReasoningSummaryPartDoneEventPart fromJson(Map<String, dynamic> json) => ResponseReasoningSummaryPartDoneEventPartMapper.fromJson(json);
-
+  static ResponseReasoningSummaryPartDoneEventPart fromJson(Map<String, dynamic> json) =>
+      ResponseReasoningSummaryPartDoneEventPartMapper.fromJson(json);
 }
-

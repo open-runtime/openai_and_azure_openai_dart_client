@@ -12,12 +12,7 @@ part 'chat_completion_request_message_assistant.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageAssistant with ChatCompletionRequestMessageAssistantMappable {
-  const ChatCompletionRequestMessageAssistant({
-    required this.role,
-    this.content,
-    this.toolCalls,
-    this.context,
-  });
+  const ChatCompletionRequestMessageAssistant({required this.role, this.content, this.toolCalls, this.context});
 
   final ChatCompletionRequestMessageRole role;
   final String? content;
@@ -25,7 +20,6 @@ class ChatCompletionRequestMessageAssistant with ChatCompletionRequestMessageAss
   final List<ChatCompletionMessageToolCall>? toolCalls;
   final AzureChatExtensionsMessageContext? context;
 
-  static ChatCompletionRequestMessageAssistant fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageAssistantMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageAssistant fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageAssistantMapper.fromJson(json);
 }
-

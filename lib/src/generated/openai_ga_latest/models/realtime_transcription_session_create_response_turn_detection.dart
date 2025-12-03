@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_transcription_session_create_response_turn_detection.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeTranscriptionSessionCreateResponseTurnDetection with RealtimeTranscriptionSessionCreateResponseTurnDetectionMappable {
+class RealtimeTranscriptionSessionCreateResponseTurnDetection
+    with RealtimeTranscriptionSessionCreateResponseTurnDetectionMappable {
   const RealtimeTranscriptionSessionCreateResponseTurnDetection({
     this.type,
     this.threshold,
@@ -22,7 +23,6 @@ class RealtimeTranscriptionSessionCreateResponseTurnDetection with RealtimeTrans
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
 
-  static RealtimeTranscriptionSessionCreateResponseTurnDetection fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseTurnDetectionMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateResponseTurnDetection fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateResponseTurnDetectionMapper.fromJson(json);
 }
-

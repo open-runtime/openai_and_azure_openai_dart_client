@@ -9,10 +9,10 @@ part 'usage_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum UsageResponseObjectObjectEnum {
-  @MappableValue('page') 
+  @MappableValue('page')
   page,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum UsageResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageResponseObjectObjectEnum.unknown).toList();
+  static List<UsageResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageResponseObjectObjectEnum.unknown).toList();
 }

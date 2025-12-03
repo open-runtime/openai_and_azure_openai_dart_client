@@ -9,10 +9,10 @@ part 'apply_patch_delete_file_operation_type.mapper.dart';
 /// Delete the specified file.
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchDeleteFileOperationType {
-  @MappableValue('delete_file') 
+  @MappableValue('delete_file')
   deleteFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ApplyPatchDeleteFileOperationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchDeleteFileOperationType> get $valuesDefined => values.where((value) => value != ApplyPatchDeleteFileOperationType.unknown).toList();
+  static List<ApplyPatchDeleteFileOperationType> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchDeleteFileOperationType.unknown).toList();
 }

@@ -10,16 +10,16 @@ part 'image_edit_stream_event_background.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditStreamEventBackground {
-  @MappableValue('transparent') 
+  @MappableValue('transparent')
   transparent,
 
-  @MappableValue('opaque') 
+  @MappableValue('opaque')
   opaque,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageEditStreamEventBackground {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditStreamEventBackground> get $valuesDefined => values.where((value) => value != ImageEditStreamEventBackground.unknown).toList();
+  static List<ImageEditStreamEventBackground> get $valuesDefined =>
+      values.where((value) => value != ImageEditStreamEventBackground.unknown).toList();
 }

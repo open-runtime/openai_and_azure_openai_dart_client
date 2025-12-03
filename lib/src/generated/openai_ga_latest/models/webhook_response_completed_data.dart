@@ -8,13 +8,10 @@ part 'webhook_response_completed_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCompletedData with WebhookResponseCompletedDataMappable {
-  const WebhookResponseCompletedData({
-    required this.id,
-  });
+  const WebhookResponseCompletedData({required this.id});
 
   final String id;
 
-  static WebhookResponseCompletedData fromJson(Map<String, dynamic> json) => WebhookResponseCompletedDataMapper.fromJson(json);
-
+  static WebhookResponseCompletedData fromJson(Map<String, dynamic> json) =>
+      WebhookResponseCompletedDataMapper.fromJson(json);
 }
-

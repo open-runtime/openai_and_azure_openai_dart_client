@@ -9,16 +9,11 @@ part 'history_param.mapper.dart';
 /// Controls how much historical context is retained for the session.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class HistoryParam with HistoryParamMappable {
-  const HistoryParam({
-    this.enabled,
-    this.recentThreads,
-  });
+  const HistoryParam({this.enabled, this.recentThreads});
 
   final bool? enabled;
   @MappableField(key: 'recent_threads')
   final int? recentThreads;
 
   static HistoryParam fromJson(Map<String, dynamic> json) => HistoryParamMapper.fromJson(json);
-
 }
-

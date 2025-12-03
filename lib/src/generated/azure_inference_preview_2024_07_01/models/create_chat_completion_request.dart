@@ -71,7 +71,6 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final int? seed;
   final bool? logprobs;
 
-  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestMapper.fromJson(json);
-
+  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestMapper.fromJson(json);
 }
-

@@ -12,16 +12,11 @@ part 'code_interpreter_tool.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterTool with CodeInterpreterToolMappable {
-  const CodeInterpreterTool({
-    required this.type,
-    required this.fileIds,
-  });
+  const CodeInterpreterTool({required this.type, required this.fileIds});
 
   final CodeInterpreterToolType type;
   @MappableField(key: 'file_ids')
   final List<String> fileIds;
 
   static CodeInterpreterTool fromJson(Map<String, dynamic> json) => CodeInterpreterToolMapper.fromJson(json);
-
 }
-

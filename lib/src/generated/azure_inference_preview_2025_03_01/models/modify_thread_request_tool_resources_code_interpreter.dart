@@ -8,14 +8,11 @@ part 'modify_thread_request_tool_resources_code_interpreter.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyThreadRequestToolResourcesCodeInterpreter with ModifyThreadRequestToolResourcesCodeInterpreterMappable {
-  const ModifyThreadRequestToolResourcesCodeInterpreter({
-    this.fileIds = const [],
-  });
+  const ModifyThreadRequestToolResourcesCodeInterpreter({this.fileIds = const []});
 
   @MappableField(key: 'file_ids')
   final List<String> fileIds;
 
-  static ModifyThreadRequestToolResourcesCodeInterpreter fromJson(Map<String, dynamic> json) => ModifyThreadRequestToolResourcesCodeInterpreterMapper.fromJson(json);
-
+  static ModifyThreadRequestToolResourcesCodeInterpreter fromJson(Map<String, dynamic> json) =>
+      ModifyThreadRequestToolResourcesCodeInterpreterMapper.fromJson(json);
 }
-

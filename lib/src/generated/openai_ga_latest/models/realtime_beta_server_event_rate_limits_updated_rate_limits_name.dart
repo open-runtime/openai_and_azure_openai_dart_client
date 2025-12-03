@@ -10,13 +10,13 @@ part 'realtime_beta_server_event_rate_limits_updated_rate_limits_name.mapper.dar
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName {
-  @MappableValue('requests') 
+  @MappableValue('requests')
   requests,
 
-  @MappableValue('tokens') 
+  @MappableValue('tokens')
   tokens,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName> get $valuesDefined => values.where((value) => value != RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName.unknown).toList();
+  static List<RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'run_step_delta_step_details_tool_calls_code_output_logs_object_type.mapper
 /// Always `logs`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType {
-  @MappableValue('logs') 
+  @MappableValue('logs')
   logs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType.unknown).toList();
 }

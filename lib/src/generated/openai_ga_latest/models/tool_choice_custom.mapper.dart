@@ -7,13 +7,14 @@
 
 part of 'tool_choice_custom.dart';
 
-class ToolChoiceCustomMapper extends ClassMapperBase<ToolChoiceCustom> {
+class ToolChoiceCustomMapper extends SubClassMapperBase<ToolChoiceCustom> {
   ToolChoiceCustomMapper._();
 
   static ToolChoiceCustomMapper? _instance;
   static ToolChoiceCustomMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceCustomMapper._());
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       ToolChoiceCustomTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -39,6 +40,14 @@ class ToolChoiceCustomMapper extends ClassMapperBase<ToolChoiceCustom> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'custom';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static ToolChoiceCustom _instantiate(DecodingData data) {
     return ToolChoiceCustom(type: data.dec(_f$type), name: data.dec(_f$name));
@@ -105,7 +114,8 @@ extension ToolChoiceCustomValueCopy<$R, $Out>
 }
 
 abstract class ToolChoiceCustomCopyWith<$R, $In extends ToolChoiceCustom, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({ToolChoiceCustomType? type, String? name});
   ToolChoiceCustomCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

@@ -11,8 +11,8 @@ import 'widget_message_item_type.dart';
 part 'widget_message_item.mapper.dart';
 
 /// Thread item that renders a widget payload.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class WidgetMessageItem with WidgetMessageItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.widget')
+class WidgetMessageItem extends ThreadItem with WidgetMessageItemMappable {
   const WidgetMessageItem({
     required this.id,
     required this.createdAt,
@@ -33,6 +33,4 @@ class WidgetMessageItem with WidgetMessageItemMappable {
   final WidgetMessageItemType type;
 
   static WidgetMessageItem fromJson(Map<String, dynamic> json) => WidgetMessageItemMapper.fromJson(json);
-
 }
-

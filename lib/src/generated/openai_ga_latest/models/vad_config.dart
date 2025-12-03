@@ -10,12 +10,7 @@ part 'vad_config.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VadConfig with VadConfigMappable {
-  const VadConfig({
-    required this.type,
-    this.prefixPaddingMs = 300,
-    this.silenceDurationMs = 200,
-    this.threshold = 0.5,
-  });
+  const VadConfig({required this.type, this.prefixPaddingMs = 300, this.silenceDurationMs = 200, this.threshold = 0.5});
 
   final VadConfigType type;
   @MappableField(key: 'prefix_padding_ms')
@@ -25,6 +20,4 @@ class VadConfig with VadConfigMappable {
   final num threshold;
 
   static VadConfig fromJson(Map<String, dynamic> json) => VadConfigMapper.fromJson(json);
-
 }
-

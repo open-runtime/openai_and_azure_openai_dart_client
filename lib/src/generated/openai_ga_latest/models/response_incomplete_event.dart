@@ -12,13 +12,9 @@ part 'response_incomplete_event.mapper.dart';
 
 /// An event that is emitted when a response finishes as incomplete.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseIncompleteEvent with ResponseIncompleteEventMappable {
-  const ResponseIncompleteEvent({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.incomplete')
+class ResponseIncompleteEvent extends ResponseStreamEvent with ResponseIncompleteEventMappable {
+  const ResponseIncompleteEvent({required this.type, required this.response, required this.sequenceNumber});
 
   final ResponseIncompleteEventType type;
   final ResponseModel response;
@@ -26,6 +22,4 @@ class ResponseIncompleteEvent with ResponseIncompleteEventMappable {
   final int sequenceNumber;
 
   static ResponseIncompleteEvent fromJson(Map<String, dynamic> json) => ResponseIncompleteEventMapper.fromJson(json);
-
 }
-

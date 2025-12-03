@@ -8,7 +8,7 @@
 part of 'chat_completion_request_assistant_message.dart';
 
 class ChatCompletionRequestAssistantMessageMapper
-    extends ClassMapperBase<ChatCompletionRequestAssistantMessage> {
+    extends SubClassMapperBase<ChatCompletionRequestAssistantMessage> {
   ChatCompletionRequestAssistantMessageMapper._();
 
   static ChatCompletionRequestAssistantMessageMapper? _instance;
@@ -16,6 +16,9 @@ class ChatCompletionRequestAssistantMessageMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestAssistantMessageMapper._(),
+      );
+      ChatCompletionRequestMessageMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ChatCompletionRequestAssistantMessageRoleMapper.ensureInitialized();
       ChatCompletionRequestAssistantMessageAudioMapper.ensureInitialized();
@@ -100,6 +103,14 @@ class ChatCompletionRequestAssistantMessageMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'role';
+  @override
+  final dynamic discriminatorValue = 'assistant';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestMessageMapper.ensureInitialized();
 
   static ChatCompletionRequestAssistantMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestAssistantMessage(
@@ -196,7 +207,7 @@ abstract class ChatCompletionRequestAssistantMessageCopyWith<
   $In extends ChatCompletionRequestAssistantMessage,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ChatCompletionRequestMessageCopyWith<$R, $In, $Out> {
   ChatCompletionRequestAssistantMessageAudioCopyWith<
     $R,
     ChatCompletionRequestAssistantMessageAudio,
@@ -219,6 +230,7 @@ abstract class ChatCompletionRequestAssistantMessageCopyWith<
     ChatCompletionRequestAssistantMessageFunctionCall
   >?
   get chatCompletionRequestAssistantMessageFunctionCall;
+  @override
   $R call({
     ChatCompletionRequestAssistantMessageRole? role,
     String? content,

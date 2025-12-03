@@ -10,13 +10,9 @@ import 'response_stream_event.dart';
 part 'response_audio_delta_event.mapper.dart';
 
 /// Emitted when there is a partial audio response.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseAudioDeltaEvent with ResponseAudioDeltaEventMappable {
-  const ResponseAudioDeltaEvent({
-    required this.type,
-    required this.sequenceNumber,
-    required this.delta,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.delta')
+class ResponseAudioDeltaEvent extends ResponseStreamEvent with ResponseAudioDeltaEventMappable {
+  const ResponseAudioDeltaEvent({required this.type, required this.sequenceNumber, required this.delta});
 
   final ResponseAudioDeltaEventType type;
   @MappableField(key: 'sequence_number')
@@ -24,6 +20,4 @@ class ResponseAudioDeltaEvent with ResponseAudioDeltaEventMappable {
   final String delta;
 
   static ResponseAudioDeltaEvent fromJson(Map<String, dynamic> json) => ResponseAudioDeltaEventMapper.fromJson(json);
-
 }
-

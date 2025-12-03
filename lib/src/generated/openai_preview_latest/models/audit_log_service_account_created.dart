@@ -10,16 +10,12 @@ part 'audit_log_service_account_created.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogServiceAccountCreated with AuditLogServiceAccountCreatedMappable {
-  const AuditLogServiceAccountCreated({
-    this.id,
-    this.auditLogServiceAccountCreatedData,
-  });
+  const AuditLogServiceAccountCreated({this.id, this.auditLogServiceAccountCreatedData});
 
   final String? id;
   @MappableField(key: 'data')
   final AuditLogServiceAccountCreatedData? auditLogServiceAccountCreatedData;
 
-  static AuditLogServiceAccountCreated fromJson(Map<String, dynamic> json) => AuditLogServiceAccountCreatedMapper.fromJson(json);
-
+  static AuditLogServiceAccountCreated fromJson(Map<String, dynamic> json) =>
+      AuditLogServiceAccountCreatedMapper.fromJson(json);
 }
-

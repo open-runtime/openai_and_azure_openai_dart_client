@@ -8,11 +8,7 @@ part 'speech_audio_done_event_usage.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SpeechAudioDoneEventUsage with SpeechAudioDoneEventUsageMappable {
-  const SpeechAudioDoneEventUsage({
-    required this.inputTokens,
-    required this.outputTokens,
-    required this.totalTokens,
-  });
+  const SpeechAudioDoneEventUsage({required this.inputTokens, required this.outputTokens, required this.totalTokens});
 
   @MappableField(key: 'input_tokens')
   final int inputTokens;
@@ -21,7 +17,6 @@ class SpeechAudioDoneEventUsage with SpeechAudioDoneEventUsageMappable {
   @MappableField(key: 'total_tokens')
   final int totalTokens;
 
-  static SpeechAudioDoneEventUsage fromJson(Map<String, dynamic> json) => SpeechAudioDoneEventUsageMapper.fromJson(json);
-
+  static SpeechAudioDoneEventUsage fromJson(Map<String, dynamic> json) =>
+      SpeechAudioDoneEventUsageMapper.fromJson(json);
 }
-

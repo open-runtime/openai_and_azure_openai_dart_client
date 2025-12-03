@@ -10,10 +10,10 @@ part 'response_stream_event_type40.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventType40 {
   /// Incorrect name has been replaced. Original name: `response.image_generation_call.in_progress`.
-  @MappableValue('response.image_generation_call.in_progress') 
+  @MappableValue('response.image_generation_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseStreamEventType40 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventType40> get $valuesDefined => values.where((value) => value != ResponseStreamEventType40.unknown).toList();
+  static List<ResponseStreamEventType40> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventType40.unknown).toList();
 }

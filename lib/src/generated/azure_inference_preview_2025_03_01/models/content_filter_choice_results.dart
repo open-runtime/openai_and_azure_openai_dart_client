@@ -46,7 +46,6 @@ class ContentFilterChoiceResults with ContentFilterChoiceResultsMappable {
   @MappableField(key: 'ungrounded_material')
   final ContentFilterDetectedWithCompletionTextSpansResult? ungroundedMaterial;
 
-  static ContentFilterChoiceResults fromJson(Map<String, dynamic> json) => ContentFilterChoiceResultsMapper.fromJson(json);
-
+  static ContentFilterChoiceResults fromJson(Map<String, dynamic> json) =>
+      ContentFilterChoiceResultsMapper.fromJson(json);
 }
-

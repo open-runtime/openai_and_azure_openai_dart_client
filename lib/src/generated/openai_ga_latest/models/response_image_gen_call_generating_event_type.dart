@@ -10,10 +10,10 @@ part 'response_image_gen_call_generating_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseImageGenCallGeneratingEventType {
   /// Incorrect name has been replaced. Original name: `response.image_generation_call.generating`.
-  @MappableValue('response.image_generation_call.generating') 
+  @MappableValue('response.image_generation_call.generating')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseImageGenCallGeneratingEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseImageGenCallGeneratingEventType> get $valuesDefined => values.where((value) => value != ResponseImageGenCallGeneratingEventType.unknown).toList();
+  static List<ResponseImageGenCallGeneratingEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseImageGenCallGeneratingEventType.unknown).toList();
 }

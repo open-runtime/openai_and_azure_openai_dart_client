@@ -11,17 +11,11 @@ part 'task_group_task.mapper.dart';
 /// Task entry that appears within a TaskGroup.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TaskGroupTask with TaskGroupTaskMappable {
-  const TaskGroupTask({
-    required this.type,
-    required this.heading,
-    required this.summary,
-  });
+  const TaskGroupTask({required this.type, required this.heading, required this.summary});
 
   final TaskType type;
   final String? heading;
   final String? summary;
 
   static TaskGroupTask fromJson(Map<String, dynamic> json) => TaskGroupTaskMapper.fromJson(json);
-
 }
-

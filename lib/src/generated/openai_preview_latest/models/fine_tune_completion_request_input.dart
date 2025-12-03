@@ -9,15 +9,11 @@ part 'fine_tune_completion_request_input.mapper.dart';
 /// The per-line training example of a fine-tuning input file for completions models
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneCompletionRequestInput with FineTuneCompletionRequestInputMappable {
-  const FineTuneCompletionRequestInput({
-    this.prompt,
-    this.completion,
-  });
+  const FineTuneCompletionRequestInput({this.prompt, this.completion});
 
   final String? prompt;
   final String? completion;
 
-  static FineTuneCompletionRequestInput fromJson(Map<String, dynamic> json) => FineTuneCompletionRequestInputMapper.fromJson(json);
-
+  static FineTuneCompletionRequestInput fromJson(Map<String, dynamic> json) =>
+      FineTuneCompletionRequestInputMapper.fromJson(json);
 }
-

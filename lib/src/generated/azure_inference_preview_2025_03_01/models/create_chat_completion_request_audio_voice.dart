@@ -11,25 +11,25 @@ part 'create_chat_completion_request_audio_voice.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateChatCompletionRequestAudioVoice {
-  @MappableValue('alloy') 
+  @MappableValue('alloy')
   alloy,
 
-  @MappableValue('echo') 
+  @MappableValue('echo')
   echo,
 
-  @MappableValue('fable') 
+  @MappableValue('fable')
   fable,
 
-  @MappableValue('onyx') 
+  @MappableValue('onyx')
   onyx,
 
-  @MappableValue('nova') 
+  @MappableValue('nova')
   nova,
 
-  @MappableValue('shimmer') 
+  @MappableValue('shimmer')
   shimmer,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -38,5 +38,6 @@ enum CreateChatCompletionRequestAudioVoice {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateChatCompletionRequestAudioVoice> get $valuesDefined => values.where((value) => value != CreateChatCompletionRequestAudioVoice.unknown).toList();
+  static List<CreateChatCompletionRequestAudioVoice> get $valuesDefined =>
+      values.where((value) => value != CreateChatCompletionRequestAudioVoice.unknown).toList();
 }

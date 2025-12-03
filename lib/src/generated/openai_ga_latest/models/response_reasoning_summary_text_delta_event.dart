@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_reasoning_summary_text_delta_event.mapper.dart';
 
 /// Emitted when a delta is added to a reasoning summary text.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseReasoningSummaryTextDeltaEvent with ResponseReasoningSummaryTextDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_text.delta')
+class ResponseReasoningSummaryTextDeltaEvent extends ResponseStreamEvent
+    with ResponseReasoningSummaryTextDeltaEventMappable {
   const ResponseReasoningSummaryTextDeltaEvent({
     required this.type,
     required this.itemId,
@@ -32,7 +33,6 @@ class ResponseReasoningSummaryTextDeltaEvent with ResponseReasoningSummaryTextDe
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseReasoningSummaryTextDeltaEvent fromJson(Map<String, dynamic> json) => ResponseReasoningSummaryTextDeltaEventMapper.fromJson(json);
-
+  static ResponseReasoningSummaryTextDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseReasoningSummaryTextDeltaEventMapper.fromJson(json);
 }
-

@@ -38,7 +38,6 @@ class ChatCompletionMessageListDataData with ChatCompletionMessageListDataDataMa
   @MappableField(key: 'audio')
   final ChatCompletionResponseMessageAudio? chatCompletionResponseMessageAudio;
 
-  static ChatCompletionMessageListDataData fromJson(Map<String, dynamic> json) => ChatCompletionMessageListDataDataMapper.fromJson(json);
-
+  static ChatCompletionMessageListDataData fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageListDataDataMapper.fromJson(json);
 }
-

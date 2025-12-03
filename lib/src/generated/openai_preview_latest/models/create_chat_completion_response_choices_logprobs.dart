@@ -10,15 +10,11 @@ part 'create_chat_completion_response_choices_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionResponseChoicesLogprobs with CreateChatCompletionResponseChoicesLogprobsMappable {
-  const CreateChatCompletionResponseChoicesLogprobs({
-    required this.content,
-    required this.refusal,
-  });
+  const CreateChatCompletionResponseChoicesLogprobs({required this.content, required this.refusal});
 
   final List<ChatCompletionTokenLogprob>? content;
   final List<ChatCompletionTokenLogprob>? refusal;
 
-  static CreateChatCompletionResponseChoicesLogprobs fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesLogprobsMapper.fromJson(json);
-
+  static CreateChatCompletionResponseChoicesLogprobs fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseChoicesLogprobsMapper.fromJson(json);
 }
-

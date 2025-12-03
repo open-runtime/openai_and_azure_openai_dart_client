@@ -9,10 +9,10 @@ part 'computer_tool_call_type.mapper.dart';
 /// The type of the computer call. Always `computer_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerToolCallType {
-  @MappableValue('computer_call') 
+  @MappableValue('computer_call')
   computerCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ComputerToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerToolCallType> get $valuesDefined => values.where((value) => value != ComputerToolCallType.unknown).toList();
+  static List<ComputerToolCallType> get $valuesDefined =>
+      values.where((value) => value != ComputerToolCallType.unknown).toList();
 }

@@ -9,8 +9,16 @@ part 'create_fine_tuning_job_request_hyperparameters_learning_rate_multiplier_un
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid.
 /// overfitting.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString, CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum])
-sealed class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString,
+    CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum,
+  ],
+)
+sealed class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion
+    with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionMappable {
   const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion();
 
   static CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion fromJson(dynamic json) {
@@ -18,7 +26,8 @@ sealed class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnio
   }
 }
 
-extension CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionDeserializer on CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion {
+extension CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionDeserializer
+    on CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion {
   static CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -31,34 +40,39 @@ extension CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionDe
 
     // Also handle wrapped format: {'value': ...}
     if (json is Map<String, dynamic> && json.containsKey('value')) {
-      return CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionDeserializer.tryDeserialize(json['value']);
+      return CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionDeserializer.tryDeserialize(
+        json['value'],
+      );
     }
 
-    throw FormatException('Could not determine the correct type for CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString extends CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantStringMappable {
+class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString
+    extends CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion
+    with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantStringMappable {
   final String value;
 
-  const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum extends CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNumMappable {
+class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum
+    extends CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion
+    with CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNumMappable {
   final num value;
 
-  const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionJsonValue on CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion {
+extension CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionJsonValue
+    on CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -88,7 +102,9 @@ class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionHook e
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion.fromJson(value);
     }

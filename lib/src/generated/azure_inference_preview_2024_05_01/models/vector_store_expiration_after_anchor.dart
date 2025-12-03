@@ -9,10 +9,10 @@ part 'vector_store_expiration_after_anchor.mapper.dart';
 /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreExpirationAfterAnchor {
-  @MappableValue('last_active_at') 
+  @MappableValue('last_active_at')
   lastActiveAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum VectorStoreExpirationAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreExpirationAfterAnchor> get $valuesDefined => values.where((value) => value != VectorStoreExpirationAfterAnchor.unknown).toList();
+  static List<VectorStoreExpirationAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != VectorStoreExpirationAfterAnchor.unknown).toList();
 }

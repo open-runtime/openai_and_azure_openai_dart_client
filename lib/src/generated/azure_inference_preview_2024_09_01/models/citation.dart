@@ -9,14 +9,7 @@ part 'citation.mapper.dart';
 /// citation information for a chat completions response message.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Citation with CitationMappable {
-  const Citation({
-    required this.content,
-    this.title,
-    this.url,
-    this.filepath,
-    this.chunkId,
-    this.rerankScore,
-  });
+  const Citation({required this.content, this.title, this.url, this.filepath, this.chunkId, this.rerankScore});
 
   final String content;
   final String? title;
@@ -28,6 +21,4 @@ class Citation with CitationMappable {
   final double? rerankScore;
 
   static Citation fromJson(Map<String, dynamic> json) => CitationMapper.fromJson(json);
-
 }
-

@@ -11,10 +11,10 @@ part 'screenshot_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ScreenshotType {
-  @MappableValue('screenshot') 
+  @MappableValue('screenshot')
   screenshot,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

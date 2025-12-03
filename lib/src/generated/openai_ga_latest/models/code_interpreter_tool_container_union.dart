@@ -13,7 +13,14 @@ part 'code_interpreter_tool_container_union.mapper.dart';
 /// The code interpreter container. Can be a container ID or an object that.
 /// specifies uploaded file IDs to make available to your code.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto, CodeInterpreterToolContainerUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto,
+    CodeInterpreterToolContainerUnionVariantString,
+  ],
+)
 sealed class CodeInterpreterToolContainerUnion with CodeInterpreterToolContainerUnionMappable {
   const CodeInterpreterToolContainerUnion();
 
@@ -31,13 +38,13 @@ extension CodeInterpreterToolContainerUnionDeserializer on CodeInterpreterToolCo
       return CodeInterpreterToolContainerUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for CodeInterpreterToolContainerUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto extends CodeInterpreterToolContainerUnion with CodeInterpreterToolContainerUnionCodeInterpreterContainerAutoMappable {
+class CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto extends CodeInterpreterToolContainerUnion
+    with CodeInterpreterToolContainerUnionCodeInterpreterContainerAutoMappable {
   final CodeInterpreterContainerAutoType type;
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
@@ -52,10 +59,9 @@ class CodeInterpreterToolContainerUnionCodeInterpreterContainerAuto extends Code
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterToolContainerUnionVariantString extends CodeInterpreterToolContainerUnion with CodeInterpreterToolContainerUnionVariantStringMappable {
+class CodeInterpreterToolContainerUnionVariantString extends CodeInterpreterToolContainerUnion
+    with CodeInterpreterToolContainerUnionVariantStringMappable {
   final String value;
 
-  const CodeInterpreterToolContainerUnionVariantString({
-    required this.value,
-  });
+  const CodeInterpreterToolContainerUnionVariantString({required this.value});
 }

@@ -20,7 +20,6 @@ class ChatCompletionResponseMessageAnnotations with ChatCompletionResponseMessag
   @MappableField(key: 'url_citation')
   final ChatCompletionResponseMessageAnnotationsUrlCitation chatCompletionResponseMessageAnnotationsUrlCitation;
 
-  static ChatCompletionResponseMessageAnnotations fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageAnnotationsMapper.fromJson(json);
-
+  static ChatCompletionResponseMessageAnnotations fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageAnnotationsMapper.fromJson(json);
 }
-

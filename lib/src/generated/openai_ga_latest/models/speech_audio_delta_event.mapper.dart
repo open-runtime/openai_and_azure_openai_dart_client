@@ -8,13 +8,16 @@
 part of 'speech_audio_delta_event.dart';
 
 class SpeechAudioDeltaEventMapper
-    extends ClassMapperBase<SpeechAudioDeltaEvent> {
+    extends SubClassMapperBase<SpeechAudioDeltaEvent> {
   SpeechAudioDeltaEventMapper._();
 
   static SpeechAudioDeltaEventMapper? _instance;
   static SpeechAudioDeltaEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = SpeechAudioDeltaEventMapper._());
+      CreateSpeechResponseStreamEventMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       SpeechAudioDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,6 +44,14 @@ class SpeechAudioDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'speech.audio.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      CreateSpeechResponseStreamEventMapper.ensureInitialized();
 
   static SpeechAudioDeltaEvent _instantiate(DecodingData data) {
     return SpeechAudioDeltaEvent(
@@ -118,7 +129,8 @@ abstract class SpeechAudioDeltaEventCopyWith<
   $In extends SpeechAudioDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CreateSpeechResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({SpeechAudioDeltaEventType? type, String? audio});
   SpeechAudioDeltaEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

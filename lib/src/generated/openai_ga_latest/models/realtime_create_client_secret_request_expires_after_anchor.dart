@@ -10,10 +10,10 @@ part 'realtime_create_client_secret_request_expires_after_anchor.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeCreateClientSecretRequestExpiresAfterAnchor {
-  @MappableValue('created_at') 
+  @MappableValue('created_at')
   createdAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeCreateClientSecretRequestExpiresAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeCreateClientSecretRequestExpiresAfterAnchor> get $valuesDefined => values.where((value) => value != RealtimeCreateClientSecretRequestExpiresAfterAnchor.unknown).toList();
+  static List<RealtimeCreateClientSecretRequestExpiresAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != RealtimeCreateClientSecretRequestExpiresAfterAnchor.unknown).toList();
 }

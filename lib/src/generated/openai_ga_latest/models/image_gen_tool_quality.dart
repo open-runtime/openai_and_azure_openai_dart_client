@@ -11,19 +11,19 @@ part 'image_gen_tool_quality.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolQuality {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum ImageGenToolQuality {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolQuality> get $valuesDefined => values.where((value) => value != ImageGenToolQuality.unknown).toList();
+  static List<ImageGenToolQuality> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolQuality.unknown).toList();
 }

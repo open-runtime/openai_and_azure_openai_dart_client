@@ -8,16 +8,16 @@ part 'video_content_variant.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VideoContentVariant {
-  @MappableValue('video') 
+  @MappableValue('video')
   video,
 
-  @MappableValue('thumbnail') 
+  @MappableValue('thumbnail')
   thumbnail,
 
-  @MappableValue('spritesheet') 
+  @MappableValue('spritesheet')
   spritesheet,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -26,5 +26,6 @@ enum VideoContentVariant {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VideoContentVariant> get $valuesDefined => values.where((value) => value != VideoContentVariant.unknown).toList();
+  static List<VideoContentVariant> get $valuesDefined =>
+      values.where((value) => value != VideoContentVariant.unknown).toList();
 }

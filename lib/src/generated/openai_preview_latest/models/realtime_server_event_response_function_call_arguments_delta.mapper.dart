@@ -9,7 +9,9 @@ part of 'realtime_server_event_response_function_call_arguments_delta.dart';
 
 class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
     extends
-        ClassMapperBase<RealtimeServerEventResponseFunctionCallArgumentsDelta> {
+        SubClassMapperBase<
+          RealtimeServerEventResponseFunctionCallArgumentsDelta
+        > {
   RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper._();
 
   static RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper? _instance;
@@ -20,6 +22,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
         _instance =
             RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseFunctionCallArgumentsDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -97,6 +100,14 @@ class RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.function_call_arguments.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseFunctionCallArgumentsDelta _instantiate(
     DecodingData data,
@@ -216,7 +227,8 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDeltaCopyWith<
   $In extends RealtimeServerEventResponseFunctionCallArgumentsDelta,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseFunctionCallArgumentsDeltaType? type,

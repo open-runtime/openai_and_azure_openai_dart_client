@@ -7,13 +7,15 @@
 
 part of 'assistant_message_item.dart';
 
-class AssistantMessageItemMapper extends ClassMapperBase<AssistantMessageItem> {
+class AssistantMessageItemMapper
+    extends SubClassMapperBase<AssistantMessageItem> {
   AssistantMessageItemMapper._();
 
   static AssistantMessageItemMapper? _instance;
   static AssistantMessageItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AssistantMessageItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseOutputTextMapper.ensureInitialized();
       AssistantMessageItemObjectObjectEnumMapper.ensureInitialized();
       AssistantMessageItemTypeMapper.ensureInitialized();
@@ -75,6 +77,13 @@ class AssistantMessageItemMapper extends ClassMapperBase<AssistantMessageItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.assistant_message';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static AssistantMessageItem _instantiate(DecodingData data) {
     return AssistantMessageItem(
@@ -156,13 +165,14 @@ abstract class AssistantMessageItemCopyWith<
   $In extends AssistantMessageItem,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     ResponseOutputText,
     ResponseOutputTextCopyWith<$R, ResponseOutputText, ResponseOutputText>
   >
   get content;
+  @override
   $R call({
     String? id,
     int? createdAt,

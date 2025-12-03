@@ -15,7 +15,8 @@ part 'models_api.g.dart';
 abstract class ModelsApi {
   factory ModelsApi(Dio dio, {String? baseUrl}) = _ModelsApi;
 
-  /// Gets a list of all models that are accessible by the Azure OpenAI resource.  ///
+  /// Gets a list of all models that are accessible by the Azure OpenAI resource.
+  ///
   /// These include base models as well as all successfully completed fine-tuned models owned by the Azure OpenAI resource.
   ///
   /// [apiVersion] - The requested API version.

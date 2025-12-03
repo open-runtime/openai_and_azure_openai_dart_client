@@ -11,8 +11,9 @@ import 'text_annotation_delta.dart';
 part 'message_delta_content_text_annotations_file_path_object.mapper.dart';
 
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageDeltaContentTextAnnotationsFilePathObject with MessageDeltaContentTextAnnotationsFilePathObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
+class MessageDeltaContentTextAnnotationsFilePathObject extends TextAnnotationDelta
+    with MessageDeltaContentTextAnnotationsFilePathObjectMappable {
   const MessageDeltaContentTextAnnotationsFilePathObject({
     required this.indexField,
     required this.type,
@@ -27,13 +28,13 @@ class MessageDeltaContentTextAnnotationsFilePathObject with MessageDeltaContentT
   final MessageDeltaContentTextAnnotationsFilePathObjectType type;
   final String? text;
   @MappableField(key: 'file_path')
-  final MessageDeltaContentTextAnnotationsFilePathObjectFilePath? messageDeltaContentTextAnnotationsFilePathObjectFilePath;
+  final MessageDeltaContentTextAnnotationsFilePathObjectFilePath?
+  messageDeltaContentTextAnnotationsFilePathObjectFilePath;
   @MappableField(key: 'start_index')
   final int? startIndex;
   @MappableField(key: 'end_index')
   final int? endIndex;
 
-  static MessageDeltaContentTextAnnotationsFilePathObject fromJson(Map<String, dynamic> json) => MessageDeltaContentTextAnnotationsFilePathObjectMapper.fromJson(json);
-
+  static MessageDeltaContentTextAnnotationsFilePathObject fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentTextAnnotationsFilePathObjectMapper.fromJson(json);
 }
-

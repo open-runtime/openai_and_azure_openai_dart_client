@@ -11,8 +11,8 @@ import 'tool.dart';
 part 'computer_use_preview_tool.mapper.dart';
 
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerUsePreviewTool with ComputerUsePreviewToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_use_preview')
+class ComputerUsePreviewTool extends Tool with ComputerUsePreviewToolMappable {
   const ComputerUsePreviewTool({
     required this.environment,
     required this.displayWidth,
@@ -28,6 +28,4 @@ class ComputerUsePreviewTool with ComputerUsePreviewToolMappable {
   final ComputerUsePreviewToolType type;
 
   static ComputerUsePreviewTool fromJson(Map<String, dynamic> json) => ComputerUsePreviewToolMapper.fromJson(json);
-
 }
-

@@ -33,7 +33,6 @@ class CompletionsCreateResponse with CompletionsCreateResponseMappable {
   @MappableField(key: 'usage')
   final CompletionsCreateResponseUsage? completionsCreateResponseUsage;
 
-  static CompletionsCreateResponse fromJson(Map<String, dynamic> json) => CompletionsCreateResponseMapper.fromJson(json);
-
+  static CompletionsCreateResponse fromJson(Map<String, dynamic> json) =>
+      CompletionsCreateResponseMapper.fromJson(json);
 }
-

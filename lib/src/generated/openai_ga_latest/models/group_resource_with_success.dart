@@ -24,6 +24,4 @@ class GroupResourceWithSuccess with GroupResourceWithSuccessMappable {
   final bool isScimManaged;
 
   static GroupResourceWithSuccess fromJson(Map<String, dynamic> json) => GroupResourceWithSuccessMapper.fromJson(json);
-
 }
-

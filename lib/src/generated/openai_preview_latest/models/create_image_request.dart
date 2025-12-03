@@ -50,6 +50,4 @@ class CreateImageRequest with CreateImageRequestMappable {
   final CreateImageRequestStyle? style;
 
   static CreateImageRequest fromJson(Map<String, dynamic> json) => CreateImageRequestMapper.fromJson(json);
-
 }
-

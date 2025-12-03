@@ -31,7 +31,6 @@ class WebhookFineTuningJobCancelled with WebhookFineTuningJobCancelledMappable {
   @MappableField(key: 'object')
   final WebhookFineTuningJobCancelledObjectObjectEnum? objectEnum;
 
-  static WebhookFineTuningJobCancelled fromJson(Map<String, dynamic> json) => WebhookFineTuningJobCancelledMapper.fromJson(json);
-
+  static WebhookFineTuningJobCancelled fromJson(Map<String, dynamic> json) =>
+      WebhookFineTuningJobCancelledMapper.fromJson(json);
 }
-

@@ -32,6 +32,4 @@ class CompletionUsage with CompletionUsageMappable {
   final int totalTokens;
 
   static CompletionUsage fromJson(Map<String, dynamic> json) => CompletionUsageMapper.fromJson(json);
-
 }
-

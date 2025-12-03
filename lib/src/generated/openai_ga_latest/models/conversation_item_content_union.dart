@@ -32,24 +32,28 @@ import 'text_content_type.dart';
 
 part 'conversation_item_content_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ConversationItemContentUnionInputText,
-  ConversationItemContentUnionOutputText,
-  ConversationItemContentUnionText,
-  ConversationItemContentUnionSummaryText,
-  ConversationItemContentUnionReasoningText,
-  ConversationItemContentUnionRefusal,
-  ConversationItemContentUnionInputImage,
-  ConversationItemContentUnionComputerScreenshot,
-  ConversationItemContentUnionInputFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ConversationItemContentUnionInputText,
+    ConversationItemContentUnionOutputText,
+    ConversationItemContentUnionText,
+    ConversationItemContentUnionSummaryText,
+    ConversationItemContentUnionReasoningText,
+    ConversationItemContentUnionRefusal,
+    ConversationItemContentUnionInputImage,
+    ConversationItemContentUnionComputerScreenshot,
+    ConversationItemContentUnionInputFile,
+  ],
+)
 sealed class ConversationItemContentUnion with ConversationItemContentUnionMappable {
   const ConversationItemContentUnion();
 
   static ConversationItemContentUnion fromJson(Map<String, dynamic> json) {
     return ConversationItemContentUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ConversationItemContentUnionDeserializer on ConversationItemContentUnion {
@@ -59,46 +63,45 @@ extension ConversationItemContentUnionDeserializer on ConversationItemContentUni
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ConversationItemContentUnionInputText: 'input_text',
-      ConversationItemContentUnionOutputText: 'output_text',
-      ConversationItemContentUnionText: 'text',
-      ConversationItemContentUnionSummaryText: 'summary_text',
-      ConversationItemContentUnionReasoningText: 'reasoning_text',
-      ConversationItemContentUnionRefusal: 'refusal',
-      ConversationItemContentUnionInputImage: 'input_image',
-      ConversationItemContentUnionComputerScreenshot: 'computer_screenshot',
-      ConversationItemContentUnionInputFile: 'input_file',
+      InputTextContent: 'input_text',
+      OutputTextContent: 'output_text',
+      TextContent: 'text',
+      SummaryTextContent: 'summary_text',
+      ReasoningTextContent: 'reasoning_text',
+      RefusalContent: 'refusal',
+      InputImageContent: 'input_image',
+      ComputerScreenshotContent: 'computer_screenshot',
+      InputFileContent: 'input_file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ConversationItemContentUnionInputText] => ConversationItemContentUnionInputTextMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionOutputText] => ConversationItemContentUnionOutputTextMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionText] => ConversationItemContentUnionTextMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionSummaryText] => ConversationItemContentUnionSummaryTextMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionReasoningText] => ConversationItemContentUnionReasoningTextMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionRefusal] => ConversationItemContentUnionRefusalMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionInputImage] => ConversationItemContentUnionInputImageMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionComputerScreenshot] => ConversationItemContentUnionComputerScreenshotMapper.fromJson(json),
-      _ when value == effective[ConversationItemContentUnionInputFile] => ConversationItemContentUnionInputFileMapper.fromJson(json),
+      _ when value == effective[InputTextContent] => InputTextContentMapper.fromJson(json),
+      _ when value == effective[OutputTextContent] => OutputTextContentMapper.fromJson(json),
+      _ when value == effective[TextContent] => TextContentMapper.fromJson(json),
+      _ when value == effective[SummaryTextContent] => SummaryTextContentMapper.fromJson(json),
+      _ when value == effective[ReasoningTextContent] => ReasoningTextContentMapper.fromJson(json),
+      _ when value == effective[RefusalContent] => RefusalContentMapper.fromJson(json),
+      _ when value == effective[InputImageContent] => InputImageContentMapper.fromJson(json),
+      _ when value == effective[ComputerScreenshotContent] => ComputerScreenshotContentMapper.fromJson(json),
+      _ when value == effective[InputFileContent] => InputFileContentMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ConversationItemContentUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
-class ConversationItemContentUnionInputText extends ConversationItemContentUnion with ConversationItemContentUnionInputTextMappable {
+class ConversationItemContentUnionInputText extends ConversationItemContentUnion
+    with ConversationItemContentUnionInputTextMappable {
   final InputTextContentType type;
   final String text;
 
-  const ConversationItemContentUnionInputText({
-    required this.type,
-    required this.text,
-  });
-
+  const ConversationItemContentUnionInputText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
-class ConversationItemContentUnionOutputText extends ConversationItemContentUnion with ConversationItemContentUnionOutputTextMappable {
+class ConversationItemContentUnionOutputText extends ConversationItemContentUnion
+    with ConversationItemContentUnionOutputTextMappable {
   final OutputTextContentType type;
   final String text;
   final List<Annotation> annotations;
@@ -110,54 +113,47 @@ class ConversationItemContentUnionOutputText extends ConversationItemContentUnio
     required this.annotations,
     required this.logprobs,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class ConversationItemContentUnionText extends ConversationItemContentUnion with ConversationItemContentUnionTextMappable {
+class ConversationItemContentUnionText extends ConversationItemContentUnion
+    with ConversationItemContentUnionTextMappable {
   final TextContentType type;
   final String text;
 
-  const ConversationItemContentUnionText({
-    required this.type,
-    required this.text,
-  });
-
+  const ConversationItemContentUnionText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'summary_text')
-class ConversationItemContentUnionSummaryText extends ConversationItemContentUnion with ConversationItemContentUnionSummaryTextMappable {
+class ConversationItemContentUnionSummaryText extends ConversationItemContentUnion
+    with ConversationItemContentUnionSummaryTextMappable {
   final SummaryTextContentType type;
   final String text;
 
-  const ConversationItemContentUnionSummaryText({
-    required this.type,
-    required this.text,
-  });
-
+  const ConversationItemContentUnionSummaryText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
-class ConversationItemContentUnionReasoningText extends ConversationItemContentUnion with ConversationItemContentUnionReasoningTextMappable {
+class ConversationItemContentUnionReasoningText extends ConversationItemContentUnion
+    with ConversationItemContentUnionReasoningTextMappable {
   final ReasoningTextContentType type;
   final String text;
 
-  const ConversationItemContentUnionReasoningText({
-    required this.type,
-    required this.text,
-  });
-
+  const ConversationItemContentUnionReasoningText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
-class ConversationItemContentUnionRefusal extends ConversationItemContentUnion with ConversationItemContentUnionRefusalMappable {
+class ConversationItemContentUnionRefusal extends ConversationItemContentUnion
+    with ConversationItemContentUnionRefusalMappable {
   final RefusalContentType type;
   final String refusal;
 
-  const ConversationItemContentUnionRefusal({
-    required this.type,
-    required this.refusal,
-  });
-
+  const ConversationItemContentUnionRefusal({required this.type, required this.refusal});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')
-class ConversationItemContentUnionInputImage extends ConversationItemContentUnion with ConversationItemContentUnionInputImageMappable {
+class ConversationItemContentUnionInputImage extends ConversationItemContentUnion
+    with ConversationItemContentUnionInputImageMappable {
   final InputImageContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
@@ -171,10 +167,11 @@ class ConversationItemContentUnionInputImage extends ConversationItemContentUnio
     required this.fileId,
     required this.detail,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_screenshot')
-class ConversationItemContentUnionComputerScreenshot extends ConversationItemContentUnion with ConversationItemContentUnionComputerScreenshotMappable {
+class ConversationItemContentUnionComputerScreenshot extends ConversationItemContentUnion
+    with ConversationItemContentUnionComputerScreenshotMappable {
   final ComputerScreenshotContentType type;
   @MappableField(key: 'image_url')
   final String? imageUrl;
@@ -186,10 +183,11 @@ class ConversationItemContentUnionComputerScreenshot extends ConversationItemCon
     required this.imageUrl,
     required this.fileId,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
-class ConversationItemContentUnionInputFile extends ConversationItemContentUnion with ConversationItemContentUnionInputFileMappable {
+class ConversationItemContentUnionInputFile extends ConversationItemContentUnion
+    with ConversationItemContentUnionInputFileMappable {
   final InputFileContentType type;
   @MappableField(key: 'file_id')
   final String? fileId;
@@ -206,5 +204,4 @@ class ConversationItemContentUnionInputFile extends ConversationItemContentUnion
     required this.fileUrl,
     required this.fileData,
   });
-
 }

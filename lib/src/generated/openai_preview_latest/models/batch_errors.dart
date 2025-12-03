@@ -10,16 +10,11 @@ part 'batch_errors.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchErrors with BatchErrorsMappable {
-  const BatchErrors({
-    this.objectField,
-    this.data,
-  });
+  const BatchErrors({this.objectField, this.data});
 
   @MappableField(key: 'object')
   final String? objectField;
   final List<BatchErrorsData>? data;
 
   static BatchErrors fromJson(Map<String, dynamic> json) => BatchErrorsMapper.fromJson(json);
-
 }
-

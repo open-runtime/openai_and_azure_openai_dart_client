@@ -9,17 +9,14 @@ import 'run_step_details_tool_calls_code_output_logs_object_type.dart';
 part 'run_step_details_tool_calls_code_output_logs_object.mapper.dart';
 
 /// Text output from the Code Interpreter tool call as part of a run step.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDetailsToolCallsCodeOutputLogsObject with RunStepDetailsToolCallsCodeOutputLogsObjectMappable {
-  const RunStepDetailsToolCallsCodeOutputLogsObject({
-    required this.type,
-    required this.logs,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
+class RunStepDetailsToolCallsCodeOutputLogsObject extends RunStepDetailsToolCallCodeInterpreterOutputsUnion
+    with RunStepDetailsToolCallsCodeOutputLogsObjectMappable {
+  const RunStepDetailsToolCallsCodeOutputLogsObject({required this.type, required this.logs});
 
   final RunStepDetailsToolCallsCodeOutputLogsObjectType type;
   final String logs;
 
-  static RunStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);
 }
-

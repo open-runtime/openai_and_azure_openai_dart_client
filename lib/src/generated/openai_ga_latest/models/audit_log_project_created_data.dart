@@ -8,15 +8,11 @@ part 'audit_log_project_created_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogProjectCreatedData with AuditLogProjectCreatedDataMappable {
-  const AuditLogProjectCreatedData({
-    this.name,
-    this.title,
-  });
+  const AuditLogProjectCreatedData({this.name, this.title});
 
   final String? name;
   final String? title;
 
-  static AuditLogProjectCreatedData fromJson(Map<String, dynamic> json) => AuditLogProjectCreatedDataMapper.fromJson(json);
-
+  static AuditLogProjectCreatedData fromJson(Map<String, dynamic> json) =>
+      AuditLogProjectCreatedDataMapper.fromJson(json);
 }
-

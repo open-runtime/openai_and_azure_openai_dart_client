@@ -13,18 +13,22 @@ import 'apply_patch_update_file_operation_type.dart';
 
 part 'conversation_item_operation_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ConversationItemOperationUnionCreateFile,
-  ConversationItemOperationUnionDeleteFile,
-  ConversationItemOperationUnionUpdateFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ConversationItemOperationUnionCreateFile,
+    ConversationItemOperationUnionDeleteFile,
+    ConversationItemOperationUnionUpdateFile,
+  ],
+)
 sealed class ConversationItemOperationUnion with ConversationItemOperationUnionMappable {
   const ConversationItemOperationUnion();
 
   static ConversationItemOperationUnion fromJson(Map<String, dynamic> json) {
     return ConversationItemOperationUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ConversationItemOperationUnionDeserializer on ConversationItemOperationUnion {
@@ -34,55 +38,46 @@ extension ConversationItemOperationUnionDeserializer on ConversationItemOperatio
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ConversationItemOperationUnionCreateFile: 'create_file',
-      ConversationItemOperationUnionDeleteFile: 'delete_file',
-      ConversationItemOperationUnionUpdateFile: 'update_file',
+      ApplyPatchCreateFileOperation: 'create_file',
+      ApplyPatchDeleteFileOperation: 'delete_file',
+      ApplyPatchUpdateFileOperation: 'update_file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ConversationItemOperationUnionCreateFile] => ConversationItemOperationUnionCreateFileMapper.fromJson(json),
-      _ when value == effective[ConversationItemOperationUnionDeleteFile] => ConversationItemOperationUnionDeleteFileMapper.fromJson(json),
-      _ when value == effective[ConversationItemOperationUnionUpdateFile] => ConversationItemOperationUnionUpdateFileMapper.fromJson(json),
+      _ when value == effective[ApplyPatchCreateFileOperation] => ApplyPatchCreateFileOperationMapper.fromJson(json),
+      _ when value == effective[ApplyPatchDeleteFileOperation] => ApplyPatchDeleteFileOperationMapper.fromJson(json),
+      _ when value == effective[ApplyPatchUpdateFileOperation] => ApplyPatchUpdateFileOperationMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ConversationItemOperationUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
-class ConversationItemOperationUnionCreateFile extends ConversationItemOperationUnion with ConversationItemOperationUnionCreateFileMappable {
+class ConversationItemOperationUnionCreateFile extends ConversationItemOperationUnion
+    with ConversationItemOperationUnionCreateFileMappable {
   final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
-  const ConversationItemOperationUnionCreateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
-
+  const ConversationItemOperationUnionCreateFile({required this.type, required this.path, required this.diff});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
-class ConversationItemOperationUnionDeleteFile extends ConversationItemOperationUnion with ConversationItemOperationUnionDeleteFileMappable {
+class ConversationItemOperationUnionDeleteFile extends ConversationItemOperationUnion
+    with ConversationItemOperationUnionDeleteFileMappable {
   final ApplyPatchDeleteFileOperationType type;
   final String path;
 
-  const ConversationItemOperationUnionDeleteFile({
-    required this.type,
-    required this.path,
-  });
-
+  const ConversationItemOperationUnionDeleteFile({required this.type, required this.path});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
-class ConversationItemOperationUnionUpdateFile extends ConversationItemOperationUnion with ConversationItemOperationUnionUpdateFileMappable {
+class ConversationItemOperationUnionUpdateFile extends ConversationItemOperationUnion
+    with ConversationItemOperationUnionUpdateFileMappable {
   final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 
-  const ConversationItemOperationUnionUpdateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
-
+  const ConversationItemOperationUnionUpdateFile({required this.type, required this.path, required this.diff});
 }

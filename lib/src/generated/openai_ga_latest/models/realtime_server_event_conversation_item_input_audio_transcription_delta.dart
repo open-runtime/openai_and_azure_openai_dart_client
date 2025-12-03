@@ -11,8 +11,13 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_delta.ma
 
 /// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemInputAudioTranscriptionDelta with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.delta',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionDelta extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({
     required this.eventId,
     required this.type,
@@ -32,7 +37,6 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDelta with Realt
   final String? delta;
   final List<LogProbProperties>? logprobs;
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionDelta fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemInputAudioTranscriptionDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper.fromJson(json);
 }
-

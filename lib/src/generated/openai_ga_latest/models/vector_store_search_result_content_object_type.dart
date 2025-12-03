@@ -9,10 +9,10 @@ part 'vector_store_search_result_content_object_type.mapper.dart';
 /// The type of content.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreSearchResultContentObjectType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum VectorStoreSearchResultContentObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreSearchResultContentObjectType> get $valuesDefined => values.where((value) => value != VectorStoreSearchResultContentObjectType.unknown).toList();
+  static List<VectorStoreSearchResultContentObjectType> get $valuesDefined =>
+      values.where((value) => value != VectorStoreSearchResultContentObjectType.unknown).toList();
 }

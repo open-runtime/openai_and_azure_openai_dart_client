@@ -9,10 +9,10 @@ part 'done_event_data.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DoneEventData {
   /// Incorrect name has been replaced. Original name: `[DONE]`.
-  @MappableValue('[DONE]') 
+  @MappableValue('[DONE]')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

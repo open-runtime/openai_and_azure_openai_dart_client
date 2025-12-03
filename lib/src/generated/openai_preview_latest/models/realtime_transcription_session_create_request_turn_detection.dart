@@ -10,7 +10,8 @@ import 'realtime_transcription_session_create_request_turn_detection_eagerness.d
 part 'realtime_transcription_session_create_request_turn_detection.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTranscriptionSessionCreateRequestTurnDetectionMappable {
+class RealtimeTranscriptionSessionCreateRequestTurnDetection
+    with RealtimeTranscriptionSessionCreateRequestTurnDetectionMappable {
   const RealtimeTranscriptionSessionCreateRequestTurnDetection({
     this.threshold,
     this.prefixPaddingMs,
@@ -33,7 +34,6 @@ class RealtimeTranscriptionSessionCreateRequestTurnDetection with RealtimeTransc
   @MappableField(key: 'interrupt_response')
   final bool interruptResponse;
 
-  static RealtimeTranscriptionSessionCreateRequestTurnDetection fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateRequestTurnDetection fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateRequestTurnDetectionMapper.fromJson(json);
 }
-

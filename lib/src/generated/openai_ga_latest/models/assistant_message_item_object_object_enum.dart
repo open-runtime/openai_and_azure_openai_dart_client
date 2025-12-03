@@ -11,10 +11,10 @@ part 'assistant_message_item_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantMessageItemObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chatkit.thread_item`.
-  @MappableValue('chatkit.thread_item') 
+  @MappableValue('chatkit.thread_item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum AssistantMessageItemObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantMessageItemObjectObjectEnum> get $valuesDefined => values.where((value) => value != AssistantMessageItemObjectObjectEnum.unknown).toList();
+  static List<AssistantMessageItemObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != AssistantMessageItemObjectObjectEnum.unknown).toList();
 }

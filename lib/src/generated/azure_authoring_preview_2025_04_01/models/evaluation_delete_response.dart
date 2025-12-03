@@ -8,11 +8,7 @@ part 'evaluation_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvaluationDeleteResponse with EvaluationDeleteResponseMappable {
-  const EvaluationDeleteResponse({
-    required this.deleted,
-    required this.evalId,
-    required this.objectField,
-  });
+  const EvaluationDeleteResponse({required this.deleted, required this.evalId, required this.objectField});
 
   final bool deleted;
   @MappableField(key: 'eval_id')
@@ -21,6 +17,4 @@ class EvaluationDeleteResponse with EvaluationDeleteResponseMappable {
   final String objectField;
 
   static EvaluationDeleteResponse fromJson(Map<String, dynamic> json) => EvaluationDeleteResponseMapper.fromJson(json);
-
 }
-

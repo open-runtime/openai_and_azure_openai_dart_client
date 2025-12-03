@@ -7,13 +7,14 @@
 
 part of 'output_text.dart';
 
-class OutputTextMapper extends ClassMapperBase<OutputText> {
+class OutputTextMapper extends SubClassMapperBase<OutputText> {
   OutputTextMapper._();
 
   static OutputTextMapper? _instance;
   static OutputTextMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OutputTextMapper._());
+      OutputContentMapper.ensureInitialized().addSubMapper(_instance!);
       OutputTextTypeMapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
     }
@@ -46,6 +47,14 @@ class OutputTextMapper extends ClassMapperBase<OutputText> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'output_text';
+  @override
+  late final ClassMapperBase superMapper =
+      OutputContentMapper.ensureInitialized();
 
   static OutputText _instantiate(DecodingData data) {
     return OutputText(
@@ -114,9 +123,10 @@ extension OutputTextValueCopy<$R, $Out>
 }
 
 abstract class OutputTextCopyWith<$R, $In extends OutputText, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements OutputContentCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, Annotation, AnnotationCopyWith<$R, Annotation, Annotation>>
   get annotations;
+  @override
   $R call({OutputTextType? type, String? text, List<Annotation>? annotations});
   OutputTextCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

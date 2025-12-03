@@ -25,6 +25,4 @@ class ComputerScreenshotImage with ComputerScreenshotImageMappable {
   final ComputerScreenshotImageType type;
 
   static ComputerScreenshotImage fromJson(Map<String, dynamic> json) => ComputerScreenshotImageMapper.fromJson(json);
-
 }
-

@@ -32,7 +32,6 @@ class RealtimeBetaServerEventResponseAudioDone with RealtimeBetaServerEventRespo
   @MappableField(key: 'content_index')
   final int contentIndex;
 
-  static RealtimeBetaServerEventResponseAudioDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseAudioDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseAudioDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseAudioDoneMapper.fromJson(json);
 }
-

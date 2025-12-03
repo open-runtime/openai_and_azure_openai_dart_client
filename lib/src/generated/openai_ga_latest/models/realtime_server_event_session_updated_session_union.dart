@@ -28,17 +28,21 @@ import 'realtime_truncation.dart';
 
 part 'realtime_server_event_session_updated_session_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeServerEventSessionUpdatedSessionUnionRealtime,
-  RealtimeServerEventSessionUpdatedSessionUnionTranscription
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeServerEventSessionUpdatedSessionUnionRealtime,
+    RealtimeServerEventSessionUpdatedSessionUnionTranscription,
+  ],
+)
 sealed class RealtimeServerEventSessionUpdatedSessionUnion with RealtimeServerEventSessionUpdatedSessionUnionMappable {
   const RealtimeServerEventSessionUpdatedSessionUnion();
 
   static RealtimeServerEventSessionUpdatedSessionUnion fromJson(Map<String, dynamic> json) {
     return RealtimeServerEventSessionUpdatedSessionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeServerEventSessionUpdatedSessionUnionDeserializer on RealtimeServerEventSessionUpdatedSessionUnion {
@@ -48,21 +52,25 @@ extension RealtimeServerEventSessionUpdatedSessionUnionDeserializer on RealtimeS
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeServerEventSessionUpdatedSessionUnionRealtime: 'realtime',
-      RealtimeServerEventSessionUpdatedSessionUnionTranscription: 'transcription',
+      RealtimeSessionCreateRequestGa: 'realtime',
+      RealtimeTranscriptionSessionCreateRequestGa: 'transcription',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeServerEventSessionUpdatedSessionUnionRealtime] => RealtimeServerEventSessionUpdatedSessionUnionRealtimeMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventSessionUpdatedSessionUnionTranscription] => RealtimeServerEventSessionUpdatedSessionUnionTranscriptionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeServerEventSessionUpdatedSessionUnion'),
+      _ when value == effective[RealtimeSessionCreateRequestGa] => RealtimeSessionCreateRequestGaMapper.fromJson(json),
+      _ when value == effective[RealtimeTranscriptionSessionCreateRequestGa] =>
+        RealtimeTranscriptionSessionCreateRequestGaMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeServerEventSessionUpdatedSessionUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
-class RealtimeServerEventSessionUpdatedSessionUnionRealtime extends RealtimeServerEventSessionUpdatedSessionUnion with RealtimeServerEventSessionUpdatedSessionUnionRealtimeMappable {
+class RealtimeServerEventSessionUpdatedSessionUnionRealtime extends RealtimeServerEventSessionUpdatedSessionUnion
+    with RealtimeServerEventSessionUpdatedSessionUnionRealtimeMappable {
   final RealtimeSessionCreateRequestGaType type;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities> outputModalities;
@@ -94,10 +102,11 @@ class RealtimeServerEventSessionUpdatedSessionUnionRealtime extends RealtimeServ
     required this.truncation,
     required this.prompt,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
-class RealtimeServerEventSessionUpdatedSessionUnionTranscription extends RealtimeServerEventSessionUpdatedSessionUnion with RealtimeServerEventSessionUpdatedSessionUnionTranscriptionMappable {
+class RealtimeServerEventSessionUpdatedSessionUnionTranscription extends RealtimeServerEventSessionUpdatedSessionUnion
+    with RealtimeServerEventSessionUpdatedSessionUnionTranscriptionMappable {
   final RealtimeTranscriptionSessionCreateRequestGaType type;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
@@ -108,5 +117,4 @@ class RealtimeServerEventSessionUpdatedSessionUnionTranscription extends Realtim
     required this.realtimeTranscriptionSessionCreateRequestGaAudio,
     required this.include,
   });
-
 }

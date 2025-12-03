@@ -9,11 +9,7 @@ part 'fine_tuning_hyper_parameters.mapper.dart';
 /// The hyper parameter settings used in a fine tune job.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningHyperParameters with FineTuningHyperParametersMappable {
-  const FineTuningHyperParameters({
-    this.nEpochs,
-    this.batchSize,
-    this.learningRateMultiplier,
-  });
+  const FineTuningHyperParameters({this.nEpochs, this.batchSize, this.learningRateMultiplier});
 
   @MappableField(key: 'n_epochs')
   final int? nEpochs;
@@ -22,7 +18,6 @@ class FineTuningHyperParameters with FineTuningHyperParametersMappable {
   @MappableField(key: 'learning_rate_multiplier')
   final double? learningRateMultiplier;
 
-  static FineTuningHyperParameters fromJson(Map<String, dynamic> json) => FineTuningHyperParametersMapper.fromJson(json);
-
+  static FineTuningHyperParameters fromJson(Map<String, dynamic> json) =>
+      FineTuningHyperParametersMapper.fromJson(json);
 }
-

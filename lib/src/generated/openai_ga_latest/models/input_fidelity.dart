@@ -9,13 +9,13 @@ part 'input_fidelity.mapper.dart';
 /// Control how much effort the model will exert to match the style and features, especially facial features, of input images. This parameter is only supported for `gpt-image-1`. Unsupported for `gpt-image-1-mini`. Supports `high` and `low`. Defaults to `low`.
 @MappableEnum(defaultValue: 'unknown')
 enum InputFidelity {
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

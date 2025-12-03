@@ -11,8 +11,8 @@ import 'response_text_annotation_delta_event_type.dart';
 part 'response_text_annotation_delta_event.mapper.dart';
 
 /// Emitted when a text annotation is added.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseTextAnnotationDeltaEvent with ResponseTextAnnotationDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.annotation.added')
+class ResponseTextAnnotationDeltaEvent extends ResponseStreamEvent with ResponseTextAnnotationDeltaEventMappable {
   const ResponseTextAnnotationDeltaEvent({
     required this.type,
     required this.itemId,
@@ -33,7 +33,6 @@ class ResponseTextAnnotationDeltaEvent with ResponseTextAnnotationDeltaEventMapp
   final int annotationIndex;
   final Annotation annotation;
 
-  static ResponseTextAnnotationDeltaEvent fromJson(Map<String, dynamic> json) => ResponseTextAnnotationDeltaEventMapper.fromJson(json);
-
+  static ResponseTextAnnotationDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseTextAnnotationDeltaEventMapper.fromJson(json);
 }
-

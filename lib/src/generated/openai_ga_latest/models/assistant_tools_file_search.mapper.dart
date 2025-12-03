@@ -8,7 +8,7 @@
 part of 'assistant_tools_file_search.dart';
 
 class AssistantToolsFileSearchMapper
-    extends ClassMapperBase<AssistantToolsFileSearch> {
+    extends SubClassMapperBase<AssistantToolsFileSearch> {
   AssistantToolsFileSearchMapper._();
 
   static AssistantToolsFileSearchMapper? _instance;
@@ -17,6 +17,7 @@ class AssistantToolsFileSearchMapper
       MapperContainer.globals.use(
         _instance = AssistantToolsFileSearchMapper._(),
       );
+      AssistantToolMapper.ensureInitialized().addSubMapper(_instance!);
       AssistantToolsFileSearchTypeMapper.ensureInitialized();
       AssistantToolsFileSearchFileSearchMapper.ensureInitialized();
     }
@@ -53,6 +54,14 @@ class AssistantToolsFileSearchMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search';
+  @override
+  late final ClassMapperBase superMapper =
+      AssistantToolMapper.ensureInitialized();
 
   static AssistantToolsFileSearch _instantiate(DecodingData data) {
     return AssistantToolsFileSearch(
@@ -132,13 +141,14 @@ abstract class AssistantToolsFileSearchCopyWith<
   $In extends AssistantToolsFileSearch,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AssistantToolCopyWith<$R, $In, $Out> {
   AssistantToolsFileSearchFileSearchCopyWith<
     $R,
     AssistantToolsFileSearchFileSearch,
     AssistantToolsFileSearchFileSearch
   >?
   get assistantToolsFileSearchFileSearch;
+  @override
   $R call({
     AssistantToolsFileSearchType? type,
     AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch,

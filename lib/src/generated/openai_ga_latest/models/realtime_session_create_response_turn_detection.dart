@@ -22,7 +22,6 @@ class RealtimeSessionCreateResponseTurnDetection with RealtimeSessionCreateRespo
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
 
-  static RealtimeSessionCreateResponseTurnDetection fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseTurnDetectionMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseTurnDetection fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseTurnDetectionMapper.fromJson(json);
 }
-

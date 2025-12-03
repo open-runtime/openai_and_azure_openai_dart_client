@@ -10,13 +10,13 @@ part 'realtime_session_create_request_turn_detection_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateRequestTurnDetectionType {
-  @MappableValue('server_vad') 
+  @MappableValue('server_vad')
   serverVad,
 
-  @MappableValue('semantic_vad') 
+  @MappableValue('semantic_vad')
   semanticVad,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum RealtimeSessionCreateRequestTurnDetectionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateRequestTurnDetectionType> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateRequestTurnDetectionType.unknown).toList();
+  static List<RealtimeSessionCreateRequestTurnDetectionType> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateRequestTurnDetectionType.unknown).toList();
 }

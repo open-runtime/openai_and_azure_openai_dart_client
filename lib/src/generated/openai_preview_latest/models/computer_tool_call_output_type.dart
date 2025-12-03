@@ -10,10 +10,10 @@ part 'computer_tool_call_output_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerToolCallOutputType {
-  @MappableValue('computer_call_output') 
+  @MappableValue('computer_call_output')
   computerCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ComputerToolCallOutputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerToolCallOutputType> get $valuesDefined => values.where((value) => value != ComputerToolCallOutputType.unknown).toList();
+  static List<ComputerToolCallOutputType> get $valuesDefined =>
+      values.where((value) => value != ComputerToolCallOutputType.unknown).toList();
 }

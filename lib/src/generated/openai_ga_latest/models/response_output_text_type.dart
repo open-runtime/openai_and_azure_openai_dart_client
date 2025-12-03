@@ -9,10 +9,10 @@ part 'response_output_text_type.mapper.dart';
 /// Type discriminator that is always `output_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseOutputTextType {
-  @MappableValue('output_text') 
+  @MappableValue('output_text')
   outputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseOutputTextType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseOutputTextType> get $valuesDefined => values.where((value) => value != ResponseOutputTextType.unknown).toList();
+  static List<ResponseOutputTextType> get $valuesDefined =>
+      values.where((value) => value != ResponseOutputTextType.unknown).toList();
 }

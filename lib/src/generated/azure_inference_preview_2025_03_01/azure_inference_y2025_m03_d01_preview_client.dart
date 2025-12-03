@@ -14,11 +14,7 @@ import 'responses/responses_api.dart';
 ///
 /// Azure OpenAI APIs for completions and search.
 class AzureInferenceY2025M03D01PreviewClient {
-  AzureInferenceY2025M03D01PreviewClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  AzureInferenceY2025M03D01PreviewClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;

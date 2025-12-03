@@ -11,11 +11,7 @@ part 'list_fine_tuning_job_events_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ListFineTuningJobEventsResponse with ListFineTuningJobEventsResponseMappable {
-  const ListFineTuningJobEventsResponse({
-    required this.data,
-    required this.objectEnum,
-    required this.hasMore,
-  });
+  const ListFineTuningJobEventsResponse({required this.data, required this.objectEnum, required this.hasMore});
 
   final List<FineTuningJobEvent> data;
   @MappableField(key: 'object')
@@ -23,7 +19,6 @@ class ListFineTuningJobEventsResponse with ListFineTuningJobEventsResponseMappab
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ListFineTuningJobEventsResponse fromJson(Map<String, dynamic> json) => ListFineTuningJobEventsResponseMapper.fromJson(json);
-
+  static ListFineTuningJobEventsResponse fromJson(Map<String, dynamic> json) =>
+      ListFineTuningJobEventsResponseMapper.fromJson(json);
 }
-

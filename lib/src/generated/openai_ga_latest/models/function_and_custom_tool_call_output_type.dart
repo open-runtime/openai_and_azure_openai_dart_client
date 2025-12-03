@@ -9,10 +9,10 @@ part 'function_and_custom_tool_call_output_type.mapper.dart';
 /// The type of the input item. Always `input_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionAndCustomToolCallOutputType {
-  @MappableValue('input_text') 
+  @MappableValue('input_text')
   inputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FunctionAndCustomToolCallOutputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionAndCustomToolCallOutputType> get $valuesDefined => values.where((value) => value != FunctionAndCustomToolCallOutputType.unknown).toList();
+  static List<FunctionAndCustomToolCallOutputType> get $valuesDefined =>
+      values.where((value) => value != FunctionAndCustomToolCallOutputType.unknown).toList();
 }

@@ -31,6 +31,4 @@ class ThreadResource with ThreadResourceMappable {
   final ThreadResourceObjectObjectEnum objectEnum;
 
   static ThreadResource fromJson(Map<String, dynamic> json) => ThreadResourceMapper.fromJson(json);
-
 }
-

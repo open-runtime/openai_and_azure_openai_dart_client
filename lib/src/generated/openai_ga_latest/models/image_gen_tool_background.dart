@@ -11,16 +11,16 @@ part 'image_gen_tool_background.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolBackground {
-  @MappableValue('transparent') 
+  @MappableValue('transparent')
   transparent,
 
-  @MappableValue('opaque') 
+  @MappableValue('opaque')
   opaque,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ImageGenToolBackground {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolBackground> get $valuesDefined => values.where((value) => value != ImageGenToolBackground.unknown).toList();
+  static List<ImageGenToolBackground> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolBackground.unknown).toList();
 }

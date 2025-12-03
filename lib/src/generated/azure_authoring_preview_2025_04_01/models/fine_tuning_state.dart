@@ -9,34 +9,34 @@ part 'fine_tuning_state.mapper.dart';
 /// The state of a finetunes object or fine tuning job.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningState {
-  @MappableValue('created') 
+  @MappableValue('created')
   created,
 
-  @MappableValue('pending') 
+  @MappableValue('pending')
   pending,
 
-  @MappableValue('running') 
+  @MappableValue('running')
   running,
 
-  @MappableValue('pausing') 
+  @MappableValue('pausing')
   pausing,
 
-  @MappableValue('paused') 
+  @MappableValue('paused')
   paused,
 
-  @MappableValue('resuming') 
+  @MappableValue('resuming')
   resuming,
 
-  @MappableValue('succeeded') 
+  @MappableValue('succeeded')
   succeeded,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

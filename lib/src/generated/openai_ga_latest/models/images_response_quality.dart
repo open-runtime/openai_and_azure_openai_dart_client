@@ -9,16 +9,16 @@ part 'images_response_quality.mapper.dart';
 /// The quality of the image generated. Either `low`, `medium`, or `high`.
 @MappableEnum(defaultValue: 'unknown')
 enum ImagesResponseQuality {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum ImagesResponseQuality {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImagesResponseQuality> get $valuesDefined => values.where((value) => value != ImagesResponseQuality.unknown).toList();
+  static List<ImagesResponseQuality> get $valuesDefined =>
+      values.where((value) => value != ImagesResponseQuality.unknown).toList();
 }

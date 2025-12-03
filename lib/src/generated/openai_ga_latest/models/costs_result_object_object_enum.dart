@@ -10,10 +10,10 @@ part 'costs_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum CostsResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.costs.result`.
-  @MappableValue('organization.costs.result') 
+  @MappableValue('organization.costs.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CostsResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CostsResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != CostsResultObjectObjectEnum.unknown).toList();
+  static List<CostsResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != CostsResultObjectObjectEnum.unknown).toList();
 }

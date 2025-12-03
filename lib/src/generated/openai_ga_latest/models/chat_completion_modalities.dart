@@ -10,8 +10,5 @@ part 'chat_completion_modalities.mapper.dart';
 class ChatCompletionModalities with ChatCompletionModalitiesMappable {
   const ChatCompletionModalities();
 
-
   static ChatCompletionModalities fromJson(Map<String, dynamic> json) => ChatCompletionModalitiesMapper.fromJson(json);
-
 }
-

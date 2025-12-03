@@ -29,7 +29,6 @@ class CompletionsCreateResponseChoices with CompletionsCreateResponseChoicesMapp
   @MappableField(key: 'content_filter_results')
   final ContentFilterChoiceResults? contentFilterResults;
 
-  static CompletionsCreateResponseChoices fromJson(Map<String, dynamic> json) => CompletionsCreateResponseChoicesMapper.fromJson(json);
-
+  static CompletionsCreateResponseChoices fromJson(Map<String, dynamic> json) =>
+      CompletionsCreateResponseChoicesMapper.fromJson(json);
 }
-

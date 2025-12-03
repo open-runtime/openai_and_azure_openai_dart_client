@@ -8,14 +8,11 @@ part 'realtime_truncation_union_variant1_token_limits.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeTruncationUnionVariant1TokenLimits with RealtimeTruncationUnionVariant1TokenLimitsMappable {
-  const RealtimeTruncationUnionVariant1TokenLimits({
-    this.postInstructions,
-  });
+  const RealtimeTruncationUnionVariant1TokenLimits({this.postInstructions});
 
   @MappableField(key: 'post_instructions')
   final int? postInstructions;
 
-  static RealtimeTruncationUnionVariant1TokenLimits fromJson(Map<String, dynamic> json) => RealtimeTruncationUnionVariant1TokenLimitsMapper.fromJson(json);
-
+  static RealtimeTruncationUnionVariant1TokenLimits fromJson(Map<String, dynamic> json) =>
+      RealtimeTruncationUnionVariant1TokenLimitsMapper.fromJson(json);
 }
-

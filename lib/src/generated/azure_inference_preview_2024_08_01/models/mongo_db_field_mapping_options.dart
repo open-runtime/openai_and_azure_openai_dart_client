@@ -31,7 +31,6 @@ class MongoDbFieldMappingOptions with MongoDbFieldMappingOptionsMappable {
   @MappableField(key: 'content_fields_separator')
   final String? contentFieldsSeparator;
 
-  static MongoDbFieldMappingOptions fromJson(Map<String, dynamic> json) => MongoDbFieldMappingOptionsMapper.fromJson(json);
-
+  static MongoDbFieldMappingOptions fromJson(Map<String, dynamic> json) =>
+      MongoDbFieldMappingOptionsMapper.fromJson(json);
 }
-

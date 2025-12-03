@@ -10,15 +10,10 @@ part 'reasoning_item_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ReasoningItemContent with ReasoningItemContentMappable {
-  const ReasoningItemContent({
-    required this.type,
-    required this.text,
-  });
+  const ReasoningItemContent({required this.type, required this.text});
 
   final ReasoningItemContentType type;
   final String text;
 
   static ReasoningItemContent fromJson(Map<String, dynamic> json) => ReasoningItemContentMapper.fromJson(json);
-
 }
-

@@ -8,13 +8,13 @@ part 'apply_patch_call_output_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchCallOutputStatus {
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ApplyPatchCallOutputStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchCallOutputStatus> get $valuesDefined => values.where((value) => value != ApplyPatchCallOutputStatus.unknown).toList();
+  static List<ApplyPatchCallOutputStatus> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchCallOutputStatus.unknown).toList();
 }

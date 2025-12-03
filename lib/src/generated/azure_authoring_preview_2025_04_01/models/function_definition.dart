@@ -8,17 +8,11 @@ part 'function_definition.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionDefinition with FunctionDefinitionMappable {
-  const FunctionDefinition({
-    this.parameters,
-    this.description,
-    this.name,
-  });
+  const FunctionDefinition({this.parameters, this.description, this.name});
 
   final dynamic? parameters;
   final String? description;
   final String? name;
 
   static FunctionDefinition fromJson(Map<String, dynamic> json) => FunctionDefinitionMapper.fromJson(json);
-
 }
-

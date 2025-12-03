@@ -10,13 +10,10 @@ part 'response_model_incomplete_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseModelIncompleteDetails with ResponseModelIncompleteDetailsMappable {
-  const ResponseModelIncompleteDetails({
-    this.reason,
-  });
+  const ResponseModelIncompleteDetails({this.reason});
 
   final ResponseModelIncompleteDetailsReason? reason;
 
-  static ResponseModelIncompleteDetails fromJson(Map<String, dynamic> json) => ResponseModelIncompleteDetailsMapper.fromJson(json);
-
+  static ResponseModelIncompleteDetails fromJson(Map<String, dynamic> json) =>
+      ResponseModelIncompleteDetailsMapper.fromJson(json);
 }
-

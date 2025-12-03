@@ -9,16 +9,13 @@ import 'run_step_details_tool_calls_file_search_result_object_content_type.dart'
 part 'run_step_details_tool_calls_file_search_result_object_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDetailsToolCallsFileSearchResultObjectContent with RunStepDetailsToolCallsFileSearchResultObjectContentMappable {
-  const RunStepDetailsToolCallsFileSearchResultObjectContent({
-    this.type,
-    this.text,
-  });
+class RunStepDetailsToolCallsFileSearchResultObjectContent
+    with RunStepDetailsToolCallsFileSearchResultObjectContentMappable {
+  const RunStepDetailsToolCallsFileSearchResultObjectContent({this.type, this.text});
 
   final RunStepDetailsToolCallsFileSearchResultObjectContentType? type;
   final String? text;
 
-  static RunStepDetailsToolCallsFileSearchResultObjectContent fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFileSearchResultObjectContentMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsFileSearchResultObjectContent fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsFileSearchResultObjectContentMapper.fromJson(json);
 }
-

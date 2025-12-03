@@ -10,16 +10,16 @@ part 'assistants_named_tool_choice_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantsNamedToolChoiceType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('code_interpreter') 
+  @MappableValue('code_interpreter')
   codeInterpreter,
 
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum AssistantsNamedToolChoiceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantsNamedToolChoiceType> get $valuesDefined => values.where((value) => value != AssistantsNamedToolChoiceType.unknown).toList();
+  static List<AssistantsNamedToolChoiceType> get $valuesDefined =>
+      values.where((value) => value != AssistantsNamedToolChoiceType.unknown).toList();
 }

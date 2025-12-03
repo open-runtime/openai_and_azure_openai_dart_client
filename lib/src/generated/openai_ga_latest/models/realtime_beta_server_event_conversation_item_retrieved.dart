@@ -23,7 +23,6 @@ class RealtimeBetaServerEventConversationItemRetrieved with RealtimeBetaServerEv
   final dynamic type;
   final RealtimeConversationItem item;
 
-  static RealtimeBetaServerEventConversationItemRetrieved fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemRetrievedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemRetrieved fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemRetrievedMapper.fromJson(json);
 }
-

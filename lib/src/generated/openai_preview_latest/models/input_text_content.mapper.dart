@@ -7,13 +7,14 @@
 
 part of 'input_text_content.dart';
 
-class InputTextContentMapper extends ClassMapperBase<InputTextContent> {
+class InputTextContentMapper extends SubClassMapperBase<InputTextContent> {
   InputTextContentMapper._();
 
   static InputTextContentMapper? _instance;
   static InputTextContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputTextContentMapper._());
+      InputContentMapper.ensureInitialized().addSubMapper(_instance!);
       InputTextContentTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,6 +42,14 @@ class InputTextContentMapper extends ClassMapperBase<InputTextContent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_text';
+  @override
+  late final ClassMapperBase superMapper =
+      InputContentMapper.ensureInitialized();
 
   static InputTextContent _instantiate(DecodingData data) {
     return InputTextContent(text: data.dec(_f$text), type: data.dec(_f$type));
@@ -107,7 +116,8 @@ extension InputTextContentValueCopy<$R, $Out>
 }
 
 abstract class InputTextContentCopyWith<$R, $In extends InputTextContent, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements InputContentCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? text, InputTextContentType? type});
   InputTextContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

@@ -11,10 +11,10 @@ part 'transcription_diarized_segment_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptionDiarizedSegmentType {
   /// Incorrect name has been replaced. Original name: `transcript.text.segment`.
-  @MappableValue('transcript.text.segment') 
+  @MappableValue('transcript.text.segment')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum TranscriptionDiarizedSegmentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptionDiarizedSegmentType> get $valuesDefined => values.where((value) => value != TranscriptionDiarizedSegmentType.unknown).toList();
+  static List<TranscriptionDiarizedSegmentType> get $valuesDefined =>
+      values.where((value) => value != TranscriptionDiarizedSegmentType.unknown).toList();
 }

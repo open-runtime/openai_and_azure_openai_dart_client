@@ -14,12 +14,7 @@ part 'fine_tune_method.mapper.dart';
 /// The method used for fine-tuning.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneMethod with FineTuneMethodMappable {
-  const FineTuneMethod({
-    required this.type,
-    this.supervised,
-    this.dpo,
-    this.reinforcement,
-  });
+  const FineTuneMethod({required this.type, this.supervised, this.dpo, this.reinforcement});
 
   final FineTuneMethodType type;
   final FineTuneSupervisedMethod? supervised;
@@ -27,6 +22,4 @@ class FineTuneMethod with FineTuneMethodMappable {
   final FineTuneReinforcementMethod? reinforcement;
 
   static FineTuneMethod fromJson(Map<String, dynamic> json) => FineTuneMethodMapper.fromJson(json);
-
 }
-

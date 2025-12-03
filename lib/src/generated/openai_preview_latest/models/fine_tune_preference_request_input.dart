@@ -25,7 +25,6 @@ class FineTunePreferenceRequestInput with FineTunePreferenceRequestInputMappable
   @MappableField(key: 'non_preferred_completion')
   final List<ChatCompletionRequestAssistantMessage>? nonPreferredCompletion;
 
-  static FineTunePreferenceRequestInput fromJson(Map<String, dynamic> json) => FineTunePreferenceRequestInputMapper.fromJson(json);
-
+  static FineTunePreferenceRequestInput fromJson(Map<String, dynamic> json) =>
+      FineTunePreferenceRequestInputMapper.fromJson(json);
 }
-

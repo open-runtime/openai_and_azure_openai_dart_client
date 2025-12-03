@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_session_create_response_audio_input_turn_detection.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseAudioInputTurnDetection with RealtimeSessionCreateResponseAudioInputTurnDetectionMappable {
+class RealtimeSessionCreateResponseAudioInputTurnDetection
+    with RealtimeSessionCreateResponseAudioInputTurnDetectionMappable {
   const RealtimeSessionCreateResponseAudioInputTurnDetection({
     this.type,
     this.threshold,
@@ -22,7 +23,6 @@ class RealtimeSessionCreateResponseAudioInputTurnDetection with RealtimeSessionC
   @MappableField(key: 'silence_duration_ms')
   final int? silenceDurationMs;
 
-  static RealtimeSessionCreateResponseAudioInputTurnDetection fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioInputTurnDetectionMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseAudioInputTurnDetection fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseAudioInputTurnDetectionMapper.fromJson(json);
 }
-

@@ -18,11 +18,12 @@ import 'refusal_content_type.dart';
 
 part 'output_content.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputContentOutputText,
-  OutputContentRefusal,
-  OutputContentReasoningText
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [OutputContentOutputText, OutputContentRefusal, OutputContentReasoningText],
+)
 sealed class OutputContent with OutputContentMappable {
   const OutputContent();
 
@@ -32,22 +33,18 @@ sealed class OutputContent with OutputContentMappable {
 }
 
 extension OutputContentUnionDeserializer on OutputContent {
-  static OutputContent tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static OutputContent tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      OutputContentOutputText: 'output_text',
-      OutputContentRefusal: 'refusal',
-      OutputContentReasoningText: 'reasoning_text',
+      OutputTextContent: 'output_text',
+      RefusalContent: 'refusal',
+      ReasoningTextContent: 'reasoning_text',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputContentOutputText] => OutputContentOutputTextMapper.fromJson(json),
-      _ when value == effective[OutputContentRefusal] => OutputContentRefusalMapper.fromJson(json),
-      _ when value == effective[OutputContentReasoningText] => OutputContentReasoningTextMapper.fromJson(json),
+      _ when value == effective[OutputTextContent] => OutputTextContentMapper.fromJson(json),
+      _ when value == effective[RefusalContent] => RefusalContentMapper.fromJson(json),
+      _ when value == effective[ReasoningTextContent] => ReasoningTextContentMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputContent'),
     };
   }
@@ -73,10 +70,7 @@ class OutputContentRefusal extends OutputContent with OutputContentRefusalMappab
   final OutputContentType2 type;
   final String refusal;
 
-  const OutputContentRefusal({
-    required this.type,
-    required this.refusal,
-  });
+  const OutputContentRefusal({required this.type, required this.refusal});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
@@ -84,8 +78,5 @@ class OutputContentReasoningText extends OutputContent with OutputContentReasoni
   final OutputContentType3 type;
   final String text;
 
-  const OutputContentReasoningText({
-    required this.type,
-    required this.text,
-  });
+  const OutputContentReasoningText({required this.type, required this.text});
 }

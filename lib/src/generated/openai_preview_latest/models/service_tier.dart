@@ -18,17 +18,17 @@ part 'service_tier.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ServiceTier {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
   /// The name has been replaced because it contains a keyword. Original name: `default`.
-  @MappableValue('default') 
+  @MappableValue('default')
   valueDefault,
 
-  @MappableValue('flex') 
+  @MappableValue('flex')
   flex,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

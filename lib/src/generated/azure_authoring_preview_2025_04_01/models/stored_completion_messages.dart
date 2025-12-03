@@ -10,14 +10,7 @@ part 'stored_completion_messages.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionMessages with StoredCompletionMessagesMappable {
-  const StoredCompletionMessages({
-    this.objectField,
-    this.data,
-    this.total,
-    this.firstId,
-    this.lastId,
-    this.hasMore,
-  });
+  const StoredCompletionMessages({this.objectField, this.data, this.total, this.firstId, this.lastId, this.hasMore});
 
   @MappableField(key: 'object')
   final String? objectField;
@@ -31,6 +24,4 @@ class StoredCompletionMessages with StoredCompletionMessagesMappable {
   final bool? hasMore;
 
   static StoredCompletionMessages fromJson(Map<String, dynamic> json) => StoredCompletionMessagesMapper.fromJson(json);
-
 }
-

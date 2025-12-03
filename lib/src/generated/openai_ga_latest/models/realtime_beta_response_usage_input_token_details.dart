@@ -27,9 +27,9 @@ class RealtimeBetaResponseUsageInputTokenDetails with RealtimeBetaResponseUsageI
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
   @MappableField(key: 'cached_tokens_details')
-  final RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails? realtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails;
+  final RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails?
+  realtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails;
 
-  static RealtimeBetaResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) => RealtimeBetaResponseUsageInputTokenDetailsMapper.fromJson(json);
-
+  static RealtimeBetaResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaResponseUsageInputTokenDetailsMapper.fromJson(json);
 }
-

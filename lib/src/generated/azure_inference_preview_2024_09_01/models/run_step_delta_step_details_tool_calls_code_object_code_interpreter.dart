@@ -9,16 +9,13 @@ import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter_outp
 part 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter with RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMappable {
-  const RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter({
-    this.input,
-    this.outputs,
-  });
+class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter
+    with RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMappable {
+  const RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter({this.input, this.outputs});
 
   final String? input;
   final List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion>? outputs;
 
-  static RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterMapper.fromJson(json);
 }
-

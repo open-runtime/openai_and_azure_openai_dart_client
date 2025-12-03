@@ -9,10 +9,10 @@ part 'computer_screenshot_content_type.mapper.dart';
 /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerScreenshotContentType {
-  @MappableValue('computer_screenshot') 
+  @MappableValue('computer_screenshot')
   computerScreenshot,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ComputerScreenshotContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerScreenshotContentType> get $valuesDefined => values.where((value) => value != ComputerScreenshotContentType.unknown).toList();
+  static List<ComputerScreenshotContentType> get $valuesDefined =>
+      values.where((value) => value != ComputerScreenshotContentType.unknown).toList();
 }

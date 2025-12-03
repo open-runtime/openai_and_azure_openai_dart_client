@@ -11,15 +11,10 @@ part 'pinecone_index.mapper.dart';
 /// Pinecone Index.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeIndex with PineconeIndexMappable {
-  const PineconeIndex({
-    required this.kind,
-    this.connectionId,
-  });
+  const PineconeIndex({required this.kind, this.connectionId});
 
   final TargetType kind;
   final String? connectionId;
 
   static PineconeIndex fromJson(Map<String, dynamic> json) => PineconeIndexMapper.fromJson(json);
-
 }
-

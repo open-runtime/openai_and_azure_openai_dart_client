@@ -19,14 +19,16 @@ class FineTuneSupervisedHyperparameters with FineTuneSupervisedHyperparametersMa
     this.nEpochs = const FineTuneSupervisedHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuneSupervisedHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuneSupervisedHyperparametersLearningRateMultiplierUnion? learningRateMultiplier;
   @MappableField(key: 'batch_size', hook: const FineTuneSupervisedHyperparametersBatchSizeUnionHook())
   final FineTuneSupervisedHyperparametersBatchSizeUnion batchSize;
   @MappableField(key: 'n_epochs', hook: const FineTuneSupervisedHyperparametersNEpochsUnionHook())
   final FineTuneSupervisedHyperparametersNEpochsUnion nEpochs;
 
-  static FineTuneSupervisedHyperparameters fromJson(Map<String, dynamic> json) => FineTuneSupervisedHyperparametersMapper.fromJson(json);
-
+  static FineTuneSupervisedHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuneSupervisedHyperparametersMapper.fromJson(json);
 }
-

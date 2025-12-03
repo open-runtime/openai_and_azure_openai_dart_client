@@ -10,10 +10,10 @@ part 'realtime_server_event_conversation_item_truncated_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventConversationItemTruncatedType {
   /// Incorrect name has been replaced. Original name: `conversation.item.truncated`.
-  @MappableValue('conversation.item.truncated') 
+  @MappableValue('conversation.item.truncated')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventConversationItemTruncatedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventConversationItemTruncatedType> get $valuesDefined => values.where((value) => value != RealtimeServerEventConversationItemTruncatedType.unknown).toList();
+  static List<RealtimeServerEventConversationItemTruncatedType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventConversationItemTruncatedType.unknown).toList();
 }

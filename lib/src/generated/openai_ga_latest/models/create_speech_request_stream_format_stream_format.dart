@@ -9,13 +9,13 @@ part 'create_speech_request_stream_format_stream_format.mapper.dart';
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateSpeechRequestStreamFormatStreamFormat {
-  @MappableValue('sse') 
+  @MappableValue('sse')
   sse,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum CreateSpeechRequestStreamFormatStreamFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateSpeechRequestStreamFormatStreamFormat> get $valuesDefined => values.where((value) => value != CreateSpeechRequestStreamFormatStreamFormat.unknown).toList();
+  static List<CreateSpeechRequestStreamFormatStreamFormat> get $valuesDefined =>
+      values.where((value) => value != CreateSpeechRequestStreamFormatStreamFormat.unknown).toList();
 }

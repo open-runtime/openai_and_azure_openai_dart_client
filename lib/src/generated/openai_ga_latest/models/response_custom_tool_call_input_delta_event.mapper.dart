@@ -8,7 +8,7 @@
 part of 'response_custom_tool_call_input_delta_event.dart';
 
 class ResponseCustomToolCallInputDeltaEventMapper
-    extends ClassMapperBase<ResponseCustomToolCallInputDeltaEvent> {
+    extends SubClassMapperBase<ResponseCustomToolCallInputDeltaEvent> {
   ResponseCustomToolCallInputDeltaEventMapper._();
 
   static ResponseCustomToolCallInputDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCustomToolCallInputDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCustomToolCallInputDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCustomToolCallInputDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -64,6 +65,14 @@ class ResponseCustomToolCallInputDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.custom_tool_call_input.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCustomToolCallInputDeltaEvent _instantiate(DecodingData data) {
     return ResponseCustomToolCallInputDeltaEvent(
@@ -154,7 +163,8 @@ abstract class ResponseCustomToolCallInputDeltaEventCopyWith<
   $In extends ResponseCustomToolCallInputDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseCustomToolCallInputDeltaEventType? type,
     int? sequenceNumber,

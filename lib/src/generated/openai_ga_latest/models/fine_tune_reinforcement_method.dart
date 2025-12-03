@@ -12,15 +12,11 @@ part 'fine_tune_reinforcement_method.mapper.dart';
 /// Configuration for the reinforcement fine-tuning method.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneReinforcementMethod with FineTuneReinforcementMethodMappable {
-  const FineTuneReinforcementMethod({
-    required this.grader,
-    this.hyperparameters,
-  });
+  const FineTuneReinforcementMethod({required this.grader, this.hyperparameters});
 
   final FineTuneReinforcementMethodGraderUnion grader;
   final FineTuneReinforcementHyperparameters? hyperparameters;
 
-  static FineTuneReinforcementMethod fromJson(Map<String, dynamic> json) => FineTuneReinforcementMethodMapper.fromJson(json);
-
+  static FineTuneReinforcementMethod fromJson(Map<String, dynamic> json) =>
+      FineTuneReinforcementMethodMapper.fromJson(json);
 }
-

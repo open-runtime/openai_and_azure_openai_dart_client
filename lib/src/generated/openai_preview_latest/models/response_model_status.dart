@@ -11,19 +11,19 @@ part 'response_model_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseModelStatus {
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum ResponseModelStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseModelStatus> get $valuesDefined => values.where((value) => value != ResponseModelStatus.unknown).toList();
+  static List<ResponseModelStatus> get $valuesDefined =>
+      values.where((value) => value != ResponseModelStatus.unknown).toList();
 }

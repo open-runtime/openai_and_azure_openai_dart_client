@@ -52,6 +52,4 @@ class VideoResource with VideoResourceMappable {
   final VideoResourceObjectObjectEnum objectEnum;
 
   static VideoResource fromJson(Map<String, dynamic> json) => VideoResourceMapper.fromJson(json);
-
 }
-

@@ -9,10 +9,10 @@ part 'user_message_input_text_type.mapper.dart';
 /// Type discriminator that is always `input_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum UserMessageInputTextType {
-  @MappableValue('input_text') 
+  @MappableValue('input_text')
   inputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum UserMessageInputTextType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UserMessageInputTextType> get $valuesDefined => values.where((value) => value != UserMessageInputTextType.unknown).toList();
+  static List<UserMessageInputTextType> get $valuesDefined =>
+      values.where((value) => value != UserMessageInputTextType.unknown).toList();
 }

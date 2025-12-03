@@ -24,19 +24,24 @@ part 'realtime_client_event.mapper.dart';
 
 /// A realtime client event.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeClientEventConversationItemCreate,
-  RealtimeClientEventConversationItemDelete,
-  RealtimeClientEventConversationItemRetrieve,
-  RealtimeClientEventConversationItemTruncate,
-  RealtimeClientEventInputAudioBufferAppend,
-  RealtimeClientEventInputAudioBufferClear,
-  RealtimeClientEventOutputAudioBufferClear,
-  RealtimeClientEventInputAudioBufferCommit,
-  RealtimeClientEventResponseCancel,
-  RealtimeClientEventResponseCreate,
-  RealtimeClientEventSessionUpdate
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeClientEventConversationItemCreate,
+    RealtimeClientEventConversationItemDelete,
+    RealtimeClientEventConversationItemRetrieve,
+    RealtimeClientEventConversationItemTruncate,
+    RealtimeClientEventInputAudioBufferAppend,
+    RealtimeClientEventInputAudioBufferClear,
+    RealtimeClientEventOutputAudioBufferClear,
+    RealtimeClientEventInputAudioBufferCommit,
+    RealtimeClientEventResponseCancel,
+    RealtimeClientEventResponseCreate,
+    RealtimeClientEventSessionUpdate,
+  ],
+)
 sealed class RealtimeClientEvent with RealtimeClientEventMappable {
   const RealtimeClientEvent();
 
@@ -67,24 +72,39 @@ extension RealtimeClientEventUnionDeserializer on RealtimeClientEvent {
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeClientEventConversationItemCreate] => RealtimeClientEventConversationItemCreateMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventConversationItemDelete] => RealtimeClientEventConversationItemDeleteMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventConversationItemRetrieve] => RealtimeClientEventConversationItemRetrieveMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventConversationItemTruncate] => RealtimeClientEventConversationItemTruncateMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventInputAudioBufferAppend] => RealtimeClientEventInputAudioBufferAppendMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventInputAudioBufferClear] => RealtimeClientEventInputAudioBufferClearMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventOutputAudioBufferClear] => RealtimeClientEventOutputAudioBufferClearMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventInputAudioBufferCommit] => RealtimeClientEventInputAudioBufferCommitMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventResponseCancel] => RealtimeClientEventResponseCancelMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventResponseCreate] => RealtimeClientEventResponseCreateMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventSessionUpdate] => RealtimeClientEventSessionUpdateMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventConversationItemCreate] =>
+        RealtimeClientEventConversationItemCreateMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventConversationItemDelete] =>
+        RealtimeClientEventConversationItemDeleteMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventConversationItemRetrieve] =>
+        RealtimeClientEventConversationItemRetrieveMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventConversationItemTruncate] =>
+        RealtimeClientEventConversationItemTruncateMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventInputAudioBufferAppend] =>
+        RealtimeClientEventInputAudioBufferAppendMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventInputAudioBufferClear] =>
+        RealtimeClientEventInputAudioBufferClearMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventOutputAudioBufferClear] =>
+        RealtimeClientEventOutputAudioBufferClearMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventInputAudioBufferCommit] =>
+        RealtimeClientEventInputAudioBufferCommitMapper.fromJson(json),
+      _ when value == effective[RealtimeClientEventResponseCancel] => RealtimeClientEventResponseCancelMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeClientEventResponseCreate] => RealtimeClientEventResponseCreateMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeClientEventSessionUpdate] => RealtimeClientEventSessionUpdateMapper.fromJson(
+        json,
+      ),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeClientEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.create')
-class RealtimeClientEventConversationItemCreate extends RealtimeClientEvent with RealtimeClientEventConversationItemCreateMappable {
+class RealtimeClientEventConversationItemCreate extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemCreateMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
@@ -101,37 +121,32 @@ class RealtimeClientEventConversationItemCreate extends RealtimeClientEvent with
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.delete')
-class RealtimeClientEventConversationItemDelete extends RealtimeClientEvent with RealtimeClientEventConversationItemDeleteMappable {
+class RealtimeClientEventConversationItemDelete extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemDeleteMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeClientEventConversationItemDelete({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeClientEventConversationItemDelete({required this.eventId, required this.type, required this.itemId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.retrieve')
-class RealtimeClientEventConversationItemRetrieve extends RealtimeClientEvent with RealtimeClientEventConversationItemRetrieveMappable {
+class RealtimeClientEventConversationItemRetrieve extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemRetrieveMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
   @MappableField(key: 'item_id')
   final String itemId;
 
-  const RealtimeClientEventConversationItemRetrieve({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeClientEventConversationItemRetrieve({required this.eventId, required this.type, required this.itemId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.truncate')
-class RealtimeClientEventConversationItemTruncate extends RealtimeClientEvent with RealtimeClientEventConversationItemTruncateMappable {
+class RealtimeClientEventConversationItemTruncate extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemTruncateMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
@@ -152,53 +167,44 @@ class RealtimeClientEventConversationItemTruncate extends RealtimeClientEvent wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.append')
-class RealtimeClientEventInputAudioBufferAppend extends RealtimeClientEvent with RealtimeClientEventInputAudioBufferAppendMappable {
+class RealtimeClientEventInputAudioBufferAppend extends RealtimeClientEvent
+    with RealtimeClientEventInputAudioBufferAppendMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
   final String audio;
 
-  const RealtimeClientEventInputAudioBufferAppend({
-    required this.eventId,
-    required this.type,
-    required this.audio,
-  });
+  const RealtimeClientEventInputAudioBufferAppend({required this.eventId, required this.type, required this.audio});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.clear')
-class RealtimeClientEventInputAudioBufferClear extends RealtimeClientEvent with RealtimeClientEventInputAudioBufferClearMappable {
+class RealtimeClientEventInputAudioBufferClear extends RealtimeClientEvent
+    with RealtimeClientEventInputAudioBufferClearMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
 
-  const RealtimeClientEventInputAudioBufferClear({
-    required this.eventId,
-    required this.type,
-  });
+  const RealtimeClientEventInputAudioBufferClear({required this.eventId, required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.clear')
-class RealtimeClientEventOutputAudioBufferClear extends RealtimeClientEvent with RealtimeClientEventOutputAudioBufferClearMappable {
+class RealtimeClientEventOutputAudioBufferClear extends RealtimeClientEvent
+    with RealtimeClientEventOutputAudioBufferClearMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
 
-  const RealtimeClientEventOutputAudioBufferClear({
-    required this.eventId,
-    required this.type,
-  });
+  const RealtimeClientEventOutputAudioBufferClear({required this.eventId, required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.commit')
-class RealtimeClientEventInputAudioBufferCommit extends RealtimeClientEvent with RealtimeClientEventInputAudioBufferCommitMappable {
+class RealtimeClientEventInputAudioBufferCommit extends RealtimeClientEvent
+    with RealtimeClientEventInputAudioBufferCommitMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
   final dynamic type;
 
-  const RealtimeClientEventInputAudioBufferCommit({
-    required this.eventId,
-    required this.type,
-  });
+  const RealtimeClientEventInputAudioBufferCommit({required this.eventId, required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.cancel')
@@ -209,11 +215,7 @@ class RealtimeClientEventResponseCancel extends RealtimeClientEvent with Realtim
   @MappableField(key: 'response_id')
   final String? responseId;
 
-  const RealtimeClientEventResponseCancel({
-    required this.eventId,
-    required this.type,
-    required this.responseId,
-  });
+  const RealtimeClientEventResponseCancel({required this.eventId, required this.type, required this.responseId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.create')
@@ -223,11 +225,7 @@ class RealtimeClientEventResponseCreate extends RealtimeClientEvent with Realtim
   final dynamic type;
   final RealtimeResponseCreateParams? response;
 
-  const RealtimeClientEventResponseCreate({
-    required this.eventId,
-    required this.type,
-    required this.response,
-  });
+  const RealtimeClientEventResponseCreate({required this.eventId, required this.type, required this.response});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'session.update')
@@ -237,9 +235,5 @@ class RealtimeClientEventSessionUpdate extends RealtimeClientEvent with Realtime
   final dynamic type;
   final RealtimeClientEventSessionUnion session;
 
-  const RealtimeClientEventSessionUpdate({
-    required this.eventId,
-    required this.type,
-    required this.session,
-  });
+  const RealtimeClientEventSessionUpdate({required this.eventId, required this.type, required this.session});
 }

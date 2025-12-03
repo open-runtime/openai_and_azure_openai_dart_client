@@ -12,7 +12,7 @@ import 'on_your_data_context_property.dart';
 
 part 'elasticsearch_chat_extension_parameters.mapper.dart';
 
-/// Parameters to use when configuring Elasticsearch® as an Azure OpenAI chat extension. 
+/// Parameters to use when configuring Elasticsearch® as an Azure OpenAI chat extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ElasticsearchChatExtensionParameters with ElasticsearchChatExtensionParametersMappable {
   const ElasticsearchChatExtensionParameters({
@@ -55,7 +55,6 @@ class ElasticsearchChatExtensionParameters with ElasticsearchChatExtensionParame
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static ElasticsearchChatExtensionParameters fromJson(Map<String, dynamic> json) => ElasticsearchChatExtensionParametersMapper.fromJson(json);
-
+  static ElasticsearchChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      ElasticsearchChatExtensionParametersMapper.fromJson(json);
 }
-

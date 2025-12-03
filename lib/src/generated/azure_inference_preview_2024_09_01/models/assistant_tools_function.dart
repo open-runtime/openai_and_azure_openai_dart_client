@@ -9,18 +9,13 @@ import 'assistant_tools_function_type.dart';
 
 part 'assistant_tools_function.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantToolsFunction with AssistantToolsFunctionMappable {
-  const AssistantToolsFunction({
-    required this.type,
-    required this.assistantToolsFunctionFunction,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class AssistantToolsFunction extends CreateThreadAndRunRequestToolsUnion with AssistantToolsFunctionMappable {
+  const AssistantToolsFunction({required this.type, required this.assistantToolsFunctionFunction});
 
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 
   static AssistantToolsFunction fromJson(Map<String, dynamic> json) => AssistantToolsFunctionMapper.fromJson(json);
-
 }
-

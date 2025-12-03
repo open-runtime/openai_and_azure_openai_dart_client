@@ -9,16 +9,16 @@ part 'input_content_detail.mapper.dart';
 /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
 @MappableEnum(defaultValue: 'unknown')
 enum InputContentDetail {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum InputContentDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputContentDetail> get $valuesDefined => values.where((value) => value != InputContentDetail.unknown).toList();
+  static List<InputContentDetail> get $valuesDefined =>
+      values.where((value) => value != InputContentDetail.unknown).toList();
 }

@@ -30,7 +30,6 @@ class RealtimeBetaServerEventResponseOutputItemDone with RealtimeBetaServerEvent
   final int outputIndex;
   final RealtimeConversationItem item;
 
-  static RealtimeBetaServerEventResponseOutputItemDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseOutputItemDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseOutputItemDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseOutputItemDoneMapper.fromJson(json);
 }
-

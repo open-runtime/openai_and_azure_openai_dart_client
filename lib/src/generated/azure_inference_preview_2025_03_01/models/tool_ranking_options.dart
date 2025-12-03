@@ -10,16 +10,11 @@ part 'tool_ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolRankingOptions with ToolRankingOptionsMappable {
-  const ToolRankingOptions({
-    this.ranker = ToolRankingOptionsRanker.auto,
-    this.scoreThreshold = 0,
-  });
+  const ToolRankingOptions({this.ranker = ToolRankingOptionsRanker.auto, this.scoreThreshold = 0});
 
   final ToolRankingOptionsRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 
   static ToolRankingOptions fromJson(Map<String, dynamic> json) => ToolRankingOptionsMapper.fromJson(json);
-
 }
-

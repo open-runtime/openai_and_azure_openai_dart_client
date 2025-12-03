@@ -37,49 +37,49 @@ import 'reasoning_item_type.dart';
 
 part 'item_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ItemUnionMessage,
-  ItemUnionFileSearchCall,
-  ItemUnionComputerCall,
-  ItemUnionComputerCallOutput,
-  ItemUnionFunctionCall,
-  ItemUnionFunctionCallOutput,
-  ItemUnionReasoning
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ItemUnionMessage,
+    ItemUnionFileSearchCall,
+    ItemUnionComputerCall,
+    ItemUnionComputerCallOutput,
+    ItemUnionFunctionCall,
+    ItemUnionFunctionCallOutput,
+    ItemUnionReasoning,
+  ],
+)
 sealed class ItemUnion with ItemUnionMappable {
   const ItemUnion();
 
   static ItemUnion fromJson(Map<String, dynamic> json) {
     return ItemUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ItemUnionDeserializer on ItemUnion {
-  static ItemUnion tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ItemUnion tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ItemUnionMessage: 'message',
-      ItemUnionFileSearchCall: 'file_search_call',
-      ItemUnionComputerCall: 'computer_call',
-      ItemUnionComputerCallOutput: 'computer_call_output',
-      ItemUnionFunctionCall: 'function_call',
-      ItemUnionFunctionCallOutput: 'function_call_output',
-      ItemUnionReasoning: 'reasoning',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      ComputerToolCall: 'computer_call',
+      ComputerToolCallOutput: 'computer_call_output',
+      FunctionToolCall: 'function_call',
+      FunctionToolCallOutput: 'function_call_output',
+      ReasoningItem: 'reasoning',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ItemUnionMessage] => ItemUnionMessageMapper.fromJson(json),
-      _ when value == effective[ItemUnionFileSearchCall] => ItemUnionFileSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionComputerCall] => ItemUnionComputerCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionComputerCallOutput] => ItemUnionComputerCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionFunctionCall] => ItemUnionFunctionCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionFunctionCallOutput] => ItemUnionFunctionCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionReasoning] => ItemUnionReasoningMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCallOutput] => ComputerToolCallOutputMapper.fromJson(json),
+      _ when value == effective[FunctionToolCall] => FunctionToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionToolCallOutput] => FunctionToolCallOutputMapper.fromJson(json),
+      _ when value == effective[ReasoningItem] => ReasoningItemMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ItemUnion'),
     };
   }
@@ -100,8 +100,8 @@ class ItemUnionMessage extends ItemUnion with ItemUnionMessageMappable {
     required this.content,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMappable {
   final String id;
@@ -117,8 +117,8 @@ class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMapp
     required this.queries,
     required this.results,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class ItemUnionComputerCall extends ItemUnion with ItemUnionComputerCallMappable {
   final ComputerToolCallType type;
@@ -138,8 +138,8 @@ class ItemUnionComputerCall extends ItemUnion with ItemUnionComputerCallMappable
     required this.pendingSafetyChecks,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call_output')
 class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOutputMappable {
   final ComputerToolCallOutputType type;
@@ -159,8 +159,8 @@ class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOu
     required this.output,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
 class ItemUnionFunctionCall extends ItemUnion with ItemUnionFunctionCallMappable {
   final String id;
@@ -179,8 +179,8 @@ class ItemUnionFunctionCall extends ItemUnion with ItemUnionFunctionCallMappable
     required this.arguments,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call_output')
 class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOutputMappable {
   final String? id;
@@ -197,8 +197,8 @@ class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOu
     required this.output,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class ItemUnionReasoning extends ItemUnion with ItemUnionReasoningMappable {
   final ReasoningItemType type;
@@ -206,11 +206,5 @@ class ItemUnionReasoning extends ItemUnion with ItemUnionReasoningMappable {
   final List<ReasoningItemContent> content;
   final ReasoningItemStatus? status;
 
-  const ItemUnionReasoning({
-    required this.type,
-    required this.id,
-    required this.content,
-    required this.status,
-  });
-
+  const ItemUnionReasoning({required this.type, required this.id, required this.content, required this.status});
 }

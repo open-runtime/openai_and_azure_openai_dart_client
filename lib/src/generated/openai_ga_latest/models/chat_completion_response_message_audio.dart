@@ -21,7 +21,6 @@ class ChatCompletionResponseMessageAudio with ChatCompletionResponseMessageAudio
   final String data;
   final String transcript;
 
-  static ChatCompletionResponseMessageAudio fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageAudioMapper.fromJson(json);
-
+  static ChatCompletionResponseMessageAudio fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageAudioMapper.fromJson(json);
 }
-

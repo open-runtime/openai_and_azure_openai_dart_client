@@ -8,13 +8,10 @@ part 'webhook_fine_tuning_job_cancelled_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookFineTuningJobCancelledData with WebhookFineTuningJobCancelledDataMappable {
-  const WebhookFineTuningJobCancelledData({
-    required this.id,
-  });
+  const WebhookFineTuningJobCancelledData({required this.id});
 
   final String id;
 
-  static WebhookFineTuningJobCancelledData fromJson(Map<String, dynamic> json) => WebhookFineTuningJobCancelledDataMapper.fromJson(json);
-
+  static WebhookFineTuningJobCancelledData fromJson(Map<String, dynamic> json) =>
+      WebhookFineTuningJobCancelledDataMapper.fromJson(json);
 }
-

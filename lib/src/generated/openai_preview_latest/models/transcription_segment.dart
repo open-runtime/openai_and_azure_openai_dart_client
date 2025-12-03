@@ -36,6 +36,4 @@ class TranscriptionSegment with TranscriptionSegmentMappable {
   final double noSpeechProb;
 
   static TranscriptionSegment fromJson(Map<String, dynamic> json) => TranscriptionSegmentMapper.fromJson(json);
-
 }
-

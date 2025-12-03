@@ -10,8 +10,5 @@ part 'metadata.mapper.dart';
 class Metadata with MetadataMappable {
   const Metadata();
 
-
   static Metadata fromJson(Map<String, dynamic> json) => MetadataMapper.fromJson(json);
-
 }
-

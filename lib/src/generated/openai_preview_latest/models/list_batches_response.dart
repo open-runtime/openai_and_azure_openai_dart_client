@@ -30,6 +30,4 @@ class ListBatchesResponse with ListBatchesResponseMappable {
   final String? lastId;
 
   static ListBatchesResponse fromJson(Map<String, dynamic> json) => ListBatchesResponseMapper.fromJson(json);
-
 }
-

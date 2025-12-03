@@ -32,6 +32,4 @@ class WebhookBatchCancelled with WebhookBatchCancelledMappable {
   final WebhookBatchCancelledObjectObjectEnum? objectEnum;
 
   static WebhookBatchCancelled fromJson(Map<String, dynamic> json) => WebhookBatchCancelledMapper.fromJson(json);
-
 }
-

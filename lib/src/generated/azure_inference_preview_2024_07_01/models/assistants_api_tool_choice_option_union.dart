@@ -15,7 +15,14 @@ part 'assistants_api_tool_choice_option_union.mapper.dart';
 /// `auto` is the default value and means the model can pick between generating a message or calling a tool.
 /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice, AssistantsApiToolChoiceOptionUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice,
+    AssistantsApiToolChoiceOptionUnionVariantString,
+  ],
+)
 sealed class AssistantsApiToolChoiceOptionUnion with AssistantsApiToolChoiceOptionUnionMappable {
   const AssistantsApiToolChoiceOptionUnion();
 
@@ -33,13 +40,13 @@ extension AssistantsApiToolChoiceOptionUnionDeserializer on AssistantsApiToolCho
       return AssistantsApiToolChoiceOptionUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for AssistantsApiToolChoiceOptionUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice extends AssistantsApiToolChoiceOptionUnion with AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMappable {
+class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice extends AssistantsApiToolChoiceOptionUnion
+    with AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoiceMappable {
   final AssistantsNamedToolChoiceType type;
   @MappableField(key: 'function')
   final AssistantsNamedToolChoiceFunction? assistantsNamedToolChoiceFunction;
@@ -51,10 +58,9 @@ class AssistantsApiToolChoiceOptionUnionAssistantsNamedToolChoice extends Assist
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantsApiToolChoiceOptionUnionVariantString extends AssistantsApiToolChoiceOptionUnion with AssistantsApiToolChoiceOptionUnionVariantStringMappable {
+class AssistantsApiToolChoiceOptionUnionVariantString extends AssistantsApiToolChoiceOptionUnion
+    with AssistantsApiToolChoiceOptionUnionVariantStringMappable {
   final String value;
 
-  const AssistantsApiToolChoiceOptionUnionVariantString({
-    required this.value,
-  });
+  const AssistantsApiToolChoiceOptionUnionVariantString({required this.value});
 }

@@ -9,10 +9,10 @@ part 'tool_type3.mapper.dart';
 /// The type of the computer use tool. Always `computer_use_preview`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType3 {
-  @MappableValue('computer_use_preview') 
+  @MappableValue('computer_use_preview')
   computerUsePreview,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

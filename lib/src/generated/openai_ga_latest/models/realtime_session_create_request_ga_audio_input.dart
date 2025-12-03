@@ -27,7 +27,6 @@ class RealtimeSessionCreateRequestGaAudioInput with RealtimeSessionCreateRequest
   @MappableField(key: 'turn_detection')
   final RealtimeTurnDetection? turnDetection;
 
-  static RealtimeSessionCreateRequestGaAudioInput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestGaAudioInputMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestGaAudioInput fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestGaAudioInputMapper.fromJson(json);
 }
-

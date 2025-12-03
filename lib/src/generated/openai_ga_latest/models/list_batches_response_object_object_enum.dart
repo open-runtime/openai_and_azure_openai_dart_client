@@ -9,10 +9,10 @@ part 'list_batches_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ListBatchesResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ListBatchesResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ListBatchesResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ListBatchesResponseObjectObjectEnum.unknown).toList();
+  static List<ListBatchesResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ListBatchesResponseObjectObjectEnum.unknown).toList();
 }

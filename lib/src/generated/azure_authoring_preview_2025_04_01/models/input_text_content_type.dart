@@ -9,10 +9,10 @@ part 'input_text_content_type.mapper.dart';
 /// The type of the input item. Always `input_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum InputTextContentType {
-  @MappableValue('input_text') 
+  @MappableValue('input_text')
   inputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum InputTextContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputTextContentType> get $valuesDefined => values.where((value) => value != InputTextContentType.unknown).toList();
+  static List<InputTextContentType> get $valuesDefined =>
+      values.where((value) => value != InputTextContentType.unknown).toList();
 }

@@ -12,15 +12,10 @@ part 'response_error.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseError with ResponseErrorMappable {
-  const ResponseError({
-    required this.code,
-    required this.message,
-  });
+  const ResponseError({required this.code, required this.message});
 
   final ResponseErrorCode code;
   final String message;
 
   static ResponseError fromJson(Map<String, dynamic> json) => ResponseErrorMapper.fromJson(json);
-
 }
-

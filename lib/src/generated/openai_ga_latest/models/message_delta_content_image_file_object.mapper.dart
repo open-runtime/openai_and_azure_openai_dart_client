@@ -8,7 +8,7 @@
 part of 'message_delta_content_image_file_object.dart';
 
 class MessageDeltaContentImageFileObjectMapper
-    extends ClassMapperBase<MessageDeltaContentImageFileObject> {
+    extends SubClassMapperBase<MessageDeltaContentImageFileObject> {
   MessageDeltaContentImageFileObjectMapper._();
 
   static MessageDeltaContentImageFileObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageDeltaContentImageFileObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentImageFileObjectMapper._(),
       );
+      MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
       MessageDeltaContentImageFileObjectTypeMapper.ensureInitialized();
       MessageDeltaContentImageFileObjectImageFileMapper.ensureInitialized();
     }
@@ -63,6 +64,14 @@ class MessageDeltaContentImageFileObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_file';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentDeltaMapper.ensureInitialized();
 
   static MessageDeltaContentImageFileObject _instantiate(DecodingData data) {
     return MessageDeltaContentImageFileObject(
@@ -152,13 +161,14 @@ abstract class MessageDeltaContentImageFileObjectCopyWith<
   $In extends MessageDeltaContentImageFileObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentDeltaCopyWith<$R, $In, $Out> {
   MessageDeltaContentImageFileObjectImageFileCopyWith<
     $R,
     MessageDeltaContentImageFileObjectImageFile,
     MessageDeltaContentImageFileObjectImageFile
   >?
   get messageDeltaContentImageFileObjectImageFile;
+  @override
   $R call({
     int? indexField,
     MessageDeltaContentImageFileObjectType? type,

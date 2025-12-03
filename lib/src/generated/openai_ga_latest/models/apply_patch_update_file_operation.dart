@@ -9,8 +9,9 @@ import 'apply_patch_update_file_operation_type.dart';
 part 'apply_patch_update_file_operation.mapper.dart';
 
 /// Instruction describing how to update a file via the apply_patch tool.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchUpdateFileOperation with ApplyPatchUpdateFileOperationMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
+class ApplyPatchUpdateFileOperation extends ApplyPatchToolCallOperationUnion
+    with ApplyPatchUpdateFileOperationMappable {
   const ApplyPatchUpdateFileOperation({
     required this.path,
     required this.diff,
@@ -21,7 +22,6 @@ class ApplyPatchUpdateFileOperation with ApplyPatchUpdateFileOperationMappable {
   final String diff;
   final ApplyPatchUpdateFileOperationType type;
 
-  static ApplyPatchUpdateFileOperation fromJson(Map<String, dynamic> json) => ApplyPatchUpdateFileOperationMapper.fromJson(json);
-
+  static ApplyPatchUpdateFileOperation fromJson(Map<String, dynamic> json) =>
+      ApplyPatchUpdateFileOperationMapper.fromJson(json);
 }
-

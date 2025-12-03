@@ -10,15 +10,11 @@ part 'realtime_conversation_item_message_system_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemMessageSystemContent with RealtimeConversationItemMessageSystemContentMappable {
-  const RealtimeConversationItemMessageSystemContent({
-    this.type,
-    this.text,
-  });
+  const RealtimeConversationItemMessageSystemContent({this.type, this.text});
 
   final RealtimeConversationItemMessageSystemContentType? type;
   final String? text;
 
-  static RealtimeConversationItemMessageSystemContent fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageSystemContentMapper.fromJson(json);
-
+  static RealtimeConversationItemMessageSystemContent fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemMessageSystemContentMapper.fromJson(json);
 }
-

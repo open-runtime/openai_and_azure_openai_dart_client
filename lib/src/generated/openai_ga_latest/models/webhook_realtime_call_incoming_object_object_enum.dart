@@ -11,10 +11,10 @@ part 'webhook_realtime_call_incoming_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookRealtimeCallIncomingObjectObjectEnum {
-  @MappableValue('event') 
+  @MappableValue('event')
   event,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookRealtimeCallIncomingObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookRealtimeCallIncomingObjectObjectEnum> get $valuesDefined => values.where((value) => value != WebhookRealtimeCallIncomingObjectObjectEnum.unknown).toList();
+  static List<WebhookRealtimeCallIncomingObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WebhookRealtimeCallIncomingObjectObjectEnum.unknown).toList();
 }

@@ -8,13 +8,13 @@ part 'truncation_enum.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum TruncationEnum {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('disabled') 
+  @MappableValue('disabled')
   disabled,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

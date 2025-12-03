@@ -10,10 +10,10 @@ part 'realtime_client_event_conversation_item_delete_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventConversationItemDeleteType {
   /// Incorrect name has been replaced. Original name: `conversation.item.delete`.
-  @MappableValue('conversation.item.delete') 
+  @MappableValue('conversation.item.delete')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventConversationItemDeleteType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventConversationItemDeleteType> get $valuesDefined => values.where((value) => value != RealtimeClientEventConversationItemDeleteType.unknown).toList();
+  static List<RealtimeClientEventConversationItemDeleteType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventConversationItemDeleteType.unknown).toList();
 }

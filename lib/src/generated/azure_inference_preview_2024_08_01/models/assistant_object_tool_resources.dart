@@ -21,7 +21,6 @@ class AssistantObjectToolResources with AssistantObjectToolResourcesMappable {
   @MappableField(key: 'file_search')
   final AssistantObjectToolResourcesFileSearch? assistantObjectToolResourcesFileSearch;
 
-  static AssistantObjectToolResources fromJson(Map<String, dynamic> json) => AssistantObjectToolResourcesMapper.fromJson(json);
-
+  static AssistantObjectToolResources fromJson(Map<String, dynamic> json) =>
+      AssistantObjectToolResourcesMapper.fromJson(json);
 }
-

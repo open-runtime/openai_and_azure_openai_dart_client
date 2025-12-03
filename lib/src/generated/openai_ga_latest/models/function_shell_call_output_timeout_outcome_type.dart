@@ -9,10 +9,10 @@ part 'function_shell_call_output_timeout_outcome_type.mapper.dart';
 /// The outcome type. Always `timeout`.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionShellCallOutputTimeoutOutcomeType {
-  @MappableValue('timeout') 
+  @MappableValue('timeout')
   timeout,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FunctionShellCallOutputTimeoutOutcomeType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionShellCallOutputTimeoutOutcomeType> get $valuesDefined => values.where((value) => value != FunctionShellCallOutputTimeoutOutcomeType.unknown).toList();
+  static List<FunctionShellCallOutputTimeoutOutcomeType> get $valuesDefined =>
+      values.where((value) => value != FunctionShellCallOutputTimeoutOutcomeType.unknown).toList();
 }

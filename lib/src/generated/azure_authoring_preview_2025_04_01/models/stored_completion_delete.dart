@@ -8,11 +8,7 @@ part 'stored_completion_delete.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionDelete with StoredCompletionDeleteMappable {
-  const StoredCompletionDelete({
-    required this.objectField,
-    this.id,
-    this.deleted,
-  });
+  const StoredCompletionDelete({required this.objectField, this.id, this.deleted});
 
   @MappableField(key: 'object')
   final String objectField;
@@ -20,6 +16,4 @@ class StoredCompletionDelete with StoredCompletionDeleteMappable {
   final bool? deleted;
 
   static StoredCompletionDelete fromJson(Map<String, dynamic> json) => StoredCompletionDeleteMapper.fromJson(json);
-
 }
-

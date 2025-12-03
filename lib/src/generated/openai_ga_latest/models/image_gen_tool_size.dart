@@ -11,19 +11,19 @@ part 'image_gen_tool_size.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolSize {
-  @MappableValue('1024x1024') 
+  @MappableValue('1024x1024')
   value1024x1024,
 
-  @MappableValue('1024x1536') 
+  @MappableValue('1024x1536')
   value1024x1536,
 
-  @MappableValue('1536x1024') 
+  @MappableValue('1536x1024')
   value1536x1024,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum ImageGenToolSize {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolSize> get $valuesDefined => values.where((value) => value != ImageGenToolSize.unknown).toList();
+  static List<ImageGenToolSize> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolSize.unknown).toList();
 }

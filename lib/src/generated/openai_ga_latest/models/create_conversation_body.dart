@@ -11,15 +11,10 @@ part 'create_conversation_body.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateConversationBody with CreateConversationBodyMappable {
-  const CreateConversationBody({
-    this.metadata,
-    this.items,
-  });
+  const CreateConversationBody({this.metadata, this.items});
 
   final Metadata? metadata;
   final List<InputItem>? items;
 
   static CreateConversationBody fromJson(Map<String, dynamic> json) => CreateConversationBodyMapper.fromJson(json);
-
 }
-

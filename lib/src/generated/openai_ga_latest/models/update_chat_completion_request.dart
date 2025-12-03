@@ -10,13 +10,10 @@ part 'update_chat_completion_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateChatCompletionRequest with UpdateChatCompletionRequestMappable {
-  const UpdateChatCompletionRequest({
-    required this.metadata,
-  });
+  const UpdateChatCompletionRequest({required this.metadata});
 
   final Metadata metadata;
 
-  static UpdateChatCompletionRequest fromJson(Map<String, dynamic> json) => UpdateChatCompletionRequestMapper.fromJson(json);
-
+  static UpdateChatCompletionRequest fromJson(Map<String, dynamic> json) =>
+      UpdateChatCompletionRequestMapper.fromJson(json);
 }
-

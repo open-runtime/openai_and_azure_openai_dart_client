@@ -9,7 +9,9 @@ part of 'realtime_server_event_input_audio_buffer_timeout_triggered.dart';
 
 class RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper
     extends
-        ClassMapperBase<RealtimeServerEventInputAudioBufferTimeoutTriggered> {
+        SubClassMapperBase<
+          RealtimeServerEventInputAudioBufferTimeoutTriggered
+        > {
   RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper._();
 
   static RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper? _instance;
@@ -20,6 +22,7 @@ class RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper
         _instance =
             RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -79,6 +82,14 @@ class RealtimeServerEventInputAudioBufferTimeoutTriggeredMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_audio_buffer.timeout_triggered';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventInputAudioBufferTimeoutTriggered _instantiate(
     DecodingData data,
@@ -189,7 +200,8 @@ abstract class RealtimeServerEventInputAudioBufferTimeoutTriggeredCopyWith<
   $In extends RealtimeServerEventInputAudioBufferTimeoutTriggered,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     dynamic type,

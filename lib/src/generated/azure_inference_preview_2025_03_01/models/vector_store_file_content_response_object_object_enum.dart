@@ -11,10 +11,10 @@ part 'vector_store_file_content_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreFileContentResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `vector_store.file_content.page`.
-  @MappableValue('vector_store.file_content.page') 
+  @MappableValue('vector_store.file_content.page')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum VectorStoreFileContentResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreFileContentResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != VectorStoreFileContentResponseObjectObjectEnum.unknown).toList();
+  static List<VectorStoreFileContentResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != VectorStoreFileContentResponseObjectObjectEnum.unknown).toList();
 }

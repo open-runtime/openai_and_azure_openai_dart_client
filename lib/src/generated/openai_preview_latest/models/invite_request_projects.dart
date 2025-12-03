@@ -10,15 +10,10 @@ part 'invite_request_projects.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InviteRequestProjects with InviteRequestProjectsMappable {
-  const InviteRequestProjects({
-    required this.id,
-    required this.role,
-  });
+  const InviteRequestProjects({required this.id, required this.role});
 
   final String id;
   final InviteRequestProjectsRole role;
 
   static InviteRequestProjects fromJson(Map<String, dynamic> json) => InviteRequestProjectsMapper.fromJson(json);
-
 }
-

@@ -10,8 +10,8 @@ import 'file_citation_body_type.dart';
 part 'file_citation_body.mapper.dart';
 
 /// A citation to a file.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileCitationBody with FileCitationBodyMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
+class FileCitationBody extends Annotation with FileCitationBodyMappable {
   const FileCitationBody({
     required this.fileId,
     required this.indexField,
@@ -27,6 +27,4 @@ class FileCitationBody with FileCitationBodyMappable {
   final FileCitationBodyType type;
 
   static FileCitationBody fromJson(Map<String, dynamic> json) => FileCitationBodyMapper.fromJson(json);
-
 }
-

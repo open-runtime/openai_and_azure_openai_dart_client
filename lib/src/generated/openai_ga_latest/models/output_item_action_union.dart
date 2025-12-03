@@ -16,18 +16,18 @@ import 'web_search_action_search_type.dart';
 
 part 'output_item_action_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputItemActionUnionSearch,
-  OutputItemActionUnionOpenPage,
-  OutputItemActionUnionFind
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [OutputItemActionUnionSearch, OutputItemActionUnionOpenPage, OutputItemActionUnionFind],
+)
 sealed class OutputItemActionUnion with OutputItemActionUnionMappable {
   const OutputItemActionUnion();
 
   static OutputItemActionUnion fromJson(Map<String, dynamic> json) {
     return OutputItemActionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension OutputItemActionUnionDeserializer on OutputItemActionUnion {
@@ -37,16 +37,16 @@ extension OutputItemActionUnionDeserializer on OutputItemActionUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      OutputItemActionUnionSearch: 'search',
-      OutputItemActionUnionOpenPage: 'open_page',
-      OutputItemActionUnionFind: 'find',
+      WebSearchActionSearch: 'search',
+      WebSearchActionOpenPage: 'open_page',
+      WebSearchActionFind: 'find',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputItemActionUnionSearch] => OutputItemActionUnionSearchMapper.fromJson(json),
-      _ when value == effective[OutputItemActionUnionOpenPage] => OutputItemActionUnionOpenPageMapper.fromJson(json),
-      _ when value == effective[OutputItemActionUnionFind] => OutputItemActionUnionFindMapper.fromJson(json),
+      _ when value == effective[WebSearchActionSearch] => WebSearchActionSearchMapper.fromJson(json),
+      _ when value == effective[WebSearchActionOpenPage] => WebSearchActionOpenPageMapper.fromJson(json),
+      _ when value == effective[WebSearchActionFind] => WebSearchActionFindMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputItemActionUnion'),
     };
   }
@@ -58,34 +58,22 @@ class OutputItemActionUnionSearch extends OutputItemActionUnion with OutputItemA
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
-  const OutputItemActionUnionSearch({
-    required this.type,
-    required this.query,
-    required this.sources,
-  });
-
+  const OutputItemActionUnionSearch({required this.type, required this.query, required this.sources});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
 class OutputItemActionUnionOpenPage extends OutputItemActionUnion with OutputItemActionUnionOpenPageMappable {
   final WebSearchActionOpenPageType type;
   final String url;
 
-  const OutputItemActionUnionOpenPage({
-    required this.type,
-    required this.url,
-  });
-
+  const OutputItemActionUnionOpenPage({required this.type, required this.url});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
 class OutputItemActionUnionFind extends OutputItemActionUnion with OutputItemActionUnionFindMappable {
   final WebSearchActionFindType type;
   final String url;
   final String pattern;
 
-  const OutputItemActionUnionFind({
-    required this.type,
-    required this.url,
-    required this.pattern,
-  });
-
+  const OutputItemActionUnionFind({required this.type, required this.url, required this.pattern});
 }

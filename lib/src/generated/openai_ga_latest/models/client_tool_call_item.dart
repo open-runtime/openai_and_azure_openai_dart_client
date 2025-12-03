@@ -12,8 +12,8 @@ import 'thread_item.dart';
 part 'client_tool_call_item.mapper.dart';
 
 /// Record of a client side tool invocation initiated by the assistant.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ClientToolCallItem with ClientToolCallItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.client_tool_call')
+class ClientToolCallItem extends ThreadItem with ClientToolCallItemMappable {
   const ClientToolCallItem({
     required this.id,
     required this.createdAt,
@@ -43,6 +43,4 @@ class ClientToolCallItem with ClientToolCallItemMappable {
   final ClientToolCallItemType type;
 
   static ClientToolCallItem fromJson(Map<String, dynamic> json) => ClientToolCallItemMapper.fromJson(json);
-
 }
-

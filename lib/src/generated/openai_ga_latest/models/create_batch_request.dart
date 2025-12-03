@@ -31,6 +31,4 @@ class CreateBatchRequest with CreateBatchRequestMappable {
   final BatchFileExpirationAfter? outputExpiresAfter;
 
   static CreateBatchRequest fromJson(Map<String, dynamic> json) => CreateBatchRequestMapper.fromJson(json);
-
 }
-

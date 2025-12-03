@@ -9,10 +9,10 @@ part 'project_rate_limit_list_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectRateLimitListResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ProjectRateLimitListResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectRateLimitListResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectRateLimitListResponseObjectObjectEnum.unknown).toList();
+  static List<ProjectRateLimitListResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectRateLimitListResponseObjectObjectEnum.unknown).toList();
 }

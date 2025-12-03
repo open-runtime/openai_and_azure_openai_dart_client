@@ -9,11 +9,7 @@ part 'function_shell_action.mapper.dart';
 /// Execute a shell command.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellAction with FunctionShellActionMappable {
-  const FunctionShellAction({
-    required this.commands,
-    required this.timeoutMs,
-    required this.maxOutputLength,
-  });
+  const FunctionShellAction({required this.commands, required this.timeoutMs, required this.maxOutputLength});
 
   final List<String> commands;
   @MappableField(key: 'timeout_ms')
@@ -22,6 +18,4 @@ class FunctionShellAction with FunctionShellActionMappable {
   final int? maxOutputLength;
 
   static FunctionShellAction fromJson(Map<String, dynamic> json) => FunctionShellActionMapper.fromJson(json);
-
 }
-

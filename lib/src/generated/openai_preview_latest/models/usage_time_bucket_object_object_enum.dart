@@ -9,10 +9,10 @@ part 'usage_time_bucket_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum UsageTimeBucketObjectObjectEnum {
-  @MappableValue('bucket') 
+  @MappableValue('bucket')
   bucket,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum UsageTimeBucketObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageTimeBucketObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageTimeBucketObjectObjectEnum.unknown).toList();
+  static List<UsageTimeBucketObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageTimeBucketObjectObjectEnum.unknown).toList();
 }

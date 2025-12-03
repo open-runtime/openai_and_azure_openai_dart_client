@@ -34,7 +34,6 @@ class AzureSearchIndexFieldMappingOptions with AzureSearchIndexFieldMappingOptio
   @MappableField(key: 'image_vector_fields')
   final List<String>? imageVectorFields;
 
-  static AzureSearchIndexFieldMappingOptions fromJson(Map<String, dynamic> json) => AzureSearchIndexFieldMappingOptionsMapper.fromJson(json);
-
+  static AzureSearchIndexFieldMappingOptions fromJson(Map<String, dynamic> json) =>
+      AzureSearchIndexFieldMappingOptionsMapper.fromJson(json);
 }
-

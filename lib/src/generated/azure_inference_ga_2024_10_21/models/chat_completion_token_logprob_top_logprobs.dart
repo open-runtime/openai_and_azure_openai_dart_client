@@ -8,17 +8,12 @@ part 'chat_completion_token_logprob_top_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionTokenLogprobTopLogprobs with ChatCompletionTokenLogprobTopLogprobsMappable {
-  const ChatCompletionTokenLogprobTopLogprobs({
-    required this.token,
-    required this.logprob,
-    required this.bytes,
-  });
+  const ChatCompletionTokenLogprobTopLogprobs({required this.token, required this.logprob, required this.bytes});
 
   final String token;
   final num logprob;
   final List<int>? bytes;
 
-  static ChatCompletionTokenLogprobTopLogprobs fromJson(Map<String, dynamic> json) => ChatCompletionTokenLogprobTopLogprobsMapper.fromJson(json);
-
+  static ChatCompletionTokenLogprobTopLogprobs fromJson(Map<String, dynamic> json) =>
+      ChatCompletionTokenLogprobTopLogprobsMapper.fromJson(json);
 }
-

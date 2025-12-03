@@ -11,10 +11,10 @@ part 'key_press_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum KeyPressType {
-  @MappableValue('keypress') 
+  @MappableValue('keypress')
   keypress,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -16,8 +16,8 @@ part 'image_edit_completed_event.mapper.dart';
 
 /// Emitted when image editing has completed and the final image is available.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ImageEditCompletedEvent with ImageEditCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_edit.completed')
+class ImageEditCompletedEvent extends ImageEditStreamEvent with ImageEditCompletedEventMappable {
   const ImageEditCompletedEvent({
     required this.type,
     required this.b64Json,
@@ -42,6 +42,4 @@ class ImageEditCompletedEvent with ImageEditCompletedEventMappable {
   final ImagesUsage usage;
 
   static ImageEditCompletedEvent fromJson(Map<String, dynamic> json) => ImageEditCompletedEventMapper.fromJson(json);
-
 }
-

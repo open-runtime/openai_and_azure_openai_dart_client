@@ -10,12 +10,7 @@ part 'realtime_server_event_rate_limits_updated_rate_limits.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventRateLimitsUpdatedRateLimits with RealtimeServerEventRateLimitsUpdatedRateLimitsMappable {
-  const RealtimeServerEventRateLimitsUpdatedRateLimits({
-    this.name,
-    this.limit,
-    this.remaining,
-    this.resetSeconds,
-  });
+  const RealtimeServerEventRateLimitsUpdatedRateLimits({this.name, this.limit, this.remaining, this.resetSeconds});
 
   final RealtimeServerEventRateLimitsUpdatedRateLimitsName? name;
   final int? limit;
@@ -23,7 +18,6 @@ class RealtimeServerEventRateLimitsUpdatedRateLimits with RealtimeServerEventRat
   @MappableField(key: 'reset_seconds')
   final num? resetSeconds;
 
-  static RealtimeServerEventRateLimitsUpdatedRateLimits fromJson(Map<String, dynamic> json) => RealtimeServerEventRateLimitsUpdatedRateLimitsMapper.fromJson(json);
-
+  static RealtimeServerEventRateLimitsUpdatedRateLimits fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventRateLimitsUpdatedRateLimitsMapper.fromJson(json);
 }
-

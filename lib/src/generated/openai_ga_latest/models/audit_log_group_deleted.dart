@@ -8,13 +8,9 @@ part 'audit_log_group_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogGroupDeleted with AuditLogGroupDeletedMappable {
-  const AuditLogGroupDeleted({
-    this.id,
-  });
+  const AuditLogGroupDeleted({this.id});
 
   final String? id;
 
   static AuditLogGroupDeleted fromJson(Map<String, dynamic> json) => AuditLogGroupDeletedMapper.fromJson(json);
-
 }
-

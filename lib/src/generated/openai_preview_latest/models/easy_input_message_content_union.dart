@@ -11,7 +11,11 @@ part 'easy_input_message_content_union.mapper.dart';
 /// Text, image, or audio input to the model, used to generate a response.
 /// Can also contain previous assistant responses.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [EasyInputMessageContentUnionInputMessageContentList, EasyInputMessageContentUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [EasyInputMessageContentUnionInputMessageContentList, EasyInputMessageContentUnionVariantString],
+)
 sealed class EasyInputMessageContentUnion with EasyInputMessageContentUnionMappable {
   const EasyInputMessageContentUnion();
 
@@ -29,23 +33,20 @@ extension EasyInputMessageContentUnionDeserializer on EasyInputMessageContentUni
       return EasyInputMessageContentUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for EasyInputMessageContentUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EasyInputMessageContentUnionInputMessageContentList extends EasyInputMessageContentUnion with EasyInputMessageContentUnionInputMessageContentListMappable {
-
-
+class EasyInputMessageContentUnionInputMessageContentList extends EasyInputMessageContentUnion
+    with EasyInputMessageContentUnionInputMessageContentListMappable {
   const EasyInputMessageContentUnionInputMessageContentList();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EasyInputMessageContentUnionVariantString extends EasyInputMessageContentUnion with EasyInputMessageContentUnionVariantStringMappable {
+class EasyInputMessageContentUnionVariantString extends EasyInputMessageContentUnion
+    with EasyInputMessageContentUnionVariantStringMappable {
   final String value;
 
-  const EasyInputMessageContentUnionVariantString({
-    required this.value,
-  });
+  const EasyInputMessageContentUnionVariantString({required this.value});
 }

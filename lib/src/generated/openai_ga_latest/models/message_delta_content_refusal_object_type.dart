@@ -9,10 +9,10 @@ part 'message_delta_content_refusal_object_type.mapper.dart';
 /// Always `refusal`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentRefusalObjectType {
-  @MappableValue('refusal') 
+  @MappableValue('refusal')
   refusal,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageDeltaContentRefusalObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentRefusalObjectType> get $valuesDefined => values.where((value) => value != MessageDeltaContentRefusalObjectType.unknown).toList();
+  static List<MessageDeltaContentRefusalObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentRefusalObjectType.unknown).toList();
 }

@@ -42,7 +42,6 @@ class ContentFilterChoiceResults with ContentFilterChoiceResultsMappable {
   @MappableField(key: 'protected_material_code')
   final ContentFilterDetectedWithCitationResult? protectedMaterialCode;
 
-  static ContentFilterChoiceResults fromJson(Map<String, dynamic> json) => ContentFilterChoiceResultsMapper.fromJson(json);
-
+  static ContentFilterChoiceResults fromJson(Map<String, dynamic> json) =>
+      ContentFilterChoiceResultsMapper.fromJson(json);
 }
-

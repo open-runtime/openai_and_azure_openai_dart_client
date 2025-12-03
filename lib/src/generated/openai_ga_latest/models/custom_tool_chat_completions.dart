@@ -11,18 +11,14 @@ part 'custom_tool_chat_completions.mapper.dart';
 
 /// A custom tool that processes input using a specified format.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolChatCompletions with CustomToolChatCompletionsMappable {
-  const CustomToolChatCompletions({
-    required this.type,
-    required this.customToolChatCompletionsCustom,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class CustomToolChatCompletions extends CreateChatCompletionRequestToolsUnion with CustomToolChatCompletionsMappable {
+  const CustomToolChatCompletions({required this.type, required this.customToolChatCompletionsCustom});
 
   final CustomToolChatCompletionsType type;
   @MappableField(key: 'custom')
   final CustomToolChatCompletionsCustom customToolChatCompletionsCustom;
 
-  static CustomToolChatCompletions fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsMapper.fromJson(json);
-
+  static CustomToolChatCompletions fromJson(Map<String, dynamic> json) =>
+      CustomToolChatCompletionsMapper.fromJson(json);
 }
-

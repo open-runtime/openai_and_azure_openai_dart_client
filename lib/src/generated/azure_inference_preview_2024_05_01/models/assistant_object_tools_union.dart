@@ -14,18 +14,22 @@ import 'assistant_tools_function_type.dart';
 
 part 'assistant_object_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  AssistantObjectToolsUnionCodeInterpreter,
-  AssistantObjectToolsUnionFileSearch,
-  AssistantObjectToolsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    AssistantObjectToolsUnionCodeInterpreter,
+    AssistantObjectToolsUnionFileSearch,
+    AssistantObjectToolsUnionFunction,
+  ],
+)
 sealed class AssistantObjectToolsUnion with AssistantObjectToolsUnionMappable {
   const AssistantObjectToolsUnion();
 
   static AssistantObjectToolsUnion fromJson(Map<String, dynamic> json) {
     return AssistantObjectToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension AssistantObjectToolsUnionDeserializer on AssistantObjectToolsUnion {
@@ -35,48 +39,43 @@ extension AssistantObjectToolsUnionDeserializer on AssistantObjectToolsUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      AssistantObjectToolsUnionCodeInterpreter: 'code_interpreter',
-      AssistantObjectToolsUnionFileSearch: 'file_search',
-      AssistantObjectToolsUnionFunction: 'function',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
+      AssistantToolsFunction: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[AssistantObjectToolsUnionCodeInterpreter] => AssistantObjectToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[AssistantObjectToolsUnionFileSearch] => AssistantObjectToolsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[AssistantObjectToolsUnionFunction] => AssistantObjectToolsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFunction] => AssistantToolsFunctionMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for AssistantObjectToolsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class AssistantObjectToolsUnionCodeInterpreter extends AssistantObjectToolsUnion with AssistantObjectToolsUnionCodeInterpreterMappable {
+class AssistantObjectToolsUnionCodeInterpreter extends AssistantObjectToolsUnion
+    with AssistantObjectToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const AssistantObjectToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const AssistantObjectToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class AssistantObjectToolsUnionFileSearch extends AssistantObjectToolsUnion with AssistantObjectToolsUnionFileSearchMappable {
+class AssistantObjectToolsUnionFileSearch extends AssistantObjectToolsUnion
+    with AssistantObjectToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
 
-  const AssistantObjectToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const AssistantObjectToolsUnionFileSearch({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class AssistantObjectToolsUnionFunction extends AssistantObjectToolsUnion with AssistantObjectToolsUnionFunctionMappable {
+class AssistantObjectToolsUnionFunction extends AssistantObjectToolsUnion
+    with AssistantObjectToolsUnionFunctionMappable {
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 
-  const AssistantObjectToolsUnionFunction({
-    required this.type,
-    required this.assistantToolsFunctionFunction,
-  });
-
+  const AssistantObjectToolsUnionFunction({required this.type, required this.assistantToolsFunctionFunction});
 }

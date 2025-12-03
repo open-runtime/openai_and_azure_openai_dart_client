@@ -7,13 +7,15 @@
 
 part of 'local_shell_tool_param.dart';
 
-class LocalShellToolParamMapper extends ClassMapperBase<LocalShellToolParam> {
+class LocalShellToolParamMapper
+    extends SubClassMapperBase<LocalShellToolParam> {
   LocalShellToolParamMapper._();
 
   static LocalShellToolParamMapper? _instance;
   static LocalShellToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LocalShellToolParamMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       LocalShellToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -32,6 +34,13 @@ class LocalShellToolParamMapper extends ClassMapperBase<LocalShellToolParam> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'local_shell';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static LocalShellToolParam _instantiate(DecodingData data) {
     return LocalShellToolParam(type: data.dec(_f$type));
@@ -106,7 +115,8 @@ abstract class LocalShellToolParamCopyWith<
   $In extends LocalShellToolParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
+  @override
   $R call({LocalShellToolParamType? type});
   LocalShellToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

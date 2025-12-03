@@ -10,10 +10,10 @@ part 'delete_vector_store_file_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeleteVectorStoreFileResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `vector_store.file.deleted`.
-  @MappableValue('vector_store.file.deleted') 
+  @MappableValue('vector_store.file.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum DeleteVectorStoreFileResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeleteVectorStoreFileResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeleteVectorStoreFileResponseObjectObjectEnum.unknown).toList();
+  static List<DeleteVectorStoreFileResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeleteVectorStoreFileResponseObjectObjectEnum.unknown).toList();
 }

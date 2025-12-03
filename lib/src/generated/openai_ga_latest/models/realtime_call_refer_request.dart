@@ -10,14 +10,10 @@ part 'realtime_call_refer_request.mapper.dart';
 /// Realtime API.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCallReferRequest with RealtimeCallReferRequestMappable {
-  const RealtimeCallReferRequest({
-    required this.targetUri,
-  });
+  const RealtimeCallReferRequest({required this.targetUri});
 
   @MappableField(key: 'target_uri')
   final String targetUri;
 
   static RealtimeCallReferRequest fromJson(Map<String, dynamic> json) => RealtimeCallReferRequestMapper.fromJson(json);
-
 }
-

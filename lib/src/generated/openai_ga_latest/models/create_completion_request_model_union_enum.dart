@@ -10,16 +10,16 @@ part 'create_completion_request_model_union_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum CreateCompletionRequestModelUnionEnum {
   /// Incorrect name has been replaced. Original name: `gpt-3.5-turbo-instruct`.
-  @MappableValue('gpt-3.5-turbo-instruct') 
+  @MappableValue('gpt-3.5-turbo-instruct')
   undefined0,
 
-  @MappableValue('davinci-002') 
+  @MappableValue('davinci-002')
   davinci002,
 
-  @MappableValue('babbage-002') 
+  @MappableValue('babbage-002')
   babbage002,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum CreateCompletionRequestModelUnionEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateCompletionRequestModelUnionEnum> get $valuesDefined => values.where((value) => value != CreateCompletionRequestModelUnionEnum.unknown).toList();
+  static List<CreateCompletionRequestModelUnionEnum> get $valuesDefined =>
+      values.where((value) => value != CreateCompletionRequestModelUnionEnum.unknown).toList();
 }

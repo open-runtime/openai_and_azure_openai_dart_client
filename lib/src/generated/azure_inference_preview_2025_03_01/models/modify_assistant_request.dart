@@ -40,6 +40,4 @@ class ModifyAssistantRequest with ModifyAssistantRequestMappable {
   final AssistantsApiResponseFormatOption? responseFormat;
 
   static ModifyAssistantRequest fromJson(Map<String, dynamic> json) => ModifyAssistantRequestMapper.fromJson(json);
-
 }
-

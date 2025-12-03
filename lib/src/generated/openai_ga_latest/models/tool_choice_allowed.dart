@@ -12,19 +12,13 @@ part 'tool_choice_allowed.mapper.dart';
 
 /// Constrains the tools available to the model to a pre-defined set.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ToolChoiceAllowed with ToolChoiceAllowedMappable {
-  const ToolChoiceAllowed({
-    required this.type,
-    required this.mode,
-    required this.tools,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'allowed_tools')
+class ToolChoiceAllowed extends ToolChoiceParam with ToolChoiceAllowedMappable {
+  const ToolChoiceAllowed({required this.type, required this.mode, required this.tools});
 
   final ToolChoiceAllowedType type;
   final ToolChoiceAllowedMode mode;
   final List<dynamic> tools;
 
   static ToolChoiceAllowed fromJson(Map<String, dynamic> json) => ToolChoiceAllowedMapper.fromJson(json);
-
 }
-

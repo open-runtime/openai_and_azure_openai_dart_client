@@ -9,10 +9,10 @@ part 'response_format_text_type.mapper.dart';
 /// The type of response format being defined. Always `text`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormatTextType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseFormatTextType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFormatTextType> get $valuesDefined => values.where((value) => value != ResponseFormatTextType.unknown).toList();
+  static List<ResponseFormatTextType> get $valuesDefined =>
+      values.where((value) => value != ResponseFormatTextType.unknown).toList();
 }

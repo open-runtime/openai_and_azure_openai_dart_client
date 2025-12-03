@@ -8,13 +8,13 @@ part 'ranker_version_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RankerVersionType {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('default-2024-11-15') 
+  @MappableValue('default-2024-11-15')
   default20241115,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RankerVersionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RankerVersionType> get $valuesDefined => values.where((value) => value != RankerVersionType.unknown).toList();
+  static List<RankerVersionType> get $valuesDefined =>
+      values.where((value) => value != RankerVersionType.unknown).toList();
 }

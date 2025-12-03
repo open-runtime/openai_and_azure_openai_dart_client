@@ -23,13 +23,13 @@ extension WebSearchApproximateLocationUnionDeserializer on WebSearchApproximateL
       return WebSearchApproximateLocationUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for WebSearchApproximateLocationUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class WebSearchApproximateLocationUnionVariant1 extends WebSearchApproximateLocationUnion with WebSearchApproximateLocationUnionVariant1Mappable {
+class WebSearchApproximateLocationUnionVariant1 extends WebSearchApproximateLocationUnion
+    with WebSearchApproximateLocationUnionVariant1Mappable {
   final WebSearchApproximateLocationUnionVariant1Type type;
   final String? country;
   final String? region;

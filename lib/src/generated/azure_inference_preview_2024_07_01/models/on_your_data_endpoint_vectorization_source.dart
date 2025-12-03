@@ -25,7 +25,6 @@ class OnYourDataEndpointVectorizationSource with OnYourDataEndpointVectorization
   final OnYourDataEndpointVectorizationSourceAuthenticationUnion? authentication;
   final int? dimensions;
 
-  static OnYourDataEndpointVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataEndpointVectorizationSourceMapper.fromJson(json);
-
+  static OnYourDataEndpointVectorizationSource fromJson(Map<String, dynamic> json) =>
+      OnYourDataEndpointVectorizationSourceMapper.fromJson(json);
 }
-

@@ -9,10 +9,10 @@ part 'message_delta_content_text_annotations_file_path_object_type.mapper.dart';
 /// Always `file_path`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentTextAnnotationsFilePathObjectType {
-  @MappableValue('file_path') 
+  @MappableValue('file_path')
   filePath,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageDeltaContentTextAnnotationsFilePathObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentTextAnnotationsFilePathObjectType> get $valuesDefined => values.where((value) => value != MessageDeltaContentTextAnnotationsFilePathObjectType.unknown).toList();
+  static List<MessageDeltaContentTextAnnotationsFilePathObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentTextAnnotationsFilePathObjectType.unknown).toList();
 }

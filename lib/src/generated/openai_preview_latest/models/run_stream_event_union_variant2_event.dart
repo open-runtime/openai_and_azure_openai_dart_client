@@ -9,10 +9,10 @@ part 'run_stream_event_union_variant2_event.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunStreamEventUnionVariant2Event {
   /// Incorrect name has been replaced. Original name: `thread.run.queued`.
-  @MappableValue('thread.run.queued') 
+  @MappableValue('thread.run.queued')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStreamEventUnionVariant2Event {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStreamEventUnionVariant2Event> get $valuesDefined => values.where((value) => value != RunStreamEventUnionVariant2Event.unknown).toList();
+  static List<RunStreamEventUnionVariant2Event> get $valuesDefined =>
+      values.where((value) => value != RunStreamEventUnionVariant2Event.unknown).toList();
 }

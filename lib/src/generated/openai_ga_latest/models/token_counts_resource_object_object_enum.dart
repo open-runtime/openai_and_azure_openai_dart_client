@@ -10,10 +10,10 @@ part 'token_counts_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TokenCountsResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `response.input_tokens`.
-  @MappableValue('response.input_tokens') 
+  @MappableValue('response.input_tokens')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum TokenCountsResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TokenCountsResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != TokenCountsResourceObjectObjectEnum.unknown).toList();
+  static List<TokenCountsResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != TokenCountsResourceObjectObjectEnum.unknown).toList();
 }

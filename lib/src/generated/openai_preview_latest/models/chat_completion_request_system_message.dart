@@ -13,19 +13,15 @@ part 'chat_completion_request_system_message.mapper.dart';
 /// messages sent by the user. With o1 models and newer, use `developer` messages.
 /// for this purpose instead.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestSystemMessage with ChatCompletionRequestSystemMessageMappable {
-  const ChatCompletionRequestSystemMessage({
-    required this.content,
-    required this.role,
-    this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
+class ChatCompletionRequestSystemMessage extends FineTunePreferenceRequestInputInputMessagesUnion
+    with ChatCompletionRequestSystemMessageMappable {
+  const ChatCompletionRequestSystemMessage({required this.content, required this.role, this.name});
 
   final String content;
   final ChatCompletionRequestSystemMessageRole role;
   final String? name;
 
-  static ChatCompletionRequestSystemMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestSystemMessageMapper.fromJson(json);
-
+  static ChatCompletionRequestSystemMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestSystemMessageMapper.fromJson(json);
 }
-

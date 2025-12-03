@@ -8,13 +8,9 @@ part 'audit_log_project_archived.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogProjectArchived with AuditLogProjectArchivedMappable {
-  const AuditLogProjectArchived({
-    this.id,
-  });
+  const AuditLogProjectArchived({this.id});
 
   final String? id;
 
   static AuditLogProjectArchived fromJson(Map<String, dynamic> json) => AuditLogProjectArchivedMapper.fromJson(json);
-
 }
-

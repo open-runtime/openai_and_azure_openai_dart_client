@@ -11,8 +11,8 @@ part 'eval_responses_source.mapper.dart';
 
 /// A EvalResponsesSource object describing a run data source configuration.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalResponsesSource with EvalResponsesSourceMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'responses')
+class EvalResponsesSource extends CreateEvalResponsesRunDataSourceSourceUnion with EvalResponsesSourceMappable {
   const EvalResponsesSource({
     required this.type,
     this.metadata,
@@ -49,6 +49,4 @@ class EvalResponsesSource with EvalResponsesSourceMappable {
   final bool? allowParallelToolCalls;
 
   static EvalResponsesSource fromJson(Map<String, dynamic> json) => EvalResponsesSourceMapper.fromJson(json);
-
 }
-

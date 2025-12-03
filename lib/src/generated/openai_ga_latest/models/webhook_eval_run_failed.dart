@@ -32,6 +32,4 @@ class WebhookEvalRunFailed with WebhookEvalRunFailedMappable {
   final WebhookEvalRunFailedObjectObjectEnum? objectEnum;
 
   static WebhookEvalRunFailed fromJson(Map<String, dynamic> json) => WebhookEvalRunFailedMapper.fromJson(json);
-
 }
-

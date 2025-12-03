@@ -11,8 +11,8 @@ part 'response_mcp_list_tools_completed_event.mapper.dart';
 
 /// Emitted when the list of available MCP tools has been successfully retrieved.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpListToolsCompletedEvent with ResponseMcpListToolsCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.completed')
+class ResponseMcpListToolsCompletedEvent extends ResponseStreamEvent with ResponseMcpListToolsCompletedEventMappable {
   const ResponseMcpListToolsCompletedEvent({
     required this.type,
     required this.itemId,
@@ -28,7 +28,6 @@ class ResponseMcpListToolsCompletedEvent with ResponseMcpListToolsCompletedEvent
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpListToolsCompletedEvent fromJson(Map<String, dynamic> json) => ResponseMcpListToolsCompletedEventMapper.fromJson(json);
-
+  static ResponseMcpListToolsCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpListToolsCompletedEventMapper.fromJson(json);
 }
-

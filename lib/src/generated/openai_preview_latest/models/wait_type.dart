@@ -11,10 +11,10 @@ part 'wait_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WaitType {
-  @MappableValue('wait') 
+  @MappableValue('wait')
   wait,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

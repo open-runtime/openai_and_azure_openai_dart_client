@@ -10,8 +10,8 @@ import 'response_stream_event.dart';
 part 'response_reasoning_text_done_event.mapper.dart';
 
 /// Emitted when a reasoning text is completed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseReasoningTextDoneEvent with ResponseReasoningTextDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_text.done')
+class ResponseReasoningTextDoneEvent extends ResponseStreamEvent with ResponseReasoningTextDoneEventMappable {
   const ResponseReasoningTextDoneEvent({
     required this.type,
     required this.itemId,
@@ -32,7 +32,6 @@ class ResponseReasoningTextDoneEvent with ResponseReasoningTextDoneEventMappable
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseReasoningTextDoneEvent fromJson(Map<String, dynamic> json) => ResponseReasoningTextDoneEventMapper.fromJson(json);
-
+  static ResponseReasoningTextDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseReasoningTextDoneEventMapper.fromJson(json);
 }
-

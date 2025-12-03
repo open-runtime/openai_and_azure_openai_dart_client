@@ -11,13 +11,9 @@ part 'base_connection.mapper.dart';
 /// A connection to a resource.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BaseConnection with BaseConnectionMappable {
-  const BaseConnection({
-    required this.kind,
-  });
+  const BaseConnection({required this.kind});
 
   final ConnectionType kind;
 
   static BaseConnection fromJson(Map<String, dynamic> json) => BaseConnectionMapper.fromJson(json);
-
 }
-

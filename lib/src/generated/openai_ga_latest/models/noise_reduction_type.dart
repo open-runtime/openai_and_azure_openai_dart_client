@@ -10,13 +10,13 @@ part 'noise_reduction_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum NoiseReductionType {
-  @MappableValue('near_field') 
+  @MappableValue('near_field')
   nearField,
 
-  @MappableValue('far_field') 
+  @MappableValue('far_field')
   farField,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum NoiseReductionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<NoiseReductionType> get $valuesDefined => values.where((value) => value != NoiseReductionType.unknown).toList();
+  static List<NoiseReductionType> get $valuesDefined =>
+      values.where((value) => value != NoiseReductionType.unknown).toList();
 }

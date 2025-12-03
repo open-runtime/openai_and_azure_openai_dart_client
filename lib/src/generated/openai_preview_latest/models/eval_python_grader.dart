@@ -10,8 +10,8 @@ part 'eval_python_grader.mapper.dart';
 
 /// A PythonGrader object that runs a python script on the input.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalPythonGrader with EvalPythonGraderMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
+class EvalPythonGrader extends EvalTestingCriteriaUnion with EvalPythonGraderMappable {
   const EvalPythonGrader({
     required this.type,
     required this.name,
@@ -29,6 +29,4 @@ class EvalPythonGrader with EvalPythonGraderMappable {
   final String? imageTag;
 
   static EvalPythonGrader fromJson(Map<String, dynamic> json) => EvalPythonGraderMapper.fromJson(json);
-
 }
-

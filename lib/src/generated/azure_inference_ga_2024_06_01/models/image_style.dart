@@ -9,13 +9,13 @@ part 'image_style.mapper.dart';
 /// The style of the generated images.
 @MappableEnum(defaultValue: 'unknown')
 enum ImageStyle {
-  @MappableValue('vivid') 
+  @MappableValue('vivid')
   vivid,
 
-  @MappableValue('natural') 
+  @MappableValue('natural')
   natural,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

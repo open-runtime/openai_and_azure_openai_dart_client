@@ -9,10 +9,10 @@ part 'chat_completion_allowed_tools_choice_type.mapper.dart';
 /// Allowed tool configuration type. Always `allowed_tools`.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionAllowedToolsChoiceType {
-  @MappableValue('allowed_tools') 
+  @MappableValue('allowed_tools')
   allowedTools,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionAllowedToolsChoiceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionAllowedToolsChoiceType> get $valuesDefined => values.where((value) => value != ChatCompletionAllowedToolsChoiceType.unknown).toList();
+  static List<ChatCompletionAllowedToolsChoiceType> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionAllowedToolsChoiceType.unknown).toList();
 }

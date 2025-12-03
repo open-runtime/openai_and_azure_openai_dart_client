@@ -19,8 +19,8 @@ part 'image_gen_tool.mapper.dart';
 
 /// A tool that generates images using a model like `gpt-image-1`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ImageGenTool with ImageGenToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation')
+class ImageGenTool extends Tool with ImageGenToolMappable {
   const ImageGenTool({
     required this.type,
     this.inputFidelity,
@@ -53,6 +53,4 @@ class ImageGenTool with ImageGenToolMappable {
   final int partialImages;
 
   static ImageGenTool fromJson(Map<String, dynamic> json) => ImageGenToolMapper.fromJson(json);
-
 }
-

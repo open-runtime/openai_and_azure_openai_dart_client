@@ -13,15 +13,11 @@ part 'azure_cosmos_db_chat_extension_configuration.mapper.dart';
 /// extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureCosmosDbChatExtensionConfiguration with AzureCosmosDbChatExtensionConfigurationMappable {
-  const AzureCosmosDbChatExtensionConfiguration({
-    required this.type,
-    this.parameters,
-  });
+  const AzureCosmosDbChatExtensionConfiguration({required this.type, this.parameters});
 
   final AzureChatExtensionType type;
   final AzureCosmosDbChatExtensionParameters? parameters;
 
-  static AzureCosmosDbChatExtensionConfiguration fromJson(Map<String, dynamic> json) => AzureCosmosDbChatExtensionConfigurationMapper.fromJson(json);
-
+  static AzureCosmosDbChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      AzureCosmosDbChatExtensionConfigurationMapper.fromJson(json);
 }
-

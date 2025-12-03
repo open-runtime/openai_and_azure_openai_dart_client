@@ -9,13 +9,13 @@ part 'run_step_object_type.mapper.dart';
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepObjectType {
-  @MappableValue('message_creation') 
+  @MappableValue('message_creation')
   messageCreation,
 
-  @MappableValue('tool_calls') 
+  @MappableValue('tool_calls')
   toolCalls,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RunStepObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepObjectType> get $valuesDefined => values.where((value) => value != RunStepObjectType.unknown).toList();
+  static List<RunStepObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepObjectType.unknown).toList();
 }

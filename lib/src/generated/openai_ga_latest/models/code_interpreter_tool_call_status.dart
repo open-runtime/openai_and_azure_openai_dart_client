@@ -10,22 +10,22 @@ part 'code_interpreter_tool_call_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CodeInterpreterToolCallStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('interpreting') 
+  @MappableValue('interpreting')
   interpreting,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum CodeInterpreterToolCallStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CodeInterpreterToolCallStatus> get $valuesDefined => values.where((value) => value != CodeInterpreterToolCallStatus.unknown).toList();
+  static List<CodeInterpreterToolCallStatus> get $valuesDefined =>
+      values.where((value) => value != CodeInterpreterToolCallStatus.unknown).toList();
 }

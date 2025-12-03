@@ -10,19 +10,13 @@ part 'web_search_action_find.mapper.dart';
 
 /// Action type "find": Searches for a pattern within a loaded page.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class WebSearchActionFind with WebSearchActionFindMappable {
-  const WebSearchActionFind({
-    required this.type,
-    required this.url,
-    required this.pattern,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
+class WebSearchActionFind extends WebSearchToolCallActionUnion with WebSearchActionFindMappable {
+  const WebSearchActionFind({required this.type, required this.url, required this.pattern});
 
   final WebSearchActionFindType type;
   final String url;
   final String pattern;
 
   static WebSearchActionFind fromJson(Map<String, dynamic> json) => WebSearchActionFindMapper.fromJson(json);
-
 }
-

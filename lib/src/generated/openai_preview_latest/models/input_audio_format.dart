@@ -11,13 +11,13 @@ part 'input_audio_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputAudioFormat {
-  @MappableValue('mp3') 
+  @MappableValue('mp3')
   mp3,
 
-  @MappableValue('wav') 
+  @MappableValue('wav')
   wav,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -26,5 +26,6 @@ enum InputAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputAudioFormat> get $valuesDefined => values.where((value) => value != InputAudioFormat.unknown).toList();
+  static List<InputAudioFormat> get $valuesDefined =>
+      values.where((value) => value != InputAudioFormat.unknown).toList();
 }

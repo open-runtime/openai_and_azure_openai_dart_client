@@ -14,7 +14,14 @@ import 'compound_filter.dart';
 part 'vector_store_search_request_filters_union.mapper.dart';
 
 /// A filter to apply based on file attributes.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [VectorStoreSearchRequestFiltersUnionComparisonFilter, VectorStoreSearchRequestFiltersUnionCompoundFilter])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    VectorStoreSearchRequestFiltersUnionComparisonFilter,
+    VectorStoreSearchRequestFiltersUnionCompoundFilter,
+  ],
+)
 sealed class VectorStoreSearchRequestFiltersUnion with VectorStoreSearchRequestFiltersUnionMappable {
   const VectorStoreSearchRequestFiltersUnion();
 
@@ -32,13 +39,13 @@ extension VectorStoreSearchRequestFiltersUnionDeserializer on VectorStoreSearchR
       return VectorStoreSearchRequestFiltersUnionCompoundFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for VectorStoreSearchRequestFiltersUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class VectorStoreSearchRequestFiltersUnionComparisonFilter extends VectorStoreSearchRequestFiltersUnion with VectorStoreSearchRequestFiltersUnionComparisonFilterMappable {
+class VectorStoreSearchRequestFiltersUnionComparisonFilter extends VectorStoreSearchRequestFiltersUnion
+    with VectorStoreSearchRequestFiltersUnionComparisonFilterMappable {
   final ComparisonFilterType type;
   final String key;
   final ComparisonFilterValueUnion value;
@@ -51,12 +58,10 @@ class VectorStoreSearchRequestFiltersUnionComparisonFilter extends VectorStoreSe
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class VectorStoreSearchRequestFiltersUnionCompoundFilter extends VectorStoreSearchRequestFiltersUnion with VectorStoreSearchRequestFiltersUnionCompoundFilterMappable {
+class VectorStoreSearchRequestFiltersUnionCompoundFilter extends VectorStoreSearchRequestFiltersUnion
+    with VectorStoreSearchRequestFiltersUnionCompoundFilterMappable {
   final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
-  const VectorStoreSearchRequestFiltersUnionCompoundFilter({
-    required this.type,
-    required this.filters,
-  });
+  const VectorStoreSearchRequestFiltersUnionCompoundFilter({required this.type, required this.filters});
 }

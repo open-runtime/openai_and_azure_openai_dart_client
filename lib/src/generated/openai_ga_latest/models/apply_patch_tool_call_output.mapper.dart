@@ -8,7 +8,7 @@
 part of 'apply_patch_tool_call_output.dart';
 
 class ApplyPatchToolCallOutputMapper
-    extends ClassMapperBase<ApplyPatchToolCallOutput> {
+    extends SubClassMapperBase<ApplyPatchToolCallOutput> {
   ApplyPatchToolCallOutputMapper._();
 
   static ApplyPatchToolCallOutputMapper? _instance;
@@ -17,6 +17,7 @@ class ApplyPatchToolCallOutputMapper
       MapperContainer.globals.use(
         _instance = ApplyPatchToolCallOutputMapper._(),
       );
+      OutputItemMapper.ensureInitialized().addSubMapper(_instance!);
       ApplyPatchCallOutputStatusMapper.ensureInitialized();
       ApplyPatchToolCallOutputTypeMapper.ensureInitialized();
     }
@@ -77,6 +78,13 @@ class ApplyPatchToolCallOutputMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'apply_patch_call_output';
+  @override
+  late final ClassMapperBase superMapper = OutputItemMapper.ensureInitialized();
 
   static ApplyPatchToolCallOutput _instantiate(DecodingData data) {
     return ApplyPatchToolCallOutput(
@@ -158,7 +166,8 @@ abstract class ApplyPatchToolCallOutputCopyWith<
   $In extends ApplyPatchToolCallOutput,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements OutputItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? id,
     String? callId,

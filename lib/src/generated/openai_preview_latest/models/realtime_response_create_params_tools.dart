@@ -10,19 +10,13 @@ part 'realtime_response_create_params_tools.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsTools with RealtimeResponseCreateParamsToolsMappable {
-  const RealtimeResponseCreateParamsTools({
-    this.type,
-    this.name,
-    this.description,
-    this.parameters,
-  });
+  const RealtimeResponseCreateParamsTools({this.type, this.name, this.description, this.parameters});
 
   final RealtimeResponseCreateParamsToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;
 
-  static RealtimeResponseCreateParamsTools fromJson(Map<String, dynamic> json) => RealtimeResponseCreateParamsToolsMapper.fromJson(json);
-
+  static RealtimeResponseCreateParamsTools fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseCreateParamsToolsMapper.fromJson(json);
 }
-

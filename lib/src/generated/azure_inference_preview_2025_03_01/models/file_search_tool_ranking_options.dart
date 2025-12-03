@@ -10,16 +10,12 @@ part 'file_search_tool_ranking_options.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileSearchToolRankingOptions with FileSearchToolRankingOptionsMappable {
-  const FileSearchToolRankingOptions({
-    this.ranker = FileSearchToolRankingOptionsRanker.auto,
-    this.scoreThreshold = 0,
-  });
+  const FileSearchToolRankingOptions({this.ranker = FileSearchToolRankingOptionsRanker.auto, this.scoreThreshold = 0});
 
   final FileSearchToolRankingOptionsRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 
-  static FileSearchToolRankingOptions fromJson(Map<String, dynamic> json) => FileSearchToolRankingOptionsMapper.fromJson(json);
-
+  static FileSearchToolRankingOptions fromJson(Map<String, dynamic> json) =>
+      FileSearchToolRankingOptionsMapper.fromJson(json);
 }
-

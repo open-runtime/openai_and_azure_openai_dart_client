@@ -13,8 +13,8 @@ import 'message_type.dart';
 part 'message.mapper.dart';
 
 /// A message to or from the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Message with MessageMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
+class Message extends ConversationItem with MessageMappable {
   const Message({
     required this.id,
     required this.status,
@@ -30,6 +30,4 @@ class Message with MessageMappable {
   final MessageType type;
 
   static Message fromJson(Map<String, dynamic> json) => MessageMapper.fromJson(json);
-
 }
-

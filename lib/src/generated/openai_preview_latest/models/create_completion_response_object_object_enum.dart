@@ -10,10 +10,10 @@ part 'create_completion_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateCompletionResponseObjectObjectEnum {
-  @MappableValue('text_completion') 
+  @MappableValue('text_completion')
   textCompletion,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CreateCompletionResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateCompletionResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != CreateCompletionResponseObjectObjectEnum.unknown).toList();
+  static List<CreateCompletionResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != CreateCompletionResponseObjectObjectEnum.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'realtime_mcp_approval_request_type.mapper.dart';
 /// The type of the item. Always `mcp_approval_request`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeMcpApprovalRequestType {
-  @MappableValue('mcp_approval_request') 
+  @MappableValue('mcp_approval_request')
   mcpApprovalRequest,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeMcpApprovalRequestType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeMcpApprovalRequestType> get $valuesDefined => values.where((value) => value != RealtimeMcpApprovalRequestType.unknown).toList();
+  static List<RealtimeMcpApprovalRequestType> get $valuesDefined =>
+      values.where((value) => value != RealtimeMcpApprovalRequestType.unknown).toList();
 }

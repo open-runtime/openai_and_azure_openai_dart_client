@@ -34,6 +34,4 @@ class SystemComputeUrl with SystemComputeUrlMappable {
   final List<GenericEmbeddingSettings>? embeddings;
 
   static SystemComputeUrl fromJson(Map<String, dynamic> json) => SystemComputeUrlMapper.fromJson(json);
-
 }
-

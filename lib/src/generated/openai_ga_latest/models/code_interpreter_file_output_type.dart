@@ -10,10 +10,10 @@ part 'code_interpreter_file_output_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CodeInterpreterFileOutputType {
-  @MappableValue('files') 
+  @MappableValue('files')
   files,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CodeInterpreterFileOutputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CodeInterpreterFileOutputType> get $valuesDefined => values.where((value) => value != CodeInterpreterFileOutputType.unknown).toList();
+  static List<CodeInterpreterFileOutputType> get $valuesDefined =>
+      values.where((value) => value != CodeInterpreterFileOutputType.unknown).toList();
 }

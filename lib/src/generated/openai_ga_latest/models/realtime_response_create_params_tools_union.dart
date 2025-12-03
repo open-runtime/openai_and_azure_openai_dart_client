@@ -15,17 +15,18 @@ import 'tool.dart';
 
 part 'realtime_response_create_params_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeResponseCreateParamsToolsUnionFunction,
-  RealtimeResponseCreateParamsToolsUnionMcp
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RealtimeResponseCreateParamsToolsUnionFunction, RealtimeResponseCreateParamsToolsUnionMcp],
+)
 sealed class RealtimeResponseCreateParamsToolsUnion with RealtimeResponseCreateParamsToolsUnionMappable {
   const RealtimeResponseCreateParamsToolsUnion();
 
   static RealtimeResponseCreateParamsToolsUnion fromJson(Map<String, dynamic> json) {
     return RealtimeResponseCreateParamsToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeResponseCreateParamsToolsUnionDeserializer on RealtimeResponseCreateParamsToolsUnion {
@@ -34,22 +35,22 @@ extension RealtimeResponseCreateParamsToolsUnionDeserializer on RealtimeResponse
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      RealtimeResponseCreateParamsToolsUnionFunction: 'function',
-      RealtimeResponseCreateParamsToolsUnionMcp: 'mcp',
-    };
+    final mappingFallback = const <Type, Object?>{RealtimeFunctionTool: 'function', McpTool: 'mcp'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeResponseCreateParamsToolsUnionFunction] => RealtimeResponseCreateParamsToolsUnionFunctionMapper.fromJson(json),
-      _ when value == effective[RealtimeResponseCreateParamsToolsUnionMcp] => RealtimeResponseCreateParamsToolsUnionMcpMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeResponseCreateParamsToolsUnion'),
+      _ when value == effective[RealtimeFunctionTool] => RealtimeFunctionToolMapper.fromJson(json),
+      _ when value == effective[McpTool] => McpToolMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeResponseCreateParamsToolsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class RealtimeResponseCreateParamsToolsUnionFunction extends RealtimeResponseCreateParamsToolsUnion with RealtimeResponseCreateParamsToolsUnionFunctionMappable {
+class RealtimeResponseCreateParamsToolsUnionFunction extends RealtimeResponseCreateParamsToolsUnion
+    with RealtimeResponseCreateParamsToolsUnionFunctionMappable {
   final RealtimeFunctionToolType? type;
   final String? name;
   final String? description;
@@ -61,10 +62,11 @@ class RealtimeResponseCreateParamsToolsUnionFunction extends RealtimeResponseCre
     required this.description,
     required this.parameters,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
-class RealtimeResponseCreateParamsToolsUnionMcp extends RealtimeResponseCreateParamsToolsUnion with RealtimeResponseCreateParamsToolsUnionMcpMappable {
+class RealtimeResponseCreateParamsToolsUnionMcp extends RealtimeResponseCreateParamsToolsUnion
+    with RealtimeResponseCreateParamsToolsUnionMcpMappable {
   final McpToolType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -92,5 +94,4 @@ class RealtimeResponseCreateParamsToolsUnionMcp extends RealtimeResponseCreatePa
     required this.allowedTools,
     required this.requireApproval,
   });
-
 }

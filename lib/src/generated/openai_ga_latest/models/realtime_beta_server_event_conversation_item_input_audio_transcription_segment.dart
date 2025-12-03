@@ -8,7 +8,8 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_seg
 
 /// Returned when an input audio transcription segment is identified for an item.
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment with RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentMappable {
+class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment
+    with RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({
     required this.eventId,
     required this.type,
@@ -34,7 +35,6 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment with
   final double start;
   final double end;
 
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json);
 }
-

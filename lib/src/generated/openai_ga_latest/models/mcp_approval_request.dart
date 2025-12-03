@@ -13,8 +13,8 @@ part 'mcp_approval_request.mapper.dart';
 
 /// A request for human approval of a tool invocation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class McpApprovalRequest with McpApprovalRequestMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
+class McpApprovalRequest extends ItemUnion with McpApprovalRequestMappable {
   const McpApprovalRequest({
     required this.type,
     required this.id,
@@ -31,6 +31,4 @@ class McpApprovalRequest with McpApprovalRequestMappable {
   final String arguments;
 
   static McpApprovalRequest fromJson(Map<String, dynamic> json) => McpApprovalRequestMapper.fromJson(json);
-
 }
-

@@ -10,8 +10,8 @@ import 'response_stream_event.dart';
 part 'response_error_event.mapper.dart';
 
 /// Emitted when an error occurs.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseErrorEvent with ResponseErrorEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
+class ResponseErrorEvent extends ResponseStreamEvent with ResponseErrorEventMappable {
   const ResponseErrorEvent({
     required this.type,
     required this.code,
@@ -28,6 +28,4 @@ class ResponseErrorEvent with ResponseErrorEventMappable {
   final int sequenceNumber;
 
   static ResponseErrorEvent fromJson(Map<String, dynamic> json) => ResponseErrorEventMapper.fromJson(json);
-
 }
-

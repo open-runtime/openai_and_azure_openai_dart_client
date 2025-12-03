@@ -10,22 +10,22 @@ part 'computer_action_button.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerActionButton {
-  @MappableValue('left') 
+  @MappableValue('left')
   left,
 
-  @MappableValue('right') 
+  @MappableValue('right')
   right,
 
-  @MappableValue('wheel') 
+  @MappableValue('wheel')
   wheel,
 
-  @MappableValue('back') 
+  @MappableValue('back')
   back,
 
-  @MappableValue('forward') 
+  @MappableValue('forward')
   forward,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum ComputerActionButton {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerActionButton> get $valuesDefined => values.where((value) => value != ComputerActionButton.unknown).toList();
+  static List<ComputerActionButton> get $valuesDefined =>
+      values.where((value) => value != ComputerActionButton.unknown).toList();
 }

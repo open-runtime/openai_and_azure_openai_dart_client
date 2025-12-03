@@ -9,16 +9,16 @@ part 'on_your_data_context_property.mapper.dart';
 /// The context property.
 @MappableEnum(defaultValue: 'unknown')
 enum OnYourDataContextProperty {
-  @MappableValue('citations') 
+  @MappableValue('citations')
   citations,
 
-  @MappableValue('intent') 
+  @MappableValue('intent')
   intent,
 
-  @MappableValue('all_retrieved_documents') 
+  @MappableValue('all_retrieved_documents')
   allRetrievedDocuments,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum OnYourDataContextProperty {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OnYourDataContextProperty> get $valuesDefined => values.where((value) => value != OnYourDataContextProperty.unknown).toList();
+  static List<OnYourDataContextProperty> get $valuesDefined =>
+      values.where((value) => value != OnYourDataContextProperty.unknown).toList();
 }

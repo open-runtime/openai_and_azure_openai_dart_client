@@ -8,17 +8,13 @@ part 'create_embedding_response_usage.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEmbeddingResponseUsage with CreateEmbeddingResponseUsageMappable {
-  const CreateEmbeddingResponseUsage({
-    required this.promptTokens,
-    required this.totalTokens,
-  });
+  const CreateEmbeddingResponseUsage({required this.promptTokens, required this.totalTokens});
 
   @MappableField(key: 'prompt_tokens')
   final int promptTokens;
   @MappableField(key: 'total_tokens')
   final int totalTokens;
 
-  static CreateEmbeddingResponseUsage fromJson(Map<String, dynamic> json) => CreateEmbeddingResponseUsageMapper.fromJson(json);
-
+  static CreateEmbeddingResponseUsage fromJson(Map<String, dynamic> json) =>
+      CreateEmbeddingResponseUsageMapper.fromJson(json);
 }
-

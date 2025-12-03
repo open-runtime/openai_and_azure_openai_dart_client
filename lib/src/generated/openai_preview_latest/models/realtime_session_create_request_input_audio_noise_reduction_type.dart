@@ -10,13 +10,13 @@ part 'realtime_session_create_request_input_audio_noise_reduction_type.mapper.da
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateRequestInputAudioNoiseReductionType {
-  @MappableValue('near_field') 
+  @MappableValue('near_field')
   nearField,
 
-  @MappableValue('far_field') 
+  @MappableValue('far_field')
   farField,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum RealtimeSessionCreateRequestInputAudioNoiseReductionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateRequestInputAudioNoiseReductionType> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateRequestInputAudioNoiseReductionType.unknown).toList();
+  static List<RealtimeSessionCreateRequestInputAudioNoiseReductionType> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateRequestInputAudioNoiseReductionType.unknown).toList();
 }

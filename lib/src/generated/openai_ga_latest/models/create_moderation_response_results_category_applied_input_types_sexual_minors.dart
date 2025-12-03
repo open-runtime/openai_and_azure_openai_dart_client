@@ -8,10 +8,10 @@ part 'create_moderation_response_results_category_applied_input_types_sexual_min
 
 @MappableEnum(defaultValue: 'unknown')
 enum CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,7 @@ enum CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors> get $valuesDefined => values.where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.unknown).toList();
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors> get $valuesDefined => values
+      .where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.unknown)
+      .toList();
 }

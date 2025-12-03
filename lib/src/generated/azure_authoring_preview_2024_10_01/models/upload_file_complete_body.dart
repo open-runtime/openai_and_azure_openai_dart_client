@@ -8,16 +8,11 @@ part 'upload_file_complete_body.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadFileCompleteBody with UploadFileCompleteBodyMappable {
-  const UploadFileCompleteBody({
-    required this.partIds,
-    this.md5,
-  });
+  const UploadFileCompleteBody({required this.partIds, this.md5});
 
   @MappableField(key: 'part_ids')
   final List<String> partIds;
   final String? md5;
 
   static UploadFileCompleteBody fromJson(Map<String, dynamic> json) => UploadFileCompleteBodyMapper.fromJson(json);
-
 }
-

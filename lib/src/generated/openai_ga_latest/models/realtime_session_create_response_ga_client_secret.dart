@@ -8,16 +8,12 @@ part 'realtime_session_create_response_ga_client_secret.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseGaClientSecret with RealtimeSessionCreateResponseGaClientSecretMappable {
-  const RealtimeSessionCreateResponseGaClientSecret({
-    required this.value,
-    required this.expiresAt,
-  });
+  const RealtimeSessionCreateResponseGaClientSecret({required this.value, required this.expiresAt});
 
   final String value;
   @MappableField(key: 'expires_at')
   final int expiresAt;
 
-  static RealtimeSessionCreateResponseGaClientSecret fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaClientSecretMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseGaClientSecret fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseGaClientSecretMapper.fromJson(json);
 }
-

@@ -7,13 +7,14 @@
 
 part of 'scroll.dart';
 
-class ScrollMapper extends ClassMapperBase<Scroll> {
+class ScrollMapper extends SubClassMapperBase<Scroll> {
   ScrollMapper._();
 
   static ScrollMapper? _instance;
   static ScrollMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ScrollMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       ScrollTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -58,6 +59,14 @@ class ScrollMapper extends ClassMapperBase<Scroll> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'scroll';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Scroll _instantiate(DecodingData data) {
     return Scroll(
@@ -114,7 +123,8 @@ extension ScrollValueCopy<$R, $Out> on ObjectCopyWith<$R, Scroll, $Out> {
 }
 
 abstract class ScrollCopyWith<$R, $In extends Scroll, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({int? x, int? y, int? scrollX, int? scrollY, ScrollType? type});
   ScrollCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

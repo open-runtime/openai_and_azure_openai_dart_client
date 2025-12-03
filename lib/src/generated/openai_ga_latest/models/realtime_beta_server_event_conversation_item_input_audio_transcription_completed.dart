@@ -22,7 +22,8 @@ part 'realtime_beta_server_event_conversation_item_input_audio_transcription_com
 /// should be treated as a rough guide.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted with RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMappable {
+class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted
+    with RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted({
     required this.eventId,
     required this.type,
@@ -44,7 +45,6 @@ class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted wi
   final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion usage;
   final List<LogProbProperties>? logprobs;
 
-  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json);
 }
-

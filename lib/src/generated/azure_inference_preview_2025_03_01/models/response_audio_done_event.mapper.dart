@@ -8,13 +8,14 @@
 part of 'response_audio_done_event.dart';
 
 class ResponseAudioDoneEventMapper
-    extends ClassMapperBase<ResponseAudioDoneEvent> {
+    extends SubClassMapperBase<ResponseAudioDoneEvent> {
   ResponseAudioDoneEventMapper._();
 
   static ResponseAudioDoneEventMapper? _instance;
   static ResponseAudioDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseAudioDoneEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseAudioDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -33,6 +34,14 @@ class ResponseAudioDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.audio.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseAudioDoneEvent _instantiate(DecodingData data) {
     return ResponseAudioDoneEvent(type: data.dec(_f$type));
@@ -107,7 +116,8 @@ abstract class ResponseAudioDoneEventCopyWith<
   $In extends ResponseAudioDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({ResponseAudioDoneEventType? type});
   ResponseAudioDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

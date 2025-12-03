@@ -40,6 +40,4 @@ class CreateAssistantRequest with CreateAssistantRequestMappable {
   final AssistantsApiResponseFormatOption? responseFormat;
 
   static CreateAssistantRequest fromJson(Map<String, dynamic> json) => CreateAssistantRequestMapper.fromJson(json);
-
 }
-

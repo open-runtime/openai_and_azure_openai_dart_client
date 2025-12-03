@@ -11,15 +11,11 @@ part 'response_format_text.mapper.dart';
 
 /// Default response format. Used to generate text responses.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFormatText with ResponseFormatTextMappable {
-  const ResponseFormatText({
-    required this.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class ResponseFormatText extends CreateChatCompletionRequestResponseFormatUnion with ResponseFormatTextMappable {
+  const ResponseFormatText({required this.type});
 
   final ResponseFormatTextType type;
 
   static ResponseFormatText fromJson(Map<String, dynamic> json) => ResponseFormatTextMapper.fromJson(json);
-
 }
-

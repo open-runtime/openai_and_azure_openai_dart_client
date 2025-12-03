@@ -10,10 +10,10 @@ part 'deleted_conversation_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeletedConversationResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `conversation.deleted`.
-  @MappableValue('conversation.deleted') 
+  @MappableValue('conversation.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum DeletedConversationResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeletedConversationResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeletedConversationResourceObjectObjectEnum.unknown).toList();
+  static List<DeletedConversationResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeletedConversationResourceObjectObjectEnum.unknown).toList();
 }

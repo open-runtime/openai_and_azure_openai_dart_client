@@ -8,17 +8,13 @@ part 'chat_completion_choice_common.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionChoiceCommon with ChatCompletionChoiceCommonMappable {
-  const ChatCompletionChoiceCommon({
-    this.indexField,
-    this.finishReason,
-  });
+  const ChatCompletionChoiceCommon({this.indexField, this.finishReason});
 
   @MappableField(key: 'index')
   final int? indexField;
   @MappableField(key: 'finish_reason')
   final String? finishReason;
 
-  static ChatCompletionChoiceCommon fromJson(Map<String, dynamic> json) => ChatCompletionChoiceCommonMapper.fromJson(json);
-
+  static ChatCompletionChoiceCommon fromJson(Map<String, dynamic> json) =>
+      ChatCompletionChoiceCommonMapper.fromJson(json);
 }
-

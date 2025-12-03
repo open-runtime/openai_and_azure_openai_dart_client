@@ -51,10 +51,12 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   @MappableField(key: 'tool_choice')
   final String? toolChoice;
   final num? temperature;
-  @MappableField(key: 'max_response_output_tokens', hook: const RealtimeSessionCreateResponseMaxResponseOutputTokensUnionHook())
+  @MappableField(
+    key: 'max_response_output_tokens',
+    hook: const RealtimeSessionCreateResponseMaxResponseOutputTokensUnionHook(),
+  )
   final RealtimeSessionCreateResponseMaxResponseOutputTokensUnion? maxResponseOutputTokens;
 
-  static RealtimeSessionCreateResponse fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponse fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseMapper.fromJson(json);
 }
-

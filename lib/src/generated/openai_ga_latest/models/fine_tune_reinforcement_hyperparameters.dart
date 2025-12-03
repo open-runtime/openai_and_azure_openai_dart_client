@@ -27,9 +27,15 @@ class FineTuneReinforcementHyperparameters with FineTuneReinforcementHyperparame
     this.evalSamples = const FineTuneReinforcementHyperparametersEvalSamplesUnionVariantString(value: 'auto'),
   });
 
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuneReinforcementHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuneReinforcementHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuneReinforcementHyperparametersLearningRateMultiplierUnion? learningRateMultiplier;
-  @MappableField(key: 'compute_multiplier', hook: const FineTuneReinforcementHyperparametersComputeMultiplierUnionHook())
+  @MappableField(
+    key: 'compute_multiplier',
+    hook: const FineTuneReinforcementHyperparametersComputeMultiplierUnionHook(),
+  )
   final FineTuneReinforcementHyperparametersComputeMultiplierUnion? computeMultiplier;
   @MappableField(key: 'batch_size', hook: const FineTuneReinforcementHyperparametersBatchSizeUnionHook())
   final FineTuneReinforcementHyperparametersBatchSizeUnion batchSize;
@@ -42,7 +48,6 @@ class FineTuneReinforcementHyperparameters with FineTuneReinforcementHyperparame
   @MappableField(key: 'eval_samples', hook: const FineTuneReinforcementHyperparametersEvalSamplesUnionHook())
   final FineTuneReinforcementHyperparametersEvalSamplesUnion evalSamples;
 
-  static FineTuneReinforcementHyperparameters fromJson(Map<String, dynamic> json) => FineTuneReinforcementHyperparametersMapper.fromJson(json);
-
+  static FineTuneReinforcementHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuneReinforcementHyperparametersMapper.fromJson(json);
 }
-

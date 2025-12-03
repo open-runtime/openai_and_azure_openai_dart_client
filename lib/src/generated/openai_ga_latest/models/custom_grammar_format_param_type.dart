@@ -9,10 +9,10 @@ part 'custom_grammar_format_param_type.mapper.dart';
 /// Grammar format. Always `grammar`.
 @MappableEnum(defaultValue: 'unknown')
 enum CustomGrammarFormatParamType {
-  @MappableValue('grammar') 
+  @MappableValue('grammar')
   grammar,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CustomGrammarFormatParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomGrammarFormatParamType> get $valuesDefined => values.where((value) => value != CustomGrammarFormatParamType.unknown).toList();
+  static List<CustomGrammarFormatParamType> get $valuesDefined =>
+      values.where((value) => value != CustomGrammarFormatParamType.unknown).toList();
 }

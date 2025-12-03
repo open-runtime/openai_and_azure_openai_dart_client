@@ -8,14 +8,11 @@ part 'text_annotation_delta_file_path.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TextAnnotationDeltaFilePath with TextAnnotationDeltaFilePathMappable {
-  const TextAnnotationDeltaFilePath({
-    this.fileId,
-  });
+  const TextAnnotationDeltaFilePath({this.fileId});
 
   @MappableField(key: 'file_id')
   final String? fileId;
 
-  static TextAnnotationDeltaFilePath fromJson(Map<String, dynamic> json) => TextAnnotationDeltaFilePathMapper.fromJson(json);
-
+  static TextAnnotationDeltaFilePath fromJson(Map<String, dynamic> json) =>
+      TextAnnotationDeltaFilePathMapper.fromJson(json);
 }
-

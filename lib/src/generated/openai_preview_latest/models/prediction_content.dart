@@ -13,15 +13,10 @@ part 'prediction_content.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PredictionContent with PredictionContentMappable {
-  const PredictionContent({
-    required this.type,
-    required this.content,
-  });
+  const PredictionContent({required this.type, required this.content});
 
   final PredictionContentType type;
   final String content;
 
   static PredictionContent fromJson(Map<String, dynamic> json) => PredictionContentMapper.fromJson(json);
-
 }
-

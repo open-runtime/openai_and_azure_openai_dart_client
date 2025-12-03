@@ -29,7 +29,6 @@ class ChatCompletionStreamResponseDelta with ChatCompletionStreamResponseDeltaMa
   final ChatCompletionStreamResponseDeltaRole? role;
   final String? refusal;
 
-  static ChatCompletionStreamResponseDelta fromJson(Map<String, dynamic> json) => ChatCompletionStreamResponseDeltaMapper.fromJson(json);
-
+  static ChatCompletionStreamResponseDelta fromJson(Map<String, dynamic> json) =>
+      ChatCompletionStreamResponseDeltaMapper.fromJson(json);
 }
-

@@ -8,7 +8,7 @@
 part of 'chat_completion_request_user_message.dart';
 
 class ChatCompletionRequestUserMessageMapper
-    extends ClassMapperBase<ChatCompletionRequestUserMessage> {
+    extends SubClassMapperBase<ChatCompletionRequestUserMessage> {
   ChatCompletionRequestUserMessageMapper._();
 
   static ChatCompletionRequestUserMessageMapper? _instance;
@@ -16,6 +16,9 @@ class ChatCompletionRequestUserMessageMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestUserMessageMapper._(),
+      );
+      ChatCompletionRequestMessageMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ChatCompletionRequestUserMessageRoleMapper.ensureInitialized();
     }
@@ -53,6 +56,14 @@ class ChatCompletionRequestUserMessageMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'role';
+  @override
+  final dynamic discriminatorValue = 'user';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestMessageMapper.ensureInitialized();
 
   static ChatCompletionRequestUserMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestUserMessage(
@@ -139,7 +150,8 @@ abstract class ChatCompletionRequestUserMessageCopyWith<
   $In extends ChatCompletionRequestUserMessage,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ChatCompletionRequestMessageCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? content,
     ChatCompletionRequestUserMessageRole? role,

@@ -8,7 +8,7 @@
 part of 'response_image_gen_call_completed_event.dart';
 
 class ResponseImageGenCallCompletedEventMapper
-    extends ClassMapperBase<ResponseImageGenCallCompletedEvent> {
+    extends SubClassMapperBase<ResponseImageGenCallCompletedEvent> {
   ResponseImageGenCallCompletedEventMapper._();
 
   static ResponseImageGenCallCompletedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseImageGenCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseImageGenCallCompletedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseImageGenCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,6 +61,14 @@ class ResponseImageGenCallCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.image_generation_call.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseImageGenCallCompletedEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallCompletedEvent(
@@ -148,7 +157,8 @@ abstract class ResponseImageGenCallCompletedEventCopyWith<
   $In extends ResponseImageGenCallCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseImageGenCallCompletedEventType? type,
     int? outputIndex,

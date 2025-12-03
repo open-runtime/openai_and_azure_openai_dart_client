@@ -11,8 +11,8 @@ part 'response_mcp_call_failed_event.mapper.dart';
 
 /// Emitted when an MCP  tool call has failed.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpCallFailedEvent with ResponseMcpCallFailedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.failed')
+class ResponseMcpCallFailedEvent extends ResponseStreamEvent with ResponseMcpCallFailedEventMappable {
   const ResponseMcpCallFailedEvent({
     required this.type,
     required this.itemId,
@@ -28,7 +28,6 @@ class ResponseMcpCallFailedEvent with ResponseMcpCallFailedEventMappable {
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpCallFailedEvent fromJson(Map<String, dynamic> json) => ResponseMcpCallFailedEventMapper.fromJson(json);
-
+  static ResponseMcpCallFailedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpCallFailedEventMapper.fromJson(json);
 }
-

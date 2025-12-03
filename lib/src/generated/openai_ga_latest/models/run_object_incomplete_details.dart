@@ -10,13 +10,10 @@ part 'run_object_incomplete_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectIncompleteDetails with RunObjectIncompleteDetailsMappable {
-  const RunObjectIncompleteDetails({
-    this.reason,
-  });
+  const RunObjectIncompleteDetails({this.reason});
 
   final RunObjectIncompleteDetailsReason? reason;
 
-  static RunObjectIncompleteDetails fromJson(Map<String, dynamic> json) => RunObjectIncompleteDetailsMapper.fromJson(json);
-
+  static RunObjectIncompleteDetails fromJson(Map<String, dynamic> json) =>
+      RunObjectIncompleteDetailsMapper.fromJson(json);
 }
-

@@ -12,8 +12,9 @@ import 'realtime_conversation_item_function_call_type.dart';
 part 'realtime_conversation_item_function_call.mapper.dart';
 
 /// A function call item in a Realtime conversation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeConversationItemFunctionCall with RealtimeConversationItemFunctionCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
+class RealtimeConversationItemFunctionCall extends RealtimeConversationItem
+    with RealtimeConversationItemFunctionCallMappable {
   const RealtimeConversationItemFunctionCall({
     required this.type,
     required this.name,
@@ -34,7 +35,6 @@ class RealtimeConversationItemFunctionCall with RealtimeConversationItemFunction
   @MappableField(key: 'call_id')
   final String? callId;
 
-  static RealtimeConversationItemFunctionCall fromJson(Map<String, dynamic> json) => RealtimeConversationItemFunctionCallMapper.fromJson(json);
-
+  static RealtimeConversationItemFunctionCall fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemFunctionCallMapper.fromJson(json);
 }
-

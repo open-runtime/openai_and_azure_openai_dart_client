@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_file_search_call_completed_event.mapper.dart';
 
 /// Emitted when a file search call is completed (results found).
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFileSearchCallCompletedEvent with ResponseFileSearchCallCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.completed')
+class ResponseFileSearchCallCompletedEvent extends ResponseStreamEvent
+    with ResponseFileSearchCallCompletedEventMappable {
   const ResponseFileSearchCallCompletedEvent({
     required this.type,
     required this.outputIndex,
@@ -27,7 +28,6 @@ class ResponseFileSearchCallCompletedEvent with ResponseFileSearchCallCompletedE
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseFileSearchCallCompletedEvent fromJson(Map<String, dynamic> json) => ResponseFileSearchCallCompletedEventMapper.fromJson(json);
-
+  static ResponseFileSearchCallCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFileSearchCallCompletedEventMapper.fromJson(json);
 }
-

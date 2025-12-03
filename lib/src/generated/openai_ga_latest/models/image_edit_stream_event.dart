@@ -26,10 +26,12 @@ import 'images_usage.dart';
 
 part 'image_edit_stream_event.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ImageEditStreamEventImageEditPartialImage,
-  ImageEditStreamEventImageEditCompleted
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ImageEditStreamEventImageEditPartialImage, ImageEditStreamEventImageEditCompleted],
+)
 sealed class ImageEditStreamEvent with ImageEditStreamEventMappable {
   const ImageEditStreamEvent();
 
@@ -45,21 +47,22 @@ extension ImageEditStreamEventUnionDeserializer on ImageEditStreamEvent {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ImageEditStreamEventImageEditPartialImage: 'image_edit.partial_image',
-      ImageEditStreamEventImageEditCompleted: 'image_edit.completed',
+      ImageEditPartialImageEvent: 'image_edit.partial_image',
+      ImageEditCompletedEvent: 'image_edit.completed',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ImageEditStreamEventImageEditPartialImage] => ImageEditStreamEventImageEditPartialImageMapper.fromJson(json),
-      _ when value == effective[ImageEditStreamEventImageEditCompleted] => ImageEditStreamEventImageEditCompletedMapper.fromJson(json),
+      _ when value == effective[ImageEditPartialImageEvent] => ImageEditPartialImageEventMapper.fromJson(json),
+      _ when value == effective[ImageEditCompletedEvent] => ImageEditCompletedEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ImageEditStreamEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_edit.partial_image')
-class ImageEditStreamEventImageEditPartialImage extends ImageEditStreamEvent with ImageEditStreamEventImageEditPartialImageMappable {
+class ImageEditStreamEventImageEditPartialImage extends ImageEditStreamEvent
+    with ImageEditStreamEventImageEditPartialImageMappable {
   final ImageEditStreamEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
@@ -86,7 +89,8 @@ class ImageEditStreamEventImageEditPartialImage extends ImageEditStreamEvent wit
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_edit.completed')
-class ImageEditStreamEventImageEditCompleted extends ImageEditStreamEvent with ImageEditStreamEventImageEditCompletedMappable {
+class ImageEditStreamEventImageEditCompleted extends ImageEditStreamEvent
+    with ImageEditStreamEventImageEditCompletedMappable {
   final ImageEditStreamEventType2 type;
   @MappableField(key: 'b64_json')
   final String b64Json;

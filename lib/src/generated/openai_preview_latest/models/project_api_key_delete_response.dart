@@ -10,18 +10,13 @@ part 'project_api_key_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKeyDeleteResponse with ProjectApiKeyDeleteResponseMappable {
-  const ProjectApiKeyDeleteResponse({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const ProjectApiKeyDeleteResponse({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final ProjectApiKeyDeleteResponseObjectObjectEnum objectEnum;
   final String id;
   final bool deleted;
 
-  static ProjectApiKeyDeleteResponse fromJson(Map<String, dynamic> json) => ProjectApiKeyDeleteResponseMapper.fromJson(json);
-
+  static ProjectApiKeyDeleteResponse fromJson(Map<String, dynamic> json) =>
+      ProjectApiKeyDeleteResponseMapper.fromJson(json);
 }
-

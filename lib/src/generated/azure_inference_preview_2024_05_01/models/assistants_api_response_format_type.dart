@@ -9,13 +9,13 @@ part 'assistants_api_response_format_type.mapper.dart';
 /// Must be one of `text` or `json_object`.
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantsApiResponseFormatType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('json_object') 
+  @MappableValue('json_object')
   jsonObject,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum AssistantsApiResponseFormatType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantsApiResponseFormatType> get $valuesDefined => values.where((value) => value != AssistantsApiResponseFormatType.unknown).toList();
+  static List<AssistantsApiResponseFormatType> get $valuesDefined =>
+      values.where((value) => value != AssistantsApiResponseFormatType.unknown).toList();
 }

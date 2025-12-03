@@ -9,10 +9,10 @@ part 'model_union_enum4.mapper.dart';
 /// Enum values: dall-e-2
 @MappableEnum(defaultValue: 'unknown')
 enum ModelUnionEnum4 {
-  @MappableValue('dall-e-2') 
+  @MappableValue('dall-e-2')
   dallE2,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

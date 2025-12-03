@@ -36,17 +36,22 @@ import 'wait_type.dart';
 
 part 'computer_action.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ComputerActionClick,
-  ComputerActionDoubleClick,
-  ComputerActionDrag,
-  ComputerActionKeypress,
-  ComputerActionMove,
-  ComputerActionScreenshot,
-  ComputerActionScroll,
-  ComputerActionType,
-  ComputerActionWait
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ComputerActionClick,
+    ComputerActionDoubleClick,
+    ComputerActionDrag,
+    ComputerActionKeypress,
+    ComputerActionMove,
+    ComputerActionScreenshot,
+    ComputerActionScroll,
+    ComputerActionType,
+    ComputerActionWait,
+  ],
+)
 sealed class ComputerAction with ComputerActionMappable {
   const ComputerAction();
 
@@ -56,34 +61,30 @@ sealed class ComputerAction with ComputerActionMappable {
 }
 
 extension ComputerActionUnionDeserializer on ComputerAction {
-  static ComputerAction tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ComputerAction tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ComputerActionClick: 'click',
-      ComputerActionDoubleClick: 'double_click',
-      ComputerActionDrag: 'drag',
-      ComputerActionKeypress: 'keypress',
-      ComputerActionMove: 'move',
-      ComputerActionScreenshot: 'screenshot',
-      ComputerActionScroll: 'scroll',
-      ComputerActionType: 'type',
-      ComputerActionWait: 'wait',
+      ClickParam: 'click',
+      DoubleClickAction: 'double_click',
+      Drag: 'drag',
+      KeyPressAction: 'keypress',
+      Move: 'move',
+      Screenshot: 'screenshot',
+      Scroll: 'scroll',
+      TypeModel: 'type',
+      Wait: 'wait',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ComputerActionClick] => ComputerActionClickMapper.fromJson(json),
-      _ when value == effective[ComputerActionDoubleClick] => ComputerActionDoubleClickMapper.fromJson(json),
-      _ when value == effective[ComputerActionDrag] => ComputerActionDragMapper.fromJson(json),
-      _ when value == effective[ComputerActionKeypress] => ComputerActionKeypressMapper.fromJson(json),
-      _ when value == effective[ComputerActionMove] => ComputerActionMoveMapper.fromJson(json),
-      _ when value == effective[ComputerActionScreenshot] => ComputerActionScreenshotMapper.fromJson(json),
-      _ when value == effective[ComputerActionScroll] => ComputerActionScrollMapper.fromJson(json),
-      _ when value == effective[ComputerActionType] => ComputerActionTypeMapper.fromJson(json),
-      _ when value == effective[ComputerActionWait] => ComputerActionWaitMapper.fromJson(json),
+      _ when value == effective[ClickParam] => ClickParamMapper.fromJson(json),
+      _ when value == effective[DoubleClickAction] => DoubleClickActionMapper.fromJson(json),
+      _ when value == effective[Drag] => DragMapper.fromJson(json),
+      _ when value == effective[KeyPressAction] => KeyPressActionMapper.fromJson(json),
+      _ when value == effective[Move] => MoveMapper.fromJson(json),
+      _ when value == effective[Screenshot] => ScreenshotMapper.fromJson(json),
+      _ when value == effective[Scroll] => ScrollMapper.fromJson(json),
+      _ when value == effective[TypeModel] => TypeModelMapper.fromJson(json),
+      _ when value == effective[Wait] => WaitMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ComputerAction'),
     };
   }
@@ -96,12 +97,7 @@ class ComputerActionClick extends ComputerAction with ComputerActionClickMappabl
   final int x;
   final int y;
 
-  const ComputerActionClick({
-    required this.type,
-    required this.button,
-    required this.x,
-    required this.y,
-  });
+  const ComputerActionClick({required this.type, required this.button, required this.x, required this.y});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'double_click')
@@ -110,11 +106,7 @@ class ComputerActionDoubleClick extends ComputerAction with ComputerActionDouble
   final int x;
   final int y;
 
-  const ComputerActionDoubleClick({
-    required this.type,
-    required this.x,
-    required this.y,
-  });
+  const ComputerActionDoubleClick({required this.type, required this.x, required this.y});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'drag')
@@ -122,10 +114,7 @@ class ComputerActionDrag extends ComputerAction with ComputerActionDragMappable 
   final ComputerActionType3 type;
   final List<DragPoint> path;
 
-  const ComputerActionDrag({
-    required this.type,
-    required this.path,
-  });
+  const ComputerActionDrag({required this.type, required this.path});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'keypress')
@@ -133,10 +122,7 @@ class ComputerActionKeypress extends ComputerAction with ComputerActionKeypressM
   final ComputerActionType4 type;
   final List<String> keys;
 
-  const ComputerActionKeypress({
-    required this.type,
-    required this.keys,
-  });
+  const ComputerActionKeypress({required this.type, required this.keys});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'move')
@@ -145,20 +131,14 @@ class ComputerActionMove extends ComputerAction with ComputerActionMoveMappable 
   final int x;
   final int y;
 
-  const ComputerActionMove({
-    required this.type,
-    required this.x,
-    required this.y,
-  });
+  const ComputerActionMove({required this.type, required this.x, required this.y});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'screenshot')
 class ComputerActionScreenshot extends ComputerAction with ComputerActionScreenshotMappable {
   final ComputerActionType6 type;
 
-  const ComputerActionScreenshot({
-    required this.type,
-  });
+  const ComputerActionScreenshot({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'scroll')
@@ -185,17 +165,12 @@ class ComputerActionType extends ComputerAction with ComputerActionTypeMappable 
   final ComputerActionType8 type;
   final String text;
 
-  const ComputerActionType({
-    required this.type,
-    required this.text,
-  });
+  const ComputerActionType({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'wait')
 class ComputerActionWait extends ComputerAction with ComputerActionWaitMappable {
   final ComputerActionType9 type;
 
-  const ComputerActionWait({
-    required this.type,
-  });
+  const ComputerActionWait({required this.type});
 }

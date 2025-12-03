@@ -8,7 +8,11 @@ import 'model_ids_shared.dart';
 
 part 'model_ids_responses_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ModelIdsResponsesUnionModelIdsShared, ModelIdsResponsesUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ModelIdsResponsesUnionModelIdsShared, ModelIdsResponsesUnionVariantString],
+)
 sealed class ModelIdsResponsesUnion with ModelIdsResponsesUnionMappable {
   const ModelIdsResponsesUnion();
 
@@ -26,23 +30,20 @@ extension ModelIdsResponsesUnionDeserializer on ModelIdsResponsesUnion {
       return ModelIdsResponsesUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ModelIdsResponsesUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ModelIdsResponsesUnionModelIdsShared extends ModelIdsResponsesUnion with ModelIdsResponsesUnionModelIdsSharedMappable {
-
-
+class ModelIdsResponsesUnionModelIdsShared extends ModelIdsResponsesUnion
+    with ModelIdsResponsesUnionModelIdsSharedMappable {
   const ModelIdsResponsesUnionModelIdsShared();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ModelIdsResponsesUnionVariantString extends ModelIdsResponsesUnion with ModelIdsResponsesUnionVariantStringMappable {
+class ModelIdsResponsesUnionVariantString extends ModelIdsResponsesUnion
+    with ModelIdsResponsesUnionVariantStringMappable {
   final String value;
 
-  const ModelIdsResponsesUnionVariantString({
-    required this.value,
-  });
+  const ModelIdsResponsesUnionVariantString({required this.value});
 }

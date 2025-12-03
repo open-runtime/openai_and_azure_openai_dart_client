@@ -22,8 +22,9 @@ part 'realtime_session_create_response_ga.mapper.dart';
 /// A new Realtime session configuration, with an ephemeral key. Default TTL.
 /// for keys is one minute.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseGa with RealtimeSessionCreateResponseGaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
+class RealtimeSessionCreateResponseGa extends RealtimeCreateClientSecretResponseSessionUnion
+    with RealtimeSessionCreateResponseGaMappable {
   const RealtimeSessionCreateResponseGa({
     required this.realtimeSessionCreateResponseGaClientSecret,
     required this.type,
@@ -60,7 +61,6 @@ class RealtimeSessionCreateResponseGa with RealtimeSessionCreateResponseGaMappab
   @MappableField(key: 'tool_choice')
   final RealtimeSessionCreateResponseGaToolChoiceUnion toolChoice;
 
-  static RealtimeSessionCreateResponseGa fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseGa fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseGaMapper.fromJson(json);
 }
-

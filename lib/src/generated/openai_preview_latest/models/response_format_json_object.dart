@@ -14,15 +14,12 @@ part 'response_format_json_object.mapper.dart';
 /// model will not generate JSON without a system or user message instructing it.
 /// to do so.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFormatJsonObject with ResponseFormatJsonObjectMappable {
-  const ResponseFormatJsonObject({
-    required this.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
+class ResponseFormatJsonObject extends CreateChatCompletionRequestResponseFormatUnion
+    with ResponseFormatJsonObjectMappable {
+  const ResponseFormatJsonObject({required this.type});
 
   final ResponseFormatJsonObjectType type;
 
   static ResponseFormatJsonObject fromJson(Map<String, dynamic> json) => ResponseFormatJsonObjectMapper.fromJson(json);
-
 }
-

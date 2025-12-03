@@ -10,8 +10,8 @@ import 'grammar_syntax1.dart';
 part 'custom_grammar_format_param.mapper.dart';
 
 /// A grammar defined by the user.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomGrammarFormatParam with CustomGrammarFormatParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'grammar')
+class CustomGrammarFormatParam extends CustomToolParamFormatUnion with CustomGrammarFormatParamMappable {
   const CustomGrammarFormatParam({
     required this.syntax,
     required this.definition,
@@ -23,6 +23,4 @@ class CustomGrammarFormatParam with CustomGrammarFormatParamMappable {
   final CustomGrammarFormatParamType type;
 
   static CustomGrammarFormatParam fromJson(Map<String, dynamic> json) => CustomGrammarFormatParamMapper.fromJson(json);
-
 }
-

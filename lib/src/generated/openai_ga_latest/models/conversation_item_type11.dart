@@ -9,10 +9,10 @@ part 'conversation_item_type11.mapper.dart';
 /// The type of the shell call output. Always `shell_call_output`.
 @MappableEnum(defaultValue: 'unknown')
 enum ConversationItemType11 {
-  @MappableValue('shell_call_output') 
+  @MappableValue('shell_call_output')
   shellCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ConversationItemType11 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ConversationItemType11> get $valuesDefined => values.where((value) => value != ConversationItemType11.unknown).toList();
+  static List<ConversationItemType11> get $valuesDefined =>
+      values.where((value) => value != ConversationItemType11.unknown).toList();
 }

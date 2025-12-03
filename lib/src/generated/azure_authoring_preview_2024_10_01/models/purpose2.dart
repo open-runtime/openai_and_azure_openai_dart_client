@@ -9,22 +9,22 @@ part 'purpose2.mapper.dart';
 /// The intended purpose of the uploaded documents. Use "fine-tune" for fine-tuning. This allows us to validate the format of the uploaded file.
 @MappableEnum(defaultValue: 'unknown')
 enum Purpose2 {
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('fine-tune-results') 
+  @MappableValue('fine-tune-results')
   fineTuneResults,
 
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('assistants_output') 
+  @MappableValue('assistants_output')
   assistantsOutput,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

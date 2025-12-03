@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_text_delta.dart';
 
 class RealtimeServerEventResponseTextDeltaMapper
-    extends ClassMapperBase<RealtimeServerEventResponseTextDelta> {
+    extends SubClassMapperBase<RealtimeServerEventResponseTextDelta> {
   RealtimeServerEventResponseTextDeltaMapper._();
 
   static RealtimeServerEventResponseTextDeltaMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseTextDeltaMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseTextDeltaMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseTextDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -73,6 +74,14 @@ class RealtimeServerEventResponseTextDeltaMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.text.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseTextDelta _instantiate(DecodingData data) {
     return RealtimeServerEventResponseTextDelta(
@@ -166,7 +175,8 @@ abstract class RealtimeServerEventResponseTextDeltaCopyWith<
   $In extends RealtimeServerEventResponseTextDelta,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseTextDeltaType? type,

@@ -9,10 +9,10 @@ part 'run_object_required_action_type.mapper.dart';
 /// For now, this is always `submit_tool_outputs`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunObjectRequiredActionType {
-  @MappableValue('submit_tool_outputs') 
+  @MappableValue('submit_tool_outputs')
   submitToolOutputs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunObjectRequiredActionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunObjectRequiredActionType> get $valuesDefined => values.where((value) => value != RunObjectRequiredActionType.unknown).toList();
+  static List<RunObjectRequiredActionType> get $valuesDefined =>
+      values.where((value) => value != RunObjectRequiredActionType.unknown).toList();
 }

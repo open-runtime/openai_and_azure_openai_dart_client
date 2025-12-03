@@ -8,17 +8,11 @@ part 'transcription_word.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptionWord with TranscriptionWordMappable {
-  const TranscriptionWord({
-    required this.word,
-    required this.start,
-    required this.end,
-  });
+  const TranscriptionWord({required this.word, required this.start, required this.end});
 
   final String word;
   final double start;
   final double end;
 
   static TranscriptionWord fromJson(Map<String, dynamic> json) => TranscriptionWordMapper.fromJson(json);
-
 }
-

@@ -43,6 +43,4 @@ class RetrievedDocument with RetrievedDocumentMappable {
   final FilterReason? filterReason;
 
   static RetrievedDocument fromJson(Map<String, dynamic> json) => RetrievedDocumentMapper.fromJson(json);
-
 }
-

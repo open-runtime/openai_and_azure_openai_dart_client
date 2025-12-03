@@ -10,22 +10,22 @@ part 'realtime_session_create_request_model.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateRequestModel {
-  @MappableValue('gpt-4o-realtime-preview') 
+  @MappableValue('gpt-4o-realtime-preview')
   gpt4oRealtimePreview,
 
-  @MappableValue('gpt-4o-realtime-preview-2024-10-01') 
+  @MappableValue('gpt-4o-realtime-preview-2024-10-01')
   gpt4oRealtimePreview20241001,
 
-  @MappableValue('gpt-4o-realtime-preview-2024-12-17') 
+  @MappableValue('gpt-4o-realtime-preview-2024-12-17')
   gpt4oRealtimePreview20241217,
 
-  @MappableValue('gpt-4o-mini-realtime-preview') 
+  @MappableValue('gpt-4o-mini-realtime-preview')
   gpt4oMiniRealtimePreview,
 
-  @MappableValue('gpt-4o-mini-realtime-preview-2024-12-17') 
+  @MappableValue('gpt-4o-mini-realtime-preview-2024-12-17')
   gpt4oMiniRealtimePreview20241217,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum RealtimeSessionCreateRequestModel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateRequestModel> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateRequestModel.unknown).toList();
+  static List<RealtimeSessionCreateRequestModel> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateRequestModel.unknown).toList();
 }

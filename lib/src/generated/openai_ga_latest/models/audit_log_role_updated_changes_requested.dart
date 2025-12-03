@@ -31,7 +31,6 @@ class AuditLogRoleUpdatedChangesRequested with AuditLogRoleUpdatedChangesRequest
   final String? description;
   final dynamic? metadata;
 
-  static AuditLogRoleUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogRoleUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogRoleUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogRoleUpdatedChangesRequestedMapper.fromJson(json);
 }
-

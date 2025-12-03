@@ -13,11 +13,7 @@ part 'group_role_assignment.mapper.dart';
 /// Role assignment linking a group to a role.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupRoleAssignment with GroupRoleAssignmentMappable {
-  const GroupRoleAssignment({
-    required this.objectEnum,
-    required this.group,
-    required this.role,
-  });
+  const GroupRoleAssignment({required this.objectEnum, required this.group, required this.role});
 
   @MappableField(key: 'object')
   final GroupRoleAssignmentObjectObjectEnum objectEnum;
@@ -25,6 +21,4 @@ class GroupRoleAssignment with GroupRoleAssignmentMappable {
   final Role role;
 
   static GroupRoleAssignment fromJson(Map<String, dynamic> json) => GroupRoleAssignmentMapper.fromJson(json);
-
 }
-

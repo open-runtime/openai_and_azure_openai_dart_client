@@ -9,17 +9,12 @@ import 'closed_status_type.dart';
 part 'closed_status.mapper.dart';
 
 /// Indicates that a thread has been closed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ClosedStatus with ClosedStatusMappable {
-  const ClosedStatus({
-    required this.reason,
-    this.type = ClosedStatusType.closed,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'closed')
+class ClosedStatus extends ThreadResourceStatusUnion with ClosedStatusMappable {
+  const ClosedStatus({required this.reason, this.type = ClosedStatusType.closed});
 
   final String? reason;
   final ClosedStatusType type;
 
   static ClosedStatus fromJson(Map<String, dynamic> json) => ClosedStatusMapper.fromJson(json);
-
 }
-

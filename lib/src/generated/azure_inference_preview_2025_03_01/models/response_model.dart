@@ -82,6 +82,4 @@ class ResponseModel with ResponseModelMappable {
   final ResponseUsage? usage;
 
   static ResponseModel fromJson(Map<String, dynamic> json) => ResponseModelMapper.fromJson(json);
-
 }
-

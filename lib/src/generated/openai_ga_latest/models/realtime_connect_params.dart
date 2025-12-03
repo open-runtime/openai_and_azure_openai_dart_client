@@ -8,16 +8,11 @@ part 'realtime_connect_params.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConnectParams with RealtimeConnectParamsMappable {
-  const RealtimeConnectParams({
-    this.model,
-    this.callId,
-  });
+  const RealtimeConnectParams({this.model, this.callId});
 
   final String? model;
   @MappableField(key: 'call_id')
   final String? callId;
 
   static RealtimeConnectParams fromJson(Map<String, dynamic> json) => RealtimeConnectParamsMapper.fromJson(json);
-
 }
-

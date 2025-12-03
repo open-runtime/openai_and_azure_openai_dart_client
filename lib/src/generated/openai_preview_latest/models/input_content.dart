@@ -18,11 +18,12 @@ import 'input_text_content_type.dart';
 
 part 'input_content.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  InputContentInputText,
-  InputContentInputImage,
-  InputContentInputFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [InputContentInputText, InputContentInputImage, InputContentInputFile],
+)
 sealed class InputContent with InputContentMappable {
   const InputContent();
 
@@ -32,22 +33,18 @@ sealed class InputContent with InputContentMappable {
 }
 
 extension InputContentUnionDeserializer on InputContent {
-  static InputContent tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static InputContent tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      InputContentInputText: 'input_text',
-      InputContentInputImage: 'input_image',
-      InputContentInputFile: 'input_file',
+      InputTextContent: 'input_text',
+      InputImageContent: 'input_image',
+      InputFileContent: 'input_file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[InputContentInputText] => InputContentInputTextMapper.fromJson(json),
-      _ when value == effective[InputContentInputImage] => InputContentInputImageMapper.fromJson(json),
-      _ when value == effective[InputContentInputFile] => InputContentInputFileMapper.fromJson(json),
+      _ when value == effective[InputTextContent] => InputTextContentMapper.fromJson(json),
+      _ when value == effective[InputImageContent] => InputImageContentMapper.fromJson(json),
+      _ when value == effective[InputFileContent] => InputFileContentMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for InputContent'),
     };
   }
@@ -58,10 +55,7 @@ class InputContentInputText extends InputContent with InputContentInputTextMappa
   final InputContentType type;
   final String text;
 
-  const InputContentInputText({
-    required this.type,
-    required this.text,
-  });
+  const InputContentInputText({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_image')

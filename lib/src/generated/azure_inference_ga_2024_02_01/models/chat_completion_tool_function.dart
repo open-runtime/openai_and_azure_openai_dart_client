@@ -10,17 +10,12 @@ part 'chat_completion_tool_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionToolFunction with ChatCompletionToolFunctionMappable {
-  const ChatCompletionToolFunction({
-    required this.name,
-    required this.parameters,
-    this.description,
-  });
+  const ChatCompletionToolFunction({required this.name, required this.parameters, this.description});
 
   final String name;
   final ChatCompletionFunctionParameters parameters;
   final String? description;
 
-  static ChatCompletionToolFunction fromJson(Map<String, dynamic> json) => ChatCompletionToolFunctionMapper.fromJson(json);
-
+  static ChatCompletionToolFunction fromJson(Map<String, dynamic> json) =>
+      ChatCompletionToolFunctionMapper.fromJson(json);
 }
-

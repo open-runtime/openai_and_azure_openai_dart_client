@@ -18,7 +18,6 @@ class MessageDeltaContentImageUrlObjectImageUrl with MessageDeltaContentImageUrl
   final MessageDeltaContentImageUrlObjectImageUrlDetail detail;
   final String? url;
 
-  static MessageDeltaContentImageUrlObjectImageUrl fromJson(Map<String, dynamic> json) => MessageDeltaContentImageUrlObjectImageUrlMapper.fromJson(json);
-
+  static MessageDeltaContentImageUrlObjectImageUrl fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentImageUrlObjectImageUrlMapper.fromJson(json);
 }
-

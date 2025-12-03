@@ -11,15 +11,11 @@ part 'create_transcription_response_json.mapper.dart';
 /// Represents a transcription response returned by model, based on the provided input.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseJson with CreateTranscriptionResponseJsonMappable {
-  const CreateTranscriptionResponseJson({
-    required this.text,
-    this.logprobs,
-  });
+  const CreateTranscriptionResponseJson({required this.text, this.logprobs});
 
   final String text;
   final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
 
-  static CreateTranscriptionResponseJson fromJson(Map<String, dynamic> json) => CreateTranscriptionResponseJsonMapper.fromJson(json);
-
+  static CreateTranscriptionResponseJson fromJson(Map<String, dynamic> json) =>
+      CreateTranscriptionResponseJsonMapper.fromJson(json);
 }
-

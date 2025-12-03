@@ -29,7 +29,6 @@ class ProjectRateLimitListResponse with ProjectRateLimitListResponseMappable {
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ProjectRateLimitListResponse fromJson(Map<String, dynamic> json) => ProjectRateLimitListResponseMapper.fromJson(json);
-
+  static ProjectRateLimitListResponse fromJson(Map<String, dynamic> json) =>
+      ProjectRateLimitListResponseMapper.fromJson(json);
 }
-

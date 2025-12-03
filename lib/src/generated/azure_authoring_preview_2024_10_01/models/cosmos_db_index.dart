@@ -11,12 +11,7 @@ part 'cosmos_db_index.mapper.dart';
 /// CosmosDB Index.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CosmosDbIndex with CosmosDbIndexMappable {
-  const CosmosDbIndex({
-    required this.kind,
-    this.connectionId,
-    this.collectionName,
-    this.databaseName,
-  });
+  const CosmosDbIndex({required this.kind, this.connectionId, this.collectionName, this.databaseName});
 
   final TargetType kind;
   final String? connectionId;
@@ -24,6 +19,4 @@ class CosmosDbIndex with CosmosDbIndexMappable {
   final String? databaseName;
 
   static CosmosDbIndex fromJson(Map<String, dynamic> json) => CosmosDbIndexMapper.fromJson(json);
-
 }
-

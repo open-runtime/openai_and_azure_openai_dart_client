@@ -8,13 +8,14 @@
 part of 'response_completed_event.dart';
 
 class ResponseCompletedEventMapper
-    extends ClassMapperBase<ResponseCompletedEvent> {
+    extends SubClassMapperBase<ResponseCompletedEvent> {
   ResponseCompletedEventMapper._();
 
   static ResponseCompletedEventMapper? _instance;
   static ResponseCompletedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseCompletedEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCompletedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -49,6 +50,14 @@ class ResponseCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCompletedEvent _instantiate(DecodingData data) {
     return ResponseCompletedEvent(
@@ -127,8 +136,9 @@ abstract class ResponseCompletedEventCopyWith<
   $In extends ResponseCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({
     ResponseCompletedEventType? type,
     ResponseModel? response,

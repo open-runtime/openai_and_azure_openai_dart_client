@@ -15,8 +15,8 @@ part 'mcp_tool.mapper.dart';
 /// Give the model access to additional tools via remote Model Context Protocol.
 /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class McpTool with McpToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
+class McpTool extends RealtimeSessionCreateResponseGaToolsUnion with McpToolMappable {
   const McpTool({
     required this.type,
     required this.serverLabel,
@@ -46,6 +46,4 @@ class McpTool with McpToolMappable {
   final McpToolAllowedToolsUnion? allowedTools;
 
   static McpTool fromJson(Map<String, dynamic> json) => McpToolMapper.fromJson(json);
-
 }
-

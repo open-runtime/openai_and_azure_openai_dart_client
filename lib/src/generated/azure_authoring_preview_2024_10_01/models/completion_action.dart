@@ -9,13 +9,13 @@ part 'completion_action.mapper.dart';
 /// The completion action.
 @MappableEnum(defaultValue: 'unknown')
 enum CompletionAction {
-  @MappableValue('cleanUpTempAssets') 
+  @MappableValue('cleanUpTempAssets')
   cleanUpTempAssets,
 
-  @MappableValue('keepAllAssets') 
+  @MappableValue('keepAllAssets')
   keepAllAssets,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum CompletionAction {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CompletionAction> get $valuesDefined => values.where((value) => value != CompletionAction.unknown).toList();
+  static List<CompletionAction> get $valuesDefined =>
+      values.where((value) => value != CompletionAction.unknown).toList();
 }

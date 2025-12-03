@@ -11,14 +11,9 @@ part 'custom_tool_call_output.mapper.dart';
 
 /// The output of a custom tool call from your code, being sent back to the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolCallOutput with CustomToolCallOutputMappable {
-  const CustomToolCallOutput({
-    required this.type,
-    required this.callId,
-    required this.output,
-    this.id,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call_output')
+class CustomToolCallOutput extends ItemUnion with CustomToolCallOutputMappable {
+  const CustomToolCallOutput({required this.type, required this.callId, required this.output, this.id});
 
   final CustomToolCallOutputType type;
   @MappableField(key: 'call_id')
@@ -27,6 +22,4 @@ class CustomToolCallOutput with CustomToolCallOutputMappable {
   final String? id;
 
   static CustomToolCallOutput fromJson(Map<String, dynamic> json) => CustomToolCallOutputMapper.fromJson(json);
-
 }
-

@@ -12,7 +12,8 @@ import 'realtime_turn_detection.dart';
 part 'realtime_transcription_session_create_request_ga_audio_input.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeTranscriptionSessionCreateRequestGaAudioInput with RealtimeTranscriptionSessionCreateRequestGaAudioInputMappable {
+class RealtimeTranscriptionSessionCreateRequestGaAudioInput
+    with RealtimeTranscriptionSessionCreateRequestGaAudioInputMappable {
   const RealtimeTranscriptionSessionCreateRequestGaAudioInput({
     this.format,
     this.transcription,
@@ -23,11 +24,11 @@ class RealtimeTranscriptionSessionCreateRequestGaAudioInput with RealtimeTranscr
   final RealtimeAudioFormats? format;
   final AudioTranscription? transcription;
   @MappableField(key: 'noise_reduction')
-  final RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction? realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction;
+  final RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction?
+  realtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction;
   @MappableField(key: 'turn_detection')
   final RealtimeTurnDetection? turnDetection;
 
-  static RealtimeTranscriptionSessionCreateRequestGaAudioInput fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateRequestGaAudioInputMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateRequestGaAudioInput fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateRequestGaAudioInputMapper.fromJson(json);
 }
-

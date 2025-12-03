@@ -11,10 +11,10 @@ part 'response_stream_event_type21.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventType21 {
   /// Incorrect name has been replaced. Original name: `response.failed`.
-  @MappableValue('response.failed') 
+  @MappableValue('response.failed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseStreamEventType21 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventType21> get $valuesDefined => values.where((value) => value != ResponseStreamEventType21.unknown).toList();
+  static List<ResponseStreamEventType21> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventType21.unknown).toList();
 }

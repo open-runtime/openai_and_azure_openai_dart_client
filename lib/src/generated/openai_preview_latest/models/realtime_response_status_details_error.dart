@@ -8,15 +8,11 @@ part 'realtime_response_status_details_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseStatusDetailsError with RealtimeResponseStatusDetailsErrorMappable {
-  const RealtimeResponseStatusDetailsError({
-    this.type,
-    this.code,
-  });
+  const RealtimeResponseStatusDetailsError({this.type, this.code});
 
   final String? type;
   final String? code;
 
-  static RealtimeResponseStatusDetailsError fromJson(Map<String, dynamic> json) => RealtimeResponseStatusDetailsErrorMapper.fromJson(json);
-
+  static RealtimeResponseStatusDetailsError fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseStatusDetailsErrorMapper.fromJson(json);
 }
-

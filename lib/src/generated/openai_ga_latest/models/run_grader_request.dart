@@ -10,11 +10,7 @@ part 'run_grader_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunGraderRequest with RunGraderRequestMappable {
-  const RunGraderRequest({
-    required this.grader,
-    required this.modelSample,
-    this.item,
-  });
+  const RunGraderRequest({required this.grader, required this.modelSample, this.item});
 
   final RunGraderRequestGraderUnion grader;
   @MappableField(key: 'model_sample')
@@ -22,6 +18,4 @@ class RunGraderRequest with RunGraderRequestMappable {
   final dynamic? item;
 
   static RunGraderRequest fromJson(Map<String, dynamic> json) => RunGraderRequestMapper.fromJson(json);
-
 }
-

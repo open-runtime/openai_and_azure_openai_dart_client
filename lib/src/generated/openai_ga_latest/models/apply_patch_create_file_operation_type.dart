@@ -9,10 +9,10 @@ part 'apply_patch_create_file_operation_type.mapper.dart';
 /// Create a new file with the provided diff.
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchCreateFileOperationType {
-  @MappableValue('create_file') 
+  @MappableValue('create_file')
   createFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ApplyPatchCreateFileOperationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchCreateFileOperationType> get $valuesDefined => values.where((value) => value != ApplyPatchCreateFileOperationType.unknown).toList();
+  static List<ApplyPatchCreateFileOperationType> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchCreateFileOperationType.unknown).toList();
 }

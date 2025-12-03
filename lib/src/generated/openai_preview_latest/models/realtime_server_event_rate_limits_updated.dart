@@ -15,13 +15,10 @@ part 'realtime_server_event_rate_limits_updated.mapper.dart';
 /// tokens, the rate limits shown here reflect that reservation, which is then .
 /// adjusted accordingly once the Response is completed.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventRateLimitsUpdated with RealtimeServerEventRateLimitsUpdatedMappable {
-  const RealtimeServerEventRateLimitsUpdated({
-    required this.eventId,
-    required this.type,
-    required this.rateLimits,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'rate_limits.updated')
+class RealtimeServerEventRateLimitsUpdated extends RealtimeServerEvent
+    with RealtimeServerEventRateLimitsUpdatedMappable {
+  const RealtimeServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits});
 
   @MappableField(key: 'event_id')
   final String eventId;
@@ -29,7 +26,6 @@ class RealtimeServerEventRateLimitsUpdated with RealtimeServerEventRateLimitsUpd
   @MappableField(key: 'rate_limits')
   final List<RealtimeServerEventRateLimitsUpdatedRateLimits> rateLimits;
 
-  static RealtimeServerEventRateLimitsUpdated fromJson(Map<String, dynamic> json) => RealtimeServerEventRateLimitsUpdatedMapper.fromJson(json);
-
+  static RealtimeServerEventRateLimitsUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventRateLimitsUpdatedMapper.fromJson(json);
 }
-

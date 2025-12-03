@@ -29,7 +29,6 @@ class CreateEvalLabelModelGrader with CreateEvalLabelModelGraderMappable {
   final List<String> passingLabels;
   final CreateEvalLabelModelGraderType type;
 
-  static CreateEvalLabelModelGrader fromJson(Map<String, dynamic> json) => CreateEvalLabelModelGraderMapper.fromJson(json);
-
+  static CreateEvalLabelModelGrader fromJson(Map<String, dynamic> json) =>
+      CreateEvalLabelModelGraderMapper.fromJson(json);
 }
-

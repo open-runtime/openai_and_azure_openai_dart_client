@@ -22,7 +22,6 @@ class ResponseFormatJsonSchemaJsonSchema with ResponseFormatJsonSchemaJsonSchema
   final bool? strict;
   final String? description;
 
-  static ResponseFormatJsonSchemaJsonSchema fromJson(Map<String, dynamic> json) => ResponseFormatJsonSchemaJsonSchemaMapper.fromJson(json);
-
+  static ResponseFormatJsonSchemaJsonSchema fromJson(Map<String, dynamic> json) =>
+      ResponseFormatJsonSchemaJsonSchemaMapper.fromJson(json);
 }
-

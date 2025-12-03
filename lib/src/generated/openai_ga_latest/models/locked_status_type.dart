@@ -9,10 +9,10 @@ part 'locked_status_type.mapper.dart';
 /// Status discriminator that is always `locked`.
 @MappableEnum(defaultValue: 'unknown')
 enum LockedStatusType {
-  @MappableValue('locked') 
+  @MappableValue('locked')
   locked,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum LockedStatusType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<LockedStatusType> get $valuesDefined => values.where((value) => value != LockedStatusType.unknown).toList();
+  static List<LockedStatusType> get $valuesDefined =>
+      values.where((value) => value != LockedStatusType.unknown).toList();
 }

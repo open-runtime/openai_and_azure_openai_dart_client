@@ -8,10 +8,10 @@ part 'create_fine_tuning_job_request_integrations_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum CreateFineTuningJobRequestIntegrationsType {
-  @MappableValue('wandb') 
+  @MappableValue('wandb')
   wandb,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum CreateFineTuningJobRequestIntegrationsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateFineTuningJobRequestIntegrationsType> get $valuesDefined => values.where((value) => value != CreateFineTuningJobRequestIntegrationsType.unknown).toList();
+  static List<CreateFineTuningJobRequestIntegrationsType> get $valuesDefined =>
+      values.where((value) => value != CreateFineTuningJobRequestIntegrationsType.unknown).toList();
 }

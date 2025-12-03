@@ -8,10 +8,10 @@ part 'text_content_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum TextContentType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

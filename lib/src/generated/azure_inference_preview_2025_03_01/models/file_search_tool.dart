@@ -14,8 +14,8 @@ part 'file_search_tool.mapper.dart';
 /// A tool that searches for relevant content from uploaded files.
 /// Learn more about the [file search tool](/docs/guides/tools-file-search).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileSearchTool with FileSearchToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
+class FileSearchTool extends Tool with FileSearchToolMappable {
   const FileSearchTool({
     required this.type,
     required this.vectorStoreIds,
@@ -34,6 +34,4 @@ class FileSearchTool with FileSearchToolMappable {
   final FileSearchToolRankingOptions? fileSearchToolRankingOptions;
 
   static FileSearchTool fromJson(Map<String, dynamic> json) => FileSearchToolMapper.fromJson(json);
-
 }
-

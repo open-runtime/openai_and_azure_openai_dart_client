@@ -11,10 +11,10 @@ part 'realtime_conversation_item_function_call_output_object_object_enum.mapper.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemFunctionCallOutputObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `realtime.item`.
-  @MappableValue('realtime.item') 
+  @MappableValue('realtime.item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeConversationItemFunctionCallOutputObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemFunctionCallOutputObjectObjectEnum> get $valuesDefined => values.where((value) => value != RealtimeConversationItemFunctionCallOutputObjectObjectEnum.unknown).toList();
+  static List<RealtimeConversationItemFunctionCallOutputObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemFunctionCallOutputObjectObjectEnum.unknown).toList();
 }

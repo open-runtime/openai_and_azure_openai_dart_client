@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'create_thread_request_tool_resources_file_search_vector_stores_chunking_strategy_union_variant2_static.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static with CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMappable {
+class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static
+    with CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMappable {
   const CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static({
     required this.maxChunkSizeTokens,
     required this.chunkOverlapTokens,
@@ -18,7 +19,7 @@ class CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnio
   @MappableField(key: 'chunk_overlap_tokens')
   final int chunkOverlapTokens;
 
-  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMapper.fromJson(json);
-
+  static CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2Static fromJson(
+    Map<String, dynamic> json,
+  ) => CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnionVariant2StaticMapper.fromJson(json);
 }
-

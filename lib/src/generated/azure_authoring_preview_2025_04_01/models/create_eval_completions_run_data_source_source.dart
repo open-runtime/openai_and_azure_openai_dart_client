@@ -10,13 +10,10 @@ part 'create_eval_completions_run_data_source_source.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceSource with CreateEvalCompletionsRunDataSourceSourceMappable {
-  const CreateEvalCompletionsRunDataSourceSource({
-    required this.type,
-  });
+  const CreateEvalCompletionsRunDataSourceSource({required this.type});
 
   final CreateEvalCompletionsRunDataSourceSourceType type;
 
-  static CreateEvalCompletionsRunDataSourceSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSourceMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSourceSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceSourceMapper.fromJson(json);
 }
-

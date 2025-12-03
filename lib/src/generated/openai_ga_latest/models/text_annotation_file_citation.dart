@@ -8,14 +8,11 @@ part 'text_annotation_file_citation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TextAnnotationFileCitation with TextAnnotationFileCitationMappable {
-  const TextAnnotationFileCitation({
-    required this.fileId,
-  });
+  const TextAnnotationFileCitation({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static TextAnnotationFileCitation fromJson(Map<String, dynamic> json) => TextAnnotationFileCitationMapper.fromJson(json);
-
+  static TextAnnotationFileCitation fromJson(Map<String, dynamic> json) =>
+      TextAnnotationFileCitationMapper.fromJson(json);
 }
-

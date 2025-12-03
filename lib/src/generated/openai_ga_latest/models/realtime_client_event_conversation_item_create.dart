@@ -17,8 +17,9 @@ part 'realtime_client_event_conversation_item_create.mapper.dart';
 /// If successful, the server will respond with a `conversation.item.created` .
 /// event, otherwise an `error` event will be sent.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventConversationItemCreate with RealtimeClientEventConversationItemCreateMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.create')
+class RealtimeClientEventConversationItemCreate extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemCreateMappable {
   const RealtimeClientEventConversationItemCreate({
     required this.type,
     required this.item,
@@ -33,7 +34,6 @@ class RealtimeClientEventConversationItemCreate with RealtimeClientEventConversa
   @MappableField(key: 'previous_item_id')
   final String? previousItemId;
 
-  static RealtimeClientEventConversationItemCreate fromJson(Map<String, dynamic> json) => RealtimeClientEventConversationItemCreateMapper.fromJson(json);
-
+  static RealtimeClientEventConversationItemCreate fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventConversationItemCreateMapper.fromJson(json);
 }
-

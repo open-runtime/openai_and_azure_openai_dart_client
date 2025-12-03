@@ -7,13 +7,14 @@
 
 part of 'tool_choice_allowed.dart';
 
-class ToolChoiceAllowedMapper extends ClassMapperBase<ToolChoiceAllowed> {
+class ToolChoiceAllowedMapper extends SubClassMapperBase<ToolChoiceAllowed> {
   ToolChoiceAllowedMapper._();
 
   static ToolChoiceAllowedMapper? _instance;
   static ToolChoiceAllowedMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ToolChoiceAllowedMapper._());
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       ToolChoiceAllowedTypeMapper.ensureInitialized();
       ToolChoiceAllowedModeMapper.ensureInitialized();
     }
@@ -49,6 +50,14 @@ class ToolChoiceAllowedMapper extends ClassMapperBase<ToolChoiceAllowed> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'allowed_tools';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static ToolChoiceAllowed _instantiate(DecodingData data) {
     return ToolChoiceAllowed(
@@ -128,8 +137,9 @@ abstract class ToolChoiceAllowedCopyWith<
   $In extends ToolChoiceAllowed,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>> get tools;
+  @override
   $R call({
     ToolChoiceAllowedType? type,
     ToolChoiceAllowedMode? mode,

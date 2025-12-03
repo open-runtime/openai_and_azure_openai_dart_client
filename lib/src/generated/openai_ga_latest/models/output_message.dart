@@ -15,8 +15,8 @@ part 'output_message.mapper.dart';
 
 /// An output message from the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class OutputMessage with OutputMessageMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
+class OutputMessage extends ItemUnion with OutputMessageMappable {
   const OutputMessage({
     required this.id,
     required this.type,
@@ -32,6 +32,4 @@ class OutputMessage with OutputMessageMappable {
   final OutputMessageStatus status;
 
   static OutputMessage fromJson(Map<String, dynamic> json) => OutputMessageMapper.fromJson(json);
-
 }
-

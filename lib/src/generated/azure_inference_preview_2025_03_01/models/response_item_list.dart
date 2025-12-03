@@ -31,6 +31,4 @@ class ResponseItemList with ResponseItemListMappable {
   final String lastId;
 
   static ResponseItemList fromJson(Map<String, dynamic> json) => ResponseItemListMapper.fromJson(json);
-
 }
-

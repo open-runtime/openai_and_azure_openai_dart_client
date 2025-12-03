@@ -10,15 +10,10 @@ part 'run_object_last_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectLastError with RunObjectLastErrorMappable {
-  const RunObjectLastError({
-    required this.code,
-    required this.message,
-  });
+  const RunObjectLastError({required this.code, required this.message});
 
   final RunObjectLastErrorCode code;
   final String message;
 
   static RunObjectLastError fromJson(Map<String, dynamic> json) => RunObjectLastErrorMapper.fromJson(json);
-
 }
-

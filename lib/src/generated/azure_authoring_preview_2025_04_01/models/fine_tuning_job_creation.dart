@@ -36,6 +36,4 @@ class FineTuningJobCreation with FineTuningJobCreationMappable {
   final SupervisedMethodRequest? method;
 
   static FineTuningJobCreation fromJson(Map<String, dynamic> json) => FineTuningJobCreationMapper.fromJson(json);
-
 }
-

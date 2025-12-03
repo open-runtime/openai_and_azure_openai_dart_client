@@ -10,10 +10,10 @@ part 'realtime_server_event_type20.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventType20 {
   /// Incorrect name has been replaced. Original name: `response.content_part.done`.
-  @MappableValue('response.content_part.done') 
+  @MappableValue('response.content_part.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventType20 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventType20> get $valuesDefined => values.where((value) => value != RealtimeServerEventType20.unknown).toList();
+  static List<RealtimeServerEventType20> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventType20.unknown).toList();
 }

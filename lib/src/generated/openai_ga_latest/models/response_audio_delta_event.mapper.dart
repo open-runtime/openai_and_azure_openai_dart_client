@@ -8,7 +8,7 @@
 part of 'response_audio_delta_event.dart';
 
 class ResponseAudioDeltaEventMapper
-    extends ClassMapperBase<ResponseAudioDeltaEvent> {
+    extends SubClassMapperBase<ResponseAudioDeltaEvent> {
   ResponseAudioDeltaEventMapper._();
 
   static ResponseAudioDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseAudioDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseAudioDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseAudioDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -51,6 +52,14 @@ class ResponseAudioDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.audio.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseAudioDeltaEvent _instantiate(DecodingData data) {
     return ResponseAudioDeltaEvent(
@@ -129,7 +138,8 @@ abstract class ResponseAudioDeltaEventCopyWith<
   $In extends ResponseAudioDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseAudioDeltaEventType? type,
     int? sequenceNumber,

@@ -9,7 +9,11 @@ import 'mcp_tool_filter.dart';
 part 'mcp_tool_require_approval_union.mapper.dart';
 
 /// Specify which of the MCP server's tools require approval.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [McpToolRequireApprovalUnionVariant1, McpToolRequireApprovalUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [McpToolRequireApprovalUnionVariant1, McpToolRequireApprovalUnionVariantString],
+)
 sealed class McpToolRequireApprovalUnion with McpToolRequireApprovalUnionMappable {
   const McpToolRequireApprovalUnion();
 
@@ -27,27 +31,23 @@ extension McpToolRequireApprovalUnionDeserializer on McpToolRequireApprovalUnion
       return McpToolRequireApprovalUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for McpToolRequireApprovalUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class McpToolRequireApprovalUnionVariant1 extends McpToolRequireApprovalUnion with McpToolRequireApprovalUnionVariant1Mappable {
+class McpToolRequireApprovalUnionVariant1 extends McpToolRequireApprovalUnion
+    with McpToolRequireApprovalUnionVariant1Mappable {
   final McpToolFilter? always;
   final McpToolFilter? never;
 
-  const McpToolRequireApprovalUnionVariant1({
-    required this.always,
-    required this.never,
-  });
+  const McpToolRequireApprovalUnionVariant1({required this.always, required this.never});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class McpToolRequireApprovalUnionVariantString extends McpToolRequireApprovalUnion with McpToolRequireApprovalUnionVariantStringMappable {
+class McpToolRequireApprovalUnionVariantString extends McpToolRequireApprovalUnion
+    with McpToolRequireApprovalUnionVariantStringMappable {
   final String value;
 
-  const McpToolRequireApprovalUnionVariantString({
-    required this.value,
-  });
+  const McpToolRequireApprovalUnionVariantString({required this.value});
 }

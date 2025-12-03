@@ -9,13 +9,13 @@ part 'realtime_conversation_item_message_assistant_content_type.mapper.dart';
 /// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemMessageAssistantContentType {
-  @MappableValue('output_text') 
+  @MappableValue('output_text')
   outputText,
 
-  @MappableValue('output_audio') 
+  @MappableValue('output_audio')
   outputAudio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RealtimeConversationItemMessageAssistantContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemMessageAssistantContentType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemMessageAssistantContentType.unknown).toList();
+  static List<RealtimeConversationItemMessageAssistantContentType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemMessageAssistantContentType.unknown).toList();
 }

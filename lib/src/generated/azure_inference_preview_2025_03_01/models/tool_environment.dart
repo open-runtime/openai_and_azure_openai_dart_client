@@ -10,19 +10,19 @@ part 'tool_environment.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolEnvironment {
-  @MappableValue('mac') 
+  @MappableValue('mac')
   mac,
 
-  @MappableValue('windows') 
+  @MappableValue('windows')
   windows,
 
-  @MappableValue('ubuntu') 
+  @MappableValue('ubuntu')
   ubuntu,
 
-  @MappableValue('browser') 
+  @MappableValue('browser')
   browser,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

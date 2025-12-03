@@ -10,10 +10,10 @@ part 'usage_vector_stores_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageVectorStoresResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.vector_stores.result`.
-  @MappableValue('organization.usage.vector_stores.result') 
+  @MappableValue('organization.usage.vector_stores.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageVectorStoresResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageVectorStoresResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageVectorStoresResultObjectObjectEnum.unknown).toList();
+  static List<UsageVectorStoresResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageVectorStoresResultObjectObjectEnum.unknown).toList();
 }

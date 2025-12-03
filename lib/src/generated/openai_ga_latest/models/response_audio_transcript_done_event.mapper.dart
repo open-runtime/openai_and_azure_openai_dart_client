@@ -8,7 +8,7 @@
 part of 'response_audio_transcript_done_event.dart';
 
 class ResponseAudioTranscriptDoneEventMapper
-    extends ClassMapperBase<ResponseAudioTranscriptDoneEvent> {
+    extends SubClassMapperBase<ResponseAudioTranscriptDoneEvent> {
   ResponseAudioTranscriptDoneEventMapper._();
 
   static ResponseAudioTranscriptDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseAudioTranscriptDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseAudioTranscriptDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseAudioTranscriptDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -47,6 +48,14 @@ class ResponseAudioTranscriptDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.audio.transcript.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseAudioTranscriptDoneEvent _instantiate(DecodingData data) {
     return ResponseAudioTranscriptDoneEvent(
@@ -132,7 +141,8 @@ abstract class ResponseAudioTranscriptDoneEventCopyWith<
   $In extends ResponseAudioTranscriptDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({ResponseAudioTranscriptDoneEventType? type, int? sequenceNumber});
   ResponseAudioTranscriptDoneEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

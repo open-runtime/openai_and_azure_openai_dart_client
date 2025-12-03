@@ -12,15 +12,10 @@ part 'compound_filter.mapper.dart';
 /// Combine multiple filters using `and` or `or`.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CompoundFilter with CompoundFilterMappable {
-  const CompoundFilter({
-    required this.type,
-    required this.filters,
-  });
+  const CompoundFilter({required this.type, required this.filters});
 
   final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
   static CompoundFilter fromJson(Map<String, dynamic> json) => CompoundFilterMapper.fromJson(json);
-
 }
-

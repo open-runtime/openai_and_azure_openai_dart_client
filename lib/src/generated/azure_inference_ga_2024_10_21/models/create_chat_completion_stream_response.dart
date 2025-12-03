@@ -10,8 +10,9 @@ import 'create_chat_completion_stream_response_object_object_enum.dart';
 part 'create_chat_completion_stream_response.mapper.dart';
 
 /// Represents a streamed chunk of a chat completion response returned by model, based on the provided input.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateChatCompletionStreamResponse with CreateChatCompletionStreamResponseMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chat.completion.chunk')
+class CreateChatCompletionStreamResponse extends ChatCompletionsCreateResponseUnion
+    with CreateChatCompletionStreamResponseMappable {
   const CreateChatCompletionStreamResponse({
     required this.id,
     required this.choices,
@@ -30,7 +31,6 @@ class CreateChatCompletionStreamResponse with CreateChatCompletionStreamResponse
   @MappableField(key: 'system_fingerprint')
   final String? systemFingerprint;
 
-  static CreateChatCompletionStreamResponse fromJson(Map<String, dynamic> json) => CreateChatCompletionStreamResponseMapper.fromJson(json);
-
+  static CreateChatCompletionStreamResponse fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionStreamResponseMapper.fromJson(json);
 }
-

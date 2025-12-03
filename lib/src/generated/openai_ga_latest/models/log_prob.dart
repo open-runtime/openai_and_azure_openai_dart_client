@@ -11,12 +11,7 @@ part 'log_prob.mapper.dart';
 /// The log probability of a token.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class LogProb with LogProbMappable {
-  const LogProb({
-    required this.token,
-    required this.logprob,
-    required this.bytes,
-    required this.topLogprobs,
-  });
+  const LogProb({required this.token, required this.logprob, required this.bytes, required this.topLogprobs});
 
   final String token;
   final num logprob;
@@ -25,6 +20,4 @@ class LogProb with LogProbMappable {
   final List<TopLogProb> topLogprobs;
 
   static LogProb fromJson(Map<String, dynamic> json) => LogProbMapper.fromJson(json);
-
 }
-

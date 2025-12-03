@@ -22,7 +22,6 @@ class RealtimeSessionCreateResponseGaAudioOutput with RealtimeSessionCreateRespo
   final num speed;
   final RealtimeAudioFormats? format;
 
-  static RealtimeSessionCreateResponseGaAudioOutput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaAudioOutputMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseGaAudioOutput fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseGaAudioOutputMapper.fromJson(json);
 }
-

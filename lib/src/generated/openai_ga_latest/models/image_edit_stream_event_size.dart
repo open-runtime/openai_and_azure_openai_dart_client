@@ -10,19 +10,19 @@ part 'image_edit_stream_event_size.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditStreamEventSize {
-  @MappableValue('1024x1024') 
+  @MappableValue('1024x1024')
   value1024x1024,
 
-  @MappableValue('1024x1536') 
+  @MappableValue('1024x1536')
   value1024x1536,
 
-  @MappableValue('1536x1024') 
+  @MappableValue('1536x1024')
   value1536x1024,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ImageEditStreamEventSize {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditStreamEventSize> get $valuesDefined => values.where((value) => value != ImageEditStreamEventSize.unknown).toList();
+  static List<ImageEditStreamEventSize> get $valuesDefined =>
+      values.where((value) => value != ImageEditStreamEventSize.unknown).toList();
 }

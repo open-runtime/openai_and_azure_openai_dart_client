@@ -11,8 +11,9 @@ part 'chat_completion_message_custom_tool_call.mapper.dart';
 
 /// A call to a custom tool created by the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionMessageCustomToolCall with ChatCompletionMessageCustomToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class ChatCompletionMessageCustomToolCall extends ChatCompletionMessageToolCallsUnion
+    with ChatCompletionMessageCustomToolCallMappable {
   const ChatCompletionMessageCustomToolCall({
     required this.id,
     required this.type,
@@ -24,7 +25,6 @@ class ChatCompletionMessageCustomToolCall with ChatCompletionMessageCustomToolCa
   @MappableField(key: 'custom')
   final ChatCompletionMessageCustomToolCallCustom chatCompletionMessageCustomToolCallCustom;
 
-  static ChatCompletionMessageCustomToolCall fromJson(Map<String, dynamic> json) => ChatCompletionMessageCustomToolCallMapper.fromJson(json);
-
+  static ChatCompletionMessageCustomToolCall fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageCustomToolCallMapper.fromJson(json);
 }
-

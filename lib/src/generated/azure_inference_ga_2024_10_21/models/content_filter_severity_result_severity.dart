@@ -8,19 +8,19 @@ part 'content_filter_severity_result_severity.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ContentFilterSeverityResultSeverity {
-  @MappableValue('safe') 
+  @MappableValue('safe')
   safe,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ContentFilterSeverityResultSeverity {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ContentFilterSeverityResultSeverity> get $valuesDefined => values.where((value) => value != ContentFilterSeverityResultSeverity.unknown).toList();
+  static List<ContentFilterSeverityResultSeverity> get $valuesDefined =>
+      values.where((value) => value != ContentFilterSeverityResultSeverity.unknown).toList();
 }

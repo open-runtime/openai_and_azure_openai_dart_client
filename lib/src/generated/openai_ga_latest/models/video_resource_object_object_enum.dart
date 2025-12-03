@@ -10,10 +10,10 @@ part 'video_resource_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum VideoResourceObjectObjectEnum {
-  @MappableValue('video') 
+  @MappableValue('video')
   video,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum VideoResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VideoResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != VideoResourceObjectObjectEnum.unknown).toList();
+  static List<VideoResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != VideoResourceObjectObjectEnum.unknown).toList();
 }

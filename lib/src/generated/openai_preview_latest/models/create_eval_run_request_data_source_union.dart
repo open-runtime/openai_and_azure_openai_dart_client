@@ -15,17 +15,18 @@ import 'create_eval_jsonl_run_data_source_type.dart';
 
 part 'create_eval_run_request_data_source_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalRunRequestDataSourceUnionJsonl,
-  CreateEvalRunRequestDataSourceUnionCompletions
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CreateEvalRunRequestDataSourceUnionJsonl, CreateEvalRunRequestDataSourceUnionCompletions],
+)
 sealed class CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionMappable {
   const CreateEvalRunRequestDataSourceUnion();
 
   static CreateEvalRunRequestDataSourceUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalRunRequestDataSourceUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalRunRequestDataSourceUnionDeserializer on CreateEvalRunRequestDataSourceUnion {
@@ -35,32 +36,32 @@ extension CreateEvalRunRequestDataSourceUnionDeserializer on CreateEvalRunReques
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalRunRequestDataSourceUnionJsonl: 'jsonl',
-      CreateEvalRunRequestDataSourceUnionCompletions: 'completions',
+      CreateEvalJsonlRunDataSource: 'jsonl',
+      CreateEvalCompletionsRunDataSource: 'completions',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalRunRequestDataSourceUnionJsonl] => CreateEvalRunRequestDataSourceUnionJsonlMapper.fromJson(json),
-      _ when value == effective[CreateEvalRunRequestDataSourceUnionCompletions] => CreateEvalRunRequestDataSourceUnionCompletionsMapper.fromJson(json),
+      _ when value == effective[CreateEvalJsonlRunDataSource] => CreateEvalJsonlRunDataSourceMapper.fromJson(json),
+      _ when value == effective[CreateEvalCompletionsRunDataSource] =>
+        CreateEvalCompletionsRunDataSourceMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalRunRequestDataSourceUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'jsonl')
-class CreateEvalRunRequestDataSourceUnionJsonl extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionJsonlMappable {
+class CreateEvalRunRequestDataSourceUnionJsonl extends CreateEvalRunRequestDataSourceUnion
+    with CreateEvalRunRequestDataSourceUnionJsonlMappable {
   final CreateEvalJsonlRunDataSourceType type;
   final CreateEvalJsonlRunDataSourceSourceUnion source;
 
-  const CreateEvalRunRequestDataSourceUnionJsonl({
-    required this.type,
-    required this.source,
-  });
-
+  const CreateEvalRunRequestDataSourceUnionJsonl({required this.type, required this.source});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
-class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunRequestDataSourceUnion with CreateEvalRunRequestDataSourceUnionCompletionsMappable {
+class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunRequestDataSourceUnion
+    with CreateEvalRunRequestDataSourceUnionCompletionsMappable {
   final CreateEvalCompletionsRunDataSourceType type;
   @MappableField(key: 'input_messages')
   final CreateEvalCompletionsRunDataSourceInputMessagesUnion? inputMessages;
@@ -76,5 +77,4 @@ class CreateEvalRunRequestDataSourceUnionCompletions extends CreateEvalRunReques
     required this.model,
     required this.source,
   });
-
 }

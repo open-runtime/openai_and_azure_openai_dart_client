@@ -36,6 +36,4 @@ class CreateSpeechRequest with CreateSpeechRequestMappable {
   final String? instructions;
 
   static CreateSpeechRequest fromJson(Map<String, dynamic> json) => CreateSpeechRequestMapper.fromJson(json);
-
 }
-

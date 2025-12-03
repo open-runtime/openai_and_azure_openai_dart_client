@@ -9,13 +9,13 @@ part 'user_role.mapper.dart';
 /// `owner` or `reader`
 @MappableEnum(defaultValue: 'unknown')
 enum UserRole {
-  @MappableValue('owner') 
+  @MappableValue('owner')
   owner,
 
-  @MappableValue('reader') 
+  @MappableValue('reader')
   reader,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -8,17 +8,13 @@ part 'code_interpreter_file_output_files.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterFileOutputFiles with CodeInterpreterFileOutputFilesMappable {
-  const CodeInterpreterFileOutputFiles({
-    required this.mimeType,
-    required this.fileId,
-  });
+  const CodeInterpreterFileOutputFiles({required this.mimeType, required this.fileId});
 
   @MappableField(key: 'mime_type')
   final String mimeType;
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static CodeInterpreterFileOutputFiles fromJson(Map<String, dynamic> json) => CodeInterpreterFileOutputFilesMapper.fromJson(json);
-
+  static CodeInterpreterFileOutputFiles fromJson(Map<String, dynamic> json) =>
+      CodeInterpreterFileOutputFilesMapper.fromJson(json);
 }
-

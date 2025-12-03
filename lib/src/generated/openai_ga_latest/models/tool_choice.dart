@@ -9,13 +9,9 @@ part 'tool_choice.mapper.dart';
 /// Tool selection that the assistant should honor when executing the item.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ToolChoice with ToolChoiceMappable {
-  const ToolChoice({
-    required this.id,
-  });
+  const ToolChoice({required this.id});
 
   final String id;
 
   static ToolChoice fromJson(Map<String, dynamic> json) => ToolChoiceMapper.fromJson(json);
-
 }
-

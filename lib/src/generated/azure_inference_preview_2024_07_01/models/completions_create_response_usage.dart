@@ -21,7 +21,6 @@ class CompletionsCreateResponseUsage with CompletionsCreateResponseUsageMappable
   @MappableField(key: 'total_tokens')
   final num totalTokens;
 
-  static CompletionsCreateResponseUsage fromJson(Map<String, dynamic> json) => CompletionsCreateResponseUsageMapper.fromJson(json);
-
+  static CompletionsCreateResponseUsage fromJson(Map<String, dynamic> json) =>
+      CompletionsCreateResponseUsageMapper.fromJson(json);
 }
-

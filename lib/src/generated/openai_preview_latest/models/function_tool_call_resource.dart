@@ -29,6 +29,4 @@ class FunctionToolCallResource with FunctionToolCallResourceMappable {
   final FunctionToolCallStatus? status;
 
   static FunctionToolCallResource fromJson(Map<String, dynamic> json) => FunctionToolCallResourceMapper.fromJson(json);
-
 }
-

@@ -8,15 +8,11 @@ part 'eval_jsonl_file_content_source_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalJsonlFileContentSourceContent with EvalJsonlFileContentSourceContentMappable {
-  const EvalJsonlFileContentSourceContent({
-    required this.item,
-    this.sample,
-  });
+  const EvalJsonlFileContentSourceContent({required this.item, this.sample});
 
   final dynamic item;
   final dynamic? sample;
 
-  static EvalJsonlFileContentSourceContent fromJson(Map<String, dynamic> json) => EvalJsonlFileContentSourceContentMapper.fromJson(json);
-
+  static EvalJsonlFileContentSourceContent fromJson(Map<String, dynamic> json) =>
+      EvalJsonlFileContentSourceContentMapper.fromJson(json);
 }
-

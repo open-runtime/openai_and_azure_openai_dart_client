@@ -10,10 +10,10 @@ part 'thread_item_type5.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ThreadItemType5 {
   /// Incorrect name has been replaced. Original name: `chatkit.task`.
-  @MappableValue('chatkit.task') 
+  @MappableValue('chatkit.task')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

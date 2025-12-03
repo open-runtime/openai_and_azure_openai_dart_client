@@ -9,10 +9,10 @@ part 'message_delta_content_text_annotations_file_citation_object_type.mapper.da
 /// Always `file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentTextAnnotationsFileCitationObjectType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageDeltaContentTextAnnotationsFileCitationObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentTextAnnotationsFileCitationObjectType> get $valuesDefined => values.where((value) => value != MessageDeltaContentTextAnnotationsFileCitationObjectType.unknown).toList();
+  static List<MessageDeltaContentTextAnnotationsFileCitationObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentTextAnnotationsFileCitationObjectType.unknown).toList();
 }

@@ -11,13 +11,9 @@ part 'target_index.mapper.dart';
 /// Information about the index to be created.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TargetIndex with TargetIndexMappable {
-  const TargetIndex({
-    required this.kind,
-  });
+  const TargetIndex({required this.kind});
 
   final TargetType kind;
 
   static TargetIndex fromJson(Map<String, dynamic> json) => TargetIndexMapper.fromJson(json);
-
 }
-

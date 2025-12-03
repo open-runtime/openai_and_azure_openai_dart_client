@@ -24,17 +24,22 @@ import 'realtime_truncation.dart';
 
 part 'realtime_create_client_secret_response_session_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeCreateClientSecretResponseSessionUnionRealtime,
-  RealtimeCreateClientSecretResponseSessionUnionTranscription
-])
-sealed class RealtimeCreateClientSecretResponseSessionUnion with RealtimeCreateClientSecretResponseSessionUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeCreateClientSecretResponseSessionUnionRealtime,
+    RealtimeCreateClientSecretResponseSessionUnionTranscription,
+  ],
+)
+sealed class RealtimeCreateClientSecretResponseSessionUnion
+    with RealtimeCreateClientSecretResponseSessionUnionMappable {
   const RealtimeCreateClientSecretResponseSessionUnion();
 
   static RealtimeCreateClientSecretResponseSessionUnion fromJson(Map<String, dynamic> json) {
     return RealtimeCreateClientSecretResponseSessionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeCreateClientSecretResponseSessionUnionDeserializer on RealtimeCreateClientSecretResponseSessionUnion {
@@ -44,21 +49,27 @@ extension RealtimeCreateClientSecretResponseSessionUnionDeserializer on Realtime
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeCreateClientSecretResponseSessionUnionRealtime: 'realtime',
-      RealtimeCreateClientSecretResponseSessionUnionTranscription: 'transcription',
+      RealtimeSessionCreateResponseGa: 'realtime',
+      RealtimeTranscriptionSessionCreateResponseGa: 'transcription',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeCreateClientSecretResponseSessionUnionRealtime] => RealtimeCreateClientSecretResponseSessionUnionRealtimeMapper.fromJson(json),
-      _ when value == effective[RealtimeCreateClientSecretResponseSessionUnionTranscription] => RealtimeCreateClientSecretResponseSessionUnionTranscriptionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeCreateClientSecretResponseSessionUnion'),
+      _ when value == effective[RealtimeSessionCreateResponseGa] => RealtimeSessionCreateResponseGaMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RealtimeTranscriptionSessionCreateResponseGa] =>
+        RealtimeTranscriptionSessionCreateResponseGaMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeCreateClientSecretResponseSessionUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
-class RealtimeCreateClientSecretResponseSessionUnionRealtime extends RealtimeCreateClientSecretResponseSessionUnion with RealtimeCreateClientSecretResponseSessionUnionRealtimeMappable {
+class RealtimeCreateClientSecretResponseSessionUnionRealtime extends RealtimeCreateClientSecretResponseSessionUnion
+    with RealtimeCreateClientSecretResponseSessionUnionRealtimeMappable {
   @MappableField(key: 'client_secret')
   final RealtimeSessionCreateResponseGaClientSecret realtimeSessionCreateResponseGaClientSecret;
   final RealtimeSessionCreateResponseGaType type;
@@ -93,10 +104,11 @@ class RealtimeCreateClientSecretResponseSessionUnionRealtime extends RealtimeCre
     required this.truncation,
     required this.prompt,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
-class RealtimeCreateClientSecretResponseSessionUnionTranscription extends RealtimeCreateClientSecretResponseSessionUnion with RealtimeCreateClientSecretResponseSessionUnionTranscriptionMappable {
+class RealtimeCreateClientSecretResponseSessionUnionTranscription extends RealtimeCreateClientSecretResponseSessionUnion
+    with RealtimeCreateClientSecretResponseSessionUnionTranscriptionMappable {
   final RealtimeTranscriptionSessionCreateResponseGaType type;
   final String id;
   @MappableField(key: 'object')
@@ -115,5 +127,4 @@ class RealtimeCreateClientSecretResponseSessionUnionTranscription extends Realti
     required this.include,
     required this.realtimeTranscriptionSessionCreateResponseGaAudio,
   });
-
 }

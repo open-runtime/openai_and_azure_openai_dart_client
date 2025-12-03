@@ -8,16 +8,12 @@ part 'audit_log_ip_allowlist_updated.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogIpAllowlistUpdated with AuditLogIpAllowlistUpdatedMappable {
-  const AuditLogIpAllowlistUpdated({
-    this.id,
-    this.allowedIps,
-  });
+  const AuditLogIpAllowlistUpdated({this.id, this.allowedIps});
 
   final String? id;
   @MappableField(key: 'allowed_ips')
   final List<String>? allowedIps;
 
-  static AuditLogIpAllowlistUpdated fromJson(Map<String, dynamic> json) => AuditLogIpAllowlistUpdatedMapper.fromJson(json);
-
+  static AuditLogIpAllowlistUpdated fromJson(Map<String, dynamic> json) =>
+      AuditLogIpAllowlistUpdatedMapper.fromJson(json);
 }
-

@@ -12,15 +12,11 @@ part 'content_filter_detailed_results.mapper.dart';
 /// Content filtering results with a detail of content filter ids for the filtered segments.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetailedResults with ContentFilterDetailedResultsMappable {
-  const ContentFilterDetailedResults({
-    required this.filtered,
-    this.details,
-  });
+  const ContentFilterDetailedResults({required this.filtered, this.details});
 
   final bool filtered;
   final List<ContentFilterIdResult>? details;
 
-  static ContentFilterDetailedResults fromJson(Map<String, dynamic> json) => ContentFilterDetailedResultsMapper.fromJson(json);
-
+  static ContentFilterDetailedResults fromJson(Map<String, dynamic> json) =>
+      ContentFilterDetailedResultsMapper.fromJson(json);
 }
-

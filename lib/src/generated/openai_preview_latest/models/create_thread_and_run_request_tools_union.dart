@@ -19,18 +19,22 @@ import 'function_object.dart';
 
 part 'create_thread_and_run_request_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateThreadAndRunRequestToolsUnionCodeInterpreter,
-  CreateThreadAndRunRequestToolsUnionFileSearch,
-  CreateThreadAndRunRequestToolsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateThreadAndRunRequestToolsUnionCodeInterpreter,
+    CreateThreadAndRunRequestToolsUnionFileSearch,
+    CreateThreadAndRunRequestToolsUnionFunction,
+  ],
+)
 sealed class CreateThreadAndRunRequestToolsUnion with CreateThreadAndRunRequestToolsUnionMappable {
   const CreateThreadAndRunRequestToolsUnion();
 
   static CreateThreadAndRunRequestToolsUnion fromJson(Map<String, dynamic> json) {
     return CreateThreadAndRunRequestToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateThreadAndRunRequestToolsUnionDeserializer on CreateThreadAndRunRequestToolsUnion {
@@ -40,32 +44,32 @@ extension CreateThreadAndRunRequestToolsUnionDeserializer on CreateThreadAndRunR
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateThreadAndRunRequestToolsUnionCodeInterpreter: 'code_interpreter',
-      CreateThreadAndRunRequestToolsUnionFileSearch: 'file_search',
-      CreateThreadAndRunRequestToolsUnionFunction: 'function',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
+      AssistantToolsFunction: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateThreadAndRunRequestToolsUnionCodeInterpreter] => CreateThreadAndRunRequestToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[CreateThreadAndRunRequestToolsUnionFileSearch] => CreateThreadAndRunRequestToolsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[CreateThreadAndRunRequestToolsUnionFunction] => CreateThreadAndRunRequestToolsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFunction] => AssistantToolsFunctionMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateThreadAndRunRequestToolsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class CreateThreadAndRunRequestToolsUnionCodeInterpreter extends CreateThreadAndRunRequestToolsUnion with CreateThreadAndRunRequestToolsUnionCodeInterpreterMappable {
+class CreateThreadAndRunRequestToolsUnionCodeInterpreter extends CreateThreadAndRunRequestToolsUnion
+    with CreateThreadAndRunRequestToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const CreateThreadAndRunRequestToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const CreateThreadAndRunRequestToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class CreateThreadAndRunRequestToolsUnionFileSearch extends CreateThreadAndRunRequestToolsUnion with CreateThreadAndRunRequestToolsUnionFileSearchMappable {
+class CreateThreadAndRunRequestToolsUnionFileSearch extends CreateThreadAndRunRequestToolsUnion
+    with CreateThreadAndRunRequestToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
   @MappableField(key: 'file_search')
   final AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch;
@@ -74,17 +78,14 @@ class CreateThreadAndRunRequestToolsUnionFileSearch extends CreateThreadAndRunRe
     required this.type,
     required this.assistantToolsFileSearchFileSearch,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class CreateThreadAndRunRequestToolsUnionFunction extends CreateThreadAndRunRequestToolsUnion with CreateThreadAndRunRequestToolsUnionFunctionMappable {
+class CreateThreadAndRunRequestToolsUnionFunction extends CreateThreadAndRunRequestToolsUnion
+    with CreateThreadAndRunRequestToolsUnionFunctionMappable {
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 
-  const CreateThreadAndRunRequestToolsUnionFunction({
-    required this.type,
-    required this.functionField,
-  });
-
+  const CreateThreadAndRunRequestToolsUnionFunction({required this.type, required this.functionField});
 }

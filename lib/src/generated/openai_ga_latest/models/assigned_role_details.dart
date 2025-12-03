@@ -42,6 +42,4 @@ class AssignedRoleDetails with AssignedRoleDetailsMappable {
   final dynamic metadata;
 
   static AssignedRoleDetails fromJson(Map<String, dynamic> json) => AssignedRoleDetailsMapper.fromJson(json);
-
 }
-

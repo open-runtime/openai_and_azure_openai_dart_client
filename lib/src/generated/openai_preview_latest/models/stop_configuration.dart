@@ -15,8 +15,5 @@ part 'stop_configuration.mapper.dart';
 class StopConfiguration with StopConfigurationMappable {
   const StopConfiguration();
 
-
   static StopConfiguration fromJson(Map<String, dynamic> json) => StopConfigurationMapper.fromJson(json);
-
 }
-

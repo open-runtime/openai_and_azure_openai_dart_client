@@ -12,17 +12,18 @@ import 'user_message_quoted_text_type.dart';
 
 part 'thread_item_content_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ThreadItemContentUnionInputText,
-  ThreadItemContentUnionQuotedText
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ThreadItemContentUnionInputText, ThreadItemContentUnionQuotedText],
+)
 sealed class ThreadItemContentUnion with ThreadItemContentUnionMappable {
   const ThreadItemContentUnion();
 
   static ThreadItemContentUnion fromJson(Map<String, dynamic> json) {
     return ThreadItemContentUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ThreadItemContentUnionDeserializer on ThreadItemContentUnion {
@@ -32,14 +33,14 @@ extension ThreadItemContentUnionDeserializer on ThreadItemContentUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ThreadItemContentUnionInputText: 'input_text',
-      ThreadItemContentUnionQuotedText: 'quoted_text',
+      UserMessageInputText: 'input_text',
+      UserMessageQuotedText: 'quoted_text',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ThreadItemContentUnionInputText] => ThreadItemContentUnionInputTextMapper.fromJson(json),
-      _ when value == effective[ThreadItemContentUnionQuotedText] => ThreadItemContentUnionQuotedTextMapper.fromJson(json),
+      _ when value == effective[UserMessageInputText] => UserMessageInputTextMapper.fromJson(json),
+      _ when value == effective[UserMessageQuotedText] => UserMessageQuotedTextMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ThreadItemContentUnion'),
     };
   }
@@ -50,20 +51,13 @@ class ThreadItemContentUnionInputText extends ThreadItemContentUnion with Thread
   final UserMessageInputTextType type;
   final String text;
 
-  const ThreadItemContentUnionInputText({
-    required this.type,
-    required this.text,
-  });
-
+  const ThreadItemContentUnionInputText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'quoted_text')
 class ThreadItemContentUnionQuotedText extends ThreadItemContentUnion with ThreadItemContentUnionQuotedTextMappable {
   final UserMessageQuotedTextType type;
   final String text;
 
-  const ThreadItemContentUnionQuotedText({
-    required this.type,
-    required this.text,
-  });
-
+  const ThreadItemContentUnionQuotedText({required this.type, required this.text});
 }

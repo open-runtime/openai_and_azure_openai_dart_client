@@ -11,7 +11,11 @@ part 'input_item_content_union.mapper.dart';
 /// Text, image, or audio input to the model, used to generate a response.
 /// Can also contain previous assistant responses.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [InputItemContentUnionInputMessageContentList, InputItemContentUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [InputItemContentUnionInputMessageContentList, InputItemContentUnionVariantString],
+)
 sealed class InputItemContentUnion with InputItemContentUnionMappable {
   const InputItemContentUnion();
 
@@ -29,15 +33,13 @@ extension InputItemContentUnionDeserializer on InputItemContentUnion {
       return InputItemContentUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for InputItemContentUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class InputItemContentUnionInputMessageContentList extends InputItemContentUnion with InputItemContentUnionInputMessageContentListMappable {
-
-
+class InputItemContentUnionInputMessageContentList extends InputItemContentUnion
+    with InputItemContentUnionInputMessageContentListMappable {
   const InputItemContentUnionInputMessageContentList();
 }
 
@@ -45,7 +47,5 @@ class InputItemContentUnionInputMessageContentList extends InputItemContentUnion
 class InputItemContentUnionVariantString extends InputItemContentUnion with InputItemContentUnionVariantStringMappable {
   final String value;
 
-  const InputItemContentUnionVariantString({
-    required this.value,
-  });
+  const InputItemContentUnionVariantString({required this.value});
 }

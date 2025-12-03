@@ -11,10 +11,10 @@ part 'response_reasoning_text_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseReasoningTextDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.reasoning_text.delta`.
-  @MappableValue('response.reasoning_text.delta') 
+  @MappableValue('response.reasoning_text.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseReasoningTextDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseReasoningTextDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseReasoningTextDeltaEventType.unknown).toList();
+  static List<ResponseReasoningTextDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseReasoningTextDeltaEventType.unknown).toList();
 }

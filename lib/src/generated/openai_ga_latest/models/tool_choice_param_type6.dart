@@ -9,10 +9,10 @@ part 'tool_choice_param_type6.mapper.dart';
 /// The tool to call. Always `shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolChoiceParamType6 {
-  @MappableValue('shell') 
+  @MappableValue('shell')
   shell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ToolChoiceParamType6 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ToolChoiceParamType6> get $valuesDefined => values.where((value) => value != ToolChoiceParamType6.unknown).toList();
+  static List<ToolChoiceParamType6> get $valuesDefined =>
+      values.where((value) => value != ToolChoiceParamType6.unknown).toList();
 }

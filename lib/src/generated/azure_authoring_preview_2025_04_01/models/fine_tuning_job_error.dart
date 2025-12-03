@@ -9,17 +9,11 @@ part 'fine_tuning_job_error.mapper.dart';
 /// For fine-tuning jobs that have failed, this will contain more information on the cause of the failure.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobError with FineTuningJobErrorMappable {
-  const FineTuningJobError({
-    this.code,
-    this.message,
-    this.param,
-  });
+  const FineTuningJobError({this.code, this.message, this.param});
 
   final String? code;
   final String? message;
   final String? param;
 
   static FineTuningJobError fromJson(Map<String, dynamic> json) => FineTuningJobErrorMapper.fromJson(json);
-
 }
-

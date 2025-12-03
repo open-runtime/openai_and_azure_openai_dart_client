@@ -10,10 +10,10 @@ part 'project_api_key_delete_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectApiKeyDeleteResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.project.api_key.deleted`.
-  @MappableValue('organization.project.api_key.deleted') 
+  @MappableValue('organization.project.api_key.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ProjectApiKeyDeleteResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectApiKeyDeleteResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectApiKeyDeleteResponseObjectObjectEnum.unknown).toList();
+  static List<ProjectApiKeyDeleteResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectApiKeyDeleteResponseObjectObjectEnum.unknown).toList();
 }

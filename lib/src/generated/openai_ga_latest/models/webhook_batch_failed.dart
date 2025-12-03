@@ -32,6 +32,4 @@ class WebhookBatchFailed with WebhookBatchFailedMappable {
   final WebhookBatchFailedObjectObjectEnum? objectEnum;
 
   static WebhookBatchFailed fromJson(Map<String, dynamic> json) => WebhookBatchFailedMapper.fromJson(json);
-
 }
-

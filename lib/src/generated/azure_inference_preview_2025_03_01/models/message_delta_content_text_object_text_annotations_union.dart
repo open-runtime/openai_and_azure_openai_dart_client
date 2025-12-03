@@ -13,47 +13,60 @@ import 'message_delta_content_text_annotations_file_path_object_type.dart';
 
 part 'message_delta_content_text_object_text_annotations_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation,
-  MessageDeltaContentTextObjectTextAnnotationsUnionFilePath
-])
-sealed class MessageDeltaContentTextObjectTextAnnotationsUnion with MessageDeltaContentTextObjectTextAnnotationsUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation,
+    MessageDeltaContentTextObjectTextAnnotationsUnionFilePath,
+  ],
+)
+sealed class MessageDeltaContentTextObjectTextAnnotationsUnion
+    with MessageDeltaContentTextObjectTextAnnotationsUnionMappable {
   const MessageDeltaContentTextObjectTextAnnotationsUnion();
 
   static MessageDeltaContentTextObjectTextAnnotationsUnion fromJson(Map<String, dynamic> json) {
     return MessageDeltaContentTextObjectTextAnnotationsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
-extension MessageDeltaContentTextObjectTextAnnotationsUnionDeserializer on MessageDeltaContentTextObjectTextAnnotationsUnion {
+extension MessageDeltaContentTextObjectTextAnnotationsUnionDeserializer
+    on MessageDeltaContentTextObjectTextAnnotationsUnion {
   static MessageDeltaContentTextObjectTextAnnotationsUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation: 'file_citation',
-      MessageDeltaContentTextObjectTextAnnotationsUnionFilePath: 'file_path',
+      MessageDeltaContentTextAnnotationsFileCitationObject: 'file_citation',
+      MessageDeltaContentTextAnnotationsFilePathObject: 'file_path',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation] => MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMapper.fromJson(json),
-      _ when value == effective[MessageDeltaContentTextObjectTextAnnotationsUnionFilePath] => MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageDeltaContentTextObjectTextAnnotationsUnion'),
+      _ when value == effective[MessageDeltaContentTextAnnotationsFileCitationObject] =>
+        MessageDeltaContentTextAnnotationsFileCitationObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentTextAnnotationsFilePathObject] =>
+        MessageDeltaContentTextAnnotationsFilePathObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for MessageDeltaContentTextObjectTextAnnotationsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
-class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation extends MessageDeltaContentTextObjectTextAnnotationsUnion with MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMappable {
+class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation
+    extends MessageDeltaContentTextObjectTextAnnotationsUnion
+    with MessageDeltaContentTextObjectTextAnnotationsUnionFileCitationMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentTextAnnotationsFileCitationObjectType type;
   final String? text;
   @MappableField(key: 'file_citation')
-  final MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;
+  final MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation?
+  messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;
   @MappableField(key: 'start_index')
   final int? startIndex;
   @MappableField(key: 'end_index')
@@ -67,16 +80,19 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFileCitation extends Mess
     required this.startIndex,
     required this.endIndex,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
-class MessageDeltaContentTextObjectTextAnnotationsUnionFilePath extends MessageDeltaContentTextObjectTextAnnotationsUnion with MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMappable {
+class MessageDeltaContentTextObjectTextAnnotationsUnionFilePath
+    extends MessageDeltaContentTextObjectTextAnnotationsUnion
+    with MessageDeltaContentTextObjectTextAnnotationsUnionFilePathMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentTextAnnotationsFilePathObjectType type;
   final String? text;
   @MappableField(key: 'file_path')
-  final MessageDeltaContentTextAnnotationsFilePathObjectFilePath? messageDeltaContentTextAnnotationsFilePathObjectFilePath;
+  final MessageDeltaContentTextAnnotationsFilePathObjectFilePath?
+  messageDeltaContentTextAnnotationsFilePathObjectFilePath;
   @MappableField(key: 'start_index')
   final int? startIndex;
   @MappableField(key: 'end_index')
@@ -90,5 +106,4 @@ class MessageDeltaContentTextObjectTextAnnotationsUnionFilePath extends MessageD
     required this.startIndex,
     required this.endIndex,
   });
-
 }

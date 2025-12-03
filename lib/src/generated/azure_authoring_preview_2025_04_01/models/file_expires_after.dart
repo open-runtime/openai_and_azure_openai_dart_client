@@ -11,15 +11,10 @@ part 'file_expires_after.mapper.dart';
 /// Defines a expiration for the file.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileExpiresAfter with FileExpiresAfterMappable {
-  const FileExpiresAfter({
-    this.anchor,
-    this.seconds,
-  });
+  const FileExpiresAfter({this.anchor, this.seconds});
 
   final FileExpiryAnchor? anchor;
   final int? seconds;
 
   static FileExpiresAfter fromJson(Map<String, dynamic> json) => FileExpiresAfterMapper.fromJson(json);
-
 }
-

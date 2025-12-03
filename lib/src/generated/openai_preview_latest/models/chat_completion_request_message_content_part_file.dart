@@ -12,8 +12,9 @@ part 'chat_completion_request_message_content_part_file.mapper.dart';
 
 /// Learn about [file inputs](/docs/guides/text) for text generation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartFile with ChatCompletionRequestMessageContentPartFileMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file')
+class ChatCompletionRequestMessageContentPartFile extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestMessageContentPartFileMappable {
   const ChatCompletionRequestMessageContentPartFile({
     required this.type,
     required this.chatCompletionRequestMessageContentPartFileFile,
@@ -23,7 +24,6 @@ class ChatCompletionRequestMessageContentPartFile with ChatCompletionRequestMess
   @MappableField(key: 'file')
   final ChatCompletionRequestMessageContentPartFileFile chatCompletionRequestMessageContentPartFileFile;
 
-  static ChatCompletionRequestMessageContentPartFile fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartFileMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartFile fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartFileMapper.fromJson(json);
 }
-

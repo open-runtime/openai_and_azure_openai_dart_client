@@ -10,15 +10,11 @@ part 'content_filter_detected_result.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedResult with ContentFilterDetectedResultMappable {
-  const ContentFilterDetectedResult({
-    required this.filtered,
-    this.detected,
-  });
+  const ContentFilterDetectedResult({required this.filtered, this.detected});
 
   final bool filtered;
   final bool? detected;
 
-  static ContentFilterDetectedResult fromJson(Map<String, dynamic> json) => ContentFilterDetectedResultMapper.fromJson(json);
-
+  static ContentFilterDetectedResult fromJson(Map<String, dynamic> json) =>
+      ContentFilterDetectedResultMapper.fromJson(json);
 }
-

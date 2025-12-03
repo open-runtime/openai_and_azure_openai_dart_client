@@ -11,8 +11,8 @@ import 'response_stream_event.dart';
 part 'response_content_part_done_event.mapper.dart';
 
 /// Emitted when a content part is done.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseContentPartDoneEvent with ResponseContentPartDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.done')
+class ResponseContentPartDoneEvent extends ResponseStreamEvent with ResponseContentPartDoneEventMappable {
   const ResponseContentPartDoneEvent({
     required this.type,
     required this.itemId,
@@ -34,7 +34,6 @@ class ResponseContentPartDoneEvent with ResponseContentPartDoneEventMappable {
   @MappableField(key: 'part')
   final OutputContent partField;
 
-  static ResponseContentPartDoneEvent fromJson(Map<String, dynamic> json) => ResponseContentPartDoneEventMapper.fromJson(json);
-
+  static ResponseContentPartDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseContentPartDoneEventMapper.fromJson(json);
 }
-

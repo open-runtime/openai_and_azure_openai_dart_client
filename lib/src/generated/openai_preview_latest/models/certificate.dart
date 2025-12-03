@@ -32,6 +32,4 @@ class Certificate with CertificateMappable {
   final bool? active;
 
   static Certificate fromJson(Map<String, dynamic> json) => CertificateMapper.fromJson(json);
-
 }
-

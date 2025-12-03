@@ -18,14 +18,16 @@ class CreateFineTuningJobRequestHyperparameters with CreateFineTuningJobRequestH
     this.nEpochs = const CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
-  @MappableField(key: 'learning_rate_multiplier', hook: const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final CreateFineTuningJobRequestHyperparametersLearningRateMultiplierUnion? learningRateMultiplier;
   @MappableField(key: 'batch_size', hook: const CreateFineTuningJobRequestHyperparametersBatchSizeUnionHook())
   final CreateFineTuningJobRequestHyperparametersBatchSizeUnion batchSize;
   @MappableField(key: 'n_epochs', hook: const CreateFineTuningJobRequestHyperparametersNEpochsUnionHook())
   final CreateFineTuningJobRequestHyperparametersNEpochsUnion nEpochs;
 
-  static CreateFineTuningJobRequestHyperparameters fromJson(Map<String, dynamic> json) => CreateFineTuningJobRequestHyperparametersMapper.fromJson(json);
-
+  static CreateFineTuningJobRequestHyperparameters fromJson(Map<String, dynamic> json) =>
+      CreateFineTuningJobRequestHyperparametersMapper.fromJson(json);
 }
-

@@ -33,6 +33,4 @@ class FineTuningJobCreation with FineTuningJobCreationMappable {
   final List<WandBIntegrationRequestWrapper>? integrations;
 
   static FineTuningJobCreation fromJson(Map<String, dynamic> json) => FineTuningJobCreationMapper.fromJson(json);
-
 }
-

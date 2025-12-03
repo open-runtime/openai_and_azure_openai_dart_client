@@ -8,12 +8,7 @@ part 'effective_at.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EffectiveAt with EffectiveAtMappable {
-  const EffectiveAt({
-    this.gt,
-    this.gte,
-    this.lt,
-    this.lte,
-  });
+  const EffectiveAt({this.gt, this.gte, this.lt, this.lte});
 
   final int? gt;
   final int? gte;
@@ -21,6 +16,4 @@ class EffectiveAt with EffectiveAtMappable {
   final int? lte;
 
   static EffectiveAt fromJson(Map<String, dynamic> json) => EffectiveAtMapper.fromJson(json);
-
 }
-

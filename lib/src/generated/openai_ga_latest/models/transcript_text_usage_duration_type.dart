@@ -9,10 +9,10 @@ part 'transcript_text_usage_duration_type.mapper.dart';
 /// The type of the usage object. Always `duration` for this variant.
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptTextUsageDurationType {
-  @MappableValue('duration') 
+  @MappableValue('duration')
   duration,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum TranscriptTextUsageDurationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptTextUsageDurationType> get $valuesDefined => values.where((value) => value != TranscriptTextUsageDurationType.unknown).toList();
+  static List<TranscriptTextUsageDurationType> get $valuesDefined =>
+      values.where((value) => value != TranscriptTextUsageDurationType.unknown).toList();
 }

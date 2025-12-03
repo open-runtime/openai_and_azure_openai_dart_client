@@ -10,18 +10,13 @@ part 'project_service_account_delete_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountDeleteResponse with ProjectServiceAccountDeleteResponseMappable {
-  const ProjectServiceAccountDeleteResponse({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const ProjectServiceAccountDeleteResponse({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final ProjectServiceAccountDeleteResponseObjectObjectEnum objectEnum;
   final String id;
   final bool deleted;
 
-  static ProjectServiceAccountDeleteResponse fromJson(Map<String, dynamic> json) => ProjectServiceAccountDeleteResponseMapper.fromJson(json);
-
+  static ProjectServiceAccountDeleteResponse fromJson(Map<String, dynamic> json) =>
+      ProjectServiceAccountDeleteResponseMapper.fromJson(json);
 }
-

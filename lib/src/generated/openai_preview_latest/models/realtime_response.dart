@@ -58,6 +58,4 @@ class RealtimeResponse with RealtimeResponseMappable {
   final RealtimeResponseMaxOutputTokensUnion? maxOutputTokens;
 
   static RealtimeResponse fromJson(Map<String, dynamic> json) => RealtimeResponseMapper.fromJson(json);
-
 }
-

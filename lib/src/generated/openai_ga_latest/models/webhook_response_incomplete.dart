@@ -31,7 +31,6 @@ class WebhookResponseIncomplete with WebhookResponseIncompleteMappable {
   @MappableField(key: 'object')
   final WebhookResponseIncompleteObjectObjectEnum? objectEnum;
 
-  static WebhookResponseIncomplete fromJson(Map<String, dynamic> json) => WebhookResponseIncompleteMapper.fromJson(json);
-
+  static WebhookResponseIncomplete fromJson(Map<String, dynamic> json) =>
+      WebhookResponseIncompleteMapper.fromJson(json);
 }
-

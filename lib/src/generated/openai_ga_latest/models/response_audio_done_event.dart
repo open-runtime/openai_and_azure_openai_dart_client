@@ -10,18 +10,13 @@ import 'response_stream_event.dart';
 part 'response_audio_done_event.mapper.dart';
 
 /// Emitted when the audio response is complete.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseAudioDoneEvent with ResponseAudioDoneEventMappable {
-  const ResponseAudioDoneEvent({
-    required this.type,
-    required this.sequenceNumber,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.done')
+class ResponseAudioDoneEvent extends ResponseStreamEvent with ResponseAudioDoneEventMappable {
+  const ResponseAudioDoneEvent({required this.type, required this.sequenceNumber});
 
   final ResponseAudioDoneEventType type;
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
   static ResponseAudioDoneEvent fromJson(Map<String, dynamic> json) => ResponseAudioDoneEventMapper.fromJson(json);
-
 }
-

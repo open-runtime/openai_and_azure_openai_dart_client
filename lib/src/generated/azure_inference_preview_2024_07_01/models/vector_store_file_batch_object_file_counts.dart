@@ -23,7 +23,6 @@ class VectorStoreFileBatchObjectFileCounts with VectorStoreFileBatchObjectFileCo
   final int cancelled;
   final int total;
 
-  static VectorStoreFileBatchObjectFileCounts fromJson(Map<String, dynamic> json) => VectorStoreFileBatchObjectFileCountsMapper.fromJson(json);
-
+  static VectorStoreFileBatchObjectFileCounts fromJson(Map<String, dynamic> json) =>
+      VectorStoreFileBatchObjectFileCountsMapper.fromJson(json);
 }
-

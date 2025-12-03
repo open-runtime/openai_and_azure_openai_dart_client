@@ -27,7 +27,6 @@ class TranscriptionDiarizedSegment with TranscriptionDiarizedSegmentMappable {
   final String text;
   final String speaker;
 
-  static TranscriptionDiarizedSegment fromJson(Map<String, dynamic> json) => TranscriptionDiarizedSegmentMapper.fromJson(json);
-
+  static TranscriptionDiarizedSegment fromJson(Map<String, dynamic> json) =>
+      TranscriptionDiarizedSegmentMapper.fromJson(json);
 }
-

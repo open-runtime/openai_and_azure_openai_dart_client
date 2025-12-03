@@ -12,18 +12,13 @@ part 'realtime_client_event_transcription_session_update.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeClientEventTranscriptionSessionUpdate with RealtimeClientEventTranscriptionSessionUpdateMappable {
-  const RealtimeClientEventTranscriptionSessionUpdate({
-    required this.type,
-    required this.session,
-    this.eventId,
-  });
+  const RealtimeClientEventTranscriptionSessionUpdate({required this.type, required this.session, this.eventId});
 
   final dynamic type;
   final RealtimeTranscriptionSessionCreateRequest session;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventTranscriptionSessionUpdate fromJson(Map<String, dynamic> json) => RealtimeClientEventTranscriptionSessionUpdateMapper.fromJson(json);
-
+  static RealtimeClientEventTranscriptionSessionUpdate fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventTranscriptionSessionUpdateMapper.fromJson(json);
 }
-

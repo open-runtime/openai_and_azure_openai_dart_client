@@ -10,10 +10,10 @@ part 'mcp_approval_request_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum McpApprovalRequestType {
-  @MappableValue('mcp_approval_request') 
+  @MappableValue('mcp_approval_request')
   mcpApprovalRequest,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum McpApprovalRequestType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<McpApprovalRequestType> get $valuesDefined => values.where((value) => value != McpApprovalRequestType.unknown).toList();
+  static List<McpApprovalRequestType> get $valuesDefined =>
+      values.where((value) => value != McpApprovalRequestType.unknown).toList();
 }

@@ -8,7 +8,7 @@
 part of 'chat_completion_request_message_content_part_audio.dart';
 
 class ChatCompletionRequestMessageContentPartAudioMapper
-    extends ClassMapperBase<ChatCompletionRequestMessageContentPartAudio> {
+    extends SubClassMapperBase<ChatCompletionRequestMessageContentPartAudio> {
   ChatCompletionRequestMessageContentPartAudioMapper._();
 
   static ChatCompletionRequestMessageContentPartAudioMapper? _instance;
@@ -18,6 +18,8 @@ class ChatCompletionRequestMessageContentPartAudioMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartAudioMapper._(),
       );
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionRequestMessageContentPartAudioTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartAudioInputAudioMapper.ensureInitialized();
     }
@@ -60,6 +62,14 @@ class ChatCompletionRequestMessageContentPartAudioMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_audio';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized();
 
   static ChatCompletionRequestMessageContentPartAudio _instantiate(
     DecodingData data,
@@ -163,13 +173,15 @@ abstract class ChatCompletionRequestMessageContentPartAudioCopyWith<
   $In extends ChatCompletionRequestMessageContentPartAudio,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements
+        ChatCompletionRequestUserMessageContentPartCopyWith<$R, $In, $Out> {
   ChatCompletionRequestMessageContentPartAudioInputAudioCopyWith<
     $R,
     ChatCompletionRequestMessageContentPartAudioInputAudio,
     ChatCompletionRequestMessageContentPartAudioInputAudio
   >
   get chatCompletionRequestMessageContentPartAudioInputAudio;
+  @override
   $R call({
     ChatCompletionRequestMessageContentPartAudioType? type,
     ChatCompletionRequestMessageContentPartAudioInputAudio?

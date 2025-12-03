@@ -11,16 +11,12 @@ part 'on_your_data_connection_string_authentication_options.mapper.dart';
 /// The authentication options for Azure OpenAI On Your Data when using a connection string.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataConnectionStringAuthenticationOptions with OnYourDataConnectionStringAuthenticationOptionsMappable {
-  const OnYourDataConnectionStringAuthenticationOptions({
-    required this.type,
-    this.connectionString,
-  });
+  const OnYourDataConnectionStringAuthenticationOptions({required this.type, this.connectionString});
 
   final OnYourDataAuthenticationType type;
   @MappableField(key: 'connection_string')
   final String? connectionString;
 
-  static OnYourDataConnectionStringAuthenticationOptions fromJson(Map<String, dynamic> json) => OnYourDataConnectionStringAuthenticationOptionsMapper.fromJson(json);
-
+  static OnYourDataConnectionStringAuthenticationOptions fromJson(Map<String, dynamic> json) =>
+      OnYourDataConnectionStringAuthenticationOptionsMapper.fromJson(json);
 }
-

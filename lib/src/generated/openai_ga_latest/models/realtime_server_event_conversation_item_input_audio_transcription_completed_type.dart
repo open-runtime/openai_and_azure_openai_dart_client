@@ -12,10 +12,10 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_complete
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType {
   /// Incorrect name has been replaced. Original name: `conversation.item.input_audio_transcription.completed`.
-  @MappableValue('conversation.item.input_audio_transcription.completed') 
+  @MappableValue('conversation.item.input_audio_transcription.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,7 @@ enum RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType> get $valuesDefined => values.where((value) => value != RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType.unknown).toList();
+  static List<RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType> get $valuesDefined => values
+      .where((value) => value != RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType.unknown)
+      .toList();
 }

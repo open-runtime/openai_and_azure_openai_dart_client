@@ -7,13 +7,14 @@
 
 part of 'key_press.dart';
 
-class KeyPressMapper extends ClassMapperBase<KeyPress> {
+class KeyPressMapper extends SubClassMapperBase<KeyPress> {
   KeyPressMapper._();
 
   static KeyPressMapper? _instance;
   static KeyPressMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = KeyPressMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       KeyPressTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,6 +42,14 @@ class KeyPressMapper extends ClassMapperBase<KeyPress> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'keypress';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static KeyPress _instantiate(DecodingData data) {
     return KeyPress(keys: data.dec(_f$keys), type: data.dec(_f$type));
@@ -102,8 +111,9 @@ extension KeyPressValueCopy<$R, $Out> on ObjectCopyWith<$R, KeyPress, $Out> {
 }
 
 abstract class KeyPressCopyWith<$R, $In extends KeyPress, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get keys;
+  @override
   $R call({List<String>? keys, KeyPressType? type});
   KeyPressCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

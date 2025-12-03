@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_done.dart';
 
 class RealtimeServerEventResponseDoneMapper
-    extends ClassMapperBase<RealtimeServerEventResponseDone> {
+    extends SubClassMapperBase<RealtimeServerEventResponseDone> {
   RealtimeServerEventResponseDoneMapper._();
 
   static RealtimeServerEventResponseDoneMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseDoneMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseDoneMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseDoneTypeMapper.ensureInitialized();
       RealtimeResponseMapper.ensureInitialized();
     }
@@ -52,6 +53,14 @@ class RealtimeServerEventResponseDoneMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.done';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseDone _instantiate(DecodingData data) {
     return RealtimeServerEventResponseDone(
@@ -138,8 +147,9 @@ abstract class RealtimeServerEventResponseDoneCopyWith<
   $In extends RealtimeServerEventResponseDone,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeResponseCopyWith<$R, RealtimeResponse, RealtimeResponse> get response;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseDoneType? type,

@@ -11,7 +11,8 @@ part 'realtime_beta_server_event_response_audio_transcript_done.mapper.dart';
 /// cancelled.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventResponseAudioTranscriptDone with RealtimeBetaServerEventResponseAudioTranscriptDoneMappable {
+class RealtimeBetaServerEventResponseAudioTranscriptDone
+    with RealtimeBetaServerEventResponseAudioTranscriptDoneMappable {
   const RealtimeBetaServerEventResponseAudioTranscriptDone({
     required this.eventId,
     required this.type,
@@ -35,7 +36,6 @@ class RealtimeBetaServerEventResponseAudioTranscriptDone with RealtimeBetaServer
   final int contentIndex;
   final String transcript;
 
-  static RealtimeBetaServerEventResponseAudioTranscriptDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseAudioTranscriptDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseAudioTranscriptDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseAudioTranscriptDoneMapper.fromJson(json);
 }
-

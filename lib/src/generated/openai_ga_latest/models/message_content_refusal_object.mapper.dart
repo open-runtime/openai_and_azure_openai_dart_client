@@ -8,7 +8,7 @@
 part of 'message_content_refusal_object.dart';
 
 class MessageContentRefusalObjectMapper
-    extends ClassMapperBase<MessageContentRefusalObject> {
+    extends SubClassMapperBase<MessageContentRefusalObject> {
   MessageContentRefusalObjectMapper._();
 
   static MessageContentRefusalObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageContentRefusalObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentRefusalObjectMapper._(),
       );
+      MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentRefusalObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -48,6 +49,14 @@ class MessageContentRefusalObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'refusal';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentMapper.ensureInitialized();
 
   static MessageContentRefusalObject _instantiate(DecodingData data) {
     return MessageContentRefusalObject(
@@ -129,7 +138,8 @@ abstract class MessageContentRefusalObjectCopyWith<
   $In extends MessageContentRefusalObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentCopyWith<$R, $In, $Out> {
+  @override
   $R call({MessageContentRefusalObjectType? type, String? refusal});
   MessageContentRefusalObjectCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

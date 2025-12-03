@@ -9,16 +9,16 @@ part 'create_eval_completions_run_data_source_source_type.mapper.dart';
 /// The type of source. Can be one of `EvalJsonlFileContentSource`, `EvalJsonlFileIdSource`, or `EvalStoredCompletionsSource`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalCompletionsRunDataSourceSourceType {
-  @MappableValue('EvalJsonlFileContentSource') 
+  @MappableValue('EvalJsonlFileContentSource')
   evalJsonlFileContentSource,
 
-  @MappableValue('EvalJsonlFileIdSource') 
+  @MappableValue('EvalJsonlFileIdSource')
   evalJsonlFileIdSource,
 
-  @MappableValue('EvalStoredCompletionsSource') 
+  @MappableValue('EvalStoredCompletionsSource')
   evalStoredCompletionsSource,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum CreateEvalCompletionsRunDataSourceSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalCompletionsRunDataSourceSourceType> get $valuesDefined => values.where((value) => value != CreateEvalCompletionsRunDataSourceSourceType.unknown).toList();
+  static List<CreateEvalCompletionsRunDataSourceSourceType> get $valuesDefined =>
+      values.where((value) => value != CreateEvalCompletionsRunDataSourceSourceType.unknown).toList();
 }

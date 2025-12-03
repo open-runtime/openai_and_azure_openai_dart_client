@@ -8,14 +8,7 @@ part 'admin_api_key_owner.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKeyOwner with AdminApiKeyOwnerMappable {
-  const AdminApiKeyOwner({
-    this.type,
-    this.objectField,
-    this.id,
-    this.name,
-    this.createdAt,
-    this.role,
-  });
+  const AdminApiKeyOwner({this.type, this.objectField, this.id, this.name, this.createdAt, this.role});
 
   final String? type;
   @MappableField(key: 'object')
@@ -27,6 +20,4 @@ class AdminApiKeyOwner with AdminApiKeyOwnerMappable {
   final String? role;
 
   static AdminApiKeyOwner fromJson(Map<String, dynamic> json) => AdminApiKeyOwnerMapper.fromJson(json);
-
 }
-

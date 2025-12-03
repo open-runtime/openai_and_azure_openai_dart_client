@@ -10,13 +10,9 @@ part 'modify_message_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyMessageRequest with ModifyMessageRequestMappable {
-  const ModifyMessageRequest({
-    this.metadata,
-  });
+  const ModifyMessageRequest({this.metadata});
 
   final Metadata? metadata;
 
   static ModifyMessageRequest fromJson(Map<String, dynamic> json) => ModifyMessageRequestMapper.fromJson(json);
-
 }
-

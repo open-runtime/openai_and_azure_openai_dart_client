@@ -19,8 +19,5 @@ part 'input_param.mapper.dart';
 class InputParam with InputParamMappable {
   const InputParam();
 
-
   static InputParam fromJson(Map<String, dynamic> json) => InputParamMapper.fromJson(json);
-
 }
-

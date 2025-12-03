@@ -9,10 +9,10 @@ part 'run_step_delta_step_details_message_creation_object_type.mapper.dart';
 /// Always `message_creation`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsMessageCreationObjectType {
-  @MappableValue('message_creation') 
+  @MappableValue('message_creation')
   messageCreation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDeltaStepDetailsMessageCreationObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsMessageCreationObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsMessageCreationObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsMessageCreationObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsMessageCreationObjectType.unknown).toList();
 }

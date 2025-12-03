@@ -11,13 +11,9 @@ part 'file_citation.mapper.dart';
 
 /// A citation to a file.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileCitation with FileCitationMappable {
-  const FileCitation({
-    required this.type,
-    required this.indexField,
-    required this.fileId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
+class FileCitation extends Annotation with FileCitationMappable {
+  const FileCitation({required this.type, required this.indexField, required this.fileId});
 
   final FileCitationType type;
   @MappableField(key: 'index')
@@ -26,6 +22,4 @@ class FileCitation with FileCitationMappable {
   final String fileId;
 
   static FileCitation fromJson(Map<String, dynamic> json) => FileCitationMapper.fromJson(json);
-
 }
-

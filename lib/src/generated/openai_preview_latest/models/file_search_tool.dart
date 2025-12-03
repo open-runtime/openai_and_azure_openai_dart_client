@@ -12,8 +12,8 @@ import 'tool.dart';
 part 'file_search_tool.mapper.dart';
 
 /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileSearchTool with FileSearchToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
+class FileSearchTool extends Tool with FileSearchToolMappable {
   const FileSearchTool({
     required this.vectorStoreIds,
     this.maxNumResults,
@@ -32,6 +32,4 @@ class FileSearchTool with FileSearchToolMappable {
   final FileSearchToolType type;
 
   static FileSearchTool fromJson(Map<String, dynamic> json) => FileSearchToolMapper.fromJson(json);
-
 }
-

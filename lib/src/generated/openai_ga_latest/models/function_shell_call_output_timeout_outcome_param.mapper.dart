@@ -8,7 +8,7 @@
 part of 'function_shell_call_output_timeout_outcome_param.dart';
 
 class FunctionShellCallOutputTimeoutOutcomeParamMapper
-    extends ClassMapperBase<FunctionShellCallOutputTimeoutOutcomeParam> {
+    extends SubClassMapperBase<FunctionShellCallOutputTimeoutOutcomeParam> {
   FunctionShellCallOutputTimeoutOutcomeParamMapper._();
 
   static FunctionShellCallOutputTimeoutOutcomeParamMapper? _instance;
@@ -17,6 +17,8 @@ class FunctionShellCallOutputTimeoutOutcomeParamMapper
       MapperContainer.globals.use(
         _instance = FunctionShellCallOutputTimeoutOutcomeParamMapper._(),
       );
+      FunctionShellCallOutputOutcomeParamMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       FunctionShellCallOutputTimeoutOutcomeParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -46,6 +48,14 @@ class FunctionShellCallOutputTimeoutOutcomeParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'timeout';
+  @override
+  late final ClassMapperBase superMapper =
+      FunctionShellCallOutputOutcomeParamMapper.ensureInitialized();
 
   static FunctionShellCallOutputTimeoutOutcomeParam _instantiate(
     DecodingData data,
@@ -141,7 +151,8 @@ abstract class FunctionShellCallOutputTimeoutOutcomeParamCopyWith<
   $In extends FunctionShellCallOutputTimeoutOutcomeParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements FunctionShellCallOutputOutcomeParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({FunctionShellCallOutputTimeoutOutcomeParamType? type});
   FunctionShellCallOutputTimeoutOutcomeParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

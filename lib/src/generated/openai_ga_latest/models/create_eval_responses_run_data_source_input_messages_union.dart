@@ -11,8 +11,16 @@ import 'create_eval_responses_run_data_source_input_messages_union_variant2_type
 part 'create_eval_responses_run_data_source_input_messages_union.mapper.dart';
 
 /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1, CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2])
-sealed class CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1,
+    CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2,
+  ],
+)
+sealed class CreateEvalResponsesRunDataSourceInputMessagesUnion
+    with CreateEvalResponsesRunDataSourceInputMessagesUnionMappable {
   const CreateEvalResponsesRunDataSourceInputMessagesUnion();
 
   static CreateEvalResponsesRunDataSourceInputMessagesUnion fromJson(Map<String, dynamic> json) {
@@ -20,7 +28,8 @@ sealed class CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalR
   }
 }
 
-extension CreateEvalResponsesRunDataSourceInputMessagesUnionDeserializer on CreateEvalResponsesRunDataSourceInputMessagesUnion {
+extension CreateEvalResponsesRunDataSourceInputMessagesUnionDeserializer
+    on CreateEvalResponsesRunDataSourceInputMessagesUnion {
   static CreateEvalResponsesRunDataSourceInputMessagesUnion tryDeserialize(Map<String, dynamic> json) {
     try {
       return CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mapper.fromJson(json);
@@ -29,30 +38,29 @@ extension CreateEvalResponsesRunDataSourceInputMessagesUnionDeserializer on Crea
       return CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for CreateEvalResponsesRunDataSourceInputMessagesUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateEvalResponsesRunDataSourceInputMessagesUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1 extends CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mappable {
+class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1
+    extends CreateEvalResponsesRunDataSourceInputMessagesUnion
+    with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Mappable {
   final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1Type type;
   final List<CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1TemplateUnion> template;
 
-  const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1({
-    required this.type,
-    required this.template,
-  });
+  const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant1({required this.type, required this.template});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2 extends CreateEvalResponsesRunDataSourceInputMessagesUnion with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mappable {
+class CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2
+    extends CreateEvalResponsesRunDataSourceInputMessagesUnion
+    with CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Mappable {
   final CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2Type type;
   @MappableField(key: 'item_reference')
   final String itemReference;
 
-  const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2({
-    required this.type,
-    required this.itemReference,
-  });
+  const CreateEvalResponsesRunDataSourceInputMessagesUnionVariant2({required this.type, required this.itemReference});
 }

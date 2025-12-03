@@ -9,8 +9,9 @@ import 'apply_patch_create_file_operation_type.dart';
 part 'apply_patch_create_file_operation.mapper.dart';
 
 /// Instruction describing how to create a file via the apply_patch tool.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchCreateFileOperation with ApplyPatchCreateFileOperationMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
+class ApplyPatchCreateFileOperation extends ApplyPatchToolCallOperationUnion
+    with ApplyPatchCreateFileOperationMappable {
   const ApplyPatchCreateFileOperation({
     required this.path,
     required this.diff,
@@ -21,7 +22,6 @@ class ApplyPatchCreateFileOperation with ApplyPatchCreateFileOperationMappable {
   final String diff;
   final ApplyPatchCreateFileOperationType type;
 
-  static ApplyPatchCreateFileOperation fromJson(Map<String, dynamic> json) => ApplyPatchCreateFileOperationMapper.fromJson(json);
-
+  static ApplyPatchCreateFileOperation fromJson(Map<String, dynamic> json) =>
+      ApplyPatchCreateFileOperationMapper.fromJson(json);
 }
-

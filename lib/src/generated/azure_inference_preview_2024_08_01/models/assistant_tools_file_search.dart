@@ -9,18 +9,13 @@ import 'assistant_tools_file_search_type.dart';
 
 part 'assistant_tools_file_search.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantToolsFileSearch with AssistantToolsFileSearchMappable {
-  const AssistantToolsFileSearch({
-    required this.type,
-    this.assistantToolsFileSearchFileSearch,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
+class AssistantToolsFileSearch extends CreateThreadAndRunRequestToolsUnion with AssistantToolsFileSearchMappable {
+  const AssistantToolsFileSearch({required this.type, this.assistantToolsFileSearchFileSearch});
 
   final AssistantToolsFileSearchType type;
   @MappableField(key: 'file_search')
   final AssistantToolsFileSearchFileSearch? assistantToolsFileSearchFileSearch;
 
   static AssistantToolsFileSearch fromJson(Map<String, dynamic> json) => AssistantToolsFileSearchMapper.fromJson(json);
-
 }
-

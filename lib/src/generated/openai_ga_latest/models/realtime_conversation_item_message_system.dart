@@ -32,7 +32,6 @@ class RealtimeConversationItemMessageSystem with RealtimeConversationItemMessage
   final RealtimeConversationItemMessageSystemObjectObjectEnum? objectEnum;
   final RealtimeConversationItemMessageSystemStatus? status;
 
-  static RealtimeConversationItemMessageSystem fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageSystemMapper.fromJson(json);
-
+  static RealtimeConversationItemMessageSystem fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemMessageSystemMapper.fromJson(json);
 }
-

@@ -8,15 +8,11 @@ part 'chat_completion_message_tool_call_chunk_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageToolCallChunkFunction with ChatCompletionMessageToolCallChunkFunctionMappable {
-  const ChatCompletionMessageToolCallChunkFunction({
-    this.name,
-    this.arguments,
-  });
+  const ChatCompletionMessageToolCallChunkFunction({this.name, this.arguments});
 
   final String? name;
   final String? arguments;
 
-  static ChatCompletionMessageToolCallChunkFunction fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallChunkFunctionMapper.fromJson(json);
-
+  static ChatCompletionMessageToolCallChunkFunction fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageToolCallChunkFunctionMapper.fromJson(json);
 }
-

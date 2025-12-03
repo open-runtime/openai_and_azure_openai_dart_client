@@ -8,13 +8,7 @@ part 'audit_log_role_created.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogRoleCreated with AuditLogRoleCreatedMappable {
-  const AuditLogRoleCreated({
-    this.id,
-    this.roleName,
-    this.permissions,
-    this.resourceType,
-    this.resourceId,
-  });
+  const AuditLogRoleCreated({this.id, this.roleName, this.permissions, this.resourceType, this.resourceId});
 
   final String? id;
   @MappableField(key: 'role_name')
@@ -26,6 +20,4 @@ class AuditLogRoleCreated with AuditLogRoleCreatedMappable {
   final String? resourceId;
 
   static AuditLogRoleCreated fromJson(Map<String, dynamic> json) => AuditLogRoleCreatedMapper.fromJson(json);
-
 }
-

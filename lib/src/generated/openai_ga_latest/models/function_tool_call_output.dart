@@ -13,13 +13,7 @@ part 'function_tool_call_output.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionToolCallOutput with FunctionToolCallOutputMappable {
-  const FunctionToolCallOutput({
-    required this.type,
-    required this.callId,
-    required this.output,
-    this.id,
-    this.status,
-  });
+  const FunctionToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.status});
 
   final FunctionToolCallOutputType type;
   @MappableField(key: 'call_id')
@@ -29,6 +23,4 @@ class FunctionToolCallOutput with FunctionToolCallOutputMappable {
   final FunctionToolCallOutputStatus? status;
 
   static FunctionToolCallOutput fromJson(Map<String, dynamic> json) => FunctionToolCallOutputMapper.fromJson(json);
-
 }
-

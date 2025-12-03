@@ -29,7 +29,6 @@ class CreateTranscriptionResponseVerboseJson with CreateTranscriptionResponseVer
   final List<TranscriptionSegment>? segments;
   final TranscriptTextUsageDuration? usage;
 
-  static CreateTranscriptionResponseVerboseJson fromJson(Map<String, dynamic> json) => CreateTranscriptionResponseVerboseJsonMapper.fromJson(json);
-
+  static CreateTranscriptionResponseVerboseJson fromJson(Map<String, dynamic> json) =>
+      CreateTranscriptionResponseVerboseJsonMapper.fromJson(json);
 }
-

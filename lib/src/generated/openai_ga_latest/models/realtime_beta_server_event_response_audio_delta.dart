@@ -32,7 +32,6 @@ class RealtimeBetaServerEventResponseAudioDelta with RealtimeBetaServerEventResp
   final int contentIndex;
   final String delta;
 
-  static RealtimeBetaServerEventResponseAudioDelta fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseAudioDeltaMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseAudioDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseAudioDeltaMapper.fromJson(json);
 }
-

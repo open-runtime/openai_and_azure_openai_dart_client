@@ -8,7 +8,7 @@
 part of 'response_code_interpreter_call_in_progress_event.dart';
 
 class ResponseCodeInterpreterCallInProgressEventMapper
-    extends ClassMapperBase<ResponseCodeInterpreterCallInProgressEvent> {
+    extends SubClassMapperBase<ResponseCodeInterpreterCallInProgressEvent> {
   ResponseCodeInterpreterCallInProgressEventMapper._();
 
   static ResponseCodeInterpreterCallInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCodeInterpreterCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCodeInterpreterCallInProgressEventTypeMapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
@@ -62,6 +63,15 @@ class ResponseCodeInterpreterCallInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'response.code_interpreter_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCodeInterpreterCallInProgressEvent _instantiate(
     DecodingData data,
@@ -161,13 +171,14 @@ abstract class ResponseCodeInterpreterCallInProgressEventCopyWith<
   $In extends ResponseCodeInterpreterCallInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   CodeInterpreterToolCallCopyWith<
     $R,
     CodeInterpreterToolCall,
     CodeInterpreterToolCall
   >
   get codeInterpreterCall;
+  @override
   $R call({
     ResponseCodeInterpreterCallInProgressEventType? type,
     int? outputIndex,

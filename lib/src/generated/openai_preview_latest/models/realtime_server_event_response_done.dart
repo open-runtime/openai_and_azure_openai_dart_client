@@ -14,20 +14,15 @@ part 'realtime_server_event_response_done.mapper.dart';
 /// final state. The Response object included in the `response.done` event will .
 /// include all output Items in the Response but will omit the raw audio data.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseDone with RealtimeServerEventResponseDoneMappable {
-  const RealtimeServerEventResponseDone({
-    required this.eventId,
-    required this.type,
-    required this.response,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.done')
+class RealtimeServerEventResponseDone extends RealtimeServerEvent with RealtimeServerEventResponseDoneMappable {
+  const RealtimeServerEventResponseDone({required this.eventId, required this.type, required this.response});
 
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventResponseDoneType type;
   final RealtimeResponse response;
 
-  static RealtimeServerEventResponseDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseDoneMapper.fromJson(json);
 }
-

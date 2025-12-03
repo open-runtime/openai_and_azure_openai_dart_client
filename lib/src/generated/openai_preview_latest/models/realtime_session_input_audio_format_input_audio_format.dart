@@ -12,16 +12,16 @@ part 'realtime_session_input_audio_format_input_audio_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionInputAudioFormatInputAudioFormat {
-  @MappableValue('pcm16') 
+  @MappableValue('pcm16')
   pcm16,
 
-  @MappableValue('g711_ulaw') 
+  @MappableValue('g711_ulaw')
   g711Ulaw,
 
-  @MappableValue('g711_alaw') 
+  @MappableValue('g711_alaw')
   g711Alaw,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum RealtimeSessionInputAudioFormatInputAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionInputAudioFormatInputAudioFormat> get $valuesDefined => values.where((value) => value != RealtimeSessionInputAudioFormatInputAudioFormat.unknown).toList();
+  static List<RealtimeSessionInputAudioFormatInputAudioFormat> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionInputAudioFormatInputAudioFormat.unknown).toList();
 }

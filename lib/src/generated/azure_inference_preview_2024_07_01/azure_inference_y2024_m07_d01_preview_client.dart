@@ -13,11 +13,7 @@ import 'vector_stores/vector_stores_api.dart';
 ///
 /// Azure OpenAI APIs for completions and search.
 class AzureInferenceY2024M07D01PreviewClient {
-  AzureInferenceY2024M07D01PreviewClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  AzureInferenceY2024M07D01PreviewClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;

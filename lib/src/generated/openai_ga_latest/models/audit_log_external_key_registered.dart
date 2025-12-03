@@ -8,15 +8,11 @@ part 'audit_log_external_key_registered.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogExternalKeyRegistered with AuditLogExternalKeyRegisteredMappable {
-  const AuditLogExternalKeyRegistered({
-    this.id,
-    this.data,
-  });
+  const AuditLogExternalKeyRegistered({this.id, this.data});
 
   final String? id;
   final dynamic? data;
 
-  static AuditLogExternalKeyRegistered fromJson(Map<String, dynamic> json) => AuditLogExternalKeyRegisteredMapper.fromJson(json);
-
+  static AuditLogExternalKeyRegistered fromJson(Map<String, dynamic> json) =>
+      AuditLogExternalKeyRegisteredMapper.fromJson(json);
 }
-

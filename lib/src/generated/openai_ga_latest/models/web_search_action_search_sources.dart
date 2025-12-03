@@ -10,15 +10,11 @@ part 'web_search_action_search_sources.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchActionSearchSources with WebSearchActionSearchSourcesMappable {
-  const WebSearchActionSearchSources({
-    required this.type,
-    required this.url,
-  });
+  const WebSearchActionSearchSources({required this.type, required this.url});
 
   final WebSearchActionSearchSourcesType type;
   final String url;
 
-  static WebSearchActionSearchSources fromJson(Map<String, dynamic> json) => WebSearchActionSearchSourcesMapper.fromJson(json);
-
+  static WebSearchActionSearchSources fromJson(Map<String, dynamic> json) =>
+      WebSearchActionSearchSourcesMapper.fromJson(json);
 }
-

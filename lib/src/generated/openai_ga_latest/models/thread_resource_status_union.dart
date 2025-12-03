@@ -13,18 +13,22 @@ import 'locked_status_type.dart';
 
 part 'thread_resource_status_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ThreadResourceStatusUnionActive,
-  ThreadResourceStatusUnionLocked,
-  ThreadResourceStatusUnionClosed
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ThreadResourceStatusUnionActive,
+    ThreadResourceStatusUnionLocked,
+    ThreadResourceStatusUnionClosed,
+  ],
+)
 sealed class ThreadResourceStatusUnion with ThreadResourceStatusUnionMappable {
   const ThreadResourceStatusUnion();
 
   static ThreadResourceStatusUnion fromJson(Map<String, dynamic> json) {
     return ThreadResourceStatusUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ThreadResourceStatusUnionDeserializer on ThreadResourceStatusUnion {
@@ -34,16 +38,16 @@ extension ThreadResourceStatusUnionDeserializer on ThreadResourceStatusUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ThreadResourceStatusUnionActive: 'active',
-      ThreadResourceStatusUnionLocked: 'locked',
-      ThreadResourceStatusUnionClosed: 'closed',
+      ActiveStatus: 'active',
+      LockedStatus: 'locked',
+      ClosedStatus: 'closed',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ThreadResourceStatusUnionActive] => ThreadResourceStatusUnionActiveMapper.fromJson(json),
-      _ when value == effective[ThreadResourceStatusUnionLocked] => ThreadResourceStatusUnionLockedMapper.fromJson(json),
-      _ when value == effective[ThreadResourceStatusUnionClosed] => ThreadResourceStatusUnionClosedMapper.fromJson(json),
+      _ when value == effective[ActiveStatus] => ActiveStatusMapper.fromJson(json),
+      _ when value == effective[LockedStatus] => LockedStatusMapper.fromJson(json),
+      _ when value == effective[ClosedStatus] => ClosedStatusMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ThreadResourceStatusUnion'),
     };
   }
@@ -53,30 +57,21 @@ extension ThreadResourceStatusUnionDeserializer on ThreadResourceStatusUnion {
 class ThreadResourceStatusUnionActive extends ThreadResourceStatusUnion with ThreadResourceStatusUnionActiveMappable {
   final ActiveStatusType type;
 
-  const ThreadResourceStatusUnionActive({
-    required this.type,
-  });
-
+  const ThreadResourceStatusUnionActive({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'locked')
 class ThreadResourceStatusUnionLocked extends ThreadResourceStatusUnion with ThreadResourceStatusUnionLockedMappable {
   final LockedStatusType type;
   final String? reason;
 
-  const ThreadResourceStatusUnionLocked({
-    required this.type,
-    required this.reason,
-  });
-
+  const ThreadResourceStatusUnionLocked({required this.type, required this.reason});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'closed')
 class ThreadResourceStatusUnionClosed extends ThreadResourceStatusUnion with ThreadResourceStatusUnionClosedMappable {
   final ClosedStatusType type;
   final String? reason;
 
-  const ThreadResourceStatusUnionClosed({
-    required this.type,
-    required this.reason,
-  });
-
+  const ThreadResourceStatusUnionClosed({required this.type, required this.reason});
 }

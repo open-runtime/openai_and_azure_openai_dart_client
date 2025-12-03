@@ -32,6 +32,4 @@ class WebhookBatchCompleted with WebhookBatchCompletedMappable {
   final WebhookBatchCompletedObjectObjectEnum? objectEnum;
 
   static WebhookBatchCompleted fromJson(Map<String, dynamic> json) => WebhookBatchCompletedMapper.fromJson(json);
-
 }
-

@@ -9,10 +9,10 @@ part 'computer_use_preview_tool_type.mapper.dart';
 /// The type of the computer use tool. Always `computer_use_preview`.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerUsePreviewToolType {
-  @MappableValue('computer_use_preview') 
+  @MappableValue('computer_use_preview')
   computerUsePreview,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ComputerUsePreviewToolType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerUsePreviewToolType> get $valuesDefined => values.where((value) => value != ComputerUsePreviewToolType.unknown).toList();
+  static List<ComputerUsePreviewToolType> get $valuesDefined =>
+      values.where((value) => value != ComputerUsePreviewToolType.unknown).toList();
 }

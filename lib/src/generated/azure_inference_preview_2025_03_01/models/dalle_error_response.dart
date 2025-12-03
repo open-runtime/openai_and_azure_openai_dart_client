@@ -10,13 +10,9 @@ part 'dalle_error_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleErrorResponse with DalleErrorResponseMappable {
-  const DalleErrorResponse({
-    this.error,
-  });
+  const DalleErrorResponse({this.error});
 
   final DalleError? error;
 
   static DalleErrorResponse fromJson(Map<String, dynamic> json) => DalleErrorResponseMapper.fromJson(json);
-
 }
-

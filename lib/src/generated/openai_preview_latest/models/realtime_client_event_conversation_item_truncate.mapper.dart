@@ -8,7 +8,7 @@
 part of 'realtime_client_event_conversation_item_truncate.dart';
 
 class RealtimeClientEventConversationItemTruncateMapper
-    extends ClassMapperBase<RealtimeClientEventConversationItemTruncate> {
+    extends SubClassMapperBase<RealtimeClientEventConversationItemTruncate> {
   RealtimeClientEventConversationItemTruncateMapper._();
 
   static RealtimeClientEventConversationItemTruncateMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventConversationItemTruncateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemTruncateMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeClientEventConversationItemTruncateTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -67,6 +68,14 @@ class RealtimeClientEventConversationItemTruncateMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.truncate';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventConversationItemTruncate _instantiate(
     DecodingData data,
@@ -171,7 +180,8 @@ abstract class RealtimeClientEventConversationItemTruncateCopyWith<
   $In extends RealtimeClientEventConversationItemTruncate,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     RealtimeClientEventConversationItemTruncateType? type,
     String? itemId,

@@ -27,7 +27,6 @@ class CreateChatCompletionResponseChoices with CreateChatCompletionResponseChoic
   @MappableField(key: 'logprobs')
   final CreateChatCompletionResponseChoicesLogprobs? createChatCompletionResponseChoicesLogprobs;
 
-  static CreateChatCompletionResponseChoices fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesMapper.fromJson(json);
-
+  static CreateChatCompletionResponseChoices fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseChoicesMapper.fromJson(json);
 }
-

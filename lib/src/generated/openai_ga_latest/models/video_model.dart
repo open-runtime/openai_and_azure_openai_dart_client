@@ -8,13 +8,13 @@ part 'video_model.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VideoModel {
-  @MappableValue('sora-2') 
+  @MappableValue('sora-2')
   sora2,
 
-  @MappableValue('sora-2-pro') 
+  @MappableValue('sora-2-pro')
   sora2Pro,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -11,8 +11,9 @@ import 'text_annotation.dart';
 part 'message_content_text_annotations_file_citation_object.mapper.dart';
 
 /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageContentTextAnnotationsFileCitationObject with MessageContentTextAnnotationsFileCitationObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
+class MessageContentTextAnnotationsFileCitationObject extends TextAnnotation
+    with MessageContentTextAnnotationsFileCitationObjectMappable {
   const MessageContentTextAnnotationsFileCitationObject({
     required this.type,
     required this.text,
@@ -24,13 +25,13 @@ class MessageContentTextAnnotationsFileCitationObject with MessageContentTextAnn
   final MessageContentTextAnnotationsFileCitationObjectType type;
   final String text;
   @MappableField(key: 'file_citation')
-  final MessageContentTextAnnotationsFileCitationObjectFileCitation messageContentTextAnnotationsFileCitationObjectFileCitation;
+  final MessageContentTextAnnotationsFileCitationObjectFileCitation
+  messageContentTextAnnotationsFileCitationObjectFileCitation;
   @MappableField(key: 'start_index')
   final int startIndex;
   @MappableField(key: 'end_index')
   final int endIndex;
 
-  static MessageContentTextAnnotationsFileCitationObject fromJson(Map<String, dynamic> json) => MessageContentTextAnnotationsFileCitationObjectMapper.fromJson(json);
-
+  static MessageContentTextAnnotationsFileCitationObject fromJson(Map<String, dynamic> json) =>
+      MessageContentTextAnnotationsFileCitationObjectMapper.fromJson(json);
 }
-

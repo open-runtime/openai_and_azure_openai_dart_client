@@ -11,10 +11,10 @@ part 'click_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ClickType {
-  @MappableValue('click') 
+  @MappableValue('click')
   click,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

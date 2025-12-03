@@ -8,7 +8,7 @@
 part of 'realtime_client_event_input_audio_buffer_append.dart';
 
 class RealtimeClientEventInputAudioBufferAppendMapper
-    extends ClassMapperBase<RealtimeClientEventInputAudioBufferAppend> {
+    extends SubClassMapperBase<RealtimeClientEventInputAudioBufferAppend> {
   RealtimeClientEventInputAudioBufferAppendMapper._();
 
   static RealtimeClientEventInputAudioBufferAppendMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventInputAudioBufferAppendMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventInputAudioBufferAppendMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeClientEventInputAudioBufferAppendTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -48,6 +49,14 @@ class RealtimeClientEventInputAudioBufferAppendMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_audio_buffer.append';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventInputAudioBufferAppend _instantiate(
     DecodingData data,
@@ -145,7 +154,8 @@ abstract class RealtimeClientEventInputAudioBufferAppendCopyWith<
   $In extends RealtimeClientEventInputAudioBufferAppend,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     RealtimeClientEventInputAudioBufferAppendType? type,
     String? audio,

@@ -19,12 +19,17 @@ import 'url_citation_body_type.dart';
 
 part 'annotation.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  AnnotationFileCitation,
-  AnnotationUrlCitation,
-  AnnotationContainerFileCitation,
-  AnnotationFilePath
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    AnnotationFileCitation,
+    AnnotationUrlCitation,
+    AnnotationContainerFileCitation,
+    AnnotationFilePath,
+  ],
+)
 sealed class Annotation with AnnotationMappable {
   const Annotation();
 
@@ -34,24 +39,20 @@ sealed class Annotation with AnnotationMappable {
 }
 
 extension AnnotationUnionDeserializer on Annotation {
-  static Annotation tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static Annotation tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      AnnotationFileCitation: 'file_citation',
-      AnnotationUrlCitation: 'url_citation',
-      AnnotationContainerFileCitation: 'container_file_citation',
-      AnnotationFilePath: 'file_path',
+      FileCitationBody: 'file_citation',
+      UrlCitationBody: 'url_citation',
+      ContainerFileCitationBody: 'container_file_citation',
+      FilePath: 'file_path',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[AnnotationFileCitation] => AnnotationFileCitationMapper.fromJson(json),
-      _ when value == effective[AnnotationUrlCitation] => AnnotationUrlCitationMapper.fromJson(json),
-      _ when value == effective[AnnotationContainerFileCitation] => AnnotationContainerFileCitationMapper.fromJson(json),
-      _ when value == effective[AnnotationFilePath] => AnnotationFilePathMapper.fromJson(json),
+      _ when value == effective[FileCitationBody] => FileCitationBodyMapper.fromJson(json),
+      _ when value == effective[UrlCitationBody] => UrlCitationBodyMapper.fromJson(json),
+      _ when value == effective[ContainerFileCitationBody] => ContainerFileCitationBodyMapper.fromJson(json),
+      _ when value == effective[FilePath] => FilePathMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for Annotation'),
     };
   }
@@ -124,9 +125,5 @@ class AnnotationFilePath extends Annotation with AnnotationFilePathMappable {
   @MappableField(key: 'index')
   final int indexField;
 
-  const AnnotationFilePath({
-    required this.type,
-    required this.fileId,
-    required this.indexField,
-  });
+  const AnnotationFilePath({required this.type, required this.fileId, required this.indexField});
 }

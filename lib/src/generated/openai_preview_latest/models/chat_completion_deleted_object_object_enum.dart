@@ -11,10 +11,10 @@ part 'chat_completion_deleted_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionDeletedObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chat.completion.deleted`.
-  @MappableValue('chat.completion.deleted') 
+  @MappableValue('chat.completion.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ChatCompletionDeletedObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionDeletedObjectObjectEnum> get $valuesDefined => values.where((value) => value != ChatCompletionDeletedObjectObjectEnum.unknown).toList();
+  static List<ChatCompletionDeletedObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionDeletedObjectObjectEnum.unknown).toList();
 }

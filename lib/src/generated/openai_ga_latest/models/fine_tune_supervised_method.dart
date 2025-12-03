@@ -11,13 +11,9 @@ part 'fine_tune_supervised_method.mapper.dart';
 /// Configuration for the supervised fine-tuning method.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneSupervisedMethod with FineTuneSupervisedMethodMappable {
-  const FineTuneSupervisedMethod({
-    this.hyperparameters,
-  });
+  const FineTuneSupervisedMethod({this.hyperparameters});
 
   final FineTuneSupervisedHyperparameters? hyperparameters;
 
   static FineTuneSupervisedMethod fromJson(Map<String, dynamic> json) => FineTuneSupervisedMethodMapper.fromJson(json);
-
 }
-

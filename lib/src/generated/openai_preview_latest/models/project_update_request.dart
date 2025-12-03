@@ -8,13 +8,9 @@ part 'project_update_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUpdateRequest with ProjectUpdateRequestMappable {
-  const ProjectUpdateRequest({
-    required this.name,
-  });
+  const ProjectUpdateRequest({required this.name});
 
   final String name;
 
   static ProjectUpdateRequest fromJson(Map<String, dynamic> json) => ProjectUpdateRequestMapper.fromJson(json);
-
 }
-

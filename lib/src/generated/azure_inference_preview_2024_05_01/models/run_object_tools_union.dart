@@ -17,18 +17,18 @@ import 'modify_assistant_request_tools_union.dart';
 
 part 'run_object_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunObjectToolsUnionCodeInterpreter,
-  RunObjectToolsUnionFileSearch,
-  RunObjectToolsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RunObjectToolsUnionCodeInterpreter, RunObjectToolsUnionFileSearch, RunObjectToolsUnionFunction],
+)
 sealed class RunObjectToolsUnion with RunObjectToolsUnionMappable {
   const RunObjectToolsUnion();
 
   static RunObjectToolsUnion fromJson(Map<String, dynamic> json) {
     return RunObjectToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RunObjectToolsUnionDeserializer on RunObjectToolsUnion {
@@ -38,16 +38,16 @@ extension RunObjectToolsUnionDeserializer on RunObjectToolsUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunObjectToolsUnionCodeInterpreter: 'code_interpreter',
-      RunObjectToolsUnionFileSearch: 'file_search',
-      RunObjectToolsUnionFunction: 'function',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
+      AssistantToolsFunction: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunObjectToolsUnionCodeInterpreter] => RunObjectToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[RunObjectToolsUnionFileSearch] => RunObjectToolsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[RunObjectToolsUnionFunction] => RunObjectToolsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFunction] => AssistantToolsFunctionMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunObjectToolsUnion'),
     };
   }
@@ -57,29 +57,21 @@ extension RunObjectToolsUnionDeserializer on RunObjectToolsUnion {
 class RunObjectToolsUnionCodeInterpreter extends RunObjectToolsUnion with RunObjectToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const RunObjectToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const RunObjectToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
 class RunObjectToolsUnionFileSearch extends RunObjectToolsUnion with RunObjectToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
 
-  const RunObjectToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const RunObjectToolsUnionFileSearch({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
 class RunObjectToolsUnionFunction extends RunObjectToolsUnion with RunObjectToolsUnionFunctionMappable {
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 
-  const RunObjectToolsUnionFunction({
-    required this.type,
-    required this.assistantToolsFunctionFunction,
-  });
-
+  const RunObjectToolsUnionFunction({required this.type, required this.assistantToolsFunctionFunction});
 }

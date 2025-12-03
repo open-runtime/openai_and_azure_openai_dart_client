@@ -10,15 +10,12 @@ import 'response_stream_event.dart';
 part 'response_audio_transcript_done_event.mapper.dart';
 
 /// Emitted when the full audio transcript is completed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseAudioTranscriptDoneEvent with ResponseAudioTranscriptDoneEventMappable {
-  const ResponseAudioTranscriptDoneEvent({
-    required this.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.done')
+class ResponseAudioTranscriptDoneEvent extends ResponseStreamEvent with ResponseAudioTranscriptDoneEventMappable {
+  const ResponseAudioTranscriptDoneEvent({required this.type});
 
   final ResponseAudioTranscriptDoneEventType type;
 
-  static ResponseAudioTranscriptDoneEvent fromJson(Map<String, dynamic> json) => ResponseAudioTranscriptDoneEventMapper.fromJson(json);
-
+  static ResponseAudioTranscriptDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseAudioTranscriptDoneEventMapper.fromJson(json);
 }
-

@@ -11,10 +11,10 @@ part 'computer_action_type9.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerActionType9 {
-  @MappableValue('wait') 
+  @MappableValue('wait')
   wait,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ComputerActionType9 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerActionType9> get $valuesDefined => values.where((value) => value != ComputerActionType9.unknown).toList();
+  static List<ComputerActionType9> get $valuesDefined =>
+      values.where((value) => value != ComputerActionType9.unknown).toList();
 }

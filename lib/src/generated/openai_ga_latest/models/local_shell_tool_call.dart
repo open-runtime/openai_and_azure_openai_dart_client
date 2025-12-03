@@ -15,8 +15,8 @@ part 'local_shell_tool_call.mapper.dart';
 
 /// A tool call to run a command on the local shell.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class LocalShellToolCall with LocalShellToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call')
+class LocalShellToolCall extends ItemUnion with LocalShellToolCallMappable {
   const LocalShellToolCall({
     required this.type,
     required this.id,
@@ -33,6 +33,4 @@ class LocalShellToolCall with LocalShellToolCallMappable {
   final LocalShellToolCallStatus status;
 
   static LocalShellToolCall fromJson(Map<String, dynamic> json) => LocalShellToolCallMapper.fromJson(json);
-
 }
-

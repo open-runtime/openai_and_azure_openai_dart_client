@@ -13,15 +13,11 @@ part 'azure_search_chat_extension_configuration.mapper.dart';
 /// extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureSearchChatExtensionConfiguration with AzureSearchChatExtensionConfigurationMappable {
-  const AzureSearchChatExtensionConfiguration({
-    required this.type,
-    this.parameters,
-  });
+  const AzureSearchChatExtensionConfiguration({required this.type, this.parameters});
 
   final AzureChatExtensionType type;
   final AzureSearchChatExtensionParameters? parameters;
 
-  static AzureSearchChatExtensionConfiguration fromJson(Map<String, dynamic> json) => AzureSearchChatExtensionConfigurationMapper.fromJson(json);
-
+  static AzureSearchChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      AzureSearchChatExtensionConfigurationMapper.fromJson(json);
 }
-

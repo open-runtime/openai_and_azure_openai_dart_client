@@ -24,7 +24,6 @@ class CompletionUsageCompletionTokensDetails with CompletionUsageCompletionToken
   @MappableField(key: 'rejected_prediction_tokens')
   final int rejectedPredictionTokens;
 
-  static CompletionUsageCompletionTokensDetails fromJson(Map<String, dynamic> json) => CompletionUsageCompletionTokensDetailsMapper.fromJson(json);
-
+  static CompletionUsageCompletionTokensDetails fromJson(Map<String, dynamic> json) =>
+      CompletionUsageCompletionTokensDetailsMapper.fromJson(json);
 }
-

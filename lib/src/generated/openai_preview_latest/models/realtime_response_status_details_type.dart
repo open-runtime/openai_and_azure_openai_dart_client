@@ -12,19 +12,19 @@ part 'realtime_response_status_details_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseStatusDetailsType {
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum RealtimeResponseStatusDetailsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseStatusDetailsType> get $valuesDefined => values.where((value) => value != RealtimeResponseStatusDetailsType.unknown).toList();
+  static List<RealtimeResponseStatusDetailsType> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseStatusDetailsType.unknown).toList();
 }

@@ -11,10 +11,10 @@ part 'move_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum MoveType {
-  @MappableValue('move') 
+  @MappableValue('move')
   move,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

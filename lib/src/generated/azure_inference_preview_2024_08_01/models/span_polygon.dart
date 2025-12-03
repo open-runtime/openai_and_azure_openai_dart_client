@@ -8,15 +8,10 @@ part 'span_polygon.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SpanPolygon with SpanPolygonMappable {
-  const SpanPolygon({
-    this.x,
-    this.y,
-  });
+  const SpanPolygon({this.x, this.y});
 
   final num? x;
   final num? y;
 
   static SpanPolygon fromJson(Map<String, dynamic> json) => SpanPolygonMapper.fromJson(json);
-
 }
-

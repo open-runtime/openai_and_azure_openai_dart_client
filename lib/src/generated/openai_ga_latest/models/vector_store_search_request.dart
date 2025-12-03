@@ -29,6 +29,4 @@ class VectorStoreSearchRequest with VectorStoreSearchRequestMappable {
   final int maxNumResults;
 
   static VectorStoreSearchRequest fromJson(Map<String, dynamic> json) => VectorStoreSearchRequestMapper.fromJson(json);
-
 }
-

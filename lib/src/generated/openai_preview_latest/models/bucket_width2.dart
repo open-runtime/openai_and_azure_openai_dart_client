@@ -8,16 +8,16 @@ part 'bucket_width2.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum BucketWidth2 {
-  @MappableValue('1m') 
+  @MappableValue('1m')
   value1m,
 
-  @MappableValue('1h') 
+  @MappableValue('1h')
   value1h,
 
-  @MappableValue('1d') 
+  @MappableValue('1d')
   value1d,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

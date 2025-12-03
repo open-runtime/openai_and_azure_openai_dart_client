@@ -10,16 +10,16 @@ part 'image_gen_partial_image_event_output_format_output_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenPartialImageEventOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageGenPartialImageEventOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenPartialImageEventOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImageGenPartialImageEventOutputFormatOutputFormat.unknown).toList();
+  static List<ImageGenPartialImageEventOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImageGenPartialImageEventOutputFormatOutputFormat.unknown).toList();
 }

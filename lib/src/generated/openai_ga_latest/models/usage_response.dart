@@ -11,12 +11,7 @@ part 'usage_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UsageResponse with UsageResponseMappable {
-  const UsageResponse({
-    required this.objectEnum,
-    required this.data,
-    required this.hasMore,
-    required this.nextPage,
-  });
+  const UsageResponse({required this.objectEnum, required this.data, required this.hasMore, required this.nextPage});
 
   @MappableField(key: 'object')
   final UsageResponseObjectObjectEnum objectEnum;
@@ -27,6 +22,4 @@ class UsageResponse with UsageResponseMappable {
   final String nextPage;
 
   static UsageResponse fromJson(Map<String, dynamic> json) => UsageResponseMapper.fromJson(json);
-
 }
-

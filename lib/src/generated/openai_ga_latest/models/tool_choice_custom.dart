@@ -11,17 +11,12 @@ part 'tool_choice_custom.mapper.dart';
 
 /// Use this option to force the model to call a specific custom tool.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ToolChoiceCustom with ToolChoiceCustomMappable {
-  const ToolChoiceCustom({
-    required this.type,
-    required this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class ToolChoiceCustom extends ToolChoiceParam with ToolChoiceCustomMappable {
+  const ToolChoiceCustom({required this.type, required this.name});
 
   final ToolChoiceCustomType type;
   final String name;
 
   static ToolChoiceCustom fromJson(Map<String, dynamic> json) => ToolChoiceCustomMapper.fromJson(json);
-
 }
-

@@ -13,7 +13,11 @@ import 'compound_filter.dart';
 
 part 'filters_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FiltersUnionComparisonFilter, FiltersUnionCompoundFilter])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [FiltersUnionComparisonFilter, FiltersUnionCompoundFilter],
+)
 sealed class FiltersUnion with FiltersUnionMappable {
   const FiltersUnion();
 
@@ -31,7 +35,6 @@ extension FiltersUnionDeserializer on FiltersUnion {
       return FiltersUnionCompoundFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for FiltersUnion from: $json');
   }
 }
@@ -42,11 +45,7 @@ class FiltersUnionComparisonFilter extends FiltersUnion with FiltersUnionCompari
   final String key;
   final ComparisonFilterValueUnion value;
 
-  const FiltersUnionComparisonFilter({
-    required this.type,
-    required this.key,
-    required this.value,
-  });
+  const FiltersUnionComparisonFilter({required this.type, required this.key, required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -54,8 +53,5 @@ class FiltersUnionCompoundFilter extends FiltersUnion with FiltersUnionCompoundF
   final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
-  const FiltersUnionCompoundFilter({
-    required this.type,
-    required this.filters,
-  });
+  const FiltersUnionCompoundFilter({required this.type, required this.filters});
 }

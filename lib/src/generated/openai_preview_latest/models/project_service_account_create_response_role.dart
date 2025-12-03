@@ -9,10 +9,10 @@ part 'project_service_account_create_response_role.mapper.dart';
 /// Service accounts can only have one role of type `member`
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectServiceAccountCreateResponseRole {
-  @MappableValue('member') 
+  @MappableValue('member')
   member,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ProjectServiceAccountCreateResponseRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectServiceAccountCreateResponseRole> get $valuesDefined => values.where((value) => value != ProjectServiceAccountCreateResponseRole.unknown).toList();
+  static List<ProjectServiceAccountCreateResponseRole> get $valuesDefined =>
+      values.where((value) => value != ProjectServiceAccountCreateResponseRole.unknown).toList();
 }

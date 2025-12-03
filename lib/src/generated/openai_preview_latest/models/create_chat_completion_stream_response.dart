@@ -40,7 +40,6 @@ class CreateChatCompletionStreamResponse with CreateChatCompletionStreamResponse
   final String? systemFingerprint;
   final CompletionUsage? usage;
 
-  static CreateChatCompletionStreamResponse fromJson(Map<String, dynamic> json) => CreateChatCompletionStreamResponseMapper.fromJson(json);
-
+  static CreateChatCompletionStreamResponse fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionStreamResponseMapper.fromJson(json);
 }
-

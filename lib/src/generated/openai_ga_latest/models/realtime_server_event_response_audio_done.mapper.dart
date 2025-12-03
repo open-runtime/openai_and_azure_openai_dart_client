@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_audio_done.dart';
 
 class RealtimeServerEventResponseAudioDoneMapper
-    extends ClassMapperBase<RealtimeServerEventResponseAudioDone> {
+    extends SubClassMapperBase<RealtimeServerEventResponseAudioDone> {
   RealtimeServerEventResponseAudioDoneMapper._();
 
   static RealtimeServerEventResponseAudioDoneMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseAudioDoneMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseAudioDoneMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -63,6 +64,14 @@ class RealtimeServerEventResponseAudioDoneMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_audio.done';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseAudioDone _instantiate(DecodingData data) {
     return RealtimeServerEventResponseAudioDone(
@@ -155,7 +164,8 @@ abstract class RealtimeServerEventResponseAudioDoneCopyWith<
   $In extends RealtimeServerEventResponseAudioDone,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     dynamic type,

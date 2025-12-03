@@ -8,16 +8,12 @@ part 'submit_tool_outputs_run_request_tool_outputs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SubmitToolOutputsRunRequestToolOutputs with SubmitToolOutputsRunRequestToolOutputsMappable {
-  const SubmitToolOutputsRunRequestToolOutputs({
-    this.toolCallId,
-    this.output,
-  });
+  const SubmitToolOutputsRunRequestToolOutputs({this.toolCallId, this.output});
 
   @MappableField(key: 'tool_call_id')
   final String? toolCallId;
   final String? output;
 
-  static SubmitToolOutputsRunRequestToolOutputs fromJson(Map<String, dynamic> json) => SubmitToolOutputsRunRequestToolOutputsMapper.fromJson(json);
-
+  static SubmitToolOutputsRunRequestToolOutputs fromJson(Map<String, dynamic> json) =>
+      SubmitToolOutputsRunRequestToolOutputsMapper.fromJson(json);
 }
-

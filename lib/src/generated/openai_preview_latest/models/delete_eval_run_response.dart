@@ -8,11 +8,7 @@ part 'delete_eval_run_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteEvalRunResponse with DeleteEvalRunResponseMappable {
-  const DeleteEvalRunResponse({
-    this.objectField,
-    this.deleted,
-    this.runId,
-  });
+  const DeleteEvalRunResponse({this.objectField, this.deleted, this.runId});
 
   @MappableField(key: 'object')
   final String? objectField;
@@ -21,6 +17,4 @@ class DeleteEvalRunResponse with DeleteEvalRunResponseMappable {
   final String? runId;
 
   static DeleteEvalRunResponse fromJson(Map<String, dynamic> json) => DeleteEvalRunResponseMapper.fromJson(json);
-
 }
-

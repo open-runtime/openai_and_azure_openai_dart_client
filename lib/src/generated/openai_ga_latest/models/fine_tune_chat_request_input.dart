@@ -17,12 +17,7 @@ part 'fine_tune_chat_request_input.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneChatRequestInput with FineTuneChatRequestInputMappable {
-  const FineTuneChatRequestInput({
-    this.messages,
-    this.tools,
-    this.parallelToolCalls,
-    this.functions,
-  });
+  const FineTuneChatRequestInput({this.messages, this.tools, this.parallelToolCalls, this.functions});
 
   final List<FineTuneChatRequestInputMessagesUnion>? messages;
   final List<ChatCompletionTool>? tools;
@@ -31,6 +26,4 @@ class FineTuneChatRequestInput with FineTuneChatRequestInputMappable {
   final List<ChatCompletionFunctions>? functions;
 
   static FineTuneChatRequestInput fromJson(Map<String, dynamic> json) => FineTuneChatRequestInputMapper.fromJson(json);
-
 }
-

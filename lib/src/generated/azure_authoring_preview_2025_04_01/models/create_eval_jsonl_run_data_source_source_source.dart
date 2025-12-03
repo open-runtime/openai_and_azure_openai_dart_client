@@ -24,7 +24,6 @@ class CreateEvalJsonlRunDataSourceSourceSource with CreateEvalJsonlRunDataSource
   final String id;
   final EvalJsonlFileIdSourceType type;
 
-  static CreateEvalJsonlRunDataSourceSourceSource fromJson(Map<String, dynamic> json) => CreateEvalJsonlRunDataSourceSourceSourceMapper.fromJson(json);
-
+  static CreateEvalJsonlRunDataSourceSourceSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalJsonlRunDataSourceSourceSourceMapper.fromJson(json);
 }
-

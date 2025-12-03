@@ -9,22 +9,22 @@ part 'image_size.mapper.dart';
 /// The size of the generated images.
 @MappableEnum(defaultValue: 'unknown')
 enum ImageSize {
-  @MappableValue('256x256') 
+  @MappableValue('256x256')
   value256x256,
 
-  @MappableValue('512x512') 
+  @MappableValue('512x512')
   value512x512,
 
-  @MappableValue('1792x1024') 
+  @MappableValue('1792x1024')
   value1792x1024,
 
-  @MappableValue('1024x1792') 
+  @MappableValue('1024x1792')
   value1024x1792,
 
-  @MappableValue('1024x1024') 
+  @MappableValue('1024x1024')
   value1024x1024,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

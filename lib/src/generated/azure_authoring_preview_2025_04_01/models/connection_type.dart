@@ -9,22 +9,22 @@ part 'connection_type.mapper.dart';
 /// The connection type.
 @MappableEnum(defaultValue: 'unknown')
 enum ConnectionType {
-  @MappableValue('EndpointWithKey') 
+  @MappableValue('EndpointWithKey')
   endpointWithKey,
 
-  @MappableValue('ConnectionString') 
+  @MappableValue('ConnectionString')
   connectionString,
 
-  @MappableValue('EndpointWithManagedIdentity') 
+  @MappableValue('EndpointWithManagedIdentity')
   endpointWithManagedIdentity,
 
-  @MappableValue('WorkspaceConnection') 
+  @MappableValue('WorkspaceConnection')
   workspaceConnection,
 
-  @MappableValue('RelativeConnection') 
+  @MappableValue('RelativeConnection')
   relativeConnection,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

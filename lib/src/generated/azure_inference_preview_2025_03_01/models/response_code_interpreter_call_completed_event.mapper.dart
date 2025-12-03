@@ -8,7 +8,7 @@
 part of 'response_code_interpreter_call_completed_event.dart';
 
 class ResponseCodeInterpreterCallCompletedEventMapper
-    extends ClassMapperBase<ResponseCodeInterpreterCallCompletedEvent> {
+    extends SubClassMapperBase<ResponseCodeInterpreterCallCompletedEvent> {
   ResponseCodeInterpreterCallCompletedEventMapper._();
 
   static ResponseCodeInterpreterCallCompletedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCodeInterpreterCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCodeInterpreterCallCompletedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCodeInterpreterCallCompletedEventTypeMapper.ensureInitialized();
       CodeInterpreterToolCallMapper.ensureInitialized();
     }
@@ -62,6 +63,14 @@ class ResponseCodeInterpreterCallCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.code_interpreter_call.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCodeInterpreterCallCompletedEvent _instantiate(
     DecodingData data,
@@ -159,13 +168,14 @@ abstract class ResponseCodeInterpreterCallCompletedEventCopyWith<
   $In extends ResponseCodeInterpreterCallCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   CodeInterpreterToolCallCopyWith<
     $R,
     CodeInterpreterToolCall,
     CodeInterpreterToolCall
   >
   get codeInterpreterCall;
+  @override
   $R call({
     ResponseCodeInterpreterCallCompletedEventType? type,
     int? outputIndex,

@@ -12,13 +12,9 @@ part 'response_created_event.mapper.dart';
 
 /// An event that is emitted when a response is created.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCreatedEvent with ResponseCreatedEventMappable {
-  const ResponseCreatedEvent({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.created')
+class ResponseCreatedEvent extends ResponseStreamEvent with ResponseCreatedEventMappable {
+  const ResponseCreatedEvent({required this.type, required this.response, required this.sequenceNumber});
 
   final ResponseCreatedEventType type;
   final ResponseModel response;
@@ -26,6 +22,4 @@ class ResponseCreatedEvent with ResponseCreatedEventMappable {
   final int sequenceNumber;
 
   static ResponseCreatedEvent fromJson(Map<String, dynamic> json) => ResponseCreatedEventMapper.fromJson(json);
-
 }
-

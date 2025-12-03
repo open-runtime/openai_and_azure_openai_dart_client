@@ -10,17 +10,13 @@ part 'create_thread_request_tool_resources_file_search.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateThreadRequestToolResourcesFileSearch with CreateThreadRequestToolResourcesFileSearchMappable {
-  const CreateThreadRequestToolResourcesFileSearch({
-    this.vectorStoreIds,
-    this.vectorStores,
-  });
+  const CreateThreadRequestToolResourcesFileSearch({this.vectorStoreIds, this.vectorStores});
 
   @MappableField(key: 'vector_store_ids')
   final List<String>? vectorStoreIds;
   @MappableField(key: 'vector_stores')
   final List<CreateThreadRequestToolResourcesFileSearchVectorStores>? vectorStores;
 
-  static CreateThreadRequestToolResourcesFileSearch fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchMapper.fromJson(json);
-
+  static CreateThreadRequestToolResourcesFileSearch fromJson(Map<String, dynamic> json) =>
+      CreateThreadRequestToolResourcesFileSearchMapper.fromJson(json);
 }
-

@@ -13,17 +13,12 @@ part 'on_your_data_endpoint_vectorization_source.mapper.dart';
 /// on a public Azure OpenAI endpoint call for embeddings.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataEndpointVectorizationSource with OnYourDataEndpointVectorizationSourceMappable {
-  const OnYourDataEndpointVectorizationSource({
-    required this.type,
-    this.authentication,
-    this.endpoint,
-  });
+  const OnYourDataEndpointVectorizationSource({required this.type, this.authentication, this.endpoint});
 
   final OnYourDataVectorizationSourceType type;
   final OnYourDataApiKeyAuthenticationOptions? authentication;
   final String? endpoint;
 
-  static OnYourDataEndpointVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataEndpointVectorizationSourceMapper.fromJson(json);
-
+  static OnYourDataEndpointVectorizationSource fromJson(Map<String, dynamic> json) =>
+      OnYourDataEndpointVectorizationSourceMapper.fromJson(json);
 }
-

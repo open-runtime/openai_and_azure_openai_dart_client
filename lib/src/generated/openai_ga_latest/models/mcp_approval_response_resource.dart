@@ -12,8 +12,8 @@ part 'mcp_approval_response_resource.mapper.dart';
 
 /// A response to an MCP approval request.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class McpApprovalResponseResource with McpApprovalResponseResourceMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
+class McpApprovalResponseResource extends ItemResource with McpApprovalResponseResourceMappable {
   const McpApprovalResponseResource({
     required this.type,
     required this.id,
@@ -29,7 +29,6 @@ class McpApprovalResponseResource with McpApprovalResponseResourceMappable {
   final bool approve;
   final String? reason;
 
-  static McpApprovalResponseResource fromJson(Map<String, dynamic> json) => McpApprovalResponseResourceMapper.fromJson(json);
-
+  static McpApprovalResponseResource fromJson(Map<String, dynamic> json) =>
+      McpApprovalResponseResourceMapper.fromJson(json);
 }
-

@@ -23,7 +23,6 @@ class ChatCompletionTokenLogprob with ChatCompletionTokenLogprobMappable {
   @MappableField(key: 'top_logprobs')
   final List<ChatCompletionTokenLogprobTopLogprobs> topLogprobs;
 
-  static ChatCompletionTokenLogprob fromJson(Map<String, dynamic> json) => ChatCompletionTokenLogprobMapper.fromJson(json);
-
+  static ChatCompletionTokenLogprob fromJson(Map<String, dynamic> json) =>
+      ChatCompletionTokenLogprobMapper.fromJson(json);
 }
-

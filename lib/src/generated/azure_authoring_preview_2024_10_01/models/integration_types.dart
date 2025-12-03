@@ -9,10 +9,10 @@ part 'integration_types.mapper.dart';
 /// List of Fine Tune integrations available.
 @MappableEnum(defaultValue: 'unknown')
 enum IntegrationTypes {
-  @MappableValue('wandb') 
+  @MappableValue('wandb')
   wandb,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum IntegrationTypes {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<IntegrationTypes> get $valuesDefined => values.where((value) => value != IntegrationTypes.unknown).toList();
+  static List<IntegrationTypes> get $valuesDefined =>
+      values.where((value) => value != IntegrationTypes.unknown).toList();
 }

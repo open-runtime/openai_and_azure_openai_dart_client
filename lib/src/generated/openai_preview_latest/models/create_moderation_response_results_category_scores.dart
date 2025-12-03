@@ -46,7 +46,6 @@ class CreateModerationResponseResultsCategoryScores with CreateModerationRespons
   @MappableField(key: 'violence/graphic')
   final num violenceGraphic;
 
-  static CreateModerationResponseResultsCategoryScores fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsCategoryScoresMapper.fromJson(json);
-
+  static CreateModerationResponseResultsCategoryScores fromJson(Map<String, dynamic> json) =>
+      CreateModerationResponseResultsCategoryScoresMapper.fromJson(json);
 }
-

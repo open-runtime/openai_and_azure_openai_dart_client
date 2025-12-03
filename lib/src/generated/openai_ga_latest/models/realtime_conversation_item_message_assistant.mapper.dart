@@ -8,7 +8,7 @@
 part of 'realtime_conversation_item_message_assistant.dart';
 
 class RealtimeConversationItemMessageAssistantMapper
-    extends ClassMapperBase<RealtimeConversationItemMessageAssistant> {
+    extends SubClassMapperBase<RealtimeConversationItemMessageAssistant> {
   RealtimeConversationItemMessageAssistantMapper._();
 
   static RealtimeConversationItemMessageAssistantMapper? _instance;
@@ -16,6 +16,9 @@ class RealtimeConversationItemMessageAssistantMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemMessageAssistantMapper._(),
+      );
+      RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RealtimeConversationItemMessageAssistantTypeMapper.ensureInitialized();
       RealtimeConversationItemMessageAssistantRoleMapper.ensureInitialized();
@@ -87,6 +90,14 @@ class RealtimeConversationItemMessageAssistantMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'message';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeConversationItemMapper.ensureInitialized();
 
   static RealtimeConversationItemMessageAssistant _instantiate(
     DecodingData data,
@@ -183,7 +194,7 @@ abstract class RealtimeConversationItemMessageAssistantCopyWith<
   $In extends RealtimeConversationItemMessageAssistant,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     RealtimeConversationItemMessageAssistantContent,
@@ -194,6 +205,7 @@ abstract class RealtimeConversationItemMessageAssistantCopyWith<
     >
   >
   get content;
+  @override
   $R call({
     RealtimeConversationItemMessageAssistantType? type,
     RealtimeConversationItemMessageAssistantRole? role,

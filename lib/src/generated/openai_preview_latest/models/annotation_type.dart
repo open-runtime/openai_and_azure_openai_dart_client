@@ -9,10 +9,10 @@ part 'annotation_type.mapper.dart';
 /// The type of the file citation. Always `file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum AnnotationType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

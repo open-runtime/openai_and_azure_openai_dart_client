@@ -17,12 +17,7 @@ part 'input_message.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InputMessage with InputMessageMappable {
-  const InputMessage({
-    required this.role,
-    required this.content,
-    this.type,
-    this.status,
-  });
+  const InputMessage({required this.role, required this.content, this.type, this.status});
 
   final InputMessageRole role;
   final InputMessageContentList content;
@@ -30,6 +25,4 @@ class InputMessage with InputMessageMappable {
   final InputMessageStatus? status;
 
   static InputMessage fromJson(Map<String, dynamic> json) => InputMessageMapper.fromJson(json);
-
 }
-

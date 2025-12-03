@@ -24,7 +24,6 @@ class RealtimeBetaServerEventResponseMcpCallCompleted with RealtimeBetaServerEve
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventResponseMcpCallCompleted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseMcpCallCompletedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseMcpCallCompleted fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseMcpCallCompletedMapper.fromJson(json);
 }
-

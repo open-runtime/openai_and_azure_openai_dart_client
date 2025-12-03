@@ -9,10 +9,10 @@ part 'key_press_action_type.mapper.dart';
 /// Specifies the event type. For a keypress action, this property is always set to `keypress`.
 @MappableEnum(defaultValue: 'unknown')
 enum KeyPressActionType {
-  @MappableValue('keypress') 
+  @MappableValue('keypress')
   keypress,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum KeyPressActionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<KeyPressActionType> get $valuesDefined => values.where((value) => value != KeyPressActionType.unknown).toList();
+  static List<KeyPressActionType> get $valuesDefined =>
+      values.where((value) => value != KeyPressActionType.unknown).toList();
 }

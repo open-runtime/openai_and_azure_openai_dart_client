@@ -8,7 +8,7 @@
 part of 'response_output_item_done_event.dart';
 
 class ResponseOutputItemDoneEventMapper
-    extends ClassMapperBase<ResponseOutputItemDoneEvent> {
+    extends SubClassMapperBase<ResponseOutputItemDoneEvent> {
   ResponseOutputItemDoneEventMapper._();
 
   static ResponseOutputItemDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseOutputItemDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseOutputItemDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseOutputItemDoneEventTypeMapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
     }
@@ -56,6 +57,14 @@ class ResponseOutputItemDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_item.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseOutputItemDoneEvent _instantiate(DecodingData data) {
     return ResponseOutputItemDoneEvent(
@@ -138,8 +147,9 @@ abstract class ResponseOutputItemDoneEventCopyWith<
   $In extends ResponseOutputItemDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   OutputItemCopyWith<$R, OutputItem, OutputItem> get item;
+  @override
   $R call({
     ResponseOutputItemDoneEventType? type,
     int? outputIndex,

@@ -12,18 +12,13 @@ part 'fine_tune_preference_request_input_input.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTunePreferenceRequestInputInput with FineTunePreferenceRequestInputInputMappable {
-  const FineTunePreferenceRequestInputInput({
-    this.messages,
-    this.tools,
-    this.parallelToolCalls,
-  });
+  const FineTunePreferenceRequestInputInput({this.messages, this.tools, this.parallelToolCalls});
 
   final List<FineTunePreferenceRequestInputInputMessagesUnion>? messages;
   final List<ChatCompletionTool>? tools;
   @MappableField(key: 'parallel_tool_calls')
   final ParallelToolCalls? parallelToolCalls;
 
-  static FineTunePreferenceRequestInputInput fromJson(Map<String, dynamic> json) => FineTunePreferenceRequestInputInputMapper.fromJson(json);
-
+  static FineTunePreferenceRequestInputInput fromJson(Map<String, dynamic> json) =>
+      FineTunePreferenceRequestInputInputMapper.fromJson(json);
 }
-

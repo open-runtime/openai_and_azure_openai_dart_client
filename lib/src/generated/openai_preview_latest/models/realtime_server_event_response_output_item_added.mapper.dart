@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_output_item_added.dart';
 
 class RealtimeServerEventResponseOutputItemAddedMapper
-    extends ClassMapperBase<RealtimeServerEventResponseOutputItemAdded> {
+    extends SubClassMapperBase<RealtimeServerEventResponseOutputItemAdded> {
   RealtimeServerEventResponseOutputItemAddedMapper._();
 
   static RealtimeServerEventResponseOutputItemAddedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseOutputItemAddedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseOutputItemAddedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseOutputItemAddedTypeMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
@@ -68,6 +69,14 @@ class RealtimeServerEventResponseOutputItemAddedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_item.added';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseOutputItemAdded _instantiate(
     DecodingData data,
@@ -169,13 +178,14 @@ abstract class RealtimeServerEventResponseOutputItemAddedCopyWith<
   $In extends RealtimeServerEventResponseOutputItemAdded,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeConversationItemCopyWith<
     $R,
     RealtimeConversationItem,
     RealtimeConversationItem
   >
   get item;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseOutputItemAddedType? type,

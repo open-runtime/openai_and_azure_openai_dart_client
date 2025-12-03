@@ -10,10 +10,10 @@ part 'output_item_type2.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemType2 {
-  @MappableValue('file_search_call') 
+  @MappableValue('file_search_call')
   fileSearchCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

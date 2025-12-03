@@ -11,15 +11,10 @@ part 'file_expiration_after.mapper.dart';
 /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileExpirationAfter with FileExpirationAfterMappable {
-  const FileExpirationAfter({
-    required this.anchor,
-    required this.seconds,
-  });
+  const FileExpirationAfter({required this.anchor, required this.seconds});
 
   final FileExpirationAfterAnchor anchor;
   final int seconds;
 
   static FileExpirationAfter fromJson(Map<String, dynamic> json) => FileExpirationAfterMapper.fromJson(json);
-
 }
-

@@ -9,20 +9,17 @@ import 'run_step_delta_step_details_tool_calls_code_output_logs_object_type.dart
 part 'run_step_delta_step_details_tool_calls_code_output_logs_object.mapper.dart';
 
 /// Text output from the Code Interpreter tool call as part of a run step.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject with RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMappable {
-  const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject({
-    required this.indexField,
-    required this.type,
-    this.logs,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
+class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject
+    extends RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion
+    with RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMappable {
+  const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject({required this.indexField, required this.type, this.logs});
 
   @MappableField(key: 'index')
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type;
   final String? logs;
 
-  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json);
 }
-

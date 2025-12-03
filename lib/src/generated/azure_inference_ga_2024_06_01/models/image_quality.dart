@@ -9,13 +9,13 @@ part 'image_quality.mapper.dart';
 /// The quality of the image that will be generated.
 @MappableEnum(defaultValue: 'unknown')
 enum ImageQuality {
-  @MappableValue('standard') 
+  @MappableValue('standard')
   standard,
 
-  @MappableValue('hd') 
+  @MappableValue('hd')
   hd,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

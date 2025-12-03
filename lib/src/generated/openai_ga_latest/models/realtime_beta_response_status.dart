@@ -11,22 +11,22 @@ part 'realtime_beta_response_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaResponseStatus {
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -35,5 +35,6 @@ enum RealtimeBetaResponseStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaResponseStatus> get $valuesDefined => values.where((value) => value != RealtimeBetaResponseStatus.unknown).toList();
+  static List<RealtimeBetaResponseStatus> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaResponseStatus.unknown).toList();
 }

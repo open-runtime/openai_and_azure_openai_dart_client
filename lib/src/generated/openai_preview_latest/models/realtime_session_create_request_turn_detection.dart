@@ -33,7 +33,6 @@ class RealtimeSessionCreateRequestTurnDetection with RealtimeSessionCreateReques
   @MappableField(key: 'interrupt_response')
   final bool interruptResponse;
 
-  static RealtimeSessionCreateRequestTurnDetection fromJson(Map<String, dynamic> json) => RealtimeSessionCreateRequestTurnDetectionMapper.fromJson(json);
-
+  static RealtimeSessionCreateRequestTurnDetection fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateRequestTurnDetectionMapper.fromJson(json);
 }
-

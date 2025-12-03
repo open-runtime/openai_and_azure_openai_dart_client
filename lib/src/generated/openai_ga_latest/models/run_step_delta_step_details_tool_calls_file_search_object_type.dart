@@ -9,10 +9,10 @@ part 'run_step_delta_step_details_tool_calls_file_search_object_type.mapper.dart
 /// The type of tool call. This is always going to be `file_search` for this type of tool call.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsToolCallsFileSearchObjectType {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDeltaStepDetailsToolCallsFileSearchObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsToolCallsFileSearchObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsToolCallsFileSearchObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsToolCallsFileSearchObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsToolCallsFileSearchObjectType.unknown).toList();
 }

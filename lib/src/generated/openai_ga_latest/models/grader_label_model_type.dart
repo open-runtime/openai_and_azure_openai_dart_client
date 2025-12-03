@@ -9,10 +9,10 @@ part 'grader_label_model_type.mapper.dart';
 /// The object type, which is always `label_model`.
 @MappableEnum(defaultValue: 'unknown')
 enum GraderLabelModelType {
-  @MappableValue('label_model') 
+  @MappableValue('label_model')
   labelModel,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum GraderLabelModelType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GraderLabelModelType> get $valuesDefined => values.where((value) => value != GraderLabelModelType.unknown).toList();
+  static List<GraderLabelModelType> get $valuesDefined =>
+      values.where((value) => value != GraderLabelModelType.unknown).toList();
 }

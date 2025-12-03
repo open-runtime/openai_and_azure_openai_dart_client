@@ -11,7 +11,14 @@ part 'create_fine_tuning_job_request_model_union.mapper.dart';
 /// The name of the model to fine-tune. You can select one of the.
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateFineTuningJobRequestModelUnionVariantEnum, CreateFineTuningJobRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateFineTuningJobRequestModelUnionVariantEnum,
+    CreateFineTuningJobRequestModelUnionVariantString,
+  ],
+)
 sealed class CreateFineTuningJobRequestModelUnion with CreateFineTuningJobRequestModelUnionMappable {
   const CreateFineTuningJobRequestModelUnion();
 
@@ -48,21 +55,19 @@ extension CreateFineTuningJobRequestModelUnionDeserializer on CreateFineTuningJo
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestModelUnionVariantEnum extends CreateFineTuningJobRequestModelUnion with CreateFineTuningJobRequestModelUnionVariantEnumMappable {
+class CreateFineTuningJobRequestModelUnionVariantEnum extends CreateFineTuningJobRequestModelUnion
+    with CreateFineTuningJobRequestModelUnionVariantEnumMappable {
   final CreateFineTuningJobRequestModelUnionEnum value;
 
-  const CreateFineTuningJobRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestModelUnionVariantString extends CreateFineTuningJobRequestModelUnion with CreateFineTuningJobRequestModelUnionVariantStringMappable {
+class CreateFineTuningJobRequestModelUnionVariantString extends CreateFineTuningJobRequestModelUnion
+    with CreateFineTuningJobRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateFineTuningJobRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

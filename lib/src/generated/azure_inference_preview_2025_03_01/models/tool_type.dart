@@ -10,10 +10,10 @@ part 'tool_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

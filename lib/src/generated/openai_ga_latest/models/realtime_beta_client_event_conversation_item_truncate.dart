@@ -38,7 +38,6 @@ class RealtimeBetaClientEventConversationItemTruncate with RealtimeBetaClientEve
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventConversationItemTruncate fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventConversationItemTruncateMapper.fromJson(json);
-
+  static RealtimeBetaClientEventConversationItemTruncate fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventConversationItemTruncateMapper.fromJson(json);
 }
-

@@ -10,17 +10,13 @@ import 'response_stream_event.dart';
 part 'response_audio_transcript_delta_event.mapper.dart';
 
 /// Emitted when there is a partial transcript of audio.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseAudioTranscriptDeltaEvent with ResponseAudioTranscriptDeltaEventMappable {
-  const ResponseAudioTranscriptDeltaEvent({
-    required this.type,
-    required this.delta,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.audio.transcript.delta')
+class ResponseAudioTranscriptDeltaEvent extends ResponseStreamEvent with ResponseAudioTranscriptDeltaEventMappable {
+  const ResponseAudioTranscriptDeltaEvent({required this.type, required this.delta});
 
   final ResponseAudioTranscriptDeltaEventType type;
   final String delta;
 
-  static ResponseAudioTranscriptDeltaEvent fromJson(Map<String, dynamic> json) => ResponseAudioTranscriptDeltaEventMapper.fromJson(json);
-
+  static ResponseAudioTranscriptDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseAudioTranscriptDeltaEventMapper.fromJson(json);
 }
-

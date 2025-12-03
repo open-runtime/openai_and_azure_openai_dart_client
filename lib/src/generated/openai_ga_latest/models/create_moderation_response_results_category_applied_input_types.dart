@@ -21,7 +21,8 @@ import 'create_moderation_response_results_category_applied_input_types_violence
 part 'create_moderation_response_results_category_applied_input_types.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateModerationResponseResultsCategoryAppliedInputTypes with CreateModerationResponseResultsCategoryAppliedInputTypesMappable {
+class CreateModerationResponseResultsCategoryAppliedInputTypes
+    with CreateModerationResponseResultsCategoryAppliedInputTypesMappable {
   const CreateModerationResponseResultsCategoryAppliedInputTypes({
     required this.hate,
     required this.hateThreatening,
@@ -60,7 +61,6 @@ class CreateModerationResponseResultsCategoryAppliedInputTypes with CreateModera
   @MappableField(key: 'violence/graphic')
   final List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic> violenceGraphic;
 
-  static CreateModerationResponseResultsCategoryAppliedInputTypes fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsCategoryAppliedInputTypesMapper.fromJson(json);
-
+  static CreateModerationResponseResultsCategoryAppliedInputTypes fromJson(Map<String, dynamic> json) =>
+      CreateModerationResponseResultsCategoryAppliedInputTypesMapper.fromJson(json);
 }
-

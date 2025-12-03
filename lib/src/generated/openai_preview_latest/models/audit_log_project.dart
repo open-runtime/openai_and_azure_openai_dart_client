@@ -8,15 +8,10 @@ part 'audit_log_project.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogProject with AuditLogProjectMappable {
-  const AuditLogProject({
-    this.id,
-    this.name,
-  });
+  const AuditLogProject({this.id, this.name});
 
   final String? id;
   final String? name;
 
   static AuditLogProject fromJson(Map<String, dynamic> json) => AuditLogProjectMapper.fromJson(json);
-
 }
-

@@ -10,13 +10,7 @@ part 'api_key_list.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ApiKeyList with ApiKeyListMappable {
-  const ApiKeyList({
-    this.objectField,
-    this.data,
-    this.hasMore,
-    this.firstId,
-    this.lastId,
-  });
+  const ApiKeyList({this.objectField, this.data, this.hasMore, this.firstId, this.lastId});
 
   @MappableField(key: 'object')
   final String? objectField;
@@ -29,6 +23,4 @@ class ApiKeyList with ApiKeyListMappable {
   final String? lastId;
 
   static ApiKeyList fromJson(Map<String, dynamic> json) => ApiKeyListMapper.fromJson(json);
-
 }
-

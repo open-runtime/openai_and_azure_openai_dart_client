@@ -82,7 +82,8 @@ abstract class ApiApi {
     @Query('api-version') required String apiVersion,
     @Part(name: 'file') required MultipartFile file,
     @Part(name: 'temperature') num? temperature = 0,
-    @Part(name: 'timestamp_granularities[]') List<TimestampGranularities>? timestampGranularities = const [TimestampGranularities.segment],
+    @Part(name: 'timestamp_granularities[]')
+    List<TimestampGranularities>? timestampGranularities = const [TimestampGranularities.segment],
     @Part(name: 'prompt') String? prompt,
     @Part(name: 'response_format') AudioResponseFormat? responseFormat,
     @Part(name: 'language') String? language,

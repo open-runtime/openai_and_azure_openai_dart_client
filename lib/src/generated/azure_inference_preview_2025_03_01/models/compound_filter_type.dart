@@ -9,13 +9,13 @@ part 'compound_filter_type.mapper.dart';
 /// Type of operation: `and` or `or`.
 @MappableEnum(defaultValue: 'unknown')
 enum CompoundFilterType {
-  @MappableValue('and') 
+  @MappableValue('and')
   and,
 
-  @MappableValue('or') 
+  @MappableValue('or')
   or,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum CompoundFilterType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CompoundFilterType> get $valuesDefined => values.where((value) => value != CompoundFilterType.unknown).toList();
+  static List<CompoundFilterType> get $valuesDefined =>
+      values.where((value) => value != CompoundFilterType.unknown).toList();
 }

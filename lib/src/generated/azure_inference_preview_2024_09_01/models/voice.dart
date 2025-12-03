@@ -9,25 +9,25 @@ part 'voice.mapper.dart';
 /// The voice to use for speech synthesis.
 @MappableEnum(defaultValue: 'unknown')
 enum Voice {
-  @MappableValue('alloy') 
+  @MappableValue('alloy')
   alloy,
 
-  @MappableValue('echo') 
+  @MappableValue('echo')
   echo,
 
-  @MappableValue('fable') 
+  @MappableValue('fable')
   fable,
 
-  @MappableValue('onyx') 
+  @MappableValue('onyx')
   onyx,
 
-  @MappableValue('nova') 
+  @MappableValue('nova')
   nova,
 
-  @MappableValue('shimmer') 
+  @MappableValue('shimmer')
   shimmer,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

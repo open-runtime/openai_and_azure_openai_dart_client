@@ -13,7 +13,11 @@ part 'tool_container_union.mapper.dart';
 /// The code interpreter container. Can be a container ID or an object that.
 /// specifies uploaded file IDs to make available to your code.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ToolContainerUnionCodeInterpreterContainerAuto, ToolContainerUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ToolContainerUnionCodeInterpreterContainerAuto, ToolContainerUnionVariantString],
+)
 sealed class ToolContainerUnion with ToolContainerUnionMappable {
   const ToolContainerUnion();
 
@@ -31,13 +35,13 @@ extension ToolContainerUnionDeserializer on ToolContainerUnion {
       return ToolContainerUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ToolContainerUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ToolContainerUnionCodeInterpreterContainerAuto extends ToolContainerUnion with ToolContainerUnionCodeInterpreterContainerAutoMappable {
+class ToolContainerUnionCodeInterpreterContainerAuto extends ToolContainerUnion
+    with ToolContainerUnionCodeInterpreterContainerAutoMappable {
   final CodeInterpreterContainerAutoType type;
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
@@ -55,7 +59,5 @@ class ToolContainerUnionCodeInterpreterContainerAuto extends ToolContainerUnion 
 class ToolContainerUnionVariantString extends ToolContainerUnion with ToolContainerUnionVariantStringMappable {
   final String value;
 
-  const ToolContainerUnionVariantString({
-    required this.value,
-  });
+  const ToolContainerUnionVariantString({required this.value});
 }

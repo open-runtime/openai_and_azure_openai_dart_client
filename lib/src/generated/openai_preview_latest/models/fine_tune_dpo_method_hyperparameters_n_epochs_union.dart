@@ -8,7 +8,14 @@ part 'fine_tune_dpo_method_hyperparameters_n_epochs_union.mapper.dart';
 
 /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneDpoMethodHyperparametersNEpochsUnionVariantString, FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneDpoMethodHyperparametersNEpochsUnionVariantString,
+    FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt,
+  ],
+)
 sealed class FineTuneDpoMethodHyperparametersNEpochsUnion with FineTuneDpoMethodHyperparametersNEpochsUnionMappable {
   const FineTuneDpoMethodHyperparametersNEpochsUnion();
 
@@ -33,26 +40,26 @@ extension FineTuneDpoMethodHyperparametersNEpochsUnionDeserializer on FineTuneDp
       return FineTuneDpoMethodHyperparametersNEpochsUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneDpoMethodHyperparametersNEpochsUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneDpoMethodHyperparametersNEpochsUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoMethodHyperparametersNEpochsUnionVariantString extends FineTuneDpoMethodHyperparametersNEpochsUnion with FineTuneDpoMethodHyperparametersNEpochsUnionVariantStringMappable {
+class FineTuneDpoMethodHyperparametersNEpochsUnionVariantString extends FineTuneDpoMethodHyperparametersNEpochsUnion
+    with FineTuneDpoMethodHyperparametersNEpochsUnionVariantStringMappable {
   final String value;
 
-  const FineTuneDpoMethodHyperparametersNEpochsUnionVariantString({
-    required this.value,
-  });
+  const FineTuneDpoMethodHyperparametersNEpochsUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt extends FineTuneDpoMethodHyperparametersNEpochsUnion with FineTuneDpoMethodHyperparametersNEpochsUnionVariantIntMappable {
+class FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt extends FineTuneDpoMethodHyperparametersNEpochsUnion
+    with FineTuneDpoMethodHyperparametersNEpochsUnionVariantIntMappable {
   final int value;
 
-  const FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt({
-    required this.value,
-  });
+  const FineTuneDpoMethodHyperparametersNEpochsUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

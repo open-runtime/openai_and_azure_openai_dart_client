@@ -7,17 +7,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'create_thread_request_tool_resources_file_search_vector_stores.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRequestToolResourcesFileSearchVectorStoresMappable {
-  const CreateThreadRequestToolResourcesFileSearchVectorStores({
-    this.fileIds,
-    this.metadata,
-  });
+class CreateThreadRequestToolResourcesFileSearchVectorStores
+    with CreateThreadRequestToolResourcesFileSearchVectorStoresMappable {
+  const CreateThreadRequestToolResourcesFileSearchVectorStores({this.fileIds, this.metadata});
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
   final dynamic? metadata;
 
-  static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
-
+  static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) =>
+      CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 }
-

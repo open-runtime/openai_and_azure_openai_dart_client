@@ -9,10 +9,10 @@ part 'grader_multi_type.mapper.dart';
 /// The object type, which is always `multi`.
 @MappableEnum(defaultValue: 'unknown')
 enum GraderMultiType {
-  @MappableValue('multi') 
+  @MappableValue('multi')
   multi,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -11,14 +11,9 @@ import 'tool.dart';
 part 'custom_tool_param.mapper.dart';
 
 /// A custom tool that processes input using a specified format. Learn more about   [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools)
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolParam with CustomToolParamMappable {
-  const CustomToolParam({
-    required this.name,
-    this.description,
-    this.format,
-    this.type = CustomToolParamType.custom,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class CustomToolParam extends Tool with CustomToolParamMappable {
+  const CustomToolParam({required this.name, this.description, this.format, this.type = CustomToolParamType.custom});
 
   final String name;
   final String? description;
@@ -26,6 +21,4 @@ class CustomToolParam with CustomToolParamMappable {
   final CustomToolParamType type;
 
   static CustomToolParam fromJson(Map<String, dynamic> json) => CustomToolParamMapper.fromJson(json);
-
 }
-

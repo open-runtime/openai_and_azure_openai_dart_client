@@ -9,10 +9,10 @@ part 'message_delta_content_image_file_object_type.mapper.dart';
 /// Always `image_file`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentImageFileObjectType {
-  @MappableValue('image_file') 
+  @MappableValue('image_file')
   imageFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageDeltaContentImageFileObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentImageFileObjectType> get $valuesDefined => values.where((value) => value != MessageDeltaContentImageFileObjectType.unknown).toList();
+  static List<MessageDeltaContentImageFileObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentImageFileObjectType.unknown).toList();
 }

@@ -8,13 +8,13 @@ part 'order_by.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum OrderBy {
-  @MappableValue('created_at') 
+  @MappableValue('created_at')
   createdAt,
 
-  @MappableValue('updated_at') 
+  @MappableValue('updated_at')
   updatedAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

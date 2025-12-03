@@ -41,6 +41,4 @@ class ModelResponseProperties with ModelResponsePropertiesMappable {
   final ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention? promptCacheRetention;
 
   static ModelResponseProperties fromJson(Map<String, dynamic> json) => ModelResponsePropertiesMapper.fromJson(json);
-
 }
-

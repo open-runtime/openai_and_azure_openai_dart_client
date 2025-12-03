@@ -19,7 +19,6 @@ class MessageDeltaContentImageFileObjectImageFile with MessageDeltaContentImageF
   @MappableField(key: 'file_id')
   final String? fileId;
 
-  static MessageDeltaContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) => MessageDeltaContentImageFileObjectImageFileMapper.fromJson(json);
-
+  static MessageDeltaContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentImageFileObjectImageFileMapper.fromJson(json);
 }
-

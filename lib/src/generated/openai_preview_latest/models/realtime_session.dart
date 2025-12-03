@@ -60,6 +60,4 @@ class RealtimeSession with RealtimeSessionMappable {
   final RealtimeSessionMaxResponseOutputTokensUnion? maxResponseOutputTokens;
 
   static RealtimeSession fromJson(Map<String, dynamic> json) => RealtimeSessionMapper.fromJson(json);
-
 }
-

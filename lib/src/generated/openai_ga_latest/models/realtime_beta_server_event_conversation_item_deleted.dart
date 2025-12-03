@@ -24,7 +24,6 @@ class RealtimeBetaServerEventConversationItemDeleted with RealtimeBetaServerEven
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventConversationItemDeleted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemDeletedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemDeleted fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemDeletedMapper.fromJson(json);
 }
-

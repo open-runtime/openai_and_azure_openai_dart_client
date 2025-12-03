@@ -8,14 +8,11 @@ part 'create_fine_tuning_checkpoint_permission_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateFineTuningCheckpointPermissionRequest with CreateFineTuningCheckpointPermissionRequestMappable {
-  const CreateFineTuningCheckpointPermissionRequest({
-    required this.projectIds,
-  });
+  const CreateFineTuningCheckpointPermissionRequest({required this.projectIds});
 
   @MappableField(key: 'project_ids')
   final List<String> projectIds;
 
-  static CreateFineTuningCheckpointPermissionRequest fromJson(Map<String, dynamic> json) => CreateFineTuningCheckpointPermissionRequestMapper.fromJson(json);
-
+  static CreateFineTuningCheckpointPermissionRequest fromJson(Map<String, dynamic> json) =>
+      CreateFineTuningCheckpointPermissionRequestMapper.fromJson(json);
 }
-

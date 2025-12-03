@@ -7,13 +7,14 @@
 
 part of 'wait.dart';
 
-class WaitMapper extends ClassMapperBase<Wait> {
+class WaitMapper extends SubClassMapperBase<Wait> {
   WaitMapper._();
 
   static WaitMapper? _instance;
   static WaitMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WaitMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       WaitTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -36,6 +37,14 @@ class WaitMapper extends ClassMapperBase<Wait> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'wait';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Wait _instantiate(DecodingData data) {
     return Wait(type: data.dec(_f$type));
@@ -86,7 +95,8 @@ extension WaitValueCopy<$R, $Out> on ObjectCopyWith<$R, Wait, $Out> {
 }
 
 abstract class WaitCopyWith<$R, $In extends Wait, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({WaitType? type});
   WaitCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

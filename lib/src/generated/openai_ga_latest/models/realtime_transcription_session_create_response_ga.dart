@@ -12,8 +12,9 @@ part 'realtime_transcription_session_create_response_ga.mapper.dart';
 
 /// A Realtime transcription session configuration object.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeTranscriptionSessionCreateResponseGa with RealtimeTranscriptionSessionCreateResponseGaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
+class RealtimeTranscriptionSessionCreateResponseGa extends RealtimeCreateClientSecretResponseSessionUnion
+    with RealtimeTranscriptionSessionCreateResponseGaMappable {
   const RealtimeTranscriptionSessionCreateResponseGa({
     required this.type,
     required this.id,
@@ -33,7 +34,6 @@ class RealtimeTranscriptionSessionCreateResponseGa with RealtimeTranscriptionSes
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateResponseGaAudio? realtimeTranscriptionSessionCreateResponseGaAudio;
 
-  static RealtimeTranscriptionSessionCreateResponseGa fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseGaMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateResponseGa fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateResponseGaMapper.fromJson(json);
 }
-

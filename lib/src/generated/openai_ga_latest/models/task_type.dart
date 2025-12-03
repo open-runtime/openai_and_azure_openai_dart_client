@@ -8,13 +8,13 @@ part 'task_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum TaskType {
-  @MappableValue('custom') 
+  @MappableValue('custom')
   custom,
 
-  @MappableValue('thought') 
+  @MappableValue('thought')
   thought,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

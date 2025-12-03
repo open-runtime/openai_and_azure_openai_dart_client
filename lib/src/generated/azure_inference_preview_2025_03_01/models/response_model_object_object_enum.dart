@@ -11,10 +11,10 @@ part 'response_model_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseModelObjectObjectEnum {
-  @MappableValue('response') 
+  @MappableValue('response')
   response,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseModelObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseModelObjectObjectEnum> get $valuesDefined => values.where((value) => value != ResponseModelObjectObjectEnum.unknown).toList();
+  static List<ResponseModelObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ResponseModelObjectObjectEnum.unknown).toList();
 }

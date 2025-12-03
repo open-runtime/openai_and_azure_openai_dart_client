@@ -9,10 +9,10 @@ part 'code_interpreter_output_logs_type.mapper.dart';
 /// The type of the output. Always `logs`.
 @MappableEnum(defaultValue: 'unknown')
 enum CodeInterpreterOutputLogsType {
-  @MappableValue('logs') 
+  @MappableValue('logs')
   logs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CodeInterpreterOutputLogsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CodeInterpreterOutputLogsType> get $valuesDefined => values.where((value) => value != CodeInterpreterOutputLogsType.unknown).toList();
+  static List<CodeInterpreterOutputLogsType> get $valuesDefined =>
+      values.where((value) => value != CodeInterpreterOutputLogsType.unknown).toList();
 }

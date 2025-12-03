@@ -10,10 +10,10 @@ part 'conversation_item_type7.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ConversationItemType7 {
-  @MappableValue('code_interpreter_call') 
+  @MappableValue('code_interpreter_call')
   codeInterpreterCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ConversationItemType7 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ConversationItemType7> get $valuesDefined => values.where((value) => value != ConversationItemType7.unknown).toList();
+  static List<ConversationItemType7> get $valuesDefined =>
+      values.where((value) => value != ConversationItemType7.unknown).toList();
 }

@@ -29,6 +29,4 @@ class VideoListResource with VideoListResourceMappable {
   final dynamic objectField;
 
   static VideoListResource fromJson(Map<String, dynamic> json) => VideoListResourceMapper.fromJson(json);
-
 }
-

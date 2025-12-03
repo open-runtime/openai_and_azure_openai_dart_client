@@ -9,14 +9,12 @@ import 'noise_reduction_type.dart';
 part 'realtime_session_create_response_audio_input_noise_reduction.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseAudioInputNoiseReduction with RealtimeSessionCreateResponseAudioInputNoiseReductionMappable {
-  const RealtimeSessionCreateResponseAudioInputNoiseReduction({
-    this.type,
-  });
+class RealtimeSessionCreateResponseAudioInputNoiseReduction
+    with RealtimeSessionCreateResponseAudioInputNoiseReductionMappable {
+  const RealtimeSessionCreateResponseAudioInputNoiseReduction({this.type});
 
   final NoiseReductionType? type;
 
-  static RealtimeSessionCreateResponseAudioInputNoiseReduction fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioInputNoiseReductionMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseAudioInputNoiseReduction fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseAudioInputNoiseReductionMapper.fromJson(json);
 }
-

@@ -29,6 +29,4 @@ class ProjectServiceAccount with ProjectServiceAccountMappable {
   final int createdAt;
 
   static ProjectServiceAccount fromJson(Map<String, dynamic> json) => ProjectServiceAccountMapper.fromJson(json);
-
 }
-

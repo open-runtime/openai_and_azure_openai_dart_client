@@ -8,15 +8,10 @@ part 'error2.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Error2 with Error2Mappable {
-  const Error2({
-    required this.code,
-    required this.message,
-  });
+  const Error2({required this.code, required this.message});
 
   final String code;
   final String message;
 
   static Error2 fromJson(Map<String, dynamic> json) => Error2Mapper.fromJson(json);
-
 }
-

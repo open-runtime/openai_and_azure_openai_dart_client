@@ -12,15 +12,10 @@ part 'done_event.mapper.dart';
 /// Occurs when a stream ends.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DoneEvent with DoneEventMappable {
-  const DoneEvent({
-    required this.event,
-    required this.data,
-  });
+  const DoneEvent({required this.event, required this.data});
 
   final DoneEventEvent event;
   final DoneEventData data;
 
   static DoneEvent fromJson(Map<String, dynamic> json) => DoneEventMapper.fromJson(json);
-
 }
-

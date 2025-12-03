@@ -10,13 +10,9 @@ part 'validate_grader_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ValidateGraderResponse with ValidateGraderResponseMappable {
-  const ValidateGraderResponse({
-    this.grader,
-  });
+  const ValidateGraderResponse({this.grader});
 
   final ValidateGraderResponseGraderUnion? grader;
 
   static ValidateGraderResponse fromJson(Map<String, dynamic> json) => ValidateGraderResponseMapper.fromJson(json);
-
 }
-

@@ -11,17 +11,12 @@ import 'response_stream_event.dart';
 part 'response_in_progress_event.mapper.dart';
 
 /// Emitted when the response is in progress.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseInProgressEvent with ResponseInProgressEventMappable {
-  const ResponseInProgressEvent({
-    required this.type,
-    required this.response,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.in_progress')
+class ResponseInProgressEvent extends ResponseStreamEvent with ResponseInProgressEventMappable {
+  const ResponseInProgressEvent({required this.type, required this.response});
 
   final ResponseInProgressEventType type;
   final ResponseModel response;
 
   static ResponseInProgressEvent fromJson(Map<String, dynamic> json) => ResponseInProgressEventMapper.fromJson(json);
-
 }
-

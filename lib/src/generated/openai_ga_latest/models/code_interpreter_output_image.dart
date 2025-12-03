@@ -9,17 +9,13 @@ import 'code_interpreter_output_image_type.dart';
 part 'code_interpreter_output_image.mapper.dart';
 
 /// The image output from the code interpreter.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterOutputImage with CodeInterpreterOutputImageMappable {
-  const CodeInterpreterOutputImage({
-    required this.url,
-    this.type = CodeInterpreterOutputImageType.image,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
+class CodeInterpreterOutputImage extends OutputItemOutputsUnion with CodeInterpreterOutputImageMappable {
+  const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image});
 
   final String url;
   final CodeInterpreterOutputImageType type;
 
-  static CodeInterpreterOutputImage fromJson(Map<String, dynamic> json) => CodeInterpreterOutputImageMapper.fromJson(json);
-
+  static CodeInterpreterOutputImage fromJson(Map<String, dynamic> json) =>
+      CodeInterpreterOutputImageMapper.fromJson(json);
 }
-

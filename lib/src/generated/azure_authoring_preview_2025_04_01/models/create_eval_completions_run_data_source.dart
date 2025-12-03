@@ -31,7 +31,6 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
   @MappableField(key: 'sampling_params')
   final CreateEvalCompletionsRunDataSourceSamplingParams? createEvalCompletionsRunDataSourceSamplingParams;
 
-  static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
 }
-

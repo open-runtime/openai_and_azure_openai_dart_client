@@ -8,7 +8,7 @@
 part of 'response_function_call_arguments_done_event.dart';
 
 class ResponseFunctionCallArgumentsDoneEventMapper
-    extends ClassMapperBase<ResponseFunctionCallArgumentsDoneEvent> {
+    extends SubClassMapperBase<ResponseFunctionCallArgumentsDoneEvent> {
   ResponseFunctionCallArgumentsDoneEventMapper._();
 
   static ResponseFunctionCallArgumentsDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseFunctionCallArgumentsDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFunctionCallArgumentsDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseFunctionCallArgumentsDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -56,6 +57,14 @@ class ResponseFunctionCallArgumentsDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.function_call_arguments.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseFunctionCallArgumentsDoneEvent _instantiate(
     DecodingData data,
@@ -146,7 +155,8 @@ abstract class ResponseFunctionCallArgumentsDoneEventCopyWith<
   $In extends ResponseFunctionCallArgumentsDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseFunctionCallArgumentsDoneEventType? type,
     String? itemId,

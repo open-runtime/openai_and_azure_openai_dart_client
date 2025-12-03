@@ -8,11 +8,7 @@ part 'delete_model_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteModelResponse with DeleteModelResponseMappable {
-  const DeleteModelResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectField,
-  });
+  const DeleteModelResponse({required this.id, required this.deleted, required this.objectField});
 
   final String id;
   final bool deleted;
@@ -20,6 +16,4 @@ class DeleteModelResponse with DeleteModelResponseMappable {
   final String objectField;
 
   static DeleteModelResponse fromJson(Map<String, dynamic> json) => DeleteModelResponseMapper.fromJson(json);
-
 }
-

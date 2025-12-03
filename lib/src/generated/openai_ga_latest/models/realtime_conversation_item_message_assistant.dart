@@ -14,8 +14,9 @@ import 'realtime_conversation_item_message_assistant_type.dart';
 part 'realtime_conversation_item_message_assistant.mapper.dart';
 
 /// An assistant message item in a Realtime conversation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeConversationItemMessageAssistant with RealtimeConversationItemMessageAssistantMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message')
+class RealtimeConversationItemMessageAssistant extends RealtimeConversationItem
+    with RealtimeConversationItemMessageAssistantMappable {
   const RealtimeConversationItemMessageAssistant({
     required this.type,
     required this.role,
@@ -33,7 +34,6 @@ class RealtimeConversationItemMessageAssistant with RealtimeConversationItemMess
   final RealtimeConversationItemMessageAssistantObjectObjectEnum? objectEnum;
   final RealtimeConversationItemMessageAssistantStatus? status;
 
-  static RealtimeConversationItemMessageAssistant fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageAssistantMapper.fromJson(json);
-
+  static RealtimeConversationItemMessageAssistant fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemMessageAssistantMapper.fromJson(json);
 }
-

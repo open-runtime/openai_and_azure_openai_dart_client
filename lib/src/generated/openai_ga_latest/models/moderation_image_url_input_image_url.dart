@@ -8,13 +8,10 @@ part 'moderation_image_url_input_image_url.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModerationImageUrlInputImageUrl with ModerationImageUrlInputImageUrlMappable {
-  const ModerationImageUrlInputImageUrl({
-    required this.url,
-  });
+  const ModerationImageUrlInputImageUrl({required this.url});
 
   final String url;
 
-  static ModerationImageUrlInputImageUrl fromJson(Map<String, dynamic> json) => ModerationImageUrlInputImageUrlMapper.fromJson(json);
-
+  static ModerationImageUrlInputImageUrl fromJson(Map<String, dynamic> json) =>
+      ModerationImageUrlInputImageUrlMapper.fromJson(json);
 }
-

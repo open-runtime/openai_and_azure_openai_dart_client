@@ -10,12 +10,7 @@ part 'create_vector_store_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreRequest with CreateVectorStoreRequestMappable {
-  const CreateVectorStoreRequest({
-    this.fileIds,
-    this.name,
-    this.expiresAfter,
-    this.metadata,
-  });
+  const CreateVectorStoreRequest({this.fileIds, this.name, this.expiresAfter, this.metadata});
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
@@ -25,6 +20,4 @@ class CreateVectorStoreRequest with CreateVectorStoreRequestMappable {
   final dynamic? metadata;
 
   static CreateVectorStoreRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreRequestMapper.fromJson(json);
-
 }
-

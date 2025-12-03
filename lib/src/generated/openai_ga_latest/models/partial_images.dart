@@ -10,8 +10,5 @@ part 'partial_images.mapper.dart';
 class PartialImages with PartialImagesMappable {
   const PartialImages();
 
-
   static PartialImages fromJson(Map<String, dynamic> json) => PartialImagesMapper.fromJson(json);
-
 }
-

@@ -8,19 +8,19 @@ part 'video_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VideoStatus {
-  @MappableValue('queued') 
+  @MappableValue('queued')
   queued,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -8,7 +8,7 @@
 part of 'response_mcp_call_completed_event.dart';
 
 class ResponseMcpCallCompletedEventMapper
-    extends ClassMapperBase<ResponseMcpCallCompletedEvent> {
+    extends SubClassMapperBase<ResponseMcpCallCompletedEvent> {
   ResponseMcpCallCompletedEventMapper._();
 
   static ResponseMcpCallCompletedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallCompletedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -61,6 +62,14 @@ class ResponseMcpCallCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpCallCompletedEvent _instantiate(DecodingData data) {
     return ResponseMcpCallCompletedEvent(
@@ -144,7 +153,8 @@ abstract class ResponseMcpCallCompletedEventCopyWith<
   $In extends ResponseMcpCallCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpCallCompletedEventType? type,
     String? itemId,

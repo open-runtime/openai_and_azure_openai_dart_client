@@ -9,10 +9,10 @@ part 'item_reference_param_type.mapper.dart';
 /// The type of item to reference. Always `item_reference`.
 @MappableEnum(defaultValue: 'unknown')
 enum ItemReferenceParamType {
-  @MappableValue('item_reference') 
+  @MappableValue('item_reference')
   itemReference,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ItemReferenceParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemReferenceParamType> get $valuesDefined => values.where((value) => value != ItemReferenceParamType.unknown).toList();
+  static List<ItemReferenceParamType> get $valuesDefined =>
+      values.where((value) => value != ItemReferenceParamType.unknown).toList();
 }

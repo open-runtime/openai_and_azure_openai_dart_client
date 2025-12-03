@@ -26,7 +26,6 @@ class FunctionToolCallOutputResource with FunctionToolCallOutputResourceMappable
   final String output;
   final FunctionToolCallOutputStatus? status;
 
-  static FunctionToolCallOutputResource fromJson(Map<String, dynamic> json) => FunctionToolCallOutputResourceMapper.fromJson(json);
-
+  static FunctionToolCallOutputResource fromJson(Map<String, dynamic> json) =>
+      FunctionToolCallOutputResourceMapper.fromJson(json);
 }
-

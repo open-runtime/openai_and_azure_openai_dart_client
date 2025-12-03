@@ -9,13 +9,13 @@ part 'message_delta_object_delta_role.mapper.dart';
 /// The entity that produced the message. One of `user` or `assistant`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaObjectDeltaRole {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum MessageDeltaObjectDeltaRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaObjectDeltaRole> get $valuesDefined => values.where((value) => value != MessageDeltaObjectDeltaRole.unknown).toList();
+  static List<MessageDeltaObjectDeltaRole> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaObjectDeltaRole.unknown).toList();
 }

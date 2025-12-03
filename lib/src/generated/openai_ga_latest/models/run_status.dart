@@ -9,34 +9,34 @@ part 'run_status.mapper.dart';
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStatus {
-  @MappableValue('queued') 
+  @MappableValue('queued')
   queued,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('requires_action') 
+  @MappableValue('requires_action')
   requiresAction,
 
-  @MappableValue('cancelling') 
+  @MappableValue('cancelling')
   cancelling,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

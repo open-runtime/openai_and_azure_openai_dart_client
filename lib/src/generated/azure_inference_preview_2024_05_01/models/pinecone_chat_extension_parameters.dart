@@ -51,7 +51,6 @@ class PineconeChatExtensionParameters with PineconeChatExtensionParametersMappab
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static PineconeChatExtensionParameters fromJson(Map<String, dynamic> json) => PineconeChatExtensionParametersMapper.fromJson(json);
-
+  static PineconeChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      PineconeChatExtensionParametersMapper.fromJson(json);
 }
-

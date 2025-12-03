@@ -35,12 +35,17 @@ part 'item_resource.mapper.dart';
 
 /// Content item used to generate a response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ItemResourceMessage,
-  ItemResourceFileSearchCall,
-  ItemResourceComputerCall,
-  ItemResourceWebSearchCall
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ItemResourceMessage,
+    ItemResourceFileSearchCall,
+    ItemResourceComputerCall,
+    ItemResourceWebSearchCall,
+  ],
+)
 sealed class ItemResource with ItemResourceMappable {
   const ItemResource();
 
@@ -50,24 +55,20 @@ sealed class ItemResource with ItemResourceMappable {
 }
 
 extension ItemResourceUnionDeserializer on ItemResource {
-  static ItemResource tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ItemResource tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ItemResourceMessage: 'message',
-      ItemResourceFileSearchCall: 'file_search_call',
-      ItemResourceComputerCall: 'computer_call',
-      ItemResourceWebSearchCall: 'web_search_call',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      ComputerToolCall: 'computer_call',
+      WebSearchToolCall: 'web_search_call',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ItemResourceMessage] => ItemResourceMessageMapper.fromJson(json),
-      _ when value == effective[ItemResourceFileSearchCall] => ItemResourceFileSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceComputerCall] => ItemResourceComputerCallMapper.fromJson(json),
-      _ when value == effective[ItemResourceWebSearchCall] => ItemResourceWebSearchCallMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[WebSearchToolCall] => WebSearchToolCallMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ItemResource'),
     };
   }
@@ -134,9 +135,5 @@ class ItemResourceWebSearchCall extends ItemResource with ItemResourceWebSearchC
   final ItemResourceType4 type;
   final ItemResourceStatus3 status;
 
-  const ItemResourceWebSearchCall({
-    required this.id,
-    required this.type,
-    required this.status,
-  });
+  const ItemResourceWebSearchCall({required this.id, required this.type, required this.status});
 }

@@ -10,10 +10,10 @@ part 'response_mcp_call_arguments_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseMcpCallArgumentsDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.mcp_call_arguments.delta`.
-  @MappableValue('response.mcp_call_arguments.delta') 
+  @MappableValue('response.mcp_call_arguments.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseMcpCallArgumentsDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseMcpCallArgumentsDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseMcpCallArgumentsDeltaEventType.unknown).toList();
+  static List<ResponseMcpCallArgumentsDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseMcpCallArgumentsDeltaEventType.unknown).toList();
 }

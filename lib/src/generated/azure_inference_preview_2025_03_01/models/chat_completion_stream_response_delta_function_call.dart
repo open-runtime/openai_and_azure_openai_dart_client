@@ -8,15 +8,11 @@ part 'chat_completion_stream_response_delta_function_call.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionStreamResponseDeltaFunctionCall with ChatCompletionStreamResponseDeltaFunctionCallMappable {
-  const ChatCompletionStreamResponseDeltaFunctionCall({
-    this.arguments,
-    this.name,
-  });
+  const ChatCompletionStreamResponseDeltaFunctionCall({this.arguments, this.name});
 
   final String? arguments;
   final String? name;
 
-  static ChatCompletionStreamResponseDeltaFunctionCall fromJson(Map<String, dynamic> json) => ChatCompletionStreamResponseDeltaFunctionCallMapper.fromJson(json);
-
+  static ChatCompletionStreamResponseDeltaFunctionCall fromJson(Map<String, dynamic> json) =>
+      ChatCompletionStreamResponseDeltaFunctionCallMapper.fromJson(json);
 }
-

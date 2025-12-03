@@ -31,7 +31,6 @@ class ComputerToolCallOutputResource with ComputerToolCallOutputResourceMappable
   final ComputerToolCallOutputStatus? status;
   final ComputerToolCallOutputType type;
 
-  static ComputerToolCallOutputResource fromJson(Map<String, dynamic> json) => ComputerToolCallOutputResourceMapper.fromJson(json);
-
+  static ComputerToolCallOutputResource fromJson(Map<String, dynamic> json) =>
+      ComputerToolCallOutputResourceMapper.fromJson(json);
 }
-

@@ -23,6 +23,4 @@ class DeletedVideoResource with DeletedVideoResourceMappable {
   final DeletedVideoResourceObjectObjectEnum objectEnum;
 
   static DeletedVideoResource fromJson(Map<String, dynamic> json) => DeletedVideoResourceMapper.fromJson(json);
-
 }
-

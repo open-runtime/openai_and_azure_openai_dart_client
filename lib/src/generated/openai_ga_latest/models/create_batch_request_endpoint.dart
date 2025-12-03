@@ -10,26 +10,26 @@ part 'create_batch_request_endpoint.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum CreateBatchRequestEndpoint {
   /// Incorrect name has been replaced. Original name: `/v1/responses`.
-  @MappableValue('/v1/responses') 
+  @MappableValue('/v1/responses')
   undefined0,
 
   /// Incorrect name has been replaced. Original name: `/v1/chat/completions`.
-  @MappableValue('/v1/chat/completions') 
+  @MappableValue('/v1/chat/completions')
   undefined1,
 
   /// Incorrect name has been replaced. Original name: `/v1/embeddings`.
-  @MappableValue('/v1/embeddings') 
+  @MappableValue('/v1/embeddings')
   undefined2,
 
   /// Incorrect name has been replaced. Original name: `/v1/completions`.
-  @MappableValue('/v1/completions') 
+  @MappableValue('/v1/completions')
   undefined3,
 
   /// Incorrect name has been replaced. Original name: `/v1/moderations`.
-  @MappableValue('/v1/moderations') 
+  @MappableValue('/v1/moderations')
   undefined4,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -38,5 +38,6 @@ enum CreateBatchRequestEndpoint {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateBatchRequestEndpoint> get $valuesDefined => values.where((value) => value != CreateBatchRequestEndpoint.unknown).toList();
+  static List<CreateBatchRequestEndpoint> get $valuesDefined =>
+      values.where((value) => value != CreateBatchRequestEndpoint.unknown).toList();
 }

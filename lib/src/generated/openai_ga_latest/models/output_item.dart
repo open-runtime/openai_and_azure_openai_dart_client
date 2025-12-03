@@ -97,25 +97,30 @@ import 'web_search_tool_call_type.dart';
 
 part 'output_item.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputItemMessage,
-  OutputItemFileSearchCall,
-  OutputItemFunctionCall,
-  OutputItemWebSearchCall,
-  OutputItemComputerCall,
-  OutputItemReasoning,
-  OutputItemImageGenerationCall,
-  OutputItemCodeInterpreterCall,
-  OutputItemLocalShellCall,
-  OutputItemShellCall,
-  OutputItemShellCallOutput,
-  OutputItemApplyPatchCall,
-  OutputItemApplyPatchCallOutput,
-  OutputItemMcpCall,
-  OutputItemMcpListTools,
-  OutputItemMcpApprovalRequest,
-  OutputItemCustomToolCall
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    OutputItemMessage,
+    OutputItemFileSearchCall,
+    OutputItemFunctionCall,
+    OutputItemWebSearchCall,
+    OutputItemComputerCall,
+    OutputItemReasoning,
+    OutputItemImageGenerationCall,
+    OutputItemCodeInterpreterCall,
+    OutputItemLocalShellCall,
+    OutputItemShellCall,
+    OutputItemShellCallOutput,
+    OutputItemApplyPatchCall,
+    OutputItemApplyPatchCallOutput,
+    OutputItemMcpCall,
+    OutputItemMcpListTools,
+    OutputItemMcpApprovalRequest,
+    OutputItemCustomToolCall,
+  ],
+)
 sealed class OutputItem with OutputItemMappable {
   const OutputItem();
 
@@ -125,50 +130,46 @@ sealed class OutputItem with OutputItemMappable {
 }
 
 extension OutputItemUnionDeserializer on OutputItem {
-  static OutputItem tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static OutputItem tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      OutputItemMessage: 'message',
-      OutputItemFileSearchCall: 'file_search_call',
-      OutputItemFunctionCall: 'function_call',
-      OutputItemWebSearchCall: 'web_search_call',
-      OutputItemComputerCall: 'computer_call',
-      OutputItemReasoning: 'reasoning',
-      OutputItemImageGenerationCall: 'image_generation_call',
-      OutputItemCodeInterpreterCall: 'code_interpreter_call',
-      OutputItemLocalShellCall: 'local_shell_call',
-      OutputItemShellCall: 'shell_call',
-      OutputItemShellCallOutput: 'shell_call_output',
-      OutputItemApplyPatchCall: 'apply_patch_call',
-      OutputItemApplyPatchCallOutput: 'apply_patch_call_output',
-      OutputItemMcpCall: 'mcp_call',
-      OutputItemMcpListTools: 'mcp_list_tools',
-      OutputItemMcpApprovalRequest: 'mcp_approval_request',
-      OutputItemCustomToolCall: 'custom_tool_call',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      FunctionToolCall: 'function_call',
+      WebSearchToolCall: 'web_search_call',
+      ComputerToolCall: 'computer_call',
+      ReasoningItem: 'reasoning',
+      ImageGenToolCall: 'image_generation_call',
+      CodeInterpreterToolCall: 'code_interpreter_call',
+      LocalShellToolCall: 'local_shell_call',
+      FunctionShellCall: 'shell_call',
+      FunctionShellCallOutput: 'shell_call_output',
+      ApplyPatchToolCall: 'apply_patch_call',
+      ApplyPatchToolCallOutput: 'apply_patch_call_output',
+      McpToolCall: 'mcp_call',
+      McpListTools: 'mcp_list_tools',
+      McpApprovalRequest: 'mcp_approval_request',
+      CustomToolCall: 'custom_tool_call',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputItemMessage] => OutputItemMessageMapper.fromJson(json),
-      _ when value == effective[OutputItemFileSearchCall] => OutputItemFileSearchCallMapper.fromJson(json),
-      _ when value == effective[OutputItemFunctionCall] => OutputItemFunctionCallMapper.fromJson(json),
-      _ when value == effective[OutputItemWebSearchCall] => OutputItemWebSearchCallMapper.fromJson(json),
-      _ when value == effective[OutputItemComputerCall] => OutputItemComputerCallMapper.fromJson(json),
-      _ when value == effective[OutputItemReasoning] => OutputItemReasoningMapper.fromJson(json),
-      _ when value == effective[OutputItemImageGenerationCall] => OutputItemImageGenerationCallMapper.fromJson(json),
-      _ when value == effective[OutputItemCodeInterpreterCall] => OutputItemCodeInterpreterCallMapper.fromJson(json),
-      _ when value == effective[OutputItemLocalShellCall] => OutputItemLocalShellCallMapper.fromJson(json),
-      _ when value == effective[OutputItemShellCall] => OutputItemShellCallMapper.fromJson(json),
-      _ when value == effective[OutputItemShellCallOutput] => OutputItemShellCallOutputMapper.fromJson(json),
-      _ when value == effective[OutputItemApplyPatchCall] => OutputItemApplyPatchCallMapper.fromJson(json),
-      _ when value == effective[OutputItemApplyPatchCallOutput] => OutputItemApplyPatchCallOutputMapper.fromJson(json),
-      _ when value == effective[OutputItemMcpCall] => OutputItemMcpCallMapper.fromJson(json),
-      _ when value == effective[OutputItemMcpListTools] => OutputItemMcpListToolsMapper.fromJson(json),
-      _ when value == effective[OutputItemMcpApprovalRequest] => OutputItemMcpApprovalRequestMapper.fromJson(json),
-      _ when value == effective[OutputItemCustomToolCall] => OutputItemCustomToolCallMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionToolCall] => FunctionToolCallMapper.fromJson(json),
+      _ when value == effective[WebSearchToolCall] => WebSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[ReasoningItem] => ReasoningItemMapper.fromJson(json),
+      _ when value == effective[ImageGenToolCall] => ImageGenToolCallMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterToolCall] => CodeInterpreterToolCallMapper.fromJson(json),
+      _ when value == effective[LocalShellToolCall] => LocalShellToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionShellCall] => FunctionShellCallMapper.fromJson(json),
+      _ when value == effective[FunctionShellCallOutput] => FunctionShellCallOutputMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolCall] => ApplyPatchToolCallMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolCallOutput] => ApplyPatchToolCallOutputMapper.fromJson(json),
+      _ when value == effective[McpToolCall] => McpToolCallMapper.fromJson(json),
+      _ when value == effective[McpListTools] => McpListToolsMapper.fromJson(json),
+      _ when value == effective[McpApprovalRequest] => McpApprovalRequestMapper.fromJson(json),
+      _ when value == effective[CustomToolCall] => CustomToolCallMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputItem'),
     };
   }
@@ -235,12 +236,7 @@ class OutputItemWebSearchCall extends OutputItem with OutputItemWebSearchCallMap
   final OutputItemStatus3 status;
   final OutputItemActionUnion action;
 
-  const OutputItemWebSearchCall({
-    required this.id,
-    required this.type,
-    required this.status,
-    required this.action,
-  });
+  const OutputItemWebSearchCall({required this.id, required this.type, required this.status, required this.action});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')

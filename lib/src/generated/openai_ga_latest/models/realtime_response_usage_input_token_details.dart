@@ -27,9 +27,9 @@ class RealtimeResponseUsageInputTokenDetails with RealtimeResponseUsageInputToke
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
   @MappableField(key: 'cached_tokens_details')
-  final RealtimeResponseUsageInputTokenDetailsCachedTokensDetails? realtimeResponseUsageInputTokenDetailsCachedTokensDetails;
+  final RealtimeResponseUsageInputTokenDetailsCachedTokensDetails?
+  realtimeResponseUsageInputTokenDetailsCachedTokensDetails;
 
-  static RealtimeResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) => RealtimeResponseUsageInputTokenDetailsMapper.fromJson(json);
-
+  static RealtimeResponseUsageInputTokenDetails fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseUsageInputTokenDetailsMapper.fromJson(json);
 }
-

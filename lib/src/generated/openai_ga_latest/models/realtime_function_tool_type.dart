@@ -10,10 +10,10 @@ part 'realtime_function_tool_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeFunctionToolType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeFunctionToolType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeFunctionToolType> get $valuesDefined => values.where((value) => value != RealtimeFunctionToolType.unknown).toList();
+  static List<RealtimeFunctionToolType> get $valuesDefined =>
+      values.where((value) => value != RealtimeFunctionToolType.unknown).toList();
 }

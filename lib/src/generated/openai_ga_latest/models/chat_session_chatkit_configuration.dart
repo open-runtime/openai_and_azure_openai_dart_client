@@ -25,7 +25,6 @@ class ChatSessionChatkitConfiguration with ChatSessionChatkitConfigurationMappab
   final ChatSessionFileUpload fileUpload;
   final ChatSessionHistory history;
 
-  static ChatSessionChatkitConfiguration fromJson(Map<String, dynamic> json) => ChatSessionChatkitConfigurationMapper.fromJson(json);
-
+  static ChatSessionChatkitConfiguration fromJson(Map<String, dynamic> json) =>
+      ChatSessionChatkitConfigurationMapper.fromJson(json);
 }
-

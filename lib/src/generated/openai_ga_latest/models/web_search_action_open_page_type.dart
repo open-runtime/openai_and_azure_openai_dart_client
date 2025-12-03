@@ -10,10 +10,10 @@ part 'web_search_action_open_page_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchActionOpenPageType {
-  @MappableValue('open_page') 
+  @MappableValue('open_page')
   openPage,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum WebSearchActionOpenPageType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchActionOpenPageType> get $valuesDefined => values.where((value) => value != WebSearchActionOpenPageType.unknown).toList();
+  static List<WebSearchActionOpenPageType> get $valuesDefined =>
+      values.where((value) => value != WebSearchActionOpenPageType.unknown).toList();
 }

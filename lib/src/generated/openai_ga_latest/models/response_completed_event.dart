@@ -11,13 +11,9 @@ import 'response_stream_event.dart';
 part 'response_completed_event.mapper.dart';
 
 /// Emitted when the model response is complete.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCompletedEvent with ResponseCompletedEventMappable {
-  const ResponseCompletedEvent({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.completed')
+class ResponseCompletedEvent extends ResponseStreamEvent with ResponseCompletedEventMappable {
+  const ResponseCompletedEvent({required this.type, required this.response, required this.sequenceNumber});
 
   final ResponseCompletedEventType type;
   final ResponseModel response;
@@ -25,6 +21,4 @@ class ResponseCompletedEvent with ResponseCompletedEventMappable {
   final int sequenceNumber;
 
   static ResponseCompletedEvent fromJson(Map<String, dynamic> json) => ResponseCompletedEventMapper.fromJson(json);
-
 }
-

@@ -9,16 +9,16 @@ part 'fine_tune_method_type.mapper.dart';
 /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuneMethodType {
-  @MappableValue('supervised') 
+  @MappableValue('supervised')
   supervised,
 
-  @MappableValue('dpo') 
+  @MappableValue('dpo')
   dpo,
 
-  @MappableValue('reinforcement') 
+  @MappableValue('reinforcement')
   reinforcement,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum FineTuneMethodType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuneMethodType> get $valuesDefined => values.where((value) => value != FineTuneMethodType.unknown).toList();
+  static List<FineTuneMethodType> get $valuesDefined =>
+      values.where((value) => value != FineTuneMethodType.unknown).toList();
 }

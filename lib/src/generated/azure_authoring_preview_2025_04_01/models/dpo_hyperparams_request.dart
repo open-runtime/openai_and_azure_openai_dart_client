@@ -28,6 +28,4 @@ class DpoHyperparamsRequest with DpoHyperparamsRequestMappable {
   final double? l2Multiplier;
 
   static DpoHyperparamsRequest fromJson(Map<String, dynamic> json) => DpoHyperparamsRequestMapper.fromJson(json);
-
 }
-

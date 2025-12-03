@@ -9,10 +9,10 @@ part 'message_content_text_annotations_file_citation_object_type.mapper.dart';
 /// Always `file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentTextAnnotationsFileCitationObjectType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentTextAnnotationsFileCitationObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentTextAnnotationsFileCitationObjectType> get $valuesDefined => values.where((value) => value != MessageContentTextAnnotationsFileCitationObjectType.unknown).toList();
+  static List<MessageContentTextAnnotationsFileCitationObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageContentTextAnnotationsFileCitationObjectType.unknown).toList();
 }

@@ -29,7 +29,6 @@ class ProjectApiKeyListResponse with ProjectApiKeyListResponseMappable {
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ProjectApiKeyListResponse fromJson(Map<String, dynamic> json) => ProjectApiKeyListResponseMapper.fromJson(json);
-
+  static ProjectApiKeyListResponse fromJson(Map<String, dynamic> json) =>
+      ProjectApiKeyListResponseMapper.fromJson(json);
 }
-

@@ -17,11 +17,7 @@ import 'upload_file/upload_file_api.dart';
 ///
 /// APIs for fine-tuning and managing deployments of OpenAI models.
 class AzureAuthoringY2025M04D01PreviewClient {
-  AzureAuthoringY2025M04D01PreviewClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  AzureAuthoringY2025M04D01PreviewClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;

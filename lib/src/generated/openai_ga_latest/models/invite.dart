@@ -41,6 +41,4 @@ class Invite with InviteMappable {
   final List<InviteProjects>? projects;
 
   static Invite fromJson(Map<String, dynamic> json) => InviteMapper.fromJson(json);
-
 }
-

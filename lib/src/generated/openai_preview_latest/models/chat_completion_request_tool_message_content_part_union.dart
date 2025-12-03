@@ -9,8 +9,13 @@ import 'chat_completion_request_message_content_part_text.dart';
 
 part 'chat_completion_request_tool_message_content_part_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText])
-sealed class ChatCompletionRequestToolMessageContentPartUnion with ChatCompletionRequestToolMessageContentPartUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText],
+)
+sealed class ChatCompletionRequestToolMessageContentPartUnion
+    with ChatCompletionRequestToolMessageContentPartUnionMappable {
   const ChatCompletionRequestToolMessageContentPartUnion();
 
   static ChatCompletionRequestToolMessageContentPartUnion fromJson(Map<String, dynamic> json) {
@@ -18,19 +23,25 @@ sealed class ChatCompletionRequestToolMessageContentPartUnion with ChatCompletio
   }
 }
 
-extension ChatCompletionRequestToolMessageContentPartUnionDeserializer on ChatCompletionRequestToolMessageContentPartUnion {
+extension ChatCompletionRequestToolMessageContentPartUnionDeserializer
+    on ChatCompletionRequestToolMessageContentPartUnion {
   static ChatCompletionRequestToolMessageContentPartUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper.fromJson(json);
+      return ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartTextMapper.fromJson(
+        json,
+      );
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for ChatCompletionRequestToolMessageContentPartUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for ChatCompletionRequestToolMessageContentPartUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText extends ChatCompletionRequestToolMessageContentPartUnion with ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartTextMappable {
+class ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartText
+    extends ChatCompletionRequestToolMessageContentPartUnion
+    with ChatCompletionRequestToolMessageContentPartUnionChatCompletionRequestMessageContentPartTextMappable {
   final ChatCompletionRequestMessageContentPartTextType type;
   final String text;
 

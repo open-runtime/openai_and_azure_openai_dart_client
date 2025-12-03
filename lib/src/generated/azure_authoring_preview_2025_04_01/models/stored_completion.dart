@@ -59,6 +59,4 @@ class StoredCompletion with StoredCompletionMappable {
   final List<Choice>? choices;
 
   static StoredCompletion fromJson(Map<String, dynamic> json) => StoredCompletionMapper.fromJson(json);
-
 }
-

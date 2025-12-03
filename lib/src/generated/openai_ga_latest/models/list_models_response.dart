@@ -11,16 +11,11 @@ part 'list_models_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ListModelsResponse with ListModelsResponseMappable {
-  const ListModelsResponse({
-    required this.objectEnum,
-    required this.data,
-  });
+  const ListModelsResponse({required this.objectEnum, required this.data});
 
   @MappableField(key: 'object')
   final ListModelsResponseObjectObjectEnum objectEnum;
   final List<Model> data;
 
   static ListModelsResponse fromJson(Map<String, dynamic> json) => ListModelsResponseMapper.fromJson(json);
-
 }
-

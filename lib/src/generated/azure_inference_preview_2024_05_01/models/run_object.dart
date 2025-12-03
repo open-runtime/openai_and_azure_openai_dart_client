@@ -95,6 +95,4 @@ class RunObject with RunObjectMappable {
   final List<RunObjectToolsUnion> tools;
 
   static RunObject fromJson(Map<String, dynamic> json) => RunObjectMapper.fromJson(json);
-
 }
-

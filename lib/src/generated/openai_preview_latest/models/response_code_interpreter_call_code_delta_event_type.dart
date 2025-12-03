@@ -11,10 +11,10 @@ part 'response_code_interpreter_call_code_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseCodeInterpreterCallCodeDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.code_interpreter_call.code.delta`.
-  @MappableValue('response.code_interpreter_call.code.delta') 
+  @MappableValue('response.code_interpreter_call.code.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseCodeInterpreterCallCodeDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseCodeInterpreterCallCodeDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseCodeInterpreterCallCodeDeltaEventType.unknown).toList();
+  static List<ResponseCodeInterpreterCallCodeDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseCodeInterpreterCallCodeDeltaEventType.unknown).toList();
 }

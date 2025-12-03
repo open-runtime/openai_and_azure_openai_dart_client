@@ -11,16 +11,12 @@ part 'run_step_details_tool_call_file_search.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallFileSearch with RunStepDetailsToolCallFileSearchMappable {
-  const RunStepDetailsToolCallFileSearch({
-    this.rankingOptions,
-    this.results,
-  });
+  const RunStepDetailsToolCallFileSearch({this.rankingOptions, this.results});
 
   @MappableField(key: 'ranking_options')
   final RunStepDetailsToolCallsFileSearchRankingOptionsObject? rankingOptions;
   final List<RunStepDetailsToolCallsFileSearchResultObject>? results;
 
-  static RunStepDetailsToolCallFileSearch fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallFileSearchMapper.fromJson(json);
-
+  static RunStepDetailsToolCallFileSearch fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallFileSearchMapper.fromJson(json);
 }
-

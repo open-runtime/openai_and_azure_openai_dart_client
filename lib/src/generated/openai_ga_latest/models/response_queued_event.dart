@@ -12,13 +12,9 @@ part 'response_queued_event.mapper.dart';
 
 /// Emitted when a response is queued and waiting to be processed.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseQueuedEvent with ResponseQueuedEventMappable {
-  const ResponseQueuedEvent({
-    required this.type,
-    required this.response,
-    required this.sequenceNumber,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.queued')
+class ResponseQueuedEvent extends ResponseStreamEvent with ResponseQueuedEventMappable {
+  const ResponseQueuedEvent({required this.type, required this.response, required this.sequenceNumber});
 
   final ResponseQueuedEventType type;
   final ResponseModel response;
@@ -26,6 +22,4 @@ class ResponseQueuedEvent with ResponseQueuedEventMappable {
   final int sequenceNumber;
 
   static ResponseQueuedEvent fromJson(Map<String, dynamic> json) => ResponseQueuedEventMapper.fromJson(json);
-
 }
-

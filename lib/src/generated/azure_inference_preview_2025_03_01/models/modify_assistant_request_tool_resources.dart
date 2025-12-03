@@ -21,7 +21,6 @@ class ModifyAssistantRequestToolResources with ModifyAssistantRequestToolResourc
   @MappableField(key: 'file_search')
   final ModifyAssistantRequestToolResourcesFileSearch? modifyAssistantRequestToolResourcesFileSearch;
 
-  static ModifyAssistantRequestToolResources fromJson(Map<String, dynamic> json) => ModifyAssistantRequestToolResourcesMapper.fromJson(json);
-
+  static ModifyAssistantRequestToolResources fromJson(Map<String, dynamic> json) =>
+      ModifyAssistantRequestToolResourcesMapper.fromJson(json);
 }
-

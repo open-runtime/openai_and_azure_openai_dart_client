@@ -27,7 +27,6 @@ class VectorStoreFileContentResponse with VectorStoreFileContentResponseMappable
   @MappableField(key: 'next_page')
   final String? nextPage;
 
-  static VectorStoreFileContentResponse fromJson(Map<String, dynamic> json) => VectorStoreFileContentResponseMapper.fromJson(json);
-
+  static VectorStoreFileContentResponse fromJson(Map<String, dynamic> json) =>
+      VectorStoreFileContentResponseMapper.fromJson(json);
 }
-

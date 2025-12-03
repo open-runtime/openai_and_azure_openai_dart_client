@@ -10,13 +10,13 @@ part 'tool_moderation.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolModeration {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

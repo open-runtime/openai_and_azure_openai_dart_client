@@ -26,6 +26,4 @@ class WebSearchPreviewTool with WebSearchPreviewToolMappable {
   final WebSearchPreviewToolType type;
 
   static WebSearchPreviewTool fromJson(Map<String, dynamic> json) => WebSearchPreviewToolMapper.fromJson(json);
-
 }
-

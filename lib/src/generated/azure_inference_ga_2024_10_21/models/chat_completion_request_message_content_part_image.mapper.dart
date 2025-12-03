@@ -8,7 +8,7 @@
 part of 'chat_completion_request_message_content_part_image.dart';
 
 class ChatCompletionRequestMessageContentPartImageMapper
-    extends ClassMapperBase<ChatCompletionRequestMessageContentPartImage> {
+    extends SubClassMapperBase<ChatCompletionRequestMessageContentPartImage> {
   ChatCompletionRequestMessageContentPartImageMapper._();
 
   static ChatCompletionRequestMessageContentPartImageMapper? _instance;
@@ -18,6 +18,8 @@ class ChatCompletionRequestMessageContentPartImageMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartImageMapper._(),
       );
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionRequestMessageContentPartImageTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartImageImageUrlMapper.ensureInitialized();
     }
@@ -60,6 +62,14 @@ class ChatCompletionRequestMessageContentPartImageMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_url';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized();
 
   static ChatCompletionRequestMessageContentPartImage _instantiate(
     DecodingData data,
@@ -163,13 +173,15 @@ abstract class ChatCompletionRequestMessageContentPartImageCopyWith<
   $In extends ChatCompletionRequestMessageContentPartImage,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements
+        ChatCompletionRequestUserMessageContentPartCopyWith<$R, $In, $Out> {
   ChatCompletionRequestMessageContentPartImageImageUrlCopyWith<
     $R,
     ChatCompletionRequestMessageContentPartImageImageUrl,
     ChatCompletionRequestMessageContentPartImageImageUrl
   >
   get chatCompletionRequestMessageContentPartImageImageUrl;
+  @override
   $R call({
     ChatCompletionRequestMessageContentPartImageType? type,
     ChatCompletionRequestMessageContentPartImageImageUrl?

@@ -9,13 +9,13 @@ part 'message_object_role.mapper.dart';
 /// The entity that produced the message. One of `user` or `assistant`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageObjectRole {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum MessageObjectRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageObjectRole> get $valuesDefined => values.where((value) => value != MessageObjectRole.unknown).toList();
+  static List<MessageObjectRole> get $valuesDefined =>
+      values.where((value) => value != MessageObjectRole.unknown).toList();
 }

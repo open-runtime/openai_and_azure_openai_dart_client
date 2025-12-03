@@ -21,7 +21,6 @@ extension RunCompletionUsageUnionDeserializer on RunCompletionUsageUnion {
       return RunCompletionUsageUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for RunCompletionUsageUnion from: $json');
   }
 }

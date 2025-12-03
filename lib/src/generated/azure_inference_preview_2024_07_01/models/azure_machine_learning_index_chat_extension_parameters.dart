@@ -47,7 +47,6 @@ class AzureMachineLearningIndexChatExtensionParameters with AzureMachineLearning
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static AzureMachineLearningIndexChatExtensionParameters fromJson(Map<String, dynamic> json) => AzureMachineLearningIndexChatExtensionParametersMapper.fromJson(json);
-
+  static AzureMachineLearningIndexChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      AzureMachineLearningIndexChatExtensionParametersMapper.fromJson(json);
 }
-

@@ -9,19 +9,19 @@ part 'vector_store_file_batch_object_status.mapper.dart';
 /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreFileBatchObjectStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum VectorStoreFileBatchObjectStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreFileBatchObjectStatus> get $valuesDefined => values.where((value) => value != VectorStoreFileBatchObjectStatus.unknown).toList();
+  static List<VectorStoreFileBatchObjectStatus> get $valuesDefined =>
+      values.where((value) => value != VectorStoreFileBatchObjectStatus.unknown).toList();
 }

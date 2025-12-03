@@ -10,19 +10,19 @@ part 'conversation_item_status2.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ConversationItemStatus2 {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('searching') 
+  @MappableValue('searching')
   searching,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ConversationItemStatus2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ConversationItemStatus2> get $valuesDefined => values.where((value) => value != ConversationItemStatus2.unknown).toList();
+  static List<ConversationItemStatus2> get $valuesDefined =>
+      values.where((value) => value != ConversationItemStatus2.unknown).toList();
 }

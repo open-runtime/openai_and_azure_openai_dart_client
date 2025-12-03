@@ -8,11 +8,7 @@ part 'usage.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Usage with UsageMappable {
-  const Usage({
-    this.totalTokens,
-    this.completionTokens,
-    this.promptTokens,
-  });
+  const Usage({this.totalTokens, this.completionTokens, this.promptTokens});
 
   @MappableField(key: 'total_tokens')
   final int? totalTokens;
@@ -22,6 +18,4 @@ class Usage with UsageMappable {
   final int? promptTokens;
 
   static Usage fromJson(Map<String, dynamic> json) => UsageMapper.fromJson(json);
-
 }
-

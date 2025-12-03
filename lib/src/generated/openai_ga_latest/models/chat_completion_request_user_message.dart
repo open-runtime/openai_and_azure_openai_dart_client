@@ -12,19 +12,15 @@ part 'chat_completion_request_user_message.mapper.dart';
 /// Messages sent by an end user, containing prompts or additional context.
 /// information.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestUserMessage with ChatCompletionRequestUserMessageMappable {
-  const ChatCompletionRequestUserMessage({
-    required this.content,
-    required this.role,
-    this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
+class ChatCompletionRequestUserMessage extends FineTuneReinforcementRequestInputMessagesUnion
+    with ChatCompletionRequestUserMessageMappable {
+  const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name});
 
   final String content;
   final ChatCompletionRequestUserMessageRole role;
   final String? name;
 
-  static ChatCompletionRequestUserMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestUserMessageMapper.fromJson(json);
-
+  static ChatCompletionRequestUserMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestUserMessageMapper.fromJson(json);
 }
-

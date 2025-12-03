@@ -45,6 +45,4 @@ class EvalRunOutputItem with EvalRunOutputItemMappable {
   final EvalRunOutputItemObjectObjectEnum objectEnum;
 
   static EvalRunOutputItem fromJson(Map<String, dynamic> json) => EvalRunOutputItemMapper.fromJson(json);
-
 }
-

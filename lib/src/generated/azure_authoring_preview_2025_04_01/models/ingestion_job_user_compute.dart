@@ -33,6 +33,4 @@ class IngestionJobUserCompute with IngestionJobUserComputeMappable {
   final int? dataRefreshIntervalInHours;
 
   static IngestionJobUserCompute fromJson(Map<String, dynamic> json) => IngestionJobUserComputeMapper.fromJson(json);
-
 }
-

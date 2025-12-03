@@ -11,17 +11,11 @@ part 'create_moderation_response.mapper.dart';
 /// Represents if a given text input is potentially harmful.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationResponse with CreateModerationResponseMappable {
-  const CreateModerationResponse({
-    required this.id,
-    required this.model,
-    required this.results,
-  });
+  const CreateModerationResponse({required this.id, required this.model, required this.results});
 
   final String id;
   final String model;
   final List<CreateModerationResponseResults> results;
 
   static CreateModerationResponse fromJson(Map<String, dynamic> json) => CreateModerationResponseMapper.fromJson(json);
-
 }
-

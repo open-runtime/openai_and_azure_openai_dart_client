@@ -18,8 +18,8 @@ part 'reasoning_item.mapper.dart';
 /// for subsequent turns of a conversation if you are manually.
 /// [managing context](https://platform.openai.com/docs/guides/conversation-state).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ReasoningItem with ReasoningItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
+class ReasoningItem extends ItemUnion with ReasoningItemMappable {
   const ReasoningItem({
     required this.type,
     required this.id,
@@ -38,6 +38,4 @@ class ReasoningItem with ReasoningItemMappable {
   final ReasoningItemStatus? status;
 
   static ReasoningItem fromJson(Map<String, dynamic> json) => ReasoningItemMapper.fromJson(json);
-
 }
-

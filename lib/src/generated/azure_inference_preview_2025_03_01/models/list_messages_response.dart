@@ -29,6 +29,4 @@ class ListMessagesResponse with ListMessagesResponseMappable {
   final bool hasMore;
 
   static ListMessagesResponse fromJson(Map<String, dynamic> json) => ListMessagesResponseMapper.fromJson(json);
-
 }
-

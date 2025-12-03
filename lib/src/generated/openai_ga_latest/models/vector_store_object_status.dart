@@ -9,16 +9,16 @@ part 'vector_store_object_status.mapper.dart';
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreObjectStatus {
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum VectorStoreObjectStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreObjectStatus> get $valuesDefined => values.where((value) => value != VectorStoreObjectStatus.unknown).toList();
+  static List<VectorStoreObjectStatus> get $valuesDefined =>
+      values.where((value) => value != VectorStoreObjectStatus.unknown).toList();
 }

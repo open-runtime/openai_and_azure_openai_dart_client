@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_mcp_call_arguments_done.mapper.dart';
 
 /// Returned when MCP tool call arguments are finalized during response generation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseMcpCallArgumentsDone with RealtimeServerEventResponseMcpCallArgumentsDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.done')
+class RealtimeServerEventResponseMcpCallArgumentsDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallArgumentsDoneMappable {
   const RealtimeServerEventResponseMcpCallArgumentsDone({
     required this.eventId,
     required this.type,
@@ -31,7 +32,6 @@ class RealtimeServerEventResponseMcpCallArgumentsDone with RealtimeServerEventRe
   final int outputIndex;
   final String arguments;
 
-  static RealtimeServerEventResponseMcpCallArgumentsDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseMcpCallArgumentsDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseMcpCallArgumentsDoneMapper.fromJson(json);
 }
-

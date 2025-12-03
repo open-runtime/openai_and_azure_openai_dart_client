@@ -10,12 +10,9 @@ import 'metadata.dart';
 part 'create_thread_request_tool_resources_file_search_vector_stores.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRequestToolResourcesFileSearchVectorStoresMappable {
-  const CreateThreadRequestToolResourcesFileSearchVectorStores({
-    this.fileIds,
-    this.chunkingStrategy,
-    this.metadata,
-  });
+class CreateThreadRequestToolResourcesFileSearchVectorStores
+    with CreateThreadRequestToolResourcesFileSearchVectorStoresMappable {
+  const CreateThreadRequestToolResourcesFileSearchVectorStores({this.fileIds, this.chunkingStrategy, this.metadata});
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
@@ -23,7 +20,6 @@ class CreateThreadRequestToolResourcesFileSearchVectorStores with CreateThreadRe
   final CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyUnion? chunkingStrategy;
   final Metadata? metadata;
 
-  static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) => CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
-
+  static CreateThreadRequestToolResourcesFileSearchVectorStores fromJson(Map<String, dynamic> json) =>
+      CreateThreadRequestToolResourcesFileSearchVectorStoresMapper.fromJson(json);
 }
-

@@ -8,7 +8,7 @@
 part of 'image_edit_completed_event.dart';
 
 class ImageEditCompletedEventMapper
-    extends ClassMapperBase<ImageEditCompletedEvent> {
+    extends SubClassMapperBase<ImageEditCompletedEvent> {
   ImageEditCompletedEventMapper._();
 
   static ImageEditCompletedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ImageEditCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ImageEditCompletedEventMapper._(),
       );
+      ImageEditStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ImageEditCompletedEventTypeMapper.ensureInitialized();
       ImageEditCompletedEventSizeMapper.ensureInitialized();
       ImageEditCompletedEventQualityMapper.ensureInitialized();
@@ -92,6 +93,14 @@ class ImageEditCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_edit.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ImageEditStreamEventMapper.ensureInitialized();
 
   static ImageEditCompletedEvent _instantiate(DecodingData data) {
     return ImageEditCompletedEvent(
@@ -175,8 +184,9 @@ abstract class ImageEditCompletedEventCopyWith<
   $In extends ImageEditCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ImageEditStreamEventCopyWith<$R, $In, $Out> {
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
+  @override
   $R call({
     ImageEditCompletedEventType? type,
     String? b64Json,

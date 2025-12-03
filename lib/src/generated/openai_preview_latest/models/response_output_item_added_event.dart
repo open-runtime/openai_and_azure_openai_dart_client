@@ -11,20 +11,15 @@ import 'response_stream_event.dart';
 part 'response_output_item_added_event.mapper.dart';
 
 /// Emitted when a new output item is added.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseOutputItemAddedEvent with ResponseOutputItemAddedEventMappable {
-  const ResponseOutputItemAddedEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.item,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.added')
+class ResponseOutputItemAddedEvent extends ResponseStreamEvent with ResponseOutputItemAddedEventMappable {
+  const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.item});
 
   final ResponseOutputItemAddedEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final OutputItem item;
 
-  static ResponseOutputItemAddedEvent fromJson(Map<String, dynamic> json) => ResponseOutputItemAddedEventMapper.fromJson(json);
-
+  static ResponseOutputItemAddedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseOutputItemAddedEventMapper.fromJson(json);
 }
-

@@ -27,7 +27,6 @@ class RealtimeSessionCreateResponseAudioInput with RealtimeSessionCreateResponse
   @MappableField(key: 'turn_detection')
   final RealtimeSessionCreateResponseAudioInputTurnDetection? realtimeSessionCreateResponseAudioInputTurnDetection;
 
-  static RealtimeSessionCreateResponseAudioInput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioInputMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseAudioInput fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseAudioInputMapper.fromJson(json);
 }
-

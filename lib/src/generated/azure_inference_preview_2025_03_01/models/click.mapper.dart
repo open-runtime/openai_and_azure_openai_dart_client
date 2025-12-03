@@ -7,13 +7,14 @@
 
 part of 'click.dart';
 
-class ClickMapper extends ClassMapperBase<Click> {
+class ClickMapper extends SubClassMapperBase<Click> {
   ClickMapper._();
 
   static ClickMapper? _instance;
   static ClickMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClickMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       ClickButtonMapper.ensureInitialized();
       ClickTypeMapper.ensureInitialized();
     }
@@ -48,6 +49,14 @@ class ClickMapper extends ClassMapperBase<Click> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'click';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Click _instantiate(DecodingData data) {
     return Click(
@@ -103,7 +112,8 @@ extension ClickValueCopy<$R, $Out> on ObjectCopyWith<$R, Click, $Out> {
 }
 
 abstract class ClickCopyWith<$R, $In extends Click, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({ClickButton? button, int? x, int? y, ClickType? type});
   ClickCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

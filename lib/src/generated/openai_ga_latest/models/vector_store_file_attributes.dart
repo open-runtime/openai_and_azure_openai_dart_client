@@ -10,8 +10,6 @@ part 'vector_store_file_attributes.mapper.dart';
 class VectorStoreFileAttributes with VectorStoreFileAttributesMappable {
   const VectorStoreFileAttributes();
 
-
-  static VectorStoreFileAttributes fromJson(Map<String, dynamic> json) => VectorStoreFileAttributesMapper.fromJson(json);
-
+  static VectorStoreFileAttributes fromJson(Map<String, dynamic> json) =>
+      VectorStoreFileAttributesMapper.fromJson(json);
 }
-

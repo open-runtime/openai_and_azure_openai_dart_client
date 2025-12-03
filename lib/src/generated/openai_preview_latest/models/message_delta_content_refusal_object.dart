@@ -9,20 +9,16 @@ import 'message_delta_content_refusal_object_type.dart';
 part 'message_delta_content_refusal_object.mapper.dart';
 
 /// The refusal content that is part of a message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageDeltaContentRefusalObject with MessageDeltaContentRefusalObjectMappable {
-  const MessageDeltaContentRefusalObject({
-    required this.indexField,
-    required this.type,
-    this.refusal,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
+class MessageDeltaContentRefusalObject extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaContentRefusalObjectMappable {
+  const MessageDeltaContentRefusalObject({required this.indexField, required this.type, this.refusal});
 
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentRefusalObjectType type;
   final String? refusal;
 
-  static MessageDeltaContentRefusalObject fromJson(Map<String, dynamic> json) => MessageDeltaContentRefusalObjectMapper.fromJson(json);
-
+  static MessageDeltaContentRefusalObject fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentRefusalObjectMapper.fromJson(json);
 }
-

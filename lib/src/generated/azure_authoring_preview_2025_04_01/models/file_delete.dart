@@ -9,11 +9,7 @@ part 'file_delete.mapper.dart';
 /// Defines the response for File Delete.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileDelete with FileDeleteMappable {
-  const FileDelete({
-    required this.objectField,
-    required this.deleted,
-    required this.id,
-  });
+  const FileDelete({required this.objectField, required this.deleted, required this.id});
 
   @MappableField(key: 'object')
   final String objectField;
@@ -21,6 +17,4 @@ class FileDelete with FileDeleteMappable {
   final String id;
 
   static FileDelete fromJson(Map<String, dynamic> json) => FileDeleteMapper.fromJson(json);
-
 }
-

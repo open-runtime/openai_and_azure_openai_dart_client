@@ -10,19 +10,19 @@ part 'image_edit_completed_event_quality.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditCompletedEventQuality {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ImageEditCompletedEventQuality {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditCompletedEventQuality> get $valuesDefined => values.where((value) => value != ImageEditCompletedEventQuality.unknown).toList();
+  static List<ImageEditCompletedEventQuality> get $valuesDefined =>
+      values.where((value) => value != ImageEditCompletedEventQuality.unknown).toList();
 }

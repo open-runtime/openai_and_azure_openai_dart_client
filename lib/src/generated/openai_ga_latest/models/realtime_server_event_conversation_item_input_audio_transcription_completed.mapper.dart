@@ -9,7 +9,7 @@ part of 'realtime_server_event_conversation_item_input_audio_transcription_compl
 
 class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
     extends
-        ClassMapperBase<
+        SubClassMapperBase<
           RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
         > {
   RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper._();
@@ -23,6 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeMapper.ensureInitialized();
       RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
@@ -114,6 +115,15 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'conversation.item.input_audio_transcription.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
   _instantiate(DecodingData data) {
@@ -241,7 +251,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
   $In extends RealtimeServerEventConversationItemInputAudioTranscriptionCompleted,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionCopyWith<
     $R,
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion,
@@ -254,6 +264,7 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionComplet
     LogProbPropertiesCopyWith<$R, LogProbProperties, LogProbProperties>
   >?
   get logprobs;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType?

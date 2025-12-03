@@ -24,6 +24,4 @@ class CreateUploadRequest with CreateUploadRequestMappable {
   final String mimeType;
 
   static CreateUploadRequest fromJson(Map<String, dynamic> json) => CreateUploadRequestMapper.fromJson(json);
-
 }
-

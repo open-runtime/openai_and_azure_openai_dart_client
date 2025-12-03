@@ -28,6 +28,4 @@ class EvalGraderPython with EvalGraderPythonMappable {
   final num? passThreshold;
 
   static EvalGraderPython fromJson(Map<String, dynamic> json) => EvalGraderPythonMapper.fromJson(json);
-
 }
-

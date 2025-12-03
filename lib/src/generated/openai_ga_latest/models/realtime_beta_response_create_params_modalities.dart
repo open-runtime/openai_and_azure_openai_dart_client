@@ -8,13 +8,13 @@ part 'realtime_beta_response_create_params_modalities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaResponseCreateParamsModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeBetaResponseCreateParamsModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaResponseCreateParamsModalities> get $valuesDefined => values.where((value) => value != RealtimeBetaResponseCreateParamsModalities.unknown).toList();
+  static List<RealtimeBetaResponseCreateParamsModalities> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaResponseCreateParamsModalities.unknown).toList();
 }

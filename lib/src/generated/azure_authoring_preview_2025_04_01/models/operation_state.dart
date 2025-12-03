@@ -9,19 +9,19 @@ part 'operation_state.mapper.dart';
 /// The state of a job or item.
 @MappableEnum(defaultValue: 'unknown')
 enum OperationState {
-  @MappableValue('notRunning') 
+  @MappableValue('notRunning')
   notRunning,
 
-  @MappableValue('running') 
+  @MappableValue('running')
   running,
 
-  @MappableValue('succeeded') 
+  @MappableValue('succeeded')
   succeeded,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

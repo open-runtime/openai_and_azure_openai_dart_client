@@ -12,7 +12,14 @@ part 'realtime_session_create_response_tracing_union.mapper.dart';
 /// `auto` will create a trace for the session with default values for the.
 /// workflow name, group id, and metadata.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionCreateResponseTracingUnionVariant1, RealtimeSessionCreateResponseTracingUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionCreateResponseTracingUnionVariant1,
+    RealtimeSessionCreateResponseTracingUnionVariantString,
+  ],
+)
 sealed class RealtimeSessionCreateResponseTracingUnion with RealtimeSessionCreateResponseTracingUnionMappable {
   const RealtimeSessionCreateResponseTracingUnion();
 
@@ -30,13 +37,15 @@ extension RealtimeSessionCreateResponseTracingUnionDeserializer on RealtimeSessi
       return RealtimeSessionCreateResponseTracingUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for RealtimeSessionCreateResponseTracingUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionCreateResponseTracingUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseTracingUnionVariant1 extends RealtimeSessionCreateResponseTracingUnion with RealtimeSessionCreateResponseTracingUnionVariant1Mappable {
+class RealtimeSessionCreateResponseTracingUnionVariant1 extends RealtimeSessionCreateResponseTracingUnion
+    with RealtimeSessionCreateResponseTracingUnionVariant1Mappable {
   @MappableField(key: 'workflow_name')
   final String? workflowName;
   @MappableField(key: 'group_id')
@@ -51,10 +60,9 @@ class RealtimeSessionCreateResponseTracingUnionVariant1 extends RealtimeSessionC
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseTracingUnionVariantString extends RealtimeSessionCreateResponseTracingUnion with RealtimeSessionCreateResponseTracingUnionVariantStringMappable {
+class RealtimeSessionCreateResponseTracingUnionVariantString extends RealtimeSessionCreateResponseTracingUnion
+    with RealtimeSessionCreateResponseTracingUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionCreateResponseTracingUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionCreateResponseTracingUnionVariantString({required this.value});
 }

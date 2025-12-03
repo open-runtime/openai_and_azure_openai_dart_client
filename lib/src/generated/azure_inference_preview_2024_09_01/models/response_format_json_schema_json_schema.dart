@@ -10,19 +10,13 @@ part 'response_format_json_schema_json_schema.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseFormatJsonSchemaJsonSchema with ResponseFormatJsonSchemaJsonSchemaMappable {
-  const ResponseFormatJsonSchemaJsonSchema({
-    required this.name,
-    this.strict = false,
-    this.description,
-    this.schema,
-  });
+  const ResponseFormatJsonSchemaJsonSchema({required this.name, this.strict = false, this.description, this.schema});
 
   final String name;
   final bool? strict;
   final String? description;
   final ResponseFormatJsonSchemaSchema? schema;
 
-  static ResponseFormatJsonSchemaJsonSchema fromJson(Map<String, dynamic> json) => ResponseFormatJsonSchemaJsonSchemaMapper.fromJson(json);
-
+  static ResponseFormatJsonSchemaJsonSchema fromJson(Map<String, dynamic> json) =>
+      ResponseFormatJsonSchemaJsonSchemaMapper.fromJson(json);
 }
-

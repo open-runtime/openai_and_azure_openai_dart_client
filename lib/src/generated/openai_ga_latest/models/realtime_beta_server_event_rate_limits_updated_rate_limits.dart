@@ -9,13 +9,9 @@ import 'realtime_beta_server_event_rate_limits_updated_rate_limits_name.dart';
 part 'realtime_beta_server_event_rate_limits_updated_rate_limits.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventRateLimitsUpdatedRateLimits with RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMappable {
-  const RealtimeBetaServerEventRateLimitsUpdatedRateLimits({
-    this.name,
-    this.limit,
-    this.remaining,
-    this.resetSeconds,
-  });
+class RealtimeBetaServerEventRateLimitsUpdatedRateLimits
+    with RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMappable {
+  const RealtimeBetaServerEventRateLimitsUpdatedRateLimits({this.name, this.limit, this.remaining, this.resetSeconds});
 
   final RealtimeBetaServerEventRateLimitsUpdatedRateLimitsName? name;
   final int? limit;
@@ -23,7 +19,6 @@ class RealtimeBetaServerEventRateLimitsUpdatedRateLimits with RealtimeBetaServer
   @MappableField(key: 'reset_seconds')
   final num? resetSeconds;
 
-  static RealtimeBetaServerEventRateLimitsUpdatedRateLimits fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper.fromJson(json);
-
+  static RealtimeBetaServerEventRateLimitsUpdatedRateLimits fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventRateLimitsUpdatedRateLimitsMapper.fromJson(json);
 }
-

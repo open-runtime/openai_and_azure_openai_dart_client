@@ -8,13 +8,10 @@ part 'webhook_eval_run_canceled_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunCanceledData with WebhookEvalRunCanceledDataMappable {
-  const WebhookEvalRunCanceledData({
-    required this.id,
-  });
+  const WebhookEvalRunCanceledData({required this.id});
 
   final String id;
 
-  static WebhookEvalRunCanceledData fromJson(Map<String, dynamic> json) => WebhookEvalRunCanceledDataMapper.fromJson(json);
-
+  static WebhookEvalRunCanceledData fromJson(Map<String, dynamic> json) =>
+      WebhookEvalRunCanceledDataMapper.fromJson(json);
 }
-

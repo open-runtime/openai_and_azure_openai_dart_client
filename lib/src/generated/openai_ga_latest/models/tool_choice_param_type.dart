@@ -9,10 +9,10 @@ part 'tool_choice_param_type.mapper.dart';
 /// Allowed tool configuration type. Always `allowed_tools`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolChoiceParamType {
-  @MappableValue('allowed_tools') 
+  @MappableValue('allowed_tools')
   allowedTools,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ToolChoiceParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ToolChoiceParamType> get $valuesDefined => values.where((value) => value != ToolChoiceParamType.unknown).toList();
+  static List<ToolChoiceParamType> get $valuesDefined =>
+      values.where((value) => value != ToolChoiceParamType.unknown).toList();
 }

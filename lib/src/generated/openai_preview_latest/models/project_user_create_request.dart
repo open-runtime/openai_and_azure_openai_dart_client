@@ -10,16 +10,11 @@ part 'project_user_create_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectUserCreateRequest with ProjectUserCreateRequestMappable {
-  const ProjectUserCreateRequest({
-    required this.userId,
-    required this.role,
-  });
+  const ProjectUserCreateRequest({required this.userId, required this.role});
 
   @MappableField(key: 'user_id')
   final String userId;
   final ProjectUserCreateRequestRole role;
 
   static ProjectUserCreateRequest fromJson(Map<String, dynamic> json) => ProjectUserCreateRequestMapper.fromJson(json);
-
 }
-

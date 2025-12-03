@@ -8,7 +8,14 @@ part 'fine_tune_dpo_method_hyperparameters_beta_union.mapper.dart';
 
 /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneDpoMethodHyperparametersBetaUnionVariantString, FineTuneDpoMethodHyperparametersBetaUnionVariantNum])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneDpoMethodHyperparametersBetaUnionVariantString,
+    FineTuneDpoMethodHyperparametersBetaUnionVariantNum,
+  ],
+)
 sealed class FineTuneDpoMethodHyperparametersBetaUnion with FineTuneDpoMethodHyperparametersBetaUnionMappable {
   const FineTuneDpoMethodHyperparametersBetaUnion();
 
@@ -33,26 +40,26 @@ extension FineTuneDpoMethodHyperparametersBetaUnionDeserializer on FineTuneDpoMe
       return FineTuneDpoMethodHyperparametersBetaUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneDpoMethodHyperparametersBetaUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneDpoMethodHyperparametersBetaUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoMethodHyperparametersBetaUnionVariantString extends FineTuneDpoMethodHyperparametersBetaUnion with FineTuneDpoMethodHyperparametersBetaUnionVariantStringMappable {
+class FineTuneDpoMethodHyperparametersBetaUnionVariantString extends FineTuneDpoMethodHyperparametersBetaUnion
+    with FineTuneDpoMethodHyperparametersBetaUnionVariantStringMappable {
   final String value;
 
-  const FineTuneDpoMethodHyperparametersBetaUnionVariantString({
-    required this.value,
-  });
+  const FineTuneDpoMethodHyperparametersBetaUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoMethodHyperparametersBetaUnionVariantNum extends FineTuneDpoMethodHyperparametersBetaUnion with FineTuneDpoMethodHyperparametersBetaUnionVariantNumMappable {
+class FineTuneDpoMethodHyperparametersBetaUnionVariantNum extends FineTuneDpoMethodHyperparametersBetaUnion
+    with FineTuneDpoMethodHyperparametersBetaUnionVariantNumMappable {
   final num value;
 
-  const FineTuneDpoMethodHyperparametersBetaUnionVariantNum({
-    required this.value,
-  });
+  const FineTuneDpoMethodHyperparametersBetaUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

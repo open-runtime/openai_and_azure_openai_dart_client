@@ -11,10 +11,10 @@ part 'response_audio_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseAudioDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.audio.done`.
-  @MappableValue('response.audio.done') 
+  @MappableValue('response.audio.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseAudioDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseAudioDoneEventType> get $valuesDefined => values.where((value) => value != ResponseAudioDoneEventType.unknown).toList();
+  static List<ResponseAudioDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseAudioDoneEventType.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'realtime_conversation_item_message_system_content_type.mapper.dart';
 /// The content type. Always `input_text` for system messages.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemMessageSystemContentType {
-  @MappableValue('input_text') 
+  @MappableValue('input_text')
   inputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeConversationItemMessageSystemContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemMessageSystemContentType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemMessageSystemContentType.unknown).toList();
+  static List<RealtimeConversationItemMessageSystemContentType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemMessageSystemContentType.unknown).toList();
 }

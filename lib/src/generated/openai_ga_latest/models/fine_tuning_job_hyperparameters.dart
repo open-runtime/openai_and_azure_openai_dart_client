@@ -20,12 +20,14 @@ class FineTuningJobHyperparameters with FineTuningJobHyperparametersMappable {
 
   @MappableField(key: 'n_epochs', hook: const FineTuningJobHyperparametersNEpochsUnionHook())
   final FineTuningJobHyperparametersNEpochsUnion nEpochs;
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuningJobHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuningJobHyperparametersLearningRateMultiplierUnion? learningRateMultiplier;
   @MappableField(key: 'batch_size', hook: const FineTuningJobHyperparametersBatchSizeUnionHook())
   final FineTuningJobHyperparametersBatchSizeUnion? batchSize;
 
-  static FineTuningJobHyperparameters fromJson(Map<String, dynamic> json) => FineTuningJobHyperparametersMapper.fromJson(json);
-
+  static FineTuningJobHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuningJobHyperparametersMapper.fromJson(json);
 }
-

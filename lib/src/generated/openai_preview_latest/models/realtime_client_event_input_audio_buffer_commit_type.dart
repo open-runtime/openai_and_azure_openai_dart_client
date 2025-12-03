@@ -10,10 +10,10 @@ part 'realtime_client_event_input_audio_buffer_commit_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventInputAudioBufferCommitType {
   /// Incorrect name has been replaced. Original name: `input_audio_buffer.commit`.
-  @MappableValue('input_audio_buffer.commit') 
+  @MappableValue('input_audio_buffer.commit')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventInputAudioBufferCommitType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventInputAudioBufferCommitType> get $valuesDefined => values.where((value) => value != RealtimeClientEventInputAudioBufferCommitType.unknown).toList();
+  static List<RealtimeClientEventInputAudioBufferCommitType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventInputAudioBufferCommitType.unknown).toList();
 }

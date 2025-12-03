@@ -10,7 +10,11 @@ part 'create_completion_request_model_union.mapper.dart';
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateCompletionRequestModelUnionVariantEnum, CreateCompletionRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateCompletionRequestModelUnionVariantEnum, CreateCompletionRequestModelUnionVariantString],
+)
 sealed class CreateCompletionRequestModelUnion with CreateCompletionRequestModelUnionMappable {
   const CreateCompletionRequestModelUnion();
 
@@ -47,21 +51,19 @@ extension CreateCompletionRequestModelUnionDeserializer on CreateCompletionReque
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateCompletionRequestModelUnionVariantEnum extends CreateCompletionRequestModelUnion with CreateCompletionRequestModelUnionVariantEnumMappable {
+class CreateCompletionRequestModelUnionVariantEnum extends CreateCompletionRequestModelUnion
+    with CreateCompletionRequestModelUnionVariantEnumMappable {
   final CreateCompletionRequestModelUnionEnum value;
 
-  const CreateCompletionRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateCompletionRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateCompletionRequestModelUnionVariantString extends CreateCompletionRequestModelUnion with CreateCompletionRequestModelUnionVariantStringMappable {
+class CreateCompletionRequestModelUnionVariantString extends CreateCompletionRequestModelUnion
+    with CreateCompletionRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateCompletionRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateCompletionRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

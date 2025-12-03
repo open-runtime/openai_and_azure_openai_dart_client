@@ -11,16 +11,11 @@ part 'fine_tuning_integration.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningIntegration with FineTuningIntegrationMappable {
-  const FineTuningIntegration({
-    required this.type,
-    required this.fineTuningIntegrationWandb,
-  });
+  const FineTuningIntegration({required this.type, required this.fineTuningIntegrationWandb});
 
   final FineTuningIntegrationType type;
   @MappableField(key: 'wandb')
   final FineTuningIntegrationWandb fineTuningIntegrationWandb;
 
   static FineTuningIntegration fromJson(Map<String, dynamic> json) => FineTuningIntegrationMapper.fromJson(json);
-
 }
-

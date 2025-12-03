@@ -40,7 +40,6 @@ class CreateModelResponseProperties with CreateModelResponsePropertiesMappable {
   @MappableField(key: 'prompt_cache_retention')
   final ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention? promptCacheRetention;
 
-  static CreateModelResponseProperties fromJson(Map<String, dynamic> json) => CreateModelResponsePropertiesMapper.fromJson(json);
-
+  static CreateModelResponseProperties fromJson(Map<String, dynamic> json) =>
+      CreateModelResponsePropertiesMapper.fromJson(json);
 }
-

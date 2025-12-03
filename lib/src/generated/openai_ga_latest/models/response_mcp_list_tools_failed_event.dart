@@ -11,8 +11,8 @@ part 'response_mcp_list_tools_failed_event.mapper.dart';
 
 /// Emitted when the attempt to list available MCP tools has failed.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpListToolsFailedEvent with ResponseMcpListToolsFailedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.failed')
+class ResponseMcpListToolsFailedEvent extends ResponseStreamEvent with ResponseMcpListToolsFailedEventMappable {
   const ResponseMcpListToolsFailedEvent({
     required this.type,
     required this.itemId,
@@ -28,7 +28,6 @@ class ResponseMcpListToolsFailedEvent with ResponseMcpListToolsFailedEventMappab
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpListToolsFailedEvent fromJson(Map<String, dynamic> json) => ResponseMcpListToolsFailedEventMapper.fromJson(json);
-
+  static ResponseMcpListToolsFailedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpListToolsFailedEventMapper.fromJson(json);
 }
-

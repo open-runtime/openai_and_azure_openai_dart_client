@@ -9,16 +9,16 @@ part 'log_level.mapper.dart';
 /// The verbosity level of an event.
 @MappableEnum(defaultValue: 'unknown')
 enum LogLevel {
-  @MappableValue('info') 
+  @MappableValue('info')
   info,
 
-  @MappableValue('warning') 
+  @MappableValue('warning')
   warning,
 
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

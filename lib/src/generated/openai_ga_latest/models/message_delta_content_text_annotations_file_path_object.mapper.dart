@@ -8,7 +8,8 @@
 part of 'message_delta_content_text_annotations_file_path_object.dart';
 
 class MessageDeltaContentTextAnnotationsFilePathObjectMapper
-    extends ClassMapperBase<MessageDeltaContentTextAnnotationsFilePathObject> {
+    extends
+        SubClassMapperBase<MessageDeltaContentTextAnnotationsFilePathObject> {
   MessageDeltaContentTextAnnotationsFilePathObjectMapper._();
 
   static MessageDeltaContentTextAnnotationsFilePathObjectMapper? _instance;
@@ -18,6 +19,7 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentTextAnnotationsFilePathObjectMapper._(),
       );
+      TextAnnotationDeltaMapper.ensureInitialized().addSubMapper(_instance!);
       MessageDeltaContentTextAnnotationsFilePathObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFilePathObjectFilePathMapper.ensureInitialized();
     }
@@ -87,6 +89,14 @@ class MessageDeltaContentTextAnnotationsFilePathObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_path';
+  @override
+  late final ClassMapperBase superMapper =
+      TextAnnotationDeltaMapper.ensureInitialized();
 
   static MessageDeltaContentTextAnnotationsFilePathObject _instantiate(
     DecodingData data,
@@ -201,13 +211,14 @@ abstract class MessageDeltaContentTextAnnotationsFilePathObjectCopyWith<
   $In extends MessageDeltaContentTextAnnotationsFilePathObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements TextAnnotationDeltaCopyWith<$R, $In, $Out> {
   MessageDeltaContentTextAnnotationsFilePathObjectFilePathCopyWith<
     $R,
     MessageDeltaContentTextAnnotationsFilePathObjectFilePath,
     MessageDeltaContentTextAnnotationsFilePathObjectFilePath
   >?
   get messageDeltaContentTextAnnotationsFilePathObjectFilePath;
+  @override
   $R call({
     int? indexField,
     MessageDeltaContentTextAnnotationsFilePathObjectType? type,

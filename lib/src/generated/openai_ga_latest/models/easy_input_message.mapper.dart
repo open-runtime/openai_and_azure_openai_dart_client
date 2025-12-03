@@ -7,13 +7,14 @@
 
 part of 'easy_input_message.dart';
 
-class EasyInputMessageMapper extends ClassMapperBase<EasyInputMessage> {
+class EasyInputMessageMapper extends SubClassMapperBase<EasyInputMessage> {
   EasyInputMessageMapper._();
 
   static EasyInputMessageMapper? _instance;
   static EasyInputMessageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = EasyInputMessageMapper._());
+      InputItemMapper.ensureInitialized().addSubMapper(_instance!);
       EasyInputMessageRoleMapper.ensureInitialized();
       EasyInputMessageContentUnionMapper.ensureInitialized();
       EasyInputMessageTypeMapper.ensureInitialized();
@@ -50,6 +51,13 @@ class EasyInputMessageMapper extends ClassMapperBase<EasyInputMessage> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'message';
+  @override
+  late final ClassMapperBase superMapper = InputItemMapper.ensureInitialized();
 
   static EasyInputMessage _instantiate(DecodingData data) {
     return EasyInputMessage(
@@ -120,13 +128,14 @@ extension EasyInputMessageValueCopy<$R, $Out>
 }
 
 abstract class EasyInputMessageCopyWith<$R, $In extends EasyInputMessage, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements InputItemCopyWith<$R, $In, $Out> {
   EasyInputMessageContentUnionCopyWith<
     $R,
     EasyInputMessageContentUnion,
     EasyInputMessageContentUnion
   >
   get content;
+  @override
   $R call({
     EasyInputMessageRole? role,
     EasyInputMessageContentUnion? content,

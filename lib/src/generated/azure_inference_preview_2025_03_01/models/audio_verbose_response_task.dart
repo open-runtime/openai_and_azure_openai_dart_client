@@ -9,13 +9,13 @@ part 'audio_verbose_response_task.mapper.dart';
 /// Type of audio task.
 @MappableEnum(defaultValue: 'unknown')
 enum AudioVerboseResponseTask {
-  @MappableValue('transcribe') 
+  @MappableValue('transcribe')
   transcribe,
 
-  @MappableValue('translate') 
+  @MappableValue('translate')
   translate,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum AudioVerboseResponseTask {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AudioVerboseResponseTask> get $valuesDefined => values.where((value) => value != AudioVerboseResponseTask.unknown).toList();
+  static List<AudioVerboseResponseTask> get $valuesDefined =>
+      values.where((value) => value != AudioVerboseResponseTask.unknown).toList();
 }

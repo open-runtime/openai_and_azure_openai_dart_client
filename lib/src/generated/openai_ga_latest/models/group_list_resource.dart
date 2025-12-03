@@ -12,12 +12,7 @@ part 'group_list_resource.mapper.dart';
 /// Paginated list of organization groups.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupListResource with GroupListResourceMappable {
-  const GroupListResource({
-    required this.objectEnum,
-    required this.data,
-    required this.hasMore,
-    required this.next,
-  });
+  const GroupListResource({required this.objectEnum, required this.data, required this.hasMore, required this.next});
 
   @MappableField(key: 'object')
   final GroupListResourceObjectObjectEnum objectEnum;
@@ -27,6 +22,4 @@ class GroupListResource with GroupListResourceMappable {
   final String? next;
 
   static GroupListResource fromJson(Map<String, dynamic> json) => GroupListResourceMapper.fromJson(json);
-
 }
-

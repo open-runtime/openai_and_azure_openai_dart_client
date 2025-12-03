@@ -11,12 +11,7 @@ part 'choice.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Choice with ChoiceMappable {
-  const Choice({
-    this.indexField,
-    this.message,
-    this.finishReason,
-    this.logprobs,
-  });
+  const Choice({this.indexField, this.message, this.finishReason, this.logprobs});
 
   @MappableField(key: 'index')
   final int? indexField;
@@ -26,6 +21,4 @@ class Choice with ChoiceMappable {
   final Map<String, Logprob>? logprobs;
 
   static Choice fromJson(Map<String, dynamic> json) => ChoiceMapper.fromJson(json);
-
 }
-

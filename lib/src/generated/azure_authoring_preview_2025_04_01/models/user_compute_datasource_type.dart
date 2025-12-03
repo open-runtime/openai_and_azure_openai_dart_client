@@ -9,13 +9,13 @@ part 'user_compute_datasource_type.mapper.dart';
 /// The datasource type.
 @MappableEnum(defaultValue: 'unknown')
 enum UserComputeDatasourceType {
-  @MappableValue('Dataset') 
+  @MappableValue('Dataset')
   dataset,
 
-  @MappableValue('Urls') 
+  @MappableValue('Urls')
   urls,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum UserComputeDatasourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UserComputeDatasourceType> get $valuesDefined => values.where((value) => value != UserComputeDatasourceType.unknown).toList();
+  static List<UserComputeDatasourceType> get $valuesDefined =>
+      values.where((value) => value != UserComputeDatasourceType.unknown).toList();
 }

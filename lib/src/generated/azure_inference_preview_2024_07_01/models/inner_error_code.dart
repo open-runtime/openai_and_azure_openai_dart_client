@@ -9,10 +9,10 @@ part 'inner_error_code.mapper.dart';
 /// Error codes for the inner error object.
 @MappableEnum(defaultValue: 'unknown')
 enum InnerErrorCode {
-  @MappableValue('ResponsibleAIPolicyViolation') 
+  @MappableValue('ResponsibleAIPolicyViolation')
   responsibleAiPolicyViolation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

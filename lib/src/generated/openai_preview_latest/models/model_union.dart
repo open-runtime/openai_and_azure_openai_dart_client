@@ -9,7 +9,11 @@ import 'model_union_enum.dart';
 part 'model_union.mapper.dart';
 
 /// The model to use for image generation. Only `dall-e-2` is supported at this time.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ModelUnionVariantEnum, ModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ModelUnionVariantEnum, ModelUnionVariantString],
+)
 sealed class ModelUnion with ModelUnionMappable {
   const ModelUnion();
 
@@ -49,18 +53,14 @@ extension ModelUnionDeserializer on ModelUnion {
 class ModelUnionVariantEnum extends ModelUnion with ModelUnionVariantEnumMappable {
   final ModelUnionEnum value;
 
-  const ModelUnionVariantEnum({
-    required this.value,
-  });
+  const ModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelUnionVariantString extends ModelUnion with ModelUnionVariantStringMappable {
   final String value;
 
-  const ModelUnionVariantString({
-    required this.value,
-  });
+  const ModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

@@ -11,10 +11,10 @@ part 'chat_completion_list_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionListObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ChatCompletionListObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionListObjectObjectEnum> get $valuesDefined => values.where((value) => value != ChatCompletionListObjectObjectEnum.unknown).toList();
+  static List<ChatCompletionListObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionListObjectObjectEnum.unknown).toList();
 }

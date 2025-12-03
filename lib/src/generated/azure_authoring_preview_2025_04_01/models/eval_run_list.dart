@@ -31,6 +31,4 @@ class EvalRunList with EvalRunListMappable {
   final EvalRunListObjectObjectEnum objectEnum;
 
   static EvalRunList fromJson(Map<String, dynamic> json) => EvalRunListMapper.fromJson(json);
-
 }
-

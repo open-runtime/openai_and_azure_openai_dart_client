@@ -14,17 +14,18 @@ import 'chat_completion_request_user_message_content_part.dart';
 
 part 'data_content_parts_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  DataContentPartsUnionText,
-  DataContentPartsUnionImageUrl
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [DataContentPartsUnionText, DataContentPartsUnionImageUrl],
+)
 sealed class DataContentPartsUnion with DataContentPartsUnionMappable {
   const DataContentPartsUnion();
 
   static DataContentPartsUnion fromJson(Map<String, dynamic> json) {
     return DataContentPartsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension DataContentPartsUnionDeserializer on DataContentPartsUnion {
@@ -34,14 +35,16 @@ extension DataContentPartsUnionDeserializer on DataContentPartsUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      DataContentPartsUnionText: 'text',
-      DataContentPartsUnionImageUrl: 'image_url',
+      ChatCompletionRequestMessageContentPartText: 'text',
+      ChatCompletionRequestMessageContentPartImage: 'image_url',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[DataContentPartsUnionText] => DataContentPartsUnionTextMapper.fromJson(json),
-      _ when value == effective[DataContentPartsUnionImageUrl] => DataContentPartsUnionImageUrlMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartText] =>
+        ChatCompletionRequestMessageContentPartTextMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartImage] =>
+        ChatCompletionRequestMessageContentPartImageMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for DataContentPartsUnion'),
     };
   }
@@ -52,12 +55,9 @@ class DataContentPartsUnionText extends DataContentPartsUnion with DataContentPa
   final ChatCompletionRequestMessageContentPartTextType type;
   final String text;
 
-  const DataContentPartsUnionText({
-    required this.type,
-    required this.text,
-  });
-
+  const DataContentPartsUnionText({required this.type, required this.text});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
 class DataContentPartsUnionImageUrl extends DataContentPartsUnion with DataContentPartsUnionImageUrlMappable {
   final ChatCompletionRequestMessageContentPartImageType type;
@@ -68,5 +68,4 @@ class DataContentPartsUnionImageUrl extends DataContentPartsUnion with DataConte
     required this.type,
     required this.chatCompletionRequestMessageContentPartImageImageUrl,
   });
-
 }

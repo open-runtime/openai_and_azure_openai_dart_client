@@ -11,10 +11,10 @@ part 'vector_store_search_results_page_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreSearchResultsPageObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `vector_store.search_results.page`.
-  @MappableValue('vector_store.search_results.page') 
+  @MappableValue('vector_store.search_results.page')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum VectorStoreSearchResultsPageObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreSearchResultsPageObjectObjectEnum> get $valuesDefined => values.where((value) => value != VectorStoreSearchResultsPageObjectObjectEnum.unknown).toList();
+  static List<VectorStoreSearchResultsPageObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != VectorStoreSearchResultsPageObjectObjectEnum.unknown).toList();
 }

@@ -23,6 +23,4 @@ class DeletedThreadResource with DeletedThreadResourceMappable {
   final DeletedThreadResourceObjectObjectEnum objectEnum;
 
   static DeletedThreadResource fromJson(Map<String, dynamic> json) => DeletedThreadResourceMapper.fromJson(json);
-
 }
-

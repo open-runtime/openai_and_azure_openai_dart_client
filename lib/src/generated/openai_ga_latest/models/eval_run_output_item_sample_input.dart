@@ -8,15 +8,11 @@ part 'eval_run_output_item_sample_input.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunOutputItemSampleInput with EvalRunOutputItemSampleInputMappable {
-  const EvalRunOutputItemSampleInput({
-    required this.role,
-    required this.content,
-  });
+  const EvalRunOutputItemSampleInput({required this.role, required this.content});
 
   final String role;
   final String content;
 
-  static EvalRunOutputItemSampleInput fromJson(Map<String, dynamic> json) => EvalRunOutputItemSampleInputMapper.fromJson(json);
-
+  static EvalRunOutputItemSampleInput fromJson(Map<String, dynamic> json) =>
+      EvalRunOutputItemSampleInputMapper.fromJson(json);
 }
-

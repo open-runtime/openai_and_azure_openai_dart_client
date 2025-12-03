@@ -19,16 +19,12 @@ part 'realtime_beta_client_event_input_audio_buffer_commit.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventInputAudioBufferCommit with RealtimeBetaClientEventInputAudioBufferCommitMappable {
-  const RealtimeBetaClientEventInputAudioBufferCommit({
-    required this.type,
-    this.eventId,
-  });
+  const RealtimeBetaClientEventInputAudioBufferCommit({required this.type, this.eventId});
 
   final dynamic type;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventInputAudioBufferCommit fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventInputAudioBufferCommitMapper.fromJson(json);
-
+  static RealtimeBetaClientEventInputAudioBufferCommit fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventInputAudioBufferCommitMapper.fromJson(json);
 }
-

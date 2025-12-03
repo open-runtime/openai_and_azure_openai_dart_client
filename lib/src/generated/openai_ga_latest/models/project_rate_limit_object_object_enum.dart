@@ -11,10 +11,10 @@ part 'project_rate_limit_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectRateLimitObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `project.rate_limit`.
-  @MappableValue('project.rate_limit') 
+  @MappableValue('project.rate_limit')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ProjectRateLimitObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectRateLimitObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectRateLimitObjectObjectEnum.unknown).toList();
+  static List<ProjectRateLimitObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectRateLimitObjectObjectEnum.unknown).toList();
 }

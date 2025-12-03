@@ -10,13 +10,13 @@ part 'tool_model.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolModel {
-  @MappableValue('gpt-image-1') 
+  @MappableValue('gpt-image-1')
   gptImage1,
 
-  @MappableValue('gpt-image-1-mini') 
+  @MappableValue('gpt-image-1-mini')
   gptImage1Mini,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

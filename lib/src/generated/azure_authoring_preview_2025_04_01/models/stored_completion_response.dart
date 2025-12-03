@@ -62,6 +62,4 @@ class StoredCompletionResponse with StoredCompletionResponseMappable {
   final String? objectField;
 
   static StoredCompletionResponse fromJson(Map<String, dynamic> json) => StoredCompletionResponseMapper.fromJson(json);
-
 }
-

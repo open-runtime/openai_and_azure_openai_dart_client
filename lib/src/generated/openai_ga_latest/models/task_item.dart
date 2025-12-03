@@ -12,8 +12,8 @@ import 'thread_item.dart';
 part 'task_item.mapper.dart';
 
 /// Task emitted by the workflow to show progress and status updates.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TaskItem with TaskItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.task')
+class TaskItem extends ThreadItem with TaskItemMappable {
   const TaskItem({
     required this.id,
     required this.createdAt,
@@ -39,6 +39,4 @@ class TaskItem with TaskItemMappable {
   final TaskItemType type;
 
   static TaskItem fromJson(Map<String, dynamic> json) => TaskItemMapper.fromJson(json);
-
 }
-

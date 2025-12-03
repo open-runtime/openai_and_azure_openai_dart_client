@@ -8,7 +8,7 @@
 part of 'realtime_client_event_response_create.dart';
 
 class RealtimeClientEventResponseCreateMapper
-    extends ClassMapperBase<RealtimeClientEventResponseCreate> {
+    extends SubClassMapperBase<RealtimeClientEventResponseCreate> {
   RealtimeClientEventResponseCreateMapper._();
 
   static RealtimeClientEventResponseCreateMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventResponseCreateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventResponseCreateMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeResponseCreateParamsMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,6 +51,14 @@ class RealtimeClientEventResponseCreateMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.create';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventResponseCreate _instantiate(DecodingData data) {
     return RealtimeClientEventResponseCreate(
@@ -137,13 +146,14 @@ abstract class RealtimeClientEventResponseCreateCopyWith<
   $In extends RealtimeClientEventResponseCreate,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
   RealtimeResponseCreateParamsCopyWith<
     $R,
     RealtimeResponseCreateParams,
     RealtimeResponseCreateParams
   >?
   get response;
+  @override
   $R call({
     dynamic type,
     String? eventId,

@@ -13,13 +13,10 @@ part 'azure_chat_extension_configuration.mapper.dart';
 ///   The use of this configuration is compatible only with Azure OpenAI.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureChatExtensionConfiguration with AzureChatExtensionConfigurationMappable {
-  const AzureChatExtensionConfiguration({
-    required this.type,
-  });
+  const AzureChatExtensionConfiguration({required this.type});
 
   final AzureChatExtensionType type;
 
-  static AzureChatExtensionConfiguration fromJson(Map<String, dynamic> json) => AzureChatExtensionConfigurationMapper.fromJson(json);
-
+  static AzureChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      AzureChatExtensionConfigurationMapper.fromJson(json);
 }
-

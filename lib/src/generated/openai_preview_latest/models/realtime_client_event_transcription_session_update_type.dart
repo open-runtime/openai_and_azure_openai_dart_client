@@ -10,10 +10,10 @@ part 'realtime_client_event_transcription_session_update_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventTranscriptionSessionUpdateType {
   /// Incorrect name has been replaced. Original name: `transcription_session.update`.
-  @MappableValue('transcription_session.update') 
+  @MappableValue('transcription_session.update')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventTranscriptionSessionUpdateType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventTranscriptionSessionUpdateType> get $valuesDefined => values.where((value) => value != RealtimeClientEventTranscriptionSessionUpdateType.unknown).toList();
+  static List<RealtimeClientEventTranscriptionSessionUpdateType> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventTranscriptionSessionUpdateType.unknown).toList();
 }

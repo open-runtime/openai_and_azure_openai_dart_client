@@ -11,17 +11,11 @@ part 'endpoint_key_connection.mapper.dart';
 /// Endpoint key connection.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EndpointKeyConnection with EndpointKeyConnectionMappable {
-  const EndpointKeyConnection({
-    required this.kind,
-    this.endpoint,
-    this.key,
-  });
+  const EndpointKeyConnection({required this.kind, this.endpoint, this.key});
 
   final ConnectionType kind;
   final String? endpoint;
   final String? key;
 
   static EndpointKeyConnection fromJson(Map<String, dynamic> json) => EndpointKeyConnectionMapper.fromJson(json);
-
 }
-

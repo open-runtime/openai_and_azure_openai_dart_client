@@ -8,10 +8,7 @@ part 'audit_log_login_failed.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogLoginFailed with AuditLogLoginFailedMappable {
-  const AuditLogLoginFailed({
-    this.errorCode,
-    this.errorMessage,
-  });
+  const AuditLogLoginFailed({this.errorCode, this.errorMessage});
 
   @MappableField(key: 'error_code')
   final String? errorCode;
@@ -19,6 +16,4 @@ class AuditLogLoginFailed with AuditLogLoginFailedMappable {
   final String? errorMessage;
 
   static AuditLogLoginFailed fromJson(Map<String, dynamic> json) => AuditLogLoginFailedMapper.fromJson(json);
-
 }
-

@@ -9,22 +9,22 @@ part 'tool_environment.mapper.dart';
 /// The type of computer environment to control.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolEnvironment {
-  @MappableValue('windows') 
+  @MappableValue('windows')
   windows,
 
-  @MappableValue('mac') 
+  @MappableValue('mac')
   mac,
 
-  @MappableValue('linux') 
+  @MappableValue('linux')
   linux,
 
-  @MappableValue('ubuntu') 
+  @MappableValue('ubuntu')
   ubuntu,
 
-  @MappableValue('browser') 
+  @MappableValue('browser')
   browser,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

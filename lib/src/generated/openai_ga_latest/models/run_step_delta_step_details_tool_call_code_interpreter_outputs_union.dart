@@ -13,41 +13,53 @@ import 'run_step_delta_step_details_tool_calls_code_output_logs_object_type.dart
 
 part 'run_step_delta_step_details_tool_call_code_interpreter_outputs_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs,
-  RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage
-])
-sealed class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs,
+    RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage,
+  ],
+)
+sealed class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion
+    with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionMappable {
   const RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion();
 
   static RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion fromJson(Map<String, dynamic> json) {
     return RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
-extension RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionDeserializer on RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion {
+extension RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionDeserializer
+    on RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion {
   static RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs: 'logs',
-      RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage: 'image',
+      RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject: 'logs',
+      RunStepDeltaStepDetailsToolCallsCodeOutputImageObject: 'image',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs] => RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogsMapper.fromJson(json),
-      _ when value == effective[RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage] => RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImageMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion'),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject] =>
+        RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsCodeOutputImageObject] =>
+        RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
-class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs extends RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogsMappable {
+class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs
+    extends RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion
+    with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogsMappable {
   @MappableField(key: 'index')
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type;
@@ -58,20 +70,22 @@ class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionLogs extends Run
     required this.type,
     required this.logs,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
-class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage extends RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImageMappable {
+class RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage
+    extends RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion
+    with RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImageMappable {
   @MappableField(key: 'index')
   final int indexField;
   final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type;
   @MappableField(key: 'image')
-  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
+  final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage?
+  runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage;
 
   const RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnionImage({
     required this.indexField,
     required this.type,
     required this.runStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage,
   });
-
 }

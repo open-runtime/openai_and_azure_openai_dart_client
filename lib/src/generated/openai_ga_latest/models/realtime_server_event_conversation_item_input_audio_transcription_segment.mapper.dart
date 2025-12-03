@@ -9,7 +9,7 @@ part of 'realtime_server_event_conversation_item_input_audio_transcription_segme
 
 class RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper
     extends
-        ClassMapperBase<
+        SubClassMapperBase<
           RealtimeServerEventConversationItemInputAudioTranscriptionSegment
         > {
   RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper._();
@@ -23,6 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -127,6 +128,15 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'conversation.item.input_audio_transcription.segment';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionSegment
   _instantiate(DecodingData data) {
@@ -256,7 +266,8 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionSegment
   $In extends RealtimeServerEventConversationItemInputAudioTranscriptionSegment,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     dynamic type,

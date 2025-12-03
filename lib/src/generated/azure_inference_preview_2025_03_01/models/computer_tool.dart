@@ -13,8 +13,8 @@ part 'computer_tool.mapper.dart';
 /// A tool that controls a virtual computer. Learn more about the .
 /// [computer tool](/docs/guides/tools-computer-use).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerTool with ComputerToolMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer-preview')
+class ComputerTool extends Tool with ComputerToolMappable {
   const ComputerTool({
     required this.type,
     required this.displayWidth,
@@ -30,6 +30,4 @@ class ComputerTool with ComputerToolMappable {
   final ComputerToolEnvironment environment;
 
   static ComputerTool fromJson(Map<String, dynamic> json) => ComputerToolMapper.fromJson(json);
-
 }
-

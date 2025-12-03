@@ -8,15 +8,10 @@ part 'batch_request_output_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutputError with BatchRequestOutputErrorMappable {
-  const BatchRequestOutputError({
-    this.code,
-    this.message,
-  });
+  const BatchRequestOutputError({this.code, this.message});
 
   final String? code;
   final String? message;
 
   static BatchRequestOutputError fromJson(Map<String, dynamic> json) => BatchRequestOutputErrorMapper.fromJson(json);
-
 }
-

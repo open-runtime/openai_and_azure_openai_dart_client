@@ -9,8 +9,16 @@ part 'create_fine_tuning_job_request_hyperparameters_batch_size_union.mapper.dar
 /// Number of examples in each batch. A larger batch size means that model parameters.
 /// are updated less frequently, but with lower variance.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString, CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt])
-sealed class CreateFineTuningJobRequestHyperparametersBatchSizeUnion with CreateFineTuningJobRequestHyperparametersBatchSizeUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString,
+    CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt,
+  ],
+)
+sealed class CreateFineTuningJobRequestHyperparametersBatchSizeUnion
+    with CreateFineTuningJobRequestHyperparametersBatchSizeUnionMappable {
   const CreateFineTuningJobRequestHyperparametersBatchSizeUnion();
 
   static CreateFineTuningJobRequestHyperparametersBatchSizeUnion fromJson(dynamic json) {
@@ -18,7 +26,8 @@ sealed class CreateFineTuningJobRequestHyperparametersBatchSizeUnion with Create
   }
 }
 
-extension CreateFineTuningJobRequestHyperparametersBatchSizeUnionDeserializer on CreateFineTuningJobRequestHyperparametersBatchSizeUnion {
+extension CreateFineTuningJobRequestHyperparametersBatchSizeUnionDeserializer
+    on CreateFineTuningJobRequestHyperparametersBatchSizeUnion {
   static CreateFineTuningJobRequestHyperparametersBatchSizeUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -34,31 +43,34 @@ extension CreateFineTuningJobRequestHyperparametersBatchSizeUnionDeserializer on
       return CreateFineTuningJobRequestHyperparametersBatchSizeUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for CreateFineTuningJobRequestHyperparametersBatchSizeUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateFineTuningJobRequestHyperparametersBatchSizeUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString extends CreateFineTuningJobRequestHyperparametersBatchSizeUnion with CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantStringMappable {
+class CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString
+    extends CreateFineTuningJobRequestHyperparametersBatchSizeUnion
+    with CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantStringMappable {
   final String value;
 
-  const CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt extends CreateFineTuningJobRequestHyperparametersBatchSizeUnion with CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantIntMappable {
+class CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt
+    extends CreateFineTuningJobRequestHyperparametersBatchSizeUnion
+    with CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantIntMappable {
   final int value;
 
-  const CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersBatchSizeUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension CreateFineTuningJobRequestHyperparametersBatchSizeUnionJsonValue on CreateFineTuningJobRequestHyperparametersBatchSizeUnion {
+extension CreateFineTuningJobRequestHyperparametersBatchSizeUnionJsonValue
+    on CreateFineTuningJobRequestHyperparametersBatchSizeUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -88,7 +100,9 @@ class CreateFineTuningJobRequestHyperparametersBatchSizeUnionHook extends Mappin
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! CreateFineTuningJobRequestHyperparametersBatchSizeUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! CreateFineTuningJobRequestHyperparametersBatchSizeUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return CreateFineTuningJobRequestHyperparametersBatchSizeUnion.fromJson(value);
     }

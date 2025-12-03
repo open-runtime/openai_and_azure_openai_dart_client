@@ -32,7 +32,6 @@ class RealtimeBetaClientEventConversationItemCreate with RealtimeBetaClientEvent
   @MappableField(key: 'previous_item_id')
   final String? previousItemId;
 
-  static RealtimeBetaClientEventConversationItemCreate fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventConversationItemCreateMapper.fromJson(json);
-
+  static RealtimeBetaClientEventConversationItemCreate fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventConversationItemCreateMapper.fromJson(json);
 }
-

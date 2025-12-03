@@ -10,10 +10,10 @@ part 'file_citation_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum FileCitationType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum FileCitationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FileCitationType> get $valuesDefined => values.where((value) => value != FileCitationType.unknown).toList();
+  static List<FileCitationType> get $valuesDefined =>
+      values.where((value) => value != FileCitationType.unknown).toList();
 }

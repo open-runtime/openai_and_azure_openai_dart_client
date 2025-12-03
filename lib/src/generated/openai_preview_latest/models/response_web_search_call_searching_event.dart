@@ -10,13 +10,9 @@ import 'response_web_search_call_searching_event_type.dart';
 part 'response_web_search_call_searching_event.mapper.dart';
 
 /// Emitted when a web search call is executing.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseWebSearchCallSearchingEvent with ResponseWebSearchCallSearchingEventMappable {
-  const ResponseWebSearchCallSearchingEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.searching')
+class ResponseWebSearchCallSearchingEvent extends ResponseStreamEvent with ResponseWebSearchCallSearchingEventMappable {
+  const ResponseWebSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId});
 
   final ResponseWebSearchCallSearchingEventType type;
   @MappableField(key: 'output_index')
@@ -24,7 +20,6 @@ class ResponseWebSearchCallSearchingEvent with ResponseWebSearchCallSearchingEve
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseWebSearchCallSearchingEvent fromJson(Map<String, dynamic> json) => ResponseWebSearchCallSearchingEventMapper.fromJson(json);
-
+  static ResponseWebSearchCallSearchingEvent fromJson(Map<String, dynamic> json) =>
+      ResponseWebSearchCallSearchingEventMapper.fromJson(json);
 }
-

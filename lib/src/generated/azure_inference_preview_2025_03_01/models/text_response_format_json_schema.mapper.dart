@@ -8,7 +8,7 @@
 part of 'text_response_format_json_schema.dart';
 
 class TextResponseFormatJsonSchemaMapper
-    extends ClassMapperBase<TextResponseFormatJsonSchema> {
+    extends SubClassMapperBase<TextResponseFormatJsonSchema> {
   TextResponseFormatJsonSchemaMapper._();
 
   static TextResponseFormatJsonSchemaMapper? _instance;
@@ -16,6 +16,9 @@ class TextResponseFormatJsonSchemaMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = TextResponseFormatJsonSchemaMapper._(),
+      );
+      TextResponseFormatConfigurationMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       TextResponseFormatJsonSchemaTypeMapper.ensureInitialized();
     }
@@ -67,6 +70,14 @@ class TextResponseFormatJsonSchemaMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'json_schema';
+  @override
+  late final ClassMapperBase superMapper =
+      TextResponseFormatConfigurationMapper.ensureInitialized();
 
   static TextResponseFormatJsonSchema _instantiate(DecodingData data) {
     return TextResponseFormatJsonSchema(
@@ -150,7 +161,8 @@ abstract class TextResponseFormatJsonSchemaCopyWith<
   $In extends TextResponseFormatJsonSchema,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements TextResponseFormatConfigurationCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     TextResponseFormatJsonSchemaType? type,
     dynamic schema,

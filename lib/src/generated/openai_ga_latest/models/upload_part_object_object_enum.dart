@@ -11,10 +11,10 @@ part 'upload_part_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UploadPartObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `upload.part`.
-  @MappableValue('upload.part') 
+  @MappableValue('upload.part')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum UploadPartObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UploadPartObjectObjectEnum> get $valuesDefined => values.where((value) => value != UploadPartObjectObjectEnum.unknown).toList();
+  static List<UploadPartObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UploadPartObjectObjectEnum.unknown).toList();
 }

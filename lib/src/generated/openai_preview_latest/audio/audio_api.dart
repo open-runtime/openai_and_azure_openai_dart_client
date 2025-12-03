@@ -72,7 +72,8 @@ abstract class AudioApi {
     @Part(name: 'file') required MultipartFile file,
     @Part(name: 'model') required ModelUnion model,
     @Part(name: 'temperature') num? temperature = 0,
-    @Part(name: 'timestamp_granularities[]') List<TimestampGranularities>? timestampGranularities = const [TimestampGranularities.segment],
+    @Part(name: 'timestamp_granularities[]')
+    List<TimestampGranularities>? timestampGranularities = const [TimestampGranularities.segment],
     @Part(name: 'stream') bool? stream = false,
     @Part(name: 'language') String? language,
     @Part(name: 'prompt') String? prompt,

@@ -12,16 +12,16 @@ part 'create_completion_response_choices_finish_reason_finish_reason.mapper.dart
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateCompletionResponseChoicesFinishReasonFinishReason {
-  @MappableValue('stop') 
+  @MappableValue('stop')
   stop,
 
-  @MappableValue('length') 
+  @MappableValue('length')
   length,
 
-  @MappableValue('content_filter') 
+  @MappableValue('content_filter')
   contentFilter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum CreateCompletionResponseChoicesFinishReasonFinishReason {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateCompletionResponseChoicesFinishReasonFinishReason> get $valuesDefined => values.where((value) => value != CreateCompletionResponseChoicesFinishReasonFinishReason.unknown).toList();
+  static List<CreateCompletionResponseChoicesFinishReasonFinishReason> get $valuesDefined =>
+      values.where((value) => value != CreateCompletionResponseChoicesFinishReasonFinishReason.unknown).toList();
 }

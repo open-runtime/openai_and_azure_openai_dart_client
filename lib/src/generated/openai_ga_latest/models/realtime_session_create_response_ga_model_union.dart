@@ -10,7 +10,14 @@ part 'realtime_session_create_response_ga_model_union.mapper.dart';
 
 /// The Realtime model used for this session.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionCreateResponseGaModelUnionVariantEnum, RealtimeSessionCreateResponseGaModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionCreateResponseGaModelUnionVariantEnum,
+    RealtimeSessionCreateResponseGaModelUnionVariantString,
+  ],
+)
 sealed class RealtimeSessionCreateResponseGaModelUnion with RealtimeSessionCreateResponseGaModelUnionMappable {
   const RealtimeSessionCreateResponseGaModelUnion();
 
@@ -42,26 +49,26 @@ extension RealtimeSessionCreateResponseGaModelUnionDeserializer on RealtimeSessi
       return RealtimeSessionCreateResponseGaModelUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeSessionCreateResponseGaModelUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionCreateResponseGaModelUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseGaModelUnionVariantEnum extends RealtimeSessionCreateResponseGaModelUnion with RealtimeSessionCreateResponseGaModelUnionVariantEnumMappable {
+class RealtimeSessionCreateResponseGaModelUnionVariantEnum extends RealtimeSessionCreateResponseGaModelUnion
+    with RealtimeSessionCreateResponseGaModelUnionVariantEnumMappable {
   final RealtimeSessionCreateResponseGaModelUnionEnum value;
 
-  const RealtimeSessionCreateResponseGaModelUnionVariantEnum({
-    required this.value,
-  });
+  const RealtimeSessionCreateResponseGaModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateResponseGaModelUnionVariantString extends RealtimeSessionCreateResponseGaModelUnion with RealtimeSessionCreateResponseGaModelUnionVariantStringMappable {
+class RealtimeSessionCreateResponseGaModelUnionVariantString extends RealtimeSessionCreateResponseGaModelUnion
+    with RealtimeSessionCreateResponseGaModelUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionCreateResponseGaModelUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionCreateResponseGaModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

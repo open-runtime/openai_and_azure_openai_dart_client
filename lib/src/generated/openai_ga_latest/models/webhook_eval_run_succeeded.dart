@@ -32,6 +32,4 @@ class WebhookEvalRunSucceeded with WebhookEvalRunSucceededMappable {
   final WebhookEvalRunSucceededObjectObjectEnum? objectEnum;
 
   static WebhookEvalRunSucceeded fromJson(Map<String, dynamic> json) => WebhookEvalRunSucceededMapper.fromJson(json);
-
 }
-

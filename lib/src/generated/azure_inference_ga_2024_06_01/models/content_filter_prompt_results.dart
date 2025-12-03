@@ -33,7 +33,6 @@ class ContentFilterPromptResults with ContentFilterPromptResultsMappable {
   final ErrorBase? error;
   final ContentFilterDetectedResult? jailbreak;
 
-  static ContentFilterPromptResults fromJson(Map<String, dynamic> json) => ContentFilterPromptResultsMapper.fromJson(json);
-
+  static ContentFilterPromptResults fromJson(Map<String, dynamic> json) =>
+      ContentFilterPromptResultsMapper.fromJson(json);
 }
-

@@ -9,10 +9,10 @@ part 'chat_completion_request_message_content_part_refusal_type.mapper.dart';
 /// The type of the content part.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestMessageContentPartRefusalType {
-  @MappableValue('refusal') 
+  @MappableValue('refusal')
   refusal,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionRequestMessageContentPartRefusalType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestMessageContentPartRefusalType> get $valuesDefined => values.where((value) => value != ChatCompletionRequestMessageContentPartRefusalType.unknown).toList();
+  static List<ChatCompletionRequestMessageContentPartRefusalType> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestMessageContentPartRefusalType.unknown).toList();
 }

@@ -23,6 +23,4 @@ class ResponseOutputText with ResponseOutputTextMappable {
   final ResponseOutputTextType type;
 
   static ResponseOutputText fromJson(Map<String, dynamic> json) => ResponseOutputTextMapper.fromJson(json);
-
 }
-

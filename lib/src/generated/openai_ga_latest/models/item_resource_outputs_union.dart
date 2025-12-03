@@ -13,17 +13,18 @@ import 'conversation_item_outputs_union.dart';
 
 part 'item_resource_outputs_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ItemResourceOutputsUnionLogs,
-  ItemResourceOutputsUnionImage
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ItemResourceOutputsUnionLogs, ItemResourceOutputsUnionImage],
+)
 sealed class ItemResourceOutputsUnion with ItemResourceOutputsUnionMappable {
   const ItemResourceOutputsUnion();
 
   static ItemResourceOutputsUnion fromJson(Map<String, dynamic> json) {
     return ItemResourceOutputsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ItemResourceOutputsUnionDeserializer on ItemResourceOutputsUnion {
@@ -33,14 +34,14 @@ extension ItemResourceOutputsUnionDeserializer on ItemResourceOutputsUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ItemResourceOutputsUnionLogs: 'logs',
-      ItemResourceOutputsUnionImage: 'image',
+      CodeInterpreterOutputLogs: 'logs',
+      CodeInterpreterOutputImage: 'image',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ItemResourceOutputsUnionLogs] => ItemResourceOutputsUnionLogsMapper.fromJson(json),
-      _ when value == effective[ItemResourceOutputsUnionImage] => ItemResourceOutputsUnionImageMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterOutputLogs] => CodeInterpreterOutputLogsMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterOutputImage] => CodeInterpreterOutputImageMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ItemResourceOutputsUnion'),
     };
   }
@@ -51,20 +52,13 @@ class ItemResourceOutputsUnionLogs extends ItemResourceOutputsUnion with ItemRes
   final CodeInterpreterOutputLogsType type;
   final String logs;
 
-  const ItemResourceOutputsUnionLogs({
-    required this.type,
-    required this.logs,
-  });
-
+  const ItemResourceOutputsUnionLogs({required this.type, required this.logs});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
 class ItemResourceOutputsUnionImage extends ItemResourceOutputsUnion with ItemResourceOutputsUnionImageMappable {
   final CodeInterpreterOutputImageType type;
   final String url;
 
-  const ItemResourceOutputsUnionImage({
-    required this.type,
-    required this.url,
-  });
-
+  const ItemResourceOutputsUnionImage({required this.type, required this.url});
 }

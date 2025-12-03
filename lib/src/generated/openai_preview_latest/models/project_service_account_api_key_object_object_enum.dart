@@ -11,10 +11,10 @@ part 'project_service_account_api_key_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectServiceAccountApiKeyObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.project.service_account.api_key`.
-  @MappableValue('organization.project.service_account.api_key') 
+  @MappableValue('organization.project.service_account.api_key')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ProjectServiceAccountApiKeyObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectServiceAccountApiKeyObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectServiceAccountApiKeyObjectObjectEnum.unknown).toList();
+  static List<ProjectServiceAccountApiKeyObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectServiceAccountApiKeyObjectObjectEnum.unknown).toList();
 }

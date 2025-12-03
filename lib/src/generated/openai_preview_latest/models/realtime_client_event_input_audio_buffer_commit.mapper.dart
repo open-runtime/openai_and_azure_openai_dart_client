@@ -8,7 +8,7 @@
 part of 'realtime_client_event_input_audio_buffer_commit.dart';
 
 class RealtimeClientEventInputAudioBufferCommitMapper
-    extends ClassMapperBase<RealtimeClientEventInputAudioBufferCommit> {
+    extends SubClassMapperBase<RealtimeClientEventInputAudioBufferCommit> {
   RealtimeClientEventInputAudioBufferCommitMapper._();
 
   static RealtimeClientEventInputAudioBufferCommitMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventInputAudioBufferCommitMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventInputAudioBufferCommitMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeClientEventInputAudioBufferCommitTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -45,6 +46,14 @@ class RealtimeClientEventInputAudioBufferCommitMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_audio_buffer.commit';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventInputAudioBufferCommit _instantiate(
     DecodingData data,
@@ -141,7 +150,8 @@ abstract class RealtimeClientEventInputAudioBufferCommitCopyWith<
   $In extends RealtimeClientEventInputAudioBufferCommit,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     RealtimeClientEventInputAudioBufferCommitType? type,
     String? eventId,

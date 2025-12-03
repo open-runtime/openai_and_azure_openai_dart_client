@@ -11,10 +11,10 @@ part 'realtime_session_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `realtime.session`.
-  @MappableValue('realtime.session') 
+  @MappableValue('realtime.session')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeSessionObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionObjectObjectEnum> get $valuesDefined => values.where((value) => value != RealtimeSessionObjectObjectEnum.unknown).toList();
+  static List<RealtimeSessionObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionObjectObjectEnum.unknown).toList();
 }

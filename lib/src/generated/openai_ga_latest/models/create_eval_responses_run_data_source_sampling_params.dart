@@ -34,7 +34,6 @@ class CreateEvalResponsesRunDataSourceSamplingParams with CreateEvalResponsesRun
   @MappableField(key: 'text')
   final CreateEvalResponsesRunDataSourceSamplingParamsText? createEvalResponsesRunDataSourceSamplingParamsText;
 
-  static CreateEvalResponsesRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceSamplingParamsMapper.fromJson(json);
-
+  static CreateEvalResponsesRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) =>
+      CreateEvalResponsesRunDataSourceSamplingParamsMapper.fromJson(json);
 }
-

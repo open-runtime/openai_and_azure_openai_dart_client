@@ -12,16 +12,11 @@ part 'moderation_image_url_input.mapper.dart';
 /// An object describing an image to classify.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModerationImageUrlInput with ModerationImageUrlInputMappable {
-  const ModerationImageUrlInput({
-    required this.type,
-    required this.moderationImageUrlInputImageUrl,
-  });
+  const ModerationImageUrlInput({required this.type, required this.moderationImageUrlInputImageUrl});
 
   final ModerationImageUrlInputType type;
   @MappableField(key: 'image_url')
   final ModerationImageUrlInputImageUrl moderationImageUrlInputImageUrl;
 
   static ModerationImageUrlInput fromJson(Map<String, dynamic> json) => ModerationImageUrlInputMapper.fromJson(json);
-
 }
-

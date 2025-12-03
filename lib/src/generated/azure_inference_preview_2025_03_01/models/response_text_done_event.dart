@@ -10,8 +10,8 @@ import 'response_text_done_event_type.dart';
 part 'response_text_done_event.mapper.dart';
 
 /// Emitted when text content is finalized.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseTextDoneEvent with ResponseTextDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.done')
+class ResponseTextDoneEvent extends ResponseStreamEvent with ResponseTextDoneEventMappable {
   const ResponseTextDoneEvent({
     required this.type,
     required this.itemId,
@@ -30,6 +30,4 @@ class ResponseTextDoneEvent with ResponseTextDoneEventMappable {
   final String text;
 
   static ResponseTextDoneEvent fromJson(Map<String, dynamic> json) => ResponseTextDoneEventMapper.fromJson(json);
-
 }
-

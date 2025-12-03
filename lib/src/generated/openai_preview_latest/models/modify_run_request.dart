@@ -10,13 +10,9 @@ part 'modify_run_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyRunRequest with ModifyRunRequestMappable {
-  const ModifyRunRequest({
-    this.metadata,
-  });
+  const ModifyRunRequest({this.metadata});
 
   final Metadata? metadata;
 
   static ModifyRunRequest fromJson(Map<String, dynamic> json) => ModifyRunRequestMapper.fromJson(json);
-
 }
-

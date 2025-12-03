@@ -9,13 +9,13 @@ part 'fine_tuning_job_event_type.mapper.dart';
 /// The type of event.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningJobEventType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('metrics') 
+  @MappableValue('metrics')
   metrics,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum FineTuningJobEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningJobEventType> get $valuesDefined => values.where((value) => value != FineTuningJobEventType.unknown).toList();
+  static List<FineTuningJobEventType> get $valuesDefined =>
+      values.where((value) => value != FineTuningJobEventType.unknown).toList();
 }

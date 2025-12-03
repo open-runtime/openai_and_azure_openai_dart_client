@@ -9,19 +9,19 @@ part 'upload_status.mapper.dart';
 /// The status of the Upload.
 @MappableEnum(defaultValue: 'unknown')
 enum UploadStatus {
-  @MappableValue('pending') 
+  @MappableValue('pending')
   pending,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

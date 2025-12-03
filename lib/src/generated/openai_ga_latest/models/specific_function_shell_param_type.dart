@@ -9,10 +9,10 @@ part 'specific_function_shell_param_type.mapper.dart';
 /// The tool to call. Always `shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum SpecificFunctionShellParamType {
-  @MappableValue('shell') 
+  @MappableValue('shell')
   shell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum SpecificFunctionShellParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SpecificFunctionShellParamType> get $valuesDefined => values.where((value) => value != SpecificFunctionShellParamType.unknown).toList();
+  static List<SpecificFunctionShellParamType> get $valuesDefined =>
+      values.where((value) => value != SpecificFunctionShellParamType.unknown).toList();
 }

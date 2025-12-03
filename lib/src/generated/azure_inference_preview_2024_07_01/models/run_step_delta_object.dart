@@ -13,11 +13,7 @@ part 'run_step_delta_object.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaObject with RunStepDeltaObjectMappable {
-  const RunStepDeltaObject({
-    required this.id,
-    required this.objectEnum,
-    required this.runStepDeltaObjectDelta,
-  });
+  const RunStepDeltaObject({required this.id, required this.objectEnum, required this.runStepDeltaObjectDelta});
 
   final String id;
   @MappableField(key: 'object')
@@ -26,6 +22,4 @@ class RunStepDeltaObject with RunStepDeltaObjectMappable {
   final RunStepDeltaObjectDelta runStepDeltaObjectDelta;
 
   static RunStepDeltaObject fromJson(Map<String, dynamic> json) => RunStepDeltaObjectMapper.fromJson(json);
-
 }
-

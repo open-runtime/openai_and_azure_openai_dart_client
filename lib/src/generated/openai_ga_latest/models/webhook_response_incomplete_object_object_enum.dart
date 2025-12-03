@@ -11,10 +11,10 @@ part 'webhook_response_incomplete_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookResponseIncompleteObjectObjectEnum {
-  @MappableValue('event') 
+  @MappableValue('event')
   event,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookResponseIncompleteObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookResponseIncompleteObjectObjectEnum> get $valuesDefined => values.where((value) => value != WebhookResponseIncompleteObjectObjectEnum.unknown).toList();
+  static List<WebhookResponseIncompleteObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WebhookResponseIncompleteObjectObjectEnum.unknown).toList();
 }

@@ -28,7 +28,6 @@ class CreateEvalRequestDataSourceConfigDataSourceConfig with CreateEvalRequestDa
   final bool includeSampleSchema;
   final CreateEvalLogsDataSourceConfigType type;
 
-  static CreateEvalRequestDataSourceConfigDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalRequestDataSourceConfigDataSourceConfigMapper.fromJson(json);
-
+  static CreateEvalRequestDataSourceConfigDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      CreateEvalRequestDataSourceConfigDataSourceConfigMapper.fromJson(json);
 }
-

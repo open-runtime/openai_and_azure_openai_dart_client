@@ -12,17 +12,18 @@ import 'code_interpreter_tool_call_outputs_union.dart';
 
 part 'conversation_item_outputs_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ConversationItemOutputsUnionLogs,
-  ConversationItemOutputsUnionImage
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ConversationItemOutputsUnionLogs, ConversationItemOutputsUnionImage],
+)
 sealed class ConversationItemOutputsUnion with ConversationItemOutputsUnionMappable {
   const ConversationItemOutputsUnion();
 
   static ConversationItemOutputsUnion fromJson(Map<String, dynamic> json) {
     return ConversationItemOutputsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ConversationItemOutputsUnionDeserializer on ConversationItemOutputsUnion {
@@ -32,38 +33,33 @@ extension ConversationItemOutputsUnionDeserializer on ConversationItemOutputsUni
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ConversationItemOutputsUnionLogs: 'logs',
-      ConversationItemOutputsUnionImage: 'image',
+      CodeInterpreterOutputLogs: 'logs',
+      CodeInterpreterOutputImage: 'image',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ConversationItemOutputsUnionLogs] => ConversationItemOutputsUnionLogsMapper.fromJson(json),
-      _ when value == effective[ConversationItemOutputsUnionImage] => ConversationItemOutputsUnionImageMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterOutputLogs] => CodeInterpreterOutputLogsMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterOutputImage] => CodeInterpreterOutputImageMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ConversationItemOutputsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'logs')
-class ConversationItemOutputsUnionLogs extends ConversationItemOutputsUnion with ConversationItemOutputsUnionLogsMappable {
+class ConversationItemOutputsUnionLogs extends ConversationItemOutputsUnion
+    with ConversationItemOutputsUnionLogsMappable {
   final CodeInterpreterOutputLogsType type;
   final String logs;
 
-  const ConversationItemOutputsUnionLogs({
-    required this.type,
-    required this.logs,
-  });
-
+  const ConversationItemOutputsUnionLogs({required this.type, required this.logs});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image')
-class ConversationItemOutputsUnionImage extends ConversationItemOutputsUnion with ConversationItemOutputsUnionImageMappable {
+class ConversationItemOutputsUnionImage extends ConversationItemOutputsUnion
+    with ConversationItemOutputsUnionImageMappable {
   final CodeInterpreterOutputImageType type;
   final String url;
 
-  const ConversationItemOutputsUnionImage({
-    required this.type,
-    required this.url,
-  });
-
+  const ConversationItemOutputsUnionImage({required this.type, required this.url});
 }

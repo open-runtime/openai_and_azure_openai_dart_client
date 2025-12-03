@@ -10,11 +10,7 @@ import 'api/api_api.dart';
 ///
 /// Azure OpenAI APIs for completions and search.
 class AzureInferenceY2024M06D01GaClient {
-  AzureInferenceY2024M06D01GaClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  AzureInferenceY2024M06D01GaClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;

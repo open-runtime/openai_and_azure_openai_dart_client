@@ -36,6 +36,4 @@ class ProjectApiKey with ProjectApiKeyMappable {
   final ProjectApiKeyOwner projectApiKeyOwner;
 
   static ProjectApiKey fromJson(Map<String, dynamic> json) => ProjectApiKeyMapper.fromJson(json);
-
 }
-

@@ -29,7 +29,6 @@ class ListFineTuningCheckpointPermissionResponse with ListFineTuningCheckpointPe
   @MappableField(key: 'last_id')
   final String? lastId;
 
-  static ListFineTuningCheckpointPermissionResponse fromJson(Map<String, dynamic> json) => ListFineTuningCheckpointPermissionResponseMapper.fromJson(json);
-
+  static ListFineTuningCheckpointPermissionResponse fromJson(Map<String, dynamic> json) =>
+      ListFineTuningCheckpointPermissionResponseMapper.fromJson(json);
 }
-

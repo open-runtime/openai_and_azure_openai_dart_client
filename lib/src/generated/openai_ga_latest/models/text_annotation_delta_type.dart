@@ -9,10 +9,10 @@ part 'text_annotation_delta_type.mapper.dart';
 /// Always `file_citation`.
 @MappableEnum(defaultValue: 'unknown')
 enum TextAnnotationDeltaType {
-  @MappableValue('file_citation') 
+  @MappableValue('file_citation')
   fileCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum TextAnnotationDeltaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TextAnnotationDeltaType> get $valuesDefined => values.where((value) => value != TextAnnotationDeltaType.unknown).toList();
+  static List<TextAnnotationDeltaType> get $valuesDefined =>
+      values.where((value) => value != TextAnnotationDeltaType.unknown).toList();
 }

@@ -12,11 +12,7 @@ part 'embedding.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Embedding with EmbeddingMappable {
-  const Embedding({
-    required this.indexField,
-    required this.embedding,
-    required this.objectEnum,
-  });
+  const Embedding({required this.indexField, required this.embedding, required this.objectEnum});
 
   @MappableField(key: 'index')
   final int indexField;
@@ -25,6 +21,4 @@ class Embedding with EmbeddingMappable {
   final EmbeddingObjectObjectEnum objectEnum;
 
   static Embedding fromJson(Map<String, dynamic> json) => EmbeddingMapper.fromJson(json);
-
 }
-

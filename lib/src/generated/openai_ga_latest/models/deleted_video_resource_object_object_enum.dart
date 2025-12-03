@@ -11,10 +11,10 @@ part 'deleted_video_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeletedVideoResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `video.deleted`.
-  @MappableValue('video.deleted') 
+  @MappableValue('video.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum DeletedVideoResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeletedVideoResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeletedVideoResourceObjectObjectEnum.unknown).toList();
+  static List<DeletedVideoResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeletedVideoResourceObjectObjectEnum.unknown).toList();
 }

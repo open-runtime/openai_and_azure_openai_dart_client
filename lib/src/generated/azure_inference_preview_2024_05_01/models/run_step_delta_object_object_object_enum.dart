@@ -11,10 +11,10 @@ part 'run_step_delta_object_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaObjectObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `thread.run.step.delta`.
-  @MappableValue('thread.run.step.delta') 
+  @MappableValue('thread.run.step.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RunStepDeltaObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != RunStepDeltaObjectObjectObjectEnum.unknown).toList();
+  static List<RunStepDeltaObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaObjectObjectObjectEnum.unknown).toList();
 }

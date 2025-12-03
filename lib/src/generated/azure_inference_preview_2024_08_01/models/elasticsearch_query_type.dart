@@ -9,13 +9,13 @@ part 'elasticsearch_query_type.mapper.dart';
 /// The type of Elasticsearch® retrieval query that should be executed when using it as an Azure OpenAI chat extension.
 @MappableEnum(defaultValue: 'unknown')
 enum ElasticsearchQueryType {
-  @MappableValue('simple') 
+  @MappableValue('simple')
   simple,
 
-  @MappableValue('vector') 
+  @MappableValue('vector')
   vector,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ElasticsearchQueryType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ElasticsearchQueryType> get $valuesDefined => values.where((value) => value != ElasticsearchQueryType.unknown).toList();
+  static List<ElasticsearchQueryType> get $valuesDefined =>
+      values.where((value) => value != ElasticsearchQueryType.unknown).toList();
 }

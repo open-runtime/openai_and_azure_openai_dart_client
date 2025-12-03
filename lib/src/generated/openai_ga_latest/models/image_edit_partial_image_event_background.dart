@@ -10,16 +10,16 @@ part 'image_edit_partial_image_event_background.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditPartialImageEventBackground {
-  @MappableValue('transparent') 
+  @MappableValue('transparent')
   transparent,
 
-  @MappableValue('opaque') 
+  @MappableValue('opaque')
   opaque,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageEditPartialImageEventBackground {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditPartialImageEventBackground> get $valuesDefined => values.where((value) => value != ImageEditPartialImageEventBackground.unknown).toList();
+  static List<ImageEditPartialImageEventBackground> get $valuesDefined =>
+      values.where((value) => value != ImageEditPartialImageEventBackground.unknown).toList();
 }

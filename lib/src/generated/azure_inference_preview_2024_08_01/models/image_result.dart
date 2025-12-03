@@ -12,13 +12,7 @@ part 'image_result.mapper.dart';
 /// The image url or encoded image if successful, and an error otherwise.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageResult with ImageResultMappable {
-  const ImageResult({
-    this.url,
-    this.b64Json,
-    this.contentFilterResults,
-    this.revisedPrompt,
-    this.promptFilterResults,
-  });
+  const ImageResult({this.url, this.b64Json, this.contentFilterResults, this.revisedPrompt, this.promptFilterResults});
 
   final String? url;
   @MappableField(key: 'b64_json')
@@ -31,6 +25,4 @@ class ImageResult with ImageResultMappable {
   final DalleFilterResults? promptFilterResults;
 
   static ImageResult fromJson(Map<String, dynamic> json) => ImageResultMapper.fromJson(json);
-
 }
-

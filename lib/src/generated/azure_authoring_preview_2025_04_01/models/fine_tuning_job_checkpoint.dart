@@ -34,6 +34,4 @@ class FineTuningJobCheckpoint with FineTuningJobCheckpointMappable {
   final String? id;
 
   static FineTuningJobCheckpoint fromJson(Map<String, dynamic> json) => FineTuningJobCheckpointMapper.fromJson(json);
-
 }
-

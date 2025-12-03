@@ -11,16 +11,11 @@ part 'eval_file_run_data_source.mapper.dart';
 /// A FileRunDataSource configuration with a file id
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalFileRunDataSource with EvalFileRunDataSourceMappable {
-  const EvalFileRunDataSource({
-    required this.fileId,
-    this.type = EvalFileRunDataSourceType.file,
-  });
+  const EvalFileRunDataSource({required this.fileId, this.type = EvalFileRunDataSourceType.file});
 
   @MappableField(key: 'file_id')
   final String fileId;
   final EvalFileRunDataSourceType type;
 
   static EvalFileRunDataSource fromJson(Map<String, dynamic> json) => EvalFileRunDataSourceMapper.fromJson(json);
-
 }
-

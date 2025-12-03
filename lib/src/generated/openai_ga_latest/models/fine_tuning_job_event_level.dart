@@ -9,16 +9,16 @@ part 'fine_tuning_job_event_level.mapper.dart';
 /// The log level of the event.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningJobEventLevel {
-  @MappableValue('info') 
+  @MappableValue('info')
   info,
 
-  @MappableValue('warn') 
+  @MappableValue('warn')
   warn,
 
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum FineTuningJobEventLevel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningJobEventLevel> get $valuesDefined => values.where((value) => value != FineTuningJobEventLevel.unknown).toList();
+  static List<FineTuningJobEventLevel> get $valuesDefined =>
+      values.where((value) => value != FineTuningJobEventLevel.unknown).toList();
 }

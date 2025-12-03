@@ -20,6 +20,4 @@ class CreateModerationRequest with CreateModerationRequestMappable {
   final CreateModerationRequestModelUnion model;
 
   static CreateModerationRequest fromJson(Map<String, dynamic> json) => CreateModerationRequestMapper.fromJson(json);
-
 }
-

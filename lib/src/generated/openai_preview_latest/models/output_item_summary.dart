@@ -10,15 +10,10 @@ part 'output_item_summary.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputItemSummary with OutputItemSummaryMappable {
-  const OutputItemSummary({
-    required this.type,
-    required this.text,
-  });
+  const OutputItemSummary({required this.type, required this.text});
 
   final OutputItemSummaryType type;
   final String text;
 
   static OutputItemSummary fromJson(Map<String, dynamic> json) => OutputItemSummaryMapper.fromJson(json);
-
 }
-

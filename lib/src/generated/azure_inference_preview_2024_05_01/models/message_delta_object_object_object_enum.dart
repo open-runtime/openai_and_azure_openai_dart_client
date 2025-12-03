@@ -11,10 +11,10 @@ part 'message_delta_object_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaObjectObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `thread.message.delta`.
-  @MappableValue('thread.message.delta') 
+  @MappableValue('thread.message.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum MessageDeltaObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != MessageDeltaObjectObjectObjectEnum.unknown).toList();
+  static List<MessageDeltaObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaObjectObjectObjectEnum.unknown).toList();
 }

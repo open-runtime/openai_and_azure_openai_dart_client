@@ -8,11 +8,7 @@ part 'certificate_certificate_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CertificateCertificateDetails with CertificateCertificateDetailsMappable {
-  const CertificateCertificateDetails({
-    this.validAt,
-    this.expiresAt,
-    this.content,
-  });
+  const CertificateCertificateDetails({this.validAt, this.expiresAt, this.content});
 
   @MappableField(key: 'valid_at')
   final int? validAt;
@@ -20,7 +16,6 @@ class CertificateCertificateDetails with CertificateCertificateDetailsMappable {
   final int? expiresAt;
   final String? content;
 
-  static CertificateCertificateDetails fromJson(Map<String, dynamic> json) => CertificateCertificateDetailsMapper.fromJson(json);
-
+  static CertificateCertificateDetails fromJson(Map<String, dynamic> json) =>
+      CertificateCertificateDetailsMapper.fromJson(json);
 }
-

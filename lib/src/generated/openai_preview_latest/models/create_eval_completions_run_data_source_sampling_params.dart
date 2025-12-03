@@ -22,7 +22,6 @@ class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletion
   final num topP;
   final int seed;
 
-  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
 }
-

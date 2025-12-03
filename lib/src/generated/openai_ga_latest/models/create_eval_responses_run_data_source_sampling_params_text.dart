@@ -9,14 +9,12 @@ import 'text_response_format_configuration.dart';
 part 'create_eval_responses_run_data_source_sampling_params_text.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalResponsesRunDataSourceSamplingParamsText with CreateEvalResponsesRunDataSourceSamplingParamsTextMappable {
-  const CreateEvalResponsesRunDataSourceSamplingParamsText({
-    this.format,
-  });
+class CreateEvalResponsesRunDataSourceSamplingParamsText
+    with CreateEvalResponsesRunDataSourceSamplingParamsTextMappable {
+  const CreateEvalResponsesRunDataSourceSamplingParamsText({this.format});
 
   final TextResponseFormatConfiguration? format;
 
-  static CreateEvalResponsesRunDataSourceSamplingParamsText fromJson(Map<String, dynamic> json) => CreateEvalResponsesRunDataSourceSamplingParamsTextMapper.fromJson(json);
-
+  static CreateEvalResponsesRunDataSourceSamplingParamsText fromJson(Map<String, dynamic> json) =>
+      CreateEvalResponsesRunDataSourceSamplingParamsTextMapper.fromJson(json);
 }
-

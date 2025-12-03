@@ -8,17 +8,13 @@ part 'transcript_text_usage_tokens_input_token_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextUsageTokensInputTokenDetails with TranscriptTextUsageTokensInputTokenDetailsMappable {
-  const TranscriptTextUsageTokensInputTokenDetails({
-    this.textTokens,
-    this.audioTokens,
-  });
+  const TranscriptTextUsageTokensInputTokenDetails({this.textTokens, this.audioTokens});
 
   @MappableField(key: 'text_tokens')
   final int? textTokens;
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
 
-  static TranscriptTextUsageTokensInputTokenDetails fromJson(Map<String, dynamic> json) => TranscriptTextUsageTokensInputTokenDetailsMapper.fromJson(json);
-
+  static TranscriptTextUsageTokensInputTokenDetails fromJson(Map<String, dynamic> json) =>
+      TranscriptTextUsageTokensInputTokenDetailsMapper.fromJson(json);
 }
-

@@ -8,15 +8,10 @@ part 'error_base.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ErrorBase with ErrorBaseMappable {
-  const ErrorBase({
-    this.code,
-    this.message,
-  });
+  const ErrorBase({this.code, this.message});
 
   final String? code;
   final String? message;
 
   static ErrorBase fromJson(Map<String, dynamic> json) => ErrorBaseMapper.fromJson(json);
-
 }
-

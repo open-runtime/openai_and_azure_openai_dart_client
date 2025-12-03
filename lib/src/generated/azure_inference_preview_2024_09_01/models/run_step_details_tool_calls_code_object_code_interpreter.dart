@@ -10,15 +10,11 @@ part 'run_step_details_tool_calls_code_object_code_interpreter.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsCodeObjectCodeInterpreter with RunStepDetailsToolCallsCodeObjectCodeInterpreterMappable {
-  const RunStepDetailsToolCallsCodeObjectCodeInterpreter({
-    required this.input,
-    required this.outputs,
-  });
+  const RunStepDetailsToolCallsCodeObjectCodeInterpreter({required this.input, required this.outputs});
 
   final String input;
   final List<RunStepDetailsToolCallsCodeObjectCodeInterpreterOutputsUnion> outputs;
 
-  static RunStepDetailsToolCallsCodeObjectCodeInterpreter fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsCodeObjectCodeInterpreter fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsCodeObjectCodeInterpreterMapper.fromJson(json);
 }
-

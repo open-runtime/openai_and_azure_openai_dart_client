@@ -11,10 +11,10 @@ part 'function_tool_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionToolType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum FunctionToolType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionToolType> get $valuesDefined => values.where((value) => value != FunctionToolType.unknown).toList();
+  static List<FunctionToolType> get $valuesDefined =>
+      values.where((value) => value != FunctionToolType.unknown).toList();
 }

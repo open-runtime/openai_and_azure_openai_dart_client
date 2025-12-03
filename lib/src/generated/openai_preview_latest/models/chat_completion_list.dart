@@ -32,6 +32,4 @@ class ChatCompletionList with ChatCompletionListMappable {
   final ChatCompletionListObjectObjectEnum objectEnum;
 
   static ChatCompletionList fromJson(Map<String, dynamic> json) => ChatCompletionListMapper.fromJson(json);
-
 }
-

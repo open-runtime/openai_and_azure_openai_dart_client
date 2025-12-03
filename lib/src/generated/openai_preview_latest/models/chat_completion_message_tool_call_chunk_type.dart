@@ -10,10 +10,10 @@ part 'chat_completion_message_tool_call_chunk_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionMessageToolCallChunkType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ChatCompletionMessageToolCallChunkType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionMessageToolCallChunkType> get $valuesDefined => values.where((value) => value != ChatCompletionMessageToolCallChunkType.unknown).toList();
+  static List<ChatCompletionMessageToolCallChunkType> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionMessageToolCallChunkType.unknown).toList();
 }

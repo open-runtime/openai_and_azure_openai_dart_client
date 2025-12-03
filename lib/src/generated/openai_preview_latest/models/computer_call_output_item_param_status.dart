@@ -9,16 +9,16 @@ part 'computer_call_output_item_param_status.mapper.dart';
 /// The status of the message input. One of `in_progress`, `completed`, or `incomplete`. Populated when input items are returned via API.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerCallOutputItemParamStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum ComputerCallOutputItemParamStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerCallOutputItemParamStatus> get $valuesDefined => values.where((value) => value != ComputerCallOutputItemParamStatus.unknown).toList();
+  static List<ComputerCallOutputItemParamStatus> get $valuesDefined =>
+      values.where((value) => value != ComputerCallOutputItemParamStatus.unknown).toList();
 }

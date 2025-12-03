@@ -15,18 +15,22 @@ import 'run_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_details_tool_calls_object_tool_calls_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter,
-  RunStepDetailsToolCallsObjectToolCallsUnionFileSearch,
-  RunStepDetailsToolCallsObjectToolCallsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter,
+    RunStepDetailsToolCallsObjectToolCallsUnionFileSearch,
+    RunStepDetailsToolCallsObjectToolCallsUnionFunction,
+  ],
+)
 sealed class RunStepDetailsToolCallsObjectToolCallsUnion with RunStepDetailsToolCallsObjectToolCallsUnionMappable {
   const RunStepDetailsToolCallsObjectToolCallsUnion();
 
   static RunStepDetailsToolCallsObjectToolCallsUnion fromJson(Map<String, dynamic> json) {
     return RunStepDetailsToolCallsObjectToolCallsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RunStepDetailsToolCallsObjectToolCallsUnionDeserializer on RunStepDetailsToolCallsObjectToolCallsUnion {
@@ -36,23 +40,30 @@ extension RunStepDetailsToolCallsObjectToolCallsUnionDeserializer on RunStepDeta
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter: 'code_interpreter',
-      RunStepDetailsToolCallsObjectToolCallsUnionFileSearch: 'file_search',
-      RunStepDetailsToolCallsObjectToolCallsUnionFunction: 'function',
+      RunStepDetailsToolCallsCodeObject: 'code_interpreter',
+      RunStepDetailsToolCallsFileSearchObject: 'file_search',
+      RunStepDetailsToolCallsFunctionObject: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter] => RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[RunStepDetailsToolCallsObjectToolCallsUnionFileSearch] => RunStepDetailsToolCallsObjectToolCallsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[RunStepDetailsToolCallsObjectToolCallsUnionFunction] => RunStepDetailsToolCallsObjectToolCallsUnionFunctionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepDetailsToolCallsObjectToolCallsUnion'),
+      _ when value == effective[RunStepDetailsToolCallsCodeObject] => RunStepDetailsToolCallsCodeObjectMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RunStepDetailsToolCallsFileSearchObject] =>
+        RunStepDetailsToolCallsFileSearchObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDetailsToolCallsFunctionObject] =>
+        RunStepDetailsToolCallsFunctionObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RunStepDetailsToolCallsObjectToolCallsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extends RunStepDetailsToolCallsObjectToolCallsUnion with RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMappable {
+class RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extends RunStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreterMappable {
   final String id;
   final RunStepDetailsToolCallsCodeObjectType type;
   @MappableField(key: 'code_interpreter')
@@ -63,10 +74,11 @@ class RunStepDetailsToolCallsObjectToolCallsUnionCodeInterpreter extends RunStep
     required this.type,
     required this.runStepDetailsToolCallsCodeObjectCodeInterpreter,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class RunStepDetailsToolCallsObjectToolCallsUnionFileSearch extends RunStepDetailsToolCallsObjectToolCallsUnion with RunStepDetailsToolCallsObjectToolCallsUnionFileSearchMappable {
+class RunStepDetailsToolCallsObjectToolCallsUnionFileSearch extends RunStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDetailsToolCallsObjectToolCallsUnionFileSearchMappable {
   final String id;
   final RunStepDetailsToolCallsFileSearchObjectType type;
   @MappableField(key: 'file_search')
@@ -77,10 +89,11 @@ class RunStepDetailsToolCallsObjectToolCallsUnionFileSearch extends RunStepDetai
     required this.type,
     required this.fileSearch,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class RunStepDetailsToolCallsObjectToolCallsUnionFunction extends RunStepDetailsToolCallsObjectToolCallsUnion with RunStepDetailsToolCallsObjectToolCallsUnionFunctionMappable {
+class RunStepDetailsToolCallsObjectToolCallsUnionFunction extends RunStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDetailsToolCallsObjectToolCallsUnionFunctionMappable {
   final String id;
   final RunStepDetailsToolCallsFunctionObjectType type;
   @MappableField(key: 'function')
@@ -91,5 +104,4 @@ class RunStepDetailsToolCallsObjectToolCallsUnionFunction extends RunStepDetails
     required this.type,
     required this.runStepDetailsToolCallsFunctionObjectFunction,
   });
-
 }

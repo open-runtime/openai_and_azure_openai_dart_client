@@ -9,7 +9,9 @@ part of 'realtime_server_event_response_function_call_arguments_done.dart';
 
 class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
     extends
-        ClassMapperBase<RealtimeServerEventResponseFunctionCallArgumentsDone> {
+        SubClassMapperBase<
+          RealtimeServerEventResponseFunctionCallArgumentsDone
+        > {
   RealtimeServerEventResponseFunctionCallArgumentsDoneMapper._();
 
   static RealtimeServerEventResponseFunctionCallArgumentsDoneMapper? _instance;
@@ -20,6 +22,7 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
         _instance =
             RealtimeServerEventResponseFunctionCallArgumentsDoneMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseFunctionCallArgumentsDoneTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -97,6 +100,14 @@ class RealtimeServerEventResponseFunctionCallArgumentsDoneMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.function_call_arguments.done';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseFunctionCallArgumentsDone _instantiate(
     DecodingData data,
@@ -214,7 +225,8 @@ abstract class RealtimeServerEventResponseFunctionCallArgumentsDoneCopyWith<
   $In extends RealtimeServerEventResponseFunctionCallArgumentsDone,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseFunctionCallArgumentsDoneType? type,

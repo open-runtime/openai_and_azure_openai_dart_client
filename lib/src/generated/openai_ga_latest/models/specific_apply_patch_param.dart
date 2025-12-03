@@ -10,15 +10,11 @@ import 'tool_choice_param.dart';
 part 'specific_apply_patch_param.mapper.dart';
 
 /// Forces the model to call the apply_patch tool when executing a tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class SpecificApplyPatchParam with SpecificApplyPatchParamMappable {
-  const SpecificApplyPatchParam({
-    this.type = SpecificApplyPatchParamType.applyPatch,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch')
+class SpecificApplyPatchParam extends ToolChoiceParam with SpecificApplyPatchParamMappable {
+  const SpecificApplyPatchParam({this.type = SpecificApplyPatchParamType.applyPatch});
 
   final SpecificApplyPatchParamType type;
 
   static SpecificApplyPatchParam fromJson(Map<String, dynamic> json) => SpecificApplyPatchParamMapper.fromJson(json);
-
 }
-

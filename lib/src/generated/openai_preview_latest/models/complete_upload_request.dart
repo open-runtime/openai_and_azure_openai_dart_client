@@ -8,16 +8,11 @@ part 'complete_upload_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CompleteUploadRequest with CompleteUploadRequestMappable {
-  const CompleteUploadRequest({
-    required this.partIds,
-    this.md5,
-  });
+  const CompleteUploadRequest({required this.partIds, this.md5});
 
   @MappableField(key: 'part_ids')
   final List<String> partIds;
   final String? md5;
 
   static CompleteUploadRequest fromJson(Map<String, dynamic> json) => CompleteUploadRequestMapper.fromJson(json);
-
 }
-

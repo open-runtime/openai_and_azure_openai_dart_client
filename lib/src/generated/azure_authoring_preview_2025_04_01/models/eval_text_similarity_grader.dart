@@ -31,6 +31,4 @@ class EvalTextSimilarityGrader with EvalTextSimilarityGraderMappable {
   final String? name;
 
   static EvalTextSimilarityGrader fromJson(Map<String, dynamic> json) => EvalTextSimilarityGraderMapper.fromJson(json);
-
 }
-

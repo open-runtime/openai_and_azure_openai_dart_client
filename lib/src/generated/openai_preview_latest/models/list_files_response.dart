@@ -29,6 +29,4 @@ class ListFilesResponse with ListFilesResponseMappable {
   final bool hasMore;
 
   static ListFilesResponse fromJson(Map<String, dynamic> json) => ListFilesResponseMapper.fromJson(json);
-
 }
-

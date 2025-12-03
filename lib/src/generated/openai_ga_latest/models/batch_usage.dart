@@ -31,6 +31,4 @@ class BatchUsage with BatchUsageMappable {
   final int totalTokens;
 
   static BatchUsage fromJson(Map<String, dynamic> json) => BatchUsageMapper.fromJson(json);
-
 }
-

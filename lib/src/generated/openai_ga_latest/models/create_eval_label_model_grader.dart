@@ -12,8 +12,8 @@ part 'create_eval_label_model_grader.mapper.dart';
 /// A LabelModelGrader object which uses a model to assign labels to each item.
 /// in the evaluation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalLabelModelGrader with CreateEvalLabelModelGraderMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
+class CreateEvalLabelModelGrader extends CreateEvalRequestTestingCriteriaUnion with CreateEvalLabelModelGraderMappable {
   const CreateEvalLabelModelGrader({
     required this.type,
     required this.name,
@@ -31,7 +31,6 @@ class CreateEvalLabelModelGrader with CreateEvalLabelModelGraderMappable {
   @MappableField(key: 'passing_labels')
   final List<String> passingLabels;
 
-  static CreateEvalLabelModelGrader fromJson(Map<String, dynamic> json) => CreateEvalLabelModelGraderMapper.fromJson(json);
-
+  static CreateEvalLabelModelGrader fromJson(Map<String, dynamic> json) =>
+      CreateEvalLabelModelGraderMapper.fromJson(json);
 }
-

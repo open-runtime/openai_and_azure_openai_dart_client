@@ -8,7 +8,7 @@
 part of 'realtime_server_event_conversation_item_deleted.dart';
 
 class RealtimeServerEventConversationItemDeletedMapper
-    extends ClassMapperBase<RealtimeServerEventConversationItemDeleted> {
+    extends SubClassMapperBase<RealtimeServerEventConversationItemDeleted> {
   RealtimeServerEventConversationItemDeletedMapper._();
 
   static RealtimeServerEventConversationItemDeletedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventConversationItemDeletedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventConversationItemDeletedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventConversationItemDeletedTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -49,6 +50,14 @@ class RealtimeServerEventConversationItemDeletedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.deleted';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemDeleted _instantiate(
     DecodingData data,
@@ -148,7 +157,8 @@ abstract class RealtimeServerEventConversationItemDeletedCopyWith<
   $In extends RealtimeServerEventConversationItemDeleted,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventConversationItemDeletedType? type,

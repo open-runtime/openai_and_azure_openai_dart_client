@@ -8,12 +8,7 @@ part 'eval_run_result_counts.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalRunResultCounts with EvalRunResultCountsMappable {
-  const EvalRunResultCounts({
-    required this.total,
-    required this.errored,
-    required this.failed,
-    required this.passed,
-  });
+  const EvalRunResultCounts({required this.total, required this.errored, required this.failed, required this.passed});
 
   final int total;
   final int errored;
@@ -21,6 +16,4 @@ class EvalRunResultCounts with EvalRunResultCountsMappable {
   final int passed;
 
   static EvalRunResultCounts fromJson(Map<String, dynamic> json) => EvalRunResultCountsMapper.fromJson(json);
-
 }
-

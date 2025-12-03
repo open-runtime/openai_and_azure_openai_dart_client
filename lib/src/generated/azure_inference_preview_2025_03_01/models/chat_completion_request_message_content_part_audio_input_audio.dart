@@ -9,16 +9,13 @@ import 'chat_completion_request_message_content_part_audio_input_audio_format.da
 part 'chat_completion_request_message_content_part_audio_input_audio.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartAudioInputAudio with ChatCompletionRequestMessageContentPartAudioInputAudioMappable {
-  const ChatCompletionRequestMessageContentPartAudioInputAudio({
-    required this.data,
-    required this.format,
-  });
+class ChatCompletionRequestMessageContentPartAudioInputAudio
+    with ChatCompletionRequestMessageContentPartAudioInputAudioMappable {
+  const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format});
 
   final String data;
   final ChatCompletionRequestMessageContentPartAudioInputAudioFormat format;
 
-  static ChatCompletionRequestMessageContentPartAudioInputAudio fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartAudioInputAudioMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartAudioInputAudio fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartAudioInputAudioMapper.fromJson(json);
 }
-

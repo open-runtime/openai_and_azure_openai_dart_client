@@ -10,10 +10,10 @@ part 'open_ai_file_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum OpenAiFileObjectObjectEnum {
-  @MappableValue('file') 
+  @MappableValue('file')
   file,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum OpenAiFileObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OpenAiFileObjectObjectEnum> get $valuesDefined => values.where((value) => value != OpenAiFileObjectObjectEnum.unknown).toList();
+  static List<OpenAiFileObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != OpenAiFileObjectObjectEnum.unknown).toList();
 }

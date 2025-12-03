@@ -24,7 +24,6 @@ class CodeInterpreterContainerAuto with CodeInterpreterContainerAutoMappable {
   final ContainerMemoryLimit? memoryLimit;
   final CodeInterpreterContainerAutoType type;
 
-  static CodeInterpreterContainerAuto fromJson(Map<String, dynamic> json) => CodeInterpreterContainerAutoMapper.fromJson(json);
-
+  static CodeInterpreterContainerAuto fromJson(Map<String, dynamic> json) =>
+      CodeInterpreterContainerAutoMapper.fromJson(json);
 }
-

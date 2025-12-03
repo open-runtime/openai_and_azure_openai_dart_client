@@ -11,10 +11,10 @@ part 'scroll_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ScrollType {
-  @MappableValue('scroll') 
+  @MappableValue('scroll')
   scroll,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

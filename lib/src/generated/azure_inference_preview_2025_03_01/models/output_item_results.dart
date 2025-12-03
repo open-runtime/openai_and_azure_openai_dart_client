@@ -10,13 +10,7 @@ part 'output_item_results.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputItemResults with OutputItemResultsMappable {
-  const OutputItemResults({
-    this.fileId,
-    this.text,
-    this.filename,
-    this.attributes,
-    this.score,
-  });
+  const OutputItemResults({this.fileId, this.text, this.filename, this.attributes, this.score});
 
   @MappableField(key: 'file_id')
   final String? fileId;
@@ -26,6 +20,4 @@ class OutputItemResults with OutputItemResultsMappable {
   final double? score;
 
   static OutputItemResults fromJson(Map<String, dynamic> json) => OutputItemResultsMapper.fromJson(json);
-
 }
-

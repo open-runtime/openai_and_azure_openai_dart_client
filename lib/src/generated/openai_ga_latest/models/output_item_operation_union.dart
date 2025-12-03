@@ -15,18 +15,22 @@ import 'item_resource_operation_union.dart';
 
 part 'output_item_operation_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputItemOperationUnionCreateFile,
-  OutputItemOperationUnionDeleteFile,
-  OutputItemOperationUnionUpdateFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    OutputItemOperationUnionCreateFile,
+    OutputItemOperationUnionDeleteFile,
+    OutputItemOperationUnionUpdateFile,
+  ],
+)
 sealed class OutputItemOperationUnion with OutputItemOperationUnionMappable {
   const OutputItemOperationUnion();
 
   static OutputItemOperationUnion fromJson(Map<String, dynamic> json) {
     return OutputItemOperationUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension OutputItemOperationUnionDeserializer on OutputItemOperationUnion {
@@ -36,55 +40,46 @@ extension OutputItemOperationUnionDeserializer on OutputItemOperationUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      OutputItemOperationUnionCreateFile: 'create_file',
-      OutputItemOperationUnionDeleteFile: 'delete_file',
-      OutputItemOperationUnionUpdateFile: 'update_file',
+      ApplyPatchCreateFileOperation: 'create_file',
+      ApplyPatchDeleteFileOperation: 'delete_file',
+      ApplyPatchUpdateFileOperation: 'update_file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputItemOperationUnionCreateFile] => OutputItemOperationUnionCreateFileMapper.fromJson(json),
-      _ when value == effective[OutputItemOperationUnionDeleteFile] => OutputItemOperationUnionDeleteFileMapper.fromJson(json),
-      _ when value == effective[OutputItemOperationUnionUpdateFile] => OutputItemOperationUnionUpdateFileMapper.fromJson(json),
+      _ when value == effective[ApplyPatchCreateFileOperation] => ApplyPatchCreateFileOperationMapper.fromJson(json),
+      _ when value == effective[ApplyPatchDeleteFileOperation] => ApplyPatchDeleteFileOperationMapper.fromJson(json),
+      _ when value == effective[ApplyPatchUpdateFileOperation] => ApplyPatchUpdateFileOperationMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputItemOperationUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
-class OutputItemOperationUnionCreateFile extends OutputItemOperationUnion with OutputItemOperationUnionCreateFileMappable {
+class OutputItemOperationUnionCreateFile extends OutputItemOperationUnion
+    with OutputItemOperationUnionCreateFileMappable {
   final ApplyPatchCreateFileOperationType type;
   final String path;
   final String diff;
 
-  const OutputItemOperationUnionCreateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
-
+  const OutputItemOperationUnionCreateFile({required this.type, required this.path, required this.diff});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
-class OutputItemOperationUnionDeleteFile extends OutputItemOperationUnion with OutputItemOperationUnionDeleteFileMappable {
+class OutputItemOperationUnionDeleteFile extends OutputItemOperationUnion
+    with OutputItemOperationUnionDeleteFileMappable {
   final ApplyPatchDeleteFileOperationType type;
   final String path;
 
-  const OutputItemOperationUnionDeleteFile({
-    required this.type,
-    required this.path,
-  });
-
+  const OutputItemOperationUnionDeleteFile({required this.type, required this.path});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
-class OutputItemOperationUnionUpdateFile extends OutputItemOperationUnion with OutputItemOperationUnionUpdateFileMappable {
+class OutputItemOperationUnionUpdateFile extends OutputItemOperationUnion
+    with OutputItemOperationUnionUpdateFileMappable {
   final ApplyPatchUpdateFileOperationType type;
   final String path;
   final String diff;
 
-  const OutputItemOperationUnionUpdateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
-
+  const OutputItemOperationUnionUpdateFile({required this.type, required this.path, required this.diff});
 }

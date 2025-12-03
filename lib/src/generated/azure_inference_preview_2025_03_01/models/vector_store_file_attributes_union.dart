@@ -6,7 +6,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'vector_store_file_attributes_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [VectorStoreFileAttributesUnionVariantString, VectorStoreFileAttributesUnionVariantNum, VectorStoreFileAttributesUnionVariantBool])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    VectorStoreFileAttributesUnionVariantString,
+    VectorStoreFileAttributesUnionVariantNum,
+    VectorStoreFileAttributesUnionVariantBool,
+  ],
+)
 sealed class VectorStoreFileAttributesUnion with VectorStoreFileAttributesUnionMappable {
   const VectorStoreFileAttributesUnion();
 
@@ -40,30 +48,27 @@ extension VectorStoreFileAttributesUnionDeserializer on VectorStoreFileAttribute
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class VectorStoreFileAttributesUnionVariantString extends VectorStoreFileAttributesUnion with VectorStoreFileAttributesUnionVariantStringMappable {
+class VectorStoreFileAttributesUnionVariantString extends VectorStoreFileAttributesUnion
+    with VectorStoreFileAttributesUnionVariantStringMappable {
   final String value;
 
-  const VectorStoreFileAttributesUnionVariantString({
-    required this.value,
-  });
+  const VectorStoreFileAttributesUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class VectorStoreFileAttributesUnionVariantNum extends VectorStoreFileAttributesUnion with VectorStoreFileAttributesUnionVariantNumMappable {
+class VectorStoreFileAttributesUnionVariantNum extends VectorStoreFileAttributesUnion
+    with VectorStoreFileAttributesUnionVariantNumMappable {
   final num value;
 
-  const VectorStoreFileAttributesUnionVariantNum({
-    required this.value,
-  });
+  const VectorStoreFileAttributesUnionVariantNum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class VectorStoreFileAttributesUnionVariantBool extends VectorStoreFileAttributesUnion with VectorStoreFileAttributesUnionVariantBoolMappable {
+class VectorStoreFileAttributesUnionVariantBool extends VectorStoreFileAttributesUnion
+    with VectorStoreFileAttributesUnionVariantBoolMappable {
   final bool value;
 
-  const VectorStoreFileAttributesUnionVariantBool({
-    required this.value,
-  });
+  const VectorStoreFileAttributesUnionVariantBool({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

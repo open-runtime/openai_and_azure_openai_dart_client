@@ -11,10 +11,10 @@ part 'create_transcription_response_stream_event_type3.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum CreateTranscriptionResponseStreamEventType3 {
   /// Incorrect name has been replaced. Original name: `transcript.text.done`.
-  @MappableValue('transcript.text.done') 
+  @MappableValue('transcript.text.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum CreateTranscriptionResponseStreamEventType3 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateTranscriptionResponseStreamEventType3> get $valuesDefined => values.where((value) => value != CreateTranscriptionResponseStreamEventType3.unknown).toList();
+  static List<CreateTranscriptionResponseStreamEventType3> get $valuesDefined =>
+      values.where((value) => value != CreateTranscriptionResponseStreamEventType3.unknown).toList();
 }

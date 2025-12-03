@@ -23,17 +23,18 @@ import 'realtime_truncation.dart';
 
 part 'realtime_client_event_session_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeClientEventSessionUnionRealtime,
-  RealtimeClientEventSessionUnionTranscription
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RealtimeClientEventSessionUnionRealtime, RealtimeClientEventSessionUnionTranscription],
+)
 sealed class RealtimeClientEventSessionUnion with RealtimeClientEventSessionUnionMappable {
   const RealtimeClientEventSessionUnion();
 
   static RealtimeClientEventSessionUnion fromJson(Map<String, dynamic> json) {
     return RealtimeClientEventSessionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeClientEventSessionUnionDeserializer on RealtimeClientEventSessionUnion {
@@ -43,21 +44,23 @@ extension RealtimeClientEventSessionUnionDeserializer on RealtimeClientEventSess
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeClientEventSessionUnionRealtime: 'realtime',
-      RealtimeClientEventSessionUnionTranscription: 'transcription',
+      RealtimeSessionCreateRequestGa: 'realtime',
+      RealtimeTranscriptionSessionCreateRequestGa: 'transcription',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeClientEventSessionUnionRealtime] => RealtimeClientEventSessionUnionRealtimeMapper.fromJson(json),
-      _ when value == effective[RealtimeClientEventSessionUnionTranscription] => RealtimeClientEventSessionUnionTranscriptionMapper.fromJson(json),
+      _ when value == effective[RealtimeSessionCreateRequestGa] => RealtimeSessionCreateRequestGaMapper.fromJson(json),
+      _ when value == effective[RealtimeTranscriptionSessionCreateRequestGa] =>
+        RealtimeTranscriptionSessionCreateRequestGaMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeClientEventSessionUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'realtime')
-class RealtimeClientEventSessionUnionRealtime extends RealtimeClientEventSessionUnion with RealtimeClientEventSessionUnionRealtimeMappable {
+class RealtimeClientEventSessionUnionRealtime extends RealtimeClientEventSessionUnion
+    with RealtimeClientEventSessionUnionRealtimeMappable {
   final RealtimeSessionCreateRequestGaType type;
   @MappableField(key: 'output_modalities')
   final List<RealtimeSessionCreateRequestGaOutputModalitiesOutputModalities> outputModalities;
@@ -89,10 +92,11 @@ class RealtimeClientEventSessionUnionRealtime extends RealtimeClientEventSession
     required this.truncation,
     required this.prompt,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription')
-class RealtimeClientEventSessionUnionTranscription extends RealtimeClientEventSessionUnion with RealtimeClientEventSessionUnionTranscriptionMappable {
+class RealtimeClientEventSessionUnionTranscription extends RealtimeClientEventSessionUnion
+    with RealtimeClientEventSessionUnionTranscriptionMappable {
   final RealtimeTranscriptionSessionCreateRequestGaType type;
   @MappableField(key: 'audio')
   final RealtimeTranscriptionSessionCreateRequestGaAudio? realtimeTranscriptionSessionCreateRequestGaAudio;
@@ -103,5 +107,4 @@ class RealtimeClientEventSessionUnionTranscription extends RealtimeClientEventSe
     required this.realtimeTranscriptionSessionCreateRequestGaAudio,
     required this.include,
   });
-
 }

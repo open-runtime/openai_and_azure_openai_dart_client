@@ -11,10 +11,10 @@ part 'response_reasoning_text_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseReasoningTextDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.reasoning_text.done`.
-  @MappableValue('response.reasoning_text.done') 
+  @MappableValue('response.reasoning_text.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseReasoningTextDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseReasoningTextDoneEventType> get $valuesDefined => values.where((value) => value != ResponseReasoningTextDoneEventType.unknown).toList();
+  static List<ResponseReasoningTextDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseReasoningTextDoneEventType.unknown).toList();
 }

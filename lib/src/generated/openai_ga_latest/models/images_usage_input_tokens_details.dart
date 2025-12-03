@@ -8,17 +8,13 @@ part 'images_usage_input_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ImagesUsageInputTokensDetails with ImagesUsageInputTokensDetailsMappable {
-  const ImagesUsageInputTokensDetails({
-    required this.textTokens,
-    required this.imageTokens,
-  });
+  const ImagesUsageInputTokensDetails({required this.textTokens, required this.imageTokens});
 
   @MappableField(key: 'text_tokens')
   final int textTokens;
   @MappableField(key: 'image_tokens')
   final int imageTokens;
 
-  static ImagesUsageInputTokensDetails fromJson(Map<String, dynamic> json) => ImagesUsageInputTokensDetailsMapper.fromJson(json);
-
+  static ImagesUsageInputTokensDetails fromJson(Map<String, dynamic> json) =>
+      ImagesUsageInputTokensDetailsMapper.fromJson(json);
 }
-

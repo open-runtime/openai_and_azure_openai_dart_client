@@ -9,12 +9,7 @@ part 'group_response.mapper.dart';
 /// Details about an organization group.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupResponse with GroupResponseMappable {
-  const GroupResponse({
-    required this.id,
-    required this.name,
-    required this.createdAt,
-    required this.isScimManaged,
-  });
+  const GroupResponse({required this.id, required this.name, required this.createdAt, required this.isScimManaged});
 
   final String id;
   final String name;
@@ -24,6 +19,4 @@ class GroupResponse with GroupResponseMappable {
   final bool isScimManaged;
 
   static GroupResponse fromJson(Map<String, dynamic> json) => GroupResponseMapper.fromJson(json);
-
 }
-

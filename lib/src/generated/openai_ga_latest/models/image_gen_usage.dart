@@ -28,6 +28,4 @@ class ImageGenUsage with ImageGenUsageMappable {
   final ImageGenInputUsageDetails inputTokensDetails;
 
   static ImageGenUsage fromJson(Map<String, dynamic> json) => ImageGenUsageMapper.fromJson(json);
-
 }
-

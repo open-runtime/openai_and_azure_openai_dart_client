@@ -9,10 +9,10 @@ part 'realtime_conversation_item_type.mapper.dart';
 /// The type of the item. Always `message`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeConversationItemType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemType.unknown).toList();
+  static List<RealtimeConversationItemType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemType.unknown).toList();
 }

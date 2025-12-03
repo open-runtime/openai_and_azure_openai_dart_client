@@ -8,7 +8,7 @@
 part of 'response_reasoning_text_done_event.dart';
 
 class ResponseReasoningTextDoneEventMapper
-    extends ClassMapperBase<ResponseReasoningTextDoneEvent> {
+    extends SubClassMapperBase<ResponseReasoningTextDoneEvent> {
   ResponseReasoningTextDoneEventMapper._();
 
   static ResponseReasoningTextDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseReasoningTextDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningTextDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseReasoningTextDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -68,6 +69,14 @@ class ResponseReasoningTextDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.reasoning_text.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseReasoningTextDoneEvent _instantiate(DecodingData data) {
     return ResponseReasoningTextDoneEvent(
@@ -157,7 +166,8 @@ abstract class ResponseReasoningTextDoneEventCopyWith<
   $In extends ResponseReasoningTextDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseReasoningTextDoneEventType? type,
     String? itemId,

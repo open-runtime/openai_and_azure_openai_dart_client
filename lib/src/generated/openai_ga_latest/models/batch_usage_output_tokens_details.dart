@@ -8,14 +8,11 @@ part 'batch_usage_output_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchUsageOutputTokensDetails with BatchUsageOutputTokensDetailsMappable {
-  const BatchUsageOutputTokensDetails({
-    required this.reasoningTokens,
-  });
+  const BatchUsageOutputTokensDetails({required this.reasoningTokens});
 
   @MappableField(key: 'reasoning_tokens')
   final int reasoningTokens;
 
-  static BatchUsageOutputTokensDetails fromJson(Map<String, dynamic> json) => BatchUsageOutputTokensDetailsMapper.fromJson(json);
-
+  static BatchUsageOutputTokensDetails fromJson(Map<String, dynamic> json) =>
+      BatchUsageOutputTokensDetailsMapper.fromJson(json);
 }
-

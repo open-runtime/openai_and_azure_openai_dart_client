@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_beta_response_usage_input_token_details_cached_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails with RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMappable {
+class RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails
+    with RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMappable {
   const RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails({
     this.textTokens,
     this.imageTokens,
@@ -21,7 +22,6 @@ class RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails with Realtim
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
 
-  static RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails fromJson(Map<String, dynamic> json) => RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMapper.fromJson(json);
-
+  static RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetailsMapper.fromJson(json);
 }
-

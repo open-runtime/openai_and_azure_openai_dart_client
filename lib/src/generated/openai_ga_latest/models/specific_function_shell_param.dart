@@ -10,15 +10,12 @@ import 'tool_choice_param.dart';
 part 'specific_function_shell_param.mapper.dart';
 
 /// Forces the model to call the function shell tool when a tool call is required.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class SpecificFunctionShellParam with SpecificFunctionShellParamMappable {
-  const SpecificFunctionShellParam({
-    this.type = SpecificFunctionShellParamType.shell,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell')
+class SpecificFunctionShellParam extends ToolChoiceParam with SpecificFunctionShellParamMappable {
+  const SpecificFunctionShellParam({this.type = SpecificFunctionShellParamType.shell});
 
   final SpecificFunctionShellParamType type;
 
-  static SpecificFunctionShellParam fromJson(Map<String, dynamic> json) => SpecificFunctionShellParamMapper.fromJson(json);
-
+  static SpecificFunctionShellParam fromJson(Map<String, dynamic> json) =>
+      SpecificFunctionShellParamMapper.fromJson(json);
 }
-

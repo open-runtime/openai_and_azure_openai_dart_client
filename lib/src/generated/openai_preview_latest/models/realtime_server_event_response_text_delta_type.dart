@@ -10,10 +10,10 @@ part 'realtime_server_event_response_text_delta_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseTextDeltaType {
   /// Incorrect name has been replaced. Original name: `response.text.delta`.
-  @MappableValue('response.text.delta') 
+  @MappableValue('response.text.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventResponseTextDeltaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseTextDeltaType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseTextDeltaType.unknown).toList();
+  static List<RealtimeServerEventResponseTextDeltaType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseTextDeltaType.unknown).toList();
 }

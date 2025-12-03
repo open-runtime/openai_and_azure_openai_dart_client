@@ -9,10 +9,10 @@ part 'output_text_content_type.mapper.dart';
 /// The type of the output text. Always `output_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum OutputTextContentType {
-  @MappableValue('output_text') 
+  @MappableValue('output_text')
   outputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum OutputTextContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputTextContentType> get $valuesDefined => values.where((value) => value != OutputTextContentType.unknown).toList();
+  static List<OutputTextContentType> get $valuesDefined =>
+      values.where((value) => value != OutputTextContentType.unknown).toList();
 }

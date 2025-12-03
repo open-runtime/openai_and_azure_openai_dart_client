@@ -8,22 +8,22 @@ part 'sizes.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Sizes {
-  @MappableValue('256x256') 
+  @MappableValue('256x256')
   value256x256,
 
-  @MappableValue('512x512') 
+  @MappableValue('512x512')
   value512x512,
 
-  @MappableValue('1024x1024') 
+  @MappableValue('1024x1024')
   value1024x1024,
 
-  @MappableValue('1792x1792') 
+  @MappableValue('1792x1792')
   value1792x1792,
 
-  @MappableValue('1024x1792') 
+  @MappableValue('1024x1792')
   value1024x1792,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

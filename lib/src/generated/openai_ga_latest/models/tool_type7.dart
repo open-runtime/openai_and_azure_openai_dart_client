@@ -9,10 +9,10 @@ part 'tool_type7.mapper.dart';
 /// The type of the local shell tool. Always `local_shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType7 {
-  @MappableValue('local_shell') 
+  @MappableValue('local_shell')
   localShell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

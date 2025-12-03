@@ -17,17 +17,17 @@ part 'tool_choice_options.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolChoiceOptions {
-  @MappableValue('none') 
+  @MappableValue('none')
   none,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
   /// The name has been replaced because it contains a keyword. Original name: `required`.
-  @MappableValue('required') 
+  @MappableValue('required')
   valueRequired,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -36,5 +36,6 @@ enum ToolChoiceOptions {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ToolChoiceOptions> get $valuesDefined => values.where((value) => value != ToolChoiceOptions.unknown).toList();
+  static List<ToolChoiceOptions> get $valuesDefined =>
+      values.where((value) => value != ToolChoiceOptions.unknown).toList();
 }

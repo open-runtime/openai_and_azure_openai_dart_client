@@ -18,7 +18,8 @@ part 'realtime_beta_server_event_input_audio_buffer_speech_started.mapper.dart';
 /// the audio buffer during VAD activation).
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventInputAudioBufferSpeechStarted with RealtimeBetaServerEventInputAudioBufferSpeechStartedMappable {
+class RealtimeBetaServerEventInputAudioBufferSpeechStarted
+    with RealtimeBetaServerEventInputAudioBufferSpeechStartedMappable {
   const RealtimeBetaServerEventInputAudioBufferSpeechStarted({
     required this.eventId,
     required this.type,
@@ -34,7 +35,6 @@ class RealtimeBetaServerEventInputAudioBufferSpeechStarted with RealtimeBetaServ
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventInputAudioBufferSpeechStarted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventInputAudioBufferSpeechStartedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventInputAudioBufferSpeechStarted fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventInputAudioBufferSpeechStartedMapper.fromJson(json);
 }
-

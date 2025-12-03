@@ -26,10 +26,12 @@ import 'images_usage.dart';
 
 part 'image_gen_stream_event.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ImageGenStreamEventImageGenerationPartialImage,
-  ImageGenStreamEventImageGenerationCompleted
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ImageGenStreamEventImageGenerationPartialImage, ImageGenStreamEventImageGenerationCompleted],
+)
 sealed class ImageGenStreamEvent with ImageGenStreamEventMappable {
   const ImageGenStreamEvent();
 
@@ -45,21 +47,22 @@ extension ImageGenStreamEventUnionDeserializer on ImageGenStreamEvent {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ImageGenStreamEventImageGenerationPartialImage: 'image_generation.partial_image',
-      ImageGenStreamEventImageGenerationCompleted: 'image_generation.completed',
+      ImageGenPartialImageEvent: 'image_generation.partial_image',
+      ImageGenCompletedEvent: 'image_generation.completed',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ImageGenStreamEventImageGenerationPartialImage] => ImageGenStreamEventImageGenerationPartialImageMapper.fromJson(json),
-      _ when value == effective[ImageGenStreamEventImageGenerationCompleted] => ImageGenStreamEventImageGenerationCompletedMapper.fromJson(json),
+      _ when value == effective[ImageGenPartialImageEvent] => ImageGenPartialImageEventMapper.fromJson(json),
+      _ when value == effective[ImageGenCompletedEvent] => ImageGenCompletedEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ImageGenStreamEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation.partial_image')
-class ImageGenStreamEventImageGenerationPartialImage extends ImageGenStreamEvent with ImageGenStreamEventImageGenerationPartialImageMappable {
+class ImageGenStreamEventImageGenerationPartialImage extends ImageGenStreamEvent
+    with ImageGenStreamEventImageGenerationPartialImageMappable {
   final ImageGenStreamEventType type;
   @MappableField(key: 'b64_json')
   final String b64Json;
@@ -86,7 +89,8 @@ class ImageGenStreamEventImageGenerationPartialImage extends ImageGenStreamEvent
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation.completed')
-class ImageGenStreamEventImageGenerationCompleted extends ImageGenStreamEvent with ImageGenStreamEventImageGenerationCompletedMappable {
+class ImageGenStreamEventImageGenerationCompleted extends ImageGenStreamEvent
+    with ImageGenStreamEventImageGenerationCompletedMappable {
   final ImageGenStreamEventType2 type;
   @MappableField(key: 'b64_json')
   final String b64Json;

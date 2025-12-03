@@ -12,8 +12,9 @@ import 'prompt_filter_results.dart';
 part 'create_chat_completion_response.mapper.dart';
 
 /// Represents a chat completion response returned by model, based on the provided input.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chat.completion')
+class CreateChatCompletionResponse extends ChatCompletionsCreateResponseUnion
+    with CreateChatCompletionResponseMappable {
   const CreateChatCompletionResponse({
     required this.id,
     required this.choices,
@@ -37,7 +38,6 @@ class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
   final String? systemFingerprint;
   final CompletionUsage? usage;
 
-  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseMapper.fromJson(json);
-
+  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseMapper.fromJson(json);
 }
-

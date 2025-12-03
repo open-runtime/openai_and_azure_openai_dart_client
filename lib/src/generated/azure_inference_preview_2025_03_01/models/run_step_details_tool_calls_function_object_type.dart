@@ -10,10 +10,10 @@ part 'run_step_details_tool_calls_function_object_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallsFunctionObjectType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RunStepDetailsToolCallsFunctionObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallsFunctionObjectType> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallsFunctionObjectType.unknown).toList();
+  static List<RunStepDetailsToolCallsFunctionObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallsFunctionObjectType.unknown).toList();
 }

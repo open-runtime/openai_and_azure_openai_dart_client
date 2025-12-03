@@ -13,13 +13,10 @@ part 'realtime_client_event_conversation_item_retrieve.mapper.dart';
 /// unless the item does not exist in the conversation history, in which case the .
 /// server will respond with an error.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventConversationItemRetrieve with RealtimeClientEventConversationItemRetrieveMappable {
-  const RealtimeClientEventConversationItemRetrieve({
-    required this.type,
-    required this.itemId,
-    this.eventId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.retrieve')
+class RealtimeClientEventConversationItemRetrieve extends RealtimeClientEvent
+    with RealtimeClientEventConversationItemRetrieveMappable {
+  const RealtimeClientEventConversationItemRetrieve({required this.type, required this.itemId, this.eventId});
 
   final dynamic type;
   @MappableField(key: 'item_id')
@@ -27,7 +24,6 @@ class RealtimeClientEventConversationItemRetrieve with RealtimeClientEventConver
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventConversationItemRetrieve fromJson(Map<String, dynamic> json) => RealtimeClientEventConversationItemRetrieveMapper.fromJson(json);
-
+  static RealtimeClientEventConversationItemRetrieve fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventConversationItemRetrieveMapper.fromJson(json);
 }
-

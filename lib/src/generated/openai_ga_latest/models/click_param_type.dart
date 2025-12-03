@@ -9,10 +9,10 @@ part 'click_param_type.mapper.dart';
 /// Specifies the event type. For a click action, this property is always `click`.
 @MappableEnum(defaultValue: 'unknown')
 enum ClickParamType {
-  @MappableValue('click') 
+  @MappableValue('click')
   click,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

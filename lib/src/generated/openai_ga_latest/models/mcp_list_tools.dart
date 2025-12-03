@@ -14,8 +14,8 @@ part 'mcp_list_tools.mapper.dart';
 
 /// A list of tools available on an MCP server.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class McpListTools with McpListToolsMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
+class McpListTools extends ItemUnion with McpListToolsMappable {
   const McpListTools({
     required this.type,
     required this.id,
@@ -32,6 +32,4 @@ class McpListTools with McpListToolsMappable {
   final String? error;
 
   static McpListTools fromJson(Map<String, dynamic> json) => McpListToolsMapper.fromJson(json);
-
 }
-

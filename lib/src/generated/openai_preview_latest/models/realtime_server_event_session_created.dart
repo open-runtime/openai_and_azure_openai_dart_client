@@ -14,20 +14,15 @@ part 'realtime_server_event_session_created.mapper.dart';
 /// connection is established as the first server event. This event will contain .
 /// the default Session configuration.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventSessionCreated with RealtimeServerEventSessionCreatedMappable {
-  const RealtimeServerEventSessionCreated({
-    required this.eventId,
-    required this.type,
-    required this.session,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'session.created')
+class RealtimeServerEventSessionCreated extends RealtimeServerEvent with RealtimeServerEventSessionCreatedMappable {
+  const RealtimeServerEventSessionCreated({required this.eventId, required this.type, required this.session});
 
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventSessionCreatedType type;
   final RealtimeSession session;
 
-  static RealtimeServerEventSessionCreated fromJson(Map<String, dynamic> json) => RealtimeServerEventSessionCreatedMapper.fromJson(json);
-
+  static RealtimeServerEventSessionCreated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventSessionCreatedMapper.fromJson(json);
 }
-

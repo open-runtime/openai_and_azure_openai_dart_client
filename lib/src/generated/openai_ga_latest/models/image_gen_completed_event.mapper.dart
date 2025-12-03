@@ -8,13 +8,14 @@
 part of 'image_gen_completed_event.dart';
 
 class ImageGenCompletedEventMapper
-    extends ClassMapperBase<ImageGenCompletedEvent> {
+    extends SubClassMapperBase<ImageGenCompletedEvent> {
   ImageGenCompletedEventMapper._();
 
   static ImageGenCompletedEventMapper? _instance;
   static ImageGenCompletedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImageGenCompletedEventMapper._());
+      ImageGenStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ImageGenCompletedEventTypeMapper.ensureInitialized();
       ImageGenCompletedEventSizeMapper.ensureInitialized();
       ImageGenCompletedEventQualityMapper.ensureInitialized();
@@ -88,6 +89,14 @@ class ImageGenCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_generation.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ImageGenStreamEventMapper.ensureInitialized();
 
   static ImageGenCompletedEvent _instantiate(DecodingData data) {
     return ImageGenCompletedEvent(
@@ -171,8 +180,9 @@ abstract class ImageGenCompletedEventCopyWith<
   $In extends ImageGenCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ImageGenStreamEventCopyWith<$R, $In, $Out> {
   ImagesUsageCopyWith<$R, ImagesUsage, ImagesUsage> get usage;
+  @override
   $R call({
     ImageGenCompletedEventType? type,
     String? b64Json,

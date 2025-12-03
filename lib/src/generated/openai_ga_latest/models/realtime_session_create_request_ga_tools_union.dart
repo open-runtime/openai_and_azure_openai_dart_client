@@ -16,17 +16,18 @@ import 'tool.dart';
 
 part 'realtime_session_create_request_ga_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeSessionCreateRequestGaToolsUnionFunction,
-  RealtimeSessionCreateRequestGaToolsUnionMcp
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RealtimeSessionCreateRequestGaToolsUnionFunction, RealtimeSessionCreateRequestGaToolsUnionMcp],
+)
 sealed class RealtimeSessionCreateRequestGaToolsUnion with RealtimeSessionCreateRequestGaToolsUnionMappable {
   const RealtimeSessionCreateRequestGaToolsUnion();
 
   static RealtimeSessionCreateRequestGaToolsUnion fromJson(Map<String, dynamic> json) {
     return RealtimeSessionCreateRequestGaToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeSessionCreateRequestGaToolsUnionDeserializer on RealtimeSessionCreateRequestGaToolsUnion {
@@ -35,22 +36,22 @@ extension RealtimeSessionCreateRequestGaToolsUnionDeserializer on RealtimeSessio
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      RealtimeSessionCreateRequestGaToolsUnionFunction: 'function',
-      RealtimeSessionCreateRequestGaToolsUnionMcp: 'mcp',
-    };
+    final mappingFallback = const <Type, Object?>{RealtimeFunctionTool: 'function', McpTool: 'mcp'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeSessionCreateRequestGaToolsUnionFunction] => RealtimeSessionCreateRequestGaToolsUnionFunctionMapper.fromJson(json),
-      _ when value == effective[RealtimeSessionCreateRequestGaToolsUnionMcp] => RealtimeSessionCreateRequestGaToolsUnionMcpMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeSessionCreateRequestGaToolsUnion'),
+      _ when value == effective[RealtimeFunctionTool] => RealtimeFunctionToolMapper.fromJson(json),
+      _ when value == effective[McpTool] => McpToolMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeSessionCreateRequestGaToolsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class RealtimeSessionCreateRequestGaToolsUnionFunction extends RealtimeSessionCreateRequestGaToolsUnion with RealtimeSessionCreateRequestGaToolsUnionFunctionMappable {
+class RealtimeSessionCreateRequestGaToolsUnionFunction extends RealtimeSessionCreateRequestGaToolsUnion
+    with RealtimeSessionCreateRequestGaToolsUnionFunctionMappable {
   final RealtimeFunctionToolType? type;
   final String? name;
   final String? description;
@@ -62,10 +63,11 @@ class RealtimeSessionCreateRequestGaToolsUnionFunction extends RealtimeSessionCr
     required this.description,
     required this.parameters,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp')
-class RealtimeSessionCreateRequestGaToolsUnionMcp extends RealtimeSessionCreateRequestGaToolsUnion with RealtimeSessionCreateRequestGaToolsUnionMcpMappable {
+class RealtimeSessionCreateRequestGaToolsUnionMcp extends RealtimeSessionCreateRequestGaToolsUnion
+    with RealtimeSessionCreateRequestGaToolsUnionMcpMappable {
   final McpToolType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -93,5 +95,4 @@ class RealtimeSessionCreateRequestGaToolsUnionMcp extends RealtimeSessionCreateR
     required this.allowedTools,
     required this.requireApproval,
   });
-
 }

@@ -18,19 +18,23 @@ import 'message_delta_content_text_object_type.dart';
 
 part 'message_delta_object_delta_content_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageDeltaObjectDeltaContentUnionImageFile,
-  MessageDeltaObjectDeltaContentUnionText,
-  MessageDeltaObjectDeltaContentUnionRefusal,
-  MessageDeltaObjectDeltaContentUnionImageUrl
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    MessageDeltaObjectDeltaContentUnionImageFile,
+    MessageDeltaObjectDeltaContentUnionText,
+    MessageDeltaObjectDeltaContentUnionRefusal,
+    MessageDeltaObjectDeltaContentUnionImageUrl,
+  ],
+)
 sealed class MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionMappable {
   const MessageDeltaObjectDeltaContentUnion();
 
   static MessageDeltaObjectDeltaContentUnion fromJson(Map<String, dynamic> json) {
     return MessageDeltaObjectDeltaContentUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension MessageDeltaObjectDeltaContentUnionDeserializer on MessageDeltaObjectDeltaContentUnion {
@@ -40,25 +44,31 @@ extension MessageDeltaObjectDeltaContentUnionDeserializer on MessageDeltaObjectD
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageDeltaObjectDeltaContentUnionImageFile: 'image_file',
-      MessageDeltaObjectDeltaContentUnionText: 'text',
-      MessageDeltaObjectDeltaContentUnionRefusal: 'refusal',
-      MessageDeltaObjectDeltaContentUnionImageUrl: 'image_url',
+      MessageDeltaContentImageFileObject: 'image_file',
+      MessageDeltaContentTextObject: 'text',
+      MessageDeltaContentRefusalObject: 'refusal',
+      MessageDeltaContentImageUrlObject: 'image_url',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageDeltaObjectDeltaContentUnionImageFile] => MessageDeltaObjectDeltaContentUnionImageFileMapper.fromJson(json),
-      _ when value == effective[MessageDeltaObjectDeltaContentUnionText] => MessageDeltaObjectDeltaContentUnionTextMapper.fromJson(json),
-      _ when value == effective[MessageDeltaObjectDeltaContentUnionRefusal] => MessageDeltaObjectDeltaContentUnionRefusalMapper.fromJson(json),
-      _ when value == effective[MessageDeltaObjectDeltaContentUnionImageUrl] => MessageDeltaObjectDeltaContentUnionImageUrlMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentImageFileObject] =>
+        MessageDeltaContentImageFileObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentTextObject] => MessageDeltaContentTextObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentRefusalObject] => MessageDeltaContentRefusalObjectMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[MessageDeltaContentImageUrlObject] => MessageDeltaContentImageUrlObjectMapper.fromJson(
+        json,
+      ),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageDeltaObjectDeltaContentUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_file')
-class MessageDeltaObjectDeltaContentUnionImageFile extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionImageFileMappable {
+class MessageDeltaObjectDeltaContentUnionImageFile extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaObjectDeltaContentUnionImageFileMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentImageFileObjectType type;
@@ -70,10 +80,11 @@ class MessageDeltaObjectDeltaContentUnionImageFile extends MessageDeltaObjectDel
     required this.type,
     required this.messageDeltaContentImageFileObjectImageFile,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class MessageDeltaObjectDeltaContentUnionText extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionTextMappable {
+class MessageDeltaObjectDeltaContentUnionText extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaObjectDeltaContentUnionTextMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentTextObjectType type;
@@ -85,10 +96,11 @@ class MessageDeltaObjectDeltaContentUnionText extends MessageDeltaObjectDeltaCon
     required this.type,
     required this.messageDeltaContentTextObjectText,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
-class MessageDeltaObjectDeltaContentUnionRefusal extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionRefusalMappable {
+class MessageDeltaObjectDeltaContentUnionRefusal extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaObjectDeltaContentUnionRefusalMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentRefusalObjectType type;
@@ -99,10 +111,11 @@ class MessageDeltaObjectDeltaContentUnionRefusal extends MessageDeltaObjectDelta
     required this.type,
     required this.refusal,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_url')
-class MessageDeltaObjectDeltaContentUnionImageUrl extends MessageDeltaObjectDeltaContentUnion with MessageDeltaObjectDeltaContentUnionImageUrlMappable {
+class MessageDeltaObjectDeltaContentUnionImageUrl extends MessageDeltaObjectDeltaContentUnion
+    with MessageDeltaObjectDeltaContentUnionImageUrlMappable {
   @MappableField(key: 'index')
   final int indexField;
   final MessageDeltaContentImageUrlObjectType type;
@@ -114,5 +127,4 @@ class MessageDeltaObjectDeltaContentUnionImageUrl extends MessageDeltaObjectDelt
     required this.type,
     required this.messageDeltaContentImageUrlObjectImageUrl,
   });
-
 }

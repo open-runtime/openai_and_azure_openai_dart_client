@@ -8,19 +8,19 @@ part 'container_memory_limit.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ContainerMemoryLimit {
-  @MappableValue('1g') 
+  @MappableValue('1g')
   value1g,
 
-  @MappableValue('4g') 
+  @MappableValue('4g')
   value4g,
 
-  @MappableValue('16g') 
+  @MappableValue('16g')
   value16g,
 
-  @MappableValue('64g') 
+  @MappableValue('64g')
   value64g,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ContainerMemoryLimit {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ContainerMemoryLimit> get $valuesDefined => values.where((value) => value != ContainerMemoryLimit.unknown).toList();
+  static List<ContainerMemoryLimit> get $valuesDefined =>
+      values.where((value) => value != ContainerMemoryLimit.unknown).toList();
 }

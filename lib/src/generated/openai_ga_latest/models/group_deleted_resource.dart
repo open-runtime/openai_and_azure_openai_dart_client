@@ -11,11 +11,7 @@ part 'group_deleted_resource.mapper.dart';
 /// Confirmation payload returned after deleting a group.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupDeletedResource with GroupDeletedResourceMappable {
-  const GroupDeletedResource({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const GroupDeletedResource({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final GroupDeletedResourceObjectObjectEnum objectEnum;
@@ -23,6 +19,4 @@ class GroupDeletedResource with GroupDeletedResourceMappable {
   final bool deleted;
 
   static GroupDeletedResource fromJson(Map<String, dynamic> json) => GroupDeletedResourceMapper.fromJson(json);
-
 }
-

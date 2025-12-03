@@ -11,10 +11,10 @@ part 'realtime_server_event_response_function_call_arguments_delta_type.mapper.d
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseFunctionCallArgumentsDeltaType {
   /// Incorrect name has been replaced. Original name: `response.function_call_arguments.delta`.
-  @MappableValue('response.function_call_arguments.delta') 
+  @MappableValue('response.function_call_arguments.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeServerEventResponseFunctionCallArgumentsDeltaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseFunctionCallArgumentsDeltaType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseFunctionCallArgumentsDeltaType.unknown).toList();
+  static List<RealtimeServerEventResponseFunctionCallArgumentsDeltaType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseFunctionCallArgumentsDeltaType.unknown).toList();
 }

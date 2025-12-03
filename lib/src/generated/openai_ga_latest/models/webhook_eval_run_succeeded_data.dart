@@ -8,13 +8,10 @@ part 'webhook_eval_run_succeeded_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookEvalRunSucceededData with WebhookEvalRunSucceededDataMappable {
-  const WebhookEvalRunSucceededData({
-    required this.id,
-  });
+  const WebhookEvalRunSucceededData({required this.id});
 
   final String id;
 
-  static WebhookEvalRunSucceededData fromJson(Map<String, dynamic> json) => WebhookEvalRunSucceededDataMapper.fromJson(json);
-
+  static WebhookEvalRunSucceededData fromJson(Map<String, dynamic> json) =>
+      WebhookEvalRunSucceededDataMapper.fromJson(json);
 }
-

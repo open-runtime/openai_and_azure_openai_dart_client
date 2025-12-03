@@ -10,22 +10,22 @@ part 'audio_response_format.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum AudioResponseFormat {
   /// The name has been replaced because it contains a keyword. Original name: `json`.
-  @MappableValue('json') 
+  @MappableValue('json')
   valueJson,
 
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('srt') 
+  @MappableValue('srt')
   srt,
 
-  @MappableValue('verbose_json') 
+  @MappableValue('verbose_json')
   verboseJson,
 
-  @MappableValue('vtt') 
+  @MappableValue('vtt')
   vtt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum AudioResponseFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AudioResponseFormat> get $valuesDefined => values.where((value) => value != AudioResponseFormat.unknown).toList();
+  static List<AudioResponseFormat> get $valuesDefined =>
+      values.where((value) => value != AudioResponseFormat.unknown).toList();
 }

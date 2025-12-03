@@ -12,12 +12,7 @@ part 'user_list_resource.mapper.dart';
 /// Paginated list of user objects returned when inspecting group membership.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserListResource with UserListResourceMappable {
-  const UserListResource({
-    required this.objectEnum,
-    required this.data,
-    required this.hasMore,
-    required this.next,
-  });
+  const UserListResource({required this.objectEnum, required this.data, required this.hasMore, required this.next});
 
   @MappableField(key: 'object')
   final UserListResourceObjectObjectEnum objectEnum;
@@ -27,6 +22,4 @@ class UserListResource with UserListResourceMappable {
   final String? next;
 
   static UserListResource fromJson(Map<String, dynamic> json) => UserListResourceMapper.fromJson(json);
-
 }
-

@@ -8,16 +8,16 @@ part 'search_context_size.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum SearchContextSize {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -26,5 +26,6 @@ enum SearchContextSize {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SearchContextSize> get $valuesDefined => values.where((value) => value != SearchContextSize.unknown).toList();
+  static List<SearchContextSize> get $valuesDefined =>
+      values.where((value) => value != SearchContextSize.unknown).toList();
 }

@@ -12,7 +12,14 @@ part 'custom_tool_chat_completions_custom_format_union.mapper.dart';
 
 /// The input format for the custom tool. Default is unconstrained text.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CustomToolChatCompletionsCustomFormatUnionVariant1, CustomToolChatCompletionsCustomFormatUnionVariant2])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CustomToolChatCompletionsCustomFormatUnionVariant1,
+    CustomToolChatCompletionsCustomFormatUnionVariant2,
+  ],
+)
 sealed class CustomToolChatCompletionsCustomFormatUnion with CustomToolChatCompletionsCustomFormatUnionMappable {
   const CustomToolChatCompletionsCustomFormatUnion();
 
@@ -30,25 +37,27 @@ extension CustomToolChatCompletionsCustomFormatUnionDeserializer on CustomToolCh
       return CustomToolChatCompletionsCustomFormatUnionVariant2Mapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for CustomToolChatCompletionsCustomFormatUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CustomToolChatCompletionsCustomFormatUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolChatCompletionsCustomFormatUnionVariant1 extends CustomToolChatCompletionsCustomFormatUnion with CustomToolChatCompletionsCustomFormatUnionVariant1Mappable {
+class CustomToolChatCompletionsCustomFormatUnionVariant1 extends CustomToolChatCompletionsCustomFormatUnion
+    with CustomToolChatCompletionsCustomFormatUnionVariant1Mappable {
   final CustomToolChatCompletionsCustomFormatUnionVariant1Type type;
 
-  const CustomToolChatCompletionsCustomFormatUnionVariant1({
-    required this.type,
-  });
+  const CustomToolChatCompletionsCustomFormatUnionVariant1({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolChatCompletionsCustomFormatUnionVariant2 extends CustomToolChatCompletionsCustomFormatUnion with CustomToolChatCompletionsCustomFormatUnionVariant2Mappable {
+class CustomToolChatCompletionsCustomFormatUnionVariant2 extends CustomToolChatCompletionsCustomFormatUnion
+    with CustomToolChatCompletionsCustomFormatUnionVariant2Mappable {
   final CustomToolChatCompletionsCustomFormatUnionVariant2Type type;
   @MappableField(key: 'grammar')
-  final CustomToolChatCompletionsCustomFormatUnionVariant2Grammar customToolChatCompletionsCustomFormatUnionVariant2Grammar;
+  final CustomToolChatCompletionsCustomFormatUnionVariant2Grammar
+  customToolChatCompletionsCustomFormatUnionVariant2Grammar;
 
   const CustomToolChatCompletionsCustomFormatUnionVariant2({
     required this.type,

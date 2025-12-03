@@ -10,17 +10,11 @@ part 'log_prob_properties.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class LogProbProperties with LogProbPropertiesMappable {
-  const LogProbProperties({
-    required this.token,
-    required this.logprob,
-    required this.bytes,
-  });
+  const LogProbProperties({required this.token, required this.logprob, required this.bytes});
 
   final String token;
   final num logprob;
   final List<int> bytes;
 
   static LogProbProperties fromJson(Map<String, dynamic> json) => LogProbPropertiesMapper.fromJson(json);
-
 }
-

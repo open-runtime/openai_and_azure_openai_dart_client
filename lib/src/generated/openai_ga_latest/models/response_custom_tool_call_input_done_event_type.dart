@@ -10,10 +10,10 @@ part 'response_custom_tool_call_input_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseCustomToolCallInputDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.custom_tool_call_input.done`.
-  @MappableValue('response.custom_tool_call_input.done') 
+  @MappableValue('response.custom_tool_call_input.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseCustomToolCallInputDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseCustomToolCallInputDoneEventType> get $valuesDefined => values.where((value) => value != ResponseCustomToolCallInputDoneEventType.unknown).toList();
+  static List<ResponseCustomToolCallInputDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseCustomToolCallInputDoneEventType.unknown).toList();
 }

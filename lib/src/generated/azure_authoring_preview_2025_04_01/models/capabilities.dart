@@ -26,6 +26,4 @@ class Capabilities with CapabilitiesMappable {
   final bool embeddings;
 
   static Capabilities fromJson(Map<String, dynamic> json) => CapabilitiesMapper.fromJson(json);
-
 }
-

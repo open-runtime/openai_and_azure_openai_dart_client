@@ -10,10 +10,10 @@ part 'response_image_gen_call_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseImageGenCallInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.image_generation_call.in_progress`.
-  @MappableValue('response.image_generation_call.in_progress') 
+  @MappableValue('response.image_generation_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseImageGenCallInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseImageGenCallInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseImageGenCallInProgressEventType.unknown).toList();
+  static List<ResponseImageGenCallInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseImageGenCallInProgressEventType.unknown).toList();
 }

@@ -14,8 +14,8 @@ import 'output_item.dart';
 part 'function_shell_call.mapper.dart';
 
 /// A tool call that executes one or more shell commands in a managed environment.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCall with FunctionShellCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
+class FunctionShellCall extends OutputItem with FunctionShellCallMappable {
   const FunctionShellCall({
     required this.id,
     required this.callId,
@@ -35,6 +35,4 @@ class FunctionShellCall with FunctionShellCallMappable {
   final FunctionShellCallType type;
 
   static FunctionShellCall fromJson(Map<String, dynamic> json) => FunctionShellCallMapper.fromJson(json);
-
 }
-

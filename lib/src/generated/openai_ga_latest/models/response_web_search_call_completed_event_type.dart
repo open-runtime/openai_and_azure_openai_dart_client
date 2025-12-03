@@ -11,10 +11,10 @@ part 'response_web_search_call_completed_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseWebSearchCallCompletedEventType {
   /// Incorrect name has been replaced. Original name: `response.web_search_call.completed`.
-  @MappableValue('response.web_search_call.completed') 
+  @MappableValue('response.web_search_call.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseWebSearchCallCompletedEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseWebSearchCallCompletedEventType> get $valuesDefined => values.where((value) => value != ResponseWebSearchCallCompletedEventType.unknown).toList();
+  static List<ResponseWebSearchCallCompletedEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseWebSearchCallCompletedEventType.unknown).toList();
 }

@@ -14,14 +14,9 @@ part 'image_gen_tool_call.mapper.dart';
 
 /// An image generation request made by the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ImageGenToolCall with ImageGenToolCallMappable {
-  const ImageGenToolCall({
-    required this.type,
-    required this.id,
-    required this.status,
-    required this.result,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')
+class ImageGenToolCall extends ItemUnion with ImageGenToolCallMappable {
+  const ImageGenToolCall({required this.type, required this.id, required this.status, required this.result});
 
   final ImageGenToolCallType type;
   final String id;
@@ -29,6 +24,4 @@ class ImageGenToolCall with ImageGenToolCallMappable {
   final String? result;
 
   static ImageGenToolCall fromJson(Map<String, dynamic> json) => ImageGenToolCallMapper.fromJson(json);
-
 }
-

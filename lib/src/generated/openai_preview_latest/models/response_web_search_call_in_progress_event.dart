@@ -10,13 +10,10 @@ import 'response_web_search_call_in_progress_event_type.dart';
 part 'response_web_search_call_in_progress_event.mapper.dart';
 
 /// Emitted when a web search call is initiated.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseWebSearchCallInProgressEvent with ResponseWebSearchCallInProgressEventMappable {
-  const ResponseWebSearchCallInProgressEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.web_search_call.in_progress')
+class ResponseWebSearchCallInProgressEvent extends ResponseStreamEvent
+    with ResponseWebSearchCallInProgressEventMappable {
+  const ResponseWebSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId});
 
   final ResponseWebSearchCallInProgressEventType type;
   @MappableField(key: 'output_index')
@@ -24,7 +21,6 @@ class ResponseWebSearchCallInProgressEvent with ResponseWebSearchCallInProgressE
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseWebSearchCallInProgressEvent fromJson(Map<String, dynamic> json) => ResponseWebSearchCallInProgressEventMapper.fromJson(json);
-
+  static ResponseWebSearchCallInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseWebSearchCallInProgressEventMapper.fromJson(json);
 }
-

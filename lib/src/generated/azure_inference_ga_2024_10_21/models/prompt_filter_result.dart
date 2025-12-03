@@ -11,10 +11,7 @@ part 'prompt_filter_result.mapper.dart';
 /// Content filtering results for a single prompt in the request.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PromptFilterResult with PromptFilterResultMappable {
-  const PromptFilterResult({
-    this.promptIndex,
-    this.contentFilterResults,
-  });
+  const PromptFilterResult({this.promptIndex, this.contentFilterResults});
 
   @MappableField(key: 'prompt_index')
   final int? promptIndex;
@@ -22,6 +19,4 @@ class PromptFilterResult with PromptFilterResultMappable {
   final ContentFilterPromptResults? contentFilterResults;
 
   static PromptFilterResult fromJson(Map<String, dynamic> json) => PromptFilterResultMapper.fromJson(json);
-
 }
-

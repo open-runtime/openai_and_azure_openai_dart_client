@@ -8,15 +8,11 @@ part 'chat_completion_message_custom_tool_call_custom.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionMessageCustomToolCallCustom with ChatCompletionMessageCustomToolCallCustomMappable {
-  const ChatCompletionMessageCustomToolCallCustom({
-    required this.name,
-    required this.input,
-  });
+  const ChatCompletionMessageCustomToolCallCustom({required this.name, required this.input});
 
   final String name;
   final String input;
 
-  static ChatCompletionMessageCustomToolCallCustom fromJson(Map<String, dynamic> json) => ChatCompletionMessageCustomToolCallCustomMapper.fromJson(json);
-
+  static ChatCompletionMessageCustomToolCallCustom fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageCustomToolCallCustomMapper.fromJson(json);
 }
-

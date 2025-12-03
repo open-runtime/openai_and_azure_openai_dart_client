@@ -21,20 +21,24 @@ import 'eval_text_similarity_grader_type.dart';
 
 part 'create_eval_request_testing_criteria_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalRequestTestingCriteriaUnionLabelModel,
-  CreateEvalRequestTestingCriteriaUnionStringCheck,
-  CreateEvalRequestTestingCriteriaUnionTextSimilarity,
-  CreateEvalRequestTestingCriteriaUnionPython,
-  CreateEvalRequestTestingCriteriaUnionScoreModel
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalRequestTestingCriteriaUnionLabelModel,
+    CreateEvalRequestTestingCriteriaUnionStringCheck,
+    CreateEvalRequestTestingCriteriaUnionTextSimilarity,
+    CreateEvalRequestTestingCriteriaUnionPython,
+    CreateEvalRequestTestingCriteriaUnionScoreModel,
+  ],
+)
 sealed class CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionMappable {
   const CreateEvalRequestTestingCriteriaUnion();
 
   static CreateEvalRequestTestingCriteriaUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalRequestTestingCriteriaUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequestTestingCriteriaUnion {
@@ -44,27 +48,30 @@ extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequest
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalRequestTestingCriteriaUnionLabelModel: 'label_model',
-      CreateEvalRequestTestingCriteriaUnionStringCheck: 'string_check',
-      CreateEvalRequestTestingCriteriaUnionTextSimilarity: 'text_similarity',
-      CreateEvalRequestTestingCriteriaUnionPython: 'python',
-      CreateEvalRequestTestingCriteriaUnionScoreModel: 'score_model',
+      CreateEvalLabelModelGrader: 'label_model',
+      EvalStringCheckGrader: 'string_check',
+      EvalTextSimilarityGrader: 'text_similarity',
+      EvalPythonGrader: 'python',
+      EvalScoreModelGrader: 'score_model',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionLabelModel] => CreateEvalRequestTestingCriteriaUnionLabelModelMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionStringCheck] => CreateEvalRequestTestingCriteriaUnionStringCheckMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionTextSimilarity] => CreateEvalRequestTestingCriteriaUnionTextSimilarityMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionPython] => CreateEvalRequestTestingCriteriaUnionPythonMapper.fromJson(json),
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionScoreModel] => CreateEvalRequestTestingCriteriaUnionScoreModelMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalRequestTestingCriteriaUnion'),
+      _ when value == effective[CreateEvalLabelModelGrader] => CreateEvalLabelModelGraderMapper.fromJson(json),
+      _ when value == effective[EvalStringCheckGrader] => EvalStringCheckGraderMapper.fromJson(json),
+      _ when value == effective[EvalTextSimilarityGrader] => EvalTextSimilarityGraderMapper.fromJson(json),
+      _ when value == effective[EvalPythonGrader] => EvalPythonGraderMapper.fromJson(json),
+      _ when value == effective[EvalScoreModelGrader] => EvalScoreModelGraderMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalRequestTestingCriteriaUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
-class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
+class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
   final CreateEvalLabelModelGraderType type;
   final String name;
   final String model;
@@ -81,10 +88,11 @@ class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestT
     required this.labels,
     required this.passingLabels,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
-class CreateEvalRequestTestingCriteriaUnionStringCheck extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionStringCheckMappable {
+class CreateEvalRequestTestingCriteriaUnionStringCheck extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionStringCheckMappable {
   final EvalStringCheckGraderType type;
   final String name;
   final String input;
@@ -98,10 +106,11 @@ class CreateEvalRequestTestingCriteriaUnionStringCheck extends CreateEvalRequest
     required this.reference,
     required this.operation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
-class CreateEvalRequestTestingCriteriaUnionTextSimilarity extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionTextSimilarityMappable {
+class CreateEvalRequestTestingCriteriaUnionTextSimilarity extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionTextSimilarityMappable {
   final EvalTextSimilarityGraderType type;
   final String? name;
   final String input;
@@ -119,10 +128,11 @@ class CreateEvalRequestTestingCriteriaUnionTextSimilarity extends CreateEvalRequ
     required this.passThreshold,
     required this.evaluationMetric,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
-class CreateEvalRequestTestingCriteriaUnionPython extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionPythonMappable {
+class CreateEvalRequestTestingCriteriaUnionPython extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionPythonMappable {
   final EvalPythonGraderType type;
   final String name;
   final String source;
@@ -138,10 +148,11 @@ class CreateEvalRequestTestingCriteriaUnionPython extends CreateEvalRequestTesti
     required this.passThreshold,
     required this.imageTag,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
-class CreateEvalRequestTestingCriteriaUnionScoreModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionScoreModelMappable {
+class CreateEvalRequestTestingCriteriaUnionScoreModel extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionScoreModelMappable {
   final EvalScoreModelGraderType type;
   final String name;
   final String model;
@@ -161,5 +172,4 @@ class CreateEvalRequestTestingCriteriaUnionScoreModel extends CreateEvalRequestT
     required this.passThreshold,
     required this.range,
   });
-
 }

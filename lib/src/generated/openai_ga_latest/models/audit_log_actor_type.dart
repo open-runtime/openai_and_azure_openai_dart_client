@@ -9,13 +9,13 @@ part 'audit_log_actor_type.mapper.dart';
 /// The type of actor. Is either `session` or `api_key`.
 @MappableEnum(defaultValue: 'unknown')
 enum AuditLogActorType {
-  @MappableValue('session') 
+  @MappableValue('session')
   session,
 
-  @MappableValue('api_key') 
+  @MappableValue('api_key')
   apiKey,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum AuditLogActorType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AuditLogActorType> get $valuesDefined => values.where((value) => value != AuditLogActorType.unknown).toList();
+  static List<AuditLogActorType> get $valuesDefined =>
+      values.where((value) => value != AuditLogActorType.unknown).toList();
 }

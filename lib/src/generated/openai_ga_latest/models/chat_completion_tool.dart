@@ -11,18 +11,13 @@ part 'chat_completion_tool.mapper.dart';
 
 /// A function tool that can be used to generate a response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionTool with ChatCompletionToolMappable {
-  const ChatCompletionTool({
-    required this.type,
-    required this.functionField,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class ChatCompletionTool extends CreateChatCompletionRequestToolsUnion with ChatCompletionToolMappable {
+  const ChatCompletionTool({required this.type, required this.functionField});
 
   final ChatCompletionToolType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 
   static ChatCompletionTool fromJson(Map<String, dynamic> json) => ChatCompletionToolMapper.fromJson(json);
-
 }
-

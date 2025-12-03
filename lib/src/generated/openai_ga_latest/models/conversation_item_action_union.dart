@@ -14,18 +14,22 @@ import 'web_search_action_search_type.dart';
 
 part 'conversation_item_action_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ConversationItemActionUnionSearch,
-  ConversationItemActionUnionOpenPage,
-  ConversationItemActionUnionFind
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ConversationItemActionUnionSearch,
+    ConversationItemActionUnionOpenPage,
+    ConversationItemActionUnionFind,
+  ],
+)
 sealed class ConversationItemActionUnion with ConversationItemActionUnionMappable {
   const ConversationItemActionUnion();
 
   static ConversationItemActionUnion fromJson(Map<String, dynamic> json) {
     return ConversationItemActionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ConversationItemActionUnionDeserializer on ConversationItemActionUnion {
@@ -35,55 +39,45 @@ extension ConversationItemActionUnionDeserializer on ConversationItemActionUnion
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ConversationItemActionUnionSearch: 'search',
-      ConversationItemActionUnionOpenPage: 'open_page',
-      ConversationItemActionUnionFind: 'find',
+      WebSearchActionSearch: 'search',
+      WebSearchActionOpenPage: 'open_page',
+      WebSearchActionFind: 'find',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ConversationItemActionUnionSearch] => ConversationItemActionUnionSearchMapper.fromJson(json),
-      _ when value == effective[ConversationItemActionUnionOpenPage] => ConversationItemActionUnionOpenPageMapper.fromJson(json),
-      _ when value == effective[ConversationItemActionUnionFind] => ConversationItemActionUnionFindMapper.fromJson(json),
+      _ when value == effective[WebSearchActionSearch] => WebSearchActionSearchMapper.fromJson(json),
+      _ when value == effective[WebSearchActionOpenPage] => WebSearchActionOpenPageMapper.fromJson(json),
+      _ when value == effective[WebSearchActionFind] => WebSearchActionFindMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ConversationItemActionUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'search')
-class ConversationItemActionUnionSearch extends ConversationItemActionUnion with ConversationItemActionUnionSearchMappable {
+class ConversationItemActionUnionSearch extends ConversationItemActionUnion
+    with ConversationItemActionUnionSearchMappable {
   final WebSearchActionSearchType type;
   final String query;
   final List<WebSearchActionSearchSources>? sources;
 
-  const ConversationItemActionUnionSearch({
-    required this.type,
-    required this.query,
-    required this.sources,
-  });
-
+  const ConversationItemActionUnionSearch({required this.type, required this.query, required this.sources});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'open_page')
-class ConversationItemActionUnionOpenPage extends ConversationItemActionUnion with ConversationItemActionUnionOpenPageMappable {
+class ConversationItemActionUnionOpenPage extends ConversationItemActionUnion
+    with ConversationItemActionUnionOpenPageMappable {
   final WebSearchActionOpenPageType type;
   final String url;
 
-  const ConversationItemActionUnionOpenPage({
-    required this.type,
-    required this.url,
-  });
-
+  const ConversationItemActionUnionOpenPage({required this.type, required this.url});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'find')
 class ConversationItemActionUnionFind extends ConversationItemActionUnion with ConversationItemActionUnionFindMappable {
   final WebSearchActionFindType type;
   final String url;
   final String pattern;
 
-  const ConversationItemActionUnionFind({
-    required this.type,
-    required this.url,
-    required this.pattern,
-  });
-
+  const ConversationItemActionUnionFind({required this.type, required this.url, required this.pattern});
 }

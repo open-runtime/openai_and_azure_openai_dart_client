@@ -10,10 +10,10 @@ part 'output_message_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputMessageRole {
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum OutputMessageRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputMessageRole> get $valuesDefined => values.where((value) => value != OutputMessageRole.unknown).toList();
+  static List<OutputMessageRole> get $valuesDefined =>
+      values.where((value) => value != OutputMessageRole.unknown).toList();
 }

@@ -12,10 +12,10 @@ part 'realtime_conversation_item_with_reference_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemWithReferenceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `realtime.item`.
-  @MappableValue('realtime.item') 
+  @MappableValue('realtime.item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RealtimeConversationItemWithReferenceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemWithReferenceObjectObjectEnum> get $valuesDefined => values.where((value) => value != RealtimeConversationItemWithReferenceObjectObjectEnum.unknown).toList();
+  static List<RealtimeConversationItemWithReferenceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemWithReferenceObjectObjectEnum.unknown).toList();
 }

@@ -10,10 +10,10 @@ part 'realtime_client_event_type8.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeClientEventType8 {
   /// Incorrect name has been replaced. Original name: `input_audio_buffer.commit`.
-  @MappableValue('input_audio_buffer.commit') 
+  @MappableValue('input_audio_buffer.commit')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeClientEventType8 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeClientEventType8> get $valuesDefined => values.where((value) => value != RealtimeClientEventType8.unknown).toList();
+  static List<RealtimeClientEventType8> get $valuesDefined =>
+      values.where((value) => value != RealtimeClientEventType8.unknown).toList();
 }

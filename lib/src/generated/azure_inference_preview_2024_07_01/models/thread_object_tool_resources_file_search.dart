@@ -8,14 +8,11 @@ part 'thread_object_tool_resources_file_search.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ThreadObjectToolResourcesFileSearch with ThreadObjectToolResourcesFileSearchMappable {
-  const ThreadObjectToolResourcesFileSearch({
-    this.vectorStoreIds,
-  });
+  const ThreadObjectToolResourcesFileSearch({this.vectorStoreIds});
 
   @MappableField(key: 'vector_store_ids')
   final List<String>? vectorStoreIds;
 
-  static ThreadObjectToolResourcesFileSearch fromJson(Map<String, dynamic> json) => ThreadObjectToolResourcesFileSearchMapper.fromJson(json);
-
+  static ThreadObjectToolResourcesFileSearch fromJson(Map<String, dynamic> json) =>
+      ThreadObjectToolResourcesFileSearchMapper.fromJson(json);
 }
-

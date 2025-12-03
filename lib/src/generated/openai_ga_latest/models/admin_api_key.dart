@@ -37,6 +37,4 @@ class AdminApiKey with AdminApiKeyMappable {
   final String? value;
 
   static AdminApiKey fromJson(Map<String, dynamic> json) => AdminApiKeyMapper.fromJson(json);
-
 }
-

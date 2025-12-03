@@ -10,15 +10,11 @@ part 'message_delta_content_text_object_text.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentTextObjectText with MessageDeltaContentTextObjectTextMappable {
-  const MessageDeltaContentTextObjectText({
-    this.value,
-    this.annotations,
-  });
+  const MessageDeltaContentTextObjectText({this.value, this.annotations});
 
   final String? value;
   final List<MessageDeltaContentTextObjectTextAnnotationsUnion>? annotations;
 
-  static MessageDeltaContentTextObjectText fromJson(Map<String, dynamic> json) => MessageDeltaContentTextObjectTextMapper.fromJson(json);
-
+  static MessageDeltaContentTextObjectText fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentTextObjectTextMapper.fromJson(json);
 }
-

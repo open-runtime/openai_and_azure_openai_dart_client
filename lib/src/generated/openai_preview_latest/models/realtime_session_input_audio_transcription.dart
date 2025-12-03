@@ -8,17 +8,12 @@ part 'realtime_session_input_audio_transcription.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionInputAudioTranscription with RealtimeSessionInputAudioTranscriptionMappable {
-  const RealtimeSessionInputAudioTranscription({
-    this.model,
-    this.language,
-    this.prompt,
-  });
+  const RealtimeSessionInputAudioTranscription({this.model, this.language, this.prompt});
 
   final String? model;
   final String? language;
   final String? prompt;
 
-  static RealtimeSessionInputAudioTranscription fromJson(Map<String, dynamic> json) => RealtimeSessionInputAudioTranscriptionMapper.fromJson(json);
-
+  static RealtimeSessionInputAudioTranscription fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionInputAudioTranscriptionMapper.fromJson(json);
 }
-

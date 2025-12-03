@@ -9,10 +9,10 @@ part 'realtime_transcription_session_create_request_ga_include.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestGaInclude {
   /// Incorrect name has been replaced. Original name: `item.input_audio_transcription.logprobs`.
-  @MappableValue('item.input_audio_transcription.logprobs') 
+  @MappableValue('item.input_audio_transcription.logprobs')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeTranscriptionSessionCreateRequestGaInclude {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestGaInclude> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestGaInclude.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestGaInclude> get $valuesDefined =>
+      values.where((value) => value != RealtimeTranscriptionSessionCreateRequestGaInclude.unknown).toList();
 }

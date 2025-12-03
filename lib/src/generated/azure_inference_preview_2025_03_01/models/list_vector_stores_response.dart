@@ -29,6 +29,4 @@ class ListVectorStoresResponse with ListVectorStoresResponseMappable {
   final bool hasMore;
 
   static ListVectorStoresResponse fromJson(Map<String, dynamic> json) => ListVectorStoresResponseMapper.fromJson(json);
-
 }
-

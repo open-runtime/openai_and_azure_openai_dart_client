@@ -8,7 +8,11 @@ import 'model_ids_shared_enum.dart';
 
 part 'model_ids_shared.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ModelIdsSharedVariantEnum, ModelIdsSharedVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ModelIdsSharedVariantEnum, ModelIdsSharedVariantString],
+)
 sealed class ModelIdsShared with ModelIdsSharedMappable {
   const ModelIdsShared();
 
@@ -48,18 +52,14 @@ extension ModelIdsSharedUnionDeserializer on ModelIdsShared {
 class ModelIdsSharedVariantEnum extends ModelIdsShared with ModelIdsSharedVariantEnumMappable {
   final ModelIdsSharedEnum value;
 
-  const ModelIdsSharedVariantEnum({
-    required this.value,
-  });
+  const ModelIdsSharedVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelIdsSharedVariantString extends ModelIdsShared with ModelIdsSharedVariantStringMappable {
   final String value;
 
-  const ModelIdsSharedVariantString({
-    required this.value,
-  });
+  const ModelIdsSharedVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

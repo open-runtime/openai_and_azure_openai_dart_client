@@ -15,25 +15,25 @@ part 'create_image_request_quality.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateImageRequestQuality {
-  @MappableValue('standard') 
+  @MappableValue('standard')
   standard,
 
-  @MappableValue('hd') 
+  @MappableValue('hd')
   hd,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -42,5 +42,6 @@ enum CreateImageRequestQuality {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateImageRequestQuality> get $valuesDefined => values.where((value) => value != CreateImageRequestQuality.unknown).toList();
+  static List<CreateImageRequestQuality> get $valuesDefined =>
+      values.where((value) => value != CreateImageRequestQuality.unknown).toList();
 }

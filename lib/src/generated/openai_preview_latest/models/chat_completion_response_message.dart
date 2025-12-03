@@ -36,7 +36,6 @@ class ChatCompletionResponseMessage with ChatCompletionResponseMessageMappable {
   @MappableField(key: 'audio')
   final ChatCompletionResponseMessageAudio? chatCompletionResponseMessageAudio;
 
-  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageMapper.fromJson(json);
-
+  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageMapper.fromJson(json);
 }
-

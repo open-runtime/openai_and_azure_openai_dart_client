@@ -7,13 +7,14 @@
 
 part of 'type_model.dart';
 
-class TypeModelMapper extends ClassMapperBase<TypeModel> {
+class TypeModelMapper extends SubClassMapperBase<TypeModel> {
   TypeModelMapper._();
 
   static TypeModelMapper? _instance;
   static TypeModelMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TypeModelMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       TypeModelTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -41,6 +42,14 @@ class TypeModelMapper extends ClassMapperBase<TypeModel> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'type';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static TypeModel _instantiate(DecodingData data) {
     return TypeModel(text: data.dec(_f$text), type: data.dec(_f$type));
@@ -104,7 +113,8 @@ extension TypeModelValueCopy<$R, $Out> on ObjectCopyWith<$R, TypeModel, $Out> {
 }
 
 abstract class TypeModelCopyWith<$R, $In extends TypeModel, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? text, TypeModelType? type});
   TypeModelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

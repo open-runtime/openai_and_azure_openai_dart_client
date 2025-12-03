@@ -9,13 +9,13 @@ part 'project_api_key_owner_type.mapper.dart';
 /// `user` or `service_account`
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectApiKeyOwnerType {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('service_account') 
+  @MappableValue('service_account')
   serviceAccount,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ProjectApiKeyOwnerType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectApiKeyOwnerType> get $valuesDefined => values.where((value) => value != ProjectApiKeyOwnerType.unknown).toList();
+  static List<ProjectApiKeyOwnerType> get $valuesDefined =>
+      values.where((value) => value != ProjectApiKeyOwnerType.unknown).toList();
 }

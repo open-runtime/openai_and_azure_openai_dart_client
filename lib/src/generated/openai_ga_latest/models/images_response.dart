@@ -36,6 +36,4 @@ class ImagesResponse with ImagesResponseMappable {
   final ImageGenUsage? usage;
 
   static ImagesResponse fromJson(Map<String, dynamic> json) => ImagesResponseMapper.fromJson(json);
-
 }
-

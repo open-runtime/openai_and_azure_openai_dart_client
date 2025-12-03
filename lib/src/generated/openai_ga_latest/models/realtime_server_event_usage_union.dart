@@ -15,17 +15,18 @@ import 'transcript_text_usage_tokens_type.dart';
 
 part 'realtime_server_event_usage_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeServerEventUsageUnionTokens,
-  RealtimeServerEventUsageUnionDuration
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RealtimeServerEventUsageUnionTokens, RealtimeServerEventUsageUnionDuration],
+)
 sealed class RealtimeServerEventUsageUnion with RealtimeServerEventUsageUnionMappable {
   const RealtimeServerEventUsageUnion();
 
   static RealtimeServerEventUsageUnion fromJson(Map<String, dynamic> json) {
     return RealtimeServerEventUsageUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeServerEventUsageUnionDeserializer on RealtimeServerEventUsageUnion {
@@ -35,21 +36,22 @@ extension RealtimeServerEventUsageUnionDeserializer on RealtimeServerEventUsageU
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeServerEventUsageUnionTokens: 'tokens',
-      RealtimeServerEventUsageUnionDuration: 'duration',
+      TranscriptTextUsageTokens: 'tokens',
+      TranscriptTextUsageDuration: 'duration',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeServerEventUsageUnionTokens] => RealtimeServerEventUsageUnionTokensMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventUsageUnionDuration] => RealtimeServerEventUsageUnionDurationMapper.fromJson(json),
+      _ when value == effective[TranscriptTextUsageTokens] => TranscriptTextUsageTokensMapper.fromJson(json),
+      _ when value == effective[TranscriptTextUsageDuration] => TranscriptTextUsageDurationMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeServerEventUsageUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tokens')
-class RealtimeServerEventUsageUnionTokens extends RealtimeServerEventUsageUnion with RealtimeServerEventUsageUnionTokensMappable {
+class RealtimeServerEventUsageUnionTokens extends RealtimeServerEventUsageUnion
+    with RealtimeServerEventUsageUnionTokensMappable {
   final TranscriptTextUsageTokensType type;
   @MappableField(key: 'input_tokens')
   final int inputTokens;
@@ -67,16 +69,13 @@ class RealtimeServerEventUsageUnionTokens extends RealtimeServerEventUsageUnion 
     required this.outputTokens,
     required this.totalTokens,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'duration')
-class RealtimeServerEventUsageUnionDuration extends RealtimeServerEventUsageUnion with RealtimeServerEventUsageUnionDurationMappable {
+class RealtimeServerEventUsageUnionDuration extends RealtimeServerEventUsageUnion
+    with RealtimeServerEventUsageUnionDurationMappable {
   final TranscriptTextUsageDurationType type;
   final num seconds;
 
-  const RealtimeServerEventUsageUnionDuration({
-    required this.type,
-    required this.seconds,
-  });
-
+  const RealtimeServerEventUsageUnionDuration({required this.type, required this.seconds});
 }

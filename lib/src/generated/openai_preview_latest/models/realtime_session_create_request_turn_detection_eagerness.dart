@@ -10,19 +10,19 @@ part 'realtime_session_create_request_turn_detection_eagerness.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateRequestTurnDetectionEagerness {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum RealtimeSessionCreateRequestTurnDetectionEagerness {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateRequestTurnDetectionEagerness> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateRequestTurnDetectionEagerness.unknown).toList();
+  static List<RealtimeSessionCreateRequestTurnDetectionEagerness> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateRequestTurnDetectionEagerness.unknown).toList();
 }

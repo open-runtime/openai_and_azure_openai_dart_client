@@ -11,10 +11,10 @@ part 'vector_store_file_object_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreFileObjectObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `vector_store.file`.
-  @MappableValue('vector_store.file') 
+  @MappableValue('vector_store.file')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum VectorStoreFileObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreFileObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != VectorStoreFileObjectObjectObjectEnum.unknown).toList();
+  static List<VectorStoreFileObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != VectorStoreFileObjectObjectObjectEnum.unknown).toList();
 }

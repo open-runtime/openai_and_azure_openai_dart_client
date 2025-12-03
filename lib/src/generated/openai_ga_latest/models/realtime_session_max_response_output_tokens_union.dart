@@ -11,7 +11,14 @@ part 'realtime_session_max_response_output_tokens_union.mapper.dart';
 /// limit output tokens, or `inf` for the maximum available tokens for a.
 /// given model. Defaults to `inf`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionMaxResponseOutputTokensUnionVariantString, RealtimeSessionMaxResponseOutputTokensUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionMaxResponseOutputTokensUnionVariantString,
+    RealtimeSessionMaxResponseOutputTokensUnionVariantInt,
+  ],
+)
 sealed class RealtimeSessionMaxResponseOutputTokensUnion with RealtimeSessionMaxResponseOutputTokensUnionMappable {
   const RealtimeSessionMaxResponseOutputTokensUnion();
 
@@ -36,26 +43,26 @@ extension RealtimeSessionMaxResponseOutputTokensUnionDeserializer on RealtimeSes
       return RealtimeSessionMaxResponseOutputTokensUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeSessionMaxResponseOutputTokensUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionMaxResponseOutputTokensUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionMaxResponseOutputTokensUnionVariantString extends RealtimeSessionMaxResponseOutputTokensUnion with RealtimeSessionMaxResponseOutputTokensUnionVariantStringMappable {
+class RealtimeSessionMaxResponseOutputTokensUnionVariantString extends RealtimeSessionMaxResponseOutputTokensUnion
+    with RealtimeSessionMaxResponseOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionMaxResponseOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionMaxResponseOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionMaxResponseOutputTokensUnionVariantInt extends RealtimeSessionMaxResponseOutputTokensUnion with RealtimeSessionMaxResponseOutputTokensUnionVariantIntMappable {
+class RealtimeSessionMaxResponseOutputTokensUnionVariantInt extends RealtimeSessionMaxResponseOutputTokensUnion
+    with RealtimeSessionMaxResponseOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeSessionMaxResponseOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeSessionMaxResponseOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

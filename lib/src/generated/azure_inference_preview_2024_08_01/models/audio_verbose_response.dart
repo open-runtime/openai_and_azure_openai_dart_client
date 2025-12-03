@@ -14,14 +14,7 @@ part 'audio_verbose_response.mapper.dart';
 /// Translation or transcription response when response_format was verbose_json
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioVerboseResponse with AudioVerboseResponseMappable {
-  const AudioVerboseResponse({
-    required this.text,
-    this.task,
-    this.language,
-    this.duration,
-    this.segments,
-    this.words,
-  });
+  const AudioVerboseResponse({required this.text, this.task, this.language, this.duration, this.segments, this.words});
 
   final String text;
   final AudioVerboseResponseTask? task;
@@ -31,6 +24,4 @@ class AudioVerboseResponse with AudioVerboseResponseMappable {
   final List<AudioWord>? words;
 
   static AudioVerboseResponse fromJson(Map<String, dynamic> json) => AudioVerboseResponseMapper.fromJson(json);
-
 }
-

@@ -9,11 +9,7 @@ part 'realtime_beta_server_event_mcp_list_tools_failed.mapper.dart';
 /// Returned when listing MCP tools has failed for an item.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventMcpListToolsFailed with RealtimeBetaServerEventMcpListToolsFailedMappable {
-  const RealtimeBetaServerEventMcpListToolsFailed({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+  const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId});
 
   @MappableField(key: 'event_id')
   final String eventId;
@@ -21,7 +17,6 @@ class RealtimeBetaServerEventMcpListToolsFailed with RealtimeBetaServerEventMcpL
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventMcpListToolsFailed fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventMcpListToolsFailedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventMcpListToolsFailed fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventMcpListToolsFailedMapper.fromJson(json);
 }
-

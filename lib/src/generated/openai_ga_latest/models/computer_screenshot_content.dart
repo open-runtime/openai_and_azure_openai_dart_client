@@ -9,8 +9,8 @@ import 'computer_screenshot_content_type.dart';
 part 'computer_screenshot_content.mapper.dart';
 
 /// A screenshot of a computer.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerScreenshotContent with ComputerScreenshotContentMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_screenshot')
+class ComputerScreenshotContent extends MessageContentUnion with ComputerScreenshotContentMappable {
   const ComputerScreenshotContent({
     required this.imageUrl,
     required this.fileId,
@@ -23,7 +23,6 @@ class ComputerScreenshotContent with ComputerScreenshotContentMappable {
   final String? fileId;
   final ComputerScreenshotContentType type;
 
-  static ComputerScreenshotContent fromJson(Map<String, dynamic> json) => ComputerScreenshotContentMapper.fromJson(json);
-
+  static ComputerScreenshotContent fromJson(Map<String, dynamic> json) =>
+      ComputerScreenshotContentMapper.fromJson(json);
 }
-

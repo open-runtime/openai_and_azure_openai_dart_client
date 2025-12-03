@@ -9,15 +9,10 @@ part 'batch_output_reference.mapper.dart';
 /// The Azure Storage folder to store output.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchOutputReference with BatchOutputReferenceMappable {
-  const BatchOutputReference({
-    this.url,
-    this.delimiter,
-  });
+  const BatchOutputReference({this.url, this.delimiter});
 
   final String? url;
   final String? delimiter;
 
   static BatchOutputReference fromJson(Map<String, dynamic> json) => BatchOutputReferenceMapper.fromJson(json);
-
 }
-

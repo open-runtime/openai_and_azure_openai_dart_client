@@ -32,7 +32,6 @@ class RealtimeBetaServerEventResponseTextDelta with RealtimeBetaServerEventRespo
   final int contentIndex;
   final String delta;
 
-  static RealtimeBetaServerEventResponseTextDelta fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseTextDeltaMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseTextDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseTextDeltaMapper.fromJson(json);
 }
-

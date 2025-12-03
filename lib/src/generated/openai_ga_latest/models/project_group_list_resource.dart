@@ -27,6 +27,4 @@ class ProjectGroupListResource with ProjectGroupListResourceMappable {
   final String? next;
 
   static ProjectGroupListResource fromJson(Map<String, dynamic> json) => ProjectGroupListResourceMapper.fromJson(json);
-
 }
-

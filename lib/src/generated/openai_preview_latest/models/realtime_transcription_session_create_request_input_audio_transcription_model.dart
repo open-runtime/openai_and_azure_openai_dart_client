@@ -10,16 +10,16 @@ part 'realtime_transcription_session_create_request_input_audio_transcription_mo
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel {
-  @MappableValue('gpt-4o-transcribe') 
+  @MappableValue('gpt-4o-transcribe')
   gpt4oTranscribe,
 
-  @MappableValue('gpt-4o-mini-transcribe') 
+  @MappableValue('gpt-4o-mini-transcribe')
   gpt4oMiniTranscribe,
 
-  @MappableValue('whisper-1') 
+  @MappableValue('whisper-1')
   whisper1,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,7 @@ enum RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel> get $valuesDefined => values
+      .where((value) => value != RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.unknown)
+      .toList();
 }

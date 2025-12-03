@@ -9,10 +9,10 @@ part 'eval_string_check_grader_type.mapper.dart';
 /// The object type, which is always `string_check`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalStringCheckGraderType {
-  @MappableValue('string_check') 
+  @MappableValue('string_check')
   stringCheck,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalStringCheckGraderType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalStringCheckGraderType> get $valuesDefined => values.where((value) => value != EvalStringCheckGraderType.unknown).toList();
+  static List<EvalStringCheckGraderType> get $valuesDefined =>
+      values.where((value) => value != EvalStringCheckGraderType.unknown).toList();
 }

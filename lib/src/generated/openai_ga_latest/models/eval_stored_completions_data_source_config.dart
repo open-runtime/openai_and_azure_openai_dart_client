@@ -11,8 +11,9 @@ part 'eval_stored_completions_data_source_config.mapper.dart';
 
 /// Deprecated in favor of LogsDataSourceConfig.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalStoredCompletionsDataSourceConfig with EvalStoredCompletionsDataSourceConfigMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
+class EvalStoredCompletionsDataSourceConfig extends EvalDataSourceConfigUnion
+    with EvalStoredCompletionsDataSourceConfigMappable {
   const EvalStoredCompletionsDataSourceConfig({
     required this.schema,
     this.metadata,
@@ -23,7 +24,6 @@ class EvalStoredCompletionsDataSourceConfig with EvalStoredCompletionsDataSource
   final Metadata? metadata;
   final EvalStoredCompletionsDataSourceConfigType type;
 
-  static EvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) => EvalStoredCompletionsDataSourceConfigMapper.fromJson(json);
-
+  static EvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      EvalStoredCompletionsDataSourceConfigMapper.fromJson(json);
 }
-

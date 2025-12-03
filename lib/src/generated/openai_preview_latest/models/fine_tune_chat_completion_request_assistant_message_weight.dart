@@ -9,13 +9,13 @@ part 'fine_tune_chat_completion_request_assistant_message_weight.mapper.dart';
 /// Controls whether the assistant message is trained against (0 or 1)
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuneChatCompletionRequestAssistantMessageWeight {
-  @MappableValue(0) 
+  @MappableValue(0)
   value0,
 
-  @MappableValue(1) 
+  @MappableValue(1)
   value1,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum FineTuneChatCompletionRequestAssistantMessageWeight {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuneChatCompletionRequestAssistantMessageWeight> get $valuesDefined => values.where((value) => value != FineTuneChatCompletionRequestAssistantMessageWeight.unknown).toList();
+  static List<FineTuneChatCompletionRequestAssistantMessageWeight> get $valuesDefined =>
+      values.where((value) => value != FineTuneChatCompletionRequestAssistantMessageWeight.unknown).toList();
 }

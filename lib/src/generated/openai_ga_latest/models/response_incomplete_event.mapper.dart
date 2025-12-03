@@ -8,7 +8,7 @@
 part of 'response_incomplete_event.dart';
 
 class ResponseIncompleteEventMapper
-    extends ClassMapperBase<ResponseIncompleteEvent> {
+    extends SubClassMapperBase<ResponseIncompleteEvent> {
   ResponseIncompleteEventMapper._();
 
   static ResponseIncompleteEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseIncompleteEventMapper
       MapperContainer.globals.use(
         _instance = ResponseIncompleteEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseIncompleteEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -50,6 +51,14 @@ class ResponseIncompleteEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.incomplete';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseIncompleteEvent _instantiate(DecodingData data) {
     return ResponseIncompleteEvent(
@@ -128,8 +137,9 @@ abstract class ResponseIncompleteEventCopyWith<
   $In extends ResponseIncompleteEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({
     ResponseIncompleteEventType? type,
     ResponseModel? response,

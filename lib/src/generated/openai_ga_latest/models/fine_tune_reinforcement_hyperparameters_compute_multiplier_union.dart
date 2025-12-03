@@ -8,8 +8,16 @@ part 'fine_tune_reinforcement_hyperparameters_compute_multiplier_union.mapper.da
 
 /// Multiplier on amount of compute used for exploring search space during training.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString, FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum])
-sealed class FineTuneReinforcementHyperparametersComputeMultiplierUnion with FineTuneReinforcementHyperparametersComputeMultiplierUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString,
+    FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum,
+  ],
+)
+sealed class FineTuneReinforcementHyperparametersComputeMultiplierUnion
+    with FineTuneReinforcementHyperparametersComputeMultiplierUnionMappable {
   const FineTuneReinforcementHyperparametersComputeMultiplierUnion();
 
   static FineTuneReinforcementHyperparametersComputeMultiplierUnion fromJson(dynamic json) {
@@ -17,7 +25,8 @@ sealed class FineTuneReinforcementHyperparametersComputeMultiplierUnion with Fin
   }
 }
 
-extension FineTuneReinforcementHyperparametersComputeMultiplierUnionDeserializer on FineTuneReinforcementHyperparametersComputeMultiplierUnion {
+extension FineTuneReinforcementHyperparametersComputeMultiplierUnionDeserializer
+    on FineTuneReinforcementHyperparametersComputeMultiplierUnion {
   static FineTuneReinforcementHyperparametersComputeMultiplierUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -33,31 +42,34 @@ extension FineTuneReinforcementHyperparametersComputeMultiplierUnionDeserializer
       return FineTuneReinforcementHyperparametersComputeMultiplierUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneReinforcementHyperparametersComputeMultiplierUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneReinforcementHyperparametersComputeMultiplierUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString extends FineTuneReinforcementHyperparametersComputeMultiplierUnion with FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantStringMappable {
+class FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString
+    extends FineTuneReinforcementHyperparametersComputeMultiplierUnion
+    with FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantStringMappable {
   final String value;
 
-  const FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum extends FineTuneReinforcementHyperparametersComputeMultiplierUnion with FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNumMappable {
+class FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum
+    extends FineTuneReinforcementHyperparametersComputeMultiplierUnion
+    with FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNumMappable {
   final num value;
 
-  const FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum({
-    required this.value,
-  });
+  const FineTuneReinforcementHyperparametersComputeMultiplierUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension FineTuneReinforcementHyperparametersComputeMultiplierUnionJsonValue on FineTuneReinforcementHyperparametersComputeMultiplierUnion {
+extension FineTuneReinforcementHyperparametersComputeMultiplierUnionJsonValue
+    on FineTuneReinforcementHyperparametersComputeMultiplierUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -87,7 +99,9 @@ class FineTuneReinforcementHyperparametersComputeMultiplierUnionHook extends Map
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! FineTuneReinforcementHyperparametersComputeMultiplierUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! FineTuneReinforcementHyperparametersComputeMultiplierUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return FineTuneReinforcementHyperparametersComputeMultiplierUnion.fromJson(value);
     }

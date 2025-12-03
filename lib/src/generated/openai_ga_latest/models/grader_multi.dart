@@ -10,8 +10,8 @@ import 'grader_multi_type.dart';
 part 'grader_multi.mapper.dart';
 
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class GraderMulti with GraderMultiMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'multi')
+class GraderMulti extends ValidateGraderResponseGraderUnion with GraderMultiMappable {
   const GraderMulti({
     required this.name,
     required this.graders,
@@ -26,6 +26,4 @@ class GraderMulti with GraderMultiMappable {
   final GraderMultiType type;
 
   static GraderMulti fromJson(Map<String, dynamic> json) => GraderMultiMapper.fromJson(json);
-
 }
-

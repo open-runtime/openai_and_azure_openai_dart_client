@@ -15,17 +15,21 @@ import 'prompt_filter_results.dart';
 
 part 'chat_completions_create_response_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'object', includeSubClasses: [
-  ChatCompletionsCreateResponseUnionChatCompletion,
-  ChatCompletionsCreateResponseUnionChatCompletionChunk
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'object',
+  includeSubClasses: [
+    ChatCompletionsCreateResponseUnionChatCompletion,
+    ChatCompletionsCreateResponseUnionChatCompletionChunk,
+  ],
+)
 sealed class ChatCompletionsCreateResponseUnion with ChatCompletionsCreateResponseUnionMappable {
   const ChatCompletionsCreateResponseUnion();
 
   static ChatCompletionsCreateResponseUnion fromJson(Map<String, dynamic> json) {
     return ChatCompletionsCreateResponseUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ChatCompletionsCreateResponseUnionDeserializer on ChatCompletionsCreateResponseUnion {
@@ -35,21 +39,23 @@ extension ChatCompletionsCreateResponseUnionDeserializer on ChatCompletionsCreat
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ChatCompletionsCreateResponseUnionChatCompletion: 'chat.completion',
-      ChatCompletionsCreateResponseUnionChatCompletionChunk: 'chat.completion.chunk',
+      CreateChatCompletionResponse: 'chat.completion',
+      CreateChatCompletionStreamResponse: 'chat.completion.chunk',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ChatCompletionsCreateResponseUnionChatCompletion] => ChatCompletionsCreateResponseUnionChatCompletionMapper.fromJson(json),
-      _ when value == effective[ChatCompletionsCreateResponseUnionChatCompletionChunk] => ChatCompletionsCreateResponseUnionChatCompletionChunkMapper.fromJson(json),
+      _ when value == effective[CreateChatCompletionResponse] => CreateChatCompletionResponseMapper.fromJson(json),
+      _ when value == effective[CreateChatCompletionStreamResponse] =>
+        CreateChatCompletionStreamResponseMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChatCompletionsCreateResponseUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chat.completion')
-class ChatCompletionsCreateResponseUnionChatCompletion extends ChatCompletionsCreateResponseUnion with ChatCompletionsCreateResponseUnionChatCompletionMappable {
+class ChatCompletionsCreateResponseUnionChatCompletion extends ChatCompletionsCreateResponseUnion
+    with ChatCompletionsCreateResponseUnionChatCompletionMappable {
   final String id;
   @MappableField(key: 'prompt_filter_results')
   final PromptFilterResults? promptFilterResults;
@@ -72,10 +78,11 @@ class ChatCompletionsCreateResponseUnionChatCompletion extends ChatCompletionsCr
     required this.objectEnum,
     required this.usage,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chat.completion.chunk')
-class ChatCompletionsCreateResponseUnionChatCompletionChunk extends ChatCompletionsCreateResponseUnion with ChatCompletionsCreateResponseUnionChatCompletionChunkMappable {
+class ChatCompletionsCreateResponseUnionChatCompletionChunk extends ChatCompletionsCreateResponseUnion
+    with ChatCompletionsCreateResponseUnionChatCompletionChunkMappable {
   final String id;
   final List<CreateChatCompletionStreamResponseChoices> choices;
   final int created;
@@ -93,5 +100,4 @@ class ChatCompletionsCreateResponseUnionChatCompletionChunk extends ChatCompleti
     required this.systemFingerprint,
     required this.objectEnum,
   });
-
 }

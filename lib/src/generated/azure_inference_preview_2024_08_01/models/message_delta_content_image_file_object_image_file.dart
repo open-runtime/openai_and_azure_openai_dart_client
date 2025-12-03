@@ -8,14 +8,11 @@ part 'message_delta_content_image_file_object_image_file.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaContentImageFileObjectImageFile with MessageDeltaContentImageFileObjectImageFileMappable {
-  const MessageDeltaContentImageFileObjectImageFile({
-    this.fileId,
-  });
+  const MessageDeltaContentImageFileObjectImageFile({this.fileId});
 
   @MappableField(key: 'file_id')
   final String? fileId;
 
-  static MessageDeltaContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) => MessageDeltaContentImageFileObjectImageFileMapper.fromJson(json);
-
+  static MessageDeltaContentImageFileObjectImageFile fromJson(Map<String, dynamic> json) =>
+      MessageDeltaContentImageFileObjectImageFileMapper.fromJson(json);
 }
-

@@ -12,12 +12,7 @@ part 'create_eval_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalRequest with CreateEvalRequestMappable {
-  const CreateEvalRequest({
-    required this.dataSourceConfig,
-    required this.testingCriteria,
-    this.name,
-    this.metadata,
-  });
+  const CreateEvalRequest({required this.dataSourceConfig, required this.testingCriteria, this.name, this.metadata});
 
   @MappableField(key: 'data_source_config')
   final CreateEvalRequestDataSourceConfigUnion dataSourceConfig;
@@ -27,6 +22,4 @@ class CreateEvalRequest with CreateEvalRequestMappable {
   final Metadata? metadata;
 
   static CreateEvalRequest fromJson(Map<String, dynamic> json) => CreateEvalRequestMapper.fromJson(json);
-
 }
-

@@ -9,10 +9,10 @@ part 'file_annotation_source_type.mapper.dart';
 /// Type discriminator that is always `file`.
 @MappableEnum(defaultValue: 'unknown')
 enum FileAnnotationSourceType {
-  @MappableValue('file') 
+  @MappableValue('file')
   file,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FileAnnotationSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FileAnnotationSourceType> get $valuesDefined => values.where((value) => value != FileAnnotationSourceType.unknown).toList();
+  static List<FileAnnotationSourceType> get $valuesDefined =>
+      values.where((value) => value != FileAnnotationSourceType.unknown).toList();
 }

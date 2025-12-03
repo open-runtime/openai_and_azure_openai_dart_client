@@ -11,8 +11,8 @@ import 'response_text_delta_event_type.dart';
 part 'response_text_delta_event.mapper.dart';
 
 /// Emitted when there is an additional text delta.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseTextDeltaEvent with ResponseTextDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.delta')
+class ResponseTextDeltaEvent extends ResponseStreamEvent with ResponseTextDeltaEventMappable {
   const ResponseTextDeltaEvent({
     required this.type,
     required this.itemId,
@@ -36,6 +36,4 @@ class ResponseTextDeltaEvent with ResponseTextDeltaEventMappable {
   final List<ResponseLogProb> logprobs;
 
   static ResponseTextDeltaEvent fromJson(Map<String, dynamic> json) => ResponseTextDeltaEventMapper.fromJson(json);
-
 }
-

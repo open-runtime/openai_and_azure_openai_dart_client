@@ -13,11 +13,7 @@ part 'chatkit_configuration_param.mapper.dart';
 /// Optional per-session configuration settings for ChatKit behavior.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatkitConfigurationParam with ChatkitConfigurationParamMappable {
-  const ChatkitConfigurationParam({
-    this.automaticThreadTitling,
-    this.fileUpload,
-    this.history,
-  });
+  const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history});
 
   @MappableField(key: 'automatic_thread_titling')
   final AutomaticThreadTitlingParam? automaticThreadTitling;
@@ -25,7 +21,6 @@ class ChatkitConfigurationParam with ChatkitConfigurationParamMappable {
   final FileUploadParam? fileUpload;
   final HistoryParam? history;
 
-  static ChatkitConfigurationParam fromJson(Map<String, dynamic> json) => ChatkitConfigurationParamMapper.fromJson(json);
-
+  static ChatkitConfigurationParam fromJson(Map<String, dynamic> json) =>
+      ChatkitConfigurationParamMapper.fromJson(json);
 }
-

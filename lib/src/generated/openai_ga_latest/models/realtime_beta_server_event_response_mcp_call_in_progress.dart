@@ -24,7 +24,6 @@ class RealtimeBetaServerEventResponseMcpCallInProgress with RealtimeBetaServerEv
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventResponseMcpCallInProgress fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseMcpCallInProgressMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseMcpCallInProgress fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseMcpCallInProgressMapper.fromJson(json);
 }
-

@@ -13,16 +13,12 @@ part 'chat_completion_allowed_tools_choice.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionAllowedToolsChoice with ChatCompletionAllowedToolsChoiceMappable {
-  const ChatCompletionAllowedToolsChoice({
-    required this.type,
-    required this.allowedTools,
-  });
+  const ChatCompletionAllowedToolsChoice({required this.type, required this.allowedTools});
 
   final ChatCompletionAllowedToolsChoiceType type;
   @MappableField(key: 'allowed_tools')
   final ChatCompletionAllowedTools allowedTools;
 
-  static ChatCompletionAllowedToolsChoice fromJson(Map<String, dynamic> json) => ChatCompletionAllowedToolsChoiceMapper.fromJson(json);
-
+  static ChatCompletionAllowedToolsChoice fromJson(Map<String, dynamic> json) =>
+      ChatCompletionAllowedToolsChoiceMapper.fromJson(json);
 }
-

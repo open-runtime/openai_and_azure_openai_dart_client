@@ -12,18 +12,14 @@ part 'response_format_json_schema.mapper.dart';
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFormatJsonSchema with ResponseFormatJsonSchemaMappable {
-  const ResponseFormatJsonSchema({
-    required this.type,
-    required this.responseFormatJsonSchemaJsonSchema,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
+class ResponseFormatJsonSchema extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
+    with ResponseFormatJsonSchemaMappable {
+  const ResponseFormatJsonSchema({required this.type, required this.responseFormatJsonSchemaJsonSchema});
 
   final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 
   static ResponseFormatJsonSchema fromJson(Map<String, dynamic> json) => ResponseFormatJsonSchemaMapper.fromJson(json);
-
 }
-

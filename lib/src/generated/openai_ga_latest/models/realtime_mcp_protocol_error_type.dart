@@ -8,10 +8,10 @@ part 'realtime_mcp_protocol_error_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeMcpProtocolErrorType {
-  @MappableValue('protocol_error') 
+  @MappableValue('protocol_error')
   protocolError,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum RealtimeMcpProtocolErrorType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeMcpProtocolErrorType> get $valuesDefined => values.where((value) => value != RealtimeMcpProtocolErrorType.unknown).toList();
+  static List<RealtimeMcpProtocolErrorType> get $valuesDefined =>
+      values.where((value) => value != RealtimeMcpProtocolErrorType.unknown).toList();
 }

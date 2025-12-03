@@ -10,10 +10,10 @@ part 'item_resource_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceRole {
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ItemResourceRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceRole> get $valuesDefined => values.where((value) => value != ItemResourceRole.unknown).toList();
+  static List<ItemResourceRole> get $valuesDefined =>
+      values.where((value) => value != ItemResourceRole.unknown).toList();
 }

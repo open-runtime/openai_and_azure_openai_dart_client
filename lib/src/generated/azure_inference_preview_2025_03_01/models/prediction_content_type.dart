@@ -9,10 +9,10 @@ part 'prediction_content_type.mapper.dart';
 /// The type of the predicted content you want to provide. This type is currently always `content`.
 @MappableEnum(defaultValue: 'unknown')
 enum PredictionContentType {
-  @MappableValue('content') 
+  @MappableValue('content')
   content,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum PredictionContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<PredictionContentType> get $valuesDefined => values.where((value) => value != PredictionContentType.unknown).toList();
+  static List<PredictionContentType> get $valuesDefined =>
+      values.where((value) => value != PredictionContentType.unknown).toList();
 }

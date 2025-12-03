@@ -21,13 +21,13 @@ extension RunStepCompletionUsageUnionDeserializer on RunStepCompletionUsageUnion
       return RunStepCompletionUsageUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for RunStepCompletionUsageUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepCompletionUsageUnionVariant1 extends RunStepCompletionUsageUnion with RunStepCompletionUsageUnionVariant1Mappable {
+class RunStepCompletionUsageUnionVariant1 extends RunStepCompletionUsageUnion
+    with RunStepCompletionUsageUnionVariant1Mappable {
   @MappableField(key: 'completion_tokens')
   final int completionTokens;
   @MappableField(key: 'prompt_tokens')

@@ -11,15 +11,10 @@ part 'ingestion_job_list.mapper.dart';
 /// Represents a list of ingestion jobs.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobList with IngestionJobListMappable {
-  const IngestionJobList({
-    this.nextLink,
-    this.value,
-  });
+  const IngestionJobList({this.nextLink, this.value});
 
   final String? nextLink;
   final List<IngestionJob>? value;
 
   static IngestionJobList fromJson(Map<String, dynamic> json) => IngestionJobListMapper.fromJson(json);
-
 }
-

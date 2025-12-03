@@ -11,15 +11,10 @@ part 'line.mapper.dart';
 /// A content line object consisting of an adjacent sequence of content elements, such as words and selection marks.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Line with LineMappable {
-  const Line({
-    required this.text,
-    required this.spans,
-  });
+  const Line({required this.text, required this.spans});
 
   final String text;
   final List<Span> spans;
 
   static Line fromJson(Map<String, dynamic> json) => LineMapper.fromJson(json);
-
 }
-

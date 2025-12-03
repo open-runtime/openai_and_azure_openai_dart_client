@@ -9,10 +9,10 @@ part 'function_shell_tool_param_type.mapper.dart';
 /// The type of the shell tool. Always `shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionShellToolParamType {
-  @MappableValue('shell') 
+  @MappableValue('shell')
   shell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FunctionShellToolParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionShellToolParamType> get $valuesDefined => values.where((value) => value != FunctionShellToolParamType.unknown).toList();
+  static List<FunctionShellToolParamType> get $valuesDefined =>
+      values.where((value) => value != FunctionShellToolParamType.unknown).toList();
 }

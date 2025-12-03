@@ -25,6 +25,4 @@ class EvalRunOutputItemResult with EvalRunOutputItemResultMappable {
   final dynamic? sample;
 
   static EvalRunOutputItemResult fromJson(Map<String, dynamic> json) => EvalRunOutputItemResultMapper.fromJson(json);
-
 }
-

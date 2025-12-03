@@ -8,7 +8,7 @@
 part of 'realtime_server_event_conversation_item_truncated.dart';
 
 class RealtimeServerEventConversationItemTruncatedMapper
-    extends ClassMapperBase<RealtimeServerEventConversationItemTruncated> {
+    extends SubClassMapperBase<RealtimeServerEventConversationItemTruncated> {
   RealtimeServerEventConversationItemTruncatedMapper._();
 
   static RealtimeServerEventConversationItemTruncatedMapper? _instance;
@@ -18,6 +18,7 @@ class RealtimeServerEventConversationItemTruncatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventConversationItemTruncatedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -63,6 +64,14 @@ class RealtimeServerEventConversationItemTruncatedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.truncated';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemTruncated _instantiate(
     DecodingData data,
@@ -167,7 +176,8 @@ abstract class RealtimeServerEventConversationItemTruncatedCopyWith<
   $In extends RealtimeServerEventConversationItemTruncated,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     dynamic type,

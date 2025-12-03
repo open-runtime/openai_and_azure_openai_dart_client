@@ -7,15 +7,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'message_content_text_annotations_file_path_object_file_path.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageContentTextAnnotationsFilePathObjectFilePath with MessageContentTextAnnotationsFilePathObjectFilePathMappable {
-  const MessageContentTextAnnotationsFilePathObjectFilePath({
-    required this.fileId,
-  });
+class MessageContentTextAnnotationsFilePathObjectFilePath
+    with MessageContentTextAnnotationsFilePathObjectFilePathMappable {
+  const MessageContentTextAnnotationsFilePathObjectFilePath({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static MessageContentTextAnnotationsFilePathObjectFilePath fromJson(Map<String, dynamic> json) => MessageContentTextAnnotationsFilePathObjectFilePathMapper.fromJson(json);
-
+  static MessageContentTextAnnotationsFilePathObjectFilePath fromJson(Map<String, dynamic> json) =>
+      MessageContentTextAnnotationsFilePathObjectFilePathMapper.fromJson(json);
 }
-

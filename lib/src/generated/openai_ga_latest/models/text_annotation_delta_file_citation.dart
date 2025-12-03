@@ -8,16 +8,12 @@ part 'text_annotation_delta_file_citation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TextAnnotationDeltaFileCitation with TextAnnotationDeltaFileCitationMappable {
-  const TextAnnotationDeltaFileCitation({
-    this.fileId,
-    this.quote,
-  });
+  const TextAnnotationDeltaFileCitation({this.fileId, this.quote});
 
   @MappableField(key: 'file_id')
   final String? fileId;
   final String? quote;
 
-  static TextAnnotationDeltaFileCitation fromJson(Map<String, dynamic> json) => TextAnnotationDeltaFileCitationMapper.fromJson(json);
-
+  static TextAnnotationDeltaFileCitation fromJson(Map<String, dynamic> json) =>
+      TextAnnotationDeltaFileCitationMapper.fromJson(json);
 }
-

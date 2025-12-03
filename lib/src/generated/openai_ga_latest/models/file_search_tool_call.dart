@@ -16,8 +16,8 @@ part 'file_search_tool_call.mapper.dart';
 /// The results of a file search tool call. See the.
 /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FileSearchToolCall with FileSearchToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
+class FileSearchToolCall extends ItemUnion with FileSearchToolCallMappable {
   const FileSearchToolCall({
     required this.id,
     required this.type,
@@ -33,6 +33,4 @@ class FileSearchToolCall with FileSearchToolCallMappable {
   final List<FileSearchToolCallResults>? results;
 
   static FileSearchToolCall fromJson(Map<String, dynamic> json) => FileSearchToolCallMapper.fromJson(json);
-
 }
-

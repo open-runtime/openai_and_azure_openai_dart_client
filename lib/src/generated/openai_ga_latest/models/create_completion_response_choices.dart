@@ -25,7 +25,6 @@ class CreateCompletionResponseChoices with CreateCompletionResponseChoicesMappab
   final CreateCompletionResponseChoicesLogprobs? logprobs;
   final String text;
 
-  static CreateCompletionResponseChoices fromJson(Map<String, dynamic> json) => CreateCompletionResponseChoicesMapper.fromJson(json);
-
+  static CreateCompletionResponseChoices fromJson(Map<String, dynamic> json) =>
+      CreateCompletionResponseChoicesMapper.fromJson(json);
 }
-

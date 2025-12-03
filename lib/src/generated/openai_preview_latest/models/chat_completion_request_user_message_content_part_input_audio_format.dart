@@ -10,13 +10,13 @@ part 'chat_completion_request_user_message_content_part_input_audio_format.mappe
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestUserMessageContentPartInputAudioFormat {
-  @MappableValue('wav') 
+  @MappableValue('wav')
   wav,
 
-  @MappableValue('mp3') 
+  @MappableValue('mp3')
   mp3,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,6 @@ enum ChatCompletionRequestUserMessageContentPartInputAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestUserMessageContentPartInputAudioFormat> get $valuesDefined => values.where((value) => value != ChatCompletionRequestUserMessageContentPartInputAudioFormat.unknown).toList();
+  static List<ChatCompletionRequestUserMessageContentPartInputAudioFormat> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestUserMessageContentPartInputAudioFormat.unknown).toList();
 }

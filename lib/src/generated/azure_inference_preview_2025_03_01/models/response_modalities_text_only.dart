@@ -8,10 +8,10 @@ part 'response_modalities_text_only.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseModalitiesTextOnly {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum ResponseModalitiesTextOnly {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseModalitiesTextOnly> get $valuesDefined => values.where((value) => value != ResponseModalitiesTextOnly.unknown).toList();
+  static List<ResponseModalitiesTextOnly> get $valuesDefined =>
+      values.where((value) => value != ResponseModalitiesTextOnly.unknown).toList();
 }

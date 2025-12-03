@@ -10,10 +10,10 @@ part 'usage_code_interpreter_sessions_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageCodeInterpreterSessionsResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.code_interpreter_sessions.result`.
-  @MappableValue('organization.usage.code_interpreter_sessions.result') 
+  @MappableValue('organization.usage.code_interpreter_sessions.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageCodeInterpreterSessionsResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageCodeInterpreterSessionsResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageCodeInterpreterSessionsResultObjectObjectEnum.unknown).toList();
+  static List<UsageCodeInterpreterSessionsResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageCodeInterpreterSessionsResultObjectObjectEnum.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'text_response_format_json_schema_type.mapper.dart';
 /// The type of response format being defined. Always `json_schema`.
 @MappableEnum(defaultValue: 'unknown')
 enum TextResponseFormatJsonSchemaType {
-  @MappableValue('json_schema') 
+  @MappableValue('json_schema')
   jsonSchema,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum TextResponseFormatJsonSchemaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TextResponseFormatJsonSchemaType> get $valuesDefined => values.where((value) => value != TextResponseFormatJsonSchemaType.unknown).toList();
+  static List<TextResponseFormatJsonSchemaType> get $valuesDefined =>
+      values.where((value) => value != TextResponseFormatJsonSchemaType.unknown).toList();
 }

@@ -32,7 +32,6 @@ class RunGraderResponseMetadata with RunGraderResponseMetadataMappable {
   @MappableField(key: 'sampled_model_name')
   final String? sampledModelName;
 
-  static RunGraderResponseMetadata fromJson(Map<String, dynamic> json) => RunGraderResponseMetadataMapper.fromJson(json);
-
+  static RunGraderResponseMetadata fromJson(Map<String, dynamic> json) =>
+      RunGraderResponseMetadataMapper.fromJson(json);
 }
-

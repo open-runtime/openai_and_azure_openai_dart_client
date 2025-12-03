@@ -32,11 +32,7 @@ import 'vector_stores/vector_stores_api.dart';
 ///
 /// The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
 class OpenAiPreviewLatestClient {
-  OpenAiPreviewLatestClient(
-    Dio dio, {
-    String? baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  OpenAiPreviewLatestClient(Dio dio, {String? baseUrl}) : _dio = dio, _baseUrl = baseUrl;
 
   final Dio _dio;
   final String? _baseUrl;

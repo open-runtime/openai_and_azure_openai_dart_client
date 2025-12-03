@@ -9,10 +9,10 @@ part 'input_image_content_param_auto_param_type.mapper.dart';
 /// The type of the input item. Always `input_image`.
 @MappableEnum(defaultValue: 'unknown')
 enum InputImageContentParamAutoParamType {
-  @MappableValue('input_image') 
+  @MappableValue('input_image')
   inputImage,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum InputImageContentParamAutoParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputImageContentParamAutoParamType> get $valuesDefined => values.where((value) => value != InputImageContentParamAutoParamType.unknown).toList();
+  static List<InputImageContentParamAutoParamType> get $valuesDefined =>
+      values.where((value) => value != InputImageContentParamAutoParamType.unknown).toList();
 }

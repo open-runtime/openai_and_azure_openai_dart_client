@@ -9,8 +9,9 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_response_mcp_call_in_progress.mapper.dart';
 
 /// Returned when an MCP tool call has started and is in progress.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseMcpCallInProgress with RealtimeServerEventResponseMcpCallInProgressMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call.in_progress')
+class RealtimeServerEventResponseMcpCallInProgress extends RealtimeServerEvent
+    with RealtimeServerEventResponseMcpCallInProgressMappable {
   const RealtimeServerEventResponseMcpCallInProgress({
     required this.eventId,
     required this.type,
@@ -26,7 +27,6 @@ class RealtimeServerEventResponseMcpCallInProgress with RealtimeServerEventRespo
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventResponseMcpCallInProgress fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseMcpCallInProgressMapper.fromJson(json);
-
+  static RealtimeServerEventResponseMcpCallInProgress fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseMcpCallInProgressMapper.fromJson(json);
 }
-

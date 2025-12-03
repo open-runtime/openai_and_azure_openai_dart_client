@@ -11,8 +11,9 @@ import 'realtime_server_event_response_output_item_added_type.dart';
 part 'realtime_server_event_response_output_item_added.mapper.dart';
 
 /// Returned when a new Item is created during Response generation.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseOutputItemAdded with RealtimeServerEventResponseOutputItemAddedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.added')
+class RealtimeServerEventResponseOutputItemAdded extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputItemAddedMappable {
   const RealtimeServerEventResponseOutputItemAdded({
     required this.eventId,
     required this.type,
@@ -30,7 +31,6 @@ class RealtimeServerEventResponseOutputItemAdded with RealtimeServerEventRespons
   final int outputIndex;
   final RealtimeConversationItem item;
 
-  static RealtimeServerEventResponseOutputItemAdded fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseOutputItemAddedMapper.fromJson(json);
-
+  static RealtimeServerEventResponseOutputItemAdded fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseOutputItemAddedMapper.fromJson(json);
 }
-

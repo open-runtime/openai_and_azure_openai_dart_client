@@ -8,13 +8,10 @@ part 'project_service_account_create_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectServiceAccountCreateRequest with ProjectServiceAccountCreateRequestMappable {
-  const ProjectServiceAccountCreateRequest({
-    required this.name,
-  });
+  const ProjectServiceAccountCreateRequest({required this.name});
 
   final String name;
 
-  static ProjectServiceAccountCreateRequest fromJson(Map<String, dynamic> json) => ProjectServiceAccountCreateRequestMapper.fromJson(json);
-
+  static ProjectServiceAccountCreateRequest fromJson(Map<String, dynamic> json) =>
+      ProjectServiceAccountCreateRequestMapper.fromJson(json);
 }
-

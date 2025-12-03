@@ -23,7 +23,6 @@ class RealtimeBetaServerEventErrorError with RealtimeBetaServerEventErrorErrorMa
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaServerEventErrorError fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventErrorErrorMapper.fromJson(json);
-
+  static RealtimeBetaServerEventErrorError fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventErrorErrorMapper.fromJson(json);
 }
-

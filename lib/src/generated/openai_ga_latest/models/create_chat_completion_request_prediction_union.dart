@@ -9,16 +9,18 @@ import 'prediction_content_type.dart';
 
 part 'create_chat_completion_request_prediction_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateChatCompletionRequestPredictionUnionContent
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CreateChatCompletionRequestPredictionUnionContent],
+)
 sealed class CreateChatCompletionRequestPredictionUnion with CreateChatCompletionRequestPredictionUnionMappable {
   const CreateChatCompletionRequestPredictionUnion();
 
   static CreateChatCompletionRequestPredictionUnion fromJson(Map<String, dynamic> json) {
     return CreateChatCompletionRequestPredictionUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateChatCompletionRequestPredictionUnionDeserializer on CreateChatCompletionRequestPredictionUnion {
@@ -27,26 +29,23 @@ extension CreateChatCompletionRequestPredictionUnionDeserializer on CreateChatCo
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      CreateChatCompletionRequestPredictionUnionContent: 'content',
-    };
+    final mappingFallback = const <Type, Object?>{PredictionContent: 'content'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateChatCompletionRequestPredictionUnionContent] => CreateChatCompletionRequestPredictionUnionContentMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestPredictionUnion'),
+      _ when value == effective[PredictionContent] => PredictionContentMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestPredictionUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'content')
-class CreateChatCompletionRequestPredictionUnionContent extends CreateChatCompletionRequestPredictionUnion with CreateChatCompletionRequestPredictionUnionContentMappable {
+class CreateChatCompletionRequestPredictionUnionContent extends CreateChatCompletionRequestPredictionUnion
+    with CreateChatCompletionRequestPredictionUnionContentMappable {
   final PredictionContentType type;
   final String content;
 
-  const CreateChatCompletionRequestPredictionUnionContent({
-    required this.type,
-    required this.content,
-  });
-
+  const CreateChatCompletionRequestPredictionUnionContent({required this.type, required this.content});
 }

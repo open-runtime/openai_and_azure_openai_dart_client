@@ -10,10 +10,10 @@ part 'realtime_server_event_response_output_item_done_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseOutputItemDoneType {
   /// Incorrect name has been replaced. Original name: `response.output_item.done`.
-  @MappableValue('response.output_item.done') 
+  @MappableValue('response.output_item.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeServerEventResponseOutputItemDoneType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseOutputItemDoneType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseOutputItemDoneType.unknown).toList();
+  static List<RealtimeServerEventResponseOutputItemDoneType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseOutputItemDoneType.unknown).toList();
 }

@@ -25,6 +25,4 @@ class ApproximateLocation with ApproximateLocationMappable {
   final ApproximateLocationType type;
 
   static ApproximateLocation fromJson(Map<String, dynamic> json) => ApproximateLocationMapper.fromJson(json);
-
 }
-

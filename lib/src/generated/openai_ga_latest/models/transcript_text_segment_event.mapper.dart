@@ -8,7 +8,7 @@
 part of 'transcript_text_segment_event.dart';
 
 class TranscriptTextSegmentEventMapper
-    extends ClassMapperBase<TranscriptTextSegmentEvent> {
+    extends SubClassMapperBase<TranscriptTextSegmentEvent> {
   TranscriptTextSegmentEventMapper._();
 
   static TranscriptTextSegmentEventMapper? _instance;
@@ -17,6 +17,8 @@ class TranscriptTextSegmentEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextSegmentEventMapper._(),
       );
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       TranscriptTextSegmentEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -68,6 +70,14 @@ class TranscriptTextSegmentEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'transcript.text.segment';
+  @override
+  late final ClassMapperBase superMapper =
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized();
 
   static TranscriptTextSegmentEvent _instantiate(DecodingData data) {
     return TranscriptTextSegmentEvent(
@@ -153,7 +163,8 @@ abstract class TranscriptTextSegmentEventCopyWith<
   $In extends TranscriptTextSegmentEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CreateTranscriptionResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     TranscriptTextSegmentEventType? type,
     String? id,

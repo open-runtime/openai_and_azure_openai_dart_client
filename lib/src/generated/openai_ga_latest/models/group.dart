@@ -29,6 +29,4 @@ class Group with GroupMappable {
   final bool scimManaged;
 
   static Group fromJson(Map<String, dynamic> json) => GroupMapper.fromJson(json);
-
 }
-

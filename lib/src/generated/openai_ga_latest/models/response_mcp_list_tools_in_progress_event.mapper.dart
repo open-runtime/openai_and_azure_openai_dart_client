@@ -8,7 +8,7 @@
 part of 'response_mcp_list_tools_in_progress_event.dart';
 
 class ResponseMcpListToolsInProgressEventMapper
-    extends ClassMapperBase<ResponseMcpListToolsInProgressEvent> {
+    extends SubClassMapperBase<ResponseMcpListToolsInProgressEvent> {
   ResponseMcpListToolsInProgressEventMapper._();
 
   static ResponseMcpListToolsInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpListToolsInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpListToolsInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpListToolsInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,6 +61,14 @@ class ResponseMcpListToolsInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_list_tools.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpListToolsInProgressEvent _instantiate(DecodingData data) {
     return ResponseMcpListToolsInProgressEvent(
@@ -150,7 +159,8 @@ abstract class ResponseMcpListToolsInProgressEventCopyWith<
   $In extends ResponseMcpListToolsInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpListToolsInProgressEventType? type,
     String? itemId,

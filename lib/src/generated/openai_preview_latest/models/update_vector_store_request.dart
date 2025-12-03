@@ -11,11 +11,7 @@ part 'update_vector_store_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateVectorStoreRequest with UpdateVectorStoreRequestMappable {
-  const UpdateVectorStoreRequest({
-    required this.name,
-    required this.expiresAfter,
-    required this.metadata,
-  });
+  const UpdateVectorStoreRequest({required this.name, required this.expiresAfter, required this.metadata});
 
   final String? name;
   @MappableField(key: 'expires_after')
@@ -23,6 +19,4 @@ class UpdateVectorStoreRequest with UpdateVectorStoreRequestMappable {
   final Metadata? metadata;
 
   static UpdateVectorStoreRequest fromJson(Map<String, dynamic> json) => UpdateVectorStoreRequestMapper.fromJson(json);
-
 }
-

@@ -57,6 +57,4 @@ class RealtimeBetaResponse with RealtimeBetaResponseMappable {
   final RealtimeBetaResponseMaxOutputTokensUnion? maxOutputTokens;
 
   static RealtimeBetaResponse fromJson(Map<String, dynamic> json) => RealtimeBetaResponseMapper.fromJson(json);
-
 }
-

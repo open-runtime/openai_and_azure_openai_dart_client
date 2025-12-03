@@ -10,10 +10,10 @@ part 'reasoning_item_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningItemType {
-  @MappableValue('reasoning') 
+  @MappableValue('reasoning')
   reasoning,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ReasoningItemType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ReasoningItemType> get $valuesDefined => values.where((value) => value != ReasoningItemType.unknown).toList();
+  static List<ReasoningItemType> get $valuesDefined =>
+      values.where((value) => value != ReasoningItemType.unknown).toList();
 }

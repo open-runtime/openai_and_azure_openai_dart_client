@@ -10,17 +10,12 @@ import 'reasoning_text_content_type.dart';
 part 'reasoning_text_content.mapper.dart';
 
 /// Reasoning text from the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ReasoningTextContent with ReasoningTextContentMappable {
-  const ReasoningTextContent({
-    required this.text,
-    this.type = ReasoningTextContentType.reasoningText,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning_text')
+class ReasoningTextContent extends MessageContentUnion with ReasoningTextContentMappable {
+  const ReasoningTextContent({required this.text, this.type = ReasoningTextContentType.reasoningText});
 
   final String text;
   final ReasoningTextContentType type;
 
   static ReasoningTextContent fromJson(Map<String, dynamic> json) => ReasoningTextContentMapper.fromJson(json);
-
 }
-

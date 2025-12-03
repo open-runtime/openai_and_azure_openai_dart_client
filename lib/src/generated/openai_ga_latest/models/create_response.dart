@@ -96,6 +96,4 @@ class CreateResponse with CreateResponseMappable {
   final ConversationParam? conversation;
 
   static CreateResponse fromJson(Map<String, dynamic> json) => CreateResponseMapper.fromJson(json);
-
 }
-

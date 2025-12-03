@@ -10,10 +10,10 @@ part 'create_chat_completion_request_web_search_options_user_location_type.mappe
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateChatCompletionRequestWebSearchOptionsUserLocationType {
-  @MappableValue('approximate') 
+  @MappableValue('approximate')
   approximate,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CreateChatCompletionRequestWebSearchOptionsUserLocationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateChatCompletionRequestWebSearchOptionsUserLocationType> get $valuesDefined => values.where((value) => value != CreateChatCompletionRequestWebSearchOptionsUserLocationType.unknown).toList();
+  static List<CreateChatCompletionRequestWebSearchOptionsUserLocationType> get $valuesDefined =>
+      values.where((value) => value != CreateChatCompletionRequestWebSearchOptionsUserLocationType.unknown).toList();
 }

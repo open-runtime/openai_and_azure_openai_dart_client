@@ -7,13 +7,14 @@
 
 part of 'response_error_event.dart';
 
-class ResponseErrorEventMapper extends ClassMapperBase<ResponseErrorEvent> {
+class ResponseErrorEventMapper extends SubClassMapperBase<ResponseErrorEvent> {
   ResponseErrorEventMapper._();
 
   static ResponseErrorEventMapper? _instance;
   static ResponseErrorEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseErrorEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseErrorEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -52,6 +53,14 @@ class ResponseErrorEventMapper extends ClassMapperBase<ResponseErrorEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'error';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseErrorEvent _instantiate(DecodingData data) {
     return ResponseErrorEvent(
@@ -132,7 +141,8 @@ abstract class ResponseErrorEventCopyWith<
   $In extends ResponseErrorEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseErrorEventType? type,
     String? code,

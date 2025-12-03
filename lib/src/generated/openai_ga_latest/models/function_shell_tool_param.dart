@@ -10,15 +10,11 @@ import 'tool.dart';
 part 'function_shell_tool_param.mapper.dart';
 
 /// A tool that allows the model to execute shell commands.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellToolParam with FunctionShellToolParamMappable {
-  const FunctionShellToolParam({
-    this.type = FunctionShellToolParamType.shell,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell')
+class FunctionShellToolParam extends Tool with FunctionShellToolParamMappable {
+  const FunctionShellToolParam({this.type = FunctionShellToolParamType.shell});
 
   final FunctionShellToolParamType type;
 
   static FunctionShellToolParam fromJson(Map<String, dynamic> json) => FunctionShellToolParamMapper.fromJson(json);
-
 }
-

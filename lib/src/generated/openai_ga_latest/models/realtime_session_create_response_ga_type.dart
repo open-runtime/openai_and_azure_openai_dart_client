@@ -10,10 +10,10 @@ part 'realtime_session_create_response_ga_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateResponseGaType {
-  @MappableValue('realtime') 
+  @MappableValue('realtime')
   realtime,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeSessionCreateResponseGaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateResponseGaType> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateResponseGaType.unknown).toList();
+  static List<RealtimeSessionCreateResponseGaType> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateResponseGaType.unknown).toList();
 }

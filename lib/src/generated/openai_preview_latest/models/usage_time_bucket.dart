@@ -27,6 +27,4 @@ class UsageTimeBucket with UsageTimeBucketMappable {
   final List<UsageTimeBucketResultUnion> result;
 
   static UsageTimeBucket fromJson(Map<String, dynamic> json) => UsageTimeBucketMapper.fromJson(json);
-
 }
-

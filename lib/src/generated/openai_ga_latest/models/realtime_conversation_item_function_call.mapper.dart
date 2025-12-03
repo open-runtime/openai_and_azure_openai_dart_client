@@ -8,7 +8,7 @@
 part of 'realtime_conversation_item_function_call.dart';
 
 class RealtimeConversationItemFunctionCallMapper
-    extends ClassMapperBase<RealtimeConversationItemFunctionCall> {
+    extends SubClassMapperBase<RealtimeConversationItemFunctionCall> {
   RealtimeConversationItemFunctionCallMapper._();
 
   static RealtimeConversationItemFunctionCallMapper? _instance;
@@ -16,6 +16,9 @@ class RealtimeConversationItemFunctionCallMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RealtimeConversationItemFunctionCallMapper._(),
+      );
+      RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RealtimeConversationItemFunctionCallTypeMapper.ensureInitialized();
       RealtimeConversationItemFunctionCallObjectObjectEnumMapper.ensureInitialized();
@@ -79,6 +82,14 @@ class RealtimeConversationItemFunctionCallMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'function_call';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeConversationItemMapper.ensureInitialized();
 
   static RealtimeConversationItemFunctionCall _instantiate(DecodingData data) {
     return RealtimeConversationItemFunctionCall(
@@ -172,7 +183,8 @@ abstract class RealtimeConversationItemFunctionCallCopyWith<
   $In extends RealtimeConversationItemFunctionCall,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     RealtimeConversationItemFunctionCallType? type,
     String? name,

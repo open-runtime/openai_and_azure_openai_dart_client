@@ -21,7 +21,6 @@ class DeletedConversationResource with DeletedConversationResourceMappable {
   @MappableField(key: 'object')
   final DeletedConversationResourceObjectObjectEnum objectEnum;
 
-  static DeletedConversationResource fromJson(Map<String, dynamic> json) => DeletedConversationResourceMapper.fromJson(json);
-
+  static DeletedConversationResource fromJson(Map<String, dynamic> json) =>
+      DeletedConversationResourceMapper.fromJson(json);
 }
-

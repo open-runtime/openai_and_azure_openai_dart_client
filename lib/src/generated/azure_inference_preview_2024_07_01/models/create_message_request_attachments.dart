@@ -10,16 +10,12 @@ part 'create_message_request_attachments.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateMessageRequestAttachments with CreateMessageRequestAttachmentsMappable {
-  const CreateMessageRequestAttachments({
-    this.fileId,
-    this.tools,
-  });
+  const CreateMessageRequestAttachments({this.fileId, this.tools});
 
   @MappableField(key: 'file_id')
   final String? fileId;
   final List<CreateMessageRequestAttachmentsToolsUnion>? tools;
 
-  static CreateMessageRequestAttachments fromJson(Map<String, dynamic> json) => CreateMessageRequestAttachmentsMapper.fromJson(json);
-
+  static CreateMessageRequestAttachments fromJson(Map<String, dynamic> json) =>
+      CreateMessageRequestAttachmentsMapper.fromJson(json);
 }
-

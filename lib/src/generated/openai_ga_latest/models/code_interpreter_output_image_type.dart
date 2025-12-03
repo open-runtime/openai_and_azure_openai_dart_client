@@ -9,10 +9,10 @@ part 'code_interpreter_output_image_type.mapper.dart';
 /// The type of the output. Always `image`.
 @MappableEnum(defaultValue: 'unknown')
 enum CodeInterpreterOutputImageType {
-  @MappableValue('image') 
+  @MappableValue('image')
   image,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CodeInterpreterOutputImageType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CodeInterpreterOutputImageType> get $valuesDefined => values.where((value) => value != CodeInterpreterOutputImageType.unknown).toList();
+  static List<CodeInterpreterOutputImageType> get $valuesDefined =>
+      values.where((value) => value != CodeInterpreterOutputImageType.unknown).toList();
 }

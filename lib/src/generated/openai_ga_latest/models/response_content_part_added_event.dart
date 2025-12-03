@@ -11,8 +11,8 @@ import 'response_stream_event.dart';
 part 'response_content_part_added_event.mapper.dart';
 
 /// Emitted when a new content part is added.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseContentPartAddedEvent with ResponseContentPartAddedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.added')
+class ResponseContentPartAddedEvent extends ResponseStreamEvent with ResponseContentPartAddedEventMappable {
   const ResponseContentPartAddedEvent({
     required this.type,
     required this.itemId,
@@ -34,7 +34,6 @@ class ResponseContentPartAddedEvent with ResponseContentPartAddedEventMappable {
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseContentPartAddedEvent fromJson(Map<String, dynamic> json) => ResponseContentPartAddedEventMapper.fromJson(json);
-
+  static ResponseContentPartAddedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseContentPartAddedEventMapper.fromJson(json);
 }
-

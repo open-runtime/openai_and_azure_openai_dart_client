@@ -42,6 +42,4 @@ class ResponseProperties with ResponsePropertiesMappable {
   final ResponsePropertiesToolChoiceUnion? toolChoice;
 
   static ResponseProperties fromJson(Map<String, dynamic> json) => ResponsePropertiesMapper.fromJson(json);
-
 }
-

@@ -31,6 +31,4 @@ class EvalRunPerModelUsage with EvalRunPerModelUsageMappable {
   final int cachedTokens;
 
   static EvalRunPerModelUsage fromJson(Map<String, dynamic> json) => EvalRunPerModelUsageMapper.fromJson(json);
-
 }
-

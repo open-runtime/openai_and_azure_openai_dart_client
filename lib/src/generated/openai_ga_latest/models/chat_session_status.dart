@@ -8,16 +8,16 @@ part 'chat_session_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ChatSessionStatus {
-  @MappableValue('active') 
+  @MappableValue('active')
   active,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -26,5 +26,6 @@ enum ChatSessionStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatSessionStatus> get $valuesDefined => values.where((value) => value != ChatSessionStatus.unknown).toList();
+  static List<ChatSessionStatus> get $valuesDefined =>
+      values.where((value) => value != ChatSessionStatus.unknown).toList();
 }

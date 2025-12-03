@@ -42,6 +42,4 @@ class EvalRunOutputItemSample with EvalRunOutputItemSampleMappable {
   final int seed;
 
   static EvalRunOutputItemSample fromJson(Map<String, dynamic> json) => EvalRunOutputItemSampleMapper.fromJson(json);
-
 }
-

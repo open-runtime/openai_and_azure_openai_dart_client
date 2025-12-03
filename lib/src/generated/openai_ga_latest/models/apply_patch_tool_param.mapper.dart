@@ -7,13 +7,15 @@
 
 part of 'apply_patch_tool_param.dart';
 
-class ApplyPatchToolParamMapper extends ClassMapperBase<ApplyPatchToolParam> {
+class ApplyPatchToolParamMapper
+    extends SubClassMapperBase<ApplyPatchToolParam> {
   ApplyPatchToolParamMapper._();
 
   static ApplyPatchToolParamMapper? _instance;
   static ApplyPatchToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ApplyPatchToolParamMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       ApplyPatchToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -32,6 +34,13 @@ class ApplyPatchToolParamMapper extends ClassMapperBase<ApplyPatchToolParam> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'apply_patch';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static ApplyPatchToolParam _instantiate(DecodingData data) {
     return ApplyPatchToolParam(type: data.dec(_f$type));
@@ -106,7 +115,8 @@ abstract class ApplyPatchToolParamCopyWith<
   $In extends ApplyPatchToolParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
+  @override
   $R call({ApplyPatchToolParamType? type});
   ApplyPatchToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

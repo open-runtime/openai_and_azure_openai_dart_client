@@ -10,12 +10,7 @@ part 'realtime_server_event_part.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventPart with RealtimeServerEventPartMappable {
-  const RealtimeServerEventPart({
-    this.type,
-    this.text,
-    this.audio,
-    this.transcript,
-  });
+  const RealtimeServerEventPart({this.type, this.text, this.audio, this.transcript});
 
   final RealtimeServerEventPartType? type;
   final String? text;
@@ -23,6 +18,4 @@ class RealtimeServerEventPart with RealtimeServerEventPartMappable {
   final String? transcript;
 
   static RealtimeServerEventPart fromJson(Map<String, dynamic> json) => RealtimeServerEventPartMapper.fromJson(json);
-
 }
-

@@ -32,6 +32,4 @@ class Project with ProjectMappable {
   final int? archivedAt;
 
   static Project fromJson(Map<String, dynamic> json) => ProjectMapper.fromJson(json);
-
 }
-

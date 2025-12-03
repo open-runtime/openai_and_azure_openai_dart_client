@@ -9,10 +9,10 @@ part 'code_interpreter_container_auto_type.mapper.dart';
 /// Always `auto`.
 @MappableEnum(defaultValue: 'unknown')
 enum CodeInterpreterContainerAutoType {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CodeInterpreterContainerAutoType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CodeInterpreterContainerAutoType> get $valuesDefined => values.where((value) => value != CodeInterpreterContainerAutoType.unknown).toList();
+  static List<CodeInterpreterContainerAutoType> get $valuesDefined =>
+      values.where((value) => value != CodeInterpreterContainerAutoType.unknown).toList();
 }

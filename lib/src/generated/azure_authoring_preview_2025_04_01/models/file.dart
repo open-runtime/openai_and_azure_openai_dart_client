@@ -40,6 +40,4 @@ class File with FileMappable {
   final String? statusDetails;
 
   static File fromJson(Map<String, dynamic> json) => FileMapper.fromJson(json);
-
 }
-

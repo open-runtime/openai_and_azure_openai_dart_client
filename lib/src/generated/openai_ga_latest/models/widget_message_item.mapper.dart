@@ -7,13 +7,14 @@
 
 part of 'widget_message_item.dart';
 
-class WidgetMessageItemMapper extends ClassMapperBase<WidgetMessageItem> {
+class WidgetMessageItemMapper extends SubClassMapperBase<WidgetMessageItem> {
   WidgetMessageItemMapper._();
 
   static WidgetMessageItemMapper? _instance;
   static WidgetMessageItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = WidgetMessageItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       WidgetMessageItemObjectObjectEnumMapper.ensureInitialized();
       WidgetMessageItemTypeMapper.ensureInitialized();
     }
@@ -73,6 +74,13 @@ class WidgetMessageItemMapper extends ClassMapperBase<WidgetMessageItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.widget';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static WidgetMessageItem _instantiate(DecodingData data) {
     return WidgetMessageItem(
@@ -155,7 +163,8 @@ abstract class WidgetMessageItemCopyWith<
   $In extends WidgetMessageItem,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? id,
     int? createdAt,

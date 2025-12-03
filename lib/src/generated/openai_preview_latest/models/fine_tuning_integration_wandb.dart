@@ -8,19 +8,13 @@ part 'fine_tuning_integration_wandb.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningIntegrationWandb with FineTuningIntegrationWandbMappable {
-  const FineTuningIntegrationWandb({
-    required this.project,
-    this.name,
-    this.entity,
-    this.tags,
-  });
+  const FineTuningIntegrationWandb({required this.project, this.name, this.entity, this.tags});
 
   final String project;
   final String? name;
   final String? entity;
   final List<String>? tags;
 
-  static FineTuningIntegrationWandb fromJson(Map<String, dynamic> json) => FineTuningIntegrationWandbMapper.fromJson(json);
-
+  static FineTuningIntegrationWandb fromJson(Map<String, dynamic> json) =>
+      FineTuningIntegrationWandbMapper.fromJson(json);
 }
-

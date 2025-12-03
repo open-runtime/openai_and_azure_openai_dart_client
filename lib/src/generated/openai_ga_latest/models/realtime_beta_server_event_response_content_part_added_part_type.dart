@@ -9,13 +9,13 @@ part 'realtime_beta_server_event_response_content_part_added_part_type.mapper.da
 /// The content type ("text", "audio").
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaServerEventResponseContentPartAddedPartType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RealtimeBetaServerEventResponseContentPartAddedPartType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaServerEventResponseContentPartAddedPartType> get $valuesDefined => values.where((value) => value != RealtimeBetaServerEventResponseContentPartAddedPartType.unknown).toList();
+  static List<RealtimeBetaServerEventResponseContentPartAddedPartType> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaServerEventResponseContentPartAddedPartType.unknown).toList();
 }

@@ -11,10 +11,10 @@ part 'project_service_account_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectServiceAccountObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.project.service_account`.
-  @MappableValue('organization.project.service_account') 
+  @MappableValue('organization.project.service_account')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ProjectServiceAccountObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectServiceAccountObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectServiceAccountObjectObjectEnum.unknown).toList();
+  static List<ProjectServiceAccountObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectServiceAccountObjectObjectEnum.unknown).toList();
 }

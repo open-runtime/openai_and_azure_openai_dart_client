@@ -9,13 +9,9 @@ part 'chunking_settings.mapper.dart';
 /// Chunking settings
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChunkingSettings with ChunkingSettingsMappable {
-  const ChunkingSettings({
-    this.maxChunkSizeInTokens,
-  });
+  const ChunkingSettings({this.maxChunkSizeInTokens});
 
   final int? maxChunkSizeInTokens;
 
   static ChunkingSettings fromJson(Map<String, dynamic> json) => ChunkingSettingsMapper.fromJson(json);
-
 }
-

@@ -8,7 +8,7 @@
 part of 'chat_completion_request_message_content_part_text.dart';
 
 class ChatCompletionRequestMessageContentPartTextMapper
-    extends ClassMapperBase<ChatCompletionRequestMessageContentPartText> {
+    extends SubClassMapperBase<ChatCompletionRequestMessageContentPartText> {
   ChatCompletionRequestMessageContentPartTextMapper._();
 
   static ChatCompletionRequestMessageContentPartTextMapper? _instance;
@@ -17,6 +17,8 @@ class ChatCompletionRequestMessageContentPartTextMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartTextMapper._(),
       );
+      ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionRequestMessageContentPartTextTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -44,6 +46,14 @@ class ChatCompletionRequestMessageContentPartTextMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'text';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestAssistantMessageContentPartMapper.ensureInitialized();
 
   static ChatCompletionRequestMessageContentPartText _instantiate(
     DecodingData data,
@@ -145,7 +155,13 @@ abstract class ChatCompletionRequestMessageContentPartTextCopyWith<
   $In extends ChatCompletionRequestMessageContentPartText,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements
+        ChatCompletionRequestAssistantMessageContentPartCopyWith<
+          $R,
+          $In,
+          $Out
+        > {
+  @override
   $R call({
     ChatCompletionRequestMessageContentPartTextType? type,
     String? text,

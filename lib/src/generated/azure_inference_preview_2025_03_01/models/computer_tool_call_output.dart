@@ -13,8 +13,8 @@ part 'computer_tool_call_output.mapper.dart';
 
 /// The output of a computer tool call.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerToolCallOutput with ComputerToolCallOutputMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call_output')
+class ComputerToolCallOutput extends ItemUnion with ComputerToolCallOutputMappable {
   const ComputerToolCallOutput({
     required this.callId,
     required this.output,
@@ -34,6 +34,4 @@ class ComputerToolCallOutput with ComputerToolCallOutputMappable {
   final ComputerToolCallOutputType type;
 
   static ComputerToolCallOutput fromJson(Map<String, dynamic> json) => ComputerToolCallOutputMapper.fromJson(json);
-
 }
-

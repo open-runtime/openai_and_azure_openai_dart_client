@@ -8,22 +8,22 @@ part 'computer_environment.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerEnvironment {
-  @MappableValue('windows') 
+  @MappableValue('windows')
   windows,
 
-  @MappableValue('mac') 
+  @MappableValue('mac')
   mac,
 
-  @MappableValue('linux') 
+  @MappableValue('linux')
   linux,
 
-  @MappableValue('ubuntu') 
+  @MappableValue('ubuntu')
   ubuntu,
 
-  @MappableValue('browser') 
+  @MappableValue('browser')
   browser,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum ComputerEnvironment {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerEnvironment> get $valuesDefined => values.where((value) => value != ComputerEnvironment.unknown).toList();
+  static List<ComputerEnvironment> get $valuesDefined =>
+      values.where((value) => value != ComputerEnvironment.unknown).toList();
 }

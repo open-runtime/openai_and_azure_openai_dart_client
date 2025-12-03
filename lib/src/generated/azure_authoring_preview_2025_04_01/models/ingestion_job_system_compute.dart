@@ -30,7 +30,6 @@ class IngestionJobSystemCompute with IngestionJobSystemComputeMappable {
   final CompletionAction? completionAction;
   final int? dataRefreshIntervalInHours;
 
-  static IngestionJobSystemCompute fromJson(Map<String, dynamic> json) => IngestionJobSystemComputeMapper.fromJson(json);
-
+  static IngestionJobSystemCompute fromJson(Map<String, dynamic> json) =>
+      IngestionJobSystemComputeMapper.fromJson(json);
 }
-

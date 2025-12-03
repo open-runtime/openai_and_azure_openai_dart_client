@@ -10,13 +10,9 @@ part 'user_role_update_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserRoleUpdateRequest with UserRoleUpdateRequestMappable {
-  const UserRoleUpdateRequest({
-    required this.role,
-  });
+  const UserRoleUpdateRequest({required this.role});
 
   final UserRoleUpdateRequestRole role;
 
   static UserRoleUpdateRequest fromJson(Map<String, dynamic> json) => UserRoleUpdateRequestMapper.fromJson(json);
-
 }
-

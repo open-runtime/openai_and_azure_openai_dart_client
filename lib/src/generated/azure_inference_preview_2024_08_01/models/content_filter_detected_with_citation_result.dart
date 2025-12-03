@@ -26,7 +26,6 @@ class ContentFilterDetectedWithCitationResult with ContentFilterDetectedWithCita
   @MappableField(key: 'citation')
   final ContentFilterDetectedWithCitationResultCitation? contentFilterDetectedWithCitationResultCitation;
 
-  static ContentFilterDetectedWithCitationResult fromJson(Map<String, dynamic> json) => ContentFilterDetectedWithCitationResultMapper.fromJson(json);
-
+  static ContentFilterDetectedWithCitationResult fromJson(Map<String, dynamic> json) =>
+      ContentFilterDetectedWithCitationResultMapper.fromJson(json);
 }
-

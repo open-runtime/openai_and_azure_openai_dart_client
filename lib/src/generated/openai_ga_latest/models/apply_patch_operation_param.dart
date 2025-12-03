@@ -17,11 +17,16 @@ import 'apply_patch_update_file_operation_param_type.dart';
 part 'apply_patch_operation_param.mapper.dart';
 
 /// One of the create_file, delete_file, or update_file operations supplied to the apply_patch tool.
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ApplyPatchOperationParamCreateFile,
-  ApplyPatchOperationParamDeleteFile,
-  ApplyPatchOperationParamUpdateFile
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ApplyPatchOperationParamCreateFile,
+    ApplyPatchOperationParamDeleteFile,
+    ApplyPatchOperationParamUpdateFile,
+  ],
+)
 sealed class ApplyPatchOperationParam with ApplyPatchOperationParamMappable {
   const ApplyPatchOperationParam();
 
@@ -37,54 +42,49 @@ extension ApplyPatchOperationParamUnionDeserializer on ApplyPatchOperationParam 
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ApplyPatchOperationParamCreateFile: 'create_file',
-      ApplyPatchOperationParamDeleteFile: 'delete_file',
-      ApplyPatchOperationParamUpdateFile: 'update_file',
+      ApplyPatchCreateFileOperationParam: 'create_file',
+      ApplyPatchDeleteFileOperationParam: 'delete_file',
+      ApplyPatchUpdateFileOperationParam: 'update_file',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ApplyPatchOperationParamCreateFile] => ApplyPatchOperationParamCreateFileMapper.fromJson(json),
-      _ when value == effective[ApplyPatchOperationParamDeleteFile] => ApplyPatchOperationParamDeleteFileMapper.fromJson(json),
-      _ when value == effective[ApplyPatchOperationParamUpdateFile] => ApplyPatchOperationParamUpdateFileMapper.fromJson(json),
+      _ when value == effective[ApplyPatchCreateFileOperationParam] =>
+        ApplyPatchCreateFileOperationParamMapper.fromJson(json),
+      _ when value == effective[ApplyPatchDeleteFileOperationParam] =>
+        ApplyPatchDeleteFileOperationParamMapper.fromJson(json),
+      _ when value == effective[ApplyPatchUpdateFileOperationParam] =>
+        ApplyPatchUpdateFileOperationParamMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ApplyPatchOperationParam'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
-class ApplyPatchOperationParamCreateFile extends ApplyPatchOperationParam with ApplyPatchOperationParamCreateFileMappable {
+class ApplyPatchOperationParamCreateFile extends ApplyPatchOperationParam
+    with ApplyPatchOperationParamCreateFileMappable {
   final ApplyPatchOperationParamType type;
   final String path;
   final String diff;
 
-  const ApplyPatchOperationParamCreateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
+  const ApplyPatchOperationParamCreateFile({required this.type, required this.path, required this.diff});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
-class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam with ApplyPatchOperationParamDeleteFileMappable {
+class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam
+    with ApplyPatchOperationParamDeleteFileMappable {
   final ApplyPatchOperationParamType2 type;
   final String path;
 
-  const ApplyPatchOperationParamDeleteFile({
-    required this.type,
-    required this.path,
-  });
+  const ApplyPatchOperationParamDeleteFile({required this.type, required this.path});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'update_file')
-class ApplyPatchOperationParamUpdateFile extends ApplyPatchOperationParam with ApplyPatchOperationParamUpdateFileMappable {
+class ApplyPatchOperationParamUpdateFile extends ApplyPatchOperationParam
+    with ApplyPatchOperationParamUpdateFileMappable {
   final ApplyPatchOperationParamType3 type;
   final String path;
   final String diff;
 
-  const ApplyPatchOperationParamUpdateFile({
-    required this.type,
-    required this.path,
-    required this.diff,
-  });
+  const ApplyPatchOperationParamUpdateFile({required this.type, required this.path, required this.diff});
 }

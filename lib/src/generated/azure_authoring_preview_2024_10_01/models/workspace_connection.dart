@@ -11,15 +11,10 @@ part 'workspace_connection.mapper.dart';
 /// AML Workspace connection.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkspaceConnection with WorkspaceConnectionMappable {
-  const WorkspaceConnection({
-    required this.kind,
-    this.connectionId,
-  });
+  const WorkspaceConnection({required this.kind, this.connectionId});
 
   final ConnectionType kind;
   final String? connectionId;
 
   static WorkspaceConnection fromJson(Map<String, dynamic> json) => WorkspaceConnectionMapper.fromJson(json);
-
 }
-

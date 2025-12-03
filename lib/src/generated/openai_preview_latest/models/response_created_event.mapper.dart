@@ -7,13 +7,15 @@
 
 part of 'response_created_event.dart';
 
-class ResponseCreatedEventMapper extends ClassMapperBase<ResponseCreatedEvent> {
+class ResponseCreatedEventMapper
+    extends SubClassMapperBase<ResponseCreatedEvent> {
   ResponseCreatedEventMapper._();
 
   static ResponseCreatedEventMapper? _instance;
   static ResponseCreatedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseCreatedEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCreatedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -41,6 +43,14 @@ class ResponseCreatedEventMapper extends ClassMapperBase<ResponseCreatedEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.created';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCreatedEvent _instantiate(DecodingData data) {
     return ResponseCreatedEvent(
@@ -118,8 +128,9 @@ abstract class ResponseCreatedEventCopyWith<
   $In extends ResponseCreatedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({ResponseCreatedEventType? type, ResponseModel? response});
   ResponseCreatedEventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

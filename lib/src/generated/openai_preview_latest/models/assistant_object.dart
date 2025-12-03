@@ -51,6 +51,4 @@ class AssistantObject with AssistantObjectMappable {
   final num? topP;
 
   static AssistantObject fromJson(Map<String, dynamic> json) => AssistantObjectMapper.fromJson(json);
-
 }
-

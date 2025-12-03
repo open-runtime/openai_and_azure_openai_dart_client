@@ -8,17 +8,13 @@ part 'image_gen_tool_input_image_mask.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ImageGenToolInputImageMask with ImageGenToolInputImageMaskMappable {
-  const ImageGenToolInputImageMask({
-    this.imageUrl,
-    this.fileId,
-  });
+  const ImageGenToolInputImageMask({this.imageUrl, this.fileId});
 
   @MappableField(key: 'image_url')
   final String? imageUrl;
   @MappableField(key: 'file_id')
   final String? fileId;
 
-  static ImageGenToolInputImageMask fromJson(Map<String, dynamic> json) => ImageGenToolInputImageMaskMapper.fromJson(json);
-
+  static ImageGenToolInputImageMask fromJson(Map<String, dynamic> json) =>
+      ImageGenToolInputImageMaskMapper.fromJson(json);
 }
-

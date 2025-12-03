@@ -16,8 +16,8 @@ part 'image_gen_completed_event.mapper.dart';
 
 /// Emitted when image generation has completed and the final image is available.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ImageGenCompletedEvent with ImageGenCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation.completed')
+class ImageGenCompletedEvent extends ImageGenStreamEvent with ImageGenCompletedEventMappable {
   const ImageGenCompletedEvent({
     required this.type,
     required this.b64Json,
@@ -42,6 +42,4 @@ class ImageGenCompletedEvent with ImageGenCompletedEventMappable {
   final ImagesUsage usage;
 
   static ImageGenCompletedEvent fromJson(Map<String, dynamic> json) => ImageGenCompletedEventMapper.fromJson(json);
-
 }
-

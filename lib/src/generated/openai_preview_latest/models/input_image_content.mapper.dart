@@ -7,13 +7,14 @@
 
 part of 'input_image_content.dart';
 
-class InputImageContentMapper extends ClassMapperBase<InputImageContent> {
+class InputImageContentMapper extends SubClassMapperBase<InputImageContent> {
   InputImageContentMapper._();
 
   static InputImageContentMapper? _instance;
   static InputImageContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = InputImageContentMapper._());
+      InputContentMapper.ensureInitialized().addSubMapper(_instance!);
       InputImageContentDetailMapper.ensureInitialized();
       InputImageContentTypeMapper.ensureInitialized();
     }
@@ -59,6 +60,14 @@ class InputImageContentMapper extends ClassMapperBase<InputImageContent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_image';
+  @override
+  late final ClassMapperBase superMapper =
+      InputContentMapper.ensureInitialized();
 
   static InputImageContent _instantiate(DecodingData data) {
     return InputImageContent(
@@ -139,7 +148,8 @@ abstract class InputImageContentCopyWith<
   $In extends InputImageContent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements InputContentCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     InputImageContentDetail? detail,
     String? imageUrl,

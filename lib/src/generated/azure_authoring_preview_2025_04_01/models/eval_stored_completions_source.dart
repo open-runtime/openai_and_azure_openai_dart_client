@@ -30,7 +30,6 @@ class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
   final Metadata? metadata;
   final String? model;
 
-  static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) => EvalStoredCompletionsSourceMapper.fromJson(json);
-
+  static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) =>
+      EvalStoredCompletionsSourceMapper.fromJson(json);
 }
-

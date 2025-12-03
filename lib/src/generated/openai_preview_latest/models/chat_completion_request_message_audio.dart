@@ -8,13 +8,10 @@ part 'chat_completion_request_message_audio.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageAudio with ChatCompletionRequestMessageAudioMappable {
-  const ChatCompletionRequestMessageAudio({
-    required this.id,
-  });
+  const ChatCompletionRequestMessageAudio({required this.id});
 
   final String id;
 
-  static ChatCompletionRequestMessageAudio fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageAudioMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageAudio fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageAudioMapper.fromJson(json);
 }
-

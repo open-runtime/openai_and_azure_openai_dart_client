@@ -28,6 +28,4 @@ class CreateUploadRequest with CreateUploadRequestMappable {
   final FileExpirationAfter? expiresAfter;
 
   static CreateUploadRequest fromJson(Map<String, dynamic> json) => CreateUploadRequestMapper.fromJson(json);
-
 }
-

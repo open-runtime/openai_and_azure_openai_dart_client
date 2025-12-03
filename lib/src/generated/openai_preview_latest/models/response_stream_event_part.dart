@@ -10,15 +10,10 @@ part 'response_stream_event_part.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseStreamEventPart with ResponseStreamEventPartMappable {
-  const ResponseStreamEventPart({
-    required this.type,
-    required this.text,
-  });
+  const ResponseStreamEventPart({required this.type, required this.text});
 
   final ResponseStreamEventPartType type;
   final String text;
 
   static ResponseStreamEventPart fromJson(Map<String, dynamic> json) => ResponseStreamEventPartMapper.fromJson(json);
-
 }
-

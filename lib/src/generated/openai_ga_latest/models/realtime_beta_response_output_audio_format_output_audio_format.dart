@@ -10,16 +10,16 @@ part 'realtime_beta_response_output_audio_format_output_audio_format.mapper.dart
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeBetaResponseOutputAudioFormatOutputAudioFormat {
-  @MappableValue('pcm16') 
+  @MappableValue('pcm16')
   pcm16,
 
-  @MappableValue('g711_ulaw') 
+  @MappableValue('g711_ulaw')
   g711Ulaw,
 
-  @MappableValue('g711_alaw') 
+  @MappableValue('g711_alaw')
   g711Alaw,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum RealtimeBetaResponseOutputAudioFormatOutputAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeBetaResponseOutputAudioFormatOutputAudioFormat> get $valuesDefined => values.where((value) => value != RealtimeBetaResponseOutputAudioFormatOutputAudioFormat.unknown).toList();
+  static List<RealtimeBetaResponseOutputAudioFormatOutputAudioFormat> get $valuesDefined =>
+      values.where((value) => value != RealtimeBetaResponseOutputAudioFormatOutputAudioFormat.unknown).toList();
 }

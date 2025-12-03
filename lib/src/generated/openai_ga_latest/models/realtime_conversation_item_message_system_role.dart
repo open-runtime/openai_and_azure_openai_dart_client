@@ -9,10 +9,10 @@ part 'realtime_conversation_item_message_system_role.mapper.dart';
 /// The role of the message sender. Always `system`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemMessageSystemRole {
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeConversationItemMessageSystemRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemMessageSystemRole> get $valuesDefined => values.where((value) => value != RealtimeConversationItemMessageSystemRole.unknown).toList();
+  static List<RealtimeConversationItemMessageSystemRole> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemMessageSystemRole.unknown).toList();
 }

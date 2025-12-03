@@ -8,7 +8,7 @@
 part of 'message_content_image_url_object.dart';
 
 class MessageContentImageUrlObjectMapper
-    extends ClassMapperBase<MessageContentImageUrlObject> {
+    extends SubClassMapperBase<MessageContentImageUrlObject> {
   MessageContentImageUrlObjectMapper._();
 
   static MessageContentImageUrlObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageContentImageUrlObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentImageUrlObjectMapper._(),
       );
+      MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentImageUrlObjectTypeMapper.ensureInitialized();
       MessageContentImageUrlObjectImageUrlMapper.ensureInitialized();
     }
@@ -57,6 +58,14 @@ class MessageContentImageUrlObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_url';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentMapper.ensureInitialized();
 
   static MessageContentImageUrlObject _instantiate(DecodingData data) {
     return MessageContentImageUrlObject(
@@ -139,13 +148,14 @@ abstract class MessageContentImageUrlObjectCopyWith<
   $In extends MessageContentImageUrlObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentCopyWith<$R, $In, $Out> {
   MessageContentImageUrlObjectImageUrlCopyWith<
     $R,
     MessageContentImageUrlObjectImageUrl,
     MessageContentImageUrlObjectImageUrl
   >
   get messageContentImageUrlObjectImageUrl;
+  @override
   $R call({
     MessageContentImageUrlObjectType? type,
     MessageContentImageUrlObjectImageUrl? messageContentImageUrlObjectImageUrl,

@@ -30,7 +30,6 @@ class CreateEvalStoredCompletionsRunDataSource with CreateEvalStoredCompletionsR
   final Metadata? metadata;
   final String? model;
 
-  static CreateEvalStoredCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalStoredCompletionsRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalStoredCompletionsRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalStoredCompletionsRunDataSourceMapper.fromJson(json);
 }
-

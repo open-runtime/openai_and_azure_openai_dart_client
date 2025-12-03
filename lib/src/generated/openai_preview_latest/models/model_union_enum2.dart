@@ -9,10 +9,10 @@ part 'model_union_enum2.mapper.dart';
 /// Enum values: whisper-1
 @MappableEnum(defaultValue: 'unknown')
 enum ModelUnionEnum2 {
-  @MappableValue('whisper-1') 
+  @MappableValue('whisper-1')
   whisper1,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

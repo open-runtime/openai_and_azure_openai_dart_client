@@ -16,16 +16,16 @@ part 'reasoning_effort.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningEffort {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

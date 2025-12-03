@@ -11,17 +11,12 @@ part 'input_text.mapper.dart';
 
 /// A text input to the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class InputText with InputTextMappable {
-  const InputText({
-    required this.type,
-    required this.text,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_text')
+class InputText extends InputContent with InputTextMappable {
+  const InputText({required this.type, required this.text});
 
   final InputTextType type;
   final String text;
 
   static InputText fromJson(Map<String, dynamic> json) => InputTextMapper.fromJson(json);
-
 }
-

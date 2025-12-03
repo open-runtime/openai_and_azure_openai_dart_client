@@ -8,13 +8,13 @@ part 'realtime_response_create_params_output_modalities_output_modalities.mapper
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseCreateParamsOutputModalitiesOutputModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeResponseCreateParamsOutputModalitiesOutputModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseCreateParamsOutputModalitiesOutputModalities> get $valuesDefined => values.where((value) => value != RealtimeResponseCreateParamsOutputModalitiesOutputModalities.unknown).toList();
+  static List<RealtimeResponseCreateParamsOutputModalitiesOutputModalities> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseCreateParamsOutputModalitiesOutputModalities.unknown).toList();
 }

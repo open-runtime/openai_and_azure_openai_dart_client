@@ -8,13 +8,10 @@ part 'audit_log_api_key_updated_changes_requested.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogApiKeyUpdatedChangesRequested with AuditLogApiKeyUpdatedChangesRequestedMappable {
-  const AuditLogApiKeyUpdatedChangesRequested({
-    this.scopes,
-  });
+  const AuditLogApiKeyUpdatedChangesRequested({this.scopes});
 
   final List<String>? scopes;
 
-  static AuditLogApiKeyUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogApiKeyUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogApiKeyUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogApiKeyUpdatedChangesRequestedMapper.fromJson(json);
 }
-

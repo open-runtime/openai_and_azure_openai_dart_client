@@ -8,7 +8,7 @@
 part of 'apply_patch_update_file_operation_param.dart';
 
 class ApplyPatchUpdateFileOperationParamMapper
-    extends ClassMapperBase<ApplyPatchUpdateFileOperationParam> {
+    extends SubClassMapperBase<ApplyPatchUpdateFileOperationParam> {
   ApplyPatchUpdateFileOperationParamMapper._();
 
   static ApplyPatchUpdateFileOperationParamMapper? _instance;
@@ -16,6 +16,9 @@ class ApplyPatchUpdateFileOperationParamMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ApplyPatchUpdateFileOperationParamMapper._(),
+      );
+      ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ApplyPatchUpdateFileOperationParamTypeMapper.ensureInitialized();
     }
@@ -55,6 +58,14 @@ class ApplyPatchUpdateFileOperationParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'update_file';
+  @override
+  late final ClassMapperBase superMapper =
+      ApplyPatchOperationParamMapper.ensureInitialized();
 
   static ApplyPatchUpdateFileOperationParam _instantiate(DecodingData data) {
     return ApplyPatchUpdateFileOperationParam(
@@ -142,7 +153,8 @@ abstract class ApplyPatchUpdateFileOperationParamCopyWith<
   $In extends ApplyPatchUpdateFileOperationParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? path,
     String? diff,

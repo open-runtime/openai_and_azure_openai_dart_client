@@ -9,22 +9,22 @@ part 'run_step_object_status.mapper.dart';
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepObjectStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum RunStepObjectStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepObjectStatus> get $valuesDefined => values.where((value) => value != RunStepObjectStatus.unknown).toList();
+  static List<RunStepObjectStatus> get $valuesDefined =>
+      values.where((value) => value != RunStepObjectStatus.unknown).toList();
 }

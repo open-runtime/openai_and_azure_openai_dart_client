@@ -9,13 +9,13 @@ part 'run_step_object_last_error_code.mapper.dart';
 /// One of `server_error` or `rate_limit_exceeded`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepObjectLastErrorCode {
-  @MappableValue('server_error') 
+  @MappableValue('server_error')
   serverError,
 
-  @MappableValue('rate_limit_exceeded') 
+  @MappableValue('rate_limit_exceeded')
   rateLimitExceeded,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RunStepObjectLastErrorCode {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepObjectLastErrorCode> get $valuesDefined => values.where((value) => value != RunStepObjectLastErrorCode.unknown).toList();
+  static List<RunStepObjectLastErrorCode> get $valuesDefined =>
+      values.where((value) => value != RunStepObjectLastErrorCode.unknown).toList();
 }

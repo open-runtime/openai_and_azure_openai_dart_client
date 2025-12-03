@@ -10,13 +10,9 @@ part 'update_conversation_body.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateConversationBody with UpdateConversationBodyMappable {
-  const UpdateConversationBody({
-    required this.metadata,
-  });
+  const UpdateConversationBody({required this.metadata});
 
   final Metadata metadata;
 
   static UpdateConversationBody fromJson(Map<String, dynamic> json) => UpdateConversationBodyMapper.fromJson(json);
-
 }
-

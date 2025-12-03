@@ -11,15 +11,10 @@ part 'ingestion_job.mapper.dart';
 /// Represents the details of a job.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJob with IngestionJobMappable {
-  const IngestionJob({
-    required this.kind,
-    this.jobId,
-  });
+  const IngestionJob({required this.kind, this.jobId});
 
   final IngestionJobType kind;
   final String? jobId;
 
   static IngestionJob fromJson(Map<String, dynamic> json) => IngestionJobMapper.fromJson(json);
-
 }
-

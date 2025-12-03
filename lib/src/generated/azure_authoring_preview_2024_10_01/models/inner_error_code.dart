@@ -6,14 +6,15 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'inner_error_code.mapper.dart';
 
-/// Inner error codes as defined in the Microsoft REST guidelines.///
+/// Inner error codes as defined in the Microsoft REST guidelines.
+///
 /// (https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#7102-error-condition-responses).
 @MappableEnum(defaultValue: 'unknown')
 enum InnerErrorCode {
-  @MappableValue('invalidPayload') 
+  @MappableValue('invalidPayload')
   invalidPayload,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

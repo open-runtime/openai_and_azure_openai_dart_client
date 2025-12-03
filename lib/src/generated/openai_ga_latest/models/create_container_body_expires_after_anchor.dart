@@ -9,10 +9,10 @@ part 'create_container_body_expires_after_anchor.mapper.dart';
 /// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateContainerBodyExpiresAfterAnchor {
-  @MappableValue('last_active_at') 
+  @MappableValue('last_active_at')
   lastActiveAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CreateContainerBodyExpiresAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateContainerBodyExpiresAfterAnchor> get $valuesDefined => values.where((value) => value != CreateContainerBodyExpiresAfterAnchor.unknown).toList();
+  static List<CreateContainerBodyExpiresAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != CreateContainerBodyExpiresAfterAnchor.unknown).toList();
 }

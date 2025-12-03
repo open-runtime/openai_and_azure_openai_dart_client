@@ -17,7 +17,6 @@ class RealtimeTranscriptionSessionCreateResponseGaAudio with RealtimeTranscripti
   @MappableField(key: 'input')
   final RealtimeTranscriptionSessionCreateResponseGaAudioInput? realtimeTranscriptionSessionCreateResponseGaAudioInput;
 
-  static RealtimeTranscriptionSessionCreateResponseGaAudio fromJson(Map<String, dynamic> json) => RealtimeTranscriptionSessionCreateResponseGaAudioMapper.fromJson(json);
-
+  static RealtimeTranscriptionSessionCreateResponseGaAudio fromJson(Map<String, dynamic> json) =>
+      RealtimeTranscriptionSessionCreateResponseGaAudioMapper.fromJson(json);
 }
-

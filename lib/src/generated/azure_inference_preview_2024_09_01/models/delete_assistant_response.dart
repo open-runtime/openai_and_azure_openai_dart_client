@@ -10,11 +10,7 @@ part 'delete_assistant_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteAssistantResponse with DeleteAssistantResponseMappable {
-  const DeleteAssistantResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectEnum,
-  });
+  const DeleteAssistantResponse({required this.id, required this.deleted, required this.objectEnum});
 
   final String id;
   final bool deleted;
@@ -22,6 +18,4 @@ class DeleteAssistantResponse with DeleteAssistantResponseMappable {
   final DeleteAssistantResponseObjectObjectEnum objectEnum;
 
   static DeleteAssistantResponse fromJson(Map<String, dynamic> json) => DeleteAssistantResponseMapper.fromJson(json);
-
 }
-

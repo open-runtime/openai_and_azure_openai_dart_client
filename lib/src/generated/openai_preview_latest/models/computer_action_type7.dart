@@ -11,10 +11,10 @@ part 'computer_action_type7.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerActionType7 {
-  @MappableValue('scroll') 
+  @MappableValue('scroll')
   scroll,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ComputerActionType7 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerActionType7> get $valuesDefined => values.where((value) => value != ComputerActionType7.unknown).toList();
+  static List<ComputerActionType7> get $valuesDefined =>
+      values.where((value) => value != ComputerActionType7.unknown).toList();
 }

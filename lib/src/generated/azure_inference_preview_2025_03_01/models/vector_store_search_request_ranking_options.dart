@@ -19,7 +19,6 @@ class VectorStoreSearchRequestRankingOptions with VectorStoreSearchRequestRankin
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 
-  static VectorStoreSearchRequestRankingOptions fromJson(Map<String, dynamic> json) => VectorStoreSearchRequestRankingOptionsMapper.fromJson(json);
-
+  static VectorStoreSearchRequestRankingOptions fromJson(Map<String, dynamic> json) =>
+      VectorStoreSearchRequestRankingOptionsMapper.fromJson(json);
 }
-

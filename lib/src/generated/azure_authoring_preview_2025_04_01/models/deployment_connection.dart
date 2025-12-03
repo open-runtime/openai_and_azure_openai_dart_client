@@ -11,13 +11,9 @@ part 'deployment_connection.mapper.dart';
 /// Relative deployment connection.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeploymentConnection with DeploymentConnectionMappable {
-  const DeploymentConnection({
-    required this.kind,
-  });
+  const DeploymentConnection({required this.kind});
 
   final ConnectionType kind;
 
   static DeploymentConnection fromJson(Map<String, dynamic> json) => DeploymentConnectionMapper.fromJson(json);
-
 }
-

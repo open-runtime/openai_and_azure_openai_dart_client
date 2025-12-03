@@ -27,7 +27,6 @@ class FineTuningCheckpointPermission with FineTuningCheckpointPermissionMappable
   @MappableField(key: 'object')
   final FineTuningCheckpointPermissionObjectObjectEnum objectEnum;
 
-  static FineTuningCheckpointPermission fromJson(Map<String, dynamic> json) => FineTuningCheckpointPermissionMapper.fromJson(json);
-
+  static FineTuningCheckpointPermission fromJson(Map<String, dynamic> json) =>
+      FineTuningCheckpointPermissionMapper.fromJson(json);
 }
-

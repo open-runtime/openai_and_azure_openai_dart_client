@@ -20,11 +20,16 @@ import 'run_step_delta_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_delta_step_details_tool_call.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepDeltaStepDetailsToolCallCodeInterpreter,
-  RunStepDeltaStepDetailsToolCallFileSearch,
-  RunStepDeltaStepDetailsToolCallFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RunStepDeltaStepDetailsToolCallCodeInterpreter,
+    RunStepDeltaStepDetailsToolCallFileSearch,
+    RunStepDeltaStepDetailsToolCallFunction,
+  ],
+)
 sealed class RunStepDeltaStepDetailsToolCall with RunStepDeltaStepDetailsToolCallMappable {
   const RunStepDeltaStepDetailsToolCall();
 
@@ -40,23 +45,27 @@ extension RunStepDeltaStepDetailsToolCallUnionDeserializer on RunStepDeltaStepDe
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepDeltaStepDetailsToolCallCodeInterpreter: 'code_interpreter',
-      RunStepDeltaStepDetailsToolCallFileSearch: 'file_search',
-      RunStepDeltaStepDetailsToolCallFunction: 'function',
+      RunStepDeltaStepDetailsToolCallsCodeObject: 'code_interpreter',
+      RunStepDeltaStepDetailsToolCallsFileSearchObject: 'file_search',
+      RunStepDeltaStepDetailsToolCallsFunctionObject: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepDeltaStepDetailsToolCallCodeInterpreter] => RunStepDeltaStepDetailsToolCallCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[RunStepDeltaStepDetailsToolCallFileSearch] => RunStepDeltaStepDetailsToolCallFileSearchMapper.fromJson(json),
-      _ when value == effective[RunStepDeltaStepDetailsToolCallFunction] => RunStepDeltaStepDetailsToolCallFunctionMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsCodeObject] =>
+        RunStepDeltaStepDetailsToolCallsCodeObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsFileSearchObject] =>
+        RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDeltaStepDetailsToolCallsFunctionObject] =>
+        RunStepDeltaStepDetailsToolCallsFunctionObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepDeltaStepDetailsToolCall'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class RunStepDeltaStepDetailsToolCallCodeInterpreter extends RunStepDeltaStepDetailsToolCall with RunStepDeltaStepDetailsToolCallCodeInterpreterMappable {
+class RunStepDeltaStepDetailsToolCallCodeInterpreter extends RunStepDeltaStepDetailsToolCall
+    with RunStepDeltaStepDetailsToolCallCodeInterpreterMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
@@ -73,7 +82,8 @@ class RunStepDeltaStepDetailsToolCallCodeInterpreter extends RunStepDeltaStepDet
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class RunStepDeltaStepDetailsToolCallFileSearch extends RunStepDeltaStepDetailsToolCall with RunStepDeltaStepDetailsToolCallFileSearchMappable {
+class RunStepDeltaStepDetailsToolCallFileSearch extends RunStepDeltaStepDetailsToolCall
+    with RunStepDeltaStepDetailsToolCallFileSearchMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;
@@ -90,7 +100,8 @@ class RunStepDeltaStepDetailsToolCallFileSearch extends RunStepDeltaStepDetailsT
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class RunStepDeltaStepDetailsToolCallFunction extends RunStepDeltaStepDetailsToolCall with RunStepDeltaStepDetailsToolCallFunctionMappable {
+class RunStepDeltaStepDetailsToolCallFunction extends RunStepDeltaStepDetailsToolCall
+    with RunStepDeltaStepDetailsToolCallFunctionMappable {
   @MappableField(key: 'index')
   final int indexField;
   final String? id;

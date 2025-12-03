@@ -11,8 +11,8 @@ part 'response_mcp_call_arguments_done_event.mapper.dart';
 
 /// Emitted when the arguments for an MCP tool call are finalized.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpCallArgumentsDoneEvent with ResponseMcpCallArgumentsDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_call_arguments.done')
+class ResponseMcpCallArgumentsDoneEvent extends ResponseStreamEvent with ResponseMcpCallArgumentsDoneEventMappable {
   const ResponseMcpCallArgumentsDoneEvent({
     required this.type,
     required this.outputIndex,
@@ -30,7 +30,6 @@ class ResponseMcpCallArgumentsDoneEvent with ResponseMcpCallArgumentsDoneEventMa
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpCallArgumentsDoneEvent fromJson(Map<String, dynamic> json) => ResponseMcpCallArgumentsDoneEventMapper.fromJson(json);
-
+  static ResponseMcpCallArgumentsDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpCallArgumentsDoneEventMapper.fromJson(json);
 }
-

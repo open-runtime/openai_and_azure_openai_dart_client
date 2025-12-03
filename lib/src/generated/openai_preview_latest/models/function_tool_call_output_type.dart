@@ -10,10 +10,10 @@ part 'function_tool_call_output_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionToolCallOutputType {
-  @MappableValue('function_call_output') 
+  @MappableValue('function_call_output')
   functionCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum FunctionToolCallOutputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionToolCallOutputType> get $valuesDefined => values.where((value) => value != FunctionToolCallOutputType.unknown).toList();
+  static List<FunctionToolCallOutputType> get $valuesDefined =>
+      values.where((value) => value != FunctionToolCallOutputType.unknown).toList();
 }

@@ -11,7 +11,11 @@ part 'conversation_param_union.mapper.dart';
 /// The conversation that this response belongs to. Items from this conversation are prepended to `input_items` for this response request.
 /// Input items and output items from this response are automatically added to this conversation after this response completes.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ConversationParamUnionConversationParam2, ConversationParamUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ConversationParamUnionConversationParam2, ConversationParamUnionVariantString],
+)
 sealed class ConversationParamUnion with ConversationParamUnionMappable {
   const ConversationParamUnion();
 
@@ -29,25 +33,22 @@ extension ConversationParamUnionDeserializer on ConversationParamUnion {
       return ConversationParamUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ConversationParamUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ConversationParamUnionConversationParam2 extends ConversationParamUnion with ConversationParamUnionConversationParam2Mappable {
+class ConversationParamUnionConversationParam2 extends ConversationParamUnion
+    with ConversationParamUnionConversationParam2Mappable {
   final String id;
 
-  const ConversationParamUnionConversationParam2({
-    required this.id,
-  });
+  const ConversationParamUnionConversationParam2({required this.id});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ConversationParamUnionVariantString extends ConversationParamUnion with ConversationParamUnionVariantStringMappable {
+class ConversationParamUnionVariantString extends ConversationParamUnion
+    with ConversationParamUnionVariantStringMappable {
   final String value;
 
-  const ConversationParamUnionVariantString({
-    required this.value,
-  });
+  const ConversationParamUnionVariantString({required this.value});
 }

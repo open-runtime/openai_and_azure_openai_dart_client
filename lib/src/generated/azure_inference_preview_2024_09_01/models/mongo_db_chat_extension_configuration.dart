@@ -13,15 +13,11 @@ part 'mongo_db_chat_extension_configuration.mapper.dart';
 /// extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MongoDbChatExtensionConfiguration with MongoDbChatExtensionConfigurationMappable {
-  const MongoDbChatExtensionConfiguration({
-    required this.type,
-    this.parameters,
-  });
+  const MongoDbChatExtensionConfiguration({required this.type, this.parameters});
 
   final AzureChatExtensionType type;
   final MongoDbChatExtensionParameters? parameters;
 
-  static MongoDbChatExtensionConfiguration fromJson(Map<String, dynamic> json) => MongoDbChatExtensionConfigurationMapper.fromJson(json);
-
+  static MongoDbChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      MongoDbChatExtensionConfigurationMapper.fromJson(json);
 }
-

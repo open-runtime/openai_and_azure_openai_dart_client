@@ -11,8 +11,9 @@ import 'text_annotation.dart';
 part 'message_content_text_annotations_file_path_object.mapper.dart';
 
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageContentTextAnnotationsFilePathObject with MessageContentTextAnnotationsFilePathObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
+class MessageContentTextAnnotationsFilePathObject extends TextAnnotation
+    with MessageContentTextAnnotationsFilePathObjectMappable {
   const MessageContentTextAnnotationsFilePathObject({
     required this.type,
     required this.text,
@@ -30,7 +31,6 @@ class MessageContentTextAnnotationsFilePathObject with MessageContentTextAnnotat
   @MappableField(key: 'end_index')
   final int endIndex;
 
-  static MessageContentTextAnnotationsFilePathObject fromJson(Map<String, dynamic> json) => MessageContentTextAnnotationsFilePathObjectMapper.fromJson(json);
-
+  static MessageContentTextAnnotationsFilePathObject fromJson(Map<String, dynamic> json) =>
+      MessageContentTextAnnotationsFilePathObjectMapper.fromJson(json);
 }
-

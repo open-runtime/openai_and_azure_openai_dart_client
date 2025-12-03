@@ -11,11 +11,7 @@ part 'list_paginated_fine_tuning_jobs_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ListPaginatedFineTuningJobsResponse with ListPaginatedFineTuningJobsResponseMappable {
-  const ListPaginatedFineTuningJobsResponse({
-    required this.data,
-    required this.hasMore,
-    required this.objectEnum,
-  });
+  const ListPaginatedFineTuningJobsResponse({required this.data, required this.hasMore, required this.objectEnum});
 
   final List<FineTuningJob> data;
   @MappableField(key: 'has_more')
@@ -23,7 +19,6 @@ class ListPaginatedFineTuningJobsResponse with ListPaginatedFineTuningJobsRespon
   @MappableField(key: 'object')
   final ListPaginatedFineTuningJobsResponseObjectObjectEnum objectEnum;
 
-  static ListPaginatedFineTuningJobsResponse fromJson(Map<String, dynamic> json) => ListPaginatedFineTuningJobsResponseMapper.fromJson(json);
-
+  static ListPaginatedFineTuningJobsResponse fromJson(Map<String, dynamic> json) =>
+      ListPaginatedFineTuningJobsResponseMapper.fromJson(json);
 }
-

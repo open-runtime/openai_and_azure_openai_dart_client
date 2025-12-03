@@ -9,13 +9,13 @@ part 'project_user_update_request_role.mapper.dart';
 /// `owner` or `member`
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectUserUpdateRequestRole {
-  @MappableValue('owner') 
+  @MappableValue('owner')
   owner,
 
-  @MappableValue('member') 
+  @MappableValue('member')
   member,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ProjectUserUpdateRequestRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectUserUpdateRequestRole> get $valuesDefined => values.where((value) => value != ProjectUserUpdateRequestRole.unknown).toList();
+  static List<ProjectUserUpdateRequestRole> get $valuesDefined =>
+      values.where((value) => value != ProjectUserUpdateRequestRole.unknown).toList();
 }

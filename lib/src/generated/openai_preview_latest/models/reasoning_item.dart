@@ -14,14 +14,9 @@ part 'reasoning_item.mapper.dart';
 /// A description of the chain of thought used by a reasoning model while generating.
 /// a response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ReasoningItem with ReasoningItemMappable {
-  const ReasoningItem({
-    required this.type,
-    required this.id,
-    required this.summary,
-    this.status,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
+class ReasoningItem extends ItemUnion with ReasoningItemMappable {
+  const ReasoningItem({required this.type, required this.id, required this.summary, this.status});
 
   final ReasoningItemType type;
   final String id;
@@ -29,6 +24,4 @@ class ReasoningItem with ReasoningItemMappable {
   final ReasoningItemStatus? status;
 
   static ReasoningItem fromJson(Map<String, dynamic> json) => ReasoningItemMapper.fromJson(json);
-
 }
-

@@ -9,13 +9,13 @@ part 'realtime_server_event_response_content_part_added_part_type.mapper.dart';
 /// The content type ("text", "audio").
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseContentPartAddedPartType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RealtimeServerEventResponseContentPartAddedPartType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseContentPartAddedPartType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseContentPartAddedPartType.unknown).toList();
+  static List<RealtimeServerEventResponseContentPartAddedPartType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseContentPartAddedPartType.unknown).toList();
 }

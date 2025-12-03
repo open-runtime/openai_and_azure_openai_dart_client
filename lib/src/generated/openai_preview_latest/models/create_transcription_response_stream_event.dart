@@ -16,10 +16,15 @@ import 'transcript_text_done_event_type.dart';
 
 part 'create_transcription_response_stream_event.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateTranscriptionResponseStreamEventTranscriptTextDelta,
-  CreateTranscriptionResponseStreamEventTranscriptTextDone
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateTranscriptionResponseStreamEventTranscriptTextDelta,
+    CreateTranscriptionResponseStreamEventTranscriptTextDone,
+  ],
+)
 sealed class CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventMappable {
   const CreateTranscriptionResponseStreamEvent();
 
@@ -35,21 +40,24 @@ extension CreateTranscriptionResponseStreamEventUnionDeserializer on CreateTrans
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateTranscriptionResponseStreamEventTranscriptTextDelta: 'transcript.text.delta',
-      CreateTranscriptionResponseStreamEventTranscriptTextDone: 'transcript.text.done',
+      TranscriptTextDeltaEvent: 'transcript.text.delta',
+      TranscriptTextDoneEvent: 'transcript.text.done',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateTranscriptionResponseStreamEventTranscriptTextDelta] => CreateTranscriptionResponseStreamEventTranscriptTextDeltaMapper.fromJson(json),
-      _ when value == effective[CreateTranscriptionResponseStreamEventTranscriptTextDone] => CreateTranscriptionResponseStreamEventTranscriptTextDoneMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateTranscriptionResponseStreamEvent'),
+      _ when value == effective[TranscriptTextDeltaEvent] => TranscriptTextDeltaEventMapper.fromJson(json),
+      _ when value == effective[TranscriptTextDoneEvent] => TranscriptTextDoneEventMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateTranscriptionResponseStreamEvent',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.delta')
-class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventTranscriptTextDeltaMappable {
+class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTranscriptionResponseStreamEvent
+    with CreateTranscriptionResponseStreamEventTranscriptTextDeltaMappable {
   final CreateTranscriptionResponseStreamEventType type;
   final String delta;
   final List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs;
@@ -62,7 +70,8 @@ class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTr
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.done')
-class CreateTranscriptionResponseStreamEventTranscriptTextDone extends CreateTranscriptionResponseStreamEvent with CreateTranscriptionResponseStreamEventTranscriptTextDoneMappable {
+class CreateTranscriptionResponseStreamEventTranscriptTextDone extends CreateTranscriptionResponseStreamEvent
+    with CreateTranscriptionResponseStreamEventTranscriptTextDoneMappable {
   final CreateTranscriptionResponseStreamEventType2 type;
   final String text;
   final List<CreateTranscriptionResponseStreamEventLogprobs>? logprobs;

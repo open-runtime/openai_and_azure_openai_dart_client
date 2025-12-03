@@ -8,13 +8,13 @@ part 'timestamp_granularities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum TimestampGranularities {
-  @MappableValue('word') 
+  @MappableValue('word')
   word,
 
-  @MappableValue('segment') 
+  @MappableValue('segment')
   segment,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum TimestampGranularities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TimestampGranularities> get $valuesDefined => values.where((value) => value != TimestampGranularities.unknown).toList();
+  static List<TimestampGranularities> get $valuesDefined =>
+      values.where((value) => value != TimestampGranularities.unknown).toList();
 }

@@ -29,6 +29,4 @@ class ListRunStepsResponse with ListRunStepsResponseMappable {
   final bool hasMore;
 
   static ListRunStepsResponse fromJson(Map<String, dynamic> json) => ListRunStepsResponseMapper.fromJson(json);
-
 }
-

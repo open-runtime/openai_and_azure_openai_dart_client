@@ -8,15 +8,11 @@ part 'audit_log_certificates_deactivated_certificates.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCertificatesDeactivatedCertificates with AuditLogCertificatesDeactivatedCertificatesMappable {
-  const AuditLogCertificatesDeactivatedCertificates({
-    this.id,
-    this.name,
-  });
+  const AuditLogCertificatesDeactivatedCertificates({this.id, this.name});
 
   final String? id;
   final String? name;
 
-  static AuditLogCertificatesDeactivatedCertificates fromJson(Map<String, dynamic> json) => AuditLogCertificatesDeactivatedCertificatesMapper.fromJson(json);
-
+  static AuditLogCertificatesDeactivatedCertificates fromJson(Map<String, dynamic> json) =>
+      AuditLogCertificatesDeactivatedCertificatesMapper.fromJson(json);
 }
-

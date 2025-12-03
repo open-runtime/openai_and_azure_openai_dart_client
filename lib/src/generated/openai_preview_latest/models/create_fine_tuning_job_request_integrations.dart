@@ -20,7 +20,6 @@ class CreateFineTuningJobRequestIntegrations with CreateFineTuningJobRequestInte
   @MappableField(key: 'wandb')
   final CreateFineTuningJobRequestIntegrationsWandb createFineTuningJobRequestIntegrationsWandb;
 
-  static CreateFineTuningJobRequestIntegrations fromJson(Map<String, dynamic> json) => CreateFineTuningJobRequestIntegrationsMapper.fromJson(json);
-
+  static CreateFineTuningJobRequestIntegrations fromJson(Map<String, dynamic> json) =>
+      CreateFineTuningJobRequestIntegrationsMapper.fromJson(json);
 }
-

@@ -9,7 +9,11 @@ import 'create_thread_and_run_request_model_union_enum.dart';
 part 'create_thread_and_run_request_model_union.mapper.dart';
 
 /// The ID of the [Model](https://platform.openai.com/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateThreadAndRunRequestModelUnionVariantEnum, CreateThreadAndRunRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateThreadAndRunRequestModelUnionVariantEnum, CreateThreadAndRunRequestModelUnionVariantString],
+)
 sealed class CreateThreadAndRunRequestModelUnion with CreateThreadAndRunRequestModelUnionMappable {
   const CreateThreadAndRunRequestModelUnion();
 
@@ -46,21 +50,19 @@ extension CreateThreadAndRunRequestModelUnionDeserializer on CreateThreadAndRunR
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadAndRunRequestModelUnionVariantEnum extends CreateThreadAndRunRequestModelUnion with CreateThreadAndRunRequestModelUnionVariantEnumMappable {
+class CreateThreadAndRunRequestModelUnionVariantEnum extends CreateThreadAndRunRequestModelUnion
+    with CreateThreadAndRunRequestModelUnionVariantEnumMappable {
   final CreateThreadAndRunRequestModelUnionEnum value;
 
-  const CreateThreadAndRunRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateThreadAndRunRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadAndRunRequestModelUnionVariantString extends CreateThreadAndRunRequestModelUnion with CreateThreadAndRunRequestModelUnionVariantStringMappable {
+class CreateThreadAndRunRequestModelUnionVariantString extends CreateThreadAndRunRequestModelUnion
+    with CreateThreadAndRunRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateThreadAndRunRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateThreadAndRunRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

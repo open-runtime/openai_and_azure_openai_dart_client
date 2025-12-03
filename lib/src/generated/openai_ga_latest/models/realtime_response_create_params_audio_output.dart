@@ -20,7 +20,6 @@ class RealtimeResponseCreateParamsAudioOutput with RealtimeResponseCreateParamsA
   final VoiceIdsShared voice;
   final RealtimeAudioFormats? format;
 
-  static RealtimeResponseCreateParamsAudioOutput fromJson(Map<String, dynamic> json) => RealtimeResponseCreateParamsAudioOutputMapper.fromJson(json);
-
+  static RealtimeResponseCreateParamsAudioOutput fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseCreateParamsAudioOutputMapper.fromJson(json);
 }
-

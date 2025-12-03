@@ -10,10 +10,10 @@ part 'response_mcp_call_arguments_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseMcpCallArgumentsDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.mcp_call_arguments.done`.
-  @MappableValue('response.mcp_call_arguments.done') 
+  @MappableValue('response.mcp_call_arguments.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseMcpCallArgumentsDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseMcpCallArgumentsDoneEventType> get $valuesDefined => values.where((value) => value != ResponseMcpCallArgumentsDoneEventType.unknown).toList();
+  static List<ResponseMcpCallArgumentsDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseMcpCallArgumentsDoneEventType.unknown).toList();
 }

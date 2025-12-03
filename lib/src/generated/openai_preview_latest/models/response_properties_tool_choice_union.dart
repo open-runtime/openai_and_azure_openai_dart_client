@@ -15,7 +15,15 @@ part 'response_properties_tool_choice_union.mapper.dart';
 /// a response. See the `tools` parameter to see how to specify which tools.
 /// the model can call.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ResponsePropertiesToolChoiceUnionToolChoiceTypes, ResponsePropertiesToolChoiceUnionToolChoiceFunction, ResponsePropertiesToolChoiceUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    ResponsePropertiesToolChoiceUnionToolChoiceTypes,
+    ResponsePropertiesToolChoiceUnionToolChoiceFunction,
+    ResponsePropertiesToolChoiceUnionVariantString,
+  ],
+)
 sealed class ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionMappable {
   const ResponsePropertiesToolChoiceUnion();
 
@@ -36,36 +44,31 @@ extension ResponsePropertiesToolChoiceUnionDeserializer on ResponsePropertiesToo
       return ResponsePropertiesToolChoiceUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ResponsePropertiesToolChoiceUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponsePropertiesToolChoiceUnionToolChoiceTypes extends ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionToolChoiceTypesMappable {
+class ResponsePropertiesToolChoiceUnionToolChoiceTypes extends ResponsePropertiesToolChoiceUnion
+    with ResponsePropertiesToolChoiceUnionToolChoiceTypesMappable {
   final ToolChoiceTypesType type;
 
-  const ResponsePropertiesToolChoiceUnionToolChoiceTypes({
-    required this.type,
-  });
+  const ResponsePropertiesToolChoiceUnionToolChoiceTypes({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponsePropertiesToolChoiceUnionToolChoiceFunction extends ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionToolChoiceFunctionMappable {
+class ResponsePropertiesToolChoiceUnionToolChoiceFunction extends ResponsePropertiesToolChoiceUnion
+    with ResponsePropertiesToolChoiceUnionToolChoiceFunctionMappable {
   final ToolChoiceFunctionType type;
   final String name;
 
-  const ResponsePropertiesToolChoiceUnionToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+  const ResponsePropertiesToolChoiceUnionToolChoiceFunction({required this.type, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponsePropertiesToolChoiceUnionVariantString extends ResponsePropertiesToolChoiceUnion with ResponsePropertiesToolChoiceUnionVariantStringMappable {
+class ResponsePropertiesToolChoiceUnionVariantString extends ResponsePropertiesToolChoiceUnion
+    with ResponsePropertiesToolChoiceUnionVariantStringMappable {
   final String value;
 
-  const ResponsePropertiesToolChoiceUnionVariantString({
-    required this.value,
-  });
+  const ResponsePropertiesToolChoiceUnionVariantString({required this.value});
 }

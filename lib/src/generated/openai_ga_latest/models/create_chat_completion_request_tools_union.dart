@@ -13,17 +13,18 @@ import 'function_object.dart';
 
 part 'create_chat_completion_request_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateChatCompletionRequestToolsUnionFunction,
-  CreateChatCompletionRequestToolsUnionCustom
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CreateChatCompletionRequestToolsUnionFunction, CreateChatCompletionRequestToolsUnionCustom],
+)
 sealed class CreateChatCompletionRequestToolsUnion with CreateChatCompletionRequestToolsUnionMappable {
   const CreateChatCompletionRequestToolsUnion();
 
   static CreateChatCompletionRequestToolsUnion fromJson(Map<String, dynamic> json) {
     return CreateChatCompletionRequestToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateChatCompletionRequestToolsUnionDeserializer on CreateChatCompletionRequestToolsUnion {
@@ -32,34 +33,32 @@ extension CreateChatCompletionRequestToolsUnionDeserializer on CreateChatComplet
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      CreateChatCompletionRequestToolsUnionFunction: 'function',
-      CreateChatCompletionRequestToolsUnionCustom: 'custom',
-    };
+    final mappingFallback = const <Type, Object?>{ChatCompletionTool: 'function', CustomToolChatCompletions: 'custom'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateChatCompletionRequestToolsUnionFunction] => CreateChatCompletionRequestToolsUnionFunctionMapper.fromJson(json),
-      _ when value == effective[CreateChatCompletionRequestToolsUnionCustom] => CreateChatCompletionRequestToolsUnionCustomMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestToolsUnion'),
+      _ when value == effective[ChatCompletionTool] => ChatCompletionToolMapper.fromJson(json),
+      _ when value == effective[CustomToolChatCompletions] => CustomToolChatCompletionsMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestToolsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class CreateChatCompletionRequestToolsUnionFunction extends CreateChatCompletionRequestToolsUnion with CreateChatCompletionRequestToolsUnionFunctionMappable {
+class CreateChatCompletionRequestToolsUnionFunction extends CreateChatCompletionRequestToolsUnion
+    with CreateChatCompletionRequestToolsUnionFunctionMappable {
   final ChatCompletionToolType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 
-  const CreateChatCompletionRequestToolsUnionFunction({
-    required this.type,
-    required this.functionField,
-  });
-
+  const CreateChatCompletionRequestToolsUnionFunction({required this.type, required this.functionField});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
-class CreateChatCompletionRequestToolsUnionCustom extends CreateChatCompletionRequestToolsUnion with CreateChatCompletionRequestToolsUnionCustomMappable {
+class CreateChatCompletionRequestToolsUnionCustom extends CreateChatCompletionRequestToolsUnion
+    with CreateChatCompletionRequestToolsUnionCustomMappable {
   final CustomToolChatCompletionsType type;
   @MappableField(key: 'custom')
   final CustomToolChatCompletionsCustom customToolChatCompletionsCustom;
@@ -68,5 +67,4 @@ class CreateChatCompletionRequestToolsUnionCustom extends CreateChatCompletionRe
     required this.type,
     required this.customToolChatCompletionsCustom,
   });
-
 }

@@ -22,6 +22,4 @@ class DeletedConversation with DeletedConversationMappable {
   final DeletedConversationResourceObjectObjectEnum objectEnum;
 
   static DeletedConversation fromJson(Map<String, dynamic> json) => DeletedConversationMapper.fromJson(json);
-
 }
-

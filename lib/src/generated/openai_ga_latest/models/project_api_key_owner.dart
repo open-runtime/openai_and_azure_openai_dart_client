@@ -12,11 +12,7 @@ part 'project_api_key_owner.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectApiKeyOwner with ProjectApiKeyOwnerMappable {
-  const ProjectApiKeyOwner({
-    this.type,
-    this.user,
-    this.serviceAccount,
-  });
+  const ProjectApiKeyOwner({this.type, this.user, this.serviceAccount});
 
   final ProjectApiKeyOwnerType? type;
   final ProjectUser? user;
@@ -24,6 +20,4 @@ class ProjectApiKeyOwner with ProjectApiKeyOwnerMappable {
   final ProjectServiceAccount? serviceAccount;
 
   static ProjectApiKeyOwner fromJson(Map<String, dynamic> json) => ProjectApiKeyOwnerMapper.fromJson(json);
-
 }
-

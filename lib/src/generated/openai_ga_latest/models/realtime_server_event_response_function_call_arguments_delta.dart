@@ -10,8 +10,9 @@ part 'realtime_server_event_response_function_call_arguments_delta.mapper.dart';
 
 /// Returned when the model-generated function call arguments are updated.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseFunctionCallArgumentsDelta with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.delta')
+class RealtimeServerEventResponseFunctionCallArgumentsDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseFunctionCallArgumentsDeltaMappable {
   const RealtimeServerEventResponseFunctionCallArgumentsDelta({
     required this.eventId,
     required this.type,
@@ -35,7 +36,6 @@ class RealtimeServerEventResponseFunctionCallArgumentsDelta with RealtimeServerE
   final String callId;
   final String delta;
 
-  static RealtimeServerEventResponseFunctionCallArgumentsDelta fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper.fromJson(json);
-
+  static RealtimeServerEventResponseFunctionCallArgumentsDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseFunctionCallArgumentsDeltaMapper.fromJson(json);
 }
-

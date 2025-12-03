@@ -9,10 +9,10 @@ part 'project_api_key_list_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectApiKeyListResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ProjectApiKeyListResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectApiKeyListResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectApiKeyListResponseObjectObjectEnum.unknown).toList();
+  static List<ProjectApiKeyListResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectApiKeyListResponseObjectObjectEnum.unknown).toList();
 }

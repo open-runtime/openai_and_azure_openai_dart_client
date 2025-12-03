@@ -11,8 +11,8 @@ import 'input_file_content_type.dart';
 part 'input_file_content.mapper.dart';
 
 /// A file input to the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class InputFileContent with InputFileContentMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_file')
+class InputFileContent extends MessageContentUnion with InputFileContentMappable {
   const InputFileContent({
     this.fileId,
     this.filename,
@@ -31,6 +31,4 @@ class InputFileContent with InputFileContentMappable {
   final InputFileContentType type;
 
   static InputFileContent fromJson(Map<String, dynamic> json) => InputFileContentMapper.fromJson(json);
-
 }
-

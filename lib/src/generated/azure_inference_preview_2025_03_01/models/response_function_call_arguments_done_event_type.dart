@@ -9,10 +9,10 @@ part 'response_function_call_arguments_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFunctionCallArgumentsDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.function_call_arguments.done`.
-  @MappableValue('response.function_call_arguments.done') 
+  @MappableValue('response.function_call_arguments.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseFunctionCallArgumentsDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFunctionCallArgumentsDoneEventType> get $valuesDefined => values.where((value) => value != ResponseFunctionCallArgumentsDoneEventType.unknown).toList();
+  static List<ResponseFunctionCallArgumentsDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseFunctionCallArgumentsDoneEventType.unknown).toList();
 }

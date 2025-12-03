@@ -12,16 +12,11 @@ part 'model_list.mapper.dart';
 /// Represents a list of models.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelList with ModelListMappable {
-  const ModelList({
-    this.objectField,
-    this.data,
-  });
+  const ModelList({this.objectField, this.data});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
   final List<Model>? data;
 
   static ModelList fromJson(Map<String, dynamic> json) => ModelListMapper.fromJson(json);
-
 }
-

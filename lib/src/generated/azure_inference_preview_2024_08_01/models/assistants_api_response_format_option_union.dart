@@ -15,7 +15,14 @@ part 'assistants_api_response_format_option_union.mapper.dart';
 ///
 /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat, AssistantsApiResponseFormatOptionUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat,
+    AssistantsApiResponseFormatOptionUnionVariantString,
+  ],
+)
 sealed class AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionMappable {
   const AssistantsApiResponseFormatOptionUnion();
 
@@ -33,25 +40,24 @@ extension AssistantsApiResponseFormatOptionUnionDeserializer on AssistantsApiRes
       return AssistantsApiResponseFormatOptionUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for AssistantsApiResponseFormatOptionUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for AssistantsApiResponseFormatOptionUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMappable {
+class AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat extends AssistantsApiResponseFormatOptionUnion
+    with AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormatMappable {
   final AssistantsApiResponseFormatType type;
 
-  const AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat({
-    required this.type,
-  });
+  const AssistantsApiResponseFormatOptionUnionAssistantsApiResponseFormat({required this.type});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantsApiResponseFormatOptionUnionVariantString extends AssistantsApiResponseFormatOptionUnion with AssistantsApiResponseFormatOptionUnionVariantStringMappable {
+class AssistantsApiResponseFormatOptionUnionVariantString extends AssistantsApiResponseFormatOptionUnion
+    with AssistantsApiResponseFormatOptionUnionVariantStringMappable {
   final String value;
 
-  const AssistantsApiResponseFormatOptionUnionVariantString({
-    required this.value,
-  });
+  const AssistantsApiResponseFormatOptionUnionVariantString({required this.value});
 }

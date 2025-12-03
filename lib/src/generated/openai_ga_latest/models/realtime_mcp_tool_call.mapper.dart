@@ -7,13 +7,17 @@
 
 part of 'realtime_mcp_tool_call.dart';
 
-class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
+class RealtimeMcpToolCallMapper
+    extends SubClassMapperBase<RealtimeMcpToolCall> {
   RealtimeMcpToolCallMapper._();
 
   static RealtimeMcpToolCallMapper? _instance;
   static RealtimeMcpToolCallMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RealtimeMcpToolCallMapper._());
+      RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       RealtimeMcpToolCallTypeMapper.ensureInitialized();
       RealtimeMcpToolCallErrorUnionMapper.ensureInitialized();
     }
@@ -78,6 +82,14 @@ class RealtimeMcpToolCallMapper extends ClassMapperBase<RealtimeMcpToolCall> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp_call';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeConversationItemMapper.ensureInitialized();
 
   static RealtimeMcpToolCall _instantiate(DecodingData data) {
     return RealtimeMcpToolCall(
@@ -161,13 +173,14 @@ abstract class RealtimeMcpToolCallCopyWith<
   $In extends RealtimeMcpToolCall,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
   RealtimeMcpToolCallErrorUnionCopyWith<
     $R,
     RealtimeMcpToolCallErrorUnion,
     RealtimeMcpToolCallErrorUnion
   >?
   get error;
+  @override
   $R call({
     RealtimeMcpToolCallType? type,
     String? id,

@@ -8,19 +8,19 @@ part 'video_size.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VideoSize {
-  @MappableValue('720x1280') 
+  @MappableValue('720x1280')
   value720x1280,
 
-  @MappableValue('1280x720') 
+  @MappableValue('1280x720')
   value1280x720,
 
-  @MappableValue('1024x1792') 
+  @MappableValue('1024x1792')
   value1024x1792,
 
-  @MappableValue('1792x1024') 
+  @MappableValue('1792x1024')
   value1792x1024,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

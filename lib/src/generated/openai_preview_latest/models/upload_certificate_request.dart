@@ -8,15 +8,10 @@ part 'upload_certificate_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadCertificateRequest with UploadCertificateRequestMappable {
-  const UploadCertificateRequest({
-    required this.content,
-    this.name,
-  });
+  const UploadCertificateRequest({required this.content, this.name});
 
   final String content;
   final String? name;
 
   static UploadCertificateRequest fromJson(Map<String, dynamic> json) => UploadCertificateRequestMapper.fromJson(json);
-
 }
-

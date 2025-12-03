@@ -10,17 +10,12 @@ import 'inner_error.dart';
 
 part 'error.mapper.dart';
 
-/// Error content as defined in the Microsoft REST guidelines.///
+/// Error content as defined in the Microsoft REST guidelines.
+///
 /// (https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#7102-error-condition-responses).
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Error with ErrorMappable {
-  const Error({
-    required this.code,
-    required this.message,
-    this.target,
-    this.details,
-    this.innererror,
-  });
+  const Error({required this.code, required this.message, this.target, this.details, this.innererror});
 
   final ErrorCode code;
   final String message;
@@ -29,6 +24,4 @@ class Error with ErrorMappable {
   final InnerError? innererror;
 
   static Error fromJson(Map<String, dynamic> json) => ErrorMapper.fromJson(json);
-
 }
-

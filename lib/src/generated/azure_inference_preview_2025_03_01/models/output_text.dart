@@ -12,19 +12,13 @@ part 'output_text.mapper.dart';
 
 /// A text output from the model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class OutputText with OutputTextMappable {
-  const OutputText({
-    required this.type,
-    required this.text,
-    required this.annotations,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
+class OutputText extends OutputContent with OutputTextMappable {
+  const OutputText({required this.type, required this.text, required this.annotations});
 
   final OutputTextType type;
   final String text;
   final List<Annotation> annotations;
 
   static OutputText fromJson(Map<String, dynamic> json) => OutputTextMapper.fromJson(json);
-
 }
-

@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_function_call_arguments_done_event.mapper.dart';
 
 /// Emitted when function-call arguments are finalized.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFunctionCallArgumentsDoneEvent with ResponseFunctionCallArgumentsDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.done')
+class ResponseFunctionCallArgumentsDoneEvent extends ResponseStreamEvent
+    with ResponseFunctionCallArgumentsDoneEventMappable {
   const ResponseFunctionCallArgumentsDoneEvent({
     required this.type,
     required this.itemId,
@@ -31,7 +32,6 @@ class ResponseFunctionCallArgumentsDoneEvent with ResponseFunctionCallArgumentsD
   final int sequenceNumber;
   final String arguments;
 
-  static ResponseFunctionCallArgumentsDoneEvent fromJson(Map<String, dynamic> json) => ResponseFunctionCallArgumentsDoneEventMapper.fromJson(json);
-
+  static ResponseFunctionCallArgumentsDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFunctionCallArgumentsDoneEventMapper.fromJson(json);
 }
-

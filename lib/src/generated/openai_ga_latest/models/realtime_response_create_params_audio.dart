@@ -10,14 +10,11 @@ part 'realtime_response_create_params_audio.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseCreateParamsAudio with RealtimeResponseCreateParamsAudioMappable {
-  const RealtimeResponseCreateParamsAudio({
-    this.realtimeResponseCreateParamsAudioOutput,
-  });
+  const RealtimeResponseCreateParamsAudio({this.realtimeResponseCreateParamsAudioOutput});
 
   @MappableField(key: 'output')
   final RealtimeResponseCreateParamsAudioOutput? realtimeResponseCreateParamsAudioOutput;
 
-  static RealtimeResponseCreateParamsAudio fromJson(Map<String, dynamic> json) => RealtimeResponseCreateParamsAudioMapper.fromJson(json);
-
+  static RealtimeResponseCreateParamsAudio fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseCreateParamsAudioMapper.fromJson(json);
 }
-

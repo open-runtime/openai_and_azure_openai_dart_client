@@ -9,17 +9,12 @@ import 'text_content_type.dart';
 part 'text_content.mapper.dart';
 
 /// A text content.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TextContent with TextContentMappable {
-  const TextContent({
-    required this.text,
-    this.type = TextContentType.text,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class TextContent extends MessageContentUnion with TextContentMappable {
+  const TextContent({required this.text, this.type = TextContentType.text});
 
   final String text;
   final TextContentType type;
 
   static TextContent fromJson(Map<String, dynamic> json) => TextContentMapper.fromJson(json);
-
 }
-

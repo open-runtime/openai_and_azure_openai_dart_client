@@ -8,13 +8,10 @@ part 'audit_log_external_key_removed.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogExternalKeyRemoved with AuditLogExternalKeyRemovedMappable {
-  const AuditLogExternalKeyRemoved({
-    this.id,
-  });
+  const AuditLogExternalKeyRemoved({this.id});
 
   final String? id;
 
-  static AuditLogExternalKeyRemoved fromJson(Map<String, dynamic> json) => AuditLogExternalKeyRemovedMapper.fromJson(json);
-
+  static AuditLogExternalKeyRemoved fromJson(Map<String, dynamic> json) =>
+      AuditLogExternalKeyRemovedMapper.fromJson(json);
 }
-

@@ -22,7 +22,6 @@ class ChatCompletionMessageToolCall with ChatCompletionMessageToolCallMappable {
   @MappableField(key: 'function')
   final ChatCompletionMessageToolCallFunction chatCompletionMessageToolCallFunction;
 
-  static ChatCompletionMessageToolCall fromJson(Map<String, dynamic> json) => ChatCompletionMessageToolCallMapper.fromJson(json);
-
+  static ChatCompletionMessageToolCall fromJson(Map<String, dynamic> json) =>
+      ChatCompletionMessageToolCallMapper.fromJson(json);
 }
-

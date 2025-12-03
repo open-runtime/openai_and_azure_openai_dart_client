@@ -8,7 +8,7 @@
 part of 'message_delta_content_text_object.dart';
 
 class MessageDeltaContentTextObjectMapper
-    extends ClassMapperBase<MessageDeltaContentTextObject> {
+    extends SubClassMapperBase<MessageDeltaContentTextObject> {
   MessageDeltaContentTextObjectMapper._();
 
   static MessageDeltaContentTextObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageDeltaContentTextObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentTextObjectMapper._(),
       );
+      MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
       MessageDeltaContentTextObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextObjectTextMapper.ensureInitialized();
     }
@@ -64,6 +65,14 @@ class MessageDeltaContentTextObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'text';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentDeltaMapper.ensureInitialized();
 
   static MessageDeltaContentTextObject _instantiate(DecodingData data) {
     return MessageDeltaContentTextObject(
@@ -148,13 +157,14 @@ abstract class MessageDeltaContentTextObjectCopyWith<
   $In extends MessageDeltaContentTextObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentDeltaCopyWith<$R, $In, $Out> {
   MessageDeltaContentTextObjectTextCopyWith<
     $R,
     MessageDeltaContentTextObjectText,
     MessageDeltaContentTextObjectText
   >?
   get messageDeltaContentTextObjectText;
+  @override
   $R call({
     int? indexField,
     MessageDeltaContentTextObjectType? type,

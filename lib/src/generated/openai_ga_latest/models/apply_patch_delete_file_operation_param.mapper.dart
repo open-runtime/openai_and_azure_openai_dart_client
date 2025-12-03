@@ -8,7 +8,7 @@
 part of 'apply_patch_delete_file_operation_param.dart';
 
 class ApplyPatchDeleteFileOperationParamMapper
-    extends ClassMapperBase<ApplyPatchDeleteFileOperationParam> {
+    extends SubClassMapperBase<ApplyPatchDeleteFileOperationParam> {
   ApplyPatchDeleteFileOperationParamMapper._();
 
   static ApplyPatchDeleteFileOperationParamMapper? _instance;
@@ -16,6 +16,9 @@ class ApplyPatchDeleteFileOperationParamMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ApplyPatchDeleteFileOperationParamMapper._(),
+      );
+      ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ApplyPatchDeleteFileOperationParamTypeMapper.ensureInitialized();
     }
@@ -51,6 +54,14 @@ class ApplyPatchDeleteFileOperationParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'delete_file';
+  @override
+  late final ClassMapperBase superMapper =
+      ApplyPatchOperationParamMapper.ensureInitialized();
 
   static ApplyPatchDeleteFileOperationParam _instantiate(DecodingData data) {
     return ApplyPatchDeleteFileOperationParam(
@@ -137,7 +148,8 @@ abstract class ApplyPatchDeleteFileOperationParamCopyWith<
   $In extends ApplyPatchDeleteFileOperationParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? path, ApplyPatchDeleteFileOperationParamType? type});
   ApplyPatchDeleteFileOperationParamCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

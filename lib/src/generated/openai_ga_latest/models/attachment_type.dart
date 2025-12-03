@@ -8,13 +8,13 @@ part 'attachment_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum AttachmentType {
-  @MappableValue('image') 
+  @MappableValue('image')
   image,
 
-  @MappableValue('file') 
+  @MappableValue('file')
   file,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

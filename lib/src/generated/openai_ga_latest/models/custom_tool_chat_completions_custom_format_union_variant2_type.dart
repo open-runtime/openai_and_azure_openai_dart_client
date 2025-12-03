@@ -9,10 +9,10 @@ part 'custom_tool_chat_completions_custom_format_union_variant2_type.mapper.dart
 /// Grammar format. Always `grammar`.
 @MappableEnum(defaultValue: 'unknown')
 enum CustomToolChatCompletionsCustomFormatUnionVariant2Type {
-  @MappableValue('grammar') 
+  @MappableValue('grammar')
   grammar,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CustomToolChatCompletionsCustomFormatUnionVariant2Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomToolChatCompletionsCustomFormatUnionVariant2Type> get $valuesDefined => values.where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant2Type.unknown).toList();
+  static List<CustomToolChatCompletionsCustomFormatUnionVariant2Type> get $valuesDefined =>
+      values.where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant2Type.unknown).toList();
 }

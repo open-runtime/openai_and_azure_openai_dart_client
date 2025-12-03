@@ -9,10 +9,10 @@ part 'include2.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum Include2 {
   /// Incorrect name has been replaced. Original name: `step_details.tool_calls[*].file_search.results[*].content`.
-  @MappableValue('step_details.tool_calls[*].file_search.results[*].content') 
+  @MappableValue('step_details.tool_calls[*].file_search.results[*].content')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

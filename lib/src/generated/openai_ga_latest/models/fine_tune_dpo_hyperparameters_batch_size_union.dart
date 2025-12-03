@@ -8,7 +8,14 @@ part 'fine_tune_dpo_hyperparameters_batch_size_union.mapper.dart';
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneDpoHyperparametersBatchSizeUnionVariantString, FineTuneDpoHyperparametersBatchSizeUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneDpoHyperparametersBatchSizeUnionVariantString,
+    FineTuneDpoHyperparametersBatchSizeUnionVariantInt,
+  ],
+)
 sealed class FineTuneDpoHyperparametersBatchSizeUnion with FineTuneDpoHyperparametersBatchSizeUnionMappable {
   const FineTuneDpoHyperparametersBatchSizeUnion();
 
@@ -33,26 +40,26 @@ extension FineTuneDpoHyperparametersBatchSizeUnionDeserializer on FineTuneDpoHyp
       return FineTuneDpoHyperparametersBatchSizeUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneDpoHyperparametersBatchSizeUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneDpoHyperparametersBatchSizeUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoHyperparametersBatchSizeUnionVariantString extends FineTuneDpoHyperparametersBatchSizeUnion with FineTuneDpoHyperparametersBatchSizeUnionVariantStringMappable {
+class FineTuneDpoHyperparametersBatchSizeUnionVariantString extends FineTuneDpoHyperparametersBatchSizeUnion
+    with FineTuneDpoHyperparametersBatchSizeUnionVariantStringMappable {
   final String value;
 
-  const FineTuneDpoHyperparametersBatchSizeUnionVariantString({
-    required this.value,
-  });
+  const FineTuneDpoHyperparametersBatchSizeUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoHyperparametersBatchSizeUnionVariantInt extends FineTuneDpoHyperparametersBatchSizeUnion with FineTuneDpoHyperparametersBatchSizeUnionVariantIntMappable {
+class FineTuneDpoHyperparametersBatchSizeUnionVariantInt extends FineTuneDpoHyperparametersBatchSizeUnion
+    with FineTuneDpoHyperparametersBatchSizeUnionVariantIntMappable {
   final int value;
 
-  const FineTuneDpoHyperparametersBatchSizeUnionVariantInt({
-    required this.value,
-  });
+  const FineTuneDpoHyperparametersBatchSizeUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

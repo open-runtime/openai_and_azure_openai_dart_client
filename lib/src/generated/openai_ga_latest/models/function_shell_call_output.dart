@@ -13,8 +13,8 @@ import 'output_item.dart';
 part 'function_shell_call_output.mapper.dart';
 
 /// The output of a shell tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCallOutput with FunctionShellCallOutputMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
+class FunctionShellCallOutput extends OutputItem with FunctionShellCallOutputMappable {
   const FunctionShellCallOutput({
     required this.id,
     required this.callId,
@@ -35,6 +35,4 @@ class FunctionShellCallOutput with FunctionShellCallOutputMappable {
   final FunctionShellCallOutputType type;
 
   static FunctionShellCallOutput fromJson(Map<String, dynamic> json) => FunctionShellCallOutputMapper.fromJson(json);
-
 }
-

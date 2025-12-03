@@ -9,13 +9,13 @@ part 'invite_request_role.mapper.dart';
 /// `owner` or `reader`
 @MappableEnum(defaultValue: 'unknown')
 enum InviteRequestRole {
-  @MappableValue('reader') 
+  @MappableValue('reader')
   reader,
 
-  @MappableValue('owner') 
+  @MappableValue('owner')
   owner,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum InviteRequestRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InviteRequestRole> get $valuesDefined => values.where((value) => value != InviteRequestRole.unknown).toList();
+  static List<InviteRequestRole> get $valuesDefined =>
+      values.where((value) => value != InviteRequestRole.unknown).toList();
 }

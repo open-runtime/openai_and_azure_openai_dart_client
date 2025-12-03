@@ -30,7 +30,6 @@ class CreateChatCompletionResponseChoicesChoices with CreateChatCompletionRespon
   final ContentFilterChoiceResults? contentFilterResults;
   final ChatCompletionChoiceLogProbs? logprobs;
 
-  static CreateChatCompletionResponseChoicesChoices fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesChoicesMapper.fromJson(json);
-
+  static CreateChatCompletionResponseChoicesChoices fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseChoicesChoicesMapper.fromJson(json);
 }
-

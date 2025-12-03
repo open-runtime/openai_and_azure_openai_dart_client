@@ -15,10 +15,12 @@ import 'speech_audio_done_event_usage.dart';
 
 part 'create_speech_response_stream_event.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateSpeechResponseStreamEventSpeechAudioDelta,
-  CreateSpeechResponseStreamEventSpeechAudioDone
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CreateSpeechResponseStreamEventSpeechAudioDelta, CreateSpeechResponseStreamEventSpeechAudioDone],
+)
 sealed class CreateSpeechResponseStreamEvent with CreateSpeechResponseStreamEventMappable {
   const CreateSpeechResponseStreamEvent();
 
@@ -34,32 +36,31 @@ extension CreateSpeechResponseStreamEventUnionDeserializer on CreateSpeechRespon
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateSpeechResponseStreamEventSpeechAudioDelta: 'speech.audio.delta',
-      CreateSpeechResponseStreamEventSpeechAudioDone: 'speech.audio.done',
+      SpeechAudioDeltaEvent: 'speech.audio.delta',
+      SpeechAudioDoneEvent: 'speech.audio.done',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateSpeechResponseStreamEventSpeechAudioDelta] => CreateSpeechResponseStreamEventSpeechAudioDeltaMapper.fromJson(json),
-      _ when value == effective[CreateSpeechResponseStreamEventSpeechAudioDone] => CreateSpeechResponseStreamEventSpeechAudioDoneMapper.fromJson(json),
+      _ when value == effective[SpeechAudioDeltaEvent] => SpeechAudioDeltaEventMapper.fromJson(json),
+      _ when value == effective[SpeechAudioDoneEvent] => SpeechAudioDoneEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateSpeechResponseStreamEvent'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'speech.audio.delta')
-class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechResponseStreamEvent with CreateSpeechResponseStreamEventSpeechAudioDeltaMappable {
+class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechResponseStreamEvent
+    with CreateSpeechResponseStreamEventSpeechAudioDeltaMappable {
   final CreateSpeechResponseStreamEventType type;
   final String audio;
 
-  const CreateSpeechResponseStreamEventSpeechAudioDelta({
-    required this.type,
-    required this.audio,
-  });
+  const CreateSpeechResponseStreamEventSpeechAudioDelta({required this.type, required this.audio});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'speech.audio.done')
-class CreateSpeechResponseStreamEventSpeechAudioDone extends CreateSpeechResponseStreamEvent with CreateSpeechResponseStreamEventSpeechAudioDoneMappable {
+class CreateSpeechResponseStreamEventSpeechAudioDone extends CreateSpeechResponseStreamEvent
+    with CreateSpeechResponseStreamEventSpeechAudioDoneMappable {
   final CreateSpeechResponseStreamEventType2 type;
   @MappableField(key: 'usage')
   final CreateSpeechResponseStreamEventUsage createSpeechResponseStreamEventUsage;

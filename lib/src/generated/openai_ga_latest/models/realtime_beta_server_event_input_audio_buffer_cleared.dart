@@ -11,16 +11,12 @@ part 'realtime_beta_server_event_input_audio_buffer_cleared.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaServerEventInputAudioBufferCleared with RealtimeBetaServerEventInputAudioBufferClearedMappable {
-  const RealtimeBetaServerEventInputAudioBufferCleared({
-    required this.eventId,
-    required this.type,
-  });
+  const RealtimeBetaServerEventInputAudioBufferCleared({required this.eventId, required this.type});
 
   @MappableField(key: 'event_id')
   final String eventId;
   final dynamic type;
 
-  static RealtimeBetaServerEventInputAudioBufferCleared fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventInputAudioBufferClearedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventInputAudioBufferCleared fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventInputAudioBufferClearedMapper.fromJson(json);
 }
-

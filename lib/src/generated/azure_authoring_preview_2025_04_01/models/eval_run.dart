@@ -58,6 +58,4 @@ class EvalRun with EvalRunMappable {
   final EvalRunObjectObjectEnum objectEnum;
 
   static EvalRun fromJson(Map<String, dynamic> json) => EvalRunMapper.fromJson(json);
-
 }
-

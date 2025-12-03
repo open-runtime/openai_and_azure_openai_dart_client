@@ -27,7 +27,6 @@ class GraderScoreModelSamplingParams with GraderScoreModelSamplingParamsMappable
   @MappableField(key: 'reasoning_effort')
   final ReasoningEffort? reasoningEffort;
 
-  static GraderScoreModelSamplingParams fromJson(Map<String, dynamic> json) => GraderScoreModelSamplingParamsMapper.fromJson(json);
-
+  static GraderScoreModelSamplingParams fromJson(Map<String, dynamic> json) =>
+      GraderScoreModelSamplingParamsMapper.fromJson(json);
 }
-

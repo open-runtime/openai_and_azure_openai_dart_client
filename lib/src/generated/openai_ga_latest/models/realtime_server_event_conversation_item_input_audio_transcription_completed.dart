@@ -22,8 +22,13 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_complete
 /// The transcript may diverge somewhat from the model's interpretation, and.
 /// should be treated as a rough guide.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.completed',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionCompleted({
     required this.eventId,
     required this.type,
@@ -45,7 +50,6 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted with R
   final RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion usage;
   final List<LogProbProperties>? logprobs;
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionCompleted fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemInputAudioTranscriptionCompleted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemInputAudioTranscriptionCompletedMapper.fromJson(json);
 }
-

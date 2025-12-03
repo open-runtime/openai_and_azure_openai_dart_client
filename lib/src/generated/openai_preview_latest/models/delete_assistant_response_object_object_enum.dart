@@ -10,10 +10,10 @@ part 'delete_assistant_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeleteAssistantResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `assistant.deleted`.
-  @MappableValue('assistant.deleted') 
+  @MappableValue('assistant.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum DeleteAssistantResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeleteAssistantResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeleteAssistantResponseObjectObjectEnum.unknown).toList();
+  static List<DeleteAssistantResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeleteAssistantResponseObjectObjectEnum.unknown).toList();
 }

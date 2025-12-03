@@ -30,6 +30,4 @@ class ConversationItemList with ConversationItemListMappable {
   final String lastId;
 
   static ConversationItemList fromJson(Map<String, dynamic> json) => ConversationItemListMapper.fromJson(json);
-
 }
-

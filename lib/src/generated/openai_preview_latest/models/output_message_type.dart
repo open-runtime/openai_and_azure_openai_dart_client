@@ -10,10 +10,10 @@ part 'output_message_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputMessageType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum OutputMessageType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputMessageType> get $valuesDefined => values.where((value) => value != OutputMessageType.unknown).toList();
+  static List<OutputMessageType> get $valuesDefined =>
+      values.where((value) => value != OutputMessageType.unknown).toList();
 }

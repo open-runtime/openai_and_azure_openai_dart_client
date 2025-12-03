@@ -11,17 +11,12 @@ part 'type_model.mapper.dart';
 
 /// An action to type in text.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TypeModel with TypeModelMappable {
-  const TypeModel({
-    required this.text,
-    this.type = TypeModelType.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'type')
+class TypeModel extends ComputerAction with TypeModelMappable {
+  const TypeModel({required this.text, this.type = TypeModelType.type});
 
   final String text;
   final TypeModelType type;
 
   static TypeModel fromJson(Map<String, dynamic> json) => TypeModelMapper.fromJson(json);
-
 }
-

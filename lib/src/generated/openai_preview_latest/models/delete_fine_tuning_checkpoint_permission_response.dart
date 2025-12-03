@@ -21,7 +21,6 @@ class DeleteFineTuningCheckpointPermissionResponse with DeleteFineTuningCheckpoi
   final DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum objectEnum;
   final bool deleted;
 
-  static DeleteFineTuningCheckpointPermissionResponse fromJson(Map<String, dynamic> json) => DeleteFineTuningCheckpointPermissionResponseMapper.fromJson(json);
-
+  static DeleteFineTuningCheckpointPermissionResponse fromJson(Map<String, dynamic> json) =>
+      DeleteFineTuningCheckpointPermissionResponseMapper.fromJson(json);
 }
-

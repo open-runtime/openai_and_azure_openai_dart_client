@@ -9,7 +9,9 @@ part of 'message_delta_content_text_annotations_file_citation_object.dart';
 
 class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
     extends
-        ClassMapperBase<MessageDeltaContentTextAnnotationsFileCitationObject> {
+        SubClassMapperBase<
+          MessageDeltaContentTextAnnotationsFileCitationObject
+        > {
   MessageDeltaContentTextAnnotationsFileCitationObjectMapper._();
 
   static MessageDeltaContentTextAnnotationsFileCitationObjectMapper? _instance;
@@ -20,6 +22,7 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
         _instance =
             MessageDeltaContentTextAnnotationsFileCitationObjectMapper._(),
       );
+      TextAnnotationDeltaMapper.ensureInitialized().addSubMapper(_instance!);
       MessageDeltaContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageDeltaContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
@@ -95,6 +98,14 @@ class MessageDeltaContentTextAnnotationsFileCitationObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_citation';
+  @override
+  late final ClassMapperBase superMapper =
+      TextAnnotationDeltaMapper.ensureInitialized();
 
   static MessageDeltaContentTextAnnotationsFileCitationObject _instantiate(
     DecodingData data,
@@ -214,13 +225,14 @@ abstract class MessageDeltaContentTextAnnotationsFileCitationObjectCopyWith<
   $In extends MessageDeltaContentTextAnnotationsFileCitationObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements TextAnnotationDeltaCopyWith<$R, $In, $Out> {
   MessageDeltaContentTextAnnotationsFileCitationObjectFileCitationCopyWith<
     $R,
     MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation,
     MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation
   >?
   get messageDeltaContentTextAnnotationsFileCitationObjectFileCitation;
+  @override
   $R call({
     int? indexField,
     MessageDeltaContentTextAnnotationsFileCitationObjectType? type,

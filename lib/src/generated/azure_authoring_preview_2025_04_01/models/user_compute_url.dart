@@ -15,13 +15,7 @@ part 'user_compute_url.mapper.dart';
 /// Urls
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeUrl with UserComputeUrlMappable {
-  const UserComputeUrl({
-    required this.kind,
-    this.urls,
-    this.crawling,
-    this.chunking,
-    this.embeddings,
-  });
+  const UserComputeUrl({required this.kind, this.urls, this.crawling, this.chunking, this.embeddings});
 
   final UserComputeDatasourceType kind;
   final List<String>? urls;
@@ -30,6 +24,4 @@ class UserComputeUrl with UserComputeUrlMappable {
   final List<WorkspaceConnectionEmbeddingSettings>? embeddings;
 
   static UserComputeUrl fromJson(Map<String, dynamic> json) => UserComputeUrlMapper.fromJson(json);
-
 }
-

@@ -10,14 +10,7 @@ part 'stored_completion_list.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class StoredCompletionList with StoredCompletionListMappable {
-  const StoredCompletionList({
-    this.objectField,
-    this.data,
-    this.total,
-    this.firstId,
-    this.lastId,
-    this.hasMore,
-  });
+  const StoredCompletionList({this.objectField, this.data, this.total, this.firstId, this.lastId, this.hasMore});
 
   @MappableField(key: 'object')
   final String? objectField;
@@ -31,6 +24,4 @@ class StoredCompletionList with StoredCompletionListMappable {
   final bool? hasMore;
 
   static StoredCompletionList fromJson(Map<String, dynamic> json) => StoredCompletionListMapper.fromJson(json);
-
 }
-

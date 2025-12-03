@@ -17,17 +17,18 @@ import 'run_object_tools_union.dart';
 
 part 'message_object_attachments_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageObjectAttachmentsToolsUnionCodeInterpreter,
-  MessageObjectAttachmentsToolsUnionFileSearch
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [MessageObjectAttachmentsToolsUnionCodeInterpreter, MessageObjectAttachmentsToolsUnionFileSearch],
+)
 sealed class MessageObjectAttachmentsToolsUnion with MessageObjectAttachmentsToolsUnionMappable {
   const MessageObjectAttachmentsToolsUnion();
 
   static MessageObjectAttachmentsToolsUnion fromJson(Map<String, dynamic> json) {
     return MessageObjectAttachmentsToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension MessageObjectAttachmentsToolsUnionDeserializer on MessageObjectAttachmentsToolsUnion {
@@ -37,34 +38,31 @@ extension MessageObjectAttachmentsToolsUnionDeserializer on MessageObjectAttachm
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageObjectAttachmentsToolsUnionCodeInterpreter: 'code_interpreter',
-      MessageObjectAttachmentsToolsUnionFileSearch: 'file_search',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageObjectAttachmentsToolsUnionCodeInterpreter] => MessageObjectAttachmentsToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[MessageObjectAttachmentsToolsUnionFileSearch] => MessageObjectAttachmentsToolsUnionFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageObjectAttachmentsToolsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class MessageObjectAttachmentsToolsUnionCodeInterpreter extends MessageObjectAttachmentsToolsUnion with MessageObjectAttachmentsToolsUnionCodeInterpreterMappable {
+class MessageObjectAttachmentsToolsUnionCodeInterpreter extends MessageObjectAttachmentsToolsUnion
+    with MessageObjectAttachmentsToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const MessageObjectAttachmentsToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const MessageObjectAttachmentsToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class MessageObjectAttachmentsToolsUnionFileSearch extends MessageObjectAttachmentsToolsUnion with MessageObjectAttachmentsToolsUnionFileSearchMappable {
+class MessageObjectAttachmentsToolsUnionFileSearch extends MessageObjectAttachmentsToolsUnion
+    with MessageObjectAttachmentsToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
 
-  const MessageObjectAttachmentsToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const MessageObjectAttachmentsToolsUnionFileSearch({required this.type});
 }

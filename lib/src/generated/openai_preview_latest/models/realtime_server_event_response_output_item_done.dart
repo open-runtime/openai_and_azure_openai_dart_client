@@ -13,8 +13,9 @@ part 'realtime_server_event_response_output_item_done.mapper.dart';
 /// Returned when an Item is done streaming. Also emitted when a Response is .
 /// interrupted, incomplete, or cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseOutputItemDone with RealtimeServerEventResponseOutputItemDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.done')
+class RealtimeServerEventResponseOutputItemDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseOutputItemDoneMappable {
   const RealtimeServerEventResponseOutputItemDone({
     required this.eventId,
     required this.type,
@@ -32,7 +33,6 @@ class RealtimeServerEventResponseOutputItemDone with RealtimeServerEventResponse
   final int outputIndex;
   final RealtimeConversationItem item;
 
-  static RealtimeServerEventResponseOutputItemDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseOutputItemDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseOutputItemDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseOutputItemDoneMapper.fromJson(json);
 }
-

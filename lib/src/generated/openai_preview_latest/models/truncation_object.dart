@@ -11,16 +11,11 @@ part 'truncation_object.mapper.dart';
 /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TruncationObject with TruncationObjectMappable {
-  const TruncationObject({
-    required this.type,
-    this.lastMessages,
-  });
+  const TruncationObject({required this.type, this.lastMessages});
 
   final TruncationObjectType type;
   @MappableField(key: 'last_messages')
   final int? lastMessages;
 
   static TruncationObject fromJson(Map<String, dynamic> json) => TruncationObjectMapper.fromJson(json);
-
 }
-

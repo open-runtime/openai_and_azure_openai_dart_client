@@ -11,16 +11,18 @@ import 'transcription_diarized_segment.dart';
 
 part 'create_transcription_response_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'task', includeSubClasses: [
-  CreateTranscriptionResponseUnionTranscribe
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'task',
+  includeSubClasses: [CreateTranscriptionResponseUnionTranscribe],
+)
 sealed class CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionMappable {
   const CreateTranscriptionResponseUnion();
 
   static CreateTranscriptionResponseUnion fromJson(Map<String, dynamic> json) {
     return CreateTranscriptionResponseUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateTranscriptionResponseUnionDeserializer on CreateTranscriptionResponseUnion {
@@ -29,20 +31,20 @@ extension CreateTranscriptionResponseUnionDeserializer on CreateTranscriptionRes
     String key = 'task',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      CreateTranscriptionResponseUnionTranscribe: 'transcribe',
-    };
+    final mappingFallback = const <Type, Object?>{CreateTranscriptionResponseDiarizedJson: 'transcribe'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateTranscriptionResponseUnionTranscribe] => CreateTranscriptionResponseUnionTranscribeMapper.fromJson(json),
+      _ when value == effective[CreateTranscriptionResponseDiarizedJson] =>
+        CreateTranscriptionResponseDiarizedJsonMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateTranscriptionResponseUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcribe')
-class CreateTranscriptionResponseUnionTranscribe extends CreateTranscriptionResponseUnion with CreateTranscriptionResponseUnionTranscribeMappable {
+class CreateTranscriptionResponseUnionTranscribe extends CreateTranscriptionResponseUnion
+    with CreateTranscriptionResponseUnionTranscribeMappable {
   final CreateTranscriptionResponseDiarizedJsonTask task;
   final num duration;
   final String text;
@@ -56,5 +58,4 @@ class CreateTranscriptionResponseUnionTranscribe extends CreateTranscriptionResp
     required this.segments,
     required this.usage,
   });
-
 }

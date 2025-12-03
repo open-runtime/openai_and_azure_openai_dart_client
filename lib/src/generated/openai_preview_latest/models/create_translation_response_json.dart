@@ -8,13 +8,10 @@ part 'create_translation_response_json.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranslationResponseJson with CreateTranslationResponseJsonMappable {
-  const CreateTranslationResponseJson({
-    required this.text,
-  });
+  const CreateTranslationResponseJson({required this.text});
 
   final String text;
 
-  static CreateTranslationResponseJson fromJson(Map<String, dynamic> json) => CreateTranslationResponseJsonMapper.fromJson(json);
-
+  static CreateTranslationResponseJson fromJson(Map<String, dynamic> json) =>
+      CreateTranslationResponseJsonMapper.fromJson(json);
 }
-

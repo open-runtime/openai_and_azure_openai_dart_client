@@ -11,15 +11,10 @@ part 'ingestion_job_run_list.mapper.dart';
 /// Represents a list of ingestion job runs.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobRunList with IngestionJobRunListMappable {
-  const IngestionJobRunList({
-    this.nextLink,
-    this.value,
-  });
+  const IngestionJobRunList({this.nextLink, this.value});
 
   final String? nextLink;
   final List<IngestionJobRun>? value;
 
   static IngestionJobRunList fromJson(Map<String, dynamic> json) => IngestionJobRunListMapper.fromJson(json);
-
 }
-

@@ -9,10 +9,10 @@ part 'reasoning_text_content_type.mapper.dart';
 /// The type of the reasoning text. Always `reasoning_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningTextContentType {
-  @MappableValue('reasoning_text') 
+  @MappableValue('reasoning_text')
   reasoningText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ReasoningTextContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ReasoningTextContentType> get $valuesDefined => values.where((value) => value != ReasoningTextContentType.unknown).toList();
+  static List<ReasoningTextContentType> get $valuesDefined =>
+      values.where((value) => value != ReasoningTextContentType.unknown).toList();
 }

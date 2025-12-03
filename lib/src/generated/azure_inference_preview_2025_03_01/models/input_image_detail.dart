@@ -11,16 +11,16 @@ part 'input_image_detail.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputImageDetail {
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum InputImageDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputImageDetail> get $valuesDefined => values.where((value) => value != InputImageDetail.unknown).toList();
+  static List<InputImageDetail> get $valuesDefined =>
+      values.where((value) => value != InputImageDetail.unknown).toList();
 }

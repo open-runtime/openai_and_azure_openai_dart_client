@@ -9,18 +9,14 @@ import 'response_format_json_schema_type.dart';
 
 part 'response_format_json_schema.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFormatJsonSchema with ResponseFormatJsonSchemaMappable {
-  const ResponseFormatJsonSchema({
-    required this.type,
-    required this.responseFormatJsonSchemaJsonSchema,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
+class ResponseFormatJsonSchema extends CreateChatCompletionRequestResponseFormatUnion
+    with ResponseFormatJsonSchemaMappable {
+  const ResponseFormatJsonSchema({required this.type, required this.responseFormatJsonSchemaJsonSchema});
 
   final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
 
   static ResponseFormatJsonSchema fromJson(Map<String, dynamic> json) => ResponseFormatJsonSchemaMapper.fromJson(json);
-
 }
-

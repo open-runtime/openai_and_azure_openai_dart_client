@@ -9,16 +9,13 @@ import 'custom_tool_chat_completions_custom_format_union_variant2_grammar_syntax
 part 'custom_tool_chat_completions_custom_format_union_variant2_grammar.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CustomToolChatCompletionsCustomFormatUnionVariant2Grammar with CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMappable {
-  const CustomToolChatCompletionsCustomFormatUnionVariant2Grammar({
-    required this.definition,
-    required this.syntax,
-  });
+class CustomToolChatCompletionsCustomFormatUnionVariant2Grammar
+    with CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMappable {
+  const CustomToolChatCompletionsCustomFormatUnionVariant2Grammar({required this.definition, required this.syntax});
 
   final String definition;
   final CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax syntax;
 
-  static CustomToolChatCompletionsCustomFormatUnionVariant2Grammar fromJson(Map<String, dynamic> json) => CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper.fromJson(json);
-
+  static CustomToolChatCompletionsCustomFormatUnionVariant2Grammar fromJson(Map<String, dynamic> json) =>
+      CustomToolChatCompletionsCustomFormatUnionVariant2GrammarMapper.fromJson(json);
 }
-

@@ -13,13 +13,9 @@ part 'realtime_client_event_response_cancel.mapper.dart';
 /// with a `response.cancelled` event or an error if there is no response to .
 /// cancel.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventResponseCancel with RealtimeClientEventResponseCancelMappable {
-  const RealtimeClientEventResponseCancel({
-    required this.type,
-    this.eventId,
-    this.responseId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.cancel')
+class RealtimeClientEventResponseCancel extends RealtimeClientEvent with RealtimeClientEventResponseCancelMappable {
+  const RealtimeClientEventResponseCancel({required this.type, this.eventId, this.responseId});
 
   final RealtimeClientEventResponseCancelType type;
   @MappableField(key: 'event_id')
@@ -27,7 +23,6 @@ class RealtimeClientEventResponseCancel with RealtimeClientEventResponseCancelMa
   @MappableField(key: 'response_id')
   final String? responseId;
 
-  static RealtimeClientEventResponseCancel fromJson(Map<String, dynamic> json) => RealtimeClientEventResponseCancelMapper.fromJson(json);
-
+  static RealtimeClientEventResponseCancel fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventResponseCancelMapper.fromJson(json);
 }
-

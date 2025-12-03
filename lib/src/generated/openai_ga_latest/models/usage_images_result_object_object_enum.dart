@@ -10,10 +10,10 @@ part 'usage_images_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageImagesResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.images.result`.
-  @MappableValue('organization.usage.images.result') 
+  @MappableValue('organization.usage.images.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageImagesResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageImagesResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageImagesResultObjectObjectEnum.unknown).toList();
+  static List<UsageImagesResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageImagesResultObjectObjectEnum.unknown).toList();
 }

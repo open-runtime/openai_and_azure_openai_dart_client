@@ -8,7 +8,7 @@
 part of 'realtime_client_event_response_cancel.dart';
 
 class RealtimeClientEventResponseCancelMapper
-    extends ClassMapperBase<RealtimeClientEventResponseCancel> {
+    extends SubClassMapperBase<RealtimeClientEventResponseCancel> {
   RealtimeClientEventResponseCancelMapper._();
 
   static RealtimeClientEventResponseCancelMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventResponseCancelMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventResponseCancelMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -45,6 +46,14 @@ class RealtimeClientEventResponseCancelMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.cancel';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventResponseCancel _instantiate(DecodingData data) {
     return RealtimeClientEventResponseCancel(
@@ -132,7 +141,8 @@ abstract class RealtimeClientEventResponseCancelCopyWith<
   $In extends RealtimeClientEventResponseCancel,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({dynamic type, String? eventId, String? responseId});
   RealtimeClientEventResponseCancelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

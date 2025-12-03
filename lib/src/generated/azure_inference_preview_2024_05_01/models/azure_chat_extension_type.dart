@@ -11,22 +11,22 @@ part 'azure_chat_extension_type.mapper.dart';
 ///   The use of this configuration is compatible only with Azure OpenAI.
 @MappableEnum(defaultValue: 'unknown')
 enum AzureChatExtensionType {
-  @MappableValue('azure_search') 
+  @MappableValue('azure_search')
   azureSearch,
 
-  @MappableValue('azure_ml_index') 
+  @MappableValue('azure_ml_index')
   azureMlIndex,
 
-  @MappableValue('azure_cosmos_db') 
+  @MappableValue('azure_cosmos_db')
   azureCosmosDb,
 
-  @MappableValue('elasticsearch') 
+  @MappableValue('elasticsearch')
   elasticsearch,
 
-  @MappableValue('pinecone') 
+  @MappableValue('pinecone')
   pinecone,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -35,5 +35,6 @@ enum AzureChatExtensionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AzureChatExtensionType> get $valuesDefined => values.where((value) => value != AzureChatExtensionType.unknown).toList();
+  static List<AzureChatExtensionType> get $valuesDefined =>
+      values.where((value) => value != AzureChatExtensionType.unknown).toList();
 }

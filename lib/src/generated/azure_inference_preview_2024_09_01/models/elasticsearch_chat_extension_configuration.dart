@@ -13,15 +13,11 @@ part 'elasticsearch_chat_extension_configuration.mapper.dart';
 /// extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ElasticsearchChatExtensionConfiguration with ElasticsearchChatExtensionConfigurationMappable {
-  const ElasticsearchChatExtensionConfiguration({
-    required this.type,
-    this.parameters,
-  });
+  const ElasticsearchChatExtensionConfiguration({required this.type, this.parameters});
 
   final AzureChatExtensionType type;
   final ElasticsearchChatExtensionParameters? parameters;
 
-  static ElasticsearchChatExtensionConfiguration fromJson(Map<String, dynamic> json) => ElasticsearchChatExtensionConfigurationMapper.fromJson(json);
-
+  static ElasticsearchChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      ElasticsearchChatExtensionConfigurationMapper.fromJson(json);
 }
-

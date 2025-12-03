@@ -11,8 +11,9 @@ part 'response_custom_tool_call_input_delta_event.mapper.dart';
 
 /// Event representing a delta (partial update) to the input of a custom tool call.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCustomToolCallInputDeltaEvent with ResponseCustomToolCallInputDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.delta')
+class ResponseCustomToolCallInputDeltaEvent extends ResponseStreamEvent
+    with ResponseCustomToolCallInputDeltaEventMappable {
   const ResponseCustomToolCallInputDeltaEvent({
     required this.type,
     required this.sequenceNumber,
@@ -30,7 +31,6 @@ class ResponseCustomToolCallInputDeltaEvent with ResponseCustomToolCallInputDelt
   final String itemId;
   final String delta;
 
-  static ResponseCustomToolCallInputDeltaEvent fromJson(Map<String, dynamic> json) => ResponseCustomToolCallInputDeltaEventMapper.fromJson(json);
-
+  static ResponseCustomToolCallInputDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCustomToolCallInputDeltaEventMapper.fromJson(json);
 }
-

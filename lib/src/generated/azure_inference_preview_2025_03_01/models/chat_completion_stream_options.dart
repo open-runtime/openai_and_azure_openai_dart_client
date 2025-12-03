@@ -10,14 +10,11 @@ part 'chat_completion_stream_options.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionStreamOptions with ChatCompletionStreamOptionsMappable {
-  const ChatCompletionStreamOptions({
-    this.includeUsage,
-  });
+  const ChatCompletionStreamOptions({this.includeUsage});
 
   @MappableField(key: 'include_usage')
   final bool? includeUsage;
 
-  static ChatCompletionStreamOptions fromJson(Map<String, dynamic> json) => ChatCompletionStreamOptionsMapper.fromJson(json);
-
+  static ChatCompletionStreamOptions fromJson(Map<String, dynamic> json) =>
+      ChatCompletionStreamOptionsMapper.fromJson(json);
 }
-

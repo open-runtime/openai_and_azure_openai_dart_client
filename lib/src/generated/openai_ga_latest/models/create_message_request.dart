@@ -12,12 +12,7 @@ part 'create_message_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateMessageRequest with CreateMessageRequestMappable {
-  const CreateMessageRequest({
-    required this.role,
-    required this.content,
-    this.attachments,
-    this.metadata,
-  });
+  const CreateMessageRequest({required this.role, required this.content, this.attachments, this.metadata});
 
   final CreateMessageRequestRole role;
   final String content;
@@ -25,6 +20,4 @@ class CreateMessageRequest with CreateMessageRequestMappable {
   final Metadata? metadata;
 
   static CreateMessageRequest fromJson(Map<String, dynamic> json) => CreateMessageRequestMapper.fromJson(json);
-
 }
-

@@ -11,10 +11,10 @@ part 'image_gen_completed_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenCompletedEventType {
   /// Incorrect name has been replaced. Original name: `image_generation.completed`.
-  @MappableValue('image_generation.completed') 
+  @MappableValue('image_generation.completed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ImageGenCompletedEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenCompletedEventType> get $valuesDefined => values.where((value) => value != ImageGenCompletedEventType.unknown).toList();
+  static List<ImageGenCompletedEventType> get $valuesDefined =>
+      values.where((value) => value != ImageGenCompletedEventType.unknown).toList();
 }

@@ -32,6 +32,4 @@ class WebhookResponseCompleted with WebhookResponseCompletedMappable {
   final WebhookResponseCompletedObjectObjectEnum? objectEnum;
 
   static WebhookResponseCompleted fromJson(Map<String, dynamic> json) => WebhookResponseCompletedMapper.fromJson(json);
-
 }
-

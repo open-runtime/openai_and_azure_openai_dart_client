@@ -31,6 +31,4 @@ class ProjectUser with ProjectUserMappable {
   final int addedAt;
 
   static ProjectUser fromJson(Map<String, dynamic> json) => ProjectUserMapper.fromJson(json);
-
 }
-

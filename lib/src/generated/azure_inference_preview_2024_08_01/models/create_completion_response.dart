@@ -39,6 +39,4 @@ class CreateCompletionResponse with CreateCompletionResponseMappable {
   final CompletionUsage? usage;
 
   static CreateCompletionResponse fromJson(Map<String, dynamic> json) => CreateCompletionResponseMapper.fromJson(json);
-
 }
-

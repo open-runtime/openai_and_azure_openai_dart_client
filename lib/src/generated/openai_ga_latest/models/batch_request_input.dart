@@ -11,11 +11,7 @@ part 'batch_request_input.mapper.dart';
 /// The per-line object of the batch input file
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestInput with BatchRequestInputMappable {
-  const BatchRequestInput({
-    this.customId,
-    this.method,
-    this.url,
-  });
+  const BatchRequestInput({this.customId, this.method, this.url});
 
   @MappableField(key: 'custom_id')
   final String? customId;
@@ -23,6 +19,4 @@ class BatchRequestInput with BatchRequestInputMappable {
   final String? url;
 
   static BatchRequestInput fromJson(Map<String, dynamic> json) => BatchRequestInputMapper.fromJson(json);
-
 }
-

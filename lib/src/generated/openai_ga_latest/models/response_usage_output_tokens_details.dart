@@ -8,14 +8,11 @@ part 'response_usage_output_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseUsageOutputTokensDetails with ResponseUsageOutputTokensDetailsMappable {
-  const ResponseUsageOutputTokensDetails({
-    required this.reasoningTokens,
-  });
+  const ResponseUsageOutputTokensDetails({required this.reasoningTokens});
 
   @MappableField(key: 'reasoning_tokens')
   final int reasoningTokens;
 
-  static ResponseUsageOutputTokensDetails fromJson(Map<String, dynamic> json) => ResponseUsageOutputTokensDetailsMapper.fromJson(json);
-
+  static ResponseUsageOutputTokensDetails fromJson(Map<String, dynamic> json) =>
+      ResponseUsageOutputTokensDetailsMapper.fromJson(json);
 }
-

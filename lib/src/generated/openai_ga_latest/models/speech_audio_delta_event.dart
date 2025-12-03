@@ -10,17 +10,12 @@ import 'speech_audio_delta_event_type.dart';
 part 'speech_audio_delta_event.mapper.dart';
 
 /// Emitted for each chunk of audio data generated during speech synthesis.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class SpeechAudioDeltaEvent with SpeechAudioDeltaEventMappable {
-  const SpeechAudioDeltaEvent({
-    required this.type,
-    required this.audio,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'speech.audio.delta')
+class SpeechAudioDeltaEvent extends CreateSpeechResponseStreamEvent with SpeechAudioDeltaEventMappable {
+  const SpeechAudioDeltaEvent({required this.type, required this.audio});
 
   final SpeechAudioDeltaEventType type;
   final String audio;
 
   static SpeechAudioDeltaEvent fromJson(Map<String, dynamic> json) => SpeechAudioDeltaEventMapper.fromJson(json);
-
 }
-

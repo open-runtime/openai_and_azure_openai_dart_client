@@ -8,7 +8,7 @@
 part of 'response_output_item_added_event.dart';
 
 class ResponseOutputItemAddedEventMapper
-    extends ClassMapperBase<ResponseOutputItemAddedEvent> {
+    extends SubClassMapperBase<ResponseOutputItemAddedEvent> {
   ResponseOutputItemAddedEventMapper._();
 
   static ResponseOutputItemAddedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseOutputItemAddedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseOutputItemAddedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseOutputItemAddedEventTypeMapper.ensureInitialized();
       OutputItemMapper.ensureInitialized();
     }
@@ -56,6 +57,14 @@ class ResponseOutputItemAddedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_item.added';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseOutputItemAddedEvent _instantiate(DecodingData data) {
     return ResponseOutputItemAddedEvent(
@@ -137,8 +146,9 @@ abstract class ResponseOutputItemAddedEventCopyWith<
   $In extends ResponseOutputItemAddedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   OutputItemCopyWith<$R, OutputItem, OutputItem> get item;
+  @override
   $R call({
     ResponseOutputItemAddedEventType? type,
     int? outputIndex,

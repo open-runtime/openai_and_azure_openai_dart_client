@@ -10,10 +10,10 @@ part 'response_code_interpreter_call_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseCodeInterpreterCallInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.code_interpreter_call.in_progress`.
-  @MappableValue('response.code_interpreter_call.in_progress') 
+  @MappableValue('response.code_interpreter_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseCodeInterpreterCallInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseCodeInterpreterCallInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseCodeInterpreterCallInProgressEventType.unknown).toList();
+  static List<ResponseCodeInterpreterCallInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseCodeInterpreterCallInProgressEventType.unknown).toList();
 }

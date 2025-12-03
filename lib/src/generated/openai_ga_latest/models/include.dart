@@ -8,10 +8,10 @@ part 'include.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Include {
-  @MappableValue('content') 
+  @MappableValue('content')
   content,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

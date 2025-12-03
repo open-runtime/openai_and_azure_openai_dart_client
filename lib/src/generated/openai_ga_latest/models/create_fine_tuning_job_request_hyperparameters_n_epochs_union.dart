@@ -9,8 +9,16 @@ part 'create_fine_tuning_job_request_hyperparameters_n_epochs_union.mapper.dart'
 /// The number of epochs to train the model for. An epoch refers to one full cycle.
 /// through the training dataset.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString, CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt])
-sealed class CreateFineTuningJobRequestHyperparametersNEpochsUnion with CreateFineTuningJobRequestHyperparametersNEpochsUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString,
+    CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt,
+  ],
+)
+sealed class CreateFineTuningJobRequestHyperparametersNEpochsUnion
+    with CreateFineTuningJobRequestHyperparametersNEpochsUnionMappable {
   const CreateFineTuningJobRequestHyperparametersNEpochsUnion();
 
   static CreateFineTuningJobRequestHyperparametersNEpochsUnion fromJson(dynamic json) {
@@ -18,7 +26,8 @@ sealed class CreateFineTuningJobRequestHyperparametersNEpochsUnion with CreateFi
   }
 }
 
-extension CreateFineTuningJobRequestHyperparametersNEpochsUnionDeserializer on CreateFineTuningJobRequestHyperparametersNEpochsUnion {
+extension CreateFineTuningJobRequestHyperparametersNEpochsUnionDeserializer
+    on CreateFineTuningJobRequestHyperparametersNEpochsUnion {
   static CreateFineTuningJobRequestHyperparametersNEpochsUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -34,31 +43,34 @@ extension CreateFineTuningJobRequestHyperparametersNEpochsUnionDeserializer on C
       return CreateFineTuningJobRequestHyperparametersNEpochsUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for CreateFineTuningJobRequestHyperparametersNEpochsUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateFineTuningJobRequestHyperparametersNEpochsUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString extends CreateFineTuningJobRequestHyperparametersNEpochsUnion with CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantStringMappable {
+class CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString
+    extends CreateFineTuningJobRequestHyperparametersNEpochsUnion
+    with CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantStringMappable {
   final String value;
 
-  const CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt extends CreateFineTuningJobRequestHyperparametersNEpochsUnion with CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantIntMappable {
+class CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt
+    extends CreateFineTuningJobRequestHyperparametersNEpochsUnion
+    with CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantIntMappable {
   final int value;
 
-  const CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt({
-    required this.value,
-  });
+  const CreateFineTuningJobRequestHyperparametersNEpochsUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension CreateFineTuningJobRequestHyperparametersNEpochsUnionJsonValue on CreateFineTuningJobRequestHyperparametersNEpochsUnion {
+extension CreateFineTuningJobRequestHyperparametersNEpochsUnionJsonValue
+    on CreateFineTuningJobRequestHyperparametersNEpochsUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -88,7 +100,9 @@ class CreateFineTuningJobRequestHyperparametersNEpochsUnionHook extends MappingH
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! CreateFineTuningJobRequestHyperparametersNEpochsUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! CreateFineTuningJobRequestHyperparametersNEpochsUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return CreateFineTuningJobRequestHyperparametersNEpochsUnion.fromJson(value);
     }

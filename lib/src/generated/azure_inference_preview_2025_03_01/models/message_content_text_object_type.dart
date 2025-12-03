@@ -9,10 +9,10 @@ part 'message_content_text_object_type.mapper.dart';
 /// Always `text`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentTextObjectType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentTextObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentTextObjectType> get $valuesDefined => values.where((value) => value != MessageContentTextObjectType.unknown).toList();
+  static List<MessageContentTextObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageContentTextObjectType.unknown).toList();
 }

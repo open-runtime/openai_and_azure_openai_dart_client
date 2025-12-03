@@ -10,13 +10,7 @@ part 'upload_part_resource.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UploadPartResource with UploadPartResourceMappable {
-  const UploadPartResource({
-    this.objectField,
-    this.createdAt,
-    this.id,
-    this.uploadId,
-    this.azureBlockId,
-  });
+  const UploadPartResource({this.objectField, this.createdAt, this.id, this.uploadId, this.azureBlockId});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
@@ -29,6 +23,4 @@ class UploadPartResource with UploadPartResourceMappable {
   final String? azureBlockId;
 
   static UploadPartResource fromJson(Map<String, dynamic> json) => UploadPartResourceMapper.fromJson(json);
-
 }
-

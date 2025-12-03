@@ -10,8 +10,5 @@ part 'response_prompt_variables.mapper.dart';
 class ResponsePromptVariables with ResponsePromptVariablesMappable {
   const ResponsePromptVariables();
 
-
   static ResponsePromptVariables fromJson(Map<String, dynamic> json) => ResponsePromptVariablesMapper.fromJson(json);
-
 }
-

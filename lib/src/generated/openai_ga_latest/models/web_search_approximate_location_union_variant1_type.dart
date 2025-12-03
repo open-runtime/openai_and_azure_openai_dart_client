@@ -9,10 +9,10 @@ part 'web_search_approximate_location_union_variant1_type.mapper.dart';
 /// The type of location approximation. Always `approximate`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchApproximateLocationUnionVariant1Type {
-  @MappableValue('approximate') 
+  @MappableValue('approximate')
   approximate,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum WebSearchApproximateLocationUnionVariant1Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchApproximateLocationUnionVariant1Type> get $valuesDefined => values.where((value) => value != WebSearchApproximateLocationUnionVariant1Type.unknown).toList();
+  static List<WebSearchApproximateLocationUnionVariant1Type> get $valuesDefined =>
+      values.where((value) => value != WebSearchApproximateLocationUnionVariant1Type.unknown).toList();
 }

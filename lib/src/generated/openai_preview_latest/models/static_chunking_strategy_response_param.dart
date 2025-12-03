@@ -9,18 +9,15 @@ import 'static_chunking_strategy_response_param_type.dart';
 
 part 'static_chunking_strategy_response_param.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class StaticChunkingStrategyResponseParam with StaticChunkingStrategyResponseParamMappable {
-  const StaticChunkingStrategyResponseParam({
-    required this.type,
-    required this.staticField,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
+class StaticChunkingStrategyResponseParam extends VectorStoreFileObjectChunkingStrategyUnion
+    with StaticChunkingStrategyResponseParamMappable {
+  const StaticChunkingStrategyResponseParam({required this.type, required this.staticField});
 
   final StaticChunkingStrategyResponseParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
-  static StaticChunkingStrategyResponseParam fromJson(Map<String, dynamic> json) => StaticChunkingStrategyResponseParamMapper.fromJson(json);
-
+  static StaticChunkingStrategyResponseParam fromJson(Map<String, dynamic> json) =>
+      StaticChunkingStrategyResponseParamMapper.fromJson(json);
 }
-

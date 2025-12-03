@@ -8,7 +8,7 @@
 part of 'transcript_text_delta_event.dart';
 
 class TranscriptTextDeltaEventMapper
-    extends ClassMapperBase<TranscriptTextDeltaEvent> {
+    extends SubClassMapperBase<TranscriptTextDeltaEvent> {
   TranscriptTextDeltaEventMapper._();
 
   static TranscriptTextDeltaEventMapper? _instance;
@@ -17,6 +17,8 @@ class TranscriptTextDeltaEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextDeltaEventMapper._(),
       );
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       TranscriptTextDeltaEventTypeMapper.ensureInitialized();
       TranscriptTextDeltaEventLogprobsMapper.ensureInitialized();
     }
@@ -62,6 +64,14 @@ class TranscriptTextDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'transcript.text.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized();
 
   static TranscriptTextDeltaEvent _instantiate(DecodingData data) {
     return TranscriptTextDeltaEvent(
@@ -141,7 +151,7 @@ abstract class TranscriptTextDeltaEventCopyWith<
   $In extends TranscriptTextDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CreateTranscriptionResponseStreamEventCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     TranscriptTextDeltaEventLogprobs,
@@ -152,6 +162,7 @@ abstract class TranscriptTextDeltaEventCopyWith<
     >
   >?
   get logprobs;
+  @override
   $R call({
     TranscriptTextDeltaEventType? type,
     String? delta,

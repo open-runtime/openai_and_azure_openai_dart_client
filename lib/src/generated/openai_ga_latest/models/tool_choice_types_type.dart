@@ -18,25 +18,25 @@ part 'tool_choice_types_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolChoiceTypesType {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('web_search_preview') 
+  @MappableValue('web_search_preview')
   webSearchPreview,
 
-  @MappableValue('computer_use_preview') 
+  @MappableValue('computer_use_preview')
   computerUsePreview,
 
-  @MappableValue('web_search_preview_2025_03_11') 
+  @MappableValue('web_search_preview_2025_03_11')
   webSearchPreview20250311,
 
-  @MappableValue('image_generation') 
+  @MappableValue('image_generation')
   imageGeneration,
 
-  @MappableValue('code_interpreter') 
+  @MappableValue('code_interpreter')
   codeInterpreter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -45,5 +45,6 @@ enum ToolChoiceTypesType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ToolChoiceTypesType> get $valuesDefined => values.where((value) => value != ToolChoiceTypesType.unknown).toList();
+  static List<ToolChoiceTypesType> get $valuesDefined =>
+      values.where((value) => value != ToolChoiceTypesType.unknown).toList();
 }

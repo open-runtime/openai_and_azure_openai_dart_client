@@ -9,16 +9,16 @@ part 'open_ai_file_status.mapper.dart';
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
 @MappableEnum(defaultValue: 'unknown')
 enum OpenAiFileStatus {
-  @MappableValue('uploaded') 
+  @MappableValue('uploaded')
   uploaded,
 
-  @MappableValue('processed') 
+  @MappableValue('processed')
   processed,
 
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum OpenAiFileStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OpenAiFileStatus> get $valuesDefined => values.where((value) => value != OpenAiFileStatus.unknown).toList();
+  static List<OpenAiFileStatus> get $valuesDefined =>
+      values.where((value) => value != OpenAiFileStatus.unknown).toList();
 }

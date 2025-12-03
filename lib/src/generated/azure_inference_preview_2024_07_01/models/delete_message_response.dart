@@ -10,11 +10,7 @@ part 'delete_message_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteMessageResponse with DeleteMessageResponseMappable {
-  const DeleteMessageResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectEnum,
-  });
+  const DeleteMessageResponse({required this.id, required this.deleted, required this.objectEnum});
 
   final String id;
   final bool deleted;
@@ -22,6 +18,4 @@ class DeleteMessageResponse with DeleteMessageResponseMappable {
   final DeleteMessageResponseObjectObjectEnum objectEnum;
 
   static DeleteMessageResponse fromJson(Map<String, dynamic> json) => DeleteMessageResponseMapper.fromJson(json);
-
 }
-

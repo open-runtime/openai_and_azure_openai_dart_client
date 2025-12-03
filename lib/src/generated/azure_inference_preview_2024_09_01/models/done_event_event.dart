@@ -8,10 +8,10 @@ part 'done_event_event.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum DoneEventEvent {
-  @MappableValue('done') 
+  @MappableValue('done')
   done,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -11,8 +11,8 @@ part 'url_citation.mapper.dart';
 
 /// A citation for a web resource used to generate a model response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UrlCitation with UrlCitationMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url_citation')
+class UrlCitation extends Annotation with UrlCitationMappable {
   const UrlCitation({
     required this.url,
     required this.title,
@@ -30,6 +30,4 @@ class UrlCitation with UrlCitationMappable {
   final int endIndex;
 
   static UrlCitation fromJson(Map<String, dynamic> json) => UrlCitationMapper.fromJson(json);
-
 }
-

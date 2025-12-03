@@ -19,18 +19,13 @@ part 'realtime_beta_client_event_input_audio_buffer_append.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventInputAudioBufferAppend with RealtimeBetaClientEventInputAudioBufferAppendMappable {
-  const RealtimeBetaClientEventInputAudioBufferAppend({
-    required this.type,
-    required this.audio,
-    this.eventId,
-  });
+  const RealtimeBetaClientEventInputAudioBufferAppend({required this.type, required this.audio, this.eventId});
 
   final dynamic type;
   final String audio;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventInputAudioBufferAppend fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventInputAudioBufferAppendMapper.fromJson(json);
-
+  static RealtimeBetaClientEventInputAudioBufferAppend fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventInputAudioBufferAppendMapper.fromJson(json);
 }
-

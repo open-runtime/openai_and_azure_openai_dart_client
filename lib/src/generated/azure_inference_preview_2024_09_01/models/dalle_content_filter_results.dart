@@ -11,12 +11,7 @@ part 'dalle_content_filter_results.mapper.dart';
 /// Information about the content filtering results.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleContentFilterResults with DalleContentFilterResultsMappable {
-  const DalleContentFilterResults({
-    this.sexual,
-    this.violence,
-    this.hate,
-    this.selfHarm,
-  });
+  const DalleContentFilterResults({this.sexual, this.violence, this.hate, this.selfHarm});
 
   final ContentFilterSeverityResult? sexual;
   final ContentFilterSeverityResult? violence;
@@ -24,7 +19,6 @@ class DalleContentFilterResults with DalleContentFilterResultsMappable {
   @MappableField(key: 'self_harm')
   final ContentFilterSeverityResult? selfHarm;
 
-  static DalleContentFilterResults fromJson(Map<String, dynamic> json) => DalleContentFilterResultsMapper.fromJson(json);
-
+  static DalleContentFilterResults fromJson(Map<String, dynamic> json) =>
+      DalleContentFilterResultsMapper.fromJson(json);
 }
-

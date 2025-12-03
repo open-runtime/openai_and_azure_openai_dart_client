@@ -6,17 +6,18 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'life_cycle_status.mapper.dart';
 
-/// The life cycle status of a model.///
+/// The life cycle status of a model.
+///
 /// Note: A model can be promoted from "preview" to "generally-available", but never from "generally-available" to "preview".
 @MappableEnum(defaultValue: 'unknown')
 enum LifeCycleStatus {
-  @MappableValue('preview') 
+  @MappableValue('preview')
   preview,
 
-  @MappableValue('generally-available') 
+  @MappableValue('generally-available')
   generallyAvailable,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

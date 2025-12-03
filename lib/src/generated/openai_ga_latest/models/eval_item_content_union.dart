@@ -16,7 +16,17 @@ part 'eval_item_content_union.mapper.dart';
 
 /// Inputs to the model - can contain template strings.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [EvalItemContentUnionInputTextContent, EvalItemContentUnionVariant2, EvalItemContentUnionVariant3, EvalItemContentUnionInputAudio, EvalItemContentUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    EvalItemContentUnionInputTextContent,
+    EvalItemContentUnionVariant2,
+    EvalItemContentUnionVariant3,
+    EvalItemContentUnionInputAudio,
+    EvalItemContentUnionVariantString,
+  ],
+)
 sealed class EvalItemContentUnion with EvalItemContentUnionMappable {
   const EvalItemContentUnion();
 
@@ -43,20 +53,17 @@ extension EvalItemContentUnionDeserializer on EvalItemContentUnion {
       return EvalItemContentUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for EvalItemContentUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalItemContentUnionInputTextContent extends EvalItemContentUnion with EvalItemContentUnionInputTextContentMappable {
+class EvalItemContentUnionInputTextContent extends EvalItemContentUnion
+    with EvalItemContentUnionInputTextContentMappable {
   final InputTextContentType type;
   final String text;
 
-  const EvalItemContentUnionInputTextContent({
-    required this.type,
-    required this.text,
-  });
+  const EvalItemContentUnionInputTextContent({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -64,10 +71,7 @@ class EvalItemContentUnionVariant2 extends EvalItemContentUnion with EvalItemCon
   final EvalItemContentUnionVariant2Type type;
   final String text;
 
-  const EvalItemContentUnionVariant2({
-    required this.type,
-    required this.text,
-  });
+  const EvalItemContentUnionVariant2({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -77,11 +81,7 @@ class EvalItemContentUnionVariant3 extends EvalItemContentUnion with EvalItemCon
   final String imageUrl;
   final String? detail;
 
-  const EvalItemContentUnionVariant3({
-    required this.type,
-    required this.imageUrl,
-    required this.detail,
-  });
+  const EvalItemContentUnionVariant3({required this.type, required this.imageUrl, required this.detail});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -90,17 +90,12 @@ class EvalItemContentUnionInputAudio extends EvalItemContentUnion with EvalItemC
   @MappableField(key: 'input_audio')
   final InputAudioInputAudio inputAudioInputAudio;
 
-  const EvalItemContentUnionInputAudio({
-    required this.type,
-    required this.inputAudioInputAudio,
-  });
+  const EvalItemContentUnionInputAudio({required this.type, required this.inputAudioInputAudio});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalItemContentUnionVariantString extends EvalItemContentUnion with EvalItemContentUnionVariantStringMappable {
   final String value;
 
-  const EvalItemContentUnionVariantString({
-    required this.value,
-  });
+  const EvalItemContentUnionVariantString({required this.value});
 }

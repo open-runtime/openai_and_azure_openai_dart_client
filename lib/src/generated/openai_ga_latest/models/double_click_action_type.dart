@@ -9,10 +9,10 @@ part 'double_click_action_type.mapper.dart';
 /// Specifies the event type. For a double click action, this property is always set to `double_click`.
 @MappableEnum(defaultValue: 'unknown')
 enum DoubleClickActionType {
-  @MappableValue('double_click') 
+  @MappableValue('double_click')
   doubleClick,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum DoubleClickActionType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DoubleClickActionType> get $valuesDefined => values.where((value) => value != DoubleClickActionType.unknown).toList();
+  static List<DoubleClickActionType> get $valuesDefined =>
+      values.where((value) => value != DoubleClickActionType.unknown).toList();
 }

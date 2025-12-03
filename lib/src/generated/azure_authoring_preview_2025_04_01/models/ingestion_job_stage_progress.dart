@@ -11,13 +11,7 @@ part 'ingestion_job_stage_progress.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class IngestionJobStageProgress with IngestionJobStageProgressMappable {
-  const IngestionJobStageProgress({
-    this.name,
-    this.totalItems,
-    this.processedItems,
-    this.state,
-    this.subStageProgress,
-  });
+  const IngestionJobStageProgress({this.name, this.totalItems, this.processedItems, this.state, this.subStageProgress});
 
   final String? name;
   final int? totalItems;
@@ -25,7 +19,6 @@ class IngestionJobStageProgress with IngestionJobStageProgressMappable {
   final OperationState? state;
   final List<IngestionJobStageProgress>? subStageProgress;
 
-  static IngestionJobStageProgress fromJson(Map<String, dynamic> json) => IngestionJobStageProgressMapper.fromJson(json);
-
+  static IngestionJobStageProgress fromJson(Map<String, dynamic> json) =>
+      IngestionJobStageProgressMapper.fromJson(json);
 }
-

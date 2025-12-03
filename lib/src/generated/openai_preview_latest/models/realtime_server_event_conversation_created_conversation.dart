@@ -7,17 +7,14 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_server_event_conversation_created_conversation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationCreatedConversation with RealtimeServerEventConversationCreatedConversationMappable {
-  const RealtimeServerEventConversationCreatedConversation({
-    this.id,
-    this.objectField,
-  });
+class RealtimeServerEventConversationCreatedConversation
+    with RealtimeServerEventConversationCreatedConversationMappable {
+  const RealtimeServerEventConversationCreatedConversation({this.id, this.objectField});
 
   final String? id;
   @MappableField(key: 'object')
   final String? objectField;
 
-  static RealtimeServerEventConversationCreatedConversation fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationCreatedConversationMapper.fromJson(json);
-
+  static RealtimeServerEventConversationCreatedConversation fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationCreatedConversationMapper.fromJson(json);
 }
-

@@ -13,8 +13,9 @@ part 'create_eval_completions_run_data_source.mapper.dart';
 
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSourceMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'completions')
+class CreateEvalCompletionsRunDataSource extends EvalRunDataSourceUnion
+    with CreateEvalCompletionsRunDataSourceMappable {
   const CreateEvalCompletionsRunDataSource({
     required this.source,
     this.inputMessages,
@@ -31,7 +32,6 @@ class CreateEvalCompletionsRunDataSource with CreateEvalCompletionsRunDataSource
   final String? model;
   final CreateEvalCompletionsRunDataSourceType type;
 
-  static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceMapper.fromJson(json);
 }
-

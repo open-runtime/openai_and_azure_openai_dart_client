@@ -17,10 +17,12 @@ import 'text_annotation_type2.dart';
 
 part 'text_annotation.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  TextAnnotationFileCitation,
-  TextAnnotationFilePath
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [TextAnnotationFileCitation, TextAnnotationFilePath],
+)
 sealed class TextAnnotation with TextAnnotationMappable {
   const TextAnnotation();
 
@@ -30,20 +32,18 @@ sealed class TextAnnotation with TextAnnotationMappable {
 }
 
 extension TextAnnotationUnionDeserializer on TextAnnotation {
-  static TextAnnotation tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static TextAnnotation tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      TextAnnotationFileCitation: 'file_citation',
-      TextAnnotationFilePath: 'file_path',
+      MessageContentTextAnnotationsFileCitationObject: 'file_citation',
+      MessageContentTextAnnotationsFilePathObject: 'file_path',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[TextAnnotationFileCitation] => TextAnnotationFileCitationMapper.fromJson(json),
-      _ when value == effective[TextAnnotationFilePath] => TextAnnotationFilePathMapper.fromJson(json),
+      _ when value == effective[MessageContentTextAnnotationsFileCitationObject] =>
+        MessageContentTextAnnotationsFileCitationObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentTextAnnotationsFilePathObject] =>
+        MessageContentTextAnnotationsFilePathObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for TextAnnotation'),
     };
   }

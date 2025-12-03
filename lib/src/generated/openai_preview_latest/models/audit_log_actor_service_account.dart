@@ -9,13 +9,10 @@ part 'audit_log_actor_service_account.mapper.dart';
 /// The service account that performed the audit logged action.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActorServiceAccount with AuditLogActorServiceAccountMappable {
-  const AuditLogActorServiceAccount({
-    this.id,
-  });
+  const AuditLogActorServiceAccount({this.id});
 
   final String? id;
 
-  static AuditLogActorServiceAccount fromJson(Map<String, dynamic> json) => AuditLogActorServiceAccountMapper.fromJson(json);
-
+  static AuditLogActorServiceAccount fromJson(Map<String, dynamic> json) =>
+      AuditLogActorServiceAccountMapper.fromJson(json);
 }
-

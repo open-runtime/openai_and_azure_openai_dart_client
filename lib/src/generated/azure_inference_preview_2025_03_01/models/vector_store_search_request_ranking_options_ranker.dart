@@ -8,13 +8,13 @@ part 'vector_store_search_request_ranking_options_ranker.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VectorStoreSearchRequestRankingOptionsRanker {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('default-2024-11-15') 
+  @MappableValue('default-2024-11-15')
   default20241115,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum VectorStoreSearchRequestRankingOptionsRanker {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<VectorStoreSearchRequestRankingOptionsRanker> get $valuesDefined => values.where((value) => value != VectorStoreSearchRequestRankingOptionsRanker.unknown).toList();
+  static List<VectorStoreSearchRequestRankingOptionsRanker> get $valuesDefined =>
+      values.where((value) => value != VectorStoreSearchRequestRankingOptionsRanker.unknown).toList();
 }

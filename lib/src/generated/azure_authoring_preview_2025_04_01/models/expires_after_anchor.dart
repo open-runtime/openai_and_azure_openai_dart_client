@@ -9,10 +9,10 @@ part 'expires_after_anchor.mapper.dart';
 /// Defines the anchor relative to what time the absolute expiration should be generated from.
 @MappableEnum(defaultValue: 'unknown')
 enum ExpiresAfterAnchor {
-  @MappableValue('created_at') 
+  @MappableValue('created_at')
   createdAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ExpiresAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ExpiresAfterAnchor> get $valuesDefined => values.where((value) => value != ExpiresAfterAnchor.unknown).toList();
+  static List<ExpiresAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != ExpiresAfterAnchor.unknown).toList();
 }

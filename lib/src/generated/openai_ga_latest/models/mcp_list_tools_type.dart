@@ -10,10 +10,10 @@ part 'mcp_list_tools_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum McpListToolsType {
-  @MappableValue('mcp_list_tools') 
+  @MappableValue('mcp_list_tools')
   mcpListTools,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum McpListToolsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<McpListToolsType> get $valuesDefined => values.where((value) => value != McpListToolsType.unknown).toList();
+  static List<McpListToolsType> get $valuesDefined =>
+      values.where((value) => value != McpListToolsType.unknown).toList();
 }

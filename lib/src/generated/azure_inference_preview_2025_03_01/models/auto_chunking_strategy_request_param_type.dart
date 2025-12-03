@@ -9,10 +9,10 @@ part 'auto_chunking_strategy_request_param_type.mapper.dart';
 /// Always `auto`.
 @MappableEnum(defaultValue: 'unknown')
 enum AutoChunkingStrategyRequestParamType {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum AutoChunkingStrategyRequestParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AutoChunkingStrategyRequestParamType> get $valuesDefined => values.where((value) => value != AutoChunkingStrategyRequestParamType.unknown).toList();
+  static List<AutoChunkingStrategyRequestParamType> get $valuesDefined =>
+      values.where((value) => value != AutoChunkingStrategyRequestParamType.unknown).toList();
 }

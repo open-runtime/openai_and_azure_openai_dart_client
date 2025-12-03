@@ -11,10 +11,10 @@ part 'double_click_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum DoubleClickType {
-  @MappableValue('double_click') 
+  @MappableValue('double_click')
   doubleClick,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

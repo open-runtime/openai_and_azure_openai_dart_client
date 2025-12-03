@@ -9,16 +9,16 @@ part 'web_search_tool_search_context_size_search_context_size.mapper.dart';
 /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchToolSearchContextSizeSearchContextSize {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum WebSearchToolSearchContextSizeSearchContextSize {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchToolSearchContextSizeSearchContextSize> get $valuesDefined => values.where((value) => value != WebSearchToolSearchContextSizeSearchContextSize.unknown).toList();
+  static List<WebSearchToolSearchContextSizeSearchContextSize> get $valuesDefined =>
+      values.where((value) => value != WebSearchToolSearchContextSizeSearchContextSize.unknown).toList();
 }

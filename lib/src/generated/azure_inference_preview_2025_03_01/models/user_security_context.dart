@@ -9,12 +9,7 @@ part 'user_security_context.mapper.dart';
 /// User security context contains several parameters that describe the AI application itself, and the end user that interacts with the AI application. These fields assist your security operations teams to investigate and mitigate security incidents by providing a comprehensive approach to protecting your AI applications. [Learn more](https://aka.ms/TP4AI/Documentation/EndUserContext) about protecting AI applications using Microsoft Defender for Cloud.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserSecurityContext with UserSecurityContextMappable {
-  const UserSecurityContext({
-    this.applicationName,
-    this.endUserId,
-    this.endUserTenantId,
-    this.sourceIp,
-  });
+  const UserSecurityContext({this.applicationName, this.endUserId, this.endUserTenantId, this.sourceIp});
 
   @MappableField(key: 'application_name')
   final String? applicationName;
@@ -26,6 +21,4 @@ class UserSecurityContext with UserSecurityContextMappable {
   final String? sourceIp;
 
   static UserSecurityContext fromJson(Map<String, dynamic> json) => UserSecurityContextMapper.fromJson(json);
-
 }
-

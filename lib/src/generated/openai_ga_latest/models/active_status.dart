@@ -9,15 +9,11 @@ import 'active_status_type.dart';
 part 'active_status.mapper.dart';
 
 /// Indicates that a thread is active.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ActiveStatus with ActiveStatusMappable {
-  const ActiveStatus({
-    this.type = ActiveStatusType.active,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'active')
+class ActiveStatus extends ThreadResourceStatusUnion with ActiveStatusMappable {
+  const ActiveStatus({this.type = ActiveStatusType.active});
 
   final ActiveStatusType type;
 
   static ActiveStatus fromJson(Map<String, dynamic> json) => ActiveStatusMapper.fromJson(json);
-
 }
-

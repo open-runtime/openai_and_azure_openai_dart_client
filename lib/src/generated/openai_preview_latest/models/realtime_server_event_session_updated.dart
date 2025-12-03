@@ -13,20 +13,15 @@ part 'realtime_server_event_session_updated.mapper.dart';
 /// Returned when a session is updated with a `session.update` event, unless .
 /// there is an error.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventSessionUpdated with RealtimeServerEventSessionUpdatedMappable {
-  const RealtimeServerEventSessionUpdated({
-    required this.eventId,
-    required this.type,
-    required this.session,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'session.updated')
+class RealtimeServerEventSessionUpdated extends RealtimeServerEvent with RealtimeServerEventSessionUpdatedMappable {
+  const RealtimeServerEventSessionUpdated({required this.eventId, required this.type, required this.session});
 
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventSessionUpdatedType type;
   final RealtimeSession session;
 
-  static RealtimeServerEventSessionUpdated fromJson(Map<String, dynamic> json) => RealtimeServerEventSessionUpdatedMapper.fromJson(json);
-
+  static RealtimeServerEventSessionUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventSessionUpdatedMapper.fromJson(json);
 }
-

@@ -11,17 +11,11 @@ part 'endpoint_mi_connection.mapper.dart';
 /// Endpoint Managed Identity connection.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EndpointMiConnection with EndpointMiConnectionMappable {
-  const EndpointMiConnection({
-    required this.kind,
-    this.endpoint,
-    this.resourceId,
-  });
+  const EndpointMiConnection({required this.kind, this.endpoint, this.resourceId});
 
   final ConnectionType kind;
   final String? endpoint;
   final String? resourceId;
 
   static EndpointMiConnection fromJson(Map<String, dynamic> json) => EndpointMiConnectionMapper.fromJson(json);
-
 }
-

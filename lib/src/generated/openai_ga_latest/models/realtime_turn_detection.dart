@@ -10,8 +10,5 @@ part 'realtime_turn_detection.mapper.dart';
 class RealtimeTurnDetection with RealtimeTurnDetectionMappable {
   const RealtimeTurnDetection();
 
-
   static RealtimeTurnDetection fromJson(Map<String, dynamic> json) => RealtimeTurnDetectionMapper.fromJson(json);
-
 }
-

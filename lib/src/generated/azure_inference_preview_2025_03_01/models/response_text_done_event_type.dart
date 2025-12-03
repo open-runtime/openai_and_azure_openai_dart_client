@@ -11,10 +11,10 @@ part 'response_text_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseTextDoneEventType {
   /// Incorrect name has been replaced. Original name: `response.output_text.done`.
-  @MappableValue('response.output_text.done') 
+  @MappableValue('response.output_text.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseTextDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseTextDoneEventType> get $valuesDefined => values.where((value) => value != ResponseTextDoneEventType.unknown).toList();
+  static List<ResponseTextDoneEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseTextDoneEventType.unknown).toList();
 }

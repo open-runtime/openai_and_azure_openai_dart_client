@@ -9,10 +9,10 @@ part 'batch_request_input_method.mapper.dart';
 /// The HTTP method to be used for the request. Currently only `POST` is supported.
 @MappableEnum(defaultValue: 'unknown')
 enum BatchRequestInputMethod {
-  @MappableValue('POST') 
+  @MappableValue('POST')
   post,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum BatchRequestInputMethod {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<BatchRequestInputMethod> get $valuesDefined => values.where((value) => value != BatchRequestInputMethod.unknown).toList();
+  static List<BatchRequestInputMethod> get $valuesDefined =>
+      values.where((value) => value != BatchRequestInputMethod.unknown).toList();
 }

@@ -14,8 +14,9 @@ part 'eval_stored_completions_data_source_config.mapper.dart';
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
 /// `item` and `sample` are both defined when using this data source config.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalStoredCompletionsDataSourceConfig with EvalStoredCompletionsDataSourceConfigMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
+class EvalStoredCompletionsDataSourceConfig extends EvalDataSourceConfigUnion
+    with EvalStoredCompletionsDataSourceConfigMappable {
   const EvalStoredCompletionsDataSourceConfig({
     required this.schema,
     this.metadata,
@@ -26,7 +27,6 @@ class EvalStoredCompletionsDataSourceConfig with EvalStoredCompletionsDataSource
   final Metadata? metadata;
   final EvalStoredCompletionsDataSourceConfigType type;
 
-  static EvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) => EvalStoredCompletionsDataSourceConfigMapper.fromJson(json);
-
+  static EvalStoredCompletionsDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      EvalStoredCompletionsDataSourceConfigMapper.fromJson(json);
 }
-

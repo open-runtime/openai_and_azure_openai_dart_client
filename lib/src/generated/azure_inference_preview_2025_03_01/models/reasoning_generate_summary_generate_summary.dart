@@ -14,13 +14,13 @@ part 'reasoning_generate_summary_generate_summary.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningGenerateSummaryGenerateSummary {
-  @MappableValue('concise') 
+  @MappableValue('concise')
   concise,
 
-  @MappableValue('detailed') 
+  @MappableValue('detailed')
   detailed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ReasoningGenerateSummaryGenerateSummary {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ReasoningGenerateSummaryGenerateSummary> get $valuesDefined => values.where((value) => value != ReasoningGenerateSummaryGenerateSummary.unknown).toList();
+  static List<ReasoningGenerateSummaryGenerateSummary> get $valuesDefined =>
+      values.where((value) => value != ReasoningGenerateSummaryGenerateSummary.unknown).toList();
 }

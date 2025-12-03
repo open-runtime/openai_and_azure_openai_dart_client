@@ -9,10 +9,10 @@ part 'refusal_content_type.mapper.dart';
 /// The type of the refusal. Always `refusal`.
 @MappableEnum(defaultValue: 'unknown')
 enum RefusalContentType {
-  @MappableValue('refusal') 
+  @MappableValue('refusal')
   refusal,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RefusalContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RefusalContentType> get $valuesDefined => values.where((value) => value != RefusalContentType.unknown).toList();
+  static List<RefusalContentType> get $valuesDefined =>
+      values.where((value) => value != RefusalContentType.unknown).toList();
 }

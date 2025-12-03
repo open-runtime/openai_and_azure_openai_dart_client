@@ -9,10 +9,10 @@ part 'tool_type10.mapper.dart';
 /// The type of the tool. Always `apply_patch`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType10 {
-  @MappableValue('apply_patch') 
+  @MappableValue('apply_patch')
   applyPatch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -11,8 +11,8 @@ import 'function_shell_call_item_status.dart';
 part 'function_shell_call_item_param.mapper.dart';
 
 /// A tool representing a request to execute one or more shell commands.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionShellCallItemParam with FunctionShellCallItemParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
+class FunctionShellCallItemParam extends ItemUnion with FunctionShellCallItemParamMappable {
   const FunctionShellCallItemParam({
     required this.callId,
     required this.action,
@@ -28,7 +28,6 @@ class FunctionShellCallItemParam with FunctionShellCallItemParamMappable {
   final String? id;
   final FunctionShellCallItemStatus? status;
 
-  static FunctionShellCallItemParam fromJson(Map<String, dynamic> json) => FunctionShellCallItemParamMapper.fromJson(json);
-
+  static FunctionShellCallItemParam fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallItemParamMapper.fromJson(json);
 }
-

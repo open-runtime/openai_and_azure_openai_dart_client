@@ -10,10 +10,10 @@ part 'usage_embeddings_result_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum UsageEmbeddingsResultObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.usage.embeddings.result`.
-  @MappableValue('organization.usage.embeddings.result') 
+  @MappableValue('organization.usage.embeddings.result')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum UsageEmbeddingsResultObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<UsageEmbeddingsResultObjectObjectEnum> get $valuesDefined => values.where((value) => value != UsageEmbeddingsResultObjectObjectEnum.unknown).toList();
+  static List<UsageEmbeddingsResultObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != UsageEmbeddingsResultObjectObjectEnum.unknown).toList();
 }

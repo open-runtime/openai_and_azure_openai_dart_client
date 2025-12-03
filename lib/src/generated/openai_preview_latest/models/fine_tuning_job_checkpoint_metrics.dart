@@ -32,7 +32,6 @@ class FineTuningJobCheckpointMetrics with FineTuningJobCheckpointMetricsMappable
   @MappableField(key: 'full_valid_mean_token_accuracy')
   final num? fullValidMeanTokenAccuracy;
 
-  static FineTuningJobCheckpointMetrics fromJson(Map<String, dynamic> json) => FineTuningJobCheckpointMetricsMapper.fromJson(json);
-
+  static FineTuningJobCheckpointMetrics fromJson(Map<String, dynamic> json) =>
+      FineTuningJobCheckpointMetricsMapper.fromJson(json);
 }
-

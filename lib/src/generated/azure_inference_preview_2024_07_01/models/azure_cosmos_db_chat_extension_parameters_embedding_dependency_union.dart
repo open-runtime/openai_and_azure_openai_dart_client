@@ -9,8 +9,16 @@ import 'on_your_data_deployment_name_vectorization_source.dart';
 
 part 'azure_cosmos_db_chat_extension_parameters_embedding_dependency_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource, AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource])
-sealed class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource,
+    AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource,
+  ],
+)
+sealed class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
+    with AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionMappable {
   const AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion();
 
   static AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion fromJson(Map<String, dynamic> json) {
@@ -18,30 +26,37 @@ sealed class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion with A
   }
 }
 
-extension AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionDeserializer on AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion {
+extension AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionDeserializer
+    on AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion {
   static AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion tryDeserialize(Map<String, dynamic> json) {
     try {
-      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMapper.fromJson(json);
+      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMapper.fromJson(
+        json,
+      );
     } catch (_) {}
     try {
-      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMapper.fromJson(json);
+      return AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMapper.fromJson(
+        json,
+      );
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMappable {
-
-
+class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource
+    extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
+    with AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSourceMappable {
   const AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataEndpointVectorizationSource();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion with AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMappable {
-
-
+class AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource
+    extends AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnion
+    with
+        AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSourceMappable {
   const AzureCosmosDbChatExtensionParametersEmbeddingDependencyUnionOnYourDataDeploymentNameVectorizationSource();
 }

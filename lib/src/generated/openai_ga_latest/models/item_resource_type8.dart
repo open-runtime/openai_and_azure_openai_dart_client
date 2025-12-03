@@ -10,10 +10,10 @@ part 'item_resource_type8.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceType8 {
-  @MappableValue('local_shell_call_output') 
+  @MappableValue('local_shell_call_output')
   localShellCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ItemResourceType8 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceType8> get $valuesDefined => values.where((value) => value != ItemResourceType8.unknown).toList();
+  static List<ItemResourceType8> get $valuesDefined =>
+      values.where((value) => value != ItemResourceType8.unknown).toList();
 }

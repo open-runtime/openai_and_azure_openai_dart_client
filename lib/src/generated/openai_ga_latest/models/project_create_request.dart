@@ -10,15 +10,10 @@ part 'project_create_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ProjectCreateRequest with ProjectCreateRequestMappable {
-  const ProjectCreateRequest({
-    required this.name,
-    this.geography,
-  });
+  const ProjectCreateRequest({required this.name, this.geography});
 
   final String name;
   final ProjectCreateRequestGeography? geography;
 
   static ProjectCreateRequest fromJson(Map<String, dynamic> json) => ProjectCreateRequestMapper.fromJson(json);
-
 }
-

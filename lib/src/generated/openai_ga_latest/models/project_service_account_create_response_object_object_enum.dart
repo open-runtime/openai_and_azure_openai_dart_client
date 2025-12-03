@@ -10,10 +10,10 @@ part 'project_service_account_create_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectServiceAccountCreateResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.project.service_account`.
-  @MappableValue('organization.project.service_account') 
+  @MappableValue('organization.project.service_account')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ProjectServiceAccountCreateResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectServiceAccountCreateResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectServiceAccountCreateResponseObjectObjectEnum.unknown).toList();
+  static List<ProjectServiceAccountCreateResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectServiceAccountCreateResponseObjectObjectEnum.unknown).toList();
 }

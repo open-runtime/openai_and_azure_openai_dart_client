@@ -8,15 +8,10 @@ part 'costs_result_amount.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CostsResultAmount with CostsResultAmountMappable {
-  const CostsResultAmount({
-    this.value,
-    this.currency,
-  });
+  const CostsResultAmount({this.value, this.currency});
 
   final num? value;
   final String? currency;
 
   static CostsResultAmount fromJson(Map<String, dynamic> json) => CostsResultAmountMapper.fromJson(json);
-
 }
-

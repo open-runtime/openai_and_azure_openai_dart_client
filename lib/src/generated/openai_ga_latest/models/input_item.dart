@@ -14,9 +14,7 @@ import 'input_item_type.dart';
 
 part 'input_item.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  InputItemMessage
-])
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [InputItemMessage])
 sealed class InputItem with InputItemMappable {
   const InputItem();
 
@@ -26,18 +24,12 @@ sealed class InputItem with InputItemMappable {
 }
 
 extension InputItemUnionDeserializer on InputItem {
-  static InputItem tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
-    final mappingFallback = const <Type, Object?>{
-      InputItemMessage: 'message',
-    };
+  static InputItem tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
+    final mappingFallback = const <Type, Object?>{EasyInputMessage: 'message'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[InputItemMessage] => InputItemMessageMapper.fromJson(json),
+      _ when value == effective[EasyInputMessage] => EasyInputMessageMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for InputItem'),
     };
   }
@@ -49,9 +41,5 @@ class InputItemMessage extends InputItem with InputItemMessageMappable {
   final InputItemContentUnion content;
   final InputItemType? type;
 
-  const InputItemMessage({
-    required this.role,
-    required this.content,
-    required this.type,
-  });
+  const InputItemMessage({required this.role, required this.content, required this.type});
 }

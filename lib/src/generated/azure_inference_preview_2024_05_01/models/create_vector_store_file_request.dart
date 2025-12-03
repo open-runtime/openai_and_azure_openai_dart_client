@@ -8,14 +8,11 @@ part 'create_vector_store_file_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreFileRequest with CreateVectorStoreFileRequestMappable {
-  const CreateVectorStoreFileRequest({
-    required this.fileId,
-  });
+  const CreateVectorStoreFileRequest({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static CreateVectorStoreFileRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreFileRequestMapper.fromJson(json);
-
+  static CreateVectorStoreFileRequest fromJson(Map<String, dynamic> json) =>
+      CreateVectorStoreFileRequestMapper.fromJson(json);
 }
-

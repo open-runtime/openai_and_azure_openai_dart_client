@@ -8,7 +8,7 @@
 part of 'response_refusal_done_event.dart';
 
 class ResponseRefusalDoneEventMapper
-    extends ClassMapperBase<ResponseRefusalDoneEvent> {
+    extends SubClassMapperBase<ResponseRefusalDoneEvent> {
   ResponseRefusalDoneEventMapper._();
 
   static ResponseRefusalDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseRefusalDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseRefusalDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseRefusalDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -65,6 +66,14 @@ class ResponseRefusalDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.refusal.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseRefusalDoneEvent _instantiate(DecodingData data) {
     return ResponseRefusalDoneEvent(
@@ -145,7 +154,8 @@ abstract class ResponseRefusalDoneEventCopyWith<
   $In extends ResponseRefusalDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseRefusalDoneEventType? type,
     String? itemId,

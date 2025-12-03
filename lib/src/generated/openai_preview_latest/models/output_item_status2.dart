@@ -11,22 +11,22 @@ part 'output_item_status2.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemStatus2 {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('searching') 
+  @MappableValue('searching')
   searching,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -35,5 +35,6 @@ enum OutputItemStatus2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputItemStatus2> get $valuesDefined => values.where((value) => value != OutputItemStatus2.unknown).toList();
+  static List<OutputItemStatus2> get $valuesDefined =>
+      values.where((value) => value != OutputItemStatus2.unknown).toList();
 }

@@ -11,17 +11,11 @@ part 'serverless_compute.mapper.dart';
 /// Serverless compute.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ServerlessCompute with ServerlessComputeMappable {
-  const ServerlessCompute({
-    required this.kind,
-    this.sku,
-    this.instanceCount,
-  });
+  const ServerlessCompute({required this.kind, this.sku, this.instanceCount});
 
   final ComputeType kind;
   final String? sku;
   final int? instanceCount;
 
   static ServerlessCompute fromJson(Map<String, dynamic> json) => ServerlessComputeMapper.fromJson(json);
-
 }
-

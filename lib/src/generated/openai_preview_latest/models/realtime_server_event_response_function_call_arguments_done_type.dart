@@ -11,10 +11,10 @@ part 'realtime_server_event_response_function_call_arguments_done_type.mapper.da
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventResponseFunctionCallArgumentsDoneType {
   /// Incorrect name has been replaced. Original name: `response.function_call_arguments.done`.
-  @MappableValue('response.function_call_arguments.done') 
+  @MappableValue('response.function_call_arguments.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeServerEventResponseFunctionCallArgumentsDoneType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventResponseFunctionCallArgumentsDoneType> get $valuesDefined => values.where((value) => value != RealtimeServerEventResponseFunctionCallArgumentsDoneType.unknown).toList();
+  static List<RealtimeServerEventResponseFunctionCallArgumentsDoneType> get $valuesDefined =>
+      values.where((value) => value != RealtimeServerEventResponseFunctionCallArgumentsDoneType.unknown).toList();
 }

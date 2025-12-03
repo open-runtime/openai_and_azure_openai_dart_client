@@ -122,7 +122,6 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   @MappableField(key: 'max_tokens')
   final int? maxTokens;
 
-  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestMapper.fromJson(json);
-
+  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestMapper.fromJson(json);
 }
-

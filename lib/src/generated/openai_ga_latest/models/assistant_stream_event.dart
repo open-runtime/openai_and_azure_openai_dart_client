@@ -31,9 +31,12 @@ part 'assistant_stream_event.mapper.dart';
 /// in your code. See the [Assistants API quickstart](https://platform.openai.com/docs/assistants/overview) to learn how to.
 /// integrate the Assistants API with streaming.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'event', includeSubClasses: [
-  AssistantStreamEventError
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'event',
+  includeSubClasses: [AssistantStreamEventError],
+)
 sealed class AssistantStreamEvent with AssistantStreamEventMappable {
   const AssistantStreamEvent();
 
@@ -48,13 +51,11 @@ extension AssistantStreamEventUnionDeserializer on AssistantStreamEvent {
     String key = 'event',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      AssistantStreamEventError: 'error',
-    };
+    final mappingFallback = const <Type, Object?>{ErrorEvent: 'error'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[AssistantStreamEventError] => AssistantStreamEventErrorMapper.fromJson(json),
+      _ when value == effective[ErrorEvent] => ErrorEventMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for AssistantStreamEvent'),
     };
   }
@@ -65,8 +66,5 @@ class AssistantStreamEventError extends AssistantStreamEvent with AssistantStrea
   final AssistantStreamEventEvent event;
   final Error data;
 
-  const AssistantStreamEventError({
-    required this.event,
-    required this.data,
-  });
+  const AssistantStreamEventError({required this.event, required this.data});
 }

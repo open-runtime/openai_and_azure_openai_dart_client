@@ -9,10 +9,10 @@ part 'response_format_text_grammar_type.mapper.dart';
 /// The type of response format being defined. Always `grammar`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormatTextGrammarType {
-  @MappableValue('grammar') 
+  @MappableValue('grammar')
   grammar,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseFormatTextGrammarType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFormatTextGrammarType> get $valuesDefined => values.where((value) => value != ResponseFormatTextGrammarType.unknown).toList();
+  static List<ResponseFormatTextGrammarType> get $valuesDefined =>
+      values.where((value) => value != ResponseFormatTextGrammarType.unknown).toList();
 }

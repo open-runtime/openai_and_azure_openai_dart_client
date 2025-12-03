@@ -11,8 +11,16 @@ part 'realtime_response_create_params_max_response_output_tokens_union.mapper.da
 /// limit output tokens, or `inf` for the maximum available tokens for a.
 /// given model. Defaults to `inf`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString, RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt])
-sealed class RealtimeResponseCreateParamsMaxResponseOutputTokensUnion with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString,
+    RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt,
+  ],
+)
+sealed class RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+    with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionMappable {
   const RealtimeResponseCreateParamsMaxResponseOutputTokensUnion();
 
   static RealtimeResponseCreateParamsMaxResponseOutputTokensUnion fromJson(dynamic json) {
@@ -20,7 +28,8 @@ sealed class RealtimeResponseCreateParamsMaxResponseOutputTokensUnion with Realt
   }
 }
 
-extension RealtimeResponseCreateParamsMaxResponseOutputTokensUnionDeserializer on RealtimeResponseCreateParamsMaxResponseOutputTokensUnion {
+extension RealtimeResponseCreateParamsMaxResponseOutputTokensUnionDeserializer
+    on RealtimeResponseCreateParamsMaxResponseOutputTokensUnion {
   static RealtimeResponseCreateParamsMaxResponseOutputTokensUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -36,31 +45,34 @@ extension RealtimeResponseCreateParamsMaxResponseOutputTokensUnionDeserializer o
       return RealtimeResponseCreateParamsMaxResponseOutputTokensUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeResponseCreateParamsMaxResponseOutputTokensUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeResponseCreateParamsMaxResponseOutputTokensUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString extends RealtimeResponseCreateParamsMaxResponseOutputTokensUnion with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantStringMappable {
+class RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString
+    extends RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+    with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt extends RealtimeResponseCreateParamsMaxResponseOutputTokensUnion with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantIntMappable {
+class RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt
+    extends RealtimeResponseCreateParamsMaxResponseOutputTokensUnion
+    with RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeResponseCreateParamsMaxResponseOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension RealtimeResponseCreateParamsMaxResponseOutputTokensUnionJsonValue on RealtimeResponseCreateParamsMaxResponseOutputTokensUnion {
+extension RealtimeResponseCreateParamsMaxResponseOutputTokensUnionJsonValue
+    on RealtimeResponseCreateParamsMaxResponseOutputTokensUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -90,7 +102,9 @@ class RealtimeResponseCreateParamsMaxResponseOutputTokensUnionHook extends Mappi
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! RealtimeResponseCreateParamsMaxResponseOutputTokensUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! RealtimeResponseCreateParamsMaxResponseOutputTokensUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return RealtimeResponseCreateParamsMaxResponseOutputTokensUnion.fromJson(value);
     }

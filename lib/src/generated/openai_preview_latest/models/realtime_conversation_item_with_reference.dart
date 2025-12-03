@@ -41,7 +41,6 @@ class RealtimeConversationItemWithReference with RealtimeConversationItemWithRef
   final String? arguments;
   final String? output;
 
-  static RealtimeConversationItemWithReference fromJson(Map<String, dynamic> json) => RealtimeConversationItemWithReferenceMapper.fromJson(json);
-
+  static RealtimeConversationItemWithReference fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemWithReferenceMapper.fromJson(json);
 }
-

@@ -21,6 +21,4 @@ class TokenCountsResource with TokenCountsResourceMappable {
   final TokenCountsResourceObjectObjectEnum objectEnum;
 
   static TokenCountsResource fromJson(Map<String, dynamic> json) => TokenCountsResourceMapper.fromJson(json);
-
 }
-

@@ -43,6 +43,4 @@ class Eval with EvalMappable {
   final EvalObjectObjectEnum objectEnum;
 
   static Eval fromJson(Map<String, dynamic> json) => EvalMapper.fromJson(json);
-
 }
-

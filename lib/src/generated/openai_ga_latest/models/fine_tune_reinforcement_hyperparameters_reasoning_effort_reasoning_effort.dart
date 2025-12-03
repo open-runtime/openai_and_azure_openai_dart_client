@@ -11,19 +11,19 @@ part 'fine_tune_reinforcement_hyperparameters_reasoning_effort_reasoning_effort.
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort {
   /// The name has been replaced because it contains a keyword. Original name: `default`.
-  @MappableValue('default') 
+  @MappableValue('default')
   valueDefault,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,7 @@ enum FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort> get $valuesDefined => values.where((value) => value != FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort.unknown).toList();
+  static List<FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort> get $valuesDefined => values
+      .where((value) => value != FineTuneReinforcementHyperparametersReasoningEffortReasoningEffort.unknown)
+      .toList();
 }

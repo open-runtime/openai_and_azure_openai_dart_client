@@ -11,17 +11,12 @@ part 'prediction_content.mapper.dart';
 /// Static predicted output content, such as the content of a text file that is.
 /// being regenerated.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class PredictionContent with PredictionContentMappable {
-  const PredictionContent({
-    required this.type,
-    required this.content,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'content')
+class PredictionContent extends CreateChatCompletionRequestPredictionUnion with PredictionContentMappable {
+  const PredictionContent({required this.type, required this.content});
 
   final PredictionContentType type;
   final String content;
 
   static PredictionContent fromJson(Map<String, dynamic> json) => PredictionContentMapper.fromJson(json);
-
 }
-

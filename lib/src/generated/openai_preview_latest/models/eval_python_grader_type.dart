@@ -9,10 +9,10 @@ part 'eval_python_grader_type.mapper.dart';
 /// The object type, which is always `python`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalPythonGraderType {
-  @MappableValue('python') 
+  @MappableValue('python')
   python,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalPythonGraderType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalPythonGraderType> get $valuesDefined => values.where((value) => value != EvalPythonGraderType.unknown).toList();
+  static List<EvalPythonGraderType> get $valuesDefined =>
+      values.where((value) => value != EvalPythonGraderType.unknown).toList();
 }

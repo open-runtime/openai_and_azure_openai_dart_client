@@ -9,10 +9,10 @@ part 'output_content_type3.mapper.dart';
 /// The type of the reasoning text. Always `reasoning_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum OutputContentType3 {
-  @MappableValue('reasoning_text') 
+  @MappableValue('reasoning_text')
   reasoningText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum OutputContentType3 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputContentType3> get $valuesDefined => values.where((value) => value != OutputContentType3.unknown).toList();
+  static List<OutputContentType3> get $valuesDefined =>
+      values.where((value) => value != OutputContentType3.unknown).toList();
 }

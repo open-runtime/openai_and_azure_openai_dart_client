@@ -10,13 +10,9 @@ part 'error_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ErrorResponse with ErrorResponseMappable {
-  const ErrorResponse({
-    this.error,
-  });
+  const ErrorResponse({this.error});
 
   final Error? error;
 
   static ErrorResponse fromJson(Map<String, dynamic> json) => ErrorResponseMapper.fromJson(json);
-
 }
-

@@ -8,14 +8,9 @@ import 'realtime_function_tool_type.dart';
 
 part 'realtime_function_tool.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeFunctionTool with RealtimeFunctionToolMappable {
-  const RealtimeFunctionTool({
-    this.type,
-    this.name,
-    this.description,
-    this.parameters,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class RealtimeFunctionTool extends RealtimeSessionCreateResponseGaToolsUnion with RealtimeFunctionToolMappable {
+  const RealtimeFunctionTool({this.type, this.name, this.description, this.parameters});
 
   final RealtimeFunctionToolType? type;
   final String? name;
@@ -23,6 +18,4 @@ class RealtimeFunctionTool with RealtimeFunctionToolMappable {
   final dynamic? parameters;
 
   static RealtimeFunctionTool fromJson(Map<String, dynamic> json) => RealtimeFunctionToolMapper.fromJson(json);
-
 }
-

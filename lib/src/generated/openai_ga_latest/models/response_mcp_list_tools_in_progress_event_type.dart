@@ -10,10 +10,10 @@ part 'response_mcp_list_tools_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseMcpListToolsInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.mcp_list_tools.in_progress`.
-  @MappableValue('response.mcp_list_tools.in_progress') 
+  @MappableValue('response.mcp_list_tools.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseMcpListToolsInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseMcpListToolsInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseMcpListToolsInProgressEventType.unknown).toList();
+  static List<ResponseMcpListToolsInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseMcpListToolsInProgressEventType.unknown).toList();
 }

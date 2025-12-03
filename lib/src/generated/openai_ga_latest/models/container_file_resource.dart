@@ -30,6 +30,4 @@ class ContainerFileResource with ContainerFileResourceMappable {
   final String source;
 
   static ContainerFileResource fromJson(Map<String, dynamic> json) => ContainerFileResourceMapper.fromJson(json);
-
 }
-

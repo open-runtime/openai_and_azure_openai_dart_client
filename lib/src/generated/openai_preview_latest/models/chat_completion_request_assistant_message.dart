@@ -14,8 +14,9 @@ part 'chat_completion_request_assistant_message.mapper.dart';
 
 /// Messages sent by the model in response to user messages.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantMessageMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'assistant')
+class ChatCompletionRequestAssistantMessage extends ChatCompletionRequestMessage
+    with ChatCompletionRequestAssistantMessageMappable {
   const ChatCompletionRequestAssistantMessage({
     required this.role,
     this.content,
@@ -37,7 +38,6 @@ class ChatCompletionRequestAssistantMessage with ChatCompletionRequestAssistantM
   @MappableField(key: 'function_call')
   final ChatCompletionRequestAssistantMessageFunctionCall? chatCompletionRequestAssistantMessageFunctionCall;
 
-  static ChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestAssistantMessageMapper.fromJson(json);
-
+  static ChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestAssistantMessageMapper.fromJson(json);
 }
-

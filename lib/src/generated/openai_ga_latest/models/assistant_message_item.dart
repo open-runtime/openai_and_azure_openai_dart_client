@@ -12,8 +12,8 @@ import 'thread_item.dart';
 part 'assistant_message_item.mapper.dart';
 
 /// Assistant-authored message within a thread.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantMessageItem with AssistantMessageItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.assistant_message')
+class AssistantMessageItem extends ThreadItem with AssistantMessageItemMappable {
   const AssistantMessageItem({
     required this.id,
     required this.createdAt,
@@ -34,6 +34,4 @@ class AssistantMessageItem with AssistantMessageItemMappable {
   final AssistantMessageItemType type;
 
   static AssistantMessageItem fromJson(Map<String, dynamic> json) => AssistantMessageItemMapper.fromJson(json);
-
 }
-

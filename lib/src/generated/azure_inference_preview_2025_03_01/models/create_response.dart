@@ -63,6 +63,4 @@ class CreateResponse with CreateResponseMappable {
   final bool? stream;
 
   static CreateResponse fromJson(Map<String, dynamic> json) => CreateResponseMapper.fromJson(json);
-
 }
-

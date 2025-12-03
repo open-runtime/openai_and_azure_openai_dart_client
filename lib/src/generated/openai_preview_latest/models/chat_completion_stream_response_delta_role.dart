@@ -9,22 +9,22 @@ part 'chat_completion_stream_response_delta_role.mapper.dart';
 /// The role of the author of this message.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionStreamResponseDeltaRole {
-  @MappableValue('developer') 
+  @MappableValue('developer')
   developer,
 
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('tool') 
+  @MappableValue('tool')
   tool,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum ChatCompletionStreamResponseDeltaRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionStreamResponseDeltaRole> get $valuesDefined => values.where((value) => value != ChatCompletionStreamResponseDeltaRole.unknown).toList();
+  static List<ChatCompletionStreamResponseDeltaRole> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionStreamResponseDeltaRole.unknown).toList();
 }

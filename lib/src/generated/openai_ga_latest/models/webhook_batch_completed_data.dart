@@ -8,13 +8,10 @@ part 'webhook_batch_completed_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCompletedData with WebhookBatchCompletedDataMappable {
-  const WebhookBatchCompletedData({
-    required this.id,
-  });
+  const WebhookBatchCompletedData({required this.id});
 
   final String id;
 
-  static WebhookBatchCompletedData fromJson(Map<String, dynamic> json) => WebhookBatchCompletedDataMapper.fromJson(json);
-
+  static WebhookBatchCompletedData fromJson(Map<String, dynamic> json) =>
+      WebhookBatchCompletedDataMapper.fromJson(json);
 }
-

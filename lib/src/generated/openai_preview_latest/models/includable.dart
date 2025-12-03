@@ -16,18 +16,18 @@ part 'includable.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum Includable {
   /// Incorrect name has been replaced. Original name: `file_search_call.results`.
-  @MappableValue('file_search_call.results') 
+  @MappableValue('file_search_call.results')
   undefined0,
 
   /// Incorrect name has been replaced. Original name: `message.input_image.image_url`.
-  @MappableValue('message.input_image.image_url') 
+  @MappableValue('message.input_image.image_url')
   undefined1,
 
   /// Incorrect name has been replaced. Original name: `computer_call_output.output.image_url`.
-  @MappableValue('computer_call_output.output.image_url') 
+  @MappableValue('computer_call_output.output.image_url')
   undefined2,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

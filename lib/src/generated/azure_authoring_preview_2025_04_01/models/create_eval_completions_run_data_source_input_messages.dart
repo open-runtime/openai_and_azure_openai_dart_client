@@ -11,18 +11,13 @@ part 'create_eval_completions_run_data_source_input_messages.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalCompletionsRunDataSourceInputMessages with CreateEvalCompletionsRunDataSourceInputMessagesMappable {
-  const CreateEvalCompletionsRunDataSourceInputMessages({
-    required this.type,
-    this.template,
-    this.itemReference,
-  });
+  const CreateEvalCompletionsRunDataSourceInputMessages({required this.type, this.template, this.itemReference});
 
   final CreateEvalCompletionsRunDataSourceInputMessagesType type;
   final List<CreateEvalCompletionsRunDataSourceInputMessagesTemplate>? template;
   @MappableField(key: 'item_reference')
   final String? itemReference;
 
-  static CreateEvalCompletionsRunDataSourceInputMessages fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceInputMessagesMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSourceInputMessages fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceInputMessagesMapper.fromJson(json);
 }
-

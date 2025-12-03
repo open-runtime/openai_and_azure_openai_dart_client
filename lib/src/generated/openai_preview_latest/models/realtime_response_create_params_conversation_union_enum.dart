@@ -9,13 +9,13 @@ part 'realtime_response_create_params_conversation_union_enum.mapper.dart';
 /// Enum values: auto, none
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseCreateParamsConversationUnionEnum {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('none') 
+  @MappableValue('none')
   none,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum RealtimeResponseCreateParamsConversationUnionEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseCreateParamsConversationUnionEnum> get $valuesDefined => values.where((value) => value != RealtimeResponseCreateParamsConversationUnionEnum.unknown).toList();
+  static List<RealtimeResponseCreateParamsConversationUnionEnum> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseCreateParamsConversationUnionEnum.unknown).toList();
 }

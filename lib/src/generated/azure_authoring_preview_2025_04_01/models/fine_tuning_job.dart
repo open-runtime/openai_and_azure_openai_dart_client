@@ -69,6 +69,4 @@ class FineTuningJob with FineTuningJobMappable {
   final SupervisedMethod? method;
 
   static FineTuningJob fromJson(Map<String, dynamic> json) => FineTuningJobMapper.fromJson(json);
-
 }
-

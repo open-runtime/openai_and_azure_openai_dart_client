@@ -14,17 +14,18 @@ import 'vector_store_file_object_chunking_strategy_union.dart';
 
 part 'chunking_strategy_request_param_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ChunkingStrategyRequestParamUnionAuto,
-  ChunkingStrategyRequestParamUnionStatic
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ChunkingStrategyRequestParamUnionAuto, ChunkingStrategyRequestParamUnionStatic],
+)
 sealed class ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionMappable {
   const ChunkingStrategyRequestParamUnion();
 
   static ChunkingStrategyRequestParamUnion fromJson(Map<String, dynamic> json) {
     return ChunkingStrategyRequestParamUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ChunkingStrategyRequestParamUnionDeserializer on ChunkingStrategyRequestParamUnion {
@@ -34,37 +35,36 @@ extension ChunkingStrategyRequestParamUnionDeserializer on ChunkingStrategyReque
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ChunkingStrategyRequestParamUnionAuto: 'auto',
-      ChunkingStrategyRequestParamUnionStatic: 'static',
+      AutoChunkingStrategyRequestParam: 'auto',
+      StaticChunkingStrategyRequestParam: 'static',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ChunkingStrategyRequestParamUnionAuto] => ChunkingStrategyRequestParamUnionAutoMapper.fromJson(json),
-      _ when value == effective[ChunkingStrategyRequestParamUnionStatic] => ChunkingStrategyRequestParamUnionStaticMapper.fromJson(json),
+      _ when value == effective[AutoChunkingStrategyRequestParam] => AutoChunkingStrategyRequestParamMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[StaticChunkingStrategyRequestParam] =>
+        StaticChunkingStrategyRequestParamMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChunkingStrategyRequestParamUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'auto')
-class ChunkingStrategyRequestParamUnionAuto extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionAutoMappable {
+class ChunkingStrategyRequestParamUnionAuto extends ChunkingStrategyRequestParamUnion
+    with ChunkingStrategyRequestParamUnionAutoMappable {
   final AutoChunkingStrategyRequestParamType type;
 
-  const ChunkingStrategyRequestParamUnionAuto({
-    required this.type,
-  });
-
+  const ChunkingStrategyRequestParamUnionAuto({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'static')
-class ChunkingStrategyRequestParamUnionStatic extends ChunkingStrategyRequestParamUnion with ChunkingStrategyRequestParamUnionStaticMappable {
+class ChunkingStrategyRequestParamUnionStatic extends ChunkingStrategyRequestParamUnion
+    with ChunkingStrategyRequestParamUnionStaticMappable {
   final StaticChunkingStrategyRequestParamType type;
   @MappableField(key: 'static')
   final StaticChunkingStrategy staticField;
 
-  const ChunkingStrategyRequestParamUnionStatic({
-    required this.type,
-    required this.staticField,
-  });
-
+  const ChunkingStrategyRequestParamUnionStatic({required this.type, required this.staticField});
 }

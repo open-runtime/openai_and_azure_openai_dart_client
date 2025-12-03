@@ -11,10 +11,10 @@ part 'eval_run_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum EvalRunObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `eval.run`.
-  @MappableValue('eval.run') 
+  @MappableValue('eval.run')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum EvalRunObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalRunObjectObjectEnum> get $valuesDefined => values.where((value) => value != EvalRunObjectObjectEnum.unknown).toList();
+  static List<EvalRunObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != EvalRunObjectObjectEnum.unknown).toList();
 }

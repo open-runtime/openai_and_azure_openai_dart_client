@@ -8,13 +8,13 @@ part 'status2.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Status2 {
-  @MappableValue('fail') 
+  @MappableValue('fail')
   fail,
 
-  @MappableValue('pass') 
+  @MappableValue('pass')
   pass,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

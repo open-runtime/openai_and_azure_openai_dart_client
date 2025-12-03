@@ -9,10 +9,10 @@ part 'approximate_location_type.mapper.dart';
 /// The type of location approximation. Always `approximate`.
 @MappableEnum(defaultValue: 'unknown')
 enum ApproximateLocationType {
-  @MappableValue('approximate') 
+  @MappableValue('approximate')
   approximate,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ApproximateLocationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApproximateLocationType> get $valuesDefined => values.where((value) => value != ApproximateLocationType.unknown).toList();
+  static List<ApproximateLocationType> get $valuesDefined =>
+      values.where((value) => value != ApproximateLocationType.unknown).toList();
 }

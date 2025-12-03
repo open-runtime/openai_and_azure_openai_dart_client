@@ -9,10 +9,10 @@ part 'run_step_details_tool_call_type2.mapper.dart';
 /// The type of tool call. This is always going to be `file_search` for this type of tool call.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallType2 {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDetailsToolCallType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallType2> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallType2.unknown).toList();
+  static List<RunStepDetailsToolCallType2> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallType2.unknown).toList();
 }

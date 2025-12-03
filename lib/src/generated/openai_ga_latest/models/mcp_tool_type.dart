@@ -9,10 +9,10 @@ part 'mcp_tool_type.mapper.dart';
 /// The type of the MCP tool. Always `mcp`.
 @MappableEnum(defaultValue: 'unknown')
 enum McpToolType {
-  @MappableValue('mcp') 
+  @MappableValue('mcp')
   mcp,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -8,7 +8,7 @@
 part of 'message_delta_content_refusal_object.dart';
 
 class MessageDeltaContentRefusalObjectMapper
-    extends ClassMapperBase<MessageDeltaContentRefusalObject> {
+    extends SubClassMapperBase<MessageDeltaContentRefusalObject> {
   MessageDeltaContentRefusalObjectMapper._();
 
   static MessageDeltaContentRefusalObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageDeltaContentRefusalObjectMapper
       MapperContainer.globals.use(
         _instance = MessageDeltaContentRefusalObjectMapper._(),
       );
+      MessageContentDeltaMapper.ensureInitialized().addSubMapper(_instance!);
       MessageDeltaContentRefusalObjectTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,6 +51,14 @@ class MessageDeltaContentRefusalObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'refusal';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentDeltaMapper.ensureInitialized();
 
   static MessageDeltaContentRefusalObject _instantiate(DecodingData data) {
     return MessageDeltaContentRefusalObject(
@@ -136,7 +145,8 @@ abstract class MessageDeltaContentRefusalObjectCopyWith<
   $In extends MessageDeltaContentRefusalObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentDeltaCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     int? indexField,
     MessageDeltaContentRefusalObjectType? type,

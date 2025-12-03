@@ -10,10 +10,10 @@ part 'eval_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalObjectObjectEnum {
-  @MappableValue('eval') 
+  @MappableValue('eval')
   eval,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum EvalObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalObjectObjectEnum> get $valuesDefined => values.where((value) => value != EvalObjectObjectEnum.unknown).toList();
+  static List<EvalObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != EvalObjectObjectEnum.unknown).toList();
 }

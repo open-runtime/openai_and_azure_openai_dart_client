@@ -10,19 +10,19 @@ part 'realtime_conversation_item_content_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemContentType {
-  @MappableValue('input_audio') 
+  @MappableValue('input_audio')
   inputAudio,
 
-  @MappableValue('input_text') 
+  @MappableValue('input_text')
   inputText,
 
-  @MappableValue('item_reference') 
+  @MappableValue('item_reference')
   itemReference,
 
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum RealtimeConversationItemContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemContentType> get $valuesDefined => values.where((value) => value != RealtimeConversationItemContentType.unknown).toList();
+  static List<RealtimeConversationItemContentType> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemContentType.unknown).toList();
 }

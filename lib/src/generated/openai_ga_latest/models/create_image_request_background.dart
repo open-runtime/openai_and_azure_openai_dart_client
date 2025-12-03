@@ -16,16 +16,16 @@ part 'create_image_request_background.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateImageRequestBackground {
-  @MappableValue('transparent') 
+  @MappableValue('transparent')
   transparent,
 
-  @MappableValue('opaque') 
+  @MappableValue('opaque')
   opaque,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -34,5 +34,6 @@ enum CreateImageRequestBackground {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateImageRequestBackground> get $valuesDefined => values.where((value) => value != CreateImageRequestBackground.unknown).toList();
+  static List<CreateImageRequestBackground> get $valuesDefined =>
+      values.where((value) => value != CreateImageRequestBackground.unknown).toList();
 }

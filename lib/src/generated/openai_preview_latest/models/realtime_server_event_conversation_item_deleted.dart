@@ -13,13 +13,10 @@ part 'realtime_server_event_conversation_item_deleted.mapper.dart';
 /// `conversation.item.delete` event. This event is used to synchronize the .
 /// server's understanding of the conversation history with the client's view.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemDeleted with RealtimeServerEventConversationItemDeletedMappable {
-  const RealtimeServerEventConversationItemDeleted({
-    required this.eventId,
-    required this.type,
-    required this.itemId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.deleted')
+class RealtimeServerEventConversationItemDeleted extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemDeletedMappable {
+  const RealtimeServerEventConversationItemDeleted({required this.eventId, required this.type, required this.itemId});
 
   @MappableField(key: 'event_id')
   final String eventId;
@@ -27,7 +24,6 @@ class RealtimeServerEventConversationItemDeleted with RealtimeServerEventConvers
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventConversationItemDeleted fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemDeletedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemDeleted fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemDeletedMapper.fromJson(json);
 }
-

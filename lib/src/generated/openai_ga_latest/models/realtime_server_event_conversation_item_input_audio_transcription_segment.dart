@@ -9,8 +9,13 @@ import 'realtime_server_event.dart';
 part 'realtime_server_event_conversation_item_input_audio_transcription_segment.mapper.dart';
 
 /// Returned when an input audio transcription segment is identified for an item.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemInputAudioTranscriptionSegment with RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'conversation.item.input_audio_transcription.segment',
+)
+class RealtimeServerEventConversationItemInputAudioTranscriptionSegment extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionSegment({
     required this.eventId,
     required this.type,
@@ -36,7 +41,6 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionSegment with Rea
   final double start;
   final double end;
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionSegment fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemInputAudioTranscriptionSegment fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemInputAudioTranscriptionSegmentMapper.fromJson(json);
 }
-

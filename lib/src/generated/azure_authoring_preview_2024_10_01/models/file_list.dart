@@ -12,16 +12,11 @@ part 'file_list.mapper.dart';
 /// Represents a list of files.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileList with FileListMappable {
-  const FileList({
-    this.objectField,
-    this.data,
-  });
+  const FileList({this.objectField, this.data});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
   final List<File>? data;
 
   static FileList fromJson(Map<String, dynamic> json) => FileListMapper.fromJson(json);
-
 }
-

@@ -11,18 +11,13 @@ part 'realtime_session_create_response_audio_output.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseAudioOutput with RealtimeSessionCreateResponseAudioOutputMappable {
-  const RealtimeSessionCreateResponseAudioOutput({
-    this.format,
-    this.voice,
-    this.speed,
-  });
+  const RealtimeSessionCreateResponseAudioOutput({this.format, this.voice, this.speed});
 
   final RealtimeAudioFormats? format;
   @MappableField(hook: const VoiceIdsSharedHook())
   final VoiceIdsShared? voice;
   final num? speed;
 
-  static RealtimeSessionCreateResponseAudioOutput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseAudioOutputMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseAudioOutput fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseAudioOutputMapper.fromJson(json);
 }
-

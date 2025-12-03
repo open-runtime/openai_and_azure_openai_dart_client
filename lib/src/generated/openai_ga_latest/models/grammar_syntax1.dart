@@ -8,13 +8,13 @@ part 'grammar_syntax1.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum GrammarSyntax1 {
-  @MappableValue('lark') 
+  @MappableValue('lark')
   lark,
 
-  @MappableValue('regex') 
+  @MappableValue('regex')
   regex,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

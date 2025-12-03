@@ -8,10 +8,10 @@ part 'realtime_mcp_tool_execution_error_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeMcpToolExecutionErrorType {
-  @MappableValue('tool_execution_error') 
+  @MappableValue('tool_execution_error')
   toolExecutionError,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum RealtimeMcpToolExecutionErrorType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeMcpToolExecutionErrorType> get $valuesDefined => values.where((value) => value != RealtimeMcpToolExecutionErrorType.unknown).toList();
+  static List<RealtimeMcpToolExecutionErrorType> get $valuesDefined =>
+      values.where((value) => value != RealtimeMcpToolExecutionErrorType.unknown).toList();
 }

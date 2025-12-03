@@ -13,13 +13,7 @@ part 'input_message_resource.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InputMessageResource with InputMessageResourceMappable {
-  const InputMessageResource({
-    required this.role,
-    required this.content,
-    required this.id,
-    this.type,
-    this.status,
-  });
+  const InputMessageResource({required this.role, required this.content, required this.id, this.type, this.status});
 
   final InputMessageRole role;
   final InputMessageContentList content;
@@ -28,6 +22,4 @@ class InputMessageResource with InputMessageResourceMappable {
   final InputMessageStatus? status;
 
   static InputMessageResource fromJson(Map<String, dynamic> json) => InputMessageResourceMapper.fromJson(json);
-
 }
-

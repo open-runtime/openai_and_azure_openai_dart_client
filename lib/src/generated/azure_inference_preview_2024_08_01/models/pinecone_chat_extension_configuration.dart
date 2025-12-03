@@ -13,15 +13,11 @@ part 'pinecone_chat_extension_configuration.mapper.dart';
 /// extension.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class PineconeChatExtensionConfiguration with PineconeChatExtensionConfigurationMappable {
-  const PineconeChatExtensionConfiguration({
-    required this.type,
-    this.parameters,
-  });
+  const PineconeChatExtensionConfiguration({required this.type, this.parameters});
 
   final AzureChatExtensionType type;
   final PineconeChatExtensionParameters? parameters;
 
-  static PineconeChatExtensionConfiguration fromJson(Map<String, dynamic> json) => PineconeChatExtensionConfigurationMapper.fromJson(json);
-
+  static PineconeChatExtensionConfiguration fromJson(Map<String, dynamic> json) =>
+      PineconeChatExtensionConfigurationMapper.fromJson(json);
 }
-

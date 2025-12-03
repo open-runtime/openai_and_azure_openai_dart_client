@@ -16,8 +16,9 @@ part 'realtime_server_event_conversation_item_added.mapper.dart';
 ///
 /// The event will include the full content of the Item (except when model is generating a Response) except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if necessary.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemAdded with RealtimeServerEventConversationItemAddedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.added')
+class RealtimeServerEventConversationItemAdded extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemAddedMappable {
   const RealtimeServerEventConversationItemAdded({
     required this.eventId,
     required this.type,
@@ -32,7 +33,6 @@ class RealtimeServerEventConversationItemAdded with RealtimeServerEventConversat
   @MappableField(key: 'previous_item_id')
   final String? previousItemId;
 
-  static RealtimeServerEventConversationItemAdded fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemAddedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemAdded fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemAddedMapper.fromJson(json);
 }
-

@@ -11,25 +11,25 @@ part 'create_chat_completion_request_audio_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateChatCompletionRequestAudioFormat {
-  @MappableValue('wav') 
+  @MappableValue('wav')
   wav,
 
-  @MappableValue('aac') 
+  @MappableValue('aac')
   aac,
 
-  @MappableValue('mp3') 
+  @MappableValue('mp3')
   mp3,
 
-  @MappableValue('flac') 
+  @MappableValue('flac')
   flac,
 
-  @MappableValue('opus') 
+  @MappableValue('opus')
   opus,
 
-  @MappableValue('pcm16') 
+  @MappableValue('pcm16')
   pcm16,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -38,5 +38,6 @@ enum CreateChatCompletionRequestAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateChatCompletionRequestAudioFormat> get $valuesDefined => values.where((value) => value != CreateChatCompletionRequestAudioFormat.unknown).toList();
+  static List<CreateChatCompletionRequestAudioFormat> get $valuesDefined =>
+      values.where((value) => value != CreateChatCompletionRequestAudioFormat.unknown).toList();
 }

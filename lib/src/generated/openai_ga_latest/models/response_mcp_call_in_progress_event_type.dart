@@ -10,10 +10,10 @@ part 'response_mcp_call_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseMcpCallInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.mcp_call.in_progress`.
-  @MappableValue('response.mcp_call.in_progress') 
+  @MappableValue('response.mcp_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseMcpCallInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseMcpCallInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseMcpCallInProgressEventType.unknown).toList();
+  static List<ResponseMcpCallInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseMcpCallInProgressEventType.unknown).toList();
 }

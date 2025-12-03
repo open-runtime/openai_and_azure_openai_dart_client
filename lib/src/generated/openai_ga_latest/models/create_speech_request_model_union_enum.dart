@@ -9,16 +9,16 @@ part 'create_speech_request_model_union_enum.mapper.dart';
 /// Enum values: tts-1, tts-1-hd, gpt-4o-mini-tts
 @MappableEnum(defaultValue: 'unknown')
 enum CreateSpeechRequestModelUnionEnum {
-  @MappableValue('tts-1') 
+  @MappableValue('tts-1')
   tts1,
 
-  @MappableValue('tts-1-hd') 
+  @MappableValue('tts-1-hd')
   tts1Hd,
 
-  @MappableValue('gpt-4o-mini-tts') 
+  @MappableValue('gpt-4o-mini-tts')
   gpt4oMiniTts,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum CreateSpeechRequestModelUnionEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateSpeechRequestModelUnionEnum> get $valuesDefined => values.where((value) => value != CreateSpeechRequestModelUnionEnum.unknown).toList();
+  static List<CreateSpeechRequestModelUnionEnum> get $valuesDefined =>
+      values.where((value) => value != CreateSpeechRequestModelUnionEnum.unknown).toList();
 }

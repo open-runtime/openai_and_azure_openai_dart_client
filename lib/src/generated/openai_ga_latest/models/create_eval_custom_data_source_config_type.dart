@@ -9,10 +9,10 @@ part 'create_eval_custom_data_source_config_type.mapper.dart';
 /// The type of data source. Always `custom`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateEvalCustomDataSourceConfigType {
-  @MappableValue('custom') 
+  @MappableValue('custom')
   custom,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CreateEvalCustomDataSourceConfigType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateEvalCustomDataSourceConfigType> get $valuesDefined => values.where((value) => value != CreateEvalCustomDataSourceConfigType.unknown).toList();
+  static List<CreateEvalCustomDataSourceConfigType> get $valuesDefined =>
+      values.where((value) => value != CreateEvalCustomDataSourceConfigType.unknown).toList();
 }

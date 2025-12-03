@@ -11,15 +11,10 @@ part 'azure_ai_search_index.mapper.dart';
 /// Azure AI Search Index.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AzureAiSearchIndex with AzureAiSearchIndexMappable {
-  const AzureAiSearchIndex({
-    required this.kind,
-    this.connectionId,
-  });
+  const AzureAiSearchIndex({required this.kind, this.connectionId});
 
   final TargetType kind;
   final String? connectionId;
 
   static AzureAiSearchIndex fromJson(Map<String, dynamic> json) => AzureAiSearchIndexMapper.fromJson(json);
-
 }
-

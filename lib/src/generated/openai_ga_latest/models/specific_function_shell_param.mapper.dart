@@ -8,7 +8,7 @@
 part of 'specific_function_shell_param.dart';
 
 class SpecificFunctionShellParamMapper
-    extends ClassMapperBase<SpecificFunctionShellParam> {
+    extends SubClassMapperBase<SpecificFunctionShellParam> {
   SpecificFunctionShellParamMapper._();
 
   static SpecificFunctionShellParamMapper? _instance;
@@ -17,6 +17,7 @@ class SpecificFunctionShellParamMapper
       MapperContainer.globals.use(
         _instance = SpecificFunctionShellParamMapper._(),
       );
+      ToolChoiceParamMapper.ensureInitialized().addSubMapper(_instance!);
       SpecificFunctionShellParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -43,6 +44,14 @@ class SpecificFunctionShellParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'shell';
+  @override
+  late final ClassMapperBase superMapper =
+      ToolChoiceParamMapper.ensureInitialized();
 
   static SpecificFunctionShellParam _instantiate(DecodingData data) {
     return SpecificFunctionShellParam(type: data.dec(_f$type));
@@ -121,7 +130,8 @@ abstract class SpecificFunctionShellParamCopyWith<
   $In extends SpecificFunctionShellParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolChoiceParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({SpecificFunctionShellParamType? type});
   SpecificFunctionShellParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

@@ -8,7 +8,7 @@
 part of 'response_image_gen_call_in_progress_event.dart';
 
 class ResponseImageGenCallInProgressEventMapper
-    extends ClassMapperBase<ResponseImageGenCallInProgressEvent> {
+    extends SubClassMapperBase<ResponseImageGenCallInProgressEvent> {
   ResponseImageGenCallInProgressEventMapper._();
 
   static ResponseImageGenCallInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseImageGenCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseImageGenCallInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseImageGenCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -60,6 +61,15 @@ class ResponseImageGenCallInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'response.image_generation_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseImageGenCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallInProgressEvent(
@@ -150,7 +160,8 @@ abstract class ResponseImageGenCallInProgressEventCopyWith<
   $In extends ResponseImageGenCallInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseImageGenCallInProgressEventType? type,
     int? outputIndex,

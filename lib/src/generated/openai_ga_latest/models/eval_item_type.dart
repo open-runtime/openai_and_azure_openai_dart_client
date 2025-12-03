@@ -10,10 +10,10 @@ part 'eval_item_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum EvalItemType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

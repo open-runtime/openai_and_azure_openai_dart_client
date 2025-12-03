@@ -10,8 +10,5 @@ part 'run_step_stream_event.mapper.dart';
 class RunStepStreamEvent with RunStepStreamEventMappable {
   const RunStepStreamEvent();
 
-
   static RunStepStreamEvent fromJson(Map<String, dynamic> json) => RunStepStreamEventMapper.fromJson(json);
-
 }
-

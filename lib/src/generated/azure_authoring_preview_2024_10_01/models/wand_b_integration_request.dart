@@ -8,12 +8,7 @@ part 'wand_b_integration_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WandBIntegrationRequest with WandBIntegrationRequestMappable {
-  const WandBIntegrationRequest({
-    required this.project,
-    this.name,
-    this.entity,
-    this.tags,
-  });
+  const WandBIntegrationRequest({required this.project, this.name, this.entity, this.tags});
 
   final String project;
   final String? name;
@@ -21,6 +16,4 @@ class WandBIntegrationRequest with WandBIntegrationRequestMappable {
   final List<String>? tags;
 
   static WandBIntegrationRequest fromJson(Map<String, dynamic> json) => WandBIntegrationRequestMapper.fromJson(json);
-
 }
-

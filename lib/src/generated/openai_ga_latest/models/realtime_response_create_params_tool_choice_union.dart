@@ -14,7 +14,15 @@ part 'realtime_response_create_params_tool_choice_union.mapper.dart';
 /// How the model chooses tools. Provide one of the string modes or force a specific.
 /// function/MCP tool.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction, RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp, RealtimeResponseCreateParamsToolChoiceUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction,
+    RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp,
+    RealtimeResponseCreateParamsToolChoiceUnionVariantString,
+  ],
+)
 sealed class RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionMappable {
   const RealtimeResponseCreateParamsToolChoiceUnion();
 
@@ -35,24 +43,24 @@ extension RealtimeResponseCreateParamsToolChoiceUnionDeserializer on RealtimeRes
       return RealtimeResponseCreateParamsToolChoiceUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for RealtimeResponseCreateParamsToolChoiceUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeResponseCreateParamsToolChoiceUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction extends RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMappable {
+class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction extends RealtimeResponseCreateParamsToolChoiceUnion
+    with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunctionMappable {
   final ToolChoiceFunctionType type;
   final String name;
 
-  const RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+  const RealtimeResponseCreateParamsToolChoiceUnionToolChoiceFunction({required this.type, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp extends RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMappable {
+class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp extends RealtimeResponseCreateParamsToolChoiceUnion
+    with RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcpMappable {
   final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -66,10 +74,9 @@ class RealtimeResponseCreateParamsToolChoiceUnionToolChoiceMcp extends RealtimeR
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseCreateParamsToolChoiceUnionVariantString extends RealtimeResponseCreateParamsToolChoiceUnion with RealtimeResponseCreateParamsToolChoiceUnionVariantStringMappable {
+class RealtimeResponseCreateParamsToolChoiceUnionVariantString extends RealtimeResponseCreateParamsToolChoiceUnion
+    with RealtimeResponseCreateParamsToolChoiceUnionVariantStringMappable {
   final String value;
 
-  const RealtimeResponseCreateParamsToolChoiceUnionVariantString({
-    required this.value,
-  });
+  const RealtimeResponseCreateParamsToolChoiceUnionVariantString({required this.value});
 }

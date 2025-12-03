@@ -8,7 +8,7 @@
 part of 'realtime_mcp_approval_request.dart';
 
 class RealtimeMcpApprovalRequestMapper
-    extends ClassMapperBase<RealtimeMcpApprovalRequest> {
+    extends SubClassMapperBase<RealtimeMcpApprovalRequest> {
   RealtimeMcpApprovalRequestMapper._();
 
   static RealtimeMcpApprovalRequestMapper? _instance;
@@ -16,6 +16,9 @@ class RealtimeMcpApprovalRequestMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RealtimeMcpApprovalRequestMapper._(),
+      );
+      RealtimeConversationItemMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RealtimeMcpApprovalRequestTypeMapper.ensureInitialized();
     }
@@ -63,6 +66,14 @@ class RealtimeMcpApprovalRequestMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'mcp_approval_request';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeConversationItemMapper.ensureInitialized();
 
   static RealtimeMcpApprovalRequest _instantiate(DecodingData data) {
     return RealtimeMcpApprovalRequest(
@@ -147,7 +158,8 @@ abstract class RealtimeMcpApprovalRequestCopyWith<
   $In extends RealtimeMcpApprovalRequest,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeConversationItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     RealtimeMcpApprovalRequestType? type,
     String? id,

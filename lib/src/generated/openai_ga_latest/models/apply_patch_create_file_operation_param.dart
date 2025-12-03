@@ -10,8 +10,9 @@ import 'apply_patch_operation_param.dart';
 part 'apply_patch_create_file_operation_param.mapper.dart';
 
 /// Instruction for creating a new file via the apply_patch tool.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchCreateFileOperationParam with ApplyPatchCreateFileOperationParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'create_file')
+class ApplyPatchCreateFileOperationParam extends ApplyPatchOperationParam
+    with ApplyPatchCreateFileOperationParamMappable {
   const ApplyPatchCreateFileOperationParam({
     required this.path,
     required this.diff,
@@ -22,7 +23,6 @@ class ApplyPatchCreateFileOperationParam with ApplyPatchCreateFileOperationParam
   final String diff;
   final ApplyPatchCreateFileOperationParamType type;
 
-  static ApplyPatchCreateFileOperationParam fromJson(Map<String, dynamic> json) => ApplyPatchCreateFileOperationParamMapper.fromJson(json);
-
+  static ApplyPatchCreateFileOperationParam fromJson(Map<String, dynamic> json) =>
+      ApplyPatchCreateFileOperationParamMapper.fromJson(json);
 }
-

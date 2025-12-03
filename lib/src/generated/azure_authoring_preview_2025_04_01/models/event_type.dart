@@ -9,13 +9,13 @@ part 'event_type.mapper.dart';
 /// Defines the severity of a content filter result.
 @MappableEnum(defaultValue: 'unknown')
 enum EventType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('metrics') 
+  @MappableValue('metrics')
   metrics,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

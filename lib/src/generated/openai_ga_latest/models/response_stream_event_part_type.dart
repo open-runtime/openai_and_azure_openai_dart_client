@@ -9,10 +9,10 @@ part 'response_stream_event_part_type.mapper.dart';
 /// The type of the summary part. Always `summary_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventPartType {
-  @MappableValue('summary_text') 
+  @MappableValue('summary_text')
   summaryText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseStreamEventPartType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventPartType> get $valuesDefined => values.where((value) => value != ResponseStreamEventPartType.unknown).toList();
+  static List<ResponseStreamEventPartType> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventPartType.unknown).toList();
 }

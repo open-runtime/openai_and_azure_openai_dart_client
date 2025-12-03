@@ -9,31 +9,31 @@ part 'open_ai_file_purpose.mapper.dart';
 /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
 @MappableEnum(defaultValue: 'unknown')
 enum OpenAiFilePurpose {
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('assistants_output') 
+  @MappableValue('assistants_output')
   assistantsOutput,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('batch_output') 
+  @MappableValue('batch_output')
   batchOutput,
 
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('fine-tune-results') 
+  @MappableValue('fine-tune-results')
   fineTuneResults,
 
-  @MappableValue('vision') 
+  @MappableValue('vision')
   vision,
 
-  @MappableValue('user_data') 
+  @MappableValue('user_data')
   userData,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -42,5 +42,6 @@ enum OpenAiFilePurpose {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OpenAiFilePurpose> get $valuesDefined => values.where((value) => value != OpenAiFilePurpose.unknown).toList();
+  static List<OpenAiFilePurpose> get $valuesDefined =>
+      values.where((value) => value != OpenAiFilePurpose.unknown).toList();
 }

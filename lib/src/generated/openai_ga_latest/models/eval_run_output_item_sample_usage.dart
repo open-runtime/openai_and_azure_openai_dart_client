@@ -24,7 +24,6 @@ class EvalRunOutputItemSampleUsage with EvalRunOutputItemSampleUsageMappable {
   @MappableField(key: 'cached_tokens')
   final int cachedTokens;
 
-  static EvalRunOutputItemSampleUsage fromJson(Map<String, dynamic> json) => EvalRunOutputItemSampleUsageMapper.fromJson(json);
-
+  static EvalRunOutputItemSampleUsage fromJson(Map<String, dynamic> json) =>
+      EvalRunOutputItemSampleUsageMapper.fromJson(json);
 }
-

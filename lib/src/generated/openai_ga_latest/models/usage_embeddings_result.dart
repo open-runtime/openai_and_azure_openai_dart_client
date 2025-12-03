@@ -9,8 +9,8 @@ import 'usage_embeddings_result_object_object_enum.dart';
 part 'usage_embeddings_result.mapper.dart';
 
 /// The aggregated embeddings usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageEmbeddingsResult with UsageEmbeddingsResultMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.embeddings.result')
+class UsageEmbeddingsResult extends UsageTimeBucketResultUnion with UsageEmbeddingsResultMappable {
   const UsageEmbeddingsResult({
     required this.objectEnum,
     required this.inputTokens,
@@ -36,6 +36,4 @@ class UsageEmbeddingsResult with UsageEmbeddingsResultMappable {
   final String? model;
 
   static UsageEmbeddingsResult fromJson(Map<String, dynamic> json) => UsageEmbeddingsResultMapper.fromJson(json);
-
 }
-

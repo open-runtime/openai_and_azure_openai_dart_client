@@ -9,10 +9,10 @@ part 'item_resource_type3.mapper.dart';
 /// The type of the computer call. Always `computer_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceType3 {
-  @MappableValue('computer_call') 
+  @MappableValue('computer_call')
   computerCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ItemResourceType3 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceType3> get $valuesDefined => values.where((value) => value != ItemResourceType3.unknown).toList();
+  static List<ItemResourceType3> get $valuesDefined =>
+      values.where((value) => value != ItemResourceType3.unknown).toList();
 }

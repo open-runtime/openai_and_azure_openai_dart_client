@@ -8,17 +8,13 @@ part 'realtime_response_usage_output_token_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeResponseUsageOutputTokenDetails with RealtimeResponseUsageOutputTokenDetailsMappable {
-  const RealtimeResponseUsageOutputTokenDetails({
-    this.textTokens,
-    this.audioTokens,
-  });
+  const RealtimeResponseUsageOutputTokenDetails({this.textTokens, this.audioTokens});
 
   @MappableField(key: 'text_tokens')
   final int? textTokens;
   @MappableField(key: 'audio_tokens')
   final int? audioTokens;
 
-  static RealtimeResponseUsageOutputTokenDetails fromJson(Map<String, dynamic> json) => RealtimeResponseUsageOutputTokenDetailsMapper.fromJson(json);
-
+  static RealtimeResponseUsageOutputTokenDetails fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseUsageOutputTokenDetailsMapper.fromJson(json);
 }
-

@@ -30,6 +30,4 @@ class FileDetails with FileDetailsMappable {
   final String? storageContainerName;
 
   static FileDetails fromJson(Map<String, dynamic> json) => FileDetailsMapper.fromJson(json);
-
 }
-

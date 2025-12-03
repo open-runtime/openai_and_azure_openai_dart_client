@@ -8,15 +8,10 @@ part 'function_call_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionCallFunction with FunctionCallFunctionMappable {
-  const FunctionCallFunction({
-    this.name,
-    this.arguments,
-  });
+  const FunctionCallFunction({this.name, this.arguments});
 
   final String? name;
   final String? arguments;
 
   static FunctionCallFunction fromJson(Map<String, dynamic> json) => FunctionCallFunctionMapper.fromJson(json);
-
 }
-

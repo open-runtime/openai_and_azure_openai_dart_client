@@ -30,6 +30,4 @@ class EvalLabelModelGrader with EvalLabelModelGraderMappable {
   final EvalLabelModelGraderType type;
 
   static EvalLabelModelGrader fromJson(Map<String, dynamic> json) => EvalLabelModelGraderMapper.fromJson(json);
-
 }
-

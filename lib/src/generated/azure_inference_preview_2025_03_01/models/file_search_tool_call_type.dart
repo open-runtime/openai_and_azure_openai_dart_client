@@ -10,10 +10,10 @@ part 'file_search_tool_call_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum FileSearchToolCallType {
-  @MappableValue('file_search_call') 
+  @MappableValue('file_search_call')
   fileSearchCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum FileSearchToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FileSearchToolCallType> get $valuesDefined => values.where((value) => value != FileSearchToolCallType.unknown).toList();
+  static List<FileSearchToolCallType> get $valuesDefined =>
+      values.where((value) => value != FileSearchToolCallType.unknown).toList();
 }

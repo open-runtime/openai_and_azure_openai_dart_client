@@ -9,17 +9,12 @@ import 'locked_status_type.dart';
 part 'locked_status.mapper.dart';
 
 /// Indicates that a thread is locked and cannot accept new input.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class LockedStatus with LockedStatusMappable {
-  const LockedStatus({
-    required this.reason,
-    this.type = LockedStatusType.locked,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'locked')
+class LockedStatus extends ThreadResourceStatusUnion with LockedStatusMappable {
+  const LockedStatus({required this.reason, this.type = LockedStatusType.locked});
 
   final String? reason;
   final LockedStatusType type;
 
   static LockedStatus fromJson(Map<String, dynamic> json) => LockedStatusMapper.fromJson(json);
-
 }
-

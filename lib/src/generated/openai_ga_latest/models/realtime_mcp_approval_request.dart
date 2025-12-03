@@ -11,8 +11,8 @@ part 'realtime_mcp_approval_request.mapper.dart';
 
 /// A Realtime item requesting human approval of a tool invocation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeMcpApprovalRequest with RealtimeMcpApprovalRequestMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
+class RealtimeMcpApprovalRequest extends RealtimeConversationItem with RealtimeMcpApprovalRequestMappable {
   const RealtimeMcpApprovalRequest({
     required this.type,
     required this.id,
@@ -28,7 +28,6 @@ class RealtimeMcpApprovalRequest with RealtimeMcpApprovalRequestMappable {
   final String name;
   final String arguments;
 
-  static RealtimeMcpApprovalRequest fromJson(Map<String, dynamic> json) => RealtimeMcpApprovalRequestMapper.fromJson(json);
-
+  static RealtimeMcpApprovalRequest fromJson(Map<String, dynamic> json) =>
+      RealtimeMcpApprovalRequestMapper.fromJson(json);
 }
-

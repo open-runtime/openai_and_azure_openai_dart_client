@@ -8,16 +8,16 @@ part 'video_seconds.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum VideoSeconds {
-  @MappableValue('4') 
+  @MappableValue('4')
   value4,
 
-  @MappableValue('8') 
+  @MappableValue('8')
   value8,
 
-  @MappableValue('12') 
+  @MappableValue('12')
   value12,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

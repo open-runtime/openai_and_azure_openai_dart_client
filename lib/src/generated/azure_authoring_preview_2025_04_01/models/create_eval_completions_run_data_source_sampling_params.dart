@@ -22,7 +22,6 @@ class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletion
   @MappableField(key: 'max_completion_tokens')
   final int? maxCompletionTokens;
 
-  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
 }
-

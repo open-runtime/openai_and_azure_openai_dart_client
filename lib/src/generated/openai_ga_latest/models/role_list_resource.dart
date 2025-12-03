@@ -12,12 +12,7 @@ part 'role_list_resource.mapper.dart';
 /// Paginated list of roles assigned to a principal.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RoleListResource with RoleListResourceMappable {
-  const RoleListResource({
-    required this.objectEnum,
-    required this.data,
-    required this.hasMore,
-    required this.next,
-  });
+  const RoleListResource({required this.objectEnum, required this.data, required this.hasMore, required this.next});
 
   @MappableField(key: 'object')
   final RoleListResourceObjectObjectEnum objectEnum;
@@ -27,6 +22,4 @@ class RoleListResource with RoleListResourceMappable {
   final String? next;
 
   static RoleListResource fromJson(Map<String, dynamic> json) => RoleListResourceMapper.fromJson(json);
-
 }
-

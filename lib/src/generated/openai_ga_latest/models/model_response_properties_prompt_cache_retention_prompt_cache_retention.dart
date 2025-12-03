@@ -10,13 +10,13 @@ part 'model_response_properties_prompt_cache_retention_prompt_cache_retention.ma
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention {
-  @MappableValue('in-memory') 
+  @MappableValue('in-memory')
   inMemory,
 
-  @MappableValue('24h') 
+  @MappableValue('24h')
   value24h,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -25,5 +25,7 @@ enum ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention> get $valuesDefined => values.where((value) => value != ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention.unknown).toList();
+  static List<ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention> get $valuesDefined => values
+      .where((value) => value != ModelResponsePropertiesPromptCacheRetentionPromptCacheRetention.unknown)
+      .toList();
 }

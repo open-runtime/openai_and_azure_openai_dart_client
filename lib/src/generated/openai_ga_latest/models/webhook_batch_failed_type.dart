@@ -11,10 +11,10 @@ part 'webhook_batch_failed_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookBatchFailedType {
   /// Incorrect name has been replaced. Original name: `batch.failed`.
-  @MappableValue('batch.failed') 
+  @MappableValue('batch.failed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookBatchFailedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookBatchFailedType> get $valuesDefined => values.where((value) => value != WebhookBatchFailedType.unknown).toList();
+  static List<WebhookBatchFailedType> get $valuesDefined =>
+      values.where((value) => value != WebhookBatchFailedType.unknown).toList();
 }

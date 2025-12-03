@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'chat_completion_response_message_annotations_url_citation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionResponseMessageAnnotationsUrlCitation with ChatCompletionResponseMessageAnnotationsUrlCitationMappable {
+class ChatCompletionResponseMessageAnnotationsUrlCitation
+    with ChatCompletionResponseMessageAnnotationsUrlCitationMappable {
   const ChatCompletionResponseMessageAnnotationsUrlCitation({
     required this.endIndex,
     required this.startIndex,
@@ -22,7 +23,6 @@ class ChatCompletionResponseMessageAnnotationsUrlCitation with ChatCompletionRes
   final String url;
   final String title;
 
-  static ChatCompletionResponseMessageAnnotationsUrlCitation fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageAnnotationsUrlCitationMapper.fromJson(json);
-
+  static ChatCompletionResponseMessageAnnotationsUrlCitation fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageAnnotationsUrlCitationMapper.fromJson(json);
 }
-

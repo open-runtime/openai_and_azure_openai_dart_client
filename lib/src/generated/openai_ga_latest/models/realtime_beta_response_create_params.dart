@@ -53,7 +53,6 @@ class RealtimeBetaResponseCreateParams with RealtimeBetaResponseCreateParamsMapp
   final Prompt? prompt;
   final List<RealtimeConversationItem>? input;
 
-  static RealtimeBetaResponseCreateParams fromJson(Map<String, dynamic> json) => RealtimeBetaResponseCreateParamsMapper.fromJson(json);
-
+  static RealtimeBetaResponseCreateParams fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaResponseCreateParamsMapper.fromJson(json);
 }
-

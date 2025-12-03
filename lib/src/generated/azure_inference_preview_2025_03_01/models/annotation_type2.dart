@@ -10,10 +10,10 @@ part 'annotation_type2.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum AnnotationType2 {
-  @MappableValue('url_citation') 
+  @MappableValue('url_citation')
   urlCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

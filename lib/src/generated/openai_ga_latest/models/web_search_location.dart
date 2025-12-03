@@ -9,12 +9,7 @@ part 'web_search_location.mapper.dart';
 /// Approximate location parameters for the search.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebSearchLocation with WebSearchLocationMappable {
-  const WebSearchLocation({
-    this.country,
-    this.region,
-    this.city,
-    this.timezone,
-  });
+  const WebSearchLocation({this.country, this.region, this.city, this.timezone});
 
   final String? country;
   final String? region;
@@ -22,6 +17,4 @@ class WebSearchLocation with WebSearchLocationMappable {
   final String? timezone;
 
   static WebSearchLocation fromJson(Map<String, dynamic> json) => WebSearchLocationMapper.fromJson(json);
-
 }
-

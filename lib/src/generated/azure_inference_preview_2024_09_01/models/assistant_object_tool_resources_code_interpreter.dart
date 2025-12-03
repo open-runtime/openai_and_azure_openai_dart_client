@@ -8,14 +8,11 @@ part 'assistant_object_tool_resources_code_interpreter.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantObjectToolResourcesCodeInterpreter with AssistantObjectToolResourcesCodeInterpreterMappable {
-  const AssistantObjectToolResourcesCodeInterpreter({
-    this.fileIds = const [],
-  });
+  const AssistantObjectToolResourcesCodeInterpreter({this.fileIds = const []});
 
   @MappableField(key: 'file_ids')
   final List<String> fileIds;
 
-  static AssistantObjectToolResourcesCodeInterpreter fromJson(Map<String, dynamic> json) => AssistantObjectToolResourcesCodeInterpreterMapper.fromJson(json);
-
+  static AssistantObjectToolResourcesCodeInterpreter fromJson(Map<String, dynamic> json) =>
+      AssistantObjectToolResourcesCodeInterpreterMapper.fromJson(json);
 }
-

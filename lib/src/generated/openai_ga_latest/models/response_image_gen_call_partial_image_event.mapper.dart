@@ -8,7 +8,7 @@
 part of 'response_image_gen_call_partial_image_event.dart';
 
 class ResponseImageGenCallPartialImageEventMapper
-    extends ClassMapperBase<ResponseImageGenCallPartialImageEvent> {
+    extends SubClassMapperBase<ResponseImageGenCallPartialImageEvent> {
   ResponseImageGenCallPartialImageEventMapper._();
 
   static ResponseImageGenCallPartialImageEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseImageGenCallPartialImageEventMapper
       MapperContainer.globals.use(
         _instance = ResponseImageGenCallPartialImageEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseImageGenCallPartialImageEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -78,6 +79,15 @@ class ResponseImageGenCallPartialImageEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'response.image_generation_call.partial_image';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseImageGenCallPartialImageEvent _instantiate(DecodingData data) {
     return ResponseImageGenCallPartialImageEvent(
@@ -169,7 +179,8 @@ abstract class ResponseImageGenCallPartialImageEventCopyWith<
   $In extends ResponseImageGenCallPartialImageEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseImageGenCallPartialImageEventType? type,
     int? outputIndex,

@@ -8,13 +8,13 @@ part 'create_moderation_response_results_category_applied_input_types_self_harm_
 
 @MappableEnum(defaultValue: 'unknown')
 enum CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('image') 
+  @MappableValue('image')
   image,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,7 @@ enum CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstruction
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions> get $valuesDefined => values.where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.unknown).toList();
+  static List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions> get $valuesDefined => values
+      .where((value) => value != CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.unknown)
+      .toList();
 }

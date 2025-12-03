@@ -10,10 +10,10 @@ part 'run_step_delta_step_details_tool_calls_function_object_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsToolCallsFunctionObjectType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RunStepDeltaStepDetailsToolCallsFunctionObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsToolCallsFunctionObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsToolCallsFunctionObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsToolCallsFunctionObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsToolCallsFunctionObjectType.unknown).toList();
 }

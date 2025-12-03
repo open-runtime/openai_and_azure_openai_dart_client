@@ -9,15 +9,10 @@ part 'audit_log_actor_user.mapper.dart';
 /// The user who performed the audit logged action.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActorUser with AuditLogActorUserMappable {
-  const AuditLogActorUser({
-    this.id,
-    this.email,
-  });
+  const AuditLogActorUser({this.id, this.email});
 
   final String? id;
   final String? email;
 
   static AuditLogActorUser fromJson(Map<String, dynamic> json) => AuditLogActorUserMapper.fromJson(json);
-
 }
-

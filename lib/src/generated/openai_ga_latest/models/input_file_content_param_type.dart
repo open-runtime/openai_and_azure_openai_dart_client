@@ -9,10 +9,10 @@ part 'input_file_content_param_type.mapper.dart';
 /// The type of the input item. Always `input_file`.
 @MappableEnum(defaultValue: 'unknown')
 enum InputFileContentParamType {
-  @MappableValue('input_file') 
+  @MappableValue('input_file')
   inputFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum InputFileContentParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InputFileContentParamType> get $valuesDefined => values.where((value) => value != InputFileContentParamType.unknown).toList();
+  static List<InputFileContentParamType> get $valuesDefined =>
+      values.where((value) => value != InputFileContentParamType.unknown).toList();
 }

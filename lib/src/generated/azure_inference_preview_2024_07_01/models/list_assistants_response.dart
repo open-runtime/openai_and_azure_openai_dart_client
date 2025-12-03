@@ -29,6 +29,4 @@ class ListAssistantsResponse with ListAssistantsResponseMappable {
   final bool hasMore;
 
   static ListAssistantsResponse fromJson(Map<String, dynamic> json) => ListAssistantsResponseMapper.fromJson(json);
-
 }
-

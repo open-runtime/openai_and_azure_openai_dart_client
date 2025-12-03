@@ -12,8 +12,8 @@ import 'computer_screenshot_image.dart';
 part 'computer_call_output_item_param.mapper.dart';
 
 /// The output of a computer tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerCallOutputItemParam with ComputerCallOutputItemParamMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call_output')
+class ComputerCallOutputItemParam extends ItemUnion with ComputerCallOutputItemParamMappable {
   const ComputerCallOutputItemParam({
     required this.callId,
     required this.output,
@@ -32,7 +32,6 @@ class ComputerCallOutputItemParam with ComputerCallOutputItemParamMappable {
   final List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks;
   final ComputerCallOutputItemParamStatus? status;
 
-  static ComputerCallOutputItemParam fromJson(Map<String, dynamic> json) => ComputerCallOutputItemParamMapper.fromJson(json);
-
+  static ComputerCallOutputItemParam fromJson(Map<String, dynamic> json) =>
+      ComputerCallOutputItemParamMapper.fromJson(json);
 }
-

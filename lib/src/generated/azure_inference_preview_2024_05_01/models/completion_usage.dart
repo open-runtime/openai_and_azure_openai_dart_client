@@ -9,11 +9,7 @@ part 'completion_usage.mapper.dart';
 /// Usage statistics for the completion request.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsage with CompletionUsageMappable {
-  const CompletionUsage({
-    required this.promptTokens,
-    required this.completionTokens,
-    required this.totalTokens,
-  });
+  const CompletionUsage({required this.promptTokens, required this.completionTokens, required this.totalTokens});
 
   @MappableField(key: 'prompt_tokens')
   final int promptTokens;
@@ -23,6 +19,4 @@ class CompletionUsage with CompletionUsageMappable {
   final int totalTokens;
 
   static CompletionUsage fromJson(Map<String, dynamic> json) => CompletionUsageMapper.fromJson(json);
-
 }
-

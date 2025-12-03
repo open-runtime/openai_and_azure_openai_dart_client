@@ -8,13 +8,10 @@ part 'audit_log_service_account_created_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogServiceAccountCreatedData with AuditLogServiceAccountCreatedDataMappable {
-  const AuditLogServiceAccountCreatedData({
-    this.role,
-  });
+  const AuditLogServiceAccountCreatedData({this.role});
 
   final String? role;
 
-  static AuditLogServiceAccountCreatedData fromJson(Map<String, dynamic> json) => AuditLogServiceAccountCreatedDataMapper.fromJson(json);
-
+  static AuditLogServiceAccountCreatedData fromJson(Map<String, dynamic> json) =>
+      AuditLogServiceAccountCreatedDataMapper.fromJson(json);
 }
-

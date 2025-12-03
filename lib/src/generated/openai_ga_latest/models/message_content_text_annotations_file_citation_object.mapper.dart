@@ -8,7 +8,8 @@
 part of 'message_content_text_annotations_file_citation_object.dart';
 
 class MessageContentTextAnnotationsFileCitationObjectMapper
-    extends ClassMapperBase<MessageContentTextAnnotationsFileCitationObject> {
+    extends
+        SubClassMapperBase<MessageContentTextAnnotationsFileCitationObject> {
   MessageContentTextAnnotationsFileCitationObjectMapper._();
 
   static MessageContentTextAnnotationsFileCitationObjectMapper? _instance;
@@ -18,6 +19,7 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextAnnotationsFileCitationObjectMapper._(),
       );
+      TextAnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentTextAnnotationsFileCitationObjectTypeMapper.ensureInitialized();
       MessageContentTextAnnotationsFileCitationObjectFileCitationMapper.ensureInitialized();
     }
@@ -75,6 +77,14 @@ class MessageContentTextAnnotationsFileCitationObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_citation';
+  @override
+  late final ClassMapperBase superMapper =
+      TextAnnotationMapper.ensureInitialized();
 
   static MessageContentTextAnnotationsFileCitationObject _instantiate(
     DecodingData data,
@@ -188,13 +198,14 @@ abstract class MessageContentTextAnnotationsFileCitationObjectCopyWith<
   $In extends MessageContentTextAnnotationsFileCitationObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements TextAnnotationCopyWith<$R, $In, $Out> {
   MessageContentTextAnnotationsFileCitationObjectFileCitationCopyWith<
     $R,
     MessageContentTextAnnotationsFileCitationObjectFileCitation,
     MessageContentTextAnnotationsFileCitationObjectFileCitation
   >
   get messageContentTextAnnotationsFileCitationObjectFileCitation;
+  @override
   $R call({
     MessageContentTextAnnotationsFileCitationObjectType? type,
     String? text,

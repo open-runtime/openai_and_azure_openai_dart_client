@@ -8,14 +8,10 @@ part 'audit_log_group_created_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogGroupCreatedData with AuditLogGroupCreatedDataMappable {
-  const AuditLogGroupCreatedData({
-    this.groupName,
-  });
+  const AuditLogGroupCreatedData({this.groupName});
 
   @MappableField(key: 'group_name')
   final String? groupName;
 
   static AuditLogGroupCreatedData fromJson(Map<String, dynamic> json) => AuditLogGroupCreatedDataMapper.fromJson(json);
-
 }
-

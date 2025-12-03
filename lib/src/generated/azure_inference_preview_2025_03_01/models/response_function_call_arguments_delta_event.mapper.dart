@@ -8,7 +8,7 @@
 part of 'response_function_call_arguments_delta_event.dart';
 
 class ResponseFunctionCallArgumentsDeltaEventMapper
-    extends ClassMapperBase<ResponseFunctionCallArgumentsDeltaEvent> {
+    extends SubClassMapperBase<ResponseFunctionCallArgumentsDeltaEvent> {
   ResponseFunctionCallArgumentsDeltaEventMapper._();
 
   static ResponseFunctionCallArgumentsDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseFunctionCallArgumentsDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFunctionCallArgumentsDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseFunctionCallArgumentsDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -55,6 +56,14 @@ class ResponseFunctionCallArgumentsDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.function_call_arguments.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseFunctionCallArgumentsDeltaEvent _instantiate(
     DecodingData data,
@@ -149,7 +158,8 @@ abstract class ResponseFunctionCallArgumentsDeltaEventCopyWith<
   $In extends ResponseFunctionCallArgumentsDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseFunctionCallArgumentsDeltaEventType? type,
     String? itemId,

@@ -10,15 +10,11 @@ part 'chat_completion_request_message_content_part_text.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageContentPartText with ChatCompletionRequestMessageContentPartTextMappable {
-  const ChatCompletionRequestMessageContentPartText({
-    required this.type,
-    this.text,
-  });
+  const ChatCompletionRequestMessageContentPartText({required this.type, this.text});
 
   final ChatCompletionRequestMessageContentPartType type;
   final String? text;
 
-  static ChatCompletionRequestMessageContentPartText fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartTextMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartText fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartTextMapper.fromJson(json);
 }
-

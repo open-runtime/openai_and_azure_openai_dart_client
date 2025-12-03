@@ -11,10 +11,10 @@ part 'delete_certificate_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeleteCertificateResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `certificate.deleted`.
-  @MappableValue('certificate.deleted') 
+  @MappableValue('certificate.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum DeleteCertificateResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeleteCertificateResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeleteCertificateResponseObjectObjectEnum.unknown).toList();
+  static List<DeleteCertificateResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeleteCertificateResponseObjectObjectEnum.unknown).toList();
 }

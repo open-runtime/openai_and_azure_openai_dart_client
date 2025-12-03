@@ -8,7 +8,7 @@
 part of 'response_file_search_call_completed_event.dart';
 
 class ResponseFileSearchCallCompletedEventMapper
-    extends ClassMapperBase<ResponseFileSearchCallCompletedEvent> {
+    extends SubClassMapperBase<ResponseFileSearchCallCompletedEvent> {
   ResponseFileSearchCallCompletedEventMapper._();
 
   static ResponseFileSearchCallCompletedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseFileSearchCallCompletedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseFileSearchCallCompletedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseFileSearchCallCompletedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -51,6 +52,14 @@ class ResponseFileSearchCallCompletedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.file_search_call.completed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseFileSearchCallCompletedEvent _instantiate(DecodingData data) {
     return ResponseFileSearchCallCompletedEvent(
@@ -140,7 +149,8 @@ abstract class ResponseFileSearchCallCompletedEventCopyWith<
   $In extends ResponseFileSearchCallCompletedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseFileSearchCallCompletedEventType? type,
     int? outputIndex,

@@ -38,6 +38,4 @@ class FineTuningJobCheckpoint with FineTuningJobCheckpointMappable {
   final FineTuningJobCheckpointObjectObjectEnum objectEnum;
 
   static FineTuningJobCheckpoint fromJson(Map<String, dynamic> json) => FineTuningJobCheckpointMapper.fromJson(json);
-
 }
-

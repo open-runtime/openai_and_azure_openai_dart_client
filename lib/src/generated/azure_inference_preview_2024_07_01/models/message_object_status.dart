@@ -9,16 +9,16 @@ part 'message_object_status.mapper.dart';
 /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageObjectStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum MessageObjectStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageObjectStatus> get $valuesDefined => values.where((value) => value != MessageObjectStatus.unknown).toList();
+  static List<MessageObjectStatus> get $valuesDefined =>
+      values.where((value) => value != MessageObjectStatus.unknown).toList();
 }

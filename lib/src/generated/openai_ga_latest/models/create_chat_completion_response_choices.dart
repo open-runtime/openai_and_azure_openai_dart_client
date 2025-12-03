@@ -26,7 +26,6 @@ class CreateChatCompletionResponseChoices with CreateChatCompletionResponseChoic
   final ChatCompletionResponseMessage message;
   final CreateChatCompletionResponseChoicesLogprobs? logprobs;
 
-  static CreateChatCompletionResponseChoices fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesMapper.fromJson(json);
-
+  static CreateChatCompletionResponseChoices fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseChoicesMapper.fromJson(json);
 }
-

@@ -11,10 +11,10 @@ part 'image_edit_partial_image_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ImageEditPartialImageEventType {
   /// Incorrect name has been replaced. Original name: `image_edit.partial_image`.
-  @MappableValue('image_edit.partial_image') 
+  @MappableValue('image_edit.partial_image')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ImageEditPartialImageEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageEditPartialImageEventType> get $valuesDefined => values.where((value) => value != ImageEditPartialImageEventType.unknown).toList();
+  static List<ImageEditPartialImageEventType> get $valuesDefined =>
+      values.where((value) => value != ImageEditPartialImageEventType.unknown).toList();
 }

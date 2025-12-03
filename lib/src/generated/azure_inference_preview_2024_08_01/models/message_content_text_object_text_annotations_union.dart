@@ -13,17 +13,21 @@ import 'message_content_text_annotations_file_path_object_type.dart';
 
 part 'message_content_text_object_text_annotations_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  MessageContentTextObjectTextAnnotationsUnionFileCitation,
-  MessageContentTextObjectTextAnnotationsUnionFilePath
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    MessageContentTextObjectTextAnnotationsUnionFileCitation,
+    MessageContentTextObjectTextAnnotationsUnionFilePath,
+  ],
+)
 sealed class MessageContentTextObjectTextAnnotationsUnion with MessageContentTextObjectTextAnnotationsUnionMappable {
   const MessageContentTextObjectTextAnnotationsUnion();
 
   static MessageContentTextObjectTextAnnotationsUnion fromJson(Map<String, dynamic> json) {
     return MessageContentTextObjectTextAnnotationsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension MessageContentTextObjectTextAnnotationsUnionDeserializer on MessageContentTextObjectTextAnnotationsUnion {
@@ -33,25 +37,31 @@ extension MessageContentTextObjectTextAnnotationsUnionDeserializer on MessageCon
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      MessageContentTextObjectTextAnnotationsUnionFileCitation: 'file_citation',
-      MessageContentTextObjectTextAnnotationsUnionFilePath: 'file_path',
+      MessageContentTextAnnotationsFileCitationObject: 'file_citation',
+      MessageContentTextAnnotationsFilePathObject: 'file_path',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[MessageContentTextObjectTextAnnotationsUnionFileCitation] => MessageContentTextObjectTextAnnotationsUnionFileCitationMapper.fromJson(json),
-      _ when value == effective[MessageContentTextObjectTextAnnotationsUnionFilePath] => MessageContentTextObjectTextAnnotationsUnionFilePathMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for MessageContentTextObjectTextAnnotationsUnion'),
+      _ when value == effective[MessageContentTextAnnotationsFileCitationObject] =>
+        MessageContentTextAnnotationsFileCitationObjectMapper.fromJson(json),
+      _ when value == effective[MessageContentTextAnnotationsFilePathObject] =>
+        MessageContentTextAnnotationsFilePathObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for MessageContentTextObjectTextAnnotationsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_citation')
-class MessageContentTextObjectTextAnnotationsUnionFileCitation extends MessageContentTextObjectTextAnnotationsUnion with MessageContentTextObjectTextAnnotationsUnionFileCitationMappable {
+class MessageContentTextObjectTextAnnotationsUnionFileCitation extends MessageContentTextObjectTextAnnotationsUnion
+    with MessageContentTextObjectTextAnnotationsUnionFileCitationMappable {
   final MessageContentTextAnnotationsFileCitationObjectType type;
   final String text;
   @MappableField(key: 'file_citation')
-  final MessageContentTextAnnotationsFileCitationObjectFileCitation messageContentTextAnnotationsFileCitationObjectFileCitation;
+  final MessageContentTextAnnotationsFileCitationObjectFileCitation
+  messageContentTextAnnotationsFileCitationObjectFileCitation;
   @MappableField(key: 'start_index')
   final int startIndex;
   @MappableField(key: 'end_index')
@@ -64,10 +74,11 @@ class MessageContentTextObjectTextAnnotationsUnionFileCitation extends MessageCo
     required this.startIndex,
     required this.endIndex,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_path')
-class MessageContentTextObjectTextAnnotationsUnionFilePath extends MessageContentTextObjectTextAnnotationsUnion with MessageContentTextObjectTextAnnotationsUnionFilePathMappable {
+class MessageContentTextObjectTextAnnotationsUnionFilePath extends MessageContentTextObjectTextAnnotationsUnion
+    with MessageContentTextObjectTextAnnotationsUnionFilePathMappable {
   final MessageContentTextAnnotationsFilePathObjectType type;
   final String text;
   @MappableField(key: 'file_path')
@@ -84,5 +95,4 @@ class MessageContentTextObjectTextAnnotationsUnionFilePath extends MessageConten
     required this.startIndex,
     required this.endIndex,
   });
-
 }

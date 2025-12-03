@@ -11,17 +11,12 @@ import 'error_event_event.dart';
 part 'error_event.mapper.dart';
 
 /// Occurs when an [error](https://platform.openai.com/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ErrorEvent with ErrorEventMappable {
-  const ErrorEvent({
-    required this.event,
-    required this.data,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'error')
+class ErrorEvent extends AssistantStreamEvent with ErrorEventMappable {
+  const ErrorEvent({required this.event, required this.data});
 
   final ErrorEventEvent event;
   final Error data;
 
   static ErrorEvent fromJson(Map<String, dynamic> json) => ErrorEventMapper.fromJson(json);
-
 }
-

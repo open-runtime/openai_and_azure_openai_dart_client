@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_audio_delta.dart';
 
 class RealtimeServerEventResponseAudioDeltaMapper
-    extends ClassMapperBase<RealtimeServerEventResponseAudioDelta> {
+    extends SubClassMapperBase<RealtimeServerEventResponseAudioDelta> {
   RealtimeServerEventResponseAudioDeltaMapper._();
 
   static RealtimeServerEventResponseAudioDeltaMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseAudioDeltaMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseAudioDeltaMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseAudioDeltaTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -73,6 +74,14 @@ class RealtimeServerEventResponseAudioDeltaMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.audio.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseAudioDelta _instantiate(DecodingData data) {
     return RealtimeServerEventResponseAudioDelta(
@@ -165,7 +174,8 @@ abstract class RealtimeServerEventResponseAudioDeltaCopyWith<
   $In extends RealtimeServerEventResponseAudioDelta,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventResponseAudioDeltaType? type,

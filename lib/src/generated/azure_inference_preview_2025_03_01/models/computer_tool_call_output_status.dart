@@ -11,16 +11,16 @@ part 'computer_tool_call_output_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerToolCallOutputStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ComputerToolCallOutputStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerToolCallOutputStatus> get $valuesDefined => values.where((value) => value != ComputerToolCallOutputStatus.unknown).toList();
+  static List<ComputerToolCallOutputStatus> get $valuesDefined =>
+      values.where((value) => value != ComputerToolCallOutputStatus.unknown).toList();
 }

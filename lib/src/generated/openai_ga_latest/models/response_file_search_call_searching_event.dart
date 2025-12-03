@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_file_search_call_searching_event.mapper.dart';
 
 /// Emitted when a file search is currently searching.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.file_search_call.searching')
+class ResponseFileSearchCallSearchingEvent extends ResponseStreamEvent
+    with ResponseFileSearchCallSearchingEventMappable {
   const ResponseFileSearchCallSearchingEvent({
     required this.type,
     required this.outputIndex,
@@ -27,7 +28,6 @@ class ResponseFileSearchCallSearchingEvent with ResponseFileSearchCallSearchingE
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseFileSearchCallSearchingEvent fromJson(Map<String, dynamic> json) => ResponseFileSearchCallSearchingEventMapper.fromJson(json);
-
+  static ResponseFileSearchCallSearchingEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFileSearchCallSearchingEventMapper.fromJson(json);
 }
-

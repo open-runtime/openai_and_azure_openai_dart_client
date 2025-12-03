@@ -9,10 +9,10 @@ part 'assistant_tools_code_type.mapper.dart';
 /// The type of tool being defined: `code_interpreter`
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantToolsCodeType {
-  @MappableValue('code_interpreter') 
+  @MappableValue('code_interpreter')
   codeInterpreter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum AssistantToolsCodeType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantToolsCodeType> get $valuesDefined => values.where((value) => value != AssistantToolsCodeType.unknown).toList();
+  static List<AssistantToolsCodeType> get $valuesDefined =>
+      values.where((value) => value != AssistantToolsCodeType.unknown).toList();
 }

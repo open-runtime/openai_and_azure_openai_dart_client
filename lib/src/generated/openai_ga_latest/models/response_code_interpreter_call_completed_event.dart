@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_code_interpreter_call_completed_event.mapper.dart';
 
 /// Emitted when the code interpreter call is completed.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCodeInterpreterCallCompletedEvent with ResponseCodeInterpreterCallCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.completed')
+class ResponseCodeInterpreterCallCompletedEvent extends ResponseStreamEvent
+    with ResponseCodeInterpreterCallCompletedEventMappable {
   const ResponseCodeInterpreterCallCompletedEvent({
     required this.type,
     required this.outputIndex,
@@ -27,7 +28,6 @@ class ResponseCodeInterpreterCallCompletedEvent with ResponseCodeInterpreterCall
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseCodeInterpreterCallCompletedEvent fromJson(Map<String, dynamic> json) => ResponseCodeInterpreterCallCompletedEventMapper.fromJson(json);
-
+  static ResponseCodeInterpreterCallCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCodeInterpreterCallCompletedEventMapper.fromJson(json);
 }
-

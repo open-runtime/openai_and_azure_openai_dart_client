@@ -10,8 +10,8 @@ import 'container_file_citation_body_type.dart';
 part 'container_file_citation_body.mapper.dart';
 
 /// A citation for a container file used to generate a model response.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ContainerFileCitationBody with ContainerFileCitationBodyMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'container_file_citation')
+class ContainerFileCitationBody extends Annotation with ContainerFileCitationBodyMappable {
   const ContainerFileCitationBody({
     required this.containerId,
     required this.fileId,
@@ -32,7 +32,6 @@ class ContainerFileCitationBody with ContainerFileCitationBodyMappable {
   final String filename;
   final ContainerFileCitationBodyType type;
 
-  static ContainerFileCitationBody fromJson(Map<String, dynamic> json) => ContainerFileCitationBodyMapper.fromJson(json);
-
+  static ContainerFileCitationBody fromJson(Map<String, dynamic> json) =>
+      ContainerFileCitationBodyMapper.fromJson(json);
 }
-

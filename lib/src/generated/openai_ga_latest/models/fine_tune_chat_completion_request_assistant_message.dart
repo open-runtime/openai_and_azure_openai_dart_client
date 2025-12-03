@@ -36,7 +36,6 @@ class FineTuneChatCompletionRequestAssistantMessage with FineTuneChatCompletionR
   final ChatCompletionRequestAssistantMessageFunctionCall? functionCall;
   final FineTuneChatCompletionRequestAssistantMessageWeight? weight;
 
-  static FineTuneChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) => FineTuneChatCompletionRequestAssistantMessageMapper.fromJson(json);
-
+  static FineTuneChatCompletionRequestAssistantMessage fromJson(Map<String, dynamic> json) =>
+      FineTuneChatCompletionRequestAssistantMessageMapper.fromJson(json);
 }
-

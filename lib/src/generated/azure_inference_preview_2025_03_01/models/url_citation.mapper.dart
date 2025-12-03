@@ -7,13 +7,14 @@
 
 part of 'url_citation.dart';
 
-class UrlCitationMapper extends ClassMapperBase<UrlCitation> {
+class UrlCitationMapper extends SubClassMapperBase<UrlCitation> {
   UrlCitationMapper._();
 
   static UrlCitationMapper? _instance;
   static UrlCitationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UrlCitationMapper._());
+      AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       UrlCitationTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -56,6 +57,13 @@ class UrlCitationMapper extends ClassMapperBase<UrlCitation> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'url_citation';
+  @override
+  late final ClassMapperBase superMapper = AnnotationMapper.ensureInitialized();
 
   static UrlCitation _instantiate(DecodingData data) {
     return UrlCitation(
@@ -126,7 +134,8 @@ extension UrlCitationValueCopy<$R, $Out>
 }
 
 abstract class UrlCitationCopyWith<$R, $In extends UrlCitation, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AnnotationCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? url,
     String? title,

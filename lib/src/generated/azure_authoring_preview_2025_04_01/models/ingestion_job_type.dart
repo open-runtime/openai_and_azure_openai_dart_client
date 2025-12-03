@@ -9,13 +9,13 @@ part 'ingestion_job_type.mapper.dart';
 /// The job type.
 @MappableEnum(defaultValue: 'unknown')
 enum IngestionJobType {
-  @MappableValue('SystemCompute') 
+  @MappableValue('SystemCompute')
   systemCompute,
 
-  @MappableValue('UserCompute') 
+  @MappableValue('UserCompute')
   userCompute,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum IngestionJobType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<IngestionJobType> get $valuesDefined => values.where((value) => value != IngestionJobType.unknown).toList();
+  static List<IngestionJobType> get $valuesDefined =>
+      values.where((value) => value != IngestionJobType.unknown).toList();
 }

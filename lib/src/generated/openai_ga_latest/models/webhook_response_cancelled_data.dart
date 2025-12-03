@@ -8,13 +8,10 @@ part 'webhook_response_cancelled_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookResponseCancelledData with WebhookResponseCancelledDataMappable {
-  const WebhookResponseCancelledData({
-    required this.id,
-  });
+  const WebhookResponseCancelledData({required this.id});
 
   final String id;
 
-  static WebhookResponseCancelledData fromJson(Map<String, dynamic> json) => WebhookResponseCancelledDataMapper.fromJson(json);
-
+  static WebhookResponseCancelledData fromJson(Map<String, dynamic> json) =>
+      WebhookResponseCancelledDataMapper.fromJson(json);
 }
-

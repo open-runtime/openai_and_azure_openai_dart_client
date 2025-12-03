@@ -7,15 +7,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'run_step_details_message_creation_object_message_creation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDetailsMessageCreationObjectMessageCreation with RunStepDetailsMessageCreationObjectMessageCreationMappable {
-  const RunStepDetailsMessageCreationObjectMessageCreation({
-    required this.messageId,
-  });
+class RunStepDetailsMessageCreationObjectMessageCreation
+    with RunStepDetailsMessageCreationObjectMessageCreationMappable {
+  const RunStepDetailsMessageCreationObjectMessageCreation({required this.messageId});
 
   @MappableField(key: 'message_id')
   final String messageId;
 
-  static RunStepDetailsMessageCreationObjectMessageCreation fromJson(Map<String, dynamic> json) => RunStepDetailsMessageCreationObjectMessageCreationMapper.fromJson(json);
-
+  static RunStepDetailsMessageCreationObjectMessageCreation fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsMessageCreationObjectMessageCreationMapper.fromJson(json);
 }
-

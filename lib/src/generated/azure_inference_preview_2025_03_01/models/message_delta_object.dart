@@ -13,11 +13,7 @@ part 'message_delta_object.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageDeltaObject with MessageDeltaObjectMappable {
-  const MessageDeltaObject({
-    required this.id,
-    required this.objectEnum,
-    required this.messageDeltaObjectDelta,
-  });
+  const MessageDeltaObject({required this.id, required this.objectEnum, required this.messageDeltaObjectDelta});
 
   final String id;
   @MappableField(key: 'object')
@@ -26,6 +22,4 @@ class MessageDeltaObject with MessageDeltaObjectMappable {
   final MessageDeltaObjectDelta messageDeltaObjectDelta;
 
   static MessageDeltaObject fromJson(Map<String, dynamic> json) => MessageDeltaObjectMapper.fromJson(json);
-
 }
-

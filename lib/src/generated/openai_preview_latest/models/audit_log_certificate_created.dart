@@ -8,15 +8,11 @@ part 'audit_log_certificate_created.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCertificateCreated with AuditLogCertificateCreatedMappable {
-  const AuditLogCertificateCreated({
-    this.id,
-    this.name,
-  });
+  const AuditLogCertificateCreated({this.id, this.name});
 
   final String? id;
   final String? name;
 
-  static AuditLogCertificateCreated fromJson(Map<String, dynamic> json) => AuditLogCertificateCreatedMapper.fromJson(json);
-
+  static AuditLogCertificateCreated fromJson(Map<String, dynamic> json) =>
+      AuditLogCertificateCreatedMapper.fromJson(json);
 }
-

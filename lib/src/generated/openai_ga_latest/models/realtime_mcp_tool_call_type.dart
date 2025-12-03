@@ -9,10 +9,10 @@ part 'realtime_mcp_tool_call_type.mapper.dart';
 /// The type of the item. Always `mcp_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeMcpToolCallType {
-  @MappableValue('mcp_call') 
+  @MappableValue('mcp_call')
   mcpCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeMcpToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeMcpToolCallType> get $valuesDefined => values.where((value) => value != RealtimeMcpToolCallType.unknown).toList();
+  static List<RealtimeMcpToolCallType> get $valuesDefined =>
+      values.where((value) => value != RealtimeMcpToolCallType.unknown).toList();
 }

@@ -11,10 +11,10 @@ part 'response_stream_event_type16.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseStreamEventType16 {
   /// Incorrect name has been replaced. Original name: `response.file_search_call.in_progress`.
-  @MappableValue('response.file_search_call.in_progress') 
+  @MappableValue('response.file_search_call.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseStreamEventType16 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseStreamEventType16> get $valuesDefined => values.where((value) => value != ResponseStreamEventType16.unknown).toList();
+  static List<ResponseStreamEventType16> get $valuesDefined =>
+      values.where((value) => value != ResponseStreamEventType16.unknown).toList();
 }

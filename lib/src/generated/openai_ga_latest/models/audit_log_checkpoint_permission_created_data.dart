@@ -8,17 +8,13 @@ part 'audit_log_checkpoint_permission_created_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCheckpointPermissionCreatedData with AuditLogCheckpointPermissionCreatedDataMappable {
-  const AuditLogCheckpointPermissionCreatedData({
-    this.projectId,
-    this.fineTunedModelCheckpoint,
-  });
+  const AuditLogCheckpointPermissionCreatedData({this.projectId, this.fineTunedModelCheckpoint});
 
   @MappableField(key: 'project_id')
   final String? projectId;
   @MappableField(key: 'fine_tuned_model_checkpoint')
   final String? fineTunedModelCheckpoint;
 
-  static AuditLogCheckpointPermissionCreatedData fromJson(Map<String, dynamic> json) => AuditLogCheckpointPermissionCreatedDataMapper.fromJson(json);
-
+  static AuditLogCheckpointPermissionCreatedData fromJson(Map<String, dynamic> json) =>
+      AuditLogCheckpointPermissionCreatedDataMapper.fromJson(json);
 }
-

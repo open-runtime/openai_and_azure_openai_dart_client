@@ -10,15 +10,11 @@ part 'chat_completion_request_message_user.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageUser with ChatCompletionRequestMessageUserMappable {
-  const ChatCompletionRequestMessageUser({
-    required this.role,
-    this.content,
-  });
+  const ChatCompletionRequestMessageUser({required this.role, this.content});
 
   final ChatCompletionRequestMessageRole role;
   final String? content;
 
-  static ChatCompletionRequestMessageUser fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageUserMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageUser fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageUserMapper.fromJson(json);
 }
-

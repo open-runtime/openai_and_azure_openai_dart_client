@@ -8,13 +8,9 @@ part 'audit_log_role_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogRoleDeleted with AuditLogRoleDeletedMappable {
-  const AuditLogRoleDeleted({
-    this.id,
-  });
+  const AuditLogRoleDeleted({this.id});
 
   final String? id;
 
   static AuditLogRoleDeleted fromJson(Map<String, dynamic> json) => AuditLogRoleDeletedMapper.fromJson(json);
-
 }
-

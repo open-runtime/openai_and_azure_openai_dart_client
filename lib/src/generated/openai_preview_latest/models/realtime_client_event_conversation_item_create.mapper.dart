@@ -8,7 +8,7 @@
 part of 'realtime_client_event_conversation_item_create.dart';
 
 class RealtimeClientEventConversationItemCreateMapper
-    extends ClassMapperBase<RealtimeClientEventConversationItemCreate> {
+    extends SubClassMapperBase<RealtimeClientEventConversationItemCreate> {
   RealtimeClientEventConversationItemCreateMapper._();
 
   static RealtimeClientEventConversationItemCreateMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventConversationItemCreateMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemCreateMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeClientEventConversationItemCreateTypeMapper.ensureInitialized();
       RealtimeConversationItemMapper.ensureInitialized();
     }
@@ -69,6 +70,14 @@ class RealtimeClientEventConversationItemCreateMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.create';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventConversationItemCreate _instantiate(
     DecodingData data,
@@ -167,13 +176,14 @@ abstract class RealtimeClientEventConversationItemCreateCopyWith<
   $In extends RealtimeClientEventConversationItemCreate,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
   RealtimeConversationItemCopyWith<
     $R,
     RealtimeConversationItem,
     RealtimeConversationItem
   >
   get item;
+  @override
   $R call({
     RealtimeClientEventConversationItemCreateType? type,
     RealtimeConversationItem? item,

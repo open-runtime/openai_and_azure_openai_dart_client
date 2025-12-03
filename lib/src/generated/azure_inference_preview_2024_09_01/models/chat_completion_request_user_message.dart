@@ -9,19 +9,15 @@ import 'chat_completion_request_user_message_role.dart';
 
 part 'chat_completion_request_user_message.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestUserMessage with ChatCompletionRequestUserMessageMappable {
-  const ChatCompletionRequestUserMessage({
-    required this.content,
-    required this.role,
-    this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
+class ChatCompletionRequestUserMessage extends ChatCompletionRequestMessage
+    with ChatCompletionRequestUserMessageMappable {
+  const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name});
 
   final String content;
   final ChatCompletionRequestUserMessageRole role;
   final String? name;
 
-  static ChatCompletionRequestUserMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestUserMessageMapper.fromJson(json);
-
+  static ChatCompletionRequestUserMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestUserMessageMapper.fromJson(json);
 }
-

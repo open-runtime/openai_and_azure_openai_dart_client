@@ -11,10 +11,10 @@ part 'task_item_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TaskItemObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chatkit.thread_item`.
-  @MappableValue('chatkit.thread_item') 
+  @MappableValue('chatkit.thread_item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum TaskItemObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TaskItemObjectObjectEnum> get $valuesDefined => values.where((value) => value != TaskItemObjectObjectEnum.unknown).toList();
+  static List<TaskItemObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != TaskItemObjectObjectEnum.unknown).toList();
 }

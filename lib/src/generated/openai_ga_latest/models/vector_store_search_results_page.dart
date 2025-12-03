@@ -29,7 +29,6 @@ class VectorStoreSearchResultsPage with VectorStoreSearchResultsPageMappable {
   @MappableField(key: 'next_page')
   final String? nextPage;
 
-  static VectorStoreSearchResultsPage fromJson(Map<String, dynamic> json) => VectorStoreSearchResultsPageMapper.fromJson(json);
-
+  static VectorStoreSearchResultsPage fromJson(Map<String, dynamic> json) =>
+      VectorStoreSearchResultsPageMapper.fromJson(json);
 }
-

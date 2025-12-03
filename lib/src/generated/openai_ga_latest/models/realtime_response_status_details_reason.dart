@@ -10,19 +10,19 @@ part 'realtime_response_status_details_reason.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseStatusDetailsReason {
-  @MappableValue('turn_detected') 
+  @MappableValue('turn_detected')
   turnDetected,
 
-  @MappableValue('client_cancelled') 
+  @MappableValue('client_cancelled')
   clientCancelled,
 
-  @MappableValue('max_output_tokens') 
+  @MappableValue('max_output_tokens')
   maxOutputTokens,
 
-  @MappableValue('content_filter') 
+  @MappableValue('content_filter')
   contentFilter,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum RealtimeResponseStatusDetailsReason {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseStatusDetailsReason> get $valuesDefined => values.where((value) => value != RealtimeResponseStatusDetailsReason.unknown).toList();
+  static List<RealtimeResponseStatusDetailsReason> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseStatusDetailsReason.unknown).toList();
 }

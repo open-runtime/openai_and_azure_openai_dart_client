@@ -8,13 +8,10 @@ part 'assistants_named_tool_choice_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantsNamedToolChoiceFunction with AssistantsNamedToolChoiceFunctionMappable {
-  const AssistantsNamedToolChoiceFunction({
-    required this.name,
-  });
+  const AssistantsNamedToolChoiceFunction({required this.name});
 
   final String name;
 
-  static AssistantsNamedToolChoiceFunction fromJson(Map<String, dynamic> json) => AssistantsNamedToolChoiceFunctionMapper.fromJson(json);
-
+  static AssistantsNamedToolChoiceFunction fromJson(Map<String, dynamic> json) =>
+      AssistantsNamedToolChoiceFunctionMapper.fromJson(json);
 }
-

@@ -10,13 +10,9 @@ part 'fine_tune_method_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneMethodRequest with FineTuneMethodRequestMappable {
-  const FineTuneMethodRequest({
-    required this.type,
-  });
+  const FineTuneMethodRequest({required this.type});
 
   final FineTuningMethodType type;
 
   static FineTuneMethodRequest fromJson(Map<String, dynamic> json) => FineTuneMethodRequestMapper.fromJson(json);
-
 }
-

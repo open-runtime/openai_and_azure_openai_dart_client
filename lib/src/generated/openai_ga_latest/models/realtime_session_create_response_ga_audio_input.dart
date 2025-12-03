@@ -23,11 +23,11 @@ class RealtimeSessionCreateResponseGaAudioInput with RealtimeSessionCreateRespon
   final RealtimeAudioFormats? format;
   final AudioTranscription? transcription;
   @MappableField(key: 'noise_reduction')
-  final RealtimeSessionCreateResponseGaAudioInputNoiseReduction? realtimeSessionCreateResponseGaAudioInputNoiseReduction;
+  final RealtimeSessionCreateResponseGaAudioInputNoiseReduction?
+  realtimeSessionCreateResponseGaAudioInputNoiseReduction;
   @MappableField(key: 'turn_detection')
   final RealtimeTurnDetection? turnDetection;
 
-  static RealtimeSessionCreateResponseGaAudioInput fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaAudioInputMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseGaAudioInput fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseGaAudioInputMapper.fromJson(json);
 }
-

@@ -9,13 +9,13 @@ part 'custom_tool_chat_completions_custom_format_union_variant2_grammar_syntax.m
 /// The syntax of the grammar definition. One of `lark` or `regex`.
 @MappableEnum(defaultValue: 'unknown')
 enum CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax {
-  @MappableValue('lark') 
+  @MappableValue('lark')
   lark,
 
-  @MappableValue('regex') 
+  @MappableValue('regex')
   regex,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,7 @@ enum CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax> get $valuesDefined => values.where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax.unknown).toList();
+  static List<CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax> get $valuesDefined => values
+      .where((value) => value != CustomToolChatCompletionsCustomFormatUnionVariant2GrammarSyntax.unknown)
+      .toList();
 }

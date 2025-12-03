@@ -10,12 +10,7 @@ part 'realtime_server_event_rate_limits.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventRateLimits with RealtimeServerEventRateLimitsMappable {
-  const RealtimeServerEventRateLimits({
-    this.name,
-    this.limit,
-    this.remaining,
-    this.resetSeconds,
-  });
+  const RealtimeServerEventRateLimits({this.name, this.limit, this.remaining, this.resetSeconds});
 
   final RealtimeServerEventRateLimitsName? name;
   final int? limit;
@@ -23,7 +18,6 @@ class RealtimeServerEventRateLimits with RealtimeServerEventRateLimitsMappable {
   @MappableField(key: 'reset_seconds')
   final num? resetSeconds;
 
-  static RealtimeServerEventRateLimits fromJson(Map<String, dynamic> json) => RealtimeServerEventRateLimitsMapper.fromJson(json);
-
+  static RealtimeServerEventRateLimits fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventRateLimitsMapper.fromJson(json);
 }
-

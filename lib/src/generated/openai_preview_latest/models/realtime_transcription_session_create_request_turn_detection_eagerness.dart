@@ -10,19 +10,19 @@ part 'realtime_transcription_session_create_request_turn_detection_eagerness.map
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness {
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('medium') 
+  @MappableValue('medium')
   medium,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,7 @@ enum RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness> get $valuesDefined => values
+      .where((value) => value != RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness.unknown)
+      .toList();
 }

@@ -7,13 +7,14 @@
 
 part of 'drag.dart';
 
-class DragMapper extends ClassMapperBase<Drag> {
+class DragMapper extends SubClassMapperBase<Drag> {
   DragMapper._();
 
   static DragMapper? _instance;
   static DragMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = DragMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       CoordinateMapper.ensureInitialized();
       DragTypeMapper.ensureInitialized();
     }
@@ -39,6 +40,14 @@ class DragMapper extends ClassMapperBase<Drag> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'drag';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static Drag _instantiate(DecodingData data) {
     return Drag(path: data.dec(_f$path), type: data.dec(_f$type));
@@ -89,9 +98,10 @@ extension DragValueCopy<$R, $Out> on ObjectCopyWith<$R, Drag, $Out> {
 }
 
 abstract class DragCopyWith<$R, $In extends Drag, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, Coordinate, CoordinateCopyWith<$R, Coordinate, Coordinate>>
   get path;
+  @override
   $R call({List<Coordinate>? path, DragType? type});
   DragCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

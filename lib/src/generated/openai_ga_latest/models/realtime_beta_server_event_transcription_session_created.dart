@@ -11,7 +11,8 @@ part 'realtime_beta_server_event_transcription_session_created.mapper.dart';
 /// Returned when a transcription session is created.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventTranscriptionSessionCreated with RealtimeBetaServerEventTranscriptionSessionCreatedMappable {
+class RealtimeBetaServerEventTranscriptionSessionCreated
+    with RealtimeBetaServerEventTranscriptionSessionCreatedMappable {
   const RealtimeBetaServerEventTranscriptionSessionCreated({
     required this.eventId,
     required this.type,
@@ -23,7 +24,6 @@ class RealtimeBetaServerEventTranscriptionSessionCreated with RealtimeBetaServer
   final dynamic type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
-  static RealtimeBetaServerEventTranscriptionSessionCreated fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventTranscriptionSessionCreatedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventTranscriptionSessionCreated fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventTranscriptionSessionCreatedMapper.fromJson(json);
 }
-

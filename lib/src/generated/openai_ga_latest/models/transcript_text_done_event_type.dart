@@ -11,10 +11,10 @@ part 'transcript_text_done_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptTextDoneEventType {
   /// Incorrect name has been replaced. Original name: `transcript.text.done`.
-  @MappableValue('transcript.text.done') 
+  @MappableValue('transcript.text.done')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum TranscriptTextDoneEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptTextDoneEventType> get $valuesDefined => values.where((value) => value != TranscriptTextDoneEventType.unknown).toList();
+  static List<TranscriptTextDoneEventType> get $valuesDefined =>
+      values.where((value) => value != TranscriptTextDoneEventType.unknown).toList();
 }

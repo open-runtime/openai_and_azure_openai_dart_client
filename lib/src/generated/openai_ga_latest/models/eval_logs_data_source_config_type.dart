@@ -9,10 +9,10 @@ part 'eval_logs_data_source_config_type.mapper.dart';
 /// The type of data source. Always `logs`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalLogsDataSourceConfigType {
-  @MappableValue('logs') 
+  @MappableValue('logs')
   logs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalLogsDataSourceConfigType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalLogsDataSourceConfigType> get $valuesDefined => values.where((value) => value != EvalLogsDataSourceConfigType.unknown).toList();
+  static List<EvalLogsDataSourceConfigType> get $valuesDefined =>
+      values.where((value) => value != EvalLogsDataSourceConfigType.unknown).toList();
 }

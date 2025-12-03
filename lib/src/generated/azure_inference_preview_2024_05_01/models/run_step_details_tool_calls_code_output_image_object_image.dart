@@ -8,14 +8,11 @@ part 'run_step_details_tool_calls_code_output_image_object_image.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDetailsToolCallsCodeOutputImageObjectImage with RunStepDetailsToolCallsCodeOutputImageObjectImageMappable {
-  const RunStepDetailsToolCallsCodeOutputImageObjectImage({
-    required this.fileId,
-  });
+  const RunStepDetailsToolCallsCodeOutputImageObjectImage({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
-  static RunStepDetailsToolCallsCodeOutputImageObjectImage fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsCodeOutputImageObjectImageMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsCodeOutputImageObjectImage fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsCodeOutputImageObjectImageMapper.fromJson(json);
 }
-

@@ -10,10 +10,10 @@ part 'output_audio_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputAudioType {
-  @MappableValue('output_audio') 
+  @MappableValue('output_audio')
   outputAudio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

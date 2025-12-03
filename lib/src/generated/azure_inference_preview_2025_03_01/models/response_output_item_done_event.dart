@@ -11,20 +11,15 @@ import 'response_stream_event.dart';
 part 'response_output_item_done_event.mapper.dart';
 
 /// Emitted when an output item is marked done.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseOutputItemDoneEvent with ResponseOutputItemDoneEventMappable {
-  const ResponseOutputItemDoneEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.item,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_item.done')
+class ResponseOutputItemDoneEvent extends ResponseStreamEvent with ResponseOutputItemDoneEventMappable {
+  const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.item});
 
   final ResponseOutputItemDoneEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final OutputItem item;
 
-  static ResponseOutputItemDoneEvent fromJson(Map<String, dynamic> json) => ResponseOutputItemDoneEventMapper.fromJson(json);
-
+  static ResponseOutputItemDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseOutputItemDoneEventMapper.fromJson(json);
 }
-

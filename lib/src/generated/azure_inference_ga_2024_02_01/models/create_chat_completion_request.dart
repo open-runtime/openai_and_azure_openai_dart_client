@@ -66,7 +66,6 @@ class CreateChatCompletionRequest with CreateChatCompletionRequestMappable {
   final int? n;
   final int? seed;
 
-  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestMapper.fromJson(json);
-
+  static CreateChatCompletionRequest fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestMapper.fromJson(json);
 }
-

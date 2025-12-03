@@ -13,11 +13,7 @@ part 'user_role_assignment.mapper.dart';
 /// Role assignment linking a user to a role.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserRoleAssignment with UserRoleAssignmentMappable {
-  const UserRoleAssignment({
-    required this.objectEnum,
-    required this.user,
-    required this.role,
-  });
+  const UserRoleAssignment({required this.objectEnum, required this.user, required this.role});
 
   @MappableField(key: 'object')
   final UserRoleAssignmentObjectObjectEnum objectEnum;
@@ -25,6 +21,4 @@ class UserRoleAssignment with UserRoleAssignmentMappable {
   final Role role;
 
   static UserRoleAssignment fromJson(Map<String, dynamic> json) => UserRoleAssignmentMapper.fromJson(json);
-
 }
-

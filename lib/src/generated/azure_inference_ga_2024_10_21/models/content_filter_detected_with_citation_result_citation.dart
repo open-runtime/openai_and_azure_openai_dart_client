@@ -8,16 +8,12 @@ part 'content_filter_detected_with_citation_result_citation.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterDetectedWithCitationResultCitation with ContentFilterDetectedWithCitationResultCitationMappable {
-  const ContentFilterDetectedWithCitationResultCitation({
-    this.url,
-    this.license,
-  });
+  const ContentFilterDetectedWithCitationResultCitation({this.url, this.license});
 
   @MappableField(key: 'URL')
   final String? url;
   final String? license;
 
-  static ContentFilterDetectedWithCitationResultCitation fromJson(Map<String, dynamic> json) => ContentFilterDetectedWithCitationResultCitationMapper.fromJson(json);
-
+  static ContentFilterDetectedWithCitationResultCitation fromJson(Map<String, dynamic> json) =>
+      ContentFilterDetectedWithCitationResultCitationMapper.fromJson(json);
 }
-

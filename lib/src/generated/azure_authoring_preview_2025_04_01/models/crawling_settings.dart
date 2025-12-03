@@ -26,6 +26,4 @@ class CrawlingSettings with CrawlingSettingsMappable {
   final int? maxFiles;
 
   static CrawlingSettings fromJson(Map<String, dynamic> json) => CrawlingSettingsMapper.fromJson(json);
-
 }
-

@@ -11,10 +11,10 @@ part 'fine_tuning_checkpoint_permission_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningCheckpointPermissionObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `checkpoint.permission`.
-  @MappableValue('checkpoint.permission') 
+  @MappableValue('checkpoint.permission')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum FineTuningCheckpointPermissionObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningCheckpointPermissionObjectObjectEnum> get $valuesDefined => values.where((value) => value != FineTuningCheckpointPermissionObjectObjectEnum.unknown).toList();
+  static List<FineTuningCheckpointPermissionObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != FineTuningCheckpointPermissionObjectObjectEnum.unknown).toList();
 }

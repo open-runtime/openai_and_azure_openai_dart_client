@@ -8,7 +8,7 @@
 part of 'response_mcp_call_failed_event.dart';
 
 class ResponseMcpCallFailedEventMapper
-    extends ClassMapperBase<ResponseMcpCallFailedEvent> {
+    extends SubClassMapperBase<ResponseMcpCallFailedEvent> {
   ResponseMcpCallFailedEventMapper._();
 
   static ResponseMcpCallFailedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpCallFailedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallFailedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpCallFailedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -59,6 +60,14 @@ class ResponseMcpCallFailedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call.failed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpCallFailedEvent _instantiate(DecodingData data) {
     return ResponseMcpCallFailedEvent(
@@ -142,7 +151,8 @@ abstract class ResponseMcpCallFailedEventCopyWith<
   $In extends ResponseMcpCallFailedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpCallFailedEventType? type,
     String? itemId,

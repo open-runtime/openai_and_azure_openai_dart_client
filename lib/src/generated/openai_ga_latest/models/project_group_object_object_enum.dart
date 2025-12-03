@@ -11,10 +11,10 @@ part 'project_group_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectGroupObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `project.group`.
-  @MappableValue('project.group') 
+  @MappableValue('project.group')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ProjectGroupObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ProjectGroupObjectObjectEnum> get $valuesDefined => values.where((value) => value != ProjectGroupObjectObjectEnum.unknown).toList();
+  static List<ProjectGroupObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ProjectGroupObjectObjectEnum.unknown).toList();
 }

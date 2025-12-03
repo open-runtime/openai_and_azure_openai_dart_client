@@ -27,7 +27,6 @@ class CreateChatCompletionResponseChoicesChoices with CreateChatCompletionRespon
   @MappableField(key: 'content_filter_results')
   final ContentFilterChoiceResults? contentFilterResults;
 
-  static CreateChatCompletionResponseChoicesChoices fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseChoicesChoicesMapper.fromJson(json);
-
+  static CreateChatCompletionResponseChoicesChoices fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseChoicesChoicesMapper.fromJson(json);
 }
-

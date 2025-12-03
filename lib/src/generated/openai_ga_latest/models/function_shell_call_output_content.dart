@@ -24,7 +24,6 @@ class FunctionShellCallOutputContent with FunctionShellCallOutputContentMappable
   @MappableField(key: 'created_by')
   final String? createdBy;
 
-  static FunctionShellCallOutputContent fromJson(Map<String, dynamic> json) => FunctionShellCallOutputContentMapper.fromJson(json);
-
+  static FunctionShellCallOutputContent fromJson(Map<String, dynamic> json) =>
+      FunctionShellCallOutputContentMapper.fromJson(json);
 }
-

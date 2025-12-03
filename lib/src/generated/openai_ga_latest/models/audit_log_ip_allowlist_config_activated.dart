@@ -10,13 +10,10 @@ part 'audit_log_ip_allowlist_config_activated.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogIpAllowlistConfigActivated with AuditLogIpAllowlistConfigActivatedMappable {
-  const AuditLogIpAllowlistConfigActivated({
-    this.configs,
-  });
+  const AuditLogIpAllowlistConfigActivated({this.configs});
 
   final List<AuditLogIpAllowlistConfigActivatedConfigs>? configs;
 
-  static AuditLogIpAllowlistConfigActivated fromJson(Map<String, dynamic> json) => AuditLogIpAllowlistConfigActivatedMapper.fromJson(json);
-
+  static AuditLogIpAllowlistConfigActivated fromJson(Map<String, dynamic> json) =>
+      AuditLogIpAllowlistConfigActivatedMapper.fromJson(json);
 }
-

@@ -10,14 +10,11 @@ part 'run_object_required_action_submit_tool_outputs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunObjectRequiredActionSubmitToolOutputs with RunObjectRequiredActionSubmitToolOutputsMappable {
-  const RunObjectRequiredActionSubmitToolOutputs({
-    required this.toolCalls,
-  });
+  const RunObjectRequiredActionSubmitToolOutputs({required this.toolCalls});
 
   @MappableField(key: 'tool_calls')
   final List<RunToolCallObject> toolCalls;
 
-  static RunObjectRequiredActionSubmitToolOutputs fromJson(Map<String, dynamic> json) => RunObjectRequiredActionSubmitToolOutputsMapper.fromJson(json);
-
+  static RunObjectRequiredActionSubmitToolOutputs fromJson(Map<String, dynamic> json) =>
+      RunObjectRequiredActionSubmitToolOutputsMapper.fromJson(json);
 }
-

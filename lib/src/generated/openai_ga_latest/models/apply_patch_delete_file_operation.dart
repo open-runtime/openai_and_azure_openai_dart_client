@@ -9,17 +9,14 @@ import 'apply_patch_delete_file_operation_type.dart';
 part 'apply_patch_delete_file_operation.mapper.dart';
 
 /// Instruction describing how to delete a file via the apply_patch tool.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ApplyPatchDeleteFileOperation with ApplyPatchDeleteFileOperationMappable {
-  const ApplyPatchDeleteFileOperation({
-    required this.path,
-    this.type = ApplyPatchDeleteFileOperationType.deleteFile,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'delete_file')
+class ApplyPatchDeleteFileOperation extends ApplyPatchToolCallOperationUnion
+    with ApplyPatchDeleteFileOperationMappable {
+  const ApplyPatchDeleteFileOperation({required this.path, this.type = ApplyPatchDeleteFileOperationType.deleteFile});
 
   final String path;
   final ApplyPatchDeleteFileOperationType type;
 
-  static ApplyPatchDeleteFileOperation fromJson(Map<String, dynamic> json) => ApplyPatchDeleteFileOperationMapper.fromJson(json);
-
+  static ApplyPatchDeleteFileOperation fromJson(Map<String, dynamic> json) =>
+      ApplyPatchDeleteFileOperationMapper.fromJson(json);
 }
-

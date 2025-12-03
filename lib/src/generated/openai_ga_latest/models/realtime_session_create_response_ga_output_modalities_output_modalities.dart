@@ -8,13 +8,13 @@ part 'realtime_session_create_response_ga_output_modalities_output_modalities.ma
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,7 @@ enum RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities.unknown).toList();
+  static List<RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities> get $valuesDefined => values
+      .where((value) => value != RealtimeSessionCreateResponseGaOutputModalitiesOutputModalities.unknown)
+      .toList();
 }

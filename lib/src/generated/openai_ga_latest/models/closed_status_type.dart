@@ -9,10 +9,10 @@ part 'closed_status_type.mapper.dart';
 /// Status discriminator that is always `closed`.
 @MappableEnum(defaultValue: 'unknown')
 enum ClosedStatusType {
-  @MappableValue('closed') 
+  @MappableValue('closed')
   closed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ClosedStatusType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ClosedStatusType> get $valuesDefined => values.where((value) => value != ClosedStatusType.unknown).toList();
+  static List<ClosedStatusType> get $valuesDefined =>
+      values.where((value) => value != ClosedStatusType.unknown).toList();
 }

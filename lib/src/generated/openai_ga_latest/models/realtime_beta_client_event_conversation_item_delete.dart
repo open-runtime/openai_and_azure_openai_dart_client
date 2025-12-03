@@ -13,11 +13,7 @@ part 'realtime_beta_client_event_conversation_item_delete.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventConversationItemDelete with RealtimeBetaClientEventConversationItemDeleteMappable {
-  const RealtimeBetaClientEventConversationItemDelete({
-    required this.type,
-    required this.itemId,
-    this.eventId,
-  });
+  const RealtimeBetaClientEventConversationItemDelete({required this.type, required this.itemId, this.eventId});
 
   final dynamic type;
   @MappableField(key: 'item_id')
@@ -25,7 +21,6 @@ class RealtimeBetaClientEventConversationItemDelete with RealtimeBetaClientEvent
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventConversationItemDelete fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventConversationItemDeleteMapper.fromJson(json);
-
+  static RealtimeBetaClientEventConversationItemDelete fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventConversationItemDeleteMapper.fromJson(json);
 }
-

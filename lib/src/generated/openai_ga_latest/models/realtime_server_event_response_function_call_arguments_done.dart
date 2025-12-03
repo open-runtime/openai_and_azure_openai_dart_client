@@ -11,8 +11,9 @@ part 'realtime_server_event_response_function_call_arguments_done.mapper.dart';
 /// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseFunctionCallArgumentsDone with RealtimeServerEventResponseFunctionCallArgumentsDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.done')
+class RealtimeServerEventResponseFunctionCallArgumentsDone extends RealtimeServerEvent
+    with RealtimeServerEventResponseFunctionCallArgumentsDoneMappable {
   const RealtimeServerEventResponseFunctionCallArgumentsDone({
     required this.eventId,
     required this.type,
@@ -36,7 +37,6 @@ class RealtimeServerEventResponseFunctionCallArgumentsDone with RealtimeServerEv
   final String callId;
   final String arguments;
 
-  static RealtimeServerEventResponseFunctionCallArgumentsDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseFunctionCallArgumentsDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json);
 }
-

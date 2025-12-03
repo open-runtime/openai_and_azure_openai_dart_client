@@ -10,10 +10,10 @@ part 'group_list_resource_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum GroupListResourceObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum GroupListResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GroupListResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != GroupListResourceObjectObjectEnum.unknown).toList();
+  static List<GroupListResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != GroupListResourceObjectObjectEnum.unknown).toList();
 }

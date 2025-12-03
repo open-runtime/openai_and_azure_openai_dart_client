@@ -14,18 +14,23 @@ import 'response_format_text_type.dart';
 
 part 'create_chat_completion_request_response_format_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateChatCompletionRequestResponseFormatUnionText,
-  CreateChatCompletionRequestResponseFormatUnionJsonObject,
-  CreateChatCompletionRequestResponseFormatUnionJsonSchema
-])
-sealed class CreateChatCompletionRequestResponseFormatUnion with CreateChatCompletionRequestResponseFormatUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateChatCompletionRequestResponseFormatUnionText,
+    CreateChatCompletionRequestResponseFormatUnionJsonObject,
+    CreateChatCompletionRequestResponseFormatUnionJsonSchema,
+  ],
+)
+sealed class CreateChatCompletionRequestResponseFormatUnion
+    with CreateChatCompletionRequestResponseFormatUnionMappable {
   const CreateChatCompletionRequestResponseFormatUnion();
 
   static CreateChatCompletionRequestResponseFormatUnion fromJson(Map<String, dynamic> json) {
     return CreateChatCompletionRequestResponseFormatUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateChatCompletionRequestResponseFormatUnionDeserializer on CreateChatCompletionRequestResponseFormatUnion {
@@ -35,41 +40,42 @@ extension CreateChatCompletionRequestResponseFormatUnionDeserializer on CreateCh
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateChatCompletionRequestResponseFormatUnionText: 'text',
-      CreateChatCompletionRequestResponseFormatUnionJsonObject: 'json_object',
-      CreateChatCompletionRequestResponseFormatUnionJsonSchema: 'json_schema',
+      ResponseFormatText: 'text',
+      ResponseFormatJsonObject: 'json_object',
+      ResponseFormatJsonSchema: 'json_schema',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateChatCompletionRequestResponseFormatUnionText] => CreateChatCompletionRequestResponseFormatUnionTextMapper.fromJson(json),
-      _ when value == effective[CreateChatCompletionRequestResponseFormatUnionJsonObject] => CreateChatCompletionRequestResponseFormatUnionJsonObjectMapper.fromJson(json),
-      _ when value == effective[CreateChatCompletionRequestResponseFormatUnionJsonSchema] => CreateChatCompletionRequestResponseFormatUnionJsonSchemaMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestResponseFormatUnion'),
+      _ when value == effective[ResponseFormatText] => ResponseFormatTextMapper.fromJson(json),
+      _ when value == effective[ResponseFormatJsonObject] => ResponseFormatJsonObjectMapper.fromJson(json),
+      _ when value == effective[ResponseFormatJsonSchema] => ResponseFormatJsonSchemaMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateChatCompletionRequestResponseFormatUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class CreateChatCompletionRequestResponseFormatUnionText extends CreateChatCompletionRequestResponseFormatUnion with CreateChatCompletionRequestResponseFormatUnionTextMappable {
+class CreateChatCompletionRequestResponseFormatUnionText extends CreateChatCompletionRequestResponseFormatUnion
+    with CreateChatCompletionRequestResponseFormatUnionTextMappable {
   final ResponseFormatTextType type;
 
-  const CreateChatCompletionRequestResponseFormatUnionText({
-    required this.type,
-  });
-
+  const CreateChatCompletionRequestResponseFormatUnionText({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
-class CreateChatCompletionRequestResponseFormatUnionJsonObject extends CreateChatCompletionRequestResponseFormatUnion with CreateChatCompletionRequestResponseFormatUnionJsonObjectMappable {
+class CreateChatCompletionRequestResponseFormatUnionJsonObject extends CreateChatCompletionRequestResponseFormatUnion
+    with CreateChatCompletionRequestResponseFormatUnionJsonObjectMappable {
   final ResponseFormatJsonObjectType type;
 
-  const CreateChatCompletionRequestResponseFormatUnionJsonObject({
-    required this.type,
-  });
-
+  const CreateChatCompletionRequestResponseFormatUnionJsonObject({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
-class CreateChatCompletionRequestResponseFormatUnionJsonSchema extends CreateChatCompletionRequestResponseFormatUnion with CreateChatCompletionRequestResponseFormatUnionJsonSchemaMappable {
+class CreateChatCompletionRequestResponseFormatUnionJsonSchema extends CreateChatCompletionRequestResponseFormatUnion
+    with CreateChatCompletionRequestResponseFormatUnionJsonSchemaMappable {
   final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
@@ -78,5 +84,4 @@ class CreateChatCompletionRequestResponseFormatUnionJsonSchema extends CreateCha
     required this.type,
     required this.responseFormatJsonSchemaJsonSchema,
   });
-
 }

@@ -32,6 +32,4 @@ class WebhookResponseCancelled with WebhookResponseCancelledMappable {
   final WebhookResponseCancelledObjectObjectEnum? objectEnum;
 
   static WebhookResponseCancelled fromJson(Map<String, dynamic> json) => WebhookResponseCancelledMapper.fromJson(json);
-
 }
-

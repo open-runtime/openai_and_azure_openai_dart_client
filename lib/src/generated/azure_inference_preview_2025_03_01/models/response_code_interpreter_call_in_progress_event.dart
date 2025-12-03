@@ -11,8 +11,9 @@ import 'response_stream_event.dart';
 part 'response_code_interpreter_call_in_progress_event.mapper.dart';
 
 /// Emitted when a code interpreter call is in progress.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCodeInterpreterCallInProgressEvent with ResponseCodeInterpreterCallInProgressEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.in_progress')
+class ResponseCodeInterpreterCallInProgressEvent extends ResponseStreamEvent
+    with ResponseCodeInterpreterCallInProgressEventMappable {
   const ResponseCodeInterpreterCallInProgressEvent({
     required this.type,
     required this.outputIndex,
@@ -25,7 +26,6 @@ class ResponseCodeInterpreterCallInProgressEvent with ResponseCodeInterpreterCal
   @MappableField(key: 'code_interpreter_call')
   final CodeInterpreterToolCall codeInterpreterCall;
 
-  static ResponseCodeInterpreterCallInProgressEvent fromJson(Map<String, dynamic> json) => ResponseCodeInterpreterCallInProgressEventMapper.fromJson(json);
-
+  static ResponseCodeInterpreterCallInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCodeInterpreterCallInProgressEventMapper.fromJson(json);
 }
-

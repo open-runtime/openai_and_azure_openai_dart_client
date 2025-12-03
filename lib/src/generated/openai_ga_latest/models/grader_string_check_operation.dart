@@ -9,19 +9,19 @@ part 'grader_string_check_operation.mapper.dart';
 /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
 @MappableEnum(defaultValue: 'unknown')
 enum GraderStringCheckOperation {
-  @MappableValue('eq') 
+  @MappableValue('eq')
   eq,
 
-  @MappableValue('ne') 
+  @MappableValue('ne')
   ne,
 
-  @MappableValue('like') 
+  @MappableValue('like')
   like,
 
-  @MappableValue('ilike') 
+  @MappableValue('ilike')
   ilike,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum GraderStringCheckOperation {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<GraderStringCheckOperation> get $valuesDefined => values.where((value) => value != GraderStringCheckOperation.unknown).toList();
+  static List<GraderStringCheckOperation> get $valuesDefined =>
+      values.where((value) => value != GraderStringCheckOperation.unknown).toList();
 }

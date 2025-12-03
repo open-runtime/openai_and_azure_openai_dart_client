@@ -9,7 +9,11 @@ import 'create_image_request_model_union_enum.dart';
 part 'create_image_request_model_union.mapper.dart';
 
 /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or `gpt-image-1`. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateImageRequestModelUnionVariantEnum, CreateImageRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateImageRequestModelUnionVariantEnum, CreateImageRequestModelUnionVariantString],
+)
 sealed class CreateImageRequestModelUnion with CreateImageRequestModelUnionMappable {
   const CreateImageRequestModelUnion();
 
@@ -46,21 +50,19 @@ extension CreateImageRequestModelUnionDeserializer on CreateImageRequestModelUni
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateImageRequestModelUnionVariantEnum extends CreateImageRequestModelUnion with CreateImageRequestModelUnionVariantEnumMappable {
+class CreateImageRequestModelUnionVariantEnum extends CreateImageRequestModelUnion
+    with CreateImageRequestModelUnionVariantEnumMappable {
   final CreateImageRequestModelUnionEnum value;
 
-  const CreateImageRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateImageRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateImageRequestModelUnionVariantString extends CreateImageRequestModelUnion with CreateImageRequestModelUnionVariantStringMappable {
+class CreateImageRequestModelUnionVariantString extends CreateImageRequestModelUnion
+    with CreateImageRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateImageRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateImageRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

@@ -8,17 +8,12 @@ part 'run_step_delta_step_details_tool_call_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallFunction with RunStepDeltaStepDetailsToolCallFunctionMappable {
-  const RunStepDeltaStepDetailsToolCallFunction({
-    this.name,
-    this.arguments,
-    this.output,
-  });
+  const RunStepDeltaStepDetailsToolCallFunction({this.name, this.arguments, this.output});
 
   final String? name;
   final String? arguments;
   final String? output;
 
-  static RunStepDeltaStepDetailsToolCallFunction fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallFunctionMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallFunction fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallFunctionMapper.fromJson(json);
 }
-

@@ -16,15 +16,10 @@ part 'response_text_param.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ResponseTextParam with ResponseTextParamMappable {
-  const ResponseTextParam({
-    this.format,
-    this.verbosity,
-  });
+  const ResponseTextParam({this.format, this.verbosity});
 
   final TextResponseFormatConfiguration? format;
   final Verbosity? verbosity;
 
   static ResponseTextParam fromJson(Map<String, dynamic> json) => ResponseTextParamMapper.fromJson(json);
-
 }
-

@@ -9,17 +9,14 @@ import 'chat_completion_request_message_content_part_refusal_type.dart';
 
 part 'chat_completion_request_message_content_part_refusal.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartRefusal with ChatCompletionRequestMessageContentPartRefusalMappable {
-  const ChatCompletionRequestMessageContentPartRefusal({
-    required this.type,
-    required this.refusal,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
+class ChatCompletionRequestMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart
+    with ChatCompletionRequestMessageContentPartRefusalMappable {
+  const ChatCompletionRequestMessageContentPartRefusal({required this.type, required this.refusal});
 
   final ChatCompletionRequestMessageContentPartRefusalType type;
   final String refusal;
 
-  static ChatCompletionRequestMessageContentPartRefusal fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartRefusalMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartRefusal fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartRefusalMapper.fromJson(json);
 }
-

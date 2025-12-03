@@ -11,10 +11,10 @@ part 'realtime_conversation_item_message_assistant_object_object_enum.mapper.dar
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemMessageAssistantObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `realtime.item`.
-  @MappableValue('realtime.item') 
+  @MappableValue('realtime.item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeConversationItemMessageAssistantObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemMessageAssistantObjectObjectEnum> get $valuesDefined => values.where((value) => value != RealtimeConversationItemMessageAssistantObjectObjectEnum.unknown).toList();
+  static List<RealtimeConversationItemMessageAssistantObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemMessageAssistantObjectObjectEnum.unknown).toList();
 }

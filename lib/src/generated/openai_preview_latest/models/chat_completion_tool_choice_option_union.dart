@@ -18,7 +18,14 @@ part 'chat_completion_tool_choice_option_union.mapper.dart';
 ///
 /// `none` is the default when no tools are present. `auto` is the default if tools are present.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice, ChatCompletionToolChoiceOptionUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice,
+    ChatCompletionToolChoiceOptionUnionVariantString,
+  ],
+)
 sealed class ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionMappable {
   const ChatCompletionToolChoiceOptionUnion();
 
@@ -36,13 +43,13 @@ extension ChatCompletionToolChoiceOptionUnionDeserializer on ChatCompletionToolC
       return ChatCompletionToolChoiceOptionUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ChatCompletionToolChoiceOptionUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMappable {
+class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends ChatCompletionToolChoiceOptionUnion
+    with ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoiceMappable {
   final ChatCompletionNamedToolChoiceType type;
   @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction chatCompletionNamedToolChoiceFunction;
@@ -54,10 +61,9 @@ class ChatCompletionToolChoiceOptionUnionChatCompletionNamedToolChoice extends C
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionToolChoiceOptionUnionVariantString extends ChatCompletionToolChoiceOptionUnion with ChatCompletionToolChoiceOptionUnionVariantStringMappable {
+class ChatCompletionToolChoiceOptionUnionVariantString extends ChatCompletionToolChoiceOptionUnion
+    with ChatCompletionToolChoiceOptionUnionVariantStringMappable {
   final String value;
 
-  const ChatCompletionToolChoiceOptionUnionVariantString({
-    required this.value,
-  });
+  const ChatCompletionToolChoiceOptionUnionVariantString({required this.value});
 }

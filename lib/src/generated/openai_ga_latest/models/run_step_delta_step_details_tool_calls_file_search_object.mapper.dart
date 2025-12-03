@@ -8,7 +8,8 @@
 part of 'run_step_delta_step_details_tool_calls_file_search_object.dart';
 
 class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
-    extends ClassMapperBase<RunStepDeltaStepDetailsToolCallsFileSearchObject> {
+    extends
+        SubClassMapperBase<RunStepDeltaStepDetailsToolCallsFileSearchObject> {
   RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper._();
 
   static RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper? _instance;
@@ -17,6 +18,9 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper._(),
+      );
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeMapper.ensureInitialized();
     }
@@ -60,6 +64,14 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_search';
+  @override
+  late final ClassMapperBase superMapper =
+      RunStepDeltaStepDetailsToolCallMapper.ensureInitialized();
 
   static RunStepDeltaStepDetailsToolCallsFileSearchObject _instantiate(
     DecodingData data,
@@ -170,7 +182,8 @@ abstract class RunStepDeltaStepDetailsToolCallsFileSearchObjectCopyWith<
   $In extends RunStepDeltaStepDetailsToolCallsFileSearchObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RunStepDeltaStepDetailsToolCallCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     int? indexField,
     RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type,

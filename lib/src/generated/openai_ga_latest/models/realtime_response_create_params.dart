@@ -48,7 +48,6 @@ class RealtimeResponseCreateParams with RealtimeResponseCreateParamsMappable {
   final Prompt? prompt;
   final List<RealtimeConversationItem>? input;
 
-  static RealtimeResponseCreateParams fromJson(Map<String, dynamic> json) => RealtimeResponseCreateParamsMapper.fromJson(json);
-
+  static RealtimeResponseCreateParams fromJson(Map<String, dynamic> json) =>
+      RealtimeResponseCreateParamsMapper.fromJson(json);
 }
-

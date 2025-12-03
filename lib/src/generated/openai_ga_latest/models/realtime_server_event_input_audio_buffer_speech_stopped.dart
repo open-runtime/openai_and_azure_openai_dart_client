@@ -12,8 +12,9 @@ part 'realtime_server_event_input_audio_buffer_speech_stopped.mapper.dart';
 /// the audio buffer. The server will also send an `conversation.item.created` .
 /// event with the user message item that is created from the audio buffer.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventInputAudioBufferSpeechStopped with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'input_audio_buffer.speech_stopped')
+class RealtimeServerEventInputAudioBufferSpeechStopped extends RealtimeServerEvent
+    with RealtimeServerEventInputAudioBufferSpeechStoppedMappable {
   const RealtimeServerEventInputAudioBufferSpeechStopped({
     required this.eventId,
     required this.type,
@@ -29,7 +30,6 @@ class RealtimeServerEventInputAudioBufferSpeechStopped with RealtimeServerEventI
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeServerEventInputAudioBufferSpeechStopped fromJson(Map<String, dynamic> json) => RealtimeServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json);
-
+  static RealtimeServerEventInputAudioBufferSpeechStopped fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json);
 }
-

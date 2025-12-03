@@ -12,7 +12,17 @@ import 'eval_grader_score_model.dart';
 
 part 'eval_testing_criteria_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [EvalTestingCriteriaUnionEvalGraderLabelModel, EvalTestingCriteriaUnionEvalGraderStringCheck, EvalTestingCriteriaUnionEvalGraderTextSimilarity, EvalTestingCriteriaUnionEvalGraderPython, EvalTestingCriteriaUnionEvalGraderScoreModel])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    EvalTestingCriteriaUnionEvalGraderLabelModel,
+    EvalTestingCriteriaUnionEvalGraderStringCheck,
+    EvalTestingCriteriaUnionEvalGraderTextSimilarity,
+    EvalTestingCriteriaUnionEvalGraderPython,
+    EvalTestingCriteriaUnionEvalGraderScoreModel,
+  ],
+)
 sealed class EvalTestingCriteriaUnion with EvalTestingCriteriaUnionMappable {
   const EvalTestingCriteriaUnion();
 
@@ -39,42 +49,36 @@ extension EvalTestingCriteriaUnionDeserializer on EvalTestingCriteriaUnion {
       return EvalTestingCriteriaUnionEvalGraderScoreModelMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for EvalTestingCriteriaUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalTestingCriteriaUnionEvalGraderLabelModel extends EvalTestingCriteriaUnion with EvalTestingCriteriaUnionEvalGraderLabelModelMappable {
-
-
+class EvalTestingCriteriaUnionEvalGraderLabelModel extends EvalTestingCriteriaUnion
+    with EvalTestingCriteriaUnionEvalGraderLabelModelMappable {
   const EvalTestingCriteriaUnionEvalGraderLabelModel();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalTestingCriteriaUnionEvalGraderStringCheck extends EvalTestingCriteriaUnion with EvalTestingCriteriaUnionEvalGraderStringCheckMappable {
-
-
+class EvalTestingCriteriaUnionEvalGraderStringCheck extends EvalTestingCriteriaUnion
+    with EvalTestingCriteriaUnionEvalGraderStringCheckMappable {
   const EvalTestingCriteriaUnionEvalGraderStringCheck();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalTestingCriteriaUnionEvalGraderTextSimilarity extends EvalTestingCriteriaUnion with EvalTestingCriteriaUnionEvalGraderTextSimilarityMappable {
-
-
+class EvalTestingCriteriaUnionEvalGraderTextSimilarity extends EvalTestingCriteriaUnion
+    with EvalTestingCriteriaUnionEvalGraderTextSimilarityMappable {
   const EvalTestingCriteriaUnionEvalGraderTextSimilarity();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalTestingCriteriaUnionEvalGraderPython extends EvalTestingCriteriaUnion with EvalTestingCriteriaUnionEvalGraderPythonMappable {
-
-
+class EvalTestingCriteriaUnionEvalGraderPython extends EvalTestingCriteriaUnion
+    with EvalTestingCriteriaUnionEvalGraderPythonMappable {
   const EvalTestingCriteriaUnionEvalGraderPython();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalTestingCriteriaUnionEvalGraderScoreModel extends EvalTestingCriteriaUnion with EvalTestingCriteriaUnionEvalGraderScoreModelMappable {
-
-
+class EvalTestingCriteriaUnionEvalGraderScoreModel extends EvalTestingCriteriaUnion
+    with EvalTestingCriteriaUnionEvalGraderScoreModelMappable {
   const EvalTestingCriteriaUnionEvalGraderScoreModel();
 }

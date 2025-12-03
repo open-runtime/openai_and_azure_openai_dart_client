@@ -9,19 +9,15 @@ import 'chat_completion_request_message.dart';
 
 part 'chat_completion_request_function_message.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestFunctionMessage with ChatCompletionRequestFunctionMessageMappable {
-  const ChatCompletionRequestFunctionMessage({
-    required this.role,
-    required this.content,
-    required this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class ChatCompletionRequestFunctionMessage extends FineTunePreferenceRequestInputInputMessagesUnion
+    with ChatCompletionRequestFunctionMessageMappable {
+  const ChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name});
 
   final ChatCompletionRequestFunctionMessageRole role;
   final String? content;
   final String name;
 
-  static ChatCompletionRequestFunctionMessage fromJson(Map<String, dynamic> json) => ChatCompletionRequestFunctionMessageMapper.fromJson(json);
-
+  static ChatCompletionRequestFunctionMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestFunctionMessageMapper.fromJson(json);
 }
-

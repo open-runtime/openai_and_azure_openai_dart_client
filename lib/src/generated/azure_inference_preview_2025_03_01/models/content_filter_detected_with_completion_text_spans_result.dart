@@ -11,7 +11,8 @@ import 'content_filter_result_base.dart';
 part 'content_filter_detected_with_completion_text_spans_result.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ContentFilterDetectedWithCompletionTextSpansResult with ContentFilterDetectedWithCompletionTextSpansResultMappable {
+class ContentFilterDetectedWithCompletionTextSpansResult
+    with ContentFilterDetectedWithCompletionTextSpansResultMappable {
   const ContentFilterDetectedWithCompletionTextSpansResult({
     required this.contentFilterDetectedResult,
     required this.filtered,
@@ -25,7 +26,6 @@ class ContentFilterDetectedWithCompletionTextSpansResult with ContentFilterDetec
   final bool? detected;
   final List<ContentFilterCompletionTextSpan>? details;
 
-  static ContentFilterDetectedWithCompletionTextSpansResult fromJson(Map<String, dynamic> json) => ContentFilterDetectedWithCompletionTextSpansResultMapper.fromJson(json);
-
+  static ContentFilterDetectedWithCompletionTextSpansResult fromJson(Map<String, dynamic> json) =>
+      ContentFilterDetectedWithCompletionTextSpansResultMapper.fromJson(json);
 }
-

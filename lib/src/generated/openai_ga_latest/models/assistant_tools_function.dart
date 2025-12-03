@@ -10,18 +10,13 @@ import 'function_object.dart';
 
 part 'assistant_tools_function.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class AssistantToolsFunction with AssistantToolsFunctionMappable {
-  const AssistantToolsFunction({
-    required this.type,
-    required this.functionField,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class AssistantToolsFunction extends AssistantTool with AssistantToolsFunctionMappable {
+  const AssistantToolsFunction({required this.type, required this.functionField});
 
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final FunctionObject functionField;
 
   static AssistantToolsFunction fromJson(Map<String, dynamic> json) => AssistantToolsFunctionMapper.fromJson(json);
-
 }
-

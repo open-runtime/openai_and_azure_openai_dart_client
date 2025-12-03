@@ -10,10 +10,10 @@ part 'realtime_transcription_session_create_request_ga_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestGaType {
-  @MappableValue('transcription') 
+  @MappableValue('transcription')
   transcription,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeTranscriptionSessionCreateRequestGaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestGaType> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestGaType.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestGaType> get $valuesDefined =>
+      values.where((value) => value != RealtimeTranscriptionSessionCreateRequestGaType.unknown).toList();
 }

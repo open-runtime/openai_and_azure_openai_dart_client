@@ -12,7 +12,11 @@ part 'realtime_session_tracing_union.mapper.dart';
 /// `auto` will create a trace for the session with default values for the.
 /// workflow name, group id, and metadata.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionTracingUnionVariant1, RealtimeSessionTracingUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [RealtimeSessionTracingUnionVariant1, RealtimeSessionTracingUnionVariantString],
+)
 sealed class RealtimeSessionTracingUnion with RealtimeSessionTracingUnionMappable {
   const RealtimeSessionTracingUnion();
 
@@ -30,13 +34,13 @@ extension RealtimeSessionTracingUnionDeserializer on RealtimeSessionTracingUnion
       return RealtimeSessionTracingUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for RealtimeSessionTracingUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionTracingUnionVariant1 extends RealtimeSessionTracingUnion with RealtimeSessionTracingUnionVariant1Mappable {
+class RealtimeSessionTracingUnionVariant1 extends RealtimeSessionTracingUnion
+    with RealtimeSessionTracingUnionVariant1Mappable {
   @MappableField(key: 'workflow_name')
   final String? workflowName;
   @MappableField(key: 'group_id')
@@ -51,10 +55,9 @@ class RealtimeSessionTracingUnionVariant1 extends RealtimeSessionTracingUnion wi
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionTracingUnionVariantString extends RealtimeSessionTracingUnion with RealtimeSessionTracingUnionVariantStringMappable {
+class RealtimeSessionTracingUnionVariantString extends RealtimeSessionTracingUnion
+    with RealtimeSessionTracingUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionTracingUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionTracingUnionVariantString({required this.value});
 }

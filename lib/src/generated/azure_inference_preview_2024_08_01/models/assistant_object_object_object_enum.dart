@@ -10,10 +10,10 @@ part 'assistant_object_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantObjectObjectObjectEnum {
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum AssistantObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != AssistantObjectObjectObjectEnum.unknown).toList();
+  static List<AssistantObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != AssistantObjectObjectObjectEnum.unknown).toList();
 }

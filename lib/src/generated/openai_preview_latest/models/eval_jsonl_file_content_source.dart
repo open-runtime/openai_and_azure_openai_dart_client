@@ -9,17 +9,14 @@ import 'eval_jsonl_file_content_source_type.dart';
 
 part 'eval_jsonl_file_content_source.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalJsonlFileContentSource with EvalJsonlFileContentSourceMappable {
-  const EvalJsonlFileContentSource({
-    required this.content,
-    this.type = EvalJsonlFileContentSourceType.fileContent,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_content')
+class EvalJsonlFileContentSource extends CreateEvalResponsesRunDataSourceSourceUnion
+    with EvalJsonlFileContentSourceMappable {
+  const EvalJsonlFileContentSource({required this.content, this.type = EvalJsonlFileContentSourceType.fileContent});
 
   final List<EvalJsonlFileContentSourceContent> content;
   final EvalJsonlFileContentSourceType type;
 
-  static EvalJsonlFileContentSource fromJson(Map<String, dynamic> json) => EvalJsonlFileContentSourceMapper.fromJson(json);
-
+  static EvalJsonlFileContentSource fromJson(Map<String, dynamic> json) =>
+      EvalJsonlFileContentSourceMapper.fromJson(json);
 }
-

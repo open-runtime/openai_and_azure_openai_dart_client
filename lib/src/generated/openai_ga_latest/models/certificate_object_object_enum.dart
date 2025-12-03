@@ -15,18 +15,18 @@ part 'certificate_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum CertificateObjectObjectEnum {
-  @MappableValue('certificate') 
+  @MappableValue('certificate')
   certificate,
 
   /// Incorrect name has been replaced. Original name: `organization.certificate`.
-  @MappableValue('organization.certificate') 
+  @MappableValue('organization.certificate')
   undefined0,
 
   /// Incorrect name has been replaced. Original name: `organization.project.certificate`.
-  @MappableValue('organization.project.certificate') 
+  @MappableValue('organization.project.certificate')
   undefined1,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -35,5 +35,6 @@ enum CertificateObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CertificateObjectObjectEnum> get $valuesDefined => values.where((value) => value != CertificateObjectObjectEnum.unknown).toList();
+  static List<CertificateObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != CertificateObjectObjectEnum.unknown).toList();
 }

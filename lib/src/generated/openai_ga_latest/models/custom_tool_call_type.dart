@@ -10,10 +10,10 @@ part 'custom_tool_call_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CustomToolCallType {
-  @MappableValue('custom_tool_call') 
+  @MappableValue('custom_tool_call')
   customToolCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum CustomToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomToolCallType> get $valuesDefined => values.where((value) => value != CustomToolCallType.unknown).toList();
+  static List<CustomToolCallType> get $valuesDefined =>
+      values.where((value) => value != CustomToolCallType.unknown).toList();
 }

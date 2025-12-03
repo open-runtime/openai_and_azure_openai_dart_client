@@ -7,15 +7,13 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'create_thread_and_run_request_without_stream_tool_resources_file_search.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch with CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMappable {
-  const CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch({
-    this.vectorStoreIds,
-  });
+class CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch
+    with CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMappable {
+  const CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch({this.vectorStoreIds});
 
   @MappableField(key: 'vector_store_ids')
   final List<String>? vectorStoreIds;
 
-  static CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch fromJson(Map<String, dynamic> json) => CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMapper.fromJson(json);
-
+  static CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearch fromJson(Map<String, dynamic> json) =>
+      CreateThreadAndRunRequestWithoutStreamToolResourcesFileSearchMapper.fromJson(json);
 }
-

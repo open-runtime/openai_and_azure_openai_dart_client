@@ -10,16 +10,11 @@ part 'create_moderation_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateModerationRequest with CreateModerationRequestMappable {
-  const CreateModerationRequest({
-    required this.input,
-    this.model,
-  });
+  const CreateModerationRequest({required this.input, this.model});
 
   final String input;
   @MappableField(hook: const CreateModerationRequestModelUnionHook())
   final CreateModerationRequestModelUnion? model;
 
   static CreateModerationRequest fromJson(Map<String, dynamic> json) => CreateModerationRequestMapper.fromJson(json);
-
 }
-

@@ -11,17 +11,21 @@ import 'function_shell_call_output_timeout_outcome_type.dart';
 
 part 'function_shell_call_output_content_outcome_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  FunctionShellCallOutputContentOutcomeUnionTimeout,
-  FunctionShellCallOutputContentOutcomeUnionExit
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    FunctionShellCallOutputContentOutcomeUnionTimeout,
+    FunctionShellCallOutputContentOutcomeUnionExit,
+  ],
+)
 sealed class FunctionShellCallOutputContentOutcomeUnion with FunctionShellCallOutputContentOutcomeUnionMappable {
   const FunctionShellCallOutputContentOutcomeUnion();
 
   static FunctionShellCallOutputContentOutcomeUnion fromJson(Map<String, dynamic> json) {
     return FunctionShellCallOutputContentOutcomeUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension FunctionShellCallOutputContentOutcomeUnionDeserializer on FunctionShellCallOutputContentOutcomeUnion {
@@ -31,37 +35,37 @@ extension FunctionShellCallOutputContentOutcomeUnionDeserializer on FunctionShel
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      FunctionShellCallOutputContentOutcomeUnionTimeout: 'timeout',
-      FunctionShellCallOutputContentOutcomeUnionExit: 'exit',
+      FunctionShellCallOutputTimeoutOutcome: 'timeout',
+      FunctionShellCallOutputExitOutcome: 'exit',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[FunctionShellCallOutputContentOutcomeUnionTimeout] => FunctionShellCallOutputContentOutcomeUnionTimeoutMapper.fromJson(json),
-      _ when value == effective[FunctionShellCallOutputContentOutcomeUnionExit] => FunctionShellCallOutputContentOutcomeUnionExitMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for FunctionShellCallOutputContentOutcomeUnion'),
+      _ when value == effective[FunctionShellCallOutputTimeoutOutcome] =>
+        FunctionShellCallOutputTimeoutOutcomeMapper.fromJson(json),
+      _ when value == effective[FunctionShellCallOutputExitOutcome] =>
+        FunctionShellCallOutputExitOutcomeMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for FunctionShellCallOutputContentOutcomeUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'timeout')
-class FunctionShellCallOutputContentOutcomeUnionTimeout extends FunctionShellCallOutputContentOutcomeUnion with FunctionShellCallOutputContentOutcomeUnionTimeoutMappable {
+class FunctionShellCallOutputContentOutcomeUnionTimeout extends FunctionShellCallOutputContentOutcomeUnion
+    with FunctionShellCallOutputContentOutcomeUnionTimeoutMappable {
   final FunctionShellCallOutputTimeoutOutcomeType type;
 
-  const FunctionShellCallOutputContentOutcomeUnionTimeout({
-    required this.type,
-  });
-
+  const FunctionShellCallOutputContentOutcomeUnionTimeout({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'exit')
-class FunctionShellCallOutputContentOutcomeUnionExit extends FunctionShellCallOutputContentOutcomeUnion with FunctionShellCallOutputContentOutcomeUnionExitMappable {
+class FunctionShellCallOutputContentOutcomeUnionExit extends FunctionShellCallOutputContentOutcomeUnion
+    with FunctionShellCallOutputContentOutcomeUnionExitMappable {
   final FunctionShellCallOutputExitOutcomeType type;
   @MappableField(key: 'exit_code')
   final int exitCode;
 
-  const FunctionShellCallOutputContentOutcomeUnionExit({
-    required this.type,
-    required this.exitCode,
-  });
-
+  const FunctionShellCallOutputContentOutcomeUnionExit({required this.type, required this.exitCode});
 }

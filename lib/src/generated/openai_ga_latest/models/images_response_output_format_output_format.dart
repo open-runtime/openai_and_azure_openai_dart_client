@@ -9,16 +9,16 @@ part 'images_response_output_format_output_format.mapper.dart';
 /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
 @MappableEnum(defaultValue: 'unknown')
 enum ImagesResponseOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum ImagesResponseOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImagesResponseOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImagesResponseOutputFormatOutputFormat.unknown).toList();
+  static List<ImagesResponseOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImagesResponseOutputFormatOutputFormat.unknown).toList();
 }

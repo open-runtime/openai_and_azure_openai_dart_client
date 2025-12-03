@@ -9,28 +9,28 @@ part 'file_state.mapper.dart';
 /// The state of a file.
 @MappableEnum(defaultValue: 'unknown')
 enum FileState {
-  @MappableValue('uploaded') 
+  @MappableValue('uploaded')
   uploaded,
 
-  @MappableValue('pending') 
+  @MappableValue('pending')
   pending,
 
-  @MappableValue('running') 
+  @MappableValue('running')
   running,
 
-  @MappableValue('processed') 
+  @MappableValue('processed')
   processed,
 
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('deleting') 
+  @MappableValue('deleting')
   deleting,
 
-  @MappableValue('deleted') 
+  @MappableValue('deleted')
   deleted,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

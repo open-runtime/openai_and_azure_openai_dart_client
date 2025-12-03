@@ -32,6 +32,4 @@ class CreateVectorStoreRequest with CreateVectorStoreRequestMappable {
   final Metadata? metadata;
 
   static CreateVectorStoreRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreRequestMapper.fromJson(json);
-
 }
-

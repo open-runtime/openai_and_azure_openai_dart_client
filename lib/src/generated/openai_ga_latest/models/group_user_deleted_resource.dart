@@ -11,16 +11,11 @@ part 'group_user_deleted_resource.mapper.dart';
 /// Confirmation payload returned after removing a user from a group.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GroupUserDeletedResource with GroupUserDeletedResourceMappable {
-  const GroupUserDeletedResource({
-    required this.objectEnum,
-    required this.deleted,
-  });
+  const GroupUserDeletedResource({required this.objectEnum, required this.deleted});
 
   @MappableField(key: 'object')
   final GroupUserDeletedResourceObjectObjectEnum objectEnum;
   final bool deleted;
 
   static GroupUserDeletedResource fromJson(Map<String, dynamic> json) => GroupUserDeletedResourceMapper.fromJson(json);
-
 }
-

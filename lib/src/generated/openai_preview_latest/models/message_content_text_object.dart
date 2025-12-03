@@ -10,18 +10,13 @@ import 'message_content_text_object_type.dart';
 part 'message_content_text_object.mapper.dart';
 
 /// The text content that is part of a message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class MessageContentTextObject with MessageContentTextObjectMappable {
-  const MessageContentTextObject({
-    required this.type,
-    required this.messageContentTextObjectText,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class MessageContentTextObject extends MessageObjectContentUnion with MessageContentTextObjectMappable {
+  const MessageContentTextObject({required this.type, required this.messageContentTextObjectText});
 
   final MessageContentTextObjectType type;
   @MappableField(key: 'text')
   final MessageContentTextObjectText messageContentTextObjectText;
 
   static MessageContentTextObject fromJson(Map<String, dynamic> json) => MessageContentTextObjectMapper.fromJson(json);
-
 }
-

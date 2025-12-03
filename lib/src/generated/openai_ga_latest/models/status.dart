@@ -8,22 +8,22 @@ part 'status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum Status {
-  @MappableValue('queued') 
+  @MappableValue('queued')
   queued,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('canceled') 
+  @MappableValue('canceled')
   canceled,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

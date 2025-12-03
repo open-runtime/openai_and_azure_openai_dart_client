@@ -12,17 +12,11 @@ part 'output_audio.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OutputAudio with OutputAudioMappable {
-  const OutputAudio({
-    required this.type,
-    required this.data,
-    required this.transcript,
-  });
+  const OutputAudio({required this.type, required this.data, required this.transcript});
 
   final OutputAudioType type;
   final String data;
   final String transcript;
 
   static OutputAudio fromJson(Map<String, dynamic> json) => OutputAudioMapper.fromJson(json);
-
 }
-

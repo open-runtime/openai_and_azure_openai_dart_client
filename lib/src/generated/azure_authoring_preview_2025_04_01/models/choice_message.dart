@@ -10,11 +10,7 @@ part 'choice_message.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChoiceMessage with ChoiceMessageMappable {
-  const ChoiceMessage({
-    this.content,
-    this.role,
-    this.toolCalls,
-  });
+  const ChoiceMessage({this.content, this.role, this.toolCalls});
 
   final String? content;
   final String? role;
@@ -22,6 +18,4 @@ class ChoiceMessage with ChoiceMessageMappable {
   final List<ToolCall>? toolCalls;
 
   static ChoiceMessage fromJson(Map<String, dynamic> json) => ChoiceMessageMapper.fromJson(json);
-
 }
-

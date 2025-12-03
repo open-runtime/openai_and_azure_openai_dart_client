@@ -13,17 +13,18 @@ import 'run_step_details_tool_calls_object_type.dart';
 
 part 'run_step_object_step_details_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepObjectStepDetailsUnionMessageCreation,
-  RunStepObjectStepDetailsUnionToolCalls
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [RunStepObjectStepDetailsUnionMessageCreation, RunStepObjectStepDetailsUnionToolCalls],
+)
 sealed class RunStepObjectStepDetailsUnion with RunStepObjectStepDetailsUnionMappable {
   const RunStepObjectStepDetailsUnion();
 
   static RunStepObjectStepDetailsUnion fromJson(Map<String, dynamic> json) {
     return RunStepObjectStepDetailsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RunStepObjectStepDetailsUnionDeserializer on RunStepObjectStepDetailsUnion {
@@ -33,21 +34,23 @@ extension RunStepObjectStepDetailsUnionDeserializer on RunStepObjectStepDetailsU
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepObjectStepDetailsUnionMessageCreation: 'message_creation',
-      RunStepObjectStepDetailsUnionToolCalls: 'tool_calls',
+      RunStepDetailsMessageCreationObject: 'message_creation',
+      RunStepDetailsToolCallsObject: 'tool_calls',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepObjectStepDetailsUnionMessageCreation] => RunStepObjectStepDetailsUnionMessageCreationMapper.fromJson(json),
-      _ when value == effective[RunStepObjectStepDetailsUnionToolCalls] => RunStepObjectStepDetailsUnionToolCallsMapper.fromJson(json),
+      _ when value == effective[RunStepDetailsMessageCreationObject] =>
+        RunStepDetailsMessageCreationObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDetailsToolCallsObject] => RunStepDetailsToolCallsObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepObjectStepDetailsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'message_creation')
-class RunStepObjectStepDetailsUnionMessageCreation extends RunStepObjectStepDetailsUnion with RunStepObjectStepDetailsUnionMessageCreationMappable {
+class RunStepObjectStepDetailsUnionMessageCreation extends RunStepObjectStepDetailsUnion
+    with RunStepObjectStepDetailsUnionMessageCreationMappable {
   final RunStepDetailsMessageCreationObjectType type;
   @MappableField(key: 'message_creation')
   final RunStepDetailsMessageCreationObjectMessageCreation runStepDetailsMessageCreationObjectMessageCreation;
@@ -56,17 +59,14 @@ class RunStepObjectStepDetailsUnionMessageCreation extends RunStepObjectStepDeta
     required this.type,
     required this.runStepDetailsMessageCreationObjectMessageCreation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_calls')
-class RunStepObjectStepDetailsUnionToolCalls extends RunStepObjectStepDetailsUnion with RunStepObjectStepDetailsUnionToolCallsMappable {
+class RunStepObjectStepDetailsUnionToolCalls extends RunStepObjectStepDetailsUnion
+    with RunStepObjectStepDetailsUnionToolCallsMappable {
   final RunStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDetailsToolCall> toolCalls;
 
-  const RunStepObjectStepDetailsUnionToolCalls({
-    required this.type,
-    required this.toolCalls,
-  });
-
+  const RunStepObjectStepDetailsUnionToolCalls({required this.type, required this.toolCalls});
 }

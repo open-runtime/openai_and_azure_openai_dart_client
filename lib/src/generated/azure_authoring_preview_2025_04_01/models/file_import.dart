@@ -12,12 +12,7 @@ part 'file_import.mapper.dart';
 /// Defines a document to import from an external content url to be usable with Azure OpenAI.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FileImport with FileImportMappable {
-  const FileImport({
-    required this.purpose,
-    required this.filename,
-    required this.contentUrl,
-    this.expiresAfter,
-  });
+  const FileImport({required this.purpose, required this.filename, required this.contentUrl, this.expiresAfter});
 
   final Purpose purpose;
   final String filename;
@@ -27,6 +22,4 @@ class FileImport with FileImportMappable {
   final FileExpiresAfter? expiresAfter;
 
   static FileImport fromJson(Map<String, dynamic> json) => FileImportMapper.fromJson(json);
-
 }
-

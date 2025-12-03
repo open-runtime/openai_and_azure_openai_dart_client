@@ -10,10 +10,10 @@ part 'static_chunking_strategy_request_param_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum StaticChunkingStrategyRequestParamType {
   /// The name has been replaced because it contains a keyword. Original name: `static`.
-  @MappableValue('static') 
+  @MappableValue('static')
   valueStatic,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum StaticChunkingStrategyRequestParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<StaticChunkingStrategyRequestParamType> get $valuesDefined => values.where((value) => value != StaticChunkingStrategyRequestParamType.unknown).toList();
+  static List<StaticChunkingStrategyRequestParamType> get $valuesDefined =>
+      values.where((value) => value != StaticChunkingStrategyRequestParamType.unknown).toList();
 }

@@ -8,13 +8,10 @@ part 'audit_log_checkpoint_permission_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogCheckpointPermissionDeleted with AuditLogCheckpointPermissionDeletedMappable {
-  const AuditLogCheckpointPermissionDeleted({
-    this.id,
-  });
+  const AuditLogCheckpointPermissionDeleted({this.id});
 
   final String? id;
 
-  static AuditLogCheckpointPermissionDeleted fromJson(Map<String, dynamic> json) => AuditLogCheckpointPermissionDeletedMapper.fromJson(json);
-
+  static AuditLogCheckpointPermissionDeleted fromJson(Map<String, dynamic> json) =>
+      AuditLogCheckpointPermissionDeletedMapper.fromJson(json);
 }
-

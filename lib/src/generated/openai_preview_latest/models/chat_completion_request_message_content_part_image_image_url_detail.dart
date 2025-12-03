@@ -9,16 +9,16 @@ part 'chat_completion_request_message_content_part_image_image_url_detail.mapper
 /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestMessageContentPartImageImageUrlDetail {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum ChatCompletionRequestMessageContentPartImageImageUrlDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestMessageContentPartImageImageUrlDetail> get $valuesDefined => values.where((value) => value != ChatCompletionRequestMessageContentPartImageImageUrlDetail.unknown).toList();
+  static List<ChatCompletionRequestMessageContentPartImageImageUrlDetail> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestMessageContentPartImageImageUrlDetail.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'summary_text_content_type.mapper.dart';
 /// The type of the object. Always `summary_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum SummaryTextContentType {
-  @MappableValue('summary_text') 
+  @MappableValue('summary_text')
   summaryText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum SummaryTextContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<SummaryTextContentType> get $valuesDefined => values.where((value) => value != SummaryTextContentType.unknown).toList();
+  static List<SummaryTextContentType> get $valuesDefined =>
+      values.where((value) => value != SummaryTextContentType.unknown).toList();
 }

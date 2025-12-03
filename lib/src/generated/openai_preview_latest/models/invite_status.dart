@@ -9,16 +9,16 @@ part 'invite_status.mapper.dart';
 /// `accepted`,`expired`, or `pending`
 @MappableEnum(defaultValue: 'unknown')
 enum InviteStatus {
-  @MappableValue('accepted') 
+  @MappableValue('accepted')
   accepted,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('pending') 
+  @MappableValue('pending')
   pending,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

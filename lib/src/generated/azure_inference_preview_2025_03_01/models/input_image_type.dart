@@ -10,10 +10,10 @@ part 'input_image_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum InputImageType {
-  @MappableValue('input_image') 
+  @MappableValue('input_image')
   inputImage,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

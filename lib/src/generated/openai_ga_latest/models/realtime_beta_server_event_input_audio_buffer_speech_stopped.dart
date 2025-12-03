@@ -11,7 +11,8 @@ part 'realtime_beta_server_event_input_audio_buffer_speech_stopped.mapper.dart';
 /// event with the user message item that is created from the audio buffer.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventInputAudioBufferSpeechStopped with RealtimeBetaServerEventInputAudioBufferSpeechStoppedMappable {
+class RealtimeBetaServerEventInputAudioBufferSpeechStopped
+    with RealtimeBetaServerEventInputAudioBufferSpeechStoppedMappable {
   const RealtimeBetaServerEventInputAudioBufferSpeechStopped({
     required this.eventId,
     required this.type,
@@ -27,7 +28,6 @@ class RealtimeBetaServerEventInputAudioBufferSpeechStopped with RealtimeBetaServ
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventInputAudioBufferSpeechStopped fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventInputAudioBufferSpeechStopped fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventInputAudioBufferSpeechStoppedMapper.fromJson(json);
 }
-

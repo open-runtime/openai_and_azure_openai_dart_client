@@ -8,14 +8,10 @@ part 'text_annotation_file_path.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TextAnnotationFilePath with TextAnnotationFilePathMappable {
-  const TextAnnotationFilePath({
-    required this.fileId,
-  });
+  const TextAnnotationFilePath({required this.fileId});
 
   @MappableField(key: 'file_id')
   final String fileId;
 
   static TextAnnotationFilePath fromJson(Map<String, dynamic> json) => TextAnnotationFilePathMapper.fromJson(json);
-
 }
-

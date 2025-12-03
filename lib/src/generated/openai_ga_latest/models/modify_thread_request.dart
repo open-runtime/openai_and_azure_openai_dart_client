@@ -11,16 +11,11 @@ part 'modify_thread_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModifyThreadRequest with ModifyThreadRequestMappable {
-  const ModifyThreadRequest({
-    this.toolResources,
-    this.metadata,
-  });
+  const ModifyThreadRequest({this.toolResources, this.metadata});
 
   @MappableField(key: 'tool_resources')
   final ModifyThreadRequestToolResources? toolResources;
   final Metadata? metadata;
 
   static ModifyThreadRequest fromJson(Map<String, dynamic> json) => ModifyThreadRequestMapper.fromJson(json);
-
 }
-

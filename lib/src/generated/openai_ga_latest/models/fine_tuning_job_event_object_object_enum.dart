@@ -11,10 +11,10 @@ part 'fine_tuning_job_event_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningJobEventObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `fine_tuning.job.event`.
-  @MappableValue('fine_tuning.job.event') 
+  @MappableValue('fine_tuning.job.event')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum FineTuningJobEventObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningJobEventObjectObjectEnum> get $valuesDefined => values.where((value) => value != FineTuningJobEventObjectObjectEnum.unknown).toList();
+  static List<FineTuningJobEventObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != FineTuningJobEventObjectObjectEnum.unknown).toList();
 }

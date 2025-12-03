@@ -9,22 +9,22 @@ part 'computer_use_preview_tool_environment.mapper.dart';
 /// The type of computer environment to control.
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerUsePreviewToolEnvironment {
-  @MappableValue('windows') 
+  @MappableValue('windows')
   windows,
 
-  @MappableValue('mac') 
+  @MappableValue('mac')
   mac,
 
-  @MappableValue('linux') 
+  @MappableValue('linux')
   linux,
 
-  @MappableValue('ubuntu') 
+  @MappableValue('ubuntu')
   ubuntu,
 
-  @MappableValue('browser') 
+  @MappableValue('browser')
   browser,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum ComputerUsePreviewToolEnvironment {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerUsePreviewToolEnvironment> get $valuesDefined => values.where((value) => value != ComputerUsePreviewToolEnvironment.unknown).toList();
+  static List<ComputerUsePreviewToolEnvironment> get $valuesDefined =>
+      values.where((value) => value != ComputerUsePreviewToolEnvironment.unknown).toList();
 }

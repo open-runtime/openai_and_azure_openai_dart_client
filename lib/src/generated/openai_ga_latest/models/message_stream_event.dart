@@ -10,8 +10,5 @@ part 'message_stream_event.mapper.dart';
 class MessageStreamEvent with MessageStreamEventMappable {
   const MessageStreamEvent();
 
-
   static MessageStreamEvent fromJson(Map<String, dynamic> json) => MessageStreamEventMapper.fromJson(json);
-
 }
-

@@ -73,6 +73,4 @@ class FineTuningJob with FineTuningJobMappable {
   final Metadata? metadata;
 
   static FineTuningJob fromJson(Map<String, dynamic> json) => FineTuningJobMapper.fromJson(json);
-
 }
-

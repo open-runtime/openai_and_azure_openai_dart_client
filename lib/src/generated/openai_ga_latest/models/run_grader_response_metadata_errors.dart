@@ -54,7 +54,6 @@ class RunGraderResponseMetadataErrors with RunGraderResponseMetadataErrorsMappab
   @MappableField(key: 'model_grader_server_error_details')
   final String? modelGraderServerErrorDetails;
 
-  static RunGraderResponseMetadataErrors fromJson(Map<String, dynamic> json) => RunGraderResponseMetadataErrorsMapper.fromJson(json);
-
+  static RunGraderResponseMetadataErrors fromJson(Map<String, dynamic> json) =>
+      RunGraderResponseMetadataErrorsMapper.fromJson(json);
 }
-

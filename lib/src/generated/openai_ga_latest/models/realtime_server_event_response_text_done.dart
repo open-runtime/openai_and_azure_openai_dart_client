@@ -11,8 +11,8 @@ part 'realtime_server_event_response_text_done.mapper.dart';
 /// Returned when the text value of an "output_text" content part is done streaming. Also.
 /// emitted when a Response is interrupted, incomplete, or cancelled.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseTextDone with RealtimeServerEventResponseTextDoneMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_text.done')
+class RealtimeServerEventResponseTextDone extends RealtimeServerEvent with RealtimeServerEventResponseTextDoneMappable {
   const RealtimeServerEventResponseTextDone({
     required this.eventId,
     required this.type,
@@ -36,7 +36,6 @@ class RealtimeServerEventResponseTextDone with RealtimeServerEventResponseTextDo
   final int contentIndex;
   final String text;
 
-  static RealtimeServerEventResponseTextDone fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseTextDoneMapper.fromJson(json);
-
+  static RealtimeServerEventResponseTextDone fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseTextDoneMapper.fromJson(json);
 }
-

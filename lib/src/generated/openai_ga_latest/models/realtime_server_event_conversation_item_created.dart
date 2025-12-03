@@ -19,8 +19,9 @@ part 'realtime_server_event_conversation_item_created.mapper.dart';
 ///   - The client has sent a `conversation.item.create` event to add a new Item.
 ///     to the Conversation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemCreated with RealtimeServerEventConversationItemCreatedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.created')
+class RealtimeServerEventConversationItemCreated extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemCreatedMappable {
   const RealtimeServerEventConversationItemCreated({
     required this.eventId,
     required this.type,
@@ -35,7 +36,6 @@ class RealtimeServerEventConversationItemCreated with RealtimeServerEventConvers
   @MappableField(key: 'previous_item_id')
   final String? previousItemId;
 
-  static RealtimeServerEventConversationItemCreated fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemCreatedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemCreated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemCreatedMapper.fromJson(json);
 }
-

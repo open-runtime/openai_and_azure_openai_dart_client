@@ -11,8 +11,8 @@ part 'response_image_gen_call_completed_event.mapper.dart';
 
 /// Emitted when an image generation tool call has completed and the final image is available.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseImageGenCallCompletedEvent with ResponseImageGenCallCompletedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.completed')
+class ResponseImageGenCallCompletedEvent extends ResponseStreamEvent with ResponseImageGenCallCompletedEventMappable {
   const ResponseImageGenCallCompletedEvent({
     required this.type,
     required this.outputIndex,
@@ -28,7 +28,6 @@ class ResponseImageGenCallCompletedEvent with ResponseImageGenCallCompletedEvent
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static ResponseImageGenCallCompletedEvent fromJson(Map<String, dynamic> json) => ResponseImageGenCallCompletedEventMapper.fromJson(json);
-
+  static ResponseImageGenCallCompletedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseImageGenCallCompletedEventMapper.fromJson(json);
 }
-

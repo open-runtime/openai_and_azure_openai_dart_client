@@ -35,7 +35,6 @@ class ChatCompletionsRequestCommon with ChatCompletionsRequestCommonMappable {
   @MappableField(key: 'frequency_penalty')
   final num frequencyPenalty;
 
-  static ChatCompletionsRequestCommon fromJson(Map<String, dynamic> json) => ChatCompletionsRequestCommonMapper.fromJson(json);
-
+  static ChatCompletionsRequestCommon fromJson(Map<String, dynamic> json) =>
+      ChatCompletionsRequestCommonMapper.fromJson(json);
 }
-

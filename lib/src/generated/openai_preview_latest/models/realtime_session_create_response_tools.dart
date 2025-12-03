@@ -10,19 +10,13 @@ part 'realtime_session_create_response_tools.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionCreateResponseTools with RealtimeSessionCreateResponseToolsMappable {
-  const RealtimeSessionCreateResponseTools({
-    this.type,
-    this.name,
-    this.description,
-    this.parameters,
-  });
+  const RealtimeSessionCreateResponseTools({this.type, this.name, this.description, this.parameters});
 
   final RealtimeSessionCreateResponseToolsType? type;
   final String? name;
   final String? description;
   final dynamic? parameters;
 
-  static RealtimeSessionCreateResponseTools fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseToolsMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseTools fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseToolsMapper.fromJson(json);
 }
-

@@ -13,8 +13,9 @@ part 'realtime_server_event_response_content_part_added.mapper.dart';
 /// Returned when a new content part is added to an assistant message item during.
 /// response generation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseContentPartAdded with RealtimeServerEventResponseContentPartAddedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.content_part.added')
+class RealtimeServerEventResponseContentPartAdded extends RealtimeServerEvent
+    with RealtimeServerEventResponseContentPartAddedMappable {
   const RealtimeServerEventResponseContentPartAdded({
     required this.eventId,
     required this.type,
@@ -39,7 +40,6 @@ class RealtimeServerEventResponseContentPartAdded with RealtimeServerEventRespon
   @MappableField(key: 'part')
   final RealtimeServerEventResponseContentPartAddedPart realtimeServerEventResponseContentPartAddedPart;
 
-  static RealtimeServerEventResponseContentPartAdded fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseContentPartAddedMapper.fromJson(json);
-
+  static RealtimeServerEventResponseContentPartAdded fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseContentPartAddedMapper.fromJson(json);
 }
-

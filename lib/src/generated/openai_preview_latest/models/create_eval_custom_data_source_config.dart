@@ -13,8 +13,9 @@ part 'create_eval_custom_data_source_config.mapper.dart';
 /// - Used to define your testing criteria and.
 /// - What data is required when creating a run.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateEvalCustomDataSourceConfig with CreateEvalCustomDataSourceConfigMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom')
+class CreateEvalCustomDataSourceConfig extends CreateEvalRequestDataSourceConfigUnion
+    with CreateEvalCustomDataSourceConfigMappable {
   const CreateEvalCustomDataSourceConfig({
     required this.itemSchema,
     this.type = CreateEvalCustomDataSourceConfigType.custom,
@@ -27,7 +28,6 @@ class CreateEvalCustomDataSourceConfig with CreateEvalCustomDataSourceConfigMapp
   @MappableField(key: 'include_sample_schema')
   final bool includeSampleSchema;
 
-  static CreateEvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalCustomDataSourceConfigMapper.fromJson(json);
-
+  static CreateEvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      CreateEvalCustomDataSourceConfigMapper.fromJson(json);
 }
-

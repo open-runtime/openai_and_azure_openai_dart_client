@@ -10,10 +10,10 @@ part 'invite_list_response_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum InviteListResponseObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum InviteListResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InviteListResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != InviteListResponseObjectObjectEnum.unknown).toList();
+  static List<InviteListResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != InviteListResponseObjectObjectEnum.unknown).toList();
 }

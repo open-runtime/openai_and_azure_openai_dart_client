@@ -9,10 +9,10 @@ part 'chat_completion_message_custom_tool_call_type.mapper.dart';
 /// The type of the tool. Always `custom`.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionMessageCustomToolCallType {
-  @MappableValue('custom') 
+  @MappableValue('custom')
   custom,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionMessageCustomToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionMessageCustomToolCallType> get $valuesDefined => values.where((value) => value != ChatCompletionMessageCustomToolCallType.unknown).toList();
+  static List<ChatCompletionMessageCustomToolCallType> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionMessageCustomToolCallType.unknown).toList();
 }

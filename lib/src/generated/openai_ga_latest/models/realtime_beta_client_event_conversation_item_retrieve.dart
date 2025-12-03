@@ -13,11 +13,7 @@ part 'realtime_beta_client_event_conversation_item_retrieve.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventConversationItemRetrieve with RealtimeBetaClientEventConversationItemRetrieveMappable {
-  const RealtimeBetaClientEventConversationItemRetrieve({
-    required this.type,
-    required this.itemId,
-    this.eventId,
-  });
+  const RealtimeBetaClientEventConversationItemRetrieve({required this.type, required this.itemId, this.eventId});
 
   final dynamic type;
   @MappableField(key: 'item_id')
@@ -25,7 +21,6 @@ class RealtimeBetaClientEventConversationItemRetrieve with RealtimeBetaClientEve
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventConversationItemRetrieve fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventConversationItemRetrieveMapper.fromJson(json);
-
+  static RealtimeBetaClientEventConversationItemRetrieve fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventConversationItemRetrieveMapper.fromJson(json);
 }
-

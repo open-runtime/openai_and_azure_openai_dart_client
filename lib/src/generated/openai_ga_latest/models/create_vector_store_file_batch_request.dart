@@ -12,12 +12,7 @@ part 'create_vector_store_file_batch_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreFileBatchRequest with CreateVectorStoreFileBatchRequestMappable {
-  const CreateVectorStoreFileBatchRequest({
-    this.fileIds,
-    this.files,
-    this.chunkingStrategy,
-    this.attributes,
-  });
+  const CreateVectorStoreFileBatchRequest({this.fileIds, this.files, this.chunkingStrategy, this.attributes});
 
   @MappableField(key: 'file_ids')
   final List<String>? fileIds;
@@ -26,7 +21,6 @@ class CreateVectorStoreFileBatchRequest with CreateVectorStoreFileBatchRequestMa
   final ChunkingStrategyRequestParam? chunkingStrategy;
   final VectorStoreFileAttributes? attributes;
 
-  static CreateVectorStoreFileBatchRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreFileBatchRequestMapper.fromJson(json);
-
+  static CreateVectorStoreFileBatchRequest fromJson(Map<String, dynamic> json) =>
+      CreateVectorStoreFileBatchRequestMapper.fromJson(json);
 }
-

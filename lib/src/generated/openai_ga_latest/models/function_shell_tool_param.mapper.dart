@@ -8,13 +8,14 @@
 part of 'function_shell_tool_param.dart';
 
 class FunctionShellToolParamMapper
-    extends ClassMapperBase<FunctionShellToolParam> {
+    extends SubClassMapperBase<FunctionShellToolParam> {
   FunctionShellToolParamMapper._();
 
   static FunctionShellToolParamMapper? _instance;
   static FunctionShellToolParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FunctionShellToolParamMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       FunctionShellToolParamTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -38,6 +39,13 @@ class FunctionShellToolParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'shell';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
 
   static FunctionShellToolParam _instantiate(DecodingData data) {
     return FunctionShellToolParam(type: data.dec(_f$type));
@@ -112,7 +120,8 @@ abstract class FunctionShellToolParamCopyWith<
   $In extends FunctionShellToolParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
+  @override
   $R call({FunctionShellToolParamType? type});
   FunctionShellToolParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

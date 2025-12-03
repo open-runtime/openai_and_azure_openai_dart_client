@@ -30,6 +30,4 @@ class UserListResponse with UserListResponseMappable {
   final bool hasMore;
 
   static UserListResponse fromJson(Map<String, dynamic> json) => UserListResponseMapper.fromJson(json);
-
 }
-

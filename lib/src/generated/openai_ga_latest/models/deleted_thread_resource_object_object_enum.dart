@@ -11,10 +11,10 @@ part 'deleted_thread_resource_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum DeletedThreadResourceObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chatkit.thread.deleted`.
-  @MappableValue('chatkit.thread.deleted') 
+  @MappableValue('chatkit.thread.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum DeletedThreadResourceObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeletedThreadResourceObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeletedThreadResourceObjectObjectEnum.unknown).toList();
+  static List<DeletedThreadResourceObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeletedThreadResourceObjectObjectEnum.unknown).toList();
 }

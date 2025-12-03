@@ -28,6 +28,4 @@ class Attachment with AttachmentMappable {
   final String? previewUrl;
 
   static Attachment fromJson(Map<String, dynamic> json) => AttachmentMapper.fromJson(json);
-
 }
-

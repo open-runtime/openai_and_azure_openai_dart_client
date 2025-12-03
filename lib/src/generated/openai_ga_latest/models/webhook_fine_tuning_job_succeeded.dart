@@ -31,7 +31,6 @@ class WebhookFineTuningJobSucceeded with WebhookFineTuningJobSucceededMappable {
   @MappableField(key: 'object')
   final WebhookFineTuningJobSucceededObjectObjectEnum? objectEnum;
 
-  static WebhookFineTuningJobSucceeded fromJson(Map<String, dynamic> json) => WebhookFineTuningJobSucceededMapper.fromJson(json);
-
+  static WebhookFineTuningJobSucceeded fromJson(Map<String, dynamic> json) =>
+      WebhookFineTuningJobSucceededMapper.fromJson(json);
 }
-

@@ -12,15 +12,11 @@ part 'create_eval_jsonl_run_data_source.mapper.dart';
 /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateEvalJsonlRunDataSource with CreateEvalJsonlRunDataSourceMappable {
-  const CreateEvalJsonlRunDataSource({
-    required this.source,
-    this.type = CreateEvalJsonlRunDataSourceType.jsonl,
-  });
+  const CreateEvalJsonlRunDataSource({required this.source, this.type = CreateEvalJsonlRunDataSourceType.jsonl});
 
   final CreateEvalJsonlRunDataSourceSourceSource source;
   final CreateEvalJsonlRunDataSourceType type;
 
-  static CreateEvalJsonlRunDataSource fromJson(Map<String, dynamic> json) => CreateEvalJsonlRunDataSourceMapper.fromJson(json);
-
+  static CreateEvalJsonlRunDataSource fromJson(Map<String, dynamic> json) =>
+      CreateEvalJsonlRunDataSourceMapper.fromJson(json);
 }
-

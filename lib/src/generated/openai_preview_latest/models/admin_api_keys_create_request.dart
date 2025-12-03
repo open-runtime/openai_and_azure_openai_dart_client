@@ -8,13 +8,10 @@ part 'admin_api_keys_create_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AdminApiKeysCreateRequest with AdminApiKeysCreateRequestMappable {
-  const AdminApiKeysCreateRequest({
-    required this.name,
-  });
+  const AdminApiKeysCreateRequest({required this.name});
 
   final String name;
 
-  static AdminApiKeysCreateRequest fromJson(Map<String, dynamic> json) => AdminApiKeysCreateRequestMapper.fromJson(json);
-
+  static AdminApiKeysCreateRequest fromJson(Map<String, dynamic> json) =>
+      AdminApiKeysCreateRequestMapper.fromJson(json);
 }
-

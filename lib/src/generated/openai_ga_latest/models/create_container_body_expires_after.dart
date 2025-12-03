@@ -10,15 +10,11 @@ part 'create_container_body_expires_after.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateContainerBodyExpiresAfter with CreateContainerBodyExpiresAfterMappable {
-  const CreateContainerBodyExpiresAfter({
-    required this.anchor,
-    required this.minutes,
-  });
+  const CreateContainerBodyExpiresAfter({required this.anchor, required this.minutes});
 
   final CreateContainerBodyExpiresAfterAnchor anchor;
   final int minutes;
 
-  static CreateContainerBodyExpiresAfter fromJson(Map<String, dynamic> json) => CreateContainerBodyExpiresAfterMapper.fromJson(json);
-
+  static CreateContainerBodyExpiresAfter fromJson(Map<String, dynamic> json) =>
+      CreateContainerBodyExpiresAfterMapper.fromJson(json);
 }
-

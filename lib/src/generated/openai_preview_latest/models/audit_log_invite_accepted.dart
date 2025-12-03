@@ -8,13 +8,9 @@ part 'audit_log_invite_accepted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogInviteAccepted with AuditLogInviteAcceptedMappable {
-  const AuditLogInviteAccepted({
-    this.id,
-  });
+  const AuditLogInviteAccepted({this.id});
 
   final String? id;
 
   static AuditLogInviteAccepted fromJson(Map<String, dynamic> json) => AuditLogInviteAcceptedMapper.fromJson(json);
-
 }
-

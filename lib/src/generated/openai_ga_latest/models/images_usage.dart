@@ -29,6 +29,4 @@ class ImagesUsage with ImagesUsageMappable {
   final ImagesUsageInputTokensDetails imagesUsageInputTokensDetails;
 
   static ImagesUsage fromJson(Map<String, dynamic> json) => ImagesUsageMapper.fromJson(json);
-
 }
-

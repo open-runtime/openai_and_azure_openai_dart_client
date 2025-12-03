@@ -28,7 +28,6 @@ class RealtimeBetaServerEventInputAudioBufferCommitted with RealtimeBetaServerEv
   @MappableField(key: 'previous_item_id')
   final String? previousItemId;
 
-  static RealtimeBetaServerEventInputAudioBufferCommitted fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventInputAudioBufferCommittedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventInputAudioBufferCommitted fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventInputAudioBufferCommittedMapper.fromJson(json);
 }
-

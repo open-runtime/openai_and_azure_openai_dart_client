@@ -9,10 +9,10 @@ part 'message_type.mapper.dart';
 /// The type of the message. Always set to `message`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageType {
-  @MappableValue('message') 
+  @MappableValue('message')
   message,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

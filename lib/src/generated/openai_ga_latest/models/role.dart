@@ -33,6 +33,4 @@ class Role with RoleMappable {
   final bool predefinedRole;
 
   static Role fromJson(Map<String, dynamic> json) => RoleMapper.fromJson(json);
-
 }
-

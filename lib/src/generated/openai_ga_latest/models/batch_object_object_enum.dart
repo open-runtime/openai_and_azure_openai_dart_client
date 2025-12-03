@@ -10,10 +10,10 @@ part 'batch_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum BatchObjectObjectEnum {
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum BatchObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<BatchObjectObjectEnum> get $valuesDefined => values.where((value) => value != BatchObjectObjectEnum.unknown).toList();
+  static List<BatchObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != BatchObjectObjectEnum.unknown).toList();
 }

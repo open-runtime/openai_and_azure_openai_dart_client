@@ -9,13 +9,13 @@ part 'web_search_tool_type.mapper.dart';
 /// The type of the web search tool. One of `web_search` or `web_search_2025_08_26`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchToolType {
-  @MappableValue('web_search') 
+  @MappableValue('web_search')
   webSearch,
 
-  @MappableValue('web_search_2025_08_26') 
+  @MappableValue('web_search_2025_08_26')
   webSearch20250826,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum WebSearchToolType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchToolType> get $valuesDefined => values.where((value) => value != WebSearchToolType.unknown).toList();
+  static List<WebSearchToolType> get $valuesDefined =>
+      values.where((value) => value != WebSearchToolType.unknown).toList();
 }

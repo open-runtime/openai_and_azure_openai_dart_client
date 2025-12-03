@@ -24,7 +24,6 @@ class RealtimeServerEventTranscriptionSessionUpdated with RealtimeServerEventTra
   final dynamic type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
-  static RealtimeServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) => RealtimeServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
-
+  static RealtimeServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
 }
-

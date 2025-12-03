@@ -13,17 +13,21 @@ import 'transcript_text_usage_tokens_type.dart';
 
 part 'create_transcription_response_json_usage_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateTranscriptionResponseJsonUsageUnionTokens,
-  CreateTranscriptionResponseJsonUsageUnionDuration
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateTranscriptionResponseJsonUsageUnionTokens,
+    CreateTranscriptionResponseJsonUsageUnionDuration,
+  ],
+)
 sealed class CreateTranscriptionResponseJsonUsageUnion with CreateTranscriptionResponseJsonUsageUnionMappable {
   const CreateTranscriptionResponseJsonUsageUnion();
 
   static CreateTranscriptionResponseJsonUsageUnion fromJson(Map<String, dynamic> json) {
     return CreateTranscriptionResponseJsonUsageUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateTranscriptionResponseJsonUsageUnionDeserializer on CreateTranscriptionResponseJsonUsageUnion {
@@ -33,21 +37,24 @@ extension CreateTranscriptionResponseJsonUsageUnionDeserializer on CreateTranscr
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateTranscriptionResponseJsonUsageUnionTokens: 'tokens',
-      CreateTranscriptionResponseJsonUsageUnionDuration: 'duration',
+      TranscriptTextUsageTokens: 'tokens',
+      TranscriptTextUsageDuration: 'duration',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateTranscriptionResponseJsonUsageUnionTokens] => CreateTranscriptionResponseJsonUsageUnionTokensMapper.fromJson(json),
-      _ when value == effective[CreateTranscriptionResponseJsonUsageUnionDuration] => CreateTranscriptionResponseJsonUsageUnionDurationMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateTranscriptionResponseJsonUsageUnion'),
+      _ when value == effective[TranscriptTextUsageTokens] => TranscriptTextUsageTokensMapper.fromJson(json),
+      _ when value == effective[TranscriptTextUsageDuration] => TranscriptTextUsageDurationMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateTranscriptionResponseJsonUsageUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tokens')
-class CreateTranscriptionResponseJsonUsageUnionTokens extends CreateTranscriptionResponseJsonUsageUnion with CreateTranscriptionResponseJsonUsageUnionTokensMappable {
+class CreateTranscriptionResponseJsonUsageUnionTokens extends CreateTranscriptionResponseJsonUsageUnion
+    with CreateTranscriptionResponseJsonUsageUnionTokensMappable {
   final TranscriptTextUsageTokensType type;
   @MappableField(key: 'input_tokens')
   final int inputTokens;
@@ -65,16 +72,13 @@ class CreateTranscriptionResponseJsonUsageUnionTokens extends CreateTranscriptio
     required this.outputTokens,
     required this.totalTokens,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'duration')
-class CreateTranscriptionResponseJsonUsageUnionDuration extends CreateTranscriptionResponseJsonUsageUnion with CreateTranscriptionResponseJsonUsageUnionDurationMappable {
+class CreateTranscriptionResponseJsonUsageUnionDuration extends CreateTranscriptionResponseJsonUsageUnion
+    with CreateTranscriptionResponseJsonUsageUnionDurationMappable {
   final TranscriptTextUsageDurationType type;
   final num seconds;
 
-  const CreateTranscriptionResponseJsonUsageUnionDuration({
-    required this.type,
-    required this.seconds,
-  });
-
+  const CreateTranscriptionResponseJsonUsageUnionDuration({required this.type, required this.seconds});
 }

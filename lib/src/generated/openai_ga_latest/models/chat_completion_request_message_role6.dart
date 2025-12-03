@@ -10,10 +10,10 @@ part 'chat_completion_request_message_role6.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestMessageRole6 {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ChatCompletionRequestMessageRole6 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestMessageRole6> get $valuesDefined => values.where((value) => value != ChatCompletionRequestMessageRole6.unknown).toList();
+  static List<ChatCompletionRequestMessageRole6> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestMessageRole6.unknown).toList();
 }

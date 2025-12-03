@@ -8,7 +8,7 @@
 part of 'chat_completion_request_tool_message.dart';
 
 class ChatCompletionRequestToolMessageMapper
-    extends ClassMapperBase<ChatCompletionRequestToolMessage> {
+    extends SubClassMapperBase<ChatCompletionRequestToolMessage> {
   ChatCompletionRequestToolMessageMapper._();
 
   static ChatCompletionRequestToolMessageMapper? _instance;
@@ -16,6 +16,9 @@ class ChatCompletionRequestToolMessageMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestToolMessageMapper._(),
+      );
+      ChatCompletionRequestMessageMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ChatCompletionRequestToolMessageRoleMapper.ensureInitialized();
     }
@@ -51,6 +54,14 @@ class ChatCompletionRequestToolMessageMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'role';
+  @override
+  final dynamic discriminatorValue = 'tool';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestMessageMapper.ensureInitialized();
 
   static ChatCompletionRequestToolMessage _instantiate(DecodingData data) {
     return ChatCompletionRequestToolMessage(
@@ -137,7 +148,8 @@ abstract class ChatCompletionRequestToolMessageCopyWith<
   $In extends ChatCompletionRequestToolMessage,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ChatCompletionRequestMessageCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ChatCompletionRequestToolMessageRole? role,
     String? content,

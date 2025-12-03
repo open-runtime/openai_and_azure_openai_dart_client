@@ -11,8 +11,9 @@ part 'eval_stored_completions_source.mapper.dart';
 
 /// A StoredCompletionsRunDataSource configuration describing a set of filters.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'stored_completions')
+class EvalStoredCompletionsSource extends CreateEvalCompletionsRunDataSourceSourceUnion
+    with EvalStoredCompletionsSourceMappable {
   const EvalStoredCompletionsSource({
     this.metadata,
     this.model,
@@ -31,7 +32,6 @@ class EvalStoredCompletionsSource with EvalStoredCompletionsSourceMappable {
   final int? limit;
   final EvalStoredCompletionsSourceType type;
 
-  static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) => EvalStoredCompletionsSourceMapper.fromJson(json);
-
+  static EvalStoredCompletionsSource fromJson(Map<String, dynamic> json) =>
+      EvalStoredCompletionsSourceMapper.fromJson(json);
 }
-

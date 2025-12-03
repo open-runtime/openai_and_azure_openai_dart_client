@@ -29,7 +29,6 @@ class ProjectServiceAccountListResponse with ProjectServiceAccountListResponseMa
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ProjectServiceAccountListResponse fromJson(Map<String, dynamic> json) => ProjectServiceAccountListResponseMapper.fromJson(json);
-
+  static ProjectServiceAccountListResponse fromJson(Map<String, dynamic> json) =>
+      ProjectServiceAccountListResponseMapper.fromJson(json);
 }
-

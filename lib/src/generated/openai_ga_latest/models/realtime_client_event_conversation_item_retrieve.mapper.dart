@@ -8,7 +8,7 @@
 part of 'realtime_client_event_conversation_item_retrieve.dart';
 
 class RealtimeClientEventConversationItemRetrieveMapper
-    extends ClassMapperBase<RealtimeClientEventConversationItemRetrieve> {
+    extends SubClassMapperBase<RealtimeClientEventConversationItemRetrieve> {
   RealtimeClientEventConversationItemRetrieveMapper._();
 
   static RealtimeClientEventConversationItemRetrieveMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeClientEventConversationItemRetrieveMapper
       MapperContainer.globals.use(
         _instance = RealtimeClientEventConversationItemRetrieveMapper._(),
       );
+      RealtimeClientEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -44,6 +45,14 @@ class RealtimeClientEventConversationItemRetrieveMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'conversation.item.retrieve';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeClientEventMapper.ensureInitialized();
 
   static RealtimeClientEventConversationItemRetrieve _instantiate(
     DecodingData data,
@@ -146,7 +155,8 @@ abstract class RealtimeClientEventConversationItemRetrieveCopyWith<
   $In extends RealtimeClientEventConversationItemRetrieve,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeClientEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({dynamic type, String? itemId, String? eventId});
   RealtimeClientEventConversationItemRetrieveCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

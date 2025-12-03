@@ -7,13 +7,17 @@
 
 part of 'speech_audio_done_event.dart';
 
-class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
+class SpeechAudioDoneEventMapper
+    extends SubClassMapperBase<SpeechAudioDoneEvent> {
   SpeechAudioDoneEventMapper._();
 
   static SpeechAudioDoneEventMapper? _instance;
   static SpeechAudioDoneEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = SpeechAudioDoneEventMapper._());
+      CreateSpeechResponseStreamEventMapper.ensureInitialized().addSubMapper(
+        _instance!,
+      );
       SpeechAudioDoneEventTypeMapper.ensureInitialized();
       SpeechAudioDoneEventUsageMapper.ensureInitialized();
     }
@@ -45,6 +49,14 @@ class SpeechAudioDoneEventMapper extends ClassMapperBase<SpeechAudioDoneEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'speech.audio.done';
+  @override
+  late final ClassMapperBase superMapper =
+      CreateSpeechResponseStreamEventMapper.ensureInitialized();
 
   static SpeechAudioDoneEvent _instantiate(DecodingData data) {
     return SpeechAudioDoneEvent(
@@ -122,13 +134,14 @@ abstract class SpeechAudioDoneEventCopyWith<
   $In extends SpeechAudioDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CreateSpeechResponseStreamEventCopyWith<$R, $In, $Out> {
   SpeechAudioDoneEventUsageCopyWith<
     $R,
     SpeechAudioDoneEventUsage,
     SpeechAudioDoneEventUsage
   >
   get speechAudioDoneEventUsage;
+  @override
   $R call({
     SpeechAudioDoneEventType? type,
     SpeechAudioDoneEventUsage? speechAudioDoneEventUsage,

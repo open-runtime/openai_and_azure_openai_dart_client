@@ -10,10 +10,10 @@ part 'output_item_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemRole {
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

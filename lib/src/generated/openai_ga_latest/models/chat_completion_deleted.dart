@@ -10,11 +10,7 @@ part 'chat_completion_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionDeleted with ChatCompletionDeletedMappable {
-  const ChatCompletionDeleted({
-    required this.objectEnum,
-    required this.id,
-    required this.deleted,
-  });
+  const ChatCompletionDeleted({required this.objectEnum, required this.id, required this.deleted});
 
   @MappableField(key: 'object')
   final ChatCompletionDeletedObjectObjectEnum objectEnum;
@@ -22,6 +18,4 @@ class ChatCompletionDeleted with ChatCompletionDeletedMappable {
   final bool deleted;
 
   static ChatCompletionDeleted fromJson(Map<String, dynamic> json) => ChatCompletionDeletedMapper.fromJson(json);
-
 }
-

@@ -10,13 +10,7 @@ part 'dalle_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleError with DalleErrorMappable {
-  const DalleError({
-    this.code,
-    this.message,
-    this.param,
-    this.type,
-    this.innerError,
-  });
+  const DalleError({this.code, this.message, this.param, this.type, this.innerError});
 
   final String? code;
   final String? message;
@@ -26,6 +20,4 @@ class DalleError with DalleErrorMappable {
   final DalleInnerError? innerError;
 
   static DalleError fromJson(Map<String, dynamic> json) => DalleErrorMapper.fromJson(json);
-
 }
-

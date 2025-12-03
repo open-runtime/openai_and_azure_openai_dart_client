@@ -15,18 +15,22 @@ import 'assistant_tools_function_type.dart';
 
 part 'create_assistant_request_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateAssistantRequestToolsUnionCodeInterpreter,
-  CreateAssistantRequestToolsUnionFileSearch,
-  CreateAssistantRequestToolsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateAssistantRequestToolsUnionCodeInterpreter,
+    CreateAssistantRequestToolsUnionFileSearch,
+    CreateAssistantRequestToolsUnionFunction,
+  ],
+)
 sealed class CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionMappable {
   const CreateAssistantRequestToolsUnion();
 
   static CreateAssistantRequestToolsUnion fromJson(Map<String, dynamic> json) {
     return CreateAssistantRequestToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateAssistantRequestToolsUnionDeserializer on CreateAssistantRequestToolsUnion {
@@ -36,48 +40,43 @@ extension CreateAssistantRequestToolsUnionDeserializer on CreateAssistantRequest
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateAssistantRequestToolsUnionCodeInterpreter: 'code_interpreter',
-      CreateAssistantRequestToolsUnionFileSearch: 'file_search',
-      CreateAssistantRequestToolsUnionFunction: 'function',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
+      AssistantToolsFunction: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateAssistantRequestToolsUnionCodeInterpreter] => CreateAssistantRequestToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[CreateAssistantRequestToolsUnionFileSearch] => CreateAssistantRequestToolsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[CreateAssistantRequestToolsUnionFunction] => CreateAssistantRequestToolsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFunction] => AssistantToolsFunctionMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateAssistantRequestToolsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class CreateAssistantRequestToolsUnionCodeInterpreter extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionCodeInterpreterMappable {
+class CreateAssistantRequestToolsUnionCodeInterpreter extends CreateAssistantRequestToolsUnion
+    with CreateAssistantRequestToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const CreateAssistantRequestToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const CreateAssistantRequestToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class CreateAssistantRequestToolsUnionFileSearch extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionFileSearchMappable {
+class CreateAssistantRequestToolsUnionFileSearch extends CreateAssistantRequestToolsUnion
+    with CreateAssistantRequestToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
 
-  const CreateAssistantRequestToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const CreateAssistantRequestToolsUnionFileSearch({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class CreateAssistantRequestToolsUnionFunction extends CreateAssistantRequestToolsUnion with CreateAssistantRequestToolsUnionFunctionMappable {
+class CreateAssistantRequestToolsUnionFunction extends CreateAssistantRequestToolsUnion
+    with CreateAssistantRequestToolsUnionFunctionMappable {
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 
-  const CreateAssistantRequestToolsUnionFunction({
-    required this.type,
-    required this.assistantToolsFunctionFunction,
-  });
-
+  const CreateAssistantRequestToolsUnionFunction({required this.type, required this.assistantToolsFunctionFunction});
 }

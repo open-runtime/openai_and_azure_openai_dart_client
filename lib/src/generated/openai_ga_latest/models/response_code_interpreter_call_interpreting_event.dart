@@ -10,8 +10,13 @@ import 'response_stream_event.dart';
 part 'response_code_interpreter_call_interpreting_event.mapper.dart';
 
 /// Emitted when the code interpreter is actively interpreting the code snippet.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCodeInterpreterCallInterpretingEvent with ResponseCodeInterpreterCallInterpretingEventMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'response.code_interpreter_call.interpreting',
+)
+class ResponseCodeInterpreterCallInterpretingEvent extends ResponseStreamEvent
+    with ResponseCodeInterpreterCallInterpretingEventMappable {
   const ResponseCodeInterpreterCallInterpretingEvent({
     required this.type,
     required this.outputIndex,
@@ -27,7 +32,6 @@ class ResponseCodeInterpreterCallInterpretingEvent with ResponseCodeInterpreterC
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseCodeInterpreterCallInterpretingEvent fromJson(Map<String, dynamic> json) => ResponseCodeInterpreterCallInterpretingEventMapper.fromJson(json);
-
+  static ResponseCodeInterpreterCallInterpretingEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCodeInterpreterCallInterpretingEventMapper.fromJson(json);
 }
-

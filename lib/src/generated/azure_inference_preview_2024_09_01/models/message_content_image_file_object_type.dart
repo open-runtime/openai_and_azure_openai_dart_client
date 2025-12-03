@@ -9,10 +9,10 @@ part 'message_content_image_file_object_type.mapper.dart';
 /// Always `image_file`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentImageFileObjectType {
-  @MappableValue('image_file') 
+  @MappableValue('image_file')
   imageFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentImageFileObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentImageFileObjectType> get $valuesDefined => values.where((value) => value != MessageContentImageFileObjectType.unknown).toList();
+  static List<MessageContentImageFileObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageContentImageFileObjectType.unknown).toList();
 }

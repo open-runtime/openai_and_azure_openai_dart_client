@@ -9,13 +9,13 @@ part 'images_response_background.mapper.dart';
 /// The background parameter used for the image generation. Either `transparent` or `opaque`.
 @MappableEnum(defaultValue: 'unknown')
 enum ImagesResponseBackground {
-  @MappableValue('transparent') 
+  @MappableValue('transparent')
   transparent,
 
-  @MappableValue('opaque') 
+  @MappableValue('opaque')
   opaque,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -24,5 +24,6 @@ enum ImagesResponseBackground {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImagesResponseBackground> get $valuesDefined => values.where((value) => value != ImagesResponseBackground.unknown).toList();
+  static List<ImagesResponseBackground> get $valuesDefined =>
+      values.where((value) => value != ImagesResponseBackground.unknown).toList();
 }

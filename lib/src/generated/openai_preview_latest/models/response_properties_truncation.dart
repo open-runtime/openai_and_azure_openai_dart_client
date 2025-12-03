@@ -16,13 +16,13 @@ part 'response_properties_truncation.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ResponsePropertiesTruncation {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('disabled') 
+  @MappableValue('disabled')
   disabled,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ResponsePropertiesTruncation {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponsePropertiesTruncation> get $valuesDefined => values.where((value) => value != ResponsePropertiesTruncation.unknown).toList();
+  static List<ResponsePropertiesTruncation> get $valuesDefined =>
+      values.where((value) => value != ResponsePropertiesTruncation.unknown).toList();
 }

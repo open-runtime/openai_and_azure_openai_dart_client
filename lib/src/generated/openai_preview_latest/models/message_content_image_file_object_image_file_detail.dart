@@ -9,16 +9,16 @@ part 'message_content_image_file_object_image_file_detail.mapper.dart';
 /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentImageFileObjectImageFileDetail {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum MessageContentImageFileObjectImageFileDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentImageFileObjectImageFileDetail> get $valuesDefined => values.where((value) => value != MessageContentImageFileObjectImageFileDetail.unknown).toList();
+  static List<MessageContentImageFileObjectImageFileDetail> get $valuesDefined =>
+      values.where((value) => value != MessageContentImageFileObjectImageFileDetail.unknown).toList();
 }

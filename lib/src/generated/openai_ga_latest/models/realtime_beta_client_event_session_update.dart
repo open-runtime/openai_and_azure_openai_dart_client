@@ -21,18 +21,13 @@ part 'realtime_beta_client_event_session_update.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeBetaClientEventSessionUpdate with RealtimeBetaClientEventSessionUpdateMappable {
-  const RealtimeBetaClientEventSessionUpdate({
-    required this.type,
-    required this.session,
-    this.eventId,
-  });
+  const RealtimeBetaClientEventSessionUpdate({required this.type, required this.session, this.eventId});
 
   final dynamic type;
   final RealtimeSessionCreateRequest session;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeBetaClientEventSessionUpdate fromJson(Map<String, dynamic> json) => RealtimeBetaClientEventSessionUpdateMapper.fromJson(json);
-
+  static RealtimeBetaClientEventSessionUpdate fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaClientEventSessionUpdateMapper.fromJson(json);
 }
-

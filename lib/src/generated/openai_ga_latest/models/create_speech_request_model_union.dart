@@ -10,7 +10,11 @@ part 'create_speech_request_model_union.mapper.dart';
 
 /// One of the available [TTS models](https://platform.openai.com/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateSpeechRequestModelUnionVariantEnum, CreateSpeechRequestModelUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateSpeechRequestModelUnionVariantEnum, CreateSpeechRequestModelUnionVariantString],
+)
 sealed class CreateSpeechRequestModelUnion with CreateSpeechRequestModelUnionMappable {
   const CreateSpeechRequestModelUnion();
 
@@ -47,21 +51,19 @@ extension CreateSpeechRequestModelUnionDeserializer on CreateSpeechRequestModelU
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateSpeechRequestModelUnionVariantEnum extends CreateSpeechRequestModelUnion with CreateSpeechRequestModelUnionVariantEnumMappable {
+class CreateSpeechRequestModelUnionVariantEnum extends CreateSpeechRequestModelUnion
+    with CreateSpeechRequestModelUnionVariantEnumMappable {
   final CreateSpeechRequestModelUnionEnum value;
 
-  const CreateSpeechRequestModelUnionVariantEnum({
-    required this.value,
-  });
+  const CreateSpeechRequestModelUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateSpeechRequestModelUnionVariantString extends CreateSpeechRequestModelUnion with CreateSpeechRequestModelUnionVariantStringMappable {
+class CreateSpeechRequestModelUnionVariantString extends CreateSpeechRequestModelUnion
+    with CreateSpeechRequestModelUnionVariantStringMappable {
   final String value;
 
-  const CreateSpeechRequestModelUnionVariantString({
-    required this.value,
-  });
+  const CreateSpeechRequestModelUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

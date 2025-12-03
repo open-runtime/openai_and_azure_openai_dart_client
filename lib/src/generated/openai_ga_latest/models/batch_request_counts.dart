@@ -9,17 +9,11 @@ part 'batch_request_counts.mapper.dart';
 /// The request counts for different statuses within the batch.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestCounts with BatchRequestCountsMappable {
-  const BatchRequestCounts({
-    required this.total,
-    required this.completed,
-    required this.failed,
-  });
+  const BatchRequestCounts({required this.total, required this.completed, required this.failed});
 
   final int total;
   final int completed;
   final int failed;
 
   static BatchRequestCounts fromJson(Map<String, dynamic> json) => BatchRequestCountsMapper.fromJson(json);
-
 }
-

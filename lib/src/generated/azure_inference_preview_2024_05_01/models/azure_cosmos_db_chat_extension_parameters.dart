@@ -56,7 +56,6 @@ class AzureCosmosDbChatExtensionParameters with AzureCosmosDbChatExtensionParame
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static AzureCosmosDbChatExtensionParameters fromJson(Map<String, dynamic> json) => AzureCosmosDbChatExtensionParametersMapper.fromJson(json);
-
+  static AzureCosmosDbChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      AzureCosmosDbChatExtensionParametersMapper.fromJson(json);
 }
-

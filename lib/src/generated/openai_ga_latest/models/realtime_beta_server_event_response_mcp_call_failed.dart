@@ -24,7 +24,6 @@ class RealtimeBetaServerEventResponseMcpCallFailed with RealtimeBetaServerEventR
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventResponseMcpCallFailed fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseMcpCallFailedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseMcpCallFailed fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseMcpCallFailedMapper.fromJson(json);
 }
-

@@ -10,10 +10,10 @@ part 'refusal_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RefusalType {
-  @MappableValue('refusal') 
+  @MappableValue('refusal')
   refusal,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

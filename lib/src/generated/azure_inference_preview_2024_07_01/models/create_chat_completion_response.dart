@@ -37,7 +37,6 @@ class CreateChatCompletionResponse with CreateChatCompletionResponseMappable {
   final PromptFilterResults? promptFilterResults;
   final List<CreateChatCompletionResponseChoicesChoices>? choices;
 
-  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) => CreateChatCompletionResponseMapper.fromJson(json);
-
+  static CreateChatCompletionResponse fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionResponseMapper.fromJson(json);
 }
-

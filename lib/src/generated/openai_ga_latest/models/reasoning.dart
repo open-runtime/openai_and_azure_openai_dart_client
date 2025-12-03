@@ -17,11 +17,7 @@ part 'reasoning.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class Reasoning with ReasoningMappable {
-  const Reasoning({
-    this.effort,
-    this.summary,
-    this.generateSummary,
-  });
+  const Reasoning({this.effort, this.summary, this.generateSummary});
 
   final ReasoningEffort? effort;
   final ReasoningSummary? summary;
@@ -29,6 +25,4 @@ class Reasoning with ReasoningMappable {
   final ReasoningGenerateSummaryGenerateSummary? generateSummary;
 
   static Reasoning fromJson(Map<String, dynamic> json) => ReasoningMapper.fromJson(json);
-
 }
-

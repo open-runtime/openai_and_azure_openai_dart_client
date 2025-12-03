@@ -9,7 +9,14 @@ import 'audio_verbose_response.dart';
 
 part 'translations_create_response_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [TranslationsCreateResponseUnionAudioResponse, TranslationsCreateResponseUnionAudioVerboseResponse])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    TranslationsCreateResponseUnionAudioResponse,
+    TranslationsCreateResponseUnionAudioVerboseResponse,
+  ],
+)
 sealed class TranslationsCreateResponseUnion with TranslationsCreateResponseUnionMappable {
   const TranslationsCreateResponseUnion();
 
@@ -27,23 +34,20 @@ extension TranslationsCreateResponseUnionDeserializer on TranslationsCreateRespo
       return TranslationsCreateResponseUnionAudioVerboseResponseMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for TranslationsCreateResponseUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class TranslationsCreateResponseUnionAudioResponse extends TranslationsCreateResponseUnion with TranslationsCreateResponseUnionAudioResponseMappable {
+class TranslationsCreateResponseUnionAudioResponse extends TranslationsCreateResponseUnion
+    with TranslationsCreateResponseUnionAudioResponseMappable {
   final String text;
 
-  const TranslationsCreateResponseUnionAudioResponse({
-    required this.text,
-  });
+  const TranslationsCreateResponseUnionAudioResponse({required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class TranslationsCreateResponseUnionAudioVerboseResponse extends TranslationsCreateResponseUnion with TranslationsCreateResponseUnionAudioVerboseResponseMappable {
-
-
+class TranslationsCreateResponseUnionAudioVerboseResponse extends TranslationsCreateResponseUnion
+    with TranslationsCreateResponseUnionAudioVerboseResponseMappable {
   const TranslationsCreateResponseUnionAudioVerboseResponse();
 }

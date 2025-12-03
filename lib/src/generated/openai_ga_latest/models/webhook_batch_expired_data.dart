@@ -8,13 +8,9 @@ part 'webhook_batch_expired_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchExpiredData with WebhookBatchExpiredDataMappable {
-  const WebhookBatchExpiredData({
-    required this.id,
-  });
+  const WebhookBatchExpiredData({required this.id});
 
   final String id;
 
   static WebhookBatchExpiredData fromJson(Map<String, dynamic> json) => WebhookBatchExpiredDataMapper.fromJson(json);
-
 }
-

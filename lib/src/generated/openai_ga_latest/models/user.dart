@@ -31,6 +31,4 @@ class User with UserMappable {
   final int addedAt;
 
   static User fromJson(Map<String, dynamic> json) => UserMapper.fromJson(json);
-
 }
-

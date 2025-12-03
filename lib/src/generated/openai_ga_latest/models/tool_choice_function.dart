@@ -11,17 +11,12 @@ part 'tool_choice_function.mapper.dart';
 
 /// Use this option to force the model to call a specific function.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ToolChoiceFunction with ToolChoiceFunctionMappable {
-  const ToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
+class ToolChoiceFunction extends ToolChoiceParam with ToolChoiceFunctionMappable {
+  const ToolChoiceFunction({required this.type, required this.name});
 
   final ToolChoiceFunctionType type;
   final String name;
 
   static ToolChoiceFunction fromJson(Map<String, dynamic> json) => ToolChoiceFunctionMapper.fromJson(json);
-
 }
-

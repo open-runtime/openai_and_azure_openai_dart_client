@@ -22,11 +22,16 @@ import 'run_step_details_tool_calls_function_object_type.dart';
 
 part 'run_step_details_tool_call.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RunStepDetailsToolCallCodeInterpreter,
-  RunStepDetailsToolCallFileSearch,
-  RunStepDetailsToolCallFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RunStepDetailsToolCallCodeInterpreter,
+    RunStepDetailsToolCallFileSearch,
+    RunStepDetailsToolCallFunction,
+  ],
+)
 sealed class RunStepDetailsToolCall with RunStepDetailsToolCallMappable {
   const RunStepDetailsToolCall();
 
@@ -42,23 +47,28 @@ extension RunStepDetailsToolCallUnionDeserializer on RunStepDetailsToolCall {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RunStepDetailsToolCallCodeInterpreter: 'code_interpreter',
-      RunStepDetailsToolCallFileSearch: 'file_search',
-      RunStepDetailsToolCallFunction: 'function',
+      RunStepDetailsToolCallsCodeObject: 'code_interpreter',
+      RunStepDetailsToolCallsFileSearchObject: 'file_search',
+      RunStepDetailsToolCallsFunctionObject: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RunStepDetailsToolCallCodeInterpreter] => RunStepDetailsToolCallCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[RunStepDetailsToolCallFileSearch] => RunStepDetailsToolCallFileSearchMapper.fromJson(json),
-      _ when value == effective[RunStepDetailsToolCallFunction] => RunStepDetailsToolCallFunctionMapper.fromJson(json),
+      _ when value == effective[RunStepDetailsToolCallsCodeObject] => RunStepDetailsToolCallsCodeObjectMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[RunStepDetailsToolCallsFileSearchObject] =>
+        RunStepDetailsToolCallsFileSearchObjectMapper.fromJson(json),
+      _ when value == effective[RunStepDetailsToolCallsFunctionObject] =>
+        RunStepDetailsToolCallsFunctionObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RunStepDetailsToolCall'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class RunStepDetailsToolCallCodeInterpreter extends RunStepDetailsToolCall with RunStepDetailsToolCallCodeInterpreterMappable {
+class RunStepDetailsToolCallCodeInterpreter extends RunStepDetailsToolCall
+    with RunStepDetailsToolCallCodeInterpreterMappable {
   final String id;
   final RunStepDetailsToolCallType type;
   @MappableField(key: 'code_interpreter')

@@ -7,13 +7,14 @@
 
 part of 'item_reference.dart';
 
-class ItemReferenceMapper extends ClassMapperBase<ItemReference> {
+class ItemReferenceMapper extends SubClassMapperBase<ItemReference> {
   ItemReferenceMapper._();
 
   static ItemReferenceMapper? _instance;
   static ItemReferenceMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ItemReferenceMapper._());
+      InputItemMapper.ensureInitialized().addSubMapper(_instance!);
       ItemReferenceTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -39,6 +40,13 @@ class ItemReferenceMapper extends ClassMapperBase<ItemReference> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'item_reference';
+  @override
+  late final ClassMapperBase superMapper = InputItemMapper.ensureInitialized();
 
   static ItemReference _instantiate(DecodingData data) {
     return ItemReference(id: data.dec(_f$id), type: data.dec(_f$type));
@@ -105,7 +113,8 @@ extension ItemReferenceValueCopy<$R, $Out>
 }
 
 abstract class ItemReferenceCopyWith<$R, $In extends ItemReference, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements InputItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? id, ItemReferenceType? type});
   ItemReferenceCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

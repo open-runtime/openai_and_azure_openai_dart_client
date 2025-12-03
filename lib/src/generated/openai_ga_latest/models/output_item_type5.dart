@@ -9,10 +9,10 @@ part 'output_item_type5.mapper.dart';
 /// The type of the computer call. Always `computer_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemType5 {
-  @MappableValue('computer_call') 
+  @MappableValue('computer_call')
   computerCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -17,8 +17,8 @@ part 'computer_tool_call.mapper.dart';
 /// A tool call to a computer use tool. See the.
 /// [computer use guide](https://platform.openai.com/docs/guides/tools-computer-use) for more information.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ComputerToolCall with ComputerToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
+class ComputerToolCall extends ItemUnion with ComputerToolCallMappable {
   const ComputerToolCall({
     required this.id,
     required this.callId,
@@ -38,6 +38,4 @@ class ComputerToolCall with ComputerToolCallMappable {
   final ComputerToolCallType type;
 
   static ComputerToolCall fromJson(Map<String, dynamic> json) => ComputerToolCallMapper.fromJson(json);
-
 }
-

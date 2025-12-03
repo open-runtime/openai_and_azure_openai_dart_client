@@ -11,10 +11,10 @@ part 'webhook_batch_expired_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookBatchExpiredObjectObjectEnum {
-  @MappableValue('event') 
+  @MappableValue('event')
   event,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookBatchExpiredObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookBatchExpiredObjectObjectEnum> get $valuesDefined => values.where((value) => value != WebhookBatchExpiredObjectObjectEnum.unknown).toList();
+  static List<WebhookBatchExpiredObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WebhookBatchExpiredObjectObjectEnum.unknown).toList();
 }

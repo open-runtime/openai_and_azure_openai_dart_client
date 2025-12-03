@@ -8,13 +8,9 @@ part 'audit_log_rate_limit_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogRateLimitDeleted with AuditLogRateLimitDeletedMappable {
-  const AuditLogRateLimitDeleted({
-    this.id,
-  });
+  const AuditLogRateLimitDeleted({this.id});
 
   final String? id;
 
   static AuditLogRateLimitDeleted fromJson(Map<String, dynamic> json) => AuditLogRateLimitDeletedMapper.fromJson(json);
-
 }
-

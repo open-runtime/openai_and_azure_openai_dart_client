@@ -10,20 +10,16 @@ import 'response_stream_event.dart';
 part 'response_code_interpreter_call_code_delta_event.mapper.dart';
 
 /// Emitted when a partial code snippet is added by the code interpreter.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCodeInterpreterCallCodeDeltaEvent with ResponseCodeInterpreterCallCodeDeltaEventMappable {
-  const ResponseCodeInterpreterCallCodeDeltaEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.delta,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.code.delta')
+class ResponseCodeInterpreterCallCodeDeltaEvent extends ResponseStreamEvent
+    with ResponseCodeInterpreterCallCodeDeltaEventMappable {
+  const ResponseCodeInterpreterCallCodeDeltaEvent({required this.type, required this.outputIndex, required this.delta});
 
   final ResponseCodeInterpreterCallCodeDeltaEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final String delta;
 
-  static ResponseCodeInterpreterCallCodeDeltaEvent fromJson(Map<String, dynamic> json) => ResponseCodeInterpreterCallCodeDeltaEventMapper.fromJson(json);
-
+  static ResponseCodeInterpreterCallCodeDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCodeInterpreterCallCodeDeltaEventMapper.fromJson(json);
 }
-

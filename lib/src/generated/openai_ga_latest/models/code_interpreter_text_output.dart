@@ -12,15 +12,11 @@ part 'code_interpreter_text_output.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CodeInterpreterTextOutput with CodeInterpreterTextOutputMappable {
-  const CodeInterpreterTextOutput({
-    required this.type,
-    required this.logs,
-  });
+  const CodeInterpreterTextOutput({required this.type, required this.logs});
 
   final CodeInterpreterTextOutputType type;
   final String logs;
 
-  static CodeInterpreterTextOutput fromJson(Map<String, dynamic> json) => CodeInterpreterTextOutputMapper.fromJson(json);
-
+  static CodeInterpreterTextOutput fromJson(Map<String, dynamic> json) =>
+      CodeInterpreterTextOutputMapper.fromJson(json);
 }
-

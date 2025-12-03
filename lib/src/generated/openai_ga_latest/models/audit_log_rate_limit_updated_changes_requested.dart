@@ -30,7 +30,6 @@ class AuditLogRateLimitUpdatedChangesRequested with AuditLogRateLimitUpdatedChan
   @MappableField(key: 'batch_1_day_max_input_tokens')
   final int? batch1DayMaxInputTokens;
 
-  static AuditLogRateLimitUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogRateLimitUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogRateLimitUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogRateLimitUpdatedChangesRequestedMapper.fromJson(json);
 }
-

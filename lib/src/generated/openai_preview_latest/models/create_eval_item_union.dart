@@ -12,7 +12,11 @@ import 'eval_item.dart';
 part 'create_eval_item_union.mapper.dart';
 
 /// A chat message that makes up the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateEvalItemUnionVariant1, CreateEvalItemUnionEvalItem])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [CreateEvalItemUnionVariant1, CreateEvalItemUnionEvalItem],
+)
 sealed class CreateEvalItemUnion with CreateEvalItemUnionMappable {
   const CreateEvalItemUnion();
 
@@ -30,7 +34,6 @@ extension CreateEvalItemUnionDeserializer on CreateEvalItemUnion {
       return CreateEvalItemUnionEvalItemMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for CreateEvalItemUnion from: $json');
   }
 }
@@ -40,10 +43,7 @@ class CreateEvalItemUnionVariant1 extends CreateEvalItemUnion with CreateEvalIte
   final String role;
   final String content;
 
-  const CreateEvalItemUnionVariant1({
-    required this.role,
-    required this.content,
-  });
+  const CreateEvalItemUnionVariant1({required this.role, required this.content});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -52,9 +52,5 @@ class CreateEvalItemUnionEvalItem extends CreateEvalItemUnion with CreateEvalIte
   final EvalItemContentUnion content;
   final EvalItemType? type;
 
-  const CreateEvalItemUnionEvalItem({
-    required this.role,
-    required this.content,
-    required this.type,
-  });
+  const CreateEvalItemUnionEvalItem({required this.role, required this.content, required this.type});
 }

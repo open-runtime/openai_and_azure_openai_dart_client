@@ -9,8 +9,12 @@ import 'usage_audio_transcriptions_result_object_object_enum.dart';
 part 'usage_audio_transcriptions_result.mapper.dart';
 
 /// The aggregated audio transcriptions usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageAudioTranscriptionsResult with UsageAudioTranscriptionsResultMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'organization.usage.audio_transcriptions.result',
+)
+class UsageAudioTranscriptionsResult extends UsageTimeBucketResultUnion with UsageAudioTranscriptionsResultMappable {
   const UsageAudioTranscriptionsResult({
     required this.objectEnum,
     required this.seconds,
@@ -34,7 +38,6 @@ class UsageAudioTranscriptionsResult with UsageAudioTranscriptionsResultMappable
   final String? apiKeyId;
   final String? model;
 
-  static UsageAudioTranscriptionsResult fromJson(Map<String, dynamic> json) => UsageAudioTranscriptionsResultMapper.fromJson(json);
-
+  static UsageAudioTranscriptionsResult fromJson(Map<String, dynamic> json) =>
+      UsageAudioTranscriptionsResultMapper.fromJson(json);
 }
-

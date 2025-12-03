@@ -8,13 +8,10 @@ part 'webhook_batch_cancelled_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WebhookBatchCancelledData with WebhookBatchCancelledDataMappable {
-  const WebhookBatchCancelledData({
-    required this.id,
-  });
+  const WebhookBatchCancelledData({required this.id});
 
   final String id;
 
-  static WebhookBatchCancelledData fromJson(Map<String, dynamic> json) => WebhookBatchCancelledDataMapper.fromJson(json);
-
+  static WebhookBatchCancelledData fromJson(Map<String, dynamic> json) =>
+      WebhookBatchCancelledDataMapper.fromJson(json);
 }
-

@@ -60,7 +60,6 @@ class AzureSearchChatExtensionParameters with AzureSearchChatExtensionParameters
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static AzureSearchChatExtensionParameters fromJson(Map<String, dynamic> json) => AzureSearchChatExtensionParametersMapper.fromJson(json);
-
+  static AzureSearchChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      AzureSearchChatExtensionParametersMapper.fromJson(json);
 }
-

@@ -8,17 +8,11 @@ part 'batch_request_counts.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestCounts with BatchRequestCountsMappable {
-  const BatchRequestCounts({
-    required this.total,
-    required this.completed,
-    required this.failed,
-  });
+  const BatchRequestCounts({required this.total, required this.completed, required this.failed});
 
   final int total;
   final int completed;
   final int failed;
 
   static BatchRequestCounts fromJson(Map<String, dynamic> json) => BatchRequestCountsMapper.fromJson(json);
-
 }
-

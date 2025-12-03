@@ -8,7 +8,7 @@
 part of 'response_reasoning_text_delta_event.dart';
 
 class ResponseReasoningTextDeltaEventMapper
-    extends ClassMapperBase<ResponseReasoningTextDeltaEvent> {
+    extends SubClassMapperBase<ResponseReasoningTextDeltaEvent> {
   ResponseReasoningTextDeltaEventMapper._();
 
   static ResponseReasoningTextDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseReasoningTextDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseReasoningTextDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseReasoningTextDeltaEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -69,6 +70,14 @@ class ResponseReasoningTextDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.reasoning_text.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseReasoningTextDeltaEvent _instantiate(DecodingData data) {
     return ResponseReasoningTextDeltaEvent(
@@ -158,7 +167,8 @@ abstract class ResponseReasoningTextDeltaEventCopyWith<
   $In extends ResponseReasoningTextDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseReasoningTextDeltaEventType? type,
     String? itemId,

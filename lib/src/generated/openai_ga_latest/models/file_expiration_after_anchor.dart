@@ -9,10 +9,10 @@ part 'file_expiration_after_anchor.mapper.dart';
 /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
 @MappableEnum(defaultValue: 'unknown')
 enum FileExpirationAfterAnchor {
-  @MappableValue('created_at') 
+  @MappableValue('created_at')
   createdAt,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FileExpirationAfterAnchor {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FileExpirationAfterAnchor> get $valuesDefined => values.where((value) => value != FileExpirationAfterAnchor.unknown).toList();
+  static List<FileExpirationAfterAnchor> get $valuesDefined =>
+      values.where((value) => value != FileExpirationAfterAnchor.unknown).toList();
 }

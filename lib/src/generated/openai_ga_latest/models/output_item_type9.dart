@@ -10,10 +10,10 @@ part 'output_item_type9.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemType9 {
-  @MappableValue('local_shell_call') 
+  @MappableValue('local_shell_call')
   localShellCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

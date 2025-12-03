@@ -18,9 +18,12 @@ part 'fine_tuning_api.g.dart';
 abstract class FineTuningApi {
   factory FineTuningApi(Dio dio, {String? baseUrl}) = _FineTuningApi;
 
-  /// Gets a list of all fine-tune jobs owned by the Azure OpenAI resource.  ///
-  /// The details that are returned for each fine-tune job contain besides its identifier.  ///
-  /// the base model, training and validation files, hyper parameters, time stamps, status and events.  ///
+  /// Gets a list of all fine-tune jobs owned by the Azure OpenAI resource.
+  ///
+  /// The details that are returned for each fine-tune job contain besides its identifier.
+  ///
+  /// the base model, training and validation files, hyper parameters, time stamps, status and events.
+  ///
   /// Events are created when the job status changes, e.g. running or complete, and when results are uploaded.
   ///
   /// [after] - Identifier for the last event from the previous pagination request.
@@ -37,16 +40,22 @@ abstract class FineTuningApi {
     @DioOptions() RequestOptions? options,
   });
 
-  /// Creates a job that fine-tunes a specified model from a given training file.  ///
-  /// Response includes details of the enqueued job including job status and hyper parameters.  ///
+  /// Creates a job that fine-tunes a specified model from a given training file.
+  ///
+  /// Response includes details of the enqueued job including job status and hyper parameters.
+  ///
   /// The name of the fine-tuned model is added to the response once complete.
   ///
   /// [apiVersion] - The requested API version.
   ///
-  /// [fineTuningJob] - The specification of the fine-tuned model to create.  ///
-  /// Required parameters are the base model and the training file to use.  ///
-  /// Optionally a validation file can be specified to compute validation metrics during training.  ///
-  /// Hyper parameters will be set to default values or can be optionally specified.  ///
+  /// [fineTuningJob] - The specification of the fine-tuned model to create.
+  ///
+  /// Required parameters are the base model and the training file to use.
+  ///
+  /// Optionally a validation file can be specified to compute validation metrics during training.
+  ///
+  /// Hyper parameters will be set to default values or can be optionally specified.
+  ///
   /// These include batch size, learning rate multiplier, number of epochs and others.
   @POST('/fine_tuning/jobs')
   Future<HttpResponse<FineTuningJob>> fineTuningCreate({
@@ -56,8 +65,10 @@ abstract class FineTuningApi {
     @DioOptions() RequestOptions? options,
   });
 
-  /// Gets details for a single fine-tune job specified by the given fine-tune-id.  ///
-  /// The details contain the base model, training and validation files, hyper parameters, time stamps, status and events.  ///
+  /// Gets details for a single fine-tune job specified by the given fine-tune-id.
+  ///
+  /// The details contain the base model, training and validation files, hyper parameters, time stamps, status and events.
+  ///
   /// Events are created when the job status changes, e.g. running or complete, and when results are uploaded.
   ///
   /// [fineTuningJobId] - The identifier of the fine-tune job.
@@ -97,7 +108,8 @@ abstract class FineTuningApi {
     @DioOptions() RequestOptions? options,
   });
 
-  /// Gets the checkpoints for the fine-tune job specified by the given fine-tune-id.  ///
+  /// Gets the checkpoints for the fine-tune job specified by the given fine-tune-id.
+  ///
   /// Checkpoints are created at the end of successful epochs during training.
   ///
   /// [fineTuningJobId] - The identifier of the fine-tune job.
@@ -117,7 +129,8 @@ abstract class FineTuningApi {
     @DioOptions() RequestOptions? options,
   });
 
-  /// Gets the events for the fine-tune job specified by the given fine-tune-id.  ///
+  /// Gets the events for the fine-tune job specified by the given fine-tune-id.
+  ///
   /// Events are created when the job status changes, e.g. running or complete, and when results are uploaded.
   ///
   /// [fineTuningJobId] - The identifier of the fine-tune job.

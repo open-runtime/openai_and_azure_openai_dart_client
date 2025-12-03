@@ -16,7 +16,19 @@ import 'run_step_stream_event_union_variant7_event.dart';
 
 part 'run_step_stream_event_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RunStepStreamEventUnionVariant1, RunStepStreamEventUnionVariant2, RunStepStreamEventUnionVariant3, RunStepStreamEventUnionVariant4, RunStepStreamEventUnionVariant5, RunStepStreamEventUnionVariant6, RunStepStreamEventUnionVariant7])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RunStepStreamEventUnionVariant1,
+    RunStepStreamEventUnionVariant2,
+    RunStepStreamEventUnionVariant3,
+    RunStepStreamEventUnionVariant4,
+    RunStepStreamEventUnionVariant5,
+    RunStepStreamEventUnionVariant6,
+    RunStepStreamEventUnionVariant7,
+  ],
+)
 sealed class RunStepStreamEventUnion with RunStepStreamEventUnionMappable {
   const RunStepStreamEventUnion();
 
@@ -49,7 +61,6 @@ extension RunStepStreamEventUnionDeserializer on RunStepStreamEventUnion {
       return RunStepStreamEventUnionVariant7Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for RunStepStreamEventUnion from: $json');
   }
 }
@@ -59,10 +70,7 @@ class RunStepStreamEventUnionVariant1 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant1Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant1({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant1({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -70,10 +78,7 @@ class RunStepStreamEventUnionVariant2 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant2Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant2({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant2({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -81,10 +86,7 @@ class RunStepStreamEventUnionVariant3 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant3Event event;
   final RunStepDeltaObject data;
 
-  const RunStepStreamEventUnionVariant3({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant3({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -92,10 +94,7 @@ class RunStepStreamEventUnionVariant4 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant4Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant4({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant4({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -103,10 +102,7 @@ class RunStepStreamEventUnionVariant5 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant5Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant5({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant5({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -114,10 +110,7 @@ class RunStepStreamEventUnionVariant6 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant6Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant6({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant6({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -125,8 +118,5 @@ class RunStepStreamEventUnionVariant7 extends RunStepStreamEventUnion with RunSt
   final RunStepStreamEventUnionVariant7Event event;
   final RunStepObject data;
 
-  const RunStepStreamEventUnionVariant7({
-    required this.event,
-    required this.data,
-  });
+  const RunStepStreamEventUnionVariant7({required this.event, required this.data});
 }

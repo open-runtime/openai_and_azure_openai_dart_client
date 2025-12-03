@@ -12,14 +12,9 @@ import 'transcript_text_usage_tokens.dart';
 part 'transcript_text_done_event.mapper.dart';
 
 /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TranscriptTextDoneEvent with TranscriptTextDoneEventMappable {
-  const TranscriptTextDoneEvent({
-    required this.type,
-    required this.text,
-    this.logprobs,
-    this.usage,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcript.text.done')
+class TranscriptTextDoneEvent extends CreateTranscriptionResponseStreamEvent with TranscriptTextDoneEventMappable {
+  const TranscriptTextDoneEvent({required this.type, required this.text, this.logprobs, this.usage});
 
   final TranscriptTextDoneEventType type;
   final String text;
@@ -27,6 +22,4 @@ class TranscriptTextDoneEvent with TranscriptTextDoneEventMappable {
   final TranscriptTextUsageTokens? usage;
 
   static TranscriptTextDoneEvent fromJson(Map<String, dynamic> json) => TranscriptTextDoneEventMapper.fromJson(json);
-
 }
-

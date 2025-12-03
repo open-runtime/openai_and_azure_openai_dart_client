@@ -11,15 +11,11 @@ part 'wait.mapper.dart';
 
 /// A wait action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Wait with WaitMappable {
-  const Wait({
-    this.type = WaitType.wait,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'wait')
+class Wait extends ComputerAction with WaitMappable {
+  const Wait({this.type = WaitType.wait});
 
   final WaitType type;
 
   static Wait fromJson(Map<String, dynamic> json) => WaitMapper.fromJson(json);
-
 }
-

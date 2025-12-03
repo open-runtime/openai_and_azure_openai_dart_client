@@ -9,13 +9,9 @@ part 'workflow_tracing_param.mapper.dart';
 /// Controls diagnostic tracing during the session.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkflowTracingParam with WorkflowTracingParamMappable {
-  const WorkflowTracingParam({
-    this.enabled,
-  });
+  const WorkflowTracingParam({this.enabled});
 
   final bool? enabled;
 
   static WorkflowTracingParam fromJson(Map<String, dynamic> json) => WorkflowTracingParamMapper.fromJson(json);
-
 }
-

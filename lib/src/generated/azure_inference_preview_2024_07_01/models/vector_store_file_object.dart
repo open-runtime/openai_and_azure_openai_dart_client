@@ -41,6 +41,4 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   final VectorStoreFileObjectChunkingStrategyUnion? chunkingStrategy;
 
   static VectorStoreFileObject fromJson(Map<String, dynamic> json) => VectorStoreFileObjectMapper.fromJson(json);
-
 }
-

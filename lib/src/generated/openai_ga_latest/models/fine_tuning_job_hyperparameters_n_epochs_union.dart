@@ -9,7 +9,14 @@ part 'fine_tuning_job_hyperparameters_n_epochs_union.mapper.dart';
 /// The number of epochs to train the model for. An epoch refers to one full cycle.
 /// through the training dataset.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuningJobHyperparametersNEpochsUnionVariantString, FineTuningJobHyperparametersNEpochsUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuningJobHyperparametersNEpochsUnionVariantString,
+    FineTuningJobHyperparametersNEpochsUnionVariantInt,
+  ],
+)
 sealed class FineTuningJobHyperparametersNEpochsUnion with FineTuningJobHyperparametersNEpochsUnionMappable {
   const FineTuningJobHyperparametersNEpochsUnion();
 
@@ -34,26 +41,26 @@ extension FineTuningJobHyperparametersNEpochsUnionDeserializer on FineTuningJobH
       return FineTuningJobHyperparametersNEpochsUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuningJobHyperparametersNEpochsUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuningJobHyperparametersNEpochsUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuningJobHyperparametersNEpochsUnionVariantString extends FineTuningJobHyperparametersNEpochsUnion with FineTuningJobHyperparametersNEpochsUnionVariantStringMappable {
+class FineTuningJobHyperparametersNEpochsUnionVariantString extends FineTuningJobHyperparametersNEpochsUnion
+    with FineTuningJobHyperparametersNEpochsUnionVariantStringMappable {
   final String value;
 
-  const FineTuningJobHyperparametersNEpochsUnionVariantString({
-    required this.value,
-  });
+  const FineTuningJobHyperparametersNEpochsUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuningJobHyperparametersNEpochsUnionVariantInt extends FineTuningJobHyperparametersNEpochsUnion with FineTuningJobHyperparametersNEpochsUnionVariantIntMappable {
+class FineTuningJobHyperparametersNEpochsUnionVariantInt extends FineTuningJobHyperparametersNEpochsUnion
+    with FineTuningJobHyperparametersNEpochsUnionVariantIntMappable {
   final int value;
 
-  const FineTuningJobHyperparametersNEpochsUnionVariantInt({
-    required this.value,
-  });
+  const FineTuningJobHyperparametersNEpochsUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

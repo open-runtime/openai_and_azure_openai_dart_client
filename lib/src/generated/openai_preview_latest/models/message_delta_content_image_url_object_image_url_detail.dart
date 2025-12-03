@@ -9,16 +9,16 @@ part 'message_delta_content_image_url_object_image_url_detail.mapper.dart';
 /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageDeltaContentImageUrlObjectImageUrlDetail {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum MessageDeltaContentImageUrlObjectImageUrlDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageDeltaContentImageUrlObjectImageUrlDetail> get $valuesDefined => values.where((value) => value != MessageDeltaContentImageUrlObjectImageUrlDetail.unknown).toList();
+  static List<MessageDeltaContentImageUrlObjectImageUrlDetail> get $valuesDefined =>
+      values.where((value) => value != MessageDeltaContentImageUrlObjectImageUrlDetail.unknown).toList();
 }

@@ -10,10 +10,10 @@ part 'output_item_content_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemContentType {
-  @MappableValue('reasoning_summary') 
+  @MappableValue('reasoning_summary')
   reasoningSummary,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum OutputItemContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OutputItemContentType> get $valuesDefined => values.where((value) => value != OutputItemContentType.unknown).toList();
+  static List<OutputItemContentType> get $valuesDefined =>
+      values.where((value) => value != OutputItemContentType.unknown).toList();
 }

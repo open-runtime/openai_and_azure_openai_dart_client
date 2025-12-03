@@ -13,8 +13,8 @@ import 'output_text_content_type.dart';
 part 'output_text_content.mapper.dart';
 
 /// A text output from the model.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class OutputTextContent with OutputTextContentMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_text')
+class OutputTextContent extends MessageContentUnion with OutputTextContentMappable {
   const OutputTextContent({
     required this.text,
     required this.annotations,
@@ -28,6 +28,4 @@ class OutputTextContent with OutputTextContentMappable {
   final OutputTextContentType type;
 
   static OutputTextContent fromJson(Map<String, dynamic> json) => OutputTextContentMapper.fromJson(json);
-
 }
-

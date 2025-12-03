@@ -7,13 +7,14 @@
 
 part of 'click_param.dart';
 
-class ClickParamMapper extends ClassMapperBase<ClickParam> {
+class ClickParamMapper extends SubClassMapperBase<ClickParam> {
   ClickParamMapper._();
 
   static ClickParamMapper? _instance;
   static ClickParamMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClickParamMapper._());
+      ComputerActionMapper.ensureInitialized().addSubMapper(_instance!);
       ClickButtonTypeMapper.ensureInitialized();
       ClickParamTypeMapper.ensureInitialized();
     }
@@ -51,6 +52,14 @@ class ClickParamMapper extends ClassMapperBase<ClickParam> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'click';
+  @override
+  late final ClassMapperBase superMapper =
+      ComputerActionMapper.ensureInitialized();
 
   static ClickParam _instantiate(DecodingData data) {
     return ClickParam(
@@ -120,7 +129,8 @@ extension ClickParamValueCopy<$R, $Out>
 }
 
 abstract class ClickParamCopyWith<$R, $In extends ClickParam, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ComputerActionCopyWith<$R, $In, $Out> {
+  @override
   $R call({ClickButtonType? button, int? x, int? y, ClickParamType? type});
   ClickParamCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

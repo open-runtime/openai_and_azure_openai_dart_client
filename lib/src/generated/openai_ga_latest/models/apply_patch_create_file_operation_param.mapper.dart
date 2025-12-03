@@ -8,7 +8,7 @@
 part of 'apply_patch_create_file_operation_param.dart';
 
 class ApplyPatchCreateFileOperationParamMapper
-    extends ClassMapperBase<ApplyPatchCreateFileOperationParam> {
+    extends SubClassMapperBase<ApplyPatchCreateFileOperationParam> {
   ApplyPatchCreateFileOperationParamMapper._();
 
   static ApplyPatchCreateFileOperationParamMapper? _instance;
@@ -16,6 +16,9 @@ class ApplyPatchCreateFileOperationParamMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = ApplyPatchCreateFileOperationParamMapper._(),
+      );
+      ApplyPatchOperationParamMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       ApplyPatchCreateFileOperationParamTypeMapper.ensureInitialized();
     }
@@ -55,6 +58,14 @@ class ApplyPatchCreateFileOperationParamMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'create_file';
+  @override
+  late final ClassMapperBase superMapper =
+      ApplyPatchOperationParamMapper.ensureInitialized();
 
   static ApplyPatchCreateFileOperationParam _instantiate(DecodingData data) {
     return ApplyPatchCreateFileOperationParam(
@@ -142,7 +153,8 @@ abstract class ApplyPatchCreateFileOperationParamCopyWith<
   $In extends ApplyPatchCreateFileOperationParam,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ApplyPatchOperationParamCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? path,
     String? diff,

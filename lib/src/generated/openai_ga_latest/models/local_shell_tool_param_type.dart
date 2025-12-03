@@ -9,10 +9,10 @@ part 'local_shell_tool_param_type.mapper.dart';
 /// The type of the local shell tool. Always `local_shell`.
 @MappableEnum(defaultValue: 'unknown')
 enum LocalShellToolParamType {
-  @MappableValue('local_shell') 
+  @MappableValue('local_shell')
   localShell,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum LocalShellToolParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<LocalShellToolParamType> get $valuesDefined => values.where((value) => value != LocalShellToolParamType.unknown).toList();
+  static List<LocalShellToolParamType> get $valuesDefined =>
+      values.where((value) => value != LocalShellToolParamType.unknown).toList();
 }

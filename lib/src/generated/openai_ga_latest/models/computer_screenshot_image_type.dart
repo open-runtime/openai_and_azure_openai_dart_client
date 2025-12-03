@@ -11,10 +11,10 @@ part 'computer_screenshot_image_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ComputerScreenshotImageType {
-  @MappableValue('computer_screenshot') 
+  @MappableValue('computer_screenshot')
   computerScreenshot,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ComputerScreenshotImageType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ComputerScreenshotImageType> get $valuesDefined => values.where((value) => value != ComputerScreenshotImageType.unknown).toList();
+  static List<ComputerScreenshotImageType> get $valuesDefined =>
+      values.where((value) => value != ComputerScreenshotImageType.unknown).toList();
 }

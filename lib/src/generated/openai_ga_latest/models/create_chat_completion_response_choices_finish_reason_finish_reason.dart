@@ -13,22 +13,22 @@ part 'create_chat_completion_response_choices_finish_reason_finish_reason.mapper
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateChatCompletionResponseChoicesFinishReasonFinishReason {
-  @MappableValue('stop') 
+  @MappableValue('stop')
   stop,
 
-  @MappableValue('length') 
+  @MappableValue('length')
   length,
 
-  @MappableValue('tool_calls') 
+  @MappableValue('tool_calls')
   toolCalls,
 
-  @MappableValue('content_filter') 
+  @MappableValue('content_filter')
   contentFilter,
 
-  @MappableValue('function_call') 
+  @MappableValue('function_call')
   functionCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -37,5 +37,6 @@ enum CreateChatCompletionResponseChoicesFinishReasonFinishReason {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateChatCompletionResponseChoicesFinishReasonFinishReason> get $valuesDefined => values.where((value) => value != CreateChatCompletionResponseChoicesFinishReasonFinishReason.unknown).toList();
+  static List<CreateChatCompletionResponseChoicesFinishReasonFinishReason> get $valuesDefined =>
+      values.where((value) => value != CreateChatCompletionResponseChoicesFinishReasonFinishReason.unknown).toList();
 }

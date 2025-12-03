@@ -42,6 +42,4 @@ class RealtimeConversationItem with RealtimeConversationItemMappable {
   final String? output;
 
   static RealtimeConversationItem fromJson(Map<String, dynamic> json) => RealtimeConversationItemMapper.fromJson(json);
-
 }
-

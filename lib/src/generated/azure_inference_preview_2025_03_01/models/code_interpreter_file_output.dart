@@ -12,17 +12,13 @@ part 'code_interpreter_file_output.mapper.dart';
 
 /// The output of a code interpreter tool call that is a file.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterFileOutput with CodeInterpreterFileOutputMappable {
-  const CodeInterpreterFileOutput({
-    required this.type,
-    required this.files,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'files')
+class CodeInterpreterFileOutput extends CodeInterpreterToolOutput with CodeInterpreterFileOutputMappable {
+  const CodeInterpreterFileOutput({required this.type, required this.files});
 
   final CodeInterpreterFileOutputType type;
   final List<CodeInterpreterFileOutputFiles> files;
 
-  static CodeInterpreterFileOutput fromJson(Map<String, dynamic> json) => CodeInterpreterFileOutputMapper.fromJson(json);
-
+  static CodeInterpreterFileOutput fromJson(Map<String, dynamic> json) =>
+      CodeInterpreterFileOutputMapper.fromJson(json);
 }
-

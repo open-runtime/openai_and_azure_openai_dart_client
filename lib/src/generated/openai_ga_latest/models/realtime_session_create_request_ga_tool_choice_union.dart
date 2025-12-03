@@ -14,7 +14,15 @@ part 'realtime_session_create_request_ga_tool_choice_union.mapper.dart';
 /// How the model chooses tools. Provide one of the string modes or force a specific.
 /// function/MCP tool.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction, RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcp, RealtimeSessionCreateRequestGaToolChoiceUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction,
+    RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcp,
+    RealtimeSessionCreateRequestGaToolChoiceUnionVariantString,
+  ],
+)
 sealed class RealtimeSessionCreateRequestGaToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceUnionMappable {
   const RealtimeSessionCreateRequestGaToolChoiceUnion();
 
@@ -35,24 +43,25 @@ extension RealtimeSessionCreateRequestGaToolChoiceUnionDeserializer on RealtimeS
       return RealtimeSessionCreateRequestGaToolChoiceUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for RealtimeSessionCreateRequestGaToolChoiceUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionCreateRequestGaToolChoiceUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction extends RealtimeSessionCreateRequestGaToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunctionMappable {
+class RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction
+    extends RealtimeSessionCreateRequestGaToolChoiceUnion
+    with RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunctionMappable {
   final ToolChoiceFunctionType type;
   final String name;
 
-  const RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction({
-    required this.type,
-    required this.name,
-  });
+  const RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceFunction({required this.type, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcp extends RealtimeSessionCreateRequestGaToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcpMappable {
+class RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcp extends RealtimeSessionCreateRequestGaToolChoiceUnion
+    with RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcpMappable {
   final ToolChoiceMcpType type;
   @MappableField(key: 'server_label')
   final String serverLabel;
@@ -66,10 +75,9 @@ class RealtimeSessionCreateRequestGaToolChoiceUnionToolChoiceMcp extends Realtim
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestGaToolChoiceUnionVariantString extends RealtimeSessionCreateRequestGaToolChoiceUnion with RealtimeSessionCreateRequestGaToolChoiceUnionVariantStringMappable {
+class RealtimeSessionCreateRequestGaToolChoiceUnionVariantString extends RealtimeSessionCreateRequestGaToolChoiceUnion
+    with RealtimeSessionCreateRequestGaToolChoiceUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionCreateRequestGaToolChoiceUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionCreateRequestGaToolChoiceUnionVariantString({required this.value});
 }

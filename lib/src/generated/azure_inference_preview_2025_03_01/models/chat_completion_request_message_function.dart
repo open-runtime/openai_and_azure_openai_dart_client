@@ -24,17 +24,12 @@ part 'chat_completion_request_message_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageFunction with ChatCompletionRequestMessageFunctionMappable {
-  const ChatCompletionRequestMessageFunction({
-    this.role,
-    this.name,
-    this.content,
-  });
+  const ChatCompletionRequestMessageFunction({this.role, this.name, this.content});
 
   final ChatCompletionRequestMessageFunctionRole? role;
   final String? name;
   final String? content;
 
-  static ChatCompletionRequestMessageFunction fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageFunctionMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageFunction fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageFunctionMapper.fromJson(json);
 }
-

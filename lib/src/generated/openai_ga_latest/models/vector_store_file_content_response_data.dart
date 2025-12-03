@@ -8,15 +8,11 @@ part 'vector_store_file_content_response_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreFileContentResponseData with VectorStoreFileContentResponseDataMappable {
-  const VectorStoreFileContentResponseData({
-    this.type,
-    this.text,
-  });
+  const VectorStoreFileContentResponseData({this.type, this.text});
 
   final String? type;
   final String? text;
 
-  static VectorStoreFileContentResponseData fromJson(Map<String, dynamic> json) => VectorStoreFileContentResponseDataMapper.fromJson(json);
-
+  static VectorStoreFileContentResponseData fromJson(Map<String, dynamic> json) =>
+      VectorStoreFileContentResponseDataMapper.fromJson(json);
 }
-

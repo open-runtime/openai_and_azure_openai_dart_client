@@ -10,13 +10,9 @@ part 'system_compute_datasource.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SystemComputeDatasource with SystemComputeDatasourceMappable {
-  const SystemComputeDatasource({
-    required this.kind,
-  });
+  const SystemComputeDatasource({required this.kind});
 
   final SystemComputeDatasourceType kind;
 
   static SystemComputeDatasource fromJson(Map<String, dynamic> json) => SystemComputeDatasourceMapper.fromJson(json);
-
 }
-

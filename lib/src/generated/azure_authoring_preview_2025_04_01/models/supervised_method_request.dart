@@ -11,13 +11,9 @@ part 'supervised_method_request.mapper.dart';
 /// Method used for supervised finetuning
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class SupervisedMethodRequest with SupervisedMethodRequestMappable {
-  const SupervisedMethodRequest({
-    required this.type,
-  });
+  const SupervisedMethodRequest({required this.type});
 
   final FineTuningMethodType type;
 
   static SupervisedMethodRequest fromJson(Map<String, dynamic> json) => SupervisedMethodRequestMapper.fromJson(json);
-
 }
-

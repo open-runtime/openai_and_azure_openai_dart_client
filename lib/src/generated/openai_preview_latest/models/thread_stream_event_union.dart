@@ -24,7 +24,6 @@ extension ThreadStreamEventUnionDeserializer on ThreadStreamEventUnion {
       return ThreadStreamEventUnionVariant1Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ThreadStreamEventUnion from: $json');
   }
 }
@@ -35,9 +34,5 @@ class ThreadStreamEventUnionVariant1 extends ThreadStreamEventUnion with ThreadS
   final ThreadStreamEventUnionVariant1Event event;
   final ThreadObject data;
 
-  const ThreadStreamEventUnionVariant1({
-    required this.enabled,
-    required this.event,
-    required this.data,
-  });
+  const ThreadStreamEventUnionVariant1({required this.enabled, required this.event, required this.data});
 }

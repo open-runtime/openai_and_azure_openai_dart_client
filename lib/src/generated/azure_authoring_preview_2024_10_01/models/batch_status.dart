@@ -9,31 +9,31 @@ part 'batch_status.mapper.dart';
 /// The status of a batch.
 @MappableEnum(defaultValue: 'unknown')
 enum BatchStatus {
-  @MappableValue('validating') 
+  @MappableValue('validating')
   validating,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('finalizing') 
+  @MappableValue('finalizing')
   finalizing,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('expired') 
+  @MappableValue('expired')
   expired,
 
-  @MappableValue('cancelling') 
+  @MappableValue('cancelling')
   cancelling,
 
-  @MappableValue('cancelled') 
+  @MappableValue('cancelled')
   cancelled,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

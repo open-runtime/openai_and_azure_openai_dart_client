@@ -10,17 +10,12 @@ import 'url_annotation_type.dart';
 part 'url_annotation.mapper.dart';
 
 /// Annotation that references a URL.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UrlAnnotation with UrlAnnotationMappable {
-  const UrlAnnotation({
-    required this.source,
-    this.type = UrlAnnotationType.url,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'url')
+class UrlAnnotation extends ResponseOutputTextAnnotationsUnion with UrlAnnotationMappable {
+  const UrlAnnotation({required this.source, this.type = UrlAnnotationType.url});
 
   final UrlAnnotationSource source;
   final UrlAnnotationType type;
 
   static UrlAnnotation fromJson(Map<String, dynamic> json) => UrlAnnotationMapper.fromJson(json);
-
 }
-

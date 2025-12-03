@@ -7,13 +7,15 @@
 
 part of 'response_failed_event.dart';
 
-class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
+class ResponseFailedEventMapper
+    extends SubClassMapperBase<ResponseFailedEvent> {
   ResponseFailedEventMapper._();
 
   static ResponseFailedEventMapper? _instance;
   static ResponseFailedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseFailedEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseFailedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -48,6 +50,14 @@ class ResponseFailedEventMapper extends ClassMapperBase<ResponseFailedEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.failed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseFailedEvent _instantiate(DecodingData data) {
     return ResponseFailedEvent(
@@ -126,8 +136,9 @@ abstract class ResponseFailedEventCopyWith<
   $In extends ResponseFailedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({
     ResponseFailedEventType? type,
     int? sequenceNumber,

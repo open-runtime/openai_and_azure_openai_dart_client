@@ -11,10 +11,10 @@ part 'type_model_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum TypeModelType {
-  @MappableValue('type') 
+  @MappableValue('type')
   type,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

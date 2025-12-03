@@ -10,10 +10,10 @@ part 'realtime_session_create_response_tools_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeSessionCreateResponseToolsType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum RealtimeSessionCreateResponseToolsType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeSessionCreateResponseToolsType> get $valuesDefined => values.where((value) => value != RealtimeSessionCreateResponseToolsType.unknown).toList();
+  static List<RealtimeSessionCreateResponseToolsType> get $valuesDefined =>
+      values.where((value) => value != RealtimeSessionCreateResponseToolsType.unknown).toList();
 }

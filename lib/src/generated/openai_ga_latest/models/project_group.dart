@@ -31,6 +31,4 @@ class ProjectGroup with ProjectGroupMappable {
   final int createdAt;
 
   static ProjectGroup fromJson(Map<String, dynamic> json) => ProjectGroupMapper.fromJson(json);
-
 }
-

@@ -9,16 +9,16 @@ part 'image_detail_level.mapper.dart';
 /// Specifies the detail level of the image.
 @MappableEnum(defaultValue: 'unknown')
 enum ImageDetailLevel {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum ImageDetailLevel {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageDetailLevel> get $valuesDefined => values.where((value) => value != ImageDetailLevel.unknown).toList();
+  static List<ImageDetailLevel> get $valuesDefined =>
+      values.where((value) => value != ImageDetailLevel.unknown).toList();
 }

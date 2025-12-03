@@ -10,10 +10,10 @@ part 'output_item_type7.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum OutputItemType7 {
-  @MappableValue('image_generation_call') 
+  @MappableValue('image_generation_call')
   imageGenerationCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

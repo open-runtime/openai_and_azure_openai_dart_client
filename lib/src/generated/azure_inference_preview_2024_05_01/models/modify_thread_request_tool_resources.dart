@@ -21,7 +21,6 @@ class ModifyThreadRequestToolResources with ModifyThreadRequestToolResourcesMapp
   @MappableField(key: 'file_search')
   final ModifyThreadRequestToolResourcesFileSearch? modifyThreadRequestToolResourcesFileSearch;
 
-  static ModifyThreadRequestToolResources fromJson(Map<String, dynamic> json) => ModifyThreadRequestToolResourcesMapper.fromJson(json);
-
+  static ModifyThreadRequestToolResources fromJson(Map<String, dynamic> json) =>
+      ModifyThreadRequestToolResourcesMapper.fromJson(json);
 }
-

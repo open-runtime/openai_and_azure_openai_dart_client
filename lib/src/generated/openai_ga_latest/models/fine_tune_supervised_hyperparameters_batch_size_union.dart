@@ -8,8 +8,16 @@ part 'fine_tune_supervised_hyperparameters_batch_size_union.mapper.dart';
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneSupervisedHyperparametersBatchSizeUnionVariantString, FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt])
-sealed class FineTuneSupervisedHyperparametersBatchSizeUnion with FineTuneSupervisedHyperparametersBatchSizeUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    FineTuneSupervisedHyperparametersBatchSizeUnionVariantString,
+    FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt,
+  ],
+)
+sealed class FineTuneSupervisedHyperparametersBatchSizeUnion
+    with FineTuneSupervisedHyperparametersBatchSizeUnionMappable {
   const FineTuneSupervisedHyperparametersBatchSizeUnion();
 
   static FineTuneSupervisedHyperparametersBatchSizeUnion fromJson(dynamic json) {
@@ -17,7 +25,8 @@ sealed class FineTuneSupervisedHyperparametersBatchSizeUnion with FineTuneSuperv
   }
 }
 
-extension FineTuneSupervisedHyperparametersBatchSizeUnionDeserializer on FineTuneSupervisedHyperparametersBatchSizeUnion {
+extension FineTuneSupervisedHyperparametersBatchSizeUnionDeserializer
+    on FineTuneSupervisedHyperparametersBatchSizeUnion {
   static FineTuneSupervisedHyperparametersBatchSizeUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -33,26 +42,27 @@ extension FineTuneSupervisedHyperparametersBatchSizeUnionDeserializer on FineTun
       return FineTuneSupervisedHyperparametersBatchSizeUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for FineTuneSupervisedHyperparametersBatchSizeUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for FineTuneSupervisedHyperparametersBatchSizeUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneSupervisedHyperparametersBatchSizeUnionVariantString extends FineTuneSupervisedHyperparametersBatchSizeUnion with FineTuneSupervisedHyperparametersBatchSizeUnionVariantStringMappable {
+class FineTuneSupervisedHyperparametersBatchSizeUnionVariantString
+    extends FineTuneSupervisedHyperparametersBatchSizeUnion
+    with FineTuneSupervisedHyperparametersBatchSizeUnionVariantStringMappable {
   final String value;
 
-  const FineTuneSupervisedHyperparametersBatchSizeUnionVariantString({
-    required this.value,
-  });
+  const FineTuneSupervisedHyperparametersBatchSizeUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt extends FineTuneSupervisedHyperparametersBatchSizeUnion with FineTuneSupervisedHyperparametersBatchSizeUnionVariantIntMappable {
+class FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt extends FineTuneSupervisedHyperparametersBatchSizeUnion
+    with FineTuneSupervisedHyperparametersBatchSizeUnionVariantIntMappable {
   final int value;
 
-  const FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt({
-    required this.value,
-  });
+  const FineTuneSupervisedHyperparametersBatchSizeUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

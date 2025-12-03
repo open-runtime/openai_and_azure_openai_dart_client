@@ -10,16 +10,12 @@ part 'delete_certificate_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteCertificateResponse with DeleteCertificateResponseMappable {
-  const DeleteCertificateResponse({
-    required this.objectEnum,
-    required this.id,
-  });
+  const DeleteCertificateResponse({required this.objectEnum, required this.id});
 
   @MappableField(key: 'object')
   final DeleteCertificateResponseObjectObjectEnum objectEnum;
   final String id;
 
-  static DeleteCertificateResponse fromJson(Map<String, dynamic> json) => DeleteCertificateResponseMapper.fromJson(json);
-
+  static DeleteCertificateResponse fromJson(Map<String, dynamic> json) =>
+      DeleteCertificateResponseMapper.fromJson(json);
 }
-

@@ -13,16 +13,11 @@ part 'input_audio.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InputAudio with InputAudioMappable {
-  const InputAudio({
-    required this.type,
-    required this.inputAudioInputAudio,
-  });
+  const InputAudio({required this.type, required this.inputAudioInputAudio});
 
   final InputAudioType type;
   @MappableField(key: 'input_audio')
   final InputAudioInputAudio inputAudioInputAudio;
 
   static InputAudio fromJson(Map<String, dynamic> json) => InputAudioMapper.fromJson(json);
-
 }
-

@@ -7,13 +7,14 @@
 
 part of 'task_group_item.dart';
 
-class TaskGroupItemMapper extends ClassMapperBase<TaskGroupItem> {
+class TaskGroupItemMapper extends SubClassMapperBase<TaskGroupItem> {
   TaskGroupItemMapper._();
 
   static TaskGroupItemMapper? _instance;
   static TaskGroupItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TaskGroupItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       TaskGroupTaskMapper.ensureInitialized();
       TaskGroupItemObjectObjectEnumMapper.ensureInitialized();
       TaskGroupItemTypeMapper.ensureInitialized();
@@ -74,6 +75,13 @@ class TaskGroupItemMapper extends ClassMapperBase<TaskGroupItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.task_group';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static TaskGroupItem _instantiate(DecodingData data) {
     return TaskGroupItem(
@@ -147,13 +155,14 @@ extension TaskGroupItemValueCopy<$R, $Out>
 }
 
 abstract class TaskGroupItemCopyWith<$R, $In extends TaskGroupItem, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     TaskGroupTask,
     TaskGroupTaskCopyWith<$R, TaskGroupTask, TaskGroupTask>
   >
   get tasks;
+  @override
   $R call({
     String? id,
     int? createdAt,

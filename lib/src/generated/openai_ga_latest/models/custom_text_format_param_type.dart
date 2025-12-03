@@ -9,10 +9,10 @@ part 'custom_text_format_param_type.mapper.dart';
 /// Unconstrained text format. Always `text`.
 @MappableEnum(defaultValue: 'unknown')
 enum CustomTextFormatParamType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CustomTextFormatParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CustomTextFormatParamType> get $valuesDefined => values.where((value) => value != CustomTextFormatParamType.unknown).toList();
+  static List<CustomTextFormatParamType> get $valuesDefined =>
+      values.where((value) => value != CustomTextFormatParamType.unknown).toList();
 }

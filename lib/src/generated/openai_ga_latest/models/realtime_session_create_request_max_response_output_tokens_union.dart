@@ -11,8 +11,16 @@ part 'realtime_session_create_request_max_response_output_tokens_union.mapper.da
 /// limit output tokens, or `inf` for the maximum available tokens for a.
 /// given model. Defaults to `inf`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString, RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt])
-sealed class RealtimeSessionCreateRequestMaxResponseOutputTokensUnion with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString,
+    RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt,
+  ],
+)
+sealed class RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+    with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionMappable {
   const RealtimeSessionCreateRequestMaxResponseOutputTokensUnion();
 
   static RealtimeSessionCreateRequestMaxResponseOutputTokensUnion fromJson(dynamic json) {
@@ -20,7 +28,8 @@ sealed class RealtimeSessionCreateRequestMaxResponseOutputTokensUnion with Realt
   }
 }
 
-extension RealtimeSessionCreateRequestMaxResponseOutputTokensUnionDeserializer on RealtimeSessionCreateRequestMaxResponseOutputTokensUnion {
+extension RealtimeSessionCreateRequestMaxResponseOutputTokensUnionDeserializer
+    on RealtimeSessionCreateRequestMaxResponseOutputTokensUnion {
   static RealtimeSessionCreateRequestMaxResponseOutputTokensUnion tryDeserialize(dynamic json) {
     // Try string variant
     if (json is String) {
@@ -36,31 +45,34 @@ extension RealtimeSessionCreateRequestMaxResponseOutputTokensUnionDeserializer o
       return RealtimeSessionCreateRequestMaxResponseOutputTokensUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeSessionCreateRequestMaxResponseOutputTokensUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeSessionCreateRequestMaxResponseOutputTokensUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString extends RealtimeSessionCreateRequestMaxResponseOutputTokensUnion with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantStringMappable {
+class RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString
+    extends RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+    with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt extends RealtimeSessionCreateRequestMaxResponseOutputTokensUnion with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantIntMappable {
+class RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt
+    extends RealtimeSessionCreateRequestMaxResponseOutputTokensUnion
+    with RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeSessionCreateRequestMaxResponseOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension RealtimeSessionCreateRequestMaxResponseOutputTokensUnionJsonValue on RealtimeSessionCreateRequestMaxResponseOutputTokensUnion {
+extension RealtimeSessionCreateRequestMaxResponseOutputTokensUnionJsonValue
+    on RealtimeSessionCreateRequestMaxResponseOutputTokensUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -90,7 +102,9 @@ class RealtimeSessionCreateRequestMaxResponseOutputTokensUnionHook extends Mappi
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! RealtimeSessionCreateRequestMaxResponseOutputTokensUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! RealtimeSessionCreateRequestMaxResponseOutputTokensUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return RealtimeSessionCreateRequestMaxResponseOutputTokensUnion.fromJson(value);
     }

@@ -9,7 +9,11 @@ import 'model_ids_responses.dart';
 
 part 'model_ids_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ModelIdsUnionModelIdsShared, ModelIdsUnionModelIdsResponses])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ModelIdsUnionModelIdsShared, ModelIdsUnionModelIdsResponses],
+)
 sealed class ModelIdsUnion with ModelIdsUnionMappable {
   const ModelIdsUnion();
 
@@ -27,21 +31,16 @@ extension ModelIdsUnionDeserializer on ModelIdsUnion {
       return ModelIdsUnionModelIdsResponsesMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ModelIdsUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelIdsUnionModelIdsShared extends ModelIdsUnion with ModelIdsUnionModelIdsSharedMappable {
-
-
   const ModelIdsUnionModelIdsShared();
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ModelIdsUnionModelIdsResponses extends ModelIdsUnion with ModelIdsUnionModelIdsResponsesMappable {
-
-
   const ModelIdsUnionModelIdsResponses();
 }

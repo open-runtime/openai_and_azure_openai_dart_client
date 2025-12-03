@@ -10,10 +10,10 @@ part 'image_gen_tool_call_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolCallType {
-  @MappableValue('image_generation_call') 
+  @MappableValue('image_generation_call')
   imageGenerationCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ImageGenToolCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolCallType> get $valuesDefined => values.where((value) => value != ImageGenToolCallType.unknown).toList();
+  static List<ImageGenToolCallType> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolCallType.unknown).toList();
 }

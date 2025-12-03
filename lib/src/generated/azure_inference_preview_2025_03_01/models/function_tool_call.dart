@@ -14,8 +14,8 @@ part 'function_tool_call.mapper.dart';
 /// A tool call to run a function. See the .
 /// [function calling guide](/docs/guides/function-calling) for more information.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class FunctionToolCall with FunctionToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
+class FunctionToolCall extends ItemUnion with FunctionToolCallMappable {
   const FunctionToolCall({
     required this.id,
     required this.type,
@@ -34,6 +34,4 @@ class FunctionToolCall with FunctionToolCallMappable {
   final FunctionToolCallStatus? status;
 
   static FunctionToolCall fromJson(Map<String, dynamic> json) => FunctionToolCallMapper.fromJson(json);
-
 }
-

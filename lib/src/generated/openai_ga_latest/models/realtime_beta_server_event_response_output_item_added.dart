@@ -28,7 +28,6 @@ class RealtimeBetaServerEventResponseOutputItemAdded with RealtimeBetaServerEven
   final int outputIndex;
   final RealtimeConversationItem item;
 
-  static RealtimeBetaServerEventResponseOutputItemAdded fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseOutputItemAddedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseOutputItemAdded fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseOutputItemAddedMapper.fromJson(json);
 }
-

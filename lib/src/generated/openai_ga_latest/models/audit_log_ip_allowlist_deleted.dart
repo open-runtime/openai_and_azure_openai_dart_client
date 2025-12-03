@@ -8,18 +8,13 @@ part 'audit_log_ip_allowlist_deleted.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogIpAllowlistDeleted with AuditLogIpAllowlistDeletedMappable {
-  const AuditLogIpAllowlistDeleted({
-    this.id,
-    this.name,
-    this.allowedIps,
-  });
+  const AuditLogIpAllowlistDeleted({this.id, this.name, this.allowedIps});
 
   final String? id;
   final String? name;
   @MappableField(key: 'allowed_ips')
   final List<String>? allowedIps;
 
-  static AuditLogIpAllowlistDeleted fromJson(Map<String, dynamic> json) => AuditLogIpAllowlistDeletedMapper.fromJson(json);
-
+  static AuditLogIpAllowlistDeleted fromJson(Map<String, dynamic> json) =>
+      AuditLogIpAllowlistDeletedMapper.fromJson(json);
 }
-

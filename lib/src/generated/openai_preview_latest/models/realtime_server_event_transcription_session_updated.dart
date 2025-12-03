@@ -13,8 +13,9 @@ part 'realtime_server_event_transcription_session_updated.mapper.dart';
 /// Returned when a transcription session is updated with a `transcription_session.update` event, unless .
 /// there is an error.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventTranscriptionSessionUpdated with RealtimeServerEventTranscriptionSessionUpdatedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'transcription_session.updated')
+class RealtimeServerEventTranscriptionSessionUpdated extends RealtimeServerEvent
+    with RealtimeServerEventTranscriptionSessionUpdatedMappable {
   const RealtimeServerEventTranscriptionSessionUpdated({
     required this.eventId,
     required this.type,
@@ -26,7 +27,6 @@ class RealtimeServerEventTranscriptionSessionUpdated with RealtimeServerEventTra
   final RealtimeServerEventTranscriptionSessionUpdatedType type;
   final RealtimeTranscriptionSessionCreateResponse session;
 
-  static RealtimeServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) => RealtimeServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
-
+  static RealtimeServerEventTranscriptionSessionUpdated fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventTranscriptionSessionUpdatedMapper.fromJson(json);
 }
-

@@ -8,7 +8,7 @@
 part of 'response_mcp_list_tools_failed_event.dart';
 
 class ResponseMcpListToolsFailedEventMapper
-    extends ClassMapperBase<ResponseMcpListToolsFailedEvent> {
+    extends SubClassMapperBase<ResponseMcpListToolsFailedEvent> {
   ResponseMcpListToolsFailedEventMapper._();
 
   static ResponseMcpListToolsFailedEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpListToolsFailedEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpListToolsFailedEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpListToolsFailedEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -58,6 +59,14 @@ class ResponseMcpListToolsFailedEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_list_tools.failed';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpListToolsFailedEvent _instantiate(DecodingData data) {
     return ResponseMcpListToolsFailedEvent(
@@ -145,7 +154,8 @@ abstract class ResponseMcpListToolsFailedEventCopyWith<
   $In extends ResponseMcpListToolsFailedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpListToolsFailedEventType? type,
     String? itemId,

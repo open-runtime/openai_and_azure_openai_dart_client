@@ -7,13 +7,14 @@
 
 part of 'message.dart';
 
-class MessageMapper extends ClassMapperBase<Message> {
+class MessageMapper extends SubClassMapperBase<Message> {
   MessageMapper._();
 
   static MessageMapper? _instance;
   static MessageMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = MessageMapper._());
+      ConversationItemMapper.ensureInitialized().addSubMapper(_instance!);
       MessageStatusMapper.ensureInitialized();
       MessageRoleMapper.ensureInitialized();
       MessageContentUnionMapper.ensureInitialized();
@@ -59,6 +60,14 @@ class MessageMapper extends ClassMapperBase<Message> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'message';
+  @override
+  late final ClassMapperBase superMapper =
+      ConversationItemMapper.ensureInitialized();
 
   static Message _instantiate(DecodingData data) {
     return Message(
@@ -126,13 +135,14 @@ extension MessageValueCopy<$R, $Out> on ObjectCopyWith<$R, Message, $Out> {
 }
 
 abstract class MessageCopyWith<$R, $In extends Message, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ConversationItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     MessageContentUnion,
     MessageContentUnionCopyWith<$R, MessageContentUnion, MessageContentUnion>
   >
   get content;
+  @override
   $R call({
     String? id,
     MessageStatus? status,

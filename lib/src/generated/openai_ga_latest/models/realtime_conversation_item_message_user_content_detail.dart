@@ -9,16 +9,16 @@ part 'realtime_conversation_item_message_user_content_detail.mapper.dart';
 /// The detail level of the image (for `input_image`). `auto` will default to `high`.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemMessageUserContentDetail {
-  @MappableValue('auto') 
+  @MappableValue('auto')
   auto,
 
-  @MappableValue('low') 
+  @MappableValue('low')
   low,
 
-  @MappableValue('high') 
+  @MappableValue('high')
   high,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum RealtimeConversationItemMessageUserContentDetail {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemMessageUserContentDetail> get $valuesDefined => values.where((value) => value != RealtimeConversationItemMessageUserContentDetail.unknown).toList();
+  static List<RealtimeConversationItemMessageUserContentDetail> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemMessageUserContentDetail.unknown).toList();
 }

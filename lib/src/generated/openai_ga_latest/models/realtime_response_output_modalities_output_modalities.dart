@@ -8,13 +8,13 @@ part 'realtime_response_output_modalities_output_modalities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeResponseOutputModalitiesOutputModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RealtimeResponseOutputModalitiesOutputModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeResponseOutputModalitiesOutputModalities> get $valuesDefined => values.where((value) => value != RealtimeResponseOutputModalitiesOutputModalities.unknown).toList();
+  static List<RealtimeResponseOutputModalitiesOutputModalities> get $valuesDefined =>
+      values.where((value) => value != RealtimeResponseOutputModalitiesOutputModalities.unknown).toList();
 }

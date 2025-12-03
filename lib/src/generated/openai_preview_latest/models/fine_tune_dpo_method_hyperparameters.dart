@@ -16,7 +16,9 @@ class FineTuneDpoMethodHyperparameters with FineTuneDpoMethodHyperparametersMapp
   const FineTuneDpoMethodHyperparameters({
     this.beta = const FineTuneDpoMethodHyperparametersBetaUnionVariantString(value: 'auto'),
     this.batchSize = const FineTuneDpoMethodHyperparametersBatchSizeUnionVariantString(value: 'auto'),
-    this.learningRateMultiplier = const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionVariantString(value: 'auto'),
+    this.learningRateMultiplier = const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionVariantString(
+      value: 'auto',
+    ),
     this.nEpochs = const FineTuneDpoMethodHyperparametersNEpochsUnionVariantString(value: 'auto'),
   });
 
@@ -24,12 +26,14 @@ class FineTuneDpoMethodHyperparameters with FineTuneDpoMethodHyperparametersMapp
   final FineTuneDpoMethodHyperparametersBetaUnion beta;
   @MappableField(key: 'batch_size', hook: const FineTuneDpoMethodHyperparametersBatchSizeUnionHook())
   final FineTuneDpoMethodHyperparametersBatchSizeUnion batchSize;
-  @MappableField(key: 'learning_rate_multiplier', hook: const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionHook())
+  @MappableField(
+    key: 'learning_rate_multiplier',
+    hook: const FineTuneDpoMethodHyperparametersLearningRateMultiplierUnionHook(),
+  )
   final FineTuneDpoMethodHyperparametersLearningRateMultiplierUnion learningRateMultiplier;
   @MappableField(key: 'n_epochs', hook: const FineTuneDpoMethodHyperparametersNEpochsUnionHook())
   final FineTuneDpoMethodHyperparametersNEpochsUnion nEpochs;
 
-  static FineTuneDpoMethodHyperparameters fromJson(Map<String, dynamic> json) => FineTuneDpoMethodHyperparametersMapper.fromJson(json);
-
+  static FineTuneDpoMethodHyperparameters fromJson(Map<String, dynamic> json) =>
+      FineTuneDpoMethodHyperparametersMapper.fromJson(json);
 }
-

@@ -9,13 +9,13 @@ part 'project_status.mapper.dart';
 /// `active` or `archived`
 @MappableEnum(defaultValue: 'unknown')
 enum ProjectStatus {
-  @MappableValue('active') 
+  @MappableValue('active')
   active,
 
-  @MappableValue('archived') 
+  @MappableValue('archived')
   archived,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -11,17 +11,11 @@ part 'generic_embedding_settings.mapper.dart';
 /// Connection Embedding Settings
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class GenericEmbeddingSettings with GenericEmbeddingSettingsMappable {
-  const GenericEmbeddingSettings({
-    this.connection,
-    this.deploymentName,
-    this.modelName,
-  });
+  const GenericEmbeddingSettings({this.connection, this.deploymentName, this.modelName});
 
   final BaseConnection? connection;
   final String? deploymentName;
   final String? modelName;
 
   static GenericEmbeddingSettings fromJson(Map<String, dynamic> json) => GenericEmbeddingSettingsMapper.fromJson(json);
-
 }
-

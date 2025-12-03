@@ -21,7 +21,6 @@ class RealtimeBetaServerEventMcpListToolsInProgress with RealtimeBetaServerEvent
   @MappableField(key: 'item_id')
   final String itemId;
 
-  static RealtimeBetaServerEventMcpListToolsInProgress fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventMcpListToolsInProgressMapper.fromJson(json);
-
+  static RealtimeBetaServerEventMcpListToolsInProgress fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventMcpListToolsInProgressMapper.fromJson(json);
 }
-

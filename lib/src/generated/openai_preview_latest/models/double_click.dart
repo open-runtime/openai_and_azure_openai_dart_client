@@ -11,19 +11,13 @@ part 'double_click.mapper.dart';
 
 /// A double click action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class DoubleClick with DoubleClickMappable {
-  const DoubleClick({
-    required this.x,
-    required this.y,
-    this.type = DoubleClickType.doubleClick,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'double_click')
+class DoubleClick extends ComputerAction with DoubleClickMappable {
+  const DoubleClick({required this.x, required this.y, this.type = DoubleClickType.doubleClick});
 
   final int x;
   final int y;
   final DoubleClickType type;
 
   static DoubleClick fromJson(Map<String, dynamic> json) => DoubleClickMapper.fromJson(json);
-
 }
-

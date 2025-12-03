@@ -9,7 +9,11 @@ import 'mcp_tool_filter.dart';
 part 'tool_require_approval_union.mapper.dart';
 
 /// Specify which of the MCP server's tools require approval.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [ToolRequireApprovalUnionVariant1, ToolRequireApprovalUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [ToolRequireApprovalUnionVariant1, ToolRequireApprovalUnionVariantString],
+)
 sealed class ToolRequireApprovalUnion with ToolRequireApprovalUnionMappable {
   const ToolRequireApprovalUnion();
 
@@ -27,7 +31,6 @@ extension ToolRequireApprovalUnionDeserializer on ToolRequireApprovalUnion {
       return ToolRequireApprovalUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for ToolRequireApprovalUnion from: $json');
   }
 }
@@ -37,17 +40,13 @@ class ToolRequireApprovalUnionVariant1 extends ToolRequireApprovalUnion with Too
   final McpToolFilter? always;
   final McpToolFilter? never;
 
-  const ToolRequireApprovalUnionVariant1({
-    required this.always,
-    required this.never,
-  });
+  const ToolRequireApprovalUnionVariant1({required this.always, required this.never});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class ToolRequireApprovalUnionVariantString extends ToolRequireApprovalUnion with ToolRequireApprovalUnionVariantStringMappable {
+class ToolRequireApprovalUnionVariantString extends ToolRequireApprovalUnion
+    with ToolRequireApprovalUnionVariantStringMappable {
   final String value;
 
-  const ToolRequireApprovalUnionVariantString({
-    required this.value,
-  });
+  const ToolRequireApprovalUnionVariantString({required this.value});
 }

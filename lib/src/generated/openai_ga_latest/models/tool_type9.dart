@@ -9,10 +9,10 @@ part 'tool_type9.mapper.dart';
 /// The type of the custom tool. Always `custom`.
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType9 {
-  @MappableValue('custom') 
+  @MappableValue('custom')
   custom,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

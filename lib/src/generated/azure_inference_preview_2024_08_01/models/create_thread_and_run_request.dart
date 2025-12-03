@@ -57,7 +57,6 @@ class CreateThreadAndRunRequest with CreateThreadAndRunRequestMappable {
   @MappableField(key: 'response_format')
   final AssistantsApiResponseFormatOption? responseFormat;
 
-  static CreateThreadAndRunRequest fromJson(Map<String, dynamic> json) => CreateThreadAndRunRequestMapper.fromJson(json);
-
+  static CreateThreadAndRunRequest fromJson(Map<String, dynamic> json) =>
+      CreateThreadAndRunRequestMapper.fromJson(json);
 }
-

@@ -29,6 +29,4 @@ class ContainerListResource with ContainerListResourceMappable {
   final bool hasMore;
 
   static ContainerListResource fromJson(Map<String, dynamic> json) => ContainerListResourceMapper.fromJson(json);
-
 }
-

@@ -15,8 +15,8 @@ part 'code_interpreter_tool_call.mapper.dart';
 
 /// A tool call to run code.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter_call')
+class CodeInterpreterToolCall extends ItemUnion with CodeInterpreterToolCallMappable {
   const CodeInterpreterToolCall({
     required this.id,
     required this.status,
@@ -35,6 +35,4 @@ class CodeInterpreterToolCall with CodeInterpreterToolCallMappable {
   final CodeInterpreterToolCallType type;
 
   static CodeInterpreterToolCall fromJson(Map<String, dynamic> json) => CodeInterpreterToolCallMapper.fromJson(json);
-
 }
-

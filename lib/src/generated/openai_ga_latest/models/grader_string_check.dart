@@ -11,8 +11,8 @@ part 'grader_string_check.mapper.dart';
 
 /// A StringCheckGrader object that performs a string comparison between input and reference using a specified operation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class GraderStringCheck with GraderStringCheckMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
+class GraderStringCheck extends ValidateGraderResponseGraderUnion with GraderStringCheckMappable {
   const GraderStringCheck({
     required this.type,
     required this.name,
@@ -28,6 +28,4 @@ class GraderStringCheck with GraderStringCheckMappable {
   final GraderStringCheckOperation operation;
 
   static GraderStringCheck fromJson(Map<String, dynamic> json) => GraderStringCheckMapper.fromJson(json);
-
 }
-

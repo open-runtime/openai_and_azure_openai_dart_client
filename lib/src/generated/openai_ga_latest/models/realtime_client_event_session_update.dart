@@ -19,20 +19,15 @@ part 'realtime_client_event_session_update.mapper.dart';
 /// `instructions`, pass an empty string. To clear a field like `tools`, pass an empty array.
 /// To clear a field like `turn_detection`, pass `null`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventSessionUpdate with RealtimeClientEventSessionUpdateMappable {
-  const RealtimeClientEventSessionUpdate({
-    required this.type,
-    required this.session,
-    this.eventId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'session.update')
+class RealtimeClientEventSessionUpdate extends RealtimeClientEvent with RealtimeClientEventSessionUpdateMappable {
+  const RealtimeClientEventSessionUpdate({required this.type, required this.session, this.eventId});
 
   final dynamic type;
   final RealtimeClientEventSessionUpdateSessionUnion session;
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeClientEventSessionUpdate fromJson(Map<String, dynamic> json) => RealtimeClientEventSessionUpdateMapper.fromJson(json);
-
+  static RealtimeClientEventSessionUpdate fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventSessionUpdateMapper.fromJson(json);
 }
-

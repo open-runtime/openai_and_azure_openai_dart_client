@@ -9,10 +9,10 @@ part 'run_step_stream_event_union_variant1_event.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepStreamEventUnionVariant1Event {
   /// Incorrect name has been replaced. Original name: `thread.run.step.created`.
-  @MappableValue('thread.run.step.created') 
+  @MappableValue('thread.run.step.created')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepStreamEventUnionVariant1Event {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepStreamEventUnionVariant1Event> get $valuesDefined => values.where((value) => value != RunStepStreamEventUnionVariant1Event.unknown).toList();
+  static List<RunStepStreamEventUnionVariant1Event> get $valuesDefined =>
+      values.where((value) => value != RunStepStreamEventUnionVariant1Event.unknown).toList();
 }

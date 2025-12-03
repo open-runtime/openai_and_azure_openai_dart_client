@@ -18,7 +18,6 @@ class RealtimeCreateClientSecretRequestExpiresAfter with RealtimeCreateClientSec
   final RealtimeCreateClientSecretRequestExpiresAfterAnchor anchor;
   final int seconds;
 
-  static RealtimeCreateClientSecretRequestExpiresAfter fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretRequestExpiresAfterMapper.fromJson(json);
-
+  static RealtimeCreateClientSecretRequestExpiresAfter fromJson(Map<String, dynamic> json) =>
+      RealtimeCreateClientSecretRequestExpiresAfterMapper.fromJson(json);
 }
-

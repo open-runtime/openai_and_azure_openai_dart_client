@@ -9,19 +9,19 @@ part 'create_moderation_request_model_union_enum.mapper.dart';
 /// Enum values: omni-moderation-latest, omni-moderation-2024-09-26, text-moderation-latest, text-moderation-stable
 @MappableEnum(defaultValue: 'unknown')
 enum CreateModerationRequestModelUnionEnum {
-  @MappableValue('omni-moderation-latest') 
+  @MappableValue('omni-moderation-latest')
   omniModerationLatest,
 
-  @MappableValue('omni-moderation-2024-09-26') 
+  @MappableValue('omni-moderation-2024-09-26')
   omniModeration20240926,
 
-  @MappableValue('text-moderation-latest') 
+  @MappableValue('text-moderation-latest')
   textModerationLatest,
 
-  @MappableValue('text-moderation-stable') 
+  @MappableValue('text-moderation-stable')
   textModerationStable,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,6 @@ enum CreateModerationRequestModelUnionEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateModerationRequestModelUnionEnum> get $valuesDefined => values.where((value) => value != CreateModerationRequestModelUnionEnum.unknown).toList();
+  static List<CreateModerationRequestModelUnionEnum> get $valuesDefined =>
+      values.where((value) => value != CreateModerationRequestModelUnionEnum.unknown).toList();
 }

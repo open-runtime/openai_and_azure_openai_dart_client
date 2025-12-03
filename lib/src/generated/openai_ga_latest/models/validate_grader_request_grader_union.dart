@@ -24,20 +24,24 @@ import 'run_grader_request_grader_union.dart';
 
 part 'validate_grader_request_grader_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ValidateGraderRequestGraderUnionStringCheck,
-  ValidateGraderRequestGraderUnionTextSimilarity,
-  ValidateGraderRequestGraderUnionPython,
-  ValidateGraderRequestGraderUnionScoreModel,
-  ValidateGraderRequestGraderUnionMulti
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ValidateGraderRequestGraderUnionStringCheck,
+    ValidateGraderRequestGraderUnionTextSimilarity,
+    ValidateGraderRequestGraderUnionPython,
+    ValidateGraderRequestGraderUnionScoreModel,
+    ValidateGraderRequestGraderUnionMulti,
+  ],
+)
 sealed class ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionMappable {
   const ValidateGraderRequestGraderUnion();
 
   static ValidateGraderRequestGraderUnion fromJson(Map<String, dynamic> json) {
     return ValidateGraderRequestGraderUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ValidateGraderRequestGraderUnionDeserializer on ValidateGraderRequestGraderUnion {
@@ -47,27 +51,28 @@ extension ValidateGraderRequestGraderUnionDeserializer on ValidateGraderRequestG
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ValidateGraderRequestGraderUnionStringCheck: 'string_check',
-      ValidateGraderRequestGraderUnionTextSimilarity: 'text_similarity',
-      ValidateGraderRequestGraderUnionPython: 'python',
-      ValidateGraderRequestGraderUnionScoreModel: 'score_model',
-      ValidateGraderRequestGraderUnionMulti: 'multi',
+      GraderStringCheck: 'string_check',
+      GraderTextSimilarity: 'text_similarity',
+      GraderPython: 'python',
+      GraderScoreModel: 'score_model',
+      GraderMulti: 'multi',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ValidateGraderRequestGraderUnionStringCheck] => ValidateGraderRequestGraderUnionStringCheckMapper.fromJson(json),
-      _ when value == effective[ValidateGraderRequestGraderUnionTextSimilarity] => ValidateGraderRequestGraderUnionTextSimilarityMapper.fromJson(json),
-      _ when value == effective[ValidateGraderRequestGraderUnionPython] => ValidateGraderRequestGraderUnionPythonMapper.fromJson(json),
-      _ when value == effective[ValidateGraderRequestGraderUnionScoreModel] => ValidateGraderRequestGraderUnionScoreModelMapper.fromJson(json),
-      _ when value == effective[ValidateGraderRequestGraderUnionMulti] => ValidateGraderRequestGraderUnionMultiMapper.fromJson(json),
+      _ when value == effective[GraderStringCheck] => GraderStringCheckMapper.fromJson(json),
+      _ when value == effective[GraderTextSimilarity] => GraderTextSimilarityMapper.fromJson(json),
+      _ when value == effective[GraderPython] => GraderPythonMapper.fromJson(json),
+      _ when value == effective[GraderScoreModel] => GraderScoreModelMapper.fromJson(json),
+      _ when value == effective[GraderMulti] => GraderMultiMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ValidateGraderRequestGraderUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
-class ValidateGraderRequestGraderUnionStringCheck extends ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionStringCheckMappable {
+class ValidateGraderRequestGraderUnionStringCheck extends ValidateGraderRequestGraderUnion
+    with ValidateGraderRequestGraderUnionStringCheckMappable {
   final GraderStringCheckType type;
   final String name;
   final String input;
@@ -81,10 +86,11 @@ class ValidateGraderRequestGraderUnionStringCheck extends ValidateGraderRequestG
     required this.reference,
     required this.operation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
-class ValidateGraderRequestGraderUnionTextSimilarity extends ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionTextSimilarityMappable {
+class ValidateGraderRequestGraderUnionTextSimilarity extends ValidateGraderRequestGraderUnion
+    with ValidateGraderRequestGraderUnionTextSimilarityMappable {
   final GraderTextSimilarityType type;
   final String name;
   final String input;
@@ -99,10 +105,11 @@ class ValidateGraderRequestGraderUnionTextSimilarity extends ValidateGraderReque
     required this.reference,
     required this.evaluationMetric,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
-class ValidateGraderRequestGraderUnionPython extends ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionPythonMappable {
+class ValidateGraderRequestGraderUnionPython extends ValidateGraderRequestGraderUnion
+    with ValidateGraderRequestGraderUnionPythonMappable {
   final GraderPythonType type;
   final String name;
   final String source;
@@ -115,10 +122,11 @@ class ValidateGraderRequestGraderUnionPython extends ValidateGraderRequestGrader
     required this.source,
     required this.imageTag,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
-class ValidateGraderRequestGraderUnionScoreModel extends ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionScoreModelMappable {
+class ValidateGraderRequestGraderUnionScoreModel extends ValidateGraderRequestGraderUnion
+    with ValidateGraderRequestGraderUnionScoreModelMappable {
   final GraderScoreModelType type;
   final String name;
   final String model;
@@ -135,10 +143,11 @@ class ValidateGraderRequestGraderUnionScoreModel extends ValidateGraderRequestGr
     required this.input,
     required this.range,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'multi')
-class ValidateGraderRequestGraderUnionMulti extends ValidateGraderRequestGraderUnion with ValidateGraderRequestGraderUnionMultiMappable {
+class ValidateGraderRequestGraderUnionMulti extends ValidateGraderRequestGraderUnion
+    with ValidateGraderRequestGraderUnionMultiMappable {
   final GraderMultiType type;
   final String name;
   final GraderMultiGradersUnion graders;
@@ -151,5 +160,4 @@ class ValidateGraderRequestGraderUnionMulti extends ValidateGraderRequestGraderU
     required this.graders,
     required this.calculateOutput,
   });
-
 }

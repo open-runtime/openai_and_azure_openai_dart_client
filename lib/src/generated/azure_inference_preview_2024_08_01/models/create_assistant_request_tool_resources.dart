@@ -21,7 +21,6 @@ class CreateAssistantRequestToolResources with CreateAssistantRequestToolResourc
   @MappableField(key: 'file_search')
   final CreateAssistantRequestToolResourcesFileSearch? createAssistantRequestToolResourcesFileSearch;
 
-  static CreateAssistantRequestToolResources fromJson(Map<String, dynamic> json) => CreateAssistantRequestToolResourcesMapper.fromJson(json);
-
+  static CreateAssistantRequestToolResources fromJson(Map<String, dynamic> json) =>
+      CreateAssistantRequestToolResourcesMapper.fromJson(json);
 }
-

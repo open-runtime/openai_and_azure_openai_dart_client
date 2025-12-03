@@ -10,7 +10,14 @@ import 'create_translation_response_verbose_json.dart';
 
 part 'create_translation_response_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateTranslationResponseUnionCreateTranslationResponseJson, CreateTranslationResponseUnionCreateTranslationResponseVerboseJson])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateTranslationResponseUnionCreateTranslationResponseJson,
+    CreateTranslationResponseUnionCreateTranslationResponseVerboseJson,
+  ],
+)
 sealed class CreateTranslationResponseUnion with CreateTranslationResponseUnionMappable {
   const CreateTranslationResponseUnion();
 
@@ -28,22 +35,21 @@ extension CreateTranslationResponseUnionDeserializer on CreateTranslationRespons
       return CreateTranslationResponseUnionCreateTranslationResponseVerboseJsonMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for CreateTranslationResponseUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateTranslationResponseUnionCreateTranslationResponseJson extends CreateTranslationResponseUnion with CreateTranslationResponseUnionCreateTranslationResponseJsonMappable {
+class CreateTranslationResponseUnionCreateTranslationResponseJson extends CreateTranslationResponseUnion
+    with CreateTranslationResponseUnionCreateTranslationResponseJsonMappable {
   final String text;
 
-  const CreateTranslationResponseUnionCreateTranslationResponseJson({
-    required this.text,
-  });
+  const CreateTranslationResponseUnionCreateTranslationResponseJson({required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateTranslationResponseUnionCreateTranslationResponseVerboseJson extends CreateTranslationResponseUnion with CreateTranslationResponseUnionCreateTranslationResponseVerboseJsonMappable {
+class CreateTranslationResponseUnionCreateTranslationResponseVerboseJson extends CreateTranslationResponseUnion
+    with CreateTranslationResponseUnionCreateTranslationResponseVerboseJsonMappable {
   final String language;
   final num duration;
   final String text;

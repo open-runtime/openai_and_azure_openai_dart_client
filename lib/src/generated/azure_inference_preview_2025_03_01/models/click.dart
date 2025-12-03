@@ -12,14 +12,9 @@ part 'click.mapper.dart';
 
 /// A click action.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class Click with ClickMappable {
-  const Click({
-    required this.button,
-    required this.x,
-    required this.y,
-    this.type = ClickType.click,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'click')
+class Click extends ComputerAction with ClickMappable {
+  const Click({required this.button, required this.x, required this.y, this.type = ClickType.click});
 
   final ClickButton button;
   final int x;
@@ -27,6 +22,4 @@ class Click with ClickMappable {
   final ClickType type;
 
   static Click fromJson(Map<String, dynamic> json) => ClickMapper.fromJson(json);
-
 }
-

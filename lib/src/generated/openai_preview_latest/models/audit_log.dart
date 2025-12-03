@@ -138,6 +138,4 @@ class AuditLog with AuditLogMappable {
   final AuditLogCertificatesDeactivated? auditLogCertificatesDeactivated;
 
   static AuditLog fromJson(Map<String, dynamic> json) => AuditLogMapper.fromJson(json);
-
 }
-

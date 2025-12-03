@@ -8,8 +8,9 @@ import 'run_step_delta_step_details_tool_calls_file_search_object_type.dart';
 
 part 'run_step_delta_step_details_tool_calls_file_search_object.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDeltaStepDetailsToolCallsFileSearchObject with RunStepDeltaStepDetailsToolCallsFileSearchObjectMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
+class RunStepDeltaStepDetailsToolCallsFileSearchObject extends RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion
+    with RunStepDeltaStepDetailsToolCallsFileSearchObjectMappable {
   const RunStepDeltaStepDetailsToolCallsFileSearchObject({
     required this.indexField,
     required this.type,
@@ -24,7 +25,6 @@ class RunStepDeltaStepDetailsToolCallsFileSearchObject with RunStepDeltaStepDeta
   final dynamic fileSearch;
   final String? id;
 
-  static RunStepDeltaStepDetailsToolCallsFileSearchObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallsFileSearchObject fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallsFileSearchObjectMapper.fromJson(json);
 }
-

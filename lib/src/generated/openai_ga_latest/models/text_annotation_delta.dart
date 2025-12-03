@@ -17,10 +17,12 @@ import 'text_annotation_delta_type2.dart';
 
 part 'text_annotation_delta.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  TextAnnotationDeltaFileCitation,
-  TextAnnotationDeltaFilePath
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [TextAnnotationDeltaFileCitation, TextAnnotationDeltaFilePath],
+)
 sealed class TextAnnotationDelta with TextAnnotationDeltaMappable {
   const TextAnnotationDelta();
 
@@ -36,14 +38,16 @@ extension TextAnnotationDeltaUnionDeserializer on TextAnnotationDelta {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      TextAnnotationDeltaFileCitation: 'file_citation',
-      TextAnnotationDeltaFilePath: 'file_path',
+      MessageDeltaContentTextAnnotationsFileCitationObject: 'file_citation',
+      MessageDeltaContentTextAnnotationsFilePathObject: 'file_path',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[TextAnnotationDeltaFileCitation] => TextAnnotationDeltaFileCitationMapper.fromJson(json),
-      _ when value == effective[TextAnnotationDeltaFilePath] => TextAnnotationDeltaFilePathMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentTextAnnotationsFileCitationObject] =>
+        MessageDeltaContentTextAnnotationsFileCitationObjectMapper.fromJson(json),
+      _ when value == effective[MessageDeltaContentTextAnnotationsFilePathObject] =>
+        MessageDeltaContentTextAnnotationsFilePathObjectMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for TextAnnotationDelta'),
     };
   }

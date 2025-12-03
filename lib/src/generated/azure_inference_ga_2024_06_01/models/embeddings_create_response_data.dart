@@ -8,11 +8,7 @@ part 'embeddings_create_response_data.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EmbeddingsCreateResponseData with EmbeddingsCreateResponseDataMappable {
-  const EmbeddingsCreateResponseData({
-    required this.indexField,
-    required this.objectField,
-    required this.embedding,
-  });
+  const EmbeddingsCreateResponseData({required this.indexField, required this.objectField, required this.embedding});
 
   @MappableField(key: 'index')
   final int indexField;
@@ -20,7 +16,6 @@ class EmbeddingsCreateResponseData with EmbeddingsCreateResponseDataMappable {
   final String objectField;
   final List<num> embedding;
 
-  static EmbeddingsCreateResponseData fromJson(Map<String, dynamic> json) => EmbeddingsCreateResponseDataMapper.fromJson(json);
-
+  static EmbeddingsCreateResponseData fromJson(Map<String, dynamic> json) =>
+      EmbeddingsCreateResponseDataMapper.fromJson(json);
 }
-

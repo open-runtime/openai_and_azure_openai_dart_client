@@ -18,18 +18,22 @@ import 'run_object_tools_union.dart';
 
 part 'create_run_request_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateRunRequestToolsUnionCodeInterpreter,
-  CreateRunRequestToolsUnionFileSearch,
-  CreateRunRequestToolsUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateRunRequestToolsUnionCodeInterpreter,
+    CreateRunRequestToolsUnionFileSearch,
+    CreateRunRequestToolsUnionFunction,
+  ],
+)
 sealed class CreateRunRequestToolsUnion with CreateRunRequestToolsUnionMappable {
   const CreateRunRequestToolsUnion();
 
   static CreateRunRequestToolsUnion fromJson(Map<String, dynamic> json) {
     return CreateRunRequestToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateRunRequestToolsUnionDeserializer on CreateRunRequestToolsUnion {
@@ -39,48 +43,43 @@ extension CreateRunRequestToolsUnionDeserializer on CreateRunRequestToolsUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateRunRequestToolsUnionCodeInterpreter: 'code_interpreter',
-      CreateRunRequestToolsUnionFileSearch: 'file_search',
-      CreateRunRequestToolsUnionFunction: 'function',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearch: 'file_search',
+      AssistantToolsFunction: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateRunRequestToolsUnionCodeInterpreter] => CreateRunRequestToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[CreateRunRequestToolsUnionFileSearch] => CreateRunRequestToolsUnionFileSearchMapper.fromJson(json),
-      _ when value == effective[CreateRunRequestToolsUnionFunction] => CreateRunRequestToolsUnionFunctionMapper.fromJson(json),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearch] => AssistantToolsFileSearchMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFunction] => AssistantToolsFunctionMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateRunRequestToolsUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class CreateRunRequestToolsUnionCodeInterpreter extends CreateRunRequestToolsUnion with CreateRunRequestToolsUnionCodeInterpreterMappable {
+class CreateRunRequestToolsUnionCodeInterpreter extends CreateRunRequestToolsUnion
+    with CreateRunRequestToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const CreateRunRequestToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const CreateRunRequestToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class CreateRunRequestToolsUnionFileSearch extends CreateRunRequestToolsUnion with CreateRunRequestToolsUnionFileSearchMappable {
+class CreateRunRequestToolsUnionFileSearch extends CreateRunRequestToolsUnion
+    with CreateRunRequestToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchType type;
 
-  const CreateRunRequestToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const CreateRunRequestToolsUnionFileSearch({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class CreateRunRequestToolsUnionFunction extends CreateRunRequestToolsUnion with CreateRunRequestToolsUnionFunctionMappable {
+class CreateRunRequestToolsUnionFunction extends CreateRunRequestToolsUnion
+    with CreateRunRequestToolsUnionFunctionMappable {
   final AssistantToolsFunctionType type;
   @MappableField(key: 'function')
   final AssistantToolsFunctionFunction assistantToolsFunctionFunction;
 
-  const CreateRunRequestToolsUnionFunction({
-    required this.type,
-    required this.assistantToolsFunctionFunction,
-  });
-
+  const CreateRunRequestToolsUnionFunction({required this.type, required this.assistantToolsFunctionFunction});
 }

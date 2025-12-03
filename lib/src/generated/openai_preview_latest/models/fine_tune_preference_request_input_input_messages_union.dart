@@ -17,47 +17,62 @@ import 'fine_tune_chat_request_input_messages_union.dart';
 
 part 'fine_tune_preference_request_input_input_messages_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'role', includeSubClasses: [
-  FineTunePreferenceRequestInputInputMessagesUnionSystem,
-  FineTunePreferenceRequestInputInputMessagesUnionUser,
-  FineTunePreferenceRequestInputInputMessagesUnionTool,
-  FineTunePreferenceRequestInputInputMessagesUnionFunction
-])
-sealed class FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'role',
+  includeSubClasses: [
+    FineTunePreferenceRequestInputInputMessagesUnionSystem,
+    FineTunePreferenceRequestInputInputMessagesUnionUser,
+    FineTunePreferenceRequestInputInputMessagesUnionTool,
+    FineTunePreferenceRequestInputInputMessagesUnionFunction,
+  ],
+)
+sealed class FineTunePreferenceRequestInputInputMessagesUnion
+    with FineTunePreferenceRequestInputInputMessagesUnionMappable {
   const FineTunePreferenceRequestInputInputMessagesUnion();
 
   static FineTunePreferenceRequestInputInputMessagesUnion fromJson(Map<String, dynamic> json) {
     return FineTunePreferenceRequestInputInputMessagesUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
-extension FineTunePreferenceRequestInputInputMessagesUnionDeserializer on FineTunePreferenceRequestInputInputMessagesUnion {
+extension FineTunePreferenceRequestInputInputMessagesUnionDeserializer
+    on FineTunePreferenceRequestInputInputMessagesUnion {
   static FineTunePreferenceRequestInputInputMessagesUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'role',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      FineTunePreferenceRequestInputInputMessagesUnionSystem: 'system',
-      FineTunePreferenceRequestInputInputMessagesUnionUser: 'user',
-      FineTunePreferenceRequestInputInputMessagesUnionTool: 'tool',
-      FineTunePreferenceRequestInputInputMessagesUnionFunction: 'function',
+      ChatCompletionRequestSystemMessage: 'system',
+      ChatCompletionRequestUserMessage: 'user',
+      ChatCompletionRequestToolMessage: 'tool',
+      ChatCompletionRequestFunctionMessage: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[FineTunePreferenceRequestInputInputMessagesUnionSystem] => FineTunePreferenceRequestInputInputMessagesUnionSystemMapper.fromJson(json),
-      _ when value == effective[FineTunePreferenceRequestInputInputMessagesUnionUser] => FineTunePreferenceRequestInputInputMessagesUnionUserMapper.fromJson(json),
-      _ when value == effective[FineTunePreferenceRequestInputInputMessagesUnionTool] => FineTunePreferenceRequestInputInputMessagesUnionToolMapper.fromJson(json),
-      _ when value == effective[FineTunePreferenceRequestInputInputMessagesUnionFunction] => FineTunePreferenceRequestInputInputMessagesUnionFunctionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for FineTunePreferenceRequestInputInputMessagesUnion'),
+      _ when value == effective[ChatCompletionRequestSystemMessage] =>
+        ChatCompletionRequestSystemMessageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestUserMessage] => ChatCompletionRequestUserMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestToolMessage] => ChatCompletionRequestToolMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestFunctionMessage] =>
+        ChatCompletionRequestFunctionMessageMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for FineTunePreferenceRequestInputInputMessagesUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
-class FineTunePreferenceRequestInputInputMessagesUnionSystem extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionSystemMappable {
+class FineTunePreferenceRequestInputInputMessagesUnionSystem extends FineTunePreferenceRequestInputInputMessagesUnion
+    with FineTunePreferenceRequestInputInputMessagesUnionSystemMappable {
   final String content;
   final ChatCompletionRequestSystemMessageRole role;
   final String? name;
@@ -67,10 +82,11 @@ class FineTunePreferenceRequestInputInputMessagesUnionSystem extends FineTunePre
     required this.role,
     required this.name,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
-class FineTunePreferenceRequestInputInputMessagesUnionUser extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionUserMappable {
+class FineTunePreferenceRequestInputInputMessagesUnionUser extends FineTunePreferenceRequestInputInputMessagesUnion
+    with FineTunePreferenceRequestInputInputMessagesUnionUserMappable {
   final String content;
   final ChatCompletionRequestUserMessageRole role;
   final String? name;
@@ -80,10 +96,11 @@ class FineTunePreferenceRequestInputInputMessagesUnionUser extends FineTunePrefe
     required this.role,
     required this.name,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
-class FineTunePreferenceRequestInputInputMessagesUnionTool extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionToolMappable {
+class FineTunePreferenceRequestInputInputMessagesUnionTool extends FineTunePreferenceRequestInputInputMessagesUnion
+    with FineTunePreferenceRequestInputInputMessagesUnionToolMappable {
   final ChatCompletionRequestToolMessageRole role;
   final String content;
   @MappableField(key: 'tool_call_id')
@@ -94,10 +111,11 @@ class FineTunePreferenceRequestInputInputMessagesUnionTool extends FineTunePrefe
     required this.content,
     required this.toolCallId,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class FineTunePreferenceRequestInputInputMessagesUnionFunction extends FineTunePreferenceRequestInputInputMessagesUnion with FineTunePreferenceRequestInputInputMessagesUnionFunctionMappable {
+class FineTunePreferenceRequestInputInputMessagesUnionFunction extends FineTunePreferenceRequestInputInputMessagesUnion
+    with FineTunePreferenceRequestInputInputMessagesUnionFunctionMappable {
   final ChatCompletionRequestFunctionMessageRole role;
   final String? content;
   final String name;
@@ -107,5 +125,4 @@ class FineTunePreferenceRequestInputInputMessagesUnionFunction extends FineTuneP
     required this.content,
     required this.name,
   });
-
 }

@@ -7,13 +7,14 @@
 
 part of 'task_item.dart';
 
-class TaskItemMapper extends ClassMapperBase<TaskItem> {
+class TaskItemMapper extends SubClassMapperBase<TaskItem> {
   TaskItemMapper._();
 
   static TaskItemMapper? _instance;
   static TaskItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = TaskItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       TaskTypeMapper.ensureInitialized();
       TaskItemObjectObjectEnumMapper.ensureInitialized();
       TaskItemTypeMapper.ensureInitialized();
@@ -79,6 +80,13 @@ class TaskItemMapper extends ClassMapperBase<TaskItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.task';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static TaskItem _instantiate(DecodingData data) {
     return TaskItem(
@@ -149,7 +157,8 @@ extension TaskItemValueCopy<$R, $Out> on ObjectCopyWith<$R, TaskItem, $Out> {
 }
 
 abstract class TaskItemCopyWith<$R, $In extends TaskItem, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? id,
     int? createdAt,

@@ -9,17 +9,13 @@ part 'content_filter_completion_text_span.mapper.dart';
 /// Describes a span within generated completion text.  Offset 0 is the first UTF32 code point of the completion text.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterCompletionTextSpan with ContentFilterCompletionTextSpanMappable {
-  const ContentFilterCompletionTextSpan({
-    required this.completionStartOffset,
-    required this.completionEndOffset,
-  });
+  const ContentFilterCompletionTextSpan({required this.completionStartOffset, required this.completionEndOffset});
 
   @MappableField(key: 'completion_start_offset')
   final int completionStartOffset;
   @MappableField(key: 'completion_end_offset')
   final int completionEndOffset;
 
-  static ContentFilterCompletionTextSpan fromJson(Map<String, dynamic> json) => ContentFilterCompletionTextSpanMapper.fromJson(json);
-
+  static ContentFilterCompletionTextSpan fromJson(Map<String, dynamic> json) =>
+      ContentFilterCompletionTextSpanMapper.fromJson(json);
 }
-

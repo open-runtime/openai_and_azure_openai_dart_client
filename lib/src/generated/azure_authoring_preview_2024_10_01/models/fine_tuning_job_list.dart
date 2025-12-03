@@ -12,11 +12,7 @@ part 'fine_tuning_job_list.mapper.dart';
 /// Represents a list of fine tunes.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobList with FineTuningJobListMappable {
-  const FineTuningJobList({
-    this.objectField,
-    this.data,
-    this.hasMore,
-  });
+  const FineTuningJobList({this.objectField, this.data, this.hasMore});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
@@ -25,6 +21,4 @@ class FineTuningJobList with FineTuningJobListMappable {
   final bool? hasMore;
 
   static FineTuningJobList fromJson(Map<String, dynamic> json) => FineTuningJobListMapper.fromJson(json);
-
 }
-

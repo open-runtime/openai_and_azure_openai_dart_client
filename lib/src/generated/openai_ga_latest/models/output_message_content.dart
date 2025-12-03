@@ -16,10 +16,12 @@ import 'refusal_content_type.dart';
 
 part 'output_message_content.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  OutputMessageContentOutputText,
-  OutputMessageContentRefusal
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [OutputMessageContentOutputText, OutputMessageContentRefusal],
+)
 sealed class OutputMessageContent with OutputMessageContentMappable {
   const OutputMessageContent();
 
@@ -34,15 +36,12 @@ extension OutputMessageContentUnionDeserializer on OutputMessageContent {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      OutputMessageContentOutputText: 'output_text',
-      OutputMessageContentRefusal: 'refusal',
-    };
+    final mappingFallback = const <Type, Object?>{OutputTextContent: 'output_text', RefusalContent: 'refusal'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[OutputMessageContentOutputText] => OutputMessageContentOutputTextMapper.fromJson(json),
-      _ when value == effective[OutputMessageContentRefusal] => OutputMessageContentRefusalMapper.fromJson(json),
+      _ when value == effective[OutputTextContent] => OutputTextContentMapper.fromJson(json),
+      _ when value == effective[RefusalContent] => RefusalContentMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for OutputMessageContent'),
     };
   }
@@ -68,8 +67,5 @@ class OutputMessageContentRefusal extends OutputMessageContent with OutputMessag
   final OutputMessageContentType2 type;
   final String refusal;
 
-  const OutputMessageContentRefusal({
-    required this.type,
-    required this.refusal,
-  });
+  const OutputMessageContentRefusal({required this.type, required this.refusal});
 }

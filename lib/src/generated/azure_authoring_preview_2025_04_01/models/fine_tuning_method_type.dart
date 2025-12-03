@@ -8,13 +8,13 @@ part 'fine_tuning_method_type.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum FineTuningMethodType {
-  @MappableValue('dpo') 
+  @MappableValue('dpo')
   dpo,
 
-  @MappableValue('supervised') 
+  @MappableValue('supervised')
   supervised,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum FineTuningMethodType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FineTuningMethodType> get $valuesDefined => values.where((value) => value != FineTuningMethodType.unknown).toList();
+  static List<FineTuningMethodType> get $valuesDefined =>
+      values.where((value) => value != FineTuningMethodType.unknown).toList();
 }

@@ -8,7 +8,7 @@
 part of 'response_custom_tool_call_input_done_event.dart';
 
 class ResponseCustomToolCallInputDoneEventMapper
-    extends ClassMapperBase<ResponseCustomToolCallInputDoneEvent> {
+    extends SubClassMapperBase<ResponseCustomToolCallInputDoneEvent> {
   ResponseCustomToolCallInputDoneEventMapper._();
 
   static ResponseCustomToolCallInputDoneEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseCustomToolCallInputDoneEventMapper
       MapperContainer.globals.use(
         _instance = ResponseCustomToolCallInputDoneEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseCustomToolCallInputDoneEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -64,6 +65,14 @@ class ResponseCustomToolCallInputDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.custom_tool_call_input.done';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseCustomToolCallInputDoneEvent _instantiate(DecodingData data) {
     return ResponseCustomToolCallInputDoneEvent(
@@ -155,7 +164,8 @@ abstract class ResponseCustomToolCallInputDoneEventCopyWith<
   $In extends ResponseCustomToolCallInputDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseCustomToolCallInputDoneEventType? type,
     int? sequenceNumber,

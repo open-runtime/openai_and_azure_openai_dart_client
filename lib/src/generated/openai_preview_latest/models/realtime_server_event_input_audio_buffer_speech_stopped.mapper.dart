@@ -8,7 +8,8 @@
 part of 'realtime_server_event_input_audio_buffer_speech_stopped.dart';
 
 class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
-    extends ClassMapperBase<RealtimeServerEventInputAudioBufferSpeechStopped> {
+    extends
+        SubClassMapperBase<RealtimeServerEventInputAudioBufferSpeechStopped> {
   RealtimeServerEventInputAudioBufferSpeechStoppedMapper._();
 
   static RealtimeServerEventInputAudioBufferSpeechStoppedMapper? _instance;
@@ -18,6 +19,7 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventInputAudioBufferSpeechStoppedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventInputAudioBufferSpeechStoppedTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -59,6 +61,14 @@ class RealtimeServerEventInputAudioBufferSpeechStoppedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'input_audio_buffer.speech_stopped';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventInputAudioBufferSpeechStopped _instantiate(
     DecodingData data,
@@ -169,7 +179,8 @@ abstract class RealtimeServerEventInputAudioBufferSpeechStoppedCopyWith<
   $In extends RealtimeServerEventInputAudioBufferSpeechStopped,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventInputAudioBufferSpeechStoppedType? type,

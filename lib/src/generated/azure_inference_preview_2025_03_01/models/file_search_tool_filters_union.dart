@@ -14,7 +14,11 @@ import 'compound_filter.dart';
 part 'file_search_tool_filters_union.mapper.dart';
 
 /// A filter to apply based on file attributes.
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FileSearchToolFiltersUnionComparisonFilter, FileSearchToolFiltersUnionCompoundFilter])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [FileSearchToolFiltersUnionComparisonFilter, FileSearchToolFiltersUnionCompoundFilter],
+)
 sealed class FileSearchToolFiltersUnion with FileSearchToolFiltersUnionMappable {
   const FileSearchToolFiltersUnion();
 
@@ -32,31 +36,25 @@ extension FileSearchToolFiltersUnionDeserializer on FileSearchToolFiltersUnion {
       return FileSearchToolFiltersUnionCompoundFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for FileSearchToolFiltersUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FileSearchToolFiltersUnionComparisonFilter extends FileSearchToolFiltersUnion with FileSearchToolFiltersUnionComparisonFilterMappable {
+class FileSearchToolFiltersUnionComparisonFilter extends FileSearchToolFiltersUnion
+    with FileSearchToolFiltersUnionComparisonFilterMappable {
   final ComparisonFilterType type;
   final String key;
   final ComparisonFilterValueUnion value;
 
-  const FileSearchToolFiltersUnionComparisonFilter({
-    required this.type,
-    required this.key,
-    required this.value,
-  });
+  const FileSearchToolFiltersUnionComparisonFilter({required this.type, required this.key, required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FileSearchToolFiltersUnionCompoundFilter extends FileSearchToolFiltersUnion with FileSearchToolFiltersUnionCompoundFilterMappable {
+class FileSearchToolFiltersUnionCompoundFilter extends FileSearchToolFiltersUnion
+    with FileSearchToolFiltersUnionCompoundFilterMappable {
   final CompoundFilterType type;
   final List<CompoundFilterFiltersUnion> filters;
 
-  const FileSearchToolFiltersUnionCompoundFilter({
-    required this.type,
-    required this.filters,
-  });
+  const FileSearchToolFiltersUnionCompoundFilter({required this.type, required this.filters});
 }

@@ -11,10 +11,10 @@ part 'invite_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum InviteObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.invite`.
-  @MappableValue('organization.invite') 
+  @MappableValue('organization.invite')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum InviteObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InviteObjectObjectEnum> get $valuesDefined => values.where((value) => value != InviteObjectObjectEnum.unknown).toList();
+  static List<InviteObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != InviteObjectObjectEnum.unknown).toList();
 }

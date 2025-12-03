@@ -23,7 +23,6 @@ class CreateEvalCustomDataSourceConfig with CreateEvalCustomDataSourceConfigMapp
   final bool includeSampleSchema;
   final CreateEvalCustomDataSourceConfigType type;
 
-  static CreateEvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) => CreateEvalCustomDataSourceConfigMapper.fromJson(json);
-
+  static CreateEvalCustomDataSourceConfig fromJson(Map<String, dynamic> json) =>
+      CreateEvalCustomDataSourceConfigMapper.fromJson(json);
 }
-

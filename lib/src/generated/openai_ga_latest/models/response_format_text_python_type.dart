@@ -9,10 +9,10 @@ part 'response_format_text_python_type.mapper.dart';
 /// The type of response format being defined. Always `python`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormatTextPythonType {
-  @MappableValue('python') 
+  @MappableValue('python')
   python,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseFormatTextPythonType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFormatTextPythonType> get $valuesDefined => values.where((value) => value != ResponseFormatTextPythonType.unknown).toList();
+  static List<ResponseFormatTextPythonType> get $valuesDefined =>
+      values.where((value) => value != ResponseFormatTextPythonType.unknown).toList();
 }

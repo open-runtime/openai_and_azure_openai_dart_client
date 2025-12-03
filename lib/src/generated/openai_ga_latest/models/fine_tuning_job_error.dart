@@ -8,17 +8,11 @@ part 'fine_tuning_job_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuningJobError with FineTuningJobErrorMappable {
-  const FineTuningJobError({
-    required this.code,
-    required this.message,
-    required this.param,
-  });
+  const FineTuningJobError({required this.code, required this.message, required this.param});
 
   final String code;
   final String message;
   final String? param;
 
   static FineTuningJobError fromJson(Map<String, dynamic> json) => FineTuningJobErrorMapper.fromJson(json);
-
 }
-

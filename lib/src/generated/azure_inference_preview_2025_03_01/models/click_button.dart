@@ -10,22 +10,22 @@ part 'click_button.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ClickButton {
-  @MappableValue('left') 
+  @MappableValue('left')
   left,
 
-  @MappableValue('right') 
+  @MappableValue('right')
   right,
 
-  @MappableValue('wheel') 
+  @MappableValue('wheel')
   wheel,
 
-  @MappableValue('back') 
+  @MappableValue('back')
   back,
 
-  @MappableValue('forward') 
+  @MappableValue('forward')
   forward,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

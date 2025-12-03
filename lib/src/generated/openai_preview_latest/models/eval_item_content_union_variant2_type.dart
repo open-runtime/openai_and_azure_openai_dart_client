@@ -10,10 +10,10 @@ part 'eval_item_content_union_variant2_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum EvalItemContentUnionVariant2Type {
-  @MappableValue('output_text') 
+  @MappableValue('output_text')
   outputText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum EvalItemContentUnionVariant2Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalItemContentUnionVariant2Type> get $valuesDefined => values.where((value) => value != EvalItemContentUnionVariant2Type.unknown).toList();
+  static List<EvalItemContentUnionVariant2Type> get $valuesDefined =>
+      values.where((value) => value != EvalItemContentUnionVariant2Type.unknown).toList();
 }

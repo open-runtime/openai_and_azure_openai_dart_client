@@ -7,13 +7,14 @@
 
 part of 'image_gen_tool.dart';
 
-class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
+class ImageGenToolMapper extends SubClassMapperBase<ImageGenTool> {
   ImageGenToolMapper._();
 
   static ImageGenToolMapper? _instance;
   static ImageGenToolMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ImageGenToolMapper._());
+      ToolMapper.ensureInitialized().addSubMapper(_instance!);
       ImageGenToolTypeMapper.ensureInitialized();
       InputFidelityMapper.ensureInitialized();
       ImageGenToolInputImageMaskMapper.ensureInitialized();
@@ -135,6 +136,13 @@ class ImageGenToolMapper extends ClassMapperBase<ImageGenTool> {
   @override
   bool includeTypeId<T>(_) => false;
 
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_generation';
+  @override
+  late final ClassMapperBase superMapper = ToolMapper.ensureInitialized();
+
   static ImageGenTool _instantiate(DecodingData data) {
     return ImageGenTool(
       type: data.dec(_f$type),
@@ -212,13 +220,14 @@ extension ImageGenToolValueCopy<$R, $Out>
 }
 
 abstract class ImageGenToolCopyWith<$R, $In extends ImageGenTool, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ToolCopyWith<$R, $In, $Out> {
   ImageGenToolInputImageMaskCopyWith<
     $R,
     ImageGenToolInputImageMask,
     ImageGenToolInputImageMask
   >?
   get imageGenToolInputImageMask;
+  @override
   $R call({
     ImageGenToolType? type,
     InputFidelity? inputFidelity,

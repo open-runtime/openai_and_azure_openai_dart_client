@@ -30,7 +30,6 @@ class AuditLogOrganizationUpdatedChangesRequested with AuditLogOrganizationUpdat
   @MappableField(key: 'api_call_logging_project_ids')
   final String? apiCallLoggingProjectIds;
 
-  static AuditLogOrganizationUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogOrganizationUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogOrganizationUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogOrganizationUpdatedChangesRequestedMapper.fromJson(json);
 }
-

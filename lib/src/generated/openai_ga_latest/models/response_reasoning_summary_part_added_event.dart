@@ -11,8 +11,9 @@ import 'response_stream_event.dart';
 part 'response_reasoning_summary_part_added_event.mapper.dart';
 
 /// Emitted when a new reasoning summary part is added.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseReasoningSummaryPartAddedEvent with ResponseReasoningSummaryPartAddedEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.reasoning_summary_part.added')
+class ResponseReasoningSummaryPartAddedEvent extends ResponseStreamEvent
+    with ResponseReasoningSummaryPartAddedEventMappable {
   const ResponseReasoningSummaryPartAddedEvent({
     required this.type,
     required this.itemId,
@@ -34,7 +35,6 @@ class ResponseReasoningSummaryPartAddedEvent with ResponseReasoningSummaryPartAd
   @MappableField(key: 'part')
   final ResponseReasoningSummaryPartAddedEventPart responseReasoningSummaryPartAddedEventPart;
 
-  static ResponseReasoningSummaryPartAddedEvent fromJson(Map<String, dynamic> json) => ResponseReasoningSummaryPartAddedEventMapper.fromJson(json);
-
+  static ResponseReasoningSummaryPartAddedEvent fromJson(Map<String, dynamic> json) =>
+      ResponseReasoningSummaryPartAddedEventMapper.fromJson(json);
 }
-

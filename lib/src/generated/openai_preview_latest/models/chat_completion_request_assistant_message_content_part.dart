@@ -13,11 +13,17 @@ import 'chat_completion_request_message_content_part_text_type.dart';
 
 part 'chat_completion_request_assistant_message_content_part.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ChatCompletionRequestAssistantMessageContentPartText,
-  ChatCompletionRequestAssistantMessageContentPartRefusal
-])
-sealed class ChatCompletionRequestAssistantMessageContentPart with ChatCompletionRequestAssistantMessageContentPartMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ChatCompletionRequestAssistantMessageContentPartText,
+    ChatCompletionRequestAssistantMessageContentPartRefusal,
+  ],
+)
+sealed class ChatCompletionRequestAssistantMessageContentPart
+    with ChatCompletionRequestAssistantMessageContentPartMappable {
   const ChatCompletionRequestAssistantMessageContentPart();
 
   static ChatCompletionRequestAssistantMessageContentPart fromJson(Map<String, dynamic> json) {
@@ -25,44 +31,45 @@ sealed class ChatCompletionRequestAssistantMessageContentPart with ChatCompletio
   }
 }
 
-extension ChatCompletionRequestAssistantMessageContentPartUnionDeserializer on ChatCompletionRequestAssistantMessageContentPart {
+extension ChatCompletionRequestAssistantMessageContentPartUnionDeserializer
+    on ChatCompletionRequestAssistantMessageContentPart {
   static ChatCompletionRequestAssistantMessageContentPart tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ChatCompletionRequestAssistantMessageContentPartText: 'text',
-      ChatCompletionRequestAssistantMessageContentPartRefusal: 'refusal',
+      ChatCompletionRequestMessageContentPartText: 'text',
+      ChatCompletionRequestMessageContentPartRefusal: 'refusal',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ChatCompletionRequestAssistantMessageContentPartText] => ChatCompletionRequestAssistantMessageContentPartTextMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestAssistantMessageContentPartRefusal] => ChatCompletionRequestAssistantMessageContentPartRefusalMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChatCompletionRequestAssistantMessageContentPart'),
+      _ when value == effective[ChatCompletionRequestMessageContentPartText] =>
+        ChatCompletionRequestMessageContentPartTextMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestMessageContentPartRefusal] =>
+        ChatCompletionRequestMessageContentPartRefusalMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for ChatCompletionRequestAssistantMessageContentPart',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart with ChatCompletionRequestAssistantMessageContentPartTextMappable {
+class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart
+    with ChatCompletionRequestAssistantMessageContentPartTextMappable {
   final ChatCompletionRequestAssistantMessageContentPartType type;
   final String text;
 
-  const ChatCompletionRequestAssistantMessageContentPartText({
-    required this.type,
-    required this.text,
-  });
+  const ChatCompletionRequestAssistantMessageContentPartText({required this.type, required this.text});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'refusal')
-class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart with ChatCompletionRequestAssistantMessageContentPartRefusalMappable {
+class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart
+    with ChatCompletionRequestAssistantMessageContentPartRefusalMappable {
   final ChatCompletionRequestAssistantMessageContentPartType2 type;
   final String refusal;
 
-  const ChatCompletionRequestAssistantMessageContentPartRefusal({
-    required this.type,
-    required this.refusal,
-  });
+  const ChatCompletionRequestAssistantMessageContentPartRefusal({required this.type, required this.refusal});
 }

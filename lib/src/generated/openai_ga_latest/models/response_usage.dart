@@ -34,6 +34,4 @@ class ResponseUsage with ResponseUsageMappable {
   final int totalTokens;
 
   static ResponseUsage fromJson(Map<String, dynamic> json) => ResponseUsageMapper.fromJson(json);
-
 }
-

@@ -7,13 +7,14 @@
 
 part of 'file_citation.dart';
 
-class FileCitationMapper extends ClassMapperBase<FileCitation> {
+class FileCitationMapper extends SubClassMapperBase<FileCitation> {
   FileCitationMapper._();
 
   static FileCitationMapper? _instance;
   static FileCitationMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FileCitationMapper._());
+      AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       FileCitationTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,6 +51,13 @@ class FileCitationMapper extends ClassMapperBase<FileCitation> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_citation';
+  @override
+  late final ClassMapperBase superMapper = AnnotationMapper.ensureInitialized();
 
   static FileCitation _instantiate(DecodingData data) {
     return FileCitation(
@@ -120,7 +128,8 @@ extension FileCitationValueCopy<$R, $Out>
 }
 
 abstract class FileCitationCopyWith<$R, $In extends FileCitation, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AnnotationCopyWith<$R, $In, $Out> {
+  @override
   $R call({FileCitationType? type, int? indexField, String? fileId});
   FileCitationCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

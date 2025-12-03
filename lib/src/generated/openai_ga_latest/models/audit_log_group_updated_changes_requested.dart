@@ -8,14 +8,11 @@ part 'audit_log_group_updated_changes_requested.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogGroupUpdatedChangesRequested with AuditLogGroupUpdatedChangesRequestedMappable {
-  const AuditLogGroupUpdatedChangesRequested({
-    this.groupName,
-  });
+  const AuditLogGroupUpdatedChangesRequested({this.groupName});
 
   @MappableField(key: 'group_name')
   final String? groupName;
 
-  static AuditLogGroupUpdatedChangesRequested fromJson(Map<String, dynamic> json) => AuditLogGroupUpdatedChangesRequestedMapper.fromJson(json);
-
+  static AuditLogGroupUpdatedChangesRequested fromJson(Map<String, dynamic> json) =>
+      AuditLogGroupUpdatedChangesRequestedMapper.fromJson(json);
 }
-

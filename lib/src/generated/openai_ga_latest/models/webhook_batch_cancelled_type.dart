@@ -11,10 +11,10 @@ part 'webhook_batch_cancelled_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookBatchCancelledType {
   /// Incorrect name has been replaced. Original name: `batch.cancelled`.
-  @MappableValue('batch.cancelled') 
+  @MappableValue('batch.cancelled')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookBatchCancelledType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookBatchCancelledType> get $valuesDefined => values.where((value) => value != WebhookBatchCancelledType.unknown).toList();
+  static List<WebhookBatchCancelledType> get $valuesDefined =>
+      values.where((value) => value != WebhookBatchCancelledType.unknown).toList();
 }

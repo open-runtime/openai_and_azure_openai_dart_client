@@ -9,10 +9,10 @@ part 'apply_patch_operation_param_type.mapper.dart';
 /// The operation type. Always `create_file`.
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchOperationParamType {
-  @MappableValue('create_file') 
+  @MappableValue('create_file')
   createFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ApplyPatchOperationParamType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchOperationParamType> get $valuesDefined => values.where((value) => value != ApplyPatchOperationParamType.unknown).toList();
+  static List<ApplyPatchOperationParamType> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchOperationParamType.unknown).toList();
 }

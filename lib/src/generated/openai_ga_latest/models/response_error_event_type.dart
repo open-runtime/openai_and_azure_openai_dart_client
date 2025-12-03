@@ -10,10 +10,10 @@ part 'response_error_event_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseErrorEventType {
-  @MappableValue('error') 
+  @MappableValue('error')
   error,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseErrorEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseErrorEventType> get $valuesDefined => values.where((value) => value != ResponseErrorEventType.unknown).toList();
+  static List<ResponseErrorEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseErrorEventType.unknown).toList();
 }

@@ -12,15 +12,10 @@ part 'dpo_method.mapper.dart';
 /// Request for DPO method finetuning
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DpoMethod with DpoMethodMappable {
-  const DpoMethod({
-    required this.type,
-    required this.dpo,
-  });
+  const DpoMethod({required this.type, required this.dpo});
 
   final FineTuningMethodType type;
   final DpoMethodConfigRequest dpo;
 
   static DpoMethod fromJson(Map<String, dynamic> json) => DpoMethodMapper.fromJson(json);
-
 }
-

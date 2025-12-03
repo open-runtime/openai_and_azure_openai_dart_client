@@ -10,7 +10,8 @@ part 'realtime_beta_server_event_response_function_call_arguments_done.mapper.da
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaServerEventResponseFunctionCallArgumentsDone with RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMappable {
+class RealtimeBetaServerEventResponseFunctionCallArgumentsDone
+    with RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMappable {
   const RealtimeBetaServerEventResponseFunctionCallArgumentsDone({
     required this.eventId,
     required this.type,
@@ -34,7 +35,6 @@ class RealtimeBetaServerEventResponseFunctionCallArgumentsDone with RealtimeBeta
   final String callId;
   final String arguments;
 
-  static RealtimeBetaServerEventResponseFunctionCallArgumentsDone fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json);
-
+  static RealtimeBetaServerEventResponseFunctionCallArgumentsDone fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventResponseFunctionCallArgumentsDoneMapper.fromJson(json);
 }
-

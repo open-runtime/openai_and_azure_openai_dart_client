@@ -30,6 +30,4 @@ class ThreadObject with ThreadObjectMappable {
   final dynamic metadata;
 
   static ThreadObject fromJson(Map<String, dynamic> json) => ThreadObjectMapper.fromJson(json);
-
 }
-

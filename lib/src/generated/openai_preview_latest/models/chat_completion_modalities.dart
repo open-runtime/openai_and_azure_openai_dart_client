@@ -8,13 +8,13 @@ part 'chat_completion_modalities.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionModalities {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('audio') 
+  @MappableValue('audio')
   audio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ChatCompletionModalities {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionModalities> get $valuesDefined => values.where((value) => value != ChatCompletionModalities.unknown).toList();
+  static List<ChatCompletionModalities> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionModalities.unknown).toList();
 }

@@ -10,10 +10,10 @@ part 'eval_run_output_item_list_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalRunOutputItemListObjectObjectEnum {
-  @MappableValue('list') 
+  @MappableValue('list')
   list,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum EvalRunOutputItemListObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalRunOutputItemListObjectObjectEnum> get $valuesDefined => values.where((value) => value != EvalRunOutputItemListObjectObjectEnum.unknown).toList();
+  static List<EvalRunOutputItemListObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != EvalRunOutputItemListObjectObjectEnum.unknown).toList();
 }

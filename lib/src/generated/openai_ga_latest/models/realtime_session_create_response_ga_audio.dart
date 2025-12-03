@@ -21,7 +21,6 @@ class RealtimeSessionCreateResponseGaAudio with RealtimeSessionCreateResponseGaA
   @MappableField(key: 'output')
   final RealtimeSessionCreateResponseGaAudioOutput? realtimeSessionCreateResponseGaAudioOutput;
 
-  static RealtimeSessionCreateResponseGaAudio fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseGaAudioMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponseGaAudio fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseGaAudioMapper.fromJson(json);
 }
-

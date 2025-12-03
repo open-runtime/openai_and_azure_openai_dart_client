@@ -11,10 +11,10 @@ part 'run_object_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum RunObjectObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `thread.run`.
-  @MappableValue('thread.run') 
+  @MappableValue('thread.run')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum RunObjectObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunObjectObjectObjectEnum> get $valuesDefined => values.where((value) => value != RunObjectObjectObjectEnum.unknown).toList();
+  static List<RunObjectObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != RunObjectObjectObjectEnum.unknown).toList();
 }

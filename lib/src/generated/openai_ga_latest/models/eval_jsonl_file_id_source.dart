@@ -8,17 +8,12 @@ import 'eval_jsonl_file_id_source_type.dart';
 
 part 'eval_jsonl_file_id_source.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class EvalJsonlFileIdSource with EvalJsonlFileIdSourceMappable {
-  const EvalJsonlFileIdSource({
-    required this.id,
-    this.type = EvalJsonlFileIdSourceType.fileId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_id')
+class EvalJsonlFileIdSource extends CreateEvalResponsesRunDataSourceSourceUnion with EvalJsonlFileIdSourceMappable {
+  const EvalJsonlFileIdSource({required this.id, this.type = EvalJsonlFileIdSourceType.fileId});
 
   final String id;
   final EvalJsonlFileIdSourceType type;
 
   static EvalJsonlFileIdSource fromJson(Map<String, dynamic> json) => EvalJsonlFileIdSourceMapper.fromJson(json);
-
 }
-

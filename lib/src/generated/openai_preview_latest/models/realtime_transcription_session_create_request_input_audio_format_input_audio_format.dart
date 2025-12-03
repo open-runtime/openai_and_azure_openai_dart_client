@@ -12,16 +12,16 @@ part 'realtime_transcription_session_create_request_input_audio_format_input_aud
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat {
-  @MappableValue('pcm16') 
+  @MappableValue('pcm16')
   pcm16,
 
-  @MappableValue('g711_ulaw') 
+  @MappableValue('g711_ulaw')
   g711Ulaw,
 
-  @MappableValue('g711_alaw') 
+  @MappableValue('g711_alaw')
   g711Alaw,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -30,5 +30,7 @@ enum RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat> get $valuesDefined => values.where((value) => value != RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat.unknown).toList();
+  static List<RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat> get $valuesDefined => values
+      .where((value) => value != RealtimeTranscriptionSessionCreateRequestInputAudioFormatInputAudioFormat.unknown)
+      .toList();
 }

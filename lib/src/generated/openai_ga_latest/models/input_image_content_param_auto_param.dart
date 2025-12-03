@@ -26,7 +26,6 @@ class InputImageContentParamAutoParam with InputImageContentParamAutoParamMappab
   final DetailEnum? detail;
   final InputImageContentParamAutoParamType type;
 
-  static InputImageContentParamAutoParam fromJson(Map<String, dynamic> json) => InputImageContentParamAutoParamMapper.fromJson(json);
-
+  static InputImageContentParamAutoParam fromJson(Map<String, dynamic> json) =>
+      InputImageContentParamAutoParamMapper.fromJson(json);
 }
-

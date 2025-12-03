@@ -10,10 +10,10 @@ part 'tool_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

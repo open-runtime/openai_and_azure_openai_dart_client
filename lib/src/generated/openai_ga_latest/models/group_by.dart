@@ -8,13 +8,13 @@ part 'group_by.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum GroupBy {
-  @MappableValue('project_id') 
+  @MappableValue('project_id')
   projectId,
 
-  @MappableValue('line_item') 
+  @MappableValue('line_item')
   lineItem,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

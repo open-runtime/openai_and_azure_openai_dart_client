@@ -8,7 +8,7 @@
 part of 'response_mcp_call_in_progress_event.dart';
 
 class ResponseMcpCallInProgressEventMapper
-    extends ClassMapperBase<ResponseMcpCallInProgressEvent> {
+    extends SubClassMapperBase<ResponseMcpCallInProgressEvent> {
   ResponseMcpCallInProgressEventMapper._();
 
   static ResponseMcpCallInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseMcpCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseMcpCallInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseMcpCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -58,6 +59,14 @@ class ResponseMcpCallInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseMcpCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseMcpCallInProgressEvent(
@@ -145,7 +154,8 @@ abstract class ResponseMcpCallInProgressEventCopyWith<
   $In extends ResponseMcpCallInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseMcpCallInProgressEventType? type,
     int? sequenceNumber,

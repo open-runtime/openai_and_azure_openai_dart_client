@@ -8,7 +8,11 @@ part 'fine_tune_dpo_hyperparameters_beta_union.mapper.dart';
 
 /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [FineTuneDpoHyperparametersBetaUnionVariantString, FineTuneDpoHyperparametersBetaUnionVariantNum])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [FineTuneDpoHyperparametersBetaUnionVariantString, FineTuneDpoHyperparametersBetaUnionVariantNum],
+)
 sealed class FineTuneDpoHyperparametersBetaUnion with FineTuneDpoHyperparametersBetaUnionMappable {
   const FineTuneDpoHyperparametersBetaUnion();
 
@@ -38,21 +42,19 @@ extension FineTuneDpoHyperparametersBetaUnionDeserializer on FineTuneDpoHyperpar
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoHyperparametersBetaUnionVariantString extends FineTuneDpoHyperparametersBetaUnion with FineTuneDpoHyperparametersBetaUnionVariantStringMappable {
+class FineTuneDpoHyperparametersBetaUnionVariantString extends FineTuneDpoHyperparametersBetaUnion
+    with FineTuneDpoHyperparametersBetaUnionVariantStringMappable {
   final String value;
 
-  const FineTuneDpoHyperparametersBetaUnionVariantString({
-    required this.value,
-  });
+  const FineTuneDpoHyperparametersBetaUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class FineTuneDpoHyperparametersBetaUnionVariantNum extends FineTuneDpoHyperparametersBetaUnion with FineTuneDpoHyperparametersBetaUnionVariantNumMappable {
+class FineTuneDpoHyperparametersBetaUnionVariantNum extends FineTuneDpoHyperparametersBetaUnion
+    with FineTuneDpoHyperparametersBetaUnionVariantNumMappable {
   final num value;
 
-  const FineTuneDpoHyperparametersBetaUnionVariantNum({
-    required this.value,
-  });
+  const FineTuneDpoHyperparametersBetaUnionVariantNum({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

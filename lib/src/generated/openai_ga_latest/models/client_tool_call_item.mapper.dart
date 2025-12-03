@@ -7,13 +7,14 @@
 
 part of 'client_tool_call_item.dart';
 
-class ClientToolCallItemMapper extends ClassMapperBase<ClientToolCallItem> {
+class ClientToolCallItemMapper extends SubClassMapperBase<ClientToolCallItem> {
   ClientToolCallItemMapper._();
 
   static ClientToolCallItemMapper? _instance;
   static ClientToolCallItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ClientToolCallItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       ClientToolCallStatusMapper.ensureInitialized();
       ClientToolCallItemObjectObjectEnumMapper.ensureInitialized();
       ClientToolCallItemTypeMapper.ensureInitialized();
@@ -94,6 +95,13 @@ class ClientToolCallItemMapper extends ClassMapperBase<ClientToolCallItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.client_tool_call';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static ClientToolCallItem _instantiate(DecodingData data) {
     return ClientToolCallItem(
@@ -180,7 +188,8 @@ abstract class ClientToolCallItemCopyWith<
   $In extends ClientToolCallItem,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     String? id,
     int? createdAt,

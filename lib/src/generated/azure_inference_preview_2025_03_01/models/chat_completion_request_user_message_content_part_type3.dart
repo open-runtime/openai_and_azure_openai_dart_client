@@ -9,10 +9,10 @@ part 'chat_completion_request_user_message_content_part_type3.mapper.dart';
 /// The type of the content part. Always `input_audio`.
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionRequestUserMessageContentPartType3 {
-  @MappableValue('input_audio') 
+  @MappableValue('input_audio')
   inputAudio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ChatCompletionRequestUserMessageContentPartType3 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionRequestUserMessageContentPartType3> get $valuesDefined => values.where((value) => value != ChatCompletionRequestUserMessageContentPartType3.unknown).toList();
+  static List<ChatCompletionRequestUserMessageContentPartType3> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionRequestUserMessageContentPartType3.unknown).toList();
 }

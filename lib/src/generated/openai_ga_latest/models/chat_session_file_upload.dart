@@ -9,11 +9,7 @@ part 'chat_session_file_upload.mapper.dart';
 /// Upload permissions and limits applied to the session.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatSessionFileUpload with ChatSessionFileUploadMappable {
-  const ChatSessionFileUpload({
-    required this.enabled,
-    required this.maxFileSize,
-    required this.maxFiles,
-  });
+  const ChatSessionFileUpload({required this.enabled, required this.maxFileSize, required this.maxFiles});
 
   final bool enabled;
   @MappableField(key: 'max_file_size')
@@ -22,6 +18,4 @@ class ChatSessionFileUpload with ChatSessionFileUploadMappable {
   final int? maxFiles;
 
   static ChatSessionFileUpload fromJson(Map<String, dynamic> json) => ChatSessionFileUploadMapper.fromJson(json);
-
 }
-

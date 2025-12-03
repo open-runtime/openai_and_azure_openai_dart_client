@@ -11,8 +11,8 @@ part 'realtime_mcp_approval_response.mapper.dart';
 
 /// A Realtime item responding to an MCP approval request.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeMcpApprovalResponse with RealtimeMcpApprovalResponseMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
+class RealtimeMcpApprovalResponse extends RealtimeConversationItem with RealtimeMcpApprovalResponseMappable {
   const RealtimeMcpApprovalResponse({
     required this.type,
     required this.id,
@@ -28,7 +28,6 @@ class RealtimeMcpApprovalResponse with RealtimeMcpApprovalResponseMappable {
   final bool approve;
   final String? reason;
 
-  static RealtimeMcpApprovalResponse fromJson(Map<String, dynamic> json) => RealtimeMcpApprovalResponseMapper.fromJson(json);
-
+  static RealtimeMcpApprovalResponse fromJson(Map<String, dynamic> json) =>
+      RealtimeMcpApprovalResponseMapper.fromJson(json);
 }
-

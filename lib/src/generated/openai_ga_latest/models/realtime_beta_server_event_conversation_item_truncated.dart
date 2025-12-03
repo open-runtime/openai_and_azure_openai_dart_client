@@ -33,7 +33,6 @@ class RealtimeBetaServerEventConversationItemTruncated with RealtimeBetaServerEv
   @MappableField(key: 'audio_end_ms')
   final int audioEndMs;
 
-  static RealtimeBetaServerEventConversationItemTruncated fromJson(Map<String, dynamic> json) => RealtimeBetaServerEventConversationItemTruncatedMapper.fromJson(json);
-
+  static RealtimeBetaServerEventConversationItemTruncated fromJson(Map<String, dynamic> json) =>
+      RealtimeBetaServerEventConversationItemTruncatedMapper.fromJson(json);
 }
-

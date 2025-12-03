@@ -10,10 +10,10 @@ part 'chat_completion_named_tool_choice_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ChatCompletionNamedToolChoiceType {
   /// The name has been replaced because it contains a keyword. Original name: `function`.
-  @MappableValue('function') 
+  @MappableValue('function')
   valueFunction,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ChatCompletionNamedToolChoiceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ChatCompletionNamedToolChoiceType> get $valuesDefined => values.where((value) => value != ChatCompletionNamedToolChoiceType.unknown).toList();
+  static List<ChatCompletionNamedToolChoiceType> get $valuesDefined =>
+      values.where((value) => value != ChatCompletionNamedToolChoiceType.unknown).toList();
 }

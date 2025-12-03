@@ -11,10 +11,10 @@ part 'delete_fine_tuning_checkpoint_permission_response_object_object_enum.mappe
 @MappableEnum(defaultValue: 'unknown')
 enum DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `checkpoint.permission`.
-  @MappableValue('checkpoint.permission') 
+  @MappableValue('checkpoint.permission')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum.unknown).toList();
+  static List<DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != DeleteFineTuningCheckpointPermissionResponseObjectObjectEnum.unknown).toList();
 }

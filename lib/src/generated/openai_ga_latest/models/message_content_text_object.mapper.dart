@@ -8,7 +8,7 @@
 part of 'message_content_text_object.dart';
 
 class MessageContentTextObjectMapper
-    extends ClassMapperBase<MessageContentTextObject> {
+    extends SubClassMapperBase<MessageContentTextObject> {
   MessageContentTextObjectMapper._();
 
   static MessageContentTextObjectMapper? _instance;
@@ -17,6 +17,7 @@ class MessageContentTextObjectMapper
       MapperContainer.globals.use(
         _instance = MessageContentTextObjectMapper._(),
       );
+      MessageContentMapper.ensureInitialized().addSubMapper(_instance!);
       MessageContentTextObjectTypeMapper.ensureInitialized();
       MessageContentTextObjectTextMapper.ensureInitialized();
     }
@@ -49,6 +50,14 @@ class MessageContentTextObjectMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'text';
+  @override
+  late final ClassMapperBase superMapper =
+      MessageContentMapper.ensureInitialized();
 
   static MessageContentTextObject _instantiate(DecodingData data) {
     return MessageContentTextObject(
@@ -126,13 +135,14 @@ abstract class MessageContentTextObjectCopyWith<
   $In extends MessageContentTextObject,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements MessageContentCopyWith<$R, $In, $Out> {
   MessageContentTextObjectTextCopyWith<
     $R,
     MessageContentTextObjectText,
     MessageContentTextObjectText
   >
   get messageContentTextObjectText;
+  @override
   $R call({
     MessageContentTextObjectType? type,
     MessageContentTextObjectText? messageContentTextObjectText,

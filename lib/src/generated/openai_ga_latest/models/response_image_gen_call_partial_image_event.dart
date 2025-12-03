@@ -11,8 +11,13 @@ part 'response_image_gen_call_partial_image_event.mapper.dart';
 
 /// Emitted when a partial image is available during image generation streaming.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseImageGenCallPartialImageEvent with ResponseImageGenCallPartialImageEventMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'response.image_generation_call.partial_image',
+)
+class ResponseImageGenCallPartialImageEvent extends ResponseStreamEvent
+    with ResponseImageGenCallPartialImageEventMappable {
   const ResponseImageGenCallPartialImageEvent({
     required this.type,
     required this.outputIndex,
@@ -34,7 +39,6 @@ class ResponseImageGenCallPartialImageEvent with ResponseImageGenCallPartialImag
   @MappableField(key: 'partial_image_b64')
   final String partialImageB64;
 
-  static ResponseImageGenCallPartialImageEvent fromJson(Map<String, dynamic> json) => ResponseImageGenCallPartialImageEventMapper.fromJson(json);
-
+  static ResponseImageGenCallPartialImageEvent fromJson(Map<String, dynamic> json) =>
+      ResponseImageGenCallPartialImageEventMapper.fromJson(json);
 }
-

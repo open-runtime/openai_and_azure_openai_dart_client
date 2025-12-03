@@ -11,10 +11,10 @@ part 'webhook_response_failed_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookResponseFailedType {
   /// Incorrect name has been replaced. Original name: `response.failed`.
-  @MappableValue('response.failed') 
+  @MappableValue('response.failed')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookResponseFailedType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookResponseFailedType> get $valuesDefined => values.where((value) => value != WebhookResponseFailedType.unknown).toList();
+  static List<WebhookResponseFailedType> get $valuesDefined =>
+      values.where((value) => value != WebhookResponseFailedType.unknown).toList();
 }

@@ -8,14 +8,11 @@ part 'create_vector_store_file_batch_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateVectorStoreFileBatchRequest with CreateVectorStoreFileBatchRequestMappable {
-  const CreateVectorStoreFileBatchRequest({
-    required this.fileIds,
-  });
+  const CreateVectorStoreFileBatchRequest({required this.fileIds});
 
   @MappableField(key: 'file_ids')
   final List<String> fileIds;
 
-  static CreateVectorStoreFileBatchRequest fromJson(Map<String, dynamic> json) => CreateVectorStoreFileBatchRequestMapper.fromJson(json);
-
+  static CreateVectorStoreFileBatchRequest fromJson(Map<String, dynamic> json) =>
+      CreateVectorStoreFileBatchRequestMapper.fromJson(json);
 }
-

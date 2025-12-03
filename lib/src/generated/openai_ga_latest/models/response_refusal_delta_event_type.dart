@@ -11,10 +11,10 @@ part 'response_refusal_delta_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseRefusalDeltaEventType {
   /// Incorrect name has been replaced. Original name: `response.refusal.delta`.
-  @MappableValue('response.refusal.delta') 
+  @MappableValue('response.refusal.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseRefusalDeltaEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseRefusalDeltaEventType> get $valuesDefined => values.where((value) => value != ResponseRefusalDeltaEventType.unknown).toList();
+  static List<ResponseRefusalDeltaEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseRefusalDeltaEventType.unknown).toList();
 }

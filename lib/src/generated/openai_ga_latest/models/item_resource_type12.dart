@@ -9,10 +9,10 @@ part 'item_resource_type12.mapper.dart';
 /// The type of the item. Always `apply_patch_call_output`.
 @MappableEnum(defaultValue: 'unknown')
 enum ItemResourceType12 {
-  @MappableValue('apply_patch_call_output') 
+  @MappableValue('apply_patch_call_output')
   applyPatchCallOutput,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ItemResourceType12 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ItemResourceType12> get $valuesDefined => values.where((value) => value != ItemResourceType12.unknown).toList();
+  static List<ItemResourceType12> get $valuesDefined =>
+      values.where((value) => value != ItemResourceType12.unknown).toList();
 }

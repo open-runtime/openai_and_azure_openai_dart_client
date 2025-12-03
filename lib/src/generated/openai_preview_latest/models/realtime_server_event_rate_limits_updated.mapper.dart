@@ -8,7 +8,7 @@
 part of 'realtime_server_event_rate_limits_updated.dart';
 
 class RealtimeServerEventRateLimitsUpdatedMapper
-    extends ClassMapperBase<RealtimeServerEventRateLimitsUpdated> {
+    extends SubClassMapperBase<RealtimeServerEventRateLimitsUpdated> {
   RealtimeServerEventRateLimitsUpdatedMapper._();
 
   static RealtimeServerEventRateLimitsUpdatedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventRateLimitsUpdatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventRateLimitsUpdatedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventRateLimitsUpdatedTypeMapper.ensureInitialized();
       RealtimeServerEventRateLimitsUpdatedRateLimitsMapper.ensureInitialized();
     }
@@ -56,6 +57,14 @@ class RealtimeServerEventRateLimitsUpdatedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'rate_limits.updated';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventRateLimitsUpdated _instantiate(DecodingData data) {
     return RealtimeServerEventRateLimitsUpdated(
@@ -145,7 +154,7 @@ abstract class RealtimeServerEventRateLimitsUpdatedCopyWith<
   $In extends RealtimeServerEventRateLimitsUpdated,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     RealtimeServerEventRateLimitsUpdatedRateLimits,
@@ -156,6 +165,7 @@ abstract class RealtimeServerEventRateLimitsUpdatedCopyWith<
     >
   >
   get rateLimits;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventRateLimitsUpdatedType? type,

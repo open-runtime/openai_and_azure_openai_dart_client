@@ -11,16 +11,16 @@ part 'image_gen_tool_output_format_output_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ImageGenToolOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImageGenToolOutputFormatOutputFormat.unknown).toList();
+  static List<ImageGenToolOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolOutputFormatOutputFormat.unknown).toList();
 }

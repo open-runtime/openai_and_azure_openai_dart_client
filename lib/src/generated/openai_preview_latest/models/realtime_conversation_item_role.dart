@@ -11,16 +11,16 @@ part 'realtime_conversation_item_role.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeConversationItemRole {
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum RealtimeConversationItemRole {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeConversationItemRole> get $valuesDefined => values.where((value) => value != RealtimeConversationItemRole.unknown).toList();
+  static List<RealtimeConversationItemRole> get $valuesDefined =>
+      values.where((value) => value != RealtimeConversationItemRole.unknown).toList();
 }

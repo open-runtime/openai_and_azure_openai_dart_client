@@ -9,10 +9,10 @@ part 'assistant_tool_type2.mapper.dart';
 /// The type of tool being defined: `file_search`
 @MappableEnum(defaultValue: 'unknown')
 enum AssistantToolType2 {
-  @MappableValue('file_search') 
+  @MappableValue('file_search')
   fileSearch,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum AssistantToolType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<AssistantToolType2> get $valuesDefined => values.where((value) => value != AssistantToolType2.unknown).toList();
+  static List<AssistantToolType2> get $valuesDefined =>
+      values.where((value) => value != AssistantToolType2.unknown).toList();
 }

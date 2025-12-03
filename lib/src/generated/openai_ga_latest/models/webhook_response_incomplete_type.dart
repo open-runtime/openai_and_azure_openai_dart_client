@@ -11,10 +11,10 @@ part 'webhook_response_incomplete_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookResponseIncompleteType {
   /// Incorrect name has been replaced. Original name: `response.incomplete`.
-  @MappableValue('response.incomplete') 
+  @MappableValue('response.incomplete')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookResponseIncompleteType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookResponseIncompleteType> get $valuesDefined => values.where((value) => value != WebhookResponseIncompleteType.unknown).toList();
+  static List<WebhookResponseIncompleteType> get $valuesDefined =>
+      values.where((value) => value != WebhookResponseIncompleteType.unknown).toList();
 }

@@ -7,13 +7,14 @@
 
 part of 'refusal_content.dart';
 
-class RefusalContentMapper extends ClassMapperBase<RefusalContent> {
+class RefusalContentMapper extends SubClassMapperBase<RefusalContent> {
   RefusalContentMapper._();
 
   static RefusalContentMapper? _instance;
   static RefusalContentMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RefusalContentMapper._());
+      OutputContentMapper.ensureInitialized().addSubMapper(_instance!);
       RefusalContentTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -44,6 +45,14 @@ class RefusalContentMapper extends ClassMapperBase<RefusalContent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'refusal';
+  @override
+  late final ClassMapperBase superMapper =
+      OutputContentMapper.ensureInitialized();
 
   static RefusalContent _instantiate(DecodingData data) {
     return RefusalContent(
@@ -113,7 +122,8 @@ extension RefusalContentValueCopy<$R, $Out>
 }
 
 abstract class RefusalContentCopyWith<$R, $In extends RefusalContent, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements OutputContentCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? refusal, RefusalContentType? type});
   RefusalContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

@@ -31,7 +31,6 @@ class ElasticsearchIndexFieldMappingOptions with ElasticsearchIndexFieldMappingO
   @MappableField(key: 'vector_fields')
   final List<String>? vectorFields;
 
-  static ElasticsearchIndexFieldMappingOptions fromJson(Map<String, dynamic> json) => ElasticsearchIndexFieldMappingOptionsMapper.fromJson(json);
-
+  static ElasticsearchIndexFieldMappingOptions fromJson(Map<String, dynamic> json) =>
+      ElasticsearchIndexFieldMappingOptionsMapper.fromJson(json);
 }
-

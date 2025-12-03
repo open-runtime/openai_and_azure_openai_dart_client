@@ -8,11 +8,7 @@ part 'batch_request_output_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutputResponse with BatchRequestOutputResponseMappable {
-  const BatchRequestOutputResponse({
-    this.statusCode,
-    this.requestId,
-    this.body,
-  });
+  const BatchRequestOutputResponse({this.statusCode, this.requestId, this.body});
 
   @MappableField(key: 'status_code')
   final int? statusCode;
@@ -20,7 +16,6 @@ class BatchRequestOutputResponse with BatchRequestOutputResponseMappable {
   final String? requestId;
   final dynamic? body;
 
-  static BatchRequestOutputResponse fromJson(Map<String, dynamic> json) => BatchRequestOutputResponseMapper.fromJson(json);
-
+  static BatchRequestOutputResponse fromJson(Map<String, dynamic> json) =>
+      BatchRequestOutputResponseMapper.fromJson(json);
 }
-

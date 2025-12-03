@@ -10,11 +10,7 @@ part 'delete_thread_response.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DeleteThreadResponse with DeleteThreadResponseMappable {
-  const DeleteThreadResponse({
-    required this.id,
-    required this.deleted,
-    required this.objectEnum,
-  });
+  const DeleteThreadResponse({required this.id, required this.deleted, required this.objectEnum});
 
   final String id;
   final bool deleted;
@@ -22,6 +18,4 @@ class DeleteThreadResponse with DeleteThreadResponseMappable {
   final DeleteThreadResponseObjectObjectEnum objectEnum;
 
   static DeleteThreadResponse fromJson(Map<String, dynamic> json) => DeleteThreadResponseMapper.fromJson(json);
-
 }
-

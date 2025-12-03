@@ -21,7 +21,6 @@ class ChatCompletionNamedToolChoiceCustom with ChatCompletionNamedToolChoiceCust
   @MappableField(key: 'custom')
   final ChatCompletionNamedToolChoiceCustomCustom chatCompletionNamedToolChoiceCustomCustom;
 
-  static ChatCompletionNamedToolChoiceCustom fromJson(Map<String, dynamic> json) => ChatCompletionNamedToolChoiceCustomMapper.fromJson(json);
-
+  static ChatCompletionNamedToolChoiceCustom fromJson(Map<String, dynamic> json) =>
+      ChatCompletionNamedToolChoiceCustomMapper.fromJson(json);
 }
-

@@ -42,6 +42,4 @@ class Model with ModelMappable {
   final String? fineTune;
 
   static Model fromJson(Map<String, dynamic> json) => ModelMapper.fromJson(json);
-
 }
-

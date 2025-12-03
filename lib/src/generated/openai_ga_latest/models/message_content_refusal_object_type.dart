@@ -9,10 +9,10 @@ part 'message_content_refusal_object_type.mapper.dart';
 /// Always `refusal`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentRefusalObjectType {
-  @MappableValue('refusal') 
+  @MappableValue('refusal')
   refusal,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentRefusalObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentRefusalObjectType> get $valuesDefined => values.where((value) => value != MessageContentRefusalObjectType.unknown).toList();
+  static List<MessageContentRefusalObjectType> get $valuesDefined =>
+      values.where((value) => value != MessageContentRefusalObjectType.unknown).toList();
 }

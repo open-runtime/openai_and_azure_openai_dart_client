@@ -15,10 +15,12 @@ import 'code_interpreter_tool_output_type2.dart';
 
 part 'code_interpreter_tool_output.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CodeInterpreterToolOutputLogs,
-  CodeInterpreterToolOutputFiles
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CodeInterpreterToolOutputLogs, CodeInterpreterToolOutputFiles],
+)
 sealed class CodeInterpreterToolOutput with CodeInterpreterToolOutputMappable {
   const CodeInterpreterToolOutput();
 
@@ -34,14 +36,14 @@ extension CodeInterpreterToolOutputUnionDeserializer on CodeInterpreterToolOutpu
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CodeInterpreterToolOutputLogs: 'logs',
-      CodeInterpreterToolOutputFiles: 'files',
+      CodeInterpreterTextOutput: 'logs',
+      CodeInterpreterFileOutput: 'files',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CodeInterpreterToolOutputLogs] => CodeInterpreterToolOutputLogsMapper.fromJson(json),
-      _ when value == effective[CodeInterpreterToolOutputFiles] => CodeInterpreterToolOutputFilesMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterTextOutput] => CodeInterpreterTextOutputMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterFileOutput] => CodeInterpreterFileOutputMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for CodeInterpreterToolOutput'),
     };
   }
@@ -52,10 +54,7 @@ class CodeInterpreterToolOutputLogs extends CodeInterpreterToolOutput with CodeI
   final CodeInterpreterToolOutputType type;
   final String logs;
 
-  const CodeInterpreterToolOutputLogs({
-    required this.type,
-    required this.logs,
-  });
+  const CodeInterpreterToolOutputLogs({required this.type, required this.logs});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'files')
@@ -63,8 +62,5 @@ class CodeInterpreterToolOutputFiles extends CodeInterpreterToolOutput with Code
   final CodeInterpreterToolOutputType2 type;
   final List<CodeInterpreterToolOutputFiles> files;
 
-  const CodeInterpreterToolOutputFiles({
-    required this.type,
-    required this.files,
-  });
+  const CodeInterpreterToolOutputFiles({required this.type, required this.files});
 }

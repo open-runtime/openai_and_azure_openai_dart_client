@@ -35,6 +35,4 @@ class ContentFilterResultsBase with ContentFilterResultsBaseMappable {
   final ErrorBase? error;
 
   static ContentFilterResultsBase fromJson(Map<String, dynamic> json) => ContentFilterResultsBaseMapper.fromJson(json);
-
 }
-

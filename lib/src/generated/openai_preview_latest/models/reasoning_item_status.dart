@@ -11,16 +11,16 @@ part 'reasoning_item_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ReasoningItemStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -29,5 +29,6 @@ enum ReasoningItemStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ReasoningItemStatus> get $valuesDefined => values.where((value) => value != ReasoningItemStatus.unknown).toList();
+  static List<ReasoningItemStatus> get $valuesDefined =>
+      values.where((value) => value != ReasoningItemStatus.unknown).toList();
 }

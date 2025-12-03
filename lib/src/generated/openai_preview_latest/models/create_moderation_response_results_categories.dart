@@ -46,7 +46,6 @@ class CreateModerationResponseResultsCategories with CreateModerationResponseRes
   @MappableField(key: 'violence/graphic')
   final bool violenceGraphic;
 
-  static CreateModerationResponseResultsCategories fromJson(Map<String, dynamic> json) => CreateModerationResponseResultsCategoriesMapper.fromJson(json);
-
+  static CreateModerationResponseResultsCategories fromJson(Map<String, dynamic> json) =>
+      CreateModerationResponseResultsCategoriesMapper.fromJson(json);
 }
-

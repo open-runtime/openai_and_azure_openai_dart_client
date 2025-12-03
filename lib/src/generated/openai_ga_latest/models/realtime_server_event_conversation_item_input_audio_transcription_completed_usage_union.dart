@@ -16,41 +16,55 @@ import 'transcript_text_usage_tokens_type.dart';
 
 part 'realtime_server_event_conversation_item_input_audio_transcription_completed_usage_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens,
-  RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration
-])
-sealed class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens,
+    RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration,
+  ],
+)
+sealed class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
+    with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion();
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion fromJson(Map<String, dynamic> json) {
-    return RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDeserializer.tryDeserialize(json);
+  static RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion fromJson(
+    Map<String, dynamic> json,
+  ) {
+    return RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDeserializer.tryDeserialize(
+      json,
+    );
   }
-
 }
 
-extension RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDeserializer on RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion {
+extension RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDeserializer
+    on RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion {
   static RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens: 'tokens',
-      RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration: 'duration',
+      TranscriptTextUsageTokens: 'tokens',
+      TranscriptTextUsageDuration: 'duration',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens] => RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokensMapper.fromJson(json),
-      _ when value == effective[RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration] => RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDurationMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion'),
+      _ when value == effective[TranscriptTextUsageTokens] => TranscriptTextUsageTokensMapper.fromJson(json),
+      _ when value == effective[TranscriptTextUsageDuration] => TranscriptTextUsageDurationMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tokens')
-class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokensMappable {
+class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokens
+    extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
+    with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionTokensMappable {
   final TranscriptTextUsageTokensType type;
   @MappableField(key: 'input_tokens')
   final int inputTokens;
@@ -68,10 +82,12 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
     required this.outputTokens,
     required this.totalTokens,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'duration')
-class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDurationMappable {
+class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDuration
+    extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
+    with RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnionDurationMappable {
   final TranscriptTextUsageDurationType type;
   final num seconds;
 
@@ -79,5 +95,4 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUn
     required this.type,
     required this.seconds,
   });
-
 }

@@ -12,17 +12,12 @@ part 'code_interpreter_tool.mapper.dart';
 
 /// A tool that runs Python code to help generate a response to a prompt.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class CodeInterpreterTool with CodeInterpreterToolMappable {
-  const CodeInterpreterTool({
-    required this.type,
-    required this.container,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
+class CodeInterpreterTool extends Tool with CodeInterpreterToolMappable {
+  const CodeInterpreterTool({required this.type, required this.container});
 
   final CodeInterpreterToolType type;
   final CodeInterpreterToolContainerUnion container;
 
   static CodeInterpreterTool fromJson(Map<String, dynamic> json) => CodeInterpreterToolMapper.fromJson(json);
-
 }
-

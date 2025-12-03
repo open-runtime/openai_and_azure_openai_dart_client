@@ -12,17 +12,14 @@ part 'chat_completion_request_message_content_part_text.mapper.dart';
 
 /// Learn about [text inputs](/docs/guides/text-generation).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ChatCompletionRequestMessageContentPartText with ChatCompletionRequestMessageContentPartTextMappable {
-  const ChatCompletionRequestMessageContentPartText({
-    required this.type,
-    required this.text,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
+class ChatCompletionRequestMessageContentPartText extends ChatCompletionRequestUserMessageContentPart
+    with ChatCompletionRequestMessageContentPartTextMappable {
+  const ChatCompletionRequestMessageContentPartText({required this.type, required this.text});
 
   final ChatCompletionRequestMessageContentPartTextType type;
   final String text;
 
-  static ChatCompletionRequestMessageContentPartText fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageContentPartTextMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageContentPartText fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageContentPartTextMapper.fromJson(json);
 }
-

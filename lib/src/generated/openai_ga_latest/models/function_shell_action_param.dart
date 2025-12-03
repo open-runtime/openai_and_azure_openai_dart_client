@@ -9,11 +9,7 @@ part 'function_shell_action_param.mapper.dart';
 /// Commands and limits describing how to run the function shell tool call.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FunctionShellActionParam with FunctionShellActionParamMappable {
-  const FunctionShellActionParam({
-    required this.commands,
-    this.timeoutMs,
-    this.maxOutputLength,
-  });
+  const FunctionShellActionParam({required this.commands, this.timeoutMs, this.maxOutputLength});
 
   final List<String> commands;
   @MappableField(key: 'timeout_ms')
@@ -22,6 +18,4 @@ class FunctionShellActionParam with FunctionShellActionParamMappable {
   final int? maxOutputLength;
 
   static FunctionShellActionParam fromJson(Map<String, dynamic> json) => FunctionShellActionParamMapper.fromJson(json);
-
 }
-

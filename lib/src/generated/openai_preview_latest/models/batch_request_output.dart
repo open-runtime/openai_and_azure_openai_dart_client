@@ -12,12 +12,7 @@ part 'batch_request_output.mapper.dart';
 /// The per-line object of the batch output and error files
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchRequestOutput with BatchRequestOutputMappable {
-  const BatchRequestOutput({
-    this.id,
-    this.customId,
-    this.batchRequestOutputResponse,
-    this.batchRequestOutputError,
-  });
+  const BatchRequestOutput({this.id, this.customId, this.batchRequestOutputResponse, this.batchRequestOutputError});
 
   final String? id;
   @MappableField(key: 'custom_id')
@@ -28,6 +23,4 @@ class BatchRequestOutput with BatchRequestOutputMappable {
   final BatchRequestOutputError? batchRequestOutputError;
 
   static BatchRequestOutput fromJson(Map<String, dynamic> json) => BatchRequestOutputMapper.fromJson(json);
-
 }
-

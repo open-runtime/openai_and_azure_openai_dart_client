@@ -11,15 +11,11 @@ part 'vector_store_expiration_after.mapper.dart';
 /// The expiration policy for a vector store.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VectorStoreExpirationAfter with VectorStoreExpirationAfterMappable {
-  const VectorStoreExpirationAfter({
-    required this.anchor,
-    required this.days,
-  });
+  const VectorStoreExpirationAfter({required this.anchor, required this.days});
 
   final VectorStoreExpirationAfterAnchor anchor;
   final int days;
 
-  static VectorStoreExpirationAfter fromJson(Map<String, dynamic> json) => VectorStoreExpirationAfterMapper.fromJson(json);
-
+  static VectorStoreExpirationAfter fromJson(Map<String, dynamic> json) =>
+      VectorStoreExpirationAfterMapper.fromJson(json);
 }
-

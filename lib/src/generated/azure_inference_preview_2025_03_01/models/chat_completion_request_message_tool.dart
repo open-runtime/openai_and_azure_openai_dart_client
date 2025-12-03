@@ -23,16 +23,12 @@ part 'chat_completion_request_message_tool.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionRequestMessageTool with ChatCompletionRequestMessageToolMappable {
-  const ChatCompletionRequestMessageTool({
-    this.toolCallId,
-    this.content,
-  });
+  const ChatCompletionRequestMessageTool({this.toolCallId, this.content});
 
   @MappableField(key: 'tool_call_id')
   final String? toolCallId;
   final String? content;
 
-  static ChatCompletionRequestMessageTool fromJson(Map<String, dynamic> json) => ChatCompletionRequestMessageToolMapper.fromJson(json);
-
+  static ChatCompletionRequestMessageTool fromJson(Map<String, dynamic> json) =>
+      ChatCompletionRequestMessageToolMapper.fromJson(json);
 }
-

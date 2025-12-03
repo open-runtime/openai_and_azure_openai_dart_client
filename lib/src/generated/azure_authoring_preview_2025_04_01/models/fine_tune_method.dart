@@ -10,13 +10,9 @@ part 'fine_tune_method.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class FineTuneMethod with FineTuneMethodMappable {
-  const FineTuneMethod({
-    required this.type,
-  });
+  const FineTuneMethod({required this.type});
 
   final FineTuningMethodType type;
 
   static FineTuneMethod fromJson(Map<String, dynamic> json) => FineTuneMethodMapper.fromJson(json);
-
 }
-

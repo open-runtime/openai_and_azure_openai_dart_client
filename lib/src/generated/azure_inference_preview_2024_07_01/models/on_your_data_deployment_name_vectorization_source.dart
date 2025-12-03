@@ -12,18 +12,13 @@ part 'on_your_data_deployment_name_vectorization_source.mapper.dart';
 /// on an internal embeddings model deployment name in the same Azure OpenAI resource.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataDeploymentNameVectorizationSource with OnYourDataDeploymentNameVectorizationSourceMappable {
-  const OnYourDataDeploymentNameVectorizationSource({
-    required this.type,
-    this.deploymentName,
-    this.dimensions,
-  });
+  const OnYourDataDeploymentNameVectorizationSource({required this.type, this.deploymentName, this.dimensions});
 
   final OnYourDataVectorizationSourceType type;
   @MappableField(key: 'deployment_name')
   final String? deploymentName;
   final int? dimensions;
 
-  static OnYourDataDeploymentNameVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataDeploymentNameVectorizationSourceMapper.fromJson(json);
-
+  static OnYourDataDeploymentNameVectorizationSource fromJson(Map<String, dynamic> json) =>
+      OnYourDataDeploymentNameVectorizationSourceMapper.fromJson(json);
 }
-

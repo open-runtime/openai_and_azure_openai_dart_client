@@ -10,10 +10,10 @@ part 'response_output_text_annotation_added_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseOutputTextAnnotationAddedEventType {
   /// Incorrect name has been replaced. Original name: `response.output_text.annotation.added`.
-  @MappableValue('response.output_text.annotation.added') 
+  @MappableValue('response.output_text.annotation.added')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum ResponseOutputTextAnnotationAddedEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseOutputTextAnnotationAddedEventType> get $valuesDefined => values.where((value) => value != ResponseOutputTextAnnotationAddedEventType.unknown).toList();
+  static List<ResponseOutputTextAnnotationAddedEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseOutputTextAnnotationAddedEventType.unknown).toList();
 }

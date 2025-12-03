@@ -30,6 +30,4 @@ class ListAuditLogsResponse with ListAuditLogsResponseMappable {
   final bool hasMore;
 
   static ListAuditLogsResponse fromJson(Map<String, dynamic> json) => ListAuditLogsResponseMapper.fromJson(json);
-
 }
-

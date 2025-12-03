@@ -16,19 +16,23 @@ import 'chat_completion_request_user_message_role.dart';
 
 part 'fine_tune_chat_request_input_messages_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'role', includeSubClasses: [
-  FineTuneChatRequestInputMessagesUnionSystem,
-  FineTuneChatRequestInputMessagesUnionUser,
-  FineTuneChatRequestInputMessagesUnionTool,
-  FineTuneChatRequestInputMessagesUnionFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'role',
+  includeSubClasses: [
+    FineTuneChatRequestInputMessagesUnionSystem,
+    FineTuneChatRequestInputMessagesUnionUser,
+    FineTuneChatRequestInputMessagesUnionTool,
+    FineTuneChatRequestInputMessagesUnionFunction,
+  ],
+)
 sealed class FineTuneChatRequestInputMessagesUnion with FineTuneChatRequestInputMessagesUnionMappable {
   const FineTuneChatRequestInputMessagesUnion();
 
   static FineTuneChatRequestInputMessagesUnion fromJson(Map<String, dynamic> json) {
     return FineTuneChatRequestInputMessagesUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension FineTuneChatRequestInputMessagesUnionDeserializer on FineTuneChatRequestInputMessagesUnion {
@@ -38,51 +42,54 @@ extension FineTuneChatRequestInputMessagesUnionDeserializer on FineTuneChatReque
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      FineTuneChatRequestInputMessagesUnionSystem: 'system',
-      FineTuneChatRequestInputMessagesUnionUser: 'user',
-      FineTuneChatRequestInputMessagesUnionTool: 'tool',
-      FineTuneChatRequestInputMessagesUnionFunction: 'function',
+      ChatCompletionRequestSystemMessage: 'system',
+      ChatCompletionRequestUserMessage: 'user',
+      ChatCompletionRequestToolMessage: 'tool',
+      ChatCompletionRequestFunctionMessage: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[FineTuneChatRequestInputMessagesUnionSystem] => FineTuneChatRequestInputMessagesUnionSystemMapper.fromJson(json),
-      _ when value == effective[FineTuneChatRequestInputMessagesUnionUser] => FineTuneChatRequestInputMessagesUnionUserMapper.fromJson(json),
-      _ when value == effective[FineTuneChatRequestInputMessagesUnionTool] => FineTuneChatRequestInputMessagesUnionToolMapper.fromJson(json),
-      _ when value == effective[FineTuneChatRequestInputMessagesUnionFunction] => FineTuneChatRequestInputMessagesUnionFunctionMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for FineTuneChatRequestInputMessagesUnion'),
+      _ when value == effective[ChatCompletionRequestSystemMessage] =>
+        ChatCompletionRequestSystemMessageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestUserMessage] => ChatCompletionRequestUserMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestToolMessage] => ChatCompletionRequestToolMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestFunctionMessage] =>
+        ChatCompletionRequestFunctionMessageMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for FineTuneChatRequestInputMessagesUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
-class FineTuneChatRequestInputMessagesUnionSystem extends FineTuneChatRequestInputMessagesUnion with FineTuneChatRequestInputMessagesUnionSystemMappable {
+class FineTuneChatRequestInputMessagesUnionSystem extends FineTuneChatRequestInputMessagesUnion
+    with FineTuneChatRequestInputMessagesUnionSystemMappable {
   final String content;
   final ChatCompletionRequestSystemMessageRole role;
   final String? name;
 
-  const FineTuneChatRequestInputMessagesUnionSystem({
-    required this.content,
-    required this.role,
-    required this.name,
-  });
-
+  const FineTuneChatRequestInputMessagesUnionSystem({required this.content, required this.role, required this.name});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
-class FineTuneChatRequestInputMessagesUnionUser extends FineTuneChatRequestInputMessagesUnion with FineTuneChatRequestInputMessagesUnionUserMappable {
+class FineTuneChatRequestInputMessagesUnionUser extends FineTuneChatRequestInputMessagesUnion
+    with FineTuneChatRequestInputMessagesUnionUserMappable {
   final String content;
   final ChatCompletionRequestUserMessageRole role;
   final String? name;
 
-  const FineTuneChatRequestInputMessagesUnionUser({
-    required this.content,
-    required this.role,
-    required this.name,
-  });
-
+  const FineTuneChatRequestInputMessagesUnionUser({required this.content, required this.role, required this.name});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
-class FineTuneChatRequestInputMessagesUnionTool extends FineTuneChatRequestInputMessagesUnion with FineTuneChatRequestInputMessagesUnionToolMappable {
+class FineTuneChatRequestInputMessagesUnionTool extends FineTuneChatRequestInputMessagesUnion
+    with FineTuneChatRequestInputMessagesUnionToolMappable {
   final ChatCompletionRequestToolMessageRole role;
   final String content;
   @MappableField(key: 'tool_call_id')
@@ -93,18 +100,14 @@ class FineTuneChatRequestInputMessagesUnionTool extends FineTuneChatRequestInput
     required this.content,
     required this.toolCallId,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class FineTuneChatRequestInputMessagesUnionFunction extends FineTuneChatRequestInputMessagesUnion with FineTuneChatRequestInputMessagesUnionFunctionMappable {
+class FineTuneChatRequestInputMessagesUnionFunction extends FineTuneChatRequestInputMessagesUnion
+    with FineTuneChatRequestInputMessagesUnionFunctionMappable {
   final ChatCompletionRequestFunctionMessageRole role;
   final String? content;
   final String name;
 
-  const FineTuneChatRequestInputMessagesUnionFunction({
-    required this.role,
-    required this.content,
-    required this.name,
-  });
-
+  const FineTuneChatRequestInputMessagesUnionFunction({required this.role, required this.content, required this.name});
 }

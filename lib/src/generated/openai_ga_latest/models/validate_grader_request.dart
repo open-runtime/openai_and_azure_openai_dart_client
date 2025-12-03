@@ -10,13 +10,9 @@ part 'validate_grader_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ValidateGraderRequest with ValidateGraderRequestMappable {
-  const ValidateGraderRequest({
-    required this.grader,
-  });
+  const ValidateGraderRequest({required this.grader});
 
   final ValidateGraderRequestGraderUnion grader;
 
   static ValidateGraderRequest fromJson(Map<String, dynamic> json) => ValidateGraderRequestMapper.fromJson(json);
-
 }
-

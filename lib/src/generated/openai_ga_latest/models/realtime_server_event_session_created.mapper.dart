@@ -8,7 +8,7 @@
 part of 'realtime_server_event_session_created.dart';
 
 class RealtimeServerEventSessionCreatedMapper
-    extends ClassMapperBase<RealtimeServerEventSessionCreated> {
+    extends SubClassMapperBase<RealtimeServerEventSessionCreated> {
   RealtimeServerEventSessionCreatedMapper._();
 
   static RealtimeServerEventSessionCreatedMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventSessionCreatedMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventSessionCreatedMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventSessionCreatedSessionUnionMapper.ensureInitialized();
     }
     return _instance!;
@@ -50,6 +51,14 @@ class RealtimeServerEventSessionCreatedMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'session.created';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventSessionCreated _instantiate(DecodingData data) {
     return RealtimeServerEventSessionCreated(
@@ -137,13 +146,14 @@ abstract class RealtimeServerEventSessionCreatedCopyWith<
   $In extends RealtimeServerEventSessionCreated,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeServerEventSessionCreatedSessionUnionCopyWith<
     $R,
     RealtimeServerEventSessionCreatedSessionUnion,
     RealtimeServerEventSessionCreatedSessionUnion
   >
   get session;
+  @override
   $R call({
     String? eventId,
     dynamic type,

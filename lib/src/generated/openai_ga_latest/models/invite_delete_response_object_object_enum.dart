@@ -11,10 +11,10 @@ part 'invite_delete_response_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum InviteDeleteResponseObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `organization.invite.deleted`.
-  @MappableValue('organization.invite.deleted') 
+  @MappableValue('organization.invite.deleted')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum InviteDeleteResponseObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<InviteDeleteResponseObjectObjectEnum> get $valuesDefined => values.where((value) => value != InviteDeleteResponseObjectObjectEnum.unknown).toList();
+  static List<InviteDeleteResponseObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != InviteDeleteResponseObjectObjectEnum.unknown).toList();
 }

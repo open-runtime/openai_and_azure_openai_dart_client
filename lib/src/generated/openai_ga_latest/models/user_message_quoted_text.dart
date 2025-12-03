@@ -9,17 +9,12 @@ import 'user_message_quoted_text_type.dart';
 part 'user_message_quoted_text.mapper.dart';
 
 /// Quoted snippet that the user referenced in their message.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UserMessageQuotedText with UserMessageQuotedTextMappable {
-  const UserMessageQuotedText({
-    required this.text,
-    this.type = UserMessageQuotedTextType.quotedText,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'quoted_text')
+class UserMessageQuotedText extends ThreadItemContentUnion with UserMessageQuotedTextMappable {
+  const UserMessageQuotedText({required this.text, this.type = UserMessageQuotedTextType.quotedText});
 
   final String text;
   final UserMessageQuotedTextType type;
 
   static UserMessageQuotedText fromJson(Map<String, dynamic> json) => UserMessageQuotedTextMapper.fromJson(json);
-
 }
-

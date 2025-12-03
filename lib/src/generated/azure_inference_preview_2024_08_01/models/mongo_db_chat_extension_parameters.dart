@@ -57,7 +57,6 @@ class MongoDbChatExtensionParameters with MongoDbChatExtensionParametersMappable
   @MappableField(key: 'include_contexts')
   final List<OnYourDataContextProperty>? includeContexts;
 
-  static MongoDbChatExtensionParameters fromJson(Map<String, dynamic> json) => MongoDbChatExtensionParametersMapper.fromJson(json);
-
+  static MongoDbChatExtensionParameters fromJson(Map<String, dynamic> json) =>
+      MongoDbChatExtensionParametersMapper.fromJson(json);
 }
-

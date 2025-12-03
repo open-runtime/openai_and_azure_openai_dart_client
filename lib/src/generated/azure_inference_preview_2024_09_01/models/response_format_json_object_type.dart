@@ -9,10 +9,10 @@ part 'response_format_json_object_type.mapper.dart';
 /// The type of response format being defined: `json_object`
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormatJsonObjectType {
-  @MappableValue('json_object') 
+  @MappableValue('json_object')
   jsonObject,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseFormatJsonObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseFormatJsonObjectType> get $valuesDefined => values.where((value) => value != ResponseFormatJsonObjectType.unknown).toList();
+  static List<ResponseFormatJsonObjectType> get $valuesDefined =>
+      values.where((value) => value != ResponseFormatJsonObjectType.unknown).toList();
 }

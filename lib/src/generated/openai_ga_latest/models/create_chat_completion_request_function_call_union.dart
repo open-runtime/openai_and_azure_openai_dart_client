@@ -24,7 +24,14 @@ part 'create_chat_completion_request_function_call_union.mapper.dart';
 /// `none` is the default when no functions are present. `auto` is the default.
 /// if functions are present.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption, CreateChatCompletionRequestFunctionCallUnionVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption,
+    CreateChatCompletionRequestFunctionCallUnionVariantString,
+  ],
+)
 sealed class CreateChatCompletionRequestFunctionCallUnion with CreateChatCompletionRequestFunctionCallUnionMappable {
   const CreateChatCompletionRequestFunctionCallUnion();
 
@@ -42,25 +49,25 @@ extension CreateChatCompletionRequestFunctionCallUnionDeserializer on CreateChat
       return CreateChatCompletionRequestFunctionCallUnionVariantStringMapper.fromJson(json);
     } catch (_) {}
 
-
-    throw FormatException('Could not determine the correct type for CreateChatCompletionRequestFunctionCallUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for CreateChatCompletionRequestFunctionCallUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption extends CreateChatCompletionRequestFunctionCallUnion with CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOptionMappable {
+class CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption
+    extends CreateChatCompletionRequestFunctionCallUnion
+    with CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOptionMappable {
   final String name;
 
-  const CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption({
-    required this.name,
-  });
+  const CreateChatCompletionRequestFunctionCallUnionChatCompletionFunctionCallOption({required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CreateChatCompletionRequestFunctionCallUnionVariantString extends CreateChatCompletionRequestFunctionCallUnion with CreateChatCompletionRequestFunctionCallUnionVariantStringMappable {
+class CreateChatCompletionRequestFunctionCallUnionVariantString extends CreateChatCompletionRequestFunctionCallUnion
+    with CreateChatCompletionRequestFunctionCallUnionVariantStringMappable {
   final String value;
 
-  const CreateChatCompletionRequestFunctionCallUnionVariantString({
-    required this.value,
-  });
+  const CreateChatCompletionRequestFunctionCallUnionVariantString({required this.value});
 }

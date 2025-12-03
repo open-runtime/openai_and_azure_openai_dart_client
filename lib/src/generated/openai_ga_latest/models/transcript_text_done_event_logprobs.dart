@@ -8,17 +8,12 @@ part 'transcript_text_done_event_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class TranscriptTextDoneEventLogprobs with TranscriptTextDoneEventLogprobsMappable {
-  const TranscriptTextDoneEventLogprobs({
-    this.token,
-    this.logprob,
-    this.bytes,
-  });
+  const TranscriptTextDoneEventLogprobs({this.token, this.logprob, this.bytes});
 
   final String? token;
   final num? logprob;
   final List<int>? bytes;
 
-  static TranscriptTextDoneEventLogprobs fromJson(Map<String, dynamic> json) => TranscriptTextDoneEventLogprobsMapper.fromJson(json);
-
+  static TranscriptTextDoneEventLogprobs fromJson(Map<String, dynamic> json) =>
+      TranscriptTextDoneEventLogprobsMapper.fromJson(json);
 }
-

@@ -8,13 +8,9 @@ part 'audit_log_scim_disabled.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogScimDisabled with AuditLogScimDisabledMappable {
-  const AuditLogScimDisabled({
-    this.id,
-  });
+  const AuditLogScimDisabled({this.id});
 
   final String? id;
 
   static AuditLogScimDisabled fromJson(Map<String, dynamic> json) => AuditLogScimDisabledMapper.fromJson(json);
-
 }
-

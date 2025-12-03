@@ -10,15 +10,10 @@ part 'content_filter_id_result.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ContentFilterIdResult with ContentFilterIdResultMappable {
-  const ContentFilterIdResult({
-    required this.filtered,
-    this.id,
-  });
+  const ContentFilterIdResult({required this.filtered, this.id});
 
   final bool filtered;
   final String? id;
 
   static ContentFilterIdResult fromJson(Map<String, dynamic> json) => ContentFilterIdResultMapper.fromJson(json);
-
 }
-

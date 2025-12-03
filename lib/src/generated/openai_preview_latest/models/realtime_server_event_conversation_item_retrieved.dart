@@ -12,20 +12,16 @@ part 'realtime_server_event_conversation_item_retrieved.mapper.dart';
 
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemRetrieved with RealtimeServerEventConversationItemRetrievedMappable {
-  const RealtimeServerEventConversationItemRetrieved({
-    required this.eventId,
-    required this.type,
-    required this.item,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'conversation.item.retrieved')
+class RealtimeServerEventConversationItemRetrieved extends RealtimeServerEvent
+    with RealtimeServerEventConversationItemRetrievedMappable {
+  const RealtimeServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item});
 
   @MappableField(key: 'event_id')
   final String eventId;
   final RealtimeServerEventConversationItemRetrievedType type;
   final RealtimeConversationItem item;
 
-  static RealtimeServerEventConversationItemRetrieved fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemRetrievedMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemRetrieved fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemRetrievedMapper.fromJson(json);
 }
-

@@ -10,15 +10,11 @@ part 'message_content_text_object_text.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class MessageContentTextObjectText with MessageContentTextObjectTextMappable {
-  const MessageContentTextObjectText({
-    required this.value,
-    required this.annotations,
-  });
+  const MessageContentTextObjectText({required this.value, required this.annotations});
 
   final String value;
   final List<MessageContentTextObjectTextAnnotationsUnion> annotations;
 
-  static MessageContentTextObjectText fromJson(Map<String, dynamic> json) => MessageContentTextObjectTextMapper.fromJson(json);
-
+  static MessageContentTextObjectText fromJson(Map<String, dynamic> json) =>
+      MessageContentTextObjectTextMapper.fromJson(json);
 }
-

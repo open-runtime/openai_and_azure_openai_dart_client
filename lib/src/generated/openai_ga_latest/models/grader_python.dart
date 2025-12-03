@@ -10,14 +10,9 @@ part 'grader_python.mapper.dart';
 
 /// A PythonGrader object that runs a python script on the input.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class GraderPython with GraderPythonMappable {
-  const GraderPython({
-    required this.type,
-    required this.name,
-    required this.source,
-    this.imageTag,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
+class GraderPython extends ValidateGraderResponseGraderUnion with GraderPythonMappable {
+  const GraderPython({required this.type, required this.name, required this.source, this.imageTag});
 
   final GraderPythonType type;
   final String name;
@@ -26,6 +21,4 @@ class GraderPython with GraderPythonMappable {
   final String? imageTag;
 
   static GraderPython fromJson(Map<String, dynamic> json) => GraderPythonMapper.fromJson(json);
-
 }
-

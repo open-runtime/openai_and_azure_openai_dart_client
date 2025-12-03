@@ -12,16 +12,11 @@ part 'inner_error.mapper.dart';
 /// Inner error with additional details.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class InnerError with InnerErrorMappable {
-  const InnerError({
-    this.code,
-    this.contentFilterResults,
-  });
+  const InnerError({this.code, this.contentFilterResults});
 
   final InnerErrorCode? code;
   @MappableField(key: 'content_filter_results')
   final ContentFilterPromptResults? contentFilterResults;
 
   static InnerError fromJson(Map<String, dynamic> json) => InnerErrorMapper.fromJson(json);
-
 }
-

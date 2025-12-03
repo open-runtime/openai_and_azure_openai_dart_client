@@ -10,15 +10,11 @@ part 'run_step_delta_step_details_tool_call_code_interpreter.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RunStepDeltaStepDetailsToolCallCodeInterpreter with RunStepDeltaStepDetailsToolCallCodeInterpreterMappable {
-  const RunStepDeltaStepDetailsToolCallCodeInterpreter({
-    this.input,
-    this.outputs,
-  });
+  const RunStepDeltaStepDetailsToolCallCodeInterpreter({this.input, this.outputs});
 
   final String? input;
   final List<RunStepDeltaStepDetailsToolCallCodeInterpreterOutputsUnion>? outputs;
 
-  static RunStepDeltaStepDetailsToolCallCodeInterpreter fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallCodeInterpreterMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallCodeInterpreter fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallCodeInterpreterMapper.fromJson(json);
 }
-

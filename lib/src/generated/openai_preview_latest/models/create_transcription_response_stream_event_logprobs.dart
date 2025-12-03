@@ -8,17 +8,12 @@ part 'create_transcription_response_stream_event_logprobs.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateTranscriptionResponseStreamEventLogprobs with CreateTranscriptionResponseStreamEventLogprobsMappable {
-  const CreateTranscriptionResponseStreamEventLogprobs({
-    this.token,
-    this.logprob,
-    this.bytes,
-  });
+  const CreateTranscriptionResponseStreamEventLogprobs({this.token, this.logprob, this.bytes});
 
   final String? token;
   final num? logprob;
   final List<dynamic>? bytes;
 
-  static CreateTranscriptionResponseStreamEventLogprobs fromJson(Map<String, dynamic> json) => CreateTranscriptionResponseStreamEventLogprobsMapper.fromJson(json);
-
+  static CreateTranscriptionResponseStreamEventLogprobs fromJson(Map<String, dynamic> json) =>
+      CreateTranscriptionResponseStreamEventLogprobsMapper.fromJson(json);
 }
-

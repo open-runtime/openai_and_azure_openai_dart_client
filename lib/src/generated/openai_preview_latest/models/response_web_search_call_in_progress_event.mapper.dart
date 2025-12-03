@@ -8,7 +8,7 @@
 part of 'response_web_search_call_in_progress_event.dart';
 
 class ResponseWebSearchCallInProgressEventMapper
-    extends ClassMapperBase<ResponseWebSearchCallInProgressEvent> {
+    extends SubClassMapperBase<ResponseWebSearchCallInProgressEvent> {
   ResponseWebSearchCallInProgressEventMapper._();
 
   static ResponseWebSearchCallInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseWebSearchCallInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseWebSearchCallInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseWebSearchCallInProgressEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -51,6 +52,14 @@ class ResponseWebSearchCallInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.web_search_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseWebSearchCallInProgressEvent _instantiate(DecodingData data) {
     return ResponseWebSearchCallInProgressEvent(
@@ -140,7 +149,8 @@ abstract class ResponseWebSearchCallInProgressEventCopyWith<
   $In extends ResponseWebSearchCallInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseWebSearchCallInProgressEventType? type,
     int? outputIndex,

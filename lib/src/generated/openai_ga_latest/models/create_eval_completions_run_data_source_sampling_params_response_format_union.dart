@@ -16,53 +16,63 @@ import 'text_response_format_configuration.dart';
 
 part 'create_eval_completions_run_data_source_sampling_params_response_format_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText,
-  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema,
-  CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject
-])
-sealed class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText,
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema,
+    CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject,
+  ],
+)
+sealed class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
+    with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionMappable {
   const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion();
 
   static CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
-extension CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionDeserializer on CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion {
+extension CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionDeserializer
+    on CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion {
   static CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion tryDeserialize(
     Map<String, dynamic> json, {
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText: 'text',
-      CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema: 'json_schema',
-      CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject: 'json_object',
+      ResponseFormatText: 'text',
+      ResponseFormatJsonSchema: 'json_schema',
+      ResponseFormatJsonObject: 'json_object',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText] => CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMapper.fromJson(json),
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema] => CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchemaMapper.fromJson(json),
-      _ when value == effective[CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject] => CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion'),
+      _ when value == effective[ResponseFormatText] => ResponseFormatTextMapper.fromJson(json),
+      _ when value == effective[ResponseFormatJsonSchema] => ResponseFormatJsonSchemaMapper.fromJson(json),
+      _ when value == effective[ResponseFormatJsonObject] => ResponseFormatJsonObjectMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text')
-class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMappable {
+class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText
+    extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
+    with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionTextMappable {
   final ResponseFormatTextType type;
 
-  const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText({
-    required this.type,
-  });
-
+  const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionText({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_schema')
-class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchemaMappable {
+class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchema
+    extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
+    with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSchemaMappable {
   final ResponseFormatJsonSchemaType type;
   @MappableField(key: 'json_schema')
   final ResponseFormatJsonSchemaJsonSchema responseFormatJsonSchemaJsonSchema;
@@ -71,14 +81,13 @@ class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonSch
     required this.type,
     required this.responseFormatJsonSchemaJsonSchema,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
-class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectMappable {
+class CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject
+    extends CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion
+    with CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObjectMappable {
   final ResponseFormatJsonObjectType type;
 
-  const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject({
-    required this.type,
-  });
-
+  const CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnionJsonObject({required this.type});
 }

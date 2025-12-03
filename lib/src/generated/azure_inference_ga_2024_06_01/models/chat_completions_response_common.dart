@@ -29,7 +29,6 @@ class ChatCompletionsResponseCommon with ChatCompletionsResponseCommonMappable {
   @MappableField(key: 'system_fingerprint')
   final String? systemFingerprint;
 
-  static ChatCompletionsResponseCommon fromJson(Map<String, dynamic> json) => ChatCompletionsResponseCommonMapper.fromJson(json);
-
+  static ChatCompletionsResponseCommon fromJson(Map<String, dynamic> json) =>
+      ChatCompletionsResponseCommonMapper.fromJson(json);
 }
-

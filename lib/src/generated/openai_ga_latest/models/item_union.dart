@@ -84,94 +84,98 @@ import 'web_search_tool_call_type.dart';
 
 part 'item_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ItemUnionMessage,
-  ItemUnionFileSearchCall,
-  ItemUnionComputerCall,
-  ItemUnionComputerCallOutput,
-  ItemUnionWebSearchCall,
-  ItemUnionFunctionCall,
-  ItemUnionFunctionCallOutput,
-  ItemUnionReasoning,
-  ItemUnionImageGenerationCall,
-  ItemUnionCodeInterpreterCall,
-  ItemUnionLocalShellCall,
-  ItemUnionLocalShellCallOutput,
-  ItemUnionShellCall,
-  ItemUnionShellCallOutput,
-  ItemUnionApplyPatchCall,
-  ItemUnionApplyPatchCallOutput,
-  ItemUnionMcpListTools,
-  ItemUnionMcpApprovalRequest,
-  ItemUnionMcpApprovalResponse,
-  ItemUnionMcpCall,
-  ItemUnionCustomToolCallOutput,
-  ItemUnionCustomToolCall
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    ItemUnionMessage,
+    ItemUnionFileSearchCall,
+    ItemUnionComputerCall,
+    ItemUnionComputerCallOutput,
+    ItemUnionWebSearchCall,
+    ItemUnionFunctionCall,
+    ItemUnionFunctionCallOutput,
+    ItemUnionReasoning,
+    ItemUnionImageGenerationCall,
+    ItemUnionCodeInterpreterCall,
+    ItemUnionLocalShellCall,
+    ItemUnionLocalShellCallOutput,
+    ItemUnionShellCall,
+    ItemUnionShellCallOutput,
+    ItemUnionApplyPatchCall,
+    ItemUnionApplyPatchCallOutput,
+    ItemUnionMcpListTools,
+    ItemUnionMcpApprovalRequest,
+    ItemUnionMcpApprovalResponse,
+    ItemUnionMcpCall,
+    ItemUnionCustomToolCallOutput,
+    ItemUnionCustomToolCall,
+  ],
+)
 sealed class ItemUnion with ItemUnionMappable {
   const ItemUnion();
 
   static ItemUnion fromJson(Map<String, dynamic> json) {
     return ItemUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ItemUnionDeserializer on ItemUnion {
-  static ItemUnion tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
+  static ItemUnion tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
     final mappingFallback = const <Type, Object?>{
-      ItemUnionMessage: 'message',
-      ItemUnionFileSearchCall: 'file_search_call',
-      ItemUnionComputerCall: 'computer_call',
-      ItemUnionComputerCallOutput: 'computer_call_output',
-      ItemUnionWebSearchCall: 'web_search_call',
-      ItemUnionFunctionCall: 'function_call',
-      ItemUnionFunctionCallOutput: 'function_call_output',
-      ItemUnionReasoning: 'reasoning',
-      ItemUnionImageGenerationCall: 'image_generation_call',
-      ItemUnionCodeInterpreterCall: 'code_interpreter_call',
-      ItemUnionLocalShellCall: 'local_shell_call',
-      ItemUnionLocalShellCallOutput: 'local_shell_call_output',
-      ItemUnionShellCall: 'shell_call',
-      ItemUnionShellCallOutput: 'shell_call_output',
-      ItemUnionApplyPatchCall: 'apply_patch_call',
-      ItemUnionApplyPatchCallOutput: 'apply_patch_call_output',
-      ItemUnionMcpListTools: 'mcp_list_tools',
-      ItemUnionMcpApprovalRequest: 'mcp_approval_request',
-      ItemUnionMcpApprovalResponse: 'mcp_approval_response',
-      ItemUnionMcpCall: 'mcp_call',
-      ItemUnionCustomToolCallOutput: 'custom_tool_call_output',
-      ItemUnionCustomToolCall: 'custom_tool_call',
+      OutputMessage: 'message',
+      FileSearchToolCall: 'file_search_call',
+      ComputerToolCall: 'computer_call',
+      ComputerCallOutputItemParam: 'computer_call_output',
+      WebSearchToolCall: 'web_search_call',
+      FunctionToolCall: 'function_call',
+      FunctionCallOutputItemParam: 'function_call_output',
+      ReasoningItem: 'reasoning',
+      ImageGenToolCall: 'image_generation_call',
+      CodeInterpreterToolCall: 'code_interpreter_call',
+      LocalShellToolCall: 'local_shell_call',
+      LocalShellToolCallOutput: 'local_shell_call_output',
+      FunctionShellCallItemParam: 'shell_call',
+      FunctionShellCallOutputItemParam: 'shell_call_output',
+      ApplyPatchToolCallItemParam: 'apply_patch_call',
+      ApplyPatchToolCallOutputItemParam: 'apply_patch_call_output',
+      McpListTools: 'mcp_list_tools',
+      McpApprovalRequest: 'mcp_approval_request',
+      McpApprovalResponse: 'mcp_approval_response',
+      McpToolCall: 'mcp_call',
+      CustomToolCallOutput: 'custom_tool_call_output',
+      CustomToolCall: 'custom_tool_call',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ItemUnionMessage] => ItemUnionMessageMapper.fromJson(json),
-      _ when value == effective[ItemUnionFileSearchCall] => ItemUnionFileSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionComputerCall] => ItemUnionComputerCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionComputerCallOutput] => ItemUnionComputerCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionWebSearchCall] => ItemUnionWebSearchCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionFunctionCall] => ItemUnionFunctionCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionFunctionCallOutput] => ItemUnionFunctionCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionReasoning] => ItemUnionReasoningMapper.fromJson(json),
-      _ when value == effective[ItemUnionImageGenerationCall] => ItemUnionImageGenerationCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionCodeInterpreterCall] => ItemUnionCodeInterpreterCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionLocalShellCall] => ItemUnionLocalShellCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionLocalShellCallOutput] => ItemUnionLocalShellCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionShellCall] => ItemUnionShellCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionShellCallOutput] => ItemUnionShellCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionApplyPatchCall] => ItemUnionApplyPatchCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionApplyPatchCallOutput] => ItemUnionApplyPatchCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionMcpListTools] => ItemUnionMcpListToolsMapper.fromJson(json),
-      _ when value == effective[ItemUnionMcpApprovalRequest] => ItemUnionMcpApprovalRequestMapper.fromJson(json),
-      _ when value == effective[ItemUnionMcpApprovalResponse] => ItemUnionMcpApprovalResponseMapper.fromJson(json),
-      _ when value == effective[ItemUnionMcpCall] => ItemUnionMcpCallMapper.fromJson(json),
-      _ when value == effective[ItemUnionCustomToolCallOutput] => ItemUnionCustomToolCallOutputMapper.fromJson(json),
-      _ when value == effective[ItemUnionCustomToolCall] => ItemUnionCustomToolCallMapper.fromJson(json),
+      _ when value == effective[OutputMessage] => OutputMessageMapper.fromJson(json),
+      _ when value == effective[FileSearchToolCall] => FileSearchToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerToolCall] => ComputerToolCallMapper.fromJson(json),
+      _ when value == effective[ComputerCallOutputItemParam] => ComputerCallOutputItemParamMapper.fromJson(json),
+      _ when value == effective[WebSearchToolCall] => WebSearchToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionToolCall] => FunctionToolCallMapper.fromJson(json),
+      _ when value == effective[FunctionCallOutputItemParam] => FunctionCallOutputItemParamMapper.fromJson(json),
+      _ when value == effective[ReasoningItem] => ReasoningItemMapper.fromJson(json),
+      _ when value == effective[ImageGenToolCall] => ImageGenToolCallMapper.fromJson(json),
+      _ when value == effective[CodeInterpreterToolCall] => CodeInterpreterToolCallMapper.fromJson(json),
+      _ when value == effective[LocalShellToolCall] => LocalShellToolCallMapper.fromJson(json),
+      _ when value == effective[LocalShellToolCallOutput] => LocalShellToolCallOutputMapper.fromJson(json),
+      _ when value == effective[FunctionShellCallItemParam] => FunctionShellCallItemParamMapper.fromJson(json),
+      _ when value == effective[FunctionShellCallOutputItemParam] => FunctionShellCallOutputItemParamMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ApplyPatchToolCallItemParam] => ApplyPatchToolCallItemParamMapper.fromJson(json),
+      _ when value == effective[ApplyPatchToolCallOutputItemParam] => ApplyPatchToolCallOutputItemParamMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[McpListTools] => McpListToolsMapper.fromJson(json),
+      _ when value == effective[McpApprovalRequest] => McpApprovalRequestMapper.fromJson(json),
+      _ when value == effective[McpApprovalResponse] => McpApprovalResponseMapper.fromJson(json),
+      _ when value == effective[McpToolCall] => McpToolCallMapper.fromJson(json),
+      _ when value == effective[CustomToolCallOutput] => CustomToolCallOutputMapper.fromJson(json),
+      _ when value == effective[CustomToolCall] => CustomToolCallMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ItemUnion'),
     };
   }
@@ -192,8 +196,8 @@ class ItemUnionMessage extends ItemUnion with ItemUnionMessageMappable {
     required this.content,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search_call')
 class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMappable {
   final String id;
@@ -209,8 +213,8 @@ class ItemUnionFileSearchCall extends ItemUnion with ItemUnionFileSearchCallMapp
     required this.queries,
     required this.results,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call')
 class ItemUnionComputerCall extends ItemUnion with ItemUnionComputerCallMappable {
   final ComputerToolCallType type;
@@ -230,8 +234,8 @@ class ItemUnionComputerCall extends ItemUnion with ItemUnionComputerCallMappable
     required this.pendingSafetyChecks,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'computer_call_output')
 class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOutputMappable {
   final String? id;
@@ -251,8 +255,8 @@ class ItemUnionComputerCallOutput extends ItemUnion with ItemUnionComputerCallOu
     required this.acknowledgedSafetyChecks,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'web_search_call')
 class ItemUnionWebSearchCall extends ItemUnion with ItemUnionWebSearchCallMappable {
   final String id;
@@ -260,14 +264,9 @@ class ItemUnionWebSearchCall extends ItemUnion with ItemUnionWebSearchCallMappab
   final WebSearchToolCallStatus status;
   final WebSearchToolCallActionUnion action;
 
-  const ItemUnionWebSearchCall({
-    required this.id,
-    required this.type,
-    required this.status,
-    required this.action,
-  });
-
+  const ItemUnionWebSearchCall({required this.id, required this.type, required this.status, required this.action});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call')
 class ItemUnionFunctionCall extends ItemUnion with ItemUnionFunctionCallMappable {
   final String? id;
@@ -286,8 +285,8 @@ class ItemUnionFunctionCall extends ItemUnion with ItemUnionFunctionCallMappable
     required this.arguments,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function_call_output')
 class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOutputMappable {
   final String? id;
@@ -304,8 +303,8 @@ class ItemUnionFunctionCallOutput extends ItemUnion with ItemUnionFunctionCallOu
     required this.output,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'reasoning')
 class ItemUnionReasoning extends ItemUnion with ItemUnionReasoningMappable {
   final ReasoningItemType type;
@@ -324,8 +323,8 @@ class ItemUnionReasoning extends ItemUnion with ItemUnionReasoningMappable {
     required this.content,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_generation_call')
 class ItemUnionImageGenerationCall extends ItemUnion with ItemUnionImageGenerationCallMappable {
   final ImageGenToolCallType type;
@@ -339,8 +338,8 @@ class ItemUnionImageGenerationCall extends ItemUnion with ItemUnionImageGenerati
     required this.status,
     required this.result,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter_call')
 class ItemUnionCodeInterpreterCall extends ItemUnion with ItemUnionCodeInterpreterCallMappable {
   final CodeInterpreterToolCallType type;
@@ -359,8 +358,8 @@ class ItemUnionCodeInterpreterCall extends ItemUnion with ItemUnionCodeInterpret
     required this.code,
     required this.outputs,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call')
 class ItemUnionLocalShellCall extends ItemUnion with ItemUnionLocalShellCallMappable {
   final LocalShellToolCallType type;
@@ -377,8 +376,8 @@ class ItemUnionLocalShellCall extends ItemUnion with ItemUnionLocalShellCallMapp
     required this.action,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'local_shell_call_output')
 class ItemUnionLocalShellCallOutput extends ItemUnion with ItemUnionLocalShellCallOutputMappable {
   final LocalShellToolCallOutputType type;
@@ -392,8 +391,8 @@ class ItemUnionLocalShellCallOutput extends ItemUnion with ItemUnionLocalShellCa
     required this.output,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call')
 class ItemUnionShellCall extends ItemUnion with ItemUnionShellCallMappable {
   final String? id;
@@ -410,8 +409,8 @@ class ItemUnionShellCall extends ItemUnion with ItemUnionShellCallMappable {
     required this.action,
     required this.status,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'shell_call_output')
 class ItemUnionShellCallOutput extends ItemUnion with ItemUnionShellCallOutputMappable {
   final String? id;
@@ -429,8 +428,8 @@ class ItemUnionShellCallOutput extends ItemUnion with ItemUnionShellCallOutputMa
     required this.output,
     required this.maxOutputLength,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call')
 class ItemUnionApplyPatchCall extends ItemUnion with ItemUnionApplyPatchCallMappable {
   final ApplyPatchToolCallItemParamType type;
@@ -447,8 +446,8 @@ class ItemUnionApplyPatchCall extends ItemUnion with ItemUnionApplyPatchCallMapp
     required this.status,
     required this.operation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'apply_patch_call_output')
 class ItemUnionApplyPatchCallOutput extends ItemUnion with ItemUnionApplyPatchCallOutputMappable {
   final ApplyPatchToolCallOutputItemParamType type;
@@ -465,8 +464,8 @@ class ItemUnionApplyPatchCallOutput extends ItemUnion with ItemUnionApplyPatchCa
     required this.status,
     required this.output,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
 class ItemUnionMcpListTools extends ItemUnion with ItemUnionMcpListToolsMappable {
   final McpListToolsType type;
@@ -483,8 +482,8 @@ class ItemUnionMcpListTools extends ItemUnion with ItemUnionMcpListToolsMappable
     required this.tools,
     required this.error,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_request')
 class ItemUnionMcpApprovalRequest extends ItemUnion with ItemUnionMcpApprovalRequestMappable {
   final McpApprovalRequestType type;
@@ -501,8 +500,8 @@ class ItemUnionMcpApprovalRequest extends ItemUnion with ItemUnionMcpApprovalReq
     required this.name,
     required this.arguments,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_approval_response')
 class ItemUnionMcpApprovalResponse extends ItemUnion with ItemUnionMcpApprovalResponseMappable {
   final McpApprovalResponseType type;
@@ -519,8 +518,8 @@ class ItemUnionMcpApprovalResponse extends ItemUnion with ItemUnionMcpApprovalRe
     required this.approve,
     required this.reason,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
 class ItemUnionMcpCall extends ItemUnion with ItemUnionMcpCallMappable {
   final McpToolCallType type;
@@ -546,8 +545,8 @@ class ItemUnionMcpCall extends ItemUnion with ItemUnionMcpCallMappable {
     required this.status,
     required this.approvalRequestId,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call_output')
 class ItemUnionCustomToolCallOutput extends ItemUnion with ItemUnionCustomToolCallOutputMappable {
   final CustomToolCallOutputType type;
@@ -562,8 +561,8 @@ class ItemUnionCustomToolCallOutput extends ItemUnion with ItemUnionCustomToolCa
     required this.callId,
     required this.output,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'custom_tool_call')
 class ItemUnionCustomToolCall extends ItemUnion with ItemUnionCustomToolCallMappable {
   final CustomToolCallType type;
@@ -580,5 +579,4 @@ class ItemUnionCustomToolCall extends ItemUnion with ItemUnionCustomToolCallMapp
     required this.name,
     required this.input,
   });
-
 }

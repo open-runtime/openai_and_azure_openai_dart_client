@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_content_part_done.dart';
 
 class RealtimeServerEventResponseContentPartDoneMapper
-    extends ClassMapperBase<RealtimeServerEventResponseContentPartDone> {
+    extends SubClassMapperBase<RealtimeServerEventResponseContentPartDone> {
   RealtimeServerEventResponseContentPartDoneMapper._();
 
   static RealtimeServerEventResponseContentPartDoneMapper? _instance;
@@ -17,6 +17,7 @@ class RealtimeServerEventResponseContentPartDoneMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseContentPartDoneMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventResponseContentPartDonePartMapper.ensureInitialized();
     }
     return _instance!;
@@ -82,6 +83,14 @@ class RealtimeServerEventResponseContentPartDoneMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.content_part.done';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseContentPartDone _instantiate(
     DecodingData data,
@@ -187,13 +196,14 @@ abstract class RealtimeServerEventResponseContentPartDoneCopyWith<
   $In extends RealtimeServerEventResponseContentPartDone,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   RealtimeServerEventResponseContentPartDonePartCopyWith<
     $R,
     RealtimeServerEventResponseContentPartDonePart,
     RealtimeServerEventResponseContentPartDonePart
   >
   get realtimeServerEventResponseContentPartDonePart;
+  @override
   $R call({
     String? eventId,
     dynamic type,

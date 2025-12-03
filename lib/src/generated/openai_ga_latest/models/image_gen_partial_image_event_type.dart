@@ -11,10 +11,10 @@ part 'image_gen_partial_image_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenPartialImageEventType {
   /// Incorrect name has been replaced. Original name: `image_generation.partial_image`.
-  @MappableValue('image_generation.partial_image') 
+  @MappableValue('image_generation.partial_image')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ImageGenPartialImageEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenPartialImageEventType> get $valuesDefined => values.where((value) => value != ImageGenPartialImageEventType.unknown).toList();
+  static List<ImageGenPartialImageEventType> get $valuesDefined =>
+      values.where((value) => value != ImageGenPartialImageEventType.unknown).toList();
 }

@@ -12,8 +12,8 @@ import 'thread_item.dart';
 part 'task_group_item.mapper.dart';
 
 /// Collection of workflow tasks grouped together in the thread.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TaskGroupItem with TaskGroupItemMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'chatkit.task_group')
+class TaskGroupItem extends ThreadItem with TaskGroupItemMappable {
   const TaskGroupItem({
     required this.id,
     required this.createdAt,
@@ -34,6 +34,4 @@ class TaskGroupItem with TaskGroupItemMappable {
   final TaskGroupItemType type;
 
   static TaskGroupItem fromJson(Map<String, dynamic> json) => TaskGroupItemMapper.fromJson(json);
-
 }
-

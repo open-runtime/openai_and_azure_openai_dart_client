@@ -32,6 +32,4 @@ class WebhookEvalRunCanceled with WebhookEvalRunCanceledMappable {
   final WebhookEvalRunCanceledObjectObjectEnum? objectEnum;
 
   static WebhookEvalRunCanceled fromJson(Map<String, dynamic> json) => WebhookEvalRunCanceledMapper.fromJson(json);
-
 }
-

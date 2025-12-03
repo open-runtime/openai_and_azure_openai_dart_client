@@ -9,17 +9,12 @@ part 'workspace_connection_embedding_settings.mapper.dart';
 /// Connection id to the embedding model
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class WorkspaceConnectionEmbeddingSettings with WorkspaceConnectionEmbeddingSettingsMappable {
-  const WorkspaceConnectionEmbeddingSettings({
-    this.connectionId,
-    this.deploymentName,
-    this.modelName,
-  });
+  const WorkspaceConnectionEmbeddingSettings({this.connectionId, this.deploymentName, this.modelName});
 
   final String? connectionId;
   final String? deploymentName;
   final String? modelName;
 
-  static WorkspaceConnectionEmbeddingSettings fromJson(Map<String, dynamic> json) => WorkspaceConnectionEmbeddingSettingsMapper.fromJson(json);
-
+  static WorkspaceConnectionEmbeddingSettings fromJson(Map<String, dynamic> json) =>
+      WorkspaceConnectionEmbeddingSettingsMapper.fromJson(json);
 }
-

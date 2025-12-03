@@ -40,6 +40,4 @@ class Upload with UploadMappable {
   final OpenAiFile? file;
 
   static Upload fromJson(Map<String, dynamic> json) => UploadMapper.fromJson(json);
-
 }
-

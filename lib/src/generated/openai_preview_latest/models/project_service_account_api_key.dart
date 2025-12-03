@@ -26,7 +26,6 @@ class ProjectServiceAccountApiKey with ProjectServiceAccountApiKeyMappable {
   final int createdAt;
   final String id;
 
-  static ProjectServiceAccountApiKey fromJson(Map<String, dynamic> json) => ProjectServiceAccountApiKeyMapper.fromJson(json);
-
+  static ProjectServiceAccountApiKey fromJson(Map<String, dynamic> json) =>
+      ProjectServiceAccountApiKeyMapper.fromJson(json);
 }
-

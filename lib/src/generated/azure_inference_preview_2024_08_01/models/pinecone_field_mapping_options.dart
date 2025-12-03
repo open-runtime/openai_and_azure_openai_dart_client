@@ -28,7 +28,6 @@ class PineconeFieldMappingOptions with PineconeFieldMappingOptionsMappable {
   @MappableField(key: 'content_fields_separator')
   final String? contentFieldsSeparator;
 
-  static PineconeFieldMappingOptions fromJson(Map<String, dynamic> json) => PineconeFieldMappingOptionsMapper.fromJson(json);
-
+  static PineconeFieldMappingOptions fromJson(Map<String, dynamic> json) =>
+      PineconeFieldMappingOptionsMapper.fromJson(json);
 }
-

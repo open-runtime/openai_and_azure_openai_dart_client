@@ -10,10 +10,10 @@ part 'url_citation_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum UrlCitationType {
-  @MappableValue('url_citation') 
+  @MappableValue('url_citation')
   urlCitation,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

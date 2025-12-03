@@ -12,16 +12,12 @@ part 'chat_completion_named_tool_choice.mapper.dart';
 /// Specifies a tool the model should use. Use to force the model to call a specific function.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionNamedToolChoice with ChatCompletionNamedToolChoiceMappable {
-  const ChatCompletionNamedToolChoice({
-    this.type,
-    this.chatCompletionNamedToolChoiceFunction,
-  });
+  const ChatCompletionNamedToolChoice({this.type, this.chatCompletionNamedToolChoiceFunction});
 
   final ChatCompletionNamedToolChoiceType? type;
   @MappableField(key: 'function')
   final ChatCompletionNamedToolChoiceFunction? chatCompletionNamedToolChoiceFunction;
 
-  static ChatCompletionNamedToolChoice fromJson(Map<String, dynamic> json) => ChatCompletionNamedToolChoiceMapper.fromJson(json);
-
+  static ChatCompletionNamedToolChoice fromJson(Map<String, dynamic> json) =>
+      ChatCompletionNamedToolChoiceMapper.fromJson(json);
 }
-

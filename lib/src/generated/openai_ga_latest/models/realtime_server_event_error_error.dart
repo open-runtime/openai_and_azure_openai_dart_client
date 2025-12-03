@@ -8,13 +8,7 @@ part 'realtime_server_event_error_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventErrorError with RealtimeServerEventErrorErrorMappable {
-  const RealtimeServerEventErrorError({
-    required this.type,
-    required this.message,
-    this.code,
-    this.param,
-    this.eventId,
-  });
+  const RealtimeServerEventErrorError({required this.type, required this.message, this.code, this.param, this.eventId});
 
   final String type;
   final String message;
@@ -23,7 +17,6 @@ class RealtimeServerEventErrorError with RealtimeServerEventErrorErrorMappable {
   @MappableField(key: 'event_id')
   final String? eventId;
 
-  static RealtimeServerEventErrorError fromJson(Map<String, dynamic> json) => RealtimeServerEventErrorErrorMapper.fromJson(json);
-
+  static RealtimeServerEventErrorError fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventErrorErrorMapper.fromJson(json);
 }
-

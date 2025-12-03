@@ -10,19 +10,13 @@ part 'realtime_server_event_response_content_part_done_part.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeServerEventResponseContentPartDonePart with RealtimeServerEventResponseContentPartDonePartMappable {
-  const RealtimeServerEventResponseContentPartDonePart({
-    this.type,
-    this.text,
-    this.audio,
-    this.transcript,
-  });
+  const RealtimeServerEventResponseContentPartDonePart({this.type, this.text, this.audio, this.transcript});
 
   final RealtimeServerEventResponseContentPartDonePartType? type;
   final String? text;
   final String? audio;
   final String? transcript;
 
-  static RealtimeServerEventResponseContentPartDonePart fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseContentPartDonePartMapper.fromJson(json);
-
+  static RealtimeServerEventResponseContentPartDonePart fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseContentPartDonePartMapper.fromJson(json);
 }
-

@@ -10,15 +10,10 @@ part 'update_eval_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UpdateEvalRequest with UpdateEvalRequestMappable {
-  const UpdateEvalRequest({
-    this.name,
-    this.metadata,
-  });
+  const UpdateEvalRequest({this.name, this.metadata});
 
   final String? name;
   final Metadata? metadata;
 
   static UpdateEvalRequest fromJson(Map<String, dynamic> json) => UpdateEvalRequestMapper.fromJson(json);
-
 }
-

@@ -32,6 +32,4 @@ class EvalList with EvalListMappable {
   final EvalListObjectObjectEnum objectEnum;
 
   static EvalList fromJson(Map<String, dynamic> json) => EvalListMapper.fromJson(json);
-
 }
-

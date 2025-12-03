@@ -9,10 +9,10 @@ part 'response_reasoning_summary_part_added_event_part_type.mapper.dart';
 /// The type of the summary part. Always `summary_text`.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseReasoningSummaryPartAddedEventPartType {
-  @MappableValue('summary_text') 
+  @MappableValue('summary_text')
   summaryText,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ResponseReasoningSummaryPartAddedEventPartType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseReasoningSummaryPartAddedEventPartType> get $valuesDefined => values.where((value) => value != ResponseReasoningSummaryPartAddedEventPartType.unknown).toList();
+  static List<ResponseReasoningSummaryPartAddedEventPartType> get $valuesDefined =>
+      values.where((value) => value != ResponseReasoningSummaryPartAddedEventPartType.unknown).toList();
 }

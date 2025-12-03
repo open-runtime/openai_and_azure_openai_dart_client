@@ -8,28 +8,28 @@ part 'message_role.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum MessageRole {
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown,
 
-  @MappableValue('user') 
+  @MappableValue('user')
   user,
 
-  @MappableValue('assistant') 
+  @MappableValue('assistant')
   assistant,
 
-  @MappableValue('system') 
+  @MappableValue('system')
   system,
 
-  @MappableValue('critic') 
+  @MappableValue('critic')
   critic,
 
-  @MappableValue('discriminator') 
+  @MappableValue('discriminator')
   discriminator,
 
-  @MappableValue('developer') 
+  @MappableValue('developer')
   developer,
 
-  @MappableValue('tool') 
+  @MappableValue('tool')
   tool;
 
   String toJson() => toValue().toString();

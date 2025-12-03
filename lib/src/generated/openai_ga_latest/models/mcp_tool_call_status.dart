@@ -8,22 +8,22 @@ part 'mcp_tool_call_status.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum McpToolCallStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('calling') 
+  @MappableValue('calling')
   calling,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -32,5 +32,6 @@ enum McpToolCallStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<McpToolCallStatus> get $valuesDefined => values.where((value) => value != McpToolCallStatus.unknown).toList();
+  static List<McpToolCallStatus> get $valuesDefined =>
+      values.where((value) => value != McpToolCallStatus.unknown).toList();
 }

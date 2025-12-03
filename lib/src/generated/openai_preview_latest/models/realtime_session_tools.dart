@@ -10,12 +10,7 @@ part 'realtime_session_tools.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeSessionTools with RealtimeSessionToolsMappable {
-  const RealtimeSessionTools({
-    this.type,
-    this.name,
-    this.description,
-    this.parameters,
-  });
+  const RealtimeSessionTools({this.type, this.name, this.description, this.parameters});
 
   final RealtimeSessionToolsType? type;
   final String? name;
@@ -23,6 +18,4 @@ class RealtimeSessionTools with RealtimeSessionToolsMappable {
   final dynamic? parameters;
 
   static RealtimeSessionTools fromJson(Map<String, dynamic> json) => RealtimeSessionToolsMapper.fromJson(json);
-
 }
-

@@ -9,10 +9,10 @@ part 'create_transcription_response_diarized_json_task.mapper.dart';
 /// The type of task that was run. Always `transcribe`.
 @MappableEnum(defaultValue: 'unknown')
 enum CreateTranscriptionResponseDiarizedJsonTask {
-  @MappableValue('transcribe') 
+  @MappableValue('transcribe')
   transcribe,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum CreateTranscriptionResponseDiarizedJsonTask {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateTranscriptionResponseDiarizedJsonTask> get $valuesDefined => values.where((value) => value != CreateTranscriptionResponseDiarizedJsonTask.unknown).toList();
+  static List<CreateTranscriptionResponseDiarizedJsonTask> get $valuesDefined =>
+      values.where((value) => value != CreateTranscriptionResponseDiarizedJsonTask.unknown).toList();
 }

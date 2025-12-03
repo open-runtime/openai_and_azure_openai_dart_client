@@ -10,17 +10,14 @@ part 'run_step_details_tool_calls_file_search_ranking_options_object.mapper.dart
 
 /// The ranking options for the file search.
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDetailsToolCallsFileSearchRankingOptionsObject with RunStepDetailsToolCallsFileSearchRankingOptionsObjectMappable {
-  const RunStepDetailsToolCallsFileSearchRankingOptionsObject({
-    required this.ranker,
-    required this.scoreThreshold,
-  });
+class RunStepDetailsToolCallsFileSearchRankingOptionsObject
+    with RunStepDetailsToolCallsFileSearchRankingOptionsObjectMappable {
+  const RunStepDetailsToolCallsFileSearchRankingOptionsObject({required this.ranker, required this.scoreThreshold});
 
   final FileSearchRanker ranker;
   @MappableField(key: 'score_threshold')
   final num scoreThreshold;
 
-  static RunStepDetailsToolCallsFileSearchRankingOptionsObject fromJson(Map<String, dynamic> json) => RunStepDetailsToolCallsFileSearchRankingOptionsObjectMapper.fromJson(json);
-
+  static RunStepDetailsToolCallsFileSearchRankingOptionsObject fromJson(Map<String, dynamic> json) =>
+      RunStepDetailsToolCallsFileSearchRankingOptionsObjectMapper.fromJson(json);
 }
-

@@ -9,13 +9,9 @@ import 'usage_vector_stores_result_object_object_enum.dart';
 part 'usage_vector_stores_result.mapper.dart';
 
 /// The aggregated vector stores usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageVectorStoresResult with UsageVectorStoresResultMappable {
-  const UsageVectorStoresResult({
-    required this.objectEnum,
-    required this.usageBytes,
-    this.projectId,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.vector_stores.result')
+class UsageVectorStoresResult extends UsageTimeBucketResultUnion with UsageVectorStoresResultMappable {
+  const UsageVectorStoresResult({required this.objectEnum, required this.usageBytes, this.projectId});
 
   @MappableField(key: 'object')
   final UsageVectorStoresResultObjectObjectEnum objectEnum;
@@ -25,6 +21,4 @@ class UsageVectorStoresResult with UsageVectorStoresResultMappable {
   final String? projectId;
 
   static UsageVectorStoresResult fromJson(Map<String, dynamic> json) => UsageVectorStoresResultMapper.fromJson(json);
-
 }
-

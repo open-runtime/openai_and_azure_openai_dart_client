@@ -9,10 +9,10 @@ part 'apply_patch_update_file_operation_type.mapper.dart';
 /// Update an existing file with the provided diff.
 @MappableEnum(defaultValue: 'unknown')
 enum ApplyPatchUpdateFileOperationType {
-  @MappableValue('update_file') 
+  @MappableValue('update_file')
   updateFile,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ApplyPatchUpdateFileOperationType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ApplyPatchUpdateFileOperationType> get $valuesDefined => values.where((value) => value != ApplyPatchUpdateFileOperationType.unknown).toList();
+  static List<ApplyPatchUpdateFileOperationType> get $valuesDefined =>
+      values.where((value) => value != ApplyPatchUpdateFileOperationType.unknown).toList();
 }

@@ -9,10 +9,10 @@ part 'realtime_truncation_union_variant1_type.mapper.dart';
 /// Use retention ratio truncation.
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeTruncationUnionVariant1Type {
-  @MappableValue('retention_ratio') 
+  @MappableValue('retention_ratio')
   retentionRatio,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RealtimeTruncationUnionVariant1Type {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeTruncationUnionVariant1Type> get $valuesDefined => values.where((value) => value != RealtimeTruncationUnionVariant1Type.unknown).toList();
+  static List<RealtimeTruncationUnionVariant1Type> get $valuesDefined =>
+      values.where((value) => value != RealtimeTruncationUnionVariant1Type.unknown).toList();
 }

@@ -44,6 +44,4 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   final VectorStoreFileAttributes? attributes;
 
   static VectorStoreFileObject fromJson(Map<String, dynamic> json) => VectorStoreFileObjectMapper.fromJson(json);
-
 }
-

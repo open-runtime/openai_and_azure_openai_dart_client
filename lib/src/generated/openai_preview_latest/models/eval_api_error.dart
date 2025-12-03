@@ -10,15 +10,10 @@ part 'eval_api_error.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EvalApiError with EvalApiErrorMappable {
-  const EvalApiError({
-    required this.code,
-    required this.message,
-  });
+  const EvalApiError({required this.code, required this.message});
 
   final String code;
   final String message;
 
   static EvalApiError fromJson(Map<String, dynamic> json) => EvalApiErrorMapper.fromJson(json);
-
 }
-

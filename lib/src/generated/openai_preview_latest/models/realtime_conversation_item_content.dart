@@ -10,13 +10,7 @@ part 'realtime_conversation_item_content.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeConversationItemContent with RealtimeConversationItemContentMappable {
-  const RealtimeConversationItemContent({
-    this.type,
-    this.text,
-    this.id,
-    this.audio,
-    this.transcript,
-  });
+  const RealtimeConversationItemContent({this.type, this.text, this.id, this.audio, this.transcript});
 
   final RealtimeConversationItemContentType? type;
   final String? text;
@@ -24,7 +18,6 @@ class RealtimeConversationItemContent with RealtimeConversationItemContentMappab
   final String? audio;
   final String? transcript;
 
-  static RealtimeConversationItemContent fromJson(Map<String, dynamic> json) => RealtimeConversationItemContentMapper.fromJson(json);
-
+  static RealtimeConversationItemContent fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemContentMapper.fromJson(json);
 }
-

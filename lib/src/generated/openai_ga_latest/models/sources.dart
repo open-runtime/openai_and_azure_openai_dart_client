@@ -9,18 +9,18 @@ part 'sources.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum Sources {
   /// Incorrect name has been replaced. Original name: `image.generation`.
-  @MappableValue('image.generation') 
+  @MappableValue('image.generation')
   undefined0,
 
   /// Incorrect name has been replaced. Original name: `image.edit`.
-  @MappableValue('image.edit') 
+  @MappableValue('image.edit')
   undefined1,
 
   /// Incorrect name has been replaced. Original name: `image.variation`.
-  @MappableValue('image.variation') 
+  @MappableValue('image.variation')
   undefined2,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

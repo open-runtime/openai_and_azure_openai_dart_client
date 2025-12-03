@@ -22,20 +22,24 @@ import 'grader_text_similarity_type.dart';
 
 part 'grader_multi_graders_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  GraderMultiGradersUnionStringCheck,
-  GraderMultiGradersUnionTextSimilarity,
-  GraderMultiGradersUnionPython,
-  GraderMultiGradersUnionScoreModel,
-  GraderMultiGradersUnionLabelModel
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    GraderMultiGradersUnionStringCheck,
+    GraderMultiGradersUnionTextSimilarity,
+    GraderMultiGradersUnionPython,
+    GraderMultiGradersUnionScoreModel,
+    GraderMultiGradersUnionLabelModel,
+  ],
+)
 sealed class GraderMultiGradersUnion with GraderMultiGradersUnionMappable {
   const GraderMultiGradersUnion();
 
   static GraderMultiGradersUnion fromJson(Map<String, dynamic> json) {
     return GraderMultiGradersUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension GraderMultiGradersUnionDeserializer on GraderMultiGradersUnion {
@@ -45,27 +49,28 @@ extension GraderMultiGradersUnionDeserializer on GraderMultiGradersUnion {
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      GraderMultiGradersUnionStringCheck: 'string_check',
-      GraderMultiGradersUnionTextSimilarity: 'text_similarity',
-      GraderMultiGradersUnionPython: 'python',
-      GraderMultiGradersUnionScoreModel: 'score_model',
-      GraderMultiGradersUnionLabelModel: 'label_model',
+      GraderStringCheck: 'string_check',
+      GraderTextSimilarity: 'text_similarity',
+      GraderPython: 'python',
+      GraderScoreModel: 'score_model',
+      GraderLabelModel: 'label_model',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[GraderMultiGradersUnionStringCheck] => GraderMultiGradersUnionStringCheckMapper.fromJson(json),
-      _ when value == effective[GraderMultiGradersUnionTextSimilarity] => GraderMultiGradersUnionTextSimilarityMapper.fromJson(json),
-      _ when value == effective[GraderMultiGradersUnionPython] => GraderMultiGradersUnionPythonMapper.fromJson(json),
-      _ when value == effective[GraderMultiGradersUnionScoreModel] => GraderMultiGradersUnionScoreModelMapper.fromJson(json),
-      _ when value == effective[GraderMultiGradersUnionLabelModel] => GraderMultiGradersUnionLabelModelMapper.fromJson(json),
+      _ when value == effective[GraderStringCheck] => GraderStringCheckMapper.fromJson(json),
+      _ when value == effective[GraderTextSimilarity] => GraderTextSimilarityMapper.fromJson(json),
+      _ when value == effective[GraderPython] => GraderPythonMapper.fromJson(json),
+      _ when value == effective[GraderScoreModel] => GraderScoreModelMapper.fromJson(json),
+      _ when value == effective[GraderLabelModel] => GraderLabelModelMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for GraderMultiGradersUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'string_check')
-class GraderMultiGradersUnionStringCheck extends GraderMultiGradersUnion with GraderMultiGradersUnionStringCheckMappable {
+class GraderMultiGradersUnionStringCheck extends GraderMultiGradersUnion
+    with GraderMultiGradersUnionStringCheckMappable {
   final GraderStringCheckType type;
   final String name;
   final String input;
@@ -79,10 +84,11 @@ class GraderMultiGradersUnionStringCheck extends GraderMultiGradersUnion with Gr
     required this.reference,
     required this.operation,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
-class GraderMultiGradersUnionTextSimilarity extends GraderMultiGradersUnion with GraderMultiGradersUnionTextSimilarityMappable {
+class GraderMultiGradersUnionTextSimilarity extends GraderMultiGradersUnion
+    with GraderMultiGradersUnionTextSimilarityMappable {
   final GraderTextSimilarityType type;
   final String name;
   final String input;
@@ -97,8 +103,8 @@ class GraderMultiGradersUnionTextSimilarity extends GraderMultiGradersUnion with
     required this.reference,
     required this.evaluationMetric,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'python')
 class GraderMultiGradersUnionPython extends GraderMultiGradersUnion with GraderMultiGradersUnionPythonMappable {
   final GraderPythonType type;
@@ -113,8 +119,8 @@ class GraderMultiGradersUnionPython extends GraderMultiGradersUnion with GraderM
     required this.source,
     required this.imageTag,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'score_model')
 class GraderMultiGradersUnionScoreModel extends GraderMultiGradersUnion with GraderMultiGradersUnionScoreModelMappable {
   final GraderScoreModelType type;
@@ -133,8 +139,8 @@ class GraderMultiGradersUnionScoreModel extends GraderMultiGradersUnion with Gra
     required this.input,
     required this.range,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
 class GraderMultiGradersUnionLabelModel extends GraderMultiGradersUnion with GraderMultiGradersUnionLabelModelMappable {
   final GraderLabelModelType type;
@@ -153,5 +159,4 @@ class GraderMultiGradersUnionLabelModel extends GraderMultiGradersUnion with Gra
     required this.labels,
     required this.passingLabels,
   });
-
 }

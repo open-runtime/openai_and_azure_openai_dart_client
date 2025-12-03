@@ -10,8 +10,9 @@ import 'transcript_text_usage_tokens_type.dart';
 part 'transcript_text_usage_tokens.mapper.dart';
 
 /// Usage statistics for models billed by token usage.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class TranscriptTextUsageTokens with TranscriptTextUsageTokensMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tokens')
+class TranscriptTextUsageTokens extends RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsageUnion
+    with TranscriptTextUsageTokensMappable {
   const TranscriptTextUsageTokens({
     required this.type,
     required this.inputTokens,
@@ -30,7 +31,6 @@ class TranscriptTextUsageTokens with TranscriptTextUsageTokensMappable {
   @MappableField(key: 'input_token_details')
   final TranscriptTextUsageTokensInputTokenDetails? transcriptTextUsageTokensInputTokenDetails;
 
-  static TranscriptTextUsageTokens fromJson(Map<String, dynamic> json) => TranscriptTextUsageTokensMapper.fromJson(json);
-
+  static TranscriptTextUsageTokens fromJson(Map<String, dynamic> json) =>
+      TranscriptTextUsageTokensMapper.fromJson(json);
 }
-

@@ -25,20 +25,16 @@ extension CompoundFilterFiltersUnionDeserializer on CompoundFilterFiltersUnion {
       return CompoundFilterFiltersUnionComparisonFilterMapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for CompoundFilterFiltersUnion from: $json');
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class CompoundFilterFiltersUnionComparisonFilter extends CompoundFilterFiltersUnion with CompoundFilterFiltersUnionComparisonFilterMappable {
+class CompoundFilterFiltersUnionComparisonFilter extends CompoundFilterFiltersUnion
+    with CompoundFilterFiltersUnionComparisonFilterMappable {
   final ComparisonFilterType type;
   final String key;
   final ComparisonFilterValueUnion value;
 
-  const CompoundFilterFiltersUnionComparisonFilter({
-    required this.type,
-    required this.key,
-    required this.value,
-  });
+  const CompoundFilterFiltersUnionComparisonFilter({required this.type, required this.key, required this.value});
 }

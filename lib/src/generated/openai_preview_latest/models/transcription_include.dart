@@ -8,10 +8,10 @@ part 'transcription_include.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum TranscriptionInclude {
-  @MappableValue('logprobs') 
+  @MappableValue('logprobs')
   logprobs,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -20,5 +20,6 @@ enum TranscriptionInclude {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<TranscriptionInclude> get $valuesDefined => values.where((value) => value != TranscriptionInclude.unknown).toList();
+  static List<TranscriptionInclude> get $valuesDefined =>
+      values.where((value) => value != TranscriptionInclude.unknown).toList();
 }

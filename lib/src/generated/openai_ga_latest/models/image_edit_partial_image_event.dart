@@ -15,8 +15,8 @@ part 'image_edit_partial_image_event.mapper.dart';
 
 /// Emitted when a partial image is available during image editing streaming.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ImageEditPartialImageEvent with ImageEditPartialImageEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'image_edit.partial_image')
+class ImageEditPartialImageEvent extends ImageEditStreamEvent with ImageEditPartialImageEventMappable {
   const ImageEditPartialImageEvent({
     required this.type,
     required this.b64Json,
@@ -41,7 +41,6 @@ class ImageEditPartialImageEvent with ImageEditPartialImageEventMappable {
   @MappableField(key: 'partial_image_index')
   final int partialImageIndex;
 
-  static ImageEditPartialImageEvent fromJson(Map<String, dynamic> json) => ImageEditPartialImageEventMapper.fromJson(json);
-
+  static ImageEditPartialImageEvent fromJson(Map<String, dynamic> json) =>
+      ImageEditPartialImageEventMapper.fromJson(json);
 }
-

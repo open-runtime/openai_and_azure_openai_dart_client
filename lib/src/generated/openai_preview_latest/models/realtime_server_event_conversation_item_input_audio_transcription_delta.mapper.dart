@@ -9,7 +9,7 @@ part of 'realtime_server_event_conversation_item_input_audio_transcription_delta
 
 class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
     extends
-        ClassMapperBase<
+        SubClassMapperBase<
           RealtimeServerEventConversationItemInputAudioTranscriptionDelta
         > {
   RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper._();
@@ -23,6 +23,7 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
         _instance =
             RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
       RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeMapper.ensureInitialized();
       LogProbPropertiesMapper.ensureInitialized();
     }
@@ -103,6 +104,15 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue =
+      'conversation.item.input_audio_transcription.delta';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventConversationItemInputAudioTranscriptionDelta
   _instantiate(DecodingData data) {
@@ -228,13 +238,14 @@ abstract class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaCo
   $In extends RealtimeServerEventConversationItemInputAudioTranscriptionDelta,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     LogProbProperties,
     LogProbPropertiesCopyWith<$R, LogProbProperties, LogProbProperties>
   >?
   get logprobs;
+  @override
   $R call({
     String? eventId,
     RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? type,

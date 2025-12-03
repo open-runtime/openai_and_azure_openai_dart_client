@@ -11,10 +11,10 @@ part 'webhook_batch_completed_object_object_enum.mapper.dart';
 /// The name has been replaced because it contains a keyword. Original name: `object`.
 @MappableEnum(defaultValue: 'unknown')
 enum WebhookBatchCompletedObjectObjectEnum {
-  @MappableValue('event') 
+  @MappableValue('event')
   event,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum WebhookBatchCompletedObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebhookBatchCompletedObjectObjectEnum> get $valuesDefined => values.where((value) => value != WebhookBatchCompletedObjectObjectEnum.unknown).toList();
+  static List<WebhookBatchCompletedObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != WebhookBatchCompletedObjectObjectEnum.unknown).toList();
 }

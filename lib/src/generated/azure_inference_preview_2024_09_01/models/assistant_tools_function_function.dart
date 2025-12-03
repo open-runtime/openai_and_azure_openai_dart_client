@@ -10,17 +10,12 @@ part 'assistant_tools_function_function.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AssistantToolsFunctionFunction with AssistantToolsFunctionFunctionMappable {
-  const AssistantToolsFunctionFunction({
-    required this.description,
-    required this.name,
-    required this.parameters,
-  });
+  const AssistantToolsFunctionFunction({required this.description, required this.name, required this.parameters});
 
   final String description;
   final String name;
   final ChatCompletionFunctionParameters parameters;
 
-  static AssistantToolsFunctionFunction fromJson(Map<String, dynamic> json) => AssistantToolsFunctionFunctionMapper.fromJson(json);
-
+  static AssistantToolsFunctionFunction fromJson(Map<String, dynamic> json) =>
+      AssistantToolsFunctionFunctionMapper.fromJson(json);
 }
-

@@ -29,6 +29,4 @@ class ListRunsResponse with ListRunsResponseMappable {
   final bool hasMore;
 
   static ListRunsResponse fromJson(Map<String, dynamic> json) => ListRunsResponseMapper.fromJson(json);
-
 }
-

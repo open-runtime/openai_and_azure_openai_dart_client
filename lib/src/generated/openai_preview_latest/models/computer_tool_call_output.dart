@@ -34,6 +34,4 @@ class ComputerToolCallOutput with ComputerToolCallOutputMappable {
   final ComputerToolCallOutputType type;
 
   static ComputerToolCallOutput fromJson(Map<String, dynamic> json) => ComputerToolCallOutputMapper.fromJson(json);
-
 }
-

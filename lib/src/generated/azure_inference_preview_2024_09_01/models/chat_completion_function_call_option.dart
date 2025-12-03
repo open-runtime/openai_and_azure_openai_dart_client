@@ -10,13 +10,10 @@ part 'chat_completion_function_call_option.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class ChatCompletionFunctionCallOption with ChatCompletionFunctionCallOptionMappable {
-  const ChatCompletionFunctionCallOption({
-    required this.name,
-  });
+  const ChatCompletionFunctionCallOption({required this.name});
 
   final String name;
 
-  static ChatCompletionFunctionCallOption fromJson(Map<String, dynamic> json) => ChatCompletionFunctionCallOptionMapper.fromJson(json);
-
+  static ChatCompletionFunctionCallOption fromJson(Map<String, dynamic> json) =>
+      ChatCompletionFunctionCallOptionMapper.fromJson(json);
 }
-

@@ -56,6 +56,4 @@ class CreateImageRequest with CreateImageRequestMappable {
   final String? user;
 
   static CreateImageRequest fromJson(Map<String, dynamic> json) => CreateImageRequestMapper.fromJson(json);
-
 }
-

@@ -9,13 +9,13 @@ part 'filter_reason.mapper.dart';
 /// The filtering reason of the retrieved document.
 @MappableEnum(defaultValue: 'unknown')
 enum FilterReason {
-  @MappableValue('score') 
+  @MappableValue('score')
   score,
 
-  @MappableValue('rerank') 
+  @MappableValue('rerank')
   rerank,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

@@ -8,7 +8,7 @@
 part of 'response_text_annotation_delta_event.dart';
 
 class ResponseTextAnnotationDeltaEventMapper
-    extends ClassMapperBase<ResponseTextAnnotationDeltaEvent> {
+    extends SubClassMapperBase<ResponseTextAnnotationDeltaEvent> {
   ResponseTextAnnotationDeltaEventMapper._();
 
   static ResponseTextAnnotationDeltaEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseTextAnnotationDeltaEventMapper
       MapperContainer.globals.use(
         _instance = ResponseTextAnnotationDeltaEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseTextAnnotationDeltaEventTypeMapper.ensureInitialized();
       AnnotationMapper.ensureInitialized();
     }
@@ -66,6 +67,14 @@ class ResponseTextAnnotationDeltaEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.output_text.annotation.added';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseTextAnnotationDeltaEvent _instantiate(DecodingData data) {
     return ResponseTextAnnotationDeltaEvent(
@@ -155,8 +164,9 @@ abstract class ResponseTextAnnotationDeltaEventCopyWith<
   $In extends ResponseTextAnnotationDeltaEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   AnnotationCopyWith<$R, Annotation, Annotation> get annotation;
+  @override
   $R call({
     ResponseTextAnnotationDeltaEventType? type,
     String? itemId,

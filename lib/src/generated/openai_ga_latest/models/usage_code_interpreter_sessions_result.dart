@@ -9,13 +9,14 @@ import 'usage_code_interpreter_sessions_result_object_object_enum.dart';
 part 'usage_code_interpreter_sessions_result.mapper.dart';
 
 /// The aggregated code interpreter sessions usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageCodeInterpreterSessionsResult with UsageCodeInterpreterSessionsResultMappable {
-  const UsageCodeInterpreterSessionsResult({
-    required this.objectEnum,
-    this.numSessions,
-    this.projectId,
-  });
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorValue: 'organization.usage.code_interpreter_sessions.result',
+)
+class UsageCodeInterpreterSessionsResult extends UsageTimeBucketResultUnion
+    with UsageCodeInterpreterSessionsResultMappable {
+  const UsageCodeInterpreterSessionsResult({required this.objectEnum, this.numSessions, this.projectId});
 
   @MappableField(key: 'object')
   final UsageCodeInterpreterSessionsResultObjectObjectEnum objectEnum;
@@ -24,7 +25,6 @@ class UsageCodeInterpreterSessionsResult with UsageCodeInterpreterSessionsResult
   @MappableField(key: 'project_id')
   final String? projectId;
 
-  static UsageCodeInterpreterSessionsResult fromJson(Map<String, dynamic> json) => UsageCodeInterpreterSessionsResultMapper.fromJson(json);
-
+  static UsageCodeInterpreterSessionsResult fromJson(Map<String, dynamic> json) =>
+      UsageCodeInterpreterSessionsResultMapper.fromJson(json);
 }
-

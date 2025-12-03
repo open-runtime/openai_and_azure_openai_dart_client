@@ -31,6 +31,4 @@ class EvalRunPerModelUsage with EvalRunPerModelUsageMappable {
   final int totalTokens;
 
   static EvalRunPerModelUsage fromJson(Map<String, dynamic> json) => EvalRunPerModelUsageMapper.fromJson(json);
-
 }
-

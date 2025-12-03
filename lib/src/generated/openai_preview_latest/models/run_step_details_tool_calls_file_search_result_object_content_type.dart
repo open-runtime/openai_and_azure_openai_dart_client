@@ -9,10 +9,10 @@ part 'run_step_details_tool_calls_file_search_result_object_content_type.mapper.
 /// The type of the content.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDetailsToolCallsFileSearchResultObjectContentType {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDetailsToolCallsFileSearchResultObjectContentType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDetailsToolCallsFileSearchResultObjectContentType> get $valuesDefined => values.where((value) => value != RunStepDetailsToolCallsFileSearchResultObjectContentType.unknown).toList();
+  static List<RunStepDetailsToolCallsFileSearchResultObjectContentType> get $valuesDefined =>
+      values.where((value) => value != RunStepDetailsToolCallsFileSearchResultObjectContentType.unknown).toList();
 }

@@ -10,7 +10,8 @@ part 'on_your_data_user_assigned_managed_identity_authentication_options.mapper.
 
 /// The authentication options for Azure OpenAI On Your Data when using a user-assigned managed identity.
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class OnYourDataUserAssignedManagedIdentityAuthenticationOptions with OnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
+class OnYourDataUserAssignedManagedIdentityAuthenticationOptions
+    with OnYourDataUserAssignedManagedIdentityAuthenticationOptionsMappable {
   const OnYourDataUserAssignedManagedIdentityAuthenticationOptions({
     required this.type,
     this.managedIdentityResourceId,
@@ -20,7 +21,6 @@ class OnYourDataUserAssignedManagedIdentityAuthenticationOptions with OnYourData
   @MappableField(key: 'managed_identity_resource_id')
   final String? managedIdentityResourceId;
 
-  static OnYourDataUserAssignedManagedIdentityAuthenticationOptions fromJson(Map<String, dynamic> json) => OnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
-
+  static OnYourDataUserAssignedManagedIdentityAuthenticationOptions fromJson(Map<String, dynamic> json) =>
+      OnYourDataUserAssignedManagedIdentityAuthenticationOptionsMapper.fromJson(json);
 }
-

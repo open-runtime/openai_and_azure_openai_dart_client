@@ -10,10 +10,10 @@ part 'realtime_server_event_conversation_item_input_audio_transcription_delta_ty
 @MappableEnum(defaultValue: 'unknown')
 enum RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType {
   /// Incorrect name has been replaced. Original name: `conversation.item.input_audio_transcription.delta`.
-  @MappableValue('conversation.item.input_audio_transcription.delta') 
+  @MappableValue('conversation.item.input_audio_transcription.delta')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,7 @@ enum RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType> get $valuesDefined => values.where((value) => value != RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.unknown).toList();
+  static List<RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType> get $valuesDefined => values
+      .where((value) => value != RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.unknown)
+      .toList();
 }

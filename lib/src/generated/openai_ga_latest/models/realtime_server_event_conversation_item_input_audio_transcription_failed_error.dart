@@ -7,7 +7,8 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'realtime_server_event_conversation_item_input_audio_transcription_failed_error.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError with RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMappable {
+class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
+    with RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMappable {
   const RealtimeServerEventConversationItemInputAudioTranscriptionFailedError({
     this.type,
     this.code,
@@ -20,7 +21,6 @@ class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError with
   final String? message;
   final String? param;
 
-  static RealtimeServerEventConversationItemInputAudioTranscriptionFailedError fromJson(Map<String, dynamic> json) => RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMapper.fromJson(json);
-
+  static RealtimeServerEventConversationItemInputAudioTranscriptionFailedError fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventConversationItemInputAudioTranscriptionFailedErrorMapper.fromJson(json);
 }
-

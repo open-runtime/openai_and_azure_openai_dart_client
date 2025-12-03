@@ -10,19 +10,19 @@ part 'image_gen_tool_call_status.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenToolCallStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('generating') 
+  @MappableValue('generating')
   generating,
 
-  @MappableValue('failed') 
+  @MappableValue('failed')
   failed,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -31,5 +31,6 @@ enum ImageGenToolCallStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenToolCallStatus> get $valuesDefined => values.where((value) => value != ImageGenToolCallStatus.unknown).toList();
+  static List<ImageGenToolCallStatus> get $valuesDefined =>
+      values.where((value) => value != ImageGenToolCallStatus.unknown).toList();
 }

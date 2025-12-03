@@ -8,14 +8,11 @@ part 'completion_usage_completion_tokens_details.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CompletionUsageCompletionTokensDetails with CompletionUsageCompletionTokensDetailsMappable {
-  const CompletionUsageCompletionTokensDetails({
-    this.reasoningTokens,
-  });
+  const CompletionUsageCompletionTokensDetails({this.reasoningTokens});
 
   @MappableField(key: 'reasoning_tokens')
   final int? reasoningTokens;
 
-  static CompletionUsageCompletionTokensDetails fromJson(Map<String, dynamic> json) => CompletionUsageCompletionTokensDetailsMapper.fromJson(json);
-
+  static CompletionUsageCompletionTokensDetails fromJson(Map<String, dynamic> json) =>
+      CompletionUsageCompletionTokensDetailsMapper.fromJson(json);
 }
-

@@ -9,10 +9,10 @@ part 'message_content_delta_type2.mapper.dart';
 /// Always `text`.
 @MappableEnum(defaultValue: 'unknown')
 enum MessageContentDeltaType2 {
-  @MappableValue('text') 
+  @MappableValue('text')
   text,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum MessageContentDeltaType2 {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<MessageContentDeltaType2> get $valuesDefined => values.where((value) => value != MessageContentDeltaType2.unknown).toList();
+  static List<MessageContentDeltaType2> get $valuesDefined =>
+      values.where((value) => value != MessageContentDeltaType2.unknown).toList();
 }

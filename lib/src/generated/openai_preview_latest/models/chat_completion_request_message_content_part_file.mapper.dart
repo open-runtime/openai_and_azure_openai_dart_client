@@ -8,7 +8,7 @@
 part of 'chat_completion_request_message_content_part_file.dart';
 
 class ChatCompletionRequestMessageContentPartFileMapper
-    extends ClassMapperBase<ChatCompletionRequestMessageContentPartFile> {
+    extends SubClassMapperBase<ChatCompletionRequestMessageContentPartFile> {
   ChatCompletionRequestMessageContentPartFileMapper._();
 
   static ChatCompletionRequestMessageContentPartFileMapper? _instance;
@@ -17,6 +17,8 @@ class ChatCompletionRequestMessageContentPartFileMapper
       MapperContainer.globals.use(
         _instance = ChatCompletionRequestMessageContentPartFileMapper._(),
       );
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       ChatCompletionRequestMessageContentPartFileTypeMapper.ensureInitialized();
       ChatCompletionRequestMessageContentPartFileFileMapper.ensureInitialized();
     }
@@ -59,6 +61,14 @@ class ChatCompletionRequestMessageContentPartFileMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file';
+  @override
+  late final ClassMapperBase superMapper =
+      ChatCompletionRequestUserMessageContentPartMapper.ensureInitialized();
 
   static ChatCompletionRequestMessageContentPartFile _instantiate(
     DecodingData data,
@@ -162,13 +172,15 @@ abstract class ChatCompletionRequestMessageContentPartFileCopyWith<
   $In extends ChatCompletionRequestMessageContentPartFile,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements
+        ChatCompletionRequestUserMessageContentPartCopyWith<$R, $In, $Out> {
   ChatCompletionRequestMessageContentPartFileFileCopyWith<
     $R,
     ChatCompletionRequestMessageContentPartFileFile,
     ChatCompletionRequestMessageContentPartFileFile
   >
   get chatCompletionRequestMessageContentPartFileFile;
+  @override
   $R call({
     ChatCompletionRequestMessageContentPartFileType? type,
     ChatCompletionRequestMessageContentPartFileFile?

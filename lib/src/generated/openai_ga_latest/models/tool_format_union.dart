@@ -12,34 +12,28 @@ import 'grammar_syntax1.dart';
 
 part 'tool_format_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  ToolFormatUnionText,
-  ToolFormatUnionGrammar
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [ToolFormatUnionText, ToolFormatUnionGrammar],
+)
 sealed class ToolFormatUnion with ToolFormatUnionMappable {
   const ToolFormatUnion();
 
   static ToolFormatUnion fromJson(Map<String, dynamic> json) {
     return ToolFormatUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension ToolFormatUnionDeserializer on ToolFormatUnion {
-  static ToolFormatUnion tryDeserialize(
-    Map<String, dynamic> json, {
-    String key = 'type',
-    Map<Type, Object?>? mapping,
-  }) {
-    final mappingFallback = const <Type, Object?>{
-      ToolFormatUnionText: 'text',
-      ToolFormatUnionGrammar: 'grammar',
-    };
+  static ToolFormatUnion tryDeserialize(Map<String, dynamic> json, {String key = 'type', Map<Type, Object?>? mapping}) {
+    final mappingFallback = const <Type, Object?>{CustomTextFormatParam: 'text', CustomGrammarFormatParam: 'grammar'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ToolFormatUnionText] => ToolFormatUnionTextMapper.fromJson(json),
-      _ when value == effective[ToolFormatUnionGrammar] => ToolFormatUnionGrammarMapper.fromJson(json),
+      _ when value == effective[CustomTextFormatParam] => CustomTextFormatParamMapper.fromJson(json),
+      _ when value == effective[CustomGrammarFormatParam] => CustomGrammarFormatParamMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ToolFormatUnion'),
     };
   }
@@ -49,21 +43,14 @@ extension ToolFormatUnionDeserializer on ToolFormatUnion {
 class ToolFormatUnionText extends ToolFormatUnion with ToolFormatUnionTextMappable {
   final CustomTextFormatParamType type;
 
-  const ToolFormatUnionText({
-    required this.type,
-  });
-
+  const ToolFormatUnionText({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'grammar')
 class ToolFormatUnionGrammar extends ToolFormatUnion with ToolFormatUnionGrammarMappable {
   final CustomGrammarFormatParamType type;
   final GrammarSyntax1 syntax;
   final String definition;
 
-  const ToolFormatUnionGrammar({
-    required this.type,
-    required this.syntax,
-    required this.definition,
-  });
-
+  const ToolFormatUnionGrammar({required this.type, required this.syntax, required this.definition});
 }

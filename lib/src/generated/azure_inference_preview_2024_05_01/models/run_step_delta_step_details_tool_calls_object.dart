@@ -10,18 +10,15 @@ import 'run_step_delta_step_details_tool_calls_object_type.dart';
 part 'run_step_delta_step_details_tool_calls_object.mapper.dart';
 
 /// Details of the tool call.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RunStepDeltaStepDetailsToolCallsObject with RunStepDeltaStepDetailsToolCallsObjectMappable {
-  const RunStepDeltaStepDetailsToolCallsObject({
-    required this.type,
-    this.toolCalls,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_calls')
+class RunStepDeltaStepDetailsToolCallsObject extends RunStepDeltaObjectDeltaStepDetailsUnion
+    with RunStepDeltaStepDetailsToolCallsObjectMappable {
+  const RunStepDeltaStepDetailsToolCallsObject({required this.type, this.toolCalls});
 
   final RunStepDeltaStepDetailsToolCallsObjectType type;
   @MappableField(key: 'tool_calls')
   final List<RunStepDeltaStepDetailsToolCallsObjectToolCallsUnion>? toolCalls;
 
-  static RunStepDeltaStepDetailsToolCallsObject fromJson(Map<String, dynamic> json) => RunStepDeltaStepDetailsToolCallsObjectMapper.fromJson(json);
-
+  static RunStepDeltaStepDetailsToolCallsObject fromJson(Map<String, dynamic> json) =>
+      RunStepDeltaStepDetailsToolCallsObjectMapper.fromJson(json);
 }
-

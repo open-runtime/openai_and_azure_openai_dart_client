@@ -8,7 +8,7 @@
 part of 'image_edit_partial_image_event.dart';
 
 class ImageEditPartialImageEventMapper
-    extends ClassMapperBase<ImageEditPartialImageEvent> {
+    extends SubClassMapperBase<ImageEditPartialImageEvent> {
   ImageEditPartialImageEventMapper._();
 
   static ImageEditPartialImageEventMapper? _instance;
@@ -17,6 +17,7 @@ class ImageEditPartialImageEventMapper
       MapperContainer.globals.use(
         _instance = ImageEditPartialImageEventMapper._(),
       );
+      ImageEditStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ImageEditPartialImageEventTypeMapper.ensureInitialized();
       ImageEditPartialImageEventSizeMapper.ensureInitialized();
       ImageEditPartialImageEventQualityMapper.ensureInitialized();
@@ -101,6 +102,14 @@ class ImageEditPartialImageEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'image_edit.partial_image';
+  @override
+  late final ClassMapperBase superMapper =
+      ImageEditStreamEventMapper.ensureInitialized();
 
   static ImageEditPartialImageEvent _instantiate(DecodingData data) {
     return ImageEditPartialImageEvent(
@@ -188,7 +197,8 @@ abstract class ImageEditPartialImageEventCopyWith<
   $In extends ImageEditPartialImageEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ImageEditStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ImageEditPartialImageEventType? type,
     String? b64Json,

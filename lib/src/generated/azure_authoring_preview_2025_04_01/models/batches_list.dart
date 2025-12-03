@@ -12,13 +12,7 @@ part 'batches_list.mapper.dart';
 /// Represents a list of batches.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class BatchesList with BatchesListMappable {
-  const BatchesList({
-    this.objectField,
-    this.data,
-    this.firstId,
-    this.lastId,
-    this.hasMore,
-  });
+  const BatchesList({this.objectField, this.data, this.firstId, this.lastId, this.hasMore});
 
   @MappableField(key: 'object')
   final TypeDiscriminator? objectField;
@@ -31,6 +25,4 @@ class BatchesList with BatchesListMappable {
   final bool? hasMore;
 
   static BatchesList fromJson(Map<String, dynamic> json) => BatchesListMapper.fromJson(json);
-
 }
-

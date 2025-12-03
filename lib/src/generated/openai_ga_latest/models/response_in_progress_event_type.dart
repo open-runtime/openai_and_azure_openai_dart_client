@@ -11,10 +11,10 @@ part 'response_in_progress_event_type.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseInProgressEventType {
   /// Incorrect name has been replaced. Original name: `response.in_progress`.
-  @MappableValue('response.in_progress') 
+  @MappableValue('response.in_progress')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ResponseInProgressEventType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ResponseInProgressEventType> get $valuesDefined => values.where((value) => value != ResponseInProgressEventType.unknown).toList();
+  static List<ResponseInProgressEventType> get $valuesDefined =>
+      values.where((value) => value != ResponseInProgressEventType.unknown).toList();
 }

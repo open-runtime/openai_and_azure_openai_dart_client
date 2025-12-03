@@ -13,11 +13,7 @@ part 'audit_log_actor.mapper.dart';
 /// The actor who performed the audit logged action.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AuditLogActor with AuditLogActorMappable {
-  const AuditLogActor({
-    this.type,
-    this.session,
-    this.apiKey,
-  });
+  const AuditLogActor({this.type, this.session, this.apiKey});
 
   final AuditLogActorType? type;
   final AuditLogActorSession? session;
@@ -25,6 +21,4 @@ class AuditLogActor with AuditLogActorMappable {
   final AuditLogActorApiKey? apiKey;
 
   static AuditLogActor fromJson(Map<String, dynamic> json) => AuditLogActorMapper.fromJson(json);
-
 }
-

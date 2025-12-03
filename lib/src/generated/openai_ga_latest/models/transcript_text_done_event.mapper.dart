@@ -8,7 +8,7 @@
 part of 'transcript_text_done_event.dart';
 
 class TranscriptTextDoneEventMapper
-    extends ClassMapperBase<TranscriptTextDoneEvent> {
+    extends SubClassMapperBase<TranscriptTextDoneEvent> {
   TranscriptTextDoneEventMapper._();
 
   static TranscriptTextDoneEventMapper? _instance;
@@ -17,6 +17,8 @@ class TranscriptTextDoneEventMapper
       MapperContainer.globals.use(
         _instance = TranscriptTextDoneEventMapper._(),
       );
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized()
+          .addSubMapper(_instance!);
       TranscriptTextDoneEventTypeMapper.ensureInitialized();
       TranscriptTextDoneEventLogprobsMapper.ensureInitialized();
       TranscriptTextUsageTokensMapper.ensureInitialized();
@@ -60,6 +62,14 @@ class TranscriptTextDoneEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'transcript.text.done';
+  @override
+  late final ClassMapperBase superMapper =
+      CreateTranscriptionResponseStreamEventMapper.ensureInitialized();
 
   static TranscriptTextDoneEvent _instantiate(DecodingData data) {
     return TranscriptTextDoneEvent(
@@ -139,7 +149,7 @@ abstract class TranscriptTextDoneEventCopyWith<
   $In extends TranscriptTextDoneEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CreateTranscriptionResponseStreamEventCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     TranscriptTextDoneEventLogprobs,
@@ -156,6 +166,7 @@ abstract class TranscriptTextDoneEventCopyWith<
     TranscriptTextUsageTokens
   >?
   get usage;
+  @override
   $R call({
     TranscriptTextDoneEventType? type,
     String? text,

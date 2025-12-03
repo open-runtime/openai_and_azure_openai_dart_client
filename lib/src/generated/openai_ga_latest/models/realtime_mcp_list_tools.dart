@@ -12,14 +12,9 @@ part 'realtime_mcp_list_tools.mapper.dart';
 
 /// A Realtime item listing tools available on an MCP server.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeMcpListTools with RealtimeMcpListToolsMappable {
-  const RealtimeMcpListTools({
-    required this.type,
-    required this.serverLabel,
-    required this.tools,
-    this.id,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_list_tools')
+class RealtimeMcpListTools extends RealtimeConversationItem with RealtimeMcpListToolsMappable {
+  const RealtimeMcpListTools({required this.type, required this.serverLabel, required this.tools, this.id});
 
   final RealtimeMcpListToolsType type;
   @MappableField(key: 'server_label')
@@ -28,6 +23,4 @@ class RealtimeMcpListTools with RealtimeMcpListToolsMappable {
   final String? id;
 
   static RealtimeMcpListTools fromJson(Map<String, dynamic> json) => RealtimeMcpListToolsMapper.fromJson(json);
-
 }
-

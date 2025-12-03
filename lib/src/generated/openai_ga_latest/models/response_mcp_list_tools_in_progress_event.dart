@@ -11,8 +11,8 @@ part 'response_mcp_list_tools_in_progress_event.mapper.dart';
 
 /// Emitted when the system is in the process of retrieving the list of available MCP tools.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseMcpListToolsInProgressEvent with ResponseMcpListToolsInProgressEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.mcp_list_tools.in_progress')
+class ResponseMcpListToolsInProgressEvent extends ResponseStreamEvent with ResponseMcpListToolsInProgressEventMappable {
   const ResponseMcpListToolsInProgressEvent({
     required this.type,
     required this.itemId,
@@ -28,7 +28,6 @@ class ResponseMcpListToolsInProgressEvent with ResponseMcpListToolsInProgressEve
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseMcpListToolsInProgressEvent fromJson(Map<String, dynamic> json) => ResponseMcpListToolsInProgressEventMapper.fromJson(json);
-
+  static ResponseMcpListToolsInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseMcpListToolsInProgressEventMapper.fromJson(json);
 }
-

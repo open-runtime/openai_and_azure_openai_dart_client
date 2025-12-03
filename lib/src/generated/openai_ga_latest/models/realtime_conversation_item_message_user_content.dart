@@ -28,7 +28,6 @@ class RealtimeConversationItemMessageUserContent with RealtimeConversationItemMe
   final String? imageUrl;
   final String? transcript;
 
-  static RealtimeConversationItemMessageUserContent fromJson(Map<String, dynamic> json) => RealtimeConversationItemMessageUserContentMapper.fromJson(json);
-
+  static RealtimeConversationItemMessageUserContent fromJson(Map<String, dynamic> json) =>
+      RealtimeConversationItemMessageUserContentMapper.fromJson(json);
 }
-

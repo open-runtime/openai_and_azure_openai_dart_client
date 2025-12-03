@@ -10,10 +10,10 @@ part 'tool_type6.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ToolType6 {
-  @MappableValue('image_generation') 
+  @MappableValue('image_generation')
   imageGeneration,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

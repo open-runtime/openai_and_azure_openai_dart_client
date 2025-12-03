@@ -8,7 +8,7 @@
 part of 'response_in_progress_event.dart';
 
 class ResponseInProgressEventMapper
-    extends ClassMapperBase<ResponseInProgressEvent> {
+    extends SubClassMapperBase<ResponseInProgressEvent> {
   ResponseInProgressEventMapper._();
 
   static ResponseInProgressEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseInProgressEventMapper
       MapperContainer.globals.use(
         _instance = ResponseInProgressEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseInProgressEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -50,6 +51,14 @@ class ResponseInProgressEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseInProgressEvent _instantiate(DecodingData data) {
     return ResponseInProgressEvent(
@@ -128,8 +137,9 @@ abstract class ResponseInProgressEventCopyWith<
   $In extends ResponseInProgressEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({
     ResponseInProgressEventType? type,
     ResponseModel? response,

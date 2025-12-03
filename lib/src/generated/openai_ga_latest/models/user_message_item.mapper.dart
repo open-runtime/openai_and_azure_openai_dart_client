@@ -7,13 +7,14 @@
 
 part of 'user_message_item.dart';
 
-class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
+class UserMessageItemMapper extends SubClassMapperBase<UserMessageItem> {
   UserMessageItemMapper._();
 
   static UserMessageItemMapper? _instance;
   static UserMessageItemMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserMessageItemMapper._());
+      ThreadItemMapper.ensureInitialized().addSubMapper(_instance!);
       UserMessageItemContentUnionMapper.ensureInitialized();
       AttachmentMapper.ensureInitialized();
       InferenceOptionsMapper.ensureInitialized();
@@ -86,6 +87,13 @@ class UserMessageItemMapper extends ClassMapperBase<UserMessageItem> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'chatkit.user_message';
+  @override
+  late final ClassMapperBase superMapper = ThreadItemMapper.ensureInitialized();
 
   static UserMessageItem _instantiate(DecodingData data) {
     return UserMessageItem(
@@ -161,7 +169,7 @@ extension UserMessageItemValueCopy<$R, $Out>
 }
 
 abstract class UserMessageItemCopyWith<$R, $In extends UserMessageItem, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ThreadItemCopyWith<$R, $In, $Out> {
   ListCopyWith<
     $R,
     UserMessageItemContentUnion,
@@ -176,6 +184,7 @@ abstract class UserMessageItemCopyWith<$R, $In extends UserMessageItem, $Out>
   get attachments;
   InferenceOptionsCopyWith<$R, InferenceOptions, InferenceOptions>?
   get inferenceOptions;
+  @override
   $R call({
     String? id,
     int? createdAt,

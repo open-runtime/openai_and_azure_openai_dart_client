@@ -9,10 +9,10 @@ part 'active_status_type.mapper.dart';
 /// Status discriminator that is always `active`.
 @MappableEnum(defaultValue: 'unknown')
 enum ActiveStatusType {
-  @MappableValue('active') 
+  @MappableValue('active')
   active,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ActiveStatusType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ActiveStatusType> get $valuesDefined => values.where((value) => value != ActiveStatusType.unknown).toList();
+  static List<ActiveStatusType> get $valuesDefined =>
+      values.where((value) => value != ActiveStatusType.unknown).toList();
 }

@@ -9,7 +9,14 @@ part 'realtime_response_max_output_tokens_union.mapper.dart';
 /// Maximum number of output tokens for a single assistant response,.
 /// inclusive of tool calls, that was used in this response.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeResponseMaxOutputTokensUnionVariantString, RealtimeResponseMaxOutputTokensUnionVariantInt])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeResponseMaxOutputTokensUnionVariantString,
+    RealtimeResponseMaxOutputTokensUnionVariantInt,
+  ],
+)
 sealed class RealtimeResponseMaxOutputTokensUnion with RealtimeResponseMaxOutputTokensUnionMappable {
   const RealtimeResponseMaxOutputTokensUnion();
 
@@ -39,21 +46,19 @@ extension RealtimeResponseMaxOutputTokensUnionDeserializer on RealtimeResponseMa
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseMaxOutputTokensUnionVariantString extends RealtimeResponseMaxOutputTokensUnion with RealtimeResponseMaxOutputTokensUnionVariantStringMappable {
+class RealtimeResponseMaxOutputTokensUnionVariantString extends RealtimeResponseMaxOutputTokensUnion
+    with RealtimeResponseMaxOutputTokensUnionVariantStringMappable {
   final String value;
 
-  const RealtimeResponseMaxOutputTokensUnionVariantString({
-    required this.value,
-  });
+  const RealtimeResponseMaxOutputTokensUnionVariantString({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeResponseMaxOutputTokensUnionVariantInt extends RealtimeResponseMaxOutputTokensUnion with RealtimeResponseMaxOutputTokensUnionVariantIntMappable {
+class RealtimeResponseMaxOutputTokensUnionVariantInt extends RealtimeResponseMaxOutputTokensUnion
+    with RealtimeResponseMaxOutputTokensUnionVariantIntMappable {
   final int value;
 
-  const RealtimeResponseMaxOutputTokensUnionVariantInt({
-    required this.value,
-  });
+  const RealtimeResponseMaxOutputTokensUnionVariantInt({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

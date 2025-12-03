@@ -9,25 +9,25 @@ part 'response_format.mapper.dart';
 /// The format to synthesize the audio in.
 @MappableEnum(defaultValue: 'unknown')
 enum ResponseFormat {
-  @MappableValue('mp3') 
+  @MappableValue('mp3')
   mp3,
 
-  @MappableValue('opus') 
+  @MappableValue('opus')
   opus,
 
-  @MappableValue('aac') 
+  @MappableValue('aac')
   aac,
 
-  @MappableValue('flac') 
+  @MappableValue('flac')
   flac,
 
-  @MappableValue('wav') 
+  @MappableValue('wav')
   wav,
 
-  @MappableValue('pcm') 
+  @MappableValue('pcm')
   pcm,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

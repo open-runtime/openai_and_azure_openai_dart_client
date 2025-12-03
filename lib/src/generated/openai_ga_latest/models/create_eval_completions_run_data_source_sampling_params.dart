@@ -34,7 +34,6 @@ class CreateEvalCompletionsRunDataSourceSamplingParams with CreateEvalCompletion
   final CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormatUnion? responseFormat;
   final List<ChatCompletionTool>? tools;
 
-  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) => CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
-
+  static CreateEvalCompletionsRunDataSourceSamplingParams fromJson(Map<String, dynamic> json) =>
+      CreateEvalCompletionsRunDataSourceSamplingParamsMapper.fromJson(json);
 }
-

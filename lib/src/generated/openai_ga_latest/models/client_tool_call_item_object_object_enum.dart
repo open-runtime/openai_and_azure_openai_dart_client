@@ -11,10 +11,10 @@ part 'client_tool_call_item_object_object_enum.mapper.dart';
 @MappableEnum(defaultValue: 'unknown')
 enum ClientToolCallItemObjectObjectEnum {
   /// Incorrect name has been replaced. Original name: `chatkit.thread_item`.
-  @MappableValue('chatkit.thread_item') 
+  @MappableValue('chatkit.thread_item')
   undefined0,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -23,5 +23,6 @@ enum ClientToolCallItemObjectObjectEnum {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ClientToolCallItemObjectObjectEnum> get $valuesDefined => values.where((value) => value != ClientToolCallItemObjectObjectEnum.unknown).toList();
+  static List<ClientToolCallItemObjectObjectEnum> get $valuesDefined =>
+      values.where((value) => value != ClientToolCallItemObjectObjectEnum.unknown).toList();
 }

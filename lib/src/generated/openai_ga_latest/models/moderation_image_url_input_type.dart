@@ -9,10 +9,10 @@ part 'moderation_image_url_input_type.mapper.dart';
 /// Always `image_url`.
 @MappableEnum(defaultValue: 'unknown')
 enum ModerationImageUrlInputType {
-  @MappableValue('image_url') 
+  @MappableValue('image_url')
   imageUrl,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum ModerationImageUrlInputType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ModerationImageUrlInputType> get $valuesDefined => values.where((value) => value != ModerationImageUrlInputType.unknown).toList();
+  static List<ModerationImageUrlInputType> get $valuesDefined =>
+      values.where((value) => value != ModerationImageUrlInputType.unknown).toList();
 }

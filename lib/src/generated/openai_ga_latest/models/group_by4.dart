@@ -8,25 +8,25 @@ part 'group_by4.mapper.dart';
 
 @MappableEnum(defaultValue: 'unknown')
 enum GroupBy4 {
-  @MappableValue('project_id') 
+  @MappableValue('project_id')
   projectId,
 
-  @MappableValue('user_id') 
+  @MappableValue('user_id')
   userId,
 
-  @MappableValue('api_key_id') 
+  @MappableValue('api_key_id')
   apiKeyId,
 
-  @MappableValue('model') 
+  @MappableValue('model')
   model,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('service_tier') 
+  @MappableValue('service_tier')
   serviceTier,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

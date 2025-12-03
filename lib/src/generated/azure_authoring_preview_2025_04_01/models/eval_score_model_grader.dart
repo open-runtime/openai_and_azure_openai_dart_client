@@ -33,6 +33,4 @@ class EvalScoreModelGrader with EvalScoreModelGraderMappable {
   final dynamic? samplingParams;
 
   static EvalScoreModelGrader fromJson(Map<String, dynamic> json) => EvalScoreModelGraderMapper.fromJson(json);
-
 }
-

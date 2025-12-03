@@ -9,8 +9,8 @@ import 'usage_moderations_result_object_object_enum.dart';
 part 'usage_moderations_result.mapper.dart';
 
 /// The aggregated moderations usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageModerationsResult with UsageModerationsResultMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.moderations.result')
+class UsageModerationsResult extends UsageTimeBucketResultUnion with UsageModerationsResultMappable {
   const UsageModerationsResult({
     required this.objectEnum,
     required this.inputTokens,
@@ -36,6 +36,4 @@ class UsageModerationsResult with UsageModerationsResultMappable {
   final String? model;
 
   static UsageModerationsResult fromJson(Map<String, dynamic> json) => UsageModerationsResultMapper.fromJson(json);
-
 }
-

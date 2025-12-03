@@ -8,7 +8,7 @@
 part of 'code_interpreter_text_output.dart';
 
 class CodeInterpreterTextOutputMapper
-    extends ClassMapperBase<CodeInterpreterTextOutput> {
+    extends SubClassMapperBase<CodeInterpreterTextOutput> {
   CodeInterpreterTextOutputMapper._();
 
   static CodeInterpreterTextOutputMapper? _instance;
@@ -16,6 +16,9 @@ class CodeInterpreterTextOutputMapper
     if (_instance == null) {
       MapperContainer.globals.use(
         _instance = CodeInterpreterTextOutputMapper._(),
+      );
+      CodeInterpreterToolOutputMapper.ensureInitialized().addSubMapper(
+        _instance!,
       );
       CodeInterpreterTextOutputTypeMapper.ensureInitialized();
     }
@@ -44,6 +47,14 @@ class CodeInterpreterTextOutputMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'logs';
+  @override
+  late final ClassMapperBase superMapper =
+      CodeInterpreterToolOutputMapper.ensureInitialized();
 
   static CodeInterpreterTextOutput _instantiate(DecodingData data) {
     return CodeInterpreterTextOutput(
@@ -125,7 +136,8 @@ abstract class CodeInterpreterTextOutputCopyWith<
   $In extends CodeInterpreterTextOutput,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements CodeInterpreterToolOutputCopyWith<$R, $In, $Out> {
+  @override
   $R call({CodeInterpreterTextOutputType? type, String? logs});
   CodeInterpreterTextOutputCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,

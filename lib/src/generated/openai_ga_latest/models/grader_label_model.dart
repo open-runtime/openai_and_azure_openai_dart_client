@@ -12,8 +12,8 @@ part 'grader_label_model.mapper.dart';
 /// A LabelModelGrader object which uses a model to assign labels to each item.
 /// in the evaluation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class GraderLabelModel with GraderLabelModelMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
+class GraderLabelModel extends GraderMultiGradersUnion with GraderLabelModelMappable {
   const GraderLabelModel({
     required this.type,
     required this.name,
@@ -32,6 +32,4 @@ class GraderLabelModel with GraderLabelModelMappable {
   final List<String> passingLabels;
 
   static GraderLabelModel fromJson(Map<String, dynamic> json) => GraderLabelModelMapper.fromJson(json);
-
 }
-

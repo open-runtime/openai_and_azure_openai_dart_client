@@ -9,16 +9,16 @@ part 'target_type.mapper.dart';
 /// The target type.
 @MappableEnum(defaultValue: 'unknown')
 enum TargetType {
-  @MappableValue('AzureAISearch') 
+  @MappableValue('AzureAISearch')
   azureAiSearch,
 
-  @MappableValue('CosmosDB') 
+  @MappableValue('CosmosDB')
   cosmosDb,
 
-  @MappableValue('Pinecone') 
+  @MappableValue('Pinecone')
   pinecone,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

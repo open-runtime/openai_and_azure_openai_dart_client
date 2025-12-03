@@ -8,7 +8,7 @@
 part of 'response_web_search_call_searching_event.dart';
 
 class ResponseWebSearchCallSearchingEventMapper
-    extends ClassMapperBase<ResponseWebSearchCallSearchingEvent> {
+    extends SubClassMapperBase<ResponseWebSearchCallSearchingEvent> {
   ResponseWebSearchCallSearchingEventMapper._();
 
   static ResponseWebSearchCallSearchingEventMapper? _instance;
@@ -17,6 +17,7 @@ class ResponseWebSearchCallSearchingEventMapper
       MapperContainer.globals.use(
         _instance = ResponseWebSearchCallSearchingEventMapper._(),
       );
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseWebSearchCallSearchingEventTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -51,6 +52,14 @@ class ResponseWebSearchCallSearchingEventMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.web_search_call.searching';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseWebSearchCallSearchingEvent _instantiate(DecodingData data) {
     return ResponseWebSearchCallSearchingEvent(
@@ -140,7 +149,8 @@ abstract class ResponseWebSearchCallSearchingEventCopyWith<
   $In extends ResponseWebSearchCallSearchingEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({
     ResponseWebSearchCallSearchingEventType? type,
     int? outputIndex,

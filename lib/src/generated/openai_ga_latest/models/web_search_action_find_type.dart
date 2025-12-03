@@ -10,10 +10,10 @@ part 'web_search_action_find_type.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum WebSearchActionFindType {
-  @MappableValue('find') 
+  @MappableValue('find')
   find,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -22,5 +22,6 @@ enum WebSearchActionFindType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<WebSearchActionFindType> get $valuesDefined => values.where((value) => value != WebSearchActionFindType.unknown).toList();
+  static List<WebSearchActionFindType> get $valuesDefined =>
+      values.where((value) => value != WebSearchActionFindType.unknown).toList();
 }

@@ -9,16 +9,16 @@ part 'function_call_output_item_param_status.mapper.dart';
 /// The status of the item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionCallOutputItemParamStatus {
-  @MappableValue('in_progress') 
+  @MappableValue('in_progress')
   inProgress,
 
-  @MappableValue('completed') 
+  @MappableValue('completed')
   completed,
 
-  @MappableValue('incomplete') 
+  @MappableValue('incomplete')
   incomplete,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -27,5 +27,6 @@ enum FunctionCallOutputItemParamStatus {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionCallOutputItemParamStatus> get $valuesDefined => values.where((value) => value != FunctionCallOutputItemParamStatus.unknown).toList();
+  static List<FunctionCallOutputItemParamStatus> get $valuesDefined =>
+      values.where((value) => value != FunctionCallOutputItemParamStatus.unknown).toList();
 }

@@ -41,6 +41,4 @@ class ProjectRateLimit with ProjectRateLimitMappable {
   final int? batch1DayMaxInputTokens;
 
   static ProjectRateLimit fromJson(Map<String, dynamic> json) => ProjectRateLimitMapper.fromJson(json);
-
 }
-

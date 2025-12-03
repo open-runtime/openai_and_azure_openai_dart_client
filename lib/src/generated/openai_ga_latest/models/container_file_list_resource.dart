@@ -28,7 +28,6 @@ class ContainerFileListResource with ContainerFileListResourceMappable {
   @MappableField(key: 'has_more')
   final bool hasMore;
 
-  static ContainerFileListResource fromJson(Map<String, dynamic> json) => ContainerFileListResourceMapper.fromJson(json);
-
+  static ContainerFileListResource fromJson(Map<String, dynamic> json) =>
+      ContainerFileListResourceMapper.fromJson(json);
 }
-

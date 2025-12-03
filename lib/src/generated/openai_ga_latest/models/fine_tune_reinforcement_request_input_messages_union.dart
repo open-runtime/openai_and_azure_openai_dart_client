@@ -16,18 +16,23 @@ import 'fine_tune_preference_request_input_input_messages_union.dart';
 
 part 'fine_tune_reinforcement_request_input_messages_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'role', includeSubClasses: [
-  FineTuneReinforcementRequestInputMessagesUnionDeveloper,
-  FineTuneReinforcementRequestInputMessagesUnionUser,
-  FineTuneReinforcementRequestInputMessagesUnionTool
-])
-sealed class FineTuneReinforcementRequestInputMessagesUnion with FineTuneReinforcementRequestInputMessagesUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'role',
+  includeSubClasses: [
+    FineTuneReinforcementRequestInputMessagesUnionDeveloper,
+    FineTuneReinforcementRequestInputMessagesUnionUser,
+    FineTuneReinforcementRequestInputMessagesUnionTool,
+  ],
+)
+sealed class FineTuneReinforcementRequestInputMessagesUnion
+    with FineTuneReinforcementRequestInputMessagesUnionMappable {
   const FineTuneReinforcementRequestInputMessagesUnion();
 
   static FineTuneReinforcementRequestInputMessagesUnion fromJson(Map<String, dynamic> json) {
     return FineTuneReinforcementRequestInputMessagesUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension FineTuneReinforcementRequestInputMessagesUnionDeserializer on FineTuneReinforcementRequestInputMessagesUnion {
@@ -37,23 +42,31 @@ extension FineTuneReinforcementRequestInputMessagesUnionDeserializer on FineTune
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      FineTuneReinforcementRequestInputMessagesUnionDeveloper: 'developer',
-      FineTuneReinforcementRequestInputMessagesUnionUser: 'user',
-      FineTuneReinforcementRequestInputMessagesUnionTool: 'tool',
+      ChatCompletionRequestDeveloperMessage: 'developer',
+      ChatCompletionRequestUserMessage: 'user',
+      ChatCompletionRequestToolMessage: 'tool',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[FineTuneReinforcementRequestInputMessagesUnionDeveloper] => FineTuneReinforcementRequestInputMessagesUnionDeveloperMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementRequestInputMessagesUnionUser] => FineTuneReinforcementRequestInputMessagesUnionUserMapper.fromJson(json),
-      _ when value == effective[FineTuneReinforcementRequestInputMessagesUnionTool] => FineTuneReinforcementRequestInputMessagesUnionToolMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for FineTuneReinforcementRequestInputMessagesUnion'),
+      _ when value == effective[ChatCompletionRequestDeveloperMessage] =>
+        ChatCompletionRequestDeveloperMessageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestUserMessage] => ChatCompletionRequestUserMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestToolMessage] => ChatCompletionRequestToolMessageMapper.fromJson(
+        json,
+      ),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for FineTuneReinforcementRequestInputMessagesUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'developer')
-class FineTuneReinforcementRequestInputMessagesUnionDeveloper extends FineTuneReinforcementRequestInputMessagesUnion with FineTuneReinforcementRequestInputMessagesUnionDeveloperMappable {
+class FineTuneReinforcementRequestInputMessagesUnionDeveloper extends FineTuneReinforcementRequestInputMessagesUnion
+    with FineTuneReinforcementRequestInputMessagesUnionDeveloperMappable {
   final String content;
   final ChatCompletionRequestDeveloperMessageRole role;
   final String? name;
@@ -63,10 +76,11 @@ class FineTuneReinforcementRequestInputMessagesUnionDeveloper extends FineTuneRe
     required this.role,
     required this.name,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
-class FineTuneReinforcementRequestInputMessagesUnionUser extends FineTuneReinforcementRequestInputMessagesUnion with FineTuneReinforcementRequestInputMessagesUnionUserMappable {
+class FineTuneReinforcementRequestInputMessagesUnionUser extends FineTuneReinforcementRequestInputMessagesUnion
+    with FineTuneReinforcementRequestInputMessagesUnionUserMappable {
   final String content;
   final ChatCompletionRequestUserMessageRole role;
   final String? name;
@@ -76,10 +90,11 @@ class FineTuneReinforcementRequestInputMessagesUnionUser extends FineTuneReinfor
     required this.role,
     required this.name,
   });
-
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
-class FineTuneReinforcementRequestInputMessagesUnionTool extends FineTuneReinforcementRequestInputMessagesUnion with FineTuneReinforcementRequestInputMessagesUnionToolMappable {
+class FineTuneReinforcementRequestInputMessagesUnionTool extends FineTuneReinforcementRequestInputMessagesUnion
+    with FineTuneReinforcementRequestInputMessagesUnionToolMappable {
   final ChatCompletionRequestToolMessageRole role;
   final String content;
   @MappableField(key: 'tool_call_id')
@@ -90,5 +105,4 @@ class FineTuneReinforcementRequestInputMessagesUnionTool extends FineTuneReinfor
     required this.content,
     required this.toolCallId,
   });
-
 }

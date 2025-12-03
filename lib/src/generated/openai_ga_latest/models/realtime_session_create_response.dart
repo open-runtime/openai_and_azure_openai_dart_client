@@ -54,7 +54,6 @@ class RealtimeSessionCreateResponse with RealtimeSessionCreateResponseMappable {
   @MappableField(key: 'max_output_tokens', hook: const RealtimeSessionCreateResponseMaxOutputTokensUnionHook())
   final RealtimeSessionCreateResponseMaxOutputTokensUnion? maxOutputTokens;
 
-  static RealtimeSessionCreateResponse fromJson(Map<String, dynamic> json) => RealtimeSessionCreateResponseMapper.fromJson(json);
-
+  static RealtimeSessionCreateResponse fromJson(Map<String, dynamic> json) =>
+      RealtimeSessionCreateResponseMapper.fromJson(json);
 }
-

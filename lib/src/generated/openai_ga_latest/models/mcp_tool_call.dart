@@ -14,8 +14,8 @@ part 'mcp_tool_call.mapper.dart';
 
 /// An invocation of a tool on an MCP server.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class McpToolCall with McpToolCallMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'mcp_call')
+class McpToolCall extends ItemUnion with McpToolCallMappable {
   const McpToolCall({
     required this.type,
     required this.id,
@@ -41,6 +41,4 @@ class McpToolCall with McpToolCallMappable {
   final String? approvalRequestId;
 
   static McpToolCall fromJson(Map<String, dynamic> json) => McpToolCallMapper.fromJson(json);
-
 }
-

@@ -9,8 +9,8 @@ import 'usage_audio_speeches_result_object_object_enum.dart';
 part 'usage_audio_speeches_result.mapper.dart';
 
 /// The aggregated audio speeches usage details of the specific time bucket.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class UsageAudioSpeechesResult with UsageAudioSpeechesResultMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'organization.usage.audio_speeches.result')
+class UsageAudioSpeechesResult extends UsageTimeBucketResultUnion with UsageAudioSpeechesResultMappable {
   const UsageAudioSpeechesResult({
     required this.objectEnum,
     required this.characters,
@@ -35,6 +35,4 @@ class UsageAudioSpeechesResult with UsageAudioSpeechesResultMappable {
   final String? model;
 
   static UsageAudioSpeechesResult fromJson(Map<String, dynamic> json) => UsageAudioSpeechesResultMapper.fromJson(json);
-
 }
-

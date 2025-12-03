@@ -10,8 +10,6 @@ part 'transcription_chunking_strategy.mapper.dart';
 class TranscriptionChunkingStrategy with TranscriptionChunkingStrategyMappable {
   const TranscriptionChunkingStrategy();
 
-
-  static TranscriptionChunkingStrategy fromJson(Map<String, dynamic> json) => TranscriptionChunkingStrategyMapper.fromJson(json);
-
+  static TranscriptionChunkingStrategy fromJson(Map<String, dynamic> json) =>
+      TranscriptionChunkingStrategyMapper.fromJson(json);
 }
-

@@ -10,16 +10,16 @@ part 'image_gen_stream_event_output_format_output_format.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum ImageGenStreamEventOutputFormatOutputFormat {
-  @MappableValue('png') 
+  @MappableValue('png')
   png,
 
-  @MappableValue('webp') 
+  @MappableValue('webp')
   webp,
 
-  @MappableValue('jpeg') 
+  @MappableValue('jpeg')
   jpeg,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum ImageGenStreamEventOutputFormatOutputFormat {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<ImageGenStreamEventOutputFormatOutputFormat> get $valuesDefined => values.where((value) => value != ImageGenStreamEventOutputFormatOutputFormat.unknown).toList();
+  static List<ImageGenStreamEventOutputFormatOutputFormat> get $valuesDefined =>
+      values.where((value) => value != ImageGenStreamEventOutputFormatOutputFormat.unknown).toList();
 }

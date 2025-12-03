@@ -11,8 +11,8 @@ part 'response_image_gen_call_in_progress_event.mapper.dart';
 
 /// Emitted when an image generation tool call is in progress.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseImageGenCallInProgressEvent with ResponseImageGenCallInProgressEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.in_progress')
+class ResponseImageGenCallInProgressEvent extends ResponseStreamEvent with ResponseImageGenCallInProgressEventMappable {
   const ResponseImageGenCallInProgressEvent({
     required this.type,
     required this.outputIndex,
@@ -28,7 +28,6 @@ class ResponseImageGenCallInProgressEvent with ResponseImageGenCallInProgressEve
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseImageGenCallInProgressEvent fromJson(Map<String, dynamic> json) => ResponseImageGenCallInProgressEventMapper.fromJson(json);
-
+  static ResponseImageGenCallInProgressEvent fromJson(Map<String, dynamic> json) =>
+      ResponseImageGenCallInProgressEventMapper.fromJson(json);
 }
-

@@ -14,8 +14,16 @@ part 'realtime_beta_response_create_params_conversation_union.mapper.dart';
 /// conversation. Set this to `none` to create an out-of-band response which .
 /// will not add items to default conversation.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RealtimeBetaResponseCreateParamsConversationUnionVariantEnum, RealtimeBetaResponseCreateParamsConversationUnionVariantString])
-sealed class RealtimeBetaResponseCreateParamsConversationUnion with RealtimeBetaResponseCreateParamsConversationUnionMappable {
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RealtimeBetaResponseCreateParamsConversationUnionVariantEnum,
+    RealtimeBetaResponseCreateParamsConversationUnionVariantString,
+  ],
+)
+sealed class RealtimeBetaResponseCreateParamsConversationUnion
+    with RealtimeBetaResponseCreateParamsConversationUnionMappable {
   const RealtimeBetaResponseCreateParamsConversationUnion();
 
   static RealtimeBetaResponseCreateParamsConversationUnion fromJson(dynamic json) {
@@ -23,7 +31,8 @@ sealed class RealtimeBetaResponseCreateParamsConversationUnion with RealtimeBeta
   }
 }
 
-extension RealtimeBetaResponseCreateParamsConversationUnionDeserializer on RealtimeBetaResponseCreateParamsConversationUnion {
+extension RealtimeBetaResponseCreateParamsConversationUnionDeserializer
+    on RealtimeBetaResponseCreateParamsConversationUnion {
   static RealtimeBetaResponseCreateParamsConversationUnion tryDeserialize(dynamic json) {
     // Try enum variant
     if (json is String) {
@@ -46,31 +55,34 @@ extension RealtimeBetaResponseCreateParamsConversationUnionDeserializer on Realt
       return RealtimeBetaResponseCreateParamsConversationUnionDeserializer.tryDeserialize(json['value']);
     }
 
-    throw FormatException('Could not determine the correct type for RealtimeBetaResponseCreateParamsConversationUnion from: $json');
+    throw FormatException(
+      'Could not determine the correct type for RealtimeBetaResponseCreateParamsConversationUnion from: $json',
+    );
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseCreateParamsConversationUnionVariantEnum extends RealtimeBetaResponseCreateParamsConversationUnion with RealtimeBetaResponseCreateParamsConversationUnionVariantEnumMappable {
+class RealtimeBetaResponseCreateParamsConversationUnionVariantEnum
+    extends RealtimeBetaResponseCreateParamsConversationUnion
+    with RealtimeBetaResponseCreateParamsConversationUnionVariantEnumMappable {
   final RealtimeBetaResponseCreateParamsConversationUnionEnum value;
 
-  const RealtimeBetaResponseCreateParamsConversationUnionVariantEnum({
-    required this.value,
-  });
+  const RealtimeBetaResponseCreateParamsConversationUnionVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeBetaResponseCreateParamsConversationUnionVariantString extends RealtimeBetaResponseCreateParamsConversationUnion with RealtimeBetaResponseCreateParamsConversationUnionVariantStringMappable {
+class RealtimeBetaResponseCreateParamsConversationUnionVariantString
+    extends RealtimeBetaResponseCreateParamsConversationUnion
+    with RealtimeBetaResponseCreateParamsConversationUnionVariantStringMappable {
   final String value;
 
-  const RealtimeBetaResponseCreateParamsConversationUnionVariantString({
-    required this.value,
-  });
+  const RealtimeBetaResponseCreateParamsConversationUnionVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.
 /// Use this instead of toJson() when serializing to API requests.
-extension RealtimeBetaResponseCreateParamsConversationUnionJsonValue on RealtimeBetaResponseCreateParamsConversationUnion {
+extension RealtimeBetaResponseCreateParamsConversationUnionJsonValue
+    on RealtimeBetaResponseCreateParamsConversationUnion {
   /// Get the raw value for JSON serialization.
   /// Returns the primitive value (String, int, bool, enum) directly.
   dynamic get toJsonValue {
@@ -100,7 +112,9 @@ class RealtimeBetaResponseCreateParamsConversationUnionHook extends MappingHook 
   Object? beforeDecode(Object? value) {
     // Intercept raw primitive values BEFORE normal decoding
     // This prevents the mapper from failing on String/int values
-    if (value != null && value is! RealtimeBetaResponseCreateParamsConversationUnion && value is! Map<String, dynamic>) {
+    if (value != null &&
+        value is! RealtimeBetaResponseCreateParamsConversationUnion &&
+        value is! Map<String, dynamic>) {
       // Raw primitive value - deserialize using our custom fromJson
       return RealtimeBetaResponseCreateParamsConversationUnion.fromJson(value);
     }

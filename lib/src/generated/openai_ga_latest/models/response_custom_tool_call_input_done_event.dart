@@ -11,8 +11,9 @@ part 'response_custom_tool_call_input_done_event.mapper.dart';
 
 /// Event indicating that input for a custom tool call is complete.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCustomToolCallInputDoneEvent with ResponseCustomToolCallInputDoneEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.custom_tool_call_input.done')
+class ResponseCustomToolCallInputDoneEvent extends ResponseStreamEvent
+    with ResponseCustomToolCallInputDoneEventMappable {
   const ResponseCustomToolCallInputDoneEvent({
     required this.type,
     required this.sequenceNumber,
@@ -30,7 +31,6 @@ class ResponseCustomToolCallInputDoneEvent with ResponseCustomToolCallInputDoneE
   final String itemId;
   final String input;
 
-  static ResponseCustomToolCallInputDoneEvent fromJson(Map<String, dynamic> json) => ResponseCustomToolCallInputDoneEventMapper.fromJson(json);
-
+  static ResponseCustomToolCallInputDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCustomToolCallInputDoneEventMapper.fromJson(json);
 }
-

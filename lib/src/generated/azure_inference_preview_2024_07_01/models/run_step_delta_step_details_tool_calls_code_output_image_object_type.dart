@@ -9,10 +9,10 @@ part 'run_step_delta_step_details_tool_calls_code_output_image_object_type.mappe
 /// Always `image`.
 @MappableEnum(defaultValue: 'unknown')
 enum RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType {
-  @MappableValue('image') 
+  @MappableValue('image')
   image,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType> get $valuesDefined => values.where((value) => value != RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.unknown).toList();
+  static List<RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType> get $valuesDefined =>
+      values.where((value) => value != RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.unknown).toList();
 }

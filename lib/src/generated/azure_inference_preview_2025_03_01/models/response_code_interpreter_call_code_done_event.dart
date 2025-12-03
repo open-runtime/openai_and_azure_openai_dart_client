@@ -10,20 +10,16 @@ import 'response_stream_event.dart';
 part 'response_code_interpreter_call_code_done_event.mapper.dart';
 
 /// Emitted when code snippet output is finalized by the code interpreter.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseCodeInterpreterCallCodeDoneEvent with ResponseCodeInterpreterCallCodeDoneEventMappable {
-  const ResponseCodeInterpreterCallCodeDoneEvent({
-    required this.type,
-    required this.outputIndex,
-    required this.code,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.code_interpreter_call.code.done')
+class ResponseCodeInterpreterCallCodeDoneEvent extends ResponseStreamEvent
+    with ResponseCodeInterpreterCallCodeDoneEventMappable {
+  const ResponseCodeInterpreterCallCodeDoneEvent({required this.type, required this.outputIndex, required this.code});
 
   final ResponseCodeInterpreterCallCodeDoneEventType type;
   @MappableField(key: 'output_index')
   final int outputIndex;
   final String code;
 
-  static ResponseCodeInterpreterCallCodeDoneEvent fromJson(Map<String, dynamic> json) => ResponseCodeInterpreterCallCodeDoneEventMapper.fromJson(json);
-
+  static ResponseCodeInterpreterCallCodeDoneEvent fromJson(Map<String, dynamic> json) =>
+      ResponseCodeInterpreterCallCodeDoneEventMapper.fromJson(json);
 }
-

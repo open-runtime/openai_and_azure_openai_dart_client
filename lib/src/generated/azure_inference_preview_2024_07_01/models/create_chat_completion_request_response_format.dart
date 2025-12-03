@@ -10,13 +10,10 @@ part 'create_chat_completion_request_response_format.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class CreateChatCompletionRequestResponseFormat with CreateChatCompletionRequestResponseFormatMappable {
-  const CreateChatCompletionRequestResponseFormat({
-    this.type,
-  });
+  const CreateChatCompletionRequestResponseFormat({this.type});
 
   final ChatCompletionResponseFormat? type;
 
-  static CreateChatCompletionRequestResponseFormat fromJson(Map<String, dynamic> json) => CreateChatCompletionRequestResponseFormatMapper.fromJson(json);
-
+  static CreateChatCompletionRequestResponseFormat fromJson(Map<String, dynamic> json) =>
+      CreateChatCompletionRequestResponseFormatMapper.fromJson(json);
 }
-

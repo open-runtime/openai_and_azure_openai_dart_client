@@ -9,15 +9,12 @@ import 'text_response_format_configuration.dart';
 
 part 'response_format_json_object.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFormatJsonObject with ResponseFormatJsonObjectMappable {
-  const ResponseFormatJsonObject({
-    required this.type,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'json_object')
+class ResponseFormatJsonObject extends CreateChatCompletionRequestResponseFormatUnion
+    with ResponseFormatJsonObjectMappable {
+  const ResponseFormatJsonObject({required this.type});
 
   final ResponseFormatJsonObjectType type;
 
   static ResponseFormatJsonObject fromJson(Map<String, dynamic> json) => ResponseFormatJsonObjectMapper.fromJson(json);
-
 }
-

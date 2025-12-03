@@ -30,6 +30,4 @@ class ContainerResource with ContainerResourceMappable {
   final ContainerResourceExpiresAfter? containerResourceExpiresAfter;
 
   static ContainerResource fromJson(Map<String, dynamic> json) => ContainerResourceMapper.fromJson(json);
-
 }
-

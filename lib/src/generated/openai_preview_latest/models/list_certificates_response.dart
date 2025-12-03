@@ -30,6 +30,4 @@ class ListCertificatesResponse with ListCertificatesResponseMappable {
   final String? lastId;
 
   static ListCertificatesResponse fromJson(Map<String, dynamic> json) => ListCertificatesResponseMapper.fromJson(json);
-
 }
-

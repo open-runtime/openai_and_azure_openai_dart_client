@@ -7,13 +7,15 @@
 
 part of 'response_queued_event.dart';
 
-class ResponseQueuedEventMapper extends ClassMapperBase<ResponseQueuedEvent> {
+class ResponseQueuedEventMapper
+    extends SubClassMapperBase<ResponseQueuedEvent> {
   ResponseQueuedEventMapper._();
 
   static ResponseQueuedEventMapper? _instance;
   static ResponseQueuedEventMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = ResponseQueuedEventMapper._());
+      ResponseStreamEventMapper.ensureInitialized().addSubMapper(_instance!);
       ResponseQueuedEventTypeMapper.ensureInitialized();
       ResponseModelMapper.ensureInitialized();
     }
@@ -48,6 +50,14 @@ class ResponseQueuedEventMapper extends ClassMapperBase<ResponseQueuedEvent> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.queued';
+  @override
+  late final ClassMapperBase superMapper =
+      ResponseStreamEventMapper.ensureInitialized();
 
   static ResponseQueuedEvent _instantiate(DecodingData data) {
     return ResponseQueuedEvent(
@@ -126,8 +136,9 @@ abstract class ResponseQueuedEventCopyWith<
   $In extends ResponseQueuedEvent,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements ResponseStreamEventCopyWith<$R, $In, $Out> {
   ResponseModelCopyWith<$R, ResponseModel, ResponseModel> get response;
+  @override
   $R call({
     ResponseQueuedEventType? type,
     ResponseModel? response,

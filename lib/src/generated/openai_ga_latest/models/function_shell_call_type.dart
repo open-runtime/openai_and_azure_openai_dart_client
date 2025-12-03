@@ -9,10 +9,10 @@ part 'function_shell_call_type.mapper.dart';
 /// The type of the item. Always `shell_call`.
 @MappableEnum(defaultValue: 'unknown')
 enum FunctionShellCallType {
-  @MappableValue('shell_call') 
+  @MappableValue('shell_call')
   shellCall,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum FunctionShellCallType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<FunctionShellCallType> get $valuesDefined => values.where((value) => value != FunctionShellCallType.unknown).toList();
+  static List<FunctionShellCallType> get $valuesDefined =>
+      values.where((value) => value != FunctionShellCallType.unknown).toList();
 }

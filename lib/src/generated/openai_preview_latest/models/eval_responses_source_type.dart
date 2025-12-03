@@ -9,10 +9,10 @@ part 'eval_responses_source_type.mapper.dart';
 /// The type of run data source. Always `responses`.
 @MappableEnum(defaultValue: 'unknown')
 enum EvalResponsesSourceType {
-  @MappableValue('responses') 
+  @MappableValue('responses')
   responses,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -21,5 +21,6 @@ enum EvalResponsesSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<EvalResponsesSourceType> get $valuesDefined => values.where((value) => value != EvalResponsesSourceType.unknown).toList();
+  static List<EvalResponsesSourceType> get $valuesDefined =>
+      values.where((value) => value != EvalResponsesSourceType.unknown).toList();
 }

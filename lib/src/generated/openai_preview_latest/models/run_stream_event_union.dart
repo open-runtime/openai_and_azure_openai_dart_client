@@ -18,7 +18,22 @@ import 'run_stream_event_union_variant9_event.dart';
 
 part 'run_stream_event_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [RunStreamEventUnionVariant1, RunStreamEventUnionVariant2, RunStreamEventUnionVariant3, RunStreamEventUnionVariant4, RunStreamEventUnionVariant5, RunStreamEventUnionVariant6, RunStreamEventUnionVariant7, RunStreamEventUnionVariant8, RunStreamEventUnionVariant9, RunStreamEventUnionVariant10])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [
+    RunStreamEventUnionVariant1,
+    RunStreamEventUnionVariant2,
+    RunStreamEventUnionVariant3,
+    RunStreamEventUnionVariant4,
+    RunStreamEventUnionVariant5,
+    RunStreamEventUnionVariant6,
+    RunStreamEventUnionVariant7,
+    RunStreamEventUnionVariant8,
+    RunStreamEventUnionVariant9,
+    RunStreamEventUnionVariant10,
+  ],
+)
 sealed class RunStreamEventUnion with RunStreamEventUnionMappable {
   const RunStreamEventUnion();
 
@@ -60,7 +75,6 @@ extension RunStreamEventUnionDeserializer on RunStreamEventUnion {
       return RunStreamEventUnionVariant10Mapper.fromJson(json);
     } catch (_) {}
 
-
     throw FormatException('Could not determine the correct type for RunStreamEventUnion from: $json');
   }
 }
@@ -70,10 +84,7 @@ class RunStreamEventUnionVariant1 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant1Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant1({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant1({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -81,10 +92,7 @@ class RunStreamEventUnionVariant2 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant2Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant2({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant2({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -92,10 +100,7 @@ class RunStreamEventUnionVariant3 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant3Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant3({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant3({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -103,10 +108,7 @@ class RunStreamEventUnionVariant4 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant4Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant4({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant4({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -114,10 +116,7 @@ class RunStreamEventUnionVariant5 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant5Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant5({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant5({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -125,10 +124,7 @@ class RunStreamEventUnionVariant6 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant6Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant6({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant6({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -136,10 +132,7 @@ class RunStreamEventUnionVariant7 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant7Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant7({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant7({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -147,10 +140,7 @@ class RunStreamEventUnionVariant8 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant8Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant8({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant8({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -158,10 +148,7 @@ class RunStreamEventUnionVariant9 extends RunStreamEventUnion with RunStreamEven
   final RunStreamEventUnionVariant9Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant9({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant9({required this.event, required this.data});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
@@ -169,8 +156,5 @@ class RunStreamEventUnionVariant10 extends RunStreamEventUnion with RunStreamEve
   final RunStreamEventUnionVariant10Event event;
   final RunObject data;
 
-  const RunStreamEventUnionVariant10({
-    required this.event,
-    required this.data,
-  });
+  const RunStreamEventUnionVariant10({required this.event, required this.data});
 }

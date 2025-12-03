@@ -12,17 +12,21 @@ import 'assistant_tools_file_search_type_only_type.dart';
 
 part 'create_message_request_attachments_tools_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateMessageRequestAttachmentsToolsUnionCodeInterpreter,
-  CreateMessageRequestAttachmentsToolsUnionFileSearch
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    CreateMessageRequestAttachmentsToolsUnionCodeInterpreter,
+    CreateMessageRequestAttachmentsToolsUnionFileSearch,
+  ],
+)
 sealed class CreateMessageRequestAttachmentsToolsUnion with CreateMessageRequestAttachmentsToolsUnionMappable {
   const CreateMessageRequestAttachmentsToolsUnion();
 
   static CreateMessageRequestAttachmentsToolsUnion fromJson(Map<String, dynamic> json) {
     return CreateMessageRequestAttachmentsToolsUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateMessageRequestAttachmentsToolsUnionDeserializer on CreateMessageRequestAttachmentsToolsUnion {
@@ -32,34 +36,35 @@ extension CreateMessageRequestAttachmentsToolsUnionDeserializer on CreateMessage
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      CreateMessageRequestAttachmentsToolsUnionCodeInterpreter: 'code_interpreter',
-      CreateMessageRequestAttachmentsToolsUnionFileSearch: 'file_search',
+      AssistantToolsCode: 'code_interpreter',
+      AssistantToolsFileSearchTypeOnly: 'file_search',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateMessageRequestAttachmentsToolsUnionCodeInterpreter] => CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMapper.fromJson(json),
-      _ when value == effective[CreateMessageRequestAttachmentsToolsUnionFileSearch] => CreateMessageRequestAttachmentsToolsUnionFileSearchMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateMessageRequestAttachmentsToolsUnion'),
+      _ when value == effective[AssistantToolsCode] => AssistantToolsCodeMapper.fromJson(json),
+      _ when value == effective[AssistantToolsFileSearchTypeOnly] => AssistantToolsFileSearchTypeOnlyMapper.fromJson(
+        json,
+      ),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateMessageRequestAttachmentsToolsUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'code_interpreter')
-class CreateMessageRequestAttachmentsToolsUnionCodeInterpreter extends CreateMessageRequestAttachmentsToolsUnion with CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMappable {
+class CreateMessageRequestAttachmentsToolsUnionCodeInterpreter extends CreateMessageRequestAttachmentsToolsUnion
+    with CreateMessageRequestAttachmentsToolsUnionCodeInterpreterMappable {
   final AssistantToolsCodeType type;
 
-  const CreateMessageRequestAttachmentsToolsUnionCodeInterpreter({
-    required this.type,
-  });
-
+  const CreateMessageRequestAttachmentsToolsUnionCodeInterpreter({required this.type});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'file_search')
-class CreateMessageRequestAttachmentsToolsUnionFileSearch extends CreateMessageRequestAttachmentsToolsUnion with CreateMessageRequestAttachmentsToolsUnionFileSearchMappable {
+class CreateMessageRequestAttachmentsToolsUnionFileSearch extends CreateMessageRequestAttachmentsToolsUnion
+    with CreateMessageRequestAttachmentsToolsUnionFileSearchMappable {
   final AssistantToolsFileSearchTypeOnlyType type;
 
-  const CreateMessageRequestAttachmentsToolsUnionFileSearch({
-    required this.type,
-  });
-
+  const CreateMessageRequestAttachmentsToolsUnionFileSearch({required this.type});
 }

@@ -12,19 +12,19 @@ part 'create_upload_request_purpose.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum CreateUploadRequestPurpose {
-  @MappableValue('assistants') 
+  @MappableValue('assistants')
   assistants,
 
-  @MappableValue('batch') 
+  @MappableValue('batch')
   batch,
 
-  @MappableValue('fine-tune') 
+  @MappableValue('fine-tune')
   fineTune,
 
-  @MappableValue('vision') 
+  @MappableValue('vision')
   vision,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -33,5 +33,6 @@ enum CreateUploadRequestPurpose {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<CreateUploadRequestPurpose> get $valuesDefined => values.where((value) => value != CreateUploadRequestPurpose.unknown).toList();
+  static List<CreateUploadRequestPurpose> get $valuesDefined =>
+      values.where((value) => value != CreateUploadRequestPurpose.unknown).toList();
 }

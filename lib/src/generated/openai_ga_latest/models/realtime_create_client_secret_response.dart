@@ -12,18 +12,13 @@ part 'realtime_create_client_secret_response.mapper.dart';
 ///
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class RealtimeCreateClientSecretResponse with RealtimeCreateClientSecretResponseMappable {
-  const RealtimeCreateClientSecretResponse({
-    required this.value,
-    required this.expiresAt,
-    required this.session,
-  });
+  const RealtimeCreateClientSecretResponse({required this.value, required this.expiresAt, required this.session});
 
   final String value;
   @MappableField(key: 'expires_at')
   final int expiresAt;
   final RealtimeCreateClientSecretResponseSessionUnion session;
 
-  static RealtimeCreateClientSecretResponse fromJson(Map<String, dynamic> json) => RealtimeCreateClientSecretResponseMapper.fromJson(json);
-
+  static RealtimeCreateClientSecretResponse fromJson(Map<String, dynamic> json) =>
+      RealtimeCreateClientSecretResponseMapper.fromJson(json);
 }
-

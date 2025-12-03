@@ -8,7 +8,11 @@ import 'voice_ids_shared_enum.dart';
 
 part 'voice_ids_shared.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, includeSubClasses: [VoiceIdsSharedVariantEnum, VoiceIdsSharedVariantString])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  includeSubClasses: [VoiceIdsSharedVariantEnum, VoiceIdsSharedVariantString],
+)
 sealed class VoiceIdsShared with VoiceIdsSharedMappable {
   const VoiceIdsShared();
 
@@ -48,18 +52,14 @@ extension VoiceIdsSharedUnionDeserializer on VoiceIdsShared {
 class VoiceIdsSharedVariantEnum extends VoiceIdsShared with VoiceIdsSharedVariantEnumMappable {
   final VoiceIdsSharedEnum value;
 
-  const VoiceIdsSharedVariantEnum({
-    required this.value,
-  });
+  const VoiceIdsSharedVariantEnum({required this.value});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class VoiceIdsSharedVariantString extends VoiceIdsShared with VoiceIdsSharedVariantStringMappable {
   final String value;
 
-  const VoiceIdsSharedVariantString({
-    required this.value,
-  });
+  const VoiceIdsSharedVariantString({required this.value});
 }
 
 /// Extension to get raw value for JSON serialization of primitive unions.

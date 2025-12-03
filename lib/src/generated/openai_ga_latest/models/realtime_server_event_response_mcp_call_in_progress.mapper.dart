@@ -8,7 +8,7 @@
 part of 'realtime_server_event_response_mcp_call_in_progress.dart';
 
 class RealtimeServerEventResponseMcpCallInProgressMapper
-    extends ClassMapperBase<RealtimeServerEventResponseMcpCallInProgress> {
+    extends SubClassMapperBase<RealtimeServerEventResponseMcpCallInProgress> {
   RealtimeServerEventResponseMcpCallInProgressMapper._();
 
   static RealtimeServerEventResponseMcpCallInProgressMapper? _instance;
@@ -18,6 +18,7 @@ class RealtimeServerEventResponseMcpCallInProgressMapper
       MapperContainer.globals.use(
         _instance = RealtimeServerEventResponseMcpCallInProgressMapper._(),
       );
+      RealtimeServerEventMapper.ensureInitialized().addSubMapper(_instance!);
     }
     return _instance!;
   }
@@ -54,6 +55,14 @@ class RealtimeServerEventResponseMcpCallInProgressMapper
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'response.mcp_call.in_progress';
+  @override
+  late final ClassMapperBase superMapper =
+      RealtimeServerEventMapper.ensureInitialized();
 
   static RealtimeServerEventResponseMcpCallInProgress _instantiate(
     DecodingData data,
@@ -157,7 +166,8 @@ abstract class RealtimeServerEventResponseMcpCallInProgressCopyWith<
   $In extends RealtimeServerEventResponseMcpCallInProgress,
   $Out
 >
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements RealtimeServerEventCopyWith<$R, $In, $Out> {
+  @override
   $R call({String? eventId, dynamic type, int? outputIndex, String? itemId});
   RealtimeServerEventResponseMcpCallInProgressCopyWith<$R2, $In, $Out2>
   $chain<$R2, $Out2>(Then<$Out2, $R2> t);

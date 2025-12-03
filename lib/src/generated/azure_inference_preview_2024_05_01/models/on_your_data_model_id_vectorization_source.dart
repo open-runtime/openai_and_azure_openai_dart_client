@@ -12,16 +12,12 @@ part 'on_your_data_model_id_vectorization_source.mapper.dart';
 /// on a search service model ID. Currently only supported by Elasticsearch®.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataModelIdVectorizationSource with OnYourDataModelIdVectorizationSourceMappable {
-  const OnYourDataModelIdVectorizationSource({
-    required this.type,
-    this.modelId,
-  });
+  const OnYourDataModelIdVectorizationSource({required this.type, this.modelId});
 
   final OnYourDataVectorizationSourceType type;
   @MappableField(key: 'model_id')
   final String? modelId;
 
-  static OnYourDataModelIdVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataModelIdVectorizationSourceMapper.fromJson(json);
-
+  static OnYourDataModelIdVectorizationSource fromJson(Map<String, dynamic> json) =>
+      OnYourDataModelIdVectorizationSourceMapper.fromJson(json);
 }
-

@@ -14,8 +14,9 @@ part 'realtime_server_event_output_audio_buffer_stopped.mapper.dart';
 /// data has been sent to the client (`response.done`).
 /// [Learn more](/docs/guides/realtime-model-capabilities#client-and-server-events-for-audio-in-webrtc).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventOutputAudioBufferStopped with RealtimeServerEventOutputAudioBufferStoppedMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'output_audio_buffer.stopped')
+class RealtimeServerEventOutputAudioBufferStopped extends RealtimeServerEvent
+    with RealtimeServerEventOutputAudioBufferStoppedMappable {
   const RealtimeServerEventOutputAudioBufferStopped({
     required this.eventId,
     required this.type,
@@ -28,7 +29,6 @@ class RealtimeServerEventOutputAudioBufferStopped with RealtimeServerEventOutput
   @MappableField(key: 'response_id')
   final String responseId;
 
-  static RealtimeServerEventOutputAudioBufferStopped fromJson(Map<String, dynamic> json) => RealtimeServerEventOutputAudioBufferStoppedMapper.fromJson(json);
-
+  static RealtimeServerEventOutputAudioBufferStopped fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventOutputAudioBufferStoppedMapper.fromJson(json);
 }
-

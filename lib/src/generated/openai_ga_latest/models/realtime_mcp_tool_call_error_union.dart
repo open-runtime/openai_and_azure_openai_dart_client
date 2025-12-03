@@ -14,18 +14,22 @@ import 'realtime_mcphttp_error_type.dart';
 
 part 'realtime_mcp_tool_call_error_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  RealtimeMcpToolCallErrorUnionProtocolError,
-  RealtimeMcpToolCallErrorUnionToolExecutionError,
-  RealtimeMcpToolCallErrorUnionHttpError
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [
+    RealtimeMcpToolCallErrorUnionProtocolError,
+    RealtimeMcpToolCallErrorUnionToolExecutionError,
+    RealtimeMcpToolCallErrorUnionHttpError,
+  ],
+)
 sealed class RealtimeMcpToolCallErrorUnion with RealtimeMcpToolCallErrorUnionMappable {
   const RealtimeMcpToolCallErrorUnion();
 
   static RealtimeMcpToolCallErrorUnion fromJson(Map<String, dynamic> json) {
     return RealtimeMcpToolCallErrorUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension RealtimeMcpToolCallErrorUnionDeserializer on RealtimeMcpToolCallErrorUnion {
@@ -35,55 +39,46 @@ extension RealtimeMcpToolCallErrorUnionDeserializer on RealtimeMcpToolCallErrorU
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      RealtimeMcpToolCallErrorUnionProtocolError: 'protocol_error',
-      RealtimeMcpToolCallErrorUnionToolExecutionError: 'tool_execution_error',
-      RealtimeMcpToolCallErrorUnionHttpError: 'http_error',
+      RealtimeMcpProtocolError: 'protocol_error',
+      RealtimeMcpToolExecutionError: 'tool_execution_error',
+      RealtimeMcphttpError: 'http_error',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[RealtimeMcpToolCallErrorUnionProtocolError] => RealtimeMcpToolCallErrorUnionProtocolErrorMapper.fromJson(json),
-      _ when value == effective[RealtimeMcpToolCallErrorUnionToolExecutionError] => RealtimeMcpToolCallErrorUnionToolExecutionErrorMapper.fromJson(json),
-      _ when value == effective[RealtimeMcpToolCallErrorUnionHttpError] => RealtimeMcpToolCallErrorUnionHttpErrorMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpProtocolError] => RealtimeMcpProtocolErrorMapper.fromJson(json),
+      _ when value == effective[RealtimeMcpToolExecutionError] => RealtimeMcpToolExecutionErrorMapper.fromJson(json),
+      _ when value == effective[RealtimeMcphttpError] => RealtimeMcphttpErrorMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for RealtimeMcpToolCallErrorUnion'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'protocol_error')
-class RealtimeMcpToolCallErrorUnionProtocolError extends RealtimeMcpToolCallErrorUnion with RealtimeMcpToolCallErrorUnionProtocolErrorMappable {
+class RealtimeMcpToolCallErrorUnionProtocolError extends RealtimeMcpToolCallErrorUnion
+    with RealtimeMcpToolCallErrorUnionProtocolErrorMappable {
   final RealtimeMcpProtocolErrorType type;
   final int code;
   final String message;
 
-  const RealtimeMcpToolCallErrorUnionProtocolError({
-    required this.type,
-    required this.code,
-    required this.message,
-  });
-
+  const RealtimeMcpToolCallErrorUnionProtocolError({required this.type, required this.code, required this.message});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool_execution_error')
-class RealtimeMcpToolCallErrorUnionToolExecutionError extends RealtimeMcpToolCallErrorUnion with RealtimeMcpToolCallErrorUnionToolExecutionErrorMappable {
+class RealtimeMcpToolCallErrorUnionToolExecutionError extends RealtimeMcpToolCallErrorUnion
+    with RealtimeMcpToolCallErrorUnionToolExecutionErrorMappable {
   final RealtimeMcpToolExecutionErrorType type;
   final String message;
 
-  const RealtimeMcpToolCallErrorUnionToolExecutionError({
-    required this.type,
-    required this.message,
-  });
-
+  const RealtimeMcpToolCallErrorUnionToolExecutionError({required this.type, required this.message});
 }
+
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'http_error')
-class RealtimeMcpToolCallErrorUnionHttpError extends RealtimeMcpToolCallErrorUnion with RealtimeMcpToolCallErrorUnionHttpErrorMappable {
+class RealtimeMcpToolCallErrorUnionHttpError extends RealtimeMcpToolCallErrorUnion
+    with RealtimeMcpToolCallErrorUnionHttpErrorMappable {
   final RealtimeMcphttpErrorType type;
   final int code;
   final String message;
 
-  const RealtimeMcpToolCallErrorUnionHttpError({
-    required this.type,
-    required this.code,
-    required this.message,
-  });
-
+  const RealtimeMcpToolCallErrorUnionHttpError({required this.type, required this.code, required this.message});
 }

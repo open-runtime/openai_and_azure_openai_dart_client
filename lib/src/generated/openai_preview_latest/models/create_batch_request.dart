@@ -27,6 +27,4 @@ class CreateBatchRequest with CreateBatchRequestMappable {
   final Metadata? metadata;
 
   static CreateBatchRequest fromJson(Map<String, dynamic> json) => CreateBatchRequestMapper.fromJson(json);
-
 }
-

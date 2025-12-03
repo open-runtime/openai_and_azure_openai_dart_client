@@ -28,6 +28,4 @@ class CreateEmbeddingRequest with CreateEmbeddingRequestMappable {
   final CreateEmbeddingRequestEncodingFormatEncodingFormat encodingFormat;
 
   static CreateEmbeddingRequest fromJson(Map<String, dynamic> json) => CreateEmbeddingRequestMapper.fromJson(json);
-
 }
-

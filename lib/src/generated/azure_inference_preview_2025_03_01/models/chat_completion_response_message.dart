@@ -36,7 +36,6 @@ class ChatCompletionResponseMessage with ChatCompletionResponseMessageMappable {
   final ChatCompletionResponseMessageAudio? chatCompletionResponseMessageAudio;
   final AzureChatExtensionsMessageContext? context;
 
-  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) => ChatCompletionResponseMessageMapper.fromJson(json);
-
+  static ChatCompletionResponseMessage fromJson(Map<String, dynamic> json) =>
+      ChatCompletionResponseMessageMapper.fromJson(json);
 }
-

@@ -11,13 +11,10 @@ part 'on_your_data_integrated_vectorization_source.mapper.dart';
 /// Represents the integrated vectorizer defined within the search resource.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class OnYourDataIntegratedVectorizationSource with OnYourDataIntegratedVectorizationSourceMappable {
-  const OnYourDataIntegratedVectorizationSource({
-    required this.type,
-  });
+  const OnYourDataIntegratedVectorizationSource({required this.type});
 
   final OnYourDataVectorizationSourceType type;
 
-  static OnYourDataIntegratedVectorizationSource fromJson(Map<String, dynamic> json) => OnYourDataIntegratedVectorizationSourceMapper.fromJson(json);
-
+  static OnYourDataIntegratedVectorizationSource fromJson(Map<String, dynamic> json) =>
+      OnYourDataIntegratedVectorizationSourceMapper.fromJson(json);
 }
-

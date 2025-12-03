@@ -8,13 +8,7 @@ part 'embeddings_create_request.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class EmbeddingsCreateRequest with EmbeddingsCreateRequestMappable {
-  const EmbeddingsCreateRequest({
-    required this.input,
-    this.user,
-    this.inputType,
-    this.encodingFormat,
-    this.dimensions,
-  });
+  const EmbeddingsCreateRequest({required this.input, this.user, this.inputType, this.encodingFormat, this.dimensions});
 
   final List<String>? input;
   final String? user;
@@ -25,6 +19,4 @@ class EmbeddingsCreateRequest with EmbeddingsCreateRequestMappable {
   final int? dimensions;
 
   static EmbeddingsCreateRequest fromJson(Map<String, dynamic> json) => EmbeddingsCreateRequestMapper.fromJson(json);
-
 }
-

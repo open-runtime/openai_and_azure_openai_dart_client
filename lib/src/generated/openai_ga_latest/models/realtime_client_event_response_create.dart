@@ -35,20 +35,15 @@ part 'realtime_client_event_response_create.mapper.dart';
 /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting.
 /// raw Items and references to existing Items.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeClientEventResponseCreate with RealtimeClientEventResponseCreateMappable {
-  const RealtimeClientEventResponseCreate({
-    required this.type,
-    this.eventId,
-    this.response,
-  });
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.create')
+class RealtimeClientEventResponseCreate extends RealtimeClientEvent with RealtimeClientEventResponseCreateMappable {
+  const RealtimeClientEventResponseCreate({required this.type, this.eventId, this.response});
 
   final dynamic type;
   @MappableField(key: 'event_id')
   final String? eventId;
   final RealtimeResponseCreateParams? response;
 
-  static RealtimeClientEventResponseCreate fromJson(Map<String, dynamic> json) => RealtimeClientEventResponseCreateMapper.fromJson(json);
-
+  static RealtimeClientEventResponseCreate fromJson(Map<String, dynamic> json) =>
+      RealtimeClientEventResponseCreateMapper.fromJson(json);
 }
-

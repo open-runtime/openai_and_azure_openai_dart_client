@@ -10,16 +10,16 @@ part 'on_your_data_vectorization_source_type.mapper.dart';
 /// vector search.
 @MappableEnum(defaultValue: 'unknown')
 enum OnYourDataVectorizationSourceType {
-  @MappableValue('endpoint') 
+  @MappableValue('endpoint')
   endpoint,
 
-  @MappableValue('deployment_name') 
+  @MappableValue('deployment_name')
   deploymentName,
 
-  @MappableValue('model_id') 
+  @MappableValue('model_id')
   modelId,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();
@@ -28,5 +28,6 @@ enum OnYourDataVectorizationSourceType {
   String toString() => toValue().toString();
 
   /// Returns all defined enum values excluding the unknown value.
-  static List<OnYourDataVectorizationSourceType> get $valuesDefined => values.where((value) => value != OnYourDataVectorizationSourceType.unknown).toList();
+  static List<OnYourDataVectorizationSourceType> get $valuesDefined =>
+      values.where((value) => value != OnYourDataVectorizationSourceType.unknown).toList();
 }

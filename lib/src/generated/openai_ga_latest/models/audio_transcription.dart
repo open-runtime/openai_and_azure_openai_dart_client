@@ -10,17 +10,11 @@ part 'audio_transcription.mapper.dart';
 
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class AudioTranscription with AudioTranscriptionMappable {
-  const AudioTranscription({
-    this.model,
-    this.language,
-    this.prompt,
-  });
+  const AudioTranscription({this.model, this.language, this.prompt});
 
   final AudioTranscriptionModel? model;
   final String? language;
   final String? prompt;
 
   static AudioTranscription fromJson(Map<String, dynamic> json) => AudioTranscriptionMapper.fromJson(json);
-
 }
-

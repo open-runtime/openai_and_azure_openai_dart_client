@@ -7,13 +7,14 @@
 
 part of 'file_path.dart';
 
-class FilePathMapper extends ClassMapperBase<FilePath> {
+class FilePathMapper extends SubClassMapperBase<FilePath> {
   FilePathMapper._();
 
   static FilePathMapper? _instance;
   static FilePathMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = FilePathMapper._());
+      AnnotationMapper.ensureInitialized().addSubMapper(_instance!);
       FilePathTypeMapper.ensureInitialized();
     }
     return _instance!;
@@ -47,6 +48,13 @@ class FilePathMapper extends ClassMapperBase<FilePath> {
   final bool ignoreNull = true;
   @override
   bool includeTypeId<T>(_) => false;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'file_path';
+  @override
+  late final ClassMapperBase superMapper = AnnotationMapper.ensureInitialized();
 
   static FilePath _instantiate(DecodingData data) {
     return FilePath(
@@ -112,7 +120,8 @@ extension FilePathValueCopy<$R, $Out> on ObjectCopyWith<$R, FilePath, $Out> {
 }
 
 abstract class FilePathCopyWith<$R, $In extends FilePath, $Out>
-    implements ClassCopyWith<$R, $In, $Out> {
+    implements AnnotationCopyWith<$R, $In, $Out> {
+  @override
   $R call({FilePathType? type, String? fileId, int? indexField});
   FilePathCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }

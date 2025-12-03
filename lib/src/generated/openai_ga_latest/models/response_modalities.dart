@@ -10,8 +10,5 @@ part 'response_modalities.mapper.dart';
 class ResponseModalities with ResponseModalitiesMappable {
   const ResponseModalities();
 
-
   static ResponseModalities fromJson(Map<String, dynamic> json) => ResponseModalitiesMapper.fromJson(json);
-
 }
-

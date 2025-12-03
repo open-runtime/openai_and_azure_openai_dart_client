@@ -45,6 +45,4 @@ class TokenCountsBody with TokenCountsBodyMappable {
   final bool? parallelToolCalls;
 
   static TokenCountsBody fromJson(Map<String, dynamic> json) => TokenCountsBodyMapper.fromJson(json);
-
 }
-

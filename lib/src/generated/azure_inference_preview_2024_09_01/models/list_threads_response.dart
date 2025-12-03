@@ -29,6 +29,4 @@ class ListThreadsResponse with ListThreadsResponseMappable {
   final bool hasMore;
 
   static ListThreadsResponse fromJson(Map<String, dynamic> json) => ListThreadsResponseMapper.fromJson(json);
-
 }
-

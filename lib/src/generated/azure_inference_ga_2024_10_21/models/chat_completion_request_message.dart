@@ -25,13 +25,18 @@ import 'chat_completion_request_user_message_role.dart';
 
 part 'chat_completion_request_message.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'role', includeSubClasses: [
-  ChatCompletionRequestMessageSystem,
-  ChatCompletionRequestMessageUser,
-  ChatCompletionRequestMessageAssistant,
-  ChatCompletionRequestMessageTool,
-  ChatCompletionRequestMessageFunction
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'role',
+  includeSubClasses: [
+    ChatCompletionRequestMessageSystem,
+    ChatCompletionRequestMessageUser,
+    ChatCompletionRequestMessageAssistant,
+    ChatCompletionRequestMessageTool,
+    ChatCompletionRequestMessageFunction,
+  ],
+)
 sealed class ChatCompletionRequestMessage with ChatCompletionRequestMessageMappable {
   const ChatCompletionRequestMessage();
 
@@ -47,53 +52,55 @@ extension ChatCompletionRequestMessageUnionDeserializer on ChatCompletionRequest
     Map<Type, Object?>? mapping,
   }) {
     final mappingFallback = const <Type, Object?>{
-      ChatCompletionRequestMessageSystem: 'system',
-      ChatCompletionRequestMessageUser: 'user',
-      ChatCompletionRequestMessageAssistant: 'assistant',
-      ChatCompletionRequestMessageTool: 'tool',
-      ChatCompletionRequestMessageFunction: 'function',
+      ChatCompletionRequestSystemMessage: 'system',
+      ChatCompletionRequestUserMessage: 'user',
+      ChatCompletionRequestAssistantMessage: 'assistant',
+      ChatCompletionRequestToolMessage: 'tool',
+      ChatCompletionRequestFunctionMessage: 'function',
     };
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[ChatCompletionRequestMessageSystem] => ChatCompletionRequestMessageSystemMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestMessageUser] => ChatCompletionRequestMessageUserMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestMessageAssistant] => ChatCompletionRequestMessageAssistantMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestMessageTool] => ChatCompletionRequestMessageToolMapper.fromJson(json),
-      _ when value == effective[ChatCompletionRequestMessageFunction] => ChatCompletionRequestMessageFunctionMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestSystemMessage] =>
+        ChatCompletionRequestSystemMessageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestUserMessage] => ChatCompletionRequestUserMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestAssistantMessage] =>
+        ChatCompletionRequestAssistantMessageMapper.fromJson(json),
+      _ when value == effective[ChatCompletionRequestToolMessage] => ChatCompletionRequestToolMessageMapper.fromJson(
+        json,
+      ),
+      _ when value == effective[ChatCompletionRequestFunctionMessage] =>
+        ChatCompletionRequestFunctionMessageMapper.fromJson(json),
       _ => throw FormatException('Unknown discriminator value "${json[key]}" for ChatCompletionRequestMessage'),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'system')
-class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage with ChatCompletionRequestMessageSystemMappable {
+class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage
+    with ChatCompletionRequestMessageSystemMappable {
   final String content;
   final ChatCompletionRequestMessageRole role;
   final String? name;
 
-  const ChatCompletionRequestMessageSystem({
-    required this.content,
-    required this.role,
-    required this.name,
-  });
+  const ChatCompletionRequestMessageSystem({required this.content, required this.role, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'user')
-class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage with ChatCompletionRequestMessageUserMappable {
+class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage
+    with ChatCompletionRequestMessageUserMappable {
   final String content;
   final ChatCompletionRequestMessageRole2 role;
   final String? name;
 
-  const ChatCompletionRequestMessageUser({
-    required this.content,
-    required this.role,
-    required this.name,
-  });
+  const ChatCompletionRequestMessageUser({required this.content, required this.role, required this.name});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'assistant')
-class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage with ChatCompletionRequestMessageAssistantMappable {
+class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage
+    with ChatCompletionRequestMessageAssistantMappable {
   final String? content;
   final String? refusal;
   final ChatCompletionRequestMessageRole3 role;
@@ -114,28 +121,22 @@ class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'tool')
-class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage with ChatCompletionRequestMessageToolMappable {
+class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage
+    with ChatCompletionRequestMessageToolMappable {
   final ChatCompletionRequestMessageRole4 role;
   final String content;
   @MappableField(key: 'tool_call_id')
   final String toolCallId;
 
-  const ChatCompletionRequestMessageTool({
-    required this.role,
-    required this.content,
-    required this.toolCallId,
-  });
+  const ChatCompletionRequestMessageTool({required this.role, required this.content, required this.toolCallId});
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'function')
-class ChatCompletionRequestMessageFunction extends ChatCompletionRequestMessage with ChatCompletionRequestMessageFunctionMappable {
+class ChatCompletionRequestMessageFunction extends ChatCompletionRequestMessage
+    with ChatCompletionRequestMessageFunctionMappable {
   final ChatCompletionRequestMessageRole5 role;
   final String? content;
   final String name;
 
-  const ChatCompletionRequestMessageFunction({
-    required this.role,
-    required this.content,
-    required this.name,
-  });
+  const ChatCompletionRequestMessageFunction({required this.role, required this.content, required this.name});
 }

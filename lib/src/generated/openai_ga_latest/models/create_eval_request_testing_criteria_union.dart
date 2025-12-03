@@ -10,16 +10,18 @@ import 'create_eval_label_model_grader_type.dart';
 
 part 'create_eval_request_testing_criteria_union.mapper.dart';
 
-@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorKey: 'type', includeSubClasses: [
-  CreateEvalRequestTestingCriteriaUnionLabelModel
-])
+@MappableClass(
+  ignoreNull: true,
+  includeTypeId: false,
+  discriminatorKey: 'type',
+  includeSubClasses: [CreateEvalRequestTestingCriteriaUnionLabelModel],
+)
 sealed class CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionMappable {
   const CreateEvalRequestTestingCriteriaUnion();
 
   static CreateEvalRequestTestingCriteriaUnion fromJson(Map<String, dynamic> json) {
     return CreateEvalRequestTestingCriteriaUnionDeserializer.tryDeserialize(json);
   }
-
 }
 
 extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequestTestingCriteriaUnion {
@@ -28,20 +30,21 @@ extension CreateEvalRequestTestingCriteriaUnionDeserializer on CreateEvalRequest
     String key = 'type',
     Map<Type, Object?>? mapping,
   }) {
-    final mappingFallback = const <Type, Object?>{
-      CreateEvalRequestTestingCriteriaUnionLabelModel: 'label_model',
-    };
+    final mappingFallback = const <Type, Object?>{CreateEvalLabelModelGrader: 'label_model'};
     final value = json[key];
     final effective = mapping ?? mappingFallback;
     return switch (value) {
-      _ when value == effective[CreateEvalRequestTestingCriteriaUnionLabelModel] => CreateEvalRequestTestingCriteriaUnionLabelModelMapper.fromJson(json),
-      _ => throw FormatException('Unknown discriminator value "${json[key]}" for CreateEvalRequestTestingCriteriaUnion'),
+      _ when value == effective[CreateEvalLabelModelGrader] => CreateEvalLabelModelGraderMapper.fromJson(json),
+      _ => throw FormatException(
+        'Unknown discriminator value "${json[key]}" for CreateEvalRequestTestingCriteriaUnion',
+      ),
     };
   }
 }
 
 @MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'label_model')
-class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
+class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestTestingCriteriaUnion
+    with CreateEvalRequestTestingCriteriaUnionLabelModelMappable {
   final CreateEvalLabelModelGraderType type;
   final String name;
   final String model;
@@ -58,5 +61,4 @@ class CreateEvalRequestTestingCriteriaUnionLabelModel extends CreateEvalRequestT
     required this.labels,
     required this.passingLabels,
   });
-
 }

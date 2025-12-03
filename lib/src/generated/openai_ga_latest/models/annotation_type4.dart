@@ -10,10 +10,10 @@ part 'annotation_type4.mapper.dart';
 ///
 @MappableEnum(defaultValue: 'unknown')
 enum AnnotationType4 {
-  @MappableValue('file_path') 
+  @MappableValue('file_path')
   filePath,
 
-  @MappableValue('unknown') 
+  @MappableValue('unknown')
   unknown;
 
   String toJson() => toValue().toString();

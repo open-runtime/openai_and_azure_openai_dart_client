@@ -11,8 +11,8 @@ part 'response_image_gen_call_generating_event.mapper.dart';
 
 /// Emitted when an image generation tool call is actively generating an image (intermediate state).
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseImageGenCallGeneratingEvent with ResponseImageGenCallGeneratingEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.image_generation_call.generating')
+class ResponseImageGenCallGeneratingEvent extends ResponseStreamEvent with ResponseImageGenCallGeneratingEventMappable {
   const ResponseImageGenCallGeneratingEvent({
     required this.type,
     required this.outputIndex,
@@ -28,7 +28,6 @@ class ResponseImageGenCallGeneratingEvent with ResponseImageGenCallGeneratingEve
   @MappableField(key: 'sequence_number')
   final int sequenceNumber;
 
-  static ResponseImageGenCallGeneratingEvent fromJson(Map<String, dynamic> json) => ResponseImageGenCallGeneratingEventMapper.fromJson(json);
-
+  static ResponseImageGenCallGeneratingEvent fromJson(Map<String, dynamic> json) =>
+      ResponseImageGenCallGeneratingEventMapper.fromJson(json);
 }
-

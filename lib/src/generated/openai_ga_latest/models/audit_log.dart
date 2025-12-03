@@ -216,6 +216,4 @@ class AuditLog with AuditLogMappable {
   final AuditLogProjectDeleted? auditLogProjectDeleted;
 
   static AuditLog fromJson(Map<String, dynamic> json) => AuditLogMapper.fromJson(json);
-
 }
-

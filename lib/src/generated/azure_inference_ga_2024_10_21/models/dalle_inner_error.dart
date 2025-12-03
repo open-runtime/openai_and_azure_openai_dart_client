@@ -12,11 +12,7 @@ part 'dalle_inner_error.mapper.dart';
 /// Inner error with additional details.
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class DalleInnerError with DalleInnerErrorMappable {
-  const DalleInnerError({
-    this.code,
-    this.contentFilterResults,
-    this.revisedPrompt,
-  });
+  const DalleInnerError({this.code, this.contentFilterResults, this.revisedPrompt});
 
   final InnerErrorCode? code;
   @MappableField(key: 'content_filter_results')
@@ -25,6 +21,4 @@ class DalleInnerError with DalleInnerErrorMappable {
   final String? revisedPrompt;
 
   static DalleInnerError fromJson(Map<String, dynamic> json) => DalleInnerErrorMapper.fromJson(json);
-
 }
-

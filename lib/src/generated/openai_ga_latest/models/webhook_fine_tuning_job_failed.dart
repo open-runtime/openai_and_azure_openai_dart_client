@@ -31,7 +31,6 @@ class WebhookFineTuningJobFailed with WebhookFineTuningJobFailedMappable {
   @MappableField(key: 'object')
   final WebhookFineTuningJobFailedObjectObjectEnum? objectEnum;
 
-  static WebhookFineTuningJobFailed fromJson(Map<String, dynamic> json) => WebhookFineTuningJobFailedMapper.fromJson(json);
-
+  static WebhookFineTuningJobFailed fromJson(Map<String, dynamic> json) =>
+      WebhookFineTuningJobFailedMapper.fromJson(json);
 }
-

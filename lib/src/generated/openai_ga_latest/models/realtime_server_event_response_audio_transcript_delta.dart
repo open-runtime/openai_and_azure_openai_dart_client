@@ -10,8 +10,9 @@ part 'realtime_server_event_response_audio_transcript_delta.mapper.dart';
 
 /// Returned when the model-generated transcription of audio output is updated.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class RealtimeServerEventResponseAudioTranscriptDelta with RealtimeServerEventResponseAudioTranscriptDeltaMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.output_audio_transcript.delta')
+class RealtimeServerEventResponseAudioTranscriptDelta extends RealtimeServerEvent
+    with RealtimeServerEventResponseAudioTranscriptDeltaMappable {
   const RealtimeServerEventResponseAudioTranscriptDelta({
     required this.eventId,
     required this.type,
@@ -35,7 +36,6 @@ class RealtimeServerEventResponseAudioTranscriptDelta with RealtimeServerEventRe
   final int contentIndex;
   final String delta;
 
-  static RealtimeServerEventResponseAudioTranscriptDelta fromJson(Map<String, dynamic> json) => RealtimeServerEventResponseAudioTranscriptDeltaMapper.fromJson(json);
-
+  static RealtimeServerEventResponseAudioTranscriptDelta fromJson(Map<String, dynamic> json) =>
+      RealtimeServerEventResponseAudioTranscriptDeltaMapper.fromJson(json);
 }
-

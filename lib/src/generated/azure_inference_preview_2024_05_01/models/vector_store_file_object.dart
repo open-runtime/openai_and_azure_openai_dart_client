@@ -37,6 +37,4 @@ class VectorStoreFileObject with VectorStoreFileObjectMappable {
   final VectorStoreFileObjectLastError? vectorStoreFileObjectLastError;
 
   static VectorStoreFileObject fromJson(Map<String, dynamic> json) => VectorStoreFileObjectMapper.fromJson(json);
-
 }
-

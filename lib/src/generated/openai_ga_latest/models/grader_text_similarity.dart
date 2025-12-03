@@ -11,8 +11,8 @@ part 'grader_text_similarity.mapper.dart';
 
 /// A TextSimilarityGrader object which grades text based on similarity metrics.
 ///
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class GraderTextSimilarity with GraderTextSimilarityMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'text_similarity')
+class GraderTextSimilarity extends ValidateGraderResponseGraderUnion with GraderTextSimilarityMappable {
   const GraderTextSimilarity({
     required this.name,
     required this.input,
@@ -29,6 +29,4 @@ class GraderTextSimilarity with GraderTextSimilarityMappable {
   final GraderTextSimilarityType type;
 
   static GraderTextSimilarity fromJson(Map<String, dynamic> json) => GraderTextSimilarityMapper.fromJson(json);
-
 }
-

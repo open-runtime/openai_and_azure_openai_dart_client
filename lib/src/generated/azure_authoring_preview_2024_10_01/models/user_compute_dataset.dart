@@ -14,13 +14,7 @@ part 'user_compute_dataset.mapper.dart';
 /// Storage account
 @MappableClass(ignoreNull: true, includeTypeId: false)
 class UserComputeDataset with UserComputeDatasetMappable {
-  const UserComputeDataset({
-    required this.kind,
-    this.datasetId,
-    this.datasetType,
-    this.chunking,
-    this.embeddings,
-  });
+  const UserComputeDataset({required this.kind, this.datasetId, this.datasetType, this.chunking, this.embeddings});
 
   final UserComputeDatasourceType kind;
   final String? datasetId;
@@ -29,6 +23,4 @@ class UserComputeDataset with UserComputeDatasetMappable {
   final List<WorkspaceConnectionEmbeddingSettings>? embeddings;
 
   static UserComputeDataset fromJson(Map<String, dynamic> json) => UserComputeDatasetMapper.fromJson(json);
-
 }
-

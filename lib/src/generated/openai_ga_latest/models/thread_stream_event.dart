@@ -10,8 +10,5 @@ part 'thread_stream_event.mapper.dart';
 class ThreadStreamEvent with ThreadStreamEventMappable {
   const ThreadStreamEvent();
 
-
   static ThreadStreamEvent fromJson(Map<String, dynamic> json) => ThreadStreamEventMapper.fromJson(json);
-
 }
-

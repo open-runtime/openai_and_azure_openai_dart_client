@@ -31,7 +31,6 @@ class AzureCosmosDbFieldMappingOptions with AzureCosmosDbFieldMappingOptionsMapp
   @MappableField(key: 'content_fields_separator')
   final String? contentFieldsSeparator;
 
-  static AzureCosmosDbFieldMappingOptions fromJson(Map<String, dynamic> json) => AzureCosmosDbFieldMappingOptionsMapper.fromJson(json);
-
+  static AzureCosmosDbFieldMappingOptions fromJson(Map<String, dynamic> json) =>
+      AzureCosmosDbFieldMappingOptionsMapper.fromJson(json);
 }
-

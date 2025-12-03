@@ -31,7 +31,6 @@ class WebhookRealtimeCallIncoming with WebhookRealtimeCallIncomingMappable {
   @MappableField(key: 'object')
   final WebhookRealtimeCallIncomingObjectObjectEnum? objectEnum;
 
-  static WebhookRealtimeCallIncoming fromJson(Map<String, dynamic> json) => WebhookRealtimeCallIncomingMapper.fromJson(json);
-
+  static WebhookRealtimeCallIncoming fromJson(Map<String, dynamic> json) =>
+      WebhookRealtimeCallIncomingMapper.fromJson(json);
 }
-

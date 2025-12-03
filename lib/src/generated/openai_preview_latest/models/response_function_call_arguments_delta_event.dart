@@ -10,8 +10,9 @@ import 'response_stream_event.dart';
 part 'response_function_call_arguments_delta_event.mapper.dart';
 
 /// Emitted when there is a partial function-call arguments delta.
-@MappableClass(ignoreNull: true, includeTypeId: false)
-class ResponseFunctionCallArgumentsDeltaEvent with ResponseFunctionCallArgumentsDeltaEventMappable {
+@MappableClass(ignoreNull: true, includeTypeId: false, discriminatorValue: 'response.function_call_arguments.delta')
+class ResponseFunctionCallArgumentsDeltaEvent extends ResponseStreamEvent
+    with ResponseFunctionCallArgumentsDeltaEventMappable {
   const ResponseFunctionCallArgumentsDeltaEvent({
     required this.type,
     required this.itemId,
@@ -26,7 +27,6 @@ class ResponseFunctionCallArgumentsDeltaEvent with ResponseFunctionCallArguments
   final int outputIndex;
   final String delta;
 
-  static ResponseFunctionCallArgumentsDeltaEvent fromJson(Map<String, dynamic> json) => ResponseFunctionCallArgumentsDeltaEventMapper.fromJson(json);
-
+  static ResponseFunctionCallArgumentsDeltaEvent fromJson(Map<String, dynamic> json) =>
+      ResponseFunctionCallArgumentsDeltaEventMapper.fromJson(json);
 }
-
