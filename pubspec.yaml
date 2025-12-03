@@ -5,14 +5,17 @@ repository: https://github.com/open-runtime/openai_and_azure_openai_dart_client
 homepage: https://github.com/open-runtime/openai_and_azure_openai_dart_client
 issue_tracker: https://github.com/open-runtime/openai_and_azure_openai_dart_client/issues
 documentation: https://github.com/open-runtime/openai_and_azure_openai_dart_client#readme
+
 topics:
   - openai
   - azure
   - ai
   - llm
   - gpt
+
 environment:
   sdk: ^3.9.0
+
 dependencies:
   # ==========================================================================
   #
@@ -41,3 +44,4 @@ dev_dependencies:
   openapi_retrofit_generator:
     path: openapi_retrofit_generator
   retrofit_generator: ^10.2.0
+
